@@ -1,0 +1,4 @@
+label,famille,forme,rgb,description,source
+Luminaire DS1,luminaire,carre,"238,182,53",Luminaire encastré DEL type DS1,fixture synthétique
+Prise duplex 20A 125V,prise,cercle,"222,180,53",Prise duplex 20A 125V spécifiée,fixture synthétique
+Panneau P-1,distribution,carre,"20,20,20",Panneau de distribution P-1,fixture synthétique

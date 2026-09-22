@@ -1,0 +1,70 @@
+{
+  "counters": [
+    {
+      "group_id": 1,
+      "name": "Luminaire DS1",
+      "shape": 1,
+      "default_size": 24,
+      "color": -1133003,
+      "fill_color": -1133003,
+      "pen_width": 2,
+      "pen_type": "Generic",
+      "text": "1",
+      "show_measure": true,
+      "visible": true,
+      "elements": [
+        {"sheet": "E100_Rev0", "x": 208, "y": 404, "width": 24, "height": 24},
+        {"sheet": "E100_Rev0", "x": 312, "y": 528, "width": 24, "height": 24},
+        {"sheet": "E100_Rev0", "x": 458, "y": 626, "width": 24, "height": 24}
+      ]
+    },
+    {
+      "group_id": 2,
+      "name": "Prise duplex 20A 125V",
+      "shape": 0,
+      "default_size": 26,
+      "color": -2182091,
+      "fill_color": -2182091,
+      "pen_width": 2,
+      "pen_type": "Generic",
+      "text": "1",
+      "show_measure": true,
+      "visible": true,
+      "elements": [
+        {"sheet": "E200_Rev0", "x": 625, "y": 832, "width": 26, "height": 26},
+        {"sheet": "E200_Rev0", "x": 708, "y": 852, "width": 26, "height": 26}
+      ]
+    },
+    {
+      "group_id": 3,
+      "name": "Panneau P-1",
+      "shape": 1,
+      "default_size": 26,
+      "color": -15461356,
+      "fill_color": -15461356,
+      "pen_width": 2,
+      "pen_type": "Generic",
+      "text": "1",
+      "show_measure": true,
+      "visible": true,
+      "elements": [
+        {"sheet": "E200_Rev0", "x": 1041, "y": 1249, "width": 26, "height": 26}
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "group_id": 100,
+      "name": "CTRL-ECHELLE-BA-E100",
+      "color": -16776961,
+      "pen_width": 6,
+      "pen_type": "Generic",
+      "show_measure": true,
+      "visible": true,
+      "segments": [
+        {"sheet": "E100_Rev0", "x1": 100, "y1": 100, "x2": 100, "y2": 300},
+        {"sheet": "E100_Rev0", "x1": 100, "y1": 300, "x2": 400, "y2": 300}
+      ]
+    }
+  ]
+}

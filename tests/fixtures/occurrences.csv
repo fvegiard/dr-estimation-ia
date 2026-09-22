@@ -1,0 +1,7 @@
+feuille,label,x_pt,y_pt,page_pdf,note
+E100,Luminaire DS1,100.0,200.0,1,
+E100,Luminaire DS1,150.0,260.0,1,
+E100,Luminaire DS1,220.0,310.0,1,
+E200,Prise duplex 20A 125V,300.0,400.0,2,
+E200,Prise duplex 20A 125V,340.0,410.0,2,
+E200,Panneau P-1,500.0,600.0,2,localisation au sous-sol

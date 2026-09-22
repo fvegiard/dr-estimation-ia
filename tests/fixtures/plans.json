@@ -1,0 +1,32 @@
+{
+  "project": {
+    "name": "fixture synthetique dr-estimation-ia",
+    "description": "Projet synthétique de test — aucune donnée client",
+    "creation_date": "2026/9/22",
+    "last_modified": "2026/9/22",
+    "display_results_for_all_plans": true
+  },
+  "plans": [
+    {
+      "sheet": "E100_Rev0",
+      "file_name": "E100.png",
+      "raster_width_px": 1275,
+      "raster_height_px": 1650,
+      "scale": {"value": 100, "type": 0, "precision": 0, "set_manually": false, "engineering": false},
+      "bookmark": {"zoom": 10, "x": 0, "y": 0},
+      "layer_name": "Releve autonome",
+      "opacity": 150,
+      "legend": {"x": 900, "y": 500, "font_size": 45, "max_rows": 25}
+    },
+    {
+      "sheet": "E200_Rev0",
+      "file_name": "E200.png",
+      "raster_width_px": 1275,
+      "raster_height_px": 1650,
+      "bookmark": {"zoom": -1, "x": 0, "y": 0},
+      "layer_name": "Releve autonome",
+      "opacity": 150,
+      "legend": {"x": 900, "y": 500, "font_size": 45, "max_rows": 25}
+    }
+  ]
+}

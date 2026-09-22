@@ -1,0 +1,31 @@
+{
+  "_commentaire": "Configuration SYNTHÉTIQUE de métré d'artères pour les tests — aucune donnée client. Bâtiment fictif à 2 niveaux, 3 départs : même niveau, via puits, et réserve (destination non localisée).",
+  "mm_par_pt_h": 10.0,
+  "mm_par_pt_v": 10.0,
+  "px_par_pt": 2.0,
+  "frames": {"E100": [100.0, 100.0], "E200": [100.0, 100.0]},
+  "levels": {"SS": 0, "RDC": 3000},
+  "storey": {"SS": 3000, "RDC": 3000},
+  "sheet_level": {"E100": "SS", "E200": "RDC"},
+  "params": {
+    "hauteur_appareil_mm": 1500,
+    "extremite_toiture_mm": 1000,
+    "raccord_local_cc_m": 3.0,
+    "flexible_mm": 450,
+    "support_pas_m": 1.5,
+    "reserve_tirage_pct": 5.0,
+    "point_puits_technique": "puits synthétique de test"
+  },
+  "equipment": {
+    "P-1":  ["E100", 200.0, 200.0, "fixture"],
+    "P-2":  ["E100", 700.0, 500.0, "fixture"],
+    "V-1":  ["E200", 300.0, 400.0, "fixture"]
+  },
+  "riser": ["E100", 400.0, 300.0],
+  "feeders": [
+    {"id": "F01", "src": "P-1", "dst": "P-2", "protection": "100A 3P", "spec": "3#2 RW90 - C.27", "note": "", "route": "direct", "local_m": 0.0},
+    {"id": "F02", "src": "P-1", "dst": "V-1", "protection": "30A 3P", "spec": "3#12 RW90 - C.16", "note": "", "route": "puits", "local_m": 0.0},
+    {"id": "F03", "src": "V-1", "dst": "V-1", "protection": "CC V-1 - unite", "spec": "3#12 TECK90", "note": "", "route": "local", "local_m": 3.0},
+    {"id": "F04", "src": "P-1", "dst": "?", "protection": "15A 1P", "spec": "NON INDIQUE", "note": "destination non localisée (fixture)", "route": "reserve", "local_m": 0.0}
+  ]
+}
