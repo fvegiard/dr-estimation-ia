@@ -1,0 +1,42 @@
+{
+  "_source": "Mesuré avec pymupdf get_text('words') sur sources/plans/electrique/E405_Rev0.pdf (dépôt de référence, lecture seule). Bande cartouche x0 >= 2050 pt déjà isolée par verification/crosscheck_text.py. Aucun champ 'échelle' trouvé dans cette bande sur ce gabarit : l'échelle des vues électriques est annoncée dans le corps du plan (x < 2050 pt), pas dans le cartouche -- non configuré ici, pas inventé.",
+  "page_width_pt": 2383.919921875,
+  "page_height_pt": 1683.719970703125,
+  "fields": [
+    {
+      "name": "numero",
+      "type": "text",
+      "bbox": [2280, 1598, 2365, 1640]
+    },
+    {
+      "name": "titre",
+      "type": "text",
+      "bbox": [2130, 1398, 2365, 1456]
+    },
+    {
+      "name": "discipline",
+      "type": "text",
+      "bbox": [2130, 1634, 2365, 1660]
+    },
+    {
+      "name": "dossier",
+      "type": "text",
+      "bbox": [2130, 1596, 2260, 1620]
+    },
+    {
+      "name": "date_dessin",
+      "type": "text",
+      "bbox": [2130, 1560, 2365, 1582]
+    },
+    {
+      "name": "revisions",
+      "type": "table",
+      "bbox": [2129, 1340, 2365, 1366],
+      "columns": [
+        {"name": "indice", "x0": 2129, "x1": 2150},
+        {"name": "description", "x0": 2150, "x1": 2315},
+        {"name": "date", "x0": 2315, "x1": 2365}
+      ]
+    }
+  ]
+}
