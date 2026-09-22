@@ -1,0 +1,458 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="S-1769">
+		<Description></Description>
+		<ContactName></ContactName>
+		<ContactInfo></ContactInfo>
+		<JobNumber></JobNumber>
+		<Comment></Comment>
+		<CreationDate>2026/9/22</CreationDate>
+		<LastModified>2026/9/22</LastModified>
+		<DisplayResultsForAllPlans>True</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+		<ActivePlan Name="E201"/>
+		<RecentPlans>
+			<Plan Name="E201"/>
+			<Plan Name="E401"/>
+			<Plan Name="E003"/>
+			<Plan Name="E004"/>
+			<Plan Name="E101"/>
+		</RecentPlans>
+	</Workspace>
+	<Plans>
+		<Plan Name="E201" FileName="250075EPER-p06.png">
+			<Thumbnail FileName="2dce7bf4-0fe3-4b8b-885c-9b76ec7e3513"/>
+			<Scale Value="192" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1275" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="Luminaire C applique ext." GroupID="25" Shape="0" DefaultSize="26" Text="1" Color="-3114403" PenWidth="2" PenType="Generic" FillColor="-3114403" ShowMeasure="True" Visible="True">
+						<Element X="2621" Y="1896" Width="26" Height="26"/>
+						<Element X="2854" Y="1461" Width="26" Height="26"/>
+						<Element X="2854" Y="1837" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire D applique ext." GroupID="26" Shape="0" DefaultSize="26" Text="1" Color="-3511" PenWidth="2" PenType="Generic" FillColor="-3511" ShowMeasure="True" Visible="True">
+						<Element X="2755" Y="1369" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire E encastré ext. 4po" GroupID="27" Shape="0" DefaultSize="26" Text="1" Color="-5065163" PenWidth="2" PenType="Generic" FillColor="-5065163" ShowMeasure="True" Visible="True">
+						<Element X="2540" Y="1380" Width="26" Height="26"/>
+						<Element X="2588" Y="1380" Width="26" Height="26"/>
+						<Element X="2636" Y="1380" Width="26" Height="26"/>
+						<Element X="2687" Y="1380" Width="26" Height="26"/>
+					</Counter>
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E401" FileName="E004.png">
+			<Thumbnail FileName="f50227e2-7fb5-4a22-bbe5-331bc0703fff"/>
+			<Scale Value="96" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1275" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="Aéroconvecteur existant relocalisé" GroupID="2" Shape="1" DefaultSize="26" Text="1" Color="-5352681" PenWidth="2" PenType="Generic" FillColor="-5352681" ShowMeasure="True" Visible="True">
+						<Element X="2731" Y="743" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Boîtier protection station manuelle" GroupID="5" Shape="1" DefaultSize="26" Text="1" Color="-9327267" PenWidth="2" PenType="Generic" FillColor="-9327267" ShowMeasure="True" Visible="True">
+						<Element X="1244" Y="905" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Cercle gras — à classer" GroupID="6" Shape="0" DefaultSize="26" Text="1" Color="-4944836" PenWidth="2" PenType="Generic" FillColor="-4944836" ShowMeasure="True" Visible="True">
+						<Element X="2720" Y="1566" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Chauffage type A 1500W" GroupID="7" Shape="1" DefaultSize="26" Text="1" Color="-2083531" PenWidth="2" PenType="Generic" FillColor="-2083531" ShowMeasure="True" Visible="True">
+						<Element X="2746" Y="1041" Width="26" Height="26"/>
+						<Element X="3027" Y="721" Width="26" Height="26"/>
+						<Element X="3157" Y="811" Width="26" Height="26"/>
+						<Element X="3326" Y="813" Width="26" Height="26"/>
+						<Element X="3322" Y="1127" Width="26" Height="26"/>
+						<Element X="2746" Y="1419" Width="26" Height="26"/>
+						<Element X="3322" Y="1441" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Chauffage type A 900W" GroupID="8" Shape="1" DefaultSize="26" Text="1" Color="-127631" PenWidth="2" PenType="Generic" FillColor="-127631" ShowMeasure="True" Visible="True">
+						<Element X="2957" Y="1560" Width="26" Height="26"/>
+						<Element X="3095" Y="1560" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Commande éclairage ($)" GroupID="9" Shape="0" DefaultSize="26" Text="1" Color="-13290019" PenWidth="2" PenType="Generic" FillColor="-13290019" ShowMeasure="True" Visible="True">
+						<Element X="1412" Y="992" Width="26" Height="26"/>
+						<Element X="1240" Y="967" Width="26" Height="26"/>
+						<Element X="1383" Y="1191" Width="26" Height="26"/>
+						<Element X="1310" Y="1298" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Démol. applique" GroupID="10" Shape="0" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">
+						<Element X="1257" Y="2478" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Démol. chauffage — à confirmer" GroupID="11" Shape="1" DefaultSize="26" Text="1" Color="-4944836" PenWidth="2" PenType="Generic" FillColor="-4944836" ShowMeasure="True" Visible="True">
+						<Element X="2682" Y="2450" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Démol. luminaire encastré" GroupID="12" Shape="0" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">
+						<Element X="1257" Y="2155" Width="26" Height="26"/>
+						<Element X="1274" Y="2368" Width="26" Height="26"/>
+						<Element X="1274" Y="2529" Width="26" Height="26"/>
+						<Element X="1268" Y="2689" Width="26" Height="26"/>
+						<Element X="1257" Y="2931" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Démol. prise" GroupID="13" Shape="0" DefaultSize="26" Text="1" Color="-10863456" PenWidth="2" PenType="Generic" FillColor="-10863456" ShowMeasure="True" Visible="True">
+						<Element X="2766" Y="2485" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Démol. station manuelle" GroupID="14" Shape="1" DefaultSize="26" Text="1" Color="-12151206" PenWidth="2" PenType="Generic" FillColor="-12151206" ShowMeasure="True" Visible="True">
+						<Element X="1184" Y="2597" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Détecteur de fumée" GroupID="15" Shape="0" DefaultSize="26" Text="1" Color="-13264487" PenWidth="2" PenType="Generic" FillColor="-13264487" ShowMeasure="True" Visible="True">
+						<Element X="1738" Y="789" Width="26" Height="26"/>
+						<Element X="1516" Y="896" Width="26" Height="26"/>
+						<Element X="1674" Y="1145" Width="26" Height="26"/>
+						<Element X="1459" Y="1408" Width="26" Height="26"/>
+						<Element X="1742" Y="1395" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Enseigne sortie mur tête double" GroupID="17" Shape="0" DefaultSize="26" Text="1" Color="-5987164" PenWidth="2" PenType="Generic" FillColor="-5987164" ShowMeasure="True" Visible="True">
+						<Element X="1268" Y="868" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Gradateur à glissière" GroupID="18" Shape="0" DefaultSize="26" Text="1" Color="-11334145" PenWidth="2" PenType="Generic" FillColor="-11334145" ShowMeasure="True" Visible="True">
+						<Element X="1740" Y="912" Width="26" Height="26"/>
+						<Element X="1762" Y="912" Width="26" Height="26"/>
+						<Element X="1714" Y="1301" Width="26" Height="26"/>
+						<Element X="1733" Y="1301" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Klaxon alarme-incendie" GroupID="20" Shape="0" DefaultSize="26" Text="1" Color="-11308587" PenWidth="2" PenType="Generic" FillColor="-11308587" ShowMeasure="True" Visible="True">
+						<Element X="1237" Y="1083" Width="26" Height="26"/>
+						<Element X="1237" Y="1430" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire A 2x2 30W" GroupID="21" Shape="1" DefaultSize="26" Text="1" Color="-1133003" PenWidth="2" PenType="Generic" FillColor="-1133003" ShowMeasure="True" Visible="True">
+						<Element X="1441" Y="758" Width="26" Height="26"/>
+						<Element X="1599" Y="758" Width="26" Height="26"/>
+						<Element X="1441" Y="877" Width="26" Height="26"/>
+						<Element X="1599" Y="877" Width="26" Height="26"/>
+						<Element X="1441" Y="995" Width="26" Height="26"/>
+						<Element X="1599" Y="995" Width="26" Height="26"/>
+						<Element X="1718" Y="995" Width="26" Height="26"/>
+						<Element X="1441" Y="1114" Width="26" Height="26"/>
+						<Element X="1599" Y="1114" Width="26" Height="26"/>
+						<Element X="1758" Y="1114" Width="26" Height="26"/>
+						<Element X="1599" Y="1233" Width="26" Height="26"/>
+						<Element X="1758" Y="1233" Width="26" Height="26"/>
+						<Element X="1441" Y="1367" Width="26" Height="26"/>
+						<Element X="1599" Y="1367" Width="26" Height="26"/>
+						<Element X="1441" Y="1485" Width="26" Height="26"/>
+						<Element X="1599" Y="1485" Width="26" Height="26"/>
+						<Element X="1283" Y="1367" Width="26" Height="26"/>
+						<Element X="1283" Y="1485" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire A1 2x2 40W" GroupID="22" Shape="1" DefaultSize="26" Text="1" Color="-29071" PenWidth="2" PenType="Generic" FillColor="-29071" ShowMeasure="True" Visible="True">
+						<Element X="1738" Y="758" Width="26" Height="26"/>
+						<Element X="1738" Y="877" Width="26" Height="26"/>
+						<Element X="1738" Y="1347" Width="26" Height="26"/>
+						<Element X="1738" Y="1505" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire B encastré 6po 18W" GroupID="23" Shape="0" DefaultSize="26" Text="1" Color="-4402153" PenWidth="2" PenType="Generic" FillColor="-4402153" ShowMeasure="True" Visible="True">
+						<Element X="1279" Y="938" Width="26" Height="26"/>
+						<Element X="1358" Y="976" Width="26" Height="26"/>
+						<Element X="1279" Y="1015" Width="26" Height="26"/>
+						<Element X="1279" Y="1094" Width="26" Height="26"/>
+						<Element X="1314" Y="1195" Width="26" Height="26"/>
+						<Element X="1281" Y="1241" Width="26" Height="26"/>
+						<Element X="1738" Y="837" Width="26" Height="26"/>
+						<Element X="1740" Y="1432" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire B1 encastré 6po 12W" GroupID="24" Shape="0" DefaultSize="26" Text="1" Color="-13824" PenWidth="2" PenType="Generic" FillColor="-13824" ShowMeasure="True" Visible="True">
+						<Element X="1266" Y="784" Width="26" Height="26"/>
+						<Element X="1338" Y="784" Width="26" Height="26"/>
+						<Element X="1327" Y="877" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire D applique ext." GroupID="26" Shape="0" DefaultSize="26" Text="1" Color="-3511" PenWidth="2" PenType="Generic" FillColor="-3511" ShowMeasure="True" Visible="True">
+						<Element X="870" Y="1175" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire F sous armoire" GroupID="28" Shape="1" DefaultSize="26" Text="1" Color="-1145853" PenWidth="2" PenType="Generic" FillColor="-1145853" ShowMeasure="True" Visible="True">
+						<Element X="1393" Y="877" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire F1 sous armoire" GroupID="29" Shape="1" DefaultSize="26" Text="1" Color="-6041" PenWidth="2" PenType="Generic" FillColor="-6041" ShowMeasure="True" Visible="True">
+						<Element X="1287" Y="1549" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Luminaire G applique toilette" GroupID="30" Shape="0" DefaultSize="26" Text="1" Color="-3744163" PenWidth="2" PenType="Generic" FillColor="-3744163" ShowMeasure="True" Visible="True">
+						<Element X="1393" Y="1200" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Panneau C 225A" GroupID="32" Shape="1" DefaultSize="26" Text="1" Color="-1821387" PenWidth="2" PenType="Generic" FillColor="-1821387" ShowMeasure="True" Visible="True">
+						<Element X="2737" Y="1085" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Plancher chauffant zone" GroupID="33" Shape="1" DefaultSize="26" Text="1" Color="-2096381" PenWidth="2" PenType="Generic" FillColor="-2096381" ShowMeasure="True" Visible="True">
+						<Element X="3537" Y="1283" Width="26" Height="26"/>
+						<Element X="3559" Y="1296" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Prise 15-20A DDFT @48po" GroupID="34" Shape="0" DefaultSize="26" Text="1" Color="-4163491" PenWidth="2" PenType="Generic" FillColor="-4163491" ShowMeasure="True" Visible="True">
+						<Element X="2997" Y="1160" Width="26" Height="26"/>
+						<Element X="2797" Y="1553" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Prise double 15A" GroupID="35" Shape="0" DefaultSize="26" Text="1" Color="-2182091" PenWidth="2" PenType="Generic" FillColor="-2182091" ShowMeasure="True" Visible="True">
+						<Element X="2755" Y="1083" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Prise double 15A @48po" GroupID="36" Shape="0" DefaultSize="26" Text="1" Color="-14336" PenWidth="2" PenType="Generic" FillColor="-14336" ShowMeasure="True" Visible="True">
+						<Element X="2904" Y="831" Width="26" Height="26"/>
+						<Element X="3124" Y="725" Width="26" Height="26"/>
+						<Element X="3269" Y="912" Width="26" Height="26"/>
+						<Element X="3315" Y="1002" Width="26" Height="26"/>
+						<Element X="3027" Y="1224" Width="26" Height="26"/>
+						<Element X="3221" Y="1266" Width="26" Height="26"/>
+						<Element X="2878" Y="1298" Width="26" Height="26"/>
+						<Element X="3227" Y="1301" Width="26" Height="26"/>
+						<Element X="3142" Y="1369" Width="26" Height="26"/>
+						<Element X="2878" Y="1555" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Prise extérieure DDFT EI" GroupID="37" Shape="0" DefaultSize="26" Text="1" Color="-4023" PenWidth="2" PenType="Generic" FillColor="-4023" ShowMeasure="True" Visible="True">
+						<Element X="2896" Y="690" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Prise micro-onde 5-20R" GroupID="38" Shape="0" DefaultSize="26" Text="1" Color="-5451241" PenWidth="2" PenType="Generic" FillColor="-5451241" ShowMeasure="True" Visible="True">
+						<Element X="2904" Y="804" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Prise réfrigérateur" GroupID="39" Shape="0" DefaultSize="26" Text="1" Color="-226191" PenWidth="2" PenType="Generic" FillColor="-226191" ShowMeasure="True" Visible="True">
+						<Element X="2904" Y="736" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Raccordement chauffe-eau CE-1" GroupID="40" Shape="1" DefaultSize="26" Text="1" Color="-2209536" PenWidth="2" PenType="Generic" FillColor="-2209536" ShowMeasure="True" Visible="True">
+						<Element X="3144" Y="1314" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Raccordement condenseur CD" GroupID="41" Shape="1" DefaultSize="26" Text="1" Color="-4190863" PenWidth="2" PenType="Generic" FillColor="-4190863" ShowMeasure="True" Visible="True">
+						<Element X="3359" Y="1474" Width="26" Height="26"/>
+						<Element X="3359" Y="1531" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Raccordement porte électrifiée" GroupID="43" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">
+						<Element X="2786" Y="839" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Raccordement unité AC" GroupID="44" Shape="1" DefaultSize="26" Text="1" Color="-9415913" PenWidth="2" PenType="Generic" FillColor="-9415913" ShowMeasure="True" Visible="True">
+						<Element X="3150" Y="1272" Width="26" Height="26"/>
+						<Element X="3157" Y="1389" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Raccordement échangeur d&apos;air ECH" GroupID="45" Shape="1" DefaultSize="26" Text="1" Color="-8126371" PenWidth="2" PenType="Generic" FillColor="-8126371" ShowMeasure="True" Visible="True">
+						<Element X="2863" Y="1002" Width="26" Height="26"/>
+						<Element X="2893" Y="1241" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Relais bas voltage RT" GroupID="47" Shape="1" DefaultSize="26" Text="1" Color="-39065" PenWidth="2" PenType="Generic" FillColor="-39065" ShowMeasure="True" Visible="True">
+						<Element X="2788" Y="1342" Width="26" Height="26"/>
+						<Element X="3280" Y="1037" Width="26" Height="26"/>
+						<Element X="2964" Y="762" Width="26" Height="26"/>
+						<Element X="2788" Y="969" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Sectionneur 30A sans fusible" GroupID="49" Shape="1" DefaultSize="26" Text="1" Color="-62095" PenWidth="2" PenType="Generic" FillColor="-62095" ShowMeasure="True" Visible="True">
+						<Element X="3352" Y="1439" Width="26" Height="26"/>
+						<Element X="3352" Y="1575" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Serpentin électrique SE" GroupID="50" Shape="1" DefaultSize="26" Text="1" Color="-6146763" PenWidth="2" PenType="Generic" FillColor="-6146763" ShowMeasure="True" Visible="True">
+						<Element X="3234" Y="1059" Width="26" Height="26"/>
+						<Element X="3027" Y="1156" Width="26" Height="26"/>
+						<Element X="3273" Y="1059" Width="26" Height="26"/>
+						<Element X="2762" Y="1283" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Sonde plancher chauffant" GroupID="51" Shape="1" DefaultSize="26" Text="1" Color="-6015691" PenWidth="2" PenType="Generic" FillColor="-6015691" ShowMeasure="True" Visible="True">
+						<Element X="3115" Y="892" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Sortie data murale" GroupID="52" Shape="3" DefaultSize="26" Text="1" Color="-13290082" PenWidth="2" PenType="Generic" FillColor="-13290082" ShowMeasure="True" Visible="True">
+						<Element X="2922" Y="998" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Station manuelle existante relocalisée" GroupID="53" Shape="1" DefaultSize="26" Text="1" Color="-16533637" PenWidth="2" PenType="Generic" FillColor="-16533637" ShowMeasure="True" Visible="True">
+						<Element X="1237" Y="896" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Thermostat esclave plancher — à confirmer" GroupID="54" Shape="0" DefaultSize="26" Text="1" Color="-36535" PenWidth="2" PenType="Generic" FillColor="-36535" ShowMeasure="True" Visible="True">
+						<Element X="3056" Y="1263" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Thermostat maître plancher" GroupID="55" Shape="0" DefaultSize="26" Text="1" Color="-4063139" PenWidth="2" PenType="Generic" FillColor="-4063139" ShowMeasure="True" Visible="True">
+						<Element X="3155" Y="892" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Thermostat unipolaire" GroupID="56" Shape="0" DefaultSize="26" Text="1" Color="-46848" PenWidth="2" PenType="Generic" FillColor="-46848" ShowMeasure="True" Visible="True">
+						<Element X="3245" Y="910" Width="26" Height="26"/>
+						<Element X="3251" Y="1305" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Unité urgence UA mur tête double" GroupID="57" Shape="0" DefaultSize="26" Text="1" Color="-4031264" PenWidth="2" PenType="Generic" FillColor="-4031264" ShowMeasure="True" Visible="True">
+						<Element X="1360" Y="778" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Unité urgence UA mur tête simple" GroupID="58" Shape="0" DefaultSize="26" Text="1" Color="-9256314" PenWidth="2" PenType="Generic" FillColor="-9256314" ShowMeasure="True" Visible="True">
+						<Element X="1731" Y="725" Width="26" Height="26"/>
+						<Element X="1751" Y="1551" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Unité urgence UA plafond" GroupID="59" Shape="0" DefaultSize="26" Text="1" Color="-2049944" PenWidth="2" PenType="Generic" FillColor="-2049944" ShowMeasure="True" Visible="True">
+						<Element X="1632" Y="954" Width="26" Height="26"/>
+						<Element X="1577" Y="1316" Width="26" Height="26"/>
+					</Counter>
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E002" FileName="250075EPER-p02.png">
+			<Thumbnail FileName="5f77bf58-d5f7-41f2-bdf2-28855da07b8f"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E003" FileName="250075EPER-p03.png">
+			<Thumbnail FileName="7badebd4-d838-4831-b677-ea1bd2a44933"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1275" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="Détecteur de présence — à confirmer" GroupID="16" Shape="0" DefaultSize="26" Text="1" Color="-9352799" PenWidth="2" PenType="Generic" FillColor="-9352799" ShowMeasure="True" Visible="True">
+						<Element X="1525" Y="809" Width="26" Height="26"/>
+						<Element X="1569" Y="1215" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Minuterie astronomique" GroupID="31" Shape="1" DefaultSize="26" Text="1" Color="-16559169" PenWidth="2" PenType="Generic" FillColor="-16559169" ShowMeasure="True" Visible="True">
+						<Element X="1687" Y="943" Width="26" Height="26"/>
+					</Counter>
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E004" FileName="250075EPER-p04.png">
+			<Thumbnail FileName="37b4e1f8-120b-4d02-b116-2f938bcaba31"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1275" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="Boîte alimentation porte (BA)" GroupID="3" Shape="1" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">
+						<Element X="2557" Y="1659" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Boîte de jonction porte (BJ)" GroupID="4" Shape="1" DefaultSize="26" Text="1" Color="-12151206" PenWidth="2" PenType="Generic" FillColor="-12151206" ShowMeasure="True" Visible="True">
+						<Element X="2557" Y="1744" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Relais adressable porte (RA)" GroupID="46" Shape="1" DefaultSize="26" Text="1" Color="-15245887" PenWidth="2" PenType="Generic" FillColor="-15245887" ShowMeasure="True" Visible="True">
+						<Element X="2634" Y="1595" Width="26" Height="26"/>
+					</Counter>
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E101" FileName="250075EPER-p05.png">
+			<Thumbnail FileName="48579bad-7436-442f-9126-fff28736db44"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1275" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="Artère panneau C — à métrer" GroupID="1" Shape="1" DefaultSize="26" Text="1" Color="-3800995" PenWidth="2" PenType="Generic" FillColor="-3800995" ShowMeasure="True" Visible="True">
+						<Element X="4365" Y="2553" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Interrupteur 200A F200A" GroupID="19" Shape="1" DefaultSize="26" Text="1" Color="-5090537" PenWidth="2" PenType="Generic" FillColor="-5090537" ShowMeasure="True" Visible="True">
+						<Element X="4253" Y="2649" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Raccordement mécanique circ. 22 — à confirmer" GroupID="42" Shape="1" DefaultSize="26" Text="1" Color="-3509943" PenWidth="2" PenType="Generic" FillColor="-3509943" ShowMeasure="True" Visible="True">
+						<Element X="1964" Y="998" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="Remplacement borniers" GroupID="48" Shape="1" DefaultSize="26" Text="1" Color="-46848" PenWidth="2" PenType="Generic" FillColor="-46848" ShowMeasure="True" Visible="True">
+						<Element X="3344" Y="806" Width="26" Height="26"/>
+					</Counter>
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E001" FileName="E001.png">
+			<Thumbnail FileName="dd140afd-2ee7-444a-ab7e-512a0dd2e89c"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+		<Price Key="11;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="14;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="8;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="29;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="56;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="18;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="17;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="15;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="57;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="28;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="44;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="27;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="49;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="32;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="9;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="39;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="42;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="34;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="13;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="20;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="53;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="1;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="36;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="35;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="5;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="46;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="23;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="41;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="43;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="12;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="31;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="33;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="10;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="47;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="2;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="38;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="59;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="6;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="52;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="21;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="37;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="50;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="24;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="26;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="25;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="19;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="40;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="54;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="55;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="30;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="22;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="4;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="51;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="45;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="3;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="16;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="58;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="7;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="48;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="1" Precision="0">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>

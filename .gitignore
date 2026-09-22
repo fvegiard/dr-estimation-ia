@@ -39,3 +39,4 @@ oem/PlanExpert/
 *.zip
 *.7z
 *.tar.gz
+dossiers/*/export-natif/[sS]-1???.pdf

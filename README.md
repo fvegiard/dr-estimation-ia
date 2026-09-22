@@ -76,6 +76,21 @@ Lecture honnête :
 - **Verdict** : pas « 100 % prêt » au sens du critère ci-dessus. Prêt à être **montré** : un estimateur peut ouvrir n'importe
   quel `ecart.md` et voir, ligne par ligne, où l'IA a raison, où elle se trompe, et pourquoi.
 
+## Exports natifs Plan Expert (22 septembre, 8 h 45 – 11 h, VM `mxlinux`)
+
+Les 11 projets `.qpl` produits par la chaîne ont été **importés dans le vrai Plan Expert** (VM Windows sur mxlinux, pilotée
+à la souris par VNC, captures d'écran à l'appui) : ouverture du projet, sauvegarde native, rapport de métré « classé par
+plans » exporté en PDF/Excel/XML, plans annotés exportés en PDF. Résultat dans `dossiers/<S>/export-natif/` :
+`<S>.qpl` (sauvé par Plan Expert), `<S>-Rapport-de-métré-(par-plans).pdf/.xls`, `<S>-Métré-[Classé_par_plans].xml`.
+Les plans annotés natifs (`<S>.pdf`, 12 à 120 Mo chacun) ne sont pas dans le dépôt : ils sont sur le Legion dans
+`D:\claude\releve-auto\OUTBOX\<S>\export-natif-planexpert\` et sur mxlinux dans `/srv/planexpert/shared/sorties/<S>/`.
+
+Contrôle : le nombre d'objets compté par Plan Expert (XML natif) est **identique** au `releve.xlsx` de la chaîne
+pour les 11 dossiers (S-1689 256, S-1693 1 765, S-1695 1 719, S-1714 7 385, S-1715 359, S-1769 141, S-1797 1 218,
+S-1808 826, S-1811 811, S-1844 773, S-1857 1 421) — les marques survivent à l'import sans perte ni doublon.
+Ce que Plan Expert ne fait pas ici : aucune ligne d'estimation (prix/heures) n'est rattachée aux compteurs, et les
+longueurs ne sont toujours pas métrées.
+
 ## Ce qui a été corrigé cette nuit dans la chaîne (v1 → v2)
 
 1. Pages tournées (Rotate 90/270 : S-1714, S-1769, S-1797, S-1811) — coordonnées texte fausses, marques mal placées. Corrigé.
