@@ -1,0 +1,44 @@
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# --- Données client (JAMAIS dans le dépôt — règle absolue) ------------------
+# Plans, devis, addendas, compteurs, rasters, projets Plan Expert réels.
+dossiers/*
+!dossiers/_gabarit/
+!dossiers/_gabarit/**
+*.qpl
+*.qpl.audit.json
+releve.xlsx
+ecart.md
+
+# --- Secrets : clés, tokens, mots de passe, licences ------------------------
+.env
+*.key
+*.pem
+*_rsa
+*_ed25519
+authorized_keys
+*.private.json
+credentials.local.env
+*token*
+*secret*
+
+# --- Images de VM, installateurs, binaires sous licence ---------------------
+*.vhdx
+*.vmdk
+*.qcow2
+*.img
+*.iso
+*.msi
+storage/
+oem/PlanExpert/
+
+# --- Archives volumineuses ---------------------------------------------------
+*.zip
+*.7z
+*.tar.gz

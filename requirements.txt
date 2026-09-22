@@ -1,0 +1,7 @@
+pymupdf
+pillow
+openpyxl
+pytest
+pydantic
+# optionnel : uniquement pour src/pipeline/render_pdf.py (rapport Markdown -> PDF)
+# markdown
