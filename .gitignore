@@ -6,15 +6,12 @@ __pycache__/
 .venv/
 venv/
 
-# --- Données client (JAMAIS dans le dépôt — règle absolue) ------------------
-# Plans, devis, addendas, compteurs, rasters, projets Plan Expert réels.
-dossiers/*
-!dossiers/_gabarit/
-!dossiers/_gabarit/**
-*.qpl
-*.qpl.audit.json
-releve.xlsx
-ecart.md
+# --- Dossiers : les résultats (releve.xlsx, ecart.md, .qpl, PDF annotés) SONT dans le dépôt — c'est la preuve
+# demandée par Francis (plans et devis = appels d'offres publics, 2026-09-21). Restent hors dépôt :
+# les relevés humains scannés (prix et heures internes de DR), les rasters Plan Expert (volume) et les PDF en double.
+dossiers/*/entree/reference-*.pdf
+dossiers/*/planexpert/*.png
+dossiers/*/Dossier-complet.pdf
 
 # --- Secrets : clés, tokens, mots de passe, licences ------------------------
 .env

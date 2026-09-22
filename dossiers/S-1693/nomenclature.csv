@@ -1,0 +1,103 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire A1,luminaire,,,A1,Surface DEL 33W Lumenwerx Poros 24in,E201 T-01 tableau des appareils d'éclairage
+Luminaire A2,luminaire,,,A2,Suspendu/surface DEL 150W Lithonia REBL (gymnase),E201 T-01
+Luminaire A4,luminaire,,,A4,Surface DEL 77.5W Lumenwerx Poros 36in 8000lm,E201 T-01
+Luminaire A5,luminaire,,,A5,Surface DEL 51W Lumenwerx Poros 36in 4000lm,E201 T-01
+Luminaire B1,luminaire,,,B1,Bollard DEL 6W Lumenpulse BLDB,E201 T-01
+Luminaire E1,luminaire,,,E1,Encastré DEL 45W Lithonia CPANL 2x4 5000lm,E201 T-01
+Luminaire E1A,luminaire,,,E1A,Encastré DEL 35W Lithonia CPANL 2x4 4000lm,E201 T-01
+Luminaire E2,luminaire,,,E2,Surface DEL 30W Lithonia CPANL 2x2,E201 T-01
+Luminaire E3,luminaire,,,E3,Encastré DEL 10.5W Gotham IVO4S 1000lm,E201 T-01
+Luminaire E3A,luminaire,,,E3A,Encastré DEL 8W Gotham IVO4S 700lm,E201 T-01
+Luminaire E3B,luminaire,,,E3B,Encastré DEL 16W Gotham IVO4S 2000lm,E201 T-01
+Luminaire E4,luminaire,,,E4,Encastré DEL 17.5W Gotham IVO6S 2000lm,E201 T-01
+Luminaire E5,luminaire,,,E5,Encastré DEL 25W Lithonia LSIX 4ft,E201 T-01
+Luminaire E6,luminaire,,,E6,Encastré DEL 30W Lithonia CPANL 1x4,E201 T-01
+Luminaire E7,luminaire,,,E7,Encastré DEL 17W Paco MD4,E201 T-01
+Luminaire L1,luminaire,,,L1,Lampadaire sur fût DEL 115W Lumenpulse BLDM fût 7.5m,E201 T-01 / E002
+Luminaire M1,luminaire,,,M1,Mural DEL 30W Lumenpulse BLDN (extérieur),E201 T-01
+Luminaire M2,luminaire,,,M2,Mural DEL 33.5W Lumenwerx Poros 24in,E201 T-01
+Luminaire M3,luminaire,,,M3,Mural DEL 51W Lumenwerx Poros 36in,E201 T-01
+Luminaire S1,luminaire,,,S1,Suspendu/surface DEL 41W Lithonia ZL1D 4ft,E201 T-01
+Luminaire S2,luminaire,,,S2,Suspendu DEL 10W Lumenwerx Curv2 2ft,E201 T-01
+Luminaire S3,luminaire,,,S3,Suspendu DEL 10W Lumenwerx Curv2 3ft,E201 T-01
+Luminaire S4,luminaire,,,S4,Suspendu DEL 15W Lumenwerx Curv2 4ft,E201 T-01
+Luminaire S5,luminaire,,,S5,Suspendu DEL 15W Lumenwerx Curv2 4ft (LCN),E201 T-01
+Détecteur de mouvement,commande,cercle,,D,Détecteur de mouvement (D dans un cercle; plafond ou mural),E001 éclairage et commandes / E271 légende
+Aérotherme mural A,chauffage,,,A,Stelpro WFA4003TW 347V (4000 W),E301 T-03 tableau des appareils de chauffage
+Convecteur B,chauffage,,,B,Stelpro SCAS 347V,E301 T-03
+Aérotherme suspendu C,chauffage,,,C,Stelpro SHU thermostat intégré 347V,E301 T-03
+Plinthe D,chauffage,,,,Stelpro ALUX3 347V c/a plaque de joint ALUX3JSW,E301 T-03
+Panneau radiant E,chauffage,,,E,Thermaray AS1448-A00-347 347V (400 W),E301 T-03
+Thermostat BT T,chauffage,,,T,Thermostat Stelpro 0 V (type T),E301 T-03
+Relais triac chauffage,chauffage,carre,,RT,Relais triac pour plinthes (note 6 E301),E301 note 6 / E302 note 3
+Raccordement thermopompe,mecanique,,,TP-\d{3},Raccordement thermopompe (T-07),E581 T-07
+Sectionneur thermopompe (add. E-02),mecanique,carre,,,Sectionneur cadenassable sans fusible par thermopompe fourni installé raccordé par DR,Addenda E-02 art. .6.1 (E581)
+Raccordement serpentin électrique,mecanique,,,SE-[0-9.]+,Raccordement serpentin électrique 347V (T-06 ; sectionneur intégré par méca),E581 T-06
+Raccordement pompe,mecanique,,,PMP-\d{3}[AB],Raccordement pompe 600V (T-08),E581 T-08
+Raccordement ventilateur,mecanique,,,VE-\d{3},Raccordement ventilateur 208V (T-12),E581 T-12
+Raccordement unité de récupération,mecanique,,,REC-\d{3},Raccordement REC-001 600V 35A (T-09),E581 T-09
+Raccordement chaudière électrique,mecanique,,,CH-1,Raccordement chaudière CH-1 150 kW 200A (T-10),E581 T-10
+Raccordement humidificateur,mecanique,,,HU-\d{3},Raccordement humidificateur 600V (T-11),E581 T-11
+Raccordement chauffe-eau,mecanique,,,CE-\d{3},Raccordement chauffe-eau 36 kW (T-15),E581 T-15
+Raccordement condenseur,mecanique,,,CON-\d{3},Raccordement condenseur CON-001 208V 25A (T-13),E581 T-13
+Raccordement évaporateur,mecanique,,,EV-\d{3},Évaporateur EV-001 alimenté via CON-001 (T-14),E581 T-14
+Boîte HDMI,telecom,carre,,HDMI,Boîte HDMI (téléviseur interactif ; note 7),E301 / E601 détail 4 et 10
+Retenue magnétique,alarme,carre,,RM,Retenue magnétique,E001 alarme-incendie
+Module adressable de contrôle RA,alarme,carre,,RA,Module adressable de contrôle (relais) pour alarme incendie,E001 alarme-incendie
+Module de transmission simple MS,alarme,carre,,MS,Module adressable de transmission simple,E001 alarme-incendie
+Module de transmission double MD,alarme,carre,,MD,Module adressable de transmission double,E001 alarme-incendie
+Interrupteur de débit ID,alarme,carre,,ID,Interrupteur de débit (par RA) raccordé par DR,E001 alarme-incendie
+Panneau d'alarme incendie PAI,alarme,carre,,PAI,Panneau d'alarme incendie,E001 alarme-incendie
+Mini-klaxon M/K,alarme,,,M/K,Mini-klaxon d'alarme incendie (symbole ajouté par addenda E-01),Addenda E-01 .2.1 (E001)
+Détecteur de conduit RCFF/RCFU,alarme,,,RCFF|RCFU,Détecteur de produit de combustion c/a tube d'échantillonnage (registre coupe-feu/fumée) — détail 12 E602 révisé,E001 alarme + E401/E402 + addenda E-01
+Contact de porte,alarme,,,CP,Contact de porte (CP),E001 sécurité / E701 T-05
+Lecteur de carte,alarme,,,LC,Lecteur de carte (LC),E001 sécurité
+Gâche électrique,alarme,,,G,Gâche électrique (G),E001 sécurité
+Détecteur de requête de sortie REX,alarme,,,REX,Détecteur de réquisition de sortie,E001 sécurité
+Bouton anti-agression,alarme,,,BA,Bouton anti-agression (BA),E001 sécurité
+Clavier d'alarme intrusion,alarme,,,CL,Clavier d'alarme intrusion (CL),E001 sécurité
+Opérateur de porte,alarme,,,OP,Opérateur de porte (OP),E001 services auxiliaires
+Bouton poussoir handicapé,alarme,cercle,,H,Bouton poussoir pour handicapé (H dans un cercle),E001 services auxiliaires
+Caméra,alarme,,,C,Caméra (C ; identifiants CAM-01-xx),E001 sécurité / E701 / E751
+Horloge numérique,telecom,,,HOR,Horloge numérique au mur (HOR),E001 communication
+Borne WiFi,telecom,triangle,,WF,Borne de service Internet sans fil (WF),E001 communication
+Panneau d'alarme intrusion PA,alarme,carre,,PA,Panneau d'alarme intrusion P1 P2 P3 (PA),E001 sécurité / E701 T-05
+Poste maître intercom PMI,telecom,carre,,PMI,Poste maître d'intercommunication (PMI) — fourni par le SRI du CSSP (addenda E-01 27 51 23 2.4.1),E701 / addenda E-01
+Détecteur de mouvement intrusion,alarme,cercle,,DM-Z\d+,Détecteur de mouvement pour alarme intrusion (étiquette DM-Zxx),E001 sécurité / E701 T-05
+Sonde basse température,alarme,cercle,,SBT-Z\d+,Sonde basse température (SBT-Zxx) — 3 sondes selon add. E-02 (28 16 00 art. 2.2.6),E701 T-05 / addenda E-02
+Appareil d'urgence à typer,secours,,,''[A-H]'',Phare ou indicateur de sortie raccordé à l'accumulateur indiqué (étiquette ''A''…''H'') — type exact à confirmer,E201 liste d'éclairage d'urgence / E001 urgence
+Prise double 5-15R,prise,cercle,,,Prise de courant double 5-15R 125V,E001 prises col. 1
+Prise double 5-15R 1070mm,prise,cercle,,,Prise double 5-15R à 1070 mm du plancher,E001 prises col. 1
+Prise double 5-20R,prise,cercle,,,Prise de courant double 5-20R 125V,E001 prises col. 1
+Prise double 5-20R 1070mm,prise,cercle,,,Prise double 5-20R à 1070 mm du plancher,E001 prises col. 1
+Prise DDFT 5-15R 1070mm,prise,carre,,,Prise double 5-15R avec protection différentielle à 1070 mm,E001 prises col. 1
+Prise DDFT 5-20R,prise,carre,,,Prise double 5-20R avec protection différentielle,E001 prises col. 1
+Prise micro-onde 5-20R,prise,cercle,,,Prise 5-20R dédiée micro-onde (mention M.O. au plan),E301/E302 mention « M.O. »
+Prise lessiveuse 5-15R,prise,cercle,,,Prise double 5-15R pour lessiveuse (L),E001 prises col. 1
+Prise sécheuse 14-30R,prise,cercle,,,Prise sécheuse 14-30R 125/250V 30A (S),E001 prises col. 1
+Prise cuisinière 14-50R,prise,cercle,,,Prise cuisinière 14-50 125/250V 50A,E001 prises col. 1
+Séchoir à mains,prise,carre,,,Séchoir à mains (S dans un carré) — raccordement,E001 prises col. 1
+Sortie informatique,telecom,triangle,,,Sortie d'informatique au mur (« 2 » inscrit = 2 prises),E001 communication
+Sortie informatique 1070mm,telecom,triangle,,,Sortie d'informatique au mur à 1070 mm,E001 communication
+Sortie téléphone et informatique,telecom,triangle,,,Sortie téléphone et informatique au mur,E001 communication
+Sortie téléphone analogique,telecom,triangle,,,Sortie téléphone analogique au mur,E001 communication
+Trompette extérieure avec grillage,telecom,triangle,,,Trompette extérieure avec grillage (G),E001 communication
+Boîtier de communication,telecom,carre,,,Boîtier fourni par le fournisseur en communication installé par la discipline,E001 communication
+Boîte de jonction,distribution,carre,,,Boîte de jonction (raccordement équipement),E001 distribution
+Barre de mise à la terre,distribution,carre,,,Barre de mise à la terre (détail 2 E601),E001 distribution
+Panneau de distribution,distribution,carre,,,Panneau électrique (P2 P3 P4 P5 P6 PP2 PB CDP2),E001 distribution / E501
+Sectionneur 30A,distribution,carre,,,Sectionneur sans fusible 30A,E001 distribution
+Raccordement moteur (paniers/rideau),mecanique,,,,Raccordement moteur panier de basket / rideau diviseur motorisé (P6),E302 notes
+Raccordement équipement divers,mecanique,,,,Raccordement d'équipement indiqué par note (panneau de contrôle / contrôleur / PECD / SPR),E301 E302 notes
+Station manuelle,alarme,carre,,,Station manuelle d'alarme incendie,E001 alarme-incendie
+Station manuelle c/a garde,alarme,carre,,,Station manuelle c/a garde,E001 alarme-incendie
+Klaxon,alarme,cercle,,,Klaxon d'alarme incendie,E001 alarme-incendie
+Klaxon-strobe,alarme,cercle,,,Klaxon / stroboscope d'alarme incendie,E001 alarme-incendie
+Strobe,alarme,cercle,,,Strobe d'alarme incendie,E001 alarme-incendie
+Détecteur de fumée,alarme,cercle,,,Détecteur de fumée,E001 alarme-incendie
+Sectionneur 30A fusible 15A (add. E-01),distribution,carre,,,Sectionneur 30A avec fusible 15A — puits du monte-personne (addenda E-01 .3.1 et .4.1),Addenda E-01
+Raccordement chargeur monte-personne,mecanique,,,,Raccord pour chargeur monte-personne P2 68 et panneau de contrôle PC P2 70,Addenda E-01 .4.2 .4.3
+Boîtier camlock 400A,distribution,carre,,,Boîtier camlock 400A 347/600V 5P inox Nema 3R c/a détecteur d'inversion de phase (+ disjoncteur 400A PP1 et clé captive Kirk Key),Addenda E-02 .1.4 et .4.1-.4.2
+Haut-parleur au plafond,telecom,triangle,,,Haut-parleur de communication au plafond,E001 communication / addenda E-02 .8.1
+Carte communication IP intrusion (add. E-01),alarme,carre,,,Carte de communication IP raccordée au panneau d'alarme intrusion P1,Addenda E-01 .11.8 (E603)

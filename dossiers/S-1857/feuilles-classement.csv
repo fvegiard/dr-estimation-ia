@@ -1,0 +1,23 @@
+feuille,type,echelle,note
+E600,autre,,cartouche=E000 · PAGE TITRE / LISTE DES FEUILLES (fichier E000_Rev0.pdf mal nommé E600 par prepare.py) — aucun appareil
+E100,autre,,cartouche=E100 · DEVIS — texte de devis seulement
+E101,autre,,cartouche=E101 · DEVIS — texte de devis seulement
+E102,legende,,cartouche=E102 · SPÉCIFICATIONS — tableau des appareils d'éclairage (DMW1 DR2 DR5 DR51 DR52 DS0 DS1 DS2 DS4 DW4 DW42) + tableau des spécifications E-01 à E-77
+E103,legende,,cartouche=E103 · LÉGENDE — panneaux / généralités / raccords / alarme incendie / télécom / prises et services / éclairage
+E104,legende,,cartouche=E104 · LÉGENDE - SUITE — chauffage / distribution / sécurité intrusion / intercom / appel de garde / éclairage d'urgence
+E150,autre,100,cartouche=E150 · IMPLANTATION (1:100) — 5 DMW1 en façade = mêmes luminaires que E401 (doublon écarté voir R-003)
+E200,schema,,cartouche=E200 · SCHÉMA UNIFILAIRE DISTRIBUTION ÉLECTRIQUE
+E201,schema,,cartouche=E201 · SCHÉMA UNIFILAIRE ALARME INCENDIE ÉLECTRIQUE
+E400,plan,100,cartouche=E400 · SOUS-SOL - ÉCLAIRAGE
+E401,plan,100,cartouche=E401 · REZ DE CHAUSSÉE - ÉCLAIRAGE
+E402,plan,100,cartouche=E402 · NIVEAU 1 - ÉCLAIRAGE
+E403,plan,100,cartouche=E403 · NIVEAU 2 - ÉCLAIRAGE
+E404,plan,100,cartouche=E404 · ACCÈS TOITURE - ÉCLAIRAGE — aucun appareil électrique dessiné (équipements mécaniques en gris seulement)
+E405,plan,100,cartouche=E405 · SOUS-SOL - ALARME INCENDIE - PRISES ET SERVICES (+ détail ENTRÉE D'EAU N.À.É.)
+E406,plan,100,cartouche=E406 · REZ DE CHAUSSÉE - ALARME INCENDIE - PRISES ET SERVICES
+E407,plan,100,cartouche=E407 · NIVEAU 1 - ALARME INCENDIE - PRISES ET SERVICES
+E408,plan,100,cartouche=E408 · NIVEAU 2 - ALARME INCENDIE - PRISES ET SERVICES
+E409,plan,100,cartouche=E409 · ACCÈS TOITURE - ALARME INCENDIE - PRISES ET SERVICES
+E500,detail,,cartouche=E500 · DÉTAILS COMMUNS — feuille VIDE (aucun détail dessiné) voir R-002
+E600_2,remplacee,,cartouche=E600 · PANNEAUX rév. 1 SOUMISSION 2026-08-17 — remplacée par l'addenda (E600_ADD)
+E600_ADD,tableau,,cartouche=E600 · PANNEAUX rév. 2 ADME-01 2026-09-11 (addenda 02 scanné) — cédules PS-1 à PS-5 + P-P1

@@ -1,0 +1,60 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire A 2x2 30W,luminaire,carre,,,Stanpro L3PNV panneau 2x2 encastré 30 W,E004 tableau luminaires type A ; E001 légende éclairage
+Luminaire A1 2x2 40W,luminaire,carre,,,Stanpro L3PNV panneau 2x2 encastré 40 W,E004 tableau luminaires type A1
+Luminaire B encastré 6po 18W,luminaire,cercle,,,Stanpro Cometo Choice encastré 6 po 18 W,E004 tableau luminaires type B ; E001 légende encastré
+Luminaire B1 encastré 6po 12W,luminaire,cercle,,,Stanpro Cometo Choice encastré 6 po 12 W,E004 tableau luminaires type B1
+Luminaire C applique ext.,luminaire,cercle,,,LSI V-Locity small applique murale extérieure 36 W,E004 tableau luminaires type C ; E201 C,33
+Luminaire D applique ext.,luminaire,cercle,,,Stanpro FLM applique murale extérieure encastrée 35 W,E004 tableau luminaires type D
+Luminaire E encastré ext. 4po,luminaire,cercle,,,Stanpro LPDL encastré 4 po extérieur 9 W,E004 tableau luminaires type E
+Luminaire F sous armoire,luminaire,,,,Stanpro UCFL dessous armoire 10 W,E004 tableau luminaires type F ; E001 légende dessous d'armoire
+Luminaire F1 sous armoire,luminaire,,,,Stanpro UCFL dessous armoire 15 W,E004 tableau luminaires type F1
+Luminaire G applique toilette,luminaire,cercle,,,Stanpro L2SNQ applique murale toilette 30 W,E004 tableau luminaires type G
+Enseigne sortie mur tête double,secours,,,,Enseigne de sortie 1 côté au mur avec tête double (UA C;2),E001 légende éclairage de secours ligne 4
+Unité urgence UA mur tête double,secours,,,,Luminaire d'urgence tête double au mur Stanpro série N 12 V,E001 légende secours ; E004 tableau spécifications
+Unité urgence UA mur tête simple,secours,,,,Luminaire d'urgence tête simple au mur Stanpro série N 12 V,E001 légende secours ; E004 tableau spécifications
+Unité urgence UA plafond,secours,,,,Luminaire d'urgence au plafond (tête simple/double/triple),E001 légende secours dernière ligne ; E004 tableau spécifications SPSRS12-2L
+Détecteur de fumée,alarme,cercle,,,Détecteur de fumée Maple Armor FW511 raccordé à la boucle existante (note 3),E001 légende alarme-incendie ; E004 tableau spécifications
+Klaxon alarme-incendie,alarme,cercle,,,Klaxon d'alarme-incendie raccordé à la boucle existante (note 4),E001 légende alarme-incendie
+Station manuelle existante relocalisée,alarme,carre,,,Station manuelle existante relocalisée (ER),E001 légende station manuelle + généralités ER ; E401 plan
+Boîtier protection station manuelle,alarme,carre,,,Fournir et installer un boîtier de protection compatible,E401 note plan éclairage (flèche vers station ER)
+Relais adressable porte (RA),alarme,carre,,,Relais adressable / filage vers panneau d'alarme existant pour porte électrifiée,E004 détail B
+Commande éclairage ($),commande,cercle,,S,Emplacement du ou des contrôles d'éclairage ($ — mot 'S' vectoriel),E001 légende contrôle d'éclairage ligne 1
+Gradateur à glissière,commande,cercle,,,Gradateur à glissière captive 120 V (a/b),E001 légende contrôle d'éclairage
+Minuterie astronomique,commande,carre,,,Minuterie astronomique pour éclairage extérieur (devis 2.22 b),E003 devis art. 2.22 b)
+Détecteur de présence — à confirmer,commande,cercle,,,Détection de présence exigée au devis 2.22 (corridors / toilette) — non dessinée,E003 devis art. 2.22 a) et d)
+Prise double 15A,prise,cercle,,,Prise de courant double 15 A 120 V,E001 légende prise de courant ligne 1
+Prise réfrigérateur,prise,cercle,,,Prise double 15 A pour frigo (C;17),E001 légende + E101 cédule circuit 17 FRIGO
+Prise micro-onde 5-20R,prise,cercle,,,Prise double 15-20 A 5-20R pour micro-onde (C;40),E001 légende + E101 cédule circuit 40 MICRO-ONDE
+Prise double 15A @48po,prise,cercle,,,Prise de courant double 15 A 120 V @ 48 po PLF,E001 légende prise de courant ligne 2
+Prise 15-20A DDFT @48po,prise,cercle,,,Prise double 15-20 A 120 V GFI @ 48 po (comptoir C;7 C;8),E001 légende prise de courant avant-dernière ligne
+Prise extérieure DDFT EI,prise,cercle,,,Prise GFI à l'épreuve des intempéries (C;23),E001 légende prise GFI + généralités EI ; E101 circuit 23
+Chauffage type A 1500W,chauffage,,,,Appareil de chauffage type A Ouellet OPC 240 V 1500 W,E004 tableau chauffage type A ; E001 légende hexagone
+Chauffage type A 900W,chauffage,,,,Appareil de chauffage type A Ouellet OPC 240 V 900 W,E004 tableau chauffage type A
+Aéroconvecteur existant relocalisé,chauffage,,,,Aéroconvecteur mural existant relocalisé (ER / EAR au démantèlement),E001 légende aéroconvecteur + généralités ER
+Thermostat unipolaire,chauffage,cercle,,,Thermostat unipolaire à raccorder (T),E001 légende appareil de chauffage
+Thermostat maître plancher,chauffage,cercle,,,Thermostat maître du plancher chauffant (T M ; note 6),E401 note 6
+Thermostat esclave plancher — à confirmer,chauffage,cercle,,,Thermostat esclave 2e zone plancher chauffant (note 6),E401 note 6
+Sonde plancher chauffant,chauffage,carre,,,Sonde à installer dans la dalle (note 5),E401 note 5
+Plancher chauffant zone,chauffage,carre,,,Plancher chauffant Ouellet OWC-M 240 V 11 W/pi2 — une zone ≤ 3600 W (note 2 : deux zones),E401 note 2 ; E101 circuit 18/20
+Relais bas voltage RT,chauffage,carre,,,Relais bas voltage avec transformateur (RT a/b/c/d),E001 légende appareil de chauffage
+Serpentin électrique SE,mecanique,carre,,,Serpentin électrique à raccorder (SE-1 à SE-4),E001 légende force motrice ; E101 circuits 36/38 39/41
+Raccordement condenseur CD,mecanique,carre,,,Raccordement condenseur mini-split CD-1 / CD-2,E401 plan ; E101 circuits 27/29 32/34 ; E004 détail A
+Raccordement unité AC,mecanique,carre,,,Raccordement unité intérieure mini-split AC-1 / AC-2 (3#12 TECK90 depuis condenseur),E401 plan ; E004 détail A note 5
+Raccordement chauffe-eau CE-1,mecanique,carre,,,Chauffe-eau à raccorder CE-1 3000 W,E001 légende divers ; E101 circuits 35/37
+Raccordement échangeur d'air ECH,mecanique,carre,,,Raccordement échangeur d'air ECH-1 / ECH-2 400 W,E401 étiquettes ; E101 circuits 19/21 24/26
+Raccordement mécanique circ. 22 — à confirmer,mecanique,carre,,,Départ MÉCANIQUE 15 A circuit 22 sans équipement identifié,E101 cédule circuit 22
+Panneau C 225A,distribution,carre,,,Panneau C neuf 120/240 V 225 A 84 circuits disj. princ. 200 A 2P,E101 cédule panneau C ; E401 plan
+Sectionneur 30A sans fusible,distribution,carre,,,Sectionneur 30 A sans fusible (condenseur),E001 légende équipement et distribution ; E004 détail A note 6
+Interrupteur 200A F200A,distribution,carre,,,Interrupteur 200 A / F:200 A ajouté pour l'alimentation du panneau C,E101 note 1 + unifilaire existant modifié
+Remplacement borniers,distribution,carre,,,Remplacer les borniers de raccordement du panneau de répartition existant (note 1),E101 note 1
+Artère panneau C — à métrer,distribution,carre,,,3#250MCM-AL ACWU90 (+1#4 CU vert C 2 po EMT) vers panneau C — longueur à métrer,E101 unifilaire existant modifié
+Raccordement porte électrifiée,autre,carre,,,Raccordement porte électrifiée / contrôle d'accès (C;25) selon détail B,E401 bulle B/E004 ; E101 circuit 25
+Boîte alimentation porte (BA),autre,carre,,,Boîte d'alimentation et de contrôle porte électrifiée,E004 détail B
+Boîte de jonction porte (BJ),autre,carre,,,Boîte de jonction porte électrifiée,E004 détail B
+Sortie data murale,telecom,triangle,,,Sortie de téléphone/data au mur (note 7),E001 légende communication
+Cercle gras — à classer,autre,cercle,,,Cercle à trait gras hors légende au plan services,E401 plan services coin sud-ouest
+Démol. luminaire encastré,demolition,cercle,,,Luminaire encastré existant à enlever (EE),E401 démantèlement éclairage
+Démol. applique,demolition,cercle,,,Applique murale existante à enlever (EE),E401 démantèlement éclairage
+Démol. station manuelle,demolition,carre,,,Station manuelle existante à enlever (EE),E401 démantèlement éclairage
+Démol. chauffage — à confirmer,demolition,carre,,,Appareil de chauffage existant à enlever (EE ; symbole flèche + boîte pointillée),E401 démantèlement services
+Démol. prise,demolition,cercle,,,Prise existante à enlever (EE),E401 démantèlement services

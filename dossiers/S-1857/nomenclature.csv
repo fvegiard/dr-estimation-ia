@@ -1,0 +1,64 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire DS0,luminaire,cercle,,DS0,STANPRO CDU4R-G2 encastré rond LED 9W 765lm,E102 tableau des appareils d'éclairage
+Luminaire DS1,luminaire,carre,,DS1,STANPRO L2STR-48 linéaire LED 38W 2640lm,E102 tableau des appareils d'éclairage
+Luminaire DS2,luminaire,,,DS2,STANPRO CDU6R-G2 encastré rond LED 16W,E102 tableau des appareils d'éclairage
+Luminaire DS4,luminaire,,,DS4,STANPRO L1KSL-4LS2U LED 20W,E102 tableau des appareils d'éclairage
+Luminaire DR2,luminaire,,,DR2,LITHONIA BLWP2 enveloppant LED 17W plafond/mur,E102 tableau des appareils d'éclairage
+Luminaire DR5,luminaire,,,DR5,LITHONIA BLWP4 enveloppant LED 20W plafond/mur,E102 tableau des appareils d'éclairage
+Luminaire DR51,luminaire,,,DR51,LITHONIA BLWP4 DIM10 38W détecteur mvt 2 niveaux,E102 tableau des appareils d'éclairage
+Luminaire DR52,luminaire,,,DR52,LITHONIA BLWP4 DIM10 38W détecteur mvt 2 niveaux,E102 tableau des appareils d'éclairage
+Luminaire DW4,luminaire,,,DW4,STANPRO L2STR-48 LED 38W 5776lm,E102 tableau des appareils d'éclairage
+Luminaire DW42,luminaire,,,DW42,STANPRO L2STR-48 LED 38W 5776lm,E102 tableau des appareils d'éclairage
+Luminaire mural DMW1,luminaire,,,DMW1,SNOC 81557BK LED 7W mural extérieur (sur CME-01),E102 tableau des appareils d'éclairage ; symbole mural E103
+Phare simple PH1,secours,triangle,,PH1,Phare d'urgence simple DEL 4W 12V (E-19) étiqueté PH1,E104 éclairage d'urgence ; E102 E-19
+Phare double,secours,triangle,,,Phare d'urgence double DEL 2x4W 12V (E-20) sans étiquette,E104 éclairage d'urgence ; E102 E-20
+Accumulateur 36W,secours,carre,,36W,Accumulateur 12V 36W avec phares intégrés,E104 éclairage d'urgence (accumulateur + phare double) ; E102 E-21
+Accumulateur 36W + enseigne,secours,carre,,,Accumulateur 36W avec phares et enseigne d'issue intégrés,E104 éclairage d'urgence (accumulateur + phare double + enseigne)
+Accumulateur 18W + enseigne,secours,carre,,,Accumulateur 18W avec phares et enseigne d'issue intégrés,E104 éclairage d'urgence
+Enseigne de sortie,secours,losange,,,Enseigne d'issue (homme qui court) E-18 — face/montage non distingués,E104 éclairage d'urgence ; E102 E-18
+Détecteur inoccupation Do,commande,cercle,,Do,Détecteur infrarouge d'inoccupation (DO) LEVITON DVS15,E103 éclairage ; E102 E-13
+Détecteur occupation Di,commande,cercle,,Di,Détecteur infrarouge d'occupation (DI) LEVITON DOS15,E103 éclairage ; E102 E-12
+Bouton-poussoir B,commande,cercle,,B,Bouton-poussoir (B dans un carré) de contrôle d'éclairage,E104 distribution « B » bouton-poussoir
+Bloc d'alimentation Ba,commande,cercle,,Ba,Bloc d'alimentation pour contrôle d'éclairage par détection (Ba EP),E103 éclairage « Ba »
+Interrupteur,commande,cercle,,,Interrupteur $ (lettre de commande),E103 éclairage ; E102 E-09
+Klaxon,alarme,cercle,,K,Klaxon d'alarme incendie (hexagone K),E103 alarme incendie
+Klaxon Ei,alarme,cercle,,,Klaxon d'alarme incendie à l'épreuve des intempéries,E103 alarme incendie
+Détecteur de fumée,alarme,cercle,,F,Détecteur de fumée adressable (hexagone F) MIX-4010,E103 alarme ; E102 E-58
+Détecteur thermique,alarme,cercle,,T,Détecteur thermique (hexagone T) MIX-4030,E103 alarme ; E102 E-59
+Poste manuel,alarme,carre,,M,Poste manuel d'alarme incendie (hexagone M) MS-401,E103 alarme ; E102 E-62
+Module isolateur Mi,alarme,cercle,,Mi,Module isolateur d'alarme incendie,E103 alarme
+Module de supervision Sx,alarme,cercle,,Sx,Module de supervision MIX-4040,E103 alarme ; E102 E-65
+Module de commande Cx,alarme,cercle,,Cx,Module de commande MIX-4045,E103 alarme ; E102 E-63
+Interrupteur fin de course Ls,alarme,cercle,,Ls,Interrupteur de fin de course (vanne) dédié alarme,E103 alarme
+Indicateur de débit ID,alarme,cercle,,ID,Indicateur de débit des gicleurs,E103 alarme
+Prise duplex,prise,cercle,,,Prise de courant duplex (cercle rouge),E103 prises et services
+Prise duplex DDFT,prise,cercle,,,Prise duplex avec détection de faute à la terre (carré plein),E103 prises et services
+Prise DDFT Ei,prise,cercle,,,Prise duplex DDFT à l'épreuve des intempéries (carré plein + Ei),E103 prises et services
+Prise cuisinière C,prise,cercle,,,Cercle « C » — prise cuisinière 50A (E-08) à confirmer,E103 prises et services ; cédules PS-2/PS-5 CUISINIÈRE
+Sortie data mobilier,telecom,triangle,,,Sortie data installée dans le mobilier (triangle dans carré),E103 télécom « installée dans le mobilier »
+Prise micro-onde,prise,cercle,,,Prise duplex pour micro-onde (MO),E103 prises et services
+Prise mobilier,prise,carre,,,Prise duplex à installer dans le mobilier (carré),E103 prises et services
+Sortie data,telecom,triangle,,,Sortie data/téléphone (triangle magenta),E103 télécom
+Raccord CC équipement,distribution,carre,,CC,Raccordement direct avec coupe-circuit (triangle plein + CC),E103 raccords ; E104 CC coupe-circuit
+Raccord lave-vaisselle,mecanique,cercle,,LV,Raccord lave-vaisselle (cercle LV),E103 raccords
+Raccord sèche-main,mecanique,carre,,SM,Carré « SM » = sèche-main (absent de la légende ; identifié par cédules SÈCHE-MAIN (108/208/302)),E406/E407/E408 + E600 addenda
+Raccord hotte Ht,mecanique,cercle,,,Hotte pour cuisinière à raccorder (cercle Ht),E103 raccords
+Raccord pompe,mecanique,cercle,,,Pompe fournie par autres à raccorder (SPP/SPS/PC),E103 raccords ; E200 ; cédule P-P1
+Raccord chauffage,chauffage,carre,,,Départ chauffage (ABV C) sans symbole au plan,E600 addenda cédule P-P1
+Raccord borne VE,distribution,carre,,,Borne de recharge VE EVDUTY-40 (E-45) — BRVE-01/02,E600 addenda cédule PS-5 ; E102 E-45
+Raccord évier électrique,mecanique,cercle,,,Raccord de valve électrique (évier) — cédules « ÉVIER ÉLECTRIQUE »,E103 raccords ; E600 addenda
+Raccord équipement — cédule,mecanique,carre,,,Départ vers équipement (Q) sans symbole au plan,E600 addenda / E200
+Avertisseur visuel,alarme,cercle,,,Avertisseur visuel (⊗ avec candela 15/30) couplé au klaxon,E103 alarme incendie
+Module transmission TRA,alarme,carre,,,Module de transmission à la centrale (hexagone TRA),E103 alarme incendie ; E102 E-72/E-73
+Panneau d'alarme PAI,alarme,carre,,,Panneau de détection et signalisation d'alarme incendie (hexagone PAI),E103 alarme incendie ; E102 E-49
+Poste-maître intercom PMI,telecom,carre,,,Rectangle « PMI » — poste maître intercom (E104),E104 intercom
+Panneau,distribution,carre,,,Panneau de distribution (PS-x / P-P1),E405-E408 plans ; E200
+Transformateur,distribution,carre,,,Transformateur sec (Xfo),E405 ; E200 ; E102 E-43/E-44
+Sectionneur,distribution,carre,,,Sectionneur 600A (F/SF),E405 ; E200 ; E102 E-30
+Mesurage Hydro-Québec,distribution,carre,,,Coffret de mesurage MHQ,E405 ; E200 ; E102 E-31
+Phare simple — sans étiquette,secours,triangle,,,Phare simple sans étiquette PH1,E402 vu
+Luminaire ovale — à classer,luminaire,cercle,,,Anneau orange suspendu sans étiquette (ACCUEIL E401) — hors légende,vu E401
+Luminaire extérieur — à classer,luminaire,cercle,,,Cercle pointé mural « VERS CME-01 » sans étiquette,vu E401
+Cercle barré fléché — à classer,autre,cercle,,,Cercle bleu barré avec flèche (lettres 3/g) — hors légende,vu E403
+TS — à classer,autre,cercle,,,Cercle vert « TS » au SAS — hors légende,vu E406
+Symbole vert pointillé — à classer,autre,carre,,,Carré pointillé vert avec ⊗ au SAS — hors légende,vu E406

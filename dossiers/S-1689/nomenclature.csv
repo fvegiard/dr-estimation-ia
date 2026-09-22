@@ -1,0 +1,66 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire A 2x4 24W,luminaire,cercle,,,"LED 2'x4' encastré Cree FLX24-30L, 24 W, 120 V",E001_2 tableau des appareils d'éclairage
+Luminaire B 2x4 30W,luminaire,cercle,,B,"LED 2'x4' encastré Cree FLX24-40L, 30 W (étiquette B)",E001_2 tableau des appareils d'éclairage
+Luminaire C 2x4 38W,luminaire,cercle,,,"LED 2'x4' encastré Cree FLX24-50L, 38 W",E001_2 tableau des appareils d'éclairage
+Luminaire D1 2x2 30W,luminaire,carre,,,"LED 2'x2' encastré Cree FLX22-40L, 30 W",E001_2 tableau des appareils d'éclairage
+Luminaire E réglette 26W,luminaire,losange,,,"Réglette BJtake BLSP-4-3.5L, 26 W, appliqué",E001_2 tableau des appareils d'éclairage
+Luminaire F 2x4 surface 30W,luminaire,trapeze,,,"LED 2'x4' Cree FLX24-40L c/a kit montage en surface, 30 W",E001_2 tableau des appareils d'éclairage
+Indicateur sortie mural,secours,carre,,,"Stanpro RMXL-UDC au mur, PS-1 / X1",E001_2 tableau éclairage d'urgence
+Indicateur sortie plafond,secours,carre,,,"Stanpro RMXL-UDC au plafond, PS-1 / X1",E001_2 tableau éclairage d'urgence
+Phare simple LED,secours,triangle,,,"Stanpro N1-24-6WLA mur ou plafond",E001_2 tableau éclairage d'urgence
+Phare double LED,secours,triangle,,,"Stanpro N2-24-6WLA mur ou plafond",E001_2 tableau éclairage d'urgence
+Batterie 2 phares c/a sortie 144W,secours,carre,,,"Stanpro série RMSLC 144 W, 2 phares + indicateur de sortie",E001_2 tableau éclairage d'urgence
+Batterie 2 phares 144W — à confirmer,secours,carre,,,"Batterie 2 phares inscrite 144 W sans indicateur (légende : 2 phares = 320 W)",E002_2 plan éclairage mezzanine (salle technique)
+Interrupteur — type à confirmer,commande,cercle,,,"Interrupteur mural (simple ou SBWS-4B BlueEcosystem — symbole tourné, variante non tranchée)",E001_2 tableaux des interrupteurs
+Interrupteur détecteur présence,commande,cercle,,,"Interrupteur avec détecteur de présence Legrand PW-200",E001_2 tableau des interrupteurs
+Détecteur RooM-PIR (DP),commande,cercle,,DP,"Détecteur RooM-PIR BlueEcosystem",E001_2 tableau des interrupteurs (BlueEcosystem)
+Contrôleur BBR-HV (Z1),commande,carre,,Z1,"Relais/contrôleur de zone BBR-HV BlueEcosystem",E001_2 tableau des interrupteurs (BlueEcosystem)
+Minuterie astronomique,commande,cercle,,,"Minuterie du contrôle éclairage extérieur",E006 diagramme de principe contrôle éclairage extérieur
+Cellule photo-électrique,commande,cercle,,,"Cellule PE contrôle éclairage extérieur",E006 diagramme de principe contrôle éclairage extérieur
+Contacteur d'éclairage,commande,carre,,,"Contacteur CR circuits d'éclairage extérieur",E006 diagramme de principe contrôle éclairage extérieur
+Sélecteur 3 positions,commande,carre,,,"Sélecteur AUTO/OFF/MANUEL",E006 diagramme de principe contrôle éclairage extérieur
+Programmation contrôles éclairage,commande,losange,,,"Mise en marche et programmation du système de contrôle par le fournisseur (note)",E006 notes éclairage et contrôles / E002_2 note 3
+Détecteur de fumée,alarme,cercle,,,"Détecteur de fumée plafond, compatible système existant",E001_2 tableau d'alarme incendie
+Station manuelle,alarme,carre,,,"Station manuelle simple étape",E001_2 tableau d'alarme incendie
+Klaxon alarme incendie,alarme,cercle,,,"Klaxon d'alarme incendie mural",E001_2 tableau d'alarme incendie
+Klaxon miniature,alarme,cercle,,,"Klaxon miniature mural",E001_2 tableau d'alarme incendie
+Services technicien alarme,alarme,losange,,,"Sous-traitance technicien de la compagnie d'alarme : assistance, programmation, rapport de conformité",E002_2 notes alarme incendie
+Prise double,prise,cercle,,,"Prise de courant double 15 A 125 V 5-15R",E001_2 tableau des prises de courant
+Prise double USB,prise,cercle,,,"Prise double avec USB intégré 15 A",E001_2 tableau des prises de courant
+Prise extérieure DDFT,prise,cercle,,,"Prise double extérieure couvercle intempérisé + DDFT 15 A",E001_2 tableau des prises de courant
+Prise comptoir 20A,prise,cercle,,,"Prise double au-dessus de comptoir 20 A 5-20R",E001_2 tableau des prises de courant
+Prise comptoir DDFT — à confirmer,prise,cercle,,,"Symbole comptoir avec demi-cercle plein (DDFT ?) — variante hors légende",E002_2 plan services mezzanine (cafétéria)
+Prise micro-onde (MO),prise,cercle,,,"Prise comptoir dédiée micro-onde (qualificatif MO), circuits PS-41/51",E002_2 plan services mezzanine + cédule PS-MEZZANINE
+Prise lave-vaisselle (LV),prise,cercle,,,"Prise dédiée lave-vaisselle (qualificatif LV), circuits PS-37/39",E002_2 plan services mezzanine + cédule PS-MEZZANINE
+Sortie téléphone/données,telecom,triangle,,,"Sortie téléphonique/informatique au mur, conduit 21 mm",E001_2 tableau des télécommunications
+Sortie télécom triangle ouvert — à confirmer,telecom,triangle,,,"Triangle ouvert (variante hors légende) sur postes de travail labo",E002_2 plan services mezzanine
+Sortie câblodistribution TV,telecom,triangle,,,"Sortie de câblodistribution au mur, conduit 21 mm",E001_2 tableau des télécommunications
+Conduit 2po EMT entrée télécom — à métrer,telecom,trapeze,,,"C.2""ØEMT c/a corde de tirage vers entrée télécom",E002_2 plan services mezzanine (note)
+Plinthe électrique 500W,chauffage,carre,,,"Plinthe de chauffage électrique Stelpro série Bella 500 W",E001_2 tableau CVC + plan
+Plinthe électrique 750W,chauffage,carre,,,"Plinthe de chauffage électrique 750 W",E001_2 tableau CVC + plan
+Plinthe électrique 1500W,chauffage,carre,,,"Plinthe de chauffage électrique 1500 W",E001_2 tableau CVC + plan
+Plinthe électrique 2000W,chauffage,carre,,,"Plinthe de chauffage électrique 2000 W",E001_2 tableau CVC + plan
+Plinthe électrique 2500W,chauffage,carre,,,"Plinthe de chauffage électrique 2500 W",E001_2 tableau CVC + plan
+Aéroconvecteur mural 4kW,chauffage,carre,,,"Aéroconvecteur mural de chauffage électrique Stelpro série WF, 4 kW",E001_2 tableau CVC + plan RDC
+Mini aéroconvecteur plafond 2kW — à confirmer,chauffage,carre,,,"Symbole proche du mini aéroconvecteur de plafond Stelpro SK, 2 kW",E001_2 tableau CVC + plan (vestiaire)
+Raccordement serpentin électrique,chauffage,carre,,,"Serpentin de chauffage électrique (S-01…S-04) fourni par mécanique, raccordé par électricien",E001_2 tableau CVC + cédule PP-MEZZANINE
+Thermostat de ligne,chauffage,carre,,,"Thermostat de chauffage de ligne électronique Stelpro, fourni-installé-raccordé",E001_2 tableau CVC
+Thermostat BT STE241,chauffage,cercle,,,"Thermostat basse tension Stelpro STE241, fourni-installé-raccordé par l'électricien",E001_2 tableau CVC
+Thermostat BT (par mécanique),chauffage,cercle,,,"Thermostat basse tension fourni et installé par mécanique (BV-01…03) — fourni par autres",E001_2 tableau CVC
+Carré R — à classer,chauffage,carre,,,"Carré « R » près des plinthes, hors légende (relais ?)",E002_2 plan services mezzanine
+Moteur monophasé (ventilateur),mecanique,cercle,,,"Moteur monophasé fourni par mécanique, raccordé par électricien (VE-01, VE-02)",E001_2 tableau CVC + cédule PS-MEZZANINE
+Raccordement boîte volume variable,mecanique,carre,,,"Boîte à volume variable BV-01…03, circuit PS-42",E002_2 plan + cédule PS-MEZZANINE
+Volet motorisé M — à classer,mecanique,carre,,,"Carré « M » hachuré, circuit PS-52, hors légende",E002_2 plan services mezzanine (salle technique)
+Raccordement condenseur CO-1,mecanique,carre,,,"Condenseur CO-1 3500 W, circuit PS-54/56 2P 30 A",E002_2 plan RDC + cédule PS-MEZZANINE
+Raccordement évaporateur EV-01 — à confirmer,mecanique,carre,,,"Évaporateur EV-01 étiqueté PS(54,56) au plan mezzanine",E002_2 plan services mezzanine
+Panneau PP-MEZZ 347/600V,distribution,carre,,,"Panneau 100 A 347/600 V 3ph 4F, disj. maître 100A/3P, à l'épreuve des gicleurs",E002_2 unifilaire + cédule
+Panneau PS-MEZZ 120/208V,distribution,carre,,,"Panneau 100 A 120/208 V 3ph 4F, à l'épreuve des gicleurs",E002_2 unifilaire + cédule
+Transformateur 30 kVA,distribution,carre,,,"Transformateur sec 30 kVA 600-120/208 V 3ph 4F, à l'épreuve des gicleurs",E002_2 unifilaire + note 1
+Interrupteur sécurité 30A EI,distribution,carre,,,"Interrupteur de sécurité 30 A sans fusibles, à l'épreuve des intempéries (E.I.)",E001_2 tableau de distribution + plan RDC
+Barre de MALT,distribution,carre,,,"Nouvelle barre de mise à la terre (note 02)",E002_2 plan services mezzanine + unifilaire note 02
+Raccordement auget existant,distribution,carre,,,"Raccordement du nouveau panneau sur l'auget existant 600 A (note 2)",E002_2 unifilaire + notes
+Contreplaqué ignifuge 3/4po,distribution,trapeze,,,"Contreplaqué 3/4"" ignifuge peint gris (montage des équipements)",E002_2 plan services mezzanine (note)
+Fixation murale transformateur,distribution,trapeze,,,"Cornières 38x38x3 + amortisseurs RM-2 (détail fixation au mur d'un transformateur)",E006 détail fixation transformateur
+Protection ignifuge 1 h (note),distribution,trapeze,,,"Installer les équipements dans une protection ignifuge 1 heure",E002_2 plan RDC (notes)
+Trappe accès ignifuge relais,distribution,trapeze,,,"Fournir et installer une trappe d'accès ignifuge pour le relais de contrôle d'éclairage",E002_2 plan RDC (notes)
+TA — à classer,autre,carre,,,"Carré « TA » hors légende (trappe d'accès ?)",E002_2 plan services mezzanine (salle technique)

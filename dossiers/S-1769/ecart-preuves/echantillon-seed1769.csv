@@ -1,0 +1,11 @@
+n,index_0,feuille,label,x_pt,y_pt,source,note,image
+1,6,E004,Luminaire A 2x2 30W,788.0,459.0,visuel,A C;3 tuile r1c2,alea01_E004_788_459.png
+2,29,E004,Luminaire B encastré 6po 18W,798.0,658.0,visuel,B C;3a,alea02_E004_798_658.png
+3,49,E004,Klaxon alarme-incendie,569.0,657.0,visuel,note 4,alea03_E004_569_657.png
+4,55,E004,Gradateur à glissière,795.0,598.0,visuel,b,alea04_E004_795_598.png
+5,92,E004,Relais bas voltage RT,1275.0,447.0,visuel,RT d,alea05_E004_1275_447.png
+6,106,E004,Panneau C 225A,1252.0,500.0,visuel,panneau C corridor 140,alea06_E004_1252_500.png
+7,115,E004,Démol. applique,578.0,1134.0,visuel,EE,alea07_E004_578_1134.png
+8,127,250075EPER-p05,Interrupteur 200A F200A,1942.0,1212.0,visuel,unifilaire existant modifié 200A/224A/F:200A,alea08_250075EPER-p05_1942_1212.png
+9,132,250075EPER-p04,Boîte de jonction porte (BJ),1170.0,800.0,visuel,détail B,alea09_250075EPER-p04_1170_800.png
+10,133,250075EPER-p04,Relais adressable porte (RA),1205.0,732.0,visuel,détail B — à raccorder au panneau d'alarme existant,alea10_250075EPER-p04_1205_732.png

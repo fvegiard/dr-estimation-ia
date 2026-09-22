@@ -1,0 +1,22 @@
+feuille,type,echelle,note
+E001_ADD,autre,,cartouche=E-001 · ÉLECTRICITÉ GÉNÉRALE PAGE FRONTISPICE (rév. 1 ADDENDA ELE-002 2026-03-12) · liste des plans : ajout E-003 SCHÉMA DE CONTRÔLE D'ÉCLAIRAGE
+E002_ADD,legende,,cartouche=E-002 · ÉLECTRICITÉ GÉNÉRALE LÉGENDE / FICHES DE PANNEAU ET SCHÉMA UNIFILAIRE (rév. 2 ADDENDA ELE-002 2026-03-12) · contient aussi cédules RC-PDNO-600(600) et RC-PSNO-200(200) + unifilaire
+E003_ADD,schema,,cartouche=E-003 · ÉLECTRICITÉ GÉNÉRALE SCHÉMA DE CONTRÔLE D'ÉCLAIRAGE (rév. 0 ADDENDA ELE-002 2026-03-12) · WaveLinx CAT · feuille nouvelle
+E101_ADD,detail,,cartouche=E-101 · ÉLECTRICITÉ GÉNÉRALE DÉTAILS ET TABLEAUX (rév. 2 ADDENDA ELE-002) · tableaux luminaires et chauffage · échelle NAE
+E102,plan,200,cartouche=E-102 · ÉLECTRICITÉ GÉNÉRALE PLAN D'IMPLANTATION (rév. 0 soumission) · plan de site 1:200 · non réémis par addenda
+E201_ADD,plan,100,cartouche=E-201 · ÉLECTRICITÉ ÉCLAIRAGE ET ALARME INCENDIE NIVEAU 1 (rév. 2 ADDENDA ELE-002)
+E301_ADD,plan,100,cartouche=E-301 · ÉLECTRICITÉ SERVICES NIVEAU 1 (rév. 2 ADDENDA ELE-002)
+E002_ADD_2,remplacee,,cartouche=E-002 rév. 1 ADDENDA ELE-001 · remplacée par E002_ADD (rév. 2 ELE-002)
+E101_ADD_2,remplacee,,cartouche=E-101 rév. 1 ADDENDA ELE-001 · remplacée par E101_ADD (rév. 2 ELE-002)
+E201_ADD_2,remplacee,,cartouche=E-201 rév. 1 ADDENDA ELE-001 · remplacée par E201_ADD (rév. 2 ELE-002)
+E301_ADD_2,remplacee,,cartouche=E-301 rév. 1 ADDENDA ELE-001 · remplacée par E301_ADD (rév. 2 ELE-002)
+E001,remplacee,,cartouche=E-001 rév. 0 soumission · remplacée par E001_ADD
+E002,remplacee,,cartouche=E-002 rév. 0 soumission · remplacée par E002_ADD
+E101,remplacee,,cartouche=E-101 rév. 0 soumission · remplacée par E101_ADD
+E201,remplacee,,cartouche=E-201 rév. 0 soumission · remplacée par E201_ADD
+E301,remplacee,,cartouche=E-301 rév. 0 soumission · remplacée par E301_ADD
+T000,autre,,cartouche=T-000 · TÉLÉCOMMUNICATION CÂBLAGE STRUCTURÉ PAGE FRONTISPICE (rév. 0)
+T001,legende,,cartouche=T-001 · TÉLÉCOMMUNICATION CÂBLAGE STRUCTURÉ LÉGENDE (rév. 0)
+T100,detail,,cartouche=T-100 · TÉLÉCOMMUNICATION CÂBLAGE STRUCTURÉ DÉTAILS ET SCHÉMA (rév. 0) · NAE
+T101,detail,,cartouche=T-101 · TÉLÉCOMMUNICATION CÂBLAGE STRUCTURÉ DÉTAILS ET SCHÉMA (rév. 0) · élévations de portes / quincaillerie électrifiée
+T201,plan,100,cartouche=T-201 · TÉLÉCOMMUNICATION CÂBLAGE STRUCTURÉ NIVEAU 1 (rév. 0)

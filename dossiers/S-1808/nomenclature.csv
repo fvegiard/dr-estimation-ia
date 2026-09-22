@@ -1,0 +1,95 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire A,luminaire,carre,,,Type A · Lithonia CPANL 2x2 encastré LED 31 W (étiquette TYPE A),E032 tableau des appareils d'éclairage
+Luminaire B,luminaire,losange,,,Type B · Lithonia CPANL 2x2 encastré LED 41 W (étiquette TYPE B),E032 tableau des appareils d'éclairage
+Luminaire C,luminaire,cercle,,,Type C · Juno JPDZ6 encastré LED 16 W (étiquette TYPE C),E032 tableau des appareils d'éclairage
+Luminaire D,luminaire,trapeze,,,Type D · Lithonia CLX L48 surface LED 32 W (étiquette TYPE D),E032 tableau des appareils d'éclairage
+Luminaire E,luminaire,triangle,,,Type E · LA S-ARCH mural LED 7 W (étiquette TYPE E),E032 tableau des appareils d'éclairage
+Luminaire F,luminaire,triangle_inverse,,,Type F · Stanpro WJM mural LED 21 W (étiquette TYPE F),E032 tableau des appareils d'éclairage
+Luminaire EX1,luminaire,cercle,,EX1,Type EX1 · Juno JPDZ4 encastré extérieur 16 W,E032 tableau des appareils d'éclairage
+Luminaire EX2,luminaire,trapeze_inverse,,EX2,Type EX2 · Stanpro WCY 4 po mural extérieur 18 W,E032 tableau des appareils d'éclairage
+Luminaire EX3,luminaire,losange,,EX3,Type EX3 · Stanpro WTL-PS30A mural extérieur 15 W,E032 tableau des appareils d'éclairage
+Urgence Z1,secours,carre,,Z1,Z1 · Stanpro SLA12-2L unité à batterie 2 phares,E032 tableau éclairage d'urgence
+Urgence Z2,secours,carre,,Z2,Z2 · Stanpro PRMS12-2L unité combinée batterie / enseigne,E032 tableau éclairage d'urgence
+Urgence Z3,secours,triangle,,Z3,Z3 · Stanpro N2-06-12V-4WLJ phares à distance 12 V,E032 tableau éclairage d'urgence
+Urgence Z4,secours,losange,,Z4,Z4 · Stanpro PRMRN 1050 combiné extérieur,E032 tableau éclairage d'urgence
+Urgence Z5,secours,trapeze,,Z5,Z5 · Stanpro SWN 2 12-24 6 LA WH,E032 tableau éclairage d'urgence
+Urgence Z6,secours,cercle,,Z6,Z6 · Stanpro RMSOWH-UDC enseigne de sortie,E032 tableau éclairage d'urgence
+Relais nLight RE,commande,carre,,RE,Relais sans fil nLight AIR RPP20 120 V et 0-10 V (symbole RE),E001 légende Interrupteur
+Détecteur mouvement BV,commande,cercle,,,Détecteur de mouvement plafond bas voltage RCMS PIR 10 G2 (D dans cercle + B.V.),E001 légende Interrupteur
+Interrupteur BV 2 scènes grad.,commande,triangle,,,B.V.$ avec barre · RPODBA 2S DX WH G2 (2 scènes avec gradation),E001 légende Interrupteur
+Interrupteur BV 2 scènes,commande,triangle_inverse,,,B.V.$ sans barre · RPODBA 2S WH G2,E001 légende Interrupteur
+Gradateur,commande,losange,,,$ avec barre sans mention B.V. (gradateur),E001 légende Interrupteur
+Interrupteur simple,commande,cercle,,,$ simple sans barre ni B.V.,E001 légende Interrupteur
+Détecteur-gradateur mural,commande,trapeze,,,Détecteur-gradateur de ligne mural 0-10 V WSX PDT D WH,E001 légende Interrupteur
+Station manuelle,alarme,carre,,,Poste manuel F (carré F sans rayons),E001 légende Alarme incendie
+Piézo-stroboscope,alarme,triangle,,,Piézo combiné à un strobe (F avec rayons),E001 légende Alarme incendie
+Klaxon,alarme,trapeze,,K,Klaxon (K),E001 légende Alarme incendie
+Détecteur thermique,alarme,cercle,,,Cercle barré,E001 légende Alarme incendie
+Détecteur de fumée,alarme,cercle,,,Cercle mi-noir en diagonale,E001 légende Alarme incendie
+Avertisseur fumée/CO 120V,alarme,losange,,,Avertisseur de fumée à ionisation 120 V combiné CO + pile,E001 légende Alarme incendie
+Module relais adressable RA,alarme,carre,,RA,Module relais adressable (RA),E001 légende Alarme incendie
+Panneau alarme incendie,alarme,carre,,PAI,PAI Mircom 120 V,E001 légende / E020
+Annonciateur,alarme,carre,,,Panneau annonciateur ANN,E020 schéma alarme
+Module isolateur MI,alarme,carre,,,Module isolateur (MI),E020 schéma alarme
+Module transmission MTA,alarme,carre,,,Module adressable de transmission (MTA),E020 schéma alarme
+Résistance fin de ligne,alarme,trapeze_inverse,,,Résistance fin de ligne,E020 schéma alarme
+Détecteur fumée de gaine,alarme,triangle_inverse,,,Détecteur de fumée de gaine de ventilation à tube,E020 schéma alarme
+Transmetteur GSM,alarme,losange,,,Dispositif de transmission cellulaire et terrestre (note générale E020),E020 schéma alarme
+Raccordement hotte H-1 alarme,alarme,trapeze,,,Raccorder la hotte H-1 au PAI (note spécifique 1 E100 / E020),E100 note spécifique 1
+Raccordement volet coupe-feu,alarme,triangle,,,Raccordement volet coupe-feu/coupe-fumée au PAI (4 au total pour l'étage),E101 note spécifique 1
+Module I — à classer,alarme,losange,,,Boîte « I » sur la boucle de toit du schéma d'alarme · hors légende,E020 schéma alarme
+Symbole puits — à classer,alarme,losange,,,Symbole en sablier encadré dans le puits d'ascenseur · hors légende,E020 schéma alarme
+Prise double,prise,cercle,,,Prise de courant double 15 A / 20 A 120 V (symbole à 2 traits),E001 légende Services
+Prise comptoir,prise,losange,,,Prise comptoir double 15 A / 20 A 120 V (croix),E001 légende Services
+Prise comptoir DDFT,prise,carre,,,Prise comptoir double DDFT (croix + moitié noircie),E001 légende Services
+Prise double DDFT,prise,triangle,,,Prise double 20 A DDFT (moitié noircie),E001 légende Services
+Prise extérieure E.I,prise,trapeze,,,Prise double à l'épreuve des intempéries (E.I),E001 légende Services + abréviation E.I
+Prise spéciale,prise,trapeze_inverse,,,Prise spéciale (lave-vaisselle / sécheuse),E001 légende Services
+Prise service toiture,prise,triangle_inverse,,,Prise de service DDFT E.I à 750 mm au-dessus de la toiture (note 1 E202),E202 note spécifique 1
+Prise service toiture — à confirmer,prise,triangle_inverse,,,Bulle de note 1 sans symbole de prise,E202 note spécifique 1
+Sortie informatique,telecom,triangle,,,Sortie informatique/audio (triangle plein),E001 légende Services
+Contrôle d'accès — porte,telecom,carre,,,Conduits vides + relais sur PAI + alimentation 120 V (note 2 E200 / note 1 E201),E200 note 2 et E201 note 1
+Contreplaqué télécom,telecom,carre,,,Contreplaqué ignifuge 3/4 po téléphone / câblodistribution,E010 détail contreplaqué
+Conduit vide entrée télécom,telecom,trapeze,,,Conduit vide 2 po avec corde de tirage (Bell / Vidéotron),E010 détail + E050 note 3
+Convecteur SCR,chauffage,trapeze,,SCR,Panneau radiant mural Stelpro SCR 347 V (puissance au plan),E032 tableau chauffage
+Plinthe OFM,chauffage,trapeze_inverse,,OFM,Plinthe Ouellet OFM 347 V,E032 tableau chauffage
+Aéroconvecteur OAC,chauffage,carre,,OAC,Aéroconvecteur Ouellet OAC 347 V,E032 tableau chauffage
+Câble chauffant OWC-M,chauffage,losange,,OWC-M,Câble chauffant plancher Ouellet OWC-M (une zone par étiquette),E032 tableau chauffage
+Thermostat plancher chauffant,chauffage,cercle,,,Thermostat plancher chauffant (T noir),E200 plan
+Thermostat intégré TI,chauffage,cercle,,TI,Thermostat intégré (TI),E001 légende Chauffage
+Relais triac RT,chauffage,carre,,RT,Relais triac RE306C (RT),E001 légende Chauffage
+Thermostat AC fourni par autres,mecanique,cercle,,,T gris + FPD · contrôleur mural AC fourni par autres (non chiffré DR),E200/E201 plans
+Raccordement AC,mecanique,carre,,AC-\d+,Unité murale Mitsubishi AC-xx 208/1/60,E031 tableau AC
+Raccordement AC — à confirmer,mecanique,carre,,,Unité murale dessinée sans étiquette,E200 plan
+Raccordement ventilateur VE,mecanique,cercle,,VE-\d+,Ventilateur VE-xx,E031 tableau ventilateurs
+Raccordement évaporateur EVP,mecanique,cercle,,EVP-01,Évaporateur Chandler EVP-01 115/1/60,E031 tableau AC
+Raccordement VA-01,mecanique,cercle,,VA-01,Ventilateur d'alimentation VA-01 575/3/60,E031 tableau ventilateurs
+Raccordement serpentin SE,mecanique,losange,,SE-\d+,Serpentin électrique Thermolec SE-xx 600/3/60,E031 tableau serpentins
+Raccordement humidificateur,mecanique,carre,,HUM-\d+,Humidificateur Enersol HUM-xx 575/3/60,E031 tableau humidificateurs
+Raccordement échangeur d'air,mecanique,cercle,,ECH-\d+,Échangeur Systemair ECH-xx 208/3/60,E031 tableau échangeurs
+Raccordement chauffe-eau,mecanique,carre,,CE-01,Chauffe-eau Giant CE-01 63 kW 600/3/60,E031 tableau chauffe-eau
+Raccordement pompe,mecanique,cercle,,P-\d+,Pompe P-01 / P-02 120/1/60,E031 tableau pompes
+Raccordement condenseur,mecanique,carre,,COND-\d+,Condenseur COND-x,E031 tableau AC
+Raccordement ascenseur,mecanique,carre,,,Moteur / pompe hydraulique ascenseur,E200 / E201 plans
+Raccordement contrôleur ascenseur,mecanique,carre,,,Contrôleur d'ascenseur,E201 plan
+Sectionneur lumière ascenseur,distribution,carre,,,Sectionneur lumière ascenseur,E201 plan
+Raccordement four combi,mecanique,carre,,,Four combi (PCUI-2/4/6),E200 plan
+Raccordement cuisinière,mecanique,carre,,,Cuisinière PCUI-14/16 (cédule seulement),E004 cédule PCUI
+Raccordement boîte de dérivation VRF,mecanique,carre,,,Boîte de dérivation AC (cédule PSS1-37/39 et PSS2-47/49),E004 cédules PSS1 / PSS2
+Démarreur magnétique combiné,distribution,carre,,,Démarreur magnétique combiné salle électrique (note 2 E201),E201 note spécifique 2
+Sectionneur E.I toiture,distribution,carre,,,Interrupteur de sûreté E.I à côté des condenseurs,E202 plan
+Sectionneur à fusibles VA-01,distribution,carre,,,Sectionneur à fusibles SF serpentin VA-01 fourni et installé par l'électricien,E041 détail serpentin VA-01
+Démarreur hotte — fourni par autres,mecanique,carre,,,Démarreur magnétique ventilateur hotte fourni par l'entrepreneur en ventilation (non chiffré DR),E041 détail hotte
+Interrupteur lumière puits,commande,cercle,,,Interrupteur lumière de fosse d'ascenseur,E040 détails fosse ascenseur
+Colonne électrique îlot cuisine,distribution,losange,,,Alimentation par le plafond (colonne) pour prises de l'îlot (note 1 E200),E200 note spécifique 1
+Panneau de distribution,distribution,carre,,,Panneaux PS / PSS1 / PSS2 / PCUI,E010 unifilaire + plans
+Transformateur TX1,distribution,carre,,,TX1 112.5 kVA 600-120/208 V,E010 unifilaire + E201
+Sectionneur principal 400 A,distribution,carre,,,400 A F400A 347/600 V,E010 unifilaire + E200
+Embase HQ,distribution,carre,,HQ,Embase / compteur Hydro-Québec type B,E010 unifilaire + E200
+Boîte de tirage,distribution,carre,,TIRAGE,Boîte de tirage entrée,E010 unifilaire + E200
+Contacteur,distribution,carre,,,Contacteur C1 (éclairage extérieur) / C2 (cuisine),E010 détails contacteurs
+Minuterie astronomique,commande,carre,,,Minuterie astronomique M du contacteur C1,E010 détail C1
+Sélecteur 3 positions,commande,carre,,,Sélecteur 3 positions du contacteur C1,E010 détail C1
+Barre de mise à la terre,distribution,carre,,,Barre de MALT salle électrique,E010 unifilaire
+Liaison MALT gaz/eau,distribution,cercle,,,Liaison 1#3 Cu-nu gaz / entrée d'eau,E010 unifilaire
+Point de raccordement HQ,distribution,carre,,,Point de raccordement souterrain (coordonner avec HQ),E050 implantation

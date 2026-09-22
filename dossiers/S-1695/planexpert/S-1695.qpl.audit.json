@@ -1,0 +1,174 @@
+{
+ "qpl": "/home/claude/releve-auto/runs/S-1695/OUTBOX/S-1695/S-1695-planexpert/S-1695.qpl",
+ "sha256": "fcf5a0f7a6d0073f2c4d00711afa53dfeb054e3ce19117826ca1f0a388c735fc",
+ "octets": 159777,
+ "plans": 23,
+ "compteurs": 131,
+ "marques": 1719,
+ "libelles": 68,
+ "par_feuille": {
+  "E200": {
+   "Détecteur présence plafond DP": 2,
+   "Enseigne sortie murale": 5,
+   "Enseigne sortie plafond": 6,
+   "Interrupteur détecteur présence": 5,
+   "Interrupteur simple": 25,
+   "Luminaire A1": 57,
+   "Luminaire A3": 10,
+   "Luminaire A4": 35,
+   "Luminaire A5": 9,
+   "Luminaire A8": 15,
+   "Luminaire A9": 10,
+   "Luminaire B3": 22,
+   "Luminaire B9": 4,
+   "Luminaire C4": 12,
+   "Luminaire D1": 18,
+   "Luminaire D3": 4,
+   "Luminaire D4": 1,
+   "Luminaire D5": 8,
+   "Luminaire E1": 2,
+   "Luminaire E2": 12
+  },
+  "E201": {
+   "Enseigne sortie murale": 3,
+   "Enseigne sortie plafond": 6,
+   "Interrupteur simple": 7,
+   "Luminaire A3": 10,
+   "Luminaire A4": 35,
+   "Luminaire A9": 11,
+   "Luminaire B3": 29,
+   "Luminaire D1": 22,
+   "Luminaire E1": 2
+  },
+  "E202": {
+   "Boîte de jonction": 6,
+   "Enseigne sortie murale": 3,
+   "Enseigne sortie plafond": 6,
+   "Interrupteur simple": 7,
+   "Luminaire A3": 10,
+   "Luminaire A4": 35,
+   "Luminaire A9": 12,
+   "Luminaire B3": 26,
+   "Luminaire D1": 22,
+   "Luminaire E1": 2
+  },
+  "E203": {
+   "Luminaire A6": 24,
+   "Luminaire A7": 20
+  },
+  "E210": {
+   "Boîte de répartition télécom": 1,
+   "Boîtes de jonction chambre ×5": 23,
+   "Caméra (conduit vide)": 28,
+   "Panneau de distribution": 3,
+   "Plinthe électrique": 25,
+   "Prise 30A 6-30R": 1,
+   "Prise DDFT": 7,
+   "Prise double": 52,
+   "Prise double USB": 19,
+   "Raccord direct": 3,
+   "Raccordement EV (208V)": 23,
+   "Sortie TV câblodistribution": 7,
+   "Sortie informatique murale": 16,
+   "Sortie informatique plafond / WiFi": 3,
+   "Sèche-mains": 2,
+   "Élément H — à classer": 5
+  },
+  "E211": {
+   "Boîte de répartition télécom": 1,
+   "Boîtes de jonction chambre ×5": 30,
+   "Caméra (conduit vide)": 21,
+   "Panneau de distribution": 4,
+   "Plinthe électrique": 25,
+   "Prise 30A 6-30R": 1,
+   "Prise double": 27,
+   "Prise double USB": 4,
+   "Raccord direct": 3,
+   "Raccordement EV (208V)": 30,
+   "Sortie TV câblodistribution": 3,
+   "Sortie informatique murale": 10,
+   "Sortie informatique plafond / WiFi": 3
+  },
+  "E212": {
+   "Boîte de répartition télécom": 1,
+   "Boîtes de jonction chambre ×5": 25,
+   "Caméra (conduit vide)": 19,
+   "Panneau de distribution": 4,
+   "Plinthe électrique": 35,
+   "Prise 30A 6-30R": 1,
+   "Prise DDFT": 1,
+   "Prise double": 26,
+   "Prise double USB": 4,
+   "Raccord direct": 3,
+   "Raccordement EV (208V)": 27,
+   "Sortie TV câblodistribution": 3,
+   "Sortie informatique murale": 9,
+   "Sortie informatique plafond / WiFi": 3
+  },
+  "E213": {
+   "Raccordement CD (600V)": 6,
+   "Raccordement UAF toit": 2,
+   "Raccordement ventilateur VE": 6,
+   "Raccordement volet VM": 5,
+   "Sectionneur E.I.": 15
+  },
+  "E217": {
+   "Raccordement BC (208V)": 2,
+   "Raccordement EV (208V)": 1,
+   "Raccordement serpentin SE": 6,
+   "Raccordement ventilateur VT": 4
+  },
+  "E218": {
+   "Raccordement BC (208V)": 2,
+   "Raccordement EV (208V)": 1,
+   "Raccordement ventilateur VT": 4
+  },
+  "E219": {
+   "Raccordement BC (208V)": 2,
+   "Raccordement EV (208V)": 1,
+   "Raccordement serpentin SE": 2,
+   "Raccordement ventilateur VT": 3
+  },
+  "E400": {
+   "AI haut-parleur + stroboscope": 11,
+   "Luminaire A1": 113,
+   "Luminaire A2": 26,
+   "Luminaire B1": 22,
+   "Luminaire B2": 26,
+   "Luminaire B4": 23,
+   "Luminaire B5": 1,
+   "Luminaire B6": 1,
+   "Luminaire B7": 1,
+   "Luminaire B8": 2,
+   "Luminaire C1": 8,
+   "Luminaire C2": 1,
+   "Luminaire C3": 1,
+   "Luminaire D1": 24,
+   "Luminaire D2": 2
+  },
+  "E401": {
+   "Prise café CCT-CAFÉ": 10,
+   "Prise chambre CCT-DDFT": 20,
+   "Prise chambre CCT-PRISES": 78,
+   "Prise frigo CCT-FRIGO": 10
+  },
+  "E800": {
+   "AI dispositif adressé D": 24,
+   "AI module MAT": 2,
+   "AI module relais MRA": 2,
+   "AI signal adressé S": 40
+  },
+  "E801": {
+   "AI dispositif adressé D": 23,
+   "AI module MAT": 2,
+   "AI module relais MRA": 5,
+   "AI signal adressé S": 21
+  },
+  "E802": {
+   "AI dispositif adressé D": 28,
+   "AI module MAT": 3,
+   "AI module relais MRA": 7,
+   "AI signal adressé S": 19
+  }
+ }
+}

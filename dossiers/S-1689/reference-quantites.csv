@@ -1,0 +1,17 @@
+ligne,objet,quantite,feuille_zone,page_scan,note
+1,FIXTURE TYPE A,2,non indiquée,1,"scan pivoté 180° ; ACCEO Estimation ; « Relevé matériel demande de prix » ; section Général / Général ; aucun prix"
+2,FIXTURE TYPE B,4,non indiquée,1,
+3,FIXTURE TYPE C,7,non indiquée,1,
+4,FIXTURE TYPE D,0,non indiquée,1,"ligne présente, quantité 0"
+5,FIXTURE TYPE E,6,non indiquée,1,
+6,FIXTURE TYPE F,4,non indiquée,1,
+7,FIXTURE TYPE D1,35,non indiquée,1,
+8,BBR-HV BLUEECOSYTEM,10,non indiquée,1,
+9,ROOM-PIR BLUEECOSYTEM,11,non indiquée,1,
+10,SBWS-4B BLUEECOSYTEM,7,non indiquée,1,
+11,RUNNING MAN RMXL-UDC 120/24V,3,non indiquée,1,
+12,TETE URG SIMPLE N1-24-6WLA-WH 24V,2,non indiquée,1,
+13,TETE DOUBLE URG N2-24-6WLA WH,7,non indiquée,1,
+14,BATTERIE UNIT SLC 120/24V 2TETE,1,non indiquée,1,
+15,COMBO RMSLC 120/24V 2TETE,4,non indiquée,1,
+16,DETECTEUR WATTSTOPER WT-2255,2,non indiquée,1,

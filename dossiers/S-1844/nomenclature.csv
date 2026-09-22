@@ -1,0 +1,90 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Projecteur D3-N,luminaire,cercle,,D3-N,Projecteur sur rail noir TH 5021 (Satco/Juno),"E101 légende, rangée D3"
+Projecteur D3-NT1,luminaire,cercle,,D3-NT1,Projecteur sur rail noir avec tige TEW-12IN,"E101 légende, rangée D3"
+Projecteur D4-N,luminaire,cercle,,D4-N,Projecteur wall wash sur rail noir ATF7250-90,"E101 légende, rangée D4"
+Projecteur D4-NT1,luminaire,cercle,,D4-NT1,Projecteur wall wash sur rail noir avec tige TEBL-12IN,"E101 légende, rangée D4"
+Rail R4-NS,luminaire,carre,,R4-NS,Rail noir suspendu 4 pi avec alimentation de bout,"E101 légende, rangée R(X)"
+Rail R6-NS,luminaire,carre,,R6-?NS,Rail noir suspendu 6 pi avec alimentation de bout,"E101 légende, rangée R(X)"
+Rail R8-NS,luminaire,carre,,R8-NS,Rail noir suspendu 8 pi avec alimentation de bout,"E101 légende, rangée R(X)"
+Rail R12-NS,luminaire,carre,,R12-NS,Rail noir suspendu 12 pi avec alimentation de bout,"E101 légende, rangée R(X)"
+Linéaire S20-N,luminaire,carre,,"S20-N,?(24H)?",Système linéaire continu AXIS noir 20 pi suspendu,"E101 légende, rangée S(X)"
+Linéaire O8-N,luminaire,carre,,O8-N,Système linéaire continu 3GLIGHTING noir 8 pi,"E101 légende, rangée O(X)-N"
+Encastré B-B,luminaire,cercle,,B-B,Projecteur encastré 6 po Eralux blanc,"E101 légende, rangée B"
+Panneau P1,luminaire,carre,,P1,Panneau DEL 2x2 suspendu sur câbles (Stanpro),"E101 légende, rangée P1"
+Panneau P2,luminaire,carre,,P2\.?,Panneau DEL 2x4 suspendu sur câbles (Stanpro),"E101 légende, rangée P2"
+Troffer J1,luminaire,carre,,J1,Troffer 2x2 Columbia CLT22,"E101 légende, rangée J1"
+Réglette G3,luminaire,carre,,G3,Réglette 3 pi Stanpro,"E101 légende, rangée G3"
+Réglette G4,luminaire,carre,,G4,Réglette 4 pi Stanpro,"E101 légende, rangée G4"
+Réglette K3,luminaire,carre,,K3,Réglette 32 po sous armoire,"E101 légende, rangée K3"
+Profilé T,luminaire,carre,,Tx\d,"Profilé aluminium DEL T (Rotechled), 1 segment par étiquette ; longueur au pied au plan","E101 légende, rangée T"
+Applique extérieure AA (bailleur),autre,cercle,,AA,"Applique murale extérieure anti-vandale ; note E300 : remplacement des luminaires extérieurs par le bailleur — fourni par autres, non chiffré par DR","E101 légende rangée AA + note E300"
+Enseigne sortie U1,secours,cercle,,U1,Enseigne sortie décorative universelle (aire de vente),"E101 légende, rangée U1"
+Phare double U2,secours,cercle,,U2,Phare double décoratif 12 V,"E101 légende, rangée U2"
+Phare simple U3,secours,cercle,,U3,Phare simple décoratif 12 V,"E101 légende, rangée U3"
+Batterie U6,secours,carre,,U6,Batterie avec 2 phares,"E101 légende, rangée U6"
+Enseigne sortie U9,secours,cercle,,U9,Enseigne sortie standard (entrepôt),"E101 légende, rangée U9"
+Enseigne sortie — type à confirmer,secours,cercle,,,Enseigne de sortie suspendue sans étiquette de type,E300 visuel
+Boîte de jonction profilé T,luminaire,carre,,,Boîte de jonction encastrée au mur pour raccordement des profilés T (quantité à valider au chantier),"E300 note spécifique 1"
+Linéaire sans étiquette — à classer,luminaire,carre,,,Segment linéaire vert sans type au plan,E300 visuel
+Contrôleur NPOD,commande,cercle,,NPOD,Contrôleur graphique nPOD Touch LMGS-150,"E101 légende contrôles, rangée NPOD"
+Interrupteur NPODMA,commande,cercle,,NPODMA,Interrupteur/gradateur programmable réseau LMSW-211,"E101 légende contrôles, rangée NPODMA"
+Relais NPP16,commande,cercle,,NPP16,Relais 20 A 0-10 V LMRC-111-20M,"E101 légende contrôles, rangée NPP16"
+Relais NPP PCD,commande,cercle,,NPPPC,Relais secondaire gradation ELV LMAC-131-M,"E101 légende contrôles, rangée NPP PCD"
+Relais NPP20,commande,cercle,,NPP20,Relais de contrôle pour prise duplex LMRC-211,"E101 légende contrôles, rangée NPP20"
+Détecteur WSXA,commande,cercle,,WSXA,Détecteur de présence mural double technologie sans gradation,"E101 légende contrôles, rangée WSXA"
+Détecteur WSXA-G,commande,cercle,,WSXA-G,Détecteur de présence mural double technologie avec gradation,"E101 légende contrôles, rangée WSXA-G"
+Mise en route nLight (forfait),commande,carre,,,Démarrage prix fixe par succursale (Franklin Empire),"E101 légende contrôles, dernière ligne"
+Haut-parleur suspendu SN,telecom,triangle,,SN,Haut-parleur suspendu noir TOA Q-PE-304BK (sortie et raccordement),"E100 légende électricité, haut-parleurs"
+Prise duplex 15A,prise,cercle,,,Prise de courant duplex 15 A 120 V,"E100 légende électrique, colonne 1"
+Prise duplex circuit indépendant,prise,cercle,,,Prise duplex 15 A 120 V sur circuit indépendant (demi-cercle plein),"E100 légende électrique, colonne 1"
+Prise duplex BX caisse,prise,cercle,,,Prise duplex au bout d'un BX libre de 24 po (symbole encadré) — comptoirs-caisses,"E100 légende électrique, colonne 1"
+Prise 30A L5-30R (UPS),prise,cercle,,,Prise simple 30 A verrouillable L5-30R pour cabinet informatique (TL),"E100 légende électrique, colonne 1"
+Prise duplex affleurement plancher,prise,cercle,,,Boîte de sortie à affleurement dans la dalle avec duplex 15 A (Legrand 880),"E100 légende électrique, colonne 1 + note E200"
+Prise existante relocalisée,prise,cercle,,,Prise existante relocalisée (R.),E100 abréviations + E200
+BX 4 pi — à confirmer,prise,cercle,,,"BX de 4'-0"" de long à 12 po du sol (N., PA 40) — usage non précisé",E200 note au plan
+Sortie télécom,telecom,triangle,,,Boîte de sortie 2x3 encastrée pour câblage informatique-téléphonique,"E100 légende électrique, colonne 1"
+Sortie conduit dalle télécom,telecom,triangle,,,Sortie du conduit 1 po dans la dalle pour téléphone et informatique (BX 24 po),"E100 légende électrique, colonne 1"
+Sortie haut-parleur,telecom,triangle,,,Boîte de sortie pour raccordement des haut-parleurs (conduit 1 po),"E100 légende électrique, colonne 1"
+Contrôle de volume,telecom,triangle,,,Contrôle de volume indépendant (H),"E100 légende électrique, colonne 1"
+Thermostat programmable (par CVAC),chauffage,cercle,,,"Thermostat programmable Honeywell — fourni, installé et raccordé par CVAC (non chiffré DR)","E100 légende électrique, colonne 1"
+Thermostat électricien,chauffage,carre,,,Thermostat non programmable STE403NP fourni/installé/raccordé par l'électricien,"E100 légende électrique, colonne 1"
+Thermostat existant relocalisé,chauffage,cercle,,,Thermostat existant relocalisé (R.),E200
+Relais basse tension CVC,mecanique,carre,,,Relais basse tension (24 V) — raccordé par l'électricien,"E100 tableau CVC, rangée 1"
+Plinthe électrique,chauffage,carre,,,Plinthe électrique OFM Ouellet (1050/750/1200 W),"E100 légende électrique, dernière rangée"
+Raccordement serpentin SE,mecanique,carre,,,Serpentin de chauffage électrique SE-01/SE-02 1 kW — fourni par CVAC et raccordé par l'électricien,"E100 tableau CVC + E102 PA (M) circuit 82/84"
+Raccordement boîte à volume BV-01,mecanique,carre,,,Boîte à volume d'air variable BV-01 — raccordement,"E100 tableau CVC + E102 PA (M) circuit 16"
+Raccordement chauffe-eau CE-1,mecanique,carre,,,Chauffe-eau CE-1 — raccordement (fourniture par le bailleur),"E200 note + E102 PA (M) circuit 78"
+Raccordement pompe PR-1,mecanique,carre,,,Pompe de recirculation PR-1 — boîte de jonction et raccordement,"E200 note + E102 PA (M) circuit 40"
+Démarreur manuel,mecanique,carre,,,Démarreur manuel 120 V avec protection thermique pour pompe de recirculation,"E100 tableau CVC + E200 note"
+Raccordement volet motorisé,mecanique,carre,,,Nouveau volet motorisé dans conduit E.M. — raccordement,"E200 note + E102 PA (M) circuit 70"
+Sèche-mains SM,mecanique,carre,,,Sèche-mains — raccordement,"E100 légende électrique + E102 PA (M) circuits 74/76"
+Minuterie évacuation,mecanique,carre,,,Minuterie pour système d'évacuation (fournie par CVCA) — raccordée par l'électricien au ventilateur VE-02,"E100 légende électrique + note E200"
+Thermostat action inversée (raccordement),mecanique,cercle,,,Thermostat à action inversée à raccorder au nouveau ventilateur d'évacuation,E200 note au plan
+Raccordement ventilateur VE-02,mecanique,carre,,,Ventilateur VE-02 au toit contrôlé par minuterie — à raccorder,"E201 note + E102 PA (M) circuit 12"
+Raccordement ventilateur VE-01 — à confirmer,mecanique,carre,,,Étiquette VE 01 dans la salle électrique sans symbole d'appareil,E200 visuel
+Symbole double cercle cyan — à classer,autre,cercle,,,Deux petits cercles cyan sans légende,E200 visuel
+Boîte de tirage 8x8,distribution,carre,,,Boîte de tirage minimum 8x8 sur conduit EMT 1-1/2 du système de sécurité,E400 notes au plan
+Descente EMT + boîte 4x4,distribution,carre,,,Conduit EMT 1/2 ou 3/4 avec descente terminée par une boîte 4x4 low profile,E400 notes au plan
+Boîte 2x2 conduit 3/4 (fenêtres),distribution,carre,,,Conduit EMT 3/4 boîte 2x2 en surface centrée entre les fenêtres,E400 note au plan
+Démo appareil prises/services (E.D.),demolition,cercle,,E\.D\.,Équipement existant à démanteler (prises BX télécom thermostats) — un par étiquette E.D.,E200D
+Démo luminaire R,demolition,cercle,,,Luminaire existant type R à démanteler,E300D
+Démo luminaire H,demolition,cercle,,,Luminaire existant type H à démanteler,E300D
+Démo luminaire C,demolition,cercle,,,Luminaire existant type C (sur rail) à démanteler,E300D
+Démo luminaire C1,demolition,cercle,,C1,Luminaire existant type C1 à démanteler,E300D
+Démo luminaire W,demolition,carre,,,Luminaire linéaire existant type W (entrepôt) à démanteler,E300D
+Démo luminaire J,demolition,carre,,,Luminaire existant type J à démanteler,E300D
+Démo luminaire M,demolition,carre,,,Luminaire existant type M à démanteler,E300D
+Démo luminaire S2,demolition,cercle,,S2,Luminaire existant type S2 à démanteler,E300D
+Démo luminaire A1,demolition,carre,,A1,Luminaire existant type A1 à démanteler,E300D
+Démo luminaire A2,demolition,carre,,A2,Luminaire existant type A2 à démanteler,E300D
+Démo luminaire D1,demolition,cercle,,D1,Luminaire existant type D1 à démanteler,E300D
+Démo luminaire D2,demolition,cercle,,D2,Luminaire existant type D2 à démanteler,E300D
+Démo luminaire FS,demolition,carre,,FS,Luminaire existant type FS à démanteler,E300D
+Démo luminaire E,demolition,cercle,,,Luminaire existant type E à démanteler,E300D
+Démo rail existant,demolition,carre,,L\.:,Rail d'éclairage existant à démanteler (une étiquette L.: longueur),E300D
+Démo projecteur sur rail,demolition,triangle,,,Projecteur existant sur rail sans étiquette de type,E300D visuel
+Démo luminaire sans type,demolition,cercle,,,Luminaire existant sans étiquette de type,E300D visuel
+Démo phare d'urgence,demolition,cercle,,,Phare d'urgence existant à démanteler,E300D visuel
+Démo enseigne de sortie,demolition,cercle,,,Enseigne de sortie existante (AR) à démanteler,E300D visuel
+Démo interrupteur,demolition,cercle,,,Interrupteur existant à démanteler,E300D visuel
+Démo carré-cercle — à classer,demolition,carre,,,Symbole carré avec cercle existant en rouge (démolition) sans légende,E300D visuel
