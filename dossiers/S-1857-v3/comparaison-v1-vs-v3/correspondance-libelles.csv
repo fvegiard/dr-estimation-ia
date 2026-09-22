@@ -1,0 +1,58 @@
+libelle_humain,libelle_ia,proportion,appariees,humain,ia_libelle_total,humain_groupe,ecart_groupe,libelles_humains_partages,manquantes_ia,meme_position_libelle_different,repartition
+Prise duplex,Prise duplex 20A,0.84,213,226,228,226,2,,13,35,Prise duplex 20A=178 ; Prise duplex 15A=23 ; Prise duplex 20A à 1070mm=9 ; Prise DDFT 20A=2 ; Prise sécheuse 30A (S)=1
+Luminaire DS1,Luminaire DS1,0.97,201,201,195,201,-6,,0,6,Luminaire DS1=195 ; Luminaire DS1 service continu=6
+Luminaire DS0,Luminaire DS0,1.00,176,176,176,176,0,,0,0,Luminaire DS0=176
+Détecteur inoccupation Do,Détecteur inoccupation plafond (Do),0.74,98,98,73,98,-25,,0,25,Détecteur inoccupation plafond (Do)=73 ; Détecteur inoccupation mural (Do)=25
+Klaxon,Klaxon alarme (K),0.99,82,82,95,82,13,,0,1,Klaxon alarme (K)=81 ; Avertisseur sonore/visuel (K)=1
+Bouton-poussoir B,Bouton-poussoir (B),1.00,58,58,58,58,0,,0,0,Bouton-poussoir (B)=58
+Luminaire DR5,Luminaire DR5,1.00,50,50,50,50,0,,0,0,Luminaire DR5=50
+Luminaire DR51,Luminaire DR51,1.00,43,43,43,43,0,,0,0,Luminaire DR51=43
+Sortie data,Sortie data,0.81,32,41,41,41,0,,9,6,Sortie data=26 ; Prise duplex 20A=6
+Détecteur occupation Di,Détecteur infrarouge plafond (Di),1.00,40,40,40,40,0,,0,0,Détecteur infrarouge plafond (Di)=40
+Enseigne de sortie,Enseigne issue 1 face murale tout droit,0.43,28,28,12,28,-16,,0,16,Enseigne issue 1 face murale tout droit=12 ; Enseigne issue 1 face plafond tout droit=5 ; Enseigne issue 2 faces murale=4 ; Enseigne issue 1 face murale (flèche)=4 ; Enseigne issue 1 face plafond (flèche)=2 ; Enseigne issue 2 faces plafond=1
+Raccord CC équipement,Raccord direct équipement (▲CC),0.80,20,22,18,22,-4,,2,4,Raccord direct équipement (▲CC)=16 ; Raccord chauffe-eau (CE)=2 ; Coupe-circuit NEMA 3R (CC)=2
+Phare double,Phare urgence double mural,1.00,21,21,21,21,0,,0,0,Phare urgence double mural=21
+Prise mobilier,Prise 20A dans mobilier,0.81,16,17,17,17,0,,1,3,Prise 20A dans mobilier=13 ; Prise 20A au plancher=3
+Accumulateur 36W + enseigne,Accumulateur c/a 2 phares + enseigne,0.87,15,15,16,18,-2,Accumulateur 18W + enseigne ; Accumulateur 36W + enseigne,0,2,Accumulateur c/a 2 phares + enseigne=13 ; Accumulateur c/a 2 phares + enseigne (flèche)=2
+Prise duplex DDFT,Prise DDFT 20A,1.00,14,15,21,15,6,,1,0,Prise DDFT 20A=14
+Sortie data mobilier,Sortie data dans mobilier,0.64,11,12,9,12,-3,,1,4,Sortie data dans mobilier=7 ; Sortie data=4
+Luminaire DR52,Luminaire DR52 service continu,0.91,11,11,10,11,-1,,0,1,Luminaire DR52 service continu=10 ; Luminaire DR52=1
+Phare simple PH1,Phare urgence simple mural,1.00,11,11,12,12,0,Phare simple PH1 ; Phare simple — sans étiquette,0,0,Phare urgence simple mural=11
+Luminaire mural DMW1,Luminaire DMW1,1.00,10,10,10,10,0,,0,0,Luminaire DMW1=10
+Poste manuel,Poste manuel (M),1.00,9,9,11,9,2,,0,0,Poste manuel (M)=9
+Prise micro-onde,Prise 20A micro-onde (MO),1.00,9,9,11,9,2,,0,0,Prise 20A micro-onde (MO)=9
+Luminaire DW4,Luminaire DW4,1.00,8,8,8,8,0,,0,0,Luminaire DW4=8
+Accumulateur 36W,Accumulateur c/a 2 phares,1.00,6,6,6,6,0,,0,0,Accumulateur c/a 2 phares=6
+Interrupteur fin de course Ls,Interrupteur fin de course (Ls),1.00,6,6,6,6,0,,0,0,Interrupteur fin de course (Ls)=6
+Module de supervision Sx,Module de supervision (Sx),1.00,6,6,6,6,0,,0,0,Module de supervision (Sx)=6
+Raccord lave-vaisselle,Raccord lave-vaisselle (LV),1.00,6,6,7,6,1,,0,0,Raccord lave-vaisselle (LV)=6
+Indicateur de débit ID,Indicateur de débit (ID),1.00,5,5,5,5,0,,0,0,Indicateur de débit (ID)=5
+Interrupteur,Interrupteur unipolaire,0.80,5,5,4,5,-1,,0,1,Interrupteur unipolaire=4 ; Interrupteur c/a lampe témoin=1
+Panneau,Panneau de dérivation,1.00,5,5,6,5,1,,0,0,Panneau de dérivation=5
+Luminaire DR2,Luminaire DR2,1.00,4,4,4,4,0,,0,0,Luminaire DR2=4
+Raccord sèche-main,Sèche-mains (SM),1.00,4,4,6,4,2,,0,0,Sèche-mains (SM)=4
+Accumulateur 18W + enseigne,Accumulateur c/a 2 phares + enseigne,1.00,3,3,16,18,-2,Accumulateur 18W + enseigne ; Accumulateur 36W + enseigne,0,0,Accumulateur c/a 2 phares + enseigne=3
+Cercle barré fléché — à classer,Gradateur 3 voies,0.67,3,3,2,3,-1,,0,1,Gradateur 3 voies=2 ; Gradateur 120V=1
+Détecteur de fumée,Détecteur de fumée (F),1.00,3,3,6,3,3,,0,0,Détecteur de fumée (F)=3
+Luminaire DS4,Luminaire DS4,1.00,3,3,3,3,0,,0,0,Luminaire DS4=3
+Prise DDFT Ei,Prise DDFT intempéries,1.00,3,3,6,3,3,,0,0,Prise DDFT intempéries=3
+Prise cuisinière C,Prise cuisinière 50A (C),1.00,3,3,3,3,0,,0,0,Prise cuisinière 50A (C)=3
+Raccord pompe,Raccord pompe (▼) — à classer,1.00,3,3,3,3,0,,0,0,Raccord pompe (▼) — à classer=3
+Avertisseur visuel,,0.00,0,2,0,2,,,2,0,
+Bloc d'alimentation Ba,Bloc d'alimentation (Ba),1.00,2,2,2,2,0,,0,0,Bloc d'alimentation (Ba)=2
+Luminaire DS2,Luminaire DS2,1.00,2,2,2,2,0,,0,0,Luminaire DS2=2
+Luminaire ovale — à classer,Luminaire ovale suspendu — à classer,1.00,2,2,2,2,0,,0,0,Luminaire ovale suspendu — à classer=2
+Sectionneur,Sectionneur 600A,1.00,2,2,2,2,0,,0,0,Sectionneur 600A=2
+Transformateur,Transformateur (Xfo),1.00,2,2,2,2,0,,0,0,Transformateur (Xfo)=2
+Klaxon Ei,,0.00,0,1,0,1,,,1,0,
+Luminaire DW42,Luminaire DW42 service continu,1.00,1,1,1,1,0,,0,0,Luminaire DW42 service continu=1
+Luminaire extérieur — à classer,Cellule photoélectrique,1.00,1,1,1,1,0,,0,0,Cellule photoélectrique=1
+Mesurage Hydro-Québec,Boîte de mesurage HQ (MHQ),1.00,1,1,1,1,0,,0,0,Boîte de mesurage HQ (MHQ)=1
+Module transmission TRA,Module de transmission (TRA),1.00,1,1,1,1,0,,0,0,Module de transmission (TRA)=1
+Panneau d'alarme PAI,Panneau alarme incendie (PAI),1.00,1,1,1,1,0,,0,0,Panneau alarme incendie (PAI)=1
+Phare simple — sans étiquette,Phare urgence simple mural,1.00,1,1,12,12,0,Phare simple PH1 ; Phare simple — sans étiquette,0,0,Phare urgence simple mural=1
+Poste-maître intercom PMI,Poste maître intercom (PMI),1.00,1,1,1,1,0,,0,0,Poste maître intercom (PMI)=1
+Raccord hotte Ht,Raccord hotte (Ht),1.00,1,1,1,1,0,,0,0,Raccord hotte (Ht)=1
+Raccord équipement — cédule,,0.00,0,1,0,1,,,1,0,
+Symbole vert pointillé — à classer,Aéroconvecteur plafond (ACP),1.00,1,1,1,1,0,,0,0,Aéroconvecteur plafond (ACP)=1
+TS — à classer,Thermostat tension secteur (Ts),1.00,1,1,1,1,0,,0,0,Thermostat tension secteur (Ts)=1
