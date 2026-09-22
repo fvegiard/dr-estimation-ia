@@ -1,0 +1,1702 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="S-1715">
+		<Description>118 RUE MATHIAS SALABERRY DE VALLEYFIELD</Description>
+		<ContactName></ContactName>
+		<ContactInfo></ContactInfo>
+		<JobNumber></JobNumber>
+		<Comment></Comment>
+		<CreationDate>2026/3/23</CreationDate>
+		<LastModified>2026/3/30</LastModified>
+		<DisplayResultsForAllPlans>False</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+		<ActivePlan Name="Électrique_Plans pour soumission - 6"/>
+		<RecentPlans>
+			<Plan Name="Électrique_Plans pour soumission - 6"/>
+			<Plan Name="ELectrique_Addenda ELE-002_Plans - 3"/>
+			<Plan Name="Électrique_Plans pour soumission - 8"/>
+			<Plan Name="ELectrique_Addenda ELE-002_Plans - 2"/>
+			<Plan Name="ELectrique_Addenda ELE-002_Plans - 4"/>
+			<Plan Name="Électrique_Plans pour soumission - 9"/>
+			<Plan Name="Électrique_Addenda ELE-001_Plans - 1"/>
+			<Plan Name="Électrique_Plans pour soumission - 2"/>
+			<Plan Name="Électrique_Addenda ELE-001_Plans - 3"/>
+			<Plan Name="Électrique_Addenda ELE-002 - 2"/>
+		</RecentPlans>
+	</Workspace>
+	<Plans>
+		<Plan Name="Électrique_Plans pour soumission - 1" FileName="Électrique_Plans pour soumission - 1.png">
+			<Thumbnail FileName="e42e1ac9-84e1-46a3-a0ec-999fbd005910"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 2" FileName="Électrique_Plans pour soumission - 2.png">
+			<Thumbnail FileName="2061163e-383b-468f-9ec3-710f296096d8"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="14" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 3" FileName="Électrique_Plans pour soumission - 3.png">
+			<Thumbnail FileName="a8c610ec-26e5-482e-a12a-883ea6fe37e6"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="80" X="3911" Y="553"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 4" FileName="Électrique_Plans pour soumission - 4.png">
+			<Thumbnail FileName="2ae597a6-1b5d-4d47-86fa-f1fa5871f7bf"/>
+			<Scale Value="200" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="38" X="1414" Y="2400"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="5051" Y="3057" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Line Name="1 1/4" GroupID="1" Color="-10496" PenWidth="9" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="2760" Y1="3662" X2="2760" Y2="4690" />
+						<Element X1="2762" Y1="4690" X2="3739" Y2="4690" />
+						<Element X1="3739" Y1="4694" X2="3739" Y2="4142" />
+						<Element X1="3741" Y1="4144" X2="4355" Y2="4144" />
+						<Element X1="4355" Y1="4137" X2="4359" Y2="4175" />
+					</Line>
+					<Line Name="cond 2 po 2/10 1/" GroupID="3" Color="-65536" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5792" Y1="2945" X2="4719" Y2="2945" />
+						<Element X1="4719" Y1="2942" X2="4438" Y2="2942" />
+						<Element X1="4438" Y1="2952" X2="4438" Y2="4106" />
+						<Element X1="4441" Y1="4104" X2="4368" Y2="4104" />
+						<Element X1="4370" Y1="4109" X2="4370" Y2="4172" />
+					</Line>
+					<Line Name="cond po vide" GroupID="5" Color="-65281" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4209" Y1="3355" X2="4465" Y2="3355" />
+						<Element X1="4465" Y1="3363" X2="4465" Y2="4107" />
+						<Element X1="4475" Y1="4104" X2="4362" Y2="4104" />
+						<Element X1="4360" Y1="4102" X2="4370" Y2="4185" />
+					</Line>
+					<Line Name="cond pvc 4PO FIBRE" GroupID="7" Color="-16711936" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4718" Y1="1404" X2="4718" Y2="1638" />
+						<Element X1="4727" Y1="1638" X2="4733" Y2="1666" />
+						<Element X1="4735" Y1="1666" X2="4982" Y2="1972" />
+						<Element X1="4982" Y1="1972" X2="4991" Y2="1998" />
+						<Element X1="4991" Y1="1998" X2="4991" Y2="2470" />
+						<Element X1="4991" Y1="2472" X2="4984" Y2="2485" />
+						<Element X1="4984" Y1="2483" X2="4870" Y2="2596" />
+						<Element X1="4874" Y1="2600" X2="4874" Y2="2721" />
+						<Element X1="4876" Y1="2719" X2="4876" Y2="4024" />
+						<Element X1="4869" Y1="4024" X2="4852" Y2="4067" />
+						<Element X1="4852" Y1="4067" X2="4810" Y2="4090" />
+						<Element X1="4810" Y1="4088" X2="4295" Y2="4088" />
+					</Line>
+					<Line Name="cond   hp/" GroupID="8" Color="-7650029" PenWidth="2" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="2690" Y1="4147" X2="2690" Y2="4709" />
+						<Element X1="2689" Y1="4710" X2="3374" Y2="4710" />
+						<Element X1="3377" Y1="4712" X2="3790" Y2="4712" />
+						<Element X1="3790" Y1="4724" X2="3790" Y2="4112" />
+						<Element X1="3791" Y1="4113" X2="4290" Y2="4113" />
+						<Element X1="2688" Y1="3104" X2="2688" Y2="2547" />
+						<Element X1="2690" Y1="2554" X2="3154" Y2="2554" />
+						<Element X1="3154" Y1="2555" X2="3785" Y2="2555" />
+						<Element X1="3779" Y1="2552" X2="3779" Y2="4104" />
+						<Element X1="3785" Y1="4102" X2="4283" Y2="4102" />
+					</Line>
+					<Line Name="cond  po prise" GroupID="9" Color="-47872" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="3329" Y1="2548" X2="3786" Y2="2548" />
+						<Element X1="3786" Y1="2550" X2="3786" Y2="2958" />
+						<Element X1="3787" Y1="2954" X2="3787" Y2="4104" />
+						<Element X1="3805" Y1="4104" X2="4300" Y2="4104" />
+					</Line>
+					<Line Name="COND 4PO ENTRE ELECTRIQUE" GroupID="81" Color="-256" PenWidth="6" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="1500" Y1="1172" X2="1917" Y2="1397" />
+						<Element X1="1917" Y1="1396" X2="2302" Y2="1718" />
+						<Element X1="2296" Y1="1716" X2="2696" Y2="2447" />
+						<Element X1="2696" Y1="2447" X2="3555" Y2="2447" />
+						<Element X1="3555" Y1="2446" X2="4626" Y2="2539" />
+						<Element X1="4620" Y1="2536" X2="4620" Y2="4165" />
+						<Element X1="4617" Y1="4165" X2="4377" Y2="4165" />
+					</Line>
+					<Line Name="GRD" GroupID="82" Color="-989556" PenWidth="30" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4320" Y1="4185" X2="4320" Y2="4129" />
+						<Element X1="4318" Y1="4129" X2="4566" Y2="4129" />
+					</Line>
+					<Counter Name="LAMPADAIRE D1" GroupID="83" Shape="0" DefaultSize="51" Text="1" Color="-65536" PenWidth="2" PenType="Generic" FillColor="-65536" ShowMeasure="True" Visible="True">
+						<Element X="5749" Y="2918" Width="51" Height="51"/>
+						<Element X="4690" Y="2912" Width="51" Height="51"/>
+					</Counter>
+					<Counter Name="HPEXT" GroupID="119" Shape="1" DefaultSize="10" Text="1" Color="-16711936" PenWidth="2" PenType="Generic" FillColor="-16711936" ShowMeasure="True" Visible="True">
+						<Element X="3367" Y="4707" Width="10" Height="10"/>
+						<Element X="2687" Y="4149" Width="10" Height="10"/>
+						<Element X="2687" Y="3103" Width="10" Height="10"/>
+						<Element X="3144" Y="2551" Width="10" Height="10"/>
+						<Element X="3778" Y="3149" Width="10" Height="10"/>
+					</Counter>
+					<Counter Name="VIDEO" GroupID="120" Shape="1" DefaultSize="10" Text="1" Color="-1146130" PenWidth="2" PenType="Generic" FillColor="-1146130" ShowMeasure="True" Visible="True">
+						<Element X="3550" Y="4714" Width="10" Height="10"/>
+						<Element X="3317" Y="4712" Width="10" Height="10"/>
+					</Counter>
+					<Counter Name="3" GroupID="121" Shape="1" DefaultSize="10" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+						<Element X="3782" Y="2948" Width="10" Height="10"/>
+						<Element X="3321" Y="2539" Width="10" Height="10"/>
+					</Counter>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 5" FileName="Électrique_Plans pour soumission - 5.png">
+			<Thumbnail FileName="7b7dfdd7-dee9-437e-b9bb-5c2605efaf57"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="14" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="6201" Y="1765" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="fixt type a1" GroupID="10" Shape="1" DefaultSize="40" Text="1" Color="-12525360" PenWidth="2" PenType="Generic" FillColor="-12525360" ShowMeasure="True" Visible="True">
+						<Element X="3946" Y="1213" Width="81" Height="40"/>
+						<Element X="3954" Y="1318" Width="77" Height="40"/>
+						<Element X="3954" Y="1444" Width="82" Height="40"/>
+						<Element X="3955" Y="1524" Width="81" Height="40"/>
+						<Element X="3954" Y="1647" Width="80" Height="40"/>
+						<Element X="3952" Y="1791" Width="83" Height="40"/>
+						<Element X="4035" Y="1873" Width="85" Height="40"/>
+						<Element X="4374" Y="1218" Width="81" Height="40"/>
+						<Element X="4503" Y="1216" Width="83" Height="40"/>
+						<Element X="4660" Y="1258" Width="81" Height="40"/>
+					</Counter>
+					<Counter Name="fixt type l3" GroupID="11" Shape="1" DefaultSize="20" Text="1" Color="-8388864" PenWidth="2" PenType="Generic" FillColor="-8388864" ShowMeasure="True" Visible="True">
+						<Element X="5393" Y="1253" Width="81" Height="8"/>
+						<Element X="5630" Y="1252" Width="83" Height="12"/>
+						<Element X="5396" Y="1406" Width="78" Height="10"/>
+						<Element X="5631" Y="1407" Width="78" Height="10"/>
+						<Element X="5630" Y="1557" Width="75" Height="11"/>
+						<Element X="5398" Y="1558" Width="77" Height="10"/>
+						<Element X="5395" Y="1710" Width="82" Height="11"/>
+						<Element X="5399" Y="1861" Width="79" Height="11"/>
+						<Element X="5629" Y="1710" Width="84" Height="11"/>
+						<Element X="5627" Y="1858" Width="86" Height="12"/>
+						<Element X="5181" Y="1246" Width="82" Height="7"/>
+						<Element X="5184" Y="1370" Width="77" Height="7"/>
+						<Element X="4849" Y="1245" Width="83" Height="8"/>
+						<Element X="4852" Y="1369" Width="78" Height="8"/>
+					</Counter>
+					<Counter Name="fixt type l4" GroupID="12" Shape="1" DefaultSize="26" Text="1" Color="-989556" PenWidth="2" PenType="Generic" FillColor="-989556" ShowMeasure="True" Visible="True">
+						<Element X="4890" Y="1497" Width="81" Height="7"/>
+						<Element X="4892" Y="1624" Width="80" Height="10"/>
+						<Element X="4892" Y="1750" Width="79" Height="7"/>
+						<Element X="4890" Y="1877" Width="85" Height="7"/>
+						<Element X="5138" Y="1876" Width="84" Height="8"/>
+						<Element X="5139" Y="1750" Width="83" Height="10"/>
+						<Element X="5136" Y="1621" Width="84" Height="8"/>
+						<Element X="5139" Y="1496" Width="81" Height="10"/>
+						<Element X="5015" Y="1242" Width="85" Height="9"/>
+						<Element X="5018" Y="1368" Width="79" Height="9"/>
+					</Counter>
+					<Counter Name="FIXT TYPE L1" GroupID="13" Shape="1" DefaultSize="26" Text="1" Color="-1146130" PenWidth="2" PenType="Generic" FillColor="-1146130" ShowMeasure="True" Visible="True">
+						<Element X="4162" Y="1266" Width="165" Height="10"/>
+						<Element X="4161" Y="1389" Width="170" Height="10"/>
+					</Counter>
+					<Counter Name="FIXT  TYPE L2" GroupID="14" Shape="1" DefaultSize="17" Text="1" Color="-5247250" PenWidth="2" PenType="Generic" FillColor="-5247250" ShowMeasure="True" Visible="True">
+						<Element X="4163" Y="1843" Width="580" Height="7"/>
+						<Element X="4164" Y="1678" Width="575" Height="7"/>
+						<Element X="4164" Y="1514" Width="577" Height="8"/>
+					</Counter>
+					<Counter Name="ENSEIGNE SORTIE" GroupID="15" Shape="1" DefaultSize="30" Text="1" Color="-24454" PenWidth="2" PenType="Generic" FillColor="-24454" ShowMeasure="True" Visible="True">
+						<Element X="5005" Y="1192" Width="35" Height="22"/>
+						<Element X="4238" Y="1190" Width="34" Height="24"/>
+						<Element X="4233" Y="1914" Width="36" Height="20"/>
+						<Element X="4835" Y="1912" Width="34" Height="20"/>
+						<Element X="5384" Y="1911" Width="29" Height="25"/>
+					</Counter>
+					<Counter Name="TETE DOUBLE" GroupID="16" Shape="0" DefaultSize="43" Text="1" Color="-2968436" PenWidth="2" PenType="Generic" FillColor="-2968436" ShowMeasure="True" Visible="True">
+						<Element X="5318" Y="1767" Width="43" Height="43"/>
+						<Element X="5751" Y="1200" Width="43" Height="43"/>
+						<Element X="5099" Y="1283" Width="43" Height="43"/>
+						<Element X="4579" Y="1407" Width="43" Height="43"/>
+						<Element X="4159" Y="1893" Width="43" Height="43"/>
+						<Element X="4159" Y="1424" Width="43" Height="43"/>
+						<Element X="4805" Y="1800" Width="43" Height="43"/>
+					</Counter>
+					<Counter Name="TETE SIMPLE" GroupID="17" Shape="0" DefaultSize="29" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+						<Element X="4354" Y="1297" Width="29" Height="29"/>
+						<Element X="4486" Y="1296" Width="29" Height="29"/>
+						<Element X="4714" Y="1300" Width="29" Height="29"/>
+					</Counter>
+					<Counter Name="BATTERIE UNIT 2T" GroupID="18" Shape="1" DefaultSize="48" Text="1" Color="-38476" PenWidth="2" PenType="Generic" FillColor="-38476" ShowMeasure="True" Visible="True">
+						<Element X="4890" Y="1406" Width="46" Height="21"/>
+					</Counter>
+					<Counter Name="DECT 360" GroupID="19" Shape="0" DefaultSize="37" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+						<Element X="4268" Y="1584" Width="37" Height="37"/>
+						<Element X="4682" Y="1589" Width="37" Height="37"/>
+						<Element X="5041" Y="1669" Width="37" Height="37"/>
+						<Element X="5539" Y="1733" Width="37" Height="37"/>
+						<Element X="5537" Y="1355" Width="37" Height="37"/>
+						<Element X="4271" Y="1298" Width="37" Height="37"/>
+						<Element X="4050" Y="1218" Width="37" Height="37"/>
+						<Element X="3979" Y="1484" Width="37" Height="37"/>
+						<Element X="3950" Y="1836" Width="37" Height="37"/>
+						<Element X="4873" Y="1284" Width="37" Height="37"/>
+						<Element X="5205" Y="1284" Width="37" Height="37"/>
+					</Counter>
+					<Counter Name="INT GR" GroupID="20" Shape="0" DefaultSize="28" Text="1" Color="-12156236" PenWidth="2" PenType="Generic" FillColor="-12156236" ShowMeasure="True" Visible="True">
+						<Element X="4369" Y="1916" Width="28" Height="28"/>
+						<Element X="4128" Y="1791" Width="28" Height="28"/>
+						<Element X="3923" Y="1684" Width="28" Height="28"/>
+						<Element X="4346" Y="1342" Width="28" Height="28"/>
+					</Counter>
+					<Counter Name="INT 1 VOIE" GroupID="21" Shape="0" DefaultSize="30" Text="1" Color="-23296" PenWidth="2" PenType="Generic" FillColor="-23296" ShowMeasure="True" Visible="True">
+						<Element X="5316" Y="1859" Width="30" Height="30"/>
+						<Element X="5314" Y="1884" Width="30" Height="30"/>
+						<Element X="4945" Y="1326" Width="30" Height="30"/>
+						<Element X="4377" Y="1309" Width="30" Height="30"/>
+						<Element X="4508" Y="1307" Width="30" Height="30"/>
+						<Element X="4683" Y="1310" Width="30" Height="30"/>
+						<Element X="4724" Y="1335" Width="30" Height="30"/>
+						<Element X="5133" Y="1329" Width="30" Height="30"/>
+						<Element X="4130" Y="1190" Width="30" Height="30"/>
+					</Counter>
+					<Counter Name="FIXT TYPE R2" GroupID="22" Shape="0" DefaultSize="23" Text="1" Color="-3308225" PenWidth="2" PenType="Generic" FillColor="-3308225" ShowMeasure="True" Visible="True">
+						<Element X="4397" Y="1380" Width="23" Height="23"/>
+						<Element X="4518" Y="1383" Width="23" Height="23"/>
+						<Element X="4644" Y="1383" Width="23" Height="23"/>
+						<Element X="4764" Y="1350" Width="23" Height="23"/>
+					</Counter>
+					<Counter Name="FIXT TYPE M1" GroupID="23" Shape="0" DefaultSize="34" Text="1" Color="-4144960" PenWidth="2" PenType="Generic" FillColor="-4144960" ShowMeasure="True" Visible="True">
+						<Element X="5466" Y="1973" Width="34" Height="34"/>
+						<Element X="5820" Y="1702" Width="34" Height="34"/>
+						<Element X="5060" Y="1117" Width="34" Height="34"/>
+						<Element X="4325" Y="1121" Width="34" Height="34"/>
+						<Element X="3837" Y="1570" Width="34" Height="34"/>
+					</Counter>
+					<Counter Name="INT 3 VOIE" GroupID="24" Shape="0" DefaultSize="30" Text="1" Color="-7667712" PenWidth="2" PenType="Generic" FillColor="-7667712" ShowMeasure="True" Visible="True">
+						<Element X="4805" Y="1843" Width="30" Height="30"/>
+						<Element X="4803" Y="1874" Width="30" Height="30"/>
+						<Element X="5112" Y="1177" Width="30" Height="30"/>
+						<Element X="5084" Y="1179" Width="30" Height="30"/>
+					</Counter>
+					<Counter Name="KLAXON" GroupID="25" Shape="1" DefaultSize="34" Text="1" Color="-16777077" PenWidth="2" PenType="Generic" FillColor="-16777077" ShowMeasure="True" Visible="True">
+						<Element X="4315" Y="1307" Width="34" Height="34"/>
+						<Element X="5098" Y="1325" Width="34" Height="34"/>
+					</Counter>
+					<Counter Name="STROB" GroupID="26" Shape="1" DefaultSize="27" Text="1" Color="-16744448" PenWidth="2" PenType="Generic" FillColor="-16744448" ShowMeasure="True" Visible="True">
+						<Element X="5318" Y="1568" Width="27" Height="27"/>
+					</Counter>
+					<Counter Name="STATION MANUEL" GroupID="27" Shape="1" DefaultSize="29" Text="1" Color="-8388480" PenWidth="2" PenType="Generic" FillColor="-8388480" ShowMeasure="True" Visible="True">
+						<Element X="4804" Y="1906" Width="29" Height="29"/>
+						<Element X="5318" Y="1916" Width="29" Height="29"/>
+						<Element X="5060" Y="1179" Width="29" Height="29"/>
+						<Element X="4316" Y="1186" Width="29" Height="29"/>
+						<Element X="4320" Y="1917" Width="29" Height="29"/>
+					</Counter>
+					<Counter Name="DETECTEUR FUMÉ" GroupID="28" Shape="0" DefaultSize="30" Text="1" Color="-16744320" PenWidth="2" PenType="Generic" FillColor="-16744320" ShowMeasure="True" Visible="True">
+						<Element X="4052" Y="1797" Width="30" Height="30"/>
+						<Element X="4061" Y="1527" Width="30" Height="30"/>
+						<Element X="4053" Y="1256" Width="30" Height="30"/>
+						<Element X="4086" Y="1236" Width="30" Height="30"/>
+						<Element X="4156" Y="1206" Width="30" Height="30"/>
+						<Element X="4276" Y="1547" Width="30" Height="30"/>
+						<Element X="4687" Y="1543" Width="30" Height="30"/>
+						<Element X="4918" Y="1289" Width="30" Height="30"/>
+						<Element X="5045" Y="1592" Width="30" Height="30"/>
+						<Element X="5163" Y="1289" Width="30" Height="30"/>
+						<Element X="5539" Y="1301" Width="30" Height="30"/>
+						<Element X="5540" Y="1794" Width="30" Height="30"/>
+					</Counter>
+					<Counter Name="RA" GroupID="29" Shape="1" DefaultSize="26" Text="1" Color="-9404272" PenWidth="2" PenType="Generic" FillColor="-9404272" ShowMeasure="True" Visible="True">
+						<Element X="4161" Y="1182" Width="26" Height="26"/>
+						<Element X="4128" Y="1249" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="FIXT TYPE R1" GroupID="30" Shape="0" DefaultSize="82" Text="1" Color="-65536" PenWidth="2" PenType="Generic" FillColor="-65536" ShowMeasure="True" Visible="True">
+						<Element X="1854" Y="3225" Width="82" Height="82"/>
+						<Element X="2291" Y="2823" Width="82" Height="82"/>
+						<Element X="2405" Y="3234" Width="82" Height="82"/>
+						<Element X="2412" Y="3749" Width="82" Height="82"/>
+						<Element X="2299" Y="4159" Width="82" Height="82"/>
+						<Element X="1857" Y="3747" Width="82" Height="82"/>
+						<Element X="2818" Y="2819" Width="82" Height="82"/>
+						<Element X="2961" Y="3232" Width="82" Height="82"/>
+						<Element X="2963" Y="3749" Width="82" Height="82"/>
+						<Element X="2816" Y="4159" Width="82" Height="82"/>
+						<Element X="3367" Y="4161" Width="82" Height="82"/>
+						<Element X="3508" Y="3747" Width="82" Height="82"/>
+						<Element X="3510" Y="3232" Width="82" Height="82"/>
+						<Element X="3363" Y="2819" Width="82" Height="82"/>
+						<Element X="3850" Y="2813" Width="82" Height="82"/>
+						<Element X="4337" Y="2813" Width="82" Height="82"/>
+						<Element X="4191" Y="3236" Width="82" Height="82"/>
+						<Element X="4188" Y="3747" Width="82" Height="82"/>
+						<Element X="3852" Y="4157" Width="82" Height="82"/>
+						<Element X="4333" Y="4155" Width="82" Height="82"/>
+						<Element X="4746" Y="3744" Width="82" Height="82"/>
+						<Element X="4737" Y="3230" Width="82" Height="82"/>
+						<Element X="4882" Y="2817" Width="82" Height="82"/>
+						<Element X="5399" Y="2817" Width="82" Height="82"/>
+						<Element X="5842" Y="3230" Width="82" Height="82"/>
+						<Element X="5303" Y="3225" Width="82" Height="82"/>
+						<Element X="5295" Y="3753" Width="82" Height="82"/>
+						<Element X="5839" Y="3747" Width="82" Height="82"/>
+						<Element X="5397" Y="4153" Width="82" Height="82"/>
+						<Element X="4876" Y="4149" Width="82" Height="82"/>
+					</Counter>
+					<Counter Name="FIXT TYPE P1" GroupID="31" Shape="0" DefaultSize="27" Text="1" Color="-12525360" PenWidth="2" PenType="Generic" FillColor="-12525360" ShowMeasure="True" Visible="True">
+						<Element X="5673" Y="4597" Width="27" Height="27"/>
+						<Element X="4477" Y="4598" Width="27" Height="27"/>
+						<Element X="3279" Y="4600" Width="27" Height="27"/>
+						<Element X="2074" Y="4601" Width="27" Height="27"/>
+						<Element X="2079" Y="2435" Width="27" Height="27"/>
+						<Element X="3278" Y="2433" Width="27" Height="27"/>
+						<Element X="5673" Y="2432" Width="27" Height="27"/>
+						<Element X="4476" Y="2433" Width="27" Height="27"/>
+					</Counter>
+					<Counter Name="P.R" GroupID="32" Shape="1" DefaultSize="19" Text="1" Color="-65536" PenWidth="2" PenType="Generic" FillColor="-65536" ShowMeasure="True" Visible="True">
+						<Element X="4954" Y="1285" Width="19" Height="40"/>
+					</Counter>
+					<Counter Name="PRISE" GroupID="33" Shape="0" DefaultSize="26" Text="1" Color="-10496" PenWidth="2" PenType="Generic" FillColor="-10496" ShowMeasure="True" Visible="True">
+						<Element X="4936" Y="1402" Width="26" Height="26"/>
+					</Counter>
+					<Line Name="URG 3/10" GroupID="98" Color="-16776961" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5403" Y1="1949" X2="5320" Y2="1949" />
+						<Element X1="5320" Y1="1950" X2="5320" Y2="1807" />
+						<Element X1="5322" Y1="1809" X2="5322" Y2="1210" />
+						<Element X1="5317" Y1="1212" X2="5800" Y2="1212" />
+						<Element X1="4852" Y1="1939" X2="4811" Y2="1939" />
+						<Element X1="4811" Y1="1941" X2="4811" Y2="1830" />
+						<Element X1="4805" Y1="1830" X2="4805" Y2="1421" />
+						<Element X1="4811" Y1="1422" X2="4900" Y2="1433" />
+						<Element X1="4915" Y1="1433" X2="5135" Y2="1433" />
+						<Element X1="5135" Y1="1439" X2="5135" Y2="1310" />
+						<Element X1="5132" Y1="1310" X2="5132" Y2="1196" />
+						<Element X1="5135" Y1="1196" X2="5040" Y2="1184" />
+						<Element X1="5040" Y1="1184" X2="5786" Y2="1184" />
+						<Element X1="5786" Y1="1184" X2="5786" Y2="1216" />
+						<Element X1="4906" Y1="1424" X2="4808" Y2="1424" />
+						<Element X1="4808" Y1="1426" X2="4808" Y2="1335" />
+						<Element X1="4803" Y1="1333" X2="4371" Y2="1333" />
+						<Element X1="4372" Y1="1336" X2="4372" Y2="1201" />
+						<Element X1="4383" Y1="1202" X2="4260" Y2="1202" />
+						<Element X1="4260" Y1="1199" X2="4169" Y2="1199" />
+						<Element X1="4169" Y1="1202" X2="4169" Y2="1456" />
+						<Element X1="4152" Y1="1458" X2="4152" Y2="1936" />
+						<Element X1="4157" Y1="1935" X2="4262" Y2="1935" />
+						<Element X1="4500" Y1="1329" X2="4603" Y2="1329" />
+						<Element X1="4602" Y1="1327" X2="4602" Y2="1435" />
+					</Line>
+					<Line Name="3/16 KLAXON" GroupID="99" Color="-7667712" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5324" Y1="1579" X2="5127" Y2="1579" />
+						<Element X1="5123" Y1="1580" X2="5123" Y2="1342" />
+						<Element X1="5129" Y1="1340" X2="4350" Y2="1340" />
+						<Element X1="4350" Y1="1348" X2="4350" Y2="1248" />
+					</Line>
+					<Line Name="3/16 STA" GroupID="100" Color="-16744448" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4329" Y1="1940" X2="4822" Y2="1940" />
+						<Element X1="4822" Y1="1956" X2="5331" Y2="1956" />
+						<Element X1="4333" Y1="1940" X2="4067" Y2="1940" />
+						<Element X1="4067" Y1="1936" X2="4067" Y2="1273" />
+						<Element X1="4072" Y1="1273" X2="4068" Y2="1249" />
+						<Element X1="4068" Y1="1250" X2="4107" Y2="1255" />
+						<Element X1="4107" Y1="1255" X2="4151" Y2="1255" />
+						<Element X1="4151" Y1="1255" X2="4172" Y2="1255" />
+						<Element X1="4172" Y1="1257" X2="4172" Y2="1183" />
+						<Element X1="4175" Y1="1183" X2="4345" Y2="1183" />
+						<Element X1="4345" Y1="1187" X2="4345" Y2="1319" />
+						<Element X1="4340" Y1="1318" X2="4947" Y2="1318" />
+						<Element X1="4947" Y1="1326" X2="5193" Y2="1326" />
+						<Element X1="5193" Y1="1326" X2="5558" Y2="1326" />
+						<Element X1="5557" Y1="1356" X2="5557" Y2="1815" />
+						<Element X1="4938" Y1="1308" X2="4938" Y2="1614" />
+						<Element X1="4940" Y1="1614" X2="5071" Y2="1614" />
+						<Element X1="5071" Y1="1618" X2="5186" Y2="1618" />
+						<Element X1="5186" Y1="1617" X2="5186" Y2="1302" />
+						<Element X1="4082" Y1="1548" X2="4706" Y2="1548" />
+						<Element X1="4705" Y1="1555" X2="4078" Y2="1555" />
+					</Line>
+					<Line Name="ECL3/12" GroupID="101" Color="-8388480" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5476" Y1="1955" X2="5817" Y2="1955" />
+						<Element X1="5817" Y1="1946" X2="5817" Y2="1170" />
+						<Element X1="5814" Y1="1163" X2="4334" Y2="1163" />
+						<Element X1="4334" Y1="1157" X2="3881" Y2="1157" />
+						<Element X1="3881" Y1="1157" X2="3881" Y2="1591" />
+						<Element X1="5093" Y1="1166" X2="4813" Y2="1166" />
+						<Element X1="4813" Y1="1166" X2="4813" Y2="1401" />
+					</Line>
+					<Line Name="COND 3/4 ECL CONT" GroupID="102" Color="-16744320" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="3968" Y1="1845" X2="3968" Y2="1286" />
+						<Element X1="3978" Y1="1286" X2="4976" Y2="1286" />
+						<Element X1="4005" Y1="1512" X2="4005" Y2="1297" />
+						<Element X1="4013" Y1="1298" X2="4967" Y2="1298" />
+						<Element X1="4061" Y1="1232" X2="4969" Y2="1232" />
+						<Element X1="4968" Y1="1236" X2="4968" Y2="1315" />
+						<Element X1="4285" Y1="1615" X2="4699" Y2="1615" />
+						<Element X1="4698" Y1="1615" X2="4698" Y2="1284" />
+						<Element X1="4692" Y1="1283" X2="4900" Y2="1283" />
+						<Element X1="5558" Y1="1757" X2="5558" Y2="1376" />
+						<Element X1="5564" Y1="1376" X2="4965" Y2="1376" />
+						<Element X1="4965" Y1="1369" X2="4965" Y2="1311" />
+						<Element X1="4829" Y1="1897" X2="5061" Y2="1897" />
+						<Element X1="5061" Y1="1897" X2="5061" Y2="1304" />
+						<Element X1="5058" Y1="1304" X2="4968" Y2="1312" />
+						<Element X1="4817" Y1="1859" X2="5060" Y2="1859" />
+						<Element X1="5060" Y1="1859" X2="5060" Y2="1314" />
+						<Element X1="5065" Y1="1315" X2="4881" Y2="1315" />
+						<Element X1="5234" Y1="1290" X2="4972" Y2="1290" />
+						<Element X1="4389" Y1="1340" X2="4960" Y2="1340" />
+						<Element X1="4962" Y1="1336" X2="4968" Y2="1300" />
+						<Element X1="4527" Y1="1328" X2="4967" Y2="1328" />
+						<Element X1="4967" Y1="1325" X2="4967" Y2="1291" />
+						<Element X1="4688" Y1="1317" X2="4957" Y2="1317" />
+						<Element X1="4957" Y1="1317" X2="4951" Y2="1290" />
+						<Element X1="4141" Y1="1936" X2="4141" Y2="1245" />
+						<Element X1="4148" Y1="1243" X2="4967" Y2="1243" />
+						<Element X1="4968" Y1="1245" X2="4968" Y2="1321" />
+						<Element X1="5330" Y1="1907" X2="5330" Y2="1742" />
+						<Element X1="5324" Y1="1743" X2="5529" Y2="1743" />
+					</Line>
+					<Line Name="ECL 3/12" GroupID="103" Color="-47872" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4168" Y1="1848" X2="4168" Y2="1511" />
+						<Element X1="4664" Y1="1398" X2="4162" Y2="1398" />
+						<Element X1="4162" Y1="1398" X2="4162" Y2="1271" />
+						<Element X1="4014" Y1="1867" X2="4014" Y2="1226" />
+						<Element X1="4013" Y1="1224" X2="4972" Y2="1224" />
+						<Element X1="4669" Y1="1395" X2="4972" Y2="1395" />
+						<Element X1="4971" Y1="1397" X2="4971" Y2="1291" />
+						<Element X1="5634" Y1="1857" X2="5634" Y2="1253" />
+						<Element X1="5637" Y1="1255" X2="5402" Y2="1255" />
+						<Element X1="5402" Y1="1250" X2="5402" Y2="1860" />
+						<Element X1="5406" Y1="1250" X2="4961" Y2="1250" />
+						<Element X1="5138" Y1="1884" X2="5138" Y2="1500" />
+						<Element X1="5155" Y1="1881" X2="4895" Y2="1881" />
+						<Element X1="4895" Y1="1863" X2="4895" Y2="1253" />
+						<Element X1="4883" Y1="1255" X2="4993" Y2="1267" />
+						<Element X1="4174" Y1="1525" X2="4174" Y2="1253" />
+						<Element X1="4188" Y1="1253" X2="4967" Y2="1253" />
+					</Line>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 6" FileName="Électrique_Plans pour soumission - 6.png">
+			<Thumbnail FileName="3dbd44dc-9cd9-4610-8c1c-570471856f1d"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="68" X="3432" Y="1889"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4650" Y="2072" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="B1000W" GroupID="34" Shape="1" DefaultSize="15" Text="1" Color="-8388864" PenWidth="2" PenType="Generic" FillColor="-8388864" ShowMeasure="True" Visible="True">
+						<Element X="3976" Y="1181" Width="80" Height="10"/>
+					</Counter>
+					<Counter Name="B1500W" GroupID="35" Shape="1" DefaultSize="20" Text="1" Color="-989556" PenWidth="2" PenType="Generic" FillColor="-989556" ShowMeasure="True" Visible="True">
+						<Element X="3902" Y="1558" Width="11" Height="116"/>
+					</Counter>
+					<Counter Name="B1250W" GroupID="36" Shape="1" DefaultSize="17" Text="1" Color="-1146130" PenWidth="2" PenType="Generic" FillColor="-1146130" ShowMeasure="True" Visible="True">
+						<Element X="3903" Y="1813" Width="8" Height="109"/>
+						<Element X="3936" Y="1935" Width="94" Height="5"/>
+					</Counter>
+					<Counter Name="B2500W" GroupID="37" Shape="1" DefaultSize="22" Text="1" Color="-5247250" PenWidth="2" PenType="Generic" FillColor="-5247250" ShowMeasure="True" Visible="True">
+						<Element X="4456" Y="1938" Width="180" Height="8"/>
+					</Counter>
+					<Counter Name="B500W" GroupID="38" Shape="1" DefaultSize="20" Text="1" Color="-24454" PenWidth="2" PenType="Generic" FillColor="-24454" ShowMeasure="True" Visible="True">
+						<Element X="4670" Y="1181" Width="51" Height="10"/>
+						<Element X="4809" Y="1352" Width="9" Height="55"/>
+						<Element X="4351" Y="1228" Width="8" Height="61"/>
+						<Element X="4483" Y="1231" Width="8" Height="53"/>
+						<Element X="5215" Y="1182" Width="49" Height="7"/>
+					</Counter>
+					<Counter Name="A1500W" GroupID="39" Shape="1" DefaultSize="28" Text="1" Color="-2968436" PenWidth="2" PenType="Generic" FillColor="-2968436" ShowMeasure="True" Visible="True">
+						<Element X="5128" Y="1196" Width="12" Height="28"/>
+						<Element X="4330" Y="1199" Width="28" Height="14"/>
+						<Element X="4339" Y="1929" Width="9" Height="28"/>
+					</Counter>
+					<Counter Name="T4000W" GroupID="40" Shape="1" DefaultSize="37" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+						<Element X="5735" Y="1890" Width="37" Height="37"/>
+					</Counter>
+					<Counter Name="RELAIS" GroupID="41" Shape="1" DefaultSize="24" Text="1" Color="-38476" PenWidth="2" PenType="Generic" FillColor="-38476" ShowMeasure="True" Visible="True">
+						<Element X="3912" Y="1632" Width="24" Height="24"/>
+						<Element X="4359" Y="1243" Width="24" Height="24"/>
+						<Element X="4494" Y="1246" Width="24" Height="24"/>
+						<Element X="4685" Y="1189" Width="24" Height="24"/>
+						<Element X="4813" Y="1370" Width="24" Height="24"/>
+						<Element X="5224" Y="1188" Width="24" Height="24"/>
+						<Element X="3987" Y="1191" Width="24" Height="24"/>
+						<Element X="3997" Y="1913" Width="24" Height="24"/>
+						<Element X="4604" Y="1912" Width="24" Height="24"/>
+					</Counter>
+					<Counter Name="T1500W" GroupID="42" Shape="1" DefaultSize="37" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+						<Element X="5259" Y="1443" Width="37" Height="37"/>
+					</Counter>
+					<Counter Name="SÉCHOIRE" GroupID="43" Shape="1" DefaultSize="30" Text="1" Color="-16711936" PenWidth="2" PenType="Generic" FillColor="-16711936" ShowMeasure="True" Visible="True">
+						<Element X="4579" Y="1230" Width="25" Height="37"/>
+						<Element X="4718" Y="1311" Width="36" Height="21"/>
+						<Element X="4447" Y="1227" Width="25" Height="41"/>
+					</Counter>
+					<Counter Name="SERPENTIN" GroupID="44" Shape="1" DefaultSize="31" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True">
+						<Element X="3943" Y="1307" Width="55" Height="35"/>
+						<Element X="4091" Y="1686" Width="57" Height="26"/>
+						<Element X="4076" Y="1835" Width="52" Height="34"/>
+						<Element X="4169" Y="1790" Width="31" Height="51"/>
+						<Element X="5435" Y="1228" Width="32" Height="50"/>
+						<Element X="5535" Y="1224" Width="28" Height="55"/>
+						<Element X="4998" Y="1346" Width="50" Height="24"/>
+					</Counter>
+					<Counter Name="PRISE" GroupID="33" Shape="0" DefaultSize="26" Text="1" Color="-10496" PenWidth="2" PenType="Generic" FillColor="-10496" ShowMeasure="True" Visible="True">
+						<Element X="3995" Y="1291" Width="26" Height="26"/>
+						<Element X="4092" Y="1362" Width="26" Height="26"/>
+						<Element X="4124" Y="1491" Width="26" Height="26"/>
+						<Element X="4127" Y="1616" Width="26" Height="26"/>
+						<Element X="3924" Y="1720" Width="26" Height="26"/>
+						<Element X="4130" Y="1794" Width="26" Height="26"/>
+						<Element X="4096" Y="1917" Width="26" Height="26"/>
+						<Element X="5085" Y="1694" Width="26" Height="26"/>
+						<Element X="5319" Y="1757" Width="26" Height="26"/>
+						<Element X="5765" Y="1578" Width="26" Height="26"/>
+						<Element X="5323" Y="1303" Width="26" Height="26"/>
+						<Element X="5137" Y="1312" Width="26" Height="26"/>
+						<Element X="4952" Y="1331" Width="26" Height="26"/>
+						<Element X="4921" Y="1403" Width="26" Height="26"/>
+						<Element X="4891" Y="1405" Width="26" Height="26"/>
+						<Element X="4862" Y="1404" Width="26" Height="26"/>
+						<Element X="4837" Y="1404" Width="26" Height="26"/>
+						<Element X="4818" Y="1405" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="PRISE USB" GroupID="46" Shape="0" DefaultSize="29" Text="1" Color="-23296" PenWidth="2" PenType="Generic" FillColor="-23296" ShowMeasure="True" Visible="True">
+						<Element X="4608" Y="1450" Width="29" Height="29"/>
+						<Element X="4766" Y="1577" Width="29" Height="29"/>
+					</Counter>
+					<Counter Name="GFI" GroupID="47" Shape="1" DefaultSize="24" Text="1" Color="-3308225" PenWidth="2" PenType="Generic" FillColor="-3308225" ShowMeasure="True" Visible="True">
+						<Element X="5275" Y="1523" Width="24" Height="24"/>
+						<Element X="4807" Y="1521" Width="24" Height="24"/>
+						<Element X="4807" Y="1762" Width="24" Height="24"/>
+						<Element X="5279" Y="1775" Width="24" Height="24"/>
+						<Element X="4362" Y="1460" Width="24" Height="24"/>
+						<Element X="3970" Y="1261" Width="24" Height="24"/>
+					</Counter>
+					<Counter Name="PRISE 15/20A" GroupID="48" Shape="0" DefaultSize="23" Text="1" Color="-4144960" PenWidth="2" PenType="Generic" FillColor="-4144960" ShowMeasure="True" Visible="True">
+						<Element X="4587" Y="1422" Width="23" Height="23"/>
+						<Element X="4163" Y="1702" Width="23" Height="23"/>
+						<Element X="4959" Y="1438" Width="23" Height="23"/>
+					</Counter>
+					<Counter Name="GFI WP" GroupID="49" Shape="1" DefaultSize="27" Text="1" Color="-7667712" PenWidth="2" PenType="Generic" FillColor="-7667712" ShowMeasure="True" Visible="True">
+						<Element X="5085" Y="1130" Width="27" Height="27"/>
+						<Element X="4897" Y="1969" Width="27" Height="27"/>
+						<Element X="5813" Y="1709" Width="27" Height="27"/>
+					</Counter>
+					<Counter Name="MOTEUR 1 HP 120V" GroupID="50" Shape="0" DefaultSize="25" Text="1" Color="-16777077" PenWidth="2" PenType="Generic" FillColor="-16777077" ShowMeasure="True" Visible="True">
+						<Element X="5485" Y="1231" Width="25" Height="25"/>
+						<Element X="5667" Y="1547" Width="25" Height="25"/>
+					</Counter>
+					<Counter Name="2510" GroupID="51" Shape="0" DefaultSize="26" Text="1" Color="-16744448" PenWidth="2" PenType="Generic" FillColor="-16744448" ShowMeasure="True" Visible="True">
+						<Element X="5276" Y="1847" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="MOTEUR .5 HP 120V" GroupID="52" Shape="0" DefaultSize="35" Text="1" Color="-10496" PenWidth="2" PenType="Generic" FillColor="-10496" ShowMeasure="True" Visible="True">
+						<Element X="5262" Y="1891" Width="35" Height="35"/>
+					</Counter>
+					<Counter Name="CHAUFFE-EAU" GroupID="53" Shape="1" DefaultSize="22" Text="1" Color="-8388480" PenWidth="2" PenType="Generic" FillColor="-8388480" ShowMeasure="True" Visible="True">
+						<Element X="5255" Y="1385" Width="22" Height="22"/>
+						<Element X="5251" Y="1315" Width="22" Height="22"/>
+						<Element X="5254" Y="1250" Width="22" Height="22"/>
+					</Counter>
+					<Counter Name="MOTEUR .25HP 120V" GroupID="54" Shape="0" DefaultSize="28" Text="1" Color="-16744320" PenWidth="2" PenType="Generic" FillColor="-16744320" ShowMeasure="True" Visible="True">
+						<Element X="5275" Y="1309" Width="28" Height="28"/>
+					</Counter>
+					<Counter Name="MOTEUR VC" GroupID="55" Shape="0" DefaultSize="31" Text="1" Color="-47872" PenWidth="2" PenType="Generic" FillColor="-47872" ShowMeasure="True" Visible="True">
+						<Element X="3958" Y="1632" Width="31" Height="31"/>
+					</Counter>
+					<Counter Name="MOTEUR ECH" GroupID="56" Shape="0" DefaultSize="25" Text="1" Color="-7650029" PenWidth="2" PenType="Generic" FillColor="-7650029" ShowMeasure="True" Visible="True">
+						<Element X="3962" Y="1405" Width="25" Height="25"/>
+					</Counter>
+					<Counter Name="MOTEUR VE-3" GroupID="57" Shape="0" DefaultSize="30" Text="1" Color="-9404272" PenWidth="2" PenType="Generic" FillColor="-9404272" ShowMeasure="True" Visible="True">
+						<Element X="4809" Y="1310" Width="30" Height="30"/>
+					</Counter>
+					<Counter Name="MOTEUR VE-1" GroupID="58" Shape="0" DefaultSize="30" Text="1" Color="-65536" PenWidth="2" PenType="Generic" FillColor="-65536" ShowMeasure="True" Visible="True">
+						<Element X="4945" Y="1476" Width="30" Height="30"/>
+					</Counter>
+					<Counter Name="MOTEUR VA-2" GroupID="59" Shape="0" DefaultSize="34" Text="1" Color="-12525360" PenWidth="2" PenType="Generic" FillColor="-12525360" ShowMeasure="True" Visible="True">
+						<Element X="5014" Y="1384" Width="34" Height="34"/>
+					</Counter>
+					<Counter Name="MOTEUR PERC" GroupID="60" Shape="0" DefaultSize="27" Text="1" Color="-8388864" PenWidth="2" PenType="Generic" FillColor="-8388864" ShowMeasure="True" Visible="True">
+						<Element X="5197" Y="1388" Width="27" Height="27"/>
+					</Counter>
+					<Counter Name="CONDENSEUR" GroupID="61" Shape="0" DefaultSize="29" Text="1" Color="-989556" PenWidth="2" PenType="Generic" FillColor="-989556" ShowMeasure="True" Visible="True">
+						<Element X="5812" Y="1632" Width="29" Height="29"/>
+					</Counter>
+					<Line Name="4poCOND 4X500 MCM 1/4" GroupID="84" Color="-7667712" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5784" Y1="1380" X2="5784" Y2="1247" />
+						<Element X1="5782" Y1="1247" X2="4812" Y2="1247" />
+					</Line>
+					<Counter Name="BOITIER CAMLOCK" GroupID="85" Shape="1" DefaultSize="19" Text="1" Color="-8388864" PenWidth="2" PenType="Generic" FillColor="-8388864" ShowMeasure="True" Visible="True">
+						<Element X="5737" Y="1967" Width="36" Height="19"/>
+					</Counter>
+					<Line Name="4X500MCM 1/4 4po cond" GroupID="86" Color="-8388480" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5785" Y1="1386" X2="5479" Y2="1386" />
+						<Element X1="5479" Y1="1387" X2="5479" Y2="1794" />
+					</Line>
+					<Line Name="4/10 CAML" GroupID="104" Color="-7650029" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5767" Y1="1968" X2="5000" Y2="1968" />
+						<Element X1="5000" Y1="1970" X2="5000" Y2="1273" />
+						<Element X1="4997" Y1="1273" X2="4973" Y2="1280" />
+					</Line>
+					<Line Name="3/6 CH" GroupID="106" Color="-9404272" PenWidth="4" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4811" Y1="1225" X2="5457" Y2="1225" />
+						<Element X1="4814" Y1="1242" X2="5555" Y2="1242" />
+						<Element X1="4823" Y1="1237" X2="5154" Y2="1237" />
+						<Element X1="5154" Y1="1233" X2="5159" Y2="1190" />
+						<Element X1="5158" Y1="1190" X2="5158" Y2="1403" />
+						<Element X1="5158" Y1="1402" X2="5272" Y2="1402" />
+						<Element X1="4814" Y1="1217" X2="5180" Y2="1217" />
+						<Element X1="5180" Y1="1230" X2="5180" Y2="1187" />
+						<Element X1="5184" Y1="1187" X2="5184" Y2="1322" />
+						<Element X1="5189" Y1="1324" X2="5258" Y2="1324" />
+						<Element X1="4820" Y1="1238" X2="5205" Y2="1238" />
+						<Element X1="5205" Y1="1233" X2="5205" Y2="1185" />
+						<Element X1="5202" Y1="1186" X2="5214" Y2="1273" />
+						<Element X1="5212" Y1="1272" X2="5263" Y2="1272" />
+					</Line>
+					<Line Name="11/12" GroupID="107" Color="-16777077" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4964" Y1="1258" X2="5380" Y2="1258" />
+						<Element X1="5101" Y1="1515" X2="5101" Y2="1790" />
+					</Line>
+					<Line Name="3/12 P" GroupID="108" Color="-65536" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5384" Y1="1263" X2="5331" Y2="1263" />
+						<Element X1="5331" Y1="1261" X2="5331" Y2="1319" />
+						<Element X1="5387" Y1="1268" X2="5314" Y2="1268" />
+						<Element X1="5315" Y1="1261" X2="5315" Y2="1768" />
+						<Element X1="5315" Y1="1256" X2="5787" Y2="1256" />
+						<Element X1="5787" Y1="1258" X2="5787" Y2="1593" />
+						<Element X1="5788" Y1="1724" X2="5788" Y2="1259" />
+						<Element X1="5777" Y1="1260" X2="5376" Y2="1260" />
+						<Element X1="5819" Y1="1642" X2="5781" Y2="1642" />
+						<Element X1="5781" Y1="1645" X2="5781" Y2="1254" />
+						<Element X1="5781" Y1="1255" X2="5384" Y2="1255" />
+						<Element X1="5677" Y1="1568" X2="5677" Y2="1261" />
+						<Element X1="5676" Y1="1261" X2="5381" Y2="1261" />
+					</Line>
+					<Line Name="17/12" GroupID="109" Color="-16711936" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4974" Y1="1265" X2="5101" Y2="1265" />
+						<Element X1="5101" Y1="1268" X2="5101" Y2="1516" />
+					</Line>
+					<Line Name="15/12" GroupID="111" Color="-12525360" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4967" Y1="1270" X2="4021" Y2="1270" />
+						<Element X1="4021" Y1="1270" X2="4021" Y2="1521" />
+					</Line>
+					<Line Name="5/12" GroupID="112" Color="-23296" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4021" Y1="1510" X2="4021" Y2="1855" />
+					</Line>
+					<Line Name="T15 2/6" GroupID="113" Color="-3308225" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5296" Y1="1471" X2="5296" Y2="1228" />
+						<Element X1="5302" Y1="1228" X2="4814" Y2="1228" />
+					</Line>
+					<Line Name="T4 2/10" GroupID="114" Color="-4144960" PenWidth="9" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5786" Y1="1862" X2="5786" Y2="1908" />
+						<Element X1="5788" Y1="1908" X2="4812" Y2="1908" />
+						<Element X1="4812" Y1="1907" X2="4812" Y2="1199" />
+						<Element X1="4635" Y1="1228" X2="4823" Y2="1228" />
+						<Element X1="4807" Y1="1561" X2="4807" Y2="1217" />
+						<Element X1="4088" Y1="1862" X2="4807" Y2="1862" />
+						<Element X1="4807" Y1="1858" X2="4807" Y2="1209" />
+						<Element X1="4801" Y1="1209" X2="4801" Y2="1797" />
+						<Element X1="4804" Y1="1797" X2="4176" Y2="1797" />
+						<Element X1="4096" Y1="1700" X2="4815" Y2="1700" />
+						<Element X1="4814" Y1="1702" X2="4814" Y2="1207" />
+						<Element X1="3961" Y1="1327" X2="4808" Y2="1327" />
+						<Element X1="4808" Y1="1299" X2="4808" Y2="1202" />
+						<Element X1="4823" Y1="1189" X2="4823" Y2="1261" />
+					</Line>
+					<Line Name="7/12" GroupID="115" Color="-12156236" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4972" Y1="1279" X2="4972" Y2="1224" />
+						<Element X1="4972" Y1="1224" X2="4456" Y2="1224" />
+					</Line>
+					<Line Name="CH3/12" GroupID="124" Color="-7667712" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="4040" Y1="1944" X2="3908" Y2="1944" />
+						<Element X1="3908" Y1="1941" X2="3908" Y2="1181" />
+						<Element X1="4339" Y1="1943" X2="4634" Y2="1943" />
+						<Element X1="4634" Y1="1947" X2="4634" Y2="1234" />
+						<Element X1="4629" Y1="1234" X2="4821" Y2="1234" />
+						<Element X1="5298" Y1="1183" X2="4800" Y2="1183" />
+						<Element X1="4800" Y1="1180" X2="4800" Y2="1394" />
+					</Line>
+					<Line Name="CH 5/12" GroupID="125" Color="-16744448" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="3910" Y1="1191" X2="4448" Y2="1191" />
+					</Line>
+					<Line Name="CH6/12" GroupID="126" Color="-8388480" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="4448" Y1="1193" X2="4805" Y2="1193" />
+						<Element X1="4805" Y1="1193" X2="4805" Y2="1402" />
+						<Element X1="4816" Y1="1402" X2="4816" Y2="1244" />
+					</Line>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="False">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 7" FileName="Électrique_Plans pour soumission - 7.png">
+			<Thumbnail FileName="2f5586c4-af85-486f-bd0e-8cce4de91923"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 8" FileName="Électrique_Plans pour soumission - 8.png">
+			<Thumbnail FileName="26f47fa6-387e-40cd-855c-67a67d3842d2"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="38" X="1624" Y="1262"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 9" FileName="Électrique_Plans pour soumission - 9.png">
+			<Thumbnail FileName="42a93c72-06d9-4448-a0ee-7a397274f5e9"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="32" X="46" Y="2704"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 10" FileName="Électrique_Plans pour soumission - 10.png">
+			<Thumbnail FileName="408305f1-67ef-45f1-a6e3-9e559357bdb0"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="14" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Plans pour soumission - 11" FileName="Électrique_Plans pour soumission - 11.png">
+			<Thumbnail FileName="e9f47a3f-9a98-43cd-9402-a3a81c666772"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="59" X="3007" Y="961"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="BG" GroupID="62" Shape="1" DefaultSize="24" Text="1" Color="-1146130" PenWidth="2" PenType="Generic" FillColor="-1146130" ShowMeasure="True" Visible="True">
+						<Element X="4321" Y="2093" Width="24" Height="24"/>
+						<Element X="4128" Y="1981" Width="24" Height="24"/>
+						<Element X="4887" Y="2093" Width="24" Height="24"/>
+						<Element X="5471" Y="2095" Width="24" Height="24"/>
+						<Element X="5063" Y="1361" Width="24" Height="24"/>
+						<Element X="4953" Y="1502" Width="24" Height="24"/>
+						<Element X="5140" Y="1499" Width="24" Height="24"/>
+						<Element X="4318" Y="1362" Width="24" Height="24"/>
+						<Element X="4134" Y="1360" Width="24" Height="24"/>
+						<Element X="4694" Y="1484" Width="24" Height="24"/>
+						<Element X="4731" Y="1598" Width="24" Height="24"/>
+					</Counter>
+					<Counter Name="CL1" GroupID="63" Shape="1" DefaultSize="30" Text="1" Color="-5247250" PenWidth="2" PenType="Generic" FillColor="-5247250" ShowMeasure="True" Visible="True">
+						<Element X="4351" Y="2092" Width="30" Height="30"/>
+						<Element X="4914" Y="2095" Width="30" Height="30"/>
+						<Element X="5501" Y="2090" Width="30" Height="30"/>
+						<Element X="5091" Y="1358" Width="30" Height="30"/>
+						<Element X="4165" Y="1359" Width="30" Height="30"/>
+					</Counter>
+					<Counter Name="DETECT MOUV" GroupID="64" Shape="0" DefaultSize="32" Text="1" Color="-24454" PenWidth="2" PenType="Generic" FillColor="-24454" ShowMeasure="True" Visible="True">
+						<Element X="5280" Y="2091" Width="32" Height="32"/>
+						<Element X="5763" Y="2092" Width="32" Height="32"/>
+						<Element X="4767" Y="2095" Width="32" Height="32"/>
+						<Element X="4129" Y="2095" Width="32" Height="32"/>
+						<Element X="4092" Y="1864" Width="32" Height="32"/>
+					</Counter>
+					<Counter Name="TEL" GroupID="65" Shape="3" DefaultSize="25" Text="1" Color="-2968436" PenWidth="2" PenType="Generic" FillColor="-2968436" ShowMeasure="True" Visible="True">
+						<Element X="4123" Y="1640" Width="25" Height="25"/>
+						<Element X="4128" Y="1665" Width="25" Height="25"/>
+						<Element X="4126" Y="1850" Width="25" Height="25"/>
+						<Element X="4127" Y="2008" Width="25" Height="25"/>
+						<Element X="5244" Y="2090" Width="25" Height="25"/>
+						<Element X="4809" Y="1482" Width="25" Height="25"/>
+						<Element X="4457" Y="1855" Width="25" Height="25"/>
+					</Counter>
+					<Counter Name="HP" GroupID="66" Shape="1" DefaultSize="25" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+						<Element X="5270" Y="1965" Width="25" Height="25"/>
+						<Element X="4815" Y="1718" Width="25" Height="25"/>
+						<Element X="4476" Y="1791" Width="25" Height="25"/>
+						<Element X="4478" Y="1622" Width="25" Height="25"/>
+						<Element X="4478" Y="2012" Width="25" Height="25"/>
+						<Element X="4180" Y="1498" Width="25" Height="25"/>
+						<Element X="4131" Y="1773" Width="25" Height="25"/>
+					</Counter>
+					<Counter Name="SORTIE VIDEOSURVEILLANCE" GroupID="67" Shape="3" DefaultSize="23" Text="1" Color="-38476" PenWidth="2" PenType="Generic" FillColor="-38476" ShowMeasure="True" Visible="True">
+						<Element X="5766" Y="1357" Width="23" Height="23"/>
+						<Element X="4744" Y="2095" Width="23" Height="23"/>
+						<Element X="3903" Y="1360" Width="23" Height="23"/>
+						<Element X="3909" Y="1860" Width="23" Height="23"/>
+						<Element X="3900" Y="2091" Width="23" Height="23"/>
+						<Element X="4166" Y="1598" Width="23" Height="23"/>
+					</Counter>
+					<Counter Name="SORTIE CONTROL BATIMENT" GroupID="68" Shape="3" DefaultSize="24" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+						<Element X="4016" Y="1435" Width="24" Height="24"/>
+						<Element X="5266" Y="1351" Width="24" Height="24"/>
+						<Element X="5598" Y="2093" Width="24" Height="24"/>
+					</Counter>
+					<Line Name="COND 3/4 po VIDEOS" GroupID="69" Color="-16711936" PenWidth="6" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="4756" Y1="2113" X2="4256" Y2="2113" />
+						<Element X1="4256" Y1="2113" X2="4256" Y2="2065" />
+						<Element X1="4247" Y1="2069" X2="4247" Y2="2105" />
+						<Element X1="4244" Y1="2105" X2="3913" Y2="2105" />
+						<Element X1="4244" Y1="1846" X2="4244" Y2="1883" />
+						<Element X1="4244" Y1="1883" X2="3910" Y2="1883" />
+						<Element X1="4252" Y1="2056" X2="4252" Y2="1857" />
+						<Element X1="4248" Y1="1835" X2="4248" Y2="1605" />
+						<Element X1="4236" Y1="1602" X2="4239" Y2="1627" />
+						<Element X1="4239" Y1="1627" X2="4169" Y2="1627" />
+						<Element X1="4240" Y1="1583" X2="4240" Y2="1562" />
+						<Element X1="4242" Y1="1563" X2="4323" Y2="1563" />
+						<Element X1="4333" Y1="1559" X2="4244" Y2="1559" />
+						<Element X1="4244" Y1="1562" X2="4244" Y2="1365" />
+						<Element X1="4235" Y1="1366" X2="3909" Y2="1366" />
+						<Element X1="4247" Y1="1591" X2="4247" Y2="1554" />
+						<Element X1="4248" Y1="1556" X2="4871" Y2="1556" />
+						<Element X1="4871" Y1="1561" X2="4871" Y2="1593" />
+					</Line>
+					<Counter Name="CAB" GroupID="70" Shape="1" DefaultSize="28" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True">
+						<Element X="4865" Y="1578" Width="42" Height="24"/>
+					</Counter>
+					<Counter Name="Compteur J HOOCK" GroupID="71" Shape="2" DefaultSize="18" Text="1" Color="-12156236" PenWidth="2" PenType="Generic" FillColor="-12156236" ShowMeasure="True" Visible="True">
+						<Element X="5606" Y="2037" Width="18" Height="18"/>
+						<Element X="5604" Y="1958" Width="18" Height="18"/>
+						<Element X="5574" Y="1928" Width="18" Height="18"/>
+						<Element X="5489" Y="1924" Width="18" Height="18"/>
+						<Element X="5404" Y="1922" Width="18" Height="18"/>
+						<Element X="5329" Y="1922" Width="18" Height="18"/>
+						<Element X="5293" Y="1964" Width="18" Height="18"/>
+						<Element X="5284" Y="2037" Width="18" Height="18"/>
+						<Element X="5193" Y="1922" Width="18" Height="18"/>
+						<Element X="5110" Y="1922" Width="18" Height="18"/>
+						<Element X="5029" Y="1924" Width="18" Height="18"/>
+						<Element X="4954" Y="1922" Width="18" Height="18"/>
+						<Element X="4867" Y="1924" Width="18" Height="18"/>
+						<Element X="4852" Y="1897" Width="18" Height="18"/>
+						<Element X="4854" Y="1820" Width="18" Height="18"/>
+						<Element X="4848" Y="1745" Width="18" Height="18"/>
+						<Element X="4844" Y="1660" Width="18" Height="18"/>
+						<Element X="4465" Y="2045" Width="18" Height="18"/>
+						<Element X="4420" Y="2037" Width="18" Height="18"/>
+						<Element X="4423" Y="1954" Width="18" Height="18"/>
+						<Element X="4427" Y="1881" Width="18" Height="18"/>
+						<Element X="4355" Y="1865" Width="18" Height="18"/>
+						<Element X="4355" Y="1788" Width="18" Height="18"/>
+						<Element X="4357" Y="1701" Width="18" Height="18"/>
+						<Element X="4357" Y="1616" Width="18" Height="18"/>
+						<Element X="4278" Y="1631" Width="18" Height="18"/>
+						<Element X="4203" Y="1520" Width="18" Height="18"/>
+						<Element X="4199" Y="1601" Width="18" Height="18"/>
+						<Element X="4191" Y="1626" Width="18" Height="18"/>
+						<Element X="4159" Y="1690" Width="18" Height="18"/>
+						<Element X="4152" Y="1762" Width="18" Height="18"/>
+						<Element X="4159" Y="1847" Width="18" Height="18"/>
+						<Element X="4159" Y="2003" Width="18" Height="18"/>
+						<Element X="4163" Y="1928" Width="18" Height="18"/>
+						<Element X="4440" Y="1581" Width="18" Height="18"/>
+						<Element X="4521" Y="1586" Width="18" Height="18"/>
+						<Element X="4612" Y="1586" Width="18" Height="18"/>
+						<Element X="4684" Y="1588" Width="18" Height="18"/>
+						<Element X="4769" Y="1582" Width="18" Height="18"/>
+						<Element X="4880" Y="1543" Width="18" Height="18"/>
+						<Element X="4884" Y="1469" Width="18" Height="18"/>
+						<Element X="4914" Y="1439" Width="18" Height="18"/>
+						<Element X="5001" Y="1437" Width="18" Height="18"/>
+						<Element X="5088" Y="1437" Width="18" Height="18"/>
+						<Element X="5159" Y="1439" Width="18" Height="18"/>
+					</Counter>
+					<Counter Name="CONTROL VOLUME" GroupID="72" Shape="1" DefaultSize="30" Text="1" Color="-23296" PenWidth="2" PenType="Generic" FillColor="-23296" ShowMeasure="True" Visible="True">
+						<Element X="5274" Y="1925" Width="30" Height="30"/>
+					</Counter>
+					<Counter Name="SORTIE MICROPHONE" GroupID="73" Shape="1" DefaultSize="28" Text="1" Color="-3308225" PenWidth="2" PenType="Generic" FillColor="-3308225" ShowMeasure="True" Visible="True">
+						<Element X="4135" Y="1742" Width="28" Height="28"/>
+					</Counter>
+					<Counter Name="PORTE" GroupID="74" Shape="0" DefaultSize="60" Text="1" Color="-4144960" PenWidth="2" PenType="Generic" FillColor="-4144960" ShowMeasure="True" Visible="True">
+						<Element X="4999" Y="1286" Width="60" Height="60"/>
+						<Element X="4970" Y="1537" Width="60" Height="60"/>
+						<Element X="5106" Y="1543" Width="60" Height="60"/>
+						<Element X="4589" Y="1466" Width="60" Height="60"/>
+						<Element X="4659" Y="1551" Width="60" Height="60"/>
+						<Element X="4217" Y="1275" Width="60" Height="60"/>
+						<Element X="4121" Y="1385" Width="60" Height="60"/>
+						<Element X="4227" Y="2141" Width="60" Height="60"/>
+						<Element X="4829" Y="2147" Width="60" Height="60"/>
+						<Element X="5387" Y="2145" Width="60" Height="60"/>
+						<Element X="4082" Y="1905" Width="60" Height="60"/>
+					</Counter>
+					<Counter Name="BARRE MISE A LA TERRE" GroupID="75" Shape="1" DefaultSize="27" Text="1" Color="-7667712" PenWidth="2" PenType="Generic" FillColor="-7667712" ShowMeasure="True" Visible="True">
+						<Element X="4872" Y="1605" Width="27" Height="10"/>
+					</Counter>
+					<Counter Name="PDI" GroupID="76" Shape="1" DefaultSize="20" Text="1" Color="-16777077" PenWidth="2" PenType="Generic" FillColor="-16777077" ShowMeasure="True" Visible="True">
+						<Element X="4815" Y="1585" Width="44" Height="19"/>
+					</Counter>
+					<Counter Name="PCA" GroupID="79" Shape="1" DefaultSize="23" Text="1" Color="-8388480" PenWidth="2" PenType="Generic" FillColor="-8388480" ShowMeasure="True" Visible="True">
+						<Element X="4810" Y="1515" Width="18" Height="38"/>
+					</Counter>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-001 - 1" FileName="Électrique_Addenda ELE-001 - 1.png">
+			<Thumbnail FileName="d68952a0-0132-4398-9da7-26467859255e"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="51" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-001 - 2" FileName="Électrique_Addenda ELE-001 - 2.png">
+			<Thumbnail FileName="fa70e8d9-cbab-4f50-ad1f-cba48585733e"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="57" X="0" Y="149"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-001_Plans - 1" FileName="Électrique_Addenda ELE-001_Plans - 1.png">
+			<Thumbnail FileName="97b3cdb5-a522-412c-a2dc-c9adca5df645"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="50" X="3288" Y="1457"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-001_Plans - 2" FileName="Électrique_Addenda ELE-001_Plans - 2.png">
+			<Thumbnail FileName="54d4d412-375e-4021-a601-063f53a62903"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="104" X="4997" Y="359"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-001_Plans - 3" FileName="Électrique_Addenda ELE-001_Plans - 3.png">
+			<Thumbnail FileName="7c6f6b25-0d29-46a6-9c7c-26c0493fa119"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="62" X="3175" Y="910"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="FIXT TYPE R3" GroupID="80" Shape="1" DefaultSize="25" Text="1" Color="-16744320" PenWidth="2" PenType="Generic" FillColor="-16744320" ShowMeasure="True" Visible="True">
+						<Element X="4654" Y="2050" Width="25" Height="25"/>
+						<Element X="4411" Y="2050" Width="25" Height="25"/>
+						<Element X="4163" Y="2048" Width="25" Height="25"/>
+						<Element X="4165" Y="2238" Width="25" Height="25"/>
+						<Element X="4409" Y="2240" Width="25" Height="25"/>
+						<Element X="4649" Y="2240" Width="25" Height="25"/>
+					</Counter>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-001_Plans - 4" FileName="Électrique_Addenda ELE-001_Plans - 4.png">
+			<Thumbnail FileName="5e42826a-ed95-4370-b4c4-e22c165f4b34"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="68" X="3455" Y="997"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Line Name="COND 1po" GroupID="122" Color="-7650029" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="5468" Y1="1948" X2="5336" Y2="1948" />
+						<Element X1="5336" Y1="1952" X2="5336" Y2="1188" />
+						<Element X1="5337" Y1="1188" X2="4811" Y2="1188" />
+						<Element X1="5052" Y1="1183" X2="4817" Y2="1183" />
+						<Element X1="4829" Y1="1948" X2="4829" Y2="1191" />
+						<Element X1="4199" Y1="1181" X2="4957" Y2="1181" />
+						<Element X1="4957" Y1="1188" X2="4957" Y2="1332" />
+						<Element X1="4188" Y1="1943" X2="4825" Y2="1943" />
+						<Element X1="4825" Y1="1946" X2="4825" Y2="1177" />
+					</Line>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-002 - 1" FileName="Électrique_Addenda ELE-002 - 1.png">
+			<Thumbnail FileName="b92a14be-7619-4d3a-ba27-50aadf1edb6b"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="51" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-002 - 2" FileName="Électrique_Addenda ELE-002 - 2.png">
+			<Thumbnail FileName="17930a59-e2f3-4728-a2cb-b7a2943d1880"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="51" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-002 - 3" FileName="Électrique_Addenda ELE-002 - 3.png">
+			<Thumbnail FileName="da126d3a-71ad-41b9-95ae-e6f8e5228fbe"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="73" X="0" Y="75"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-002 - 4" FileName="Électrique_Addenda ELE-002 - 4.png">
+			<Thumbnail FileName="3ad945da-b413-4632-9224-a9de2d355783"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="51" X="0" Y="111"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-002 - 5" FileName="Électrique_Addenda ELE-002 - 5.png">
+			<Thumbnail FileName="264f7b4a-639d-4481-879e-d626809a2d83"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="61" X="0" Y="152"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="Électrique_Addenda ELE-002 - 6" FileName="Électrique_Addenda ELE-002 - 6.png">
+			<Thumbnail FileName="dd6469f2-46b7-4448-b945-d71924733450"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="75" X="0" Y="68"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="ELectrique_Addenda ELE-002_Plans - 1" FileName="ELectrique_Addenda ELE-002_Plans - 1.png">
+			<Thumbnail FileName="76e99839-6953-4db9-ad59-a588673d7318"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="ELectrique_Addenda ELE-002_Plans - 2" FileName="ELectrique_Addenda ELE-002_Plans - 2.png">
+			<Thumbnail FileName="74ec433b-0fec-4d84-b94d-97558117f617"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="50" X="3517" Y="1350"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="ELectrique_Addenda ELE-002_Plans - 3" FileName="ELectrique_Addenda ELE-002_Plans - 3.png">
+			<Thumbnail FileName="1ea1bfb0-e81b-4547-b90b-5100296b5df3"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="74" X="2417" Y="1041"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="6482" Y="4353" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="WST-C-3D" GroupID="88" Shape="1" DefaultSize="80" Text="1" Color="-5247250" PenWidth="2" PenType="Generic" FillColor="-5247250" ShowMeasure="True" Visible="True">
+						<Element X="5993" Y="1812" Width="137" Height="220"/>
+						<Element X="5756" Y="2539" Width="148" Height="204"/>
+						<Element X="6787" Y="2537" Width="152" Height="220"/>
+						<Element X="4769" Y="1657" Width="132" Height="220"/>
+						<Element X="4760" Y="2386" Width="145" Height="207"/>
+					</Counter>
+					<Counter Name="INT WST-C-3" GroupID="90" Shape="1" DefaultSize="80" Text="1" Color="-2968436" PenWidth="2" PenType="Generic" FillColor="-2968436" ShowMeasure="True" Visible="True">
+						<Element X="1348" Y="1657" Width="138" Height="211"/>
+						<Element X="2515" Y="1662" Width="141" Height="209"/>
+						<Element X="1348" Y="2385" Width="140" Height="209"/>
+					</Counter>
+					<Counter Name="INT WST-C-5D" GroupID="91" Shape="1" DefaultSize="80" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+						<Element X="2502" Y="3841" Width="139" Height="213"/>
+					</Counter>
+					<Counter Name="INT WST-C-1" GroupID="92" Shape="1" DefaultSize="80" Text="1" Color="-38476" PenWidth="2" PenType="Generic" FillColor="-38476" ShowMeasure="True" Visible="True">
+						<Element X="4558" Y="3115" Width="139" Height="202"/>
+						<Element X="5522" Y="3260" Width="131" Height="206"/>
+						<Element X="5723" Y="3985" Width="138" Height="198"/>
+						<Element X="4555" Y="3839" Width="141" Height="210"/>
+					</Counter>
+					<Counter Name="OSC-C-P" GroupID="93" Shape="0" DefaultSize="80" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+						<Element X="1649" Y="1744" Width="80" Height="80"/>
+						<Element X="1644" Y="2467" Width="80" Height="80"/>
+						<Element X="1921" Y="2472" Width="80" Height="80"/>
+						<Element X="4559" Y="1753" Width="80" Height="80"/>
+						<Element X="4553" Y="2469" Width="80" Height="80"/>
+						<Element X="5773" Y="1905" Width="80" Height="80"/>
+						<Element X="6059" Y="2624" Width="80" Height="80"/>
+						<Element X="6294" Y="2620" Width="80" Height="80"/>
+						<Element X="6504" Y="2634" Width="80" Height="80"/>
+						<Element X="5507" Y="4072" Width="80" Height="80"/>
+					</Counter>
+					<Counter Name="RSP-C-347-Z1" GroupID="94" Shape="1" DefaultSize="80" Text="1" Color="-16711936" PenWidth="2" PenType="Generic" FillColor="-16711936" ShowMeasure="True" Visible="True">
+						<Element X="2476" Y="2438" Width="174" Height="141"/>
+						<Element X="2176" Y="2439" Width="172" Height="146"/>
+						<Element X="2489" Y="3165" Width="179" Height="150"/>
+						<Element X="4238" Y="3167" Width="175" Height="146"/>
+						<Element X="4235" Y="2437" Width="175" Height="144"/>
+						<Element X="5458" Y="2586" Width="183" Height="148"/>
+						<Element X="5195" Y="3324" Width="169" Height="136"/>
+						<Element X="5457" Y="1864" Width="182" Height="148"/>
+						<Element X="4236" Y="1704" Width="165" Height="153"/>
+						<Element X="2207" Y="1710" Width="170" Height="148"/>
+						<Element X="1903" Y="1713" Width="172" Height="143"/>
+						<Element X="748" Y="3894" Width="168" Height="137"/>
+						<Element X="1022" Y="3896" Width="179" Height="138"/>
+						<Element X="1313" Y="3894" Width="183" Height="137"/>
+						<Element X="1615" Y="3897" Width="166" Height="129"/>
+						<Element X="1892" Y="3892" Width="175" Height="142"/>
+						<Element X="2183" Y="3890" Width="178" Height="144"/>
+						<Element X="4237" Y="3890" Width="179" Height="136"/>
+						<Element X="5195" Y="4031" Width="178" Height="157"/>
+					</Counter>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="ELectrique_Addenda ELE-002_Plans - 4" FileName="ELectrique_Addenda ELE-002_Plans - 4.png">
+			<Thumbnail FileName="9c902275-0783-4b95-88b8-e626034d9b77"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="56" X="3830" Y="438"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="ELectrique_Addenda ELE-002_Plans - 5" FileName="ELectrique_Addenda ELE-002_Plans - 5.png">
+			<Thumbnail FileName="8320172f-e47c-45b7-96be-d31c60773a80"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="68" X="3548" Y="983"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="6606" Y="2006" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Line Name="Distance 5" GroupID="95" Color="-65281" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="4889" Y1="1246" X2="4889" Y2="1475" />
+						<Element X1="4899" Y1="1475" X2="3966" Y2="1475" />
+						<Element X1="3966" Y1="1488" X2="3966" Y2="1940" />
+					</Line>
+					<Line Name="PVC 3/12" GroupID="97" Color="-7667712" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5446" Y1="2871" X2="5314" Y2="2871" />
+						<Element X1="5314" Y1="2876" X2="5314" Y2="3242" />
+						<Element X1="5324" Y1="4188" X2="5456" Y2="4188" />
+						<Element X1="2090" Y1="2426" X2="2090" Y2="2491" />
+						<Element X1="2093" Y1="2489" X2="3292" Y2="2489" />
+						<Element X1="3292" Y1="2494" X2="3292" Y2="2420" />
+						<Element X1="3292" Y1="2420" X2="3292" Y2="2491" />
+						<Element X1="3293" Y1="2489" X2="4491" Y2="2489" />
+						<Element X1="4491" Y1="2497" X2="4483" Y2="2419" />
+						<Element X1="4486" Y1="2414" X2="4497" Y2="2490" />
+						<Element X1="4500" Y1="2486" X2="4590" Y2="2486" />
+						<Element X1="4597" Y1="2490" X2="5690" Y2="2490" />
+						<Element X1="5690" Y1="2503" X2="5690" Y2="2397" />
+						<Element X1="2092" Y1="4637" X2="2092" Y2="4571" />
+						<Element X1="2088" Y1="4573" X2="3283" Y2="4573" />
+						<Element X1="3283" Y1="4571" X2="3283" Y2="4632" />
+						<Element X1="3279" Y1="4632" X2="3279" Y2="4575" />
+						<Element X1="3283" Y1="4575" X2="4492" Y2="4575" />
+						<Element X1="4494" Y1="4575" X2="4494" Y2="4635" />
+						<Element X1="4493" Y1="4601" X2="4545" Y2="4570" />
+						<Element X1="4483" Y1="4581" X2="5683" Y2="4581" />
+						<Element X1="5683" Y1="4588" X2="5679" Y2="4615" />
+						<Element X1="2086" Y1="2405" X2="1862" Y2="2405" />
+						<Element X1="1862" Y1="2412" X2="1862" Y2="4643" />
+						<Element X1="1869" Y1="4643" X2="2093" Y2="4643" />
+						<Element X1="4173" Y1="2059" X2="4666" Y2="2059" />
+						<Element X1="4668" Y1="2059" X2="4668" Y2="2250" />
+						<Element X1="4666" Y1="2250" X2="4175" Y2="2250" />
+						<Element X1="4664" Y1="2055" X2="4783" Y2="1935" />
+						<Element X1="1891" Y1="3257" X2="1891" Y2="3781" />
+						<Element X1="2335" Y1="2859" X2="2335" Y2="3264" />
+						<Element X1="2328" Y1="3264" X2="2452" Y2="3264" />
+						<Element X1="2455" Y1="3259" X2="2455" Y2="3793" />
+						<Element X1="2440" Y1="3793" X2="2440" Y2="4213" />
+						<Element X1="2440" Y1="4213" X2="2335" Y2="4213" />
+						<Element X1="2835" Y1="2859" X2="2976" Y2="2859" />
+						<Element X1="2976" Y1="2847" X2="2976" Y2="4182" />
+						<Element X1="2959" Y1="4182" X2="2847" Y2="4200" />
+						<Element X1="3406" Y1="2865" X2="3535" Y2="2865" />
+						<Element X1="3535" Y1="2859" X2="3535" Y2="4200" />
+						<Element X1="3512" Y1="4200" X2="3365" Y2="4200" />
+						<Element X1="3882" Y1="2865" X2="3882" Y2="4218" />
+						<Element X1="4376" Y1="2847" X2="4188" Y2="2847" />
+						<Element X1="4194" Y1="2865" X2="4194" Y2="2982" />
+						<Element X1="4188" Y1="2982" X2="4188" Y2="4218" />
+						<Element X1="4200" Y1="4218" X2="4371" Y2="4218" />
+						<Element X1="4753" Y1="3265" X2="4753" Y2="4212" />
+						<Element X1="4935" Y1="2882" X2="4935" Y2="4253" />
+						<Element X1="5312" Y1="3271" X2="5312" Y2="3812" />
+						<Element X1="5306" Y1="3812" X2="5306" Y2="4194" />
+						<Element X1="5894" Y1="3247" X2="5894" Y2="4229" />
+						<Element X1="5865" Y1="4224" X2="2288" Y2="4224" />
+						<Element X1="5282" Y1="2453" X2="5282" Y2="2871" />
+						<Element X1="5288" Y1="2865" X2="5453" Y2="2865" />
+						<Element X1="1894" Y1="3788" X2="1894" Y2="4218" />
+						<Element X1="1876" Y1="4218" X2="2300" Y2="4218" />
+					</Line>
+					<Line Name="CABLE CAT5" GroupID="118" Color="-10496" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5327" Y1="1893" X2="5327" Y2="1314" />
+						<Element X1="5323" Y1="1314" X2="4960" Y2="1314" />
+						<Element X1="5327" Y1="1899" X2="5327" Y2="1327" />
+						<Element X1="5336" Y1="1327" X2="4960" Y2="1327" />
+						<Element X1="5564" Y1="1368" X2="4966" Y2="1368" />
+						<Element X1="5552" Y1="1755" X2="5552" Y2="1358" />
+						<Element X1="5564" Y1="1359" X2="4972" Y2="1359" />
+						<Element X1="5217" Y1="1299" X2="4952" Y2="1299" />
+						<Element X1="5172" Y1="1346" X2="4955" Y2="1346" />
+						<Element X1="4889" Y1="1301" X2="4979" Y2="1301" />
+						<Element X1="5060" Y1="1693" X2="5060" Y2="1332" />
+						<Element X1="5063" Y1="1332" X2="4970" Y2="1332" />
+						<Element X1="5097" Y1="1176" X2="5097" Y2="1324" />
+						<Element X1="5086" Y1="1324" X2="4964" Y2="1336" />
+						<Element X1="5122" Y1="1186" X2="5122" Y2="1332" />
+						<Element X1="5108" Y1="1332" X2="4952" Y2="1332" />
+						<Element X1="4817" Y1="1859" X2="4817" Y2="1282" />
+						<Element X1="4824" Y1="1282" X2="4955" Y2="1282" />
+						<Element X1="4820" Y1="1892" X2="4820" Y2="1323" />
+						<Element X1="4819" Y1="1323" X2="4963" Y2="1323" />
+						<Element X1="4692" Y1="1599" X2="4692" Y2="1290" />
+						<Element X1="4686" Y1="1290" X2="5013" Y2="1290" />
+						<Element X1="4730" Y1="1346" X2="4739" Y2="1298" />
+						<Element X1="4739" Y1="1298" X2="4967" Y2="1298" />
+						<Element X1="4674" Y1="1329" X2="4679" Y2="1287" />
+						<Element X1="4679" Y1="1287" X2="4973" Y2="1287" />
+						<Element X1="4497" Y1="1324" X2="4501" Y2="1290" />
+						<Element X1="4501" Y1="1290" X2="4977" Y2="1290" />
+						<Element X1="4280" Y1="1601" X2="4280" Y2="1327" />
+						<Element X1="4289" Y1="1327" X2="4927" Y2="1327" />
+						<Element X1="4289" Y1="1312" X2="4979" Y2="1312" />
+						<Element X1="4349" Y1="1354" X2="4349" Y2="1292" />
+						<Element X1="4355" Y1="1292" X2="4964" Y2="1292" />
+						<Element X1="4144" Y1="1221" X2="4973" Y2="1221" />
+						<Element X1="4973" Y1="1221" X2="4973" Y2="1308" />
+						<Element X1="4039" Y1="1227" X2="4972" Y2="1227" />
+						<Element X1="4972" Y1="1233" X2="4972" Y2="1340" />
+						<Element X1="4135" Y1="1195" X2="4970" Y2="1195" />
+						<Element X1="4970" Y1="1229" X2="4970" Y2="1339" />
+						<Element X1="3986" Y1="1512" X2="3986" Y2="1293" />
+						<Element X1="4001" Y1="1293" X2="4919" Y2="1293" />
+						<Element X1="3933" Y1="1690" X2="3933" Y2="1305" />
+						<Element X1="3936" Y1="1305" X2="4961" Y2="1305" />
+						<Element X1="3969" Y1="1854" X2="3969" Y2="1289" />
+						<Element X1="3991" Y1="1289" X2="4969" Y2="1289" />
+						<Element X1="4136" Y1="1796" X2="4136" Y2="1289" />
+						<Element X1="4152" Y1="1289" X2="4979" Y2="1289" />
+						<Element X1="4135" Y1="1936" X2="4135" Y2="1267" />
+						<Element X1="4124" Y1="1267" X2="4970" Y2="1267" />
+						<Element X1="4376" Y1="1937" X2="4376" Y2="1290" />
+						<Element X1="4391" Y1="1290" X2="4973" Y2="1290" />
+					</Line>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="ELectrique_Addenda ELE-002_Plans - 6" FileName="ELectrique_Addenda ELE-002_Plans - 6.png">
+			<Thumbnail FileName="e53192a5-440f-4adf-960d-e4c5971cd77b"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="89" X="3770" Y="1043"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+		<Price Key="98;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="48;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="52;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="27;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="49;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="125;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="118;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="86;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="81;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="33;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="109;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="80;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="67;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="22;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="102;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="99;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="10;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="69;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="88;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="73;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="120;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="92;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="17;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="62;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="34;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="95;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="16;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="35;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="124;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="11;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="43;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="18;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="3;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="19;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="108;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="115;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="75;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="50;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="74;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="56;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="58;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="59;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="106;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="76;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="37;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="122;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="83;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="20;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="26;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="1;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="21;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="28;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="29;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="32;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="82;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="90;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="60;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="107;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="91;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="61;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="85;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="7;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="84;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="47;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="119;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="44;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="101;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="53;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="23;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="14;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="15;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="126;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="42;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="113;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="111;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="13;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="114;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="8;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="121;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="5;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="66;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="54;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="9;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="55;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="30;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="93;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="36;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="63;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="31;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="68;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="38;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="24;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="39;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="25;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="112;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="100;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="70;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="97;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="51;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="72;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="71;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="94;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="64;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="103;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="12;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="79;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="57;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="65;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="104;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="40;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="46;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="41;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="1" Precision="2">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>

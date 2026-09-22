@@ -9,7 +9,6 @@ venv/
 # --- Dossiers : les résultats (releve.xlsx, ecart.md, .qpl, PDF annotés) SONT dans le dépôt — c'est la preuve
 # demandée par Francis (plans et devis = appels d'offres publics, 2026-09-21). Restent hors dépôt :
 # les relevés humains scannés (prix et heures internes de DR), les rasters Plan Expert (volume) et les PDF en double.
-dossiers/*/entree/reference-*.pdf
 dossiers/*/planexpert/*.png
 dossiers/*/Dossier-complet.pdf
 

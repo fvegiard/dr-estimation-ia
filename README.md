@@ -114,5 +114,7 @@ dashboard-soumissions-dr, electrical-estimation-mcp (tous privés)
 
 ## Ce qui ne va jamais dans ce repo
 
-Image de la VM, installateurs ou licences Windows/Plan Expert, clés/tokens, données client
-(plans, devis, compteurs réels) — les tests n'utilisent que des fixtures synthétiques.
+Image de la VM, installateurs ou licences Windows/Plan Expert, clés/tokens. Décision de Francis (22 sept. 2026) : les plans,
+les prix et tous les fichiers produits ici sont publics — les relevés humains de référence (`dossiers/<S>/entree/reference-*.pdf`)
+et les projets Plan Expert de M. Dupuis (`dossiers/<S>/reference/<S>-Dupuis-PlanExpert.qpl`, le jeu de référence de
+`compare_qpl`) sont dans le dépôt. Les tests n'utilisent que des fixtures synthétiques.
