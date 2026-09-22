@@ -1,0 +1,20 @@
+# Secrets
+.env
+credentials.local.env
+
+# Disque Windows (des dizaines de Go)
+storage/
+
+# Archives de sauvegarde (plusieurs Go)
+backup/
+
+# Binaire Plan Expert (licence Groupe DR Electrique — jamais dans Git)
+oem/PlanExpert/
+oem/install.log
+
+# Projets clients
+shared/
+
+# Divers
+*.log
+*.tmp

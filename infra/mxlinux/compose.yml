@@ -1,0 +1,36 @@
+# Plan Expert — Windows Server 2025 dans Podman (hote : mxlinux / Mac mini 2012)
+# Recette : https://github.com/fvegiard/planexpert-mxlinux
+# Ports publies uniquement sur l'adresse Tailscale de l'hote (BIND_IP).
+services:
+  planexpert:
+    image: docker.io/dockurr/windows:latest
+    container_name: planexpert
+    environment:
+      VERSION: "2025"
+      RAM_SIZE: "4G"
+      CPU_CORES: "2"
+      DISK_SIZE: "40G"
+      LANGUAGE: "French"
+      REGION: "fr-CA"
+      KEYBOARD: "fr-CA"
+      USERNAME: "${WIN_USER}"
+      PASSWORD: "${WIN_PASSWORD}"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    ports:
+      - "${BIND_IP}:8006:8006/tcp"
+      - "${BIND_IP}:3389:3389/tcp"
+      - "${BIND_IP}:3389:3389/udp"
+      - "${BIND_IP}:2222:22/tcp"
+    volumes:
+      - ./storage:/storage
+      - ./oem:/oem
+      - ./shared:/shared
+    restart: unless-stopped
+    stop_grace_period: 2m

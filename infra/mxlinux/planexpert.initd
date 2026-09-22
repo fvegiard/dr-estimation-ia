@@ -1,0 +1,41 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          planexpert
+# Required-Start:    $network $remote_fs $syslog
+# Required-Stop:     $network $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Plan Expert (Windows Server 2025 dans Podman)
+# Description:       Demarre/arrete le conteneur planexpert (dockur/windows).
+### END INIT INFO
+
+DIR=/srv/planexpert
+COMPOSE=/usr/bin/podman-compose
+PODMAN=/usr/bin/podman
+NAME=planexpert
+
+case "$1" in
+  start)
+    echo "Demarrage $NAME..."
+    cd "$DIR" || exit 1
+    $COMPOSE up -d
+    ;;
+  stop)
+    echo "Arret $NAME..."
+    cd "$DIR" || exit 1
+    $COMPOSE down -t 120
+    ;;
+  restart)
+    "$0" stop
+    sleep 5
+    "$0" start
+    ;;
+  status)
+    $PODMAN ps -a --filter "name=$NAME" --format "{{.Names}} {{.Status}} {{.Ports}}"
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+    ;;
+esac
+exit 0
