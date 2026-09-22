@@ -3,5 +3,7 @@ pillow
 openpyxl
 pytest
 pydantic
+numpy
+scipy
 # optionnel : uniquement pour src/pipeline/render_pdf.py (rapport Markdown -> PDF)
 # markdown
