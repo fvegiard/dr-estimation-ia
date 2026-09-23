@@ -1,0 +1,216 @@
+{
+  "dossier": "s-1702 l'intendant costco stationemment",
+  "id": "1HkSUO7c_rkRA16G32b0B6kN86iqoK8tP",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1D-Y35lwWeyZ-bIUT7EGR1ZEDtIDJkzw7",
+      "ext": "db",
+      "octets": 61440,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "COSTCO_ST_HUBERT_QC_ON_SITE_LIGHTING_SUBMITTALS_Reviewed_by_FJM___MG2.pdf",
+      "id": "1wBjtstbB9U17SZQkl7DV6uZtN-C1BqrP",
+      "ext": "pdf",
+      "octets": 3189943,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "FW St Hubert #1359  RE Costco St-Bruno, Qc,   Canada le groupe dr electrique   2002009831.eml",
+      "id": "1IHwa4QcJkvNLR1VzHNjVd96_Vc6oW5qM",
+      "ext": "eml",
+      "octets": 381678,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "Graybar Credit Application - DT  , SJ , RK .pdf",
+      "id": "1zCBtV3tcE8TF64e532FNvn5oHcEFp3fi",
+      "ext": "pdf",
+      "octets": 98967,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "ST HUBERT, QC - ST BRUNO - SITE LTG - 2002009831 COSTCO.pdf",
+      "id": "11f_8InJRj9JGBe-nV76fO6CUFSc8IGRw",
+      "ext": "pdf",
+      "octets": 24903,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1702.pdf",
+      "id": "1ejGVI5rGtIgShqQiKPmlftnbB8opXWO6",
+      "ext": "pdf",
+      "octets": 59928,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1702.docx",
+      "id": "1Y2CBxd1LzS-mrcyrEzVr_PnMWXeAZvId",
+      "ext": "docx",
+      "octets": 62181,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1JxpamIQc7p6I9aLx-KhOK2-9vF7cs28o",
+      "ext": "docx",
+      "octets": 62974,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "PLAN TQC/TQC Site Electrical/Thumbs.db",
+      "id": "120S8HjTh8XK6i-IydgnDzjR6QrSjXAE-",
+      "ext": "db",
+      "octets": 29696,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "PLAN TQC/TQC Site Electrical/#RGF - AS BUILT.pdf",
+      "id": "1HbaqhheCte_U_42NHZd5L8T_vuCi_--T",
+      "ext": "pdf",
+      "octets": 41041297,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/TQC Site Electrical/PR08_Electrical_SE1_Rv.pdf",
+      "id": "1qhJtrR2-g9X5qevBWeTheWO7Vr8P7oV9",
+      "ext": "pdf",
+      "octets": 2300582,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/TQC Site Electrical/IFC-PR01_Electrical_SE1.pdf",
+      "id": "190PlUgNk11MLKpvja96ReSjK_JYjN6EK",
+      "ext": "pdf",
+      "octets": 8753675,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/Électriques (plans du bâtiment existant)/Thumbs.db",
+      "id": "1qqGZO-dTfU19FHjXeR1KemxrZTd28S1h",
+      "ext": "db",
+      "octets": 31744,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "PLAN TQC/Électriques (plans du bâtiment existant)/St Bruno WH_CO-E6_SE1_Site Light.pdf",
+      "id": "1rpqlYTFe1YEci9LcCeaXkXlT20DtfNmX",
+      "ext": "pdf",
+      "octets": 2438845,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/Électriques (plans du bâtiment existant)/St Bruno WH_PR-01_E6_Tire Center.pdf",
+      "id": "17K3e7UCuvEvlIj6H8uhg7h1VaGPc951D",
+      "ext": "pdf",
+      "octets": 1896467,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/Électriques (plans du bâtiment existant)/St Bruno WH_PR-01_E10_Panel Schedule (P8).pdf",
+      "id": "1nATvusrFhJVoGSOBzpaTP1BcIxwefTdZ",
+      "ext": "pdf",
+      "octets": 1620760,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/Électriques (plans du bâtiment existant)/St Bruno WH_PR-12_E1_One Line Diagram.pdf",
+      "id": "1Q7qGmQc4Cy06IL0hYiMuzksMlrpfwu2y",
+      "ext": "pdf",
+      "octets": 2002234,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/Électriques (plans du bâtiment existant)/St Bruno WH_PR-03_E9_Panel Schedule (H2).pdf",
+      "id": "1BJXDNC2NXP2F5XCCROWFoWhqoy837nfX",
+      "ext": "pdf",
+      "octets": 1229229,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "PLAN TQC/Électriques (plans du bâtiment existant)/St Bruno WH_PR-01_SE2_Site Elec Detail.pdf",
+      "id": "1Am70s2n7Awjs9AmnsjOBOP6Yg4qw7L9N",
+      "ext": "pdf",
+      "octets": 9655191,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/Thumbs.db",
+      "id": "1vow_TnHCMOtFnkqO6gsvGzeAFWW6LiTl",
+      "ext": "db",
+      "octets": 42496,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Nouveau dossier/Panneau P4 centre pneu1.jpg",
+      "id": "1JVYCWy6_cZkuvrFhp2i9iQ66K7dImqKr",
+      "ext": "jpg",
+      "octets": 1082791,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Nouveau dossier/Panneau P4 centre pneu2.jpg",
+      "id": "1FAen2_pQK8VoUawCEy90mhFQqe5XWK7A",
+      "ext": "jpg",
+      "octets": 737407,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Nouveau dossier/Détails nouvelle borne EV double.pdf",
+      "id": "1WwGaUdFhKKTgHjJCY1B08FLMn4TauXua",
+      "ext": "pdf",
+      "octets": 891945,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/2026-03-16 Instructions aux soumissionnaires RÉV.pdf",
+      "id": "17xHD_jn0SZmyYPYIbNS7EYQ1DtZ-ZP5U",
+      "ext": "pdf",
+      "octets": 60044,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/PR08_Electrical_SE1_Rv.pdf",
+      "id": "1-foP2xaB7P9m69WoNrOgfbM2v8ABQXTz",
+      "ext": "pdf",
+      "octets": 2300582,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/St Bruno WH_PR-01_E6_Tire Center.pdf",
+      "id": "1zO0dy1IFvomehJxvDw0E0QiYOhv6Gnjd",
+      "ext": "pdf",
+      "octets": 1896467,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/lampadaire  costco.pdf",
+      "id": "1tP_wsbrHxZLGzniGQXPKZT4lJRAe8NQ6",
+      "ext": "pdf",
+      "octets": 28919248,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/costco st bruno.pdf",
+      "id": "1zI0dOjwhvFjdE31Y8bi40DIRZx3L1O5Z",
+      "ext": "pdf",
+      "octets": 22098185,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/2026-03-10 Instructions aux soumissionnaires.pdf",
+      "id": "1jnaKhqNpShX0c4RiYpsPPnu1-mvGyKZV",
+      "ext": "pdf",
+      "octets": 68838,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Nouveau dossier/OneDrive_1_2026-03-12.zip",
+      "id": "1jljORlF45HhtBQHswXpON_BgicxpUvtR",
+      "ext": "zip",
+      "octets": 123533733,
+      "mimeType": "application/zip"
+    }
+  ]
+}

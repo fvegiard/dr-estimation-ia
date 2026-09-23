@@ -1,0 +1,27 @@
+{
+  "dossier": "S-1724 - DIX30 plinthe",
+  "id": "1frtcDhb6MXKbRCRX4cKwiWF0mzv_IGfB",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1dv4YBo7QmgQfYQHFsLwvJbhXL3maaeqW",
+      "ext": "db",
+      "octets": 11264,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1724.pdf",
+      "id": "1bMEy4WNlXxzj8b5cYroAZBkql1OmS03T",
+      "ext": "pdf",
+      "octets": 254412,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1724.docx",
+      "id": "1CmkwZGKHtUcEhwKuYDjmw9WVjvdop1st",
+      "ext": "docx",
+      "octets": 62147,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

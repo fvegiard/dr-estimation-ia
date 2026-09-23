@@ -1,0 +1,34 @@
+{
+  "dossier": "s-1749 generatrice  reservoir mont bruno ste julier",
+  "id": "1JU6ksN0--5WKMFOuwI_S0uXXfZw9XSlB",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1qHhBMh_vRvkZrpcvfX5A0AYklycy2ZWB",
+      "ext": "db",
+      "octets": 13824,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1749.pdf",
+      "id": "1VxyTD8v_lEIgzUW2VE_pojxqZwyqutNU",
+      "ext": "pdf",
+      "octets": 433310,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1749.docx",
+      "id": "1hc608sR52mg-v70SY4FMunCKJ5-L6cJR",
+      "ext": "docx",
+      "octets": 62472,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1eYOQEp7RgzZBnEmGcFDbtX0wPUd-FObQ",
+      "ext": "docx",
+      "octets": 62988,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

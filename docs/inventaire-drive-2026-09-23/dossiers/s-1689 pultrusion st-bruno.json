@@ -1,0 +1,118 @@
+{
+  "dossier": "s-1689 pultrusion st-bruno",
+  "id": "14nTdGj8yKSOTyjdSTtrgStxg_snpXy3u",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1qpHvrPpKed1KHll73hP3zE5pRxhZFjFM",
+      "ext": "db",
+      "octets": 70144,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1689.pdf",
+      "id": "1tpH4k9QMQaSfsh9ywscAm8Kzn0nVkKcz",
+      "ext": "pdf",
+      "octets": 258861,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1689.docx",
+      "id": "1qOMBEJS01Sr1ftPkutbIHQckmFJ-FlW7",
+      "ext": "docx",
+      "octets": 61865,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "14uxsglAixPDfOeOfPj9LnHKBhwwO-AaF",
+      "ext": "docx",
+      "octets": 62583,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Qte8843822.pdf",
+      "id": "1XQrncJ4aIb5huuuigbAzE2BFmy6uwG7T",
+      "ext": "pdf",
+      "octets": 181840,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Guillevin - Prix Schneider.pdf",
+      "id": "15qIWjxeWL989-hV0KsO20sK48LTk-vtZ",
+      "ext": "pdf",
+      "octets": 129861,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "doc20260310154352.pdf",
+      "id": "1S6H-dlH0BR6KfY19Bk7eDsZPGYk6WT_u",
+      "ext": "pdf",
+      "octets": 1848866,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "prix watt stopper.pdf",
+      "id": "19NfiVDg0ItaxuwK6NT5Gt6N3yePxVEvC",
+      "ext": "pdf",
+      "octets": 180037,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "prix eclairage.pdf",
+      "id": "1ibTxDW33zVnhxMcuMO4pjOoB4wNsyQsx",
+      "ext": "pdf",
+      "octets": 103775,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "prix urgence.pdf",
+      "id": "1Q3YEuhTZ7_Nh0EjrwZc1lUVHuF6HhgU2",
+      "ext": "pdf",
+      "octets": 106084,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "TAKE OFF ECL.pdf",
+      "id": "1DatZH9Ua648z9rWS314OubbbCMJCh3h7",
+      "ext": "pdf",
+      "octets": 216492,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Pultrusion Plan Électrique.pdf",
+      "id": "1jvqTCqQn9kmR6-Fy5u729Y8YbwmqcqFl",
+      "ext": "pdf",
+      "octets": 2776332,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "25-163F_Pultrusion_St-Bruno.zip",
+      "id": "1DQ7M9uC39-63pbx52A6azMgvzQCvIqWH",
+      "ext": "zip",
+      "octets": 15205887,
+      "mimeType": "application/zip"
+    },
+    {
+      "chemin": "S-1466 Pultrusion St-Bruno/Thumbs.db",
+      "id": "17QC8WYn5SOViclB6spSBfOjQcuMjdhHF",
+      "ext": "db",
+      "octets": 18432,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1466 Pultrusion St-Bruno/PLANS ARCHITECTURE.pdf",
+      "id": "1-m5NzyvnsMeKNNTdWOsqBncSfmBQVaMi",
+      "ext": "pdf",
+      "octets": 4267577,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1466 Pultrusion St-Bruno/PLANS ÉLECTRIQUES.pdf",
+      "id": "1Jdq3sYESrktkf_KaJV-d81cUH23XNcj3",
+      "ext": "pdf",
+      "octets": 2392412,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

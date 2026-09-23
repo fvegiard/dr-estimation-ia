@@ -1,0 +1,62 @@
+{
+  "dossier": "s-1786 entretien generatrice  terrebonne mdl",
+  "id": "1-JJZ3CeJzJEGH2m-NYYWBhPP0kmz9_ZH",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1OrKypmQkl1bPYhSqPtw_JRNIE8lkc4Uo",
+      "ext": "db",
+      "octets": 57856,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Soumission_S1786_MDL_Energie_02-09-2026.pdf",
+      "id": "1ZBaqAc7N9J_r_bLzz7FI_fgNG-BlU1I-",
+      "ext": "pdf",
+      "octets": 43688,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission_S-1786_MDL_Energie_6.pdf",
+      "id": "1K3EYTxbKg__iO-8iaMeHwlgcfWVZs7am",
+      "ext": "pdf",
+      "octets": 181239,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission_S-1786_MDL_Energie_.pdf",
+      "id": "1g8NrFV_SNWerOVlWVsfdNqCMkvHYsGBM",
+      "ext": "pdf",
+      "octets": 181387,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Fw Soumission 2mW Single Shift Terrebonne - Le Groupe DR Électrique Inc..eml",
+      "id": "1sic-v1p0fnmnKV7T55tfjY-SDm5eOsx7",
+      "ext": "eml",
+      "octets": 720815,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "FW United Rentals, Inc Quote# 263060215.eml",
+      "id": "11Gs5pg6lymMZKuX9jA_Nv0QzG2z7fr64",
+      "ext": "eml",
+      "octets": 160185,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "Rental Quote_263060215..PDF",
+      "id": "1Se7xtPH_Wi-4rhB7762pSInOWSm4kXtW",
+      "ext": "PDF",
+      "octets": 36512,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "RE Soumission 2mW Single Shift Terrebonne - Le Groupe DR Électrique Inc..eml",
+      "id": "1AYdW1K-mlbc9QWmfvmvnH8UC96mPCPgs",
+      "ext": "eml",
+      "octets": 351781,
+      "mimeType": "message/rfc822"
+    }
+  ]
+}

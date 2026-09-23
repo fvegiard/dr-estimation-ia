@@ -1,0 +1,125 @@
+{
+  "dossier": "s-1760 college breboeuf",
+  "id": "1va3_wBTLFGcyb8QzgDr237jTHg6cqi8K",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "11mXx-vl8C_eG_w6oF_l6t4z-8HrCZsA9",
+      "ext": "db",
+      "octets": 30208,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1760_Lanthier.pdf",
+      "id": "1VlLp14nBmBZOhUrUMVhAa1erKwbumt0j",
+      "ext": "pdf",
+      "octets": 71151,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "bordereau de soumission.XLS",
+      "id": "1FU9lN1aM749NbuZ-Kv6NkiJqwX0K5-Ba",
+      "ext": "XLS",
+      "octets": 24561,
+      "mimeType": "application/vnd.ms-excel"
+    },
+    {
+      "chemin": "s-1760.docx",
+      "id": "1sku_wcTMS2EV126xHH6swtIfRIhBN0MP",
+      "ext": "docx",
+      "octets": 62508,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1760_Lanthier_2.pdf",
+      "id": "1FKxECH172O29mtWg78pQsU1T9VbicrI5",
+      "ext": "pdf",
+      "octets": 66834,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "66941_AOI_2026-002_Addenda 1.pdf",
+      "id": "15547Eh5Bcbi5rftTiCbkoYRD7QJ72gKg",
+      "ext": "pdf",
+      "octets": 275976,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Rapport environnemental T.Harris.PDF",
+      "id": "1GhrkFuMloUzgtPXxy1MTpsxvRxtgz-au",
+      "ext": "PDF",
+      "octets": 1181810,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis dappel doffre_contrat (1).PDF",
+      "id": "1AF4Lo4-UCRRoJmvQ1ud2ufpdKzwFTa0I",
+      "ext": "PDF",
+      "octets": 1543339,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis_Cahier des charges.PDF",
+      "id": "1j9M45S9WZisq_y9XMOYAo5UiuspLhm7H",
+      "ext": "PDF",
+      "octets": 2700855,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Bordereau de soumission.PDF",
+      "id": "1xwRkxnLxLcYhCh7OZBhIvv7omkzUgPcn",
+      "ext": "PDF",
+      "octets": 210634,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Rapport damiante_GESFOR.PDF",
+      "id": "1uNMxlLotP1FVqIxYbihvFh-CVUWf9lvt",
+      "ext": "PDF",
+      "octets": 18235680,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis dappel doffre_Formulaire de soumission.PDF",
+      "id": "13A5JxJdvFtQVNnpUC8CgR1iXnG_AL1pu",
+      "ext": "PDF",
+      "octets": 1029650,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan mécanique.PDF",
+      "id": "1evSOuoeAp1jU73j-6q3dG50L2-qY8BIr",
+      "ext": "PDF",
+      "octets": 2261970,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "260420-01 Devis complet pour appel d'offre.pdf",
+      "id": "1H5zlaLsW-ltYIsJX35ESjgQ3p1H7pBNP",
+      "ext": "pdf",
+      "octets": 2828156,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan architecture.PDF",
+      "id": "1yGu_zzL0NLSDzxjOvgDo8rNRwrIfq58u",
+      "ext": "PDF",
+      "octets": 8794309,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan électrique.PDF",
+      "id": "1y7JZESaMbjr_0gvSiY5yt3ATR83U95s2",
+      "ext": "PDF",
+      "octets": 22258833,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "2026-05-01_1445 - SOUM - BREBEUF - TROIS CLASSES -ADDENDA 01.pdf",
+      "id": "148Y3bM50CaMDvdA-sNfilKzdJp-kaMtI",
+      "ext": "pdf",
+      "octets": 516634,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

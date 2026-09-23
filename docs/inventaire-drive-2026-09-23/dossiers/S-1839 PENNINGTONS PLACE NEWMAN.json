@@ -1,0 +1,62 @@
+{
+  "dossier": "S-1839 PENNINGTONS PLACE NEWMAN",
+  "id": "1zRMB6HNWxCuPVZ8TT2thMoZV-30kQ8bE",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1bivQYPJy61VjLq-ZPwAUAZXq08LXBtFU",
+      "ext": "db",
+      "octets": 26112,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (4).docx",
+      "id": "14Ybfc84AVQbrzioacAdI89B3kVX-4632",
+      "ext": "docx",
+      "octets": 62433,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission_S-1839_DOMRA_Pennington.pdf",
+      "id": "1tjSQzP9lH-B5qGhdD7NxumvW-3CaaVp0",
+      "ext": "pdf",
+      "octets": 208270,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda 1_électricité.pdf",
+      "id": "1I2tqdnIEy6cNALwXLDy-HgwWzz-fNtkS",
+      "ext": "pdf",
+      "octets": 41673,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda 2_Date de dépôt et architecture.pdf",
+      "id": "1az_XKqPptSagNSixr8lG7qRAwJL-fYYY",
+      "ext": "pdf",
+      "octets": 76486,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Invitation à soumissionner projet privé WESTCLIFF CA Penning (Le groupe DR electrique inc.).pdf",
+      "id": "1h-UlHzK5YuZJZ9x3v4ivqP4adj-OOsn2",
+      "ext": "pdf",
+      "octets": 84875,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "26-229-E-PE-SO.pdf",
+      "id": "1yRQZsgthEdw-2HYNPsXlEuhel7cYFA7k",
+      "ext": "pdf",
+      "octets": 1509639,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "3.2407-ARCH-Soumission-2026-07-15-s.pdf",
+      "id": "1V2yD3kUupAXIIorAEAXcAi3NFfLnm2fx",
+      "ext": "pdf",
+      "octets": 1910368,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

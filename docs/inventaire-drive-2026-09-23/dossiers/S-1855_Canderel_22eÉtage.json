@@ -1,0 +1,55 @@
+{
+  "dossier": "S-1855_Canderel_22eÉtage",
+  "id": "1pp3X1j41JAfbHod5MPFbuT9gGqkaTo7_",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1SFNxOpxGUiadmw3__ZrnwUrfmKmVT2wH",
+      "ext": "db",
+      "octets": 11776,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1855_22e étage.pdf",
+      "id": "1zhZRbMsnpF2JD_fKhtvebsXzhZfZcffz",
+      "ext": "pdf",
+      "octets": 444985,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1855.docx",
+      "id": "1pHR7-TFZAbE_h1ags6Xft5gqpCH1xKj5",
+      "ext": "docx",
+      "octets": 61933,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "courriel.pdf",
+      "id": "1mUz9vNn_HE3mlcgiEkeQRUyXmcVGIiHn",
+      "ext": "pdf",
+      "octets": 1768327,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Photo/Thumbs.db",
+      "id": "1GO1x4Lh4lPECeehipdBooVlAqd3cCZFw",
+      "ext": "db",
+      "octets": 30208,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Photo/2.jpg",
+      "id": "1y3tWGlJbuab06lzSavgAZm3XwFWSZVX7",
+      "ext": "jpg",
+      "octets": 2286237,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photo/1.jpg",
+      "id": "1yVDhXWKQe5kMm0oWli9O-y_t8dcArFBF",
+      "ext": "jpg",
+      "octets": 2261257,
+      "mimeType": "image/jpeg"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "dossier": "S-1680 - 2200 McGill (entrée 955 Mansfield) Chauffage",
+  "id": "1SHEKDjCBhvSp9pan9UrBxymgYbquKfLz",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1S1pqOHObyRYRzxH7snwkFSY3MBSGLFSh",
+      "ext": "db",
+      "octets": 22528,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1680.docx",
+      "id": "1JRKqwgjQ1Rc2xbrJnNFhPpiZ0eo78YKG",
+      "ext": "docx",
+      "octets": 62269,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1680.pdf",
+      "id": "1lZVG5Y1NrckVId6jTBwJQBr_Sg3ZRV16",
+      "ext": "pdf",
+      "octets": 537326,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "12frHvkyvUj2X98_YlqX0_gwOtG6WUhE0",
+      "ext": "docx",
+      "octets": 62148,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Prix et disponibilité pour remplacer 2 chauffage pour le 2200 McGill college pour Oovana..pdf",
+      "id": "1910p2NDa3x9NAfnuoGvdJo4i1m_0kmHD",
+      "ext": "pdf",
+      "octets": 2402551,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Photos/Thumbs.db",
+      "id": "1CF1I1X1D8YFjucddubj5yyoRxbZM_T03",
+      "ext": "db",
+      "octets": 42496,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Photos/Photo 2.jpg",
+      "id": "1a28dTJomrEYhmFCDwXoaKHqkAWWRlmoS",
+      "ext": "jpg",
+      "octets": 2242581,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Photo 1.jpg",
+      "id": "10RlnrbUTTrsbGA6XPGzKfxxsvqMeeIDU",
+      "ext": "jpg",
+      "octets": 2242160,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Photo 3.jpg",
+      "id": "1AR_WVV44hyRek6oAAsQcEdgbNmdErTjM",
+      "ext": "jpg",
+      "octets": 1850172,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Lumen/FC_CF_FR_web.pdf",
+      "id": "1fQcctFcNoHJgA63AHLjCaqag9NlW_pCN",
+      "ext": "pdf",
+      "octets": 275551,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Lumen/Thumbs.db",
+      "id": "17ijSrsVYu-Xqzh7B21xSV4g9qzQBPBnm",
+      "ext": "db",
+      "octets": 31744,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Lumen/LUM3229236100.pdf",
+      "id": "1GbQK_ZMafMoRU5sYIGwbSAlO1FxE8RM0",
+      "ext": "pdf",
+      "octets": 579630,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

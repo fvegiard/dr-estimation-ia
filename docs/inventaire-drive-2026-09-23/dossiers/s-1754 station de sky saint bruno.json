@@ -1,0 +1,34 @@
+{
+  "dossier": "s-1754 station de sky saint bruno",
+  "id": "1K__qzUdq9RorfopwDQ8FKkb8SHQoZ3UA",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1NHWZpvRcwLCfCG4yGKvKo4EU8BORI9hH",
+      "ext": "db",
+      "octets": 18432,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1754_SkiSaintBruno.pdf",
+      "id": "1W30_i1zLUsR6hFtGyvtauIu_RUm83H4r",
+      "ext": "pdf",
+      "octets": 78488,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1swRDXQobbqmwv0WV6nJQPjR1WdMl3TfA",
+      "ext": "docx",
+      "octets": 63762,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Fw Demande de soumission – Aménagement entrée 600A – Station de Ski Saint-Bruno.eml",
+      "id": "1j2-z8lMD4tTKnnSaHqxBTct8p-jdZ_d2",
+      "ext": "eml",
+      "octets": 15755,
+      "mimeType": "message/rfc822"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{"dossier": "S-1794 Thermographie", "id": "1zJOVFC1PCnirfwI8q2s98VXyGFY-f1Xa", "note": "Dossier tres volumineux (>150 fichiers PDF de releves SLD par adresse + pagination Drive multiple). Liste partielle ci-dessous, fichiers principaux et echantillon; sous-dossier 'prix envoiyer' non explore.", "fichiers": [
+{"chemin":"Thumbs.db","id":"1uAwcF9ClvvehhseGgnLan4nWGuICX7dT","ext":"db","octets":94208,"mimeType":"application/octet-stream"},
+{"chemin":"Soumission_S-1794_Pure_Industrial_DR_Final_1.pdf","id":"1Fb4MxdX2bS7m6H_EaHbzuVg7OA5fZEFL","ext":"pdf","octets":7177116,"mimeType":"application/pdf"},
+{"chemin":"Soumission_Pure_Industrial_DR_Electrique.pdf","id":"1vrXIDCsne9S7Rqtu4atgmDpgxqTOdMXP","ext":"pdf","octets":7154880,"mimeType":"application/pdf"},
+{"chemin":"_6__Thermography_and_Arc_Flash_-_Service_Specifications_FR.pdf","id":"10GkUqPPoEJPr25F_CtdFH5Rb0ENL0xBE","ext":"pdf","octets":225792,"mimeType":"application/pdf"},
+{"chemin":"[NOTE] ~150 fichiers '<code>_<adresse>_SLD.pdf' (releves par site, 60xx/70xx/71xx/80xx) non transcrits individuellement","id":"","ext":"pdf","octets":0,"mimeType":"application/pdf"},
+{"chemin":"[NON EXPLORE] prix envoiyer/","id":"11bqhYOARnN9Y6N_OzUxrgAguMw_Y8ISy","ext":"folder","octets":0,"mimeType":"application/vnd.google-apps.folder"}
+]}

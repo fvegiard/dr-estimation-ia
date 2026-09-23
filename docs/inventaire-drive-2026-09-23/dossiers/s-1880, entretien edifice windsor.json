@@ -1,0 +1,20 @@
+{
+  "dossier": "s-1880, entretien edifice windsor",
+  "id": "193chsWDxhXEm3ZlK2wEKXAzdm510oLXE",
+  "fichiers": [
+    {
+      "chemin": "Soumission_EP2026-____BR_Windsor-1170Peel.pdf",
+      "id": "1KLYJMZrU8jsXyy5Fdzay9aEvTxYXsfGx",
+      "ext": "pdf",
+      "octets": 30399,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "AL-2302-246.pdf",
+      "id": "1RLOOkidnlIr8tvWlu8qetOh3NeELivw2",
+      "ext": "pdf",
+      "octets": 1291686,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "dossier": "s-1811 cdc construction de 6 batiment",
+  "id": "1RLmwR7X1IzQ6pfxCPIi_eZ1lzcZJrI7h",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1Yp36coWz-_MkKziTv81QQzqzHhxw_D_V",
+      "ext": "db",
+      "octets": 36864,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "formule bsdq completer.pdf",
+      "id": "1Z0iXe5RWY-4d5v_Z80l5OwJpCBBp2xJe",
+      "ext": "pdf",
+      "octets": 1327881,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "relevé final Daniel.pdf",
+      "id": "1fxYYGlh1NdhdfEXwNmto1c8rHXwRvWK4",
+      "ext": "pdf",
+      "octets": 4731333,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "SO8A0623X6K1-0002-376-M-QuickPrint_6_NOUVEAUX_BATIMENTS_-_GA_2.PDF",
+      "id": "1o8PHAoB-9SRtL31z9EK-jCoLaCwr7ta7",
+      "ext": "PDF",
+      "octets": 604667,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "demande cautionnement.pdf",
+      "id": "1Yt9gSTV70nm9ik5l5wKOWBTIFk5Xja7w",
+      "ext": "pdf",
+      "octets": 448663,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "CDC ST-JEAN GARRISON_Q-7132573-PD-002_BOM_Total Price.pdf",
+      "id": "1yuoNWItCJefNqDKeQJ0LEHo6JreG7kz2",
+      "ext": "pdf",
+      "octets": 105017,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "releve pour demande de prix.pdf",
+      "id": "1hL8KT-J2lFvG2A9BYAmyq-Xn_eNA4Go_",
+      "ext": "pdf",
+      "octets": 807989,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Capture d'écran 2026-07-02 071240.png",
+      "id": "1ei6NiyPiJlDGAGO5EVwUu4_rZK9GRAP3",
+      "ext": "png",
+      "octets": 96931,
+      "mimeType": "image/png"
+    },
+    {
+      "chemin": "detail bsdq batiment st-jean.pdf",
+      "id": "1xagGVBalovTvKEXSsy81_jq8r_nysGvD",
+      "ext": "pdf",
+      "octets": 455219,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/extrait pour section de devis electricité.pdf",
+      "id": "14t5Fr9m5vAEuVJwgvbRT_hn4ZVAqfydH",
+      "ext": "pdf",
+      "octets": 245192,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/bordereau soumission electricité.pdf",
+      "id": "1H1kaK_caom4aipZ4AoYgtXGK3DFqbUXu",
+      "ext": "pdf",
+      "octets": 130324,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/devis alarme incendie.pdf",
+      "id": "1lltX587iAr0632azU8mGCUJ2EBUkfIOY",
+      "ext": "pdf",
+      "octets": 7789757,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/relevé alarme incendie.pdf",
+      "id": "1STvAlcyYf2iutoiuRZe6exjsf7H3Q-0p",
+      "ext": "pdf",
+      "octets": 356153,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/devis electricité.pdf",
+      "id": "153YIm9sNxWo70rPC4JwaAup_MK7CIYW2",
+      "ext": "pdf",
+      "octets": 61057407,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/01 Devis_Toutes disciplines_pour AO.pdf",
+      "id": "12-x6GCVdxE_It3w_3wPU5WaqPdhQBILj",
+      "ext": "pdf",
+      "octets": 29520272,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/Thumbs.db",
+      "id": "1S-g545mcYQPzHVKCGgNlxCCT_xUdLVdq",
+      "ext": "db",
+      "octets": 15872,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Plans/00 Architecture_Plans_pour AO.pdf",
+      "id": "1GdhqAIOfjF2tatGXglivqBawtosW80tC",
+      "ext": "pdf",
+      "octets": 6795332,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/00 Civil_Plans_pour AO.pdf",
+      "id": "1teEZ1fHjjgHOla0vl6VNRPy8yWoldnaB",
+      "ext": "pdf",
+      "octets": 17018020,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/00 Mécanique_Plans_pour AO.pdf",
+      "id": "1-xe-SsfA6hDfxikmksQ6M1R5jXQ-GMBl",
+      "ext": "pdf",
+      "octets": 4176092,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/00 Structure_Plans_pour AO.pdf",
+      "id": "1UQuCau-CYtlS8RTg5vGLffTrDLP5IMsX",
+      "ext": "pdf",
+      "octets": 3943060,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/00 Électricité_Plans_pour AO.pdf",
+      "id": "1-ut9jKIuIp8XLjEC0_P4FVKA7JnPTzKq",
+      "ext": "pdf",
+      "octets": 6532068,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "document de projet/00.3 Conditions_Supplementaires_CN_avec_VPA.pdf",
+      "id": "1M65GbTEwzHlWqwDcaUpFWoqS_Crh2QDc",
+      "ext": "pdf",
+      "octets": 236443,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "document de projet/00.5 Étude Géotech_Env._26G2003_Final_2026-04.pdf",
+      "id": "1XrRen__4eBz988v12pVMZ0we1MHNOuDP",
+      "ext": "pdf",
+      "octets": 67929669,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "document de projet/00.2 CDL250E_Documents_de_contrat_pour_soumission_électronique.pdf",
+      "id": "1kyMzfg8d2jVMxsaxH27QBobnY-ZZjF-O",
+      "ext": "pdf",
+      "octets": 2687710,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "document de projet/00.4 Liste_de_noms_vérification_intégrité.pdf",
+      "id": "1Xnky8agc-6yf6V970kS1fHUMBvtXiNvD",
+      "ext": "pdf",
+      "octets": 183178,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumissions fournisseurs - sous-traitants/Garnison St-Jean.pdf",
+      "id": "1mP8dkXaodPi2tzmqs2d7NMR8ZfHgq90D",
+      "ext": "pdf",
+      "octets": 80102,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumissions fournisseurs - sous-traitants/Quote_CDC.Garnison St-Jean - 6 Bâtiments d'habitation_S26027 Garnison St-jean_2026_07_14_LE_GROUPE_DR_ELECTRIQUE_INC_V2.pdf",
+      "id": "1CaeIhPVtJCg5OHQlWxOoHImqQebfC9q1",
+      "ext": "pdf",
+      "octets": 145381,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Cautionnement/Formulaire de demande de cautionnement - DR.docx",
+      "id": "1-qPKEV22jnN0sNvSy-WjsMnueE71tZN7",
+      "ext": "docx",
+      "octets": 28320,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Addenda/Addenda 05 (3).pdf",
+      "id": "11YEXaqZc8Piyq1b-1xMGLzdWrsyE-xQp",
+      "ext": "pdf",
+      "octets": 105127,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Thumbs.db",
+      "id": "1vEeE9M8ym9-XIyrhJa_VEHIwCbsuNqsS",
+      "ext": "db",
+      "octets": 33280,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Addenda/00 Addenda MEP01_Plans-unlocked.pdf",
+      "id": "15iJwX8SJTc-7PaEZ4LFSXTh3DchUfeW5",
+      "ext": "pdf",
+      "octets": 8428613,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Addenda 02.pdf",
+      "id": "1WFSHd_0UpqnqNgwEkivoXETKeFehBfgn",
+      "ext": "pdf",
+      "octets": 133371,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/L-S267-1302-01-351B.pdf",
+      "id": "16BzHeq_pU_kU_RZ25oH-m4clZL9GHJl3",
+      "ext": "pdf",
+      "octets": 539792,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/00 Addenda S1_Plans.pdf",
+      "id": "1ZUe0U0v9ZoKf0X8I5euLVlEDeoTN66Qc",
+      "ext": "pdf",
+      "octets": 1358817,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Addenda 02 - C1.pdf",
+      "id": "1Cd4FyRbWIy8mDAeT_Jtua2bH2NqH6-mN",
+      "ext": "pdf",
+      "octets": 439986,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/00 Addenda MEP01_Plans.pdf",
+      "id": "171QMDV7qwB7MqDp0AXNFl6Vcfe0g14JH",
+      "ext": "pdf",
+      "octets": 11827831,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/L-S267-1302-01-331B.pdf",
+      "id": "1DuS8sev5ChsjYomBAPwVDJe_lHsXCKlq",
+      "ext": "pdf",
+      "octets": 708874,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/L-S267-1302-01-320B.pdf",
+      "id": "1RAFqI17lT7NqEkfcIuNIuuMKWsLTcq66",
+      "ext": "pdf",
+      "octets": 584655,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/L-S-267-1302-01-330B.pdf",
+      "id": "1SDKIjlFGqmgNkxUGk2XV37cXPWtSZbKr",
+      "ext": "pdf",
+      "octets": 663083,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/L-S267-1302-01-312B.pdf",
+      "id": "1eQC8_8LPFTVLLJVvc5NkFJPj7VZps5lm",
+      "ext": "pdf",
+      "octets": 854319,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/00 Addenda C1_Plans.pdf",
+      "id": "1SJ3gAgDj1E-65sbBVx8-wn8TCOQh7crt",
+      "ext": "pdf",
+      "octets": 16460760,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Addenda 02 - MEP-01.pdf",
+      "id": "1y7pd5fbzIzc88UAP5lmSTcPgc-qWk8sK",
+      "ext": "pdf",
+      "octets": 723900,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Addenda 02 - C1_Étude Géotech_Env._26G2003_Final_R1-2026-06.pdf",
+      "id": "1Y6eOYkqfwvOevNwnBhuj1lJXCtxLspdy",
+      "ext": "pdf",
+      "octets": 66989059,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/L-S267-1302-01-340B.pdf",
+      "id": "1A_6v8Xr3kEh9oSzybV7TmMuRzCKiQwRl",
+      "ext": "pdf",
+      "octets": 542568,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Addenda 02 - A2.pdf",
+      "id": "12O8FqEYypVQPhTfJj_uQCpp0jvJ2SuU6",
+      "ext": "pdf",
+      "octets": 596811,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Addenda 02 - S1.pdf",
+      "id": "1RsZIlPNkXS9dDn83egWQGR-jlt8DJKfe",
+      "ext": "pdf",
+      "octets": 362940,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/00 Addenda A2_Plans.pdf",
+      "id": "1pSY1hwKQmWyzyrZU_J5TepwiyTC28PoS",
+      "ext": "pdf",
+      "octets": 2532758,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Fermeture soumission (SIP).xlsx",
+      "id": "1HsxWHWxAyqpDzW-AOkcnvg0-T0HbGCSE",
+      "ext": "xlsx",
+      "octets": 127861,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Format Lettre (DR).docx",
+      "id": "1l3qrKE6HUB8fRrm2LozU0ldQyUTdxDrO",
+      "ext": "docx",
+      "octets": 37535,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Format Lettre (BR).docx",
+      "id": "1CXfwnTMEPywigfkZZo3kV9CKTLJSiII-",
+      "ext": "docx",
+      "octets": 33161,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission projet (DR).xlsm",
+      "id": "15x7SuV-SA-XwZknUXuFCW9rqp9PBPxDP",
+      "ext": "xlsm",
+      "octets": 241343,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission résidentiel léger.xlsx",
+      "id": "1HA3_5qxSLnW5pJnbSGERJ8Tebp50tB2s",
+      "ext": "xlsx",
+      "octets": 237911,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission projet (BR).xlsm",
+      "id": "1xsmouXsrA61vO6-t3o2kd7egw4_rFOa7",
+      "ext": "xlsm",
+      "octets": 250561,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Décompte des sorties - Gabarit.xlsx",
+      "id": "1bBIUGjPhe049idctk64IBwsEP7938Chu",
+      "ext": "xlsx",
+      "octets": 65673,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Take-off et suivi de soumission - Gabarit.xlsx",
+      "id": "12o1x3XEG6VdTh4qB20FTzKLEouO5fhdW",
+      "ext": "xlsx",
+      "octets": 53215,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Take-off et demande de prix - Gabarit.xlsx",
+      "id": "12lQr2CFQdg6UGb7PIcQTp3-S1ap2pEMw",
+      "ext": "xlsx",
+      "octets": 100623,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    }
+  ]
+}
