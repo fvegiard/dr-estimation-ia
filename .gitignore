@@ -42,3 +42,7 @@ oem/PlanExpert/
 *.zip
 *.7z
 *.tar.gz
+
+# --- Bibliothèque normes (rapatriée du Drive « estimation et code », hors git) ---
+refs/normes/*
+!refs/normes/INDEX.md
