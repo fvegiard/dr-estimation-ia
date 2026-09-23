@@ -1,0 +1,19 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Dém. luminaire 1x4 / segment linéaire,demolition,carre,,,Luminaire 1x4 ou segment de rangée linéaire existant à enlever (trait pointillé),D2xx_ADD calque E-D-200-ECL masque 9x35 pt; note générale addenda
+Dém. luminaire 2x4,demolition,carre,,,Luminaire encastré 2x4 existant à enlever,D2xx_ADD calque E-D-200-ECL masque 17x35 pt
+Dém. luminaire 2x2,demolition,carre,,,Luminaire encastré 2x2 existant à enlever,D2xx_ADD calque E-D-200-ECL masque 17x17 pt
+Dém. luminaire rond encastré,demolition,cercle,,,Luminaire rond (pointillé) existant à enlever,D2xx_ADD calque E-D-200-ECL masque 10x10 pt
+Dém. éclairage — à classer,demolition,losange,,,Élément d'éclairage à enlever de forme non standard,D2xx_ADD calque E-D-200-ECL autres masques
+Dém. prise plafond projecteur,demolition,cercle,,,Prise au plafond pour projecteur à enlever et suspendre (note spécifique 6),D210_ADD note 6; calque E-D-300-SER
+Dém. chauffage — à classer,demolition,losange,,,Équipement du calque chauffage à enlever (symbole à croix),D210_ADD/D211_ADD calque E-D-500-CHA
+Luminaire 24h existant — dépose/repose temp.,demolition,carre,,,Luminaire 24 h hachuré à enlever et suspendre temporairement (note spécifique 1),D210_ADD note 1; calque E-E-200-ECL-EQP
+Éclairage existant carré — à classer,demolition,losange,,,Symbole carré mi-noir 11 pt existant (unité d'urgence ou autre),D2xx_ADD calque E-E-200-ECL-EQP masque 11x11
+Éclairage existant — à classer,demolition,losange,,,Autre élément d'éclairage existant,D2xx_ADD calque E-E-200-ECL-EQP
+Détecteur fumée existant — dépose/repose temp.,demolition,cercle,,,Détecteur de fumée à enlever et suspendre temporairement (note 3/7),D210_ADD note 3; calque E-E-600-ALA-EQP
+Station manuelle existante (F) — à confirmer,alarme,carre,,,Symbole drapeau F existant (station manuelle ?),D2xx_ADD calque E-E-600-ALA-EQP 10x10
+Alarme existante — à classer,alarme,losange,,,Autre symbole d'alarme existant,D2xx_ADD calque E-E-600-ALA-EQP
+Prise existante — à classer,prise,cercle,,,Symbole de service existant (calque E-E-300-SER-EQP),D220_ADD
+Détecteur sécurité (M) — par autres,demolition,cercle,,,Détecteur M pointillé calque sécurité — retrait par le CSSST (note générale 01) non chiffré DR,D210_ADD notes générales
+Haut-parleur classe — par autres,demolition,triangle,,,Haut-parleur de classe retiré par le CSSST (note générale 01) non chiffré DR,D210_ADD notes générales; calque E-D-400-COM
+Haut-parleur existant — dépose/entreposage,telecom,triangle,,,Haut-parleur plafond blocs B/C/C1 retiré entreposé par l'entrepreneur puis réinstallé,T-D4xx note générale 1
+Repère EAC — existant à conserver,autre,carre,,EAC,Étiquette EAC (existant à conserver: panneaux/équipements),D2xx_ADD étiquettes

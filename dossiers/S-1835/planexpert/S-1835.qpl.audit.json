@@ -1,0 +1,120 @@
+{
+ "qpl": "/home/claude/releve-auto/runs/S-1835/OUTBOX/S-1835/S-1835-planexpert/S-1835.qpl",
+ "sha256": "1ae4d23735a9779f3a8f3fdd933dc369e7b83e55dab32296ca21203f463a2e55",
+ "octets": 253184,
+ "plans": 31,
+ "compteurs": 81,
+ "marques": 3308,
+ "libelles": 18,
+ "par_feuille": {
+  "D210_ADD": {
+   "Dém. chauffage — à classer": 2,
+   "Dém. luminaire 1x4 / segment linéaire": 179,
+   "Dém. luminaire 2x4": 163,
+   "Dém. luminaire rond encastré": 27,
+   "Dém. prise plafond projecteur": 2,
+   "Détecteur fumée existant — dépose/repose temp.": 33,
+   "Détecteur sécurité (M) — par autres": 8,
+   "Haut-parleur classe — par autres": 3,
+   "Luminaire 24h existant — dépose/repose temp.": 32,
+   "Repère EAC — existant à conserver": 14,
+   "Station manuelle existante (F) — à confirmer": 10,
+   "Éclairage existant carré — à classer": 13,
+   "Éclairage existant — à classer": 1
+  },
+  "D211_ADD": {
+   "Alarme existante — à classer": 2,
+   "Dém. chauffage — à classer": 1,
+   "Dém. luminaire 1x4 / segment linéaire": 284,
+   "Dém. luminaire 2x2": 2,
+   "Dém. luminaire 2x4": 109,
+   "Dém. luminaire rond encastré": 20,
+   "Dém. éclairage — à classer": 11,
+   "Détecteur fumée existant — dépose/repose temp.": 46,
+   "Détecteur sécurité (M) — par autres": 3,
+   "Luminaire 24h existant — dépose/repose temp.": 44,
+   "Repère EAC — existant à conserver": 8,
+   "Station manuelle existante (F) — à confirmer": 9,
+   "Éclairage existant carré — à classer": 17,
+   "Éclairage existant — à classer": 2
+  },
+  "D212_ADD": {
+   "Alarme existante — à classer": 2,
+   "Dém. luminaire 1x4 / segment linéaire": 61,
+   "Dém. luminaire 2x2": 4,
+   "Dém. luminaire 2x4": 24,
+   "Dém. luminaire rond encastré": 8,
+   "Dém. éclairage — à classer": 7,
+   "Détecteur fumée existant — dépose/repose temp.": 8,
+   "Détecteur sécurité (M) — par autres": 2,
+   "Luminaire 24h existant — dépose/repose temp.": 14,
+   "Repère EAC — existant à conserver": 2,
+   "Station manuelle existante (F) — à confirmer": 1,
+   "Éclairage existant carré — à classer": 3,
+   "Éclairage existant — à classer": 2
+  },
+  "D213_ADD": {
+   "Dém. luminaire 1x4 / segment linéaire": 221,
+   "Dém. luminaire 2x4": 31,
+   "Dém. luminaire rond encastré": 24,
+   "Dém. prise plafond projecteur": 4,
+   "Dém. éclairage — à classer": 4,
+   "Détecteur fumée existant — dépose/repose temp.": 26,
+   "Luminaire 24h existant — dépose/repose temp.": 34,
+   "Repère EAC — existant à conserver": 6,
+   "Éclairage existant carré — à classer": 8
+  },
+  "D220_ADD": {
+   "Dém. luminaire 1x4 / segment linéaire": 318,
+   "Dém. luminaire 2x4": 131,
+   "Dém. prise plafond projecteur": 7,
+   "Détecteur fumée existant — dépose/repose temp.": 38,
+   "Luminaire 24h existant — dépose/repose temp.": 37,
+   "Prise existante — à classer": 4,
+   "Repère EAC — existant à conserver": 5,
+   "Station manuelle existante (F) — à confirmer": 4,
+   "Éclairage existant carré — à classer": 9
+  },
+  "D221_ADD": {
+   "Dém. luminaire 1x4 / segment linéaire": 459,
+   "Dém. luminaire 2x4": 51,
+   "Dém. luminaire rond encastré": 6,
+   "Dém. éclairage — à classer": 5,
+   "Détecteur fumée existant — dépose/repose temp.": 28,
+   "Luminaire 24h existant — dépose/repose temp.": 30,
+   "Repère EAC — existant à conserver": 13,
+   "Station manuelle existante (F) — à confirmer": 4,
+   "Éclairage existant carré — à classer": 3
+  },
+  "D222_ADD": {
+   "Dém. luminaire 1x4 / segment linéaire": 366,
+   "Dém. luminaire 2x4": 45,
+   "Détecteur fumée existant — dépose/repose temp.": 13,
+   "Luminaire 24h existant — dépose/repose temp.": 27,
+   "Repère EAC — existant à conserver": 6,
+   "Station manuelle existante (F) — à confirmer": 4,
+   "Éclairage existant carré — à classer": 2
+  },
+  "D410": {
+   "Haut-parleur existant — dépose/entreposage": 23
+  },
+  "D411": {
+   "Haut-parleur existant — dépose/entreposage": 27
+  },
+  "D412": {
+   "Haut-parleur existant — dépose/entreposage": 3
+  },
+  "D413": {
+   "Haut-parleur existant — dépose/entreposage": 13
+  },
+  "D420": {
+   "Haut-parleur existant — dépose/entreposage": 41
+  },
+  "D421": {
+   "Haut-parleur existant — dépose/entreposage": 36
+  },
+  "D422": {
+   "Haut-parleur existant — dépose/entreposage": 9
+  }
+ }
+}
