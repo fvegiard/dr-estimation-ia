@@ -1,10 +1,10 @@
 # Écart relevé humain (Dupuis) / relevé IA — S-1811
 
-_Généré le 2026-09-22 par `src.validation.compare_qpl` — comparaison déterministe marque par marque ; aucun chiffre saisi à la main._
+_Généré le 2026-09-23 par `src.validation.compare_qpl` — comparaison déterministe marque par marque ; aucun chiffre saisi à la main._
 
-- Humain : `/home/claude/releve-auto/corrections/S-1811-dupuis.qpl`
-- IA : `/home/claude/releve-auto/runs/S-1811/OUTBOX/S-1811/S-1811-planexpert/S-1811.qpl`
-- Dimensions : `/home/claude/releve-auto/corrections/png-dimensions.txt` ; feuilles : `/home/claude/releve-auto/runs/S-1811/OUTBOX/S-1811/travail/feuilles.csv`
+- Humain : `dossiers/S-1811/reference/S-1811-Dupuis-PlanExpert.qpl`
+- IA : `dossiers/S-1811/planexpert/S-1811.qpl`
+- Dimensions : `dossiers/S-1811/reference/dupuis-png-dimensions.txt` ; feuilles : `dossiers/S-1811/reference/feuilles-ia.csv`
 
 ## Résumé
 

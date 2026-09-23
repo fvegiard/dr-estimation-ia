@@ -13,6 +13,18 @@ Les dossiers (plans, devis, addendas) sont publics — appels d'offres publiés.
 
 Tant que ces chiffres ne sont pas atteints et prouvés dans `dossiers/`, le projet n'est PAS prêt.
 
+## Structure pour Claude (Code, Cowork, action GitHub)
+
+- `CLAUDE.md` — règles du projet, carte du dépôt, commandes (lu à chaque session).
+- `.claude/skills/releve-planexpert/` — la méthode de relevé (conventions de l'estimateur incluses) ;
+  `.claude/skills/comparer-estimateur/` — rejouer le jeu de référence.
+- `.claude/agents/` — `releveur` (Opus), `verificateur` (Opus), `inventaire` (Haiku).
+- `releve/` — la chaîne de relevé (rapatriée de `planexpert-s1857-saint-michel`, branche `releve-auto-v2`, e781203).
+- `dossiers/_jeu-reference/` — rappel/précision de l'IA contre les projets Plan Expert de M. Dupuis (5 dossiers) ;
+  la ligne de base est vérifiée à chaque PR par `.github/workflows/ci.yml`.
+- `.github/workflows/claude.yml` — `@claude` dans une issue ou une PR ; nécessite le secret `CLAUDE_CODE_OAUTH_TOKEN`
+  (`claude setup-token`) et l'app GitHub Claude installée sur le dépôt.
+
 ## Pipeline
 
 1. **Entrée** — `dossiers/<no>/entree/` : plans PDF, devis, addendas
