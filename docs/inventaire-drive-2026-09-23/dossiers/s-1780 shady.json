@@ -1,0 +1,132 @@
+{
+  "dossier": "s-1780 shady",
+  "id": "1kESVAfXS1g3CvwqROSHvHKUI7GYLIrGa",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1xrDJb5eq4MK8Qldu5Ekz-bHUBZOMtNYa",
+      "ext": "db",
+      "octets": 37888,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Soumission_S-1780_SWBV_Precast_3.pdf",
+      "id": "1p0uIAiAxoS6BXB5Eqo3GXI_CTcU8TeQB",
+      "ext": "pdf",
+      "octets": 55144,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission_S-1780_SWBV_Precast_2.pdf",
+      "id": "1Z01G_nsGzPvfUtRvzNdjDQmWMSyb7_jJ",
+      "ext": "pdf",
+      "octets": 50940,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1NMaXviv3g0IIxUPIuiAnNTRk5m7Ka0np",
+      "ext": "docx",
+      "octets": 62589,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "~$dele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1rI-BMqpGJzYanqNmFRZ4-EqEQrxhmsk2",
+      "ext": "docx",
+      "octets": 162,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "socle en beton.pdf",
+      "id": "1fWg9HRCKtul4SzPM-SVK1-0sXa3DQw40",
+      "ext": "pdf",
+      "octets": 1080011,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Croquis conduit Sous-dalle.pdf",
+      "id": "1ro0OWW2wRtBYrtcJVS25zynrf1zbsVeS",
+      "ext": "pdf",
+      "octets": 777958,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "250142_E_C2026-02-06 (1)-Copy.pdf",
+      "id": "11nnhZgeUIqGI_hGuw4v9IyXxo7hAcstU",
+      "ext": "pdf",
+      "octets": 8443832,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "wetransfer_250142_e_c2026-02-06-1-copy-pdf_2026-05-20_1758.zip",
+      "id": "1ijrgQXsA8zoabyenKLKqnAsNI6ETwzSp",
+      "ext": "zip",
+      "octets": 9222145,
+      "mimeType": "application/zip"
+    },
+    {
+      "chemin": "temporaire/IMG_2526.jpeg",
+      "id": "1j9dZKLXL2FNG66U5O-iHtzbkvLhw3P2F",
+      "ext": "jpeg",
+      "octets": 8028668,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "temporaire/IMG_2524.jpeg",
+      "id": "1H3ZKbzS1ZljaXatVpvGp-qKE2ucKGDHG",
+      "ext": "jpeg",
+      "octets": 1038182,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "temporaire/IMG_2522.jpeg",
+      "id": "1AGXtFtrU_9l5C2EM_WBvpDQUqzS5zM8E",
+      "ext": "jpeg",
+      "octets": 2261245,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "temporaire/Thumbs.db",
+      "id": "1XurlqlRAz8gK9v0RB2Wf6PaCpOr7pFDA",
+      "ext": "db",
+      "octets": 10752,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "temporaire/IMG_2523.jpeg",
+      "id": "19CNkW5oj5GsNiRD_ejNHJfljq6us227G",
+      "ext": "jpeg",
+      "octets": 1053724,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "demande/prix panneau et transfor/Guillevin - Prix Schneider (2 Options) Rév 1.pdf",
+      "id": "1hA8v2vW_f7JLEI7BjFYBM5ZFB0Uwdozg",
+      "ext": "pdf",
+      "octets": 356370,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "demande/prix panneau et transfor/Qte9287404.pdf",
+      "id": "1KWkkNOhXffpNtcAPcs9WIU7BZo2z55wo",
+      "ext": "pdf",
+      "octets": 181966,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "demande/prix panneau et transfor/Thumbs.db",
+      "id": "1hz_2Q-M3aLhgWG2n4MXBB22nwxCMPIqD",
+      "ext": "db",
+      "octets": 17920,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "demande/prix panneau et transfor/Qte9287391.pdf",
+      "id": "1g1fTkgD8ihC-r5fs-l9OJm0FoMSCRn1C",
+      "ext": "pdf",
+      "octets": 180261,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

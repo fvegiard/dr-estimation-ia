@@ -1,0 +1,405 @@
+{
+  "dossier": "s-1844 saq varennes",
+  "id": "14yJ_u1yy-K4kFgl3Qskn-ZQi0fEagS3G",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1xsPux7Z2EnWKZeCMuz2sOtZo4iVytz4A",
+      "ext": "db",
+      "octets": 112128,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "E-09-DEVIS-1-DE-2-Rev.0.pdf",
+      "id": "1vgP6ZqRxlc9eQ2LCGRD-8_jyS4Dp6ILG",
+      "ext": "pdf",
+      "octets": 1163957,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-04-SECTEUR-MÉLANGES-Rev.1.pdf",
+      "id": "1W2CLFFnOHAhVHM9oz8pXqOfWJJplTef9",
+      "ext": "pdf",
+      "octets": 342324,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-05-SECTEUR-RÉCEPTION-DU-LAIT-DÉMOLITION-Rev.0.pdf",
+      "id": "1fpfyClJH5KYTgvr3kxDK3usf2-C1cLFO",
+      "ext": "pdf",
+      "octets": 394656,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-01-LÉGENDE-TABLEAUX-Rev.1.pdf",
+      "id": "1NRkC2osOzlEnG44qM4n7wLto12gcgK6O",
+      "ext": "pdf",
+      "octets": 762775,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-03-SECTEUR-SILOS-Rev.1.pdf",
+      "id": "1WoopfTkg8B0ZzGkuH07DmNUZLcnLnk1f",
+      "ext": "pdf",
+      "octets": 341828,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-07-PLAN-DE-TOIT-Rev.1.pdf",
+      "id": "1rQw9N9l90RvMt5PRfa6Ktt7xeIf8A_hJ",
+      "ext": "pdf",
+      "octets": 497037,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-10-DEVIS-2-DE-2-Rev.0.pdf",
+      "id": "1kefKjceRc587k734bQ_KMpcM7b3TOa7V",
+      "ext": "pdf",
+      "octets": 1314895,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-02-PLAN-CLÉ-Rev.0.pdf",
+      "id": "1YTrJxGgnFrRsWhjlxj7izvw7cJdxUeN7",
+      "ext": "pdf",
+      "octets": 2479401,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-06-SECTEUR-RÉCEPTION-DU-LAIT-RÉAMÉNAGEMENT-Rev.1.pdf",
+      "id": "1U9ZjBTkdiAEmp9dlauCq17Zxgd7EW_mq",
+      "ext": "pdf",
+      "octets": 727297,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "E-08-DISTRIBUTION-ÉLECTRIQUE-PANNEAUX-Rev.1.pdf",
+      "id": "1Psa0J6qhTvARSdo77vKQWgTJlik-oLsZ",
+      "ext": "pdf",
+      "octets": 599083,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission_S1844_LC2000_SAQ_1.pdf",
+      "id": "1gyFrTk46xBBuHzigbp3FOMXX0dKuBkif",
+      "ext": "pdf",
+      "octets": 208919,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Capture d'écran 2026-08-27 132100.png",
+      "id": "1U8w80FBYAs6DeKka5nuQUkFUXs4IPOv7",
+      "ext": "png",
+      "octets": 15104,
+      "mimeType": "image/png"
+    },
+    {
+      "chemin": "plan pour soumission en date du 26 aout.pdf",
+      "id": "1qXSXnE92rNkHFOYQZJ2jgHRxe2pu4l37",
+      "ext": "pdf",
+      "octets": 20388,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00002.jpg",
+      "id": "1EomuHrzMs_B2sWuEwZo_OpN6X7TWHsNy",
+      "ext": "jpg",
+      "octets": 5329164,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00005.jpg",
+      "id": "1WTeTfxnzQQoURH2556asxyqnXX0_7FUX",
+      "ext": "jpg",
+      "octets": 4887260,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00011.jpg",
+      "id": "1LnXU9CTtA89M8tWnQnCYXaaOyFst-wuC",
+      "ext": "jpg",
+      "octets": 5657529,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00007.jpg",
+      "id": "1__Wnc5p8cSgbNYkrusFMS3tlMiOuWrFK",
+      "ext": "jpg",
+      "octets": 4416117,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00004.jpg",
+      "id": "146_KQfcD4redMhV4_afw2ck2FWCxbzNU",
+      "ext": "jpg",
+      "octets": 4966070,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00010.jpg",
+      "id": "1vae98hoU539E0j66Gh9mBGjRB5o-65oj",
+      "ext": "jpg",
+      "octets": 5821570,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00003.jpg",
+      "id": "1n4oVqqnbfzkv9_Ihca949gvsMqLxrKjD",
+      "ext": "jpg",
+      "octets": 8037288,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00009.jpg",
+      "id": "1Wo89p29MtzDO5XsjEjAQf87b8cNj4QZo",
+      "ext": "jpg",
+      "octets": 1426531,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00012.jpg",
+      "id": "1xtAbk2RGzax3Acxmxg3576mc7wRVRSYk",
+      "ext": "jpg",
+      "octets": 4187616,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00008.jpg",
+      "id": "1ZYThYNx4Kmgr0jv8DU8PJYA6lfNcdXs6",
+      "ext": "jpg",
+      "octets": 4820316,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00006.jpg",
+      "id": "1J9NKzW36JkQz32zWhiQREweAwfIq0yI6",
+      "ext": "jpg",
+      "octets": 5972322,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00001.jpg",
+      "id": "1C0O5pyuVMOFYpJWA_xbZCAu6ASbiCLdN",
+      "ext": "jpg",
+      "octets": 15310505,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - ARCH-03.pdf",
+      "id": "1A2nglvASceyGgbm9T76mUgZ4nJFSLGOp",
+      "ext": "pdf",
+      "octets": 616032,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - ARCH-02 (1).pdf",
+      "id": "1LX7rNcaL_wvx7k52yncF5SebfkhkpDad",
+      "ext": "pdf",
+      "octets": 2937810,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - ADM-03 (1).pdf",
+      "id": "1e55WiQpzvRsRTjeZ4kHVB-YUjKYEEUsB",
+      "ext": "pdf",
+      "octets": 198315,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - HI-02 (1).pdf",
+      "id": "1mfhVWhBCF7kepexnYk2mXfUY4L5QrHNk",
+      "ext": "pdf",
+      "octets": 317360,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf",
+      "id": "1sWTk6oXUlUvF2TLn1E-6Qa1QJLTVhoUB",
+      "ext": "pdf",
+      "octets": 16880999,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission_S-1844_LC2000_SAQ_.pdf",
+      "id": "1t6YJqxHEDOlFPw6zOUIc7dSxVufsrpvP",
+      "ext": "pdf",
+      "octets": 215243,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DR Electrique Inc. P-997.pdf",
+      "id": "1e7qL_ci21225aRHWwLjiazTYvCfw7gLq",
+      "ext": "pdf",
+      "octets": 220285,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "liste des plans electriques.pdf",
+      "id": "1kZTDOhW-xaMo8GtCSuXgz6HfoMDoCMpA",
+      "ext": "pdf",
+      "octets": 55846,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347_SELECTION_VARENNES_PLAFOND_PHASE 3..pdf",
+      "id": "10fOMLrQnAGjE5BSHfPDkjx8gKPz52FP_",
+      "ext": "pdf",
+      "octets": 1800527,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347_SELECTION_VARENNES_PLAFOND_PHASE 4..pdf",
+      "id": "1_5OgWe89ghS58FCHhL-TdvqaNufOnaP5",
+      "ext": "pdf",
+      "octets": 1822283,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347_SELECTION_VARENNES_ELECT-MEC_PHASE 2_REV_02..pdf",
+      "id": "1MdpBRdfY1Vgejv8Yw8I-yVU0QFWTWefM",
+      "ext": "pdf",
+      "octets": 415152,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347_SELECTION_VARENNES_ELECT-MEC_PHASE 1..pdf",
+      "id": "1cKRmo2CwWZnwwl8JzD0udQnj17Fzdkia",
+      "ext": "pdf",
+      "octets": 539219,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "take off.pdf",
+      "id": "1MCBt7N1JyTUitXd4qjhGOLvfyyiQoiTB",
+      "ext": "pdf",
+      "octets": 1507024,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347-Sélection Varennes-Échéancier préliminaire_REV_04.pdf",
+      "id": "1_9WO4epYxwycDVuLv2e2rzbl0CXsQSZZ",
+      "ext": "pdf",
+      "octets": 2352829,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "saq varenne rev 1.pdf",
+      "id": "11TctCm-t5wiInxMVkR16JGLRyTfNmSlQ",
+      "ext": "pdf",
+      "octets": 215954,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347-Sélection Varennes-Échéancier préliminaire_REV_04-page-00001.jpg",
+      "id": "1np1XBC-P4BH3I03P5Ji1FJW2yQtco4L5",
+      "ext": "jpg",
+      "octets": 13596174,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "plan controle SAQ Varenne.pdf",
+      "id": "1m2QkkaSXG-JLt-UoeE-AXP5jkvku-vEf",
+      "ext": "pdf",
+      "octets": 9963053,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "26-0108-02_ELECTRICITE_COMMENTÉ.pdf",
+      "id": "1_IJtl9fOZYX90Rz5iDjjljMWdtOIe-h5",
+      "ext": "pdf",
+      "octets": 13181471,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347-Sélection Varennes-Échéancier préliminaire_REV_04.xlsx",
+      "id": "13zKQgPU5xYi1RNuQPe91gmw_6f0VEL9b",
+      "ext": "xlsx",
+      "octets": 92666,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "23347_SELECTION_NOTES GÉNÉRALES_2026-08-13.pdf",
+      "id": "16dO7F53kT6zu7WoUZm47H_0Us-RgJkPL",
+      "ext": "pdf",
+      "octets": 692627,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347_SELECTION_DETAILS_2026-08-13.pdf",
+      "id": "17l1qH5d_knBHzLDdZlnURL8tvZ66fDy9",
+      "ext": "pdf",
+      "octets": 1107422,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "23347_SELECTION_GLOBAL_SOUM_2026-08-13.pdf",
+      "id": "1x62NCygnhsZfs8bsR4lTRTtWNhu2jxSP",
+      "ext": "pdf",
+      "octets": 14506522,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/Thumbs.db",
+      "id": "1NU7nbsgJ8BQmOUatbsmYRqvUNdglFCSW",
+      "ext": "db",
+      "octets": 7680,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "plan de phassage/23347_SELECTION_VARENNES_PLAFOND_PHASE 2..pdf",
+      "id": "1RaJcQDlBfcE0F6PVWOrZZB5pfk2vorll",
+      "ext": "pdf",
+      "octets": 502096,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/liste des plans electriques.pdf",
+      "id": "1fGgEykmbTs8RyetdntAmKF1xeafoSamf",
+      "ext": "pdf",
+      "octets": 55846,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/23347_SELECTION_VARENNES_ELECT-MEC_PHASE 4..pdf",
+      "id": "1almWuC20PF3pNrXfu4e8dKB69hWI4wDd",
+      "ext": "pdf",
+      "octets": 931487,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/23347_SELECTION_VARENNES_ELECT-MEC_PHASE 2_REV_02..pdf",
+      "id": "1rbGcOlWRz0B-IOkU6ZmnGTH9voiOuRR3",
+      "ext": "pdf",
+      "octets": 415152,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/23347_SELECTION_VARENNES_PLAFOND_PHASE 3..pdf",
+      "id": "1T5kOT1SfvwDt-fLektbYLA2imGSo3EKy",
+      "ext": "pdf",
+      "octets": 1800527,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/23347_SELECTION_VARENNES_ELECT-MEC_PHASE 1..pdf",
+      "id": "1d00Vvw6FcSXXCJGvFL7uHnWkztfHebxR",
+      "ext": "pdf",
+      "octets": 539219,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/23347_SELECTION_VARENNES_ELECT-MEC_PHASE 3..pdf",
+      "id": "1gHXX5uzKpdfXkBFHKKp_SFmwW4koewxn",
+      "ext": "pdf",
+      "octets": 393577,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan de phassage/23347_SELECTION_VARENNES_PLAFOND_PHASE 4..pdf",
+      "id": "1XxZvMuwFnm5_TSVncJZblkGmDKtLnCCY",
+      "ext": "pdf",
+      "octets": 1822283,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

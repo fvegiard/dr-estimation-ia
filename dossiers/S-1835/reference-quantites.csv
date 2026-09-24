@@ -1,0 +1,21 @@
+section,libellé humain,quantité,unité,note
+DEMOLITION / Général,ENLEVER FIXTURE 1X4,1927,U,v2 p4; 0.350 h; identique v1
+DEMOLITION / Général,ENLEVER FIXTURE 2X4,579,U,0.350 h; identique v1
+DEMOLITION / Général,ENLEVER FIXTURE ENCAST[RÉ],41,U,libellé tronqué; 0.350 h
+DEMOLITION / Général,ENLEVER FIXTURE MURAL,14,U,0.350 h
+DEMOLITION / Général,ENLEVER INTERRUPTEUR,176,U,0.350 h
+DEMOLITION / Général,ENLEVER FIXTURE 2X2,6,U,0.350 h
+DEMOLITION / Général,ENLEVER PRISE,7,U,0.350 h
+DEMOLITION / Général,SURFACE 193315,0,U,0.50 $ unitaire; quantité 0 (surface pi² notée en libellé)
+DEMOLITION / Général,PLASTIC FIXTURE ENLEVE[R],2567,U,= 1927+579+41+14+6 (compté par règle); v2 0.000 h (v1 0.100 h)
+DEMOLITION / Général,BALLAST ENLEVER,2567,U,compté par règle; v2 0.000 h (v1 0.100 h)
+DEMOLITION / Général,ENREPOT FIXTURE,2567,U,compté par règle; v2 0.000 h (v1 0.100 h)
+DEMOLITION / Général,ENLEVER CONDUIT ET FILA[GE],1,U,forfait; 0.000 h
+DEMOLITION / Général,HAUT PARLEUR,153,U,0.500 h
+DEMOLITION / Général,REINSTALLER HAUT PARLE[UR],153,U,0.000 h
+Sommaire v2 p3,Heures chargées / relevé,1039,h,Service 88 315.00 $; manuscrit « 85.00 » (taux $/h)
+Sommaire v2 p2 (variante),Heures chargées,700,h,relevé 687.5 h; Service 59 500.00 $; manuscrit 70 000 / 75 000 / 80 000 / 100 / 89 777.00 « prix CL 50 »
+Sommaire v2 p2 (variante),TEMPORAIRE,?,forfait,manuscrit « TEMPORAIRE = » (montant associé ? probablement 89 777.00)
+Sommaire v2 p2 (variante),DEMO AU PIED CARRÉ,193315,pi²,x 0.50 = 96 657.50 $ (manuscrit)
+v2 p1,Devis 1.19 Démolition et réfection surligné,,,.4 éclairage et chauffage temporaires aux frais de l'entrepreneur général
+Différences v1→v2,quantités,,,aucune ligne modifiée; seuls temps unitaires plastic/ballast/enrepot 0.100 h → 0 h; total 1809.1 h (v1, chargé 1820 h / 154 700 $) → 1039 h (88 315 $)

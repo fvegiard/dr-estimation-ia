@@ -1,0 +1,146 @@
+{
+  "dossier": "s-1648 nike st bruno",
+  "id": "103HDZ71GxM2d9z8K1VU2SVbmJqJl1kQp",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1TdX7kDaUPploPZw6zb_YwU8nRFcpXgj0",
+      "ext": "db",
+      "octets": 51200,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "proposition Nike st bruno.pdf",
+      "id": "1p_ynLuo2E84fu_jzZ62RgzhtMa4bYGFJ",
+      "ext": "pdf",
+      "octets": 584648,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "proposition Nike st bruno.docx",
+      "id": "1WHj7NtY87ciyHwbA9lhF4WvOx87acvWU",
+      "ext": "docx",
+      "octets": 60494,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "EMG Type U7 - Recessed remote.pdf",
+      "id": "1mcE7ZCLzoxAPnmxGgjzdwB5h0lZItNc5",
+      "ext": "pdf",
+      "octets": 729622,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "EMG Type U4 - Double Remote Heads, BoH, White.pdf",
+      "id": "1LFVpV8TcQjYsH_fXdhXMRtFC97FcfO4o",
+      "ext": "pdf",
+      "octets": 2027429,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Mirror - Edgelit for fitting rooms.pdf",
+      "id": "1sSthl-QrXR9xcnB_iFzL67jk7Lv8XyML",
+      "ext": "pdf",
+      "octets": 189513,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "NIKE St Bruno - FIRE PROTECTION - IFP.pdf",
+      "id": "1SPqKMa6xSyqNU9-2qmvTPWxgtAZuwinq",
+      "ext": "pdf",
+      "octets": 4561339,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "NIKE St Bruno - ARCHITECTURAL - IFT.pdf",
+      "id": "1abjm943nIXMnrZIOVlGNoxAjKElhW57C",
+      "ext": "pdf",
+      "octets": 36973279,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "CF Promenades St-Bruno - Construction Rules and Regulations - May 2025.pdf",
+      "id": "1Mrr-Wy_P2FNEfJum3ok0LGb-ThzzaBs1",
+      "ext": "pdf",
+      "octets": 851578,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "EMG Type U1 - Exit sign, BoH, Plastic.pdf",
+      "id": "1Vjgr3lIpTV_HtQRo4yTrkx7y0JEF91FH",
+      "ext": "pdf",
+      "octets": 2113181,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "EMG Type U5 - Double Remote Heads, FoH, Black.pdf",
+      "id": "1Il1Ivec_5i1szagYnv7whlrg5oU1kaB0",
+      "ext": "pdf",
+      "octets": 2008891,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "EMG Type UB1 - Battery Unit with Remote Heads.pdf",
+      "id": "1Ft4u8VamQVPfIK_sNHSNUh5EoR3P4vDz",
+      "ext": "pdf",
+      "octets": 2117838,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "NIKE St Bruno - STRUCTURAL - IFT.pdf",
+      "id": "13-aYTQ90aiTSdLhcJllYOSkWlz008oy6",
+      "ext": "pdf",
+      "octets": 4754793,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "NIKE St Bruno - MECHANICAL - IFT.pdf",
+      "id": "1aeHGW2AgYip0MPSZLSA4jSZYC-0fBYcg",
+      "ext": "pdf",
+      "octets": 2615611,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "EMG Type U3 - Exit sign, FoH, Edgelit.pdf",
+      "id": "1GnGB2AzdBk6nTrVKBFi89qtdrMTmJKqK",
+      "ext": "pdf",
+      "octets": 2096681,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "NIKE St Bruno - ELECTRICAL - IFT.pdf",
+      "id": "1b-DrO5wGWtSsK63aKB2c62HneOyX9-Wf",
+      "ext": "pdf",
+      "octets": 1956133,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "NIKE - Matterport Existing Site.docx",
+      "id": "186Sqk_IUx00qXKctmAiJ9I4vMTgYSG2C",
+      "ext": "docx",
+      "octets": 13822,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "UNUSED/Thumbs.db",
+      "id": "1KvIWC68XxTXnYo5FR-8d-skHJkaav5cs",
+      "ext": "db",
+      "octets": 19968,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "UNUSED/Type O - fitting room pendant.pdf",
+      "id": "11PyCDkrLgfvCQ4gRXBKAePQh7hhIqTVv",
+      "ext": "pdf",
+      "octets": 1429994,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "UNUSED/Type E - cashwrap lighting.pdf",
+      "id": "1NP24wrKaaNnWkMZMoK0ZdqABydg-Jxon",
+      "ext": "pdf",
+      "octets": 627853,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

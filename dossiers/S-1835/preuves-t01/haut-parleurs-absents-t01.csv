@@ -1,0 +1,8 @@
+feuille_originale,x_pt,y_pt,vue_aussi_sur,x_autre,y_autre,present_sur_t01,conclusion
+D420,2218.6,386.8,D421,788.8,385.3,D421_ADD,"doublon du chevauchement original, conservé une fois sur D421_ADD"
+D420,2083.6,1860.9,D421,653.8,1859.4,non,retiré du dessin par T-01 (absent des deux feuilles révisées)
+D420,2187.0,2055.0,D421,757.2,2053.5,D421_ADD,"doublon du chevauchement original, conservé une fois sur D421_ADD"
+D421,549.6,612.4,D420,1979.4,613.9,D420_ADD,"doublon du chevauchement original, conservé une fois sur D420_ADD"
+D421,544.8,702.1,D420,1974.6,703.6,D420_ADD,"doublon du chevauchement original, conservé une fois sur D420_ADD"
+D421,545.1,1497.7,D420,1974.9,1499.2,D420_ADD,"doublon du chevauchement original, conservé une fois sur D420_ADD"
+D421,653.9,1859.5,D420,2083.7,1861.0,non,retiré du dessin par T-01 (absent des deux feuilles révisées)

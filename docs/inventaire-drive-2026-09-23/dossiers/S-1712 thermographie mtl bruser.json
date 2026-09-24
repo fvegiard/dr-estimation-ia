@@ -1,0 +1,34 @@
+{
+  "dossier": "S-1712 thermographie mtl bruser",
+  "id": "1rCp1btLFQdmtbJQK4NIRu1nl5d_RtSOS",
+  "fichiers": [
+    {
+      "chemin": "26-21319_Localisation _Listes des Postes de pompage_ AO.pdf",
+      "id": "1e7BrH4NsXUqrtSml8mrDyQCRl3aIW0FR",
+      "ext": "pdf",
+      "octets": 296588,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Liste des Postes de pompage.pdf",
+      "id": "12jPoqIm6hhExO9NfNwb4Be60qteqKlkn",
+      "ext": "pdf",
+      "octets": 351568,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "AO Montreal - Demande de soumission.eml",
+      "id": "1CuDoq9WLJkaK4EEJytJPUT7Qc7sDEAqD",
+      "ext": "eml",
+      "octets": 25052226,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "Extrait Annexes - Liste des poste de pompage.pdf",
+      "id": "1K2lmvNxmyPPpQA1sYCP1Bh3XzBhFW3ls",
+      "ext": "pdf",
+      "octets": 17633857,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

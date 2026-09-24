@@ -1,0 +1,34 @@
+{
+  "dossier": "S-1729 Éclairage_Uniprix Ste-Julie",
+  "id": "1sBkfJWf1J846ugeVEtMTpGGiDuhezAK6",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1fcxLIh7wbMA_owzPLiIbV1o1jIvdh1Ru",
+      "ext": "db",
+      "octets": 11264,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1729.docx",
+      "id": "1PSEnJJVyH9oPfMZRwJJjomZeNc7qh9eI",
+      "ext": "docx",
+      "octets": 61956,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1729.pdf",
+      "id": "1AOXS_sSSOtZiY0EmIq_RP7-UwkWW_UKq",
+      "ext": "pdf",
+      "octets": 259176,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie.docx",
+      "id": "1eDbMZ63NHbd2ax5V8C5VqTG-fdZEpiP2",
+      "ext": "docx",
+      "octets": 62466,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

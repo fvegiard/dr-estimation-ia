@@ -1,0 +1,20 @@
+{
+  "dossier": "s-1773 saint julie corrdor",
+  "id": "1Uf3NqipzVHxnD9_CuYrWdfsQ12Je2x5J",
+  "fichiers": [
+    {
+      "chemin": "luminaire bord du mur hotel de ville .eml",
+      "id": "1qniscJa5LpvtGEYUXw7EaKJ_C6upoFoz",
+      "ext": "eml",
+      "octets": 165253,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "tube Metric  DR ville st-julie.eml",
+      "id": "1QFXuiR22lAlpE9v2fRRiuG-CwfD-8P_f",
+      "ext": "eml",
+      "octets": 396901,
+      "mimeType": "message/rfc822"
+    }
+  ]
+}

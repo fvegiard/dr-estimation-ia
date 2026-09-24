@@ -1,0 +1,10 @@
+{"dossier": "S-1851 CENTRAL BEAUHARNOIS HV", "id": "1Szr9GnRkZzQmQFeNCE3VvXn47GhovBGQ", "fichiers": [
+{"chemin": "depot de prix au client.eml", "id": "1nKwwTUf6wIx8BND0x-xww_ozP36sMEOp", "ext": "eml", "octets": 368179, "mimeType": "message/rfc822"},
+{"chemin": "Thumbs.db", "id": "1sZsnFd7eVc2_2NlyqjFM7XbByT_xC0WI", "ext": "db", "octets": 25600, "mimeType": "application/octet-stream"},
+{"chemin": "Soumission_Q626-042_DR_Electrique_TALVI_1.pdf", "id": "1R6TWfOR-HSUBlR5nIcOxSENK76d1n_Pv", "ext": "pdf", "octets": 235464, "mimeType": "application/pdf"},
+{"chemin": "AM011584_ADD01.pdf", "id": "1zUeG0tqWwvBDyy0hL4IWL-LchOFbpUY9", "ext": "pdf", "octets": 175553, "mimeType": "application/pdf"},
+{"chemin": "ZippedDownload.zip", "id": "1-3r55uhHq2GEgKJPTplnTj0c1bTVQPCZ", "ext": "zip", "octets": 257481618, "mimeType": "application/zip"},
+{"chemin": "Q626-042 - Terminaison HT.xlsx", "id": "1ADbXd_eVQxzNHGfFEbg41iHLlU-ogItR", "ext": "xlsx", "octets": 29643, "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+{"chemin": "LMC - Terminaisons HT.pdf", "id": "1rcahMdcrNQsfOfkcvXpxPFzbuHAkvDMg", "ext": "pdf", "octets": 195374, "mimeType": "application/pdf"},
+{"chemin": "CTP Appareillage électrique.pdf", "id": "1g4hpucq5XdsUR0Yi3BwywpjYsyKP-eN0", "ext": "pdf", "octets": 7032913, "mimeType": "application/pdf"}
+]}

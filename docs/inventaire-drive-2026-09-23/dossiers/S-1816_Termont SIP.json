@@ -1,0 +1,55 @@
+{
+  "dossier": "S-1816_Termont SIP",
+  "id": "18148SX_p0oYdV-bNGscjJH9KL-JZ5haC",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1GeyhQ04kCPCaAf3D3DZQfeVfTRN6OpRA",
+      "ext": "db",
+      "octets": 13824,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "IMG_3659.jpeg",
+      "id": "1pyBzyhxpCFAj5IV40P8bNBTPE7R7vxGH",
+      "ext": "jpeg",
+      "octets": 1234933,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "TRS37X-PM-FR-D.pdf",
+      "id": "1vuVb0zIsgHzvcQLWxkflJsfrPoVillNH",
+      "ext": "pdf",
+      "octets": 161900,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "TRS 370-DS-FR-G Fiche Technique.pdf",
+      "id": "1vhyHTQ-3R0OdhqQ6bkDJGZcZ4JslTNFa",
+      "ext": "pdf",
+      "octets": 426537,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S100008862.pdf",
+      "id": "1PaNKEN_XMVi9-Y6JZR3o3_d-yl4gMU-J",
+      "ext": "pdf",
+      "octets": 441010,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "TRS370-IN-01-FR-C Implantation avec croix de scellement.pdf",
+      "id": "1593UiZ5_IpHIw0P2-nTyhITA7EBC_RVd",
+      "ext": "pdf",
+      "octets": 252100,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Cahier des charges  - Remplacement tourniquet Viau 2026.pdf",
+      "id": "1G9eeWOw121200c72L33Nmy6UYjW1Cai8",
+      "ext": "pdf",
+      "octets": 450992,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

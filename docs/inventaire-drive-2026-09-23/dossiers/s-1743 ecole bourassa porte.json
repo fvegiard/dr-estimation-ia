@@ -1,0 +1,55 @@
+{
+  "dossier": "s-1743 ecole bourassa porte",
+  "id": "1NqPIFkGqKXdfVxpOPiQ0sZ0PFJu0Uf3g",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1doG-LDjZEyp0NSyrwhO8SItvNMz8Ey3C",
+      "ext": "db",
+      "octets": 30208,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1743.pdf",
+      "id": "1T9dDFJNANDhO8GAuewIQA_ObYTynijTq",
+      "ext": "pdf",
+      "octets": 446153,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1743.docx",
+      "id": "1EL8lb_Mb8Op5UnnRVcDp0lGx6mqW_zSv",
+      "ext": "docx",
+      "octets": 62920,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1l2GnoFh2_4GRUDyT3UIggkA0yxjFrS4X",
+      "ext": "docx",
+      "octets": 63098,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "029-063-44467_PLANS_ÉLECTRIQUE_A1_4pages.pdf",
+      "id": "1rJmRwnDdqD7cEGavEJnhRrBISoTvazGH",
+      "ext": "pdf",
+      "octets": 6436016,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "029-063-44467_Visite virtuelle_8.5x11_10pages.pdf",
+      "id": "1uJdJ3hcUBFCuskPedQBqFrm02UYilwz8",
+      "ext": "pdf",
+      "octets": 3590644,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "029-063-44467_PLANS_ARCHITECTURE_A1_5pages.pdf",
+      "id": "1iforQS6ipBH5O7O4mlBcsZEzjBfY-SDs",
+      "ext": "pdf",
+      "octets": 5265966,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

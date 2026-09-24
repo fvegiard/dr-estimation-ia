@@ -1,0 +1,20 @@
+{
+  "dossier": "s-1765 infiltrationb d'eau conduit electrique dix-30",
+  "id": "1gfGVhiaGViHEJtrH3qB_Owe3fkbtMim1",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1_VK4u_5C65mACuujf2adh609WHj5cbfn",
+      "ext": "db",
+      "octets": 24064,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "L790806 C-08.pdf",
+      "id": "1YkQxl7Jg_hQRoMQZVZQrHSCM92ZoBvwQ",
+      "ext": "pdf",
+      "octets": 2878369,
+      "mimeType": "application/pdf"
+    }
+  ]
+}
