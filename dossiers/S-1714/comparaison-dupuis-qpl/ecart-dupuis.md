@@ -1,6 +1,6 @@
 # Écart relevé humain (Dupuis) / relevé IA — S-1714
 
-_Généré le 2026-09-23 par `src.validation.compare_qpl` — comparaison déterministe marque par marque ; aucun chiffre saisi à la main._
+_Généré le 2026-09-24 par `src.validation.compare_qpl` — comparaison déterministe marque par marque ; aucun chiffre saisi à la main._
 
 - Humain : `dossiers/S-1714/reference/S-1714-Dupuis-PlanExpert.qpl`
 - IA : `dossiers/S-1714/planexpert/S-1714.qpl`

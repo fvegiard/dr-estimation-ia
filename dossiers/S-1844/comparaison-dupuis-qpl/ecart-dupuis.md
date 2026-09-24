@@ -1,6 +1,6 @@
 # Écart relevé humain (Dupuis) / relevé IA — S-1844
 
-_Généré le 2026-09-23 par `src.validation.compare_qpl` — comparaison déterministe marque par marque ; aucun chiffre saisi à la main._
+_Généré le 2026-09-24 par `src.validation.compare_qpl` — comparaison déterministe marque par marque ; aucun chiffre saisi à la main._
 
 - Humain : `dossiers/S-1844/reference/S-1844-Dupuis-PlanExpert.qpl`
 - IA : `dossiers/S-1844/planexpert/S-1844.qpl`

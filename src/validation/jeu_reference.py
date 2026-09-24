@@ -19,6 +19,9 @@ import json
 import sys
 from pathlib import Path
 
+from collections import Counter
+
+from src.qpl.categorie import categoriser
 from src.qpl.normalisation import canonique
 from src.validation import compare_qpl as cq
 
@@ -57,7 +60,32 @@ def evaluer(s: str) -> dict:
     res = {"humaines": h, "ia": ia, "appariees": a, "manquantes": tot["manquantes"], "en_trop": tot["en_trop"],
            "rappel": round(100 * a / h, 1) if h else 0.0, "precision": round(100 * a / ia, 1) if ia else 0.0}
     res["normalise"] = evaluer_normalise(s, comp)
-    return res
+    cat = accord_categories(comp)
+    res["categorie"] = {"couples": cat["couples"], "accord": cat["accord"], "pourcentage": cat["pourcentage"],
+                         "confusions": [{"humain": h, "ia": i, "n": n}
+                                        for (h, i), n in cat["confusions"].most_common(5)]}
+    return res, cat["confusions"]
+
+
+def accord_categories(comp: "cq.Comparaison", seuil: float = cq.SEUIL_MARQUE) -> dict:
+    """Among matched couples (position-based, unchanged), how many agree on
+    CATEGORY (src.qpl.categorie.categoriser) rather than on the exact label —
+    label agreement is ~0 % because the AI writes descriptive labels and the
+    estimator writes short prefixed codes for the same device. Informative
+    only : never used for the pass/fail regression check."""
+    total = accord = 0
+    confusions: Counter = Counter()
+    for res in comp.resultats[seuil].values():
+        for couple in res.couples:
+            ch = categoriser(couple.humain.marque.libelle).categorie
+            cia = categoriser(couple.ia.libelle).categorie
+            total += 1
+            if ch == cia:
+                accord += 1
+            else:
+                confusions[(ch, cia)] += 1
+    return {"couples": total, "accord": accord, "pourcentage": _pc(accord, total),
+            "confusions": confusions}
 
 
 def _pc(a: int, b: int) -> float:
@@ -98,7 +126,11 @@ def main(argv: list[str] | None = None) -> int:
     if not jeu:
         print("aucun dossier dans le jeu de référence", file=sys.stderr)
         return 2
-    res = {s: evaluer(s) for s in jeu}
+    par_dossier = {s: evaluer(s) for s in jeu}
+    res = {s: r for s, (r, _) in par_dossier.items()}
+    confusions_globales: Counter = Counter()
+    for _, confusions in par_dossier.values():
+        confusions_globales.update(confusions)
     SORTIE.mkdir(parents=True, exist_ok=True)
     (SORTIE / "resultats.json").write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     base_path = SORTIE / "ligne-de-base.json"
@@ -124,6 +156,22 @@ def main(argv: list[str] | None = None) -> int:
         n = r["normalise"]
         lignes.append(f"| {s} | {n['accord_libelle_brut']:.1f} % | {n['accord_libelle_canonique']:.1f} % | "
                       f"{n['rebut_humain']}/{n['rebut_ia']} | {n['rappel']:.1f} % | {n['precision']:.1f} % |")
+    lignes += ["", "## Category agreement (src.qpl.categorie — rule-based, informative only)", "",
+               "Among matched couples (position-based, unchanged), share whose category "
+               "(dispositif / luminaire / securite_incendie / telecom_donnees / chauffage / "
+               "distribution / mecanique_moteur / autre / indetermine) agrees — regardless of exact label wording.",
+               "",
+               "| S- | Matched couples | Category agreement |", "|---|--:|--:|"]
+    for s, r in res.items():
+        c = r["categorie"]
+        lignes.append(f"| {s} | {c['couples']} | {c['pourcentage']:.1f} % |")
+    lignes += ["", "### Top 5 disagreeing category pairs (all projects combined)", "",
+               "| Human category | AI category | Occurrences |", "|---|---|--:|"]
+    if confusions_globales:
+        for (ch, cia), n in confusions_globales.most_common(5):
+            lignes.append(f"| {ch} | {cia} | {n} |")
+    else:
+        lignes.append("| — | — | 0 |")
     lignes.append("")
     (SORTIE / "resultats.md").write_text("\n".join(lignes), encoding="utf-8")
     print("\n".join(lignes))

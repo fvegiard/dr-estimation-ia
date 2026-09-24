@@ -21,3 +21,25 @@ Régressions (> 1.0 point) : aucune
 | S-1769 | 0.0 % | 0.0 % | 0/0 | 97.4 % | 80.1 % |
 | S-1811 | 0.0 % | 0.0 % | 14/0 | 99.3 % | 83.4 % |
 | S-1844 | 0.0 % | 0.0 % | 0/0 | 79.7 % | 73.0 % |
+
+## Category agreement (src.qpl.categorie — rule-based, informative only)
+
+Among matched couples (position-based, unchanged), share whose category (dispositif / luminaire / securite_incendie / telecom_donnees / chauffage / distribution / mecanique_moteur / autre / indetermine) agrees — regardless of exact label wording.
+
+| S- | Matched couples | Category agreement |
+|---|--:|--:|
+| S-1714 | 7219 | 63.6 % |
+| S-1715 | 313 | 70.0 % |
+| S-1769 | 113 | 85.8 % |
+| S-1811 | 676 | 87.1 % |
+| S-1844 | 564 | 72.3 % |
+
+### Top 5 disagreeing category pairs (all projects combined)
+
+| Human category | AI category | Occurrences |
+|---|---|--:|
+| indetermine | securite_incendie | 907 |
+| indetermine | dispositif | 452 |
+| chauffage | dispositif | 409 |
+| dispositif | luminaire | 239 |
+| telecom_donnees | luminaire | 199 |

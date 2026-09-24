@@ -18,6 +18,38 @@
    "rappel": 96.2,
    "precision": 97.8,
    "accord_libelle_canonique_sans_rebut": 0.7
+  },
+  "categorie": {
+   "couples": 7219,
+   "accord": 4590,
+   "pourcentage": 63.6,
+   "confusions": [
+    {
+     "humain": "indetermine",
+     "ia": "securite_incendie",
+     "n": 859
+    },
+    {
+     "humain": "indetermine",
+     "ia": "dispositif",
+     "n": 417
+    },
+    {
+     "humain": "chauffage",
+     "ia": "dispositif",
+     "n": 400
+    },
+    {
+     "humain": "dispositif",
+     "ia": "luminaire",
+     "n": 233
+    },
+    {
+     "humain": "telecom_donnees",
+     "ia": "luminaire",
+     "n": 192
+    }
+   ]
   }
  },
  "S-1715": {
@@ -39,6 +71,38 @@
    "rappel": 78.4,
    "precision": 87.2,
    "accord_libelle_canonique_sans_rebut": 1.0
+  },
+  "categorie": {
+   "couples": 313,
+   "accord": 219,
+   "pourcentage": 70.0,
+   "confusions": [
+    {
+     "humain": "indetermine",
+     "ia": "securite_incendie",
+     "n": 21
+    },
+    {
+     "humain": "indetermine",
+     "ia": "dispositif",
+     "n": 16
+    },
+    {
+     "humain": "mecanique_moteur",
+     "ia": "dispositif",
+     "n": 10
+    },
+    {
+     "humain": "telecom_donnees",
+     "ia": "luminaire",
+     "n": 7
+    },
+    {
+     "humain": "dispositif",
+     "ia": "luminaire",
+     "n": 6
+    }
+   ]
   }
  },
  "S-1769": {
@@ -60,6 +124,38 @@
    "rappel": 97.4,
    "precision": 80.1,
    "accord_libelle_canonique_sans_rebut": 0.0
+  },
+  "categorie": {
+   "couples": 113,
+   "accord": 97,
+   "pourcentage": 85.8,
+   "confusions": [
+    {
+     "humain": "indetermine",
+     "ia": "securite_incendie",
+     "n": 5
+    },
+    {
+     "humain": "dispositif",
+     "ia": "autre",
+     "n": 4
+    },
+    {
+     "humain": "autre",
+     "ia": "dispositif",
+     "n": 2
+    },
+    {
+     "humain": "mecanique_moteur",
+     "ia": "dispositif",
+     "n": 2
+    },
+    {
+     "humain": "securite_incendie",
+     "ia": "dispositif",
+     "n": 1
+    }
+   ]
   }
  },
  "S-1811": {
@@ -81,6 +177,38 @@
    "rappel": 99.3,
    "precision": 83.4,
    "accord_libelle_canonique_sans_rebut": 0.0
+  },
+  "categorie": {
+   "couples": 676,
+   "accord": 589,
+   "pourcentage": 87.1,
+   "confusions": [
+    {
+     "humain": "indetermine",
+     "ia": "dispositif",
+     "n": 17
+    },
+    {
+     "humain": "luminaire",
+     "ia": "dispositif",
+     "n": 16
+    },
+    {
+     "humain": "indetermine",
+     "ia": "securite_incendie",
+     "n": 15
+    },
+    {
+     "humain": "luminaire",
+     "ia": "securite_incendie",
+     "n": 14
+    },
+    {
+     "humain": "luminaire",
+     "ia": "indetermine",
+     "n": 11
+    }
+   ]
   }
  },
  "S-1844": {
@@ -102,6 +230,38 @@
    "rappel": 79.7,
    "precision": 73.0,
    "accord_libelle_canonique_sans_rebut": 0.0
+  },
+  "categorie": {
+   "couples": 564,
+   "accord": 408,
+   "pourcentage": 72.3,
+   "confusions": [
+    {
+     "humain": "luminaire",
+     "ia": "indetermine",
+     "n": 66
+    },
+    {
+     "humain": "luminaire",
+     "ia": "distribution",
+     "n": 34
+    },
+    {
+     "humain": "indetermine",
+     "ia": "luminaire",
+     "n": 20
+    },
+    {
+     "humain": "indetermine",
+     "ia": "telecom_donnees",
+     "n": 9
+    },
+    {
+     "humain": "indetermine",
+     "ia": "distribution",
+     "n": 7
+    }
+   ]
   }
  }
 }
