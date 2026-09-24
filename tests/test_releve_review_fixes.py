@@ -245,7 +245,7 @@ def test_static_policy_files_updated():
     sdk_smoke = (ROOT / "releve" / "tests" / "sdk_smoke.py").read_text(encoding="utf-8")
     traits_py = (ROOT / "releve" / "traits.py").read_text(encoding="utf-8")
 
-    assert "tools: Write, Edit, Glob, Bash(find *), Bash(stat *), Bash(du *), Bash(ls *)" in inventaire
+    assert "tools: Glob, Bash(find *), Bash(stat *), Bash(du *), Bash(ls *)" in inventaire
     assert "tools: Read, Write, Edit, Glob, Grep, Bash(uv run releve/zoom.py *)" in releveur
     assert "author_association" in workflow
     assert settings["hooks"]["PreToolUse"][0]["hooks"][0]["args"][0].endswith("releve/tool_guard.py")
