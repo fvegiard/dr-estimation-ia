@@ -66,8 +66,8 @@
       "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     },
     {
-      "chemin": "6- Invitations/(dossier vide)",
-      "id": "1xoXfPtoGA6-GrTBbFb-xrPuQqFXHt_BB",
+      "chemin": "6- Invitations/ (vide)",
+      "id": "",
       "ext": "",
       "octets": 0,
       "mimeType": "application/vnd.google-apps.folder"
@@ -143,8 +143,8 @@
       "mimeType": "application/pdf"
     },
     {
-      "chemin": "3- Addenda/(dossier vide)",
-      "id": "1z-RfVy1QcH7Knvn4tMf72lguzywKCL40",
+      "chemin": "3- Addenda/ (vide)",
+      "id": "",
       "ext": "",
       "octets": 0,
       "mimeType": "application/vnd.google-apps.folder"

@@ -2,8 +2,8 @@
 
 Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racine `1zvxiZp6oJ28LpCwhs-pArP4-64R5w8Nf`, sous-dossier `original` id `13JWszeHOEIM41Gf6GnNO0o4sOtWZHOW7`). Lecture seule, rien téléchargé.
 
-- 200 dossiers de soumission (S-1643 → S-1882 ≈ toute l'année 2026), **3009 fichiers, 15.4 Go** (61 sous-dossiers détaillés au total : 25 depuis le 24/09, +36 sous-dossiers auparavant non explorés, résolus récursivement le 24/09/2026).
-- **Inventaire complètement énuméré** : les 36 sous-dossiers auparavant non explorés ont été explorés récursivement (métadonnées seulement, rien téléchargé) ; aucun `.qpl` (projet Plan Expert), aucun `.bak`/`.sql`, aucun `.qpt`, aucun `.mdb` trouvé.
+- 200 dossiers de soumission (S-1643 → S-1882 ≈ toute l'année 2026), **3040 fichiers, 15.6 Go** (77 sous-dossiers détaillés au total : 25 depuis le 24/09, +36 placeholders puis +16 dossiers restants (mimeType folder non marqués vide), tous résolus récursivement le 24/09/2026).
+- **Inventaire complètement énuméré** : plus aucune entrée `mimeType: application/vnd.google-apps.folder` ne cache de contenu non listé (seules restent les entrées « (vide) », dossiers confirmés vides sur Drive) ; aucun `.qpl` (projet Plan Expert), aucun `.bak`/`.sql`, aucun `.qpt`, aucun `.mdb` trouvé.
 - Sous-dossiers `take off` / `relevé` (relevés humains) présents dans plusieurs dossiers (colonne « take-off »).
 - 81 fichiers de feuilles de calcul (quantités, devis, prises de prix).
 - Un JSON par dossier dans `dossiers/` (chemin, id Drive, extension, taille) ; `racine.json` = liste des 200 dossiers avec leur id.
@@ -30,7 +30,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | S-1662_Varennes 94 St-Laurent | `1MXL4TRhJyOA9o-7CAi8u2CsjZvGa-NCT` | 7 | 2 |  | db:2, pdf:2, jpg:2, docx:1 |
 | S-1663 pur investissement 330avro | `1OjPMcOVF6XePxXFmftCFyNCzM4YEvcl1` | 8 | 8 |  | pdf:4, eml:2, db:1, docx:1 |
 | S-1664 VITRECO BUREAU | `1aLYYIwDsNMKe4OekH5D0V7NG_LIzebCU` | 19 | 19 |  | pdf:10, png:6, db:2, docx:1 |
-| s-1665 canderel lobby | `14bFMOhSMfglz75PpBozsLR6LAAzgqojx` | 24 | 250 | oui | pdf:10, :8, db:2, docx:2 |
+| s-1665 canderel lobby | `14bFMOhSMfglz75PpBozsLR6LAAzgqojx` | 73 | 615 | oui | pdf:43, jpg:18, db:6, docx:4 |
 | s-1666 chuaffage dom fillions | `18WTKz-IpmEKvvD3dySQTV0Asorc4ZT_H` | 3 | 2 |  | pdf:2, eml:1 |
 | S-1667 PURE | `1t99JAHlOfbeEw9R1_gc_mFeIyy5mgV_L` | 10 | 10 |  | docx:4, pdf:4, db:1, xlsx:1 |
 | S-1668 PURE 8rue principal | `1TWz_-O7VyxVN13s03qpJXyUlLo-zLqMc` | 13 | 14 |  | pdf:7, docx:4, db:1, xlsx:1 |
@@ -60,7 +60,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1702 l'intendant costco stationemment | `1HkSUO7c_rkRA16G32b0B6kN86iqoK8tP` | 30 | 257 |  | pdf:20, db:4, docx:2, jpg:2 |
 | s-1703 uniglo axxys | `1qKz07dMx2NlTL9_fSTyTZ3EZPD8OJt5x` | 35 | 566 |  | pdf:13, db:8, jpg:6, docx:5 |
 | s-1704 block sanitaire hitachi | `1ww1NKOxuS-6-PXuZgDYVCODZuJUZvAZ3` | 3 | 1 |  | pdf:2, eml:1 |
-| s-1705 generatrice linde sorel | `1Y0WSJJBS48bNFaSXeEpADvDg_LuHs1_A` | 30 | 46 |  | jpeg:8, pdf:7, db:3, docx:3 |
+| s-1705 generatrice linde sorel | `1Y0WSJJBS48bNFaSXeEpADvDg_LuHs1_A` | 30 | 57 |  | pdf:9, jpeg:8, eml:4, db:3 |
 | S-1706 BR 82 logement st phiollipe | `1LKVAaXIysrOweHQn5tlnKkwZhHjmtr7d` | 3 | 16 |  | pdf:2, db:1 |
 | s-1707 candarel compressseur | `1oSq1i91xYBWPAnn4ClGvSk5G9gxCFMpA` | 15 | 6 |  | pdf:9, db:3, docx:2, eml:1 |
 | S-1708_ Varennes_Jules-Phaneuf_Lampadaire | `1yvBi6FedDXO1qbdGYUjaUKN3TLTsJWPQ` | 13 | 6 |  | pdf:9, db:2, docx:1, jpg:1 |
@@ -135,7 +135,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | S-1792 SIP MATREC | `1WgpJknXHr-j8d1kWOqJRvwdPOCrLlRJG` | 0 | 0 |  |  |
 | S-1793 - centre excellence Rossy | `1Hbx5DiOlhvar95VASfAyZKWKS5q2B_C7` | 25 | 222 |  | pdf:23, db:1, jpg:1 |
 | S-1794 Thermographie | `1zJOVFC1PCnirfwI8q2s98VXyGFY-f1Xa` | 4 | 15 | oui | pdf:3, db:1 |
-| S-1796_Garage Ste-Julie RBL Ventilation | `1vLhzcE-1ciPyb9lv2aoXxF5-bbKRrPGl` | 5 | 1 |  | pdf:2, db:1, docx:1, :1 |
+| S-1796_Garage Ste-Julie RBL Ventilation | `1vLhzcE-1ciPyb9lv2aoXxF5-bbKRrPGl` | 10 | 11 |  | pdf:7, db:2, docx:1 |
 | S-1797 - École Chambly | `1HyAE7ewb9dhGrmSGoP2gebQRXu65Ymj2` | 75 | 327 | oui | pdf:71, db:2, docx:1, doc:1 |
 | s-1798 ecl mecnaique garage ste julie | `1GJ5NXZNyooXIDJMHP3l6FUkxQaIyReIO` | 3 | 0 |  | db:1, pdf:1, docx:1 |
 | s-1799 eclairage parc felix racicot st hilaire | `12jv3V3w8zna_cZNfqOFjE38JYGrAcKIu` | 5 | 2 |  | pdf:3, db:1, docx:1 |
@@ -205,7 +205,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | S-1875_Ville de Beloeil_Bernard Pilon | `1-rTOYGEDmcMd2TTcpVP4mT9hfZV57OPx` | 5 | 3 |  | db:2, pdf:2, png:1 |
 | s-1876 pat poivin piscine | `1eCHX4BV16UTMbkAoUBV034nXR_XyF4tJ` | 2 | 0 |  | db:1, pdf:1 |
 | s-1877 costco laval | `1fp90Ru_d086PV28R-mNxJ8PXdlvkcCcf` | 14 | 17 |  | pdf:12, docx:1, db:1 |
-| s-1878 drumco construction gramby | `1c0GG1gXKhMRq8fF6ZxGftwrIyjq5L8uD` | 30 | 102 |  | pdf:15, xlsx:5, :4, docx:3 |
+| s-1878 drumco construction gramby | `1c0GG1gXKhMRq8fF6ZxGftwrIyjq5L8uD` | 26 | 102 |  | pdf:15, xlsx:5, docx:3, xlsm:2 |
 | s-1879 opsis thermo laval opsis | `1TA5jbI_obSQXDjScgWZEmbwRCcLjwubH` | 2 | 0 |  | pdf:1, docx:1 |
 | s-1880, entretien edifice windsor | `193chsWDxhXEm3ZlK2wEKXAzdm510oLXE` | 2 | 1 |  | pdf:2 |
 | s-1881 hotel candlewood st-hyacinthe | `1IylpHZPZrs3TvhB3gEAr1s7M2jp_EVCm` | 0 | 0 |  |  |
