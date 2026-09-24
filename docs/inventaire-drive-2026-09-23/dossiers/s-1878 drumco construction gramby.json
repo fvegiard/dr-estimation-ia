@@ -1,32 +1,216 @@
-{"dossier":"s-1878 drumco construction gramby","id":"1c0GG1gXKhMRq8fF6ZxGftwrIyjq5L8uD","fichiers":[
-{"chemin":"Devis (sous-dossier non détaillé, vide au moment de l'inventaire)","id":"16dYn3MXg1xhSP9jhmOhvjIvlolrgu7eS","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"Soumissions fournisseurs - sous-traitants (sous-dossier non détaillé, vide au moment de l'inventaire)","id":"1flLtuaHEf0gl8pTcJ7GRRYfG2CbpstU-","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"Addenda (sous-dossier non détaillé, vide au moment de l'inventaire)","id":"1N-ekROJsZSJanuR398JwsP9lN3xt17f6","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"Feuille de calcul et quantités/Décompte des sorties - Gabarit.xlsx","id":"1FDlOKLyIhJB0cPwDv6SRafNj8K_tCFKY","ext":"xlsx","octets":65673,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Feuille de calcul et quantités/Take-off et demande de prix - Gabarit.xlsx","id":"1v1Jphl9hNTM5bCsKJbsMa17ei1mqSUKo","ext":"xlsx","octets":100623,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Feuille de calcul et quantités/Take-off et suivi de soumission - Gabarit.xlsx","id":"1ESQFRZpinm6u-TWs578NChv-4oHQ5NZi","ext":"xlsx","octets":53215,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Correspondance - QRT (sous-dossier non détaillé, vide au moment de l'inventaire)","id":"1R5T2dNYl3dDROMjaTqD1Zu3IXr5Jaush","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"Cautionnement/Formulaire de demande de cautionnement - DR.docx","id":"1H1M8_61BWVymBfPH-QvkcLQTqEfq3piK","ext":"docx","octets":28320,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"Soumission électrique/E2026-XX - Fermeture soumission (SIP).xlsx","id":"1TR7zQXFQNqHqZTH-38Y5E_BpXURHlrhH","ext":"xlsx","octets":127861,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Soumission électrique/E2026-XX - Format Lettre (BR).docx","id":"1PqCJYpxvTXp0OKkI_vmX5elOUUoGPhhl","ext":"docx","octets":33161,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"Soumission électrique/E2026-XX - Soumission projet (DR).xlsm","id":"1PpeppHKQUQSdHvz43fTZ5RrqKTWV65_D","ext":"xlsm","octets":241343,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Soumission électrique/E2026-XX - Format Lettre (DR).docx","id":"1yWD-wpbWWM4GlVtRfmUKyy4NVN3-G0L6","ext":"docx","octets":37535,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"Soumission électrique/E2026-XX - Soumission résidentiel léger.xlsx","id":"1kbx5vlica4AAycRqBfEKPhm5MKsJWjQr","ext":"xlsx","octets":237911,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Soumission électrique/E2026-XX - Soumission projet (BR).xlsm","id":"1eLaE2dt6PI45-b7E57kg8NhlTyQp4ngR","ext":"xlsm","octets":250561,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Plans/Thumbs.db","id":"1fG2w2CQTYfMgISYeIoGytMVsqTB-_Wgh","ext":"db","octets":14336,"mimeType":"application/octet-stream"},
-{"chemin":"Plans/01b-Plan d'architecture pour permis - Bâtiment E (20260818).pdf","id":"1ol3FjaVpqNXXKsYI0OiUzapacuci05p_","ext":"pdf","octets":3494045,"mimeType":"application/pdf"},
-{"chemin":"Plans/03a-Plans de mécanique pour permis - Bâtiment D (20260814).pdf","id":"17svh4G0fX-0KVPuOTkOxIIW-V5Bo6s2b","ext":"pdf","octets":3275624,"mimeType":"application/pdf"},
-{"chemin":"Plans/02b-Plans de structure pour permis - Bâtiment E (20260814).pdf","id":"1inV75HPhXmECG6T01-UIqb9HPa1ZgWYK","ext":"pdf","octets":12607434,"mimeType":"application/pdf"},
-{"chemin":"Plans/04b-Plans d'électricité pour permis - Bâtiment E (20260814).pdf","id":"1XYOICy8lt-5jwKRky1_7olxwePEf2Wig","ext":"pdf","octets":4825673,"mimeType":"application/pdf"},
-{"chemin":"Plans/02a-Plans de structure pour permis - Bâtiment D (20260814).pdf","id":"1huetj902SlEE_CeDazbxqWRZxuloMBwx","ext":"pdf","octets":2010407,"mimeType":"application/pdf"},
-{"chemin":"Plans/01a-Plan d'architecture pour permis - Bâtiment D (20260818).pdf","id":"1l82kDUsgmU3MhrlpziW7DPXaf2JXgle3","ext":"pdf","octets":3902065,"mimeType":"application/pdf"},
-{"chemin":"Plans/04c-Plans d'électricité pour permis - Bâtiment F (20260814).pdf","id":"1_mueg7y1SRav15XwSaIfspjt6f13y9GQ","ext":"pdf","octets":6531137,"mimeType":"application/pdf"},
-{"chemin":"Plans/03b-Plans de mécanique pour permis - Bâtiment E (20260814).pdf","id":"1N3bGuipWT_A8nRPunIsKAD9X_uLxpWiG","ext":"pdf","octets":3201464,"mimeType":"application/pdf"},
-{"chemin":"Plans/06-Plans de protection incendie pour permis des bâtiments (20260814).pdf","id":"1KUzRaOqVyPTAxPz30yNI2GYCN1vfCQlg","ext":"pdf","octets":597343,"mimeType":"application/pdf"},
-{"chemin":"Plans/01c-Plan d'architecture pour permis - Bâtiment F (20260818).pdf","id":"1zgFfXjNfTHxXhW1YNdRkKEFwTfXHHx36","ext":"pdf","octets":5796114,"mimeType":"application/pdf"},
-{"chemin":"Plans/03c-Plans de mécanique pour permis - Bâtiment F (20260814).pdf","id":"1VHbLgjUKeaALDoZJNfRypG7aUisg0X32","ext":"pdf","octets":4557180,"mimeType":"application/pdf"},
-{"chemin":"Plans/07-Plan de paysage pour permis (20260814).pdf","id":"14flaIkOBBM-64DFk4SovdDL2wpPLSj_r","ext":"pdf","octets":3179277,"mimeType":"application/pdf"},
-{"chemin":"Plans/02c-Plans de structure pour permis - Bâtiment F (20260814).pdf","id":"1GJHuvrsy6enmlvHomtEfRjnaQx3P6xmz","ext":"pdf","octets":14299300,"mimeType":"application/pdf"},
-{"chemin":"Plans/05-Civil pour coordination (20260812).pdf","id":"1ZCd2GC-q3kJXQ-05h-kE47Fk2X5ALJQ8","ext":"pdf","octets":23732155,"mimeType":"application/pdf"},
-{"chemin":"Plans/04a-Plans d'électricité pour permis - Bâtiment D (20260814).pdf","id":"1K9rPNabYfddo_PI9sOlh72fQcO4IU_Yx","ext":"pdf","octets":8773921,"mimeType":"application/pdf"}
-]}
+{
+  "dossier": "s-1878 drumco construction gramby",
+  "id": "1c0GG1gXKhMRq8fF6ZxGftwrIyjq5L8uD",
+  "fichiers": [
+    {
+      "chemin": "Devis",
+      "id": "16dYn3MXg1xhSP9jhmOhvjIvlolrgu7eS",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "Soumissions fournisseurs - sous-traitants",
+      "id": "1flLtuaHEf0gl8pTcJ7GRRYfG2CbpstU-",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "Addenda",
+      "id": "1N-ekROJsZSJanuR398JwsP9lN3xt17f6",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Décompte des sorties - Gabarit.xlsx",
+      "id": "1FDlOKLyIhJB0cPwDv6SRafNj8K_tCFKY",
+      "ext": "xlsx",
+      "octets": 65673,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Take-off et demande de prix - Gabarit.xlsx",
+      "id": "1v1Jphl9hNTM5bCsKJbsMa17ei1mqSUKo",
+      "ext": "xlsx",
+      "octets": 100623,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Take-off et suivi de soumission - Gabarit.xlsx",
+      "id": "1ESQFRZpinm6u-TWs578NChv-4oHQ5NZi",
+      "ext": "xlsx",
+      "octets": 53215,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Correspondance - QRT",
+      "id": "1R5T2dNYl3dDROMjaTqD1Zu3IXr5Jaush",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "Cautionnement/Formulaire de demande de cautionnement - DR.docx",
+      "id": "1H1M8_61BWVymBfPH-QvkcLQTqEfq3piK",
+      "ext": "docx",
+      "octets": 28320,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Fermeture soumission (SIP).xlsx",
+      "id": "1TR7zQXFQNqHqZTH-38Y5E_BpXURHlrhH",
+      "ext": "xlsx",
+      "octets": 127861,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Format Lettre (BR).docx",
+      "id": "1PqCJYpxvTXp0OKkI_vmX5elOUUoGPhhl",
+      "ext": "docx",
+      "octets": 33161,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission projet (DR).xlsm",
+      "id": "1PpeppHKQUQSdHvz43fTZ5RrqKTWV65_D",
+      "ext": "xlsm",
+      "octets": 241343,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Format Lettre (DR).docx",
+      "id": "1yWD-wpbWWM4GlVtRfmUKyy4NVN3-G0L6",
+      "ext": "docx",
+      "octets": 37535,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission résidentiel léger.xlsx",
+      "id": "1kbx5vlica4AAycRqBfEKPhm5MKsJWjQr",
+      "ext": "xlsx",
+      "octets": 237911,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission projet (BR).xlsm",
+      "id": "1eLaE2dt6PI45-b7E57kg8NhlTyQp4ngR",
+      "ext": "xlsm",
+      "octets": 250561,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Plans/Thumbs.db",
+      "id": "1fG2w2CQTYfMgISYeIoGytMVsqTB-_Wgh",
+      "ext": "db",
+      "octets": 14336,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Plans/01b-Plan d'architecture pour permis - Bâtiment E (20260818).pdf",
+      "id": "1ol3FjaVpqNXXKsYI0OiUzapacuci05p_",
+      "ext": "pdf",
+      "octets": 3494045,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/03a-Plans de mécanique pour permis - Bâtiment D (20260814).pdf",
+      "id": "17svh4G0fX-0KVPuOTkOxIIW-V5Bo6s2b",
+      "ext": "pdf",
+      "octets": 3275624,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/02b-Plans de structure pour permis - Bâtiment E (20260814).pdf",
+      "id": "1inV75HPhXmECG6T01-UIqb9HPa1ZgWYK",
+      "ext": "pdf",
+      "octets": 12607434,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/04b-Plans d'électricité pour permis - Bâtiment E (20260814).pdf",
+      "id": "1XYOICy8lt-5jwKRky1_7olxwePEf2Wig",
+      "ext": "pdf",
+      "octets": 4825673,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/02a-Plans de structure pour permis - Bâtiment D (20260814).pdf",
+      "id": "1huetj902SlEE_CeDazbxqWRZxuloMBwx",
+      "ext": "pdf",
+      "octets": 2010407,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/01a-Plan d'architecture pour permis - Bâtiment D (20260818).pdf",
+      "id": "1l82kDUsgmU3MhrlpziW7DPXaf2JXgle3",
+      "ext": "pdf",
+      "octets": 3902065,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/04c-Plans d'électricité pour permis - Bâtiment F (20260814).pdf",
+      "id": "1_mueg7y1SRav15XwSaIfspjt6f13y9GQ",
+      "ext": "pdf",
+      "octets": 6531137,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/03b-Plans de mécanique pour permis - Bâtiment E (20260814).pdf",
+      "id": "1N3bGuipWT_A8nRPunIsKAD9X_uLxpWiG",
+      "ext": "pdf",
+      "octets": 3201464,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/06-Plans de protection incendie pour permis des bâtiments (20260814).pdf",
+      "id": "1KUzRaOqVyPTAxPz30yNI2GYCN1vfCQlg",
+      "ext": "pdf",
+      "octets": 597343,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/01c-Plan d'architecture pour permis - Bâtiment F (20260818).pdf",
+      "id": "1zgFfXjNfTHxXhW1YNdRkKEFwTfXHHx36",
+      "ext": "pdf",
+      "octets": 5796114,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/03c-Plans de mécanique pour permis - Bâtiment F (20260814).pdf",
+      "id": "1VHbLgjUKeaALDoZJNfRypG7aUisg0X32",
+      "ext": "pdf",
+      "octets": 4557180,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/07-Plan de paysage pour permis (20260814).pdf",
+      "id": "14flaIkOBBM-64DFk4SovdDL2wpPLSj_r",
+      "ext": "pdf",
+      "octets": 3179277,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/02c-Plans de structure pour permis - Bâtiment F (20260814).pdf",
+      "id": "1GJHuvrsy6enmlvHomtEfRjnaQx3P6xmz",
+      "ext": "pdf",
+      "octets": 14299300,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/05-Civil pour coordination (20260812).pdf",
+      "id": "1ZCd2GC-q3kJXQ-05h-kE47Fk2X5ALJQ8",
+      "ext": "pdf",
+      "octets": 23732155,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/04a-Plans d'électricité pour permis - Bâtiment D (20260814).pdf",
+      "id": "1K9rPNabYfddo_PI9sOlh72fQcO4IU_Yx",
+      "ext": "pdf",
+      "octets": 8773921,
+      "mimeType": "application/pdf"
+    }
+  ]
+}
