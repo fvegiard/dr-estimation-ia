@@ -29,6 +29,21 @@ from PIL import Image, ImageDraw, ImageFont
 RASTER_W = 5694          # largeur raster Plan Expert (px) pour une feuille 2383,92 pt
 TILE_ROWS, TILE_COLS = 3, 4
 SHEET_RE = re.compile(r"\b([A-Z]{1,2}-?\d{3}[A-Z]?)\b")   # E401, E-401, A101, ME-101…
+WORK_SUBDIRS = ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "zooms")
+WORK_FILES = (
+    "inventaire.json",
+    "feuilles.csv",
+    "MANIFESTE.md",
+    "occurrences-texte.csv",
+    "occurrences-visuel.csv",
+    "feuilles-classement.csv",
+    "nomenclature.csv",
+    "reserves.md",
+    "rapport-releve.md",
+    "comparaison-estimateur.md",
+    "agent-resultat.json",
+    "agent-journal.log",
+)
 
 def sha256(path: str) -> str:
     h = hashlib.sha256()
@@ -97,10 +112,19 @@ def draw_rulers(im: Image.Image, x0: float, y0: float, x1: float, y1: float, ste
         dr.text((3, py + 2), str(int(y)), fill=(0, 60, 200, 255), font=f)
         y += step
 
-def main(inbox: str, work: str):
-    if os.path.isdir(work):
-        shutil.rmtree(work)
+def reset_workdir(work: str):
     os.makedirs(work, exist_ok=True)
+    for name in WORK_SUBDIRS:
+        path = os.path.join(work, name)
+        if os.path.isdir(path):
+            shutil.rmtree(path)
+    for name in WORK_FILES:
+        path = os.path.join(work, name)
+        if os.path.exists(path):
+            os.remove(path)
+
+def main(inbox: str, work: str):
+    reset_workdir(work)
     for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur"):
         os.makedirs(os.path.join(work, d), exist_ok=True)
     inv, feuilles, notes = [], [], []
