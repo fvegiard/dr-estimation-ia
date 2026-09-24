@@ -6,7 +6,19 @@
   "manquantes": 283,
   "en_trop": 166,
   "rappel": 96.2,
-  "precision": 97.8
+  "precision": 97.8,
+  "normalise": {
+   "accord_libelle_brut": 0.0,
+   "accord_libelle_canonique": 0.7,
+   "rebut_humain": 0,
+   "rebut_ia": 0,
+   "humaines": 7502,
+   "ia": 7385,
+   "appariees": 7219,
+   "rappel": 96.2,
+   "precision": 97.8,
+   "accord_libelle_canonique_sans_rebut": 0.7
+  }
  },
  "S-1715": {
   "humaines": 401,
@@ -15,7 +27,19 @@
   "manquantes": 88,
   "en_trop": 46,
   "rappel": 78.1,
-  "precision": 87.2
+  "precision": 87.2,
+  "normalise": {
+   "accord_libelle_brut": 0.0,
+   "accord_libelle_canonique": 1.0,
+   "rebut_humain": 2,
+   "rebut_ia": 0,
+   "humaines": 399,
+   "ia": 359,
+   "appariees": 313,
+   "rappel": 78.4,
+   "precision": 87.2,
+   "accord_libelle_canonique_sans_rebut": 1.0
+  }
  },
  "S-1769": {
   "humaines": 116,
@@ -24,7 +48,19 @@
   "manquantes": 3,
   "en_trop": 28,
   "rappel": 97.4,
-  "precision": 80.1
+  "precision": 80.1,
+  "normalise": {
+   "accord_libelle_brut": 0.0,
+   "accord_libelle_canonique": 0.0,
+   "rebut_humain": 0,
+   "rebut_ia": 0,
+   "humaines": 116,
+   "ia": 141,
+   "appariees": 113,
+   "rappel": 97.4,
+   "precision": 80.1,
+   "accord_libelle_canonique_sans_rebut": 0.0
+  }
  },
  "S-1811": {
   "humaines": 681,
@@ -33,7 +69,19 @@
   "manquantes": 5,
   "en_trop": 135,
   "rappel": 99.3,
-  "precision": 83.4
+  "precision": 83.4,
+  "normalise": {
+   "accord_libelle_brut": 0.0,
+   "accord_libelle_canonique": 0.0,
+   "rebut_humain": 14,
+   "rebut_ia": 0,
+   "humaines": 681,
+   "ia": 811,
+   "appariees": 676,
+   "rappel": 99.3,
+   "precision": 83.4,
+   "accord_libelle_canonique_sans_rebut": 0.0
+  }
  },
  "S-1844": {
   "humaines": 708,
@@ -42,6 +90,18 @@
   "manquantes": 144,
   "en_trop": 209,
   "rappel": 79.7,
-  "precision": 73.0
+  "precision": 73.0,
+  "normalise": {
+   "accord_libelle_brut": 0.0,
+   "accord_libelle_canonique": 0.0,
+   "rebut_humain": 0,
+   "rebut_ia": 0,
+   "humaines": 708,
+   "ia": 773,
+   "appariees": 564,
+   "rappel": 79.7,
+   "precision": 73.0,
+   "accord_libelle_canonique_sans_rebut": 0.0
+  }
  }
 }

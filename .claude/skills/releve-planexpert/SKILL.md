@@ -39,6 +39,21 @@ Si un outil est refusé, écris-le dans `reserves.md` ET termine ton résumé pa
 - `estimateur/pNN.png`, `estimateur/legendes/pNN-legende.png` : si un export Plan Expert de l'estimateur (M. Dupuis) est fourni,
   ses légendes par feuille (symbole, nom, quantité) sont découpées pour comparaison.
 
+## Libellés canoniques (corpus Plan Expert 2021-2026)
+Source : `apprentissage/qpl-2021-2026/dictionnaire-symboles.json` (664 relevés réels de DR Électrique), 60 libellés les plus
+fréquents. Pour la colonne `label` de `nomenclature.csv`, **préfère ces libellés** (orthographe exacte, majuscules sans accents)
+quand l'appareil correspond ; garde le type de la cédule quand il existe (`FIXT TYPE <code>` pour un luminaire). Les variantes
+connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PRISE`) ; n'invente pas de libellé hors cédule/légende.
+
+- **dispositif** : `PRISE`, `INT`, `PRISE DUPLEX 15A 120V`, `PRISE 15A`, `GFI`, `RACCORD DIRECT`, `THERMOSTAT`, `GRADATEUR`, `PRISE DUPLEX 15/20A 120V`, `INT ENL`, `DETECTEUR MOUVEMENT`, `HOTTE`, `INTERRUPTEUR`, `PRISE 15A 125V`, `SWITCH`
+- **luminaire** : `FIXT TYPE A`, `FIXT TYPE L1`, `ENSEIGNE SORTIE`, `FIXT TYPE B`, `FIXT TYPE D`, `FIXT TYPE E1`, `FIXT TYPE C`, `FIXT TYPE E`, `FIXT ENL`, `FIXT TYPE L3`, `FIXT TYPE A1`, `FIXT TYPE F`, `B1000W`, `FIXT TYPE L2`, `STRIP`, `FIXT TYPE L6`, `B300W`, `FIXT TYPE G`, `ENCASTRE`, `FIXT TO REMOVE`
+- **securite_incendie** : `DETECTEUR`, `TETE DOUBLE`, `KLAXON`, `EXIT`, `STATION MANUEL`, `DETECTEUR FUMEE`, `STROB`, `CAMERA`, `HORN`, `BATTERIE UNIT`
+- **telecom_donnees** : `TEL`, `HAUT PARLEUR`, `SORTIE TEL`, `TEL/DATA`, `HP`, `TV`
+- **chauffage** : `TH`, `PLINTHE`, `SERPENTIN`, `1000W`
+- **distribution** : `BOITE`, `COND`, `8X8`
+- **autre** : `RELAIS`
+- **indetermine** : `KS`
+
 ## Méthode (dans cet ordre)
 1. **Classer les feuilles** → `feuilles-classement.csv` (`feuille,type,echelle,note`). `type` ∈ `plan` (plan d'étage/toiture
    avec appareils à compter), `legende`, `schema` (unifilaire, distribution), `tableau` (cédules de panneaux), `detail`, `autre`.

@@ -19,6 +19,7 @@ import json
 import sys
 from pathlib import Path
 
+from src.qpl.normalisation import canonique
 from src.validation import compare_qpl as cq
 
 RACINE = Path(__file__).resolve().parents[2]
@@ -53,8 +54,40 @@ def evaluer(s: str) -> dict:
         "dossier": s, "humain": rel(ref / f"{s}-Dupuis-PlanExpert.qpl"), "ia": rel(d / "planexpert" / f"{s}.qpl"),
         "dims": rel(ref / "dupuis-png-dimensions.txt"), "feuilles": rel(ref / "feuilles-ia.csv")})
     h, ia, a = tot["humaines"], tot["ia"], tot["appariees"]
-    return {"humaines": h, "ia": ia, "appariees": a, "manquantes": tot["manquantes"], "en_trop": tot["en_trop"],
-            "rappel": round(100 * a / h, 1) if h else 0.0, "precision": round(100 * a / ia, 1) if ia else 0.0}
+    res = {"humaines": h, "ia": ia, "appariees": a, "manquantes": tot["manquantes"], "en_trop": tot["en_trop"],
+           "rappel": round(100 * a / h, 1) if h else 0.0, "precision": round(100 * a / ia, 1) if ia else 0.0}
+    res["normalise"] = evaluer_normalise(s, comp)
+    return res
+
+
+def _pc(a: int, b: int) -> float:
+    return round(100 * a / b, 1) if b else 0.0
+
+
+def evaluer_normalise(s: str, comp_brut: "cq.Comparaison") -> dict:
+    """Secondary metrics with the learnt label dictionary (reported, never used for regressions):
+    label agreement of matched couples (raw vs canonical), and recall/precision after dropping
+    noise labels ('rebut') on both sides."""
+    brut = cq.accord_libelles(comp_brut)
+    norm = cq.accord_libelles(comp_brut, canonique)
+    d = DOSSIERS / s
+    ref = d / "reference"
+    dims = cq.lire_dimensions(ref / "dupuis-png-dimensions.txt", s)
+    humains = cq.lire_qpl(ref / f"{s}-Dupuis-PlanExpert.qpl", "humain")
+    ias = cq.lire_qpl(d / "planexpert" / f"{s}.qpl", "ia")
+    rebut_h = cq.filtrer_rebut(humains, canonique)
+    rebut_ia = cq.filtrer_rebut(ias, canonique)
+    cq.preparer_humain(humains, dims)
+    anomalies = cq.preparer_ia(ias, cq.lire_feuilles(ref / "feuilles-ia.csv"), d / "planexpert")
+    comp = cq.comparer(humains, ias, anomalies)
+    tot = cq.totaux(comp)
+    acc = cq.accord_libelles(comp, canonique)
+    return {"accord_libelle_brut": _pc(brut["accord"], brut["couples"]),
+            "accord_libelle_canonique": _pc(norm["accord"], norm["couples"]),
+            "rebut_humain": rebut_h, "rebut_ia": rebut_ia,
+            "humaines": tot["humaines"], "ia": tot["ia"], "appariees": tot["appariees"],
+            "rappel": _pc(tot["appariees"], tot["humaines"]), "precision": _pc(tot["appariees"], tot["ia"]),
+            "accord_libelle_canonique_sans_rebut": _pc(acc["accord"], acc["couples"])}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -83,7 +116,15 @@ def main(argv: list[str] | None = None) -> int:
             regressions.append(s)
         lignes.append(f"| {s} | {r['humaines']} | {r['ia']} | {r['appariees']} | {r['manquantes']} | {r['en_trop']} | "
                       f"{r['rappel']:.1f} % | {r['precision']:.1f} % | {dr} | {dp} |")
-    lignes += ["", f"Régressions (> {TOLERANCE} point) : {', '.join(regressions) if regressions else 'aucune'}", ""]
+    lignes += ["", f"Régressions (> {TOLERANCE} point) : {', '.join(regressions) if regressions else 'aucune'}", "",
+               "## Normalised labels (apprentissage/qpl-2021-2026/normalisation.json) — informative only", "",
+               "| S- | Label agreement raw | Label agreement canonical | Noise dropped H/IA | Recall (no noise) | Precision (no noise) |",
+               "|---|--:|--:|--:|--:|--:|"]
+    for s, r in res.items():
+        n = r["normalise"]
+        lignes.append(f"| {s} | {n['accord_libelle_brut']:.1f} % | {n['accord_libelle_canonique']:.1f} % | "
+                      f"{n['rebut_humain']}/{n['rebut_ia']} | {n['rappel']:.1f} % | {n['precision']:.1f} % |")
+    lignes.append("")
     (SORTIE / "resultats.md").write_text("\n".join(lignes), encoding="utf-8")
     print("\n".join(lignes))
     if args.nouvelle_base:

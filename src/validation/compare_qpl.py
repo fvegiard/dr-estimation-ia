@@ -866,6 +866,33 @@ def table_libelles(comp: Comparaison) -> dict[str, Correspondance]:
     return table
 
 
+# --- Normalised label mode (optional, never the default metric) -------------------
+
+def accord_libelles(comp: Comparaison, normaliser=None, seuil: float = SEUIL_MARQUE) -> dict[str, int]:
+    """Among matched couples, how many have the same label (human vs AI).
+
+    `normaliser` (callable label -> canonical | None, e.g. src.qpl.normalisation.canonique)
+    compares canonical labels instead of raw ones. Matching itself is positional, so this
+    measures label correctness only; it does not change recall/precision."""
+    f = normaliser or (lambda x: x)
+    total = accord = 0
+    for res in comp.resultats[seuil].values():
+        for couple in res.couples:
+            total += 1
+            accord += f(couple.humain.marque.libelle) == f(couple.ia.libelle)
+    return {"couples": total, "accord": accord}
+
+
+def filtrer_rebut(plans: list[Plan], normaliser) -> int:
+    """Drop, in place, marks whose label is noise for `normaliser` (returns None). Returns count removed."""
+    retire = 0
+    for p in plans:
+        garde = [m for m in p.marques if normaliser(m.libelle) is not None]
+        retire += len(p.marques) - len(garde)
+        p.marques = garde
+    return retire
+
+
 # --- Écriture -------------------------------------------------------------------
 
 def _f(v: float | None, n: int = 4) -> str:

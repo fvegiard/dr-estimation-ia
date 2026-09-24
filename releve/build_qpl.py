@@ -20,9 +20,28 @@ Image.MAX_IMAGE_PIXELS = None
 def q(s):  # attribut XML
     return escape(str(s), {'"': "&quot;"})
 
+def canoniser(nom, occ):
+    """Opt-in (RELEVE_LIBELLES_CANONIQUES=1): rename labels to the canonical Plan Expert labels learnt from
+    the 2021-2026 corpus (src/qpl/normalisation.py) and drop noise labels. Lossy (PRISE GFI -> PRISE):
+    off by default so the estimator keeps the detailed label unless asked."""
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from src.qpl.normalisation import canonique, nettoyer
+    def c(label):  # None = noise; unchanged if only case/accents/spaces differ; else the canonical label
+        k = canonique(label)
+        return label if k is not None and k == nettoyer(label) else k
+    nom2 = {}
+    for label, v in nom.items():
+        k = c(label)
+        if k is not None:
+            nom2.setdefault(k, v)
+    occ2 = [dict(o, label=c(o["label"])) for o in occ if c(o["label"]) is not None]
+    return nom2, occ2
+
 def main(work, name, out_dir):
     os.makedirs(out_dir, exist_ok=True)
     nom = load_nomenclature(work); occ = load_occurrences(work); feuilles = load_feuilles(work)
+    if os.environ.get("RELEVE_LIBELLES_CANONIQUES") == "1":
+        nom, occ = canoniser(nom, occ)
     labels = sorted({o["label"] for o in occ})
     unknown = [l for l in labels if l not in nom]
     if unknown:
