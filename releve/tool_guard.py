@@ -14,11 +14,6 @@ import sys
 
 FILE_TOOL_PATH_KEYS = {"file_path", "path", "paths"}
 SAFE_SHELL_TOOLS = {"head", "cat", "sort", "cut"}
-SAFE_RELEVE_SCRIPTS = {
-    ("uv", "run", "releve/zoom.py"),
-    ("uv", "run", "releve/extract_occurrences.py"),
-    ("uv", "run", "releve/traits.py"),
-}
 DENY = "deny"
 
 
@@ -104,10 +99,29 @@ def _validate_bash(root: str, tool_input: dict, cwd: str) -> str | None:
         argv = shlex.split(command)
     except ValueError as exc:
         return f"Commande Bash illisible : {exc}"
-    if tuple(argv[:3]) in SAFE_RELEVE_SCRIPTS:
-        for token in argv[3:]:
-            if not _is_safe_shell_path(token, cwd, root):
-                return f"Argument Bash hors du dossier de travail : {token}"
+    if tuple(argv[:3]) == ("uv", "run", "releve/extract_occurrences.py"):
+        if len(argv) != 4:
+            return "extract_occurrences.py n'accepte qu'un seul argument : le workdir"
+        return None if _real(argv[3]) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
+    if tuple(argv[:3]) == ("uv", "run", "releve/traits.py"):
+        if len(argv) not in (7, 8):
+            return "traits.py attend WORKDIR FEUILLE x y [rayon]"
+        return None if _real(argv[3]) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
+    if tuple(argv[:3]) == ("uv", "run", "releve/zoom.py"):
+        if len(argv) < 9:
+            return "zoom.py attend WORKDIR FEUILLE X0 Y0 X1 Y1 [--px N] [--sans-marques]"
+        if _real(argv[3]) != root:
+            return f"Argument Bash hors du dossier de travail : {argv[3]}"
+        extras = argv[9:]
+        i = 0
+        while i < len(extras):
+            if extras[i] == "--sans-marques":
+                i += 1
+                continue
+            if extras[i] == "--px" and i + 1 < len(extras):
+                i += 2
+                continue
+            return f"Option zoom.py non autorisée : {' '.join(extras[i:])}"
         return None
     if argv and argv[0] in SAFE_SHELL_TOOLS:
         for token in argv[1:]:

@@ -60,9 +60,16 @@ def test_tool_guard_allows_expected_releve_commands(tmp_path):
         str(work),
     )
     chained = tool_guard.validate("Bash", {"command": "cat a.txt && cat b.txt"}, str(work), str(work))
+    extra = tool_guard.validate(
+        "Bash",
+        {"command": f"uv run releve/extract_occurrences.py {work} subdir"},
+        str(ROOT),
+        str(work),
+    )
     assert ok is None
     assert "hors du dossier de travail" in bad
     assert "chaînée" in chained
+    assert "n'accepte qu'un seul argument" in extra
 
 
 def test_extract_occurrences_invalid_regex_aborts(tmp_path):
@@ -252,4 +259,5 @@ def test_static_policy_files_updated():
     assert 'cwd=str(REPO)' in sdk_smoke
     assert '"/mnt/d/claude/releve-auto/repo"' not in sdk_smoke
     assert "doc = pymupdf.open(src)" in traits_py
+    assert "finally:" in traits_py and "doc.close()" in traits_py
     assert "pymupdf.open(src)[" not in traits_py

@@ -36,29 +36,32 @@ def main(work, feuille, x, y, rayon=12.0):
     if not src:
         sys.exit(f"PDF source introuvable pour {row['fichier']} (définir RELEVE_INBOX)")
     doc = pymupdf.open(src)
-    page = doc[int(row["page"]) - 1]
-    z = pymupdf.Rect(x - rayon, y - rayon, x + rayon, y + rayon) * page.derotation_matrix   # repère tourné → repère natif
-    z.normalize()
-    print(f"# {feuille} = {row['fichier']} page {row['page']} ; zone {z}")
-    print("## Texte")
-    for b in page.get_text("dict", clip=z).get("blocks", []):
-        for l in b.get("lines", []):
-            for s in l.get("spans", []):
-                c = s["color"]; col = f"#{c:06x}"
-                print(f"  « {s['text']} »  police={s['font']} taille={s['size']:.1f} couleur={col} bbox={[round(v, 1) for v in s['bbox']]}")
-    print("## Tracés")
-    n = 0
-    for d in page.get_drawings():
-        r = d["rect"]
-        if not r.intersects(z): continue
-        n += 1
-        if n > 40:
-            print("  … (plus de 40 tracés, zone trop large)"); break
-        print(f"  type={d['type']} épaisseur={d.get('width')} trait={gris(d.get('color'))} remplissage={gris(d.get('fill'))} "
-              f"pointillé={'oui' if d.get('dashes') and d['dashes'] not in ('[] 0', '', None) else 'non'} "
-              f"boîte={r.width:.1f}×{r.height:.1f} pt à ({r.x0:.1f},{r.y0:.1f}) items={len(d.get('items', []))}")
-    if n == 0:
-        print("  aucun tracé dans la zone")
+    try:
+        page = doc[int(row["page"]) - 1]
+        z = pymupdf.Rect(x - rayon, y - rayon, x + rayon, y + rayon) * page.derotation_matrix   # repère tourné → repère natif
+        z.normalize()
+        print(f"# {feuille} = {row['fichier']} page {row['page']} ; zone {z}")
+        print("## Texte")
+        for b in page.get_text("dict", clip=z).get("blocks", []):
+            for l in b.get("lines", []):
+                for s in l.get("spans", []):
+                    c = s["color"]; col = f"#{c:06x}"
+                    print(f"  « {s['text']} »  police={s['font']} taille={s['size']:.1f} couleur={col} bbox={[round(v, 1) for v in s['bbox']]}")
+        print("## Tracés")
+        n = 0
+        for d in page.get_drawings():
+            r = d["rect"]
+            if not r.intersects(z): continue
+            n += 1
+            if n > 40:
+                print("  … (plus de 40 tracés, zone trop large)"); break
+            print(f"  type={d['type']} épaisseur={d.get('width')} trait={gris(d.get('color'))} remplissage={gris(d.get('fill'))} "
+                  f"pointillé={'oui' if d.get('dashes') and d['dashes'] not in ('[] 0', '', None) else 'non'} "
+                  f"boîte={r.width:.1f}×{r.height:.1f} pt à ({r.x0:.1f},{r.y0:.1f}) items={len(d.get('items', []))}")
+        if n == 0:
+            print("  aucun tracé dans la zone")
+    finally:
+        doc.close()
 
 if __name__ == "__main__":
     a = sys.argv[1:]
