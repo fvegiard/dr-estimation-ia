@@ -18,6 +18,10 @@ D220_ADD,plan,100,cartouche=E-D220 rév.01 · ÉCLAIRAGE ÉTAGE BLOC B EXISTANT/
 D221_ADD,plan,100,cartouche=E-D221 rév.01 · ÉCLAIRAGE ÉTAGE BLOC C EXISTANT/DÉMOLITION
 D222_ADD,plan,100,cartouche=E-D222 rév.01 · ÉCLAIRAGE ÉTAGE BLOC D EXISTANT/DÉMOLITION
 D210_ADD_2,autre,,texte de l'addenda E-01 (20 août 2024) — pas un doublon de D210_ADD
+D420_ADD,plan,100,cartouche=T-D420 rév.1 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE BLOC B EXISTANT/DÉMOLITION (addenda T-01)
+D421_ADD,plan,100,cartouche=T-D421 rév.1 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE BLOC C EXISTANT/DÉMOLITION (addenda T-01)
+D422_ADD,plan,100,cartouche=T-D422 rév.1 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE BLOC D EXISTANT/DÉMOLITION (addenda T-01)
+D420_ADD_2,autre,,texte de l'addenda T-01 (18 août 2026) — pas un doublon de D420_ADD
 T001,legende,,cartouche=T-001 · LÉGENDE TÉLÉCOMMUNICATIONS
 D400,plan,100,cartouche=T-D400 · TÉLÉCOM DÉMOLITION PHASE 1 SOUS-SOL
 D401,plan,100,cartouche=T-D401 · TÉLÉCOM DÉMOLITION PHASE 1 SOUS-SOL
@@ -27,6 +31,6 @@ D410,plan,100,cartouche=T-D410 · TÉLÉCOM DÉMOLITION PHASE 1 RDC BLOC B
 D411,plan,100,cartouche=T-D411 · TÉLÉCOM DÉMOLITION PHASE 1 RDC
 D412,plan,100,cartouche=T-D412 · TÉLÉCOM DÉMOLITION PHASE 1 RDC
 D413,plan,100,cartouche=T-D413 · TÉLÉCOM DÉMOLITION PHASE 1 RDC
-D420,plan,100,cartouche=T-D420 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE
-D421,plan,100,cartouche=T-D421 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE
-D422,plan,100,cartouche=T-D422 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE
+D420,remplacee,100,cartouche=T-D420 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE BLOC B — remplacée par D420_ADD (addenda T-01)
+D421,remplacee,100,cartouche=T-D421 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE BLOC C — remplacée par D421_ADD (addenda T-01)
+D422,remplacee,100,cartouche=T-D422 · TÉLÉCOM DÉMOLITION PHASE 1 ÉTAGE BLOC D — remplacée par D422_ADD (addenda T-01)

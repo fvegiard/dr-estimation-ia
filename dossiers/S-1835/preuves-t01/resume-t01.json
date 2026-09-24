@@ -1,0 +1,467 @@
+{
+ "haut_parleurs_avant": 152,
+ "haut_parleurs_apres": 142,
+ "marques_avant": 3308,
+ "marques_apres": 3298,
+ "marques_visuel_apres": 3244,
+ "marques_texte_apres": 54,
+ "sous_sol_disques": {
+  "D400": 0,
+  "D401": 0,
+  "D402": 0,
+  "D403": 0
+ },
+ "doublons_retires": 3,
+ "doublons_par_paire": {
+  "D411|D412": 3,
+  "D420|D421": 6
+ },
+ "t01_hp": {
+  "D420_ADD": 38,
+  "D421_ADD": 32,
+  "D422_ADD": 9
+ },
+ "original_hp": {
+  "D420": 41,
+  "D421": 36,
+  "D422": 9
+ },
+ "t01_retires_du_dessin": [
+  {
+   "feuille_originale": "D420",
+   "x_pt": 2083.6,
+   "y_pt": 1860.9,
+   "vue_aussi_sur": "D421",
+   "x_autre": 653.8,
+   "y_autre": 1859.4,
+   "present_sur_t01": "non",
+   "conclusion": "retiré du dessin par T-01 (absent des deux feuilles révisées)"
+  },
+  {
+   "feuille_originale": "D421",
+   "x_pt": 653.9,
+   "y_pt": 1859.5,
+   "vue_aussi_sur": "D420",
+   "x_autre": 2083.7,
+   "y_autre": 1861.0,
+   "present_sur_t01": "non",
+   "conclusion": "retiré du dessin par T-01 (absent des deux feuilles révisées)"
+  }
+ ],
+ "t01_appareils_retires": 1,
+ "t01_bande_raccord": {
+  "part_commune": 0.031,
+  "doublons": 0,
+  "dx_pt": 1429.8,
+  "dy_pt": 1.5
+ },
+ "t01_doublons_resolus": 5,
+ "t01_nouveaux": 0,
+ "trace_fibre_m_1_100": 115.6,
+ "revisions": [
+  {
+   "feuille_originale": "D420",
+   "feuille_t01": "D420_ADD",
+   "dx_pt": 0.0,
+   "dy_pt": 0.0,
+   "part_commune": 0.819,
+   "traces_original": 25467,
+   "traces_t01": 22621,
+   "traces_seulement_original": 4617,
+   "traces_seulement_t01": 1771,
+   "hp_original": 41,
+   "hp_t01": 38,
+   "hp_identiques": 38,
+   "hp_absents_t01": 3,
+   "hp_nouveaux_t01": 0,
+   "mots_ajoutes_t01": "1 2026-08-18 2026/08/17 63mm ADDENDA B-116. CONDUIT CÂBLE CÂBLE D.V. DANS DE DOIT DURANT EN FIBRE L'ENTREPRENEUR LA LA OPTIQUE PAR PASSANT PROTÉGER QUI RACK RELIE S-003 S-006 SALLE SALLE T-01 T-D421 TRAVAUX UN VERS À",
+   "mots_retires_t01": "2026/07/08 ATTENTION D-132.2. ENTRE LIEN LOCAUX PARTICULIÈRE PORTER T-D413 UNE VOIR",
+   "trace_fibre_pt": 1336.1,
+   "trace_fibre_m_1_100": 47.1
+  },
+  {
+   "feuille_originale": "D421",
+   "feuille_t01": "D421_ADD",
+   "dx_pt": 0.0,
+   "dy_pt": 0.0,
+   "part_commune": 0.869,
+   "traces_original": 46014,
+   "traces_t01": 43142,
+   "traces_seulement_original": 4892,
+   "traces_seulement_t01": 2020,
+   "hp_original": 36,
+   "hp_t01": 32,
+   "hp_identiques": 32,
+   "hp_absents_t01": 4,
+   "hp_nouveaux_t01": 0,
+   "mots_ajoutes_t01": "1 2026-08-18 2026/08/17 63mm ADDENDA CONDUIT CÂBLE D.V. DANS DE DURANT FIBRE LES OPTIQUE PLAN PLAN PROTÉGER T-01 T-D420 T-D422 TRAVAUX UN VERS VERS À",
+   "mots_retires_t01": "2026/07/08 E.B. E.B. E.B. E.B. E.B. E.B.",
+   "trace_fibre_pt": 1581.9,
+   "trace_fibre_m_1_100": 55.8
+  },
+  {
+   "feuille_originale": "D422",
+   "feuille_t01": "D422_ADD",
+   "dx_pt": 239.7,
+   "dy_pt": 0.0,
+   "part_commune": 0.945,
+   "traces_original": 34819,
+   "traces_t01": 34581,
+   "traces_seulement_original": 2575,
+   "traces_seulement_t01": 2337,
+   "hp_original": 9,
+   "hp_t01": 9,
+   "hp_identiques": 9,
+   "hp_absents_t01": 0,
+   "hp_nouveaux_t01": 0,
+   "mots_ajoutes_t01": "2026-08-18 2026/08/17 63mm ADDENDA CONDUIT CÂBLE D.V. DANS DURANT PLAN RACK T-01 T-D421 TRAVAUX UN VERS",
+   "mots_retires_t01": "1 2026/07/08 ATTENTION B-111.4 D-132.2. ENTRE ET LE LIEN LOCAUX NOTE PARTICULIÈRE PORTER SPÉCIFIQUE: UNE ·",
+   "trace_fibre_pt": 360.5,
+   "trace_fibre_m_1_100": 12.7
+  }
+ ],
+ "recalages": [
+  {
+   "etage": "RDC",
+   "feuille_a": "D410",
+   "feuille_b": "D411",
+   "candidats": 617,
+   "part_commune": 0.015,
+   "dx_pt": 190.9,
+   "dy_pt": 60.0,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "RDC",
+   "feuille_a": "D410",
+   "feuille_b": "D412",
+   "candidats": 69,
+   "part_commune": 0.016,
+   "dx_pt": -207.1,
+   "dy_pt": -832.9,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "RDC",
+   "feuille_a": "D410",
+   "feuille_b": "D413",
+   "candidats": 299,
+   "part_commune": 0.016,
+   "dx_pt": -232.4,
+   "dy_pt": -41.5,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "RDC",
+   "feuille_a": "D411",
+   "feuille_b": "D412",
+   "candidats": 79,
+   "part_commune": 0.223,
+   "dx_pt": -519.0,
+   "dy_pt": -903.5,
+   "recouvrement": "oui",
+   "doublons": 3
+  },
+  {
+   "etage": "RDC",
+   "feuille_a": "D411",
+   "feuille_b": "D413",
+   "candidats": 351,
+   "part_commune": 0.022,
+   "dx_pt": -362.0,
+   "dy_pt": -176.9,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "RDC",
+   "feuille_a": "D412",
+   "feuille_b": "D413",
+   "candidats": 39,
+   "part_commune": 0.017,
+   "dx_pt": 170.5,
+   "dy_pt": -953.2,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "ÉTAGE (original)",
+   "feuille_a": "D420",
+   "feuille_b": "D421",
+   "candidats": 1471,
+   "part_commune": 0.208,
+   "dx_pt": 1429.8,
+   "dy_pt": 1.5,
+   "recouvrement": "oui",
+   "doublons": 6
+  },
+  {
+   "etage": "ÉTAGE (original)",
+   "feuille_a": "D420",
+   "feuille_b": "D422",
+   "candidats": 369,
+   "part_commune": 0.015,
+   "dx_pt": 268.3,
+   "dy_pt": 173.0,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "ÉTAGE (original)",
+   "feuille_a": "D421",
+   "feuille_b": "D422",
+   "candidats": 324,
+   "part_commune": 0.021,
+   "dx_pt": 203.2,
+   "dy_pt": 41.8,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "ÉTAGE (T-01)",
+   "feuille_a": "D420_ADD",
+   "feuille_b": "D421_ADD",
+   "candidats": 1215,
+   "part_commune": 0.031,
+   "dx_pt": 520.9,
+   "dy_pt": 1.5,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "ÉTAGE (T-01)",
+   "feuille_a": "D420_ADD",
+   "feuille_b": "D422_ADD",
+   "candidats": 342,
+   "part_commune": 0.012,
+   "dx_pt": 788.1,
+   "dy_pt": 43.3,
+   "recouvrement": "non",
+   "doublons": 0
+  },
+  {
+   "etage": "ÉTAGE (T-01)",
+   "feuille_a": "D421_ADD",
+   "feuille_b": "D422_ADD",
+   "candidats": 288,
+   "part_commune": 0.02,
+   "dx_pt": 274.7,
+   "dy_pt": 41.8,
+   "recouvrement": "non",
+   "doublons": 0
+  }
+ ],
+ "seuil_recouvrement": 0.1,
+ "tolerance_pt": 2.0,
+ "par_libelle": [
+  {
+   "libelle": "Alarme existante — à classer",
+   "avant": 4,
+   "apres": 4,
+   "ecart": 0
+  },
+  {
+   "libelle": "Dém. chauffage — à classer",
+   "avant": 3,
+   "apres": 3,
+   "ecart": 0
+  },
+  {
+   "libelle": "Dém. luminaire 1x4 / segment linéaire",
+   "avant": 1888,
+   "apres": 1888,
+   "ecart": 0
+  },
+  {
+   "libelle": "Dém. luminaire 2x2",
+   "avant": 6,
+   "apres": 6,
+   "ecart": 0
+  },
+  {
+   "libelle": "Dém. luminaire 2x4",
+   "avant": 554,
+   "apres": 554,
+   "ecart": 0
+  },
+  {
+   "libelle": "Dém. luminaire rond encastré",
+   "avant": 85,
+   "apres": 85,
+   "ecart": 0
+  },
+  {
+   "libelle": "Dém. prise plafond projecteur",
+   "avant": 13,
+   "apres": 13,
+   "ecart": 0
+  },
+  {
+   "libelle": "Dém. éclairage — à classer",
+   "avant": 27,
+   "apres": 27,
+   "ecart": 0
+  },
+  {
+   "libelle": "Détecteur fumée existant — dépose/repose temp.",
+   "avant": 192,
+   "apres": 192,
+   "ecart": 0
+  },
+  {
+   "libelle": "Détecteur sécurité (M) — par autres",
+   "avant": 13,
+   "apres": 13,
+   "ecart": 0
+  },
+  {
+   "libelle": "Haut-parleur classe — par autres",
+   "avant": 3,
+   "apres": 3,
+   "ecart": 0
+  },
+  {
+   "libelle": "Haut-parleur existant — dépose/entreposage",
+   "avant": 152,
+   "apres": 142,
+   "ecart": -10
+  },
+  {
+   "libelle": "Luminaire 24h existant — dépose/repose temp.",
+   "avant": 218,
+   "apres": 218,
+   "ecart": 0
+  },
+  {
+   "libelle": "Prise existante — à classer",
+   "avant": 4,
+   "apres": 4,
+   "ecart": 0
+  },
+  {
+   "libelle": "Repère EAC — existant à conserver",
+   "avant": 54,
+   "apres": 54,
+   "ecart": 0
+  },
+  {
+   "libelle": "Station manuelle existante (F) — à confirmer",
+   "avant": 32,
+   "apres": 32,
+   "ecart": 0
+  },
+  {
+   "libelle": "Éclairage existant carré — à classer",
+   "avant": 55,
+   "apres": 55,
+   "ecart": 0
+  },
+  {
+   "libelle": "Éclairage existant — à classer",
+   "avant": 5,
+   "apres": 5,
+   "ecart": 0
+  },
+  {
+   "libelle": "TOTAL",
+   "avant": 3308,
+   "apres": 3298,
+   "ecart": -10
+  }
+ ],
+ "par_feuille_hp": [
+  {
+   "feuille": "D400",
+   "avant": 0,
+   "apres": 0,
+   "ecart": 0
+  },
+  {
+   "feuille": "D401",
+   "avant": 0,
+   "apres": 0,
+   "ecart": 0
+  },
+  {
+   "feuille": "D402",
+   "avant": 0,
+   "apres": 0,
+   "ecart": 0
+  },
+  {
+   "feuille": "D403",
+   "avant": 0,
+   "apres": 0,
+   "ecart": 0
+  },
+  {
+   "feuille": "D410",
+   "avant": 23,
+   "apres": 23,
+   "ecart": 0
+  },
+  {
+   "feuille": "D411",
+   "avant": 27,
+   "apres": 27,
+   "ecart": 0
+  },
+  {
+   "feuille": "D412",
+   "avant": 3,
+   "apres": 0,
+   "ecart": -3
+  },
+  {
+   "feuille": "D413",
+   "avant": 13,
+   "apres": 13,
+   "ecart": 0
+  },
+  {
+   "feuille": "D420",
+   "avant": 41,
+   "apres": 0,
+   "ecart": -41
+  },
+  {
+   "feuille": "D421",
+   "avant": 36,
+   "apres": 0,
+   "ecart": -36
+  },
+  {
+   "feuille": "D422",
+   "avant": 9,
+   "apres": 0,
+   "ecart": -9
+  },
+  {
+   "feuille": "D420_ADD",
+   "avant": 0,
+   "apres": 38,
+   "ecart": 38
+  },
+  {
+   "feuille": "D421_ADD",
+   "avant": 0,
+   "apres": 32,
+   "ecart": 32
+  },
+  {
+   "feuille": "D422_ADD",
+   "avant": 0,
+   "apres": 9,
+   "ecart": 9
+  },
+  {
+   "feuille": "TOTAL",
+   "avant": 152,
+   "apres": 142,
+   "ecart": -10
+  }
+ ]
+}

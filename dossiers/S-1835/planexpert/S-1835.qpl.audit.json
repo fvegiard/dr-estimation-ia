@@ -1,10 +1,10 @@
 {
- "qpl": "/home/claude/releve-auto/runs/S-1835/OUTBOX/S-1835/S-1835-planexpert/S-1835.qpl",
- "sha256": "1ae4d23735a9779f3a8f3fdd933dc369e7b83e55dab32296ca21203f463a2e55",
- "octets": 253184,
- "plans": 31,
- "compteurs": 81,
- "marques": 3308,
+ "qpl": "/home/claude/autofix/runs/S-1835-T01/OUTBOX/S-1835/S-1835-planexpert/S-1835.qpl",
+ "sha256": "8e9d3a31a9e5ac2e8b1d30880654a66120b882ea403f8669cedaafd488a642e6",
+ "octets": 254878,
+ "plans": 35,
+ "compteurs": 80,
+ "marques": 3298,
  "libelles": 18,
  "par_feuille": {
   "D210_ADD": {
@@ -101,19 +101,16 @@
   "D411": {
    "Haut-parleur existant — dépose/entreposage": 27
   },
-  "D412": {
-   "Haut-parleur existant — dépose/entreposage": 3
-  },
   "D413": {
    "Haut-parleur existant — dépose/entreposage": 13
   },
-  "D420": {
-   "Haut-parleur existant — dépose/entreposage": 41
+  "D420_ADD": {
+   "Haut-parleur existant — dépose/entreposage": 38
   },
-  "D421": {
-   "Haut-parleur existant — dépose/entreposage": 36
+  "D421_ADD": {
+   "Haut-parleur existant — dépose/entreposage": 32
   },
-  "D422": {
+  "D422_ADD": {
    "Haut-parleur existant — dépose/entreposage": 9
   }
  }
