@@ -9,7 +9,8 @@ Les quantités sont identiques. Seuls les temps unitaires changent : plastic/bal
 154 700 $ → 88 315 $). En v2, la page 2 est une variante manuscrite (700 h, « TEMPORAIRE », démolition au pi² 193 315 × 0,50 = 96 657,50 $).
 
 ## Résumé chiffré
-| Famille | Humain | IA | Rappel IA (min/H) | Précision apparente |
+Indicateur `min(H, IA) / H` : **accord des totaux par famille** (pas un rappel marque à marque).
+| Famille | Humain | IA | Accord des totaux (min/H) | Précision apparente |
 |---|---|---|---|---|
 | Luminaires à enlever (1x4+2x4+2x2+encastré+mural) | 2567 | 2560 (1888+554+6+85+27 à classer) | 99,7 % | 10/10 au tirage |
 | 1x4 | 1927 | 1888 | 98,0 % | — |
@@ -28,9 +29,9 @@ Tirage de 10 marques IA au hasard (`shuf`, graine « 1835 ») : **10/10 sur un v
 ## Tableau des écarts classés (10 plus gros)
 | # | Objet | Humain | IA | Écart | Cause | Preuve (feuille, x, y en pt) |
 |---|---|---|---|---|---|---|
-| 1 | Luminaire 24 h dépose/repose temporaire | 0 | 218 | +218 | Convention différente : l'humain n'a pas de ligne unitaire. Le temporaire est traité en forfait (« TEMPORAIRE = », v2 p2), et le devis 1.19.4, surligné, met l'éclairage temporaire aux frais de l'entrepreneur général | D210_ADD 760,588 et 843,470 : tête hachurée d'une rangée pointillée, bulle ① (zoom `D210_ADD_720_440_990_620.png`) |
+| 1 | Luminaire 24 h dépose/repose temporaire | 0 | 218 | +218 | Convention différente : l'humain n'a pas de ligne unitaire. Le temporaire est traité en forfait (« TEMPORAIRE = », v2 p2), et le devis 1.19.4, surligné, met l'éclairage temporaire aux frais de l'entrepreneur général | D210_ADD 760,588 et 843,470 : tête hachurée d'une rangée pointillée, bulle ① (voir `releve.xlsx`, onglet `Marques`) |
 | 2 | Détecteur de fumée dépose/repose | 0 | 192 | +192 | Hors périmètre / convention : note 3, suspendre temporairement ; alarme non chiffrée par l'humain (bordereau : « détection incendie » est une ligne distincte) | nomenclature, calque E-E-600-ALA-EQP |
-| 3 | Interrupteurs | 176 | 0 | −176 | **Oubli IA** : aucun label d'interrupteur dans la nomenclature, alors que le symbole « $ » est dans la légende E001 (ligne 115) | D220_ADD ≈1860,1430 : 4 « $ » en pointillé non marqués (zoom `D220_ADD_1780_1420_1920_1540.png`) |
+| 3 | Interrupteurs | 176 | 0 | −176 | **Oubli IA** : aucun label d'interrupteur dans la nomenclature, alors que le symbole « $ » est dans la légende E001 (ligne 115) | D220_ADD ≈1860,1430 : 4 « $ » en pointillé non marqués (voir `releve.xlsx`, onglet `Marques`) |
 | 4 | Plastique/ballast/entreposage | 2567×3 | 0 | −7701 | Compté par règle (= somme des luminaires 1927+579+41+14+6) | reference-quantites.csv |
 | 5 | Encastré rond | 41 | 85 | +44 | Probable oubli humain : les ronds IA vérifiés sont de vrais luminaires ronds pointillés | D210_ADD 1214,1294 (sans marques) ; D212_ADD 1551,1221 |
 | 6 | Luminaire 1x4 | 1927 | 1888 | −39 | Convention : l'IA compte des segments de 35 pt (R-004), l'humain compte des luminaires ; une partie des 24 h hachurés et des « à classer » est probablement dans son 1x4 | D220_ADD 1815,1512 / 1884,1454 : rangée de 4 segments |

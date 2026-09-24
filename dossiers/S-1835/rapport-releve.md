@@ -26,7 +26,7 @@
 | Dém. luminaire 2x2 | 6 |
 | autres à classer / par autres | 19 |
 
-Détail par feuille : les points sont dans `occurrences-visuel.csv`. D221_ADD est la feuille la plus chargée (1x4 : 459).
+Détail par feuille : les coordonnées de marques livrées sont dans `releve.xlsx`, onglet `Marques`. D221_ADD est la feuille la plus chargée (1x4 : 459).
 
 ## Limites
 - Il n'y a pas de parcours visuel exhaustif : le relevé dépend des calques CAO. Voir R-003 et R-013.

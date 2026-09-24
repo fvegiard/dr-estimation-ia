@@ -3,7 +3,7 @@
 Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racine `1zvxiZp6oJ28LpCwhs-pArP4-64R5w8Nf`, sous-dossier `original` id `13JWszeHOEIM41Gf6GnNO0o4sOtWZHOW7`). Lecture seule, rien téléchargé.
 
 - 200 dossiers de soumission (S-1643 → S-1882 ≈ toute l'année 2026), 2586 fichiers, 14.2 Go.
-- **Aucun fichier `.qpl` (projet Plan Expert), aucun `.bak`/`.sql`** : c'est une copie de `Z:\Soumission\Soumission 2026` (plans PDF, devis, courriels .eml/.msg, soumissions .docx/.xlsx, photos, zips), pas les projets Plan Expert de l'estimateur.
+- **Dans les fichiers listés (hors sous-dossiers `[NON EXPLORE]`) : aucun `.qpl` (projet Plan Expert), aucun `.bak`/`.sql`**. Les sous-dossiers non détaillés peuvent encore contenir ces extensions.
 - Sous-dossiers `take off` / `relevé` (relevés humains) présents dans plusieurs dossiers (colonne « take-off »).
 - Certains sous-dossiers volumineux (photos, addendas) sont marqués `[NON EXPLORE]` dans les JSON : à relister au besoin.
 - Un JSON par dossier dans `dossiers/` (chemin, id Drive, extension, taille) ; `racine.json` = liste des 200 dossiers avec leur id.

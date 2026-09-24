@@ -1,6 +1,6 @@
 # STATUT — relevé automatique « S-1835 »
 
-Date : 2026-09-23 16:50 · État : **TERMINÉ**
+Date : 2026-09-23 16:50 · État : **TERMINÉ (partiel : addenda télécom T-01 non intégré)**
 
 ## Entrées
 
@@ -10,6 +10,8 @@ Date : 2026-09-23 16:50 · État : **TERMINÉ**
 | 49-366 (D) - ESBG - Addenda - E-01.pdf | 185553 | e7712be8b86cfcaaf0f029b24af7098bd8d1bd3b48dcd32bd0b8143419c00a64 |
 | 49-366 (D) - ESBG - Plans de télécommunications_12 pages.pdf | 4435312 | 7d9d333b682667b189a4577792ac55207c781e3943c9f9ec10c73c3a5205a125 |
 | 49-366 (D) - ESBG - Plans électriques_10 pages.pdf | 5787167 | fc66fbe5caeb63c3d42a273123ffaac010877355a2092d447a46d3de08cdfe2e |
+
+Note : l'addenda télécom T-01 (`...Addenda - T-01 (2).pdf` et `...Addenda - T-01 - Plans (2).pdf`) est présent dans l'inventaire Drive (`docs/inventaire-drive-2026-09-23/...`) mais n'a pas été ingéré dans ce relevé.
 
 ## Sorties
 
@@ -55,7 +57,6 @@ Le projet Plan Expert `S-1835.qpl` est dans `S-1835-planexpert/` avec ses raster
 8. **R-008 — Enseignes de sortie (note 4).** Aucun calque de démolition dédié n'a été trouvé. Elles sont possiblement dans « Éclairage existant carré — à classer ». Le compte séparé n'est pas fait.
 9. **R-009 — Par autres.** Les caméras, bornes Wi-Fi, projecteurs et haut-parleurs de classe sont retirés par le CSSST (note générale 01). Les symboles M pointillés (calque E-D-400-SEC, 13) et les haut-parleurs du calque E-D-400-COM (3) sont relevés sous des libellés « par autres » : ils ne sont pas chiffrés par DR. L'interprétation « M » = détecteur de mouvement / caméra est à confirmer.
 10. **R-010 — « Station manuelle existante (F) ».** Le symbole drapeau + F est existant et n'est pas explicitement visé par une note d'enlèvement. Il est compté à part, à confirmer (hors travaux ?).
-11. **R-011 — Télécom.** Les haut-parleurs plafond (disque noir Ø 10,6 pt) ont été comptés par lecture vectorielle : 152 sur D410-D422 et **0 sur D400-D403 (sous-sol)**. Le 0 est à vérifier visuellement. Aucun autre symbole télécom n'a été compté (la note dit qu'aucun câble ne doit être démantelé). La note vise les blocs B, C et C1 : les haut-parleurs du bloc D (D413, D422) sont comptés quand même, à confirmer.
+11. **R-011 — Télécom.** Les haut-parleurs plafond (disque noir Ø 10,6 pt) ont été comptés par lecture vectorielle : 152 sur D410-D422 et **0 sur D400-D403 (sous-sol)**. Le 0 est à vérifier visuellement. Aucun autre symbole télécom n'a été compté (la note dit qu'aucun câble ne doit être démantelé). La note vise les blocs B, C et C1 : les haut-parleurs du bloc D (D413, D422) sont comptés quand même, à confirmer. **Ce résultat est provisoire tant que l'addenda T-01 télécom n'est pas ingéré et comparé feuille par feuille.**
 12. **R-012 — Repères EAC (54).** Ils sont relevés par étiquette, en famille `autre`, comme « existant à conserver ». Ce sont des panneaux et des équipements muraux (R-3, CDP-1…), sans travaux.
 13. **R-013 — Relevé non exhaustif hors calques.** Les symboles hors WIPEOUT et hors calque E-* ne sont pas captés. Aucun parcours tuile par tuile complet n'a été fait (volume : plus de 3 000 symboles).
-
