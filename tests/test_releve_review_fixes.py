@@ -72,11 +72,13 @@ def test_tool_guard_allows_expected_releve_commands(tmp_path):
         str(ROOT),
         str(work),
     )
+    globbed = tool_guard.validate("Bash", {"command": "cat *.csv"}, str(work), str(work))
     assert ok is None
     assert relative is None
     assert "hors du dossier de travail" in bad
     assert "chaînée" in chained
     assert "n'accepte qu'un seul argument" in extra
+    assert "hors du dossier de travail" in globbed
 
 
 def test_extract_occurrences_invalid_regex_aborts(tmp_path):

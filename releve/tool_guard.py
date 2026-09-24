@@ -86,6 +86,8 @@ def _is_safe_shell_path(token: str, cwd: str, root: str) -> bool:
         return True
     if token in {".", ".."}:
         return False
+    if any(ch in token for ch in ("*", "?", "[")):
+        return False
     if "/" not in token and not token.startswith("."):
         return True
     resolved = _resolve_arg_path(token, cwd)
