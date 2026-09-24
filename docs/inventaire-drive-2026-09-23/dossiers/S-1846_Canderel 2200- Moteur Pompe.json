@@ -1,6 +1,34 @@
-{"dossier": "S-1846_Canderel 2200- Moteur Pompe", "id": "1Wyyd1O3nEJXLixzkW_el5n2oyjlQR2Wg", "fichiers": [
-{"chemin": "Thumbs.db", "id": "1nXZJlpsJKtmHTvawGnbZ-TdkRBLZ6f_B", "ext": "db", "octets": 12288, "mimeType": "application/octet-stream"},
-{"chemin": "S-1846.pdf", "id": "1f2Hi6Xxy0VwL6x4ZNsSnU9i7AiUJdFHv", "ext": "pdf", "octets": 461853, "mimeType": "application/pdf"},
-{"chemin": "S-1846.docx", "id": "1IYHBk0E5vnbI9FTwuIkQa2CLltUQGquB", "ext": "docx", "octets": 62858, "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin": "Electromoteur/ (sous-dossier non détaillé)", "id": "1Z0DO2h4zBKydBzfcfeft9HkLEd2bzX_L", "ext": "", "octets": 0, "mimeType": "voir note"}
-]}
+{
+  "dossier": "S-1846_Canderel 2200- Moteur Pompe",
+  "id": "1Wyyd1O3nEJXLixzkW_el5n2oyjlQR2Wg",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1nXZJlpsJKtmHTvawGnbZ-TdkRBLZ6f_B",
+      "ext": "db",
+      "octets": 12288,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1846.pdf",
+      "id": "1f2Hi6Xxy0VwL6x4ZNsSnU9i7AiUJdFHv",
+      "ext": "pdf",
+      "octets": 461853,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1846.docx",
+      "id": "1IYHBk0E5vnbI9FTwuIkQa2CLltUQGquB",
+      "ext": "docx",
+      "octets": 62858,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Electromoteur/Soumission #25816.pdf",
+      "id": "1ktOfsgHEkqulDtGbm1DpTfiYWh_fQeE_",
+      "ext": "pdf",
+      "octets": 73919,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

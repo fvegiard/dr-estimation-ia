@@ -2,10 +2,10 @@
 
 Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racine `1zvxiZp6oJ28LpCwhs-pArP4-64R5w8Nf`, sous-dossier `original` id `13JWszeHOEIM41Gf6GnNO0o4sOtWZHOW7`). Lecture seule, rien téléchargé.
 
-- 200 dossiers de soumission (S-1643 → S-1882 ≈ toute l'année 2026), 2586 fichiers, 14.2 Go.
-- **Dans les fichiers listés (hors sous-dossiers `[NON EXPLORE]`) : aucun `.qpl` (projet Plan Expert), aucun `.bak`/`.sql`**. Les sous-dossiers non détaillés peuvent encore contenir ces extensions.
+- 200 dossiers de soumission (S-1643 → S-1882 ≈ toute l'année 2026), **3040 fichiers, 15.6 Go** (77 sous-dossiers détaillés au total : 25 depuis le 24/09, +36 placeholders puis +16 dossiers restants (mimeType folder non marqués vide), tous résolus récursivement le 24/09/2026).
+- **Inventaire complètement énuméré** : plus aucune entrée `mimeType: application/vnd.google-apps.folder` ne cache de contenu non listé (seules restent les entrées « (vide) », dossiers confirmés vides sur Drive) ; aucun `.qpl` (projet Plan Expert), aucun `.bak`/`.sql`, aucun `.qpt`, aucun `.mdb` trouvé.
 - Sous-dossiers `take off` / `relevé` (relevés humains) présents dans plusieurs dossiers (colonne « take-off »).
-- Certains sous-dossiers volumineux (photos, addendas) sont marqués `[NON EXPLORE]` dans les JSON : à relister au besoin.
+- 81 fichiers de feuilles de calcul (quantités, devis, prises de prix).
 - Un JSON par dossier dans `dossiers/` (chemin, id Drive, extension, taille) ; `racine.json` = liste des 200 dossiers avec leur id.
 
 | Dossier | id Drive | fichiers | Mo | take-off | extensions |
@@ -30,7 +30,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | S-1662_Varennes 94 St-Laurent | `1MXL4TRhJyOA9o-7CAi8u2CsjZvGa-NCT` | 7 | 2 |  | db:2, pdf:2, jpg:2, docx:1 |
 | S-1663 pur investissement 330avro | `1OjPMcOVF6XePxXFmftCFyNCzM4YEvcl1` | 8 | 8 |  | pdf:4, eml:2, db:1, docx:1 |
 | S-1664 VITRECO BUREAU | `1aLYYIwDsNMKe4OekH5D0V7NG_LIzebCU` | 19 | 19 |  | pdf:10, png:6, db:2, docx:1 |
-| s-1665 canderel lobby | `14bFMOhSMfglz75PpBozsLR6LAAzgqojx` | 24 | 250 | oui | pdf:10, :8, db:2, docx:2 |
+| s-1665 canderel lobby | `14bFMOhSMfglz75PpBozsLR6LAAzgqojx` | 73 | 615 | oui | pdf:43, jpg:18, db:6, docx:4 |
 | s-1666 chuaffage dom fillions | `18WTKz-IpmEKvvD3dySQTV0Asorc4ZT_H` | 3 | 2 |  | pdf:2, eml:1 |
 | S-1667 PURE | `1t99JAHlOfbeEw9R1_gc_mFeIyy5mgV_L` | 10 | 10 |  | docx:4, pdf:4, db:1, xlsx:1 |
 | S-1668 PURE 8rue principal | `1TWz_-O7VyxVN13s03qpJXyUlLo-zLqMc` | 13 | 14 |  | pdf:7, docx:4, db:1, xlsx:1 |
@@ -60,7 +60,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1702 l'intendant costco stationemment | `1HkSUO7c_rkRA16G32b0B6kN86iqoK8tP` | 30 | 257 |  | pdf:20, db:4, docx:2, jpg:2 |
 | s-1703 uniglo axxys | `1qKz07dMx2NlTL9_fSTyTZ3EZPD8OJt5x` | 35 | 566 |  | pdf:13, db:8, jpg:6, docx:5 |
 | s-1704 block sanitaire hitachi | `1ww1NKOxuS-6-PXuZgDYVCODZuJUZvAZ3` | 3 | 1 |  | pdf:2, eml:1 |
-| s-1705 generatrice linde sorel | `1Y0WSJJBS48bNFaSXeEpADvDg_LuHs1_A` | 30 | 46 |  | jpeg:8, pdf:7, db:3, docx:3 |
+| s-1705 generatrice linde sorel | `1Y0WSJJBS48bNFaSXeEpADvDg_LuHs1_A` | 30 | 57 |  | pdf:9, jpeg:8, eml:4, db:3 |
 | S-1706 BR 82 logement st phiollipe | `1LKVAaXIysrOweHQn5tlnKkwZhHjmtr7d` | 3 | 16 |  | pdf:2, db:1 |
 | s-1707 candarel compressseur | `1oSq1i91xYBWPAnn4ClGvSk5G9gxCFMpA` | 15 | 6 |  | pdf:9, db:3, docx:2, eml:1 |
 | S-1708_ Varennes_Jules-Phaneuf_Lampadaire | `1yvBi6FedDXO1qbdGYUjaUKN3TLTsJWPQ` | 13 | 6 |  | pdf:9, db:2, docx:1, jpg:1 |
@@ -69,7 +69,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | S-1711_Saint-Basile_requete 2026-00508 | `1CTU4PFdkCcyR6qQ1FvYRKITK4W2tXCgq` | 4 | 2 |  | pdf:2, db:1, docx:1 |
 | S-1712 thermographie mtl bruser | `1rCp1btLFQdmtbJQK4NIRu1nl5d_RtSOS` | 4 | 43 |  | pdf:3, eml:1 |
 | S-1713_MCmarsterville borne | `1dG5twAnDJ6_QYC-lFdg2fekfRm63wT8v` | 9 | 16 |  | pdf:5, docx:3, db:1 |
-| S-1714 PARTAGE DE RIVIERA | `1FOL0NPO6xdWxwKRuAadkqsuIPXlz3s_H` | 16 | 236 | oui | pdf:8, msg:3, docx:2, db:1 |
+| S-1714 PARTAGE DE RIVIERA | `1FOL0NPO6xdWxwKRuAadkqsuIPXlz3s_H` | 39 | 474 | oui | pdf:20, db:13, msg:3, docx:2 |
 | s-1715 sprotive parc lionel groulx | `1aAvHaZl3c2fAIxAiKWvUqUCvJcciGMWt` | 57 | 121 | oui | pdf:53, xlsx:3, db:1 |
 | s-1716 L'oreal block sanitaire | `1QgNx40_hRYysVqyn7HansqLvW4YQZcOI` | 2 | 5 |  | pdf:1, db:1 |
 | S-1717_Projet du Nouveau VIC de l'Université McGill Lot 2102 | `1q64F8dsQTlVU55nV9byr4o498IaP-c0Y` | 13 | 4 |  | pdf:12, db:1 |
@@ -94,7 +94,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1740 ecole de la petite-gare | `1w2p2_bnf-7tvSOEPNS9ES91e8K16zaZu` | 21 | 1090 |  | pdf:15, db:3, zip:2, xlsx:1 |
 | s-1743 ecole bourassa porte | `1NqPIFkGqKXdfVxpOPiQ0sZ0PFJu0Uf3g` | 7 | 16 |  | pdf:4, docx:2, db:1 |
 | s-1744 ecole saint patrice | `1ovYcci8apzYYbwMrqckyM4tXObb70R7x` | 44 | 77 |  | pdf:33, docx:7, eml:3, xlsx:1 |
-| s-1745 college jean de breouf | `1rRS-JrGjHMzQnJIJlRGM01lGjoYJS5ki` | 13 | 133 | oui | folder:6, xlsx:2, docx:2, db:1 |
+| s-1745 college jean de breouf | `1rRS-JrGjHMzQnJIJlRGM01lGjoYJS5ki` | 32 | 265 | oui | pdf:19, db:7, xlsx:3, docx:2 |
 | S-1747 PARC STE JULIE | `1JRGDVZpgTzcUxMcSZmHZvgPMHtsYcIdO` | 5 | 1 |  | pdf:2, docx:2, db:1 |
 | s-1748 deplacemnt alarme incendie ,mcmasterville | `16F9NuvvuDXLN3g9pnb8m9vO7jUGh-nNI` | 11 | 7 |  | jpg:10, db:1 |
 | s-1749 generatrice  reservoir mont bruno ste julier | `1JU6ksN0--5WKMFOuwI_S0uXXfZw9XSlB` | 4 | 1 |  | docx:2, db:1, pdf:1 |
@@ -104,7 +104,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1753 ecole asomption | `1poUJ-MlcW48sn3UM_wu8moaow6z089Dt` | 27 | 74 | oui | pdf:18, db:5, docx:2, html:1 |
 | s-1754 station de sky saint bruno | `1K__qzUdq9RorfopwDQ8FKkb8SHQoZ3UA` | 4 | 0 |  | db:1, pdf:1, docx:1, eml:1 |
 | s-1755 mat ferme trudeau | `1cxL6ZhZR2IkTT75UusukjB3WI9s3zWZk` | 5 | 1 |  | pdf:2, docx:2, db:1 |
-| S-1756_SEAO_STM | `1DQCuDJtFcKhHkJdVopK8FyiQGr-VGSRn` | 9 | 53 |  | pdf:5, db:1, xlsx:1, docx:1 |
+| S-1756_SEAO_STM | `1DQCuDJtFcKhHkJdVopK8FyiQGr-VGSRn` | 13 | 58 |  | pdf:9, db:2, xlsx:1, docx:1 |
 | S-1758_Varennes_ Michael Faraday (IREQ) | `1D7Aj-YqKVXJX9qoHyptguQ87GCqjJRp2` | 25 | 33 |  | jpg:9, pdf:8, db:4, docx:1 |
 | S-1759_DIX_Lampadaire Cinéma | `1RtQHmujcm_Ie1JieDk0OTsznhXgaCbtp` | 10 | 11 |  | pdf:4, jpg:4, db:1, docx:1 |
 | s-1760 college breboeuf | `1va3_wBTLFGcyb8QzgDr237jTHg6cqi8K` | 17 | 62 |  | pdf:14, db:1, xls:1, docx:1 |
@@ -114,17 +114,17 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1764 3000 cartier st hyacinthe teck toit | `18zv7aaukt4yAw8FSGHW5Biwf5AYdX6EM` | 3 | 0 |  | eml:1, pdf:1, db:1 |
 | s-1765 infiltrationb d'eau conduit electrique dix-30 | `1gfGVhiaGViHEJtrH3qB_Owe3fkbtMim1` | 2 | 3 |  | db:1, pdf:1 |
 | s-1766 caserne st jean | `1pwiykf-fj1LTqxaDMk1ynU7_wBAZ7i7M` | 37 | 361 | oui | pdf:27, png:4, db:2, xlsx:2 |
-| S-1767 - super - jean coutu mascouche | `1fCbfj0sq8yDdWbqD4XADWywVIpRAlkfj` | 38 | 129 | oui | pdf:26, folder:7, zip:3, db:1 |
+| S-1767 - super - jean coutu mascouche | `1fCbfj0sq8yDdWbqD4XADWywVIpRAlkfj` | 76 | 218 | oui | pdf:60, db:6, zip:6, msg:2 |
 | S-1769 CPE SOLEIL SOURIANT | `17yt7hKlCpcSeE2-WpZWl7_rYPrb5e8nE` | 21 | 23 | oui | pdf:19, db:2 |
 | s-1770 linde st hubert | `1aTBTfDRMrU2qCe9ELb_pKs-zn2HuKYTk` | 5 | 0 |  | pdf:2, db:1, docx:1, xlsx:1 |
 | s-1773 saint julie corrdor | `1Uf3NqipzVHxnD9_CuYrWdfsQ12Je2x5J` | 2 | 1 |  | eml:2 |
 | s-1774 120240 camelia mcmasterville | `15NQSu4PwcJEED5oBB1RTrorQfCmNXr5C` | 20 | 24 |  | pdf:12, db:4, docx:2, :1 |
-| s-1775 clinique mieux etre | `12V75uXR3jW1FZHXqMlv-pH9pgS4yisws` | 24 | 88 | oui | pdf:18, jpg:2, db:1, xlsx:1 |
+| s-1775 clinique mieux etre | `12V75uXR3jW1FZHXqMlv-pH9pgS4yisws` | 30 | 91 | oui | pdf:24, db:2, jpg:2, xlsx:1 |
 | S-1777 - Scotia Bank_Lanthier | `16p960-SC1W_kXaaki1HBnCJ7ro4kzapq` | 20 | 40 | oui | pdf:17, db:3 |
 | S-1779 - Bases de béton et conduits _ST-BASILE | `1j-vr46aubBLtXMXjdNRHpxARVS6ZHgG3` | 7 | 8 |  | pdf:5, db:1, xlsx:1 |
 | s-1780 shady | `1kESVAfXS1g3CvwqROSHvHKUI7GYLIrGa` | 18 | 33 |  | pdf:8, jpeg:4, db:3, docx:2 |
 | S-1781_Canderel Spot plafond | `14aRG1QFiqmTGEnE5u5Wg6GFUeneuWvlv` | 4 | 1 |  | jpg:3, pdf:1 |
-| s-1782 s9 dix-30 | `1SIU0a2WDzcFbtGI_mRQWInmA_SwfxkYw` | 8 | 88 |  | pdf:3, folder:2, db:1, docx:1 |
+| s-1782 s9 dix-30 | `1SIU0a2WDzcFbtGI_mRQWInmA_SwfxkYw` | 29 | 177 |  | pdf:14, jpg:8, db:4, docx:2 |
 | s-1784 correctif pure industriel 180 de normadie | `1UCuvHZ8n1JaywbMwzTdtzkY4E6zG2feA` | 9 | 13 |  | pdf:7, db:1, jpeg:1 |
 | s-1785 eco centre varennes | `1vXoy8UO1z2R7G_s_CE9UrkaOD403MtR5` | 6 | 17 | oui | pdf:3, db:1, jpeg:1, xlsx:1 |
 | s-1786 entretien generatrice  terrebonne mdl | `1-JJZ3CeJzJEGH2m-NYYWBhPP0kmz9_ZH` | 8 | 2 |  | pdf:4, eml:3, db:1 |
@@ -134,8 +134,8 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1791 circuit urgence bureau avocat candarel | `12SZ3kvEESwdNzq8cd-YigDWarKXo6hl9` | 4 | 0 |  | eml:1, docx:1, pdf:1, db:1 |
 | S-1792 SIP MATREC | `1WgpJknXHr-j8d1kWOqJRvwdPOCrLlRJG` | 0 | 0 |  |  |
 | S-1793 - centre excellence Rossy | `1Hbx5DiOlhvar95VASfAyZKWKS5q2B_C7` | 25 | 222 |  | pdf:23, db:1, jpg:1 |
-| S-1794 Thermographie | `1zJOVFC1PCnirfwI8q2s98VXyGFY-f1Xa` | 6 | 15 | oui | pdf:4, db:1, folder:1 |
-| S-1796_Garage Ste-Julie RBL Ventilation | `1vLhzcE-1ciPyb9lv2aoXxF5-bbKRrPGl` | 5 | 1 |  | pdf:2, db:1, docx:1, :1 |
+| S-1794 Thermographie | `1zJOVFC1PCnirfwI8q2s98VXyGFY-f1Xa` | 4 | 15 | oui | pdf:3, db:1 |
+| S-1796_Garage Ste-Julie RBL Ventilation | `1vLhzcE-1ciPyb9lv2aoXxF5-bbKRrPGl` | 10 | 11 |  | pdf:7, db:2, docx:1 |
 | S-1797 - École Chambly | `1HyAE7ewb9dhGrmSGoP2gebQRXu65Ymj2` | 75 | 327 | oui | pdf:71, db:2, docx:1, doc:1 |
 | s-1798 ecl mecnaique garage ste julie | `1GJ5NXZNyooXIDJMHP3l6FUkxQaIyReIO` | 3 | 0 |  | db:1, pdf:1, docx:1 |
 | s-1799 eclairage parc felix racicot st hilaire | `12jv3V3w8zna_cZNfqOFjE38JYGrAcKIu` | 5 | 2 |  | pdf:3, db:1, docx:1 |
@@ -159,7 +159,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1820 daniel bernier | `1z7IbRhS2CI7nw0Ts-MqgGZWGimenaKK1` | 5 | 27 |  | pdf:2, db:1, eml:1, docx:1 |
 | S-1821_Saint-Basile fut Parc du Ruisseau | `1AX7d_cNh3diwjJzIDxglc3QOb0wMAD--` | 7 | 6 |  | pdf:2, db:1, docx:1, jpg:1 |
 | S-1823 DEMO ZARA CORRREFOUR LAVAL | `1ibpboT_obSfk26WOZmkM0RA4dhHTK9cp` | 0 | 0 |  |  |
-| S-1824 CHAMPIONNATS DU MONDE QUARTIER DIX 30 | `1obq-8jbOVrFDSqd1Sb43wlvI0eAGDRpm` | 15 | 2 |  | pdf:11, folder:3, db:1 |
+| S-1824 CHAMPIONNATS DU MONDE QUARTIER DIX 30 | `1obq-8jbOVrFDSqd1Sb43wlvI0eAGDRpm` | 25 | 9 |  | pdf:22, db:3 |
 | s-1825 ventilation garage point s | `14nv-btWDxY5QKYi4HmBsu2t4H9DHJIZ6` | 3 | 0 |  | db:1, pdf:1, docx:1 |
 | S-1826_SIP_Centre de biomethanisation | `1qSEU-XoppDL6jQOfSdNZVl2miM7qM_yR` | 5 | 2 |  | pdf:2, db:1, docx:1, eml:1 |
 | S-1827 CANON A NEIGE BROMONT | `1Gd4bVM-R10UC_OvOjuubbCrKuA-XMUGU` | 4 | 4 |  | pdf:3, db:1 |
@@ -169,7 +169,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | S-1832 DANONE CANADA BOUCHERVILLE | `1g3iu8m7Gcjqg_ojhJtY4MyuNdcyu0GlG` | 37 | 914 |  | pdf:27, :5, db:2, zip:1 |
 | S-1834 PROVIA ST-AMABLE | `1JWDN-9zsOiJs4OiA3izxLQ_oVLAx_0DL` | 7 | 83 |  | pdf:4, db:1, jpeg:1, zip:1 |
 | s-1835 esbg  rehabilitation inbterieur | `1ErOIpVn225CbLP-UG8kJKCTzT8UxPcKY` | 23 | 23 | oui | pdf:14, :8, db:1 |
-| S-1836_Canderel 2020_ajout prise | `1--tQbVKuTae2wgve4Z0IIy2Aj8jPCB6B` | 6 | 1 |  | pdf:3, db:1, docx:1, folder:1 |
+| S-1836_Canderel 2020_ajout prise | `1--tQbVKuTae2wgve4Z0IIy2Aj8jPCB6B` | 18 | 27 |  | jpg:9, pdf:3, mov:3, db:2 |
 | S-1837_Canderel 2000_ajout prise | `1MnqVTMs8E26owheaHi9Xim59c3qvGOXX` | 5 | 5 |  | pdf:2, db:1, docx:1, :1 |
 | S-1838 180 NORMANDIE HAUT VOLTAGE | `1nu8HADczyIZs818AoRip_cbu8AqY9iUl` | 25 | 17 |  | jpeg:20, pdf:3, db:1, mov:1 |
 | S-1839 PENNINGTONS PLACE NEWMAN | `1zRMB6HNWxCuPVZ8TT2thMoZV-30kQ8bE` | 8 | 4 |  | pdf:6, db:1, docx:1 |
@@ -179,7 +179,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1843 pmml dix-30 | `1Sw-Z_PvuPCMCuqC_vqIlw3WTxAbT-Y8Y` | 8 | 5 |  | jpg:3, eml:2, docx:1, gif:1 |
 | s-1844 saq varennes | `14yJ_u1yy-K4kFgl3Qskn-ZQi0fEagS3G` | 57 | 170 | oui | pdf:40, jpg:13, db:2, png:1 |
 | S-1846_Canderel 2200- Moteur Pompe | `1Wyyd1O3nEJXLixzkW_el5n2oyjlQR2Wg` | 4 | 1 |  | db:1, pdf:1, docx:1, :1 |
-| S-1847_McMasterville_Patinoire_Éclairage | `1rU8pTgvKQQeEntjvUra-97d7-4GGgr_g` | 11 | 2 |  | pdf:5, docx:2, folder:2, db:1 |
+| S-1847_McMasterville_Patinoire_Éclairage | `1rU8pTgvKQQeEntjvUra-97d7-4GGgr_g` | 16 | 11 |  | pdf:8, db:3, docx:2, jpg:2 |
 | S-1848_Otterburn_requête_2026-01168 | `19sjIh_4gY7ytgGQlyA_emD5frZcLKCAM` | 8 | 9 |  | jpg:3, pdf:2, db:2, docx:1 |
 | S-1849SIP CHUM ECLAIRAGE STATIONNEMENT | `18fvVUbZWLW3M1o6A5-kyhVt0oNQXJ88F` | 41 | 167 |  | pdf:37, url:3, db:1 |
 | S-1850 SIP BAUSCH - HEALTH | `1yJNzBXCMyMh4oHUSu0RT_5ER-WJuiSAT` | 6 | 10 |  | pdf:4, db:1, docx:1 |
@@ -189,12 +189,12 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | s-1854 sollio st hubert lanthier | `1hWF9TXFxA0dhH7WzW2GzKRp2AUqmZI46` | 32 | 307 | oui | pdf:17, xlsx:5, docx:4, db:2 |
 | S-1855_Canderel_22eÉtage | `1pp3X1j41JAfbHod5MPFbuT9gGqkaTo7_` | 7 | 7 |  | db:2, pdf:2, jpg:2, docx:1 |
 | S-1856_Canderel_6e Étage | `1mrwMvQm-YMmfdQP1g2XQj0S88cD4PRBY` | 4 | 2 |  | pdf:2, db:1, docx:1 |
-| S-1857 - Maison St-Michel | `1_dWoD7xyS-NJNUT3dTMMfSWoTBdtU_Aj` | 10 | 232 | oui | pdf:5, folder:3, db:1, zip:1 |
+| S-1857 - Maison St-Michel | `1_dWoD7xyS-NJNUT3dTMMfSWoTBdtU_Aj` | 189 | 494 | oui | pdf:183, db:4, zip:2 |
 | s-1858 innuscience aliementation 240v | `1yqfUvuiCJJ66JtbB0Jugkf8kPM3fXIR-` | 5 | 2 |  | pdf:4, db:1 |
 | S-1860 cable chauffant gerry | `1CTmK0Ec9ABrmlFJ6K39JexITPLWgYsot` | 10 | 31 |  | pdf:9, db:1 |
 | S-1861 -Blue Colar - Kanawake | `11oykGOYIIrvRF1hWu3QIujHsQq0iP81m` | 1 | 159 |  | zip:1 |
 | s-1862 bloc sanitaire dix-30 l15 bucci | `1hmh-pmy7ONe4Bhwi877E1N1wU4RRiz7P` | 17 | 46 |  | pdf:13, eml:3, db:1 |
-| s-1866 gar mun st amable | `13-et29qVFRLHd2tRIHV4Yc__LBAz9Gx-` | 13 | 1 |  | folder:8, pdf:3, xlsx:1, db:1 |
+| s-1866 gar mun st amable | `13-et29qVFRLHd2tRIHV4Yc__LBAz9Gx-` | 72 | 48 | oui | pdf:50, db:11, xlsx:6, docx:3 |
 | s-1868 eclairage arche centre sportif | `1GC55s_TVjQ5xzu1H5NopKnxSHeVAaOr8` | 1 | 14 |  | eml:1 |
 | s-1869 lampadaire alle des lumieres | `14Q7gXGmiDiWbiBtzuz1lZZhx3sE_vEl0` | 4 | 0 |  | pdf:2, db:1, docx:1 |
 | s-1870 _Brasswater_Éclairage_3000 Cartier | `1Zd3gNoypcT0TksivE9ItQ4yr9xJI98Qx` | 10 | 7 |  | pdf:6, db:3, docx:1 |
@@ -205,7 +205,7 @@ Source : dossier Drive partagé par lena.ai.dr@gmail.com le 23/09/2026 (id racin
 | S-1875_Ville de Beloeil_Bernard Pilon | `1-rTOYGEDmcMd2TTcpVP4mT9hfZV57OPx` | 5 | 3 |  | db:2, pdf:2, png:1 |
 | s-1876 pat poivin piscine | `1eCHX4BV16UTMbkAoUBV034nXR_XyF4tJ` | 2 | 0 |  | db:1, pdf:1 |
 | s-1877 costco laval | `1fp90Ru_d086PV28R-mNxJ8PXdlvkcCcf` | 14 | 17 |  | pdf:12, docx:1, db:1 |
-| s-1878 drumco construction gramby | `1c0GG1gXKhMRq8fF6ZxGftwrIyjq5L8uD` | 30 | 102 |  | pdf:15, xlsx:5, :4, docx:3 |
+| s-1878 drumco construction gramby | `1c0GG1gXKhMRq8fF6ZxGftwrIyjq5L8uD` | 26 | 102 |  | pdf:15, xlsx:5, docx:3, xlsm:2 |
 | s-1879 opsis thermo laval opsis | `1TA5jbI_obSQXDjScgWZEmbwRCcLjwubH` | 2 | 0 |  | pdf:1, docx:1 |
 | s-1880, entretien edifice windsor | `193chsWDxhXEm3ZlK2wEKXAzdm510oLXE` | 2 | 1 |  | pdf:2 |
 | s-1881 hotel candlewood st-hyacinthe | `1IylpHZPZrs3TvhB3gEAr1s7M2jp_EVCm` | 0 | 0 |  |  |

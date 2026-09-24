@@ -1,32 +1,230 @@
-{"dossier":"s-1705 generatrice linde sorel","id":"1Y0WSJJBS48bNFaSXeEpADvDg_LuHs1_A","fichiers":[
-{"chemin":"Thumbs.db","id":"1zbQykK329amiC2fFTWMf-xzisonxjCke","ext":"db","octets":48640,"mimeType":"application/octet-stream"},
-{"chemin":"S-1705.pdf","id":"1XHWcTychi7C-rBCOitbm8AEKR-zHHoC4","ext":"pdf","octets":257037,"mimeType":"application/pdf"},
-{"chemin":"S-1705.docx","id":"1e5k-6cOzZgBysgmC4HMJ88PXHXgtyN_V","ext":"docx","octets":62628,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"TR Soumission d'installation - Linde Sorel.eml","id":"1iJqKYT2jmrCMIlNtIc1-l4HNz0z6HikZ","ext":"eml","octets":782046,"mimeType":"message/rfc822"},
-{"chemin":"37B576001-02.pdf","id":"1Hds8srK61iTtHDoEU2LVzp8Jm0ciOaQi","ext":"pdf","octets":123995,"mimeType":"application/pdf"},
-{"chemin":"OTEC Spec E.pdf","id":"1LLIEzesRDLCldkc0twHUYbQpnf3mYT86","ext":"pdf","octets":391694,"mimeType":"application/pdf"},
-{"chemin":"7- Dépot - Lettre - BSDQ - Rapport/Modele soumission jonathan parent  - Copie - Copie (2).docx","id":"1__83za9WSaWmfWeM33IHDaYPRmzvQ7mx","ext":"docx","octets":63129,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"7- Dépot - Lettre - BSDQ - Rapport/Demande Cautionnement.doc","id":"1XNjsxHDYn5jgRxWm7cy31TJj6IzWuYRt","ext":"doc","octets":138752,"mimeType":"application/msword"},
-{"chemin":"7- Dépot - Lettre - BSDQ - Rapport/S-XXXX Lettre.docx","id":"1GKzCDBvHHL1s8jrg3ZrwA_XlImyM-FFo","ext":"docx","octets":59570,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"6- Invitations/(dossier vide)","id":"1xoXfPtoGA6-GrTBbFb-xrPuQqFXHt_BB","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"1- Prix Distributeur/guillevin (sous-dossier non détaillé)","id":"1yXAxW_D8MVP-Lm4_xafWQoOVgNN4QAwv","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"1- Prix Distributeur/Thumbs.db","id":"12XZkgANOjKURAHJHCtCzZwnZN1ywXabb","ext":"db","octets":11776,"mimeType":"application/octet-stream"},
-{"chemin":"1- Prix Distributeur/VQ580324X6K1-0000-4-M-QuickPrint_Linde-Canada_20260324-02014_2.PDF","id":"12BS3gqo2gijLCWbAyj_qZBuAanNNMXcv","ext":"PDF","octets":347923,"mimeType":"application/pdf"},
-{"chemin":"1- Prix Distributeur/TR [EXTERNAL] TR projet linde sorel .eml","id":"1EZJZAjHKj52MwPNWhn3DW5p2rbZMt6hw","ext":"eml","octets":551774,"mimeType":"message/rfc822"},
-{"chemin":"1- Prix Distributeur/Tableaux Prix Distributeur.xlsx","id":"1P0G0QGUBjuuYXcoN2s1uNRl4CDi2jzXs","ext":"xlsx","octets":18996,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"1- Prix Distributeur/guillevin/RE Linde Sorel.eml","id":"1H67aim22ISE6x0AGTL0pYzw238jI9R7U","ext":"eml","octets":9787586,"mimeType":"message/rfc822"},
-{"chemin":"1- Prix Distributeur/guillevin/16AWG_600V_Armcon.pdf","id":"1xhLKz76J5Fd8cLBBqCv8xkPGH1Vh2YF5","ext":"pdf","octets":374807,"mimeType":"application/pdf"},
-{"chemin":"1- Prix Distributeur/guillevin/Qte8870565.pdf","id":"1OnooUdVouSrwuK78RuUEnxBa8cNQvfF-","ext":"pdf","octets":184189,"mimeType":"application/pdf"},
-{"chemin":"3- Addenda/(dossier vide)","id":"1z-RfVy1QcH7Knvn4tMf72lguzywKCL40","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/Thumbs.db","id":"1OL9O6BosV6pQVd3mBkszh2WZl-cwNJ5u","ext":"db","octets":80384,"mimeType":"application/octet-stream"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0813.jpeg","id":"1wN_SD9LCEj0uIH4YegYtB7z1NWLp-mZ3","ext":"jpeg","octets":4166669,"mimeType":"image/jpeg"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0809.jpeg","id":"1J5nMkQjPwoL_Hh7MxboMdZbmjFYccP-R","ext":"jpeg","octets":3346358,"mimeType":"image/jpeg"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0783.jpeg","id":"1a8puS51I5CI3C_d3Q2S-sxnATX5NVTma","ext":"jpeg","octets":5861362,"mimeType":"image/jpeg"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0810.jpeg","id":"1IuA6FUYkJXZG_JRkE9P4RxHZ009Tcf93","ext":"jpeg","octets":3221385,"mimeType":"image/jpeg"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0814.jpeg","id":"1727TrJ5hlZ2KZ9_N4_zi4a50EYp1hIkb","ext":"jpeg","octets":3963506,"mimeType":"image/jpeg"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0811.jpeg","id":"1h4Kyd73X2UyjypyVtsC98VkHLgdFU55H","ext":"jpeg","octets":4355293,"mimeType":"image/jpeg"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0785.jpeg","id":"1QpDKZaM78ZR-Q6Ien8PBX_N_N1Z-eNFg","ext":"jpeg","octets":6218500,"mimeType":"image/jpeg"},
-{"chemin":"5- Documents et Formulaire Prix Séparés/IMG_0782.jpeg","id":"1F9C6FrnBnIgHIYQpIXuYd-uFQrWWxAVy","ext":"jpeg","octets":1047857,"mimeType":"image/jpeg"},
-{"chemin":"4- Topsheet Matériaux/Top Sheet Soumission 2023.xls","id":"11fa1NHZPr6GSHopG5A-ChDvH7NEpKX3u","ext":"xls","octets":200192,"mimeType":"application/vnd.ms-excel"},
-{"chemin":"2- Plan et Devis Soumission/doc20260312180214.pdf","id":"1EGOY60H0KC14P9MIBCqBvs-STrVS0f_S","ext":"pdf","octets":650038,"mimeType":"application/pdf"}
-]}
+{
+  "dossier": "s-1705 generatrice linde sorel",
+  "id": "1Y0WSJJBS48bNFaSXeEpADvDg_LuHs1_A",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1zbQykK329amiC2fFTWMf-xzisonxjCke",
+      "ext": "db",
+      "octets": 48640,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1705.pdf",
+      "id": "1XHWcTychi7C-rBCOitbm8AEKR-zHHoC4",
+      "ext": "pdf",
+      "octets": 257037,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1705.docx",
+      "id": "1e5k-6cOzZgBysgmC4HMJ88PXHXgtyN_V",
+      "ext": "docx",
+      "octets": 62628,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "TR Soumission d'installation - Linde Sorel.eml",
+      "id": "1iJqKYT2jmrCMIlNtIc1-l4HNz0z6HikZ",
+      "ext": "eml",
+      "octets": 782046,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "37B576001-02.pdf",
+      "id": "1Hds8srK61iTtHDoEU2LVzp8Jm0ciOaQi",
+      "ext": "pdf",
+      "octets": 123995,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "OTEC Spec E.pdf",
+      "id": "1LLIEzesRDLCldkc0twHUYbQpnf3mYT86",
+      "ext": "pdf",
+      "octets": 391694,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "7- Dépot - Lettre - BSDQ - Rapport/Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1__83za9WSaWmfWeM33IHDaYPRmzvQ7mx",
+      "ext": "docx",
+      "octets": 63129,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "7- Dépot - Lettre - BSDQ - Rapport/Demande Cautionnement.doc",
+      "id": "1XNjsxHDYn5jgRxWm7cy31TJj6IzWuYRt",
+      "ext": "doc",
+      "octets": 138752,
+      "mimeType": "application/msword"
+    },
+    {
+      "chemin": "7- Dépot - Lettre - BSDQ - Rapport/S-XXXX Lettre.docx",
+      "id": "1GKzCDBvHHL1s8jrg3ZrwA_XlImyM-FFo",
+      "ext": "docx",
+      "octets": 59570,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "6- Invitations/ (vide)",
+      "id": "",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "1- Prix Distributeur/RE Linde Sorel.eml",
+      "id": "1H67aim22ISE6x0AGTL0pYzw238jI9R7U",
+      "ext": "eml",
+      "octets": 9787586,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "1- Prix Distributeur/Qte8870565.pdf",
+      "id": "1OnooUdVouSrwuK78RuUEnxBa8cNQvfF-",
+      "ext": "pdf",
+      "octets": 184189,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "1- Prix Distributeur/16AWG_600V_Armcon.pdf",
+      "id": "1xhLKz76J5Fd8cLBBqCv8xkPGH1Vh2YF5",
+      "ext": "pdf",
+      "octets": 374807,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "1- Prix Distributeur/Thumbs.db",
+      "id": "12XZkgANOjKURAHJHCtCzZwnZN1ywXabb",
+      "ext": "db",
+      "octets": 11776,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "1- Prix Distributeur/VQ580324X6K1-0000-4-M-QuickPrint_Linde-Canada_20260324-02014_2.PDF",
+      "id": "12BS3gqo2gijLCWbAyj_qZBuAanNNMXcv",
+      "ext": "PDF",
+      "octets": 347923,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "1- Prix Distributeur/TR [EXTERNAL] TR projet linde sorel .eml",
+      "id": "1EZJZAjHKj52MwPNWhn3DW5p2rbZMt6hw",
+      "ext": "eml",
+      "octets": 551774,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "1- Prix Distributeur/Tableaux Prix Distributeur.xlsx",
+      "id": "1P0G0QGUBjuuYXcoN2s1uNRl4CDi2jzXs",
+      "ext": "xlsx",
+      "octets": 18996,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "1- Prix Distributeur/guillevin/RE Linde Sorel.eml",
+      "id": "1H67aim22ISE6x0AGTL0pYzw238jI9R7U",
+      "ext": "eml",
+      "octets": 9787586,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "1- Prix Distributeur/guillevin/16AWG_600V_Armcon.pdf",
+      "id": "1xhLKz76J5Fd8cLBBqCv8xkPGH1Vh2YF5",
+      "ext": "pdf",
+      "octets": 374807,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "1- Prix Distributeur/guillevin/Qte8870565.pdf",
+      "id": "1OnooUdVouSrwuK78RuUEnxBa8cNQvfF-",
+      "ext": "pdf",
+      "octets": 184189,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "3- Addenda/ (vide)",
+      "id": "",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/Thumbs.db",
+      "id": "1OL9O6BosV6pQVd3mBkszh2WZl-cwNJ5u",
+      "ext": "db",
+      "octets": 80384,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0813.jpeg",
+      "id": "1wN_SD9LCEj0uIH4YegYtB7z1NWLp-mZ3",
+      "ext": "jpeg",
+      "octets": 4166669,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0809.jpeg",
+      "id": "1J5nMkQjPwoL_Hh7MxboMdZbmjFYccP-R",
+      "ext": "jpeg",
+      "octets": 3346358,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0783.jpeg",
+      "id": "1a8puS51I5CI3C_d3Q2S-sxnATX5NVTma",
+      "ext": "jpeg",
+      "octets": 5861362,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0810.jpeg",
+      "id": "1IuA6FUYkJXZG_JRkE9P4RxHZ009Tcf93",
+      "ext": "jpeg",
+      "octets": 3221385,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0814.jpeg",
+      "id": "1727TrJ5hlZ2KZ9_N4_zi4a50EYp1hIkb",
+      "ext": "jpeg",
+      "octets": 3963506,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0811.jpeg",
+      "id": "1h4Kyd73X2UyjypyVtsC98VkHLgdFU55H",
+      "ext": "jpeg",
+      "octets": 4355293,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0785.jpeg",
+      "id": "1QpDKZaM78ZR-Q6Ien8PBX_N_N1Z-eNFg",
+      "ext": "jpeg",
+      "octets": 6218500,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "5- Documents et Formulaire Prix Séparés/IMG_0782.jpeg",
+      "id": "1F9C6FrnBnIgHIYQpIXuYd-uFQrWWxAVy",
+      "ext": "jpeg",
+      "octets": 1047857,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "4- Topsheet Matériaux/Top Sheet Soumission 2023.xls",
+      "id": "11fa1NHZPr6GSHopG5A-ChDvH7NEpKX3u",
+      "ext": "xls",
+      "octets": 200192,
+      "mimeType": "application/vnd.ms-excel"
+    },
+    {
+      "chemin": "2- Plan et Devis Soumission/doc20260312180214.pdf",
+      "id": "1EGOY60H0KC14P9MIBCqBvs-STrVS0f_S",
+      "ext": "pdf",
+      "octets": 650038,
+      "mimeType": "application/pdf"
+    }
+  ]
+}
