@@ -69,7 +69,18 @@ def main(argv: list[str] | None = None) -> int:
     SORTIE.mkdir(parents=True, exist_ok=True)
     (SORTIE / "resultats.json").write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     base_path = SORTIE / "ligne-de-base.json"
-    base = json.loads(base_path.read_text(encoding="utf-8")) if base_path.exists() else {}
+    if base_path.exists():
+        base = json.loads(base_path.read_text(encoding="utf-8"))
+    elif args.nouvelle_base:
+        base = {}
+    else:
+        print(f"ligne de base absente : {base_path}", file=sys.stderr)
+        return 2
+    if base:
+        manquants = sorted(set(base) - set(jeu))
+        if manquants:
+            print("dossiers de la ligne de base absents du jeu courant : " + ", ".join(manquants), file=sys.stderr)
+            return 2
     lignes = ["# Jeu de référence — relevé IA vs projets Plan Expert de l'estimateur", "",
               "_Généré par `python -m src.validation.jeu_reference` ; seuil d'appariement 1,2 % de la diagonale._", "",
               "| S- | Marques humaines | Marques IA | Appariées | Manquantes IA | En trop IA | Rappel | Précision | Δ rappel | Δ précision |",
@@ -87,6 +98,9 @@ def main(argv: list[str] | None = None) -> int:
     (SORTIE / "resultats.md").write_text("\n".join(lignes), encoding="utf-8")
     print("\n".join(lignes))
     if args.nouvelle_base:
+        if regressions:
+            print("ligne de base non mise à jour : régressions détectées", file=sys.stderr)
+            return 1
         base_path.write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         print(f"ligne de base enregistrée : {base_path}")
         return 0

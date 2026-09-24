@@ -35,7 +35,8 @@ def main(work, feuille, x, y, rayon=12.0):
                     src = os.path.join(dp, f)
     if not src:
         sys.exit(f"PDF source introuvable pour {row['fichier']} (définir RELEVE_INBOX)")
-    page = pymupdf.open(src)[int(row["page"]) - 1]
+    doc = pymupdf.open(src)
+    page = doc[int(row["page"]) - 1]
     z = pymupdf.Rect(x - rayon, y - rayon, x + rayon, y + rayon) * page.derotation_matrix   # repère tourné → repère natif
     z.normalize()
     print(f"# {feuille} = {row['fichier']} page {row['page']} ; zone {z}")

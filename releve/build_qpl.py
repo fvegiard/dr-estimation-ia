@@ -44,6 +44,9 @@ def main(work, name, out_dir):
         L.append(f'\t\t\t<Plan Name="{q(feuilles[f]["nom"])}"/>')
     L += ["\t\t</RecentPlans>", "\t</Workspace>", "\t<Plans>"]
     stats = {}
+    missing_rasters = [f for f in order if by_sheet.get(f) and not os.path.exists(os.path.join(work, "rasters", f + ".png"))]
+    if missing_rasters:
+        sys.exit("rasters absents pour feuilles marquées : " + ", ".join(missing_rasters))
     for f in order:
         info = feuilles[f]
         src = os.path.join(work, "rasters", f + ".png")

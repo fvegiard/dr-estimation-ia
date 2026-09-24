@@ -22,7 +22,7 @@ Sortie  : WORKDIR/
 Aucune valeur n'est inventée : tout vient des PDF. Les rasters et les mots sont la base du relevé.
 """
 from __future__ import annotations
-import csv, hashlib, json, os, re, sys, collections
+import csv, hashlib, json, os, re, sys, collections, shutil
 import pymupdf
 from PIL import Image, ImageDraw, ImageFont
 
@@ -98,6 +98,8 @@ def draw_rulers(im: Image.Image, x0: float, y0: float, x1: float, y1: float, ste
         y += step
 
 def main(inbox: str, work: str):
+    if os.path.isdir(work):
+        shutil.rmtree(work)
     os.makedirs(work, exist_ok=True)
     for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur"):
         os.makedirs(os.path.join(work, d), exist_ok=True)

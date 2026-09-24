@@ -15,6 +15,10 @@ from PIL import Image, ImageDraw
 from commun import load_nomenclature, load_occurrences, draw_mark
 from prepare import draw_rulers, font
 
+def open_sheet_page(work, feuille):
+    doc = pymupdf.open(os.path.join(work, "feuilles", feuille + ".pdf"))
+    return doc, doc[0]
+
 def main():
     a = sys.argv[1:]
     px = 1800; marks = True
@@ -24,7 +28,7 @@ def main():
         a.remove("--sans-marques"); marks = False
     work, f = a[0], a[1]
     x0, y0, x1, y1 = map(float, a[2:6])
-    page = pymupdf.open(os.path.join(work, "feuilles", f + ".pdf"))[0]
+    doc, page = open_sheet_page(work, f)
     z = px / (x1 - x0)
     pix = page.get_pixmap(matrix=pymupdf.Matrix(z, z), clip=pymupdf.Rect(x0, y0, x1, y1), alpha=False)
     im = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
@@ -44,6 +48,7 @@ def main():
     os.makedirs(os.path.join(work, "zooms"), exist_ok=True)
     out = os.path.join(work, "zooms", f"{f}_{int(x0)}_{int(y0)}_{int(x1)}_{int(y1)}.png")
     im.save(out); print(out)
+    doc.close()
 
 if __name__ == "__main__":
     main()
