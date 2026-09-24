@@ -2,7 +2,7 @@
 
 Vérificateur indépendant, 2026-09-23. Référence : scans `reference/releve daniel 2e version-*.png` (transcrits dans
 `reference-quantites.csv`). Pas de .qpl humain, donc la comparaison se fait sur les totaux par famille, pas marque par marque.
-Relevé IA : `runs/S-1835/OUTBOX/S-1835/travail/occurrences-visuel.csv` (3254 marques).
+Relevé IA : `runs/S-1835/OUTBOX/S-1835/travail/occurrences-visuel.csv` (3244 marques, addenda T-01 intégré).
 
 ## v1 → v2
 Les quantités sont identiques. Seuls les temps unitaires changent : plastic/ballast/entreposage passent de 0,100 h à 0 h (1809,1 h → 1039 h,
@@ -20,7 +20,7 @@ Indicateur `min(H, IA) / H` : **accord des totaux par famille** (pas un rappel m
 | Mural | 14 | 0 | 0 % | — |
 | Interrupteurs | 176 | 0 | **0 %** | — |
 | Prises | 7 | 17 (13 projecteur + 4 existantes) | 100 % | 41 % |
-| Haut-parleurs (dépose + réinstallation) | 153 | 152 (+3 « classe — par autres ») | 99,3 % | — |
+| Haut-parleurs (dépose + réinstallation) | 153 | 142 (+3 « classe — par autres ») | 92,8 % | — |
 | Plastique/ballast/entreposage | 2567 ×3 | 0 | n/a | compté par règle = somme des luminaires |
 
 Luminaires : total presque égal (−7). Le vrai trou est **les interrupteurs (−176)**.
