@@ -56,7 +56,12 @@ def test_s1835_every_drive_addendum_is_ingested_or_declared():
 
 
 def test_s1835_telecom_addendum_t01_is_an_input():
+    """T-01 is two documents (text + plans). Drive holds several copies of each ("(1)", "(2)", Addenda/ sub-folder);
+    identical copies have the same byte size (and the same extracted text, checked through the Drive connector),
+    so they collapse to one document per size. Both documents must be takeoff inputs."""
     sizes = addenda.status_input_sizes(S1835_STATUS.read_text(encoding="utf-8"))
     inv = json.loads(S1835_INVENTORY.read_text(encoding="utf-8"))
     t01 = [a for a in addenda.inventory_addenda(inv) if "T-01" in a["name"]]
-    assert len(t01) == 2 and all(a["size"] in sizes for a in t01)
+    documents = {a["size"] for a in t01}
+    assert len(documents) == 2
+    assert documents <= sizes

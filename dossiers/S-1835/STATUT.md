@@ -1,6 +1,6 @@
 # STATUT — relevé automatique « S-1835 »
 
-Date : 2026-09-24 16:55 · État : **TERMINÉ** (addendas E-01 et T-01 intégrés ; reprise T-01 du 2026-09-24)
+Date : 2026-09-24 17:22 · État : **TERMINÉ** (addendas E-01 et T-01 intégrés ; reprise T-01 du 2026-09-24)
 
 ## Entrées
 
@@ -22,8 +22,13 @@ Date : 2026-09-24 16:55 · État : **TERMINÉ** (addendas E-01 et T-01 intégré
 
 ## Addendas non intégrés
 
-- `49-366 (D) - ESBG - Addenda - ADM-01 (1).pdf` — absent de l'INBOX de ce relevé, non lu ; addenda administratif d'après son nom (ADM), à confirmer (R-018)
-- `Addenda/` — sous-dossier non détaillé par l'inventaire Drive, contenu inconnu (R-018)
+- `49-366 (D) - ESBG - Addenda - ADM-01 (1).pdf` — administratif (10 août 2026) : point de rencontre de la visite des lieux ; aucun travail (R-018)
+- `Addenda/49-366 (D) - ESBG - Addenda - HI-01.pdf` — hygiène industrielle (20 août 2024) : démolition des plafonds en crépi cimentaire des entrées S-1 à S-4, S-9 et escaliers ESC x.2 en condition d'amiante à risque élevé ; méthode, pas d'appareil ajouté ni retiré (R-018)
+- `Addenda/49-366 (D) - ESBG - Addenda - ADM-03.pdf` — administratif (25 août 2026) : le donneur d'ordre libère l'école avant les travaux (sauf étagères, armoires, électroménagers, casiers) ; aucun appareil (R-018)
+- `Addenda/49-366 (D) - ESBG - Addenda - HI-02.pdf` — hygiène industrielle (25 août 2024) : enlèvement des tuiles de vinyle du bloc D à risque faible ; protéger les boîtes de disjoncteurs par une cloison de polyéthylène (sujétion de l'entrepreneur en amiante) ; aucun compteur (R-018)
+- `Addenda/49-366 (D) - ESBG - Addenda - ARCH-02.pdf` — architecture A-02 (25 août 2026) : plafonds TA-D remplacés par crépi CP-D (B-010.12, B-010.13, D-010.14, D-010.XX, C-022 à C-024), escalier ESC.1.1, questions/réponses ; aucun extrait émis, aucun appareil électrique ou télécom modifié ; la photo « rideau diviseur à retirer » des gymnases peut demander un débranchement, à confirmer (R-018)
+- `Addenda/49-366 (D) - ESBG - Addenda - Liste des espaces clos et restreints.pdf` — liste de référence 2021 des espaces clos (C-129-1, C-131-1, sous-sol, scène) ; information, aucun travail électrique au contrat (R-018)
+- `Addenda/49-366 (D) - ESBG - Addenda - ADM-01.pdf` — administratif (10 août 2026) : point de rencontre de la visite des lieux ; aucun travail (R-018)
 
 ## Haut-parleurs : avant / après l'addenda T-01
 
@@ -77,11 +82,11 @@ Tables produites par `preuves-t01/analyse_t01.py` (fichiers `avant-apres-*.csv`)
 
 | fichier | octets | sha256 |
 |---|--:|---|
-| S-1835-Dossier-complet.pdf | 14574115 | c0c88b08331a9807f9b6c0033556af5f95776b9384ea5bae9e9f320f7486ac9f |
-| S-1835-Plans-annotes.pdf | 14402388 | 1e75402659c0ec624a280d0251d012662795a098841cb4bd0e5ce3d0a555028f |
-| S-1835-Rapport-de-metre.md | 19418 | 8401e4f781947dffb4a764530032bc4c9ea83a431adf59e1af3f3f45d300c399 |
-| S-1835-Rapport-de-metre.pdf | 172015 | 5f3b3f82cce97dfc5a3479157faf8f1da0b0436c6dcafe4174ed1a8035ce4eed |
-| S-1835-planexpert/S-1835.qpl | 254878 | 8e9d3a31a9e5ac2e8b1d30880654a66120b882ea403f8669cedaafd488a642e6 |
+| S-1835-Dossier-complet.pdf | 14576406 | 1a534c724e55eab009c2627c191fdd79758432111ff2875d6c806a667c89fe3f |
+| S-1835-Plans-annotes.pdf | 14402388 | a85222c488ed3a7c606b7fe162d23b2cfebc10525461bd638dabac03b569f573 |
+| S-1835-Rapport-de-metre.md | 21370 | 32441eace0317f2fc95ea34a57c6e98c3a8cadf9c510eb28e66abf08a232977d |
+| S-1835-Rapport-de-metre.pdf | 174299 | 35c0d73e8a7f22ebb4a8c8e2687bcb52a1e3c27fd6b3a610d50dda2855a54bec |
+| S-1835-planexpert/S-1835.qpl | 254878 | d0289ad7c0850a46c74310628439b69a30dafca7dbe60fb66d55904f0c66bfa0 |
 
 Le projet Plan Expert `S-1835.qpl` est dans `S-1835-planexpert/` avec ses rasters PNG : copier le dossier entier, puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » et le rapport de métré ci-dessus sont rendus par `releve/render_pdf.py` à partir du même .qpl.
 
@@ -124,5 +129,5 @@ Le projet Plan Expert `S-1835.qpl` est dans `S-1835-planexpert/` avec ses raster
 15. **R-015 — Chevauchement D420/D421 et haut-parleur retiré par T-01.** Les vues originales D420 et D421 se recouvraient (6 haut-parleurs dessinés deux fois, donc comptés deux fois dans le relevé précédent). T-01 supprime ce recouvrement : 5 de ces haut-parleurs restent comptés une fois sur l'autre feuille T-01, et 1 (corridor, D420 (2083,6, 1860,9) = D421 (653,8, 1859,4)) n'est plus dessiné sur aucune feuille T-01. Le texte de l'addenda n'en parle pas : il n'est pas compté (la version d'addenda prime), à confirmer auprès de l'ingénieur.
 16. **R-016 — Doublons RDC D411/D412.** D411 et D412 montrent la même bande de plan (recalage -519,0 / -903,5 pt, 22,3 % de tracés communs) : les 3 haut-parleurs de D412 sont ceux de D411 (locaux C-025, C-028…). Comptés une fois sur D411, retirés de D412 (`preuves-t01/marques-retirees.csv`). Aucune autre paire de feuilles d'un même étage ne se recouvre (meilleure part commune 3,1 %, `preuves-t01/recalage-feuilles.csv`).
 17. **R-017 — Protection du conduit de fibre optique (T-01).** Sujétion sans symbole : pas de compteur. Tracé ajouté par T-01 (traits noirs de 0,42 pt des 3 feuilles, bande de raccord comprise) : 115,6 m à 1:100. À chiffrer en forfait ou à métrer.
-18. **R-018 — Addendas non reçus.** L'inventaire Drive liste aussi « 49-366 (D) - ESBG - Addenda - ADM-01 (1).pdf » (456805 o) et « Addenda/ » (sous-dossier non détaillé). Ils ne sont pas dans l'INBOX de ce relevé et n'ont pas été lus.
+18. **R-018 — Autres addendas du dossier Drive (lus, non intégrés).** Chacun a été lu (texte du PDF, connecteur Google Drive, 2026-09-24) ; aucun ne modifie un appareil compté : « 49-366 (D) - ESBG - Addenda - ADM-01.pdf » (456805 o) : administratif (10 août 2026) : point de rencontre de la visite des lieux ; aucun travail ; « 49-366 (D) - ESBG - Addenda - HI-01.pdf » (246345 o) : hygiène industrielle (20 août 2024) : démolition des plafonds en crépi cimentaire des entrées S-1 à S-4, S-9 et escaliers ESC x.2 en condition d'amiante à risque élevé ; méthode, pas d'appareil ajouté ni retiré ; « 49-366 (D) - ESBG - Addenda - ADM-03.pdf » (198315 o) : administratif (25 août 2026) : le donneur d'ordre libère l'école avant les travaux (sauf étagères, armoires, électroménagers, casiers) ; aucun appareil ; « 49-366 (D) - ESBG - Addenda - HI-02.pdf » (317360 o) : hygiène industrielle (25 août 2024) : enlèvement des tuiles de vinyle du bloc D à risque faible ; protéger les boîtes de disjoncteurs par une cloison de polyéthylène (sujétion de l'entrepreneur en amiante) ; aucun compteur ; « 49-366 (D) - ESBG - Addenda - ARCH-02.pdf » (2937810 o) : architecture A-02 (25 août 2026) : plafonds TA-D remplacés par crépi CP-D (B-010.12, B-010.13, D-010.14, D-010.XX, C-022 à C-024), escalier ESC.1.1, questions/réponses ; aucun extrait émis, aucun appareil électrique ou télécom modifié ; la photo « rideau diviseur à retirer » des gymnases peut demander un débranchement, à confirmer ; « 49-366 (D) - ESBG - Addenda - Liste des espaces clos et restreints.pdf » (80971 o) : liste de référence 2021 des espaces clos (C-129-1, C-131-1, sous-sol, scène) ; information, aucun travail électrique au contrat. Les copies « (1) », « (2) » et celles du sous-dossier `Addenda/` de E-01 et T-01 ont la même taille en octets que les entrées du relevé (texte extrait identique vérifié pour les deux copies du texte T-01 ; le connecteur ne donne pas de somme de contrôle). Plafonds en crépi (A-02, HI-01) : la dépose des luminaires y demande plus de temps (et des mesures amiante), à considérer dans le taux, pas dans les quantités.
 

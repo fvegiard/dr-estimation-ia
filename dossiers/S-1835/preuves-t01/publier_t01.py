@@ -29,6 +29,23 @@ SPEAKER = "Haut-parleur existant — dépose/entreposage"
 INVENTORY = os.path.join(REPO, "docs", "inventaire-drive-2026-09-23", "dossiers", "s-1835 esbg  rehabilitation inbterieur.json")
 sys.path.insert(0, REPO)
 sys.path.insert(0, os.path.join(REPO, "releve"))
+# Addenda filed in Drive but not takeoff inputs. Each was read through the Google Drive connector (text of the PDF,
+# 2026-09-24) and checked for anything that changes a counted item; key = document id in the file name.
+NOT_INTEGRATED = {
+    "ADM-01": "administratif (10 août 2026) : point de rencontre de la visite des lieux ; aucun travail",
+    "ADM-03": "administratif (25 août 2026) : le donneur d'ordre libère l'école avant les travaux (sauf étagères, armoires, électroménagers, casiers) ; aucun appareil",
+    "HI-01": "hygiène industrielle (20 août 2024) : démolition des plafonds en crépi cimentaire des entrées S-1 à S-4, S-9 et escaliers ESC x.2 en condition d'amiante à risque élevé ; méthode, pas d'appareil ajouté ni retiré",
+    "HI-02": "hygiène industrielle (25 août 2024) : enlèvement des tuiles de vinyle du bloc D à risque faible ; protéger les boîtes de disjoncteurs par une cloison de polyéthylène (sujétion de l'entrepreneur en amiante) ; aucun compteur",
+    "ARCH-02": "architecture A-02 (25 août 2026) : plafonds TA-D remplacés par crépi CP-D (B-010.12, B-010.13, D-010.14, D-010.XX, C-022 à C-024), escalier ESC.1.1, questions/réponses ; aucun extrait émis, aucun appareil électrique ou télécom modifié ; la photo « rideau diviseur à retirer » des gymnases peut demander un débranchement, à confirmer",
+    "Liste des espaces clos et restreints": "liste de référence 2021 des espaces clos (C-129-1, C-131-1, sous-sol, scène) ; information, aucun travail électrique au contrat",
+}
+
+
+def declaration(name):
+    for key, why in NOT_INTEGRATED.items():
+        if f"Addenda - {key}" in name:
+            return why
+    return None
 
 
 def fr(v, d=1):
@@ -131,7 +148,11 @@ def reserves(work, R, inv_extra):
         f"recouvre (meilleure part commune {pct(noise)}, `preuves-t01/recalage-feuilles.csv`).",
         f"17. **R-017 — Protection du conduit de fibre optique (T-01).** Sujétion sans symbole : pas de compteur. Tracé ajouté par T-01 "
         f"(traits noirs de 0,42 pt des 3 feuilles, bande de raccord comprise) : {fr(R['trace_fibre_m_1_100'])} m à 1:100. À chiffrer en forfait ou à métrer.",
-        f"18. **R-018 — Addendas non reçus.** L'inventaire Drive liste aussi {inv_extra}. Ils ne sont pas dans l'INBOX de ce relevé et n'ont pas été lus.",
+        "18. **R-018 — Autres addendas du dossier Drive (lus, non intégrés).** Chacun a été lu (texte du PDF, connecteur Google Drive, "
+        "2026-09-24) ; aucun ne modifie un appareil compté : " + " ; ".join(inv_extra) + ". Les copies « (1) », « (2) » et celles du "
+        "sous-dossier `Addenda/` de E-01 et T-01 ont la même taille en octets que les entrées du relevé (texte extrait identique vérifié "
+        "pour les deux copies du texte T-01 ; le connecteur ne donne pas de somme de contrôle). Plafonds en crépi (A-02, HI-01) : "
+        "la dépose des luminaires y demande plus de temps (et des mesures amiante), à considérer dans le taux, pas dans les quantités.",
     ]) + "\n"
     write(os.path.join(work, "reserves.md"), t)
 
@@ -187,7 +208,14 @@ def main(inbox, outbox, dossier):
     inv = json.load(open(INVENTORY, encoding="utf-8"))
     in_sizes = {os.path.getsize(os.path.join(inbox, f)) for f in os.listdir(inbox)}
     not_received = [a for a in addenda.inventory_addenda(inv) if a["folder"] or a["size"] not in in_sizes]
-    inv_extra = " et ".join(f"« {a['name']} » (sous-dossier non détaillé)" if a["folder"] else f"« {a['name']} » ({a['size']} o)" for a in not_received)
+    undeclared = [a["name"] for a in not_received if not declaration(a["name"])]
+    assert not undeclared, f"addenda never read, decide first: {undeclared}"
+    seen, inv_extra = set(), []
+    for a in not_received:
+        key = addenda.normalize(os.path.basename(a["name"]))
+        if key not in seen:
+            seen.add(key)
+            inv_extra.append(f"« {key} » ({a['size']} o) : {declaration(a['name'])}")
 
     classement(work)
     nomenclature(work)
@@ -217,8 +245,7 @@ def main(inbox, outbox, dossier):
            "| T-01 (18 août 2026) | `…Addenda - T-01.pdf`, `…Addenda - T-01 - Plans.pdf` | D420_ADD, D421_ADD, D422_ADD ; texte D420_ADD_2 | remplacent T-D420 à T-D422 ; comparaison vectorielle et zooms dans `preuves-t01/` (R-014 à R-017) |",
            "", "## Addendas non intégrés", ""]
     for a in not_received:
-        why = "sous-dossier non détaillé par l'inventaire Drive, contenu inconnu" if a["folder"] else "absent de l'INBOX de ce relevé, non lu ; addenda administratif d'après son nom (ADM), à confirmer"
-        add.append(f"- `{a['name']}` — {why} (R-018)")
+        add.append(f"- `{a['name']}` — {declaration(a['name'])} (R-018)")
     add += ["", "## Haut-parleurs : avant / après l'addenda T-01", "",
             f"Sous-sol D400–D403 : {sum(R['sous_sol_disques'].values())} haut-parleur, vérifié (aucun symbole télécom noir sur les 4 feuilles, "
             "`preuves-t01/zooms/sous-sol-*.jpg`).", "", "| feuille | avant | après | écart |", "|---|--:|--:|--:|"]
