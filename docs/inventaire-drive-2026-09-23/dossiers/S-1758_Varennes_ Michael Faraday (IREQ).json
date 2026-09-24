@@ -1,27 +1,202 @@
-{"dossier":"S-1758_Varennes_ Michael Faraday (IREQ)","id":"1D7Aj-YqKVXJX9qoHyptguQ87GCqjJRp2","fichiers":[
-{"chemin":"Thumbs.db","id":"1is_-KdpnoJXvddPs2VC-6mEJfMVgzqIN","ext":"db","octets":77824,"mimeType":"application/octet-stream"},
-{"chemin":"BC - Groupe DR Électrique Inc..pdf","id":"1-WydW0pvOie1X-QQQmL7475sXXOcAHSl","ext":"pdf","octets":58607,"mimeType":"application/pdf"},
-{"chemin":"S-1758-.pdf","id":"10A4KDESuPzYF409-eYCVP7GEkEGSOArh","ext":"pdf","octets":424609,"mimeType":"application/pdf"},
-{"chemin":"S-1758.docx","id":"1poA5VsvAfYuRRlYktN9OkXqBZh2vDcJU","ext":"docx","octets":62194,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"S-1758.pdf","id":"1KFMErhtl2QgRhJ_a1P8tGp4ec-Sj7PHL","ext":"pdf","octets":1787705,"mimeType":"application/pdf"},
-{"chemin":"Electromega/PO7889.pdf","id":"1MT-7BKXmKbbGL-_7_MqtAsiwEVZd-ug_","ext":"pdf","octets":347541,"mimeType":"application/pdf"},
-{"chemin":"Electromega/Thumbs.db","id":"1OANX5tRgo4LJmd9-HTvQPJRp8fmmrixj","ext":"db","octets":9216,"mimeType":"application/octet-stream"},
-{"chemin":"Electromega/Électromega_EMQ27-18243-Ville_Varennes_Michael_Faraday.pdf","id":"1bY9ey9k0ruxZbIBZSGbVkqbWZHt8Kd3i","ext":"pdf","octets":338147,"mimeType":"application/pdf"},
-{"chemin":"Photos/Thumbs.db","id":"1XVz6TM3jOAR_RRmu8BHRchDRjpv_OByn","ext":"db","octets":8192,"mimeType":"application/octet-stream"},
-{"chemin":"Photos/Michel Faraday Varennes.xlsx","id":"1Hiw2h0owTXrkW5lfSiDshLdfA_jb1xn5","ext":"xlsx","octets":6968,"mimeType":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
-{"chemin":"Photos/Fixture 3.jpg","id":"155__Zx7fEPyCTC2JH6QGiZfxISw3R6bY","ext":"jpg","octets":762125,"mimeType":"image/jpeg"},
-{"chemin":"Photos/Fixture.jpg","id":"1VXltYurCNhw38FhqSNUvmzSi1zkOHo_T","ext":"jpg","octets":872737,"mimeType":"image/jpeg"},
-{"chemin":"Photos/Fixture 2.jpg","id":"1CvZ7WcvnYDV38C6sAJ5NyXtHW9wotm_c","ext":"jpg","octets":727569,"mimeType":"image/jpeg"},
-{"chemin":"Photos/Potence.png","id":"1LMg6SM5MeJ94Oe-PoIb0uyufyLi4XeqA","ext":"png","octets":268063,"mimeType":"image/png"},
-{"chemin":"Photos/breakout.jpg","id":"1sQCWTUl4o2BHKjgudI-2UXxwfG0QPs16","ext":"jpg","octets":1358454,"mimeType":"image/jpeg"},
-{"chemin":"Photos/Fut.jpg","id":"16jaLEPuD34rv_JQrCwh7zxmi1A_GL1rE","ext":"jpg","octets":2561744,"mimeType":"image/jpeg"},
-{"chemin":"Photos/Breakout gros.jpg","id":"1N0c2aGd9mgVZtQlX4Baa70rPxOR87zwP","ext":"jpg","octets":4728722,"mimeType":"image/jpeg"},
-{"chemin":"Photos/breakout petit 2.jpg","id":"14Ke5nnvs9iwompmc8IXjEcSFxdrqJpgY","ext":"jpg","octets":4307161,"mimeType":"image/jpeg"},
-{"chemin":"Photos/Breakout gros 2.jpg","id":"1ZmCXv-X7Xj4kq4ALOCUv5Ed-z_XJ8s3j","ext":"jpg","octets":4000509,"mimeType":"image/jpeg"},
-{"chemin":"Photos/Breakout petit.jpg","id":"1f62L-hHCbhoIjN6VTO2ImScdI9Nw-jar","ext":"jpg","octets":5122467,"mimeType":"image/jpeg"},
-{"chemin":"Westburn/Dessins (sous-dossier non détaillé)","id":"1zDuFsHslOtBIKcAUvaGd5-TGnshPIpVz","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder","note":"contient: 101-TRANSF-310, PRE-3.6, 101-TRANSF-110 pdf"},
-{"chemin":"Westburn/po7888.pdf","id":"1fXhyGu7_JEAe4kXxCzXMON3qvJT_mLhz","ext":"pdf","octets":361099,"mimeType":"application/pdf"},
-{"chemin":"Westburn/Thumbs.db","id":"12Tvkmr9bySSha2z3SG7oAPGy6_R3b7s2","ext":"db","octets":66048,"mimeType":"application/octet-stream"},
-{"chemin":"Westburn/Soumission Fixture RFM-75W60LED4K-G2-R3M.pdf","id":"1xkHzs4THFtX-qCO1E-M9z5tkDpLyr3jY","ext":"pdf","octets":4865192,"mimeType":"application/pdf"},
-{"chemin":"Westburn/Soumission BI04920-R1 Westburne.pdf","id":"1wz8acpTt10Z9tW0cPBe1d7tDrXMw3LJE","ext":"pdf","octets":186707,"mimeType":"application/pdf"}
-]}
+{
+  "dossier": "S-1758_Varennes_ Michael Faraday (IREQ)",
+  "id": "1D7Aj-YqKVXJX9qoHyptguQ87GCqjJRp2",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1is_-KdpnoJXvddPs2VC-6mEJfMVgzqIN",
+      "ext": "db",
+      "octets": 77824,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "BC - Groupe DR Électrique Inc..pdf",
+      "id": "1-WydW0pvOie1X-QQQmL7475sXXOcAHSl",
+      "ext": "pdf",
+      "octets": 58607,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1758-.pdf",
+      "id": "10A4KDESuPzYF409-eYCVP7GEkEGSOArh",
+      "ext": "pdf",
+      "octets": 424609,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1758.docx",
+      "id": "1poA5VsvAfYuRRlYktN9OkXqBZh2vDcJU",
+      "ext": "docx",
+      "octets": 62194,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1758.pdf",
+      "id": "1KFMErhtl2QgRhJ_a1P8tGp4ec-Sj7PHL",
+      "ext": "pdf",
+      "octets": 1787705,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Electromega/PO7889.pdf",
+      "id": "1MT-7BKXmKbbGL-_7_MqtAsiwEVZd-ug_",
+      "ext": "pdf",
+      "octets": 347541,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Electromega/Thumbs.db",
+      "id": "1OANX5tRgo4LJmd9-HTvQPJRp8fmmrixj",
+      "ext": "db",
+      "octets": 9216,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Electromega/Électromega_EMQ27-18243-Ville_Varennes_Michael_Faraday.pdf",
+      "id": "1bY9ey9k0ruxZbIBZSGbVkqbWZHt8Kd3i",
+      "ext": "pdf",
+      "octets": 338147,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Photos/Thumbs.db",
+      "id": "1XVz6TM3jOAR_RRmu8BHRchDRjpv_OByn",
+      "ext": "db",
+      "octets": 8192,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Photos/Michel Faraday Varennes.xlsx",
+      "id": "1Hiw2h0owTXrkW5lfSiDshLdfA_jb1xn5",
+      "ext": "xlsx",
+      "octets": 6968,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Photos/Fixture 3.jpg",
+      "id": "155__Zx7fEPyCTC2JH6QGiZfxISw3R6bY",
+      "ext": "jpg",
+      "octets": 762125,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Fixture.jpg",
+      "id": "1VXltYurCNhw38FhqSNUvmzSi1zkOHo_T",
+      "ext": "jpg",
+      "octets": 872737,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Fixture 2.jpg",
+      "id": "1CvZ7WcvnYDV38C6sAJ5NyXtHW9wotm_c",
+      "ext": "jpg",
+      "octets": 727569,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Potence.png",
+      "id": "1LMg6SM5MeJ94Oe-PoIb0uyufyLi4XeqA",
+      "ext": "png",
+      "octets": 268063,
+      "mimeType": "image/png"
+    },
+    {
+      "chemin": "Photos/breakout.jpg",
+      "id": "1sQCWTUl4o2BHKjgudI-2UXxwfG0QPs16",
+      "ext": "jpg",
+      "octets": 1358454,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Fut.jpg",
+      "id": "16jaLEPuD34rv_JQrCwh7zxmi1A_GL1rE",
+      "ext": "jpg",
+      "octets": 2561744,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Breakout gros.jpg",
+      "id": "1N0c2aGd9mgVZtQlX4Baa70rPxOR87zwP",
+      "ext": "jpg",
+      "octets": 4728722,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/breakout petit 2.jpg",
+      "id": "14Ke5nnvs9iwompmc8IXjEcSFxdrqJpgY",
+      "ext": "jpg",
+      "octets": 4307161,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Breakout gros 2.jpg",
+      "id": "1ZmCXv-X7Xj4kq4ALOCUv5Ed-z_XJ8s3j",
+      "ext": "jpg",
+      "octets": 4000509,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/Breakout petit.jpg",
+      "id": "1f62L-hHCbhoIjN6VTO2ImScdI9Nw-jar",
+      "ext": "jpg",
+      "octets": 5122467,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Westburn/Thumbs.db",
+      "id": "1zTbjlBZkwJnaqzaCoOBRE9X-pAH5D-vO",
+      "ext": "db",
+      "octets": 17408,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Westburn/101-TRANSF-310 (TB5-9).pdf",
+      "id": "1dNPACovcsW1zwNV6QrNIumWcYXjhjeM2",
+      "ext": "pdf",
+      "octets": 439741,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/PRE-3.6(Z1@Z2)S.pdf",
+      "id": "1j3_AOb_XzzbA-PQhr0HdNeOivF5EvD6R",
+      "ext": "pdf",
+      "octets": 637437,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/101-TRANSF-110 (TB1-17).pdf",
+      "id": "1cDMR6fpLlcl6d4xz-srXhIJIP6uYHM2d",
+      "ext": "pdf",
+      "octets": 446143,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/po7888.pdf",
+      "id": "1fXhyGu7_JEAe4kXxCzXMON3qvJT_mLhz",
+      "ext": "pdf",
+      "octets": 361099,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/Thumbs.db",
+      "id": "12Tvkmr9bySSha2z3SG7oAPGy6_R3b7s2",
+      "ext": "db",
+      "octets": 66048,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Westburn/Soumission Fixture RFM-75W60LED4K-G2-R3M.pdf",
+      "id": "1xkHzs4THFtX-qCO1E-M9z5tkDpLyr3jY",
+      "ext": "pdf",
+      "octets": 4865192,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/Soumission BI04920-R1 Westburne.pdf",
+      "id": "1wz8acpTt10Z9tW0cPBe1d7tDrXMw3LJE",
+      "ext": "pdf",
+      "octets": 186707,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

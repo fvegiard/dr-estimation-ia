@@ -1,25 +1,342 @@
-{"dossier": "s-1835 esbg  rehabilitation inbterieur", "id": "1ErOIpVn225CbLP-UG8kJKCTzT8UxPcKY", "fichiers": [
-{"chemin": "Thumbs.db", "id": "1IFPRD7a-lDt1hv4zhK-NZBIs6-GfQAyk", "ext": "db", "octets": 46592, "mimeType": "application/octet-stream"},
-{"chemin": "Bordereau completer.pdf", "id": "1mkPCqHtbb3a_6OjqGB67dJV4WbysemWR", "ext": "pdf", "octets": 208856, "mimeType": "application/pdf"},
-{"chemin": "formule bsdq completer.pdf", "id": "184MGWdHN7uoK7cwxJNAK6M7x7w0YVwux", "ext": "pdf", "octets": 1515928, "mimeType": "application/pdf"},
-{"chemin": "bordereau electricite.pdf", "id": "1dqATfYw2Qzl2kIpPgknKmx_0CJZMsYfT", "ext": "pdf", "octets": 201419, "mimeType": "application/pdf"},
-{"chemin": "releve daniel 2e version.pdf", "id": "1mjbWG76DICUcYWSxx90FGvWM0NSQOfR9", "ext": "pdf", "octets": 1195778, "mimeType": "application/pdf"},
-{"chemin": "demande de caution.pdf", "id": "1IHbFT67G6BdJPaDn0jI60hWpZjeohng1", "ext": "pdf", "octets": 447236, "mimeType": "application/pdf"},
-{"chemin": "Relevé Daniel.pdf", "id": "17-ftHQFjjXlaT8XKS91rFsJuxjlxGoiV", "ext": "pdf", "octets": 527510, "mimeType": "application/pdf"},
-{"chemin": "indo bsdq.pdf", "id": "1mxTgcAF-MLuOH5xHVKq8uRMFqumwV45L", "ext": "pdf", "octets": 173117, "mimeType": "application/pdf"},
-{"chemin": "49-366 (D) - ESBG - Addenda - E-01 (2).pdf", "id": "12hwL-9MX3nIJg1PJfYmvf9iofIkGEA68", "ext": "pdf", "octets": 185553, "mimeType": "application/pdf"},
-{"chemin": "49-366 (D) - ESBG - Addenda - E-01 - Plans (3).pdf", "id": "1i7b-aWLXKlDrew40HlillKYIgJ4SGutM", "ext": "pdf", "octets": 4553010, "mimeType": "application/pdf"},
-{"chemin": "49-366 (D) - ESBG - Addenda - T-01 (2).pdf", "id": "1mkRjrhS3dJV8Zow-GIu_3w_Ypbpo53nT", "ext": "pdf", "octets": 888465, "mimeType": "application/pdf"},
-{"chemin": "49-366 (D) - ESBG - Addenda - T-01 - Plans (2).pdf", "id": "1dCn7FHYS28R5LQ-9TqwFAJjjmQsYz6O7", "ext": "pdf", "octets": 2372905, "mimeType": "application/pdf"},
-{"chemin": "49-366 (D) - ESBG - Addenda - ADM-01 (1).pdf", "id": "1CpGrD91dofSGvIIf5lDSzknGxgGENwVH", "ext": "pdf", "octets": 456805, "mimeType": "application/pdf"},
-{"chemin": "49-366 (D) - ESBG - Plans de télécommunications_12 pages (3).pdf", "id": "1pbJnmK1xrnGyIYpXGArlunotLQ3y0Lzj", "ext": "pdf", "octets": 4435312, "mimeType": "application/pdf"},
-{"chemin": "49-366 (D) - ESBG - Plans électriques_10 pages (4).pdf", "id": "1wui-pRPt9jkpBqPClgpNX_MmzOeO2iBr", "ext": "pdf", "octets": 5787167, "mimeType": "application/pdf"},
-{"chemin": "Soumission électrique/ (sous-dossier non détaillé)", "id": "1hLOtnv6mvObNSnMdQ2vnAiQqUTOEsciu", "ext": "", "octets": 0, "mimeType": "voir note"},
-{"chemin": "Correspondance - QRT/ (sous-dossier non détaillé)", "id": "1QU7JYaRSiGQNmoVq6rAeXe0W_xeOybdF", "ext": "", "octets": 0, "mimeType": "voir note"},
-{"chemin": "Plans/ (sous-dossier non détaillé)", "id": "1KOczEWfuJPrSXrtpCvVFFMlum50YgO8X", "ext": "", "octets": 0, "mimeType": "voir note"},
-{"chemin": "Feuille de calcul et quantités/ (sous-dossier non détaillé)", "id": "1fyc16R3pxoonVyEezpln_J04r0pJerpd", "ext": "", "octets": 0, "mimeType": "voir note"},
-{"chemin": "Soumissions fournisseurs - sous-traitants/ (sous-dossier non détaillé)", "id": "1MYuz0-MJJrvVj7f7w9I9IInKTiohULAR", "ext": "", "octets": 0, "mimeType": "voir note"},
-{"chemin": "Devis/ (sous-dossier non détaillé)", "id": "1EIe_7NG5bcPvSzQn9Eg8EuRxydnyAxdF", "ext": "", "octets": 0, "mimeType": "voir note"},
-{"chemin": "Addenda/ (sous-dossier non détaillé)", "id": "1Hk4qspyPjhlf4zPIpHxrvGP3nNuJy631", "ext": "", "octets": 0, "mimeType": "voir note"},
-{"chemin": "Cautionnement/ (sous-dossier non détaillé)", "id": "1H1WDfdo6fFYUYble149HLPH3l2fcEqMt", "ext": "", "octets": 0, "mimeType": "voir note"}
-]}
+{
+  "dossier": "s-1835 esbg  rehabilitation inbterieur",
+  "id": "1ErOIpVn225CbLP-UG8kJKCTzT8UxPcKY",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1IFPRD7a-lDt1hv4zhK-NZBIs6-GfQAyk",
+      "ext": "db",
+      "octets": 46592,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Bordereau completer.pdf",
+      "id": "1mkPCqHtbb3a_6OjqGB67dJV4WbysemWR",
+      "ext": "pdf",
+      "octets": 208856,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "formule bsdq completer.pdf",
+      "id": "184MGWdHN7uoK7cwxJNAK6M7x7w0YVwux",
+      "ext": "pdf",
+      "octets": 1515928,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "bordereau electricite.pdf",
+      "id": "1dqATfYw2Qzl2kIpPgknKmx_0CJZMsYfT",
+      "ext": "pdf",
+      "octets": 201419,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "releve daniel 2e version.pdf",
+      "id": "1mjbWG76DICUcYWSxx90FGvWM0NSQOfR9",
+      "ext": "pdf",
+      "octets": 1195778,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "demande de caution.pdf",
+      "id": "1IHbFT67G6BdJPaDn0jI60hWpZjeohng1",
+      "ext": "pdf",
+      "octets": 447236,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Relevé Daniel.pdf",
+      "id": "17-ftHQFjjXlaT8XKS91rFsJuxjlxGoiV",
+      "ext": "pdf",
+      "octets": 527510,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "indo bsdq.pdf",
+      "id": "1mxTgcAF-MLuOH5xHVKq8uRMFqumwV45L",
+      "ext": "pdf",
+      "octets": 173117,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - E-01 (2).pdf",
+      "id": "12hwL-9MX3nIJg1PJfYmvf9iofIkGEA68",
+      "ext": "pdf",
+      "octets": 185553,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - E-01 - Plans (3).pdf",
+      "id": "1i7b-aWLXKlDrew40HlillKYIgJ4SGutM",
+      "ext": "pdf",
+      "octets": 4553010,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - T-01 (2).pdf",
+      "id": "1mkRjrhS3dJV8Zow-GIu_3w_Ypbpo53nT",
+      "ext": "pdf",
+      "octets": 888465,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - T-01 - Plans (2).pdf",
+      "id": "1dCn7FHYS28R5LQ-9TqwFAJjjmQsYz6O7",
+      "ext": "pdf",
+      "octets": 2372905,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Addenda - ADM-01 (1).pdf",
+      "id": "1CpGrD91dofSGvIIf5lDSzknGxgGENwVH",
+      "ext": "pdf",
+      "octets": 456805,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Plans de télécommunications_12 pages (3).pdf",
+      "id": "1pbJnmK1xrnGyIYpXGArlunotLQ3y0Lzj",
+      "ext": "pdf",
+      "octets": 4435312,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "49-366 (D) - ESBG - Plans électriques_10 pages (4).pdf",
+      "id": "1wui-pRPt9jkpBqPClgpNX_MmzOeO2iBr",
+      "ext": "pdf",
+      "octets": 5787167,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission électrique/Thumbs.db",
+      "id": "17tYOOvxtLg8kD9a3hgvaeqDU-onw4X7m",
+      "ext": "db",
+      "octets": 15360,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Soumission électrique/49-366 (D) - ESBG - Plans de télécommunications_12 pages.pdf",
+      "id": "1NYCY7d_kYJO6YWD6CSMoP59H4Cj56KS9",
+      "ext": "pdf",
+      "octets": 4435312,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Fermeture soumission (SIP).xlsx",
+      "id": "1rKcYQnD3bU36kK5utzXvg-9JGAbxgXYG",
+      "ext": "xlsx",
+      "octets": 127861,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Format Lettre (DR).docx",
+      "id": "1F13TTLOpPXB43BKc6r3piagc7-PbiL76",
+      "ext": "docx",
+      "octets": 37535,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission projet (DR).xlsm",
+      "id": "1lvD898xbU3foFQIxHpow2GtbMaFk1hNb",
+      "ext": "xlsm",
+      "octets": 241343,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Format Lettre (BR).docx",
+      "id": "1S0D308UKqeF3kJ_z6HFOHhjD7U7acYUe",
+      "ext": "docx",
+      "octets": 33161,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission résidentiel léger.xlsx",
+      "id": "1SgzVD39j9Us2qoH4oilzuI0IA5XrCC9I",
+      "ext": "xlsx",
+      "octets": 237911,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Soumission électrique/E2026-XX - Soumission projet (BR).xlsm",
+      "id": "1gnfD6xlZovOXmoFcf03hneKSOU_Zk6He",
+      "ext": "xlsm",
+      "octets": 250561,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Plans/Thumbs.db",
+      "id": "17vqjQPLhD4QEBCmeLqS4HRdY_jy_o1H4",
+      "ext": "db",
+      "octets": 15360,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Plans/49-366 (D) - ESBG - Plans de télécommunications_12 pages (1).pdf",
+      "id": "1U7xhBPaZkNwTXGB1szZCU3LQ4aqYRY5T",
+      "ext": "pdf",
+      "octets": 4435312,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/49-366 (D) - ESBG - Plans mécaniques_7 pages.pdf",
+      "id": "1ABt9D03iD9HbMaauIVRK1ktJYEzBVEfm",
+      "ext": "pdf",
+      "octets": 3079531,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/49-366 (D) - ESBG - Plans d'architecture_17 pages.pdf",
+      "id": "1QJx51pVSnqzNqhNoUTwzMpKvoxv034Lg",
+      "ext": "pdf",
+      "octets": 12653501,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans/49-366 (D) - ESBG - Plans électriques_10 pages (2).pdf",
+      "id": "1pW9l2wDJp2Kryiq1WrOzWHE7pIqL_NuJ",
+      "ext": "pdf",
+      "octets": 5787167,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Décompte des sorties - Gabarit.xlsx",
+      "id": "1XmuNaHvv1M30xKoIkVM5W1Dqv6akYL7v",
+      "ext": "xlsx",
+      "octets": 65673,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Take-off et demande de prix - Gabarit.xlsx",
+      "id": "11YMKuz-AP5OUacRjQT2Ne7AQeHnmR1xq",
+      "ext": "xlsx",
+      "octets": 100623,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Feuille de calcul et quantités/Take-off et suivi de soumission - Gabarit.xlsx",
+      "id": "1ZWb9IrOuO0hOsYIeDKP-38L4qFjnGlF2",
+      "ext": "xlsx",
+      "octets": 53215,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "Devis/Thumbs.db",
+      "id": "1iKZ54I-QNlJHmJcfe2w5-Awq-WV-R3RZ",
+      "ext": "db",
+      "octets": 8704,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Devis/49-366 (D) - ESBG - Devis d'architecture_93 pages.pdf",
+      "id": "1V1ANYN0twcCB3MWnHDTNtA8CvMHUHSKU",
+      "ext": "pdf",
+      "octets": 3137224,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/zC0AAKG8SrZvYXN0dEtqQ1J1OQA.pdf",
+      "id": "1ap4OE9MPdJ7j2TpB_EdNgsTR0uLT19G_",
+      "ext": "pdf",
+      "octets": 10241591,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Devis/49-366 (D) - ESBG - DAO_172 pages.pdf",
+      "id": "1DHESeuuJp7nZZZ52xKU732AeMSTe8WBh",
+      "ext": "pdf",
+      "octets": 1542255,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/Thumbs.db",
+      "id": "1N_-1qb1gfbXnPcmtebQ55ZMRbAgzakL1",
+      "ext": "db",
+      "octets": 13824,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - HI-01.pdf",
+      "id": "1c_5NvDnPLfuSg5kCM3AwGRMrax0vJSzI",
+      "ext": "pdf",
+      "octets": 246345,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - E-01.pdf",
+      "id": "1hMdAgjUdCs_Gi1F_ehB9v8dC_915y8Tk",
+      "ext": "pdf",
+      "octets": 185553,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - E-01 - Plans.pdf",
+      "id": "1jNIPdEq-gG9CzR-vpm5OqTtpubdP5hV5",
+      "ext": "pdf",
+      "octets": 4553010,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - ADM-03.pdf",
+      "id": "1NEzW97Sy7Phxr3pJRHsRpQn1LlRnIF8G",
+      "ext": "pdf",
+      "octets": 198315,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - T-01.pdf",
+      "id": "1GhSXgbYHViOdGIA3WDRI0Pm80Dn6Vd10",
+      "ext": "pdf",
+      "octets": 888465,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - T-01 (1).pdf",
+      "id": "16YIX3cjC-4hhJT9n5SFv6rqZOm5OILFo",
+      "ext": "pdf",
+      "octets": 888465,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - HI-02.pdf",
+      "id": "1_1POOHujFyhyKPoXzo5MEcp8OMV2Scdv",
+      "ext": "pdf",
+      "octets": 317360,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - ARCH-02.pdf",
+      "id": "12JSH_Sml2wcfsYU1Y-Gaf7Z-SsQIqhiS",
+      "ext": "pdf",
+      "octets": 2937810,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - Liste des espaces clos et restreints.pdf",
+      "id": "19FW5DDa27PZUGVfVZx_GEz8uHMUbth9V",
+      "ext": "pdf",
+      "octets": 80971,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - T-01 - Plans.pdf",
+      "id": "11FX5jauLw6zKxTrfh3iHAmlJKF3-6nmD",
+      "ext": "pdf",
+      "octets": 2372905,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addenda/49-366 (D) - ESBG - Addenda - ADM-01.pdf",
+      "id": "1ALwCWMqix7Zm2o88NMCTHRbR3XTBOrfG",
+      "ext": "pdf",
+      "octets": 456805,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Cautionnement/Formulaire de demande de cautionnement - DR.docx",
+      "id": "1wMlrDZVgCecOdWIVKs7SgQVf1M7A8PqV",
+      "ext": "docx",
+      "octets": 28320,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

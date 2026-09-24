@@ -1,26 +1,293 @@
-{"dossier":"s-1665 canderel lobby","id":"14bFMOhSMfglz75PpBozsLR6LAAzgqojx","fichiers":[
-{"chemin":"Thumbs.db","id":"16Y_pu6sJbOGI3um0eyE0OVuQdoPTAUgR","ext":"db","octets":51200,"mimeType":"application/octet-stream"},
-{"chemin":"21454 - Canderel Renovation Du Lobby 2000 McGill college ADDENDA - 01_.pdf","id":"1PgiOo9uC8RqjP-4k1HSoYL7gnxCGMthX","ext":"pdf","octets":381963,"mimeType":"application/pdf"},
-{"chemin":"21454 - ok Canderel Renovation Du Lobby 2000 McGill_revision_ (002).pdf","id":"1hxAVk2Lc6qn25RdXmJuLV9vLd69CggyU","ext":"pdf","octets":197461,"mimeType":"application/pdf"},
-{"chemin":"S-1665 (1).pdf","id":"1MJNAEZPkrgcLyKHsw443ixHuCiPwTCCn","ext":"pdf","octets":47492,"mimeType":"application/pdf"},
-{"chemin":"doc20260211163404.pdf","id":"1Kw_MPBMBg6dheAYZ0MlVxXWCfC6PcA5Q","ext":"pdf","octets":4330048,"mimeType":"application/pdf"},
-{"chemin":"S-1665.pdf","id":"1VzDRnTbtrGeuo-5UI7fxACnjG7tVr3T_","ext":"pdf","octets":253957,"mimeType":"application/pdf"},
-{"chemin":"S-1665.docx","id":"1welVb_N9f4x1010YE1CnP4YMy8Y5vKgQ","ext":"docx","octets":63017,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"Modele soumission jonathan parent  - Copie - Copie (2).docx","id":"17d3zg7CqhnLR2fJV9GXOfewiRpJagjpE","ext":"docx","octets":63514,"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
-{"chemin":"21454 - Canderel Renovation Du Lobby 2000 McGill college.pdf","id":"1AaSjcwK6lDYzYvFRoypTVI1noBSl2FxX","ext":"pdf","octets":259881,"mimeType":"application/pdf"},
-{"chemin":"25-066G_Canderel Lobby 2000 McGill College (5).zip","id":"1vGhHC7dn_DEFc6fUySHTHTbDRKFWSJDx","ext":"zip","octets":161766594,"mimeType":"application/zip"},
-{"chemin":"take off/take off a 2026-03-2026.pdf","id":"1duf0BDOQdMCiUVSXZ9nXudvfgY-U0H2H","ext":"pdf","octets":2773548,"mimeType":"application/pdf"},
-{"chemin":"take off/doc20260224072719.pdf","id":"1TzGTJTq6jpaxohARL11bp5Cm1s0IByIq","ext":"pdf","octets":150842,"mimeType":"application/pdf"},
-{"chemin":"take off/take off.pdf","id":"1qN7E8IGVzAzo8IH8PJo5knYCnZ26VqHv","ext":"pdf","octets":332896,"mimeType":"application/pdf"},
-{"chemin":"03 Photos/Thumbs.db","id":"1ug-6936Nav-LBHOVucSlFQXSHZ_ScBIa","ext":"db","octets":16896,"mimeType":"application/octet-stream"},
-{"chemin":"03 Photos/Lobby existant.pdf","id":"1Bns9-f491CT_z3H-wrLXd0RUwKDbSw76","ext":"pdf","octets":52165565,"mimeType":"application/pdf"},
-{"chemin":"01 Plans/Plan Architecture (sous-dossier non détaillé)","id":"1eSv0vEvUc0AvX6CyCG4BU2f1Bu98s9_L","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"01 Plans/Plan d'Origine (Construction) (sous-dossier non détaillé)","id":"1efUDrbRaMZ_B45wWYvwvrYSromUL-Y0J","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"01 Plans/Plan Électrique (sous-dossier non détaillé)","id":"1dctyqtOsfGblsmo0il5op0C1MbD82CgD","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"01 Plans/Plan Structure (sous-dossier non détaillé)","id":"1-whOfkDM9rdxYQ7DnOKnw2OETfP5159d","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"01 Plans/Plan Mécanique (sous-dossier non détaillé)","id":"1MIEcFOJJXkFEeO6ZOPFCn5x-GPyZ7iBU","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"02 Addenda/02 Addenda.zip","id":"1qnaXHrRU2ifDYITRrakl-Cl9XLop5g9S","ext":"zip","octets":26977661,"mimeType":"application/zip"},
-{"chemin":"25-066G_Canderel Lobby 2000 McGill College/02 Addenda (sous-dossier non détaillé)","id":"1JIQifKMKtXsckZY02mZaO9DulxJFzhvA","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"25-066G_Canderel Lobby 2000 McGill College/03 Photos (sous-dossier non détaillé)","id":"1m6HmrvYFQeW4mED0BwPc8NWQxVgRMjcH","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"},
-{"chemin":"25-066G_Canderel Lobby 2000 McGill College/01 Plans (sous-dossier non détaillé)","id":"1f3FTV0x2iLJcYJ9-l2G5aXqRd-QJt9j6","ext":"","octets":0,"mimeType":"application/vnd.google-apps.folder"}
-]}
+{
+  "dossier": "s-1665 canderel lobby",
+  "id": "14bFMOhSMfglz75PpBozsLR6LAAzgqojx",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "16Y_pu6sJbOGI3um0eyE0OVuQdoPTAUgR",
+      "ext": "db",
+      "octets": 51200,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "21454 - Canderel Renovation Du Lobby 2000 McGill college ADDENDA - 01_.pdf",
+      "id": "1PgiOo9uC8RqjP-4k1HSoYL7gnxCGMthX",
+      "ext": "pdf",
+      "octets": 381963,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "21454 - ok Canderel Renovation Du Lobby 2000 McGill_revision_ (002).pdf",
+      "id": "1hxAVk2Lc6qn25RdXmJuLV9vLd69CggyU",
+      "ext": "pdf",
+      "octets": 197461,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1665 (1).pdf",
+      "id": "1MJNAEZPkrgcLyKHsw443ixHuCiPwTCCn",
+      "ext": "pdf",
+      "octets": 47492,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "doc20260211163404.pdf",
+      "id": "1Kw_MPBMBg6dheAYZ0MlVxXWCfC6PcA5Q",
+      "ext": "pdf",
+      "octets": 4330048,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1665.pdf",
+      "id": "1VzDRnTbtrGeuo-5UI7fxACnjG7tVr3T_",
+      "ext": "pdf",
+      "octets": 253957,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1665.docx",
+      "id": "1welVb_N9f4x1010YE1CnP4YMy8Y5vKgQ",
+      "ext": "docx",
+      "octets": 63017,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "17d3zg7CqhnLR2fJV9GXOfewiRpJagjpE",
+      "ext": "docx",
+      "octets": 63514,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "21454 - Canderel Renovation Du Lobby 2000 McGill college.pdf",
+      "id": "1AaSjcwK6lDYzYvFRoypTVI1noBSl2FxX",
+      "ext": "pdf",
+      "octets": 259881,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College (5).zip",
+      "id": "1vGhHC7dn_DEFc6fUySHTHTbDRKFWSJDx",
+      "ext": "zip",
+      "octets": 161766594,
+      "mimeType": "application/zip"
+    },
+    {
+      "chemin": "take off/take off a 2026-03-2026.pdf",
+      "id": "1duf0BDOQdMCiUVSXZ9nXudvfgY-U0H2H",
+      "ext": "pdf",
+      "octets": 2773548,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "take off/doc20260224072719.pdf",
+      "id": "1TzGTJTq6jpaxohARL11bp5Cm1s0IByIq",
+      "ext": "pdf",
+      "octets": 150842,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "take off/take off.pdf",
+      "id": "1qN7E8IGVzAzo8IH8PJo5knYCnZ26VqHv",
+      "ext": "pdf",
+      "octets": 332896,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "03 Photos/Thumbs.db",
+      "id": "1ug-6936Nav-LBHOVucSlFQXSHZ_ScBIa",
+      "ext": "db",
+      "octets": 16896,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "03 Photos/Lobby existant.pdf",
+      "id": "1Bns9-f491CT_z3H-wrLXd0RUwKDbSw76",
+      "ext": "pdf",
+      "octets": 52165565,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/20260123_LEM_ARCHITECTURE_2000McGillCollege. PrSoumission_Signe.pdf",
+      "id": "1V6ZZx9bQuLFcBs3BwOgaIzhTJ5R2pdei",
+      "ext": "pdf",
+      "octets": 64289256,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Thumbs.db",
+      "id": "1ycWJQQ7gVDRNaGqIumIXZ07OJE2wJ4_T",
+      "ext": "db",
+      "octets": 13312,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "01 Plans/Plan Origine - entrée principale  RDC.pdf",
+      "id": "1OYyv11gWItMeon23quOpsRXNBpbvtGeZ",
+      "ext": "pdf",
+      "octets": 2469518,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Plan Origine - plaza exterieure MR.pdf",
+      "id": "11AAtgXbNc_n5KWHLxmZ6y6tLGDo0Hg-G",
+      "ext": "pdf",
+      "octets": 673485,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Plan Origine - plafond RDC.pdf",
+      "id": "1QCp2V2BhjrP2KVQ-56eY4L3C5x4xM2MA",
+      "ext": "pdf",
+      "octets": 2038457,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Plan Origine - elevation centre du lobby RDC.pdf",
+      "id": "1_UiS3PxVKmpfBcn_aRYNs2Blyed92Ccl",
+      "ext": "pdf",
+      "octets": 982803,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Plan Origine - plafond Mezzanine.pdf",
+      "id": "11qRdutZ-VUeMix4Plr7yqgd63NP33dEh",
+      "ext": "pdf",
+      "octets": 1618039,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/157104043-300-Electrique_APPEL_D'OFFRES.pdf",
+      "id": "1JL3TsjxeB9qjB3_AZ8rMU6z1nElm4nNy",
+      "ext": "pdf",
+      "octets": 8107994,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Plan structure (existant) - SS1.pdf",
+      "id": "1E5IJ8jnWT-zQW9V9T7lg032NKpEpVgVB",
+      "ext": "pdf",
+      "octets": 3069171,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Plan structure (existant) - Mezzanine.pdf",
+      "id": "1HbhaUqtDblAZRJaarBIY5glCh-kw8LFi",
+      "ext": "pdf",
+      "octets": 4345842,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/25-0358_Lemay2000McGill_STRUCTURE - SOUMISSION - 20251128.pdf",
+      "id": "1kziFkjK-WXKlzWd3F1kN4Z5DCTCwA8IK",
+      "ext": "pdf",
+      "octets": 2082483,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/Plan structure (existant) - RDC.pdf",
+      "id": "19jbZAJFVc4eI5iwfObQMKWv8saINwEPQ",
+      "ext": "pdf",
+      "octets": 4257740,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01 Plans/157104043-300-Mécanique_APPEL_D'OFFRES.pdf",
+      "id": "1xzwR_55JQij3cECrt9EVSE494wUgF_JZ",
+      "ext": "pdf",
+      "octets": 8800662,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "02 Addenda/02 Addenda.zip",
+      "id": "1qnaXHrRU2ifDYITRrakl-Cl9XLop5g9S",
+      "ext": "zip",
+      "octets": 26977661,
+      "mimeType": "application/zip"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Addenda 1",
+      "id": "1QwqNpaFZV8NQA2kt1yG_LLM9KxtTmfED",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/QRT Lemay",
+      "id": "1FePHZz9BtApqKo1DnAk0kPLSaVxGlLUu",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Mur rideau, jonctions aux étages",
+      "id": "12t8PK7vlAG92KsvzEICAvp-v1ML1WCkG",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Thumbs.db",
+      "id": "1X8deI6Dd28IjNLQO7wyJXs39AHPnu69S",
+      "ext": "db",
+      "octets": 16896,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Photos visite 3 février-202602061522.pdf",
+      "id": "1O3pEbnoeBa5CRfJeqzRUP-hz4qo067ZX",
+      "ext": "pdf",
+      "octets": 1649899,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Lobby existant.pdf",
+      "id": "1OeqMQZhkSaVPinPoueKTWbua6ufuYK-O",
+      "ext": "pdf",
+      "octets": 52165565,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Plan Cloisons temporaires",
+      "id": "1ftkv0WU_kj3_MeAStGjDEcV4Lhtuay43",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Plan Mécanique",
+      "id": "1ICb9p6QAFwCXiUDqaMo3G6FeweySV3wG",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Plan d'Origine (Construction)",
+      "id": "1Ng0OE85oZyq7-jYwdsHnZE0V_gjhB2CH",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Plan Structure",
+      "id": "1BIX8Blrfv_qjB0UYj-R9MHibSsR2tuOm",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Plan Architecture",
+      "id": "1XjCgEp_nZK_wdv8GjofPn5UcWr8zvMqf",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    },
+    {
+      "chemin": "25-066G_Canderel Lobby 2000 McGill College/Plan Électrique",
+      "id": "19AgeG8NXx83QqrXSeuZ1A2B-BlAy0Cy2",
+      "ext": "",
+      "octets": 0,
+      "mimeType": "application/vnd.google-apps.folder"
+    }
+  ]
+}
