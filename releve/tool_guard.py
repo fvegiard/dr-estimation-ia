@@ -21,6 +21,11 @@ def _real(path: str) -> str:
     return os.path.realpath(os.path.abspath(path))
 
 
+def _resolve_arg_path(token: str, cwd: str) -> str:
+    base = cwd if not os.path.isabs(token) else "/"
+    return _real(os.path.join(base, token))
+
+
 def _under(root: str, candidate: str) -> bool:
     try:
         return os.path.commonpath([root, candidate]) == root
@@ -60,8 +65,7 @@ def _collect_paths(tool_input: object, cwd: str) -> list[str]:
         raw = value.strip()
         if not raw:
             return
-        base = cwd if not os.path.isabs(raw) else "/"
-        found.append(_real(os.path.join(base, raw)))
+        found.append(_resolve_arg_path(raw, cwd))
 
     walk(tool_input)
     return found
@@ -84,8 +88,7 @@ def _is_safe_shell_path(token: str, cwd: str, root: str) -> bool:
         return False
     if "/" not in token and not token.startswith("."):
         return True
-    base = cwd if not os.path.isabs(token) else "/"
-    resolved = _real(os.path.join(base, token))
+    resolved = _resolve_arg_path(token, cwd)
     return _under(root, resolved)
 
 
@@ -102,15 +105,15 @@ def _validate_bash(root: str, tool_input: dict, cwd: str) -> str | None:
     if tuple(argv[:3]) == ("uv", "run", "releve/extract_occurrences.py"):
         if len(argv) != 4:
             return "extract_occurrences.py n'accepte qu'un seul argument : le workdir"
-        return None if _real(argv[3]) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
+        return None if _resolve_arg_path(argv[3], cwd) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
     if tuple(argv[:3]) == ("uv", "run", "releve/traits.py"):
         if len(argv) not in (7, 8):
             return "traits.py attend WORKDIR FEUILLE x y [rayon]"
-        return None if _real(argv[3]) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
+        return None if _resolve_arg_path(argv[3], cwd) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
     if tuple(argv[:3]) == ("uv", "run", "releve/zoom.py"):
         if len(argv) < 9:
             return "zoom.py attend WORKDIR FEUILLE X0 Y0 X1 Y1 [--px N] [--sans-marques]"
-        if _real(argv[3]) != root:
+        if _resolve_arg_path(argv[3], cwd) != root:
             return f"Argument Bash hors du dossier de travail : {argv[3]}"
         extras = argv[9:]
         i = 0

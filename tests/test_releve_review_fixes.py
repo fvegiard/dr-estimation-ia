@@ -53,6 +53,12 @@ def test_tool_guard_allows_expected_releve_commands(tmp_path):
         str(ROOT),
         str(work),
     )
+    relative = tool_guard.validate(
+        "Bash",
+        {"command": "uv run releve/extract_occurrences.py ./travail"},
+        str(tmp_path),
+        str(work),
+    )
     bad = tool_guard.validate(
         "Bash",
         {"command": f"uv run releve/zoom.py /etc E100 0 0 100 100"},
@@ -67,6 +73,7 @@ def test_tool_guard_allows_expected_releve_commands(tmp_path):
         str(work),
     )
     assert ok is None
+    assert relative is None
     assert "hors du dossier de travail" in bad
     assert "chaînée" in chained
     assert "n'accepte qu'un seul argument" in extra
