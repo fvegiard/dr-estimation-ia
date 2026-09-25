@@ -1,0 +1,21 @@
+{
+  "dossier": "HR26-14",
+  "projet": "Réfection des cuisines et salles de bain et divers travaux",
+  "client": "Office municipal d'habitation du Haut-Richelieu",
+  "adresse": "145 rue Latour, Saint-Jean-sur-Richelieu (QC)",
+  "consultant": "ARI Bureau d'études",
+  "emission": "Pour appel d'offres (2026-08-31)",
+  "lots": {
+    "LOT A": "145 St-Georges",
+    "LOT B": "155 Mercier",
+    "LOT C": "290 Montcalm",
+    "LOT D": "291 Chaussé"
+  },
+  "nb_feuilles": 26,
+  "totaux": {
+    "lignes_bordereau_materiel_par_repere": 886,
+    "unites_electrique_agrege(sumQte)": 1170,
+    "appareils_a_fournir_urgence(sumAfournir)": 104
+  },
+  "note_prix": "Aucun prix dans l'exemplaire. Prix à intégrer depuis la base SQL (Google Drive)."
+}

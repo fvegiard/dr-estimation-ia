@@ -1,0 +1,28 @@
+name: Auto-commit dérivés HR26-14
+# Régénère les fichiers dérivés (summary.json, familles-par-feuille.csv, VERIFICATION.md)
+# depuis les CSV sources et les recommit automatiquement s'ils changent.
+on:
+  push:
+    paths:
+      - "apprentissage/hr26-14-exemplaire/feuilles.csv"
+      - "apprentissage/hr26-14-exemplaire/bordereau-*.csv"
+      - "apprentissage/hr26-14-exemplaire/outils/regen_derives.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Régénérer les dérivés
+        run: python apprentissage/hr26-14-exemplaire/outils/regen_derives.py apprentissage/hr26-14-exemplaire
+      - name: Auto-commit si changement
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "auto : régénération des dérivés HR26-14 (summary/verification/familles)"
+          file_pattern: "apprentissage/hr26-14-exemplaire/summary.json apprentissage/hr26-14-exemplaire/VERIFICATION.md apprentissage/hr26-14-exemplaire/familles-par-feuille.csv"

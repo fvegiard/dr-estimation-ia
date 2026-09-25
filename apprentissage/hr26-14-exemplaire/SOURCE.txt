@@ -1,0 +1,8 @@
+Source de l'exemplaire (gold) HR26-14
+fichier   : EXEMPLE.pdf
+pages     : 87
+taille    : 27.7 Mo
+sha256    : 0861bc3a0e9697f7f2764fba85f0cc35bc8c5b8a3d06ce3ff2b11b32432eb84b
+provenance: fourni par Francis (Google Drive) — non versionné ici (binaire volumineux)
+contenu   : relevé IA complet du dossier HR26-14 (OMH Haut-Richelieu, 145 rue Latour),
+            4 lots, feuilles DSI01-08 (incendie), E01-14 (électricité), EU01-04 (éclairage urgence).
