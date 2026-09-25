@@ -1,0 +1,75 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Prise double,prise,cercle,,17|19|21,"Prise double 5-15R/5-20R ; en logement l'étiquette est le no de circuit (17 coin repas, 19 salon, 21 chambres) ; les prises du circuit 23 et des communs sont relevées visuellement",E100 légende prises ligne 1 ; E101 cédules panneaux types 1.1 à 4
+Prise demi-commandée,prise,cercle,,(17|19|21|23)[a-z][a-z]?,Prise double partie du bas contrôlée par interrupteur ; étiquette = circuit + lettre de l'interrupteur (ex. 21j),E100 légende prises ligne 3
+Prise comptoir,prise,cercle,,10|12,Prise double pour comptoir 5-20R (circuits 10 et 12 prises comptoir),E100 légende prises lignes 4 et 7 ; E101 cédules (10-12 PRISES COMPTOIR)
+Prise micro-onde,prise,cercle,,13,Prise dédiée micro-ondes (circuit 13 MICRO-ONDES 20A),E101 cédules (13 MICRO-ONDES)
+Prise salle de bain,prise,cercle,,15,Prise salle de bain (circuit 15 PRISES SALLE DE BAIN 20A) ; type DDFT à confirmer,E101 cédules (15 PRISES SALLE DE BAIN)
+Prise réfrigérateur,prise,cercle,,11,Prise dédiée réfrigérateur (circuit 11),E101 cédules (11 RÉFRIGÉRATEUR)
+Prise laveuse,prise,cercle,,7,Prise dédiée laveuse (circuit 7),E101 cédules (7 LAVEUSE)
+Prise sécheuse,prise,cercle,,"2,4",Prise électroménager 14-30R sécheuse 30A (circuit 2-4),E100 légende prises (électroménager) ; E101 cédules (2-4 SÉCHEUSE)
+Prise cuisinière,prise,cercle,,"1,3",Prise électroménager 14-50R cuisinière 40A (circuit 1-3),E100 légende prises (électroménager) ; E101 cédules (1-3 CUISINIÈRE)
+Prise étanche,prise,cercle,,,Prise double à l'épreuve des intempéries avec boîtier de recouvrement (balcon/terrasse/extérieur/toit),E100 légende prises (symbole encadré) ; note E202 prises balcons usage extrême
+Prise 208V lave-vitre,prise,cercle,,,Prise 208V 30A L6-30R twist-lock lavage de vitres à l'épreuve des intempéries,E100 légende prises
+Raccordement lave-vaisselle,prise,carre,,LV\d*,Raccordement lave-vaisselle (boîte LV),E100 légende prises (LV)
+Raccordement hotte,prise,carre,,H,Raccordement de la hotte pour cuisinière (boîte H),E100 légende prises (H)
+Raccordement ventilateur,mecanique,carre,,V,Raccordement pour ventilateur (boîte V),E100 légende prises (V)
+Thermostat,chauffage,cercle,,T,Thermostat par entrepreneur en électricité (T dans un cercle),E100 légende chauffage (T cercle)
+Plinthe 300W,chauffage,trapeze,,,Plinthe chauffante 300 W (étiquette de puissance + symbole plinthe vus),E100 légende chauffage (plinthe)
+Plinthe 500W,chauffage,trapeze,,,Plinthe chauffante 500 W,E100 légende chauffage (plinthe)
+Plinthe 750W,chauffage,trapeze,,,Plinthe chauffante 750 W,E100 légende chauffage (plinthe)
+Plinthe 1000W,chauffage,trapeze,,,Plinthe chauffante 1000 W,E100 légende chauffage (plinthe)
+Plinthe 1250W,chauffage,trapeze,,,Plinthe chauffante 1250 W,E100 légende chauffage (plinthe)
+Plinthe 1500W,chauffage,trapeze,,,Plinthe chauffante 1500 W,E100 légende chauffage (plinthe)
+Plinthe 2000W,chauffage,trapeze,,,Plinthe chauffante 2000 W,E100 légende chauffage (plinthe)
+Aéroconvecteur 1000W,chauffage,trapeze_inverse,,,Aéroconvecteur logement 1000 W (symbole rectangle + flèche en zigzag),E100 légende chauffage (aéroconvecteur logement)
+Aéroconvecteur 1250W,chauffage,trapeze_inverse,,,Aéroconvecteur logement 1250 W,E100 légende chauffage (aéroconvecteur logement)
+Aéroconvecteur 1500W,chauffage,trapeze_inverse,,,Aéroconvecteur logement 1500 W,E100 légende chauffage (aéroconvecteur logement)
+Aéroconvecteur 2000W,chauffage,trapeze_inverse,,,Aéroconvecteur logement 2000 W,E100 légende chauffage (aéroconvecteur logement)
+Aéroconvecteur commun,chauffage,trapeze_inverse,,,Aéroconvecteur encastré ou en surface espace commun,E100 légende chauffage
+Aérotherme,chauffage,trapeze_inverse,,,Aérotherme (au plafond ou en applique) ; étiquette AG-x,E100 légende chauffage ; E103 tableau des aérothermes
+Raccordement évaporateur,mecanique,carre,,EV-[0-9.]+,Évaporateur de climatisation EV-x (alimenté par son condenseur selon note climatisation),E202 note climatisation ; E103 tableau des évaporateurs
+Raccordement condenseur,mecanique,carre,,CO-[0-9.]+,Condenseur de climatisation CO-x (circuit 22-24 du panneau de logement),E101 cédules (22-24 AIR CLIMATISÉ) ; E103 tableau des condenseurs
+Raccordement volet motorisé,mecanique,carre,,,Raccordement volet coupe-feu/fumée motorisé (VCFFM) ou volet motorisé (VM),E100 légende prises (VM) ; étiquette VCFFM au plan
+Raccordement équipement mécanique,mecanique,carre,,,Raccordement d'un équipement mécanique étiqueté au plan (V-x ventilateur / P-x pompe / B-x / AF-x etc.) ; libellé précisé en note,E200 bulles d'équipement ; E103 tableaux
+Raccordement équipement — à classer,mecanique,carre,,,Symbole ou bulle d'équipement vu au plan sans correspondance claire en légende — à confirmer,relevé visuel
+Panneau de logement,distribution,carre,,,Panneau de distribution de logement 120/240 V 100 A (symbole panneau),E100 légende distribution ; E101 panneaux types
+Panneau de distribution,distribution,carre,,,Panneau de distribution des communs (S/UE/UNE/PC/PP…),E100 légende distribution ; E101 cédules
+Sectionneur,distribution,carre,,,Sectionneur (en plan),E100 légende distribution
+Transformateur,distribution,carre,,,Transformateur (en plan),E100 légende distribution
+Équipement salle électrique — à classer,distribution,carre,,,Équipement de distribution étiqueté en salle électrique (lecture incertaine),relevé visuel
+Sortie câblo/informatique,telecom,triangle,,,Sortie de câblodistribution et informatique (boîtier cercle + triangle),E100 légende communications
+Sortie informatique,telecom,triangle,,,Sortie d'informatique (triangle),E100 légende communications
+Luminaire encastré urgence,luminaire,cercle,,,Luminaire à douille encastré raccordé sur l'urgence (cercle plein),E100 légende éclairage
+Luminaire encastré,luminaire,cercle,,,Luminaire à douille encastré (cercle vide),E100 légende éclairage
+Luminaire linéaire,luminaire,carre,,,Appareil d'éclairage linéaire en surface ou encastré,E100 légende éclairage
+Luminaire linéaire urgence,luminaire,carre,,,Appareil d'éclairage linéaire raccordé sur l'urgence (demi-plein),E100 légende éclairage
+Luminaire linéaire applique urgence,luminaire,carre,,,Appareil d'éclairage linéaire en applique raccordé sur l'urgence,E100 légende éclairage
+Luminaire linéaire applique,luminaire,carre,,,Appareil d'éclairage linéaire en applique,E100 légende éclairage
+Luminaire applique urgence,luminaire,cercle,,,Luminaire à douille en applique raccordé sur l'urgence,E100 légende éclairage
+Luminaire applique,luminaire,cercle,,,Luminaire à douille en applique,E100 légende éclairage
+Luminaire plafonnier,luminaire,cercle,,,Luminaire plafonnier,E100 légende éclairage
+Luminaire suspendu,luminaire,cercle,,,Luminaire suspendu simple,E100 légende éclairage
+Luminaire — à classer,luminaire,cercle,,,Luminaire vu au plan dont le type n'est pas lisible — à confirmer (tableau des luminaires « À VENIR »),relevé visuel
+Enseigne sortie,secours,carre,,,Enseigne pictogramme « running man » avec batterie intégrée (une face / deux faces / directionnelle),E100 légende éclairage ; E101 tableau enseignes
+Enseigne sortie avec phares,secours,carre,,,Enseigne « running man » avec phares d'urgence combinés,E100 légende éclairage
+Unité à batterie,secours,carre,,,Unité à batterie avec projecteurs,E100 légende éclairage
+Projecteur à distance,secours,carre,,,Projecteur simple ou double pour unité à batterie à distance,E100 légende éclairage
+Détecteur de mouvement,commande,cercle,,,Détecteur de mouvement infrarouge ou 360°,E100 légende éclairage
+Interrupteur,commande,cercle,,,Interrupteur (simple / 3 voies / 4 voies / gradateur),E100 légende éclairage
+Avertisseur de fumée,alarme,cercle,,AF-[0-9]+,Avertisseur de fumée 120 V relié (AF) ; étiquette AF-<circuit>,E100 légende alarme (AF)
+Avertisseur fumée/CO,alarme,cercle,,AF1-[0-9]+,Avertisseur de fumée et monoxyde de carbone 120 V (AF1) ; étiquette AF1-<circuit>,E100 légende alarme (AF1)
+Klaxon/stroboscope,alarme,cercle,,KS,Klaxon électrique/strobe relié au panneau d'alarme (KS) ; 15cd ou 185cd selon l'étiquette voisine,E100 légende alarme (KS)
+Klaxon,alarme,cercle,,,Klaxon relié au panneau d'alarme incendie (K encadré) — relevé visuel (la lettre K sert aussi aux bulles d'axes et au mobilier),E100 légende alarme (K)
+Détecteur de fumée,alarme,cercle,,DF1,Détecteur de fumée raccordé au panneau d'alarme (DF1),E100 légende alarme (DF1)
+Détecteur de fumée de gaine,alarme,cercle,,DF2,Détecteur de fumée de gaine fourni et raccordé par électricien installé par ventilation (DF2),E100 légende alarme (DF2)
+Détecteur fumée/CO,alarme,cercle,,DF3,Détecteur de fumée et monoxyde de carbone raccordé au panneau (DF3),E100 légende alarme (DF3)
+Détecteur thermique,alarme,cercle,,TH,Détecteur thermique raccordé au panneau d'alarme (TH),E100 légende alarme (TH)
+Déclencheur manuel,alarme,carre,,DM,Déclencheur manuel (DM),E100 légende alarme (DM)
+Résistance fin de ligne,alarme,carre,,WW,Résistance de fin de ligne (WW),E100 légende alarme (WW)
+Module adressable,alarme,carre,,MA|MA-10,Module adressable de réception deux entrées (MA / MA-10),E100 légende alarme (MA)
+Supervision vanne gicleur,alarme,carre,,DV,Supervision de vanne du système de gicleur (DV),E100 légende alarme (DV)
+Détecteur débit gicleur,alarme,carre,,DD,Détecteur de débit du système de gicleur (DD),E100 légende alarme (DD)
+Relais adressable,alarme,carre,,R,Relais adressable (R),E100 légende alarme (R)
+Module isolateur,alarme,carre,,I,Module isolateur de ligne (I),E100 légende alarme (I)
+Panneau INX,alarme,carre,,INX,Panneau INX (alimentation de signalisation),E100 légende alarme (INX)
+Équipement alarme — à classer,alarme,carre,,,Symbole d'alarme vu au plan sans correspondance claire — à confirmer,relevé visuel

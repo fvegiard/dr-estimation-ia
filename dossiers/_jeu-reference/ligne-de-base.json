@@ -1,0 +1,47 @@
+{
+ "S-1714": {
+  "humaines": 7502,
+  "ia": 7385,
+  "appariees": 7219,
+  "manquantes": 283,
+  "en_trop": 166,
+  "rappel": 96.2,
+  "precision": 97.8
+ },
+ "S-1715": {
+  "humaines": 401,
+  "ia": 359,
+  "appariees": 313,
+  "manquantes": 88,
+  "en_trop": 46,
+  "rappel": 78.1,
+  "precision": 87.2
+ },
+ "S-1769": {
+  "humaines": 116,
+  "ia": 141,
+  "appariees": 113,
+  "manquantes": 3,
+  "en_trop": 28,
+  "rappel": 97.4,
+  "precision": 80.1
+ },
+ "S-1811": {
+  "humaines": 681,
+  "ia": 811,
+  "appariees": 676,
+  "manquantes": 5,
+  "en_trop": 135,
+  "rappel": 99.3,
+  "precision": 83.4
+ },
+ "S-1844": {
+  "humaines": 708,
+  "ia": 773,
+  "appariees": 564,
+  "manquantes": 144,
+  "en_trop": 209,
+  "rappel": 79.7,
+  "precision": 73.0
+ }
+}

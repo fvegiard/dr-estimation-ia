@@ -1,0 +1,27 @@
+name: Tests et jeu de référence
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Tests unitaires
+        run: python -m pytest tests -q
+      - name: Jeu de référence (relevé IA vs projets Plan Expert de l'estimateur)
+        run: |
+          set +e
+          python -m src.validation.jeu_reference
+          code=$?
+          cat dossiers/_jeu-reference/resultats.md >> "$GITHUB_STEP_SUMMARY"
+          exit $code

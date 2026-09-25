@@ -1,0 +1,13 @@
+feuille,type,echelle,note
+E001,autre,,cartouche=E001 · DEVIS - CONDITIONS GÉNÉRALES (texte de devis et liste des dessins)
+E002,autre,,cartouche=E002 · DEVIS SAQ (notes générales éclairage/contrôles)
+E100,legende,,cartouche=E100 · LÉGENDE (légende électrique · distribution · CVC · sorties · abréviations · grille CCQ)
+E101,legende,,cartouche=E101 · LÉGENDE SUITE (tableau légende d'éclairage SAQ · contrôles nLight · liste des gradateurs)
+E102,schema,,cartouche=E102 · DIAGRAMMES PANNEAUX ET CALCULS (unifilaire existant à modifier · calcul de charges · cédules PP (EC) / PA (EM) / PA (M))
+E103,detail,,cartouche=E103 · DÉTAILS CONTRÔLE D'ÉCLAIRAGE (schémas nLight par zone · plan de zones réduit · raccordement CAT5) — sans échelle
+E200D,plan,48,"cartouche=E200D · ÉLECTRICITÉ PRISES & SERVICES REZ-DE-CHAUSSÉE DÉMOLITION · échelle 1/4"":1'-0"" (≈1:48) · relevé en famille demolition"
+E200,plan,48,"cartouche=E200 · ÉLECTRICITÉ PRISES & SERVICES REZ-DE-CHAUSSÉE CONSTRUCTION · échelle 1/4"":1'-0"" (≈1:48) · seul le neuf (N.) est relevé ; E.C. exclus"
+E201,plan,48,"cartouche=E201 · ÉLECTRICITÉ PLAN DE TOITURE EXISTANT / CONSTRUCTION · échelle 1/4"":1'-0"" (≈1:48)"
+E300D,plan,48,"cartouche=E300D · ÉLECTRICITÉ ÉCLAIRAGE REZ-DE-CHAUSSÉE DÉMOLITION · échelle 1/4"":1'-0"" (≈1:48) · relevé en famille demolition"
+E300,plan,48,"cartouche=E300 · ÉLECTRICITÉ ÉCLAIRAGE REZ-DE-CHAUSSÉE CONSTRUCTION · échelle 1/4"":1'-0"" (≈1:48) · (EC) exclus"
+E400,plan,48,"cartouche=E400 · ÉLECTRICITÉ CONDUITS DU SYSTÈME DE SÉCURITÉ · échelle 1/4"":1'-0"" (≈1:48)"

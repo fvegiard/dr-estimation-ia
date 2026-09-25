@@ -1,0 +1,8 @@
+feuille,type,echelle,note
+E001,legende,,cartouche=E001 · LISTE DES PLANS ET LÉGENDE
+250075EPER-p02,autre,,cartouche=E002 · DEVIS (instructions générales et matériaux)
+250075EPER-p03,autre,,cartouche=E003 · DEVIS (SUITE) — art. 2.22 contrôle d'éclairage repris en articles comptés
+250075EPER-p04,detail,,cartouche=E004 · TABLEAUX ET DÉTAILS (luminaires/chauffage/hauteurs/spécifications ; détail A mini-split ; détail B porte électrifiée)
+250075EPER-p05,schema,,cartouche=E101 · DISTRIBUTION ÉLECTRIQUE ET PANNEAU (cédule panneau C neuf + unifilaire existant / existant modifié)
+250075EPER-p06,plan,192,"cartouche=E201 · LOCALISATION (1/16"" = 1'-0"") — bâtiment existant gris, éclairage extérieur neuf C,33"
+E004,plan,96,"cartouche=E401 · ÉCLAIRAGE, ALARME INCENDIE ET SERVICES — DÉMANTÈLEMENT ET RÉAMÉNAGEMENT (1/8"" = 1'-0"") ; nom provisoire E004 ≠ vraie E004 (= 250075EPER-p04) ; zone hachurée grise = existant hors travaux"

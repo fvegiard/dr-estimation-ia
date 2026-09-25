@@ -1,0 +1,16 @@
+page_humaine,document,page,feuille_ia,plan_ia,methode,score,transformation,dims_humain,marques_humain,doublons,marques_ia_feuille,appariees,manquantes_ia,en_trop_ia_feuille,lignes_humain,lignes_ia_feuille,second_candidat,note
+E400,E400,,E400,E400,géométrie,1.000,"0°, échelle x=1.0007 y=1.0009, translation (-1, -2) px IA",5694x4022 (fichier de dimensions),77,0,77,77,0,0,0,0,E401 (0.92),AMBIGU : E401 obtient 0.92
+E401,E401,,E401,E401,géométrie,1.000,"0°, échelle x=0.9822 y=0.9822, translation (46, 54) px IA",5694x4022 (fichier de dimensions),248,0,249,248,0,1,0,0,E402 (0.93),AMBIGU : E402 obtient 0.93
+E402,E402,,E402,E402,géométrie,1.000,"0°, échelle x=1.0001 y=1.0000, translation (-0, -0) px IA",5694x4022 (fichier de dimensions),317,0,317,317,0,0,0,0,E401 (0.89),
+E403,E403,,E403,E403,géométrie,1.000,"0°, échelle x=1.0001 y=1.0002, translation (-0, -0) px IA",5694x4022 (fichier de dimensions),161,0,161,161,0,0,0,0,E402 (0.96),AMBIGU : E402 obtient 0.96
+E405,E405,,E405,E405,géométrie,1.000,"0°, échelle x=1.0001 y=0.9990, translation (-0, 2) px IA",5694x4022 (fichier de dimensions),91,0,90,90,1,0,0,0,E401 (0.76),
+E406,E406,,E406,E406,géométrie,1.000,"0°, échelle x=0.9995 y=1.0002, translation (1, -0) px IA",5694x4022 (fichier de dimensions),216,0,218,216,0,2,0,0,E402 (0.88),
+E407,E407,,E407,E407,géométrie,0.989,"0°, échelle x=0.9822 y=0.9822, translation (49, 49) px IA",5694x4022 (fichier de dimensions),180,0,170,155,25,15,0,0,E402 (0.95),AMBIGU : E402 obtient 0.95
+E408,E408,,E403,E403,géométrie,0.978,"miroir 180°, échelle x=0.7085 y=0.6519, translation (644, 3925) px IA",5694x4022 (fichier de dimensions),90,90,161,0,0,0,0,0,E402 (0.94),AMBIGU : E402 obtient 0.94
+E600,E600_ADD,,E402,E402,géométrie,0.889,"0°, échelle x=0.6609 y=0.6609, translation (910, 1399) px IA",5694x4023 (fichier de dimensions),36,36,317,0,0,0,0,0,E401 (0.92),AMBIGU : E401 obtient 0.92
+E409,E409,,,,non appariée,,,5694x4022 (fichier de dimensions),4,0,,0,4,,0,,,aucun nom commun et moins de 5 marques
+E200,E200,,,,non appariée,,,5694x4022 (fichier de dimensions),1,0,,0,1,,0,,,aucun nom commun et moins de 5 marques
+,plans-electriques/E408_Rev0.pdf,1,E408,E408,feuille IA sans page humaine,,,,0,0,93,0,0,93,0,0,,
+,plans-electriques/E409_Rev0.pdf,1,E409,E409,feuille IA sans page humaine,,,,0,0,3,0,0,3,0,0,,
+,plans-electriques/E200_Rev0.pdf,1,E200,E200,feuille IA sans page humaine,,,,0,0,4,0,0,4,0,0,,
+,Addenda02-ADME-01-plans-electrique-E600.pdf,1,E600_ADD,E600,feuille IA sans page humaine,,,,0,0,37,0,0,37,0,0,,

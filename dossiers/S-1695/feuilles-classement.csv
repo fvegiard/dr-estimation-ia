@@ -1,0 +1,24 @@
+feuille,type,echelle,note
+QC138,autre,,cartouche=page titre · PLAYGROUND HOTEL · LISTE DES PLANS (E-214/E-215/E-216 CONTRÔLE D'ACCÈS non cochées : non émises)
+E001,legende,,cartouche=E-001 · LÉGENDE (tableaux alarme / distribution / services / force motrice / chauffage / auxiliaires / télécom / appareils d'éclairage / éclairage d'urgence)
+E200,plan,96,cartouche=E-200 · ÉCLAIRAGE 4ième ÉTAGE · 1/8 po = 1 pi (chambres grisées : voir chambres typiques E-400)
+E201,plan,96,cartouche=E-201 · ÉCLAIRAGE 5ième ÉTAGE · 1/8 po = 1 pi
+E202,plan,96,cartouche=E-202 · ÉCLAIRAGE 6ième ÉTAGE · 1/8 po = 1 pi
+E203,plan,96,cartouche=E-203 · ÉCLAIRAGE TOIT ATRIUM · 1/8 po = 1 pi
+E210,plan,96,cartouche=E-210 · SERVICES 4ième ÉTAGE · 1/8 po = 1 pi (+ extrait salle électrique 442)
+E211,plan,96,cartouche=E-211 · SERVICES 5ième ÉTAGE · 1/8 po = 1 pi
+E212,plan,96,cartouche=E-212 · SERVICES 6ième ÉTAGE · 1/8 po = 1 pi
+E213,plan,96,cartouche=E-213 · SERVICES TOIT ATRIUM · 1/8 po = 1 pi (révisé addenda ME-01)
+E217,plan,96,cartouche=E-217 · ÉLECTRO-MÉCANIQUE 4ième ÉTAGE · 1/8 po = 1 pi
+E218,plan,96,cartouche=E-218 · ÉLECTRO-MÉCANIQUE 5ième ÉTAGE · 1/8 po = 1 pi
+E219,plan,96,cartouche=E-219 · ÉLECTRO-MÉCANIQUE 6ième ÉTAGE · 1/8 po = 1 pi
+E300,schema,,cartouche=E-300 · DISTRIBUTION EXISTANTE MODIFIÉE · unifilaire (existant gris / nouveau noir)
+E301,tableau,,cartouche=E-301 · PANNEAUX (cédules des panneaux de chambres ; texte non vectoriel)
+E302,tableau,,cartouche=E-302 · PANNEAUX (Suite) (texte non vectoriel)
+E400,plan,48,cartouche=E-400 · ÉCLAIRAGE DES CHAMBRES TYPIQUES · 1/4 po = 1 pi (11 chambres types + plans clés niveaux 4/5/6)
+E401,plan,48,cartouche=E-401 · SERVICES DES CHAMBRES TYPIQUES · 1/4 po = 1 pi (11 chambres types + panneau type + plans clés)
+E800,plan,96,cartouche=E-800 · ALARME INCENDIE 4ième ÉTAGE · 1/8 po = 1 pi
+E801,plan,96,cartouche=E-801 · ALARME INCENDIE 5ième ÉTAGE · 1/8 po = 1 pi
+E802,plan,96,cartouche=E-802 · ALARME INCENDIE 6ième ÉTAGE · 1/8 po = 1 pi
+E803,plan,96,cartouche=E-803 · ALARME INCENDIE TOIT ATRIUM · 1/8 po = 1 pi
+E804,schema,,cartouche=E-804 · PROGRAMMATION DU SYSTÈME D'ALARME-INCENDIE (matrice de désenfumage)

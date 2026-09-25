@@ -1,0 +1,94 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire A1,luminaire,cercle,,A1,DEL rond encastré Exenia Dark Compact DF1R 29.6W 2700K 400lm 120V blanc,E001 tableau d'appareils d'éclairage ligne A1
+Luminaire A2,luminaire,cercle,,A2,DEL rond encastré UTechnology UT-DLE-US-6-R-27 15W 1650lm (ébénisterie),E001 tableau d'appareils d'éclairage ligne A2
+Luminaire A3,luminaire,cercle,,A3,DEL rond suspendu Delta Light SPY 39 blanc 6.7W 625lm,E001 tableau d'appareils d'éclairage ligne A3
+Luminaire A4,luminaire,cercle,,A4,DEL rond encastré Exenia RP4R 18W 1000lm noir (symbole multiple),E001 tableau d'appareils d'éclairage ligne A4
+Luminaire A5,luminaire,cercle,,A5,DEL rond suspendu Delta Light SPY 39 6.7W 625lm,E001 tableau d'appareils d'éclairage ligne A5
+Luminaire A6,luminaire,cercle,,A6,DEL rond encastré Meteor RS4R 60W 6500lm,E001 tableau d'appareils d'éclairage ligne A6
+Luminaire A7,luminaire,cercle,,A7,DEL rond encastré Exenia Dark Compact 29.6W 2000lm,E001 tableau d'appareils d'éclairage ligne A7
+Luminaire A8,luminaire,cercle,,A8,DEL rond encastré Exenia Dark Compact 29.6W 3000K 400lm blanc,E001 tableau d'appareils d'éclairage ligne A8 (nuage de révision)
+Luminaire A9,luminaire,carre,,A9,Luminaire DEL Columbia CSL4-A-LSCS 4400lm 3500K en surface (rectangulaire),E001 tableau d'appareils d'éclairage ligne A9 (nuage de révision)
+Luminaire B1,luminaire,cercle,,B1,DEL rond applique murale Richporter BL60-364 2700K,E001 tableau d'appareils d'éclairage ligne B1 (nuage de révision)
+Luminaire B2,luminaire,cercle,,B2,DEL rond applique murale Richporter BL60-362 2700K blanc,E001 tableau d'appareils d'éclairage ligne B2
+Luminaire B3,luminaire,cercle,,B3,DEL rond applique murale Lambert et Fils SIL-2W 14.8W 678lm,E001 tableau d'appareils d'éclairage ligne B3
+Luminaire B4,luminaire,cercle,,B4,DEL rond applique murale RBW MS-2-27 9W,E001 tableau d'appareils d'éclairage ligne B4
+Luminaire B5,luminaire,cercle,,B5,DEL rond applique murale RBW QS-24-A-04-01 noir anodisé,E001 tableau d'appareils d'éclairage ligne B5
+Luminaire B6,luminaire,cercle,,B6,DEL rond applique murale Richporter BL60-365 base blanche,E001 tableau d'appareils d'éclairage ligne B6
+Luminaire B7,luminaire,carre,,B7,DEL rectangulaire applique à fournir par autre (linéaire),E001 tableau d'appareils d'éclairage ligne B7
+Luminaire B8,luminaire,cercle,,B8,DEL rond applique RBW MP-5-27 7.1W 517lm,E001 tableau d'appareils d'éclairage ligne B8
+Luminaire B9,luminaire,carre,,B9,DEL rectangulaire Omnistick Mini Frost 2.4W/pi ébénisterie spa (linéaire),E001 tableau d'appareils d'éclairage ligne B9
+Luminaire C1,luminaire,cercle,,C1,DEL rond suspendu RBW 9W 532lm,E001 tableau d'appareils d'éclairage ligne C1
+Luminaire C2,luminaire,carre,,C2,Luminaire DEL suspendu Lambert et Fils 52W 2815lm (croix),E001 tableau d'appareils d'éclairage ligne C2
+Luminaire C3,luminaire,carre,,C3,Luminaire DEL suspendu Lambert et Fils 35W 1877lm (linéaire),E001 tableau d'appareils d'éclairage ligne C3
+Luminaire C4,luminaire,carre,,C4,Luminaire DEL linéaire Holectron Venta 1.46W/pi gym (linéaire),E001 tableau d'appareils d'éclairage ligne C4
+Luminaire D1,luminaire,carre,,D1,Luminaire DEL linéaire UTechnology 4.5W/pi longueur à confirmer (linéaire),E001 tableau d'appareils d'éclairage ligne D1
+Luminaire D2,luminaire,cercle,,D2,Luminaire DEL Vode 6.5W/pi (ovale / linéaire),E001 tableau d'appareils d'éclairage ligne D2
+Luminaire D3,luminaire,carre,,D3,Luminaire DEL Atlantis 4.5W/pi niche banquette (linéaire),E001 tableau d'appareils d'éclairage ligne D3
+Luminaire D4,luminaire,cercle,,D4,Luminaire DEL Holectron 4.5W/pi niche murale (ovale),E001 tableau d'appareils d'éclairage ligne D4
+Luminaire D5,luminaire,carre,,D5,Luminaire DEL Fluxwerx 7W/pi atrium retombées (linéaire),E001 tableau d'appareils d'éclairage ligne D5
+Luminaire E1,luminaire,carre,,E1,Luminaire DEL Omnify 90W 3000K,E001 tableau d'appareils d'éclairage ligne E1
+Luminaire E2,luminaire,cercle,,E2,Luminaire DEL Brownlee 16W installé à 66 po salles de soins,E001 tableau d'appareils d'éclairage ligne E2
+Enseigne sortie murale,secours,carre,,,Enseigne pictogramme homme qui court Lumacell série LA au mur,E001 tableau éclairage urgence ligne 1
+Enseigne sortie plafond,secours,carre,,,Enseigne pictogramme homme qui court Lumacell série LA au plafond,E001 tableau éclairage urgence ligne 2
+Phare d'urgence simple,secours,triangle,,,Phare d'éclairage d'urgence simple Lumacell MQM1-LD13 24Vcc,E001 tableau éclairage urgence ligne 3
+Phare d'urgence double,secours,triangle,,,Phare d'éclairage d'urgence double Lumacell MQM2-LD13 24Vcc,E001 tableau éclairage urgence ligne 4
+Accumulateur 2 phares,secours,carre,,,Accumulateur d'éclairage d'urgence 2 phares Lumacell RG24S-2LD13 30 min,E001 tableau éclairage urgence ligne 5
+Accumulateur 2 phares c/a enseigne,secours,carre,,,Accumulateur 2 phares c/a enseigne pictogramme Lumacell série LAC,E001 tableau éclairage urgence ligne 6
+Interrupteur simple,commande,cercle,,,Interrupteur simple 15/20A 120/347V,E001 tableau des services ligne 1
+Interrupteur 3 voies,commande,cercle,,,Interrupteur à 3 voies,E001 tableau des services ligne 2
+Interrupteur détecteur présence,commande,cercle,,,Interrupteur détecteur de présence mural,E001 tableau des services ligne 3
+Gradateur,commande,cercle,,,Gradateur 120V ou 0-10V,E001 tableau des services ligne 4
+Détecteur présence plafond DP,commande,cercle,,DP,Détecteur de présence double technologie au plafond 0-10V,E001 tableau des services ligne 5
+Prise double,prise,cercle,,,Prise de courant double 15A 5-15R,E001 tableau des services ligne 6
+Prise double comptoir,prise,cercle,,,Prise double 15A à 7 po au-dessus du comptoir,E001 tableau des services ligne 7
+Prise DDFT,prise,cercle,,,Prise double DDFT 15A,E001 tableau des services ligne 8
+Prise DDFT 20A,prise,cercle,,,Prise double DDFT 20A 5-20R,E001 tableau des services ligne 9
+Prise DDFT comptoir,prise,cercle,,,Prise double DDFT 15A au-dessus du comptoir,E001 tableau des services ligne 10
+Prise double USB,prise,cercle,,,Prise double c/a chargeur USB A+C,E001 tableau des services ligne 12
+Prise double plafond,prise,cercle,,,Prise double 15A au plafond,E001 tableau des services ligne 13
+Prise au plancher,prise,cercle,,,Prise de courant au plancher (xN = nombre de prises),E001 tableau des services ligne 14
+Prise chambre CCT-PRISES,prise,cercle,,CCT-PRISES,Prise de courant de chambre type identifiée CCT-PRISES (type de symbole variable),E401 étiquettes de circuit des chambres typiques
+Prise chambre CCT-DDFT,prise,cercle,,CCT-DDFT,Prise DDFT de salle de bain de chambre type (CCT #3),E401 étiquettes de circuit ; E210 description des circuits
+Prise frigo CCT-FRIGO,prise,cercle,,CCT-FRIGO,Prise réfrigérateur de chambre type (CCT #2),E401 étiquettes de circuit ; E210 description des circuits
+Prise café CCT-CAFÉ,prise,cercle,,CCT-CAFÉ,Prise machine à café de chambre type (CCT #1) à 40 po,E401 étiquettes de circuit ; E401 note 4
+Plinthe électrique,chauffage,carre,,"(?!(100|260)W)[1-9][0-9]{2,3}W",Plinthe / convecteur électrique type A (puissance inscrite au plan),E001 tableau de chauffage électrique ; E210-E212 étiquettes de puissance
+Thermostat de ligne,chauffage,carre,,,Thermostat de ligne Stelpro ST402NP/ST403NP,E001 tableau de chauffage ligne 1-2
+Sèche-mains,chauffage,carre,,,Sèche-mains 120V (SM),E001 tableau de chauffage dernière ligne
+Raccordement EV (208V),mecanique,losange,,EV-[0-9]{3},Raccordement équipement EV-xxx 208V 1ph MOCP 15A (moteur + sectionneur),E210-E212 / E217 étiquettes d'équipement
+Raccordement ventilateur VT,mecanique,losange,,VT-[0-9]{3},Raccordement ventilateur VT-xxx 120V 100-260W,E217-E219 étiquettes d'équipement
+Raccordement serpentin SE,mecanique,losange,,SE-[0-9]{3}[A-Z]?,Raccordement serpentin électrique SE-xxx 347V 0.5kW,E217/E219 étiquettes d'équipement ; E001 serpentin électrique
+Raccordement BC (208V),mecanique,losange,,BC-N[0-9]-[0-9]{2},Raccordement équipement BC-Nx 208V 1ph MCA 1.57A,E217-E219 étiquettes d'équipement
+Raccordement ventilateur VE,mecanique,losange,,VE-0[0-9],Raccordement ventilateur de toit VE-0x (120V 1/2HP ou 600V désenfumage),E213 étiquettes d'équipement
+Raccordement CD (600V),mecanique,losange,,CD-N[0-9]-[0-9]{2},Raccordement unité CD 600V 3ph (ou CD-IT-01 208V 40A),E213 étiquettes d'équipement
+Raccordement volet VM,mecanique,losange,,VM-T-[A-E],Raccordement volet motorisé de toit VM-T-x,E213 étiquettes d'équipement
+Raccordement UAF toit,mecanique,losange,,UAF-TOIT-0[0-9]R,Raccordement unité d'air frais de toit 600V 3ph MOCP 25A,E213 étiquettes d'équipement
+Raccordement équipement — à classer,mecanique,losange,,,Raccordement d'un moteur / équipement visible au plan sans étiquette de légende,visuel
+Sectionneur,distribution,carre,,,Interrupteur de sûreté 30A (SF ou F.15A),E001 tableau de distribution
+Sectionneur E.I.,distribution,carre,,,Interrupteur de sûreté (E.I.) au raccordement d'un équipement mécanique,E213 étiquettes « E.I. » ; E001 tableau de distribution
+Boîte de jonction,distribution,carre,,,Boîte de jonction ou de tirage,E001 tableau de distribution
+Panneau de distribution,distribution,carre,,,Panneau de distribution 120/208V ou 347/600V,E001 tableau de distribution ; E300
+Transformateur,distribution,carre,,,Transformateur sec 600-120/208V,E300 unifilaire
+Caméra (conduit vide),telecom,triangle,,CAM,Caméra c/a conduit 21mm vide et fil de tirage vers salle des serveurs,E001 tableau des systèmes auxiliaires
+Sortie informatique murale,telecom,triangle,,,Sortie informatique au mur c/a boîtier 1 groupe,E001 tableau de télécommunication
+Sortie informatique plafond / WiFi,telecom,triangle,,,Sortie informatique au plafond ou pour unité sans-fil,E001 tableau de télécommunication
+Sortie TV câblodistribution,telecom,triangle,,,Sortie de câblodistribution au mur (TV / RG11),E001 tableau de télécommunication
+Sortie au plancher,telecom,triangle,,,Sortie data/téléphone au plancher (xN),E001 tableau de télécommunication
+AI détecteur de fumée,alarme,cercle,,,Détecteur de fumée au plafond,E001 tableau d'alarme incendie
+AI détecteur fumée base vibrante,alarme,cercle,,,Détecteur de fumée avec base vibrante (chambres),E001 tableau d'alarme incendie
+AI détecteur thermique,alarme,cercle,,,Détecteur thermique au plafond,E001 tableau d'alarme incendie
+AI détecteur de conduit,alarme,cercle,,,Détecteur de fumée dans conduit de ventilation c/a MRA,E001 tableau d'alarme incendie
+AI station manuelle,alarme,carre,,,Station manuelle murale,E001 tableau d'alarme incendie
+AI haut-parleur,alarme,cercle,,,Haut-parleur mural ou au plafond,E001 tableau d'alarme incendie
+AI haut-parleur + stroboscope,alarme,cercle,,,Haut-parleur et stroboscope mural ou au plafond (15cd min.),E001 tableau d'alarme incendie
+AI module relais MRA,alarme,carre,,MRA,Module de relais adressable,E001 tableau d'alarme incendie
+AI module MAT,alarme,carre,,MAT,Module adressable de transmission double,E001 tableau d'alarme incendie
+AI indicateur à distance,alarme,cercle,,,Dispositif d'indication de fonctionnement à distance,E001 tableau d'alarme incendie
+AI dispositif adressé D,alarme,cercle,,"(?!D4-02[5-8]|D5-02[4-9]|D5-030|D6-03[34789]|D6-04[0-4])D[0-9T]-[0-9]{3}",Dispositif d'entrée adressable étiqueté Dx-xxx (détecteur de fumée / thermique / station manuelle),E800-E803 étiquettes d'adresse ; E001 tableau d'alarme incendie
+AI signal adressé S,alarme,cercle,,S[0-9T]-[0-9]{3},Dispositif de signalisation étiqueté Sx-xxx (haut-parleur ou haut-parleur + stroboscope),E800-E803 étiquettes d'adresse ; E001 tableau d'alarme incendie
+AI dispositif — à classer,alarme,cercle,,,Dispositif d'alarme-incendie étiqueté (Dx-xxx / Sx-xxx) dont le symbole n'est pas identifié avec certitude,visuel
+Boîtes de jonction chambre ×5,distribution,carre,,,Groupe de 5 boîtes de jonction ou de tirage (circuits du panneau d'étage vers la chambre) — 1 marque = 5 boîtes,E001 tableau de distribution (boîte de jonction) ; E210-E212 cadres par chambre
+Raccord direct,distribution,carre,,,Raccord direct (carré plein) — chambres universelles,E001 tableau de distribution
+Prise 30A 6-30R,prise,cercle,,,Prise spéciale 6-30R 208V (serveurs),E210-E212 annotation N4A-46/48 (6-30R)
+Boîte de répartition télécom,telecom,carre,,,Boîte de répartition (corridor vers monte-charge),E210-E212 annotation
+Élément H — à classer,autre,carre,,,Carré avec « H » (hors légende lue ; hygrostat ou humidistat probable),visuel
+Symbole hors légende — à classer,autre,cercle,,,Symbole électrique visible au plan et absent de la légende E-001,visuel

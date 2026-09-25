@@ -1,0 +1,103 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire DS0,luminaire,cercle,,DS0,STANPRO CDU4R-G2-PS3Q/3CWH 120V LED 3500K 765lm 9W (ponctuel),E102 tableau des appareils d'éclairage ligne DS0
+Luminaire DS0 service continu,luminaire,cercle,,,DS0 dessiné en service continu (symbole orange avec point),E102 ligne DS0 + E103 légende éclairage « luminaire en service continu »
+Luminaire DS1,luminaire,carre,,DS1,STANPRO L2STR-48LP45-Q/3C 120V LED 4000K 2640lm 38W,E102 tableau des appareils d'éclairage ligne DS1
+Luminaire DS1 service continu,luminaire,carre,,,DS1 dessiné en service continu (symbole orange avec point),E102 ligne DS1 + E103 légende éclairage « luminaire en service continu »
+Luminaire DS2,luminaire,cercle,,DS2,STANPRO CDU6R-G2-PS3Q/3CWH LED 3500K 2640lm 16W,E102 tableau des appareils d'éclairage ligne DS2
+Luminaire DS4,luminaire,carre,,DS4,STANPRO L1KSL-4LS2U-PS50-3C-WH LED 3500K 20W,E102 tableau des appareils d'éclairage ligne DS4
+Luminaire DR2,luminaire,carre,,DR2,LITHONIA LOW PROFILE LED WRAPAROUND BLWP2 20L 17W plafond/mur,E102 tableau des appareils d'éclairage ligne DR2
+Luminaire DR5,luminaire,carre,,DR5,LITHONIA LOW PROFILE LED WRAPAROUND BLWP4 40L 20W plafond/mur,E102 tableau des appareils d'éclairage ligne DR5
+Luminaire DR5 service continu,luminaire,carre,,,DR5 dessiné en service continu (symbole orange avec point),E102 ligne DR5 + E103 légende éclairage « luminaire en service continu »
+Luminaire DR51,luminaire,carre,,DR51,LITHONIA BLWP4 40L DIM10 38W détecteur mvt 2 niv. (note 1),E102 tableau des appareils d'éclairage ligne DR51
+Luminaire DR51 service continu,luminaire,carre,,,DR51 dessiné en service continu (symbole orange avec point),E102 ligne DR51 + E103 légende éclairage « luminaire en service continu »
+Luminaire DR52,luminaire,carre,,DR52,LITHONIA BLWP4 40L DIM10 38W détecteur mvt 2 niv. (note 1),E102 tableau des appareils d'éclairage ligne DR52
+Luminaire DR52 service continu,luminaire,carre,,,DR52 dessiné en service continu (symbole orange avec point),E102 ligne DR52 + E103 légende éclairage « luminaire en service continu »
+Luminaire DW4,luminaire,carre,,DW4,STANPRO L2STR-48LP45-Q/3C LED 4000K 5776lm 38W,E102 tableau des appareils d'éclairage ligne DW4
+Luminaire DW42,luminaire,carre,,DW42,STANPRO L2STR-48LP45-Q/3C LED 4000K 5776lm 38W,E102 tableau des appareils d'éclairage ligne DW42
+Luminaire DW42 service continu,luminaire,carre,,,DW42 dessiné en service continu (symbole orange avec point),E102 ligne DW42 + E103 légende éclairage « luminaire en service continu »
+Luminaire DMW1,luminaire,cercle,,DMW1,SNOC 81557BK LD 7A LED ambre 7W mural extérieur contrôlé par photocellule/CME-01,E102 tableau des appareils d'éclairage ligne DMW1 + E103 légende « luminaire mural contrôlé par photocellule »
+Luminaire ovale suspendu — à classer,luminaire,losange,,,anneau ovale orange sans étiquette de type (accueil RDC) — hors tableau des luminaires,E401 zone accueil (symbole hors légende)
+Détecteur inoccupation plafond (Do),commande,cercle,,Do,détecteur d'inoccupation installé au plafond,E103 légende éclairage « Do » plafond
+Détecteur inoccupation mural (Do),commande,cercle,,,détecteur d'inoccupation installé au mur (forme en D),E103 légende éclairage « Do » mur
+Détecteur infrarouge plafond (Di),commande,cercle,,Di,détecteur de mouvement à infrarouge installé au plafond,E103 légende éclairage « Di » plafond
+Détecteur infrarouge mural (Di),commande,cercle,,,détecteur de mouvement à infrarouge installé au mur,E103 légende éclairage « Di » mur
+Bouton-poussoir (B),commande,carre,,B,bouton-poussoir (carré « B » bleu près des portes — commande manuelle des zones à détection),E104 légende distribution « B BOUTON-POUSSOIR »
+Bloc d'alimentation (Ba),commande,carre,,Ba,bloc d'alimentation pour contrôle d'éclairage par détection de mouvement,E103 légende éclairage « Ba »
+Interrupteur unipolaire,commande,cercle,,,interrupteur un pôle 15A/20A 125V ($),E103 légende éclairage « $ »
+Interrupteur c/a lampe témoin,commande,cercle,,,interrupteur unipolaire 15A/20A avec lampe témoin,E103 légende éclairage « $ avec soleil »
+Gradateur 120V,commande,cercle,,,gradateur 120V (cercle barré + flèche),E103 légende éclairage « GRADATEUR 120V »
+Gradateur 3 voies,commande,cercle,,,gradateur 120V avec mention « 3 » (3 voies),E103 légende éclairage « GRADATEUR 120V » + indice 3
+Cellule photoélectrique,commande,cercle,,,cellule photoélectrique murale (éclairage extérieur),E103 légende éclairage « CELLULE PHOTO ÉLECTRIQUE »
+Contacteur d'éclairage CME-01,commande,carre,,,contacteur magnétique d'éclairage CME-01 (renvoi « VERS CME-01 » ; emplacement non dessiné),E104 légende distribution « CME-1 » + E401 note VERS CME-01
+Accumulateur c/a 2 phares,secours,carre,,,accumulateur de relève (puissance lue au plan 18W/36W) équipé d'un phare d'urgence double,E104 légende éclairage d'urgence ligne 3
+Accumulateur c/a 2 phares + enseigne,secours,carre,,,accumulateur de relève équipé d'un phare double et enseigne d'issue,E104 légende éclairage d'urgence ligne 4
+Accumulateur c/a 2 phares + enseigne (flèche),secours,carre,,,accumulateur de relève équipé d'un phare double et enseigne d'issue avec direction,E104 légende éclairage d'urgence ligne 5
+Phare urgence simple mural,secours,triangle,,PH1,phare d'urgence simple monté au mur (étiquette PH1 ou sans étiquette),E104 légende éclairage d'urgence « phare simple monté au mur » + E102 E-19
+Phare urgence double mural,secours,triangle,,,phare d'urgence double monté au mur,E104 légende éclairage d'urgence « phare double monté au mur » + E102 E-20
+Enseigne issue 1 face murale tout droit,secours,losange,,,enseigne d'issue simple face tout droit montée au mur,E104 légende éclairage d'urgence
+Enseigne issue 1 face murale (flèche),secours,losange,,,enseigne d'issue simple face montée au mur avec flèche,E104 légende éclairage d'urgence
+Enseigne issue 2 faces murale,secours,losange,,,enseigne d'issue double face montée au mur,E104 légende éclairage d'urgence
+Enseigne issue 1 face plafond tout droit,secours,losange,,,enseigne d'issue simple face tout droit montée au plafond,E104 légende éclairage d'urgence
+Enseigne issue 1 face plafond (flèche),secours,losange,,,enseigne d'issue simple face montée au plafond avec flèche,E104 légende éclairage d'urgence
+Enseigne issue 2 faces plafond,secours,losange,,,enseigne d'issue double face montée au plafond,E104 légende éclairage d'urgence
+Klaxon alarme (K),alarme,cercle,,K,klaxon d'alarme incendie (hexagone K + triangle),E103 légende alarme incendie « K »
+Klaxon alarme intempéries (K Ei),alarme,cercle,,,klaxon d'alarme incendie à l'épreuve des intempéries,E103 légende alarme incendie « K Ei »
+Avertisseur sonore/visuel (K),alarme,cercle,,,avertisseur sonore et visuel combiné (K + cercle ⊗ ; candela 15/30 et AP au plan),E103 légende alarme incendie « K ⊗ »
+Avertisseur sonore/visuel intempéries,alarme,cercle,,,avertisseur sonore et visuel combiné avec mention Ei,E103 légende alarme incendie « K ⊗ » + « Ei »
+Poste manuel (M),alarme,carre,,M,poste manuel d'alarme incendie,E103 légende alarme incendie « M »
+Détecteur de fumée (F),alarme,cercle,,F,détecteur de fumée,E103 légende alarme incendie « F »
+Détecteur thermique (T),alarme,cercle,,T,détecteur thermique,E103 légende alarme incendie « T »
+Module de supervision (Sx),alarme,cercle,,Sx,module de supervision d'alarme incendie (valves gicleurs),E103 légende alarme incendie « Sx » + E405 détail ENTRÉE D'EAU
+Interrupteur fin de course (Ls),alarme,cercle,,Ls,interrupteur de fin de course dédié au système d'alarme (valves),E103 légende alarme incendie « Ls » + E405 détail ENTRÉE D'EAU
+Indicateur de débit (ID),alarme,cercle,,ID,indicateur de débit des gicleurs,E103 légende alarme incendie « ID » + E405 détail ENTRÉE D'EAU
+Panneau alarme incendie (PAI),alarme,carre,,PAI,panneau de détection et signalisation d'alarme incendie,E103 légende alarme incendie « PAI » + E201
+Module de transmission (TRA),alarme,carre,,TRA,module de transmission à la centrale d'alarme incendie,E103 légende alarme incendie « TRA » + E201
+Poste maître intercom (PMI),telecom,triangle,,PMI,poste-maître d'intercommunication,E104 légende intercommunication « PMI »
+Sortie data,telecom,triangle,,,sortie data c/a plaque et conduit jusqu'à l'entreplafond,E103 légende téléphonie ligne 1
+Sortie data à 1070mm,telecom,triangle,,,sortie data à 1070mm du plancher ou 150mm du comptoir,E103 légende téléphonie ligne 2
+Sortie data au plancher,telecom,triangle,,,sortie data c/a plaque au plancher,E103 légende téléphonie ligne 3
+Sortie data dans mobilier,telecom,triangle,,,sortie data installée dans le mobilier,E103 légende téléphonie « installée dans le mobilier »
+Prise duplex 15A,prise,cercle,,,prise de courant duplex 15A-125V,E103 légende prises et services ligne 1
+Prise duplex 15A à 1070mm,prise,cercle,,,prise duplex 15A-125V à 1070mm du plancher,E103 légende prises et services ligne 3
+Prise duplex 20A,prise,cercle,,,prise de courant duplex 20A-125V,E103 légende prises et services « 20A-125V »
+Prise duplex 20A à 1070mm,prise,cercle,,,prise duplex 20A-125V à 1070mm du plancher,E103 légende prises et services « 20A à 1070mm »
+Prise 20A micro-onde (MO),prise,cercle,,,prise duplex 20A pour micro-onde (mention MO),E103 légende prises et services « MO »
+Prise 20A intempéries,prise,cercle,,,prise duplex 20A c/a plaque et boîtier à l'épreuve des intempéries (mention Ei),E103 légende prises et services « 20A Ei »
+Prise DDFT 20A,prise,cercle,,,prise duplex 5-20RA 125V avec détection de faute à la terre,E103 légende prises et services « DDFT »
+Prise DDFT 20A à 1070mm,prise,cercle,,,prise DDFT 5-20RA montée à 1070mm ou 150mm du comptoir,E103 légende prises et services « DDFT 1070mm »
+Prise DDFT intempéries,prise,cercle,,,prise DDFT 5-20RA c/a plaque et boîtier à l'épreuve des intempéries (mention Ei),E103 légende prises et services « DDFT Ei »
+Prise 20A dans mobilier,prise,carre,,,prise duplex 20A-125V à installer dans le mobilier,E103 légende prises et services « mobilier 20A »
+Prise 15A dans mobilier,prise,carre,,,prise duplex 15A-125V à installer dans le mobilier,E103 légende prises et services « mobilier 15A »
+Prise DDFT dans mobilier,prise,carre,,,prise duplex 20A DDFT à installer dans le mobilier,E103 légende prises et services « mobilier DDFT »
+Prise 20A au plancher,prise,cercle,,,prise duplex 20A-125V au plancher (cercle dans carré),E103 légende prises et services « au plancher »
+Prise cuisinière 50A (C),prise,cercle,,,prise simple 50A-250V pour cuisinière,E103 légende prises et services « C »
+Prise sécheuse 30A (S),prise,cercle,,,prise simple 30A-250V pour sécheuse,E103 légende prises et services « S »
+Raccord lave-vaisselle (LV),mecanique,carre,,LV,lave-vaisselle (prise ou raccord direct) à raccorder,E103 légende raccords « LV »
+Raccord hotte (Ht),mecanique,carre,,Ht,hotte pour cuisinière à raccorder,E103 légende raccords « Ht »
+Raccord chauffe-eau (CE),mecanique,carre,,CE,chauffe-eau à raccorder (CE-1 CE-2),E103 légende raccords « CE »
+Raccord direct équipement (▲CC),mecanique,carre,,,raccord direct à un équipement c/a coupe-circuit (▲ + CC ; tag de l'équipement en note),E103 légende raccords ligne 1
+Sèche-mains (SM),mecanique,carre,,SM,sèche-mains électrique à raccorder,E104 légende distribution « SM »
+Raccordement évier électrique,mecanique,carre,,,départ cédule « ÉVIER ÉLECTRIQUE » (Q) sans symbole au plan,E600 addenda ADME-01 cédules PS-1 PS-2 PS-3 PS-4
+Raccordement ventilo-convecteur (VC),mecanique,carre,,,départ cédule « VC » sans symbole au plan,E600 addenda ADME-01 cédules PS-1 PS-2 PS-3 PS-4
+Raccordement ventilateur sécheuse (VE-SECH),mecanique,carre,,,départ cédule « VE-SECH » (Q) sans symbole au plan,E600 addenda ADME-01 PS-2 circ. 2
+Raccordement unité UAT,mecanique,carre,,,départ cédule UAT-1 (P-P1) et UAT-2 (PS-4) 60A sans symbole au plan,E600 addenda ADME-01
+Raccordement équipement PC,mecanique,carre,,,départs cédule PC-1 à PC-6 (P-P1 15A 3P) sans symbole au plan,E600 addenda ADME-01 P-P1
+Raccordement équipement PREF — à confirmer,mecanique,carre,,,départs cédule PREF-1 à PREF-4 (P-P1) — équipement non identifié en légende,E600 addenda ADME-01 P-P1
+Raccordement serpentin (SE),mecanique,carre,,,serpentin électrique de gaine SE-1 (E200) et SE-2 (E200 + P-P1),E200 + E600 addenda P-P1
+Raccordement station de pompage SPS-1,mecanique,carre,,,station de pompage sanitaire SPS-1 (2 pompes) sans symbole au plan,E200 + E600 addenda P-P1 circ. 26
+Raccordement chauffage (P-P1),chauffage,carre,,,départs « C » chauffage 347/600V de P-P1 (ESC.A · S-07 · ESC.B · S-03) sans symbole au plan,E600 addenda ADME-01 P-P1
+Raccordement ascenseur,mecanique,carre,,,alimentation ascenseur (ASC) avec sectionneur fusible,E200 schéma unifilaire
+Raccordement lave-vaisselle (cédule),mecanique,carre,,,départ LV de la cédule sans symbole LV correspondant au plan,E600 addenda ADME-01 PS-3 PS-5
+Raccordement cuisson cuisine 140,mecanique,carre,,,départs cédule cuisinière 4 feux · cuisinière 6 feux · four combiné (140),E600 addenda ADME-01 PS-5
+Raccordement PECD-1 — à confirmer,mecanique,carre,,,départ cédule PECD-1 (Q) — équipement non identifié en légende,E600 addenda ADME-01 PS-1 circ. 2
+Aéroconvecteur plafond (ACP),chauffage,carre,,,aéroconvecteur à projection verticale au plafond (SAS),E104 légende chauffage ligne 2
+Thermostat tension secteur (Ts),chauffage,cercle,,Ts,thermostat à tension de secteur,E104 légende chauffage « Ts »
+Panneau de dérivation,distribution,carre,,PS-[1-5]|P-P1,panneaux PS-1 à PS-5 120/208V et P-P1 347/600V,E200 + E104 légende distribution + E600 addenda
+Transformateur (Xfo),distribution,carre,,Xfo,transformateur de distribution (150 kVA et 112.5 kVA),E104 légende distribution « Xfo » + E200
+Sectionneur 600A,distribution,carre,,600/S?F,sectionneur principal 600A fusible (600/F) et sectionneur 600A (600/SF),E405 salle électrique + E200
+Boîte de mesurage HQ (MHQ),distribution,carre,,MHQ,boîte de mesurage Hydro-Québec,E104 légende distribution « MHQ » + E200
+Borne de recharge VE,distribution,carre,,,borne de recharge pour véhicule électrique (BRVE-01 BRVE-02),E104 légende distribution + E600 addenda PS-5
+Coupe-circuit NEMA 3R (CC),distribution,carre,,,coupe-circuit NEMA 3R des bornes VE,E104 légende distribution « CC »
+Prise — cercle vide à classer,prise,cercle,,,cercle rouge c/a traits de fixation sans marque interne — hors légende (type non déterminé),E408 (symbole hors légende)
+Raccord pompe (▼) — à classer,mecanique,carre,,,cercle violet avec triangle plein pointe en bas (pompes SPP) — symbole hors légende,E405 (symbole hors légende) + E200 stations de pompage
+Carré plein « C » — à classer,autre,carre,,,carré rouge plein avec octogone « C » — symbole hors légende,E408 (symbole hors légende)

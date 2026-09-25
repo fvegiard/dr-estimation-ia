@@ -1,0 +1,7 @@
+feuille,type,echelle,note
+E001,autre,,"cartouche=E-001 · DEVIS - CONDITIONS GÉNÉRALES (liste des dessins: E001) — texte seulement, aucun appareil"
+E002,autre,,"cartouche=E-002 · DEVIS - CONDITIONS TECHNIQUES (liste des dessins: E002) — texte seulement; §24 bornes VE = N/A"
+E001_2,legende,,"cartouche=E-001 (sic) · LÉGENDE — numéro réel selon liste des dessins = E003; tableaux alarme, interrupteurs, CVC, abréviations, distribution, télécom, prises, éclairage, BlueEcosystem, urgence, câbles"
+E002_2,plan,128,"cartouche=E-002 (sic) · SERVICES, ÉCLAIRAGE, DIAGRAMME & PANNEAUX — numéro réel selon liste = E004; 3 plans au 3/32""=1'-0"" (≈1:128) : services mezzanine, éclairage mezzanine et incendie, services & éclairage RDC + unifilaire + cédules PP-MEZZANINE et PS-MEZZANINE"
+E005,plan,128,"cartouche=E-005 · ÉCLAIRAGE ABRI EXTÉRIEUR — 3/32""=1'-0"" (≈1:128)"
+E006,detail,,"cartouche=E-006 · CONTRÔLE D'ÉCLAIRAGE ET DÉTAILS — séquences de contrôle, schéma de principe éclairage extérieur, détails plinthe/transformateur/sortie"
