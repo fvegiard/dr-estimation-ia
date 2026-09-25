@@ -12,11 +12,6 @@
     "LOT D": "291 Chaussé"
   },
   "nb_feuilles": 26,
-  "disciplines": {
-    "INCENDIE (DSI01-08)": "détection et signalisation",
-    "ELECTRICITE (E01-14)": "puissance/éclairage/chauffage",
-    "URGENCE (EU01-04)": "éclairage d'urgence"
-  },
   "totaux": {
     "lignes_bordereau_materiel_par_repere": 886,
     "unites_electrique_agrege(sumQte)": 1162,
