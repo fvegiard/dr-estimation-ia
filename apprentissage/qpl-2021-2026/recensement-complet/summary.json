@@ -1,0 +1,61 @@
+{
+ "qpl_files_found": 856,
+ "unique_after_sha256": 511,
+ "parsed": 510,
+ "unparseable": [
+  [
+   "s-1582 (22-Octobre-2025)\\s-1582 (22-Octobre-2025).qpl",
+   "no element found: line 1, column 0"
+  ]
+ ],
+ "with_marks": 394,
+ "marks_total": 386005,
+ "marks_median_per_project": 157.0,
+ "labels_distinct": 11807,
+ "sheets": 16905,
+ "lines_total": 8955,
+ "projects_with_lines": 372,
+ "areas_total": 375,
+ "ee_ensembles_distinct": 132,
+ "projects_with_ee_link": 30,
+ "marks_linked_to_ee": 3767,
+ "prices_nonzero": 0,
+ "scale_values_top": [
+  [
+   "0",
+   14578
+  ],
+  [
+   "0.125",
+   587
+  ],
+  [
+   "0,125",
+   460
+  ],
+  [
+   "0.09375",
+   206
+  ],
+  [
+   "0.25",
+   161
+  ],
+  [
+   "0,09375",
+   151
+  ],
+  [
+   "0,25",
+   140
+  ],
+  [
+   "0.1875",
+   76
+  ]
+ ],
+ "conduit_specs_distinct": 98,
+ "pairing_s_with_plans_and_qpl": 54,
+ "pairing_s_plans_only": 191,
+ "pairing_s_qpl_only": 371
+}
