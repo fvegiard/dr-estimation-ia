@@ -29,21 +29,21 @@ Régénéré depuis les CSV sources par `outils/regen_derives.py`.
 | E05 | 23 | 116 | — | — | grille de prix ($ vide) |
 | E06 | 5 | 51 | 51 | 5 | ✅ exact |
 | E08 | 22 | 128 | — | — | grille de prix ($ vide) |
-| E09 | 4 | 98 | 103 | 6 | ⚠ divergence document |
+| E09 | 6 | 103 | 103 | 6 | ✅ exact |
 | E11 | 20 | 172 | 172 | 20 | ✅ exact |
-| E12 | 4 | 107 | 110 | 6 | ⚠ divergence document |
+| E12 | 6 | 110 | 110 | 6 | ✅ exact |
 | E14 | 20 | 172 | 172 | 20 | ✅ exact |
 
 ## Éclairage d'urgence (EU) — bordereau travaux/achats
 
-| Feuille | Lignes | Σ Lieux | Σ À fournir | Emplacements (en-tête) | Statut |
-|---|---|---|---|---|---|
-| EU01 | 5 | 31 | 29 | 31 | ✅ exact |
-| EU02 | 5 | 28 | 24 | 28 | ✅ exact |
-| EU03 | 8 | 32 | 27 | 32 | ✅ exact |
-| EU04 | 8 | 30 | 24 | 30 | ✅ exact |
+| Feuille | Lignes | Σ Lieux | Empl. (en-tête) | Σ À fournir | À fournir (en-tête) | Statut |
+|---|---|---|---|---|---|---|
+| EU01 | 5 | 31 | 31 | 29 | 29 | ✅ exact |
+| EU02 | 5 | 28 | 28 | 24 | 24 | ✅ exact |
+| EU03 | 8 | 32 | 32 | 27 | 27 | ✅ exact |
+| EU04 | 8 | 30 | 30 | 24 | 24 | ✅ exact |
 
 ## Constats (findings)
-- **E09 / E12** : bordereau = 4 familles (E09 Σ98, E12 Σ107) vs plan RELEVE 6 familles / 103 (E09), 6 / 110 (E12). À réconcilier.
+- Bordereaux agrégés : Σ Qté = en-tête sur toutes les feuilles chiffrées (aucune divergence).
 - **E03 / E04 / E05 / E08** : grilles de prix vides — matériel relevé, prix à alimenter depuis la base SQL (Google Drive).
 - **Prix** : aucun prix dans l'exemplaire (relevé identification + quantités seulement).

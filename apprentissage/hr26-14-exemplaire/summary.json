@@ -14,8 +14,8 @@
   "nb_feuilles": 26,
   "totaux": {
     "lignes_bordereau_materiel_par_repere": 886,
-    "unites_electrique_agrege(sumQte)": 1162,
+    "unites_electrique_agrege(sumQte)": 1170,
     "appareils_a_fournir_urgence(sumAfournir)": 104
   },
-  "note_prix": "Aucun prix dans l'exemplaire (grilles $ vides sur E03/E04/E05/E08). Prix à intégrer depuis la base SQL (Google Drive)."
+  "note_prix": "Aucun prix dans l'exemplaire. Prix à intégrer depuis la base SQL (Google Drive)."
 }

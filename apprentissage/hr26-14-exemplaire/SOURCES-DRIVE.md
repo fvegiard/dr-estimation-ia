@@ -21,7 +21,7 @@ Localisations confirmées (Legion, `G:\My Drive`, 2026-09-25) pour compléter l'
 
 ## Reste à faire (dépend d'un accès fichier stable au Drive)
 1. **Hydrater** puis rapatrier le QPL HR26-14 (fichiers « en ligne seulement » du Drive : clic droit →
-   « Disponible hors connexion » avant copie ; le stream a masdqué les fichiers par intermittence ce jour).
+   « Disponible hors connexion » avant copie ; le stream a masqué les fichiers par intermittence ce jour).
 2. Parser le QPL (`src/releve/qplschema.py` / `apprentissage/qpl-2021-2026/outils/parse.py`) et
    **recouper marque par marque** au bordereau extrait ici → `ecart.md` (jeu de référence HR26-14).
 3. Brancher la base **SQL prix** pour remplir les grilles `$` (E03/E04/E05/E08) — jamais de prix inventé.

@@ -62,8 +62,9 @@ Colonnes : `Repère / source · Materiel · Designation · Qte · Portee · Mode
 Colonnes : `ID · Qte · Famille · Modele / type · Prescription du devis · Source / reserve`
 - Utilisé pour les appareils **existants conservés** (CH chauffage, I commutateur, PC prise, T thermostat)
   et les feuilles à grande cardinalité. `Qte` = total de la famille sur la feuille.
-- `Σ Qte` doit égaler `reperes` de l'en-tête (vérifié : E01=80, E06=51, E11=172, E14=172 ✅ ;
-  E09/E12 divergents — voir §8).
+- `Σ Qte` doit égaler `reperes` de l'en-tête (vérifié exact sur toutes les feuilles chiffrées :
+  E01=80, E06=51, E09=103, E11=172, E12=110, E14=172 ✅). L'ancienne « divergence » E09/E12 était un
+  artefact d'extraction (familles à ID lettre+chiffre M03/M05 non capturées), désormais corrigée.
 
 ### 4c. Bordereau TRAVAUX / ACHATS — **une ligne par famille + portée** (EU01-04)
 Colonnes : `ID · Famille · Portee · Lieux · A fournir · Modele · Prescription · Source / relation`
@@ -125,10 +126,10 @@ Pour compléter l'entraînement côté prix :
 
 ## 9. Constats à réconcilier par l'estimateur
 
-- **E09 / E12** : le bordereau matériel n'itemise que 4 familles (E09 Σ98, E12 Σ107) alors que le
-  bloc RELEVE du plan annonce 6 familles / 103 (E09) et 6 / 110 (E12). Familles comptées ailleurs
-  (renvoi) ou en réserve ? À trancher.
-- **E03/E04/E05/E08** : grilles de prix vides → à alimenter depuis le SQL.
+- **E09 / E12** (résolu) : l'écart antérieur (E09 Σ98, E12 Σ107 vs en-tête 103 / 110) venait d'un bug
+  d'extraction — le parseur agrégé ignorait les ID famille lettre+chiffre (M03, M05). Corrigé :
+  E09 = 6 familles / 103 et E12 = 6 familles / 110, conformes à l'en-tête (voir `VERIFICATION.md`).
+- **E03/E04/E05/E08** : grilles de prix vides → à alimenter depuis le SQL (seul point en attente).
 
 ## 10. Entrée dans le jeu de référence
 
