@@ -250,11 +250,11 @@ def score_count_dossier(g: G.DossierGold, sheets: list[E.SheetResult], label_map
 
 
 def run_fold(test: G.DossierGold, train_golds: list[G.DossierGold], out: Path, data_root: Path,
-             model: M.Model | None = None) -> dict:
+             model: M.Model | None = None, family_balance: bool = False) -> dict:
     t0 = time.time()
     if model is None:
         log(f"{test.dossier}: training on {[g.dossier for g in train_golds]}")
-        model = T.train(train_golds, log=lambda m: log(m))
+        model = T.train(train_golds, log=lambda m: log(m), family_balance=family_balance)
     run_dir = out / "runs" / test.dossier
     run_dir.mkdir(parents=True, exist_ok=True)
     sheets_csv = sheets_csv_for(test, run_dir / "sheets-input.csv")
@@ -459,6 +459,8 @@ def main(argv: list[str] | None = None) -> int:
                     help="reuse this model (trained on all position dossiers) for count-only dossiers instead of training")
     ap.add_argument("--save-full-model", type=Path, default=None,
                     help="also save the model trained on all position dossiers (used for count-only dossiers)")
+    ap.add_argument("--family-balance", action="store_true",
+                    help="train with family re-balancing sample weights (model.family_balance_weights)")
     args = ap.parse_args(argv)
     wanted = [d.strip() for d in args.dossiers.split(",") if d.strip()]
     if args.report_only:
@@ -480,14 +482,15 @@ def main(argv: list[str] | None = None) -> int:
             continue
         test = golds[d]
         if test.has_positions:
-            res = run_fold(test, [g for g in positions if g.dossier != d], args.out, args.data)
+            res = run_fold(test, [g for g in positions if g.dossier != d], args.out, args.data,
+                           family_balance=args.family_balance)
         else:
             if full_model is None and args.full_model:
                 full_model = M.Model.load(args.full_model)
                 if sorted(full_model.trained_on) != sorted(g.dossier for g in positions):
                     raise SystemExit(f"{args.full_model} was trained on {full_model.trained_on}, not on all position dossiers")
             if full_model is None:
-                full_model = T.train(positions, log=lambda m: log(m))
+                full_model = T.train(positions, log=lambda m: log(m), family_balance=args.family_balance)
                 if args.save_full_model:
                     args.save_full_model.parent.mkdir(parents=True, exist_ok=True)
                     full_model.save(args.save_full_model)
@@ -498,7 +501,7 @@ def main(argv: list[str] | None = None) -> int:
         results.append(res)
     pool = pooled(results)
     meta = {"generated": datetime.now().strftime("%Y-%m-%d %H:%M"), "commit": git_commit(),
-            "data_root": str(args.data), "radii_px": list(RADII), "primary_radius_px": PRIMARY_R}
+            "data_root": str(args.data), "family_balance": args.family_balance, "radii_px": list(RADII), "primary_radius_px": PRIMARY_R}
     out = {"meta": meta, "pooled": pool, "dossiers": results}
     (args.out / "results.json").write_text(json.dumps(out, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     write_report(args.out / "REPORT.md", results, pool, meta)

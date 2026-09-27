@@ -93,7 +93,7 @@ def conduit_pairs(golds: list[G.DossierGold]) -> list[tuple[float, float]]:
 
 
 def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log=print,
-          hard_negatives: bool = False) -> M.Model:
+          hard_negatives: bool = False, family_balance: bool = False) -> M.Model:
     golds = [g for g in golds if g.has_positions]
     rng = np.random.default_rng(seed)
     calib = {}
@@ -102,7 +102,8 @@ def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log
         scored, gxy = [], {}
         for train_g, test_g in ((ga, gb), (gb, ga)):
             t = time.time()
-            clf, classes = M.fit_with_mining(train_g, seed=seed, log=log, hard_negatives=hard_negatives)
+            clf, classes = M.fit_with_mining(train_g, seed=seed, log=log, hard_negatives=hard_negatives,
+                                               family_balance=family_balance)
             inner = M.Model(clf, classes)
             log(f"  calibration model on {[g.dossier for g in train_g]}: {time.time() - t:.0f}s")
             for g in test_g:
@@ -113,7 +114,8 @@ def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log
         calib = M.calibrate(scored, gxy, MATCH_RADIUS_PX)
         log(f"  calibration best: {calib['best']}")
     t = time.time()
-    clf, classes = M.fit_with_mining(golds, seed=seed, log=log, hard_negatives=hard_negatives)
+    clf, classes = M.fit_with_mining(golds, seed=seed, log=log, hard_negatives=hard_negatives,
+                                               family_balance=family_balance)
     log(f"  final model: {clf.n_iter_} iterations, {time.time() - t:.0f}s")
     model = M.Model(clf, classes)
     if calib:
@@ -145,10 +147,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--data", type=Path, default=G.DATA_ROOT)
     ap.add_argument("--out", type=Path, default=DEFAULT_MODEL)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--family-balance", action="store_true",
+                    help="re-balance rare symbol families with sample weights (model.family_balance_weights)")
     ap.add_argument("--hard-negatives", action="store_true", help="refit once with mined hard negatives (off: did not help)")
     args = ap.parse_args(argv)
     golds = [G.load(d.strip(), args.data) for d in args.dossiers.split(",") if d.strip()]
-    model = train(golds, seed=args.seed, hard_negatives=args.hard_negatives)
+    model = train(golds, seed=args.seed, hard_negatives=args.hard_negatives, family_balance=args.family_balance)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     model.save(args.out)
     write_summary(model, args.out.with_suffix(".json"))

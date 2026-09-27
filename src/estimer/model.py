@@ -52,6 +52,7 @@ NEG_PER_POS = 6
 JITTER = 3
 JITTER_COPIES = 3
 NEAR_MARKUP_MIN = 1e-6     # any mark-up inside the 64 px window flags a detection "near_coloured_markup"
+FAMILY_BALANCE_MAX = 10.0  # cap on the up-weighting of a rare family (family_balance=True)
 
 
 @dataclass
@@ -229,11 +230,31 @@ def build_training_set(golds: list[DossierGold], seed: int = 0, pages_filter=Non
     return X, np.array(y_parts)
 
 
-def fit(X: np.ndarray, y: np.ndarray, seed: int = 0) -> tuple[HistGradientBoostingClassifier, list[str]]:
+def family_balance_weights(y: np.ndarray, cap: float = FAMILY_BALANCE_MAX) -> np.ndarray:
+    """Sample weights that re-balance the symbol families among themselves.
+
+    Each family class c gets w_c = clip(median_n / n_c, 1, cap) (rare families up,
+    common ones unchanged), then all family weights are rescaled so their total
+    equals the number of positive samples: the symbol-vs-"none" balance, hence
+    p(symbol) and the calibrated threshold, is left as it was. "none" keeps 1."""
+    w = np.ones(len(y), np.float64)
+    fam = y != NONE
+    if not fam.any():
+        return w
+    labels, counts = np.unique(y[fam], return_counts=True)
+    med = float(np.median(counts))
+    per = {c: float(np.clip(med / n, 1.0, cap)) for c, n in zip(labels, counts)}
+    w[fam] = np.array([per[c] for c in y[fam]])
+    w[fam] *= fam.sum() / w[fam].sum()
+    return w
+
+
+def fit(X: np.ndarray, y: np.ndarray, seed: int = 0,
+        family_balance: bool = False) -> tuple[HistGradientBoostingClassifier, list[str]]:
     clf = HistGradientBoostingClassifier(max_iter=250, learning_rate=0.1, max_leaf_nodes=31,
                                          l2_regularization=1.0, early_stopping=True,
                                          validation_fraction=0.1, n_iter_no_change=15, random_state=seed)
-    clf.fit(X, y)
+    clf.fit(X, y, sample_weight=family_balance_weights(y) if family_balance else None)
     return clf, [str(c) for c in clf.classes_]
 
 
@@ -280,16 +301,16 @@ def mine_hard_negatives(model: "Model", golds: list[DossierGold], seed: int = 0,
 
 
 def fit_with_mining(golds: list[DossierGold], seed: int = 0, log=print,
-                    hard_negatives: bool = False) -> tuple[HistGradientBoostingClassifier, list[str]]:
+                    hard_negatives: bool = False, family_balance: bool = False) -> tuple[HistGradientBoostingClassifier, list[str]]:
     """build_training_set -> fit [-> hard-negative mining -> refit]."""
     X, y = build_training_set(golds, seed=seed, log=log)
-    clf, classes = fit(X, y, seed=seed)
+    clf, classes = fit(X, y, seed=seed, family_balance=family_balance)
     if not hard_negatives:
         return clf, classes
     Xh = mine_hard_negatives(Model(clf, classes), golds, seed=seed, log=log)
     if len(Xh):
         X = np.concatenate([X, Xh]); y = np.concatenate([y, np.array([NONE] * len(Xh))])
-        clf, classes = fit(X, y, seed=seed)
+        clf, classes = fit(X, y, seed=seed, family_balance=family_balance)
     return clf, classes
 
 
