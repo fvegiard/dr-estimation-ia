@@ -1,6 +1,6 @@
 # Évaluation de l'estimateur automatique — validation croisée « un dossier exclu » contre M. Dupuis
 
-Généré le 2026-09-27 11:58 par `python -m src.estimer.evaluate` (commit 63c0e9b). Chaque nombre ci-dessous est calculé à partir des fichiers ; rien n'est saisi à la main. Détail complet : `eval/results.json` ; sorties de chaque dossier : `eval/runs/<dossier>/`.
+Généré le 2026-09-27 14:00 par `python -m src.estimer.evaluate` (commit e240619). Chaque nombre ci-dessous est calculé à partir des fichiers ; rien n'est saisi à la main. Détail complet : `eval/results.json` ; sorties de chaque dossier : `eval/runs/<dossier>/`.
 
 ## Ce qui a été mesuré
 
