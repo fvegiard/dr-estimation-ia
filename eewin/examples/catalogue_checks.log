@@ -1,0 +1,107 @@
+--- 1. Row counts of the catalogue tables (only PROCORRESP carries data)
+tbl|rows
+---|----
+BDEE|0
+BDEE_MULTI|0
+ENSCOMPO|0
+ENSEMBLE|0
+PriceUpdate_Products|0
+PROCAT|0
+PROCORRESP|84721
+PRODUITS|0
+PROGLOSS|0
+--- 2. PROCORRESP: old division -> new division
+OLDDIV|NEWDIV|n
+------|------|-
+NOE|SOE|26606
+WQE|LQE|26606
+NQE|LQE|20251
+WAE|GSE|5535
+WOE|SOE|3471
+NWE|GSE|2252
+--- 3. PROCORRESP: totals, identical keys, distinct pairs, key lengths
+total_rows|same_clemanu|same_div|distinct_old_pairs|distinct_new_pairs|max_len_old|max_len_new|isuser_not_null
+----------|------------|--------|------------------|------------------|-----------|-----------|---------------
+84721|33341|0|84634|73566|20|28|0
+--- 4. The 16 ItemType="P" keys found in Dupuis QPLs vs PROCORRESP.NEWCLEMANU (NEWDIV = LQE)
+qpl_key|n_rows_lqe|example_old_key
+-------|----------|---------------
+CONEMT11/2|3|NQE:CON11/2TME
+HOFASE12124|3|NQE:EPOD12X12X4
+HOFASE12126|3|NQE:EPOD12X12X6
+HOFASE24246|3|NQE:EPOD24X24X6
+HOFASE664|3|NQE:EPOD6X6X4
+HOFASE884|3|NQE:EPOD8X8X4
+HUBHBL2810|2|NQE:HUBHBL2810
+IBE52171K|2|NQE:THSBC52171K
+IBE72151K|2|NQE:THSCI72151K
+SCEPVC11/4|2|NQE:IPEPVC11/4X10
+SCEPVC2|2|NQE:IPEPVC2X10
+CAB12/2AC90150|1|NQE:WIR2C12AC150
+CAB12/3AC90150|1|NQE:WIR3C12AC150
+CAB3/0RW90GRE|1|NQE:WIR3/0RWVERTLL
+CAB1/0RW90GRE|0|NULL
+CAB3/0BARECU|0|NULL
+--- 5. Which modules read PROCORRESP / CLEPERS / TEMPUNI
+type|name|touches
+----|----|-------
+P |sp_FAC_CalculTotaux|TEMPUNI
+P |sp_SOU_CalculTotaux|TEMPUNI
+P |up_COMMITEM_Update|CLEPERS 
+P |up_CopySouBlocDiv|CLEPERS TEMPUNI
+P |up_CopySouBlocDiv_FAC|CLEPERS TEMPUNI
+P |up_ENSEMBLE_Update|CLEPERS TEMPUNI
+P |up_FACENS_Update|CLEPERS TEMPUNI
+P |up_FACLOTS_Update|CLEPERS TEMPUNI
+P |up_FACPRO_Update|CLEPERS TEMPUNI
+P |up_PROCORRESP_Update|PROCORRESP 
+P |up_PRODUITS_Update|CLEPERS TEMPUNI
+P |up_SOUENS_Update|CLEPERS TEMPUNI
+P |up_SOULOTS_Update|CLEPERS TEMPUNI
+P |up_SOUPRO_Update|CLEPERS TEMPUNI
+P |upbi_ProductsPrefered_BatchAssign|CLEPERS 
+P |upbi_ProductsPrefered_BatchRemove|CLEPERS 
+--- 6. Columns of PriceUpdate_Products (what a distributor file can deliver)
+columns_
+--------
+PRO_ID:varchar(20), DESC:varchar(60), CODECAT:varchar(3), COUUM:varchar(2), TEMPUM:varchar(2), CLEMANU:varchar(30), CLEDIST:varchar(20), DESCDIST:varchar(60), QPP:float, MULCOM:float, COUBRUTUNI:float, COUESC:float, PROMCOUNET:float, NOUVEAU:varchar(1), DATECOUT:datetime, CODEUPC:varchar(12), CODEUPCDIS:varchar(12), SHOWONWEB:varchar(1)
+--- 7. Unit codes accepted in COUUM / TEMPUM / QTEUM (Sys_Units)
+UnitId|CodeEN|CodeFR|Type|Package|ForProducts|ForAssemblies|BaseUnitCodeEN|BaseUnitRatio
+------|------|------|----|-------|-----------|-------------|--------------|-------------
+0|U|U|U|0|1|1|U|1
+1|C|C|U|0|1|0|U|100
+2|K|K|U|0|1|0|U|1000
+3|M|M|L|0|1|1|M|1
+4|HM|HM|L|0|1|1|M|100
+5|KM|KM|L|0|1|1|M|1000
+6|F|P|L|0|1|1|F|1
+7|CF|CP|L|0|1|1|F|100
+8|KF|KP|L|0|1|1|F|1000
+9|L|L|U|0|1|0|L|1
+10|CL|CL|U|0|1|0|L|100
+11|RL|RL|U|0|1|0|RL|1
+12|PR|PR|U|0|1|0|PR|1
+13|BO|BO|U|1|1|0|BO|1
+14|PG|PQ|U|1|1|0|PG|1
+15|LB|LB|U|0|1|0|LB|1
+16|CB|CB|U|0|1|0|LB|100
+17|KG|KG|U|0|1|0|KG|1
+18|CK|CK|U|0|1|0|KG|100
+--- 8. Indexes on the key columns
+tbl|idx|cols
+---|---|----
+ENSCOMPO|IDX_ENS_ID|ENS_ID,ORDRE
+ENSCOMPO|IDX_PRO_ID|PRO_ID
+ENSCOMPO|PK_ENSCOMPO|UniqueId
+ENSEMBLE|IDX_CLEPERS|CLEPERS
+ENSEMBLE|IDX_ENS_ID|ENS_ID
+ENSEMBLE|PK_ENSEMBLE|UniqueId
+PriceUpdate_Products|IDX_PRO_ID|PRO_ID
+PRODUITS|IDX_CLEDIST|CLEDIST
+PRODUITS|IDX_CLEMANU|CLEMANU
+PRODUITS|IDX_CLEPERS|CLEPERS
+PRODUITS|IDX_CODECAT|CODECAT
+PRODUITS|IDX_CODEUPC|CODEUPC
+PRODUITS|IDX_NOUVEAU|NOUVEAU
+PRODUITS|IDX_PRO_ID|PRO_ID
+PRODUITS|PK_PRODUITS|UniqueId
