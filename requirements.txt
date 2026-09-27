@@ -5,5 +5,7 @@ pytest
 pydantic
 numpy
 scipy
+scikit-learn
+joblib
 # optionnel : uniquement pour src/pipeline/render_pdf.py (rapport Markdown -> PDF)
 # markdown
