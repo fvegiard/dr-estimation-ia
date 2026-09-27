@@ -309,90 +309,116 @@ def _signed(v) -> str:
     return "—" if v is None else f"{100 * v:+.1f} %"
 
 
+def _fam_fr(f: str) -> str:
+    return f.replace("_", " ")
+
+
 def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> None:
-    L = ["# Estimator evaluation — leave-one-out vs M. Dupuis", "",
-         f"Generated {meta['generated']} by `python -m src.estimer.evaluate` (commit {meta['commit']}). "
-         "Every number below is computed from the files listed in `results.json`; nothing is typed in.", "",
-         "## What was measured", "",
-         "- **Input**: for each dossier, the only plan images available in this environment, `Plans-annotes.pdf` "
-         "(one 2997 px raster page per sheet, no text layer, no vectors). These pages carry the coloured marks of an "
-         "earlier automatic takeoff. The estimator never sees them as signal: coloured pixels are whitened, and during "
-         "training the holes they leave are transplanted onto negative windows at the same rate as around the "
-         "estimator's marks, so a hole alone carries no information. Detections whose window is under such mark-up are "
-         "flagged `occluded_by_markup`.",
-         "- **Gold**: M. Dupuis' own Plan Expert projects (`reference/*Dupuis*.qpl`) registered onto those pages "
-         "(`src.validation.compare_qpl` page pairing + registration, duplicates removed). S-1857 has no Dupuis project "
-         "in this environment; its gold is `reference-quantites.csv` (quantities per sheet, no positions), so only count "
-         "errors are reported for it.",
-         "- **Protocol**: leave-one-out. For each position dossier, the model (window classifier + calibrated threshold, "
-         "label->family map, counter style, conduit ratio) is trained on the other position dossiers only. S-1857 is "
-         "scored with the model trained on all five position dossiers.",
-         f"- **Matching**: optimal one-to-one assignment within R px (page px at 2997 px width); primary R = {int(PRIMARY_R)} px, "
-         "also 15 px and 45 px (45 px ≈ compare_qpl's 1.2 % of the diagonal). Families = `src.qpl.categorie` categories "
-         "(keyword categoriser built from the 2021-2026 corpus, completed by co-location votes).", "",
-         "## Pooled results (position dossiers)", "",
-         "| Scope | R | Predicted | Gold | Matched | Precision | Recall | F1 |", "|---|--:|--:|--:|--:|--:|--:|--:|"]
-    for scope, lab in (("all_pages", "all pages"), ("estimator_marked_pages", "pages Dupuis marked")):
+    """REPORT.md (in French: it is a deliverable for the estimating team)."""
+    L = ["# Évaluation de l'estimateur automatique — validation croisée « un dossier exclu » contre M. Dupuis", "",
+         f"Généré le {meta['generated']} par `python -m src.estimer.evaluate` (commit {meta['commit']}). "
+         "Chaque nombre ci-dessous est calculé à partir des fichiers ; rien n'est saisi à la main. "
+         "Détail complet : `eval/results.json` ; sorties de chaque dossier : `eval/runs/<dossier>/`.", "",
+         "## Ce qui a été mesuré", "",
+         "- **Entrée** : pour chaque dossier, les seules images de plans disponibles dans cet environnement, "
+         "`Plans-annotes.pdf` (une page raster de 2997 px par feuille, sans couche texte ni vectoriel). Ces pages portent "
+         "les marques de couleur opaques d'un relevé automatique antérieur, dessinées par-dessus les symboles. "
+         "L'estimateur traite les pixels colorés comme illisibles : une fenêtre dont le cœur du symbole (13 × 13 px au "
+         "centre) touche une marque de couleur n'est jamais évaluée ni utilisée à l'entraînement ; ces zones sont "
+         "signalées par feuille (`unreadable_markup_zones`) au lieu d'être comptées. Les marques de couleur ailleurs dans "
+         "la fenêtre sont rendues non informatives en les transplantant sur des fenêtres négatives au même taux.",
+         "- **Référence (vérité)** : les projets Plan Expert de M. Dupuis (`reference/*Dupuis*.qpl`), recalés sur ces pages "
+         "(appariement de pages et recalage de `src.validation.compare_qpl`, doublons retirés). S-1857 n'a pas de projet "
+         "Dupuis dans cet environnement ; sa vérité est `reference-quantites.csv` (quantités par feuille, sans position) : "
+         "seuls des écarts de quantité sont donc calculés pour ce dossier.",
+         "- **Protocole** : un dossier exclu à la fois. Pour chaque dossier à positions, le modèle (classifieur de fenêtres + "
+         "seuil calibré, correspondance libellé → famille, style des compteurs, ratio de conduit) est appris sur les autres "
+         "dossiers à positions seulement. S-1857 est évalué avec le modèle appris sur les cinq dossiers à positions.",
+         f"- **Appariement** : affectation optimale un-à-un à moins de R px (px de page, largeur 2997 px) ; R principal = "
+         f"{int(PRIMARY_R)} px, aussi 15 px et 45 px (45 px ≈ le seuil de 1,2 % de la diagonale de compare_qpl). Familles = "
+         "catégories de `src.qpl.categorie` (catégoriseur par mots-clés construit sur le corpus 2021-2026, complété par "
+         "des votes de co-localisation).", "",
+         "## Résultats groupés (dossiers à positions)", "",
+         "| Portée | R (px) | Prédits | Dupuis | Appariés | Précision | Rappel | F1 |", "|---|--:|--:|--:|--:|--:|--:|--:|"]
+    for scope, lab in (("all_pages", "toutes les pages"), ("estimator_marked_pages", "pages marquées par Dupuis")):
         for R in RADII:
             e = pool["detection"][scope][f"R{int(R)}"]
             L.append(f"| {lab} | {int(R)} | {e['predicted']} | {e['gold']} | {e['tp']} | {_pct(e['precision'])} | "
                      f"{_pct(e['recall'])} | {_pct(e['f1'])} |")
-    L += ["", f"### Per family (all pages, R = {int(PRIMARY_R)} px, same family required)", "",
-          "| Family | Predicted | Gold | Matched | Precision | Recall | Total count error | Mean abs. count error per dossier |",
+    o = pool["occlusion"]
+    L += ["", f"### Rappel selon la lisibilité du symbole de Dupuis (toutes familles, R = {int(PRIMARY_R)} px)", "",
+          "La première ligne est la qualité du détecteur sans fuite possible : symboles dont le cœur est visible sur la page.", "",
+          "| Symbole de Dupuis | Nombre | Appariés | Rappel |", "|---|--:|--:|--:|",
+          f"| lisible (aucune marque de couleur sur le cœur) | {o['visible']['gold']} | {o['visible']['matched']} | {_pct(o['visible']['recall'])} |",
+          f"| cœur sous une marque de couleur (dessin détruit, non compté par conception) | {o['occluded']['gold']} | "
+          f"{o['occluded']['matched']} | {_pct(o['occluded']['recall'])} |",
+          "", f"### Par famille (toutes les pages, R = {int(PRIMARY_R)} px, même famille exigée)", "",
+          "| Famille | Prédits | Dupuis | Appariés | Précision | Rappel | Écart de quantité total | Écart absolu moyen par dossier |",
           "|---|--:|--:|--:|--:|--:|--:|--:|"]
     for f, e in sorted(pool["families"].items(), key=lambda kv: -kv[1]["gold"]):
-        L.append(f"| {f} | {e['predicted']} | {e['gold']} | {e['tp']} | {_pct(e['precision'])} | {_pct(e['recall'])} | "
+        L.append(f"| {_fam_fr(f)} | {e['predicted']} | {e['gold']} | {e['tp']} | {_pct(e['precision'])} | {_pct(e['recall'])} | "
                  f"{_signed(e['count_error'])} | {_pct(e['mean_abs_count_error_per_dossier'])} |")
-    o = pool["occlusion"]
-    L += ["", "### Recall by visibility of the gold symbol (family-agnostic, R = 25 px)", "",
-          "| Gold symbol | Gold | Matched | Recall |", "|---|--:|--:|--:|",
-          f"| visible (no coloured mark-up at its centre) | {o['visible']['gold']} | {o['visible']['matched']} | {_pct(o['visible']['recall'])} |",
-          f"| under coloured mark-up (drawing destroyed) | {o['occluded']['gold']} | {o['occluded']['matched']} | {_pct(o['occluded']['recall'])} |",
-          "", f"Mean absolute total count error over position dossiers: {_pct(pool['mean_abs_total_count_error_position_dossiers'])}. "
-          f"Conduit estimate: {pool['conduits']['sheets']} sheets comparable, median absolute error "
-          f"{_pct(pool['conduits']['median_abs_error'])}.", "",
-          "## Per dossier", "",
-          "| Dossier | Gold | Trained on | Threshold | Predicted | Gold marks (placed / unplaced) | Total count error | P (R25) | R (R25) | F1 (R25) | Pred. near other takeoff | Gold near other takeoff |",
+    L += ["", f"Écart absolu moyen de la quantité totale sur les dossiers à positions : "
+          f"{_pct(pool['mean_abs_total_count_error_position_dossiers'])}. Conduits : {pool['conduits']['sheets']} feuilles "
+          f"comparables, écart absolu médian {_pct(pool['conduits']['median_abs_error'])}.", "",
+          "## Par dossier", "",
+          "| Dossier | Vérité | Appris sur | Seuil | Prédits | Marques Dupuis (placées / hors page) | Écart de quantité | "
+          "P (R25) | R (R25) | F1 (R25) | Prédictions près du relevé antérieur | Dupuis près du relevé antérieur |",
           "|---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|"]
     for r in results:
         if r["gold_type"] == "positions":
             e = r["detection"]["all_pages"]["R25"]
             t = r["totals"]
-            L.append(f"| {r['dossier']} | Dupuis .qpl | {', '.join(r['trained_on'])} | {r['threshold']} | {t['predicted']} | "
+            L.append(f"| {r['dossier']} | .qpl Dupuis | {', '.join(r['trained_on'])} | {r['threshold']} | {t['predicted']} | "
                      f"{t['gold_placed']} / {t['gold_unplaced']} | {_signed(t['count_error_vs_placed'])} | {_pct(e['precision'])} | "
                      f"{_pct(e['recall'])} | {_pct(e['f1'])} | {_pct(r['leakage']['predictions_near_other_takeoff'])} | "
                      f"{_pct(r['leakage']['gold_near_other_takeoff'])} |")
         else:
             t = r["totals"]
-            L.append(f"| {r['dossier']} | quantities only | {', '.join(r['trained_on'])} | {r['threshold']} | {t['predicted']} | "
+            L.append(f"| {r['dossier']} | quantités seulement | {', '.join(r['trained_on'])} | {r['threshold']} | {t['predicted']} | "
                      f"{t['gold']} / — | {_signed(t['count_error'])} | — | — | — | — | — |")
     for r in results:
+        pos = r["gold_type"] == "positions"
         L += ["", f"### {r['dossier']}", ""]
-        L += ["| Family | Predicted | Gold | " + ("Matched | Precision | Recall | " if r["gold_type"] == "positions" else "")
-              + "Count error |", "|---|--:|--:|" + ("--:|--:|--:|" if r["gold_type"] == "positions" else "") + "--:|"]
+        L += ["| Famille | Prédits | Dupuis | " + ("Appariés | Précision | Rappel | " if pos else "") + "Écart de quantité |",
+              "|---|--:|--:|" + ("--:|--:|--:|" if pos else "") + "--:|"]
         for f, e in sorted(r["families"].items(), key=lambda kv: -kv[1]["gold"]):
-            if r["gold_type"] == "positions":
-                L.append(f"| {f} | {e['predicted']} | {e['gold']} | {e['tp']} | {_pct(e['precision'])} | {_pct(e['recall'])} | {_signed(e['count_error'])} |")
+            if pos:
+                L.append(f"| {_fam_fr(f)} | {e['predicted']} | {e['gold']} | {e['tp']} | {_pct(e['precision'])} | "
+                         f"{_pct(e['recall'])} | {_signed(e['count_error'])} |")
             else:
-                L.append(f"| {f} | {e['predicted']} | {e['gold']} | {_signed(e['count_error'])} |")
-        L += ["", "| Sheet | Predicted | Gold |", "|---|--:|--:|"]
-        for s in r["sheets"]:
-            L.append(f"| {s['sheet']} | {s['predicted_total']} | {s['gold_total']} |")
+                L.append(f"| {_fam_fr(f)} | {e['predicted']} | {e['gold']} | {_signed(e['count_error'])} |")
+        L += ["", "| Feuille | Prédits | Dupuis |", "|---|--:|--:|"]
+        for sh in r["sheets"]:
+            L.append(f"| {sh['sheet']} | {sh['predicted_total']} | {sh['gold_total']} |")
+        if pos:
+            oc = r["occlusion"]
+            L += ["", f"Marques de Dupuis lisibles : {oc['visible']['gold']} sur {oc['visible']['gold'] + oc['occluded']['gold']} ; "
+                  f"rappel sur celles-ci (R = 25 px) : {_pct(oc['visible']['recall'])}."]
+            cb = r.get("calibration_best")
+            if cb:
+                L += [f"Calibration (dossiers d'entraînement mis de côté) : seuil {cb['threshold']}, rayon NMS "
+                      f"{cb['nms_radius']} px, précision {_pct(cb['precision'])}, rappel sur marques lisibles "
+                      f"{_pct(cb['recall_readable'])}."]
         if r.get("conduits"):
-            L += ["", "| Sheet | Dupuis conduit ft | Estimated ft | Error |", "|---|--:|--:|--:|"]
+            L += ["", "| Feuille | Conduit Dupuis (pi) | Conduit estimé (pi) | Écart |", "|---|--:|--:|--:|"]
             for c in r["conduits"]:
                 L.append(f"| {c['sheet']} | {c['estimator_ft']} | {c['estimated_ft']} | {_signed(c['error'])} |")
         if r.get("notes"):
             L += [""] + [f"- {n}" for n in r["notes"]]
-    L += ["", "## Reading these numbers", "",
-          "- The plan images used here are not the original drawings: an earlier takeoff's coloured marks cover most "
-          "symbols (see the visibility table). Symbols under them can only be inferred from what remains around them "
-          "(circuit tags, walls, leader lines). Results on clean original PDFs are expected to differ and must be "
-          "measured once those PDFs (or Dupuis' PNGs) are in the environment.",
-          "- The leakage columns compare how often predictions and the estimator's own marks fall within 15 px of the other "
-          "takeoff's marks. Similar values mean the detector is not simply re-finding the coloured marks.",
-          "- Conduit lengths are an estimate (learnt ratio × rectilinear tree over detected devices), not traced runs.",
-          "- No price is involved anywhere (the estimator's projects carry none).", ""]
+    L += ["", "## Lecture de ces chiffres", "",
+          "- Les images de plans utilisées ici ne sont pas les dessins d'origine : les marques de couleur opaques d'un relevé "
+          "antérieur couvrent le cœur de la plupart des symboles (voir le tableau de lisibilité). Ces symboles ne sont pas "
+          "comptés, par conception : les compter reviendrait à retrouver les marques du relevé antérieur, pas à lire le "
+          "dessin. Le rappel de bout en bout et les écarts de quantité sur ces entrées sont donc bornés par la part lisible ; "
+          "la performance sur des PDF d'origine propres (ou sur les PNG de Dupuis) reste à mesurer dès que ces fichiers "
+          "seront dans l'environnement.",
+          "- Les colonnes « près du relevé antérieur » comparent la part des prédictions et celle des marques de Dupuis situées "
+          "à moins de 15 px d'une marque du relevé antérieur. Des valeurs proches ou plus basses pour les prédictions "
+          "montrent que le détecteur ne retrouve pas simplement les marques de couleur.",
+          "- Les longueurs de conduit sont une estimation (ratio appris × arbre rectilinéaire sur les appareils détectés), "
+          "pas un tracé des parcours.",
+          "- Aucun prix n'intervient (les projets de l'estimateur n'en contiennent pas).", ""]
     path.write_text("\n".join(L), encoding="utf-8")
 
 
@@ -411,10 +437,16 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--data", type=Path, default=G.DATA_ROOT)
     ap.add_argument("--dossiers", default=",".join(G.ALL_DOSSIERS))
     ap.add_argument("--resume", action="store_true", help="reuse OUT/folds/<dossier>.json already computed")
+    ap.add_argument("--report-only", action="store_true", help="rebuild REPORT.md from OUT/results.json")
     ap.add_argument("--save-full-model", type=Path, default=None,
                     help="also save the model trained on all position dossiers (used for count-only dossiers)")
     args = ap.parse_args(argv)
     wanted = [d.strip() for d in args.dossiers.split(",") if d.strip()]
+    if args.report_only:
+        data = json.loads((args.out / "results.json").read_text(encoding="utf-8"))
+        write_report(args.out / "REPORT.md", data["dossiers"], data["pooled"], data["meta"])
+        log(f"report -> {args.out / 'REPORT.md'}")
+        return 0
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "folds").mkdir(exist_ok=True)
     golds = {d: G.load(d, args.data) for d in G.ALL_DOSSIERS if (args.data / d).is_dir()}
@@ -436,6 +468,7 @@ def main(argv: list[str] | None = None) -> int:
                 if args.save_full_model:
                     args.save_full_model.parent.mkdir(parents=True, exist_ok=True)
                     full_model.save(args.save_full_model)
+                    T.write_summary(full_model, args.save_full_model.with_suffix(".json"))
             res = run_fold(test, positions, args.out, args.data, model=full_model)
         cache.write_text(json.dumps(res, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
         log(f"{d}: done in {res['elapsed_s']} s")

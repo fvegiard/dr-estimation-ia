@@ -16,7 +16,9 @@ Training (`build_training_set` + `fit`):
   Residual leakage guard: mark-up can still sit in the outer part of a window.
   Its masks around positives are transplanted onto negatives at the same rate
   and offset, so "mark-up nearby" carries no information either.
-  Classifier: sklearn HistGradientBoostingClassifier (families + "none").
+  Classifier: sklearn HistGradientBoostingClassifier (families + "none"), refit once
+  with hard negatives (readable windows far from any estimator mark that the
+  first model scores as symbols, `mine_hard_negatives`).
 
 Detection (`Model.detect`): score readable candidate windows on a stride grid,
 p_symbol = 1 - p(none), keep local maxima above a threshold with non-maximum
@@ -230,6 +232,52 @@ def fit(X: np.ndarray, y: np.ndarray, seed: int = 0) -> tuple[HistGradientBoosti
                                          validation_fraction=0.1, n_iter_no_change=15, random_state=seed)
     clf.fit(X, y)
     return clf, [str(c) for c in clf.classes_]
+
+
+def mine_hard_negatives(model: "Model", golds: list[DossierGold], seed: int = 0, pages_per_dossier: int = 8,
+                        per_page: int = 300, min_score: float = 0.2, log=print) -> np.ndarray:
+    """Features of readable windows far from every estimator mark that the current
+    model scores as symbols (false alarms), on up to `pages_per_dossier` marked pages
+    per dossier. Standard hard-negative mining; labels are "none"."""
+    rng = np.random.default_rng(seed + 1)
+    parts = []
+    none_i = model.classes.index(NONE)
+    for g in golds:
+        if not g.has_positions:
+            continue
+        marked = sorted({m.page for m in g.marks})
+        if len(marked) > pages_per_dossier:
+            marked = sorted(rng.choice(marked, pages_per_dossier, replace=False).tolist())
+        doc = pymupdf.open(g.pdf)
+        n = 0
+        for pg in marked:
+            page = P.load_page(doc, pg)
+            pts = np.array([(m.x, m.y) for m in g.marks if m.page == pg], float)
+            xs, ys = F.candidate_grid(page.gray, page.overlay, STRIDE)
+            if not len(xs):
+                continue
+            far = cKDTree(pts).query(np.c_[xs, ys])[0] >= NEG_MIN_DIST
+            xs, ys = xs[far], ys[far]
+            dense = F.DenseFeatures(page.gray)
+            X = dense.at(xs, ys)
+            psym = 1.0 - model.clf.predict_proba(X)[:, none_i]
+            order = np.argsort(-psym)
+            order = order[psym[order] >= min_score][:per_page]
+            parts.append(X[order]); n += len(order)
+            del dense
+        log(f"  hard negatives {g.dossier}: {n} on {len(marked)} pages")
+    return np.concatenate(parts) if parts else np.zeros((0, F.N_FEATURES), np.float32)
+
+
+def fit_with_mining(golds: list[DossierGold], seed: int = 0, log=print) -> tuple[HistGradientBoostingClassifier, list[str]]:
+    """build_training_set -> fit -> hard-negative mining -> refit."""
+    X, y = build_training_set(golds, seed=seed, log=log)
+    clf, classes = fit(X, y, seed=seed)
+    Xh = mine_hard_negatives(Model(clf, classes), golds, seed=seed, log=log)
+    if len(Xh):
+        X = np.concatenate([X, Xh]); y = np.concatenate([y, np.array([NONE] * len(Xh))])
+        clf, classes = fit(X, y, seed=seed)
+    return clf, classes
 
 
 def family_styles(golds: list[DossierGold]) -> dict[str, tuple[str, int, int, int]]:

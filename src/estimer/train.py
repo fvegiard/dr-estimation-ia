@@ -101,10 +101,9 @@ def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log
         scored, gxy = [], {}
         for train_g, test_g in ((ga, gb), (gb, ga)):
             t = time.time()
-            X, y = M.build_training_set(train_g, seed=seed, log=log)
-            clf, classes = M.fit(X, y, seed=seed)
+            clf, classes = M.fit_with_mining(train_g, seed=seed, log=log)
             inner = M.Model(clf, classes)
-            log(f"  calibration model on {[g.dossier for g in train_g]}: {len(y)} samples, {time.time() - t:.0f}s")
+            log(f"  calibration model on {[g.dossier for g in train_g]}: {time.time() - t:.0f}s")
             for g in test_g:
                 pages = _calib_pages(g, rng)
                 scored += score_pages(inner, g, pages)
@@ -113,9 +112,8 @@ def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log
         calib = M.calibrate(scored, gxy, MATCH_RADIUS_PX)
         log(f"  calibration best: {calib['best']}")
     t = time.time()
-    X, y = M.build_training_set(golds, seed=seed, log=log)
-    clf, classes = M.fit(X, y, seed=seed)
-    log(f"  final model: {len(y)} samples, {clf.n_iter_} iterations, {time.time() - t:.0f}s")
+    clf, classes = M.fit_with_mining(golds, seed=seed, log=log)
+    log(f"  final model: {clf.n_iter_} iterations, {time.time() - t:.0f}s")
     model = M.Model(clf, classes)
     if calib:
         model.threshold = calib["best"]["threshold"]
@@ -129,6 +127,17 @@ def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log
     return model
 
 
+def write_summary(model: M.Model, path: Path) -> None:
+    """Human-readable side file of a saved model (what it was trained on, calibration, styles)."""
+    summary = {"trained_on": model.trained_on, "threshold": model.threshold, "nms_radius": model.nms_radius,
+               "stride": model.stride, "conduit_ratio": model.conduit_ratio, "classes": model.classes,
+               "family_style": model.family_style,
+               "calibration_best": model.calibration.get("best") if model.calibration else None,
+               "learnt_label_families": {k: model.label_map.learnt(k) for k in sorted(model.label_map.votes)
+                                         if model.label_map.learnt(k)}}
+    path.write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="python -m src.estimer.train")
     ap.add_argument("--dossiers", default=",".join(G.POSITION_DOSSIERS))
@@ -140,10 +149,7 @@ def main(argv: list[str] | None = None) -> int:
     model = train(golds, seed=args.seed)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     model.save(args.out)
-    summary = {"trained_on": model.trained_on, "threshold": model.threshold, "nms_radius": model.nms_radius,
-               "conduit_ratio": model.conduit_ratio, "classes": model.classes,
-               "family_style": model.family_style}
-    args.out.with_suffix(".json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_summary(model, args.out.with_suffix(".json"))
     print(f"model -> {args.out}")
     return 0
 
