@@ -16,9 +16,10 @@ Training (`build_training_set` + `fit`):
   Residual leakage guard: mark-up can still sit in the outer part of a window.
   Its masks around positives are transplanted onto negatives at the same rate
   and offset, so "mark-up nearby" carries no information either.
-  Classifier: sklearn HistGradientBoostingClassifier (families + "none"), refit once
-  with hard negatives (readable windows far from any estimator mark that the
-  first model scores as symbols, `mine_hard_negatives`).
+  Classifier: sklearn HistGradientBoostingClassifier (families + "none").
+  Optional hard-negative refit (`fit_with_mining`, off by default): measured on
+  the S-1844 fold it did not help (precision 13.1 % vs 13.9 %, recall on
+  readable marks 17.6 % vs 20.0 %, R = 25 px).
 
 Detection (`Model.detect`): score readable candidate windows on a stride grid,
 p_symbol = 1 - p(none), keep local maxima above a threshold with non-maximum
@@ -235,10 +236,11 @@ def fit(X: np.ndarray, y: np.ndarray, seed: int = 0) -> tuple[HistGradientBoosti
 
 
 def mine_hard_negatives(model: "Model", golds: list[DossierGold], seed: int = 0, pages_per_dossier: int = 8,
-                        per_page: int = 300, min_score: float = 0.2, log=print) -> np.ndarray:
+                        per_readable_mark: float = 1.0, min_score: float = 0.5, log=print) -> np.ndarray:
     """Features of readable windows far from every estimator mark that the current
-    model scores as symbols (false alarms), on up to `pages_per_dossier` marked pages
-    per dossier. Standard hard-negative mining; labels are "none"."""
+    model scores as symbols (p >= min_score), on up to `pages_per_dossier` marked pages
+    per dossier, at most `per_readable_mark` x the page's readable estimator marks (so
+    positives are not swamped). Standard hard-negative mining; labels are "none"."""
     rng = np.random.default_rng(seed + 1)
     parts = []
     none_i = model.classes.index(NONE)
@@ -253,6 +255,12 @@ def mine_hard_negatives(model: "Model", golds: list[DossierGold], seed: int = 0,
         for pg in marked:
             page = P.load_page(doc, pg)
             pts = np.array([(m.x, m.y) for m in g.marks if m.page == pg], float)
+            core = readable_centre(page.overlay)
+            h, w = core.shape
+            n_read = int(sum(core[min(h - 1, int(y)), min(w - 1, int(x))] <= 0 for x, y in pts))
+            cap = int(per_readable_mark * n_read)
+            if cap == 0:
+                continue
             xs, ys = F.candidate_grid(page.gray, page.overlay, STRIDE)
             if not len(xs):
                 continue
@@ -262,17 +270,20 @@ def mine_hard_negatives(model: "Model", golds: list[DossierGold], seed: int = 0,
             X = dense.at(xs, ys)
             psym = 1.0 - model.clf.predict_proba(X)[:, none_i]
             order = np.argsort(-psym)
-            order = order[psym[order] >= min_score][:per_page]
+            order = order[psym[order] >= min_score][:cap]
             parts.append(X[order]); n += len(order)
             del dense
         log(f"  hard negatives {g.dossier}: {n} on {len(marked)} pages")
     return np.concatenate(parts) if parts else np.zeros((0, F.N_FEATURES), np.float32)
 
 
-def fit_with_mining(golds: list[DossierGold], seed: int = 0, log=print) -> tuple[HistGradientBoostingClassifier, list[str]]:
-    """build_training_set -> fit -> hard-negative mining -> refit."""
+def fit_with_mining(golds: list[DossierGold], seed: int = 0, log=print,
+                    hard_negatives: bool = False) -> tuple[HistGradientBoostingClassifier, list[str]]:
+    """build_training_set -> fit [-> hard-negative mining -> refit]."""
     X, y = build_training_set(golds, seed=seed, log=log)
     clf, classes = fit(X, y, seed=seed)
+    if not hard_negatives:
+        return clf, classes
     Xh = mine_hard_negatives(Model(clf, classes), golds, seed=seed, log=log)
     if len(Xh):
         X = np.concatenate([X, Xh]); y = np.concatenate([y, np.array([NONE] * len(Xh))])
@@ -313,7 +324,7 @@ def calibrate(scored_pages: list[tuple], golds_by_page: dict, radius: float,
     golds_by_page: key -> (all gold xy (N,2), readable gold xy (M,2)).
     Precision counts a prediction as right if it matches any estimator mark; recall is
     measured on the marks whose core is readable (the only ones a detector can see)."""
-    thresholds = thresholds if thresholds is not None else np.round(np.arange(0.15, 0.96, 0.05), 2)
+    thresholds = thresholds if thresholds is not None else np.round(np.arange(0.05, 0.96, 0.05), 2)
     best = None
     table = []
     for rad in radii:

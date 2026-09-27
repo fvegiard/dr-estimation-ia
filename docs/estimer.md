@@ -44,6 +44,9 @@ marque), `family_uncertain` (probabilité de la famille < 0,5), `no_symbol_detec
    antérieur. Une fenêtre dont le cœur (13 × 13 px) touche une marque n'est ni apprise ni évaluée : le détecteur ne
    compte que ce qu'il voit, et les zones couvertes sont signalées. Les marques présentes ailleurs dans une fenêtre sont
    transplantées sur des négatifs au même taux, pour qu'elles ne portent aucune information.
+   Un raffinement par négatifs difficiles (`python -m src.estimer.train --hard-negatives`) a été mesuré sur le pli
+   S-1844 : précision 13,1 % contre 13,9 %, rappel sur marques lisibles 17,6 % contre 20,0 % (R = 25 px) — pas de gain,
+   désactivé par défaut.
    Un premier essai sans ce garde-fou (cœur couvert admis) retrouvait surtout les symboles cachés sous les marques
    (rappel 0,58 à 0,61 sur ceux-ci contre 0,06 à 0,08 sur les symboles visibles, R = 25 px, S-1714 pages 4, 6 et 9, modèle appris sur les 4 autres dossiers) : il relisait le relevé
    antérieur, pas le dessin. Il a été abandonné.

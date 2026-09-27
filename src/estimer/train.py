@@ -5,7 +5,7 @@
 Steps (all learnt, nothing per-dossier hard-coded):
 1. load each reference (gold.py) — marks placed on the plan pages, families;
 2. calibration: split the training dossiers in two groups, train on one, score
-   the other's marked pages (and vice versa), pick threshold / NMS radius by F1;
+   the other's marked pages (and vice versa), pick threshold / NMS radius by F1 (precision vs all his marks, recall vs his readable marks);
 3. fit the final classifier on all training dossiers;
 4. learn the label -> family map (co-location votes), the estimator's counter
    style per family and the conduit ratio.
@@ -92,7 +92,8 @@ def conduit_pairs(golds: list[G.DossierGold]) -> list[tuple[float, float]]:
     return pairs
 
 
-def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log=print) -> M.Model:
+def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log=print,
+          hard_negatives: bool = False) -> M.Model:
     golds = [g for g in golds if g.has_positions]
     rng = np.random.default_rng(seed)
     calib = {}
@@ -101,7 +102,7 @@ def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log
         scored, gxy = [], {}
         for train_g, test_g in ((ga, gb), (gb, ga)):
             t = time.time()
-            clf, classes = M.fit_with_mining(train_g, seed=seed, log=log)
+            clf, classes = M.fit_with_mining(train_g, seed=seed, log=log, hard_negatives=hard_negatives)
             inner = M.Model(clf, classes)
             log(f"  calibration model on {[g.dossier for g in train_g]}: {time.time() - t:.0f}s")
             for g in test_g:
@@ -112,7 +113,7 @@ def train(golds: list[G.DossierGold], seed: int = 0, calibrate: bool = True, log
         calib = M.calibrate(scored, gxy, MATCH_RADIUS_PX)
         log(f"  calibration best: {calib['best']}")
     t = time.time()
-    clf, classes = M.fit_with_mining(golds, seed=seed, log=log)
+    clf, classes = M.fit_with_mining(golds, seed=seed, log=log, hard_negatives=hard_negatives)
     log(f"  final model: {clf.n_iter_} iterations, {time.time() - t:.0f}s")
     model = M.Model(clf, classes)
     if calib:
@@ -144,9 +145,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--data", type=Path, default=G.DATA_ROOT)
     ap.add_argument("--out", type=Path, default=DEFAULT_MODEL)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--hard-negatives", action="store_true", help="refit once with mined hard negatives (off: did not help)")
     args = ap.parse_args(argv)
     golds = [G.load(d.strip(), args.data) for d in args.dossiers.split(",") if d.strip()]
-    model = train(golds, seed=args.seed)
+    model = train(golds, seed=args.seed, hard_negatives=args.hard_negatives)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     model.save(args.out)
     write_summary(model, args.out.with_suffix(".json"))
