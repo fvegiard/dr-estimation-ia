@@ -1,0 +1,91 @@
+
+				 Table of contents
+
+				Exit editor mode
+
+			Ask Learn
+
+			Ask Learn
+
+			Reading mode
+
+			Table of contents
+
+			Read in English
+
+			Add
+
+			Add to Plans
+
+					Copy Markdown
+
+					Print
+
+						Note
+
+						Access to this page requires authorization. You can try signing in or changing directories.
+
+						Access to this page requires authorization. You can try changing directories.
+
+			Feedback
+
+						Summarize this article for me
+
+Deferred Name Resolution and Compilation
+
+When a stored procedure is created, the statements in the procedure are parsed for syntactical accuracy. If a syntactical error is encountered in the procedure definition, an error is returned and the stored procedure is not created. If the statements are syntactically correct, the text of the stored procedure is stored in the sys.sql_modules catalog view.
+
+When a stored procedure is executed for the first time, the query processor reads the text of the stored procedure from the sys.sql_modules catalog view and checks that the names of the objects used by the procedure are present. This process is called deferred name resolution because table objects referenced by the stored procedure need not exist when the stored procedure is created, but only when it is executed.
+
+Note
+
+Deferred name resolution can only be used when you reference nonexistent table objects. All other objects must exist at the time the stored procedure is created. For example, when you reference an existing table in a stored procedure you cannot list nonexistent columns for that table.
+
+In the resolution stage, Microsoft SQL Server also performs other validation activities (for example, checking the compatibility of a column data type with variables). If the objects referenced by the stored procedure are missing when the stored procedure is executed, the stored procedure stops executing when it gets to the statement that references the missing object. In this case, or if other errors are found in the resolution stage, an error is returned.
+
+Note
+
+If an object referenced by a stored procedure is deleted or renamed, then an error is returned when the stored procedure is executed. However, if an object referenced in a stored procedure is replaced with an object of the same name, the stored procedure executes without having to be re-created. For example, if stored procedure Proc1 references table Test1, and Test1 is deleted and a different table called Test1 is created, Proc1 references the new table. The stored procedure does not have to be recreated.
+
+If procedure execution successfully passes the resolution stage, the Microsoft SQL Server query optimizer analyzes the Transact-SQL statements in the stored procedure and creates an execution plan. The execution plan describes the fastest method of executing the stored procedure, based on information such as:
+
+The amount of data in the tables.
+
+The nature and presence of indexes on the tables and the distribution of data in the indexed columns.
+
+The comparison operators and comparison values used in WHERE clause conditions.
+
+The presence of joins and UNION, GROUP BY, and ORDER BY keywords.
+
+After the query optimizer has analyzed these factors in the stored procedure, it places the execution plan in memory. The process of analyzing the stored procedure and creating an execution plan is called compilation. The optimized in-memory execution plan is used to execute the query. The execution plan stays in memory until SQL Server is restarted, or until space is needed for storage of another object.
+
+When the stored procedure is subsequently executed, SQL Server reuses the existing execution plan if it is still in memory. If the execution plan is no longer in memory, a new execution plan is created.
+
+See Also
+
+Reference
+
+CREATE PROCEDURE (Transact-SQL)
+
+sys.sql_modules (Transact-SQL)
+
+Concepts
+
+Executing Stored Procedures (Database Engine)
+
+Creating Stored Procedures (Database Engine)
+
+Creating CLR Stored Procedures
+
+Modifying Stored Procedures
+
+Recompiling Stored Procedures
+
+Viewing Stored Procedures
+
+Deleting Stored Procedures
+
+				Additional resources
+
+				Last updated on
+		2012-10-04

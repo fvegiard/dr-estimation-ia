@@ -1,0 +1,22 @@
+Courriels sources (Microsoft 365, boîte fvegiard@dreelectrique.com) — deux transferts du même message
+  1) Objet : Fwd: LABOMAR PROBIOTIC PROJECT Invitation à soumissionner
+     De : Daniel Dupuis <ddupuis@dreelectrique.com> — À : Francis Végiard — envoyé 2026-01-16T16:01:23Z
+     Message id Graph : AAMkADJhMjI1YzY3LWI4MGEtNDRkOS05ZWZiLTEwZGRkYTJkY2QwYwBGAAAAAAC5ZzDQKaNrR7AbFwfy5erZBwB4pBUqXr6kRIq_rGIBBAT0AAAAAAEMAAB4pBUqXr6kRIq_rGIBBAT0AAGajyCsAAA=
+     Internet-Message-ID : <YQXPR01MB5140A93D4465E990F16CF7CAAD8DA@YQXPR01MB5140.CANPRD01.PROD.OUTLOOK.COM>
+  2) Même objet, renvoi du 2026-01-19T13:44:52Z
+     Message id Graph : AAMkADJhMjI1YzY3LWI4MGEtNDRkOS05ZWZiLTEwZGRkYTJkY2QwYwBGAAAAAAC5ZzDQKaNrR7AbFwfy5erZBwB4pBUqXr6kRIq_rGIBBAT0AAAAAAEMAAB4pBUqXr6kRIq_rGIBBAT0AAGcZPSUAAA=
+     Internet-Message-ID : <YQXPR01MB51407E709B529360A6B8D744AD88A@YQXPR01MB5140.CANPRD01.PROD.OUTLOOK.COM>
+  Chaîne : SmartBidNet (Rafael Ortega, r.garcia-ortega@sidcan.ca) → André Lamothe (Groupe SIP, Boucherville) 2026-01-09 → Daniel Dupuis → Francis.
+  Corps : invitation à soumissionner (26 00 00 Électricité), client LABOMAR, 50 boul. Hymus, Pointe-Claire ;
+          « Envergure des travaux : Min $6,000,000.00 - Max $8,000,000.00 » (fourchette de l'appel d'offres, tous corps de métier) ;
+          fermeture générale 16 janvier 2026 03:00.
+
+Pièce jointe
+  Nom              : Exhibit_D_-_Rev1-1_Cost_Estimate.xlsx — application/octet-stream — 25 436 octets
+  Attachment id (msg 2) : ...AAGcZPSUAAABEgAQAKIcyN62xMJEoeijUyPWJHI=
+  Obtenu           : 2026-09-27 via read_resource — texte de la feuille « Bid 1 » ; binaire non téléchargeable.
+  SHA256 du xlsx original : NON DISPONIBLE. Fichier conservé : Exhibit_D_-_Rev1-1_Cost_Estimate.xlsx.txt — SHA256 dans ../SHA256SUMS
+
+NATURE DU DOCUMENT : formulaire de soumission VIERGE du gérant de construction (Exhibit D « Bid Submission Form »),
+47 postes + alternates, toutes les cellules « Final Pricing » à 0. Ce n'est pas une soumission chiffrée de DR.
+Aucun prix DR n'existe dans ce courriel => aucune ligne dans lignes.csv ni dans la base EE.

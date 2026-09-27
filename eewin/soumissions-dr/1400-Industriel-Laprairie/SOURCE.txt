@@ -1,0 +1,26 @@
+Courriel source (Microsoft 365, boîte fvegiard@dreelectrique.com)
+  Objet            : Fwd: Soumission 1400 Industriel Laprairie
+  De               : Daniel Dupuis <ddupuis@dreelectrique.com>
+  À                : Francis Végiard <fvegiard@dreelectrique.com>
+  Envoyé / reçu    : 2026-02-13T13:50:36Z / 2026-02-13T13:50:45Z (UTC)
+  Message id Graph : AAMkADJhMjI1YzY3LWI4MGEtNDRkOS05ZWZiLTEwZGRkYTJkY2QwYwBGAAAAAAC5ZzDQKaNrR7AbFwfy5erZBwB4pBUqXr6kRIq_rGIBBAT0AAAAAAEMAAB4pBUqXr6kRIq_rGIBBAT0AAGszJcUAAA=
+  Internet-Message-ID : <YQXPR01MB514062D103E3C132648F1647AD61A@YQXPR01MB5140.CANPRD01.PROD.OUTLOOK.COM>
+  Corps            : transfert du courriel Siemens du 2025-12-22 (voir courriel.txt) — contient LE SEUL PRIX : 96 298.36$.
+
+NATURE DU DOCUMENT : ce n'est PAS une soumission DR chiffrée au client ; c'est une cotation FOURNISSEUR
+(Siemens Canada, via le distributeur FRANKLIN EMPIRE INC, Longueuil) adressée à DR Électrique pour une
+entrée électrique au 1400 Industriel, La Prairie (bâtiment GE). Aucun numéro S- de DR n'apparaît.
+
+Pièce jointe retenue
+  Nom              : 1400 Industriel Laprairie.pdf
+  Type / taille    : application/pdf / 65 001 octets
+  Attachment id    : ...AAGszJcUAAABEgAQAIAKTqsbolRHly6jejKGSEc=
+  Obtenu           : 2026-09-27 via read_resource — texte extrait (11 pages), PAS le binaire.
+  SHA256 du PDF original : NON DISPONIBLE (binaire non téléchargeable par le connecteur).
+  Fichier conservé : « 1400 Industriel Laprairie.pdf.txt » — SHA256 dans ../SHA256SUMS
+  Contenu chiffré : Line 20000, Qty 1, « PPD--SB2 SWITCHBOARD - 4 SECTIONS », 600Y/347 3Ø4W, 65 kA, bus 2 000 A aluminium,
+                    incoming bottom/left, service entrance, NEMA 1 ; composition : 1 × 2 000 A/3 Main WL Breaker,
+                    1 × HYDRO-QUEBEC UTILITY METERING COMPARTMENT, 2 × 800 A/3P 3VA57-CNAS, 6 × 600 A/3P 3VA64-ELAE,
+                    (2+2+2+1) = 7 × 400 A/3P 3VA63-EJAE, 2 × 250 A/3P 3VA62-EFAE (page 2).
+                    Le PDF ne porte AUCUN prix ; le prix (96 298.36 $) est dans le corps du courriel.
+Autres pièces jointes (images inline, non conservées) : image001.png, image002.gif, image003.jpg, image004.jpg, image005.jpg, image006.jpg.

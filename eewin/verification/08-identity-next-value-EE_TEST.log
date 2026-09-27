@@ -1,0 +1,13 @@
+# 2026-09-27 14:39:28 EDT — prochaine valeur d'identité dans EE_TEST : table vide dont l'identité a servi (SOUAMD, last_value=10) et table pleine (PROCORRESP, last_value=90573). Transaction annulée ; l'identité ne se rembobine pas, donc EE_TEST diverge d'EE après ce test (dernier test exécuté).
+$ sqlcmd -d EE_TEST -Q "SET NOCOUNT ON; SELECT 'PROCORRESP' t, MAX(UniqueId) max_id, IDENT_CURRENT('dbo.PROCORRESP') ident_current FROM dbo.PROCORRESP UNION ALL SELECT 'SOUAMD', MAX(UniqueId), IDENT_CURRENT('dbo.SOUAMD') FROM dbo.SOUAMD; BEGIN TRAN; INSERT INTO dbo.SOUAMD DEFAULT VALUES; SELECT 'SOUAMD next identity' what, SCOPE_IDENTITY() value_; INSERT INTO dbo.PROCORRESP (OLDDIV) VALUES ('x'); SELECT 'PROCORRESP next identity', SCOPE_IDENTITY(); ROLLBACK;"
+t|max_id|ident_current
+-|------|-------------
+PROCORRESP|90573|90573
+SOUAMD|NULL|10
+what|value_
+----|------
+SOUAMD next identity|11
+ | 
+-|-
+PROCORRESP next identity|90574
+exit=0

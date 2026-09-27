@@ -1,0 +1,5 @@
+lignes.csv — une ligne par item lu dans les documents reçus (extraction 2026-09-27).
+Colonnes : dossier ; fichier (chemin relatif à eewin/soumissions-dr/) ; page ; no_ligne_doc ; description ; qte ; unite ;
+materiel_$ ; mo_h ; mo_$ ; total_$ ; nature_prix ; source_prix ; charge_en_bd ; cle_bd.
+Une cellule vide = le document ne donne pas la valeur (jamais estimée, jamais calculée).
+Dossiers sans aucune ligne : S-1857 (PDF non extractible par le connecteur), LABOMAR (formulaire vierge, tous les prix à 0).

@@ -1,0 +1,84 @@
+=== 1. Tax definition (TAXDEF): code M -> provincial 9.975 %, federal 5 %; TVP on cost allowed ===
+=== 2. Catalogue products (PRODUITS) ===
+=== 3. Catalogue assemblies (ENSEMBLE / ENSCOMPO) ===
+=== 4. Quote header (SOUMIS) ===
+=== 5. Block (SOUBLO, MULT=2), division (SOUDIV) and labor factor (SOUAMD, FACTMD=1.5) ===
+=== 6. Quote copies of the products (SOUPRO) - same prices as the catalogue ===
+=== 7. Quote copies of the assemblies (SOUENS / SOUENSCO) ===
+=== 7b. A lot (SOULOTS / SOULOTSCO): 10 straps + 50 F of EMT, 4 h per lot, computed cost (COUTANTSEL=0) ===
+=== 8. Takeoff lines (SOUREL) ===
+ 
+=== 9. Unit conversion ratios actually used (fn_UM_GetRatioDeConversion) ===
+conv|ratio
+----|-----
+F -> CF|0.01
+F -> C (no row: different compatibility group -> 0)|0.0
+F -> F|1.0
+U -> U|1.0
+F -> base(CF)=F|1.0
+q|v
+-|-
+nature(F)|L
+nature(U)|U
+ 
+=== 10. Quantity roll-up: sp_SOUPRO_Quantity_V2 -> SOUPRO.QTEENS / QTEOTH / QTELOT ===
+PRO_ID|COUUM|QTEENS|QTEOTH|QTELOT|QTE_TOTAL_base_unit
+------|-----|------|------|------|-------------------
+ZZP-BOX|U|20.0|0.0|0.0|20.0
+ZZP-EMT|CF|200.0|0.0|100.0|300.0
+ZZP-RECEP|U|20.0|10.0|0.0|30.0
+ZZP-STRAP|U|20.0|0.0|20.0|40.0
+ZZP-WIRE|CF|1000.0|0.0|0.0|1000.0
+ 
+=== 11a. Totals, material takeoff (P), ModeCalcul=C (markup on cost), VendantUAvantVendantT=1, VPM=2, DoLog=1 ===
+ITEM_ID|BLO_ID|DIV_ID|TypeItem|QTE|QTEUM|COUTANBRUT|SECTION|PROFIT|TYPETAXE|MULT_BLOC|fCout|fCoutPortionTVP|fVendant|fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal|CoutantNetReel|CoutantNetSection|TempsUnitaireApprox|LandedCost|CoutantUnitaire|CoutantTotal|VendantUnitaire|VendantTotal|TaxeProv|VendantUnitaireIncluantTVP|VendantTotalIncluantTVP|TempsInstallationSection|TempsInstallationTotal
+-------|------|------|--------|---|-----|----------|-------|------|--------|---------|-----|---------------|--------|-------------|-----------------------|-------------|-----------|--------------|-----------------|-------------------|----------|---------------|------------|---------------|------------|--------|--------------------------|-----------------------|------------------------|----------------------
+ZZENS-PRISE|1|1|A|10.000000|U|.000000|.000000|20.000000|M|2|374.000000|37.400000|448.800000|374.000000|37.400000|448.800000|2.000000|18.700000|.000000|NULL|.000000|18.700000|187.000000|22.440000|224.400000|9.975000|24.310000|243.100000|.000000|1.000000
+ZZENS-CONDUIT|1|1|A|100.000000|F|.000000|10.000000|20.000000|M|2|422.000000|42.100000|506.400000|796.000000|79.500000|955.200000|14.000000|2.030000|.800000|NULL|.000000|2.030000|211.000000|2.530000|253.200000|9.975000|.000000|274.250000|.100000|6.000000
+ZZP-RECEP|1|1|P|5.000000|U|.000000|.000000|30.000000|M|2|90.000000|9.000000|117.000000|886.000000|88.500000|1072.200000|17.000000|9.000000|.800000|NULL|.000000|9.000000|45.000000|11.700000|58.500000|9.975000|12.600000|63.000000|.000000|1.500000
+ZZLOT-RACK|1|1|L|1.000000|U|.000000|.000000|15.000000|M|2|111.000000|11.080000|127.660000|997.000000|99.580000|1199.860000|25.000000|55.500000|.800000|NULL|.000000|55.500000|55.500000|63.830000|63.830000|9.975000|69.370000|69.370000|.000000|4.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+997.000000|99.580000|1199.860000|25.000000
+=== 11b. Totals, service takeoff (S) ===
+ITEM_ID|BLO_ID|DIV_ID|TypeItem|QTE|QTEUM|COUTANBRUT|SECTION|PROFIT|TYPETAXE|MULT_BLOC|fCout|fCoutPortionTVP|fVendant|fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal|CoutantNetReel|CoutantNetSection|TempsUnitaireApprox|LandedCost|CoutantUnitaire|CoutantTotal|VendantUnitaire|VendantTotal|TaxeProv|VendantUnitaireIncluantTVP|VendantTotalIncluantTVP|TempsInstallationSection|TempsInstallationTotal
+-------|------|------|--------|---|-----|----------|-------|------|--------|---------|-----|---------------|--------|-------------|-----------------------|-------------|-----------|--------------|-----------------|-------------------|----------|---------------|------------|---------------|------------|--------|--------------------------|-----------------------|------------------------|----------------------
+LABOR|1|1|S|8.000000|U|65.000000|.000000|25.000000|S|2|520.000000|.000000|650.000000|520.000000|.000000|650.000000|8.000000|NULL|NULL|NULL|NULL|65.000000|520.000000|81.250000|650.000000|.000000|81.250000|650.000000|.000000|.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+520.000000|.000000|650.000000|8.000000
+=== 11c. Totals, other takeoff (O) ===
+ITEM_ID|BLO_ID|DIV_ID|TypeItem|QTE|QTEUM|COUTANBRUT|SECTION|PROFIT|TYPETAXE|MULT_BLOC|fCout|fCoutPortionTVP|fVendant|fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal|CoutantNetReel|CoutantNetSection|TempsUnitaireApprox|LandedCost|CoutantUnitaire|CoutantTotal|VendantUnitaire|VendantTotal|TaxeProv|VendantUnitaireIncluantTVP|VendantTotalIncluantTVP|TempsInstallationSection|TempsInstallationTotal
+-------|------|------|--------|---|-----|----------|-------|------|--------|---------|-----|---------------|--------|-------------|-----------------------|-------------|-----------|--------------|-----------------|-------------------|----------|---------------|------------|---------------|------------|--------|--------------------------|-----------------------|------------------------|----------------------
+PERMIT|1|1|O|1.000000|U|300.000000|.000000|10.000000|M|2|300.000000|29.930000|330.000000|300.000000|29.930000|330.000000|.000000|NULL|NULL|NULL|NULL|300.000000|300.000000|330.000000|330.000000|9.975000|359.930000|359.930000|.000000|.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+300.000000|29.930000|330.000000|.000000
+ 
+=== 12. Taxable amounts written back into SOUMIS (MATTAXAB*, SERTAXAB*, AUTTAXAB*) and UnitSelling in SOUPRO ===
+MATTAXAB1|MATTAXAB2|SERTAXAB1|SERTAXAB2|AUTTAXAB1|AUTTAXAB2
+---------|---------|---------|---------|---------|---------
+1199.8599999999999|0.0|0.0|650.0|330.0|0.0
+PRO_ID|UnitSelling
+------|-----------
+ZZP-BOX|NULL
+ZZP-EMT|NULL
+ZZP-RECEP|12.6
+ZZP-STRAP|NULL
+ZZP-WIRE|NULL
+ 
+=== 13. Same material takeoff with ModeCalcul=G (gross margin: cost / (1 - profit%)) ===
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+997.000000|99.580000|1254.280000|25.000000
+ 
+=== 14. Same material takeoff, VendantUAvantVendantT=0 (total first, then unit = total / qty) ===
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+997.000000|99.460000|1199.860000|25.000000
+ 
+=== 15. Cleanup through the official delete procedures ===
+=== 16. Proof that nothing is left behind (all counts must be 0) ===
+soumis|sourel|soupro|souens|souensco|soublo|soudiv|souamd|soulots|soulotsco|taxdef|produits|ensemble|enscompo
+------|------|------|------|--------|------|------|------|-------|---------|------|--------|--------|--------
+0|0|0|0|0|0|0|0|0|0|0|0|0|0

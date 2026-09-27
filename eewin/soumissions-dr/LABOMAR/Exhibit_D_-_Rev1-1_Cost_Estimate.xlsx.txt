@@ -1,0 +1,86 @@
+[Texte intégral retourné par le connecteur Microsoft 365 (read_resource) pour la pièce jointe
+ Exhibit_D_-_Rev1-1_Cost_Estimate.xlsx — 25 436 octets, application/octet-stream (classeur Excel, une feuille « Bid 1 »).
+ Le connecteur ne livre pas le binaire ; colonnes séparées par des tabulations telles que reçues le 2026-09-27.]
+
+=== Sheet: Bid 1 ===
+					BID SUBMISSION FORM
+				DATE:
+Construction Management Services			EXHIBIT D
+Project:	Labomar Probiotic Projet		Contractor:
+			Submitted by:
+			Final Pricing	Details or Clarifications
+TSS INSTALLATION			0
+1	TSS - SITEWORK			Civil work for TSS installation
+2	TSS - CONCRETE
+3	TSS - ELECTRICAL			Electical work for TSS installation
+DEMOLITION			0
+4	DEMOLITION - PHASE 0- WAREHOUSE 30 HYMUS			REFER to page 249 / 250 of the BOD- Architectural (Plans demolition)
+5	DEMOLITION - PHASE 2 - PHARMA SECTION
+6	DEMOLITION - PHASE 3 - PROBIOTIC SECTION
+7	DEMOLITION - PHASE 4 - OFFICES 30 HYMUS
+RELOCATION			0
+8	EQUIPMENT RELOCATION - FRIDGE			includes electrical work and other
+9	EQUIPMENT RELOCATION - OVEN			includes electrical work and other
+10	OTHER RELOCATION (ARCHIVE, SPARE PARTS)			Spare parts - workshop maintenance
+11	RACKING RELOCATION
+ARCHITECTURAL - WAREHOUSE 30 HYMUS 			0
+12	OPENINGS 			doors, frames, windows
+13	FINISHES
+14	INSULATION
+15	ACOUSTICAL CEILING
+16	ROUGH CARPENTRY
+ARCHITECTURAL - 50 HYMUS 			0
+17	OPENINGS 			doors, frames, windows
+18	FINISHES
+19	INSULATION
+20	ACOUSTICAL CEILING
+21	ROUGH CARPENTRY
+ARCHITECTURAL - OFFICES 30 HYMUS			0	MINIMUM REQUIRED
+22	OPENINGS 			doors, frames, windows
+23	FINISHES			includes paint refresh (minimum cost) 
+24	INSULATION
+25	ACOUSTICAL CEILING
+26	ROUGH CARPENTRY
+MECHANICAL			0
+27	FIRE PROTECTION
+28	PLUMBING			includes sanitary system
+29	HVAC 			excluding warehouse + Pharmaceutical 
+30	COLD ROOM
+31	AIR BALANCING
+32	START UP/TESTING
+UTILITIES			0
+33	STEAM
+34	PURIFIED WATER
+35	COMPRESSED AIR
+ELECTRICAL			0
+36	ELECTRICAL - INTERIOR			excludes electrical work for TSS & fridge + oven relocation 
+37	ELECTRICAL PANEL RELOCATION			4 Panels to relocate
+STRUCTURAL			0
+38	STRUCTURAL STEEL			For Mezzanine, refer to Exhibit I
+39	ROOFING			Roof re-inforcement ,  refer to Exhibit I
+BUILDING AUTOMATION			0
+40	BAS SYSTEM - NOT VALIDATED			For probiotic zone only (Primary packaging + production)
+41	START-UP / TESTING
+SPECIALTIES			0
+42	ACCESS CONTROL SYSTEMS
+43	DATA / LOW VOLTAGE / CABLING			Telecommunication (empty conduits)…
+44	FIRE ALARM / LIFE SAFETY 
+CONSTRUCTION MANAGEMENT			0
+45	GENERAL CONDITIONS			Site supervision, Safety, site cleaning, Waste disposal, 
+46	OVERHEAD & PROFIT
+47	CONTINGENCY
+	TOTAL Base BID		0
+	WAREHOUSE HVAC		0	#7 in the BOD (Central & Peripherique)
+	PHARMACEUTICAL HVAC		0	Pharma zone
+	PREFABRICATED WALLS		0	Alt. price for option 
+	FURNITURE (lockers, offices, archives shelves…)		0	0
+	DOWNFLOW BOOTH (Weighing room)		0	0
+	Refrigerated trailer with data logger		0	for storing refrigerated products during the move
+	Environment Monitoring 21 CFR PART 11		0	probiotic + Pharma
+	BAS SYSTEM 21CFR PART 11 + Support Validation		0	0
+	Add/Alternate 8			0
+	Add/Alternate 9			0
+	Add/Alternate 10			0
+	Add/Alternate 11			0
+	TOTAL Add/Alts (not included above)		0
+Comments or Explanations:

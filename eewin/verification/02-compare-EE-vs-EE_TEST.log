@@ -1,0 +1,167 @@
+# 2026-09-27 14:39:24 EDT — comparaison EE (source) vs EE_TEST (rechargée depuis EE_DR.sql sha256 d8aacb160d88e75a…), sortie intégrale
+$ sqlcmd -W -s '|' -v SRC=EE DST=EE_TEST -i eewin/tools/compare_ee_databases.sql
+== 1. Database properties (EE vs EE_TEST)
+name|collation_name|compatibility_level|recovery_model_desc|is_ansi_nulls_on|is_quoted_identifier_on
+----|--------------|-------------------|-------------------|----------------|-----------------------
+EE|French_CI_AS|160|FULL|0|0
+EE_TEST|French_CI_AS|160|FULL|0|0
+== 2. Object counts by type
+type_desc|EE|EE_TEST
+---------|--|-------
+DEFAULT_CONSTRAINT|61|61
+PRIMARY_KEY_CONSTRAINT|45|45
+SQL_SCALAR_FUNCTION|17|17
+SQL_STORED_PROCEDURE|160|160
+SQL_TABLE_VALUED_FUNCTION|1|1
+USER_TABLE|60|60
+== 3. Tables present in one database only
+side|schema_name|table_name
+----|-----------|----------
+== 4. Row counts per table (COUNT(*) on both sides)
+schema_name|table_name|rows_in_src|rows_in_dst|verdict
+-----------|----------|-----------|-----------|-------
+dbo|PROCORRESP|84721|84721|same
+dbo|Sys_UnitsConversion|65|65|same
+dbo|CATSTATUS|20|20|same
+dbo|Sys_Units|19|19|same
+dbo|SOUBLO|2|2|same
+dbo|SOUDIV|2|2|same
+dbo|SOUMIS|2|2|same
+dbo|SOUREL|2|2|same
+dbo|CLIENTS|1|1|same
+dbo|ENSEMBLE|1|1|same
+dbo|SOUENS|1|1|same
+dbo|SOUPRO|1|1|same
+dbo|_DBVersion|0|0|same
+dbo|_TransferCompleted|0|0|same
+dbo|BDEE|0|0|same
+dbo|BDEE_MULTI|0|0|same
+dbo|CLITAUX|0|0|same
+dbo|COMMANDE|0|0|same
+dbo|COMMITEM|0|0|same
+dbo|DEFBLO|0|0|same
+dbo|DEFDIV|0|0|same
+dbo|ENSCOMPO|0|0|same
+dbo|EULA|0|0|same
+dbo|EULAUSER|0|0|same
+dbo|FACAMD|0|0|same
+dbo|FACBLO|0|0|same
+dbo|FACDIV|0|0|same
+dbo|FACENS|0|0|same
+dbo|FACENSCO|0|0|same
+dbo|FACLOTS|0|0|same
+dbo|FACLOTSCO|0|0|same
+dbo|FACPRO|0|0|same
+dbo|FACREL|0|0|same
+dbo|FACTURES|0|0|same
+dbo|FACWEBLOG|0|0|same
+dbo|FRAIS|0|0|same
+dbo|IMPRIMER|0|0|same
+dbo|NOTES|0|0|same
+dbo|PriceUpdate_Products|0|0|same
+dbo|PROCAT|0|0|same
+dbo|PRODUITS|0|0|same
+dbo|PROFGRID|0|0|same
+dbo|PROGLOSS|0|0|same
+dbo|SOUAMD|0|0|same
+dbo|SOUENSCO|0|0|same
+dbo|SOULOTS|0|0|same
+dbo|SOULOTSCO|0|0|same
+dbo|SOUWEBLOG|0|0|same
+dbo|TAUX|0|0|same
+dbo|TAXDEF|0|0|same
+dbo|TOOLSQLSCRIPT|0|0|same
+dbo|UM_AREAS|0|0|same
+dbo|UM_BRANCHS|0|0|same
+dbo|UM_BUSINESSUNIT|0|0|same
+dbo|UM_REGIONS|0|0|same
+dbo|UM_USERREGIONS|0|0|same
+dbo|UM_USERS|0|0|same
+dbo|USERSESSION|0|0|same
+dbo|USR_GRIDVIEW|0|0|same
+dbo|USR_GRIDVIEWCOL|0|0|same
+total_rows_src|total_rows_dst|tables_compared
+--------------|--------------|---------------
+84837|84837|60
+== 5. Columns (INFORMATION_SCHEMA.COLUMNS + sys.columns attributes) differing
+side|table_name|column_name|ordinal|data_type|char_len|num_prec|num_scale|is_nullable|column_default|collation_name|is_identity|seed|increment
+----|----------|-----------|-------|---------|--------|--------|---------|-----------|--------------|--------------|-----------|----|---------
+columns_src|columns_dst
+-----------|-----------
+1061|1061
+== 6. Indexes and key constraints (name, type, unique, PK, key columns, included columns) differing
+side|table_name|index_name|type_desc|is_unique|is_primary_key|is_unique_constraint|key_columns|included_columns|allow_page_locks|allow_row_locks|fill_factor
+----|----------|----------|---------|---------|--------------|--------------------|-----------|----------------|----------------|---------------|-----------
+indexes_src|indexes_dst
+-----------|-----------
+106|106
+== 7. Default constraints (table, column, definition; names compared only when user-named) differing
+side|table_name|column_name|definition|constraint_name
+----|----------|-----------|----------|---------------
+defaults_src|defaults_dst|fks_src|fks_dst|checks_src|checks_dst
+------------|------------|-------|-------|----------|----------
+61|61|0|0|0|0
+== 8. Modules (procedures/functions/views/triggers): name, type, SHA2_256 of definition, SET options differing
+side|schema_name|object_name|type|definition_sha256|uses_ansi_nulls|uses_quoted_identifier
+----|-----------|-----------|----|-----------------|---------------|----------------------
+type|modules_src|modules_dst|definition_chars_src|definition_chars_dst
+----|-----------|-----------|--------------------|--------------------
+FN|17|17|25067|25067
+P |160|160|271270|271270
+TF|1|1|872|872
+== 9. Identity current values (sys.identity_columns.last_value) differing
+side|table_name|column_name|last_value
+----|----------|-----------|----------
+table_name|last_value_src|last_value_dst
+----------|--------------|--------------
+CATSTATUS|20|20
+CLIENTS|4|4
+ENSCOMPO|72|72
+ENSEMBLE|30|30
+PROCORRESP|90573|90573
+PRODUITS|58|58
+SOUAMD|10|10
+SOUBLO|23|23
+SOUDIV|21|21
+SOUENS|30|30
+SOUENSCO|72|72
+SOULOTS|7|7
+SOULOTSCO|14|14
+SOUMIS|19|19
+SOUPRO|61|61
+SOUREL|73|73
+TAXDEF|10|10
+== 10. Data: full row-by-row EXCEPT in both directions for every table (text columns cast to varchar(max))
+table_name|rows_src|rows_dst|only_in_src|only_in_dst|verdict
+----------|--------|--------|-----------|-----------|-------
+PROCORRESP|84721|84721|0|0|identical
+Sys_UnitsConversion|65|65|0|0|identical
+CATSTATUS|20|20|0|0|identical
+Sys_Units|19|19|0|0|identical
+SOUBLO|2|2|0|0|identical
+SOUDIV|2|2|0|0|identical
+SOUMIS|2|2|0|0|identical
+SOUREL|2|2|0|0|identical
+CLIENTS|1|1|0|0|identical
+ENSEMBLE|1|1|0|0|identical
+SOUENS|1|1|0|0|identical
+SOUPRO|1|1|0|0|identical
+tables_with_rows_compared|rows_src|rows_dst|only_in_src|only_in_dst
+-------------------------|--------|--------|-----------|-----------
+60|84837|84837|0|0
+== SUMMARY (0 differences everywhere = EE_TEST is a faithful copy of EE)
+check_name|differences
+----------|-----------
+10. data (row-level EXCEPT)|0
+10b. tables skipped by data check (must be 0)|0
+3. table list|0
+4. row counts|0
+5. columns|0
+6. indexes/keys|0
+7. defaults|0
+8. modules|0
+9. identity values|0
+overall_verdict|total_differences
+---------------|-----------------
+IDENTICAL|0
+exit=0
