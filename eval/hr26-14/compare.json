@@ -1,0 +1,223 @@
+{
+ "families": [
+  {
+   "family": "dispositif",
+   "predicted": 101,
+   "gold": 762,
+   "count_error": -0.8674540682414699
+  },
+  {
+   "family": "luminaire",
+   "predicted": 334,
+   "gold": 158,
+   "count_error": 1.1139240506329113
+  },
+  {
+   "family": "securite_incendie",
+   "predicted": 3,
+   "gold": 685,
+   "count_error": -0.9956204379562044
+  },
+  {
+   "family": "telecom_donnees",
+   "predicted": 3,
+   "gold": 0,
+   "count_error": null
+  },
+  {
+   "family": "chauffage",
+   "predicted": 0,
+   "gold": 208,
+   "count_error": -1.0
+  },
+  {
+   "family": "distribution",
+   "predicted": 0,
+   "gold": 296,
+   "count_error": -1.0
+  },
+  {
+   "family": "mecanique_moteur",
+   "predicted": 0,
+   "gold": 70,
+   "count_error": -1.0
+  },
+  {
+   "family": "autre",
+   "predicted": 0,
+   "gold": 4,
+   "count_error": -1.0
+  },
+  {
+   "family": "indetermine",
+   "predicted": 4,
+   "gold": 134,
+   "count_error": -0.9701492537313433
+  }
+ ],
+ "total": {
+  "predicted": 445,
+  "gold": 2317,
+  "count_error": -0.8079413034095814
+ },
+ "sum_abs_family_error_over_gold": 0.9624514458351316,
+ "gold_per_sheet": {
+  "DSI01": {
+   "securite_incendie": 122
+  },
+  "DSI02": {
+   "securite_incendie": 58,
+   "indetermine": 4
+  },
+  "DSI03": {
+   "securite_incendie": 94
+  },
+  "DSI04": {
+   "securite_incendie": 52,
+   "indetermine": 4
+  },
+  "DSI05": {
+   "securite_incendie": 122
+  },
+  "DSI06": {
+   "securite_incendie": 46,
+   "indetermine": 3
+  },
+  "DSI07": {
+   "securite_incendie": 121
+  },
+  "DSI08": {
+   "securite_incendie": 46,
+   "indetermine": 3
+  },
+  "E01": {
+   "chauffage": 29,
+   "dispositif": 51
+  },
+  "E02": {
+   "distribution": 47,
+   "dispositif": 8,
+   "mecanique_moteur": 18,
+   "indetermine": 9,
+   "autre": 1
+  },
+  "E03": {
+   "securite_incendie": 4,
+   "distribution": 12,
+   "dispositif": 76,
+   "indetermine": 2,
+   "luminaire": 18,
+   "chauffage": 14
+  },
+  "E04": {
+   "securite_incendie": 4,
+   "distribution": 8,
+   "dispositif": 70,
+   "indetermine": 2,
+   "luminaire": 18,
+   "chauffage": 10
+  },
+  "E05": {
+   "securite_incendie": 4,
+   "distribution": 8,
+   "dispositif": 72,
+   "indetermine": 2,
+   "luminaire": 18,
+   "chauffage": 12
+  },
+  "E06": {
+   "chauffage": 17,
+   "dispositif": 32,
+   "distribution": 2
+  },
+  "E07": {
+   "distribution": 40,
+   "dispositif": 5,
+   "chauffage": 3,
+   "mecanique_moteur": 14,
+   "indetermine": 9,
+   "autre": 1
+  },
+  "E08": {
+   "securite_incendie": 4,
+   "distribution": 8,
+   "dispositif": 82,
+   "indetermine": 2,
+   "luminaire": 18,
+   "chauffage": 14
+  },
+  "E09": {
+   "chauffage": 36,
+   "dispositif": 67
+  },
+  "E10": {
+   "dispositif": 8,
+   "mecanique_moteur": 19,
+   "distribution": 61,
+   "indetermine": 9,
+   "autre": 1
+  },
+  "E11": {
+   "securite_incendie": 4,
+   "distribution": 24,
+   "dispositif": 100,
+   "indetermine": 4,
+   "luminaire": 24,
+   "chauffage": 16
+  },
+  "E12": {
+   "chauffage": 41,
+   "dispositif": 68,
+   "distribution": 1
+  },
+  "E13": {
+   "dispositif": 8,
+   "mecanique_moteur": 19,
+   "distribution": 61,
+   "indetermine": 9,
+   "autre": 1
+  },
+  "E14": {
+   "securite_incendie": 4,
+   "distribution": 24,
+   "dispositif": 100,
+   "indetermine": 4,
+   "luminaire": 24,
+   "chauffage": 16
+  },
+  "EU01": {
+   "dispositif": 3,
+   "luminaire": 10,
+   "indetermine": 18
+  },
+  "EU02": {
+   "dispositif": 5,
+   "luminaire": 10,
+   "indetermine": 13
+  },
+  "EU03": {
+   "indetermine": 19,
+   "dispositif": 3,
+   "luminaire": 10
+  },
+  "EU04": {
+   "indetermine": 18,
+   "dispositif": 4,
+   "luminaire": 8
+  }
+ },
+ "estimate_source_sha256": "f99727914cd52a43a74e04d69ccf28157a788d4b6e6559678e0e09442e66354f",
+ "model": {
+  "trained_on": [
+   "S-1714",
+   "S-1715",
+   "S-1769",
+   "S-1811",
+   "S-1844"
+  ],
+  "threshold": 0.1,
+  "nms_radius_px": 24.0,
+  "stride_px": 6,
+  "conduit_ratio": 1.7557051546110072
+ }
+}
