@@ -457,6 +457,23 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
                   f"{_signed(r['totals'].get('count_error_vs_all_estimator_rows'))}) : {', '.join(r['sheets_outside_pdf'])}."]
         if r.get("notes"):
             L += [""] + [f"- {n}" for n in r["notes"]]
+    legacy = meta.get("legacy_comparison")
+    if legacy:
+        L += ["", f"## Comparaison avec l'ancienne évaluation sur `Plans-annotes.pdf` ({legacy['path']})", "",
+              "Même protocole, même code de détection ; seule l'entrée change (rendus annotés → PDF originaux). "
+              "Chiffres groupés sur les dossiers à positions, toutes les pages, R = 25 px.", "",
+              "| Entrée | Prédits | Dupuis placées | Appariés | Précision | Rappel | F1 | Écart absolu moyen de quantité par dossier |",
+              "|---|--:|--:|--:|--:|--:|--:|--:|"]
+        for lab, e, mae in (("Plans-annotes.pdf (ancien)", legacy["detection_R25"], legacy["mean_abs_total_count_error"]),
+                            ("plans originaux (ce rapport)", pool["detection"]["all_pages"]["R25"],
+                             pool["mean_abs_total_count_error_position_dossiers"])):
+            L.append(f"| {lab} | {e['predicted']} | {e['gold']} | {e['tp']} | {_pct(e['precision'])} | {_pct(e['recall'])} | "
+                     f"{_pct(e['f1'])} | {_pct(mae)} |")
+        L += ["", "| Famille | Rappel ancien | Rappel nouveau | Précision ancienne | Précision nouvelle |", "|---|--:|--:|--:|--:|"]
+        for f, e in sorted(pool["families"].items(), key=lambda kv: -kv[1]["gold"]):
+            o = legacy["families"].get(f, {})
+            L.append(f"| {_fam_fr(f)} | {_pct(o.get('recall'))} | {_pct(e['recall'])} | {_pct(o.get('precision'))} | "
+                     f"{_pct(e['precision'])} |")
     L += ["", "## Lecture de ces chiffres", ""]
     if meta.get("gold_source", "annotes") == "original":
         L += ["- Les entrées sont les dessins d'origine : le détecteur voit tous les symboles, et les colonnes « près du "
@@ -490,6 +507,21 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
     path.write_text("\n".join(L), encoding="utf-8")
 
 
+def legacy_comparison(out: Path, meta: dict) -> dict | None:
+    """Pooled numbers of the earlier Plans-annotes run kept in OUT/plans-annotes/results.json
+    (None when absent or when this run is itself the legacy one)."""
+    path = out / "plans-annotes" / "results.json"
+    if meta.get("gold_source", "annotes") != "original" or not path.is_file():
+        return None
+    old = json.loads(path.read_text(encoding="utf-8"))
+    pool = old["pooled"]
+    return {"path": "eval/plans-annotes/results.json", "commit": old["meta"].get("commit"),
+            "detection_R25": pool["detection"]["all_pages"]["R25"],
+            "mean_abs_total_count_error": pool.get("mean_abs_total_count_error_position_dossiers"),
+            "families": {f: {"precision": e.get("precision"), "recall": e.get("recall"), "predicted": e.get("predicted"),
+                             "gold": e.get("gold")} for f, e in pool["families"].items()}}
+
+
 def git_commit() -> str:
     import subprocess
     try:
@@ -519,6 +551,7 @@ def main(argv: list[str] | None = None) -> int:
     wanted = [d.strip() for d in args.dossiers.split(",") if d.strip()]
     if args.report_only:
         data = json.loads((args.out / "results.json").read_text(encoding="utf-8"))
+        data["meta"]["legacy_comparison"] = legacy_comparison(args.out, data["meta"])
         write_report(args.out / "REPORT.md", data["dossiers"], data["pooled"], data["meta"])
         log(f"report -> {args.out / 'REPORT.md'}")
         return 0
@@ -557,6 +590,7 @@ def main(argv: list[str] | None = None) -> int:
     meta = {"generated": datetime.now().strftime("%Y-%m-%d %H:%M"), "commit": git_commit(),
             "data_root": str(args.data), "gold_source": args.gold, "family_balance": args.family_balance,
             "radii_px": list(RADII), "primary_radius_px": PRIMARY_R}
+    meta["legacy_comparison"] = legacy_comparison(args.out, meta)
     out = {"meta": meta, "pooled": pool, "dossiers": results}
     (args.out / "results.json").write_text(json.dumps(out, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     write_report(args.out / "REPORT.md", results, pool, meta)
