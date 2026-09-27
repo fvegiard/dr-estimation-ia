@@ -238,6 +238,11 @@ def main():
         w("--   %s GroupID=%s '%s' plan #%d layer %s: %d elements" % (d["kind"], d["group"], d["name"], d["plan_idx"], d["layer_idx"], d["n"]))
 
     w("PRINT '=== 6. Roll-up: sp_SOUPRO_Quantity_V2 -> SOUPRO.QTEENS / QTEOTH ===';")
+    # @REPLACE_FILTER must be > 0: with 0 the three sp_SOU_UpdateQteTotal*_v2 procedures CLOSE a cursor (CUR_2)
+    # they never opened (6 x Msg 16916, executed 2026-09-27). With > 0 they EXEC dbo.sp_SOU_CalculCodeImpr for
+    # every SOUREL row whose CODEIMPR <> '' - a call that fails (Msg 2812) in the rebuilt database because the
+    # procedure only exists under the literal name [dbo].[dbo.sp_SOU_CalculCodeImpr] (docs/SCHEMA.md section 6).
+    # Every SOUREL row above is therefore written with @CODEIMPR='' (section 4).
     w("EXEC dbo.sp_SOUPRO_Quantity_V2 @SOU_ID=@SOU_ID, @REPLACE_FILTER=1, @DoLog=0, @SOUPROLOG='';")
     w("SELECT BLO_ID, DIV_ID, EXT_ID, TYPEITEM, ITEM_ID, DESCR, QTE, QTEUM FROM SOUREL WHERE SOU_ID=@SOU_ID ORDER BY ORDRE;")
     w("SELECT ENS_ID, ENS_ORG_ID, CLEPERS, [DESC], COUUM FROM SOUENS WHERE SOU_ID=@SOU_ID;")

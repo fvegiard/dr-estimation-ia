@@ -885,7 +885,7 @@ Journal des transferts web de la soumission.
 | Index | Type | Colonnes |
 |---|---|---|
 | `PK_SOUWEBLOG` | PK CLUSTERED | UniqueId |
-| `IDX_UNIQUEKEY` | NONCLUSTERED | SOU_ID,TRF_DATE |
+| `IDX_UNIQUEKEY` | NONCLUSTERED | SOU_ID,TRF_DATE DESC |
 
 **Colonnes**
 
@@ -1476,7 +1476,7 @@ Miroir de `SOUWEBLOG`.
 | Index | Type | Colonnes |
 |---|---|---|
 | `PK_FACWEBLOG` | PK CLUSTERED | UniqueId |
-| `IDX_UNIQUEKEY` | NONCLUSTERED | SOU_ID,TRF_DATE |
+| `IDX_UNIQUEKEY` | NONCLUSTERED | SOU_ID,TRF_DATE DESC |
 
 **Colonnes**
 
@@ -1779,7 +1779,7 @@ Régimes de taxes par province et date. Cinq tranches (`CODETAXn`, `TAUXFEDn`, `
 | Index | Type | Colonnes |
 |---|---|---|
 | `PK_TAXDEF` | PK CLUSTERED | UniqueId |
-| `IDX_PROVINCE` | NONCLUSTERED | PROVINCE,DATEDEB |
+| `IDX_PROVINCE` | NONCLUSTERED | PROVINCE,DATEDEB DESC |
 | `IDX_TAX_ID` | NONCLUSTERED | TAX_ID |
 
 **Colonnes**
@@ -2320,7 +2320,9 @@ sp_SOUPRO_Quantity_V2 (@SOU_ID, @REPLACE_FILTER, @DoLog, @SOUPROLOG)     -- V30:
  ├─ sp_SOU_UpdateQteTotalOth_v2   → SOUPRO.QTEOTH   (SOUREL TYPEITEM P/N)  -- V30:90
  ├─ sp_SOU_UpdateQteTotalEns_v2   → SOUPRO.QTEENS   (via SOUENS/SOUENSCO)  -- V39:83
  └─ sp_SOU_UpdateQteTotalLots_v2  → SOUPRO.QTELOT   (via SOULOTS/SOULOTSCO)-- V30:351
-       └─ (si @REPLACE_FILTER > 0) EXEC dbo.sp_SOU_CalculCodeImpr  → CASSÉ, voir § 6
+       └─ chacune des trois, si @REPLACE_FILTER > 0 et SOUREL.CODEIMPR <> '' : EXEC dbo.sp_SOU_CalculCodeImpr
+          (Oth_v2 l. 101, Ens_v2 l. 127, Lots_v2 l. 114) → CASSÉ (Msg 2812), voir § 6 ;
+          et si @REPLACE_FILTER = 0 : CLOSE CUR_2 sur un curseur jamais ouvert → 6 × Msg 16916 (exécuté)
 sp_SOU_CalculTotaux (@SOU_ID, @TypeReleve, @EE_CALGARY, @ModeCalcul, @VendantUAvantVendantT, @VPM, @DoLog)  -- V36:100
  ├─ fn_MultBlock, fn_UM_GetRatioDeConversion, fn_UM_GetNatureUnite, fn_CastAE
  ├─ UPDATE SOUMIS SET MAT/SER/AUTTAXAB1..5
@@ -2337,11 +2339,11 @@ Fonctions utilitaires : `fn_UM_GetUniteDeBase` (V21:87), `fn_UM_GetNatureUnite` 
    Effet : la chaîne **v1** côté soumission (`sp_SOUPRO_Quantity` → `sp_SOU_CalculQteTotalItem` → `dbo.sp_SOU_UpdateQteTotal*`) est inexécutable ; la chaîne **v2** fonctionne sauf la branche `@REPLACE_FILTER > 0` avec `CODEIMPR <> ''` qui appelle `dbo.sp_SOU_CalculCodeImpr`. Côté facture, `sp_FAC_CalculCodeImpr` existe correctement.
 2. **Deux procédures référencent une colonne supprimée.** `sp_SOU_CalculProductUsageInAssemblies` (V24:2720) et `sp_FAC_CalculProductUsageInAssemblies` font `UPDATE SOUPRO/FACPRO SET INASSEMBLIE = …` ; la colonne a été supprimée en V36_UpdateDatabase.sql:27-58 (`DROP COLUMN INASSEMBLIE`) au profit de `UnitSelling`. Preuve : `EXEC sp_SOU_CalculProductUsageInAssemblies 'X', 1` → `Msg 207 Invalid column name 'INASSEMBLIE'`.
 3. `SOUMIS.MATTAXAB6 / SERTAXAB6 / AUTTAXAB6` existent mais `TAXDEF` n'a que 5 tranches et `sp_SOU_CalculTotaux` n'écrit que 1..5 : la tranche 6 n'est jamais alimentée par le SQL.
-4. Le recensement du 2026-09-25 annonçait 90 573 lignes `PROCORRESP` d'après le fichier concaténé `EE_BaseDeDonnees_Complet_V0_V45.sql` ; la base rebâtie à partir des 52 scripts séparés en contient **84 721**. L'écart n'est pas expliqué ici (**non vérifié** : doublons dans le fichier concaténé ou lignes rejetées) — à trancher avant d'utiliser cette table.
+4. Le recensement du 2026-09-25 annonçait 90 573 lignes `PROCORRESP` d'après le fichier concaténé `EE_BaseDeDonnees_Complet_V0_V45.sql` ; la base rebâtie à partir des 52 scripts séparés en contient **84 721**. Écart expliqué (vérifié 2026-09-27) : 90 573 = 79 315 `INSERT` dans V14 + 11 258 dans V16 ; V16_UpdateDatabase.sql:187-189 exécute `DELETE FROM [PROCORRESP] WHERE [OLDDIV] IN ('NWE','WOE','WAE')` avant ses inserts, ce qui efface les 5 852 lignes `OLDDIV='WOE'` de V14 (`grep -c "VALUES (N'WOE'"`) : 90 573 − 5 852 = 84 721. Détail dans `CATALOGUE-ET-LIEN-QPL.md` §4.
 
 ## 7. Pont QPL (Plan Expert) ↔ base EE — ce qui est prouvé
 
-Étude complète (recherche dans les 52 scripts et 177 modules, anatomie du QPL, chaîne `SOUREL → SOUENS → SOUPRO`, preuve exécutée) : [[PLAN-EXPERT-VERS-EEWIN]].
+Étude complète (recherche dans les 52 scripts et 178 modules, anatomie du QPL, chaîne `SOUREL → SOUENS → SOUPRO`, preuve exécutée) : [[PLAN-EXPERT-VERS-EEWIN]].
 
 | Élément QPL (`S-1714-Dupuis-PlanExpert.qpl`) | Colonne EE | Preuve |
 |---|---|---|
