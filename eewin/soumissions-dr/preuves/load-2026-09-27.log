@@ -1,0 +1,15 @@
+ITEM_ID|BLO_ID|DIV_ID|TypeItem|QTE|QTEUM|COUTANBRUT|SECTION|PROFIT|TYPETAXE|MULT_BLOC|fCout|fCoutPortionTVP|fVendant|fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal|CoutantNetReel|CoutantNetSection|TempsUnitaireApprox|LandedCost|CoutantUnitaire|CoutantTotal|VendantUnitaire|VendantTotal|TaxeProv|VendantUnitaireIncluantTVP|VendantTotalIncluantTVP|TempsInstallationSection|TempsInstallationTotal
+-------|------|------|--------|---|-----|----------|-------|------|--------|---------|-----|---------------|--------|-------------|-----------------------|-------------|-----------|--------------|-----------------|-------------------|----------|---------------|------------|---------------|------------|--------|--------------------------|-----------------------|------------------------|----------------------
+DR:S-1844-FORFAIT|1|1|O|1.000000|U|238744.000000|.000000|.000000|NULL|1|238744.000000|-238744.000000|238744.000000|238744.000000|-238744.000000|238744.000000|.000000|NULL|NULL|NULL|NULL|238744.000000|238744.000000|238744.000000|238744.000000|.000000|.000000|.000000|.000000|.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+238744.000000|-238744.000000|238744.000000|.000000
+S-1844 engine (O): fCoutantTotal=238744.00 fVendantTotal=238744.00
+ITEM_ID|BLO_ID|DIV_ID|TypeItem|QTE|QTEUM|COUTANBRUT|SECTION|PROFIT|TYPETAXE|MULT_BLOC|fCout|fCoutPortionTVP|fVendant|fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal|CoutantNetReel|CoutantNetSection|TempsUnitaireApprox|LandedCost|CoutantUnitaire|CoutantTotal|VendantUnitaire|VendantTotal|TaxeProv|VendantUnitaireIncluantTVP|VendantTotalIncluantTVP|TempsInstallationSection|TempsInstallationTotal
+-------|------|------|--------|---|-----|----------|-------|------|--------|---------|-----|---------------|--------|-------------|-----------------------|-------------|-----------|--------------|-----------------|-------------------|----------|---------------|------------|---------------|------------|--------|--------------------------|-----------------------|------------------------|----------------------
+DR:SB2-1400IND|1|1|P|1.000000|U|.000000|.000000|.000000|NULL|1|96298.360000|-96298.360000|96298.360000|96298.360000|-96298.360000|96298.360000|.000000|96298.360000|NULL|NULL|.000000|96298.360000|96298.360000|96298.360000|96298.360000|.000000|.000000|.000000|.000000|.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+96298.360000|-96298.360000|96298.360000|.000000
+1400-INDUSTRIEL engine (P): fCoutantTotal=96298.36 fVendantTotal=96298.36
+Loaded: SOUMIS S-1844 (O forfait 238744.00) and 1400-INDUSTRIEL (P SB2 96298.36).

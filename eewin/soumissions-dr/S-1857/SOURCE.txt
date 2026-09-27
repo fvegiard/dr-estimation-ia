@@ -1,0 +1,24 @@
+Courriel source (Microsoft 365, boîte fvegiard@dreelectrique.com)
+  Objet            : 1857
+  De               : Daniel Dupuis <ddupuis@dreelectrique.com>
+  À                : Francis Végiard <fvegiard@dreelectrique.com>
+  Envoyé / reçu    : 2026-09-09T13:09:36Z / 2026-09-09T13:10:13Z (UTC)
+  Message id Graph : AAMkADJhMjI1YzY3LWI4MGEtNDRkOS05ZWZiLTEwZGRkYTJkY2QwYwBGAAAAAAC5ZzDQKaNrR7AbFwfy5erZBwB4pBUqXr6kRIq_rGIBBAT0AAAAAAEMAAB4pBUqXr6kRIq_rGIBBAT0AAIzjOW2AAA=
+  Internet-Message-ID : <YQXPR01MB5140729D04BCF52255AD7F09ADB02@YQXPR01MB5140.CANPRD01.PROD.OUTLOOK.COM>
+  Corps            : « s-1857 » + signature.
+
+Pièces jointes
+  1) S-1857 (27-Août-2026).pdf — application/pdf — 17 478 872 octets
+     Attachment id : ...AAIzjOW2AAABEgAQAIlmT8ioi9FIinwEXfsPVSQ=
+     read_resource (2026-09-27) → {"note":"PDF text extraction failed (likely a scanned, encrypted, or malformed PDF)."}
+     => AUCUN TEXTE, AUCUN PRIX récupéré. Le binaire n'est pas téléchargeable par le connecteur.
+  2) Dupuis corriger.zip — application/x-zip-compressed — 28 611 971 octets
+     Attachment id : ...AAIzjOW2AAABEgAQAP6yguyFJVlAp2VGegm3jwY=
+     Non lisible par le connecteur (archive).
+
+Courriel connexe : « ADDEDA 2 » (2026-09-16T18:23:37Z, même expéditeur) — pièce jointe
+  Addenda02-ADME-01 plans electrique-page-00023.pdf (1 212 610 octets) : plan d'addenda, pas une soumission chiffrée.
+
+Conséquence : aucune ligne S-1857 dans lignes.csv ni dans la base EE. Les dossiers locaux
+/home/claude/data/dossiers/S-1857 et S-1857-v3 contiennent des relevés de quantités (QPL, xlsx), pas de prix.
+Pour obtenir les prix S-1857 il faut le PDF binaire (Outlook) — hors de portée du connecteur.
