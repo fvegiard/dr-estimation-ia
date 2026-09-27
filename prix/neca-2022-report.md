@@ -1,18 +1,29 @@
-# NECA 2021-2022 parse report
+# NECA 2021-2022 parse report (layer: auto)
 
 - Source: `/home/claude/data/livres/Neca 2022 OCR.pdf` (sha256 `ccb048510a949d329c789c4ede79fb049d6663658c6d20d36a0162c7711cc06e`), 531 PDF pages
-- Output: `neca-2022.csv`, **14382 rows**, 14092 with all three labor units
+- Output: `neca-2022.csv`, **14398 rows**, 14381 with all three labor units, 17 printed with blank cells
 - Pages with a table header: 335; pages read from the OCR layer only: 3 [1, 56, 398]
-- Units: E=10655, C=2151, M=1467, LF=72, (none)=31, CY=6
+- Units: E=10655, C=2151, M=1467, LF=72, (none)=17, FT=17, SF=13, CY=6
 - Sections: 14; divisions: 86
 
-## Monotonicity violations (difficult < normal or very_difficult < difficult): 11
+## Method
+- `page` is the folio printed in the book (checked equal to PDF index + 1 on every page that prints one).
+- Text is read from the book's native text layer (span alpha 255); the invisible OCR layer (alpha 0) is used
+  only on pages without native text (cover, adverts). Run with `--layer ocr` to parse the OCR layer instead.
+- Numeric/unit tokens go through OCR normalisation (O->0, l/I->1, S->5, comma decimal, split decimals,
+  E/C/M/LF/CY/SF/FT variants); a token already well-formed is never altered.
+- Rows printed with blank labor-unit cells are kept with empty numbers; nothing is filled in.
+- `table_title` = bold table title [+ ` | Note: ...` printed under it]; `raw` = the printed line, including the
+  Rev flag `X` when present.
+
+## Monotonicity violations (difficult < normal or very_difficult < difficult): 12
 - p.163 [26 05 19: Low-Voltage Electrical Power Conductors and Cables] Mechanical Terminal Lugs - Two Hole / 750 kcmil: 1.35 / 1.69 / 1.03  <- `750 kcmil 1.35 1.69 1.03 E`
-- p.171 [26 05 19: Low-Voltage Electrical Power Conductors and Cables] 3/C 600 Volt Aluminum Overhead Service Drop Cable X / #1: 36.00 / 45.00 / 5.00  <- `#1 36.00 45.00 5.00 M`
+- p.171 [26 05 19: Low-Voltage Electrical Power Conductors and Cables] 3/C 600 Volt Aluminum Overhead Service Drop Cable / #1: 36.00 / 45.00 / 5.00  <- `#1 36.00 45.00 5.00 M`
 - p.212 [26 05 33: Raceway and Boxes for Electrical Systems] PVC Coated Steel Offset Nipples | Note: PVC coating repair not included / 1/2-inch: 0.25 / 0.31 / 0.27  <- `1/2-inch 0.25 0.31 0.27 E`
 - p.276 [26 05 83: Wiring Connections] Power Connections to Equipment Installed by Others - Aluminum 600 Volt Conduit / 300 Amp Circuits 500 kcmil: 1.20 / 2.00 / 1.90  <- `300 Amp Circuits 500 kcmil 1.20 2.00 1.90 E`
 - p.276 [26 05 83: Wiring Connections] Power Connections to Equipment Installed by Others - Aluminum 600 Volt Conduit / 400 Amp Circuits 1000 kcmil: 2.00 / 1.88 / 2.25  <- `400 Amp Circuits 1000 kcmil 2.00 1.88 2.25 E`
 - p.276 [26 05 83: Wiring Connections] Power Connections to Equipment Installed by Others - Aluminum 600 Volt Conduit / 450 Amp Circuits 2/300: 2.30 / 2.25 / 2.70  <- `450 Amp Circuits 2/300 2.30 2.25 2.70 E`
+- p.353 [26 51 00: Interior Lighting] Lay-in (T-Bar) Fixtures - with Lens / Slave Fixture Labor Deduct (per Fixture): -0.15 / -0.19 / -0.23  <- `Slave Fixture Labor Deduct (per Fixture) -0.15 -0.19 -0.23 E`
 - p.356 [26 51 00: Interior Lighting] Fluorescent Ballast / 8-foot Lamp: 0.75 / 0.60 / 0.75  <- `8-foot Lamp 0.75 0.60 0.75 E`
 - p.402 [28 05 37: Distributed Antenna System] Security Access Control Systems / Fiber Remote: 3.00 / 2.50 / 3.00  <- `Fiber Remote X 3.00 2.50 3.00 E`
 - p.440 [33 71 00: Electrical Utility Transmission and Distribution] Concrete Man Holes Base, Cover and Riser - Excludes Excavation and Gravel Base / 36-inch X 36-inch LID: 1.25 / 1.75 / 1.25  <- `36-inch X 36-inch LID 1.25 1.75 1.25 E`
@@ -22,651 +33,13 @@
 ## Pages with a table header but 0 rows: 7
 65, 71, 272, 461, 462, 463, 464
 
-## Rows with fewer/more than 3 numbers: 290
-- p.41: `70/2 AMP 2 Pole Unit 2.50 3.10 3.80 E` -> {}
-- p.41: `30 AMP 2 Pole Unit 2.50 3.00 4.00 E` -> {}
-- p.41: `40/2 AMP 2 Pole Unit 3.00 3.80 4.70 E` -> {}
-- p.41: `30 AMP 2 Pole Unit 3.00 3.80 4.70 E` -> {'normal': '3.00'}
-- p.41: `70/2 AMP 2 Pole Unit 4.00 5.00 6.25 E` -> {'normal': '4.00'}
-- p.175: `2C #16AWG Cable (Plenum/Non-Plenum) without Conduit 16.00 20.00 25.00 M` -> {}
-- p.175: `2C #18, 2#22AWG Cable (Plenum/Non-Plenum) without Conduit 17.00 21.25 26.56 M` -> {}
-- p.175: `5C #22AWG Cable (Plenum/Non-Plenum) without Conduit 18.00 22.50 28.13 M` -> {}
-- p.175: `2C #12, 2C #22,1C#18,1c #24 AWG (Plenum/Non-Plenum) without Conduit 20.00 25.00 31.25 M` -> {}
-- p.200: `3-inch X 0.24 0.26 ,28 E` -> {'normal': '0.24', 'difficult': '0.26'}
+## Rows with fewer/more than 3 numbers: 1
 - p.200: `Add for Knockout in Blank Box E` -> {}
-- p.273: `Print Out Labels X 0.15 0.19 0.22 E` -> {}
-- p.273: `Snap Around Labels X 0.10 0.12 0.15 E` -> {}
-- p.273: `Stick On Labels X 0.10 0.12 0.15 E` -> {}
-- p.273: `Adhesive stick on X 0.10 0.12 0.15 E` -> {}
-- p.274: `1-Button 1.00 1.25 1.50 E` -> {}
-- p.274: `2-Button 1.30 1.63 1.95 E` -> {}
-- p.274: `3-Button 1.60 2.00 2.40 E` -> {}
-- p.274: `4-Button 2.00 2.50 3.00 E` -> {}
-- p.274: `5-Button 2.50 3.13 3.75 E` -> {}
-- p.274: `6-Button 3.00 3.75 4.50 E` -> {}
-- p.274: `1-Button 1.30 1.63 1.95 E` -> {}
-- p.274: `2-Button 1.60 2.00 2.40 E` -> {}
-- p.274: `3-Button 2.00 2.50 3.00 E` -> {}
-- p.274: `4-Button 2.50 3.13 3.75 E` -> {}
-- p.274: `5-Button 3.00 3.75 4.50 E` -> {}
-- p.274: `6-Button 3.50 4.38 5.25 E` -> {}
-- p.274: `1-Pole 1/4 Horsepower 0.30 0.38 0.45 E` -> {}
-- p.274: `1-Pole 1/2 Horsepower 0.35 0.44 0.53 E` -> {}
-- p.274: `1-Pole 1 Horsepower 0.40 0.50 0.60 E` -> {}
-- p.274: `2-Pole 1/4 Horsepower 0.35 0.44 0.53 E` -> {}
-- p.274: `2-Pole 1/2 Horsepower 0.40 0.50 0.60 E` -> {}
-- p.274: `2-Pole 1 Horsepower 0.45 0.56 0.68 E` -> {}
-- p.274: `3-Pole 1/2 Horsepower 0.40 0.50 0.60 E` -> {}
-- p.274: `3-Pole 1 Horsepower 0.45 0.56 0.68 E` -> {}
-- p.274: `3-Pole 2 Horsepower 0.50 0.63 0.75 E` -> {}
-- p.274: `1-Pole 1/4 Horsepower 0.55 0.69 0.83 E` -> {}
-- p.274: `1-Pole 1/2 Horsepower 0.60 0.75 0.90 E` -> {}
-- p.274: `1-Pole 1 Horsepower 0.65 0.81 0.98 E` -> {}
-- p.274: `2-Pole 1/4 Horsepower 0.60 0.75 0.90 E` -> {}
-- p.274: `2-Pole 1/2 Horsepower 0.65 0.81 0.98 E` -> {}
-- p.274: `2-Pole 1 Horsepower 0.70 0.88 1.05 E` -> {}
-- p.274: `3-Pole 1/2 Horsepower 0.65 0.81 0.98 E` -> {}
-- p.274: `3-Pole 1 Horsepower 0.70 0.88 1.05 E` -> {}
-- p.274: `3-Pole 2 Horsepower 0.75 0.94 1.13 E` -> {}
-- p.279: `Programming Control Interface 0.75 0.94 1.17 E` -> {}
-- p.279: `DMX Control Interface 0.75 0.94 1.17 E` -> {}
-- p.279: `DMX 512 Control Interface 1.25 1.56 1.95 E` -> {}
-- p.279: `Control Interface for Miscellaneous Points 0.75 0.94 1.17 E` -> {}
-- p.280: `Ethernet Lighting and Shade Control Interface 0.75 0.94 1.17 E` -> {}
-- p.280: `Lighting and Shade Control Interface 0.75 0.94 1.17 E` -> {}
-- p.280: `Termination of LV Digital Bus - Pre-Installed Ballast 0.30 0.38 0.47 E` -> {}
-- p.280: `Termination of LV Digital Bus - Pre-Installed LED Driver 0.30 0.38 0.47 E` -> {}
-- p.280: `Bus Supply Module 0.80 1.00 1.25 E` -> {}
-- p.280: `Dimming Power Module for Dimming Ballasts 0.80 1.00 1.25 E` -> {}
-- p.280: `Emergency Lighting Interface Module 0.80 1.00 1.25 E` -> {}
-- p.280: `Motor Group Controller 1.25 1.56 1.95 E` -> {}
-- p.280: `Timeclock 1.50 1.88 2.34 E` -> {}
-- p.280: `Sensor Module 0.80 1.00 1.25 E` -> {}
-- p.280: `4-Button Wall Control with Raise/Lower 0.75 0.94 1.17 E` -> {}
-- p.280: `PIR Wired Control 0.60 0.75 0.94 E` -> {}
-- p.280: `Level Remote Control 0.25 0.31 0.39 E` -> {}
-- p.280: `Fixture Mountable Infrared Sensor 0.50 0.63 0.78 E` -> {}
-- p.280: `Fixture Mountable Daylight Sensor with IR Receiver 0.50 0.63 0.78 E` -> {}
-- p.280: `Dual Technology Ceiling Mount Sensor 0.50 0.63 0.79 E` -> {}
-- p.280: `Infrared Ceiling Mount Sensor 0.50 0.63 0.79 E` -> {}
-- p.280: `Ultrasonic Ceiling Mount Sensor 0.50 0.63 0.79 E` -> {}
-- p.280: `Power Pack 120/277V-24V 0.50 0.63 0.79 E` -> {}
-- p.280: `Auxiliary Power Pack 120/277V-24V 0.50 0.63 0.79 E` -> {}
-- p.280: `AV Control Interface 0.80 1.00 1.25 E` -> {}
-- p.280: `Wall Mounted Low Voltage Occupancy Sensor 0.35 0.44 0.55 E` -> {}
-- p.280: `Wall Mounted Low Voltage Vacancy Sensor 0.35 0.44 0.55 E` -> {}
-- p.280: `Wall Mounted Dual Low Voltage Vacancy Sensor 0.40 0.50 0.63 E` -> {}
-- p.280: `Wireless Ceiling Mount Sensor 0.35 0.44 0.55 E` -> {}
-- p.280: `Wireless Daylight Ceiling Mount Sensor 0.35 0.44 0.55 E` -> {}
-- p.280: `Wireless Wall-Mount Sensor 0.35 0.44 0.55 E` -> {}
-- p.280: `Wireless Wall-Mount Controller 0.35 0.44 0.55 E` -> {}
-- p.280: `Wireless Hub 0.50 0.63 0.78 E` -> {}
-- p.280: `Programming Control Interface 0.75 0.94 1.17 E` -> {}
-- p.280: `DMX Control Interface 0.75 0.94 1.17 E` -> {}
-- p.280: `DMX 512 Control Interface 1.25 1.56 1.95 E` -> {}
-- p.280: `Control Interface for Miscellaneous Points 0.75 0.94 1.17 E` -> {}
-- p.280: `Infrared Transmitter/Receiver Pair 1.00 1.25 1.56 E` -> {}
-- p.280: `2-Button Scene/Pushbutton Wallstation 0.65 0.81 1.02 E` -> {}
-- p.280: `3-Button Scene/Pushbutton Wallstation 0.85 1.06 1.33 E` -> {}
-- p.280: `4-Button Scene/Pushbutton Wallstation 1.05 1.31 1.64 E` -> {}
-- p.280: `5-Button Scene/Pushbutton Wallstation 1.30 1.63 2.03 E` -> {}
-- p.280: `6-Button Scene/Pushbutton Wallstation 1.80 2.25 2.81 E` -> {}
-- p.280: `7-Button Scene/Pushbutton Wallstation 2.00 2.50 3.13 E` -> {}
-- p.280: `8-Button Scene/Pushbutton Wallstation 2.25 2.81 3.52 E` -> {}
-- p.280: `10-Button Scene/Pushbutton Wallstation 2.50 3.13 3.91 E` -> {}
-- p.280: `Keyswitch Wallstation 0.45 0.56 0.70 E` -> {}
-- p.280: `Wall Mount 120v Main Unit - 3 Zone 4.00 5.00 6.25 E` -> {}
-- p.280: `Wall Mount 120v Main Unit - 4 Zone 5.00 6.25 7.81 E` -> {}
-- p.280: `Wall Mount 120v Main Unit - 6 Zone 6.00 7.50 9.38 E` -> {}
-- p.280: `Wall Mount LV Main Unit - 2 Zone 4.00 5.00 6.25 E` -> {}
-- p.280: `Wall Mount LV Main Unit - 3 Zone 4.00 5.00 6.25 E` -> {}
-- p.280: `Wall Mount LV Main Unit - 4 Zone 5.00 6.25 7.81 E` -> {}
-- p.280: `Wall Mount LV Main Unit - 6 Zone 6.00 7.50 9.38 E` -> {}
-- p.280: `Wall Mount LV Main Unit - 8 Zone 7.00 8.75 10.94 E` -> {'very': '10.94'}
-- p.280: `Slider Control Unit 4.00 5.00 6.25 E` -> {}
-- p.281: `Light Management Hub (QP3) Enclosure 4.00 5.00 6.25 E` -> {}
-- p.281: `120 Volt 24-Hour timer, multi-pole 1.60 2.00 2.50 E` -> {}
-- p.281: `120 Volt 24Hr- Programmable Astronomical Switch 2.25 2.81 3.52 E` -> {}
-- p.281: `Lighting Contactor up to 4 Pole 0.80 1.00 1.25 E` -> {}
-- p.281: `Lighting Contactor: 6-8 Pole 1.25 1.56 1.95 E` -> {}
-- p.281: `Photocell Relay - Fixture Mounted 0.65 0.81 0.98 E` -> {}
-- p.281: `Photocell Relay - Box Mounted 0.65 0.81 0.98 E` -> {}
-- p.281: `Ceiling Mounted Sensor 0.50 0.63 0.75 E` -> {}
-- p.281: `Passive Infrared Occupancy Sensor 0.50 0.63 0.75 E` -> {}
-- p.281: `Automatic Wall Switch 0.35 0.44 0.53 E` -> {}
-- p.281: `Intelligent Power Pack 0.75 0.94 1.13 E` -> {}
-- p.318: `15 Amp 3 Wire 25.00 31.25 37.50 C` -> {}
-- p.318: `20 Amp 3 Wire 30.00 37.50 45.00 C` -> {}
-- p.318: `20 Amp 4 Wire 35.00 43.75 52.50 C` -> {}
-- p.318: `20 Amp 5 Wire 40.00 50.00 60.00 C` -> {}
-- p.318: `30 Amp 3 Wire 40.00 50.00 60.00 C` -> {}
-- p.318: `30 Amp 4 Wire 45.00 56.25 67.50 C` -> {}
-- p.318: `30 Amp 5 Wire 50.00 62.50 75.00 C` -> {}
-- p.318: `50 Amp 3 Wire 50.00 62.50 75.00 C` -> {}
-- p.318: `50 Amp 4 Wire 55.00 68.75 82.50 C` -> {}
-- p.318: `60 Amp 3 Wire 60.00 75.00 90.00 C` -> {}
-- p.318: `60 Amp 4 Wire 70.00 87.50 105.00 C` -> {}
-- p.318: `15 Amp 3 Wire 25.00 31.25 37.50 C` -> {}
-- p.318: `15 Amp GFCI or AFCI 30.00 37.50 45.00 C` -> {}
-- p.318: `20 Amp 3 Wire 30.00 37.50 45.00 C` -> {}
-- p.318: `20 Amp GFCI or AFCI 35.00 43.75 52.50 C` -> {}
-- p.318: `15 Amp 3 Wire with USB Ports 25.00 31.25 37.50 C` -> {}
-- p.318: `20 Amp 3 Wire with USB Ports 30.00 37.50 45.00 C` -> {}
-- p.318: `GFCI - Blank Face 30.00 37.50 45.00 C` -> {}
-- p.318: `15 Amp 3 Wire 35.00 43.75 52.50 C` -> {}
-- p.318: `20 Amp 3 Wire 40.00 50.00 60.00 C` -> {}
-- p.319: `20 Amp 2 Wire (#12 AWG 20 Amp Circuit) 0.85 1.06 1.28 E` -> {}
-- p.319: `20 Amp 3 Wire (#12 AWG 20 Amp Circuit) 0.95 1.19 1.43 E` -> {}
-- p.319: `20 Amp 4 Wire (#12 AWG 20 Amp Circuit) 1.05 1.31 1.58 E` -> {}
-- p.319: `20 Amp 5 Wire (#12 AWG 20 Amp Circuit) 1.15 1.44 1.73 E` -> {}
-- p.319: `30 Amp 2 Wire (#10 AWG 30 Amp Circuit) 0.90 1.13 1.35 E` -> {}
-- p.319: `30 Amp 3 Wire (#10 AWG 30 Amp Circuit) 1.00 1.25 1.50 E` -> {}
-- p.319: `30 Amp 4 Wire (#10 AWG 30 Amp Circuit) 1.10 1.38 1.65 E` -> {}
-- p.319: `30 Amp 5 Wire (#10 AWG 30 Amp Circuit) 1.20 1.50 1.80 E` -> {}
-- p.319: `60 Amp 2 Wire (#8 AWG 50 Amp Circuit) 1.15 1.44 1.73 E` -> {}
-- p.319: `60 Amp 3 Wire (#8 AWG 50 Amp Circuit) 1.30 1.63 1.95 E` -> {}
-- p.319: `60 Amp 4 Wire (#8 AWG 50 Amp Circuit) 1.45 1.81 2.18 E` -> {}
-- p.319: `60 Amp 5 Wire (#8 AWG 50 Amp Circuit) 1.60 2.00 2.40 E` -> {}
-- p.319: `60 Amp 2 Wire (#6 AWG 60 Amp Circuit) 1.40 1.75 2.10 E` -> {}
-- p.319: `60 Amp 3 Wire (#6 AWG 60 Amp Circuit) 1.60 2.00 2.40 E` -> {}
-- p.319: `60 Amp 4 Wire (#6 AWG 60 Amp Circuit) 1.80 2.25 2.70 E` -> {}
-- p.319: `60 Amp 5 Wire (#6 AWG 60 Amp Circuit) 2.00 2.50 3.00 E` -> {}
-- p.319: `100 Amp 2 Wire (#4 AWG 75 Amp Circuit) 1.65 2.06 2.48 E` -> {}
-- p.319: `100 Amp 3 Wire (#4 AWG 75 Amp Circuit) 1.85 2.31 2.78 E` -> {}
-- p.319: `100 Amp 4 Wire (#4 AWG 75 Amp Circuit) 2.00 2.50 3.00 E` -> {}
-- p.319: `100 Amp 5 Wire (#4 AWG 75 Amp Circuit) 2.25 2.81 3.38 E` -> {}
-- p.319: `100 Amp 2 Wire (#2 AWG 75 Amp Circuit) 2.00 2.50 3.00 E` -> {}
-- p.319: `100 Amp 3 Wire (#2 AWG 75 Amp Circuit) 2.25 2.81 3.38 E` -> {}
-- p.319: `100 Amp 4 Wire (#2 AWG 75 Amp Circuit) 2.50 3.13 3.75 E` -> {}
-- p.319: `100 Amp 5 Wire (#2 AWG 75 Amp Circuit) 2.75 3.44 4.13 E` -> {}
-- p.319: `200 Amp 2 Wire (#1 AWG 125 Amp Circuit) 2.50 3.13 3.75 E` -> {}
-- p.319: `200 Amp 3 Wire (#1 AWG 125 Amp Circuit) 2.75 3.44 4.13 E` -> {}
-- p.319: `200 Amp 4 Wire (#1 AWG 125 Amp Circuit) 3.00 3.75 4.50 E` -> {}
-- p.319: `200 Amp 5 Wire (#1 AWG 125 Amp Circuit) 3.25 4.06 4.88 E` -> {}
-- p.319: `200 Amp 2 Wire (1/0 AWG 150 Amp Circuit) 2.75 3.44 4.13 E` -> {}
-- p.319: `200 Amp 3 Wire (1/0 AWG 150 Amp Circuit) 3.25 4.06 4.88 E` -> {}
-- p.319: `200 Amp 4 Wire (1/0 AWG 150 Amp Circuit) 3.75 4.69 5.63 E` -> {}
-- p.319: `200 Amp 5 Wire (1/0 AWG 150 Amp Circuit) 4.25 5.31 6.38 E` -> {}
-- p.319: `200 Amp 2 Wire (2/0 AWG 175 Amp Circuit) 3.00 3.75 4.50 E` -> {}
-- p.319: `200 Amp 3 Wire (2/0 AWG 175 Amp Circuit) 3.50 4.38 5.25 E` -> {}
-- p.319: `200 Amp 4 Wire (2/0 AWG 175 Amp Circuit) 4.00 5.00 6.00 E` -> {}
-- p.319: `200 Amp 5 Wire (2/0 AWG 175 Amp Circuit) 4.50 5.63 6.75 E` -> {}
-- p.319: `200 Amp 2 Wire (3/0 AWG 200 Amp Circuit) 3.50 4.38 5.25 E` -> {}
-- p.319: `200 Amp 3 Wire (3/0 AWG 200 Amp Circuit) 4.00 5.00 6.00 E` -> {}
-- p.319: `200 Amp 4 Wire (3/0 AWG 200 Amp Circuit) 4.50 5.63 6.75 E` -> {}
-- p.319: `200 Amp 5 Wire (3/0 AWG 200 Amp Circuit) 5.00 6.25 7.50 E` -> {}
-- p.319: `2-Wire 10 Amp 0.60 0.75 0.90 E` -> {}
-- p.319: `2-Wire 15 Amp 0.65 0.81 0.98 E` -> {}
-- p.319: `2-Wire 20 Amp 0.70 0.88 1.05 E` -> {}
-- p.319: `3-Wire 10 Amp 0.70 0.88 1.05 E` -> {}
-- p.319: `3-Wire 15 Amp 0.75 0.94 1.13 E` -> {}
-- p.319: `3-Wire 20 Amp 0.80 1.00 1.20 E` -> {}
-- p.319: `3-Wire 30 Amp 0.90 1.13 1.35 E` -> {}
-- p.319: `4-Wire 10 Amp 0.80 1.00 1.20 E` -> {}
-- p.319: `4-Wire 15 Amp 0.85 1.06 1.28 E` -> {}
-- p.319: `4-Wire 20 Amp 0.90 1.13 1.35 E` -> {}
-- p.319: `4-Wire 30 Amp 1.00 1.25 1.50 E` -> {}
-- p.319: `5-Wire 20 Amp 1.10 1.38 1.65 E` -> {}
-- p.319: `6-Wire 20 Amp 1.20 1.50 1.80 E` -> {}
-- p.319: `3-Wire 15 Amp 0.40 0.50 0.60 E` -> {}
-- p.319: `3-Wire 20 Amp 0.45 0.56 0.68 E` -> {}
-- p.319: `3-Wire 30 Amp 0.50 0.63 0.75 E` -> {}
-- p.319: `3-Wire 50 Amp 0.70 0.88 1.05 E` -> {}
-- p.319: `3-Wire 60 Amp 0.90 1.13 1.35 E` -> {}
-- p.319: `4-Wire 15 Amp 0.50 0.63 0.75 E` -> {}
-- p.319: `4-Wire 20 Amp 0.55 0.69 0.83 E` -> {}
-- p.319: `4-Wire 30Amp 0.60 0.75 0.90 E` -> {}
-- p.319: `4-Wire 50 Amp 0.80 1.00 1.20 E` -> {}
-- p.319: `4-Wire 60 Amp 1.00 1.25 1.50 E` -> {}
-- p.320: `1-Pole 15 Amp 20.00 25.00 30.00 C` -> {}
-- p.320: `1-Pole 20 Amp 25.00 31.25 37.50 C` -> {}
-- p.320: `1-Pole 30 Amp 30.00 37.50 45.00 C` -> {}
-- p.320: `2-Pole 15 Amp 30.00 37.50 45.00 C` -> {}
-- p.320: `2-Pole 20 Amp 35.00 43.75 52.50 C` -> {}
-- p.320: `2-Pole 30 Amp 40.00 50.00 60.00 C` -> {}
-- p.320: `3-Way 15 Amp 35.00 43.75 52.50 C` -> {}
-- p.320: `3-Way 20 Amp 40.00 50.00 60.00 C` -> {}
-- p.320: `3-Way 30 Amp 45.00 56.25 67.50 C` -> {}
-- p.320: `4-Way 15 Amp 40.00 50.00 60.00 C` -> {}
-- p.320: `4-Way 20 Amp 45.00 56.25 67.50 C` -> {}
-- p.320: `4-Way 30 Amp 50.00 62.50 75.00 C` -> {}
-- p.320: `Single Pole 25.00 31.25 37.50 C` -> {}
-- p.320: `Double Pole 35.00 43.75 52.50 C` -> {}
-- p.320: `Three-Way 40.00 50.00 60.00 C` -> {}
-- p.320: `Four-Way 45.00 56.25 67.50 C` -> {}
-- p.320: `1-Pole 10 Amp 0.35 0.44 0.53 E` -> {}
-- p.320: `1-Pole 15 Amp 0.35 0.44 0.53 E` -> {}
-- p.320: `1-Pole 20 Amp 0.35 0.44 0.53 E` -> {}
-- p.320: `2-Pole 10 Amp 0.50 0.63 0.75 E` -> {}
-- p.320: `2-Pole 15 Amp 0.50 0.63 0.75 E` -> {}
-- p.320: `2-Pole 20 Amp 0.50 0.63 0.75 E` -> {}
-- p.320: `1-Pole 600 Watt 0.40 0.50 0.60 E` -> {}
-- p.320: `1-Pole 1000 Watt 0.50 0.63 0.75 E` -> {}
-- p.320: `1 Pole - 1500 Watt 0.55 0.69 0.83 E` -> {}
-- p.320: `1 Pole - 2000 Watt 0.60 0.75 0.90 E` -> {}
-- p.320: `3-Way 600 Watt 0.70 0.88 1.05 E` -> {}
-- p.320: `3-Way 1000 Watt 0.85 1.06 1.28 E` -> {}
-- p.320: `3 Way - 1500 Watt 0.85 1.06 1.28 E` -> {}
-- p.320: `3 Way - 2000 Watt 0.90 1.13 1.35 E` -> {}
-- p.320: `1-Gang 10.00 12.50 15.00 C` -> {}
-- p.320: `2-Gang 12.00 15.00 18.00 C` -> {}
-- p.320: `3-Gang 14.00 17.50 21.00 C` -> {}
-- p.320: `4-Gang 17.00 21.25 25.50 C` -> {}
-- p.320: `5-Gang 20.00 25.00 30.00 C` -> {}
-- p.320: `6-Gang 24.00 30.00 36.00 C` -> {}
-- p.320: `1-Gang 20.00 25.00 30.00 C` -> {}
-- p.320: `2-Gang 25.00 31.25 37.50 C` -> {}
-- p.320: `3-Gang 30.00 37.50 45.00 C` -> {}
-- p.320: `4-Gang 35.00 43.75 52.50 C` -> {}
-- p.320: `50 & 60 Amp Single Receptacle Cover Plates 25.00 31.25 37.50 C` -> {}
-- p.320: `Telephone TV & Blank Cover Plates 12.00 15.00 18.00 C` -> {}
-- p.320: `1G Vertical In-Use Cover 20.00 25.00 30.00 C` -> {}
-- p.320: `1G Horizontal In-Use Cover 20.00 25.00 30.00 C` -> {}
-- p.320: `2G In-Use Cover 25.00 31.25 37.50 C` -> {}
-- p.320: `Weatherproof Blank Bell Cover 10.00 12.50 15.00 C` -> {}
-- p.320: `Weatherproof 1G SW Bell Cover 12.00 15.00 18.00 C` -> {}
-- p.320: `Weatherproof Duplex Vertical Bell Cover 12.00 15.00 18.00 C` -> {}
-- p.320: `Weatherproof Duplex Horizontal Bell Cover 12.00 15.00 18.00 C` -> {}
-- p.320: `Weatherproof 2G Blank Bell Cover 13.00 16.25 19.50 C` -> {}
-- p.320: `Weatherproof 2G SW/Receptacle Bell Cover 14.00 17.50 21.00 C` -> {}
-- p.320: `Weatherproof 2G SW/SW Bell Cover 14.00 17.50 21.00 C` -> {}
-- p.320: `Weatherproof Vertical GFCI Bell Cover 15.00 18.75 22.50 C` -> {}
-- p.320: `Weatherproof Horizontal GFCI Bell Cover 15.00 18.75 22.50 C` -> {}
-- p.320: `1-Gang 20.00 25.00 30.00 C` -> {}
-- p.320: `2-Gang 30.00 37.50 45.00 C` -> {}
-- p.320: `3-Gang 40.00 50.00 60.00 C` -> {}
-- p.344: `Set & Bolt 3-Wide Base Mounting Plate 1.50 1.88 2.25 E` -> {}
-- p.344: `Interconnecting 5.40 6.75 8.10 E` -> {}
-- p.344: `3-Wide Front Protective Shield 0.30 0.38 0.45 E` -> {}
-- p.344: `Top Mounting Plate For Electronics 0.50 0.63 0.75 E` -> {}
-- p.344: `Battery Test Kit 0.75 0.94 1.13 E` -> {}
-- p.344: `Floor Loading Plate - For Even Weight Distribution 1.00 1.25 1.50 E` -> {}
-- p.353: `Slave Fixture Labor Deduct (per Fixture) -0.15 -0.19 -0.23 E` -> {}
-- p.386: `Rack Mounted Blade Processor with Monitor 2.00 2.50 3.13 E` -> {'normal': '2.00'}
-- p.391: `Lighting (Communication Cable Connection) 1.00 1.25 1.56 E` -> {'normal': '1.00'}
-- p.391: `Lighting (Relay) 2.00 2.50 3.13 E` -> {'normal': '2.00'}
-- p.391: `Dark Out Drapes (Communication Cable Connection) 1.00 1.25 1.56 E` -> {'normal': '1.00'}
-- p.391: `Dark Out Drapes (Relay) 2.00 2.50 3.13 E` -> {'normal': '2.00'}
-- p.391: `Speakers 50 Watt 1.00 1.25 1.56 E` -> {'normal': '1.00'}
-- p.391: `Speakers 80 Watt 2.00 2.50 3.13 E` -> {'normal': '2.00'}
-- p.395: `Nurse Call - Nurse Station Annunciator 6.00 7.50 9.38 E` -> {'normal': '6.00'}
-- p.395: `Bed Station Call-In Cord 0.50 0.63 0.78 E` -> {'normal': '0.50'}
-- p.395: `Pull Cord 0.50 0.63 0.78 E` -> {'normal': '0.50'}
-- p.395: `Pillow Speaker 0.50 0.63 0.78 E` -> {'normal': '0.50'}
-- p.395: `Dome Light 0.50 0.65 0.81 E` -> {'normal': '0.50'}
-- p.395: `Zone Light 0.50 0.65 0.81 E` -> {'normal': '0.50'}
-- p.395: `Staff Station 0.50 0.65 0.81 E` -> {'normal': '0.50'}
-- p.395: `Duty Station 0.50 0.65 0.81 E` -> {'normal': '0.50'}
-- p.395: `Utility Station 0.50 0.65 0.81 E` -> {'normal': '0.50'}
-- p.395: `Emergency Station 0.50 0.63 0.78 E` -> {'normal': '0.50'}
-- p.395: `Toilet/Shower Station 0.50 0.63 0.78 E` -> {'normal': '0.50'}
-- p.395: `Code Blue Station 0.50 0.63 0.78 E` -> {'normal': '0.50'}
-- p.395: `Relay Module - Lighting Control 0.50 0.63 0.78 E` -> {'normal': '0.50'}
-- p.406: `Monitor - Rack Mounted 1.00 1.25 1.56 E` -> {'normal': '1.00'}
-- p.406: `Monitor - Wall Mounted 2.00 2.50 3.13 E` -> {'normal': '2.00'}
-- p.410: `Aspirating Smoke Detector 4.000 5.000 6.000 E` -> {}
-- p.410: `Aspirating Pipe 3/4-inch 5.000 6.200 7.500 C` -> {}
-- p.410: `Aspirating Socket Coupling 0.050 0.060 0.070 E` -> {}
-- p.410: `Aspirating Socket Union 0.050 0.060 0.070 E` -> {}
-- p.410: `Aspirating Pipe 90 Long Radius 0.100 0.125 0.150 E` -> {}
-- p.410: `Aspirating Pipe 45 0.100 0.125 0.150 E` -> {}
-- p.410: `Aspirating End Cap 0.120 0.150 0.180 E` -> {}
-- p.410: `Aspirating Pipe Clip 0.083 0.104 1.240 E` -> {}
-- p.410: `Aspirating Pipe Entrance Point with Label 0.100 0.125 0.150 E` -> {}
 
-## Rows without unit: 31
-- p.35: `2 to 5 #/SF 0.40 0.50 0.60 SF`
-- p.35: `6 to 10 #/SF 0.50 0.62 0.75 SF`
-- p.35: `11 to 15 #/SF 0.60 0.75 0.90 SF`
-- p.35: `16 to 20 #/SF 0.70 0.85 1.00 SF`
-- p.36: `Wire Reinforcing Mesh in Concrete Slabs 0.40 0.50 0.60 SF`
-- p.182: `Aluminum Bus Bar 1/8-inch x 1-inch Width 0.25 0.28 0.35 FT`
-- p.182: `Aluminum Bus Bar 1/8-inch x 3/4-inch Width 0.25 0.28 0.35 FT`
-- p.182: `Aluminum Bus Bar 1/8-inch x 1/2-inch Width 0.30 0.36 0.45 FT`
-- p.182: `Aluminum Bus Bar 1/8-inch x 2-inch Width 0.35 0.42 0.50 FT`
-- p.182: `Aluminum Bus Bar 1/4-inch x 3/4-inch Width 0.30 0.36 0.45 FT`
-- p.182: `Aluminum Bus Bar 1/4-inch x 1-inch Width 0.35 0.42 0.50 FT`
-- p.182: `Aluminum Bus Bar 1/4-inch x 1 1/2-inch Width 0.40 0.48 0.58 FT`
-- p.182: `Aluminum Bus Bar 1/4-inch x 2-inch Width 0.45 0.53 0.63 FT`
-- p.182: `Copper Bus Bar 1/16-inch x 1-inch Width 0.23 0.28 0.35 FT`
-- p.182: `Copper Bus Bar 1/8-inch x 1-inch Width 0.23 0.28 0.35 FT`
-- p.182: `Copper Bus Bar 1/8-inch x 3/4-inch Width 0.32 0.39 0.47 FT`
-- p.182: `Copper Bus Bar 1/8-inch x 1 1/2-inch Width 0.37 0.45 0.55 FT`
-- p.182: `Copper Bus Bar 1/8-inch x 2-inch Width 0.45 0.55 0.65 FT`
-- p.182: `Copper Bus Bar 1/4-inch x 3/4-inch Width 0.45 0.55 0.70 FT`
-- p.182: `Copper Bus Bar 1/4-inch x 1-inch Width 0.50 0.60 0.75 FT`
-- p.182: `Copper Bus Bar 1/4-inch x 1 1/2-inch Width 0.55 0.65 0.85 FT`
-- p.182: `Copper Bus Bar 1/4-inch x 2-inch Width 0.60 0.72 0.90 FT`
+## Rows without unit: 1
 - p.195: `X 0.00 0.00 0.00`
-- p.415: `6-inch Thick 0.10 0.12 0.15 SF`
-- p.415: `8-inch Thick 0.12 0.15 0.18 SF`
-- p.415: `10-inch Thick 0.14 0.17 0.21 SF`
-- p.415: `12-inch Thick 0.16 0.20 0.24 SF`
-- p.415: `18-inch Thick 0.18 0.22 0.27 SF`
-- p.415: `24-inch Thick 0.20 0.25 0.30 SF`
-- p.415: `Hand Finish Concrete Slabs at Grade 0.10 0.12 0.15 SF`
-- p.437: `Hand Finish Pole Foundations Above Grade 0.20 0.25 0.30 SF`
 
-## Rows with unrecognised tokens in the numeric zone: 319
-- p.35: `2 to 5 #/SF 0.40 0.50 0.60 SF` -> ['SF']
-- p.35: `6 to 10 #/SF 0.50 0.62 0.75 SF` -> ['SF']
-- p.35: `11 to 15 #/SF 0.60 0.75 0.90 SF` -> ['SF']
-- p.35: `16 to 20 #/SF 0.70 0.85 1.00 SF` -> ['SF']
-- p.36: `Wire Reinforcing Mesh in Concrete Slabs 0.40 0.50 0.60 SF` -> ['SF']
-- p.41: `70/2 AMP 2 Pole Unit 2.50 3.10 3.80 E` -> ['2.50        3.10        3.80']
-- p.41: `30 AMP 2 Pole Unit 2.50 3.00 4.00 E` -> ['2.50       3.00        4.00']
-- p.41: `40/2 AMP 2 Pole Unit 3.00 3.80 4.70 E` -> ['3.00       3.80        4.70']
-- p.41: `30 AMP 2 Pole Unit 3.00 3.80 4.70 E` -> ['3.80        4.70']
-- p.41: `70/2 AMP 2 Pole Unit 4.00 5.00 6.25 E` -> ['5.00        6.25']
-- p.175: `2C #16AWG Cable (Plenum/Non-Plenum) without Conduit 16.00 20.00 25.00 M` -> ['16.00      20.00      25.00']
-- p.175: `2C #18, 2#22AWG Cable (Plenum/Non-Plenum) without Conduit 17.00 21.25 26.56 M` -> ['17.00      21.25      26.56']
-- p.175: `5C #22AWG Cable (Plenum/Non-Plenum) without Conduit 18.00 22.50 28.13 M` -> ['18.00      22.50      28.13']
-- p.175: `2C #12, 2C #22,1C#18,1c #24 AWG (Plenum/Non-Plenum) without Conduit 20.00 25.00 31.25 M` -> ['20.00      25.00      31.25']
-- p.182: `Aluminum Bus Bar 1/8-inch x 1-inch Width 0.25 0.28 0.35 FT` -> ['FT']
-- p.182: `Aluminum Bus Bar 1/8-inch x 3/4-inch Width 0.25 0.28 0.35 FT` -> ['FT']
-- p.182: `Aluminum Bus Bar 1/8-inch x 1/2-inch Width 0.30 0.36 0.45 FT` -> ['FT']
-- p.182: `Aluminum Bus Bar 1/8-inch x 2-inch Width 0.35 0.42 0.50 FT` -> ['FT']
-- p.182: `Aluminum Bus Bar 1/4-inch x 3/4-inch Width 0.30 0.36 0.45 FT` -> ['FT']
-- p.182: `Aluminum Bus Bar 1/4-inch x 1-inch Width 0.35 0.42 0.50 FT` -> ['FT']
-- p.182: `Aluminum Bus Bar 1/4-inch x 1 1/2-inch Width 0.40 0.48 0.58 FT` -> ['FT']
-- p.182: `Aluminum Bus Bar 1/4-inch x 2-inch Width 0.45 0.53 0.63 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/16-inch x 1-inch Width 0.23 0.28 0.35 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/8-inch x 1-inch Width 0.23 0.28 0.35 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/8-inch x 3/4-inch Width 0.32 0.39 0.47 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/8-inch x 1 1/2-inch Width 0.37 0.45 0.55 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/8-inch x 2-inch Width 0.45 0.55 0.65 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/4-inch x 3/4-inch Width 0.45 0.55 0.70 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/4-inch x 1-inch Width 0.50 0.60 0.75 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/4-inch x 1 1/2-inch Width 0.55 0.65 0.85 FT` -> ['FT']
-- p.182: `Copper Bus Bar 1/4-inch x 2-inch Width 0.60 0.72 0.90 FT` -> ['FT']
-- p.200: `3-inch X 0.24 0.26 ,28 E` -> [',28']
-- p.273: `Print Out Labels X 0.15 0.19 0.22 E` -> ['0.15       0.19        0.22']
-- p.273: `Snap Around Labels X 0.10 0.12 0.15 E` -> ['0.10        0.12        0.15']
-- p.273: `Stick On Labels X 0.10 0.12 0.15 E` -> ['0.10        0.12        0.15']
-- p.273: `Adhesive stick on X 0.10 0.12 0.15 E` -> ['0.10        0.12        0.15']
-- p.274: `1-Button 1.00 1.25 1.50 E` -> ['1.00        1.25        1.50']
-- p.274: `2-Button 1.30 1.63 1.95 E` -> ['1.30        1.63        1.95']
-- p.274: `3-Button 1.60 2.00 2.40 E` -> ['1.60        2.00        2.40']
-- p.274: `4-Button 2.00 2.50 3.00 E` -> ['2.00        2.50        3.00']
-- p.274: `5-Button 2.50 3.13 3.75 E` -> ['2.50        3.13        3.75']
-- p.274: `6-Button 3.00 3.75 4.50 E` -> ['3.00        3.75        4.50']
-- p.274: `1-Button 1.30 1.63 1.95 E` -> ['1.30        1.63        1.95']
-- p.274: `2-Button 1.60 2.00 2.40 E` -> ['1.60        2.00        2.40']
-- p.274: `3-Button 2.00 2.50 3.00 E` -> ['2.00        2.50        3.00']
-- p.274: `4-Button 2.50 3.13 3.75 E` -> ['2.50        3.13        3.75']
-- p.274: `5-Button 3.00 3.75 4.50 E` -> ['3.00        3.75        4.50']
-- p.274: `6-Button 3.50 4.38 5.25 E` -> ['3.50        4.38        5.25']
-- p.274: `1-Pole 1/4 Horsepower 0.30 0.38 0.45 E` -> ['0.30        0.38        0.45']
-- p.274: `1-Pole 1/2 Horsepower 0.35 0.44 0.53 E` -> ['0.35        0.44        0.53']
-- p.274: `1-Pole 1 Horsepower 0.40 0.50 0.60 E` -> ['0.40        0.50        0.60']
-- p.274: `2-Pole 1/4 Horsepower 0.35 0.44 0.53 E` -> ['0.35        0.44        0.53']
-- p.274: `2-Pole 1/2 Horsepower 0.40 0.50 0.60 E` -> ['0.40        0.50        0.60']
-- p.274: `2-Pole 1 Horsepower 0.45 0.56 0.68 E` -> ['0.45        0.56        0.68']
-- p.274: `3-Pole 1/2 Horsepower 0.40 0.50 0.60 E` -> ['0.40        0.50        0.60']
-- p.274: `3-Pole 1 Horsepower 0.45 0.56 0.68 E` -> ['0.45        0.56        0.68']
-- p.274: `3-Pole 2 Horsepower 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.274: `1-Pole 1/4 Horsepower 0.55 0.69 0.83 E` -> ['0.55        0.69        0.83']
-- p.274: `1-Pole 1/2 Horsepower 0.60 0.75 0.90 E` -> ['0.60        0.75        0.90']
-- p.274: `1-Pole 1 Horsepower 0.65 0.81 0.98 E` -> ['0.65        0.81        0.98']
-- p.274: `2-Pole 1/4 Horsepower 0.60 0.75 0.90 E` -> ['0.60        0.75        0.90']
-- p.274: `2-Pole 1/2 Horsepower 0.65 0.81 0.98 E` -> ['0.65        0.81        0.98']
-- p.274: `2-Pole 1 Horsepower 0.70 0.88 1.05 E` -> ['0.70        0.88        1.05']
-- p.274: `3-Pole 1/2 Horsepower 0.65 0.81 0.98 E` -> ['0.65        0.81        0.98']
-- p.274: `3-Pole 1 Horsepower 0.70 0.88 1.05 E` -> ['0.70        0.88        1.05']
-- p.274: `3-Pole 2 Horsepower 0.75 0.94 1.13 E` -> ['0.75        0.94        1.13']
-- p.279: `Programming Control Interface 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.279: `DMX Control Interface 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.279: `DMX 512 Control Interface 1.25 1.56 1.95 E` -> ['1.25        1.56        1.95']
-- p.279: `Control Interface for Miscellaneous Points 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.280: `Ethernet Lighting and Shade Control Interface 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.280: `Lighting and Shade Control Interface 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.280: `Termination of LV Digital Bus - Pre-Installed Ballast 0.30 0.38 0.47 E` -> ['0.30        0.38        0.47']
-- p.280: `Termination of LV Digital Bus - Pre-Installed LED Driver 0.30 0.38 0.47 E` -> ['0.30        0.38        0.47']
-- p.280: `Bus Supply Module 0.80 1.00 1.25 E` -> ['0.80        1.00        1.25']
-- p.280: `Dimming Power Module for Dimming Ballasts 0.80 1.00 1.25 E` -> ['0.80        1.00        1.25']
-- p.280: `Emergency Lighting Interface Module 0.80 1.00 1.25 E` -> ['0.80        1.00        1.25']
-- p.280: `Motor Group Controller 1.25 1.56 1.95 E` -> ['1.25        1.56        1.95']
-- p.280: `Timeclock 1.50 1.88 2.34 E` -> ['1.50        1.88        2.34']
-- p.280: `Sensor Module 0.80 1.00 1.25 E` -> ['0.80        1.00        1.25']
-- p.280: `4-Button Wall Control with Raise/Lower 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.280: `PIR Wired Control 0.60 0.75 0.94 E` -> ['0.60        0.75        0.94']
-- p.280: `Level Remote Control 0.25 0.31 0.39 E` -> ['0.25        0.31        0.39']
-- p.280: `Fixture Mountable Infrared Sensor 0.50 0.63 0.78 E` -> ['0.50        0.63        0.78']
-- p.280: `Fixture Mountable Daylight Sensor with IR Receiver 0.50 0.63 0.78 E` -> ['0.50        0.63        0.78']
-- p.280: `Dual Technology Ceiling Mount Sensor 0.50 0.63 0.79 E` -> ['0.50        0.63        0.79']
-- p.280: `Infrared Ceiling Mount Sensor 0.50 0.63 0.79 E` -> ['0.50        0.63        0.79']
-- p.280: `Ultrasonic Ceiling Mount Sensor 0.50 0.63 0.79 E` -> ['0.50        0.63        0.79']
-- p.280: `Power Pack 120/277V-24V 0.50 0.63 0.79 E` -> ['0.50        0.63        0.79']
-- p.280: `Auxiliary Power Pack 120/277V-24V 0.50 0.63 0.79 E` -> ['0.50        0.63        0.79']
-- p.280: `AV Control Interface 0.80 1.00 1.25 E` -> ['0.80        1.00        1.25']
-- p.280: `Wall Mounted Low Voltage Occupancy Sensor 0.35 0.44 0.55 E` -> ['0.35        0.44        0.55']
-- p.280: `Wall Mounted Low Voltage Vacancy Sensor 0.35 0.44 0.55 E` -> ['0.35        0.44        0.55']
-- p.280: `Wall Mounted Dual Low Voltage Vacancy Sensor 0.40 0.50 0.63 E` -> ['0.40        0.50        0.63']
-- p.280: `Wireless Ceiling Mount Sensor 0.35 0.44 0.55 E` -> ['0.35        0.44        0.55']
-- p.280: `Wireless Daylight Ceiling Mount Sensor 0.35 0.44 0.55 E` -> ['0.35        0.44        0.55']
-- p.280: `Wireless Wall-Mount Sensor 0.35 0.44 0.55 E` -> ['0.35        0.44        0.55']
-- p.280: `Wireless Wall-Mount Controller 0.35 0.44 0.55 E` -> ['0.35        0.44        0.55']
-- p.280: `Wireless Hub 0.50 0.63 0.78 E` -> ['0.50        0.63        0.78']
-- p.280: `Programming Control Interface 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.280: `DMX Control Interface 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.280: `DMX 512 Control Interface 1.25 1.56 1.95 E` -> ['1.25        1.56        1.95']
-- p.280: `Control Interface for Miscellaneous Points 0.75 0.94 1.17 E` -> ['0.75        0.94        1.17']
-- p.280: `Infrared Transmitter/Receiver Pair 1.00 1.25 1.56 E` -> ['1.00        1.25        1.56']
-- p.280: `2-Button Scene/Pushbutton Wallstation 0.65 0.81 1.02 E` -> ['0.65        0.81        1.02']
-- p.280: `3-Button Scene/Pushbutton Wallstation 0.85 1.06 1.33 E` -> ['0.85        1.06        1.33']
-- p.280: `4-Button Scene/Pushbutton Wallstation 1.05 1.31 1.64 E` -> ['1.05        1.31        1.64']
-- p.280: `5-Button Scene/Pushbutton Wallstation 1.30 1.63 2.03 E` -> ['1.30        1.63        2.03']
-- p.280: `6-Button Scene/Pushbutton Wallstation 1.80 2.25 2.81 E` -> ['1.80        2.25        2.81']
-- p.280: `7-Button Scene/Pushbutton Wallstation 2.00 2.50 3.13 E` -> ['2.00        2.50        3.13']
-- p.280: `8-Button Scene/Pushbutton Wallstation 2.25 2.81 3.52 E` -> ['2.25        2.81        3.52']
-- p.280: `10-Button Scene/Pushbutton Wallstation 2.50 3.13 3.91 E` -> ['2.50        3.13        3.91']
-- p.280: `Keyswitch Wallstation 0.45 0.56 0.70 E` -> ['0.45        0.56        0.70']
-- p.280: `Wall Mount 120v Main Unit - 3 Zone 4.00 5.00 6.25 E` -> ['4.00        5.00        6.25']
-- p.280: `Wall Mount 120v Main Unit - 4 Zone 5.00 6.25 7.81 E` -> ['5.00        6.25        7.81']
-- p.280: `Wall Mount 120v Main Unit - 6 Zone 6.00 7.50 9.38 E` -> ['6.00        7.50        9.38']
-- p.280: `Wall Mount LV Main Unit - 2 Zone 4.00 5.00 6.25 E` -> ['4.00        5.00        6.25']
-- p.280: `Wall Mount LV Main Unit - 3 Zone 4.00 5.00 6.25 E` -> ['4.00        5.00        6.25']
-- p.280: `Wall Mount LV Main Unit - 4 Zone 5.00 6.25 7.81 E` -> ['5.00        6.25        7.81']
-- p.280: `Wall Mount LV Main Unit - 6 Zone 6.00 7.50 9.38 E` -> ['6.00        7.50        9.38']
-- p.280: `Wall Mount LV Main Unit - 8 Zone 7.00 8.75 10.94 E` -> ['7.00        8.75']
-- p.280: `Slider Control Unit 4.00 5.00 6.25 E` -> ['4.00        5.00        6.25']
-- p.281: `Light Management Hub (QP3) Enclosure 4.00 5.00 6.25 E` -> ['4.00        5.00        6.25']
-- p.281: `120 Volt 24-Hour timer, multi-pole 1.60 2.00 2.50 E` -> ['1.60        2.00        2.50']
-- p.281: `120 Volt 24Hr- Programmable Astronomical Switch 2.25 2.81 3.52 E` -> ['2.25        2.81        3.52']
-- p.281: `Lighting Contactor up to 4 Pole 0.80 1.00 1.25 E` -> ['0.80        1.00        1.25']
-- p.281: `Lighting Contactor: 6-8 Pole 1.25 1.56 1.95 E` -> ['1.25        1.56        1.95']
-- p.281: `Photocell Relay - Fixture Mounted 0.65 0.81 0.98 E` -> ['0.65        0.81        0.98']
-- p.281: `Photocell Relay - Box Mounted 0.65 0.81 0.98 E` -> ['0.65        0.81        0.98']
-- p.281: `Ceiling Mounted Sensor 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.281: `Passive Infrared Occupancy Sensor 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.281: `Automatic Wall Switch 0.35 0.44 0.53 E` -> ['0.35        0.44        0.53']
-- p.281: `Intelligent Power Pack 0.75 0.94 1.13 E` -> ['0.75        0.94        1.13']
-- p.318: `15 Amp 3 Wire 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.318: `20 Amp 3 Wire 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.318: `20 Amp 4 Wire 35.00 43.75 52.50 C` -> ['35.00      43.75      52.50']
-- p.318: `20 Amp 5 Wire 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.318: `30 Amp 3 Wire 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.318: `30 Amp 4 Wire 45.00 56.25 67.50 C` -> ['45.00      56.25      67.50']
-- p.318: `30 Amp 5 Wire 50.00 62.50 75.00 C` -> ['50.00      62.50      75.00']
-- p.318: `50 Amp 3 Wire 50.00 62.50 75.00 C` -> ['50.00      62.50      75.00']
-- p.318: `50 Amp 4 Wire 55.00 68.75 82.50 C` -> ['55.00      68.75      82.50']
-- p.318: `60 Amp 3 Wire 60.00 75.00 90.00 C` -> ['60.00      75.00      90.00']
-- p.318: `60 Amp 4 Wire 70.00 87.50 105.00 C` -> ['70.00      87.50    105.00']
-- p.318: `15 Amp 3 Wire 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.318: `15 Amp GFCI or AFCI 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.318: `20 Amp 3 Wire 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.318: `20 Amp GFCI or AFCI 35.00 43.75 52.50 C` -> ['35.00      43.75      52.50']
-- p.318: `15 Amp 3 Wire with USB Ports 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.318: `20 Amp 3 Wire with USB Ports 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.318: `GFCI - Blank Face 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.318: `15 Amp 3 Wire 35.00 43.75 52.50 C` -> ['35.00      43.75      52.50']
-- p.318: `20 Amp 3 Wire 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.319: `20 Amp 2 Wire (#12 AWG 20 Amp Circuit) 0.85 1.06 1.28 E` -> ['0.85        1.06        1.28']
-- p.319: `20 Amp 3 Wire (#12 AWG 20 Amp Circuit) 0.95 1.19 1.43 E` -> ['0.95        1.19        1.43']
-- p.319: `20 Amp 4 Wire (#12 AWG 20 Amp Circuit) 1.05 1.31 1.58 E` -> ['1.05        1.31        1.58']
-- p.319: `20 Amp 5 Wire (#12 AWG 20 Amp Circuit) 1.15 1.44 1.73 E` -> ['1.15        1.44        1.73']
-- p.319: `30 Amp 2 Wire (#10 AWG 30 Amp Circuit) 0.90 1.13 1.35 E` -> ['0.90        1.13        1.35']
-- p.319: `30 Amp 3 Wire (#10 AWG 30 Amp Circuit) 1.00 1.25 1.50 E` -> ['1.00        1.25        1.50']
-- p.319: `30 Amp 4 Wire (#10 AWG 30 Amp Circuit) 1.10 1.38 1.65 E` -> ['1.10        1.38        1.65']
-- p.319: `30 Amp 5 Wire (#10 AWG 30 Amp Circuit) 1.20 1.50 1.80 E` -> ['1.20        1.50        1.80']
-- p.319: `60 Amp 2 Wire (#8 AWG 50 Amp Circuit) 1.15 1.44 1.73 E` -> ['1.15        1.44        1.73']
-- p.319: `60 Amp 3 Wire (#8 AWG 50 Amp Circuit) 1.30 1.63 1.95 E` -> ['1.30        1.63        1.95']
-- p.319: `60 Amp 4 Wire (#8 AWG 50 Amp Circuit) 1.45 1.81 2.18 E` -> ['1.45        1.81        2.18']
-- p.319: `60 Amp 5 Wire (#8 AWG 50 Amp Circuit) 1.60 2.00 2.40 E` -> ['1.60        2.00        2.40']
-- p.319: `60 Amp 2 Wire (#6 AWG 60 Amp Circuit) 1.40 1.75 2.10 E` -> ['1.40        1.75        2.10']
-- p.319: `60 Amp 3 Wire (#6 AWG 60 Amp Circuit) 1.60 2.00 2.40 E` -> ['1.60        2.00        2.40']
-- p.319: `60 Amp 4 Wire (#6 AWG 60 Amp Circuit) 1.80 2.25 2.70 E` -> ['1.80        2.25        2.70']
-- p.319: `60 Amp 5 Wire (#6 AWG 60 Amp Circuit) 2.00 2.50 3.00 E` -> ['2.00        2.50        3.00']
-- p.319: `100 Amp 2 Wire (#4 AWG 75 Amp Circuit) 1.65 2.06 2.48 E` -> ['1.65        2.06        2.48']
-- p.319: `100 Amp 3 Wire (#4 AWG 75 Amp Circuit) 1.85 2.31 2.78 E` -> ['1.85        2.31        2.78']
-- p.319: `100 Amp 4 Wire (#4 AWG 75 Amp Circuit) 2.00 2.50 3.00 E` -> ['2.00        2.50        3.00']
-- p.319: `100 Amp 5 Wire (#4 AWG 75 Amp Circuit) 2.25 2.81 3.38 E` -> ['2.25        2.81        3.38']
-- p.319: `100 Amp 2 Wire (#2 AWG 75 Amp Circuit) 2.00 2.50 3.00 E` -> ['2.00        2.50        3.00']
-- p.319: `100 Amp 3 Wire (#2 AWG 75 Amp Circuit) 2.25 2.81 3.38 E` -> ['2.25        2.81        3.38']
-- p.319: `100 Amp 4 Wire (#2 AWG 75 Amp Circuit) 2.50 3.13 3.75 E` -> ['2.50        3.13        3.75']
-- p.319: `100 Amp 5 Wire (#2 AWG 75 Amp Circuit) 2.75 3.44 4.13 E` -> ['2.75        3.44        4.13']
-- p.319: `200 Amp 2 Wire (#1 AWG 125 Amp Circuit) 2.50 3.13 3.75 E` -> ['2.50        3.13        3.75']
-- p.319: `200 Amp 3 Wire (#1 AWG 125 Amp Circuit) 2.75 3.44 4.13 E` -> ['2.75        3.44        4.13']
-- p.319: `200 Amp 4 Wire (#1 AWG 125 Amp Circuit) 3.00 3.75 4.50 E` -> ['3.00        3.75        4.50']
-- p.319: `200 Amp 5 Wire (#1 AWG 125 Amp Circuit) 3.25 4.06 4.88 E` -> ['3.25        4.06        4.88']
-- p.319: `200 Amp 2 Wire (1/0 AWG 150 Amp Circuit) 2.75 3.44 4.13 E` -> ['2.75        3.44        4.13']
-- p.319: `200 Amp 3 Wire (1/0 AWG 150 Amp Circuit) 3.25 4.06 4.88 E` -> ['3.25        4.06        4.88']
-- p.319: `200 Amp 4 Wire (1/0 AWG 150 Amp Circuit) 3.75 4.69 5.63 E` -> ['3.75        4.69        5.63']
-- p.319: `200 Amp 5 Wire (1/0 AWG 150 Amp Circuit) 4.25 5.31 6.38 E` -> ['4.25        5.31        6.38']
-- p.319: `200 Amp 2 Wire (2/0 AWG 175 Amp Circuit) 3.00 3.75 4.50 E` -> ['3.00        3.75        4.50']
-- p.319: `200 Amp 3 Wire (2/0 AWG 175 Amp Circuit) 3.50 4.38 5.25 E` -> ['3.50        4.38        5.25']
-- p.319: `200 Amp 4 Wire (2/0 AWG 175 Amp Circuit) 4.00 5.00 6.00 E` -> ['4.00        5.00        6.00']
-- p.319: `200 Amp 5 Wire (2/0 AWG 175 Amp Circuit) 4.50 5.63 6.75 E` -> ['4.50        5.63        6.75']
-- p.319: `200 Amp 2 Wire (3/0 AWG 200 Amp Circuit) 3.50 4.38 5.25 E` -> ['3.50        4.38        5.25']
-- p.319: `200 Amp 3 Wire (3/0 AWG 200 Amp Circuit) 4.00 5.00 6.00 E` -> ['4.00        5.00        6.00']
-- p.319: `200 Amp 4 Wire (3/0 AWG 200 Amp Circuit) 4.50 5.63 6.75 E` -> ['4.50        5.63        6.75']
-- p.319: `200 Amp 5 Wire (3/0 AWG 200 Amp Circuit) 5.00 6.25 7.50 E` -> ['5.00        6.25        7.50']
-- p.319: `2-Wire 10 Amp 0.60 0.75 0.90 E` -> ['0.60        0.75        0.90']
-- p.319: `2-Wire 15 Amp 0.65 0.81 0.98 E` -> ['0.65        0.81        0.98']
-- p.319: `2-Wire 20 Amp 0.70 0.88 1.05 E` -> ['0.70        0.88        1.05']
-- p.319: `3-Wire 10 Amp 0.70 0.88 1.05 E` -> ['0.70        0.88        1.05']
-- p.319: `3-Wire 15 Amp 0.75 0.94 1.13 E` -> ['0.75        0.94        1.13']
-- p.319: `3-Wire 20 Amp 0.80 1.00 1.20 E` -> ['0.80        1.00        1.20']
-- p.319: `3-Wire 30 Amp 0.90 1.13 1.35 E` -> ['0.90        1.13        1.35']
-- p.319: `4-Wire 10 Amp 0.80 1.00 1.20 E` -> ['0.80        1.00        1.20']
-- p.319: `4-Wire 15 Amp 0.85 1.06 1.28 E` -> ['0.85        1.06        1.28']
-- p.319: `4-Wire 20 Amp 0.90 1.13 1.35 E` -> ['0.90        1.13        1.35']
-- p.319: `4-Wire 30 Amp 1.00 1.25 1.50 E` -> ['1.00        1.25        1.50']
-- p.319: `5-Wire 20 Amp 1.10 1.38 1.65 E` -> ['1.10        1.38        1.65']
-- p.319: `6-Wire 20 Amp 1.20 1.50 1.80 E` -> ['1.20        1.50        1.80']
-- p.319: `3-Wire 15 Amp 0.40 0.50 0.60 E` -> ['0.40        0.50        0.60']
-- p.319: `3-Wire 20 Amp 0.45 0.56 0.68 E` -> ['0.45        0.56        0.68']
-- p.319: `3-Wire 30 Amp 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.319: `3-Wire 50 Amp 0.70 0.88 1.05 E` -> ['0.70        0.88        1.05']
-- p.319: `3-Wire 60 Amp 0.90 1.13 1.35 E` -> ['0.90        1.13        1.35']
-- p.319: `4-Wire 15 Amp 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.319: `4-Wire 20 Amp 0.55 0.69 0.83 E` -> ['0.55        0.69        0.83']
-- p.319: `4-Wire 30Amp 0.60 0.75 0.90 E` -> ['0.60        0.75        0.90']
-- p.319: `4-Wire 50 Amp 0.80 1.00 1.20 E` -> ['0.80        1.00        1.20']
-- p.319: `4-Wire 60 Amp 1.00 1.25 1.50 E` -> ['1.00        1.25        1.50']
-- p.320: `1-Pole 15 Amp 20.00 25.00 30.00 C` -> ['20.00      25.00      30.00']
-- p.320: `1-Pole 20 Amp 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.320: `1-Pole 30 Amp 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.320: `2-Pole 15 Amp 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.320: `2-Pole 20 Amp 35.00 43.75 52.50 C` -> ['35.00      43.75      52.50']
-- p.320: `2-Pole 30 Amp 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.320: `3-Way 15 Amp 35.00 43.75 52.50 C` -> ['35.00      43.75      52.50']
-- p.320: `3-Way 20 Amp 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.320: `3-Way 30 Amp 45.00 56.25 67.50 C` -> ['45.00      56.25      67.50']
-- p.320: `4-Way 15 Amp 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.320: `4-Way 20 Amp 45.00 56.25 67.50 C` -> ['45.00      56.25      67.50']
-- p.320: `4-Way 30 Amp 50.00 62.50 75.00 C` -> ['50.00      62.50      75.00']
-- p.320: `Single Pole 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.320: `Double Pole 35.00 43.75 52.50 C` -> ['35.00      43.75      52.50']
-- p.320: `Three-Way 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.320: `Four-Way 45.00 56.25 67.50 C` -> ['45.00      56.25      67.50']
-- p.320: `1-Pole 10 Amp 0.35 0.44 0.53 E` -> ['0.35        0.44        0.53']
-- p.320: `1-Pole 15 Amp 0.35 0.44 0.53 E` -> ['0.35        0.44        0.53']
-- p.320: `1-Pole 20 Amp 0.35 0.44 0.53 E` -> ['0.35        0.44        0.53']
-- p.320: `2-Pole 10 Amp 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.320: `2-Pole 15 Amp 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.320: `2-Pole 20 Amp 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.320: `1-Pole 600 Watt 0.40 0.50 0.60 E` -> ['0.40        0.50        0.60']
-- p.320: `1-Pole 1000 Watt 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.320: `1 Pole - 1500 Watt 0.55 0.69 0.83 E` -> ['0.55        0.69        0.83']
-- p.320: `1 Pole - 2000 Watt 0.60 0.75 0.90 E` -> ['0.60        0.75        0.90']
-- p.320: `3-Way 600 Watt 0.70 0.88 1.05 E` -> ['0.70        0.88        1.05']
-- p.320: `3-Way 1000 Watt 0.85 1.06 1.28 E` -> ['0.85        1.06        1.28']
-- p.320: `3 Way - 1500 Watt 0.85 1.06 1.28 E` -> ['0.85        1.06        1.28']
-- p.320: `3 Way - 2000 Watt 0.90 1.13 1.35 E` -> ['0.90        1.13        1.35']
-- p.320: `1-Gang 10.00 12.50 15.00 C` -> ['10.00      12.50      15.00']
-- p.320: `2-Gang 12.00 15.00 18.00 C` -> ['12.00      15.00      18.00']
-- p.320: `3-Gang 14.00 17.50 21.00 C` -> ['14.00      17.50      21.00']
-- p.320: `4-Gang 17.00 21.25 25.50 C` -> ['17.00      21.25      25.50']
-- p.320: `5-Gang 20.00 25.00 30.00 C` -> ['20.00      25.00      30.00']
-- p.320: `6-Gang 24.00 30.00 36.00 C` -> ['24.00      30.00      36.00']
-- p.320: `1-Gang 20.00 25.00 30.00 C` -> ['20.00      25.00      30.00']
-- p.320: `2-Gang 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.320: `3-Gang 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.320: `4-Gang 35.00 43.75 52.50 C` -> ['35.00      43.75      52.50']
-- p.320: `50 & 60 Amp Single Receptacle Cover Plates 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.320: `Telephone TV & Blank Cover Plates 12.00 15.00 18.00 C` -> ['12.00      15.00      18.00']
-- p.320: `1G Vertical In-Use Cover 20.00 25.00 30.00 C` -> ['20.00      25.00      30.00']
-- p.320: `1G Horizontal In-Use Cover 20.00 25.00 30.00 C` -> ['20.00      25.00      30.00']
-- p.320: `2G In-Use Cover 25.00 31.25 37.50 C` -> ['25.00      31.25      37.50']
-- p.320: `Weatherproof Blank Bell Cover 10.00 12.50 15.00 C` -> ['10.00      12.50      15.00']
-- p.320: `Weatherproof 1G SW Bell Cover 12.00 15.00 18.00 C` -> ['12.00      15.00      18.00']
-- p.320: `Weatherproof Duplex Vertical Bell Cover 12.00 15.00 18.00 C` -> ['12.00      15.00      18.00']
-- p.320: `Weatherproof Duplex Horizontal Bell Cover 12.00 15.00 18.00 C` -> ['12.00      15.00      18.00']
-- p.320: `Weatherproof 2G Blank Bell Cover 13.00 16.25 19.50 C` -> ['13.00      16.25      19.50']
-- p.320: `Weatherproof 2G SW/Receptacle Bell Cover 14.00 17.50 21.00 C` -> ['14.00      17.50      21.00']
-- p.320: `Weatherproof 2G SW/SW Bell Cover 14.00 17.50 21.00 C` -> ['14.00      17.50      21.00']
-- p.320: `Weatherproof Vertical GFCI Bell Cover 15.00 18.75 22.50 C` -> ['15.00      18.75      22.50']
-- p.320: `Weatherproof Horizontal GFCI Bell Cover 15.00 18.75 22.50 C` -> ['15.00      18.75      22.50']
-- p.320: `1-Gang 20.00 25.00 30.00 C` -> ['20.00      25.00      30.00']
-- p.320: `2-Gang 30.00 37.50 45.00 C` -> ['30.00      37.50      45.00']
-- p.320: `3-Gang 40.00 50.00 60.00 C` -> ['40.00      50.00      60.00']
-- p.344: `Set & Bolt 3-Wide Base Mounting Plate 1.50 1.88 2.25 E` -> ['1.50        1.88        2.25']
-- p.344: `Interconnecting 5.40 6.75 8.10 E` -> ['5.40        6.75        8.10']
-- p.344: `3-Wide Front Protective Shield 0.30 0.38 0.45 E` -> ['0.30        0.38        0.45']
-- p.344: `Top Mounting Plate For Electronics 0.50 0.63 0.75 E` -> ['0.50        0.63        0.75']
-- p.344: `Battery Test Kit 0.75 0.94 1.13 E` -> ['0.75        0.94        1.13']
-- p.344: `Floor Loading Plate - For Even Weight Distribution 1.00 1.25 1.50 E` -> ['1.00        1.25        1.50']
-- p.353: `Slave Fixture Labor Deduct (per Fixture) -0.15 -0.19 -0.23 E` -> ['-0.15', '-0.19', '-0.23']
-- p.386: `Rack Mounted Blade Processor with Monitor 2.00 2.50 3.13 E` -> ['2.50       3.13']
-- p.391: `Lighting (Communication Cable Connection) 1.00 1.25 1.56 E` -> ['1.25       1.56']
-- p.391: `Lighting (Relay) 2.00 2.50 3.13 E` -> ['2.50       3.13']
-- p.391: `Dark Out Drapes (Communication Cable Connection) 1.00 1.25 1.56 E` -> ['1.25       1.56']
-- p.391: `Dark Out Drapes (Relay) 2.00 2.50 3.13 E` -> ['2.50       3.13']
-- p.391: `Speakers 50 Watt 1.00 1.25 1.56 E` -> ['1.25       1.56']
-- p.391: `Speakers 80 Watt 2.00 2.50 3.13 E` -> ['2.50       3.13']
-- p.395: `Nurse Call - Nurse Station Annunciator 6.00 7.50 9.38 E` -> ['7.50       9.38']
-- p.395: `Bed Station Call-In Cord 0.50 0.63 0.78 E` -> ['0.63       0.78']
-- p.395: `Pull Cord 0.50 0.63 0.78 E` -> ['0.63       0.78']
-- p.395: `Pillow Speaker 0.50 0.63 0.78 E` -> ['0.63       0.78']
-- p.395: `Dome Light 0.50 0.65 0.81 E` -> ['0.65       0.81']
-- p.395: `Zone Light 0.50 0.65 0.81 E` -> ['0.65       0.81']
-- p.395: `Staff Station 0.50 0.65 0.81 E` -> ['0.65       0.81']
-- p.395: `Duty Station 0.50 0.65 0.81 E` -> ['0.65       0.81']
-- p.395: `Utility Station 0.50 0.65 0.81 E` -> ['0.65       0.81']
-- p.395: `Emergency Station 0.50 0.63 0.78 E` -> ['0.63       0.78']
-- p.395: `Toilet/Shower Station 0.50 0.63 0.78 E` -> ['0.63       0.78']
-- p.395: `Code Blue Station 0.50 0.63 0.78 E` -> ['0.63       0.78']
-- p.395: `Relay Module - Lighting Control 0.50 0.63 0.78 E` -> ['0.63       0.78']
-- p.406: `Monitor - Rack Mounted 1.00 1.25 1.56 E` -> ['1.25       1.56']
-- p.406: `Monitor - Wall Mounted 2.00 2.50 3.13 E` -> ['2.50       3.13']
-- p.410: `Aspirating Smoke Detector 4.000 5.000 6.000 E` -> ['4.000', '5.000', '6.000']
-- p.410: `Aspirating Pipe 3/4-inch 5.000 6.200 7.500 C` -> ['5.000', '6.200', '7.500']
-- p.410: `Aspirating Socket Coupling 0.050 0.060 0.070 E` -> ['0.050', '0.060', '0.070']
-- p.410: `Aspirating Socket Union 0.050 0.060 0.070 E` -> ['0.050', '0.060', '0.070']
-- p.410: `Aspirating Pipe 90 Long Radius 0.100 0.125 0.150 E` -> ['0.100', '0.125', '0.150']
-- p.410: `Aspirating Pipe 45 0.100 0.125 0.150 E` -> ['0.100', '0.125', '0.150']
-- p.410: `Aspirating End Cap 0.120 0.150 0.180 E` -> ['0.120', '0.150', '0.180']
-- p.410: `Aspirating Pipe Clip 0.083 0.104 1.240 E` -> ['0.083', '0.104', '1.240']
-- p.410: `Aspirating Pipe Entrance Point with Label 0.100 0.125 0.150 E` -> ['0.100', '0.125', '0.150']
-- p.415: `6-inch Thick 0.10 0.12 0.15 SF` -> ['SF']
-- p.415: `8-inch Thick 0.12 0.15 0.18 SF` -> ['SF']
-- p.415: `10-inch Thick 0.14 0.17 0.21 SF` -> ['SF']
-- p.415: `12-inch Thick 0.16 0.20 0.24 SF` -> ['SF']
-- p.415: `18-inch Thick 0.18 0.22 0.27 SF` -> ['SF']
-- p.415: `24-inch Thick 0.20 0.25 0.30 SF` -> ['SF']
-- p.415: `Hand Finish Concrete Slabs at Grade 0.10 0.12 0.15 SF` -> ['SF']
-- p.437: `Hand Finish Pole Foundations Above Grade 0.20 0.25 0.30 SF` -> ['SF']
+## Rows with unrecognised tokens in the numeric zone: 0
 
 ## Rows without item description: 5
 - p.145: `50.00 62.00 73.00 M`
@@ -675,8 +48,91 @@
 - p.195: `X 0.00 0.00 0.00`
 - p.196: `0.81 1.01 1.22 E`
 
-## Pages without a printed folio (PDF index+1 used): 27
-24, 38, 44, 56, 58, 62, 64, 66, 68, 80, 86, 88, 370, 372, 376, 398, 412, 426, 428, 432, 446, 448, 458, 460, 486, 500, 531
+## Rows printed with blank labor-unit cells (kept, no numbers): 16
+- p.150: `Throat Cable`
+- p.155: `Solid Twisted Shielded Pairs`
+- p.221: `1546B Duplex. Receptacle Box`
+- p.270: `6-inch`
+- p.271: `6- inch`
+- p.271: `6- inch`
+- p.341: `Average 13.25 Feet per Minute`
+- p.344: `3-Wide Pallets Are Stackable Up to 8 high`
+- p.354: `*not including emergency sections, these should be estimated separately`
+- p.354: `*not including emergency sections, these should be estimated separately`
+- p.360: `Photoluminescent`
+- p.360: `Tritium Self Luminous`
+- p.364: `7000 to 12000 BTU`
+- p.381: `Splice Tray`
+- p.390: `Matrix Switcher Programming`
+- p.390: `Matrix Switcher (Video)`
+
+## Items whose description spans two lines around the numbers (joined): 49
+- p.181: `3-inch Long Steel Structure Aluminum Compress Connector to 1/4-inch to 1/2-inch Thick Steel Flange`
+- p.181: `3-inch Long Steel Structure Aluminum Compress Connector to 1/2-inch to 1/4-inch Thick Steel Flange`
+- p.181: `6-inch Long Steel Structure Aluminum Compress Connector to 1/4-inch to 1/2-inch Thick Steel Flange`
+- p.181: `6-inch Long Steel Structure Aluminum Compress Connector to 1/2-inch to 1/4-inch Thick Steel Flange`
+- p.310: `Typical Cross Section 800A`
+- p.310: `1200A`
+- p.310: `1600A`
+- p.310: `2000A`
+- p.310: `2500A`
+- p.310: `3000A`
+- p.310: `4000A`
+- p.310: `5000A`
+- p.310: `6000A`
+- p.311: `Horizontal Installation 800A`
+- p.311: `1200A`
+- p.311: `1600A`
+- p.311: `2000A`
+- p.311: `2500A`
+- p.311: `3000A`
+- p.311: `4000A`
+- p.311: `5000A`
+- p.311: `6000A`
+- p.312: `Vertical Installation 800A`
+- p.312: `1200A`
+- p.312: `1600A`
+- p.312: `2000A`
+- p.312: `2500A`
+- p.312: `3000A`
+- p.312: `4000A`
+- p.312: `5000A`
+- p.312: `6000A`
+- p.313: `Termination Box 800A`
+- p.313: `1200A`
+- p.313: `1600A`
+- p.313: `2000A`
+- p.313: `2500A`
+- p.313: `3000A`
+- p.313: `4000A`
+- p.313: `5000A`
+- p.313: `6000A`
+- p.314: `Environmental Seal 800A`
+- p.314: `1200A`
+- p.314: `1600A`
+- p.314: `2000A`
+- p.314: `2500A`
+- p.314: `3000A`
+- p.314: `4000A`
+- p.314: `5000A`
+- p.314: `6000A`
+
+## Titles whose first line is not bold (joined): 1
+- p.200: `Conduit Body (Condulet) Covers - Steel, Aluminum, PVC, PVC Coated` + `(includes gasket when required)`
+
+## Division names wrapped on two lines (joined): 4
+- p.384: `27 16 00: Communications Connecting Cords, Devices and Adapters`
+- p.388: `27 31 00: Voice Communications Switching and Routing Equipment`
+- p.401: `28 05 00: Common Work Results for Electronic Safety and Security`
+- p.443: `33 77 00: Medium-Voltage Utility Switchgear and Protection Devices`
+
+## Notes continued on a plain line: 3
+- p.335: `- www.prosolar.com (Primarily for Residential)`
+- p.335: `- www.unirac.com`
+- p.335: `- www.sunlink.com`
+
+## Pages without a printed folio (PDF index+1 used): 14
+1, 24, 38, 44, 56, 62, 68, 372, 398, 412, 428, 448, 458, 531
 
 ## Rows per section
 - Section 10: Division 28—Electronic Safety and Security: 194
@@ -691,5 +147,5 @@
 - Section 4: Division 13—Special Construction: 220
 - Section 5: Division 21—Fire Suppression: 96
 - Section 7: Division 23—Heating, Ventilating and Air Conditioning (HVAC): 248
-- Section 8: Division 26—Electrical: 12085
-- Section 9: Division 27—Communications: 474
+- Section 8: Division 26—Electrical: 12098
+- Section 9: Division 27—Communications: 477

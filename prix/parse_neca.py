@@ -48,7 +48,7 @@ UNIT_FIX = {"E": "E", "C": "C", "M": "M", "LF": "LF", "CY": "CY", "LE": "LF", "L
 # OCR confusions inside numeric tokens.
 OCR_DIGITS = str.maketrans({"O": "0", "o": "0", "D": "0", "Q": "0", "l": "1", "I": "1", "|": "1", "i": "1",
                             "S": "5", "s": "5", "B": "8", "Z": "2", "z": "2", "g": "9", "G": "6", ",": "."})
-NUM_RE = re.compile(r"^\d+\.\d{1,2}$|^\d+$")
+NUM_RE = re.compile(r"^-?\d+\.\d{1,3}$|^-?\d+$")   # "-0.15" deducts (p.353), "4.000" (p.410)
 DIVISION_RE = re.compile(r"^(\d\d \d\d \d\d(?:\.\d\d)?)\s*[:\-–—]\s*(.+)$")
 SECTION_RE = re.compile(r"^Section \d+:\s*Division\s+\d+.*", re.I)
 PAGE_NUM_RE = re.compile(r"^\d{1,3}$")
@@ -70,6 +70,8 @@ def normalise_number(tok: str) -> str | None:
         return t
     t2 = t.translate(OCR_DIGITS)
     t2 = re.sub(r"\.+", ".", t2)
+    if t2.startswith("."):          # ",28" printed for "0.28" (p.200)
+        t2 = "0" + t2
     if NUM_RE.match(t2):
         return t2
     # "2 .50" / "2. 50" already collapsed; "250" without a dot on a hours column is left to the caller
@@ -145,8 +147,12 @@ def _split_span_into_words(s: dict) -> list[Span]:
     return words
 
 
-def page_spans(page: pymupdf.Page) -> tuple[list[Span], str]:
-    """Visible (native) word tokens of a page; fall back to the invisible OCR layer if there is none."""
+def page_spans(page: pymupdf.Page, layer: str = "auto") -> tuple[list[Span], str]:
+    """Word tokens of a page from the requested text layer.
+
+    layer="auto": visible native text, falling back to the invisible OCR layer when a page has none;
+    "native" / "ocr": that layer only (used to measure the OCR layer against the native one).
+    """
     native, ocr = [], []
     for block in page.get_text("rawdict")["blocks"]:
         for line in block.get("lines", []):
@@ -155,6 +161,10 @@ def page_spans(page: pymupdf.Page) -> tuple[list[Span], str]:
                 if not words:
                     continue
                 (native if s["alpha"] > 0 else ocr).extend(words)
+    if layer == "native":
+        return native, "native"
+    if layer == "ocr":
+        return ocr, "ocr"
     if native:
         return native, "native"
     return ocr, "ocr"
@@ -171,6 +181,19 @@ def group_rows(spans: list[Span]) -> list[Row]:
     for r in rows:
         r.spans.sort(key=lambda s: s.x0)
     return rows
+
+
+def merge_split_decimals(tokens: list[Span]) -> list[Span]:
+    """OCR sometimes splits "1.25" into "1" + ".25" (or "1" + "," + "25"); glue adjacent pieces back."""
+    out: list[Span] = []
+    for t in tokens:
+        if out and t.x0 - out[-1].x1 < 4 and re.fullmatch(r"-?\d+", out[-1].text) \
+                and re.fullmatch(r"[.,]\d{1,3}", t.text):
+            prev = out.pop()
+            out.append(Span(prev.text + t.text, prev.x0, t.x1, prev.y, prev.bold, prev.italic, prev.size))
+        else:
+            out.append(t)
+    return out
 
 
 @dataclass
@@ -216,13 +239,14 @@ def printed_page_number(rows: list[Row], page_index: int) -> int | None:
         if r.y < 60 or r.y > 730:
             for s in r.spans:
                 t = s.text.strip()
-                if PAGE_NUM_RE.match(t) and LEFT_MARGIN_MAX < s.x0 < RIGHT_MARGIN_MIN:
+                if PAGE_NUM_RE.match(t) and (s.x0 < 60 or s.x0 > 520):   # outer corner of the footer
                     cands.append(int(t))
-    # the folio is normally page_index + 1 in this file; prefer a candidate consistent with that
+    # Verified on this file: every printed folio equals page_index + 1 (517 pages, 0 mismatch);
+    # the 14 pages without folio are adverts/blank pages.
     for c in cands:
         if c == page_index + 1:
             return c
-    return cands[0] if cands else None
+    return None
 
 
 @dataclass
@@ -231,66 +255,44 @@ class ParseState:
     division: str = ""
     table_title: str = ""
     note: str = ""
-    pending_desc: list[str] = field(default_factory=list)
-    title_open: bool = False        # last row was a title line (a following bold line continues it)
+    subheader: str = ""             # plain (non-bold) label line printed between the title and its items
 
 
-def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: dict) -> list[dict]:
-    spans, layer = page_spans(page)
-    if layer == "ocr":
-        stats["ocr_pages"].append(page_index + 1)
-    rows = group_rows(spans)
-    cols = find_columns(rows)
-    folio = printed_page_number(rows, page_index)
-    page_label = folio if folio is not None else page_index + 1
-    if folio is None:
-        stats["no_folio"].append(page_index + 1)
+@dataclass
+class Line:
+    """One classified content row of a table page."""
+    kind: str                       # division | title | note | plain | data
+    y: float
+    text: str                       # whole row, as printed (used for `raw`)
+    x0: float = 0.0                 # left edge of the row (titles/items ~146, centred lines > 200)
+    desc: str = ""                  # tokens left of the Rev column
+    nums: dict = field(default_factory=dict)
+    unit: str | None = None
+    rev: str = ""
+    bad_tokens: list = field(default_factory=list)
 
-    # running header: section
+
+def classify_rows(rows: list[Row], cols: Columns) -> list[Line]:
+    lines: list[Line] = []
     for r in rows:
-        if r.y < 80 and SECTION_RE.match(r.text):
-            state.section = re.sub(r"\s+", " ", r.text).strip()
-            break
-
-    if cols is None:
-        # Not a table page.  Divisions may still be announced on intro pages, but only bold,
-        # centred lines on table pages are trusted for the division; nothing else to do.
-        return []
-
-    out: list[dict] = []
-    n_rows_page = 0
-    page_has_title_only = False
-    state.pending_desc = []
-    for r in rows:
-        if r.y <= cols.header_y + 1:
-            continue                                   # running header + column header
-        if r.y > 740:
-            continue                                   # footer
+        if r.y <= cols.header_y + 1 or r.y > 740:
+            continue                                   # running header, column header, footer
         content = [s for s in r.spans if LEFT_MARGIN_MAX < s.x0 < RIGHT_MARGIN_MIN]
         if not content:
             continue
         r = Row(r.y, content)
         text = re.sub(r"\s+", " ", r.text).strip()
-        if not text:
-            continue
-        if text.startswith("©") or text.startswith("NECA Manual of Labor Units") or text == "2021-2022 Edition":
-            continue
-        if PAGE_NUM_RE.match(text):
+        if not text or text.startswith("©") or text.startswith("NECA Manual of Labor Units") \
+                or text == "2021-2022 Edition" or PAGE_NUM_RE.match(text):
             continue
 
-        # Division line: bold, "26 05 33: Raceway and Boxes for Electrical Systems"
         m = DIVISION_RE.match(text)
         if m and r.bold:
-            state.division = f"{m.group(1)}: {m.group(2).strip()}"
-            state.table_title = ""
-            state.note = ""
-            state.title_open = False
-            state.pending_desc = []
+            lines.append(Line("division", r.y, f"{m.group(1)}: {m.group(2).strip()}", r.x0))
             continue
 
-        # Split spans: description zone (left of Rev column) vs numeric/unit zone.
         left = [s for s in r.spans if s.xc < cols.rev - 6]
-        right = [s for s in r.spans if s.xc >= cols.rev - 6]
+        right = merge_split_decimals([s for s in r.spans if s.xc >= cols.rev - 6])
         nums: dict[str, str] = {}
         unit = None
         rev = ""
@@ -311,70 +313,171 @@ def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: di
                 else:
                     nums[col] = n
                 continue
-            # a unit token slightly off the unit column, or an unknown token
-            u = normalise_unit(tok)
+            u = normalise_unit(tok)                    # unit token slightly off its column
             if u and unit is None and s.xc > cols.very + 10:
                 unit = u
                 continue
             bad_tokens.append(tok)
-
         desc = re.sub(r"\s+", " ", " ".join(s.text for s in left)).strip()
 
-        if not nums and not unit:
-            # Text-only row: title, note, continuation of a title, or a wrapped item description.
-            if r.bold:
-                if state.title_open:
-                    state.table_title = (state.table_title + " " + text).strip()
-                else:
-                    state.table_title = text
-                    state.note = ""
-                    state.title_open = True
-                    page_has_title_only = True
-                state.pending_desc = []
-            elif r.italic or text.lower().startswith("note"):
-                state.note = (state.note + " " + text).strip() if state.note else text
-                state.title_open = False
-            else:
-                state.pending_desc.append(text)
-                state.title_open = False
+        if nums or unit:
+            lines.append(Line("data", r.y, text, r.x0, desc, nums, unit, rev, bad_tokens))
             continue
+        # Text-only row.  Bold/italic is judged on the description tokens; a lone "X" in the Rev
+        # column is the revision flag, not text.
+        left_spans = left or r.spans
+        bold = all(s.bold for s in left_spans)
+        italic = all(s.italic for s in left_spans)
+        if right and all(s.text.strip().upper() == "X" for s in right):
+            text = desc
+        if not text:
+            continue                                   # a row holding only the Rev flag (p.271)
+        if bold:
+            lines.append(Line("title", r.y, text, r.x0, desc))
+        elif italic or text.lower().startswith("note"):
+            lines.append(Line("note", r.y, text, r.x0, desc))
+        else:
+            lines.append(Line("plain", r.y, text, r.x0, desc))
+    return lines
 
-        state.title_open = False
-        # Data row.
-        if state.pending_desc:
-            desc = (" ".join(state.pending_desc) + " " + desc).strip()
-            state.pending_desc = []
-        if not desc:
-            stats["rows_without_item"].append((page_label, text))
-        if len(nums) != 3:
-            stats["rows_bad_numbers"].append((page_label, text, dict(nums)))
-        if bad_tokens:
-            stats["rows_bad_tokens"].append((page_label, text, bad_tokens))
-        if unit is None:
-            stats["rows_no_unit"].append((page_label, text))
+
+def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: dict,
+               layer: str = "auto") -> list[dict]:
+    spans, layer = page_spans(page, layer)
+    if layer == "ocr":
+        stats["ocr_pages"].append(page_index + 1)
+    rows = group_rows(spans)
+    cols = find_columns(rows)
+    folio = printed_page_number(rows, page_index)
+    page_label = folio if folio is not None else page_index + 1
+    if folio is None:
+        stats["no_folio"].append(page_index + 1)
+
+    # running header: section
+    for r in rows:
+        if r.y < 80 and SECTION_RE.match(r.text):
+            state.section = re.sub(r"\s+", " ", r.text).strip()
+            break
+
+    if cols is None:
+        return []                                      # not a table page
+
+    lines = classify_rows(rows, cols)
+    out: list[dict] = []
+    pending: list[Line] = []        # plain lines not yet emitted
+    title_open = False
+    last_kind = ""
+    last_y = -1.0
+    TWO_LINE_CELL = 6.0             # pt: numbers vertically centred between two description lines
+    ROW_PITCH = 12.0                # pt: consecutive printed rows are ~8 pt apart
+
+    def title_context() -> str:
         title = state.table_title
         if state.note:
             title = f"{title} | {state.note}" if title else state.note
-        row = {
+        return title
+
+    def emit(desc: str, ln: Line, raw: str):
+        if not desc:
+            stats["rows_without_item"].append((page_label, raw))
+        if ln.kind == "plain":
+            stats["rows_no_numbers"].append((page_label, raw))
+        else:
+            if len(ln.nums) != 3:
+                stats["rows_bad_numbers"].append((page_label, raw, dict(ln.nums)))
+            if ln.bad_tokens:
+                stats["rows_bad_tokens"].append((page_label, raw, ln.bad_tokens))
+            if ln.unit is None:
+                stats["rows_no_unit"].append((page_label, raw))
+        out.append({
             "section": state.section,
             "division": state.division,
             "page": page_label,
-            "table_title": title,
+            "table_title": title_context(),
             "item": desc,
-            "unit": unit or "",
-            "normal_hours": nums.get("normal", ""),
-            "difficult_hours": nums.get("difficult", ""),
-            "very_difficult_hours": nums.get("very", ""),
-            "raw": text,
-        }
-        if rev:
-            row["raw"] = row["raw"]  # Rev flag is kept implicitly in raw ("X" token)
-        out.append(row)
-        n_rows_page += 1
+            "unit": ln.unit or "",
+            "normal_hours": ln.nums.get("normal", ""),
+            "difficult_hours": ln.nums.get("difficult", ""),
+            "very_difficult_hours": ln.nums.get("very", ""),
+            "raw": raw,
+        })
 
-    if n_rows_page == 0:
+    def flush_pending():
+        """Plain lines the book prints as rows with blank labor-unit cells -> rows without numbers."""
+        for pl in pending:
+            emit(pl.text, pl, pl.text)
+        pending.clear()
+
+    i = 0
+    while i < len(lines):
+        ln = lines[i]
+        nxt = lines[i + 1] if i + 1 < len(lines) else None
+        if ln.kind == "division":
+            flush_pending()
+            state.division = ln.text
+            # centred bold second line of a long division name (p.384 "... Devices and" / "Adapters")
+            if nxt is not None and nxt.kind == "title" and nxt.x0 > 200 and 0 < nxt.y - ln.y < ROW_PITCH:
+                state.division = f"{ln.text} {nxt.text}"
+                stats["division_wraps"].append((page_label, state.division))
+                i += 1
+            state.table_title, state.note = "", ""
+            title_open = False
+        elif ln.kind == "title":
+            prefix = ""
+            if pending and 0 < ln.y - pending[-1].y < ROW_PITCH:
+                # non-bold first line of a title wrapped onto a bold second line (p.200)
+                prefix = pending.pop().text
+                stats["title_prefix"].append((page_label, prefix, ln.text))
+            flush_pending()
+            if title_open:
+                state.table_title = (state.table_title + " " + ln.text).strip()
+            else:
+                state.table_title, state.note = (prefix + " " + ln.text).strip(), ""
+                title_open = True
+        elif ln.kind == "note":
+            flush_pending()
+            title_open = False
+            state.note = (state.note + " " + ln.text).strip() if state.note else ln.text
+        elif ln.kind == "plain":
+            title_open = False
+            if last_kind == "note" and 0 < ln.y - last_y < ROW_PITCH \
+                    and (state.note.endswith(":") or ln.text[:1] in "-*•"):
+                # note continued on plain bullet lines (p.335 "Note: ... websites:" / "- www...")
+                state.note = (state.note + " " + ln.text).strip()
+                stats["note_continuations"].append((page_label, ln.text))
+                last_kind, last_y = "note", ln.y
+                i += 1
+                continue
+            pending.append(ln)
+        else:  # data
+            title_open = False
+            desc = ln.desc
+            raw = ln.text
+            consumed_next = False
+            if not desc:
+                # Description printed on the line(s) around the numbers: the line just above
+                # (tall cell, p.310) and/or the line just below (two-line cell, p.181).
+                if pending and 0 < ln.y - pending[-1].y < ROW_PITCH:
+                    above = pending.pop()
+                    desc = above.text
+                    raw = f"{above.text} {raw}"
+                if nxt is not None and nxt.kind == "plain" and 0 < nxt.y - ln.y < TWO_LINE_CELL:
+                    desc = (desc + " " + nxt.text).strip()
+                    raw = f"{raw} {nxt.text}"
+                    consumed_next = True
+                if desc:
+                    stats["wrapped_items"].append((page_label, desc))
+            flush_pending()
+            emit(desc, ln, raw)
+            if consumed_next:
+                i += 1
+        last_kind, last_y = ln.kind, ln.y
+        i += 1
+    flush_pending()
+
+    if not out:
         stats["header_zero_rows"].append(page_label)
-    stats["rows_per_page"][page_label] = n_rows_page
+    stats["rows_per_page"][page_label] = len(out)
     return out
 
 
@@ -403,17 +506,20 @@ def main(argv=None) -> int:
     ap.add_argument("--pdf", type=Path, default=DEFAULT_PDF)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    ap.add_argument("--layer", choices=["auto", "native", "ocr"], default="auto",
+                    help="text layer to read (default auto = native, OCR only where no native text)")
     args = ap.parse_args(argv)
 
     doc = pymupdf.open(args.pdf)
     stats = {
         "ocr_pages": [], "no_folio": [], "rows_without_item": [], "rows_bad_numbers": [],
         "rows_bad_tokens": [], "rows_no_unit": [], "header_zero_rows": [], "rows_per_page": {},
+        "wrapped_items": [], "rows_no_numbers": [], "title_prefix": [], "note_continuations": [], "division_wraps": [],
     }
     state = ParseState()
     rows: list[dict] = []
     for i, page in enumerate(doc):
-        rows.extend(parse_page(page, i, state, stats))
+        rows.extend(parse_page(page, i, state, stats, args.layer))
 
     fieldnames = ["section", "division", "page", "table_title", "item", "unit",
                   "normal_hours", "difficult_hours", "very_difficult_hours", "raw"]
@@ -429,16 +535,27 @@ def main(argv=None) -> int:
     sections = Counter(r["section"] for r in rows)
     divisions = Counter(r["division"] for r in rows)
     complete = sum(1 for r in rows if r["normal_hours"] and r["difficult_hours"] and r["very_difficult_hours"])
+    blank = sum(1 for r in rows if not (r["normal_hours"] or r["difficult_hours"] or r["very_difficult_hours"]))
 
     lines = [
-        f"# NECA 2021-2022 parse report",
+        f"# NECA 2021-2022 parse report (layer: {args.layer})",
         "",
         f"- Source: `{args.pdf}` (sha256 `{sha256(args.pdf)}`), {len(doc)} PDF pages",
-        f"- Output: `{args.out.name}`, **{len(rows)} rows**, {complete} with all three labor units",
+        f"- Output: `{args.out.name}`, **{len(rows)} rows**, {complete} with all three labor units, {blank} printed with blank cells",
         f"- Pages with a table header: {len(stats['rows_per_page'])}; pages read from the OCR layer only: "
         f"{len(stats['ocr_pages'])} {stats['ocr_pages'] if stats['ocr_pages'] else ''}",
         f"- Units: " + ", ".join(f"{u or '(none)'}={c}" for u, c in units.most_common()),
         f"- Sections: {len(sections)}; divisions: {len(divisions)}",
+        "",
+        "## Method",
+        "- `page` is the folio printed in the book (checked equal to PDF index + 1 on every page that prints one).",
+        "- Text is read from the book's native text layer (span alpha 255); the invisible OCR layer (alpha 0) is used",
+        "  only on pages without native text (cover, adverts). Run with `--layer ocr` to parse the OCR layer instead.",
+        "- Numeric/unit tokens go through OCR normalisation (O->0, l/I->1, S->5, comma decimal, split decimals,",
+        "  E/C/M/LF/CY/SF/FT variants); a token already well-formed is never altered.",
+        "- Rows printed with blank labor-unit cells are kept with empty numbers; nothing is filled in.",
+        "- `table_title` = bold table title [+ ` | Note: ...` printed under it]; `raw` = the printed line, including the",
+        "  Rev flag `X` when present.",
         "",
         f"## Monotonicity violations (difficult < normal or very_difficult < difficult): {len(viol)}",
     ]
@@ -455,6 +572,16 @@ def main(argv=None) -> int:
     lines += [f"- p.{p}: `{t}` -> {b}" for p, t, b in stats["rows_bad_tokens"]]
     lines += ["", f"## Rows without item description: {len(stats['rows_without_item'])}"]
     lines += [f"- p.{p}: `{t}`" for p, t in stats["rows_without_item"]]
+    lines += ["", f"## Rows printed with blank labor-unit cells (kept, no numbers): {len(stats['rows_no_numbers'])}"]
+    lines += [f"- p.{p}: `{t}`" for p, t in stats["rows_no_numbers"]]
+    lines += ["", f"## Items whose description spans two lines around the numbers (joined): {len(stats['wrapped_items'])}"]
+    lines += [f"- p.{p}: `{t}`" for p, t in stats["wrapped_items"]]
+    lines += ["", f"## Titles whose first line is not bold (joined): {len(stats['title_prefix'])}"]
+    lines += [f"- p.{p}: `{a}` + `{b}`" for p, a, b in stats["title_prefix"]]
+    lines += ["", f"## Division names wrapped on two lines (joined): {len(stats['division_wraps'])}"]
+    lines += [f"- p.{p}: `{t}`" for p, t in stats["division_wraps"]]
+    lines += ["", f"## Notes continued on a plain line: {len(stats['note_continuations'])}"]
+    lines += [f"- p.{p}: `{t}`" for p, t in stats["note_continuations"]]
     lines += ["", f"## Pages without a printed folio (PDF index+1 used): {len(stats['no_folio'])}",
               ", ".join(str(p) for p in stats["no_folio"]) or "(none)"]
     lines += ["", "## Rows per section"]
@@ -464,7 +591,8 @@ def main(argv=None) -> int:
     print(f"{len(rows)} rows -> {args.out}")
     print(f"monotonicity violations: {len(viol)}; header pages with 0 rows: {len(stats['header_zero_rows'])}; "
           f"bad-number rows: {len(stats['rows_bad_numbers'])}; no-unit rows: {len(stats['rows_no_unit'])}; "
-          f"bad tokens: {len(stats['rows_bad_tokens'])}; no-item rows: {len(stats['rows_without_item'])}")
+          f"bad tokens: {len(stats['rows_bad_tokens'])}; no-item rows: {len(stats['rows_without_item'])}; "
+          f"blank-cell rows: {len(stats['rows_no_numbers'])}")
     print(f"report -> {args.report}")
     return 0
 
