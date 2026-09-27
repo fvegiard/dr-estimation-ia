@@ -349,7 +349,13 @@ Contraintes révélées par l'exécution :
 - Les trois `_v2` font `CLOSE CUR_2 ; DEALLOCATE CUR_2` hors du `IF @REPLACE_FILTER > 0` qui l'a ouvert
   (`Oth_v2` l. 110-111, `Ens_v2` l. 136-137, `Lots_v2` l. 123-124) : appelées avec `@REPLACE_FILTER = 0` elles lèvent
   6 × `Msg 16916 A cursor with the name 'CUR_2' does not exist` (exécuté ; les quantités sont quand même écrites,
-  identiques à celles du §9.2). Appeler avec 1 ou 2.
+  identiques à celles du §9.2). Appeler avec 1 ou 2 — **mais** avec `@REPLACE_FILTER > 0` la branche des codes
+  d'impression (`Oth_v2` l. 83-108) fait `EXEC dbo.sp_SOU_CalculCodeImpr` (l. 101) pour chaque `SOUREL.CODEIMPR <> ''`
+  (l. 87-91) ; cette procédure n'existe que sous le nom littéral `[dbo].[dbo.sp_SOU_CalculCodeImpr]` (voir §1) →
+  `Msg 2812 Could not find stored procedure 'dbo.sp_SOU_CalculCodeImpr'` (exécuté : une ligne `SOUREL` `TYPEITEM='P'`,
+  `CODEIMPR='A'`, `@REPLACE_FILTER = 1`, puis supprimée). Les quantités du curseur `CUR_1` (l. 55-78) sont écrites
+  avant l'erreur. Donc : `@REPLACE_FILTER = 1 ou 2` **et** `SOUREL.CODEIMPR = ''` sur toutes les lignes, sinon
+  `Msg 2812` ; le jumeau facture `sp_FAC_CalculCodeImpr` existe correctement.
 - Une ligne dont le total, arrondi à 2 décimales, ne change pas n'est pas réécrite (`CAST(… AS NUMERIC(18,2)) !=`,
   `Oth_v2` l. 42-43) — sauf si `@DoLog = 1` (l. 41), où toutes les lignes sont écrites dans la table `@SOUPROLOG`
   (l. 46-52) au lieu de `SOUPRO`.
@@ -489,7 +495,7 @@ Qté à commander      : QTEOTH = Σ QTE × MULT × ratio(QTEUM→base(COUUM), Q
 1. Unité du coût hors du groupe de compatibilité de la quantité (`F` vs `C`) → ratio 0 → coût 0 sans erreur (§6).
 2. `BLO_ID` non numérique → `fn_MultBlock` plante le cumul des quantités (§8).
 3. `SOUAMD.FACTMD` fractionnaire tronqué à l'entier (`@LaborFactor INT`, §7.4) ; `QPP` fractionnaire tronqué (`@QPP INT`, §6).
-4. `sp_SOUPRO_Quantity_V2 @REPLACE_FILTER=0` → `Msg 16916` sur `CUR_2` (§8) ; utiliser 1 ou 2.
+4. `sp_SOUPRO_Quantity_V2 @REPLACE_FILTER=0` → `Msg 16916` sur `CUR_2` (§8) ; utiliser 1 ou 2, avec `SOUREL.CODEIMPR = ''` partout (sinon `Msg 2812` sur `dbo.sp_SOU_CalculCodeImpr`, §8).
 5. Le temps des produits composants n'entre pas dans les heures d'un ensemble ou d'un lot : seules `SOUENS.TEMPUNI/TEMPSEC`
    et `SOULOTS.TEMPUNI` comptent (§4, §5).
 6. `MULT_BLOC` ne s'applique qu'au relevé `P` (§7.4).
