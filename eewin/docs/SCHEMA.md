@@ -27,37 +27,37 @@ Conséquence : **l'intégrité référentielle est entièrement portée par le c
 - `SysDate datetime NOT NULL` : horodatage d'insertion présent sur 55 tables, avec `DEFAULT getdate()` sur 54 (`BDEE_MULTI` n'a pas de défaut).
 - `ORDRE varchar(6)` : ordre d'affichage textuel (`'011000'`, incrément de 1000 dans `up_CopySouBlocDiv`).
 - Toute colonne `*UM` (`COUUM`, `QTEUM`, `TEMPUM`, `DIVUM`, `FRAISUM`) est un code `Sys_Units.CodeEN` (2 car.).
-- `ACC_NO` / `ACH_NO` / `ACT_NO` (comptes comptable / achat / activité, 20 car.) ont été ajoutés en V11 puis V45 sur `PROCAT`, `PRODUITS`, `DEFBLO`, `TAUX`, `FRAIS`, `CLITAUX`, `SOUBLO`, `SOUDIV`, `SOUREL` et leurs miroirs `FAC*`.
+- `ACC_NO` / `ACH_NO` / `ACT_NO` (comptes comptable / achat / activité, 20 car.) : présents (`INFORMATION_SCHEMA.COLUMNS`) sur `PROCAT`, `CLITAUX`, `FRAIS`, `TAUX`, `SOUREL`/`FACREL` (les trois), `PRODUITS`, `DEFBLO`, `SOUBLO`/`FACBLO` (`ACC_NO`, `ACH_NO`), `DEFDIV`, `SOUDIV`/`FACDIV` (`ACT_NO` seul) ; ajoutés par les commentaires `-- New field` de V11 (toutes sauf `PRODUITS`) et V45 (`PRODUITS.ACC_NO/ACH_NO`).
 - `INCLSOU` / `INCLFAC` / `SYSTEM` (bit) sur les listes de référence : inclure dans une nouvelle soumission / facture ; enregistrement système non supprimable.
-- Chaque table a son couple `up_<TABLE>_Update` (upsert par `UniqueId`, retourne l'identité) et `up_<TABLE>_Delete` — 106 des 160 procédures sont de ce type. Les `up_SOU*_Update/Delete` appellent `sp_Update_SoumisUseSession` et les `up_FAC*` appellent `sp_Update_FacturesUserSession` pour tracer `USER_ID_UP/USER_UPDATE`.
+- La plupart des tables ont leur couple `up_<TABLE>_Update` (upsert par `UniqueId`, retourne l'identité) et `up_<TABLE>_Delete` — 106 des 160 procédures sont de ce type (8 tables n'ont qu'une des deux : `BDEE_MULTI`, `EULA`, `EULAUSER`, `FACWEBLOGL`, `PROCORRESP`, `SOUWEBLOGL`, `UM_BUSINESSUNIT`, `USERSESSION`). 19 des 23 `up_SOU*_Update/Delete` appellent `sp_Update_SoumisUseSession` (pas `up_SOUBLO_Update`, `up_SOUDIV_Update`, `up_SOUMIS_Delete`, `up_SOUWEBLOG_Delete`) et 19 `up_FAC*` appellent `sp_Update_FacturesUserSession` (`grep -l` sur les définitions) pour tracer `USER_ID_UP/USER_UPDATE`.
 - Le client est écrit en **Delphi** (commentaire `-- TO_CopyPaste en Delphi`, `up_CopySoumis_Full`, V25_UpdateDatabase.sql:37) ; une bonne part des règles métier (taux, frais, blocs par défaut, statuts) n'existe qu'en CRUD côté SQL.
 - Version « Calgary » : `EE_Calgary()` retourne 1 si la colonne `PRODUITS.LC` (landed cost) existe (V22_UpdateDatabase.sql:813). Dans cette base **elle n'existe pas** → `EE_Calgary() = 0`, le moteur utilise `CoutantNetReel` et non `LandedCost`.
 
 ## 3. ERD (relations déduites du code)
 
-Légende : `||--o{` = 1..n. Chaque relation est une jointure trouvée dans la procédure indiquée en commentaire ; **aucune n'est une FK déclarée**.
+Légende : `||--o{` = 1..n. **Aucune relation n'est une FK déclarée** (`sys.foreign_keys` = 0). Une flèche dont le commentaire nomme une procédure ou une fonction (`sp_…`, `up_…`, `fn_…`, `upbi_…`) est une jointure ou une cascade trouvée dans ce code. Une flèche dont le commentaire ne cite qu'un index (`IDX_…`) ou un nom de colonne est **déduite des noms de colonnes** — aucune routine SQL ne la réalise (`grep -w <TABLE>` sur les 178 définitions ne trouve que le CRUD) ; elle est marquée `[non vérifié]`.
 
 ```mermaid
 erDiagram
     %% ---------- Catalogue
-    PROCAT ||--o{ PRODUITS : "CODECAT (up_PriceUpdate_UpdateProducts)"
+    PROCAT ||--o{ PRODUITS : "CODECAT [non vérifié] (up_PriceUpdate_UpdateProducts écrit PRODUITS.CODECAT sans lire PROCAT)"
     PRODUITS ||--o{ ENSCOMPO : "PRO_ID (upbi_ProductsPrefered_BatchAssign)"
-    ENSEMBLE ||--o{ ENSCOMPO : "ENS_ID (IDX_ENS_ID)"
+    ENSEMBLE ||--o{ ENSCOMPO : "ENS_ID (IDX_ENS_ID) [non vérifié]"
     PriceUpdate_Products }o--|| PRODUITS : "PRO_ID (up_PriceUpdate_UpdateProducts)"
 
     %% ---------- Soumission
-    CLIENTS ||--o{ SOUMIS : "CLI_ID = CLIENTNO (IDX_CLIENTNO)"
+    CLIENTS ||--o{ SOUMIS : "CLI_ID = CLIENTNO (IDX_CLIENTNO) [non vérifié]"
     TAXDEF ||--o{ SOUMIS : "TAX_ID (sp_SOU_CalculTotaux)"
-    CATSTATUS ||--o{ SOUMIS : "ORDRE = STATUT, TYPECAT='SOU'"
-    UM_USERS ||--o{ SOUMIS : "USER_ID"
+    CATSTATUS ||--o{ SOUMIS : "ORDRE = STATUT, TYPECAT='SOU' [non vérifié : STATUT int vs ORDRE varchar(6)]"
+    UM_USERS ||--o{ SOUMIS : "USER_ID [non vérifié]"
     SOUMIS ||--o{ SOUBLO : "SOU_ID (up_DeleteSoumis_Full)"
-    SOUMIS ||--o{ SOUDIV : "SOU_ID"
-    SOUMIS ||--o{ SOUAMD : "SOU_ID"
+    SOUMIS ||--o{ SOUDIV : "SOU_ID (up_DeleteSoumis_Full)"
+    SOUMIS ||--o{ SOUAMD : "SOU_ID (up_DeleteSoumis_Full)"
     SOUMIS ||--o{ SOUREL : "SOU_ID"
     SOUMIS ||--o{ SOUPRO : "SOU_ID"
     SOUMIS ||--o{ SOUENS : "SOU_ID"
     SOUMIS ||--o{ SOULOTS : "SOU_ID"
-    SOUMIS ||--o{ SOUWEBLOG : "SOU_ID"
+    SOUMIS ||--o{ SOUWEBLOG : "SOU_ID (up_DeleteSoumis_Full)"
     SOUBLO ||--o{ SOUREL : "BLO_ID (fn_MultBlock)"
     SOUDIV ||--o{ SOUREL : "DIV_ID (fn_GetProductCompositionConcat)"
     SOUBLO ||--o{ SOUAMD : "BLO_ID (sp_SOU_CalculTotaux)"
@@ -76,34 +76,34 @@ erDiagram
     %% ---------- Facture (miroir exact)
     SOUMIS ||--o| FACTURES : "sp_FAC_SOU_Copy (SOU_ID -> FactID)"
     FACTURES ||--o{ FACREL : "SOU_ID (up_DeleteFactures_Full)"
-    FACTURES ||--o{ FACPRO : "SOU_ID"
-    FACTURES ||--o{ FACENS : "SOU_ID"
-    FACENS ||--o{ FACENSCO : "SOU_ID+ENS_ID"
-    FACTURES ||--o{ FACLOTS : "SOU_ID"
-    FACLOTS ||--o{ FACLOTSCO : "SOU_ID+LOTS_ID"
-    FACTURES ||--o{ FACBLO : "SOU_ID"
-    FACTURES ||--o{ FACDIV : "SOU_ID"
-    FACTURES ||--o{ FACAMD : "SOU_ID"
-    FACTURES ||--o{ FACWEBLOG : "SOU_ID"
+    FACTURES ||--o{ FACPRO : "SOU_ID (up_DeleteFactures_Full)"
+    FACTURES ||--o{ FACENS : "SOU_ID (up_DeleteFactures_Full)"
+    FACENS ||--o{ FACENSCO : "SOU_ID+ENS_ID (sp_FAC_CalculTotaux)"
+    FACTURES ||--o{ FACLOTS : "SOU_ID (up_DeleteFactures_Full)"
+    FACLOTS ||--o{ FACLOTSCO : "SOU_ID+LOTS_ID (sp_FAC_CalculTotaux)"
+    FACTURES ||--o{ FACBLO : "SOU_ID (up_DeleteFactures_Full)"
+    FACTURES ||--o{ FACDIV : "SOU_ID (up_DeleteFactures_Full)"
+    FACTURES ||--o{ FACAMD : "SOU_ID (up_DeleteFactures_Full)"
+    FACTURES ||--o{ FACWEBLOG : "SOU_ID (up_DeleteFactures_Full)"
 
     %% ---------- Commande
-    SOUMIS ||--o{ COMMANDE : "SOU_ID"
-    CLIENTS ||--o{ COMMANDE : "CLI_ID = ORDERED_ID"
-    COMMANDE ||--o{ COMMITEM : "COM_ID (IDX_COM_ID)"
+    SOUMIS ||--o{ COMMANDE : "SOU_ID [non vérifié]"
+    CLIENTS ||--o{ COMMANDE : "CLI_ID = ORDERED_ID [non vérifié]"
+    COMMANDE ||--o{ COMMITEM : "COM_ID (IDX_COM_ID) [non vérifié]"
     PRODUITS ||--o{ COMMITEM : "PRO_ID (upbi_ProductsPrefered_BatchAssign)"
-    CATSTATUS ||--o{ COMMANDE : "TYPECAT='COM'"
+    CATSTATUS ||--o{ COMMANDE : "TYPECAT='COM' [non vérifié]"
 
     %% ---------- Référence
-    CLIENTS ||--o{ CLITAUX : "CLI_ID (IDX_UNIQUEKEY)"
+    CLIENTS ||--o{ CLITAUX : "CLI_ID (IDX_UNIQUEKEY) [non vérifié]"
     Sys_Units ||--o{ Sys_UnitsConversion : "UnitFrom/UnitTo (fn_UM_GetRatioDeConversion)"
-    UM_BUSINESSUNIT ||--o{ UM_BRANCHS : "BU_ID"
-    UM_REGIONS ||--o{ UM_AREAS : "REGION_ID"
-    UM_AREAS ||--o{ UM_BRANCHS : "AREA_ID"
-    UM_BRANCHS ||--o{ UM_USERS : "BRANCH_ID"
-    UM_USERS ||--o{ UM_USERREGIONS : "USER_ID"
+    UM_BUSINESSUNIT ||--o{ UM_BRANCHS : "BU_ID [non vérifié]"
+    UM_REGIONS ||--o{ UM_AREAS : "REGION_ID [non vérifié]"
+    UM_AREAS ||--o{ UM_BRANCHS : "AREA_ID [non vérifié]"
+    UM_BRANCHS ||--o{ UM_USERS : "BRANCH_ID [non vérifié]"
+    UM_USERS ||--o{ UM_USERREGIONS : "USER_ID [non vérifié]"
     UM_USERS ||--o{ USERSESSION : "USER_ID (GetCurrentUserSession)"
-    EULA ||--o{ EULAUSER : "ULA_ID"
-    USR_GRIDVIEW ||--o{ USR_GRIDVIEWCOL : "VIEW_ID"
+    EULA ||--o{ EULAUSER : "ULA_ID [non vérifié]"
+    USR_GRIDVIEW ||--o{ USR_GRIDVIEWCOL : "VIEW_ID [non vérifié]"
 ```
 
 Tables hors relations : `BDEE`, `BDEE_MULTI`, `PROCORRESP`, `PROGLOSS`, `PROFGRID`, `DEFBLO`, `DEFDIV`, `NOTES`, `IMPRIMER`, `TAUX`, `FRAIS`, `TOOLSQLSCRIPT`, `_DBVersion`, `_TransferCompleted` (aucune jointure vers elles dans les 178 routines ; CRUD seulement).
@@ -115,7 +115,7 @@ Le flux complet, tel que le code le réalise :
 1. **Catalogue** (`PRODUITS`) : le prix distributeur de chaque article et le temps de pose unitaire que l'estimateur y attache.
 2. **Ensembles** (`ENSEMBLE`/`ENSCOMPO`) : la recette « une prise = boîte + prise + plaque + câble + connecteurs + temps ». C'est l'unité de relevé sur le plan : Plan Expert compte des ensembles, pas des produits.
 3. **Relevé** (`SOUREL`) : le compte de chaque ensemble/produit/lot par bloc et division, avec la quantité et l'unité.
-4. **Explosion** (`sp_SOUPRO_Quantity_V2` → `sp_SOU_UpdateQteTotal{Oth,Ens,Lots}_v2`) : les ensembles relevés sont explosés en quantités de produits dans `SOUPRO.QTEENS/QTELOT/QTEOTH`, converties dans l'unité de coût du produit (`fn_UM_GetRatioDeConversion`) et multipliées par le `MULT` du bloc (`fn_MultBlock`).
+4. **Explosion** (`sp_SOUPRO_Quantity_V2` → `sp_SOU_UpdateQteTotal{Oth,Ens,Lots}_v2`) : les ensembles relevés sont explosés en quantités de produits dans `SOUPRO.QTEENS/QTELOT/QTEOTH`, converties dans l'**unité de base** de l'unité de coût du produit (`fn_UM_GetRatioDeConversion(…, fn_UM_GetUniteDeBase(SP.COUUM), SP.QPP)` — ex. `F` pour un coût en `CF`) et multipliées par le `MULT` du bloc (`fn_MultBlock`).
 5. **Chiffrage** (`sp_SOU_CalculTotaux`) : pour chaque ligne du relevé — coût net réel (`PROMCOUNET` sinon brut − escompte), coût total, vendant (profit en mode coût `C` ou marge `G`), TVP sur coût si permise, temps de pose × facteur main-d'œuvre (`SOUAMD.FACTMD`) × `MULT`, montants taxables par tranche (`TAXDEF`). Le résultat retourné est `fCoutantTotal, fCoutantTotalPortionTVP, fVendantTotal, fLaborTotal` et les `MAT/SER/AUTTAXAB1..5` de `SOUMIS` sont écrits.
 6. **Facture** (`FAC*`) : copie intégrale de la soumission acceptée ; **commande** (`COMMANDE`) : bon d'achat des produits de `SOUPRO`.
 
@@ -149,7 +149,7 @@ Le catalogue de prix. Une ligne par article (fil, conduit, boîte, appareillage�
 |---|---|---|---|---|---|---|
 | 1 | `UniqueId` | bigint | NOT NULL |  | PK IDENTITY |  |
 | 2 | `PRO_ID` | varchar(20) |  |  |  | Identifiant produit. Les 3 premiers caractères sont le code de division/distributeur : `LEFT(PRO_ID,3) IN ('NWE','NOE','NQE','NME','WAE','WME','WOE','WQE','LQE','GSE','SOE')` dans `up_PriceUpdate_UpdateProducts`. Les PRO_ID de 20 caractères sont exclus de la mise au rancart (`LEN(PRO_ID) <> 20`, `up_PriceUpdate_DiscontinueProducts`). Ex. QPL : `LQE008445`. |
-| 3 | `CLEMANU` | varchar(30) |  |  |  | Clé manufacturier (30 car. depuis V13_UpdateDatabase.sql:283). C'est le `Key` des items `ItemType="P"` dans les QPL (ex. `IBE52171K`). |
+| 3 | `CLEMANU` | varchar(30) |  |  |  | Clé manufacturier (30 car. depuis V13_UpdateDatabase.sql:287, `ALTER TABLE dbo.PRODUITS ALTER COLUMN CLEMANU VARCHAR(30)`). C'est le `Key` des items `ItemType="P"` dans les QPL (ex. `IBE52171K`). |
 | 4 | `CLEPERS` | varchar(20) |  |  |  | Clé personnelle de l'estimateur ; `CLEPERS <> ''` = candidat « produit préféré » (`upbi_ProductsPrefered_BatchAssign`). |
 | 5 | `CLEDIST` | varchar(20) |  |  |  | Clé distributeur (chargée par `PriceUpdate_Products`). |
 | 6 | `CODEUPC` | varchar(12) |  |  |  | Code UPC personnel ; écrasé par le UPC distributeur seulement s'il est vide ou égal à CODEUPCDIS (`up_PriceUpdate_UpdateProducts`). |
@@ -577,7 +577,7 @@ L'en-tête de soumission : 138 colonnes. Identification, client et chantier fig�
 
 ### `SOUBLO`
 
-Blocs de la soumission (bâtiment, phase, étage…). Le `MULT` multiplie tout ce qui est relevé dans le bloc — un bloc « étage type × 12 » se relève une fois.
+Blocs de la soumission (bâtiment, phase, étage…). Le `MULT` multiplie les lignes **matériel** (`TYPERELEVE='P'`, `TYPEITEM` P/N/A/L) du bloc — coûts, vendants et heures dans `sp_SOU_CalculTotaux` (l. 459-464 ; les lignes `S` et `O` ne sont pas multipliées, l. 466-477) et quantités dans les `_v2` (`fn_MultBlock`) — un bloc « étage type × 12 » se relève une fois.
 
 - Créée dans `eewin/scripts/CreateTables.sql:596` — 9 colonnes — lignes dans la base rebâtie : **0**.
 
@@ -596,7 +596,7 @@ Blocs de la soumission (bâtiment, phase, étage…). Le `MULT` multiplie tout c
 | 2 | `SOU_ID` | varchar(20) |  |  |  |  |
 | 3 | `BLO_ID` | varchar(3) |  |  |  | Bloc (3 car.), clé avec SOU_ID (`IDX_UNIQUEKEY`). |
 | 4 | `DESC` | varchar(40) |  |  |  | Nom du bloc. |
-| 5 | `MULT` | int |  |  |  | Multiplicateur du bloc : quantités et coûts des lignes du bloc × MULT (`fn_MultBlock`, `sp_SOU_CalculTotaux`) ; défaut 1 si absent. |
+| 5 | `MULT` | int |  |  |  | Multiplicateur du bloc : quantités et coûts des lignes matériel (`TYPERELEVE='P'`) du bloc × MULT (`fn_MultBlock`, `sp_SOU_CalculTotaux` l. 459-464) ; défaut 1 si absent. `fn_MultBlock` reçoit `@BLO_ID_REL INT` : un `BLO_ID` non numérique (`'B1'`) fait échouer les `_v2` (`Msg 245`, exécuté). |
 | 6 | `SysDate` | datetime | NOT NULL | `(getdate())` |  |  |
 | 7 | `ACC_NO` | varchar(20) |  |  |  | V11. |
 | 8 | `ACH_NO` | varchar(20) |  |  |  | V11. |
@@ -648,7 +648,7 @@ Facteur de main-d'œuvre par couple bloc/division (`FACTMD`) : permet de majorer
 | 2 | `SOU_ID` | varchar(20) |  |  |  |  |
 | 3 | `BLO_ID` | varchar(3) |  |  |  | Bloc. |
 | 4 | `DIV_ID` | varchar(3) |  |  |  | Division. |
-| 5 | `FACTMD` | float |  |  |  | Facteur main-d'œuvre appliqué au temps des lignes du couple bloc/division (`@LaborFactor`, `sp_SOU_CalculTotaux`) ; défaut 1. |
+| 5 | `FACTMD` | float |  |  |  | Facteur main-d'œuvre appliqué au temps des lignes du couple bloc/division (`@LaborFactor`, `sp_SOU_CalculTotaux` l. 180-185, 464) ; défaut 1. `@LaborFactor` est déclaré `INT` (l. 39) alors que `FACTMD` est `float` : un facteur 1,5 est tronqué à 1 (prouvé, `eewin/examples/worked_example.log`). |
 | 6 | `SysDate` | datetime | NOT NULL | `(getdate())` |  |  |
 
 ### `SOUREL`
@@ -742,7 +742,7 @@ Copie locale des produits utilisés par la soumission (prix et temps **figés** 
 | 28 | `RESCOUNET` | int |  |  |  | V7. |
 | 29 | `ISVIRT` | bit |  |  |  | Produit virtuel (V15). |
 | 30 | `VIRTCOUNT` | int |  |  |  | Compteur virtuel (V15). |
-| 31 | `UnitSelling` | float |  |  |  | Vendant unitaire (V36) : `MAX(VendantUnitaire)` par produit dans le log de `sp_SOU_CalculTotaux` (incluant TVP si `TAXDEF.TVPSURCPER = 1`). |
+| 31 | `UnitSelling` | float |  |  |  | Vendant unitaire (V36) : `MAX(VendantUnitaire)` par `ITEM_ID` du log de `sp_SOU_CalculTotaux` (incluant TVP si `TAXDEF.TVPSURCPER = 1`). Le log n'est rempli que si `@DoLog = 1` (`IF @DoLog = 1 … insert into @Log`), donc **`UnitSelling` n'est écrit que lors d'un appel avec `@DoLog = 1`** ; seuls les `ITEM_ID` présents dans `SOUPRO.PRO_ID` (produits relevés directement) sont mis à jour. |
 
 ### `SOUENS`
 
@@ -1770,7 +1770,7 @@ Liste des frais (libellé, coût unitaire, unité, profit). Même remarque.
 
 ### `TAXDEF`
 
-Régimes de taxes par province et date. Cinq tranches (`CODETAXn`, `TAUXFEDn`, `TAUXPRVn`) — c'est la seule table de référence lue par le moteur de calcul (`sp_SOU_CalculTotaux`, `sp_FAC_CalculTotaux`).
+Régimes de taxes par province et date. Cinq tranches (`CODETAXn`, `TAUXFEDn`, `TAUXPRVn`) — avec `Sys_Units`/`Sys_UnitsConversion` (via `fn_UM_*`), c'est la seule table de référence lue par le moteur de calcul (`sp_SOU_CalculTotaux`, `sp_FAC_CalculTotaux`) ; seuls `CODETAX1..5`, `TAUXPRV1..5` et `TVPSURCPER` y sont lus (`TAUXFED*` ne l'est pas).
 
 - Créée dans `eewin/scripts/CreateTables.sql:904` — 41 colonnes — lignes dans la base rebâtie : **0**.
 
@@ -2335,7 +2335,7 @@ Fonctions utilitaires : `fn_UM_GetUniteDeBase` (V21:87), `fn_UM_GetNatureUnite` 
 1. **Sept procédures portent littéralement `dbo.` dans leur nom.** V24_UpdateDatabase.SQL lignes 6-41 exécute `sp_rename 'dbo.sp_X', 'dbo.sp_SOU_X'` ; `sp_rename` prend le nouveau nom tel quel, d'où des objets nommés `dbo.sp_SOU_CalculCodeImpr`, `dbo.sp_SOU_UpdateQteTotalOth`, `dbo.sp_SOU_UpdateQteTotalEns`, `dbo.sp_SOU_UpdateQteTotalLots`, `dbo.sp_SOU_CalculQteTotalItem`, `dbo.sp_SOU_CalculProductUsageInAssemblies`, `dbo.sp_SOUPRO_Quantity` (requête : `SELECT name FROM sys.objects WHERE name LIKE 'dbo.%'`). Trois ont été recréés correctement plus tard (`sp_SOUPRO_Quantity`, `sp_SOU_CalculQteTotalItem`, `sp_SOU_CalculProductUsageInAssemblies`) ; **quatre n'ont pas de jumeau correct** : `sp_SOU_CalculCodeImpr`, `sp_SOU_UpdateQteTotalOth/Ens/Lots` (v1).
    Preuve : `EXEC dbo.sp_SOU_CalculCodeImpr 'X','Y','Z'` → `Msg 2812 Could not find stored procedure 'dbo.sp_SOU_CalculCodeImpr'` ; `EXEC [dbo].[dbo.sp_SOU_CalculCodeImpr] 'X','Y','Z'` → OK.
    Effet : la chaîne **v1** côté soumission (`sp_SOUPRO_Quantity` → `sp_SOU_CalculQteTotalItem` → `dbo.sp_SOU_UpdateQteTotal*`) est inexécutable ; la chaîne **v2** fonctionne sauf la branche `@REPLACE_FILTER > 0` avec `CODEIMPR <> ''` qui appelle `dbo.sp_SOU_CalculCodeImpr`. Côté facture, `sp_FAC_CalculCodeImpr` existe correctement.
-2. **Deux procédures référencent une colonne supprimée.** `sp_SOU_CalculProductUsageInAssemblies` (V24:2720) et `sp_FAC_CalculProductUsageInAssemblies` font `UPDATE SOUPRO/FACPRO SET INASSEMBLIE = …` ; la colonne a été supprimée en V36_UpdateDatabase.sql:25-56 (`DROP COLUMN INASSEMBLIE`) au profit de `UnitSelling`. Preuve : `EXEC sp_SOU_CalculProductUsageInAssemblies 'X', 1` → `Msg 207 Invalid column name 'INASSEMBLIE'`.
+2. **Deux procédures référencent une colonne supprimée.** `sp_SOU_CalculProductUsageInAssemblies` (V24:2720) et `sp_FAC_CalculProductUsageInAssemblies` font `UPDATE SOUPRO/FACPRO SET INASSEMBLIE = …` ; la colonne a été supprimée en V36_UpdateDatabase.sql:27-58 (`DROP COLUMN INASSEMBLIE`) au profit de `UnitSelling`. Preuve : `EXEC sp_SOU_CalculProductUsageInAssemblies 'X', 1` → `Msg 207 Invalid column name 'INASSEMBLIE'`.
 3. `SOUMIS.MATTAXAB6 / SERTAXAB6 / AUTTAXAB6` existent mais `TAXDEF` n'a que 5 tranches et `sp_SOU_CalculTotaux` n'écrit que 1..5 : la tranche 6 n'est jamais alimentée par le SQL.
 4. Le recensement du 2026-09-25 annonçait 90 573 lignes `PROCORRESP` d'après le fichier concaténé `EE_BaseDeDonnees_Complet_V0_V45.sql` ; la base rebâtie à partir des 52 scripts séparés en contient **84 721**. L'écart n'est pas expliqué ici (**non vérifié** : doublons dans le fichier concaténé ou lignes rejetées) — à trancher avant d'utiliser cette table.
 
