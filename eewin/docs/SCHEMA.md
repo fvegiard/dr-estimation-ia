@@ -2341,6 +2341,8 @@ Fonctions utilitaires : `fn_UM_GetUniteDeBase` (V21:87), `fn_UM_GetNatureUnite` 
 
 ## 7. Pont QPL (Plan Expert) ↔ base EE — ce qui est prouvé
 
+Étude complète (recherche dans les 52 scripts et 177 modules, anatomie du QPL, chaîne `SOUREL → SOUENS → SOUPRO`, preuve exécutée) : [[PLAN-EXPERT-VERS-EEWIN]].
+
 | Élément QPL (`S-1714-Dupuis-PlanExpert.qpl`) | Colonne EE | Preuve |
 |---|---|---|
 | `EEExchangeData ItemType="A"` | `SOUREL.TYPEITEM = 'A'` (ensemble) | même code dans `sp_SOU_CalculTotaux` |
