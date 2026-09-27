@@ -2308,6 +2308,8 @@ _Aucun index (heap)._
 
 ## 5. Routines : inventaire et graphe d'appel
 
+Le détail arithmétique du moteur, avec un exemple exécuté sur la base, est dans `eewin/docs/CALCUL-SOUMISSION.md` (exemple : `eewin/examples/worked_example.sql` + `.log`). Ce document-ci ne reprend que les règles nécessaires pour lire le schéma.
+
 178 routines = 160 procédures + 18 fonctions. Procédures : **106** `up_<TABLE>_Update/Delete` (CRUD), 15 autres `up_*` (4 `up_*_Full` copie/suppression en cascade, `up_CopySouBlocDiv[_FAC]`, `up_CloneRecords`, `up_GetAllFieldsBut[_v2]`, 6 `up_PriceUpdate_*`), 3 `upbi_*` (produits préférés), et 36 `sp_*` : le **moteur** en deux versions (v1 par item, v2 ensembliste) pour SOU et pour FAC, `sp_CalculUsage_{Product,Assembly,Lot}`, `sp_*_Del_UnusedProd`, `sp_FAC_SOU_Copy`, `sp_Update_*UseSession`, `sp_UpdateToSortCols` (7 des 36 portent le préfixe fautif `dbo.`, voir § 6).
 
 Chaîne v2 (celle qui fonctionne, voir § 6) :
