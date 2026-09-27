@@ -1,0 +1,311 @@
+{
+ "dossier": "S-1844",
+ "trained_on": [
+  "S-1714",
+  "S-1715",
+  "S-1769",
+  "S-1811"
+ ],
+ "threshold": 0.1,
+ "nms_radius": 24.0,
+ "conduit_ratio": 2.5257405874638135,
+ "calibration_best": {
+  "threshold": 0.1,
+  "nms_radius": 24.0,
+  "precision": 0.2157543391188251,
+  "recall_readable": 0.5171673819742489,
+  "f1": 0.3044830123065689,
+  "predicted": 3745,
+  "readable_gold": 466
+ },
+ "gold_type": "positions",
+ "notes": [],
+ "detection": {
+  "all_pages": {
+   "R15": {
+    "tp": 30,
+    "predicted": 1014,
+    "gold": 685,
+    "precision": 0.029585798816568046,
+    "recall": 0.043795620437956206,
+    "f1": 0.03531489111241907
+   },
+   "R25": {
+    "tp": 126,
+    "predicted": 1014,
+    "gold": 685,
+    "precision": 0.1242603550295858,
+    "recall": 0.18394160583941604,
+    "f1": 0.14832254267216008
+   },
+   "R45": {
+    "tp": 221,
+    "predicted": 1014,
+    "gold": 685,
+    "precision": 0.21794871794871795,
+    "recall": 0.32262773722627736,
+    "f1": 0.26015303119482047
+   }
+  },
+  "estimator_marked_pages": {
+   "R15": {
+    "tp": 30,
+    "predicted": 972,
+    "gold": 685,
+    "precision": 0.030864197530864196,
+    "recall": 0.043795620437956206,
+    "f1": 0.036210018105009054
+   },
+   "R25": {
+    "tp": 126,
+    "predicted": 972,
+    "gold": 685,
+    "precision": 0.12962962962962962,
+    "recall": 0.18394160583941604,
+    "f1": 0.15208207604103802
+   },
+   "R45": {
+    "tp": 221,
+    "predicted": 972,
+    "gold": 685,
+    "precision": 0.2273662551440329,
+    "recall": 0.32262773722627736,
+    "f1": 0.26674713337356665
+   }
+  }
+ },
+ "families": {
+  "dispositif": {
+   "tp": 16,
+   "predicted": 481,
+   "gold": 95,
+   "precision": 0.033264033264033266,
+   "recall": 0.16842105263157894,
+   "f1": 0.05555555555555555,
+   "unplaced_gold": 0,
+   "count_error": 4.063157894736842
+  },
+  "luminaire": {
+   "tp": 43,
+   "predicted": 346,
+   "gold": 516,
+   "precision": 0.12427745664739884,
+   "recall": 0.08333333333333333,
+   "f1": 0.09976798143851506,
+   "unplaced_gold": 0,
+   "count_error": -0.32945736434108525
+  },
+  "securite_incendie": {
+   "tp": 0,
+   "predicted": 46,
+   "gold": 4,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": 10.5
+  },
+  "telecom_donnees": {
+   "tp": 0,
+   "predicted": 2,
+   "gold": 10,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": -0.8
+  },
+  "chauffage": {
+   "tp": 0,
+   "predicted": 13,
+   "gold": 5,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": 1.6
+  },
+  "distribution": {
+   "tp": 0,
+   "predicted": 0,
+   "gold": 17,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "unplaced_gold": 0,
+   "count_error": -1.0
+  },
+  "indetermine": {
+   "tp": 2,
+   "predicted": 126,
+   "gold": 38,
+   "precision": 0.015873015873015872,
+   "recall": 0.05263157894736842,
+   "f1": 0.024390243902439025,
+   "unplaced_gold": 23,
+   "count_error": 2.3157894736842106
+  }
+ },
+ "occlusion": {
+  "visible": {
+   "gold": 170,
+   "matched": 35,
+   "recall": 0.20588235294117646
+  },
+  "occluded": {
+   "gold": 515,
+   "matched": 99,
+   "recall": 0.19223300970873786
+  }
+ },
+ "leakage": {
+  "radius_px": 15.0,
+  "predictions_near_other_takeoff": 0.06903353057199212,
+  "gold_near_other_takeoff": 0.5343065693430656
+ },
+ "sheets": [
+  {
+   "page": 1,
+   "sheet": "E101",
+   "gold_total": 0,
+   "predicted_total": 31,
+   "gold": {},
+   "predicted": {
+    "dispositif": 22,
+    "luminaire": 8,
+    "securite_incendie": 1
+   }
+  },
+  {
+   "page": 2,
+   "sheet": "E200",
+   "gold_total": 57,
+   "predicted_total": 216,
+   "gold": {
+    "dispositif": 46,
+    "indetermine": 10,
+    "telecom_donnees": 1
+   },
+   "predicted": {
+    "luminaire": 50,
+    "indetermine": 16,
+    "dispositif": 128,
+    "chauffage": 3,
+    "securite_incendie": 19
+   }
+  },
+  {
+   "page": 3,
+   "sheet": "E200D",
+   "gold_total": 53,
+   "predicted_total": 169,
+   "gold": {
+    "dispositif": 49,
+    "chauffage": 4
+   },
+   "predicted": {
+    "luminaire": 74,
+    "dispositif": 76,
+    "indetermine": 16,
+    "chauffage": 1,
+    "securite_incendie": 1,
+    "telecom_donnees": 1
+   }
+  },
+  {
+   "page": 4,
+   "sheet": "E201",
+   "gold_total": 0,
+   "predicted_total": 11,
+   "gold": {},
+   "predicted": {
+    "dispositif": 4,
+    "luminaire": 6,
+    "indetermine": 1
+   }
+  },
+  {
+   "page": 5,
+   "sheet": "E300",
+   "gold_total": 354,
+   "predicted_total": 220,
+   "gold": {
+    "luminaire": 312,
+    "indetermine": 28,
+    "telecom_donnees": 9,
+    "securite_incendie": 4,
+    "chauffage": 1
+   },
+   "predicted": {
+    "luminaire": 81,
+    "dispositif": 87,
+    "indetermine": 30,
+    "securite_incendie": 17,
+    "chauffage": 4,
+    "telecom_donnees": 1
+   }
+  },
+  {
+   "page": 6,
+   "sheet": "E300D",
+   "gold_total": 204,
+   "predicted_total": 215,
+   "gold": {
+    "luminaire": 204
+   },
+   "predicted": {
+    "dispositif": 106,
+    "luminaire": 75,
+    "indetermine": 27,
+    "securite_incendie": 7
+   }
+  },
+  {
+   "page": 7,
+   "sheet": "E400",
+   "gold_total": 17,
+   "predicted_total": 152,
+   "gold": {
+    "distribution": 17
+   },
+   "predicted": {
+    "luminaire": 52,
+    "indetermine": 36,
+    "dispositif": 58,
+    "securite_incendie": 1,
+    "chauffage": 5
+   }
+  }
+ ],
+ "conduits": [
+  {
+   "page": 2,
+   "sheet": "E200",
+   "estimator_ft": 670.0,
+   "estimated_ft": 3067.9,
+   "error": 3.5789949698877024
+  },
+  {
+   "page": 5,
+   "sheet": "E300",
+   "estimator_ft": 206.4,
+   "estimated_ft": 3512.6,
+   "error": 16.016500938116195
+  },
+  {
+   "page": 7,
+   "sheet": "E400",
+   "estimator_ft": 365.8,
+   "estimated_ft": 2966.0,
+   "error": 7.109249854969651
+  }
+ ],
+ "totals": {
+  "gold_placed": 685,
+  "gold_unplaced": 23,
+  "predicted": 1014,
+  "count_error_vs_placed": 0.4802919708029197,
+  "count_error_vs_all_estimator_marks": 0.4322033898305085
+ },
+ "elapsed_s": 881.3
+}

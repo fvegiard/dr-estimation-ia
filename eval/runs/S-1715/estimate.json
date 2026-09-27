@@ -1,0 +1,8501 @@
+{
+ "source_pdf": "/home/claude/data/dossiers/S-1715/Plans-annotes.pdf",
+ "source_sha256": "d6dfd97b254def6e6a8d5250a7eec4d5d0f16244cbd1855d32bd9e396fe2b233",
+ "format": "dupuis-family-counts/1",
+ "model": {
+  "trained_on": [
+   "S-1714",
+   "S-1769",
+   "S-1811",
+   "S-1844"
+  ],
+  "threshold": 0.25,
+  "nms_radius_px": 24.0,
+  "stride_px": 6,
+  "conduit_ratio": 1.7557051546110072
+ },
+ "totals": {
+  "dispositif": 348,
+  "luminaire": 411,
+  "securite_incendie": 31,
+  "telecom_donnees": 8,
+  "chauffage": 12,
+  "mecanique_moteur": 1,
+  "indetermine": 32
+ },
+ "items": [
+  {
+   "libelle": "DISPOSITIF",
+   "quantite": 348
+  },
+  {
+   "libelle": "LUMINAIRE",
+   "quantite": 411
+  },
+  {
+   "libelle": "ALARME INCENDIE",
+   "quantite": 31
+  },
+  {
+   "libelle": "TELECOM",
+   "quantite": 8
+  },
+  {
+   "libelle": "CHAUFFAGE",
+   "quantite": 12
+  },
+  {
+   "libelle": "RACCORDEMENT MECANIQUE",
+   "quantite": 1
+  },
+  {
+   "libelle": "A CLASSER",
+   "quantite": 32
+  }
+ ],
+ "sheets": [
+  {
+   "page": 1,
+   "sheet": "E002",
+   "width_px": 2997,
+   "height_px": 2120,
+   "raster_source": "embedded-image",
+   "scale_ratio": null,
+   "scale_source": "none",
+   "overlay_fraction": 0.005,
+   "unreadable_markup_zones": 51,
+   "counts": {
+    "dispositif": 68,
+    "luminaire": 78,
+    "securite_incendie": 6,
+    "telecom_donnees": 1,
+    "chauffage": 1,
+    "indetermine": 6
+   },
+   "detections": 160,
+   "conduit_tree_ft": null,
+   "conduit_estimate_ft": null,
+   "flags": [
+    "page_has_coloured_markup",
+    "unreadable_markup_zones",
+    "scale_unknown"
+   ]
+  },
+  {
+   "page": 2,
+   "sheet": "E003",
+   "width_px": 2997,
+   "height_px": 2120,
+   "raster_source": "embedded-image",
+   "scale_ratio": null,
+   "scale_source": "none",
+   "overlay_fraction": 0.0049,
+   "unreadable_markup_zones": 72,
+   "counts": {
+    "dispositif": 38,
+    "luminaire": 74,
+    "securite_incendie": 1,
+    "telecom_donnees": 3,
+    "chauffage": 4,
+    "mecanique_moteur": 1,
+    "indetermine": 8
+   },
+   "detections": 129,
+   "conduit_tree_ft": null,
+   "conduit_estimate_ft": null,
+   "flags": [
+    "page_has_coloured_markup",
+    "unreadable_markup_zones",
+    "scale_unknown"
+   ]
+  },
+  {
+   "page": 3,
+   "sheet": "E102",
+   "width_px": 2997,
+   "height_px": 2120,
+   "raster_source": "embedded-image",
+   "scale_ratio": 200.0,
+   "scale_source": "sheets-csv-metric",
+   "overlay_fraction": 0.0046,
+   "unreadable_markup_zones": 69,
+   "counts": {
+    "dispositif": 49,
+    "luminaire": 79,
+    "securite_incendie": 2,
+    "telecom_donnees": 1,
+    "indetermine": 3
+   },
+   "detections": 134,
+   "conduit_tree_ft": 4181.3,
+   "conduit_estimate_ft": 7341.2,
+   "flags": [
+    "page_has_coloured_markup",
+    "unreadable_markup_zones"
+   ]
+  },
+  {
+   "page": 4,
+   "sheet": "E201",
+   "width_px": 2997,
+   "height_px": 2120,
+   "raster_source": "embedded-image",
+   "scale_ratio": 100.0,
+   "scale_source": "sheets-csv-metric",
+   "overlay_fraction": 0.0119,
+   "unreadable_markup_zones": 173,
+   "counts": {
+    "dispositif": 76,
+    "luminaire": 73,
+    "securite_incendie": 15,
+    "telecom_donnees": 1,
+    "chauffage": 2,
+    "indetermine": 9
+   },
+   "detections": 176,
+   "conduit_tree_ft": 2470.2,
+   "conduit_estimate_ft": 4337.0,
+   "flags": [
+    "page_has_coloured_markup",
+    "unreadable_markup_zones"
+   ]
+  },
+  {
+   "page": 5,
+   "sheet": "E301",
+   "width_px": 2997,
+   "height_px": 2120,
+   "raster_source": "embedded-image",
+   "scale_ratio": 100.0,
+   "scale_source": "sheets-csv-metric",
+   "overlay_fraction": 0.0093,
+   "unreadable_markup_zones": 134,
+   "counts": {
+    "dispositif": 69,
+    "luminaire": 56,
+    "securite_incendie": 4,
+    "telecom_donnees": 1,
+    "chauffage": 4,
+    "indetermine": 2
+   },
+   "detections": 136,
+   "conduit_tree_ft": 1683.0,
+   "conduit_estimate_ft": 2954.9,
+   "flags": [
+    "page_has_coloured_markup",
+    "unreadable_markup_zones"
+   ]
+  },
+  {
+   "page": 6,
+   "sheet": "T201",
+   "width_px": 2997,
+   "height_px": 2120,
+   "raster_source": "embedded-image",
+   "scale_ratio": 100.0,
+   "scale_source": "sheets-csv-metric",
+   "overlay_fraction": 0.0061,
+   "unreadable_markup_zones": 80,
+   "counts": {
+    "dispositif": 48,
+    "luminaire": 51,
+    "securite_incendie": 3,
+    "telecom_donnees": 1,
+    "chauffage": 1,
+    "indetermine": 4
+   },
+   "detections": 108,
+   "conduit_tree_ft": 1632.2,
+   "conduit_estimate_ft": 2865.7,
+   "flags": [
+    "page_has_coloured_markup",
+    "unreadable_markup_zones"
+   ]
+  }
+ ],
+ "counters": [
+  {
+   "group_id": 1,
+   "name": "DISPOSITIF",
+   "family": "dispositif",
+   "quantity": 348,
+   "elements": [
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2421.0,
+     "y": 813.0,
+     "score": 0.995,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2523.0,
+     "y": 813.0,
+     "score": 0.993,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2481.0,
+     "y": 813.0,
+     "score": 0.992,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2853.0,
+     "y": 1131.0,
+     "score": 0.988,
+     "family_prob": 0.987,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2805.0,
+     "y": 1119.0,
+     "score": 0.921,
+     "family_prob": 0.995,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2445.0,
+     "y": 213.0,
+     "score": 0.914,
+     "family_prob": 0.947,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2013.0,
+     "y": 813.0,
+     "score": 0.905,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2865.0,
+     "y": 1233.0,
+     "score": 0.888,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 579.0,
+     "y": 1497.0,
+     "score": 0.883,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1965.0,
+     "y": 195.0,
+     "score": 0.872,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2007.0,
+     "y": 891.0,
+     "score": 0.829,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2037.0,
+     "y": 891.0,
+     "score": 0.825,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1353.0,
+     "y": 1497.0,
+     "score": 0.803,
+     "family_prob": 0.662,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1329.0,
+     "y": 1797.0,
+     "score": 0.77,
+     "family_prob": 0.69,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1485.0,
+     "y": 1533.0,
+     "score": 0.755,
+     "family_prob": 0.967,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1401.0,
+     "y": 1833.0,
+     "score": 0.741,
+     "family_prob": 0.857,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1461.0,
+     "y": 1665.0,
+     "score": 0.715,
+     "family_prob": 0.665,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2403.0,
+     "y": 531.0,
+     "score": 0.712,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1935.0,
+     "y": 195.0,
+     "score": 0.712,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 585.0,
+     "y": 1593.0,
+     "score": 0.708,
+     "family_prob": 0.959,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 585.0,
+     "y": 1557.0,
+     "score": 0.707,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2007.0,
+     "y": 765.0,
+     "score": 0.707,
+     "family_prob": 0.948,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2427.0,
+     "y": 141.0,
+     "score": 0.688,
+     "family_prob": 0.874,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2517.0,
+     "y": 357.0,
+     "score": 0.687,
+     "family_prob": 0.945,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1353.0,
+     "y": 1641.0,
+     "score": 0.686,
+     "family_prob": 0.577,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2433.0,
+     "y": 357.0,
+     "score": 0.685,
+     "family_prob": 0.838,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1557.0,
+     "y": 1533.0,
+     "score": 0.645,
+     "family_prob": 0.92,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 669.0,
+     "y": 1485.0,
+     "score": 0.637,
+     "family_prob": 0.964,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2499.0,
+     "y": 771.0,
+     "score": 0.626,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2463.0,
+     "y": 141.0,
+     "score": 0.624,
+     "family_prob": 0.984,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2037.0,
+     "y": 765.0,
+     "score": 0.616,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1359.0,
+     "y": 1821.0,
+     "score": 0.607,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2001.0,
+     "y": 195.0,
+     "score": 0.602,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1353.0,
+     "y": 1857.0,
+     "score": 0.582,
+     "family_prob": 0.702,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 771.0,
+     "y": 1581.0,
+     "score": 0.578,
+     "family_prob": 0.977,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1443.0,
+     "y": 1821.0,
+     "score": 0.553,
+     "family_prob": 0.928,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1329.0,
+     "y": 1677.0,
+     "score": 0.543,
+     "family_prob": 0.979,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2487.0,
+     "y": 261.0,
+     "score": 0.508,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1515.0,
+     "y": 1845.0,
+     "score": 0.502,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1425.0,
+     "y": 1521.0,
+     "score": 0.499,
+     "family_prob": 0.984,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 681.0,
+     "y": 1617.0,
+     "score": 0.492,
+     "family_prob": 0.977,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2439.0,
+     "y": 735.0,
+     "score": 0.473,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1329.0,
+     "y": 1557.0,
+     "score": 0.47,
+     "family_prob": 0.946,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1413.0,
+     "y": 1689.0,
+     "score": 0.451,
+     "family_prob": 0.88,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 615.0,
+     "y": 1389.0,
+     "score": 0.437,
+     "family_prob": 0.765,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1461.0,
+     "y": 1485.0,
+     "score": 0.433,
+     "family_prob": 0.654,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1515.0,
+     "y": 1671.0,
+     "score": 0.43,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2091.0,
+     "y": 789.0,
+     "score": 0.427,
+     "family_prob": 0.959,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2343.0,
+     "y": 807.0,
+     "score": 0.427,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1515.0,
+     "y": 1785.0,
+     "score": 0.426,
+     "family_prob": 0.804,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1995.0,
+     "y": 549.0,
+     "score": 0.424,
+     "family_prob": 0.984,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 723.0,
+     "y": 1503.0,
+     "score": 0.411,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1701.0,
+     "y": 1557.0,
+     "score": 0.381,
+     "family_prob": 0.704,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1659.0,
+     "y": 1395.0,
+     "score": 0.378,
+     "family_prob": 0.675,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2553.0,
+     "y": 165.0,
+     "score": 0.368,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1359.0,
+     "y": 1533.0,
+     "score": 0.331,
+     "family_prob": 0.855,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1359.0,
+     "y": 1899.0,
+     "score": 0.328,
+     "family_prob": 0.825,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2511.0,
+     "y": 213.0,
+     "score": 0.326,
+     "family_prob": 0.952,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1719.0,
+     "y": 1521.0,
+     "score": 0.319,
+     "family_prob": 0.796,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1557.0,
+     "y": 1497.0,
+     "score": 0.318,
+     "family_prob": 0.898,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2847.0,
+     "y": 975.0,
+     "score": 0.316,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2475.0,
+     "y": 435.0,
+     "score": 0.305,
+     "family_prob": 0.706,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 585.0,
+     "y": 1677.0,
+     "score": 0.294,
+     "family_prob": 0.624,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 501.0,
+     "y": 1383.0,
+     "score": 0.282,
+     "family_prob": 0.54,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 711.0,
+     "y": 1593.0,
+     "score": 0.28,
+     "family_prob": 0.698,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1455.0,
+     "y": 1857.0,
+     "score": 0.279,
+     "family_prob": 0.903,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1965.0,
+     "y": 549.0,
+     "score": 0.268,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 627.0,
+     "y": 1641.0,
+     "score": 0.266,
+     "family_prob": 0.556,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2853.0,
+     "y": 1131.0,
+     "score": 0.988,
+     "family_prob": 0.987,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2301.0,
+     "y": 795.0,
+     "score": 0.985,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1245.0,
+     "y": 387.0,
+     "score": 0.969,
+     "family_prob": 0.71,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2277.0,
+     "y": 981.0,
+     "score": 0.958,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2253.0,
+     "y": 645.0,
+     "score": 0.941,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2445.0,
+     "y": 981.0,
+     "score": 0.938,
+     "family_prob": 0.978,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2805.0,
+     "y": 1119.0,
+     "score": 0.921,
+     "family_prob": 0.995,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1701.0,
+     "y": 915.0,
+     "score": 0.911,
+     "family_prob": 0.837,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2865.0,
+     "y": 1233.0,
+     "score": 0.888,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2169.0,
+     "y": 645.0,
+     "score": 0.881,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1701.0,
+     "y": 645.0,
+     "score": 0.864,
+     "family_prob": 0.635,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1701.0,
+     "y": 957.0,
+     "score": 0.832,
+     "family_prob": 0.898,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2517.0,
+     "y": 837.0,
+     "score": 0.823,
+     "family_prob": 0.945,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1803.0,
+     "y": 693.0,
+     "score": 0.82,
+     "family_prob": 0.506,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2349.0,
+     "y": 975.0,
+     "score": 0.806,
+     "family_prob": 0.97,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2409.0,
+     "y": 813.0,
+     "score": 0.795,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 639.0,
+     "y": 645.0,
+     "score": 0.771,
+     "family_prob": 0.684,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1701.0,
+     "y": 687.0,
+     "score": 0.769,
+     "family_prob": 0.873,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2343.0,
+     "y": 813.0,
+     "score": 0.714,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2313.0,
+     "y": 843.0,
+     "score": 0.705,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 621.0,
+     "y": 957.0,
+     "score": 0.696,
+     "family_prob": 0.608,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 747.0,
+     "y": 579.0,
+     "score": 0.671,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2271.0,
+     "y": 735.0,
+     "score": 0.658,
+     "family_prob": 0.972,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 621.0,
+     "y": 687.0,
+     "score": 0.643,
+     "family_prob": 0.806,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1629.0,
+     "y": 1413.0,
+     "score": 0.607,
+     "family_prob": 0.601,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2463.0,
+     "y": 837.0,
+     "score": 0.543,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2055.0,
+     "y": 1551.0,
+     "score": 0.51,
+     "family_prob": 0.563,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2337.0,
+     "y": 1269.0,
+     "score": 0.438,
+     "family_prob": 0.956,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2085.0,
+     "y": 645.0,
+     "score": 0.431,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2055.0,
+     "y": 1455.0,
+     "score": 0.395,
+     "family_prob": 0.968,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2169.0,
+     "y": 1587.0,
+     "score": 0.365,
+     "family_prob": 0.486,
+     "flags": [
+      "near_coloured_markup",
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1707.0,
+     "y": 579.0,
+     "score": 0.338,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 729.0,
+     "y": 849.0,
+     "score": 0.325,
+     "family_prob": 0.974,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2847.0,
+     "y": 975.0,
+     "score": 0.316,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2307.0,
+     "y": 1341.0,
+     "score": 0.31,
+     "family_prob": 0.967,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 699.0,
+     "y": 579.0,
+     "score": 0.305,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2289.0,
+     "y": 885.0,
+     "score": 0.304,
+     "family_prob": 0.682,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1611.0,
+     "y": 447.0,
+     "score": 0.265,
+     "family_prob": 0.977,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1227.0,
+     "y": 1725.0,
+     "score": 0.993,
+     "family_prob": 0.545,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2853.0,
+     "y": 1131.0,
+     "score": 0.988,
+     "family_prob": 0.987,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1635.0,
+     "y": 1437.0,
+     "score": 0.987,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1389.0,
+     "y": 1671.0,
+     "score": 0.977,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1623.0,
+     "y": 1365.0,
+     "score": 0.972,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1407.0,
+     "y": 1233.0,
+     "score": 0.971,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1077.0,
+     "y": 939.0,
+     "score": 0.968,
+     "family_prob": 0.952,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2349.0,
+     "y": 837.0,
+     "score": 0.966,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1491.0,
+     "y": 1413.0,
+     "score": 0.961,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1407.0,
+     "y": 933.0,
+     "score": 0.956,
+     "family_prob": 0.966,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1407.0,
+     "y": 1383.0,
+     "score": 0.952,
+     "family_prob": 0.973,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2385.0,
+     "y": 843.0,
+     "score": 0.95,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1611.0,
+     "y": 1515.0,
+     "score": 0.936,
+     "family_prob": 0.988,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2805.0,
+     "y": 1119.0,
+     "score": 0.921,
+     "family_prob": 0.995,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1395.0,
+     "y": 1593.0,
+     "score": 0.917,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1491.0,
+     "y": 1275.0,
+     "score": 0.914,
+     "family_prob": 0.583,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 951.0,
+     "y": 1011.0,
+     "score": 0.899,
+     "family_prob": 0.871,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1407.0,
+     "y": 1011.0,
+     "score": 0.897,
+     "family_prob": 0.948,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1389.0,
+     "y": 1539.0,
+     "score": 0.884,
+     "family_prob": 0.778,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1629.0,
+     "y": 1701.0,
+     "score": 0.861,
+     "family_prob": 0.988,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1551.0,
+     "y": 1473.0,
+     "score": 0.852,
+     "family_prob": 0.723,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1407.0,
+     "y": 1161.0,
+     "score": 0.841,
+     "family_prob": 0.882,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2301.0,
+     "y": 837.0,
+     "score": 0.82,
+     "family_prob": 0.987,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1197.0,
+     "y": 1815.0,
+     "score": 0.794,
+     "family_prob": 0.925,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1575.0,
+     "y": 1347.0,
+     "score": 0.789,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1497.0,
+     "y": 1611.0,
+     "score": 0.785,
+     "family_prob": 0.96,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1389.0,
+     "y": 1707.0,
+     "score": 0.781,
+     "family_prob": 0.959,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1413.0,
+     "y": 1455.0,
+     "score": 0.749,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1155.0,
+     "y": 1809.0,
+     "score": 0.729,
+     "family_prob": 0.878,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1323.0,
+     "y": 939.0,
+     "score": 0.725,
+     "family_prob": 0.918,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1569.0,
+     "y": 1515.0,
+     "score": 0.687,
+     "family_prob": 0.924,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1635.0,
+     "y": 1287.0,
+     "score": 0.647,
+     "family_prob": 0.937,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1473.0,
+     "y": 1539.0,
+     "score": 0.646,
+     "family_prob": 0.856,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 993.0,
+     "y": 1605.0,
+     "score": 0.628,
+     "family_prob": 0.949,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1605.0,
+     "y": 1479.0,
+     "score": 0.601,
+     "family_prob": 0.946,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2283.0,
+     "y": 897.0,
+     "score": 0.579,
+     "family_prob": 0.935,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 711.0,
+     "y": 1005.0,
+     "score": 0.559,
+     "family_prob": 0.78,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2307.0,
+     "y": 1959.0,
+     "score": 0.529,
+     "family_prob": 0.558,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1593.0,
+     "y": 1707.0,
+     "score": 0.514,
+     "family_prob": 0.819,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 981.0,
+     "y": 1233.0,
+     "score": 0.491,
+     "family_prob": 0.936,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 987.0,
+     "y": 1539.0,
+     "score": 0.491,
+     "family_prob": 0.764,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1491.0,
+     "y": 1755.0,
+     "score": 0.473,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1437.0,
+     "y": 1101.0,
+     "score": 0.412,
+     "family_prob": 0.45,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2469.0,
+     "y": 837.0,
+     "score": 0.381,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2883.0,
+     "y": 2019.0,
+     "score": 0.335,
+     "family_prob": 0.598,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2847.0,
+     "y": 975.0,
+     "score": 0.316,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1857.0,
+     "y": 789.0,
+     "score": 0.292,
+     "family_prob": 0.558,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 993.0,
+     "y": 1383.0,
+     "score": 0.285,
+     "family_prob": 0.524,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1401.0,
+     "y": 1089.0,
+     "score": 0.266,
+     "family_prob": 0.923,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1959.0,
+     "y": 531.0,
+     "score": 0.992,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2127.0,
+     "y": 645.0,
+     "score": 0.991,
+     "family_prob": 0.99,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2361.0,
+     "y": 1653.0,
+     "score": 0.987,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2847.0,
+     "y": 1101.0,
+     "score": 0.986,
+     "family_prob": 0.98,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2847.0,
+     "y": 1245.0,
+     "score": 0.985,
+     "family_prob": 0.992,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2289.0,
+     "y": 1083.0,
+     "score": 0.983,
+     "family_prob": 0.978,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2547.0,
+     "y": 891.0,
+     "score": 0.977,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2481.0,
+     "y": 1437.0,
+     "score": 0.977,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2127.0,
+     "y": 537.0,
+     "score": 0.969,
+     "family_prob": 0.975,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2127.0,
+     "y": 705.0,
+     "score": 0.968,
+     "family_prob": 0.983,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2307.0,
+     "y": 981.0,
+     "score": 0.968,
+     "family_prob": 0.978,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1947.0,
+     "y": 663.0,
+     "score": 0.967,
+     "family_prob": 0.934,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2127.0,
+     "y": 459.0,
+     "score": 0.959,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2847.0,
+     "y": 1167.0,
+     "score": 0.954,
+     "family_prob": 0.975,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1851.0,
+     "y": 549.0,
+     "score": 0.952,
+     "family_prob": 0.984,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1485.0,
+     "y": 711.0,
+     "score": 0.943,
+     "family_prob": 0.989,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1917.0,
+     "y": 573.0,
+     "score": 0.937,
+     "family_prob": 0.891,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2721.0,
+     "y": 963.0,
+     "score": 0.928,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2031.0,
+     "y": 459.0,
+     "score": 0.921,
+     "family_prob": 0.638,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1851.0,
+     "y": 663.0,
+     "score": 0.912,
+     "family_prob": 0.981,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1779.0,
+     "y": 483.0,
+     "score": 0.912,
+     "family_prob": 0.993,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2439.0,
+     "y": 843.0,
+     "score": 0.906,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2337.0,
+     "y": 1557.0,
+     "score": 0.904,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2847.0,
+     "y": 753.0,
+     "score": 0.897,
+     "family_prob": 0.969,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2499.0,
+     "y": 1917.0,
+     "score": 0.89,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2403.0,
+     "y": 1437.0,
+     "score": 0.89,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2349.0,
+     "y": 909.0,
+     "score": 0.888,
+     "family_prob": 0.967,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2367.0,
+     "y": 843.0,
+     "score": 0.883,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1713.0,
+     "y": 507.0,
+     "score": 0.866,
+     "family_prob": 0.969,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2031.0,
+     "y": 681.0,
+     "score": 0.857,
+     "family_prob": 0.98,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2331.0,
+     "y": 1203.0,
+     "score": 0.844,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1959.0,
+     "y": 471.0,
+     "score": 0.825,
+     "family_prob": 0.98,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2331.0,
+     "y": 1323.0,
+     "score": 0.816,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2511.0,
+     "y": 837.0,
+     "score": 0.815,
+     "family_prob": 0.978,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2493.0,
+     "y": 1077.0,
+     "score": 0.804,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1827.0,
+     "y": 621.0,
+     "score": 0.783,
+     "family_prob": 0.586,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2103.0,
+     "y": 597.0,
+     "score": 0.779,
+     "family_prob": 0.976,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2433.0,
+     "y": 1677.0,
+     "score": 0.776,
+     "family_prob": 0.953,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1653.0,
+     "y": 501.0,
+     "score": 0.775,
+     "family_prob": 0.99,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2463.0,
+     "y": 1677.0,
+     "score": 0.739,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2031.0,
+     "y": 711.0,
+     "score": 0.734,
+     "family_prob": 0.992,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1539.0,
+     "y": 417.0,
+     "score": 0.725,
+     "family_prob": 0.864,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2307.0,
+     "y": 1461.0,
+     "score": 0.676,
+     "family_prob": 0.981,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2535.0,
+     "y": 963.0,
+     "score": 0.673,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1485.0,
+     "y": 465.0,
+     "score": 0.664,
+     "family_prob": 0.505,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2397.0,
+     "y": 1371.0,
+     "score": 0.646,
+     "family_prob": 0.976,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2805.0,
+     "y": 975.0,
+     "score": 0.641,
+     "family_prob": 0.568,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2403.0,
+     "y": 1401.0,
+     "score": 0.627,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2499.0,
+     "y": 1677.0,
+     "score": 0.584,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2427.0,
+     "y": 1035.0,
+     "score": 0.567,
+     "family_prob": 0.975,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1491.0,
+     "y": 429.0,
+     "score": 0.561,
+     "family_prob": 0.945,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2403.0,
+     "y": 1077.0,
+     "score": 0.548,
+     "family_prob": 0.929,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2553.0,
+     "y": 1461.0,
+     "score": 0.539,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1653.0,
+     "y": 453.0,
+     "score": 0.535,
+     "family_prob": 0.993,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2343.0,
+     "y": 1053.0,
+     "score": 0.521,
+     "family_prob": 0.981,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2631.0,
+     "y": 1917.0,
+     "score": 0.483,
+     "family_prob": 0.959,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1869.0,
+     "y": 483.0,
+     "score": 0.476,
+     "family_prob": 0.955,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2787.0,
+     "y": 1935.0,
+     "score": 0.437,
+     "family_prob": 0.894,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2559.0,
+     "y": 1695.0,
+     "score": 0.435,
+     "family_prob": 0.599,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2445.0,
+     "y": 771.0,
+     "score": 0.418,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2481.0,
+     "y": 957.0,
+     "score": 0.412,
+     "family_prob": 0.979,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2283.0,
+     "y": 1203.0,
+     "score": 0.41,
+     "family_prob": 0.989,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2301.0,
+     "y": 1515.0,
+     "score": 0.404,
+     "family_prob": 0.947,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1707.0,
+     "y": 459.0,
+     "score": 0.374,
+     "family_prob": 0.996,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1521.0,
+     "y": 495.0,
+     "score": 0.343,
+     "family_prob": 0.897,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1995.0,
+     "y": 687.0,
+     "score": 0.33,
+     "family_prob": 0.629,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 921.0,
+     "y": 813.0,
+     "score": 0.315,
+     "family_prob": 0.515,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2475.0,
+     "y": 837.0,
+     "score": 0.305,
+     "family_prob": 0.909,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2841.0,
+     "y": 873.0,
+     "score": 0.289,
+     "family_prob": 0.931,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2481.0,
+     "y": 903.0,
+     "score": 0.288,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2883.0,
+     "y": 2019.0,
+     "score": 0.276,
+     "family_prob": 0.63,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2271.0,
+     "y": 735.0,
+     "score": 0.268,
+     "family_prob": 0.97,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2403.0,
+     "y": 885.0,
+     "score": 0.265,
+     "family_prob": 0.982,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2289.0,
+     "y": 1311.0,
+     "score": 0.264,
+     "family_prob": 0.689,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2445.0,
+     "y": 1203.0,
+     "score": 0.259,
+     "family_prob": 0.982,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2373.0,
+     "y": 1077.0,
+     "score": 0.254,
+     "family_prob": 0.987,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2283.0,
+     "y": 837.0,
+     "score": 0.985,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2841.0,
+     "y": 747.0,
+     "score": 0.982,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2301.0,
+     "y": 1083.0,
+     "score": 0.979,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2349.0,
+     "y": 1437.0,
+     "score": 0.971,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2841.0,
+     "y": 1251.0,
+     "score": 0.969,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2277.0,
+     "y": 801.0,
+     "score": 0.963,
+     "family_prob": 0.989,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2301.0,
+     "y": 1317.0,
+     "score": 0.95,
+     "family_prob": 0.967,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1689.0,
+     "y": 429.0,
+     "score": 0.945,
+     "family_prob": 0.943,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2301.0,
+     "y": 1437.0,
+     "score": 0.926,
+     "family_prob": 0.967,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1953.0,
+     "y": 531.0,
+     "score": 0.916,
+     "family_prob": 0.949,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2841.0,
+     "y": 1155.0,
+     "score": 0.914,
+     "family_prob": 0.983,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2307.0,
+     "y": 789.0,
+     "score": 0.906,
+     "family_prob": 0.978,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1767.0,
+     "y": 513.0,
+     "score": 0.903,
+     "family_prob": 0.97,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2541.0,
+     "y": 969.0,
+     "score": 0.877,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2517.0,
+     "y": 927.0,
+     "score": 0.869,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2841.0,
+     "y": 1719.0,
+     "score": 0.838,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2469.0,
+     "y": 927.0,
+     "score": 0.835,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1449.0,
+     "y": 687.0,
+     "score": 0.812,
+     "family_prob": 0.993,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2289.0,
+     "y": 1203.0,
+     "score": 0.808,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2415.0,
+     "y": 1317.0,
+     "score": 0.798,
+     "family_prob": 0.979,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2463.0,
+     "y": 957.0,
+     "score": 0.758,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2475.0,
+     "y": 1467.0,
+     "score": 0.744,
+     "family_prob": 0.954,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2847.0,
+     "y": 1785.0,
+     "score": 0.73,
+     "family_prob": 0.946,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2337.0,
+     "y": 1797.0,
+     "score": 0.723,
+     "family_prob": 0.935,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2421.0,
+     "y": 1683.0,
+     "score": 0.72,
+     "family_prob": 0.988,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2427.0,
+     "y": 1437.0,
+     "score": 0.7,
+     "family_prob": 0.945,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2319.0,
+     "y": 1041.0,
+     "score": 0.684,
+     "family_prob": 0.968,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1467.0,
+     "y": 519.0,
+     "score": 0.68,
+     "family_prob": 0.967,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2499.0,
+     "y": 1059.0,
+     "score": 0.622,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1515.0,
+     "y": 555.0,
+     "score": 0.62,
+     "family_prob": 0.791,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2289.0,
+     "y": 1797.0,
+     "score": 0.61,
+     "family_prob": 0.991,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2475.0,
+     "y": 843.0,
+     "score": 0.609,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2355.0,
+     "y": 1557.0,
+     "score": 0.594,
+     "family_prob": 0.918,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2355.0,
+     "y": 1677.0,
+     "score": 0.584,
+     "family_prob": 0.895,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2493.0,
+     "y": 1713.0,
+     "score": 0.561,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2061.0,
+     "y": 423.0,
+     "score": 0.554,
+     "family_prob": 0.698,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2397.0,
+     "y": 843.0,
+     "score": 0.549,
+     "family_prob": 0.958,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2343.0,
+     "y": 1389.0,
+     "score": 0.525,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2355.0,
+     "y": 1077.0,
+     "score": 0.508,
+     "family_prob": 0.969,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2439.0,
+     "y": 837.0,
+     "score": 0.507,
+     "family_prob": 0.708,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2289.0,
+     "y": 1155.0,
+     "score": 0.504,
+     "family_prob": 0.957,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2427.0,
+     "y": 1059.0,
+     "score": 0.491,
+     "family_prob": 0.975,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2289.0,
+     "y": 939.0,
+     "score": 0.486,
+     "family_prob": 0.755,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2427.0,
+     "y": 957.0,
+     "score": 0.446,
+     "family_prob": 0.973,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1953.0,
+     "y": 477.0,
+     "score": 0.44,
+     "family_prob": 0.944,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2157.0,
+     "y": 747.0,
+     "score": 0.427,
+     "family_prob": 0.908,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2343.0,
+     "y": 1647.0,
+     "score": 0.427,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2301.0,
+     "y": 1755.0,
+     "score": 0.4,
+     "family_prob": 0.949,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1911.0,
+     "y": 465.0,
+     "score": 0.39,
+     "family_prob": 0.985,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2547.0,
+     "y": 1683.0,
+     "score": 0.387,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2313.0,
+     "y": 885.0,
+     "score": 0.369,
+     "family_prob": 0.988,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2025.0,
+     "y": 423.0,
+     "score": 0.361,
+     "family_prob": 0.982,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2319.0,
+     "y": 915.0,
+     "score": 0.354,
+     "family_prob": 0.976,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2841.0,
+     "y": 1023.0,
+     "score": 0.34,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 921.0,
+     "y": 813.0,
+     "score": 0.322,
+     "family_prob": 0.532,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1977.0,
+     "y": 447.0,
+     "score": 0.317,
+     "family_prob": 0.991,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2469.0,
+     "y": 891.0,
+     "score": 0.317,
+     "family_prob": 0.911,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2343.0,
+     "y": 981.0,
+     "score": 0.316,
+     "family_prob": 0.515,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2547.0,
+     "y": 867.0,
+     "score": 0.314,
+     "family_prob": 0.844,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2289.0,
+     "y": 1677.0,
+     "score": 0.314,
+     "family_prob": 0.968,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2505.0,
+     "y": 1317.0,
+     "score": 0.311,
+     "family_prob": 0.839,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2805.0,
+     "y": 723.0,
+     "score": 0.303,
+     "family_prob": 0.93,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2457.0,
+     "y": 1677.0,
+     "score": 0.298,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2391.0,
+     "y": 1701.0,
+     "score": 0.293,
+     "family_prob": 0.982,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2391.0,
+     "y": 1581.0,
+     "score": 0.293,
+     "family_prob": 0.982,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2355.0,
+     "y": 1755.0,
+     "score": 0.282,
+     "family_prob": 0.887,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2391.0,
+     "y": 1077.0,
+     "score": 0.278,
+     "family_prob": 0.97,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1983.0,
+     "y": 579.0,
+     "score": 0.274,
+     "family_prob": 0.886,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2355.0,
+     "y": 1197.0,
+     "score": 0.271,
+     "family_prob": 0.785,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2811.0,
+     "y": 1161.0,
+     "score": 0.995,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2817.0,
+     "y": 1119.0,
+     "score": 0.995,
+     "family_prob": 0.994,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2379.0,
+     "y": 843.0,
+     "score": 0.994,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2859.0,
+     "y": 1131.0,
+     "score": 0.988,
+     "family_prob": 0.61,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2373.0,
+     "y": 1197.0,
+     "score": 0.986,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2817.0,
+     "y": 771.0,
+     "score": 0.974,
+     "family_prob": 0.995,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1725.0,
+     "y": 585.0,
+     "score": 0.974,
+     "family_prob": 0.804,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2475.0,
+     "y": 807.0,
+     "score": 0.953,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2373.0,
+     "y": 813.0,
+     "score": 0.951,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2349.0,
+     "y": 909.0,
+     "score": 0.949,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1827.0,
+     "y": 669.0,
+     "score": 0.925,
+     "family_prob": 0.818,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2409.0,
+     "y": 1197.0,
+     "score": 0.916,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2373.0,
+     "y": 1167.0,
+     "score": 0.909,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1479.0,
+     "y": 693.0,
+     "score": 0.908,
+     "family_prob": 0.577,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2427.0,
+     "y": 963.0,
+     "score": 0.905,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1515.0,
+     "y": 675.0,
+     "score": 0.895,
+     "family_prob": 0.801,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2571.0,
+     "y": 927.0,
+     "score": 0.889,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1665.0,
+     "y": 591.0,
+     "score": 0.882,
+     "family_prob": 0.732,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2319.0,
+     "y": 1083.0,
+     "score": 0.861,
+     "family_prob": 0.504,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1521.0,
+     "y": 525.0,
+     "score": 0.851,
+     "family_prob": 0.833,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2481.0,
+     "y": 963.0,
+     "score": 0.8,
+     "family_prob": 0.951,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1563.0,
+     "y": 495.0,
+     "score": 0.785,
+     "family_prob": 0.928,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2487.0,
+     "y": 837.0,
+     "score": 0.779,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2319.0,
+     "y": 1203.0,
+     "score": 0.77,
+     "family_prob": 0.67,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2301.0,
+     "y": 885.0,
+     "score": 0.764,
+     "family_prob": 0.837,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2481.0,
+     "y": 933.0,
+     "score": 0.744,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1641.0,
+     "y": 651.0,
+     "score": 0.727,
+     "family_prob": 0.507,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2289.0,
+     "y": 1101.0,
+     "score": 0.7,
+     "family_prob": 0.907,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 525.0,
+     "y": 1125.0,
+     "score": 0.672,
+     "family_prob": 0.712,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2301.0,
+     "y": 795.0,
+     "score": 0.666,
+     "family_prob": 0.937,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2307.0,
+     "y": 951.0,
+     "score": 0.625,
+     "family_prob": 0.784,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1713.0,
+     "y": 621.0,
+     "score": 0.608,
+     "family_prob": 0.525,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1581.0,
+     "y": 711.0,
+     "score": 0.576,
+     "family_prob": 0.96,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2439.0,
+     "y": 207.0,
+     "score": 0.548,
+     "family_prob": 0.984,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1785.0,
+     "y": 801.0,
+     "score": 0.492,
+     "family_prob": 0.843,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2289.0,
+     "y": 1131.0,
+     "score": 0.481,
+     "family_prob": 0.888,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2319.0,
+     "y": 981.0,
+     "score": 0.473,
+     "family_prob": 0.988,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1677.0,
+     "y": 795.0,
+     "score": 0.461,
+     "family_prob": 0.502,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2367.0,
+     "y": 1125.0,
+     "score": 0.447,
+     "family_prob": 0.727,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1473.0,
+     "y": 507.0,
+     "score": 0.43,
+     "family_prob": 0.992,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1509.0,
+     "y": 711.0,
+     "score": 0.401,
+     "family_prob": 0.88,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2409.0,
+     "y": 1017.0,
+     "score": 0.393,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2445.0,
+     "y": 1077.0,
+     "score": 0.388,
+     "family_prob": 0.673,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2493.0,
+     "y": 1077.0,
+     "score": 0.383,
+     "family_prob": 0.955,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2877.0,
+     "y": 1911.0,
+     "score": 0.336,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2367.0,
+     "y": 771.0,
+     "score": 0.3,
+     "family_prob": 0.968,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2439.0,
+     "y": 837.0,
+     "score": 0.284,
+     "family_prob": 0.964,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2385.0,
+     "y": 957.0,
+     "score": 0.28,
+     "family_prob": 0.984,
+     "flags": []
+    }
+   ]
+  },
+  {
+   "group_id": 2,
+   "name": "LUMINAIRE",
+   "family": "luminaire",
+   "quantity": 411,
+   "elements": [
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2175.0,
+     "y": 1749.0,
+     "score": 0.995,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2007.0,
+     "y": 1749.0,
+     "score": 0.992,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 339.0,
+     "y": 1443.0,
+     "score": 0.985,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1881.0,
+     "y": 531.0,
+     "score": 0.979,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1881.0,
+     "y": 459.0,
+     "score": 0.977,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2787.0,
+     "y": 261.0,
+     "score": 0.971,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1881.0,
+     "y": 129.0,
+     "score": 0.97,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1083.0,
+     "y": 1443.0,
+     "score": 0.965,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2349.0,
+     "y": 429.0,
+     "score": 0.963,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2349.0,
+     "y": 129.0,
+     "score": 0.962,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2349.0,
+     "y": 381.0,
+     "score": 0.934,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2937.0,
+     "y": 477.0,
+     "score": 0.923,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2937.0,
+     "y": 549.0,
+     "score": 0.913,
+     "family_prob": 0.897,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1875.0,
+     "y": 783.0,
+     "score": 0.906,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2937.0,
+     "y": 405.0,
+     "score": 0.897,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 987.0,
+     "y": 1635.0,
+     "score": 0.886,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2349.0,
+     "y": 507.0,
+     "score": 0.845,
+     "family_prob": 0.973,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1881.0,
+     "y": 333.0,
+     "score": 0.844,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2349.0,
+     "y": 477.0,
+     "score": 0.83,
+     "family_prob": 0.952,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2763.0,
+     "y": 1881.0,
+     "score": 0.824,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1881.0,
+     "y": 561.0,
+     "score": 0.806,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2937.0,
+     "y": 369.0,
+     "score": 0.803,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1875.0,
+     "y": 1749.0,
+     "score": 0.799,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2355.0,
+     "y": 675.0,
+     "score": 0.798,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1935.0,
+     "y": 699.0,
+     "score": 0.778,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2931.0,
+     "y": 645.0,
+     "score": 0.77,
+     "family_prob": 0.964,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 627.0,
+     "y": 1449.0,
+     "score": 0.755,
+     "family_prob": 0.982,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2913.0,
+     "y": 2037.0,
+     "score": 0.747,
+     "family_prob": 0.972,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1311.0,
+     "y": 1407.0,
+     "score": 0.738,
+     "family_prob": 0.977,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1293.0,
+     "y": 1809.0,
+     "score": 0.721,
+     "family_prob": 0.741,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2793.0,
+     "y": 291.0,
+     "score": 0.707,
+     "family_prob": 0.939,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2769.0,
+     "y": 27.0,
+     "score": 0.694,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 987.0,
+     "y": 1599.0,
+     "score": 0.679,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2793.0,
+     "y": 1851.0,
+     "score": 0.658,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1383.0,
+     "y": 1461.0,
+     "score": 0.657,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1461.0,
+     "y": 1593.0,
+     "score": 0.647,
+     "family_prob": 0.547,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2835.0,
+     "y": 531.0,
+     "score": 0.617,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1887.0,
+     "y": 861.0,
+     "score": 0.596,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 609.0,
+     "y": 1335.0,
+     "score": 0.583,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 729.0,
+     "y": 1707.0,
+     "score": 0.583,
+     "family_prob": 0.912,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1413.0,
+     "y": 1473.0,
+     "score": 0.532,
+     "family_prob": 0.569,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 567.0,
+     "y": 1413.0,
+     "score": 0.515,
+     "family_prob": 0.737,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 675.0,
+     "y": 1449.0,
+     "score": 0.51,
+     "family_prob": 0.91,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1011.0,
+     "y": 1443.0,
+     "score": 0.505,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1401.0,
+     "y": 1761.0,
+     "score": 0.499,
+     "family_prob": 0.86,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2433.0,
+     "y": 1365.0,
+     "score": 0.482,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 375.0,
+     "y": 1353.0,
+     "score": 0.481,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1515.0,
+     "y": 1437.0,
+     "score": 0.465,
+     "family_prob": 0.723,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 339.0,
+     "y": 1779.0,
+     "score": 0.462,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 45.0,
+     "y": 2007.0,
+     "score": 0.438,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1887.0,
+     "y": 207.0,
+     "score": 0.427,
+     "family_prob": 0.892,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2229.0,
+     "y": 1803.0,
+     "score": 0.414,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1059.0,
+     "y": 1821.0,
+     "score": 0.408,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1893.0,
+     "y": 639.0,
+     "score": 0.407,
+     "family_prob": 0.981,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1383.0,
+     "y": 1605.0,
+     "score": 0.402,
+     "family_prob": 0.707,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2661.0,
+     "y": 1365.0,
+     "score": 0.378,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2835.0,
+     "y": 279.0,
+     "score": 0.375,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 771.0,
+     "y": 1431.0,
+     "score": 0.37,
+     "family_prob": 0.908,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2925.0,
+     "y": 1071.0,
+     "score": 0.365,
+     "family_prob": 0.935,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1131.0,
+     "y": 1377.0,
+     "score": 0.358,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1935.0,
+     "y": 423.0,
+     "score": 0.355,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1353.0,
+     "y": 1377.0,
+     "score": 0.347,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 51.0,
+     "y": 2049.0,
+     "score": 0.337,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1869.0,
+     "y": 1701.0,
+     "score": 0.322,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1383.0,
+     "y": 1713.0,
+     "score": 0.315,
+     "family_prob": 0.712,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1929.0,
+     "y": 99.0,
+     "score": 0.305,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2337.0,
+     "y": 987.0,
+     "score": 0.298,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1359.0,
+     "y": 1335.0,
+     "score": 0.297,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1875.0,
+     "y": 1887.0,
+     "score": 0.287,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1617.0,
+     "y": 1347.0,
+     "score": 0.283,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 837.0,
+     "y": 1371.0,
+     "score": 0.278,
+     "family_prob": 0.946,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2757.0,
+     "y": 315.0,
+     "score": 0.274,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2349.0,
+     "y": 183.0,
+     "score": 0.274,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 813.0,
+     "y": 1641.0,
+     "score": 0.263,
+     "family_prob": 0.835,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1755.0,
+     "y": 1443.0,
+     "score": 0.261,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1923.0,
+     "y": 1713.0,
+     "score": 0.26,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1083.0,
+     "y": 1959.0,
+     "score": 0.256,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2757.0,
+     "y": 1341.0,
+     "score": 0.254,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 819.0,
+     "y": 1407.0,
+     "score": 0.999,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 717.0,
+     "y": 1407.0,
+     "score": 0.999,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 387.0,
+     "y": 1407.0,
+     "score": 0.999,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 279.0,
+     "y": 1407.0,
+     "score": 0.998,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1581.0,
+     "y": 1407.0,
+     "score": 0.998,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 495.0,
+     "y": 1407.0,
+     "score": 0.998,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1377.0,
+     "y": 375.0,
+     "score": 0.992,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 927.0,
+     "y": 867.0,
+     "score": 0.992,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 951.0,
+     "y": 1461.0,
+     "score": 0.991,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 825.0,
+     "y": 597.0,
+     "score": 0.99,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2157.0,
+     "y": 699.0,
+     "score": 0.981,
+     "family_prob": 0.83,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1581.0,
+     "y": 867.0,
+     "score": 0.981,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1581.0,
+     "y": 597.0,
+     "score": 0.978,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 465.0,
+     "y": 723.0,
+     "score": 0.977,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1581.0,
+     "y": 1137.0,
+     "score": 0.976,
+     "family_prob": 0.991,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 465.0,
+     "y": 993.0,
+     "score": 0.971,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2787.0,
+     "y": 261.0,
+     "score": 0.971,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1941.0,
+     "y": 1461.0,
+     "score": 0.969,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 519.0,
+     "y": 693.0,
+     "score": 0.958,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 957.0,
+     "y": 1413.0,
+     "score": 0.958,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 909.0,
+     "y": 1269.0,
+     "score": 0.956,
+     "family_prob": 0.948,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 813.0,
+     "y": 867.0,
+     "score": 0.954,
+     "family_prob": 0.989,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1941.0,
+     "y": 1191.0,
+     "score": 0.95,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1305.0,
+     "y": 597.0,
+     "score": 0.93,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2937.0,
+     "y": 477.0,
+     "score": 0.923,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2937.0,
+     "y": 549.0,
+     "score": 0.913,
+     "family_prob": 0.897,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2937.0,
+     "y": 405.0,
+     "score": 0.897,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 621.0,
+     "y": 909.0,
+     "score": 0.89,
+     "family_prob": 0.89,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 933.0,
+     "y": 1161.0,
+     "score": 0.873,
+     "family_prob": 0.929,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 519.0,
+     "y": 963.0,
+     "score": 0.851,
+     "family_prob": 0.963,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 753.0,
+     "y": 1707.0,
+     "score": 0.842,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2763.0,
+     "y": 1881.0,
+     "score": 0.836,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 723.0,
+     "y": 945.0,
+     "score": 0.819,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2037.0,
+     "y": 945.0,
+     "score": 0.815,
+     "family_prob": 0.983,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 723.0,
+     "y": 909.0,
+     "score": 0.814,
+     "family_prob": 0.884,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2937.0,
+     "y": 369.0,
+     "score": 0.803,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2931.0,
+     "y": 645.0,
+     "score": 0.77,
+     "family_prob": 0.964,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2037.0,
+     "y": 651.0,
+     "score": 0.736,
+     "family_prob": 0.993,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2271.0,
+     "y": 1251.0,
+     "score": 0.73,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 255.0,
+     "y": 1539.0,
+     "score": 0.716,
+     "family_prob": 0.934,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2793.0,
+     "y": 291.0,
+     "score": 0.707,
+     "family_prob": 0.939,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2769.0,
+     "y": 27.0,
+     "score": 0.694,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 717.0,
+     "y": 615.0,
+     "score": 0.686,
+     "family_prob": 0.991,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1791.0,
+     "y": 933.0,
+     "score": 0.684,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2793.0,
+     "y": 1851.0,
+     "score": 0.658,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2835.0,
+     "y": 531.0,
+     "score": 0.617,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 441.0,
+     "y": 1413.0,
+     "score": 0.608,
+     "family_prob": 0.801,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2913.0,
+     "y": 2037.0,
+     "score": 0.559,
+     "family_prob": 0.906,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 681.0,
+     "y": 849.0,
+     "score": 0.526,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2427.0,
+     "y": 1011.0,
+     "score": 0.517,
+     "family_prob": 0.605,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 525.0,
+     "y": 897.0,
+     "score": 0.504,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 45.0,
+     "y": 2007.0,
+     "score": 0.438,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2079.0,
+     "y": 1191.0,
+     "score": 0.429,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 879.0,
+     "y": 1101.0,
+     "score": 0.413,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2499.0,
+     "y": 1317.0,
+     "score": 0.408,
+     "family_prob": 0.888,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1203.0,
+     "y": 387.0,
+     "score": 0.398,
+     "family_prob": 0.745,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1359.0,
+     "y": 495.0,
+     "score": 0.39,
+     "family_prob": 0.964,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2343.0,
+     "y": 1011.0,
+     "score": 0.389,
+     "family_prob": 0.649,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1659.0,
+     "y": 561.0,
+     "score": 0.381,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2055.0,
+     "y": 1509.0,
+     "score": 0.38,
+     "family_prob": 0.857,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 723.0,
+     "y": 675.0,
+     "score": 0.376,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2835.0,
+     "y": 279.0,
+     "score": 0.375,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1731.0,
+     "y": 1509.0,
+     "score": 0.369,
+     "family_prob": 0.927,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2925.0,
+     "y": 1071.0,
+     "score": 0.365,
+     "family_prob": 0.935,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2163.0,
+     "y": 963.0,
+     "score": 0.354,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 51.0,
+     "y": 2049.0,
+     "score": 0.337,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1419.0,
+     "y": 381.0,
+     "score": 0.326,
+     "family_prob": 0.961,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1743.0,
+     "y": 1263.0,
+     "score": 0.315,
+     "family_prob": 0.989,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 603.0,
+     "y": 1407.0,
+     "score": 0.301,
+     "family_prob": 0.856,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2757.0,
+     "y": 315.0,
+     "score": 0.274,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 531.0,
+     "y": 867.0,
+     "score": 0.272,
+     "family_prob": 0.98,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2463.0,
+     "y": 1143.0,
+     "score": 0.269,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1533.0,
+     "y": 1707.0,
+     "score": 0.268,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2757.0,
+     "y": 1341.0,
+     "score": 0.254,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 993.0,
+     "y": 1803.0,
+     "score": 0.999,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 993.0,
+     "y": 933.0,
+     "score": 0.997,
+     "family_prob": 0.994,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1329.0,
+     "y": 1803.0,
+     "score": 0.996,
+     "family_prob": 0.87,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1413.0,
+     "y": 1803.0,
+     "score": 0.993,
+     "family_prob": 0.961,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1287.0,
+     "y": 1797.0,
+     "score": 0.988,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1875.0,
+     "y": 723.0,
+     "score": 0.981,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 897.0,
+     "y": 1155.0,
+     "score": 0.978,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1071.0,
+     "y": 1359.0,
+     "score": 0.973,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 903.0,
+     "y": 1599.0,
+     "score": 0.972,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2787.0,
+     "y": 261.0,
+     "score": 0.971,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1023.0,
+     "y": 1797.0,
+     "score": 0.965,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1593.0,
+     "y": 843.0,
+     "score": 0.959,
+     "family_prob": 0.893,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 993.0,
+     "y": 1677.0,
+     "score": 0.951,
+     "family_prob": 0.987,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1071.0,
+     "y": 1749.0,
+     "score": 0.94,
+     "family_prob": 0.969,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1479.0,
+     "y": 1383.0,
+     "score": 0.936,
+     "family_prob": 0.59,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1119.0,
+     "y": 1797.0,
+     "score": 0.933,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1215.0,
+     "y": 921.0,
+     "score": 0.931,
+     "family_prob": 0.903,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1899.0,
+     "y": 1695.0,
+     "score": 0.927,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2937.0,
+     "y": 477.0,
+     "score": 0.923,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1845.0,
+     "y": 1125.0,
+     "score": 0.922,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1245.0,
+     "y": 1803.0,
+     "score": 0.922,
+     "family_prob": 0.62,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1737.0,
+     "y": 1527.0,
+     "score": 0.911,
+     "family_prob": 0.951,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2937.0,
+     "y": 543.0,
+     "score": 0.904,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 885.0,
+     "y": 759.0,
+     "score": 0.903,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1527.0,
+     "y": 1347.0,
+     "score": 0.899,
+     "family_prob": 0.956,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2937.0,
+     "y": 405.0,
+     "score": 0.897,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1899.0,
+     "y": 1605.0,
+     "score": 0.867,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1179.0,
+     "y": 945.0,
+     "score": 0.86,
+     "family_prob": 0.935,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1623.0,
+     "y": 1611.0,
+     "score": 0.854,
+     "family_prob": 0.783,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1749.0,
+     "y": 531.0,
+     "score": 0.853,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1605.0,
+     "y": 1125.0,
+     "score": 0.842,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 903.0,
+     "y": 1677.0,
+     "score": 0.841,
+     "family_prob": 0.975,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1689.0,
+     "y": 1467.0,
+     "score": 0.841,
+     "family_prob": 0.938,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1479.0,
+     "y": 1503.0,
+     "score": 0.841,
+     "family_prob": 0.562,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1161.0,
+     "y": 1749.0,
+     "score": 0.829,
+     "family_prob": 0.839,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1899.0,
+     "y": 1335.0,
+     "score": 0.825,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1437.0,
+     "y": 1173.0,
+     "score": 0.814,
+     "family_prob": 0.754,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2937.0,
+     "y": 369.0,
+     "score": 0.803,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1443.0,
+     "y": 1989.0,
+     "score": 0.795,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1059.0,
+     "y": 1803.0,
+     "score": 0.793,
+     "family_prob": 0.924,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2931.0,
+     "y": 645.0,
+     "score": 0.785,
+     "family_prob": 0.967,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1557.0,
+     "y": 1701.0,
+     "score": 0.77,
+     "family_prob": 0.494,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2763.0,
+     "y": 1881.0,
+     "score": 0.749,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 957.0,
+     "y": 1449.0,
+     "score": 0.741,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2757.0,
+     "y": 1293.0,
+     "score": 0.736,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 897.0,
+     "y": 1305.0,
+     "score": 0.709,
+     "family_prob": 0.977,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2793.0,
+     "y": 291.0,
+     "score": 0.707,
+     "family_prob": 0.939,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1677.0,
+     "y": 1131.0,
+     "score": 0.699,
+     "family_prob": 0.978,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1797.0,
+     "y": 531.0,
+     "score": 0.698,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2769.0,
+     "y": 27.0,
+     "score": 0.694,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2793.0,
+     "y": 1851.0,
+     "score": 0.658,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1473.0,
+     "y": 1191.0,
+     "score": 0.639,
+     "family_prob": 0.851,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2835.0,
+     "y": 531.0,
+     "score": 0.617,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 903.0,
+     "y": 1755.0,
+     "score": 0.566,
+     "family_prob": 0.962,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 903.0,
+     "y": 1527.0,
+     "score": 0.558,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 585.0,
+     "y": 393.0,
+     "score": 0.547,
+     "family_prob": 0.992,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 993.0,
+     "y": 1749.0,
+     "score": 0.532,
+     "family_prob": 0.964,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1443.0,
+     "y": 1653.0,
+     "score": 0.529,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2913.0,
+     "y": 2037.0,
+     "score": 0.481,
+     "family_prob": 0.939,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1695.0,
+     "y": 1083.0,
+     "score": 0.48,
+     "family_prob": 0.988,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2925.0,
+     "y": 1071.0,
+     "score": 0.474,
+     "family_prob": 0.93,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 993.0,
+     "y": 1305.0,
+     "score": 0.455,
+     "family_prob": 0.931,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1413.0,
+     "y": 1305.0,
+     "score": 0.445,
+     "family_prob": 0.472,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 45.0,
+     "y": 2007.0,
+     "score": 0.438,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1011.0,
+     "y": 1137.0,
+     "score": 0.383,
+     "family_prob": 0.967,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1527.0,
+     "y": 1029.0,
+     "score": 0.378,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2835.0,
+     "y": 279.0,
+     "score": 0.375,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 783.0,
+     "y": 183.0,
+     "score": 0.374,
+     "family_prob": 0.985,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2235.0,
+     "y": 711.0,
+     "score": 0.369,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1551.0,
+     "y": 1311.0,
+     "score": 0.337,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 51.0,
+     "y": 2049.0,
+     "score": 0.337,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2775.0,
+     "y": 747.0,
+     "score": 0.326,
+     "family_prob": 0.961,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1407.0,
+     "y": 1755.0,
+     "score": 0.291,
+     "family_prob": 0.499,
+     "flags": [
+      "near_coloured_markup",
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1581.0,
+     "y": 1245.0,
+     "score": 0.291,
+     "family_prob": 0.959,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2757.0,
+     "y": 315.0,
+     "score": 0.274,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1989.0,
+     "y": 1077.0,
+     "score": 0.271,
+     "family_prob": 0.977,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1755.0,
+     "y": 285.0,
+     "score": 0.271,
+     "family_prob": 0.984,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2757.0,
+     "y": 1341.0,
+     "score": 0.26,
+     "family_prob": 0.985,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1473.0,
+     "y": 1035.0,
+     "score": 0.255,
+     "family_prob": 0.885,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 699.0,
+     "y": 1221.0,
+     "score": 0.996,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1611.0,
+     "y": 735.0,
+     "score": 0.995,
+     "family_prob": 0.771,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 699.0,
+     "y": 1413.0,
+     "score": 0.993,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1107.0,
+     "y": 1413.0,
+     "score": 0.988,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1761.0,
+     "y": 453.0,
+     "score": 0.987,
+     "family_prob": 0.862,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1593.0,
+     "score": 0.977,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2031.0,
+     "y": 573.0,
+     "score": 0.975,
+     "family_prob": 0.781,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1659.0,
+     "score": 0.972,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2787.0,
+     "y": 261.0,
+     "score": 0.971,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1845.0,
+     "y": 435.0,
+     "score": 0.968,
+     "family_prob": 0.958,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 909.0,
+     "y": 1413.0,
+     "score": 0.96,
+     "family_prob": 0.88,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1773.0,
+     "y": 1413.0,
+     "score": 0.958,
+     "family_prob": 0.981,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1773.0,
+     "y": 1221.0,
+     "score": 0.956,
+     "family_prob": 0.568,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2181.0,
+     "y": 1413.0,
+     "score": 0.949,
+     "family_prob": 0.865,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1563.0,
+     "y": 1413.0,
+     "score": 0.948,
+     "family_prob": 0.991,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2031.0,
+     "y": 633.0,
+     "score": 0.943,
+     "family_prob": 0.904,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1053.0,
+     "y": 1071.0,
+     "score": 0.943,
+     "family_prob": 0.852,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2031.0,
+     "y": 519.0,
+     "score": 0.942,
+     "family_prob": 0.937,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 903.0,
+     "y": 1221.0,
+     "score": 0.939,
+     "family_prob": 0.992,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1059.0,
+     "y": 1569.0,
+     "score": 0.939,
+     "family_prob": 0.494,
+     "flags": [
+      "near_coloured_markup",
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1983.0,
+     "y": 1413.0,
+     "score": 0.932,
+     "family_prob": 0.953,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2937.0,
+     "y": 477.0,
+     "score": 0.923,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1221.0,
+     "score": 0.916,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2937.0,
+     "y": 549.0,
+     "score": 0.913,
+     "family_prob": 0.897,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1317.0,
+     "y": 1413.0,
+     "score": 0.911,
+     "family_prob": 0.955,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1443.0,
+     "y": 1569.0,
+     "score": 0.907,
+     "family_prob": 0.56,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1137.0,
+     "score": 0.904,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2937.0,
+     "y": 405.0,
+     "score": 0.897,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1299.0,
+     "score": 0.887,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1803.0,
+     "y": 513.0,
+     "score": 0.878,
+     "family_prob": 0.825,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2181.0,
+     "y": 1221.0,
+     "score": 0.868,
+     "family_prob": 0.934,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1581.0,
+     "y": 429.0,
+     "score": 0.853,
+     "family_prob": 0.985,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1623.0,
+     "y": 1071.0,
+     "score": 0.835,
+     "family_prob": 0.84,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2937.0,
+     "y": 369.0,
+     "score": 0.803,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 867.0,
+     "y": 1569.0,
+     "score": 0.799,
+     "family_prob": 0.586,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1467.0,
+     "score": 0.795,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2931.0,
+     "y": 645.0,
+     "score": 0.77,
+     "family_prob": 0.964,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1821.0,
+     "y": 747.0,
+     "score": 0.763,
+     "family_prob": 0.956,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 873.0,
+     "y": 1047.0,
+     "score": 0.739,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1623.0,
+     "y": 1569.0,
+     "score": 0.73,
+     "family_prob": 0.919,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1485.0,
+     "y": 627.0,
+     "score": 0.716,
+     "family_prob": 0.955,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1317.0,
+     "y": 1221.0,
+     "score": 0.715,
+     "family_prob": 0.734,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2793.0,
+     "y": 291.0,
+     "score": 0.707,
+     "family_prob": 0.939,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1011.0,
+     "score": 0.699,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2769.0,
+     "y": 27.0,
+     "score": 0.694,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2793.0,
+     "y": 1851.0,
+     "score": 0.658,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 945.0,
+     "score": 0.646,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 885.0,
+     "score": 0.634,
+     "family_prob": 0.973,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1389.0,
+     "score": 0.625,
+     "family_prob": 0.894,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 771.0,
+     "y": 813.0,
+     "score": 0.624,
+     "family_prob": 0.607,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2019.0,
+     "y": 1071.0,
+     "score": 0.618,
+     "family_prob": 0.397,
+     "flags": [
+      "near_coloured_markup",
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2835.0,
+     "y": 531.0,
+     "score": 0.617,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2103.0,
+     "y": 1713.0,
+     "score": 0.585,
+     "family_prob": 0.983,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2913.0,
+     "y": 2037.0,
+     "score": 0.579,
+     "family_prob": 0.942,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2013.0,
+     "y": 1569.0,
+     "score": 0.571,
+     "family_prob": 0.672,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1683.0,
+     "y": 561.0,
+     "score": 0.564,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1755.0,
+     "y": 621.0,
+     "score": 0.54,
+     "family_prob": 0.953,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1485.0,
+     "y": 393.0,
+     "score": 0.539,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 525.0,
+     "y": 1551.0,
+     "score": 0.481,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1071.0,
+     "y": 807.0,
+     "score": 0.464,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 45.0,
+     "y": 2007.0,
+     "score": 0.438,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2391.0,
+     "y": 1839.0,
+     "score": 0.412,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2835.0,
+     "y": 279.0,
+     "score": 0.375,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2145.0,
+     "y": 201.0,
+     "score": 0.373,
+     "family_prob": 0.957,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2925.0,
+     "y": 1071.0,
+     "score": 0.365,
+     "family_prob": 0.935,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1755.0,
+     "y": 681.0,
+     "score": 0.338,
+     "family_prob": 0.931,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 51.0,
+     "y": 2049.0,
+     "score": 0.337,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1329.0,
+     "y": 429.0,
+     "score": 0.316,
+     "family_prob": 0.861,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1623.0,
+     "y": 537.0,
+     "score": 0.289,
+     "family_prob": 0.891,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1329.0,
+     "y": 717.0,
+     "score": 0.283,
+     "family_prob": 0.968,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2757.0,
+     "y": 315.0,
+     "score": 0.274,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2553.0,
+     "y": 2001.0,
+     "score": 0.268,
+     "family_prob": 0.71,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1719.0,
+     "y": 837.0,
+     "score": 0.253,
+     "family_prob": 0.711,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1647.0,
+     "y": 447.0,
+     "score": 0.998,
+     "family_prob": 0.986,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1947.0,
+     "y": 657.0,
+     "score": 0.998,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1755.0,
+     "y": 579.0,
+     "score": 0.996,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1785.0,
+     "y": 381.0,
+     "score": 0.995,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1485.0,
+     "y": 381.0,
+     "score": 0.98,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1593.0,
+     "score": 0.977,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1809.0,
+     "y": 651.0,
+     "score": 0.975,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1899.0,
+     "y": 381.0,
+     "score": 0.973,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2787.0,
+     "y": 261.0,
+     "score": 0.971,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1659.0,
+     "score": 0.971,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1737.0,
+     "y": 381.0,
+     "score": 0.955,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2937.0,
+     "y": 477.0,
+     "score": 0.918,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1221.0,
+     "score": 0.916,
+     "family_prob": 0.996,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2937.0,
+     "y": 549.0,
+     "score": 0.912,
+     "family_prob": 0.881,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1137.0,
+     "score": 0.911,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2937.0,
+     "y": 405.0,
+     "score": 0.897,
+     "family_prob": 0.987,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1299.0,
+     "score": 0.892,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1755.0,
+     "y": 471.0,
+     "score": 0.838,
+     "family_prob": 0.982,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1953.0,
+     "y": 381.0,
+     "score": 0.825,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2937.0,
+     "y": 369.0,
+     "score": 0.806,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1467.0,
+     "score": 0.795,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2931.0,
+     "y": 645.0,
+     "score": 0.77,
+     "family_prob": 0.964,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1587.0,
+     "y": 465.0,
+     "score": 0.745,
+     "family_prob": 0.986,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1515.0,
+     "y": 663.0,
+     "score": 0.707,
+     "family_prob": 0.764,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2793.0,
+     "y": 291.0,
+     "score": 0.707,
+     "family_prob": 0.939,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2769.0,
+     "y": 27.0,
+     "score": 0.694,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2127.0,
+     "y": 495.0,
+     "score": 0.69,
+     "family_prob": 0.914,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 945.0,
+     "score": 0.659,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 885.0,
+     "score": 0.634,
+     "family_prob": 0.973,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1389.0,
+     "score": 0.625,
+     "family_prob": 0.894,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 771.0,
+     "y": 813.0,
+     "score": 0.624,
+     "family_prob": 0.607,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2001.0,
+     "y": 645.0,
+     "score": 0.619,
+     "family_prob": 0.99,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2835.0,
+     "y": 531.0,
+     "score": 0.617,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1503.0,
+     "y": 501.0,
+     "score": 0.572,
+     "family_prob": 0.78,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2913.0,
+     "y": 2037.0,
+     "score": 0.565,
+     "family_prob": 0.88,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1707.0,
+     "y": 507.0,
+     "score": 0.562,
+     "family_prob": 0.905,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1611.0,
+     "y": 381.0,
+     "score": 0.561,
+     "family_prob": 0.985,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1011.0,
+     "score": 0.534,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1689.0,
+     "y": 717.0,
+     "score": 0.533,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1551.0,
+     "score": 0.481,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2145.0,
+     "y": 525.0,
+     "score": 0.469,
+     "family_prob": 0.987,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1071.0,
+     "y": 807.0,
+     "score": 0.464,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2925.0,
+     "y": 1071.0,
+     "score": 0.456,
+     "family_prob": 0.947,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1827.0,
+     "y": 411.0,
+     "score": 0.446,
+     "family_prob": 0.974,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 45.0,
+     "y": 2007.0,
+     "score": 0.438,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2835.0,
+     "y": 279.0,
+     "score": 0.375,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2145.0,
+     "y": 201.0,
+     "score": 0.373,
+     "family_prob": 0.957,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2883.0,
+     "y": 2019.0,
+     "score": 0.366,
+     "family_prob": 0.498,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1329.0,
+     "y": 429.0,
+     "score": 0.363,
+     "family_prob": 0.842,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1515.0,
+     "y": 597.0,
+     "score": 0.354,
+     "family_prob": 0.734,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 51.0,
+     "y": 2049.0,
+     "score": 0.337,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1329.0,
+     "y": 717.0,
+     "score": 0.329,
+     "family_prob": 0.971,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1923.0,
+     "y": 429.0,
+     "score": 0.329,
+     "family_prob": 0.49,
+     "flags": [
+      "near_coloured_markup",
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1659.0,
+     "y": 381.0,
+     "score": 0.308,
+     "family_prob": 0.997,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2793.0,
+     "y": 1845.0,
+     "score": 0.294,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2757.0,
+     "y": 315.0,
+     "score": 0.274,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 519.0,
+     "y": 1011.0,
+     "score": 0.991,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1797.0,
+     "y": 621.0,
+     "score": 0.982,
+     "family_prob": 0.756,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 525.0,
+     "y": 1659.0,
+     "score": 0.977,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2787.0,
+     "y": 261.0,
+     "score": 0.971,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 525.0,
+     "y": 1725.0,
+     "score": 0.964,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1809.0,
+     "y": 537.0,
+     "score": 0.947,
+     "family_prob": 0.645,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1581.0,
+     "y": 663.0,
+     "score": 0.947,
+     "family_prob": 0.399,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2937.0,
+     "y": 477.0,
+     "score": 0.923,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2937.0,
+     "y": 543.0,
+     "score": 0.904,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 945.0,
+     "y": 969.0,
+     "score": 0.904,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2937.0,
+     "y": 405.0,
+     "score": 0.897,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1467.0,
+     "y": 759.0,
+     "score": 0.885,
+     "family_prob": 0.992,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2757.0,
+     "y": 1851.0,
+     "score": 0.88,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 519.0,
+     "y": 1077.0,
+     "score": 0.854,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 519.0,
+     "y": 1533.0,
+     "score": 0.844,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1941.0,
+     "y": 765.0,
+     "score": 0.82,
+     "family_prob": 0.985,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1443.0,
+     "y": 267.0,
+     "score": 0.808,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2937.0,
+     "y": 369.0,
+     "score": 0.803,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2931.0,
+     "y": 645.0,
+     "score": 0.785,
+     "family_prob": 0.967,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 525.0,
+     "y": 1365.0,
+     "score": 0.784,
+     "family_prob": 1.0,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1461.0,
+     "y": 567.0,
+     "score": 0.781,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1725.0,
+     "y": 537.0,
+     "score": 0.774,
+     "family_prob": 0.881,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1329.0,
+     "y": 783.0,
+     "score": 0.755,
+     "family_prob": 0.994,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1569.0,
+     "y": 585.0,
+     "score": 0.745,
+     "family_prob": 0.987,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 519.0,
+     "y": 1287.0,
+     "score": 0.731,
+     "family_prob": 0.984,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2793.0,
+     "y": 291.0,
+     "score": 0.707,
+     "family_prob": 0.939,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2769.0,
+     "y": 27.0,
+     "score": 0.694,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 525.0,
+     "y": 1203.0,
+     "score": 0.68,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2835.0,
+     "y": 531.0,
+     "score": 0.617,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1965.0,
+     "y": 267.0,
+     "score": 0.594,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2103.0,
+     "y": 771.0,
+     "score": 0.562,
+     "family_prob": 0.992,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1221.0,
+     "y": 873.0,
+     "score": 0.542,
+     "family_prob": 0.993,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2235.0,
+     "y": 711.0,
+     "score": 0.528,
+     "family_prob": 0.991,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1815.0,
+     "y": 873.0,
+     "score": 0.527,
+     "family_prob": 0.99,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1779.0,
+     "y": 267.0,
+     "score": 0.483,
+     "family_prob": 0.992,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 45.0,
+     "y": 2007.0,
+     "score": 0.438,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2847.0,
+     "y": 1989.0,
+     "score": 0.407,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2589.0,
+     "y": 885.0,
+     "score": 0.388,
+     "family_prob": 0.968,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2835.0,
+     "y": 279.0,
+     "score": 0.375,
+     "family_prob": 0.999,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2139.0,
+     "y": 285.0,
+     "score": 0.371,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1401.0,
+     "y": 795.0,
+     "score": 0.371,
+     "family_prob": 0.977,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2925.0,
+     "y": 1071.0,
+     "score": 0.365,
+     "family_prob": 0.935,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2913.0,
+     "y": 2037.0,
+     "score": 0.347,
+     "family_prob": 0.904,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 51.0,
+     "y": 2049.0,
+     "score": 0.337,
+     "family_prob": 0.983,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2007.0,
+     "y": 561.0,
+     "score": 0.328,
+     "family_prob": 0.973,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2247.0,
+     "y": 1317.0,
+     "score": 0.308,
+     "family_prob": 0.867,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 525.0,
+     "y": 1617.0,
+     "score": 0.307,
+     "family_prob": 0.97,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2091.0,
+     "y": 585.0,
+     "score": 0.284,
+     "family_prob": 0.954,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2553.0,
+     "y": 2013.0,
+     "score": 0.275,
+     "family_prob": 0.878,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2757.0,
+     "y": 315.0,
+     "score": 0.274,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2757.0,
+     "y": 1341.0,
+     "score": 0.254,
+     "family_prob": 0.99,
+     "flags": []
+    }
+   ]
+  },
+  {
+   "group_id": 3,
+   "name": "ALARME INCENDIE",
+   "family": "securite_incendie",
+   "quantity": 31,
+   "elements": [
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2781.0,
+     "y": 1779.0,
+     "score": 0.885,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2397.0,
+     "y": 483.0,
+     "score": 0.677,
+     "family_prob": 0.838,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1971.0,
+     "y": 813.0,
+     "score": 0.665,
+     "family_prob": 0.771,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2397.0,
+     "y": 675.0,
+     "score": 0.378,
+     "family_prob": 0.402,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2397.0,
+     "y": 261.0,
+     "score": 0.318,
+     "family_prob": 0.676,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1107.0,
+     "y": 1605.0,
+     "score": 0.308,
+     "family_prob": 0.461,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2781.0,
+     "y": 1779.0,
+     "score": 0.825,
+     "family_prob": 0.995,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2781.0,
+     "y": 1779.0,
+     "score": 0.885,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 903.0,
+     "y": 915.0,
+     "score": 0.504,
+     "family_prob": 0.758,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2301.0,
+     "y": 891.0,
+     "score": 0.996,
+     "family_prob": 1.0,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2307.0,
+     "y": 861.0,
+     "score": 0.977,
+     "family_prob": 0.985,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2301.0,
+     "y": 831.0,
+     "score": 0.936,
+     "family_prob": 0.786,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1473.0,
+     "y": 585.0,
+     "score": 0.905,
+     "family_prob": 0.727,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2781.0,
+     "y": 1779.0,
+     "score": 0.885,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2301.0,
+     "y": 1581.0,
+     "score": 0.816,
+     "family_prob": 0.884,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2301.0,
+     "y": 1611.0,
+     "score": 0.77,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1809.0,
+     "y": 813.0,
+     "score": 0.733,
+     "family_prob": 0.923,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2361.0,
+     "y": 981.0,
+     "score": 0.67,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2391.0,
+     "y": 1581.0,
+     "score": 0.592,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1659.0,
+     "y": 813.0,
+     "score": 0.463,
+     "family_prob": 0.724,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 519.0,
+     "y": 1059.0,
+     "score": 0.435,
+     "family_prob": 0.929,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2421.0,
+     "y": 921.0,
+     "score": 0.356,
+     "family_prob": 0.845,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2313.0,
+     "y": 1041.0,
+     "score": 0.301,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2385.0,
+     "y": 1035.0,
+     "score": 0.275,
+     "family_prob": 0.961,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1905.0,
+     "y": 537.0,
+     "score": 0.923,
+     "family_prob": 0.978,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1809.0,
+     "y": 813.0,
+     "score": 0.77,
+     "family_prob": 0.944,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2301.0,
+     "y": 1371.0,
+     "score": 0.749,
+     "family_prob": 0.985,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1659.0,
+     "y": 813.0,
+     "score": 0.327,
+     "family_prob": 0.884,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2781.0,
+     "y": 1779.0,
+     "score": 0.885,
+     "family_prob": 0.997,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2301.0,
+     "y": 921.0,
+     "score": 0.687,
+     "family_prob": 0.932,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2295.0,
+     "y": 837.0,
+     "score": 0.678,
+     "family_prob": 0.772,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    }
+   ]
+  },
+  {
+   "group_id": 4,
+   "name": "TELECOM",
+   "family": "telecom_donnees",
+   "quantity": 8,
+   "elements": [
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2805.0,
+     "y": 1149.0,
+     "score": 0.917,
+     "family_prob": 0.908,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2805.0,
+     "y": 1149.0,
+     "score": 0.917,
+     "family_prob": 0.908,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1665.0,
+     "y": 435.0,
+     "score": 0.564,
+     "family_prob": 0.998,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1917.0,
+     "y": 423.0,
+     "score": 0.307,
+     "family_prob": 0.923,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 2805.0,
+     "y": 1149.0,
+     "score": 0.917,
+     "family_prob": 0.908,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2307.0,
+     "y": 1431.0,
+     "score": 0.386,
+     "family_prob": 0.803,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2865.0,
+     "y": 1113.0,
+     "score": 0.993,
+     "family_prob": 0.991,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2379.0,
+     "y": 1077.0,
+     "score": 0.994,
+     "family_prob": 0.988,
+     "flags": []
+    }
+   ]
+  },
+  {
+   "group_id": 5,
+   "name": "CHAUFFAGE",
+   "family": "chauffage",
+   "quantity": 12,
+   "elements": [
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1461.0,
+     "y": 1737.0,
+     "score": 0.56,
+     "family_prob": 0.337,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 759.0,
+     "y": 1413.0,
+     "score": 0.701,
+     "family_prob": 0.584,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 867.0,
+     "y": 1413.0,
+     "score": 0.694,
+     "family_prob": 0.444,
+     "flags": [
+      "near_coloured_markup",
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 873.0,
+     "y": 603.0,
+     "score": 0.637,
+     "family_prob": 0.502,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1629.0,
+     "y": 603.0,
+     "score": 0.49,
+     "family_prob": 0.533,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 2409.0,
+     "y": 963.0,
+     "score": 0.567,
+     "family_prob": 0.794,
+     "flags": []
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1473.0,
+     "y": 507.0,
+     "score": 0.329,
+     "family_prob": 0.527,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1785.0,
+     "y": 441.0,
+     "score": 0.824,
+     "family_prob": 0.497,
+     "flags": [
+      "near_coloured_markup",
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2367.0,
+     "y": 939.0,
+     "score": 0.718,
+     "family_prob": 0.989,
+     "flags": []
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 1557.0,
+     "y": 597.0,
+     "score": 0.508,
+     "family_prob": 0.666,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2331.0,
+     "y": 1155.0,
+     "score": 0.302,
+     "family_prob": 0.985,
+     "flags": []
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2655.0,
+     "y": 963.0,
+     "score": 0.545,
+     "family_prob": 0.635,
+     "flags": []
+    }
+   ]
+  },
+  {
+   "group_id": 6,
+   "name": "RACCORDEMENT MECANIQUE",
+   "family": "mecanique_moteur",
+   "quantity": 1,
+   "elements": [
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1215.0,
+     "y": 339.0,
+     "score": 0.288,
+     "family_prob": 0.828,
+     "flags": []
+    }
+   ]
+  },
+  {
+   "group_id": 7,
+   "name": "A CLASSER",
+   "family": "indetermine",
+   "quantity": 32,
+   "elements": [
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1419.0,
+     "y": 1899.0,
+     "score": 0.927,
+     "family_prob": 0.906,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 675.0,
+     "y": 1719.0,
+     "score": 0.825,
+     "family_prob": 0.959,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1287.0,
+     "y": 1899.0,
+     "score": 0.604,
+     "family_prob": 0.903,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1257.0,
+     "y": 1785.0,
+     "score": 0.397,
+     "family_prob": 0.68,
+     "flags": []
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 1107.0,
+     "y": 1671.0,
+     "score": 0.329,
+     "family_prob": 0.476,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E002",
+     "page": 1,
+     "x": 2397.0,
+     "y": 453.0,
+     "score": 0.28,
+     "family_prob": 0.491,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 609.0,
+     "y": 603.0,
+     "score": 0.928,
+     "family_prob": 0.986,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1707.0,
+     "y": 1413.0,
+     "score": 0.896,
+     "family_prob": 0.665,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 1779.0,
+     "y": 603.0,
+     "score": 0.764,
+     "family_prob": 0.91,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2151.0,
+     "y": 933.0,
+     "score": 0.686,
+     "family_prob": 0.725,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 609.0,
+     "y": 873.0,
+     "score": 0.636,
+     "family_prob": 0.979,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 507.0,
+     "y": 603.0,
+     "score": 0.615,
+     "family_prob": 0.85,
+     "flags": []
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 2085.0,
+     "y": 933.0,
+     "score": 0.538,
+     "family_prob": 0.942,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E003",
+     "page": 2,
+     "x": 945.0,
+     "y": 603.0,
+     "score": 0.404,
+     "family_prob": 0.559,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1287.0,
+     "y": 1767.0,
+     "score": 0.973,
+     "family_prob": 0.942,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1899.0,
+     "y": 1521.0,
+     "score": 0.819,
+     "family_prob": 0.945,
+     "flags": []
+    },
+    {
+     "sheet": "E102",
+     "page": 3,
+     "x": 1035.0,
+     "y": 1401.0,
+     "score": 0.565,
+     "family_prob": 0.719,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1977.0,
+     "y": 1227.0,
+     "score": 0.967,
+     "family_prob": 0.912,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1107.0,
+     "y": 1227.0,
+     "score": 0.963,
+     "family_prob": 0.757,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1821.0,
+     "y": 1077.0,
+     "score": 0.905,
+     "family_prob": 0.676,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1821.0,
+     "y": 1575.0,
+     "score": 0.849,
+     "family_prob": 0.926,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1257.0,
+     "y": 1077.0,
+     "score": 0.828,
+     "family_prob": 0.703,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1437.0,
+     "y": 1077.0,
+     "score": 0.727,
+     "family_prob": 0.747,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1257.0,
+     "y": 1575.0,
+     "score": 0.722,
+     "family_prob": 0.921,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 1563.0,
+     "y": 1227.0,
+     "score": 0.646,
+     "family_prob": 0.779,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E201",
+     "page": 4,
+     "x": 861.0,
+     "y": 1077.0,
+     "score": 0.606,
+     "family_prob": 0.583,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 2109.0,
+     "y": 741.0,
+     "score": 0.9,
+     "family_prob": 0.658,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "E301",
+     "page": 5,
+     "x": 525.0,
+     "y": 1059.0,
+     "score": 0.467,
+     "family_prob": 0.422,
+     "flags": [
+      "family_uncertain"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 2127.0,
+     "y": 507.0,
+     "score": 0.995,
+     "family_prob": 0.998,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1641.0,
+     "y": 807.0,
+     "score": 0.971,
+     "family_prob": 0.999,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 1437.0,
+     "y": 507.0,
+     "score": 0.844,
+     "family_prob": 0.958,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    },
+    {
+     "sheet": "T201",
+     "page": 6,
+     "x": 633.0,
+     "y": 1305.0,
+     "score": 0.438,
+     "family_prob": 0.596,
+     "flags": [
+      "near_coloured_markup"
+     ]
+    }
+   ]
+  }
+ ],
+ "uncertainties": {
+  "sheet_flags": [
+   {
+    "sheet": "E002",
+    "page": 1,
+    "flag": "page_has_coloured_markup"
+   },
+   {
+    "sheet": "E002",
+    "page": 1,
+    "flag": "unreadable_markup_zones"
+   },
+   {
+    "sheet": "E002",
+    "page": 1,
+    "flag": "scale_unknown"
+   },
+   {
+    "sheet": "E003",
+    "page": 2,
+    "flag": "page_has_coloured_markup"
+   },
+   {
+    "sheet": "E003",
+    "page": 2,
+    "flag": "unreadable_markup_zones"
+   },
+   {
+    "sheet": "E003",
+    "page": 2,
+    "flag": "scale_unknown"
+   },
+   {
+    "sheet": "E102",
+    "page": 3,
+    "flag": "page_has_coloured_markup"
+   },
+   {
+    "sheet": "E102",
+    "page": 3,
+    "flag": "unreadable_markup_zones"
+   },
+   {
+    "sheet": "E201",
+    "page": 4,
+    "flag": "page_has_coloured_markup"
+   },
+   {
+    "sheet": "E201",
+    "page": 4,
+    "flag": "unreadable_markup_zones"
+   },
+   {
+    "sheet": "E301",
+    "page": 5,
+    "flag": "page_has_coloured_markup"
+   },
+   {
+    "sheet": "E301",
+    "page": 5,
+    "flag": "unreadable_markup_zones"
+   },
+   {
+    "sheet": "T201",
+    "page": 6,
+    "flag": "page_has_coloured_markup"
+   },
+   {
+    "sheet": "T201",
+    "page": 6,
+    "flag": "unreadable_markup_zones"
+   }
+  ],
+  "detections_near_markup": 266,
+  "unreadable_markup_zones": 579,
+  "detections_family_uncertain": 18,
+  "family_prob_min": 0.5
+ },
+ "evaluation_fold": "S-1715"
+}

@@ -1,0 +1,345 @@
+{
+ "dossier": "S-1715",
+ "trained_on": [
+  "S-1714",
+  "S-1769",
+  "S-1811",
+  "S-1844"
+ ],
+ "threshold": 0.25,
+ "nms_radius": 24.0,
+ "conduit_ratio": 1.7557051546110072,
+ "calibration_best": {
+  "threshold": 0.25,
+  "nms_radius": 24.0,
+  "precision": 0.23093957608351787,
+  "recall_readable": 0.400359066427289,
+  "f1": 0.2929160522638961,
+  "predicted": 3161,
+  "readable_gold": 557
+ },
+ "gold_type": "positions",
+ "notes": [
+  "2 Dupuis marks with junk labels removed (normalisation.json rebut list)"
+ ],
+ "detection": {
+  "all_pages": {
+   "R15": {
+    "tp": 25,
+    "predicted": 843,
+    "gold": 399,
+    "precision": 0.02965599051008304,
+    "recall": 0.06265664160401002,
+    "f1": 0.040257648953301126
+   },
+   "R25": {
+    "tp": 87,
+    "predicted": 843,
+    "gold": 399,
+    "precision": 0.10320284697508897,
+    "recall": 0.21804511278195488,
+    "f1": 0.14009661835748793
+   },
+   "R45": {
+    "tp": 174,
+    "predicted": 843,
+    "gold": 399,
+    "precision": 0.20640569395017794,
+    "recall": 0.43609022556390975,
+    "f1": 0.28019323671497587
+   }
+  },
+  "estimator_marked_pages": {
+   "R15": {
+    "tp": 25,
+    "predicted": 683,
+    "gold": 399,
+    "precision": 0.036603221083455345,
+    "recall": 0.06265664160401002,
+    "f1": 0.04621072088724584
+   },
+   "R25": {
+    "tp": 87,
+    "predicted": 683,
+    "gold": 399,
+    "precision": 0.1273792093704246,
+    "recall": 0.21804511278195488,
+    "f1": 0.1608133086876155
+   },
+   "R45": {
+    "tp": 174,
+    "predicted": 683,
+    "gold": 399,
+    "precision": 0.2547584187408492,
+    "recall": 0.43609022556390975,
+    "f1": 0.321626617375231
+   }
+  }
+ },
+ "families": {
+  "dispositif": {
+   "tp": 8,
+   "predicted": 348,
+   "gold": 74,
+   "precision": 0.022988505747126436,
+   "recall": 0.10810810810810811,
+   "f1": 0.03791469194312796,
+   "unplaced_gold": 0,
+   "count_error": 3.7027027027027026
+  },
+  "luminaire": {
+   "tp": 16,
+   "predicted": 411,
+   "gold": 117,
+   "precision": 0.038929440389294405,
+   "recall": 0.13675213675213677,
+   "f1": 0.0606060606060606,
+   "unplaced_gold": 0,
+   "count_error": 2.5128205128205128
+  },
+  "securite_incendie": {
+   "tp": 0,
+   "predicted": 31,
+   "gold": 48,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": -0.3541666666666667
+  },
+  "telecom_donnees": {
+   "tp": 0,
+   "predicted": 8,
+   "gold": 16,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": -0.5
+  },
+  "chauffage": {
+   "tp": 0,
+   "predicted": 12,
+   "gold": 10,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": 0.2
+  },
+  "distribution": {
+   "tp": 0,
+   "predicted": 0,
+   "gold": 1,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "unplaced_gold": 0,
+   "count_error": -1.0
+  },
+  "mecanique_moteur": {
+   "tp": 0,
+   "predicted": 1,
+   "gold": 22,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": -0.9545454545454546
+  },
+  "autre": {
+   "tp": 0,
+   "predicted": 0,
+   "gold": 9,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "unplaced_gold": 0,
+   "count_error": -1.0
+  },
+  "indetermine": {
+   "tp": 0,
+   "predicted": 32,
+   "gold": 102,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": -0.6862745098039216
+  }
+ },
+ "occlusion": {
+  "visible": {
+   "gold": 79,
+   "matched": 22,
+   "recall": 0.27848101265822783
+  },
+  "occluded": {
+   "gold": 320,
+   "matched": 71,
+   "recall": 0.221875
+  }
+ },
+ "leakage": {
+  "radius_px": 15.0,
+  "predictions_near_other_takeoff": 0.020166073546856466,
+  "gold_near_other_takeoff": 0.7568922305764411
+ },
+ "sheets": [
+  {
+   "page": 1,
+   "sheet": "E002",
+   "gold_total": 0,
+   "predicted_total": 160,
+   "gold": {},
+   "predicted": {
+    "dispositif": 68,
+    "luminaire": 78,
+    "indetermine": 6,
+    "telecom_donnees": 1,
+    "securite_incendie": 6,
+    "chauffage": 1
+   }
+  },
+  {
+   "page": 2,
+   "sheet": "E003",
+   "gold_total": 42,
+   "predicted_total": 129,
+   "gold": {
+    "indetermine": 34,
+    "dispositif": 8
+   },
+   "predicted": {
+    "luminaire": 74,
+    "dispositif": 38,
+    "indetermine": 8,
+    "telecom_donnees": 3,
+    "securite_incendie": 1,
+    "chauffage": 4,
+    "mecanique_moteur": 1
+   }
+  },
+  {
+   "page": 3,
+   "sheet": "E102",
+   "gold_total": 9,
+   "predicted_total": 134,
+   "gold": {
+    "luminaire": 2,
+    "indetermine": 5,
+    "telecom_donnees": 2
+   },
+   "predicted": {
+    "luminaire": 79,
+    "dispositif": 49,
+    "indetermine": 3,
+    "telecom_donnees": 1,
+    "securite_incendie": 2
+   }
+  },
+  {
+   "page": 4,
+   "sheet": "E201",
+   "gold_total": 160,
+   "predicted_total": 176,
+   "gold": {
+    "luminaire": 97,
+    "dispositif": 25,
+    "indetermine": 6,
+    "securite_incendie": 32
+   },
+   "predicted": {
+    "securite_incendie": 15,
+    "luminaire": 73,
+    "dispositif": 76,
+    "indetermine": 9,
+    "chauffage": 2,
+    "telecom_donnees": 1
+   }
+  },
+  {
+   "page": 5,
+   "sheet": "E301",
+   "gold_total": 82,
+   "predicted_total": 136,
+   "gold": {
+    "luminaire": 8,
+    "indetermine": 8,
+    "autre": 9,
+    "dispositif": 36,
+    "chauffage": 10,
+    "mecanique_moteur": 11
+   },
+   "predicted": {
+    "luminaire": 56,
+    "telecom_donnees": 1,
+    "dispositif": 69,
+    "securite_incendie": 4,
+    "indetermine": 2,
+    "chauffage": 4
+   }
+  },
+  {
+   "page": 6,
+   "sheet": "T201",
+   "gold_total": 106,
+   "predicted_total": 108,
+   "gold": {
+    "securite_incendie": 16,
+    "dispositif": 5,
+    "telecom_donnees": 14,
+    "luminaire": 10,
+    "indetermine": 49,
+    "mecanique_moteur": 11,
+    "distribution": 1
+   },
+   "predicted": {
+    "dispositif": 48,
+    "indetermine": 4,
+    "telecom_donnees": 1,
+    "luminaire": 51,
+    "securite_incendie": 3,
+    "chauffage": 1
+   }
+  }
+ ],
+ "conduits": [
+  {
+   "page": 3,
+   "sheet": "E102",
+   "estimator_ft": 2453.2,
+   "estimated_ft": 7341.2,
+   "error": 1.9925553295341067
+  },
+  {
+   "page": 4,
+   "sheet": "E201",
+   "estimator_ft": 1643.3,
+   "estimated_ft": 4337.0,
+   "error": 1.6391223240243775
+  },
+  {
+   "page": 5,
+   "sheet": "E301",
+   "estimator_ft": 1182.5,
+   "estimated_ft": 2954.9,
+   "error": 1.4987931569500792
+  },
+  {
+   "page": 6,
+   "sheet": "T201",
+   "estimator_ft": 149.6,
+   "estimated_ft": 2865.7,
+   "error": 18.155818403700987
+  }
+ ],
+ "totals": {
+  "gold_placed": 399,
+  "gold_unplaced": 0,
+  "predicted": 843,
+  "count_error_vs_placed": 1.112781954887218,
+  "count_error_vs_all_estimator_marks": 1.112781954887218
+ },
+ "elapsed_s": 918.4
+}
