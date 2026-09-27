@@ -150,8 +150,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--family-balance", action="store_true",
                     help="re-balance rare symbol families with sample weights (model.family_balance_weights)")
     ap.add_argument("--hard-negatives", action="store_true", help="refit once with mined hard negatives (off: did not help)")
+    ap.add_argument("--gold", choices=G.GOLD_SOURCES, default="original",
+                    help="original = marks on the original bid-package PDFs (plan_index.json); annotes = legacy Plans-annotes.pdf")
     args = ap.parse_args(argv)
-    golds = [G.load(d.strip(), args.data) for d in args.dossiers.split(",") if d.strip()]
+    golds = [G.load(d.strip(), args.data, source=args.gold) for d in args.dossiers.split(",") if d.strip()]
     model = train(golds, seed=args.seed, hard_negatives=args.hard_negatives, family_balance=args.family_balance)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     model.save(args.out)

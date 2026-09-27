@@ -1,6 +1,10 @@
 """Load the estimator's (M. Dupuis) reference takeoffs as ground truth placed
 on the pages of a dossier's plan PDF.
 
+Default source (`load(..., source="original")`): the original bid-package PDFs,
+see gold_original.py. What follows describes the legacy `source="annotes"` path
+on the annotated renders (kept for comparison; never the input of new runs).
+
 Position gold (dossiers with `reference/*Dupuis*.qpl`):
   Dupuis marks are pixels of his own PNG rasters (8051-13012 px wide). The
   only plan images available for these dossiers are `Plans-annotes.pdf`
@@ -84,6 +88,8 @@ class DossierGold:
     label_map: LabelFamilyMap = field(default_factory=LabelFamilyMap)
     styles: dict[str, tuple[int, int, int]] = field(default_factory=dict)   # label -> (Shape, DefaultSize, Color)
     notes: list[str] = field(default_factory=list)
+    # other (automatic) takeoff: its sheet id (feuilles-ia.csv) -> page of `pdf`; empty = match by sheet name
+    ia_sheet_page: dict[str, int] = field(default_factory=dict)
 
     def page_of_display(self) -> dict[str, int]:
         return {s.display: s.page for s in self.sheets}
@@ -259,7 +265,18 @@ def load_count_gold(dossier_dir: Path) -> DossierGold:
     return gold
 
 
-def load(dossier: str, root: Path = DATA_ROOT) -> DossierGold:
+GOLD_SOURCES = ("original", "annotes")
+
+
+def load(dossier: str, root: Path = DATA_ROOT, source: str = "original") -> DossierGold:
+    """`source="original"`: the estimator's marks placed on the ORIGINAL bid-package
+    PDFs through src/estimer/data/plan_index.json (gold_original.py, the default);
+    `source="annotes"`: the legacy path on the annotated renders `Plans-annotes.pdf`."""
+    if source == "original":
+        from . import gold_original
+        return gold_original.load(dossier, root)
+    if source != "annotes":
+        raise ValueError(f"unknown gold source {source!r} (expected one of {GOLD_SOURCES})")
     d = root / dossier
     if list((d / "reference").glob("*Dupuis*.qpl")) if (d / "reference").is_dir() else []:
         return load_position_gold(d)

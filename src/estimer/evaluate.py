@@ -1,7 +1,10 @@
 """Leave-one-out evaluation against the estimator's (M. Dupuis) references.
 
-  python -m src.estimer.evaluate [--out eval] [--dossiers ...] [--resume]
+  python -m src.estimer.evaluate [--out eval] [--dossiers ...] [--resume] [--gold original|annotes]
 
+Input plans: by default the ORIGINAL bid-package PDFs (`--gold original`,
+gold_original.py through src/estimer/data/plan_index.json); `--gold annotes`
+is the legacy run on the annotated renders `Plans-annotes.pdf`.
 For each dossier with a Dupuis Plan Expert project (position gold), a model is
 trained on the OTHER such dossiers (`train.train`, with its own inner
 calibration) and run on the held-out dossier's plan PDF through the same
@@ -92,7 +95,7 @@ def ai_marks_page_xy(dossier_dir: Path, g: G.DossierGold) -> dict[int, np.ndarra
     by_name = {s.name: s for s in g.sheets}
     for p in ias:
         stem = Path(p.fichier).stem if p.fichier else p.nom
-        sh = by_name.get(stem)
+        sh = g.sheets[g.ia_sheet_page[stem]] if stem in g.ia_sheet_page else by_name.get(stem)
         if sh is None or not p.marques:
             continue
         if p.largeur:
@@ -306,10 +309,14 @@ def pooled(results: list[dict]) -> dict:
     cond_s = {"sheets": len(cond),
               "median_abs_error": float(np.median([abs(c["error"]) for c in cond])) if cond else None}
     tot_err = [abs(r["totals"]["count_error_vs_placed"]) for r in pos if r["totals"]["count_error_vs_placed"] is not None]
+    sum_pred = sum(r["totals"]["predicted"] for r in pos)
+    sum_gold = sum(r["totals"]["gold_placed"] for r in pos)
     cnt = [r for r in results if r["gold_type"] == "counts"]
     return {"position_dossiers": [r["dossier"] for r in pos], "count_dossiers": [r["dossier"] for r in cnt],
             "detection": det, "families": fam, "occlusion": occ, "conduits": cond_s,
-            "mean_abs_total_count_error_position_dossiers": float(np.mean(tot_err)) if tot_err else None}
+            "mean_abs_total_count_error_position_dossiers": float(np.mean(tot_err)) if tot_err else None,
+            "total_count_error_pooled_position_dossiers": (sum_pred - sum_gold) / sum_gold if sum_gold else None,
+            "predicted_total_position_dossiers": sum_pred, "gold_placed_total_position_dossiers": sum_gold}
 
 
 def _pct(v) -> str:
@@ -327,11 +334,38 @@ def _fam_fr(f: str) -> str:
 def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> None:
     """REPORT.md (in French: it is a deliverable for the estimating team)."""
     L = ["# Évaluation de l'estimateur automatique — validation croisée « un dossier exclu » contre M. Dupuis", "",
-         f"Généré le {meta['generated']} par `python -m src.estimer.evaluate` (commit {meta['commit']}). "
+         f"Généré le {meta['generated']} par `python -m src.estimer.evaluate --gold {meta.get('gold_source', 'annotes')}` "
+         f"(commit {meta['commit']}). "
          "Chaque nombre ci-dessous est calculé à partir des fichiers ; rien n'est saisi à la main. "
          "Détail complet : `eval/results.json` ; sorties de chaque dossier : `eval/runs/<dossier>/`.", "",
-         "## Ce qui a été mesuré", "",
-         "- **Entrée** : pour chaque dossier, les seules images de plans disponibles dans cet environnement, "
+         "## Ce qui a été mesuré", ""]
+    if meta.get("gold_source", "annotes") == "original":
+        L += ["- **Entrée** : les PDF ORIGINAUX des appels d'offres (`entree/plans-originaux/*.pdf`, vectoriels avec couche "
+              "texte ; indexés par `python -m src.estimer.plan_index`), jamais les rendus annotés `Plans-annotes.pdf`. "
+              "Un dossier à plusieurs PDF (original + addendas) est évalué comme un seul PDF concaténé (pages dans "
+              "l'ordre de l'index) ; les PDF sans aucun plan de l'estimateur (listes de feuilles scannées) sont exclus. "
+              "Chaque page est rendue à 2997 px de large. Les pixels nettement colorés (nuages de révision, trames de "
+              "couleur) sont toujours traités comme illisibles par le détecteur, comme avant ; leur part est faible ici.",
+              "- **Référence (vérité)** : les marques des projets Plan Expert de M. Dupuis (`reference/*Dupuis*.qpl`), "
+              "placées sur les pages par l'index : quand son plan est apparié à une page par son nom (`<pdf> - n`) et que "
+              "la taille de son raster est connue, la marque est convertie directement (pixel de son raster → pixel de la "
+              "page ; aucun autre relevé n'intervient). Pour le reste — rasters de taille inconnue (S-1811, 5 pages de "
+              "l'addenda MEP01 exportées en JPG) ou plans d'un document absent de plans-originaux (S-1844, feuilles "
+              "électriques du cahier global 23347) — c'est le recalage géométrique de `src.validation.compare_qpl` (une "
+              "similitude par page, sur les rasters du relevé automatique, puis `feuilles-ia.csv` pour retrouver la "
+              "page du PDF) qui les place ; ces cas sont comptés dans les notes de chaque dossier. Une page importée deux "
+              "fois par l'estimateur (S-1714, E401–E408) est fusionnée : les doublons à moins de 1,2 % de la diagonale "
+              "sont retirés. Une feuille marquée dans l'original ET dans son addenda garde ses deux jeux de marques : les "
+              "deux pages sont dans l'entrée. S-1857 n'a pas de projet Dupuis dans cet environnement (voir sa section) ; "
+              "sa vérité est `reference-quantites.csv` (quantités par feuille, sans position) : seuls des écarts de "
+              "quantité y sont calculés.",
+              "- **Protocole** : un dossier exclu à la fois. Pour chaque dossier à positions, le modèle (classifieur de "
+              "fenêtres + seuil calibré, correspondance libellé → famille, style des compteurs, ratio de conduit) est "
+              "appris sur les autres dossiers à positions seulement. S-1857 est évalué avec le modèle appris sur les cinq "
+              "dossiers à positions. La lecture des légendes (`legend.py`, codes de la couche texte) est active : les "
+              "PDF ont une couche texte (sauf les pages à polices vectorisées, cartouche lu par OCR dans l'index)."]
+    else:
+        L += [         "- **Entrée** : pour chaque dossier, les seules images de plans disponibles dans cet environnement, "
          "`Plans-annotes.pdf` (une page raster de 2997 px par feuille, sans couche texte ni vectoriel). Ces pages portent "
          "les marques de couleur opaques d'un relevé automatique antérieur, dessinées par-dessus les symboles. "
          "L'estimateur traite les pixels colorés comme illisibles : une fenêtre dont le cœur du symbole (13 × 13 px au "
@@ -344,8 +378,8 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
          "seuls des écarts de quantité sont donc calculés pour ce dossier.",
          "- **Protocole** : un dossier exclu à la fois. Pour chaque dossier à positions, le modèle (classifieur de fenêtres + "
          "seuil calibré, correspondance libellé → famille, style des compteurs, ratio de conduit) est appris sur les autres "
-         "dossiers à positions seulement. S-1857 est évalué avec le modèle appris sur les cinq dossiers à positions.",
-         f"- **Appariement** : affectation optimale un-à-un à moins de R px (px de page, largeur 2997 px) ; R principal = "
+         "dossiers à positions seulement. S-1857 est évalué avec le modèle appris sur les cinq dossiers à positions."]
+    L += [         f"- **Appariement** : affectation optimale un-à-un à moins de R px (px de page, largeur 2997 px) ; R principal = "
          f"{int(PRIMARY_R)} px, aussi 15 px et 45 px (45 px ≈ le seuil de 1,2 % de la diagonale de compare_qpl). Familles = "
          "catégories de `src.qpl.categorie` (catégoriseur par mots-clés construit sur le corpus 2021-2026, complété par "
          "des votes de co-localisation).", "",
@@ -369,7 +403,9 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
     for f, e in sorted(pool["families"].items(), key=lambda kv: -kv[1]["gold"]):
         L.append(f"| {_fam_fr(f)} | {e['predicted']} | {e['gold']} | {e['tp']} | {_pct(e['precision'])} | {_pct(e['recall'])} | "
                  f"{_signed(e['count_error'])} | {_pct(e['mean_abs_count_error_per_dossier'])} |")
-    L += ["", f"Écart absolu moyen de la quantité totale sur les dossiers à positions : "
+    L += ["", f"Écart de quantité totale groupé (Σ prédits {pool.get('predicted_total_position_dossiers', '—')} contre "
+          f"Σ marques Dupuis placées {pool.get('gold_placed_total_position_dossiers', '—')}) : "
+          f"{_signed(pool.get('total_count_error_pooled_position_dossiers'))} ; écart absolu moyen par dossier : "
           f"{_pct(pool['mean_abs_total_count_error_position_dossiers'])}. Conduits : {pool['conduits']['sheets']} feuilles "
           f"comparables, écart absolu médian {_pct(pool['conduits']['median_abs_error'])}.", "",
           "## Par dossier", "",
@@ -421,8 +457,23 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
                   f"{_signed(r['totals'].get('count_error_vs_all_estimator_rows'))}) : {', '.join(r['sheets_outside_pdf'])}."]
         if r.get("notes"):
             L += [""] + [f"- {n}" for n in r["notes"]]
-    L += ["", "## Lecture de ces chiffres", "",
-          "- Les images de plans utilisées ici ne sont pas les dessins d'origine : les marques de couleur opaques d'un relevé "
+    L += ["", "## Lecture de ces chiffres", ""]
+    if meta.get("gold_source", "annotes") == "original":
+        L += ["- Les entrées sont les dessins d'origine : le détecteur voit tous les symboles, et les colonnes « près du "
+              "relevé antérieur » n'ont plus de sens de fuite (aucune marque de couleur n'est dessinée sur ces pages) ; "
+              "elles restent calculées à titre de contrôle (part des prédictions et des marques de Dupuis à moins de 15 px "
+              "d'une marque du relevé automatique de la même feuille).",
+              "- Précision et rappel sont mesurés contre les marques de l'estimateur telles qu'il les a posées (souvent au "
+              "coin du symbole, pas au centre) ; R = 25 px absorbe cet écart pour les symboles courants, pas pour les "
+              "grands appareils.",
+              "- Les marques placées par recalage (S-1811 addenda MEP01, S-1844) dépendent de la similitude estimée par "
+              "compare_qpl : une erreur globale de recalage sur une page déplace toutes ses marques ; vérifié visuellement "
+              "sur S-1811 505B (addenda) et S-1844 E300 avant cette évaluation (marques sur les symboles).",
+              "- Les longueurs de conduit sont une estimation (ratio appris × arbre rectilinéaire sur les appareils "
+              "détectés), pas un tracé des parcours.",
+              "- Aucun prix n'intervient (les projets de l'estimateur n'en contiennent pas).", ""]
+    else:
+        L += [          "- Les images de plans utilisées ici ne sont pas les dessins d'origine : les marques de couleur opaques d'un relevé "
           "antérieur couvrent le cœur de la plupart des symboles (voir le tableau de lisibilité). Ces symboles ne sont pas "
           "comptés, par conception : les compter reviendrait à retrouver les marques du relevé antérieur, pas à lire le "
           "dessin. Le rappel de bout en bout et les écarts de quantité sur ces entrées sont donc bornés par la part lisible ; "
@@ -461,6 +512,9 @@ def main(argv: list[str] | None = None) -> int:
                     help="also save the model trained on all position dossiers (used for count-only dossiers)")
     ap.add_argument("--family-balance", action="store_true",
                     help="train with family re-balancing sample weights (model.family_balance_weights)")
+    ap.add_argument("--gold", choices=G.GOLD_SOURCES, default="original",
+                    help="original = the original bid-package PDFs through plan_index.json (default); "
+                         "annotes = legacy Plans-annotes.pdf renders")
     args = ap.parse_args(argv)
     wanted = [d.strip() for d in args.dossiers.split(",") if d.strip()]
     if args.report_only:
@@ -470,7 +524,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "folds").mkdir(exist_ok=True)
-    golds = {d: G.load(d, args.data) for d in G.ALL_DOSSIERS if (args.data / d).is_dir()}
+    golds = {d: G.load(d, args.data, source=args.gold) for d in G.ALL_DOSSIERS if (args.data / d).is_dir()}
     positions = [g for g in golds.values() if g.has_positions]
     results = []
     full_model = None
@@ -501,7 +555,8 @@ def main(argv: list[str] | None = None) -> int:
         results.append(res)
     pool = pooled(results)
     meta = {"generated": datetime.now().strftime("%Y-%m-%d %H:%M"), "commit": git_commit(),
-            "data_root": str(args.data), "family_balance": args.family_balance, "radii_px": list(RADII), "primary_radius_px": PRIMARY_R}
+            "data_root": str(args.data), "gold_source": args.gold, "family_balance": args.family_balance,
+            "radii_px": list(RADII), "primary_radius_px": PRIMARY_R}
     out = {"meta": meta, "pooled": pool, "dossiers": results}
     (args.out / "results.json").write_text(json.dumps(out, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
     write_report(args.out / "REPORT.md", results, pool, meta)
