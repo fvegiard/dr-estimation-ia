@@ -17,7 +17,7 @@
 | Index (PK incluses) | 106 | `sys.indexes` |
 | Tables avec des données | 4 : `PROCORRESP` 84 721, `CATSTATUS` 20, `Sys_Units` 19, `Sys_UnitsConversion` 65 — **toutes les autres sont vides** (0 produit, 0 prix, 0 soumission) | `sys.partitions` |
 
-Conséquence : **l'intégrité référentielle est entièrement portée par le code** (procédures SQL et client Delphi). Les relations dessinées dans l'ERD (§ 2) sont *déduites* des jointures écrites dans les procédures — chaque flèche cite la procédure qui la réalise.
+Conséquence : **l'intégrité référentielle est entièrement portée par le code** (procédures SQL et client Delphi). Les relations dessinées dans l'ERD (§ 3) sont *déduites* des jointures écrites dans les procédures — chaque flèche cite la procédure qui la réalise.
 
 ## 2. Conventions transversales (constatées sur les 60 tables)
 
