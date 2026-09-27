@@ -182,6 +182,8 @@ EXEC dbo.sp_SOUPRO_Quantity_V2 @SOU_ID=@SOU_ID, @REPLACE_FILTER=1, @DoLog=0, @SO
 SELECT PRO_ID, COUUM, QTEENS, QTEOTH, QTELOT, QTEENS+QTEOTH+QTELOT AS QTE_TOTAL_base_unit FROM SOUPRO WHERE SOU_ID=@SOU_ID ORDER BY PRO_ID;
 
 PRINT '';
+-- @DoLog=1 also matters for the result: SOUPRO.UnitSelling is derived from the @Log table variable that is only
+-- filled when @DoLog=1 (sp_SOU_CalculTotaux l. 496-510, 565-568). With @DoLog=0 UnitSelling is never written.
 PRINT '=== 11a. Totals, material takeoff (P), ModeCalcul=C (markup on cost), VendantUAvantVendantT=1, VPM=2, DoLog=1 ===';
 EXEC dbo.sp_SOU_CalculTotaux @SOU_ID=@SOU_ID, @TypeReleve='P', @EE_CALGARY=0, @ModeCalcul='C', @VendantUAvantVendantT=1, @VPM=2, @DoLog=1;
 PRINT '=== 11b. Totals, service takeoff (S) ===';

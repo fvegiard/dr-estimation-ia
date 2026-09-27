@@ -6,6 +6,11 @@ Source : base `EE` reconstruite à partir des 52 scripts officiels de Dupuis (`e
 prouvé par une soumission synthétique passée dans les procédures officielles (section 9, script
 `eewin/examples/worked_example.sql`, sortie `eewin/examples/worked_example.log`).
 
+Vérification adversariale du 2026-09-27 : chaque numéro de ligne, colonne, formule et valeur ci-dessous a été recontrôlé
+sur la base vivante (`OBJECT_DEFINITION` des 178 modules, `INFORMATION_SCHEMA`, rejeu intégral de `worked_example.sql` →
+sortie identique octet pour octet au `.log`) ; les mentions « exécuté » renvoient à des tests supplémentaires rejoués
+puis nettoyés par `cleanup_example.sql` (14 compteurs à 0).
+
 Convention de citation : `nom_de_procédure l. N` = ligne N du texte retourné par `OBJECT_DEFINITION` (fichier
 `sys.sql_modules`, ligne 1 vide, `CREATE PROCEDURE` en ligne 2). Pour `sp_SOU_CalculTotaux`, la version vivante est celle
 de `V36_UpdateDatabase.sql` (ligne 100 = `CREATE PROCEDURE`) : ligne script = ligne module + 98.
@@ -15,19 +20,27 @@ de `V36_UpdateDatabase.sql` (ligne 100 = `CREATE PROCEDURE`) : ligne script = li
 ## 1. Inventaire : ce qui calcule et ce qui ne calcule pas
 
 178 modules lus (`SELECT o.type, o.name FROM sys.sql_modules m JOIN sys.objects o …` : 160 `P`, 17 `FN`, 1 `TF`).
-Seuls **11** contiennent de l'arithmétique d'estimation ; les 167 autres sont des `up_<TABLE>_Update` / `up_<TABLE>_Delete`
-(INSERT/UPDATE/DELETE champ à champ), des copies (`up_CopySoumis_Full`, `up_CopySouBlocDiv`, `up_CloneRecords`), des
-descriptions (`fn_GetProductComposition*`, `fn_CompositionConcat`, `sp_CalculUsage_*`), la mise à jour de liste de prix
-(`up_PriceUpdate_*`) et la gestion de session/licence.
+Recensement par `grep` sur les 178 définitions :
+
+- l'arithmétique **coût / vendant / taxe** (`COUESC / 100`, `PROFIT / 100`, lecture de `TAXDEF.TAUXPRV*`, appel de
+  `fn_CastAE`) n'existe que dans **2** modules : `sp_SOU_CalculTotaux` et `sp_FAC_CalculTotaux` ;
+- l'arithmétique de **quantités** (appel de `fn_UM_GetRatioDeConversion`) existe dans **16** modules : les 2 précédents,
+  les 6 `sp_{SOU,FAC}_UpdateQteTotal{Oth,Ens,Lots}_v2`, les 6 de l'ancienne chaîne V1 (`sp_SOUPRO_Quantity`,
+  `sp_SOU_CalculQteTotalItem`, leurs jumeaux FAC et les doublons nommés littéralement `dbo.sp_SOUPRO_Quantity`,
+  `dbo.sp_SOU_CalculQteTotalItem`), plus `fn_GetQuantyProductIn` et `fn_GetProductCompositionConcat` qui recalculent la
+  quantité d'un composant pour l'afficher (même formule `QTE / DIV × ratio` qu'au §4, `fn_GetQuantyProductIn` l. 18-25) ;
+- les autres sont des `up_<TABLE>_Update` / `up_<TABLE>_Delete` (INSERT/UPDATE/DELETE champ à champ), des copies
+  (`up_CopySoumis_Full`, `up_CopySouBlocDiv`, `up_CloneRecords`), des descriptions (`fn_CompositionConcat`,
+  `sp_CalculUsage_*`), la mise à jour de liste de prix (`up_PriceUpdate_*`) et la gestion de session/licence.
 
 | Rôle | Module (côté soumission) | Jumeau facture | Défini dans |
 |---|---|---|---|
 | **Totaux d'une soumission** (coûtant, vendant, TVP, heures, montants taxables) | `sp_SOU_CalculTotaux` | `sp_FAC_CalculTotaux` | `V36_UpdateDatabase.sql` l. 100 / l. 721 |
 | Cumul des quantités de produits (relevé → `SOUPRO.QTEOTH/QTEENS/QTELOT`) | `sp_SOUPRO_Quantity_V2` → `sp_SOU_UpdateQteTotalOth_v2`, `sp_SOU_UpdateQteTotalEns_v2`, `sp_SOU_UpdateQteTotalLots_v2` | `sp_FACPRO_Quantity_V2` + `_v2` FAC | `V30_UpdateDatabase.sql` l. 483, 90, 351 ; `V39_UpdateDatabase.sql` l. 83 (Ens_v2) |
-| Ancienne version (curseurs, V1) du cumul | `sp_SOUPRO_Quantity` → `sp_SOU_CalculQteTotalItem` → `sp_SOU_UpdateQteTotal{Oth,Ens,Lots}` | idem FAC | renommées par `sp_rename` dans `V24_UpdateDatabase.SQL` l. 6-41 |
+| Ancienne version (curseurs, V1) du cumul — **cassée sur cette base** | `sp_SOUPRO_Quantity` → `sp_SOU_CalculQteTotalItem` → `EXEC dbo.sp_SOU_UpdateQteTotal{Oth,Ens,Lots}` (l. 42-46) ; ces trois procédures n'existent que sous le nom littéral `dbo.sp_SOU_UpdateQteTotal…` (schéma `dbo`, nom contenant le point), donc l'appel échoue : `Msg 2812 Could not find stored procedure 'dbo.sp_SOU_UpdateQteTotalOth'` (exécuté) | idem FAC (noms sans point, non testés) | renommées par `sp_rename` dans `V24_UpdateDatabase.SQL` l. 6-41 |
 | Arrondi | `fn_CastAE(@Input DECIMAL(18,6), @Precision INT)` = `ROUND(@Input, @Precision)` | — | `V30_UpdateDatabase.sql` l. 10 |
 | Multiplicateur de bloc | `fn_MultBlock(@SOU_ID, @BLO_ID_REL INT)` → `SOUBLO.MULT` (1 si absent) | — | `V30_UpdateDatabase.sql` l. 27 |
-| Unités | `fn_UM_GetRatioDeConversion`, `fn_UM_GetNatureUnite`, `fn_UM_GetUniteDeBase` | — | `V21_UpdateDatabase.sql` l. 5, 87 ; `V38_UpdateDatabase.sql` l. 6 |
+| Unités | `fn_UM_GetRatioDeConversion` (`V21` l. 5), `fn_UM_GetUniteDeBase` (`V21` l. 87), `fn_UM_GetNatureUnite` (`V38` l. 6) | — | `V21_UpdateDatabase.sql`, `V38_UpdateDatabase.sql` |
 | Variante « Calgary » (coût rendu `LC`) | `EE_Calgary()` = 1 si la colonne `PRODUITS.LC` existe | — | `V22_UpdateDatabase.sql` l. 813 |
 
 **Ce qui n'est PAS calculé en SQL** (vérifié par `grep` sur les 178 définitions) :
@@ -51,9 +64,9 @@ Tables (définitions dans `CreateTables.sql`) :
 
 | Table | Rôle | Colonnes lues par le calcul |
 |---|---|---|
-| `SOUMIS` | entête de soumission | `TAX_ID` (l. 144) ; reçoit `MATTAXAB1..5`, `SERTAXAB1..5`, `AUTTAXAB1..5`, `CALCTIMSTP` |
-| `SOUREL` (l. 851) | **lignes du relevé** : la quantité comptée sur les plans | `TYPERELEVE` (`P` produits/matériel, `S` service, `O` autre), `TYPEITEM` (`P` produit, `N` produit non catalogué, `A` ensemble, `L` lot, `T` titre, `S` service, `O` autre), `ITEM_ID`, `BLO_ID`, `DIV_ID`, `ORDRE`, `QTE`, `QTEUM`, `SECTION`, `PROFIT`, `TYPETAXE`, `COUTANBRUT` |
-| `SOUPRO` (l. 820) | copie « dans la soumission » des produits | `COUBRUTUNI` (coût brut unitaire), `COUUM` (unité du coût), `COUESC` (escompte %), `PROMCOUNET` (coût net spécial/promo), `QPP` (qté par paquet), `TEMPUNI`, `TEMPUM` (temps d'installation unitaire + unité), `LC` (Calgary seulement) ; reçoit `QTEOTH/QTEENS/QTELOT`, `UnitSelling`, `CODEIMPR` |
+| `SOUMIS` (l. 692) | entête de soumission | `TAX_ID` (colonne l. 799 ; lue par `sp_SOU_CalculTotaux` l. 144) ; reçoit `MATTAXAB1..5`, `SERTAXAB1..5`, `AUTTAXAB1..5`, `CALCTIMSTP` |
+| `SOUREL` (l. 851) | **lignes du relevé** : la quantité comptée sur les plans | `TYPERELEVE` (`P` matériel → `MATTAXAB*`, `S` service → `SERTAXAB*`, `O` autre → `AUTTAXAB*`, d'après `sp_SOU_CalculTotaux` l. 526-555), `TYPEITEM` (`P` produit lu dans `SOUPRO` par `PRO_ID = ITEM_ID`, l. 200-202 ; `N` traité exactement comme `P`, l. 189 — sens « produit non catalogué » [non vérifié] ; `A` ensemble = `SOUENS.ENS_ID`, l. 266 ; `L` lot = `SOULOTS.LOTS_ID`, l. 317 ; `T` ligne ignorée par le calcul, l. 343 — sens « titre » [non vérifié] ; `S` service et `O` autre : coût = `COUTANBRUT`, l. 353-356), `ITEM_ID`, `BLO_ID`, `DIV_ID`, `ORDRE`, `QTE`, `QTEUM`, `SECTION`, `PROFIT`, `TYPETAXE`, `COUTANBRUT` |
+| `SOUPRO` (l. 820) | copie « dans la soumission » des produits | `COUBRUTUNI` (coût brut unitaire), `COUUM` (unité du coût), `COUESC` (escompte %), `PROMCOUNET` (coût net spécial/promo), `QPP` (qté par paquet), `TEMPUNI`, `TEMPUM` (temps d'installation unitaire + unité) ; reçoit `QTEOTH/QTEENS/QTELOT`, `UnitSelling`, `CODEIMPR`, `CALCTIMSTP`. La colonne `LC` (coût rendu, variante Calgary) **n'existe dans aucune table de cette base** (`INFORMATION_SCHEMA.COLUMNS`, 0 ligne) : la procédure travaille sur une copie `#SOUPRO_TEMP` (l. 115) à laquelle elle ajoute une colonne `LC` vide quand `@EE_CALGARY = 0` (l. 118-121) |
 | `SOUENS` (l. 617) / `SOUENSCO` (l. 638) | ensembles (assemblies) et leurs composants | `SOUENS.COUUM, TEMPUNI, TEMPSEC, TEMPUM` ; `SOUENSCO.PRO_ID, QTE, QTEUM, TYPRATIO, DIV, DIVUM` |
 | `SOULOTS` (l. 654) / `SOULOTSCO` (l. 679) | lots et composants | `SOULOTS.COUUM, TEMPUNI, TEMPUM, COUTANTSEL, COUTANT1..4` ; `SOULOTSCO.PRO_ID, QTE, QTEUM` |
 | `SOUBLO` (l. 596) | blocs | `MULT` (`int`) — multiplicateur appliqué aux lignes `P` |
@@ -66,10 +79,12 @@ Le catalogue (`PRODUITS`, `ENSEMBLE`, `ENSCOMPO`) n'est **pas** lu par le calcul
 `SOUENSCO` figée dans la soumission qui sert (prix au moment de la soumission). Aucune procédure SQL ne fait la copie
 catalogue → soumission ; c'est l'application.
 
-Pont avec Plan Expert : dans un `.qpl` de Dupuis (`S-1714-Dupuis-PlanExpert.qpl`), chaque `<EEExchangeData ItemType="A"
-ItemID="ENS…" …/>` porte les mêmes noms de domaine que `SOUREL.TYPEITEM='A'` / `SOUREL.ITEM_ID` = `SOUENS.ENS_ID` ; les
-132 `ENS…` recensés (`ensembles-ee.csv`) sont donc des identifiants d'ensembles EEWin. Le chemin d'import QPL → SOUREL
-n'est pas dans les scripts SQL (application), seule la correspondance de noms est constatée.
+Pont avec Plan Expert : dans un `.qpl` de Dupuis, un élément `<EEExchangeData ItemType="A" ItemID="ENS…" Key="…"
+PersonalKey="…" …/>` porte les mêmes noms de domaine que `SOUREL.TYPEITEM='A'` / `SOUREL.ITEM_ID` = `SOUENS.ENS_ID`
+(`varchar(20)` ; les `ENS…` font 20 caractères). Le QPL de référence `S-1714-Dupuis-PlanExpert.qpl` n'en contient qu'**un
+seul** (`ItemType="A" ItemID="ENSCFFFDBD5146159B90" Key="19PE0.75 #12"`). Le recensement `ensembles-ee.csv` compte
+**132 lignes = 116 `ItemType="A"` (`ENS…`, ensembles) + 16 `ItemType="P"` (`LQE…`, 9 caractères, produits)**. Le chemin
+d'import QPL → SOUREL n'est pas dans les scripts SQL (application), seule la correspondance de noms est constatée.
 
 ---
 
@@ -90,9 +105,12 @@ ELSE
 
 > **CoutantNet = PROMCOUNET si > 0, sinon COUBRUTUNI × (1 − COUESC/100)**, exprimé par unité `COUUM`.
 
-La même expression est répétée pour les composants d'ensemble (l. 230-233, 239-242) et de lot (l. 295-298).
-En mode Calgary (`@EE_CALGARY = 1`) le coût unitaire utilise `SOUPRO.LC` (landed cost) à la place (l. 360-366) ;
-sur cette base `dbo.EE_Calgary()` retourne 0 (pas de colonne `PRODUITS.LC`).
+`SP` est `#SOUPRO_TEMP`, copie des lignes `SOUPRO` de la soumission (l. 115, 200). La même expression est répétée pour
+les composants d'ensemble (l. 230-233, 239-242) et de lot (l. 295-298).
+En mode Calgary (`@EE_CALGARY = 1`) le coût unitaire utilise `SP.LC` (landed cost) à la place (l. 360-366) ; sur cette
+base `dbo.EE_Calgary()` retourne 0 (pas de colonne `PRODUITS.LC`, `EE_Calgary` l. 8-15) et appeler `sp_SOU_CalculTotaux`
+avec `@EE_CALGARY = 1` échoue : `Msg 207 Invalid column name 'LC'` (exécuté ; la colonne n'est ajoutée à `#SOUPRO_TEMP`
+que si `@EE_CALGARY = 0`, l. 118-121).
 
 ---
 
@@ -131,7 +149,7 @@ n'est pas lu pour un ensemble :
 
 ```sql
 @TempsInstallationSection = SE.TEMPSEC,
-@TempsInstallationTotal   = @QTE * SE.TEMPUNI * fn_UM_GetRatioDeConversion(@QTEUM, SE.TEMPUM, 0)
+@TempsInstallationTotal   = @QTE * SE.TEMPUNI * fn_UM_GetRatioDeConversion(@QTEUM, SE.TEMPUM, @QPP)   -- @QPP remis à 0 l. 274
 ...
 IF (@DivisibleEnSections > 0)
   SET @TempsInstallationTotal = @TempsInstallationTotal + (@TempsInstallationSection * @SECTION);
@@ -179,17 +197,20 @@ SET @R = CASE WHEN @PACKAGETOUNIT = 1 THEN CASE WHEN @QPP = 0 THEN 0 ELSE 1.0 / 
 > **1/QPP** pour unité → paquet (`U → PG`, `U → BO`) ; **0 dans tous les autres cas** (paquet → unité, ou aucune ligne).
 
 Conséquences vérifiées sur la base (`worked_example.log` §9) : `F → CF = 0.01`, `F → F = 1`, `U → U = 1`,
-**`F → C = 0`** (`C` = centaine d'unités, groupe A ; `F` = pied, groupe B : aucune ligne). Un produit dont `COUUM` n'est
-pas du même groupe que la `QTEUM` du relevé ou du composant a donc un **coût de 0 sans aucune erreur**. Le fil de câble se
-tarife en `CF`/`KF` (cent/mille pieds), jamais en `C`/`K`.
+**`F → C = 0`** (`C` = centaine d'unités, `Sys_Units.CompatibilityGroup` A ; `F` = pied, groupe B : aucune ligne
+`Sys_UnitsConversion` entre les deux). Un produit dont `COUUM` n'est pas du même groupe que la `QTEUM` du relevé ou du
+composant a donc un **coût de 0 sans aucune erreur**. Conséquence : un fil compté en `F` doit avoir un `COUUM` du groupe B
+(`F`, `CF`, `KF`, `M`, `HM`, `KM`) ; avec `C`/`K` (groupe A) le ratio est 0.
 
 `Sys_Units` (19 lignes) : `Type` = `U` (comptage) ou `L` (longueur) — c'est ce que retourne `fn_UM_GetNatureUnite` ;
 `BaseUnitCodeEN` = unité de base du groupe (`U` pour `C`,`K` ; `F` pour `CF`,`KF` ; `M` pour `HM`,`KM` ; `LB` pour `CB` ;
 `KG` pour `CK` ; `L` pour `CL`) — c'est ce que retourne `fn_UM_GetUniteDeBase`. Unités : `U C K F CF KF M HM KM L CL
 RL PR BO PG LB CB KG CK`.
 
-Le `@QPP` est déclaré `INT` dans `sp_SOU_CalculTotaux` (l. 46) et `sp_SOU_CalculQteTotalItem` alors que `SOUPRO.QPP` est
-`float` : une quantité par paquet fractionnaire est tronquée.
+Le paramètre `@QPP` de `fn_UM_GetRatioDeConversion` est lui-même déclaré `INT` (l. 2), comme `@QPP` dans
+`sp_SOU_CalculTotaux` (l. 46) et `@QPP_SOUPRO` dans `sp_SOU_CalculQteTotalItem` (l. 5), alors que `SOUPRO.QPP` est `float`
+(`INFORMATION_SCHEMA.COLUMNS`) : une quantité par paquet fractionnaire est tronquée à l'entier partout où la fonction est
+appelée (`SELECT @i = 1.5` avec `@i INT` → 1, exécuté).
 
 ---
 
@@ -249,6 +270,17 @@ Taux (l. 414-425) : `SOUREL.TYPETAXE` est cherché dans `TAXDEF.CODETAX1..5` du 
 
 > **VendantTVP = Vendant + Coûtant × TAUXPRV/100** — la TVP est calculée sur le **coûtant**, pas sur le vendant.
 
+Deux effets de bord prouvés par exécution (mêmes données qu'au §9) :
+
+- **`TAXDEF.TVPSURCPER = 0`** : les deux `…IncluantTVP` restent à 0 (l. 433-434), donc `fCoutPortionTVP = (0 −
+  VendantTotal) × MULT` (l. 462) : la « portion TVP » retournée vaut **moins le vendant** (log : `fCoutPortionTVP =
+  -448.80` pour PRISE, −506,40, −117,00, −127,66). `UnitSelling` reçoit alors le vendant unitaire hors TVP (l. 589-592).
+- **`TYPETAXE` absent de `CODETAX1..5`** : `@TaxeProv` et `@INDEXTAX` ne sont pas remis à zéro à chaque ligne (déclarés
+  l. 58-59, assignés seulement quand la CTE l. 414-423 trouve une ligne ; le `IF … IS NULL` l. 425 ne couvre que la
+  première ligne du curseur). Une ligne avec un code inconnu **hérite du taux et de l'index de la ligne précédente** :
+  `ZZP-RECEP` passé à `TYPETAXE='Z'` a été taxé à 9,975 % et cumulé dans `MATTAXAB1` (log : `TaxeProv 9.975`,
+  `MATTAXAB1 = 1199.86` inchangé).
+
 ### 7.4 Cumul par ligne, blocs et main-d'œuvre (l. 459-481)
 
 ```sql
@@ -275,10 +307,12 @@ donc sans effet en SQL.
 
 - Cumul par index de taxe (l. 488-492) : `@MontantTax{i} += @fVendant` (vendant **hors** portion TVP, après `MULT_BLOC`),
   puis écrit dans `SOUMIS.MATTAXAB1..5` / `SERTAXAB1..5` / `AUTTAXAB1..5` selon `@TypeReleve` (l. 526-555).
-- `SOUPRO.UnitSelling` (l. 565-602) : `MAX(VendantUnitaire[IncluantTVP])` par `ITEM_ID` du log ; la condition est
-  écrite `IF NOT EXISTS (SOUPRO …) UPDATE SOUPRO SET UnitSelling = -1 … ELSE UPDATE … SET UnitSelling = …` : la branche
-  `-1` ne met donc jamais rien à jour, et seuls les produits **directement en ligne de relevé** reçoivent une valeur
-  (les composants d'ensemble restent `NULL` — vérifié §9).
+- `SOUPRO.UnitSelling` (l. 565-602) : `MAX(VendantUnitaire[IncluantTVP])` par `ITEM_ID` de la table `@Log` ; or `@Log`
+  n'est alimentée que si `@DoLog = 1` (l. 496-510). **Avec `@DoLog = 0`, `UnitSelling` n'est jamais mis à jour** (prouvé :
+  après un appel `@DoLog = 0`, `UnitSelling` reste `NULL` pour les 5 produits ; après un appel `@DoLog = 1` en mode `G`,
+  `ZZP-RECEP` passe à 13,76). La condition est écrite `IF NOT EXISTS (SOUPRO …) UPDATE SOUPRO SET UnitSelling = -1 …
+  ELSE UPDATE … SET UnitSelling = …` : la branche `-1` ne met donc jamais rien à jour, et seuls les produits
+  **directement en ligne de relevé** reçoivent une valeur (les composants d'ensemble restent `NULL` — vérifié §9).
 - Retour (l. 608-611) : `fCoutantTotal, fCoutantTotalPortionTVP, fVendantTotal, fLaborTotal` — c'est ce que
   l'application range ensuite dans `MATCOUTREL / MATPORTTVP / MATVENDCAL / MATTOTALMD` (ou `SER*`, `AUT*`) de `SOUMIS`.
 
@@ -298,19 +332,27 @@ de `COUUM`** :
             THEN CAST(CMP1.QTE_ENSCO * fn_UM_GetRatioDeConversion(SR.QTEUM, CMP1.COUUM, 0) AS NUMERIC(18,3)) * SR.QTE
             ELSE CMP1.QTE_ENSCO * SR.SECTION END) * dbo.fn_MultBlock(SR.SOU_ID, SR.BLO_ID))
   ```
-  puis `× ratio(QTEUM_cmp → base(COUUM_produit), QPP)`. `QTE_ENSCO` = même règle QTE/DIV×ratio qu'au §4.
-  > composant `L` : **QTE_composant × QTE_relevé × MULT** ; composant « section » : **QTE_composant × SECTION × MULT**.
+  puis `× ratio(QTEUM_cmp → base(COUUM_produit), QPP)` (l. 18). `QTE_ENSCO` = même règle QTE/DIV×ratio qu'au §4
+  (l. 33-41) ; `CMP1.COUUM` est le `COUUM` de l'**ensemble** (`E.COUUM`, l. 33).
+  > composant `L` : **arrondi₃(QTE_composant × ratio(QTEUM_relevé → COUUM_ensemble)) × QTE_relevé × MULT** ; composant
+  > « section » : **QTE_composant × SECTION × MULT**. (Dans l'exemple §9 le ratio vaut 1 : `U → U`, `F → F`.)
 - Lots (`Lots_v2` l. 24) : `CMP1.QTE × SR.QTE × ratio(SR.QTEUM → L.COUUM) × fn_MultBlock(…)`.
 
 Contraintes révélées par l'exécution :
 
 - `fn_MultBlock(@SOU_ID VARCHAR(20), @BLO_ID_REL INT)` : **`BLO_ID` doit être une chaîne numérique** (`'1'`, `'001'`)
   bien que `SOUREL.BLO_ID`/`SOUBLO.BLO_ID` soient `varchar(3)` — un bloc `'B1'` fait échouer le cumul
-  (`Msg 245 … converting the varchar value 'B1' to data type int`, `sp_SOU_UpdateQteTotalOth_v2` l. 55).
+  (`Msg 245 … converting the varchar value 'B1' to data type int`, `sp_SOU_UpdateQteTotalOth_v2` l. 55) et **le lot
+  entier est abandonné** (erreur de conversion = fin du batch : le nettoyage qui suivait n'a pas tourné, exécuté).
+  `sp_SOU_CalculTotaux`, lui, compare `BLO_ID` en `varchar` (l. 173-175) et accepte `'B1'` (exécuté : bloc `B1`,
+  `MULT=3` → `MULT_BLOC 3`, `fCout 7.50` pour 1 boîte à 2,50 $).
 - Les trois `_v2` font `CLOSE CUR_2 ; DEALLOCATE CUR_2` hors du `IF @REPLACE_FILTER > 0` qui l'a ouvert
   (`Oth_v2` l. 110-111, `Ens_v2` l. 136-137, `Lots_v2` l. 123-124) : appelées avec `@REPLACE_FILTER = 0` elles lèvent
-  `Msg 16916 A cursor with the name 'CUR_2' does not exist` (les quantités sont quand même écrites). Appeler avec 1 ou 2.
-- Une ligne dont le total change de moins de 0,01 n'est pas réécrite (`CAST(… AS NUMERIC(18,2)) !=`, `Oth_v2` l. 42).
+  6 × `Msg 16916 A cursor with the name 'CUR_2' does not exist` (exécuté ; les quantités sont quand même écrites,
+  identiques à celles du §9.2). Appeler avec 1 ou 2.
+- Une ligne dont le total, arrondi à 2 décimales, ne change pas n'est pas réécrite (`CAST(… AS NUMERIC(18,2)) !=`,
+  `Oth_v2` l. 42-43) — sauf si `@DoLog = 1` (l. 41), où toutes les lignes sont écrites dans la table `@SOUPROLOG`
+  (l. 46-52) au lieu de `SOUPRO`.
 
 ---
 
@@ -424,7 +466,8 @@ CoûtantUnitaire      = (S,O) ? COUTANBRUT : CoûtNet(item) × ratio(QTEUM_relev
 CoûtantTotal         = arrondi₂(QTE × CoûtantUnitaire) [+ arrondi₂(SECTION × CoûtSection) si A avec sections]
 Vendant              = mode C : Coûtant × (1 + PROFIT/100) | mode G : Coûtant / (1 − PROFIT/100)
                        (arrondi VPM sur l'unitaire si VendantUAvantVendantT=1 et pas de sections, sinon arrondi₂ sur le total)
-VendantTVP           = Vendant + Coûtant × TAUXPRV{i}/100        (i : TYPETAXE ∈ TAXDEF.CODETAX1..5 ; si TVPSURCPER=1)
+VendantTVP           = Vendant + Coûtant × TAUXPRV{i}/100        (i : TYPETAXE ∈ TAXDEF.CODETAX1..5 ; si TVPSURCPER=1,
+                       sinon VendantTVP = 0 et fPortionTVP = −Vendant ; TYPETAXE inconnu → taux/index de la ligne précédente)
 Heures(P,N)          = QTE × TEMPUNI_prod × ratio(QTEUM→TEMPUM_prod, QPP)
 Heures(A)            = QTE × TEMPUNI_ens × ratio(QTEUM→TEMPUM_ens) + SECTION × TEMPSEC_ens (si sections)
 Heures(L)            = QTE × TEMPUNI_lot × ratio(QTEUM→TEMPUM_lot)
@@ -435,6 +478,10 @@ Par ligne O          : fCout, fVendant, fPortionTVP sans MULT
 Taxable{i}           = Σ fVendant des lignes dont TYPETAXE → i   → SOUMIS.{MAT|SER|AUT}TAXAB{i}
 Retour               = Σ fCout, Σ fPortionTVP, Σ fVendant, fLabor    (le sommaire de SOUMIS — admin %, profit %, ajustements,
                        TPS/TVQ finales, heures × TAUXMD — est calculé par l'application, pas en SQL)
+UnitSelling(prod)    = MAX(VendantUnitaire[TVP]) des lignes P/N du produit — écrit seulement si @DoLog = 1
+Qté à commander      : QTEOTH = Σ QTE × MULT × ratio(QTEUM→base(COUUM), QPP)
+                       QTEENS = Σ [L : arrondi₃(QTE_cmp × ratio(QTEUM_relevé→COUUM_ens)) × QTE | ¬L : QTE_cmp × SECTION] × MULT × ratio(QTEUM_cmp→base(COUUM), QPP)
+                       QTELOT = Σ QTE_cmp × QTE × ratio(QTEUM_relevé→COUUM_lot) × MULT × ratio(QTEUM_cmp→base(COUUM), QPP)
 ```
 
 ## 11. Pièges confirmés par exécution
@@ -448,5 +495,10 @@ Retour               = Σ fCout, Σ fPortionTVP, Σ fVendant, fLabor    (le somm
 6. `MULT_BLOC` ne s'applique qu'au relevé `P` (§7.4).
 7. `UnitSelling` n'est renseigné que pour les produits en ligne directe (§7.5).
 8. `sp_FAC_CalculTotaux` : `COUTANTSEL = 4` lit `COUTANT3` et n'a pas de `ELSE` (§5).
-9. Objets nommés littéralement `dbo.sp_SOU_…` (7 procédures V1) : effet de `sp_rename 'dbo.x', 'dbo.y'` dans
-   `V24_UpdateDatabase.SQL` ; les versions `_v2`/`_V2` sont celles à utiliser.
+9. 7 objets nommés littéralement `dbo.sp_SOU_…` / `dbo.sp_SOUPRO_Quantity` (procédures V1) : effet de `sp_rename 'dbo.x',
+   'dbo.y'` dans `V24_UpdateDatabase.SQL` ; la chaîne V1 `sp_SOUPRO_Quantity → sp_SOU_CalculQteTotalItem` plante en
+   `Msg 2812` (§1) ; les versions `_v2`/`_V2` sont les seules utilisables.
+10. `UnitSelling` n'est écrit que si `sp_SOU_CalculTotaux` est appelée avec `@DoLog = 1` (§7.5).
+11. `TVPSURCPER = 0` → `fCoutantTotalPortionTVP` retourné = −Σ vendant ; `TYPETAXE` inconnu → hérite du taux de la
+    ligne précédente (§7.3).
+12. `@EE_CALGARY = 1` sur une base sans colonne `LC` → `Msg 207 Invalid column name 'LC'` (§3).
