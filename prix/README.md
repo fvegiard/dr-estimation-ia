@@ -3,6 +3,11 @@
 Dossier des données extraites des livres d'estimation, pour la chaîne d'estimation.
 Règle : **aucun nombre inventé** — chaque ligne porte le livre, la page imprimée et la ligne source brute.
 
+## National Electrical Estimator 2025 (matériel + main-d'œuvre, USD)
+
+`parse_national_estimator.py` → `national-estimator-2025.csv` (13 370 lignes : `section, page, item, crew, manhours, unit,
+material_usd, labor_usd, installed_usd, raw`) + `national-estimator-2025.report.md`. Voir ce rapport pour les contrôles.
+
 ## NECA Manual of Labor Units 2021-2022 (heures-personne seulement)
 
 | Fichier | Rôle |
