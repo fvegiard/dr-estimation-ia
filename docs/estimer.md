@@ -4,10 +4,11 @@
 
 ```bash
 pip install -r requirements.txt                      # pymupdf, numpy, scipy, scikit-learn, openpyxl…
-python -m src.estimer.train                          # apprend models/estimer.joblib sur les références Dupuis
+python -m src.estimer.train                          # apprend models/estimer.joblib sur les références Dupuis (plans originaux)
 python -m src.estimer PLANS.pdf --out sortie/        # estimation d'un PDF quelconque
-python -m src.estimer.evaluate --out eval            # validation « un dossier exclu » → eval/results.json + eval/REPORT.md
+python -m src.estimer.evaluate --out eval            # validation « un dossier exclu » sur les PLANS ORIGINAUX → eval/results.json + eval/REPORT.md
 python -m src.estimer.evaluate --out eval --report-only   # régénère REPORT.md depuis results.json
+python -m src.estimer.evaluate --gold annotes --out eval/plans-annotes   # ancien protocole sur Plans-annotes.pdf (comparaison seulement)
 python -m src.validation.ecart --reference ref.csv --ia sortie/estimate.json --sortie ecart.md
 ```
 
@@ -32,6 +33,26 @@ largeur/hauteur avec `dupuis-png-dimensions.txt`, et confrontation à l'appariem
 (`comparaison-dupuis-qpl/pages.csv`). Les plans dont le document n'est pas dans `plans-originaux` sont listés avec leur
 nombre de marques (S-1844 : 693/716 marques sur `23347_SELECTION_GLOBAL_SOUM…`, document absent). S-1857 n'a pas de
 référence Dupuis : c'est `planexpert/S-1857.qpl` (projet de la chaîne) qui est indexé, et l'INDEX le dit.
+
+## Vérité sur les plans originaux (`src.estimer.gold_original`, défaut de `train` et `evaluate`)
+
+`gold.load(dossier, source="original")` place les marques de M. Dupuis sur les PDF originaux via `plan_index.json` :
+
+- **Direct** (par défaut) : plan Dupuis apparié à une page par son nom (`<pdf> - n`, rapport L/H vérifié) et taille de son
+  raster connue (`dupuis-png-dimensions.txt`) → `x · largeur_page / largeur_png`. Aucun autre relevé n'intervient.
+- **Recalé** (reste, compté dans les notes du dossier) : raster de taille inconnue (S-1811 : 5 pages JPG de l'addenda
+  MEP01, 681 marques) ou document absent de `plans-originaux` (S-1844 : feuilles électriques du cahier global 23347,
+  685 marques) → recalage géométrique de `src.validation.compare_qpl` sur les rasters du relevé automatique
+  (similitude par page), puis `feuilles-ia.csv` pour retrouver la page du PDF. Vérifié visuellement (S-1811 505B
+  addenda, S-1844 E300) : marques sur les symboles.
+- **Non plaçable** : compté dans `unplaced` (S-1844 : 23 marques de la page E103, raster inconnu et sans recalage).
+- Page importée deux fois par Dupuis (S-1714 E401–E408) : doublons à moins de 1,2 % de la diagonale retirés (1001).
+  Feuille marquée dans l'original ET l'addenda (S-1811 503B/505B/506B/507B/508B) : les deux jeux sont gardés, les deux
+  pages étant dans l'entrée.
+- Dossier à plusieurs PDF : concaténation dans `/home/claude/data/dossiers/_cache-plans-originaux/<S>-plans-originaux.pdf`
+  (ordre de l'index, PDF sans plan Dupuis exclus — listes de feuilles scannées) ; le cache est régénéré si les SHA256 changent.
+- S-1857 : aucun `.qpl` Dupuis → vérité de quantités `reference-quantites.csv` ; `planexpert/S-1857.qpl` (relevé
+  automatique) n'est PAS utilisé comme vérité.
 
 ## Sorties
 
@@ -73,7 +94,7 @@ marque), `family_uncertain` (probabilité de la famille < 0,5), `no_symbol_detec
    cédules donnent code → famille (catégoriseur sur la description ; lignes contradictoires ou code jamais repris
    sur un plan = rejeté). Chaque occurrence isolée du code sur les plans devient une détection (`from_text_tag`), ou
    donne sa famille à la détection visuelle la plus proche à moins de 40 px (`family_from_text_tag`). Les PDF image
-   (dont tous les `Plans-annotes.pdf` évalués) n'ont pas de mots : ce module ne s'y active pas.
+   (dont les anciens `Plans-annotes.pdf`) n'ont pas de mots : ce module ne s'y active pas ; sur les PDF originaux il est actif.
 6. **Conduits** (`conduits.py`) : échelle lue dans la couche texte (« ÉCHELLE 1/8" = 1'-0" », « 1:100 ») ou donnée par
    `--sheets` ; longueur = ratio appris × arbre couvrant rectilinéaire des appareils détectés. Ratio = médiane, sur les
    feuilles où Dupuis a posé une échelle, de (longueur de ses lignes de conduit / arbre sur ses propres marques).
@@ -81,8 +102,12 @@ marque), `family_uncertain` (probabilité de la famille < 0,5), `no_symbol_detec
 
 ## Limites connues (mesurées dans `eval/REPORT.md`)
 
-- Les PDF de plans d'origine et les PNG de Dupuis ne sont pas dans l'environnement ; l'évaluation tourne sur
-  `Plans-annotes.pdf`, où la plupart des symboles sont couverts. Les chiffres de bout en bout y sont bornés par la
-  part lisible.
+- L'évaluation courante tourne sur les PDF originaux (`eval/REPORT.md`, `eval/results.json`) ; l'ancienne évaluation sur
+  `Plans-annotes.pdf` (rendus portant les marques opaques d'un relevé antérieur) est conservée dans `eval/plans-annotes/`
+  pour comparaison — elle ne doit plus servir d'entrée.
+- Les marques de Dupuis sont posées à sa manière (souvent au coin du symbole) : R = 25 px absorbe l'écart pour les
+  symboles courants, pas pour les grands appareils.
+- 1366 marques (S-1811 addenda MEP01, S-1844) sont placées par recalage, pas directement : une erreur globale de
+  recalage sur une page déplacerait toutes ses marques.
 - S-1857 n'a pas de `.qpl` Dupuis ici (seulement `reference-quantites.csv`) : écarts de quantité seulement.
 - Aucun prix : hors périmètre (les projets de Dupuis n'en contiennent pas).
