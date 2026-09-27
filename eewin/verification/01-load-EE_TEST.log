@@ -1,0 +1,66 @@
+# 2026-09-27 14:38:58 EDT — chargement d'EE_TEST à partir du seul eewin/EE_DR.sql (version finale, sortie sqlcmd intégrale)
+$ sha256sum eewin/EE_DR.sql
+d8aacb160d88e75aa2db7f2d805f0e59223ff7661a6fb83e58ad25939d0a46e2  eewin/EE_DR.sql
+$ sqlcmd -Q "IF DB_ID('EE_TEST') IS NOT NULL BEGIN ALTER DATABASE EE_TEST SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE EE_TEST; END; CREATE DATABASE EE_TEST COLLATE French_CI_AS;"
+$ docker cp eewin/EE_DR.sql eewin:/tmp/EE_DR.sql
+$ sqlcmd -d EE_TEST -f 65001 -x -b -I -i /tmp/EE_DR.sql
+The module 'up_SOUPRO_Quantity' depends on the missing object 'dbo.sp_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'up_SOUPRO_Quantity' depends on the missing object 'dbo.sp_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'up_SOUPRO_Quantity' depends on the missing object 'dbo.sp_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'up_SOUPRO_Quantity' depends on the missing object 'dbo.sp_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'up_SOUPRO_Quantity' depends on the missing object 'dbo.sp_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'up_SOUPRO_Quantity' depends on the missing object 'dbo.sp_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+The module 'sp_CalculQteTotalItem' depends on the missing object 'dbo.sp_UpdateQteTotalOth'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_CalculQteTotalItem' depends on the missing object 'dbo.sp_UpdateQteTotalEns'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_CalculQteTotalItem' depends on the missing object 'dbo.sp_UpdateQteTotalLots'. The module will still be created; however, it cannot run successfully until the object exists.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+The module 'sp_FACPRO_Quantity' depends on the missing object 'dbo.sp_FAC_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity' depends on the missing object 'dbo.sp_FAC_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity' depends on the missing object 'dbo.sp_FAC_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity' depends on the missing object 'dbo.sp_FAC_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity' depends on the missing object 'dbo.sp_FAC_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity' depends on the missing object 'dbo.sp_FAC_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity_V2' depends on the missing object 'dbo.sp_FAC_UpdateQteTotalOth_v2'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity_V2' depends on the missing object 'dbo.sp_FAC_UpdateQteTotalEns_v2'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FACPRO_Quantity_V2' depends on the missing object 'dbo.sp_FAC_UpdateQteTotalLots_v2'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FAC_CalculQteTotalItem' depends on the missing object 'dbo.sp_FAC_UpdateQteTotalOth'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FAC_CalculQteTotalItem' depends on the missing object 'dbo.sp_FAC_UpdateQteTotalEns'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FAC_CalculQteTotalItem' depends on the missing object 'dbo.sp_FAC_UpdateQteTotalLots'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_FAC_SOU_Copy' depends on the missing object 'up_GetAllFieldsBut_v2'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity' depends on the missing object 'dbo.sp_SOU_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity' depends on the missing object 'dbo.sp_SOU_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity' depends on the missing object 'dbo.sp_SOU_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity' depends on the missing object 'dbo.sp_SOU_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity' depends on the missing object 'dbo.sp_SOU_CalculQteTotalItem'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity' depends on the missing object 'dbo.sp_SOU_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity_V2' depends on the missing object 'dbo.sp_SOU_UpdateQteTotalOth_v2'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity_V2' depends on the missing object 'dbo.sp_SOU_UpdateQteTotalEns_v2'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOUPRO_Quantity_V2' depends on the missing object 'dbo.sp_SOU_UpdateQteTotalLots_v2'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOU_CalculQteTotalItem' depends on the missing object 'dbo.sp_SOU_UpdateQteTotalOth'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOU_CalculQteTotalItem' depends on the missing object 'dbo.sp_SOU_UpdateQteTotalEns'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOU_CalculQteTotalItem' depends on the missing object 'dbo.sp_SOU_UpdateQteTotalLots'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOU_UpdateQteTotalEns_v2' depends on the missing object 'dbo.sp_SOU_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOU_UpdateQteTotalLots_v2' depends on the missing object 'dbo.sp_SOU_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'sp_SOU_UpdateQteTotalOth_v2' depends on the missing object 'dbo.sp_SOU_CalculCodeImpr'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'up_CloneRecords' depends on the missing object 'dbo.up_GetAllFieldsBut'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchAssign' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchAssign' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchAssign' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchAssign' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchAssign' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchAssign' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchRemove' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchRemove' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchRemove' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchRemove' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchRemove' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchRemove' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'upbi_ProductsPrefered_BatchRemove' depends on the missing object 'upbi_ReturnMessage'. The module will still be created; however, it cannot run successfully until the object exists.
+EE_DR.sql applied to EE_TEST
+exit=0 elapsed=25s

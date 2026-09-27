@@ -1,0 +1,22 @@
+# 2026-09-27 14:31:45 EDT — rechargement complet d'EE_TEST après le contrôle négatif, puis re-comparaison
+$ sqlcmd -Q "ALTER DATABASE EE_TEST SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE EE_TEST; CREATE DATABASE EE_TEST COLLATE French_CI_AS;"
+$ sqlcmd -d EE_TEST -f 65001 -x -b -I -i /tmp/EE_DR.sql   (sortie filtrée : messages informatifs 'depends on the missing object' et 'Caution' retirés — intégrale dans 01-load-EE_TEST.log)
+EE_DR.sql applied to EE_TEST
+exit=0 elapsed=25s
+$ sqlcmd -v SRC=EE DST=EE_TEST -i compare_ee_databases.sql | tail (résumé)
+exit=0  lignes 'Msg ' : 0
+== SUMMARY (0 differences everywhere = EE_TEST is a faithful copy of EE)
+check_name|differences
+----------|-----------
+10. data (row-level EXCEPT)|1
+10b. tables skipped by data check (must be 0)|0
+3. table list|0
+4. row counts|0
+5. columns|0
+6. indexes/keys|0
+7. defaults|0
+8. modules|0
+9. identity values|0
+overall_verdict|total_differences
+---------------|-----------------
+DIFFERENCES FOUND|1

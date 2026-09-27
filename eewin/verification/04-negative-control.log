@@ -1,0 +1,49 @@
+# 2026-09-27 14:31:28 EDT — contrôle négatif : 3 altérations volontaires dans EE_TEST, la comparaison doit les voir toutes
+$ sqlcmd -d EE_TEST -Q "UPDATE dbo.CATSTATUS SET LIBELEEN = 'TAMPERED' WHERE UniqueId = 1; IF EXISTS (SELECT 1 FROM sys.indexes WHERE name='IDX_CLI_ID') DROP INDEX IDX_CLI_ID ON dbo.CLIENTS; EXEC('ALTER FUNCTION [dbo].GetCurrentUserSession() RETURNS VARCHAR(20) AS BEGIN RETURN ''TAMPERED'' END');"
+
+(1 rows affected)
+exit=0
+$ sqlcmd -v SRC=EE DST=EE_TEST -i compare_ee_databases.sql   (extraits : sections en écart + résumé ; sortie complète : 04-negative-control.full.log)
+exit=0
+lignes "Msg " (erreurs SQL) : 0
+== 6. Indexes and key constraints (name, type, unique, PK, key columns, included columns) differing
+side|table_name|index_name|type_desc|is_unique|is_primary_key|is_unique_constraint|key_columns|included_columns|allow_page_locks|allow_row_locks|fill_factor
+----|----------|----------|---------|---------|--------------|--------------------|-----------|----------------|----------------|---------------|-----------
+only in EE|CLIENTS|IDX_CLI_ID|NONCLUSTERED|0|0|0|[CLI_ID] ASC|NULL|1|1|0
+indexes_src|indexes_dst
+-----------|-----------
+106|105
+== 7. Default constraints (table, column, definition; names compared only when user-named) differing
+== 8. Modules (procedures/functions/views/triggers): name, type, SHA2_256 of definition, SET options differing
+side|schema_name|object_name|type|definition_sha256|uses_ansi_nulls|uses_quoted_identifier
+----|-----------|-----------|----|-----------------|---------------|----------------------
+only in EE|dbo|GetCurrentUserSession|FN|634F22CA184BB305CFE80C33FC690BA7E8B8E5FBE71EA083A399FF8ED79D7D1A|1|1
+only in EE_TEST|dbo|GetCurrentUserSession|FN|17B9E03F2E0AD7E82BF8A1B7FB49B0C7D51156F36351F428F1E6F5FC94E3E651|1|0
+type|modules_src|modules_dst|definition_chars_src|definition_chars_dst
+----|-----------|-----------|--------------------|--------------------
+FN|17|17|25067|24915
+P |160|160|271270|271270
+TF|1|1|872|872
+== 9. Identity current values (sys.identity_columns.last_value) differing
+== 10. Data: full row-by-row EXCEPT in both directions for every table (text columns cast to varchar(max))
+table_name|rows_src|rows_dst|only_in_src|only_in_dst|verdict
+----------|--------|--------|-----------|-----------|-------
+CATSTATUS|20|20|1|1|DIFFERENT
+tables_with_rows_compared|rows_src|rows_dst|only_in_src|only_in_dst
+-------------------------|--------|--------|-----------|-----------
+60|84837|84837|1|1
+== SUMMARY (0 differences everywhere = EE_TEST is a faithful copy of EE)
+check_name|differences
+----------|-----------
+10. data (row-level EXCEPT)|1
+10b. tables skipped by data check (must be 0)|0
+3. table list|0
+4. row counts|0
+5. columns|0
+6. indexes/keys|1
+7. defaults|0
+8. modules|2
+9. identity values|0
+overall_verdict|total_differences
+---------------|-----------------
+DIFFERENCES FOUND|4

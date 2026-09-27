@@ -1,0 +1,74 @@
+﻿09/27/2026 14:16:56 [NORMAL] - Method "Initialize" at line 126 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.Hosting\Utility\Logger.cs
+
+    Initializing SQL Tools Service Host logger
+
+09/27/2026 14:16:56 [NORMAL] - Method "Main" at line 41 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\Program.cs
+
+    Starting SQL Tools Service Host
+
+09/27/2026 14:16:56 [VERBOSE] - Method "InitializeService" at line 56 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\TaskServices\TaskService.cs
+
+    TaskService initialized
+
+09/27/2026 14:16:56 [VERBOSE] - Method "InitializeService" at line 132 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\ObjectExplorer\ObjectExplorerService.cs
+
+    ObjectExplorer service initialized
+
+09/27/2026 14:16:56 [VERBOSE] - Method "InitializeService" at line 42 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\Formatter\TSqlFormatterService.cs
+
+    TSqlFormatter initialized
+
+09/27/2026 14:16:56 [VERBOSE] - Method "ListenForMessages" at line 249 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.Hosting\Hosting\Protocol\MessageDispatcher.cs
+
+    Received message of type[Request] and method[scripting/script]
+
+09/27/2026 14:16:57 [ERROR] - Method "Execute" at line 94 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\Scripting\ScriptingScriptOperation.cs
+
+    Scripting operation daa7c642-0354-4d9b-a9fe-08944f373e86 failed with exception Microsoft.SqlServer.Management.Common.ConnectionFailureException: Failed to connect to server localhost,1433. ---> System.InvalidOperationException: Internal connection fatal error.
+       at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+       at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+       at System.Data.SqlClient.TdsParser.DrainData(TdsParserStateObject stateObj)
+       at System.Data.SqlClient.TdsParser.ThrowUnsupportedCollationEncountered(TdsParserStateObject stateObj)
+       at System.Data.SqlClient.TdsParser.GetCodePage(SqlCollation collation, TdsParserStateObject stateObj)
+       at System.Data.SqlClient.TdsParser.TryProcessEnvChange(Int32 tokenLength, TdsParserStateObject stateObj, SqlEnvChange[]& sqlEnvChange)
+       at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+       at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+       at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+       at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+       at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+       at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+       at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+       at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+       at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+       at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+       at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+       at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+       at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+       at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+       at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+       at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+       at System.Data.SqlClient.SqlConnection.Open()
+       at Microsoft.SqlServer.Management.Common.ConnectionManager.InternalConnect()
+       at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+       --- End of inner exception stack trace ---
+       at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+       at Microsoft.SqlServer.Management.Common.ConnectionManager.PoolConnect()
+       at Microsoft.SqlServer.Management.Common.ConnectionManager.GetServerInformation()
+       at Microsoft.SqlServer.Management.Smo.Server.IsAzureDbScopedConnection(ServerConnection sc)
+       at Microsoft.SqlServer.Management.Smo.Server.GetExecutionManager()
+       at Microsoft.SqlServer.Management.Smo.SqlSmoObject.get_DatabaseEngineType()
+       at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.ValidObjectType(QueryInfo info)
+       at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.EnumChildrenForDatabaseObjectType(DatabaseObjectType objectType)
+       at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.GetDatabaseObjectTypes()
+       at Microsoft.SqlTools.ServiceLayer.Scripting.ScriptingExtensionMethods.GetDatabaseObjects(SqlScriptPublishModel publishModel) in D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\Scripting\ScriptingExtensionMethods.cs:line 58
+       at Microsoft.SqlTools.ServiceLayer.Scripting.ScriptingScriptOperation.BuildPublishModel() in D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\Scripting\ScriptingScriptOperation.cs:line 173
+       at Microsoft.SqlTools.ServiceLayer.Scripting.ScriptingScriptOperation.Execute() in D:\repos\sqltoolsservice\src\Microsoft.SqlTools.ServiceLayer\Scripting\ScriptingScriptOperation.cs:line 42
+
+09/27/2026 14:16:57 [VERBOSE] - Method "WriteMessage" at line 63 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.Hosting\Hosting\Protocol\MessageWriter.cs
+
+    Sending message of type[Event] and method[scripting/scriptComplete]
+
+09/27/2026 14:16:57 [VERBOSE] - Method "WriteMessage" at line 63 of D:\repos\sqltoolsservice\src\Microsoft.SqlTools.Hosting\Hosting\Protocol\MessageWriter.cs
+
+    Sending message of type[Response] and method[scripting/script]
+
