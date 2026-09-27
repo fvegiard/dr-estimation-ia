@@ -43,6 +43,18 @@ def _to_int(value: str | None):
     return int(value) if value is not None else None
 
 
+def _to_num_raw(value: str | None):
+    """Integer when possible, else the raw string (e.g. Plan Expert writes
+    fractional scales with a decimal comma: Value="0,09375"). The raw string
+    is kept so qpl_build re-emits it byte-identical."""
+    if value is None:
+        return None
+    try:
+        return int(value)
+    except ValueError:
+        return value
+
+
 # --------------------------------------------------------------------- #
 # Décompte (ce que la consigne demande au minimum)
 # --------------------------------------------------------------------- #
@@ -131,7 +143,7 @@ def export_model(root: ET.Element) -> tuple[dict, dict]:
         scale = None
         if scale_el is not None:
             scale = {
-                "value": _to_int(scale_el.attrib.get("Value")),
+                "value": _to_num_raw(scale_el.attrib.get("Value")),
                 "type": _to_int(scale_el.attrib.get("Type")),
                 "precision": _to_int(scale_el.attrib.get("Precision")),
                 "set_manually": _to_bool(scale_el.attrib.get("SetManually")),
