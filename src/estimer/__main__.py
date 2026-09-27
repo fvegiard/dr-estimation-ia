@@ -55,9 +55,10 @@ def estimate(pdf: Path, out: Path, model: Model, sheets_csv: Path | None = None,
     out.mkdir(parents=True, exist_ok=True)
     name = name or pdf.stem
     t = time.time()
-    sheets, grays = pipeline.run(pdf, model, sheets_csv, pages, keep_gray=qpl, log=log)
+    sheets, grays, codes = pipeline.run(pdf, model, sheets_csv, pages, keep_gray=qpl, log=log)
     data = E.write_json(out / "estimate.json", pdf, sheets, model,
-                        {"elapsed_s": round(time.time() - t, 1)})
+                        {"elapsed_s": round(time.time() - t, 1),
+                         "legend_codes": codes})
     E.write_xlsx(out / "releve.xlsx", sheets, model)
     E.write_sheets_csv(out / "sheets.csv", sheets)
     if qpl:

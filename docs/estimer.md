@@ -24,7 +24,7 @@ Options de `python -m src.estimer` : `--model`, `--pages 1-3,7`, `--name`, `--no
 | `sheets.csv` | une ligne par page : comptes par famille, zones illisibles, conduit estimé, drapeaux |
 | `planexpert/<nom>.qpl` + PNG | projet Plan Expert au format de Dupuis : `Plan Name="<pdf> - N"`, `FileName="<pdf> - N.png"`, un compteur par famille (forme / taille / couleur apprises de ses compteurs), échelle écrite comme lui (Type 1 = pouces par pied, virgule décimale ; Type 0 = 1:N), ligne « CONDUIT ESTIME » quand l'échelle est connue |
 
-Drapeaux d'incertitude : `scale_unknown` (pas de conduit), `page_has_coloured_markup`, `unreadable_markup_zones`
+Drapeaux : `from_text_tag`, `family_from_text_tag` (famille lue dans une légende), `scale_unknown` (pas de conduit), `page_has_coloured_markup`, `unreadable_markup_zones`
 (zones de marques de couleur de la taille d'un symbole — non comptées), `near_coloured_markup` (détection voisine d'une
 marque), `family_uncertain` (probabilité de la famille < 0,5), `no_symbol_detected`.
 
@@ -45,12 +45,18 @@ marque), `family_uncertain` (probabilité de la famille < 0,5), `no_symbol_detec
    compte que ce qu'il voit, et les zones couvertes sont signalées. Les marques présentes ailleurs dans une fenêtre sont
    transplantées sur des négatifs au même taux, pour qu'elles ne portent aucune information.
    Un raffinement par négatifs difficiles (`python -m src.estimer.train --hard-negatives`) a été mesuré sur le pli
-   S-1844 : précision 13,1 % contre 13,9 %, rappel sur marques lisibles 17,6 % contre 20,0 % (R = 25 px) — pas de gain,
+   S-1844 : précision 13,1 % contre 13,9 %, rappel sur marques lisibles 17,6 % contre 20,0 % (R = 25 px ; grille de seuils
+   commençant à 0,05 pour l'essai, à 0,15 pour la référence) — pas de gain,
    désactivé par défaut.
    Un premier essai sans ce garde-fou (cœur couvert admis) retrouvait surtout les symboles cachés sous les marques
    (rappel 0,58 à 0,61 sur ceux-ci contre 0,06 à 0,08 sur les symboles visibles, R = 25 px, S-1714 pages 4, 6 et 9, modèle appris sur les 4 autres dossiers) : il relisait le relevé
    antérieur, pas le dessin. Il a été abandonné.
-5. **Conduits** (`conduits.py`) : échelle lue dans la couche texte (« ÉCHELLE 1/8" = 1'-0" », « 1:100 ») ou donnée par
+5. **Légendes** (`legend.py`, PDF avec couche texte seulement) : les lignes « CODE description » des légendes et
+   cédules donnent code → famille (catégoriseur sur la description ; lignes contradictoires ou code jamais repris
+   sur un plan = rejeté). Chaque occurrence isolée du code sur les plans devient une détection (`from_text_tag`), ou
+   donne sa famille à la détection visuelle la plus proche à moins de 40 px (`family_from_text_tag`). Les PDF image
+   (dont tous les `Plans-annotes.pdf` évalués) n'ont pas de mots : ce module ne s'y active pas.
+6. **Conduits** (`conduits.py`) : échelle lue dans la couche texte (« ÉCHELLE 1/8" = 1'-0" », « 1:100 ») ou donnée par
    `--sheets` ; longueur = ratio appris × arbre couvrant rectilinéaire des appareils détectés. Ratio = médiane, sur les
    feuilles où Dupuis a posé une échelle, de (longueur de ses lignes de conduit / arbre sur ses propres marques).
    C'est une estimation, toujours signalée comme telle.

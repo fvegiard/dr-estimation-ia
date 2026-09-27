@@ -9,6 +9,7 @@ import numpy as np
 import pymupdf
 
 from . import conduits as K
+from . import legend as L
 from . import pages as P
 from scipy import ndimage
 
@@ -16,6 +17,7 @@ from .export import (FLAG_MARKUP_PAGE, FLAG_NO_SYMBOL, FLAG_SCALE_UNKNOWN, FLAG_
 from .model import Model
 
 MARKUP_PAGE_MIN = 0.001        # overlay fraction above which a page is flagged
+TAG_MERGE_PX = 40.0            # a legend code this close to a visual detection labels it
 ZONE_AREA = (40, 4000)         # px area of a symbol-sized mark-up blob (an unreadable zone)
 
 
@@ -44,6 +46,35 @@ def guess_sheet_number(words: list[tuple], width: float, height: float) -> str |
     return best[1] if best else None
 
 
+def all_words(doc: pymupdf.Document, indices: list[int]) -> dict[int, list[tuple]]:
+    """Text-layer words of every page, in working px (empty for image-only pages)."""
+    out = {}
+    for i in indices:
+        page = doc[i]
+        k = P.WORK_WIDTH / page.rect.width
+        out[i] = [(w[0] * k, w[1] * k, w[2] * k, w[3] * k, w[4]) for w in page.get_text("words")]
+    return out
+
+
+def merge_tags(dets: list, hits: list[L.TagHit], page_index: int):
+    """Legend codes written on the plan: label the nearest visual detection, or add one."""
+    from .model import Detection
+    free = list(range(len(dets)))
+    for h in hits:
+        best, bd = None, TAG_MERGE_PX
+        for j in free:
+            d = np.hypot(dets[j].x - h.x, dets[j].y - h.y)
+            if d <= bd:
+                best, bd = j, d
+        if best is not None:
+            d = dets[best]
+            d.family, d.source, d.tag, d.family_prob = h.family, "visual+text_tag", h.code, 1.0
+            free.remove(best)
+        else:
+            dets.append(Detection(page_index, h.x, h.y, h.family, 1.0, 1.0, False, "text_tag", h.code))
+    return dets
+
+
 def read_sheets_csv(path: Path | None) -> dict[int, dict]:
     """Optional per-page metadata: page (1-based), name, scale_ratio, paper_width_pt, skip."""
     if path is None:
@@ -67,10 +98,17 @@ def _float(v) -> float | None:
 
 
 def run(pdf: Path, model: Model, sheets_csv: Path | None = None, pages: list[int] | None = None,
-        keep_gray: bool = True, log=print) -> tuple[list[SheetResult], dict[int, np.ndarray]]:
+        keep_gray: bool = True, log=print) -> tuple[list[SheetResult], dict[int, np.ndarray], dict[str, str]]:
+    """Returns (sheet results, page rasters for export, legend code -> family)."""
     meta = read_sheets_csv(sheets_csv)
     doc = pymupdf.open(pdf)
     indices = pages if pages is not None else list(range(doc.page_count))
+    hits, codes = L.tag_detections(all_words(doc, indices))
+    hits_by_page: dict[int, list] = {}
+    for h in hits:
+        hits_by_page.setdefault(h.page, []).append(h)
+    if codes:
+        log(f"  legend codes learnt from the text layer: {len(codes)} ({', '.join(sorted(codes)[:12])}...)")
     results: list[SheetResult] = []
     grays: dict[int, np.ndarray] = {}
     for i in indices:
@@ -93,7 +131,7 @@ def run(pdf: Path, model: Model, sheets_csv: Path | None = None, pages: list[int
         paper = _float(m.get("paper_width_pt")) or (page.width_pt if page.source == "rendered" else None)
         ovf = float(page.overlay.mean())
         sr = SheetResult(i, name, w, h, page.source, ratio, scale_source or "none", paper, ovf)
-        sr.detections = model.detect(page)
+        sr.detections = merge_tags(model.detect(page), hits_by_page.get(i, []), i)
         if ovf >= MARKUP_PAGE_MIN:
             sr.flags.append(FLAG_MARKUP_PAGE)
             sr.unreadable_zones = unreadable_zones(page.overlay)
@@ -115,4 +153,4 @@ def run(pdf: Path, model: Model, sheets_csv: Path | None = None, pages: list[int
         log(f"  page {i + 1} ({name}): {len(sr.detections)} symbols, overlay {ovf:.3%}, "
             f"scale {ratio or '-'} ({sr.scale_source})")
         results.append(sr)
-    return results, grays
+    return results, grays, codes

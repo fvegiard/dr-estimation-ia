@@ -27,6 +27,8 @@ FLAG_SCALE_UNKNOWN = "scale_unknown"
 FLAG_MARKUP_PAGE = "page_has_coloured_markup"
 FLAG_NO_SYMBOL = "no_symbol_detected"
 FAMILY_PROB_MIN = 0.5
+FLAG_TEXT_TAG = "from_text_tag"              # counted from a legend code written on the plan
+FLAG_FAMILY_FROM_TAG = "family_from_text_tag"  # visual symbol whose family comes from a nearby legend code
 
 
 @dataclass
@@ -64,8 +66,12 @@ def detection_flags(d) -> list[str]:
     f = []
     if d.near_markup:
         f.append(FLAG_NEAR_MARKUP)
-    if d.family_prob < FAMILY_PROB_MIN:
+    if d.family_prob < FAMILY_PROB_MIN and d.source == "visual":
         f.append(FLAG_LOW_FAMILY)
+    if d.source == "text_tag":
+        f.append(FLAG_TEXT_TAG)
+    elif d.source == "visual+text_tag":
+        f.append(FLAG_FAMILY_FROM_TAG)
     return f
 
 
@@ -85,6 +91,7 @@ def write_json(path: Path, pdf: Path, sheets: list[SheetResult], model, extra: d
             "quantity": len(by_fam[fam]),
             "elements": [{"sheet": s.name, "page": s.page + 1, "x": round(d.x, 1), "y": round(d.y, 1),
                           "score": round(d.score, 3), "family_prob": round(d.family_prob, 3),
+                          **({"tag": d.tag} if d.tag else {}),
                           "flags": detection_flags(d)} for s, d in by_fam[fam]],
         })
     totals = Counter()

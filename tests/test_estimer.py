@@ -222,7 +222,7 @@ def test_evaluation_scoring_on_synthetic_fold(trained, tmp_path):
     d, model, test_pdf, truth, golds = trained
     g = synthetic_gold(test_pdf, truth, "SYN-T")
     from src.estimer import pipeline
-    sheets, _ = pipeline.run(test_pdf, model, keep_gray=False, log=lambda m: None)
+    sheets, _, _ = pipeline.run(test_pdf, model, keep_gray=False, log=lambda m: None)
     res = EV.score_position_dossier(g, sheets, {})
     e = res["detection"]["all_pages"]["R25"]
     assert e["gold"] == sum(len(t) for t in truth) and 0 < e["tp"] <= e["predicted"]
@@ -238,10 +238,55 @@ def test_evaluation_scoring_on_synthetic_fold(trained, tmp_path):
 
 def test_count_gold_scoring():
     g = DossierGold("CNT", Path("x.pdf"), [], has_positions=False)
-    g.counts = [("E101", "PRISE", INDETERMINE, 10), ("E101", "FIXTURE TYPE A", INDETERMINE, 4)]
+    g.counts = [("E101", "PRISE", INDETERMINE, 10), ("E101", "FIXTURE TYPE A", INDETERMINE, 4),
+                ("E101 (ADD-1)", "PRISE", INDETERMINE, 5)]          # a sheet version absent from the PDF
     sr = E.SheetResult(0, "E101", 100, 100, "rendered", None, "none", None, 0.0)
     sr.detections = [M.Detection(0, 1, 1, "dispositif", 0.9, 0.9, False)] * 8
     res = EV.score_count_dossier(g, [sr], LabelFamilyMap())
-    assert res["families"]["dispositif"] == {"gold": 10, "predicted": 8, "count_error": -0.2}
+    assert res["families"]["dispositif"] == {"gold": 10, "predicted": 8, "gold_outside_pdf": 5, "count_error": -0.2}
     assert res["families"]["luminaire"]["predicted"] == 0
     assert res["totals"]["count_error"] == pytest.approx((8 - 14) / 14)
+    assert res["totals"]["gold_outside_pdf"] == 5 and res["sheets_outside_pdf"] == ["E101 (ADD-1)"]
+    assert res["totals"]["count_error_vs_all_estimator_rows"] == pytest.approx((8 - 19) / 19)
+
+
+# ---------------------------------------------------------------- legend codes (text-layer PDFs)
+def _legend_pdf(path: Path) -> None:
+    doc = pymupdf.open()
+    leg = doc.new_page(width=W_PT, height=H_PT)
+    y = 100
+    for line in ("DS1 LUMINAIRE ENCASTRE LED 38W", "PH1 PHARE D URGENCE SIMPLE DEL 4W",
+                 "DF DETECTEUR DE FUMEE PHOTOELECTRIQUE", "XX9 LUMINAIRE MURAL", "ZZ1 TEXTE SANS CATEGORIE"):
+        leg.insert_text((100, y), line, fontsize=10)
+        y += 20
+    leg.insert_text((100, y), "DF PRISE DOUBLE 15A", fontsize=10)      # contradicts the first DF line
+    plan = doc.new_page(width=W_PT, height=H_PT)
+    for x, code in ((200, "DS1"), (300, "DS1"), (400, "DS1"), (200, "PH1"), (300, "PH1"), (500, "DF"), (600, "ZZ1")):
+        plan.insert_text((x, 300 if code != "PH1" else 500), code, fontsize=6)
+    doc.save(path)
+
+
+def test_legend_codes_learnt_from_text_layer(tmp_path):
+    from src.estimer import legend as LG
+    from src.estimer.pipeline import all_words
+    pdf = tmp_path / "legend.pdf"
+    _legend_pdf(pdf)
+    words = all_words(pymupdf.open(pdf), [0, 1])
+    hits, codes = LG.tag_detections(words)
+    # DS1/PH1 learnt; DF dropped (contradictory legend lines); XX9 never used on a plan;
+    # ZZ1 description has no category
+    assert codes == {"DS1": "luminaire", "PH1": "securite_incendie"}
+    c = Counter((h.page, h.code) for h in hits)
+    assert c == {(1, "DS1"): 3, (1, "PH1"): 2}
+    assert LG.tag_detections({0: []}) == ([], {})
+
+
+def test_merge_tags_labels_nearby_visual_detection():
+    from src.estimer import legend as LG
+    from src.estimer.pipeline import merge_tags
+    dets = [M.Detection(0, 100, 100, "dispositif", 0.8, 0.6, False)]
+    hits = [LG.TagHit(0, 120, 110, "DS1", "luminaire"), LG.TagHit(0, 500, 500, "PH1", "securite_incendie")]
+    out = merge_tags(dets, hits, 0)
+    assert out[0].family == "luminaire" and out[0].source == "visual+text_tag" and out[0].tag == "DS1"
+    assert out[1].source == "text_tag" and out[1].family == "securite_incendie" and len(out) == 2
+    assert E.detection_flags(out[1]) == [E.FLAG_TEXT_TAG]

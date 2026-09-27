@@ -63,6 +63,8 @@ class Detection:
     score: float
     family_prob: float
     near_markup: bool
+    source: str = "visual"          # "visual" | "text_tag" | "visual+text_tag"
+    tag: str | None = None
 
 
 @dataclass

@@ -211,12 +211,20 @@ _OCC_CACHE: dict = {}
 
 
 def score_count_dossier(g: G.DossierGold, sheets: list[E.SheetResult], label_map: LabelFamilyMap) -> dict:
+    """Count-only gold. Rows of sheets that are not pages of the evaluated PDF (e.g. an
+    addendum version of a sheet) are kept aside as "outside the PDF", like unplaced
+    marks of position gold; errors are computed on the sheets present in the PDF."""
     G.finalize_count_families(g, label_map)
+    in_pdf = {s.name for s in sheets} | {s.display for s in g.sheets}
     gold_fam = Counter()
+    outside_fam = Counter()
     gold_sheet_fam = defaultdict(Counter)
     for sh, _lab, f, q in g.counts:
-        gold_fam[f] += q
-        gold_sheet_fam[sh][f] += q
+        if sh in in_pdf:
+            gold_fam[f] += q
+            gold_sheet_fam[sh][f] += q
+        else:
+            outside_fam[f] += q
     pred_fam = Counter()
     pred_sheet_fam = defaultdict(Counter)
     for s in sheets:
@@ -226,16 +234,19 @@ def score_count_dossier(g: G.DossierGold, sheets: list[E.SheetResult], label_map
     fam = {}
     for f in FAMILIES:
         if gold_fam[f] or pred_fam[f]:
-            fam[f] = {"gold": gold_fam[f], "predicted": pred_fam[f],
+            fam[f] = {"gold": gold_fam[f], "predicted": pred_fam[f], "gold_outside_pdf": outside_fam[f],
                       "count_error": (pred_fam[f] - gold_fam[f]) / gold_fam[f] if gold_fam[f] else None}
     per_sheet = []
     for name in sorted(set(gold_sheet_fam) | set(pred_sheet_fam)):
         gt, pt = sum(gold_sheet_fam[name].values()), sum(pred_sheet_fam[name].values())
         per_sheet.append({"sheet": name, "gold_total": gt, "predicted_total": pt,
                           "gold": dict(gold_sheet_fam[name]), "predicted": dict(pred_sheet_fam[name])})
-    gt, pt = sum(gold_fam.values()), sum(pred_fam.values())
+    gt, pt, go = sum(gold_fam.values()), sum(pred_fam.values()), sum(outside_fam.values())
     return {"families": fam, "sheets": per_sheet,
-            "totals": {"gold": gt, "predicted": pt, "count_error": (pt - gt) / gt if gt else None}}
+            "totals": {"gold": gt, "gold_outside_pdf": go, "predicted": pt,
+                       "count_error": (pt - gt) / gt if gt else None,
+                       "count_error_vs_all_estimator_rows": (pt - gt - go) / (gt + go) if gt + go else None},
+            "sheets_outside_pdf": sorted({sh for sh, *_ in g.counts if sh not in in_pdf})}
 
 
 def run_fold(test: G.DossierGold, train_golds: list[G.DossierGold], out: Path, data_root: Path,
@@ -248,7 +259,7 @@ def run_fold(test: G.DossierGold, train_golds: list[G.DossierGold], out: Path, d
     run_dir.mkdir(parents=True, exist_ok=True)
     sheets_csv = sheets_csv_for(test, run_dir / "sheets-input.csv")
     log(f"{test.dossier}: estimating {test.pdf.name} ({len(test.sheets)} pages)")
-    sheets, _ = pipeline.run(test.pdf, model, sheets_csv, keep_gray=False, log=lambda m: log(m))
+    sheets, _, _codes = pipeline.run(test.pdf, model, sheets_csv, keep_gray=False, log=lambda m: log(m))
     E.write_json(run_dir / "estimate.json", test.pdf, sheets, model, {"evaluation_fold": test.dossier})
     E.write_sheets_csv(run_dir / "sheets.csv", sheets)
     res = {"dossier": test.dossier, "trained_on": model.trained_on, "threshold": model.threshold,
@@ -376,7 +387,7 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
         else:
             t = r["totals"]
             L.append(f"| {r['dossier']} | quantités seulement | {', '.join(r['trained_on'])} | {r['threshold']} | {t['predicted']} | "
-                     f"{t['gold']} / — | {_signed(t['count_error'])} | — | — | — | — | — |")
+                     f"{t['gold']} / {t.get('gold_outside_pdf', '—')} | {_signed(t['count_error'])} | — | — | — | — | — |")
     for r in results:
         pos = r["gold_type"] == "positions"
         L += ["", f"### {r['dossier']}", ""]
@@ -404,6 +415,10 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
             L += ["", "| Feuille | Conduit Dupuis (pi) | Conduit estimé (pi) | Écart |", "|---|--:|--:|--:|"]
             for c in r["conduits"]:
                 L.append(f"| {c['sheet']} | {c['estimator_ft']} | {c['estimated_ft']} | {_signed(c['error'])} |")
+        if r.get("sheets_outside_pdf"):
+            L += ["", f"Feuilles du relevé de Dupuis absentes du PDF évalué (quantités mises à part, "
+                  f"{r['totals'].get('gold_outside_pdf')} au total ; écart y compris ces feuilles : "
+                  f"{_signed(r['totals'].get('count_error_vs_all_estimator_rows'))}) : {', '.join(r['sheets_outside_pdf'])}."]
         if r.get("notes"):
             L += [""] + [f"- {n}" for n in r["notes"]]
     L += ["", "## Lecture de ces chiffres", "",
@@ -416,6 +431,8 @@ def write_report(path: Path, results: list[dict], pool: dict, meta: dict) -> Non
           "- Les colonnes « près du relevé antérieur » comparent la part des prédictions et celle des marques de Dupuis situées "
           "à moins de 15 px d'une marque du relevé antérieur. Des valeurs proches ou plus basses pour les prédictions "
           "montrent que le détecteur ne retrouve pas simplement les marques de couleur.",
+          "- La lecture des légendes (codes de la couche texte, `legend.py`) ne s'active pas ici : les PDF évalués sont des "
+          "images sans mots. Seul le détecteur visuel est mesuré.",
           "- Les longueurs de conduit sont une estimation (ratio appris × arbre rectilinéaire sur les appareils détectés), "
           "pas un tracé des parcours.",
           "- Aucun prix n'intervient (les projets de l'estimateur n'en contiennent pas).", ""]
@@ -438,6 +455,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--dossiers", default=",".join(G.ALL_DOSSIERS))
     ap.add_argument("--resume", action="store_true", help="reuse OUT/folds/<dossier>.json already computed")
     ap.add_argument("--report-only", action="store_true", help="rebuild REPORT.md from OUT/results.json")
+    ap.add_argument("--full-model", type=Path, default=None,
+                    help="reuse this model (trained on all position dossiers) for count-only dossiers instead of training")
     ap.add_argument("--save-full-model", type=Path, default=None,
                     help="also save the model trained on all position dossiers (used for count-only dossiers)")
     args = ap.parse_args(argv)
@@ -463,6 +482,10 @@ def main(argv: list[str] | None = None) -> int:
         if test.has_positions:
             res = run_fold(test, [g for g in positions if g.dossier != d], args.out, args.data)
         else:
+            if full_model is None and args.full_model:
+                full_model = M.Model.load(args.full_model)
+                if sorted(full_model.trained_on) != sorted(g.dossier for g in positions):
+                    raise SystemExit(f"{args.full_model} was trained on {full_model.trained_on}, not on all position dossiers")
             if full_model is None:
                 full_model = T.train(positions, log=lambda m: log(m))
                 if args.save_full_model:
