@@ -1,9 +1,9 @@
 # NECA 2021-2022 parse report (layer: auto)
 
 - Source: `/home/claude/data/livres/Neca 2022 OCR.pdf` (sha256 `ccb048510a949d329c789c4ede79fb049d6663658c6d20d36a0162c7711cc06e`), 531 PDF pages
-- Output: `neca-2022.csv`, **14398 rows**, 14381 with all three labor units, 17 printed with blank cells
+- Output: `neca-2022.csv`, **14574 rows**, 14555 with all three labor units, 19 printed with blank cells
 - Pages with a table header: 335; pages read from the OCR layer only: 3 [1, 56, 398]
-- Units: E=10655, C=2151, M=1467, LF=72, (none)=17, FT=17, SF=13, CY=6
+- Units: E=10801, C=2163, M=1483, LF=72, (none)=19, FT=17, SF=13, CY=6
 - Sections: 14; divisions: 86
 
 ## Method
@@ -33,26 +33,30 @@
 ## Pages with a table header but 0 rows: 7
 65, 71, 272, 461, 462, 463, 464
 
-## Rows with fewer/more than 3 numbers: 1
+## Rows with fewer/more than 3 numbers: 2
 - p.200: `Add for Knockout in Blank Box E` -> {}
+- p.309: `E` -> {}
 
-## Rows without unit: 1
+## Rows without unit: 2
 - p.195: `X 0.00 0.00 0.00`
+- p.309: `5000 Amp 12.00 15.00 18.00`
 
 ## Rows with unrecognised tokens in the numeric zone: 0
 
-## Rows without item description: 5
+## Rows without item description: 6
 - p.145: `50.00 62.00 73.00 M`
 - p.179: `2.00 2.50 3.00 E`
 - p.183: `26.00 32.50 39.00 C`
 - p.195: `X 0.00 0.00 0.00`
 - p.196: `0.81 1.01 1.22 E`
+- p.309: `E`
 
-## Rows printed with blank labor-unit cells (kept, no numbers): 16
+## Rows printed with blank labor-unit cells (kept, no numbers): 17
 - p.150: `Throat Cable`
 - p.155: `Solid Twisted Shielded Pairs`
 - p.221: `1546B Duplex. Receptacle Box`
 - p.270: `6-inch`
+- p.271: `6- inch`
 - p.271: `6- inch`
 - p.271: `6- inch`
 - p.341: `Average 13.25 Feet per Minute`
@@ -135,17 +139,17 @@
 1, 24, 38, 44, 56, 62, 68, 372, 398, 412, 428, 448, 458, 531
 
 ## Rows per section
-- Section 10: Division 28—Electronic Safety and Security: 194
+- Section 10: Division 28—Electronic Safety and Security: 196
 - Section 11: Division 31—Earthwork: 145
 - Section 12: Division 32—Exterior Improvements: 40
-- Section 13: Division 33—Utilities: 511
-- Section 14: Division 34—Transportation: 162
+- Section 13: Division 33—Utilities: 515
+- Section 14: Division 34—Transportation: 163
 - Section 15: Division 48—Electrical Power Generation: 13
 - Section 1: Division 01—General Requirements: 177
 - Section 2: Division 03—Concrete: 10
 - Section 3: Division 11—Equipment: 7
-- Section 4: Division 13—Special Construction: 220
+- Section 4: Division 13—Special Construction: 223
 - Section 5: Division 21—Fire Suppression: 96
-- Section 7: Division 23—Heating, Ventilating and Air Conditioning (HVAC): 248
-- Section 8: Division 26—Electrical: 12098
-- Section 9: Division 27—Communications: 477
+- Section 7: Division 23—Heating, Ventilating and Air Conditioning (HVAC): 255
+- Section 8: Division 26—Electrical: 12249
+- Section 9: Division 27—Communications: 485

@@ -275,8 +275,8 @@ class Line:
 def classify_rows(rows: list[Row], cols: Columns) -> list[Line]:
     lines: list[Line] = []
     for r in rows:
-        if r.y <= cols.header_y + 1 or r.y > 740:
-            continue                                   # running header, column header, footer
+        if r.y <= cols.header_y + 1 or r.y > 765:
+            continue                                   # running header, column header, footer (folio baseline ~777; last data row can sit at ~742)
         content = [s for s in r.spans if LEFT_MARGIN_MAX < s.x0 < RIGHT_MARGIN_MIN]
         if not content:
             continue
