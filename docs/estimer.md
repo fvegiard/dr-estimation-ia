@@ -15,6 +15,24 @@ Options de `python -m src.estimer` : `--model`, `--pages 1-3,7`, `--name`, `--no
 (colonnes `page,name,scale_ratio,paper_width_pt,skip`) pour donner le numéro de feuille, l'échelle (réel/papier :
 96 = 1/8" = 1'-0") et la largeur papier d'un PDF image sans couche texte.
 
+## Index des plans originaux (`src.estimer.plan_index`)
+
+```bash
+python -m src.estimer.plan_index                     # 6 dossiers → dossiers/<S>/entree/plans-originaux/INDEX.md + src/estimer/data/plan_index.json
+python -m src.estimer.plan_index --dossiers S-1844 --no-ocr
+```
+
+Lit les PDF ORIGINAUX des appels d'offres (`/home/claude/data/dossiers/<S>/entree/plans-originaux/*.pdf`, jamais
+`Plans-annotes.pdf`) et, pour chaque page : taille affichée (rotation appliquée), couche texte (oui / partielle / non),
+nombre de dessins vectoriels et d'images, numéro de feuille lu dans le cartouche (texte ; à défaut OCR tesseract du
+cartouche, marqué `ocr`), titre, échelle du cartouche, pages légende, listes de feuilles (page couverture, « liste des
+plans » scannée). Puis apparie chaque `<Plan FileName=…>` du projet Plan Expert de M. Dupuis (`reference/*Dupuis*.qpl`)
+à une page : règle de nom `<pdf> - N` / `<pdf>-page-000N` (comme `src.validation.compare_qpl`), contrôle du rapport
+largeur/hauteur avec `dupuis-png-dimensions.txt`, et confrontation à l'appariement géométrique antérieur
+(`comparaison-dupuis-qpl/pages.csv`). Les plans dont le document n'est pas dans `plans-originaux` sont listés avec leur
+nombre de marques (S-1844 : 693/716 marques sur `23347_SELECTION_GLOBAL_SOUM…`, document absent). S-1857 n'a pas de
+référence Dupuis : c'est `planexpert/S-1857.qpl` (projet de la chaîne) qui est indexé, et l'INDEX le dit.
+
 ## Sorties
 
 | Fichier | Contenu |
