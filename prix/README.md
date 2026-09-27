@@ -13,8 +13,8 @@ material_usd, labor_usd, installed_usd, raw`) + `national-estimator-2025.report.
 | Fichier | Rôle |
 |---|---|
 | `parse_neca.py` | Parseur déterministe du manuel complet (pymupdf, couche texte native du PDF). |
-| `neca-2022.csv` | 14 398 lignes : `section, division, page, table_title, item, unit, normal_hours, difficult_hours, very_difficult_hours, raw`. |
-| `neca-2022-report.md` | Rapport de contrôle : violations de monotonie (difficile ≥ normal ≥ …), pages à en-tête sans lignes, lignes à cellules vides, descriptions sur deux lignes, etc. |
+| `neca-2022.csv` | 14 556 lignes : `section, division, heading, page, table_title, item, unit, normal_hours, difficult_hours, very_difficult_hours, raw`. Une ligne = une ligne d'unités de main-d'œuvre du livre (au moins un nombre imprimé, ou une unité à côté d'un article). `heading` = sous-titre centré en gras italique sous la division (« Steel Tray 6-inch Depth »). |
+| `neca-2022-report.md` | Rapport de contrôle : violations de monotonie (difficile ≥ normal ≥ …), pages à en-tête sans lignes, lignes de texte seul non exportées (sous-en-têtes de colonnes, libellés de groupe, articles laissés vides), descriptions sur deux lignes, etc. |
 
 Unités (p. 10 du manuel) : `E` = à l'unité, `C` = par 100 (unités ou pieds linéaires), `M` = par 1000, `LF` = pied linéaire,
 `CY` = verge cube ; le livre emploie aussi `SF` (pied carré) et `FT` (pied) sur quelques pages.

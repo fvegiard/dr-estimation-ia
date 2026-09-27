@@ -2,7 +2,7 @@
 """Deterministic parser of the NECA Manual of Labor Units 2021-2022 (PDF with OCR layer).
 
 Output: prix/neca-2022.csv with one row per labor-unit line of the book
-    section, division, page, table_title, item, unit,
+    section, division, heading, page, table_title, item, unit,
     normal_hours, difficult_hours, very_difficult_hours, raw
 
 Design (verified on the file /home/claude/data/livres/'Neca 2022 OCR.pdf', 531 pages):
@@ -17,7 +17,13 @@ Design (verified on the file /home/claude/data/livres/'Neca 2022 OCR.pdf', 531 p
   numeric span is assigned to the nearest column.
 - Bold left-column rows without numbers are table titles; italic rows starting with "Note" are
   notes attached to the title; bold centred rows "26 05 33: Raceway and Boxes ..." are MasterFormat
-  divisions; the bold running header "Section 8: Division 26—Electrical" gives the section.
+  divisions; bold-italic centred rows under a division ("Steel Tray 6-inch Depth", "Conduit Tags")
+  are sub-headings (column `heading`); the bold running header "Section 8: Division 26—Electrical"
+  gives the section.
+- A CSV row is a labor-unit row: it carries at least one printed labor unit, or a unit letter next to
+  an item.  Plain text lines printed inside a table without any number (column sub-headers such as
+  "Throat  Cable", group labels, items the book left blank) are NOT exported; they are listed in the
+  report with their page so nothing is silently lost.
 - No number is invented: every CSV row carries the printed page and the raw source line as read.
 
 Usage:  python3 prix/parse_neca.py [--pdf PATH] [--out prix/neca-2022.csv] [--report prix/neca-2022-report.md]
@@ -253,23 +259,28 @@ def printed_page_number(rows: list[Row], page_index: int) -> int | None:
 class ParseState:
     section: str = ""
     division: str = ""
+    heading: str = ""               # bold-italic centred sub-heading printed under the division
     table_title: str = ""
     note: str = ""
-    subheader: str = ""             # plain (non-bold) label line printed between the title and its items
 
 
 @dataclass
 class Line:
     """One classified content row of a table page."""
-    kind: str                       # division | title | note | plain | data
+    kind: str                       # division | heading | title | note | plain | data
     y: float
     text: str                       # whole row, as printed (used for `raw`)
-    x0: float = 0.0                 # left edge of the row (titles/items ~146, centred lines > 200)
+    x0: float = 0.0                 # left edge of the row (titles/items ~146, centred lines > 160)
     desc: str = ""                  # tokens left of the Rev column
     nums: dict = field(default_factory=dict)
     unit: str | None = None
     rev: str = ""
     bad_tokens: list = field(default_factory=list)
+    italic: bool = False
+
+
+HEADING_X0_MIN = 160    # titles start at x~146; centred headings/divisions start further right
+ROW_PITCH = 12.0        # pt: consecutive printed rows are ~8-9 pt apart; a blank row in between makes >= 14
 
 
 def classify_rows(rows: list[Row], cols: Columns) -> list[Line]:
@@ -320,8 +331,13 @@ def classify_rows(rows: list[Row], cols: Columns) -> list[Line]:
             bad_tokens.append(tok)
         desc = re.sub(r"\s+", " ", " ".join(s.text for s in left)).strip()
 
-        if nums or unit:
+        if nums or (unit and desc):
             lines.append(Line("data", r.y, text, r.x0, desc, nums, unit, rev, bad_tokens))
+            continue
+        if unit and not desc:
+            # a unit letter alone on an otherwise empty row (p.309: "E" printed one row below
+            # "5000 Amp 12.00 15.00 18.00") is not a labor-unit row
+            lines.append(Line("stray", r.y, text, r.x0, desc, nums, unit, rev, bad_tokens))
             continue
         # Text-only row.  Bold/italic is judged on the description tokens; a lone "X" in the Rev
         # column is the revision flag, not text.
@@ -333,11 +349,29 @@ def classify_rows(rows: list[Row], cols: Columns) -> list[Line]:
         if not text:
             continue                                   # a row holding only the Rev flag (p.271)
         if bold:
-            lines.append(Line("title", r.y, text, r.x0, desc))
+            lines.append(Line("title", r.y, text, r.x0, desc, italic=italic))
         elif italic or text.lower().startswith("note"):
-            lines.append(Line("note", r.y, text, r.x0, desc))
+            lines.append(Line("note", r.y, text, r.x0, desc, italic=italic))
         else:
             lines.append(Line("plain", r.y, text, r.x0, desc))
+    return mark_headings(lines)
+
+
+def mark_headings(lines: list[Line]) -> list[Line]:
+    """Turn centred bold lines that are sub-headings (not table titles) into kind="heading".
+
+    Verified book-wide: table titles start at the left edge of the Description column (x0 ~ 146).
+    A bold line starting further right is centred; it is a sub-heading when it is bold-italic
+    ("Steel Tray 6-inch Depth", "Conduit Tags", 55 cases) or when the next line is itself a title
+    separated by a blank row ("Cable Bus" p.310, not italic).  A centred bold line directly followed
+    by its note or its data ("Link Seals ..." p.271, "Post Hole ..." p.435) stays a title.
+    """
+    for i, ln in enumerate(lines):
+        if ln.kind != "title" or ln.x0 <= HEADING_X0_MIN:
+            continue
+        nxt = lines[i + 1] if i + 1 < len(lines) else None
+        if ln.italic or (nxt is not None and nxt.kind == "title" and nxt.y - ln.y >= ROW_PITCH):
+            ln.kind = "heading"
     return lines
 
 
@@ -364,12 +398,11 @@ def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: di
 
     lines = classify_rows(rows, cols)
     out: list[dict] = []
-    pending: list[Line] = []        # plain lines not yet emitted
+    pending: list[Line] = []        # plain lines not yet consumed as a wrapped description
     title_open = False
     last_kind = ""
     last_y = -1.0
     TWO_LINE_CELL = 6.0             # pt: numbers vertically centred between two description lines
-    ROW_PITCH = 12.0                # pt: consecutive printed rows are ~8 pt apart
 
     def title_context() -> str:
         title = state.table_title
@@ -380,18 +413,16 @@ def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: di
     def emit(desc: str, ln: Line, raw: str):
         if not desc:
             stats["rows_without_item"].append((page_label, raw))
-        if ln.kind == "plain":
-            stats["rows_no_numbers"].append((page_label, raw))
-        else:
-            if len(ln.nums) != 3:
-                stats["rows_bad_numbers"].append((page_label, raw, dict(ln.nums)))
-            if ln.bad_tokens:
-                stats["rows_bad_tokens"].append((page_label, raw, ln.bad_tokens))
-            if ln.unit is None:
-                stats["rows_no_unit"].append((page_label, raw))
+        if len(ln.nums) != 3:
+            stats["rows_bad_numbers"].append((page_label, raw, dict(ln.nums)))
+        if ln.bad_tokens:
+            stats["rows_bad_tokens"].append((page_label, raw, ln.bad_tokens))
+        if ln.unit is None:
+            stats["rows_no_unit"].append((page_label, raw))
         out.append({
             "section": state.section,
             "division": state.division,
+            "heading": state.heading,
             "page": page_label,
             "table_title": title_context(),
             "item": desc,
@@ -403,9 +434,11 @@ def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: di
         })
 
     def flush_pending():
-        """Plain lines the book prints as rows with blank labor-unit cells -> rows without numbers."""
+        """Plain lines without any labor unit (column sub-headers "Throat Cable" p.150, group labels
+        "Solid Twisted Shielded Pairs" p.155, items the book left blank "6-inch" p.270) are not
+        labor-unit rows: they are reported, not exported."""
         for pl in pending:
-            emit(pl.text, pl, pl.text)
+            stats["text_only_rows"].append((page_label, title_context(), pl.text))
         pending.clear()
 
     i = 0
@@ -416,10 +449,20 @@ def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: di
             flush_pending()
             state.division = ln.text
             # centred bold second line of a long division name (p.384 "... Devices and" / "Adapters")
-            if nxt is not None and nxt.kind == "title" and nxt.x0 > 200 and 0 < nxt.y - ln.y < ROW_PITCH:
+            if nxt is not None and nxt.kind in ("title", "heading") and nxt.x0 > 200 \
+                    and 0 < nxt.y - ln.y < ROW_PITCH:
                 state.division = f"{ln.text} {nxt.text}"
                 stats["division_wraps"].append((page_label, state.division))
                 i += 1
+            state.heading, state.table_title, state.note = "", "", ""
+            title_open = False
+        elif ln.kind == "heading":
+            flush_pending()
+            if last_kind == "heading" and 0 < ln.y - last_y < ROW_PITCH:
+                state.heading = (state.heading + " " + ln.text).strip()     # wrapped heading
+            else:
+                state.heading = ln.text
+                stats["headings"].append((page_label, ln.text))
             state.table_title, state.note = "", ""
             title_open = False
         elif ln.kind == "title":
@@ -429,7 +472,9 @@ def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: di
                 prefix = pending.pop().text
                 stats["title_prefix"].append((page_label, prefix, ln.text))
             flush_pending()
-            if title_open:
+            if title_open and 0 < ln.y - last_y < ROW_PITCH:
+                # bold title wrapped on the next printed row (p.260 "... Vertical 45 Degree Elbow - 6-inch" / "Depth");
+                # two bold titles separated by blank rows are two tables (p.456)
                 state.table_title = (state.table_title + " " + ln.text).strip()
             else:
                 state.table_title, state.note = (prefix + " " + ln.text).strip(), ""
@@ -437,7 +482,14 @@ def parse_page(page: pymupdf.Page, page_index: int, state: ParseState, stats: di
         elif ln.kind == "note":
             flush_pending()
             title_open = False
-            state.note = (state.note + " " + ln.text).strip() if state.note else ln.text
+            if last_kind == "note":
+                state.note = (state.note + " " + ln.text).strip()          # multi-line note
+            else:
+                state.note = ln.text                                      # a new note block (p.273: one note under each item)
+        elif ln.kind == "stray":
+            flush_pending()
+            title_open = False
+            stats["stray_tokens"].append((page_label, ln.text))
         elif ln.kind == "plain":
             title_open = False
             if last_kind == "note" and 0 < ln.y - last_y < ROW_PITCH \
@@ -514,14 +566,15 @@ def main(argv=None) -> int:
     stats = {
         "ocr_pages": [], "no_folio": [], "rows_without_item": [], "rows_bad_numbers": [],
         "rows_bad_tokens": [], "rows_no_unit": [], "header_zero_rows": [], "rows_per_page": {},
-        "wrapped_items": [], "rows_no_numbers": [], "title_prefix": [], "note_continuations": [], "division_wraps": [],
+        "wrapped_items": [], "text_only_rows": [], "title_prefix": [], "note_continuations": [], "division_wraps": [],
+        "headings": [], "stray_tokens": [],
     }
     state = ParseState()
     rows: list[dict] = []
     for i, page in enumerate(doc):
         rows.extend(parse_page(page, i, state, stats, args.layer))
 
-    fieldnames = ["section", "division", "page", "table_title", "item", "unit",
+    fieldnames = ["section", "division", "heading", "page", "table_title", "item", "unit",
                   "normal_hours", "difficult_hours", "very_difficult_hours", "raw"]
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("w", newline="", encoding="utf-8") as f:
@@ -541,11 +594,11 @@ def main(argv=None) -> int:
         f"# NECA 2021-2022 parse report (layer: {args.layer})",
         "",
         f"- Source: `{args.pdf}` (sha256 `{sha256(args.pdf)}`), {len(doc)} PDF pages",
-        f"- Output: `{args.out.name}`, **{len(rows)} rows**, {complete} with all three labor units, {blank} printed with blank cells",
+        f"- Output: `{args.out.name}`, **{len(rows)} rows**, {complete} with all three labor units, {blank} with a unit but no number printed",
         f"- Pages with a table header: {len(stats['rows_per_page'])}; pages read from the OCR layer only: "
         f"{len(stats['ocr_pages'])} {stats['ocr_pages'] if stats['ocr_pages'] else ''}",
         f"- Units: " + ", ".join(f"{u or '(none)'}={c}" for u, c in units.most_common()),
-        f"- Sections: {len(sections)}; divisions: {len(divisions)}",
+        f"- Sections: {len(sections)}; divisions: {len(divisions)}; sub-headings: {len(stats['headings'])}",
         "",
         "## Method",
         "- `page` is the folio printed in the book (checked equal to PDF index + 1 on every page that prints one).",
@@ -553,9 +606,10 @@ def main(argv=None) -> int:
         "  only on pages without native text (cover, adverts). Run with `--layer ocr` to parse the OCR layer instead.",
         "- Numeric/unit tokens go through OCR normalisation (O->0, l/I->1, S->5, comma decimal, split decimals,",
         "  E/C/M/LF/CY/SF/FT variants); a token already well-formed is never altered.",
-        "- Rows printed with blank labor-unit cells are kept with empty numbers; nothing is filled in.",
-        "- `table_title` = bold table title [+ ` | Note: ...` printed under it]; `raw` = the printed line, including the",
-        "  Rev flag `X` when present.",
+        "- A row is exported only when it carries a printed labor unit, or a unit letter beside an item; text-only lines",
+        "  inside tables (column sub-headers, group labels, items left blank) are listed below, not exported.",
+        "- `heading` = bold-italic centred sub-heading under the division; `table_title` = bold table title",
+        "  [+ ` | Note: ...` printed under it]; `raw` = the printed line, including the Rev flag `X` when present.",
         "",
         f"## Monotonicity violations (difficult < normal or very_difficult < difficult): {len(viol)}",
     ]
@@ -572,8 +626,12 @@ def main(argv=None) -> int:
     lines += [f"- p.{p}: `{t}` -> {b}" for p, t, b in stats["rows_bad_tokens"]]
     lines += ["", f"## Rows without item description: {len(stats['rows_without_item'])}"]
     lines += [f"- p.{p}: `{t}`" for p, t in stats["rows_without_item"]]
-    lines += ["", f"## Rows printed with blank labor-unit cells (kept, no numbers): {len(stats['rows_no_numbers'])}"]
-    lines += [f"- p.{p}: `{t}`" for p, t in stats["rows_no_numbers"]]
+    lines += ["", f"## Text-only lines inside tables (not exported: no labor unit printed): {len(stats['text_only_rows'])}"]
+    lines += [f"- p.{p} [{ctx}]: `{t}`" for p, ctx, t in stats["text_only_rows"]]
+    lines += ["", f"## Stray unit letters on an empty row (not exported): {len(stats['stray_tokens'])}"]
+    lines += [f"- p.{p}: `{t}`" for p, t in stats["stray_tokens"]]
+    lines += ["", f"## Sub-headings (column `heading`): {len(stats['headings'])}"]
+    lines += [f"- p.{p}: `{t}`" for p, t in stats["headings"]]
     lines += ["", f"## Items whose description spans two lines around the numbers (joined): {len(stats['wrapped_items'])}"]
     lines += [f"- p.{p}: `{t}`" for p, t in stats["wrapped_items"]]
     lines += ["", f"## Titles whose first line is not bold (joined): {len(stats['title_prefix'])}"]
@@ -592,7 +650,8 @@ def main(argv=None) -> int:
     print(f"monotonicity violations: {len(viol)}; header pages with 0 rows: {len(stats['header_zero_rows'])}; "
           f"bad-number rows: {len(stats['rows_bad_numbers'])}; no-unit rows: {len(stats['rows_no_unit'])}; "
           f"bad tokens: {len(stats['rows_bad_tokens'])}; no-item rows: {len(stats['rows_without_item'])}; "
-          f"blank-cell rows: {len(stats['rows_no_numbers'])}")
+          f"text-only lines not exported: {len(stats['text_only_rows'])}; stray unit letters: {len(stats['stray_tokens'])}; "
+          f"sub-headings: {len(stats['headings'])}")
     print(f"report -> {args.report}")
     return 0
 

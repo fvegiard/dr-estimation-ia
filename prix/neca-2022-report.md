@@ -1,10 +1,10 @@
 # NECA 2021-2022 parse report (layer: auto)
 
 - Source: `/home/claude/data/livres/Neca 2022 OCR.pdf` (sha256 `ccb048510a949d329c789c4ede79fb049d6663658c6d20d36a0162c7711cc06e`), 531 PDF pages
-- Output: `neca-2022.csv`, **14574 rows**, 14555 with all three labor units, 19 printed with blank cells
+- Output: `neca-2022.csv`, **14556 rows**, 14555 with all three labor units, 1 with a unit but no number printed
 - Pages with a table header: 335; pages read from the OCR layer only: 3 [1, 56, 398]
-- Units: E=10801, C=2163, M=1483, LF=72, (none)=19, FT=17, SF=13, CY=6
-- Sections: 14; divisions: 86
+- Units: E=10800, C=2163, M=1483, LF=72, FT=17, SF=13, CY=6, (none)=2
+- Sections: 14; divisions: 86; sub-headings: 47
 
 ## Method
 - `page` is the folio printed in the book (checked equal to PDF index + 1 on every page that prints one).
@@ -12,9 +12,10 @@
   only on pages without native text (cover, adverts). Run with `--layer ocr` to parse the OCR layer instead.
 - Numeric/unit tokens go through OCR normalisation (O->0, l/I->1, S->5, comma decimal, split decimals,
   E/C/M/LF/CY/SF/FT variants); a token already well-formed is never altered.
-- Rows printed with blank labor-unit cells are kept with empty numbers; nothing is filled in.
-- `table_title` = bold table title [+ ` | Note: ...` printed under it]; `raw` = the printed line, including the
-  Rev flag `X` when present.
+- A row is exported only when it carries a printed labor unit, or a unit letter beside an item; text-only lines
+  inside tables (column sub-headers, group labels, items left blank) are listed below, not exported.
+- `heading` = bold-italic centred sub-heading under the division; `table_title` = bold table title
+  [+ ` | Note: ...` printed under it]; `raw` = the printed line, including the Rev flag `X` when present.
 
 ## Monotonicity violations (difficult < normal or very_difficult < difficult): 12
 - p.163 [26 05 19: Low-Voltage Electrical Power Conductors and Cables] Mechanical Terminal Lugs - Two Hole / 750 kcmil: 1.35 / 1.69 / 1.03  <- `750 kcmil 1.35 1.69 1.03 E`
@@ -28,14 +29,13 @@
 - p.402 [28 05 37: Distributed Antenna System] Security Access Control Systems / Fiber Remote: 3.00 / 2.50 / 3.00  <- `Fiber Remote X 3.00 2.50 3.00 E`
 - p.440 [33 71 00: Electrical Utility Transmission and Distribution] Concrete Man Holes Base, Cover and Riser - Excludes Excavation and Gravel Base / 36-inch X 36-inch LID: 1.25 / 1.75 / 1.25  <- `36-inch X 36-inch LID 1.25 1.75 1.25 E`
 - p.440 [33 71 00: Electrical Utility Transmission and Distribution] Concrete Man Holes Base, Cover and Riser - Excludes Excavation and Gravel Base / 48-inch X 60-inch LID: 3.50 / 3.00 / 3.50  <- `48-inch X 60-inch LID 3.50 3.00 3.50 E`
-- p.453 [34 41 00: Roadway Signaling and Control Equipment] Traffic Light Camera Controls / Banding Iron Clamps: 0.20 / 5.00 / 0.75  <- `Banding Iron Clamps X 0.20 5.00 0.75 E`
+- p.453 [34 41 00: Roadway Signaling and Control Equipment]  / Banding Iron Clamps: 0.20 / 5.00 / 0.75  <- `Banding Iron Clamps X 0.20 5.00 0.75 E`
 
 ## Pages with a table header but 0 rows: 7
 65, 71, 272, 461, 462, 463, 464
 
-## Rows with fewer/more than 3 numbers: 2
+## Rows with fewer/more than 3 numbers: 1
 - p.200: `Add for Knockout in Blank Box E` -> {}
-- p.309: `E` -> {}
 
 ## Rows without unit: 2
 - p.195: `X 0.00 0.00 0.00`
@@ -43,32 +43,83 @@
 
 ## Rows with unrecognised tokens in the numeric zone: 0
 
-## Rows without item description: 6
+## Rows without item description: 5
 - p.145: `50.00 62.00 73.00 M`
 - p.179: `2.00 2.50 3.00 E`
 - p.183: `26.00 32.50 39.00 C`
 - p.195: `X 0.00 0.00 0.00`
 - p.196: `0.81 1.01 1.22 E`
+
+## Text-only lines inside tables (not exported: no labor unit printed): 17
+- p.150 [Teck Connectors | Note: Throat sizes vary with cable and connector manufacturers.]: `Throat Cable`
+- p.155 [Solid THHN Conductors]: `Solid Twisted Shielded Pairs`
+- p.221 [Wiremold Product - 1500 Series]: `1546B Duplex. Receptacle Box`
+- p.270 [Schedule 80 PVC Conduit Laid In Trenches - 10-foot & 20-foot Lengths with Glued Couplings]: `6-inch`
+- p.271 [Link Seals Conduit Environmental Sealing Device | Notes: Labor units for hole drilling and coring found in Section 8: Division 26 - Electrical under 25 05 29: Hangers and Supports for Electrical Systems Conduit trade sizes are based on outside diameters for these devices]: `6- inch`
+- p.271 [Link Seals Conduit Environmental Sealing Device | Notes: Labor units for hole drilling and coring found in Section 8: Division 26 - Electrical under 25 05 29: Hangers and Supports for Electrical Systems Conduit trade sizes are based on outside diameters for these devices]: `6- inch`
+- p.271 [Link Seals Conduit Environmental Sealing Device | Notes: Labor units for hole drilling and coring found in Section 8: Division 26 - Electrical under 25 05 29: Hangers and Supports for Electrical Systems Conduit trade sizes are based on outside diameters for these devices]: `6- inch`
+- p.341 [Pole/Tower Interior]: `Average 13.25 Feet per Minute`
+- p.344 [Battery Spacesaver System]: `3-Wide Pallets Are Stackable Up to 8 high`
+- p.354 [Linear: Pendent, Stem or Aircraft Cable Mounted]: `*not including emergency sections, these should be estimated separately`
+- p.354 [Linear: Recessed Mounted]: `*not including emergency sections, these should be estimated separately`
+- p.360 [Power Pack with Dual Heads]: `Photoluminescent`
+- p.360 [Power Pack with Dual Heads]: `Tritium Self Luminous`
+- p.364 []: `7000 to 12000 BTU`
+- p.381 [Splicing]: `Splice Tray`
+- p.390 [Audio Visual Systems - Programming and Switching]: `Matrix Switcher Programming`
+- p.390 [Audio Visual Systems - Programming and Switching]: `Matrix Switcher (Video)`
+
+## Stray unit letters on an empty row (not exported): 1
 - p.309: `E`
 
-## Rows printed with blank labor-unit cells (kept, no numbers): 17
-- p.150: `Throat Cable`
-- p.155: `Solid Twisted Shielded Pairs`
-- p.221: `1546B Duplex. Receptacle Box`
-- p.270: `6-inch`
-- p.271: `6- inch`
-- p.271: `6- inch`
-- p.271: `6- inch`
-- p.341: `Average 13.25 Feet per Minute`
-- p.344: `3-Wide Pallets Are Stackable Up to 8 high`
-- p.354: `*not including emergency sections, these should be estimated separately`
-- p.354: `*not including emergency sections, these should be estimated separately`
-- p.360: `Photoluminescent`
-- p.360: `Tritium Self Luminous`
-- p.364: `7000 to 12000 BTU`
-- p.381: `Splice Tray`
-- p.390: `Matrix Switcher Programming`
-- p.390: `Matrix Switcher (Video)`
+## Sub-headings (column `heading`): 47
+- p.47: `Lightning Protection`
+- p.180: `Irreversible Compression Ground System`
+- p.190: `Miscellaneous Bolts, Washers, Nuts & Screws`
+- p.192: `Hole Drilling and Coring`
+- p.192: `Firestop Material`
+- p.194: `Rigid Steel Conduit (GRC or GRS) and Fittings`
+- p.202: `Electrical Metallic Tubing (EMT) and Fittings`
+- p.204: `Intermediate Metal Conduit (IMC) and Fittings`
+- p.205: `Rigid Aluminum Conduit and Fittings`
+- p.210: `Flexible Steel Conduit (FSC or Greenfield) and Fittings`
+- p.210: `Liquidtight Flexible Conduit and Fittings (Sealtite)`
+- p.211: `PVC Coated Rigid Steel Conduit`
+- p.214: `PVC Rigid Conduit`
+- p.216: `Fiberglass Conduit`
+- p.217: `Electrical Non-Metallic Flexible Tubing (ENT) Conduit`
+- p.218: `Liquid Non-Metallic Flexible Tubing (LNT) Conduit`
+- p.220: `Metallic Surface Raceways`
+- p.222: `Nonmetallic Surface Raceways`
+- p.226: `Metal Wireway`
+- p.233: `Steel Tray 3-inch Depth`
+- p.234: `Steel Tray 4-inch Depth`
+- p.236: `Steel Tray 6-inch Depth`
+- p.237: `Steel Cable Tray Fittings & Accessories`
+- p.239: `Aluminum Tray 3-inch Depth`
+- p.240: `Aluminum Tray 4-inch Depth`
+- p.242: `Aluminum Tray 6-inch Depth`
+- p.243: `Aluminum Cable Tray Fittings & Accessories`
+- p.246: `Fiberglass Tray 3-Inch Depth`
+- p.247: `Fiberglass Tray 4-inch Depth`
+- p.249: `Fiberglass Tray 6-inch Depth`
+- p.250: `Fiberglass Cable Tray Fittings & Accessories`
+- p.252: `Solid/Ventilated Steel Tray 3-inch Depth`
+- p.253: `Solid/Ventilated Steel Tray 4-inch Depth`
+- p.254: `Solid/Ventilated Steel Tray 6-inch Depth`
+- p.255: `Solid/Ventilated Steel Cable Tray Fittings & Accessories`
+- p.257: `Solid/Ventilated Aluminum Tray 3-inch Depth`
+- p.258: `Solid/Ventilated Aluminum Tray 4-inch Depth`
+- p.260: `Solid/Ventilated Aluminum Tray 6-inch Depth`
+- p.261: `Solid/Ventilated Aluminum Cable Tray Fittings & Accessories`
+- p.267: `Trench Duct`
+- p.273: `Conduit Tags`
+- p.296: `Mission Critical Busway`
+- p.310: `Cable Bus`
+- p.337: `Generator Sets`
+- p.363: `Germicidal Lighting`
+- p.453: `Traffic Light Camera Controls`
+- p.456: `Maintenance and Protection of Traffic`
 
 ## Items whose description spans two lines around the numbers (joined): 49
 - p.181: `3-inch Long Steel Structure Aluminum Compress Connector to 1/4-inch to 1/2-inch Thick Steel Flange`
@@ -151,5 +202,5 @@
 - Section 4: Division 13—Special Construction: 223
 - Section 5: Division 21—Fire Suppression: 96
 - Section 7: Division 23—Heating, Ventilating and Air Conditioning (HVAC): 255
-- Section 8: Division 26—Electrical: 12249
-- Section 9: Division 27—Communications: 485
+- Section 8: Division 26—Electrical: 12234
+- Section 9: Division 27—Communications: 482
