@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+from collections import Counter
 from pathlib import Path
 
 import pytest
@@ -169,7 +170,10 @@ def test_jeu_reference_requires_baseline(monkeypatch, tmp_path, capsys):
     monkeypatch.setattr(
         jeu_reference,
         "evaluer",
-        lambda s: {"humaines": 1, "ia": 1, "appariees": 1, "manquantes": 0, "en_trop": 0, "rappel": 100.0, "precision": 100.0},
+        lambda s: (
+            {"humaines": 1, "ia": 1, "appariees": 1, "manquantes": 0, "en_trop": 0, "rappel": 100.0, "precision": 100.0},
+            Counter(),
+        ),
     )
 
     code = jeu_reference.main([])
@@ -195,7 +199,10 @@ def test_jeu_reference_requires_all_baseline_keys(monkeypatch, tmp_path, capsys)
     monkeypatch.setattr(
         jeu_reference,
         "evaluer",
-        lambda s: {"humaines": 1, "ia": 1, "appariees": 1, "manquantes": 0, "en_trop": 0, "rappel": 100.0, "precision": 100.0},
+        lambda s: (
+            {"humaines": 1, "ia": 1, "appariees": 1, "manquantes": 0, "en_trop": 0, "rappel": 100.0, "precision": 100.0},
+            Counter(),
+        ),
     )
 
     code = jeu_reference.main([])
@@ -217,7 +224,17 @@ def test_jeu_reference_refuses_new_baseline_on_regression(monkeypatch, tmp_path,
     monkeypatch.setattr(
         jeu_reference,
         "evaluer",
-        lambda s: {"humaines": 10, "ia": 10, "appariees": 8, "manquantes": 2, "en_trop": 2, "rappel": 80.0, "precision": 80.0},
+        lambda s: (
+            {
+                "humaines": 10, "ia": 10, "appariees": 8, "manquantes": 2, "en_trop": 2, "rappel": 80.0, "precision": 80.0,
+                "normalise": {
+                    "accord_libelle_brut": 0.0, "accord_libelle_canonique": 0.0,
+                    "rebut_humain": 0, "rebut_ia": 0, "rappel": 80.0, "precision": 80.0,
+                },
+                "categorie": {"couples": 8, "accord": 8, "pourcentage": 100.0, "confusions": []},
+            },
+            Counter(),
+        ),
     )
 
     code = jeu_reference.main(["--nouvelle-base"])
