@@ -43,3 +43,29 @@ Le script est déjà dans l'ordre exact ; chaque section porte sa bannière `/* 
 sha256sum EE_BaseDeDonnees_Complet_V0_V45.sql
 # doit donner : 0aa1ec89ca16abc0a1e88f696bbf491c785e497410d9747f1723cc54650148f7
 ```
+
+## Ne pas exécuter ce fichier tel quel — utiliser `eewin/EE_DR.sql`
+
+Ce fichier est gardé **intact** (SHA256 ci-dessus) parce que c'est la seule copie fidèle du
+livrable de M. Dupuis ; il sert de référence/preuve, pas de script à exécuter directement.
+
+La revue Codex de la PR qui a ajouté ce fichier (2026-09-23) a trouvé 3 bogues P1 qui font
+échouer une exécution telle-quelle :
+
+1. **`CREATE TABLE` avec virgule finale** (ex. ~L1436) — `EULAUSER`, les six `UM_*`, `PROCORRESP`,
+   `CATSTATUS`, `USERSESSION` et d'autres tables ne sont pas créées sur une base neuve.
+2. **Réamorçage `PROCORRESP` dupliqué** (ex. ~L19876) — le nettoyage avant réinsertion ne vide que
+   `WQE`/`NQE`, pas `NOE`, alors que le bloc de données V14 insère 26 606 lignes `NOE` sans
+   condition : une ré-exécution duplique ces lignes. C'est la même cause que l'écart
+   90 573 → 84 721 déjà expliqué dans `eewin/docs/SCHEMA.md` (§ « anomalies prouvées »).
+3. **`sp_rename` avec un nom qualifié** (ex. ~L117594) — `@newname` est passé comme
+   `dbo.sp_SOU_UpdateQteTotalOth` au lieu d'un identifiant à une seule partie ; SQL Server refuse
+   le renommage, donc `sp_SOU_UpdateQteTotalOth/Ens/Lots` et `sp_SOU_CalculCodeImpr` restent
+   absents alors que des procédures plus loin les appellent. **Vérifié sur base vivante** :
+   c'est exactement l'anomalie documentée dans `eewin/docs/SCHEMA.md` § 6 (procédures encore
+   nommées littéralement `dbo.sp_SOU_…`).
+
+`eewin/EE_DR.sql` (voir `eewin/README.md`) est la reconstruction de ce même package V0→V45,
+rejouée sur une base SQL Server 2022 vivante, corrigée, et vérifiée **identique ligne par ligne**
+après rechargement (`eewin/docs/VERIFICATION.md`). Pour toute exécution réelle — recharger la
+base, tester une soumission, chiffrer un QPL — partir de `eewin/EE_DR.sql`, pas de ce fichier.
