@@ -1,0 +1,20 @@
+{
+  "dossier": "s-1736 moteur gicleur 2000 mcgill",
+  "id": "1mP1J1cQtkzWjvCUZ8Mn32BKXMIn0JMpC",
+  "fichiers": [
+    {
+      "chemin": "Salle pompe gicleur G1.eml",
+      "id": "1S4D0CYulNtMk8TfmcX272ywp_Zx9Y4Qk",
+      "ext": "eml",
+      "octets": 9623038,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "s-1736.pdf",
+      "id": "14AybdqTKhHSxOppiya_id_IVzqVnQekQ",
+      "ext": "pdf",
+      "octets": 66210,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

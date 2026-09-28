@@ -1,0 +1,97 @@
+{
+  "dossier": "S-1717_Projet du Nouveau VIC de l'Université McGill Lot 2102",
+  "id": "1q64F8dsQTlVU55nV9byr4o498IaP-c0Y",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "162R4NLC31EyyJ7ONnnmqg-Raduw4zIZw",
+      "ext": "db",
+      "octets": 62464,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Addenda 001 - C0004896.pdf",
+      "id": "1eqNGo4_czaRKgpkYQ0xmF6aWobGZM3Ch",
+      "ext": "pdf",
+      "octets": 76893,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "03_Conditions d'admissibilité_Lot 2102 - C0004896.pdf",
+      "id": "1I8kIaSjVbszIhNjv57TzRR1CC3ostE53",
+      "ext": "pdf",
+      "octets": 203720,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "04_Conditions générales et complémentaires_Lot 2102 - C0004896.pdf",
+      "id": "1O2e9Mp6KJpnqo8duCnOgzjXVOi30K42i",
+      "ext": "pdf",
+      "octets": 1242117,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "01_IAS_Prix le plus bas_Lot 2102 - C0004896.pdf",
+      "id": "14FzDnD-1esE-s5wTgsRs26FjGvaiKCqq",
+      "ext": "pdf",
+      "octets": 245776,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "11_Annexes C1, C2, C3 et C4_Lot 2102 - C0004896.pdf",
+      "id": "11QibszKPDONGSkCUsonK1_6p39ri5ni8",
+      "ext": "pdf",
+      "octets": 204481,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "10_CFT Non-participation v3.0_Lot 2102 - C0004896.pdf",
+      "id": "1S7DxVnBDngkhV3dO0gqU38RWDgV6kWVS",
+      "ext": "pdf",
+      "octets": 494458,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "06_Liste des plans et devis_Lot 2102 - C0004896.pdf",
+      "id": "1lnYi_A-llLpvqs8HZv3Zi-VoLXEll5P3",
+      "ext": "pdf",
+      "octets": 154630,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "07_Formulaire de soumission_Lot 2102 - C0004896.pdf",
+      "id": "18-3CjSlrdDTBKbRj95e9Cd21zXSVz6S2",
+      "ext": "pdf",
+      "octets": 564250,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "02_IAS complémentaire_Lot 2102 - C0004896.pdf",
+      "id": "1RV18SR71tiRhYVnCCkExEVuo7SAwYS05",
+      "ext": "pdf",
+      "octets": 248491,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "05_Documents de référence_Lot 2102 - C0004896.pdf",
+      "id": "1bLYcNNk91BJWBe3CwWJabg6v1kuxrLEw",
+      "ext": "pdf",
+      "octets": 142224,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "13_Code de conduite des fournisseurs_Lot 2102 - C0004896.pdf",
+      "id": "1NX0X3tGFDorcCmibgQoe4_Adxg57DM3a",
+      "ext": "pdf",
+      "octets": 175994,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "09_Rapport d'évaluation du rendement (GC).R1_Lot 2102 - C0004896.PDF",
+      "id": "1DRQmdx6cgAu9SM-cqXt12Z8Yk4oAMhWZ",
+      "ext": "PDF",
+      "octets": 231325,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

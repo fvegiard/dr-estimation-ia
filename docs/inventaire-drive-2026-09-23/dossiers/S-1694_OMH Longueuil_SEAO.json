@@ -1,0 +1,146 @@
+{
+  "dossier": "S-1694_OMH Longueuil_SEAO",
+  "id": "1AoeGd8dr7ykE_OkzX-jOaJJQRCTzxv53",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1Ov4dfBKZQMysih99G_6yKG3WMPdb-xMk",
+      "ext": "db",
+      "octets": 46080,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Soumission__Signé.pdf",
+      "id": "1qOOVUdAnSKmoWGoEif_sBy9jVyjvzq6R",
+      "ext": "pdf",
+      "octets": 6140456,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "D - Déclaration, soumission, bordereau et  autres formulaires -  A SIGNER.pdf",
+      "id": "1KQOI9uibrNqbgqCdn_9IZDgDe4ny94bS",
+      "ext": "pdf",
+      "octets": 6853847,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Prix Guillevin/Thumbs.db",
+      "id": "1GMH82_iYk3ntBPl9gqHaNdUQCsbY2M7R",
+      "ext": "db",
+      "octets": 22528,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Prix Guillevin/Qte8766099.pdf",
+      "id": "1T7-THS1lPzsMnfjzk7UgAf1qr3R4KiYO",
+      "ext": "pdf",
+      "octets": 216887,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/Thumbs.db",
+      "id": "1xM9e8RrfO3_EsevlsHKYfU18tl3lc5aa",
+      "ext": "db",
+      "octets": 29696,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "DOCUMENTS/7910353-26-003.pdf",
+      "id": "1eJ87xYGSGgBdFg3QnzQyEtKSXfo4jpNI",
+      "ext": "pdf",
+      "octets": 161270,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/Demande de cautionnement (DA).pdf",
+      "id": "1GSNhsT0HW1YNntOGUbobAin7BmrCO7j2",
+      "ext": "pdf",
+      "octets": 66023,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/Cautionnement de soumission.pdf",
+      "id": "14_ZbpfOQEQcG4mY15nqvzeBs4Xo4YsSk",
+      "ext": "pdf",
+      "octets": 223467,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/Lettre de garantie irrévocable.pdf",
+      "id": "1QP167VSuIRJssuNWADHtjNzBEkUPtC3P",
+      "ext": "pdf",
+      "octets": 208414,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/Page 3 sur E - Bordereau de prix Électricité - PDF.pdf",
+      "id": "1qgpUG2EcEhVgh-QCnMTgAP1XrKIL0at-",
+      "ext": "pdf",
+      "octets": 71114,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/Page 1 sur E - Bordereau de prix Électricité - PDF.pdf",
+      "id": "13asn_kFvFzqIa_yrgoicMdh2Hbc2NjMc",
+      "ext": "pdf",
+      "octets": 76707,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/Page 2 sur E - Bordereau de prix Électricité - PDF.pdf",
+      "id": "11PFmFyfBc16cbjeF9KOxyavc4OOWDxvR",
+      "ext": "pdf",
+      "octets": 75009,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/E - Bordereau de prix Électricité.xlsx",
+      "id": "1WYxah0UWCJmU8NHwjQ2UYnh2VlqynBMs",
+      "ext": "xlsx",
+      "octets": 27861,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "DOCUMENTS/E - Bordereau de prix Électricité - PDF.pdf",
+      "id": "1az067ED8PjG14FsSLeyjKvREKqZII8ep",
+      "ext": "pdf",
+      "octets": 118426,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/D - Déclaration, soumission, bordereau et  autres formulaires.pdf",
+      "id": "1vffYmrSVhODWR6P2NV6K4wPlhWf42K3m",
+      "ext": "pdf",
+      "octets": 3055206,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/A - Cahier complet AO_Public.pdf",
+      "id": "1xGXI1jvObxwEt_uQhmobQxDfPybd5Gd4",
+      "ext": "pdf",
+      "octets": 1414604,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/E - Bordereau de prix Électricité.pdf",
+      "id": "1FHbWFVhcNwCQRC5q5qeC6bBI_ZPiDmjw",
+      "ext": "pdf",
+      "octets": 120755,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/B - Document technique_Électricité.pdf",
+      "id": "1iRlVLZPz_0Cg0jxV8pCvY7JoxReqzs9N",
+      "ext": "pdf",
+      "octets": 968755,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "DOCUMENTS/C - Service_base horaire_Guide evaluation_Rendement.pdf",
+      "id": "1PnOTxaWe26Jnk_ugGaQ7ly8NKyMTMseu",
+      "ext": "pdf",
+      "octets": 719050,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "dossier": "s-1798 ecl mecnaique garage ste julie",
+  "id": "1GJ5NXZNyooXIDJMHP3l6FUkxQaIyReIO",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1y8kJGg36BxiuYERhkdfA-HYkk5FHavDQ",
+      "ext": "db",
+      "octets": 30208,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1798.pdf",
+      "id": "1hM6pXLy81LsC8AJOwF6jjfoo7ZPBU5rv",
+      "ext": "pdf",
+      "octets": 48061,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1796.docx",
+      "id": "1FkBkeYH2EMh_oimdYGP-WieWtJn4Kggv",
+      "ext": "docx",
+      "octets": 62360,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

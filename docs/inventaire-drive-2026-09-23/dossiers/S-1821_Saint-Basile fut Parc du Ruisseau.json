@@ -1,0 +1,55 @@
+{
+  "dossier": "S-1821_Saint-Basile fut Parc du Ruisseau",
+  "id": "1AX7d_cNh3diwjJzIDxglc3QOb0wMAD--",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "18Zr_hOzdaT-XRFwHmPmyliK1n3nRCkN3",
+      "ext": "db",
+      "octets": 22016,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1821_Fut Parc du Ruisseau.pdf",
+      "id": "1UB9_Wg2DAGHU4T9em026J-jTeLeYeNz6",
+      "ext": "pdf",
+      "octets": 477074,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "soumission/S-1821.docx",
+      "id": "1ZKe4c0zUYDK8w-q89Tusem_R-oxLSE9O",
+      "ext": "docx",
+      "octets": 62239,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "soumission/Devis couleur du poteau.jpg",
+      "id": "1ZvxVNL-mtAq3f7nTJ33wW_fnlD5vLpP4",
+      "ext": "jpg",
+      "octets": 4902897,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "soumission/Devis longueur du poteau.png",
+      "id": "1sQ_KBaw1Tq6yhdYdDPYHe1K1CCEFRWfA",
+      "ext": "png",
+      "octets": 18827,
+      "mimeType": "image/png"
+    },
+    {
+      "chemin": "Westburn/WeAudit - Version A.pdf",
+      "id": "1VkLT6HuTdmjXHKFSmMBv23FAzAj-XfiM",
+      "ext": "pdf",
+      "octets": 680167,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/Dessin d'approbation - SPEC20260709_100353_33453_5.DOC",
+      "id": "1kk-q6JzFwjIkw48NCIUXU1xx5iwvnYDx",
+      "ext": "DOC",
+      "octets": 71168,
+      "mimeType": "application/msword"
+    }
+  ]
+}

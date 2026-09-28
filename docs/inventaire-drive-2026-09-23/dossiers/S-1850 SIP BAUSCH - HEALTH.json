@@ -1,0 +1,48 @@
+{
+  "dossier": "S-1850 SIP BAUSCH - HEALTH",
+  "id": "1yJNzBXCMyMh4oHUSu0RT_5ER-WJuiSAT",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1DxQn0KdAWGQopx0jFEk-u3zAAoFfBKSu",
+      "ext": "db",
+      "octets": 23040,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "CCDC2-2020-E-Office Renovation Project – Renovation Work - Electricity.pdf",
+      "id": "1ixT0BpgmEaFYFK1DUoo9OQzh9g7DIYwl",
+      "ext": "pdf",
+      "octets": 793832,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "2026-317_Soumission Démolition_Electricité.pdf",
+      "id": "1bwWEoVFzJ1ssONiYKyj-JvdP-uwYA67k",
+      "ext": "pdf",
+      "octets": 2508501,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "2026-08-14_25075_BAUSCH HEALTH_PLANS EMIS POUR APPEL D'OFFRES - PHASE 1.pdf",
+      "id": "1GINlbAulk5XIotgcdf96CM8pl4hgzWUK",
+      "ext": "pdf",
+      "octets": 6375268,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "RFP Template-Bausch Health-Renovation Work-Electricity-V0.pdf",
+      "id": "1Ls4iPzDyqck_nUdhJpi1XXH8xFERlUvd",
+      "ext": "pdf",
+      "octets": 367927,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Addendum CCDC2-2020-E-Office Project–Electricity.docx",
+      "id": "1fy5dN9wWHrNCVFjk5Wgjno4Rr7nmdce_",
+      "ext": "docx",
+      "octets": 38901,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

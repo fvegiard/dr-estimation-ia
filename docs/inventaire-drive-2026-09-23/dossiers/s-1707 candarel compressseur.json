@@ -1,0 +1,111 @@
+{
+  "dossier": "s-1707 candarel compressseur",
+  "id": "1oSq1i91xYBWPAnn4ClGvSk5G9gxCFMpA",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1lotFUZWFbTJvte8zSAJL01r6TG0Gip5i",
+      "ext": "db",
+      "octets": 14336,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (3).docx",
+      "id": "1mfzhScCp6grd1a705AJs86pifdduGxj2",
+      "ext": "docx",
+      "octets": 63388,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1707.docx",
+      "id": "1vrk__Q2w3_PYR21Hi-q4Re0Blxtm3Yan",
+      "ext": "docx",
+      "octets": 63683,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1707.pdf",
+      "id": "1TNow0N9prHUCFE1zSQ45SYms-fV6Fp6S",
+      "ext": "pdf",
+      "octets": 261138,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Plans, spécifications compresseur 2000 McGill_SCT.pdf",
+      "id": "1BgpAiaHnykrLFqQXQ1OFbfML7F7IOK3T",
+      "ext": "pdf",
+      "octets": 1479099,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "plan a jour 05-05-2026/Thumbs.db",
+      "id": "1V-sY6U7Hlda9_T2Nr1_NyojUQ9__eJm6",
+      "ext": "db",
+      "octets": 11264,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "plan a jour 05-05-2026/S-1707.pdf",
+      "id": "1j7jz_WIYiAP28G3mqom6lfDkE7W01PiP",
+      "ext": "pdf",
+      "octets": 261138,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "dessins/RE Demande de dessins d'atelier pour approbation.eml",
+      "id": "1KgcV7CfU12XB9AZCiVPODRoT6hDQ2IkE",
+      "ext": "eml",
+      "octets": 1735462,
+      "mimeType": "message/rfc822"
+    },
+    {
+      "chemin": "dessins/AJT50 - SCT.pdf",
+      "id": "17-pKtJLCrU0udyX7ECvq12aMe8HEiXSI",
+      "ext": "pdf",
+      "octets": 433493,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "dessins/J116 -SCT.pdf",
+      "id": "14-XmI8yXGPzbadsHLUc37jTmG__CPsAG",
+      "ext": "pdf",
+      "octets": 416000,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "dessins/Nexans_TECK90-600-Volts-10awg-3cond -SCT.pdf",
+      "id": "1ELV7LeKsysIN0yQrjvQlTdj8J0xzCuyy",
+      "ext": "pdf",
+      "octets": 376230,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "dessins/AJT50.pdf",
+      "id": "14oACWfNWUOr0XuGAOXV7xa44JMKOcqYD",
+      "ext": "pdf",
+      "octets": 333309,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "dessins/J116.pdf",
+      "id": "16nuzXoNDCMQ0erFFLGwWdOUFbwzcgrbW",
+      "ext": "pdf",
+      "octets": 320375,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "dessins/Nexans_TECK90-600-Volts-10awg-3cond.pdf",
+      "id": "1s46uOidKpwZpaDE_xxqOdPFXZCT9xEgQ",
+      "ext": "pdf",
+      "octets": 259937,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "dessins/Thumbs.db",
+      "id": "1VYNx06pBACdXPP6MtUF0vjWTBPJBNiGg",
+      "ext": "db",
+      "octets": 15872,
+      "mimeType": "application/octet-stream"
+    }
+  ]
+}

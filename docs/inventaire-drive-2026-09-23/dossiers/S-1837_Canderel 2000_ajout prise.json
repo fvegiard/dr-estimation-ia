@@ -1,0 +1,48 @@
+{
+  "dossier": "S-1837_Canderel 2000_ajout prise",
+  "id": "1MnqVTMs8E26owheaHi9Xim59c3qvGOXX",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "11eAxG9YKIqKAMF3RI5UKisAjCFgIq0du",
+      "ext": "db",
+      "octets": 17920,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "pris soumission.pdf",
+      "id": "1m0Z16S-lvYuBkbKxKMJ8O6-KRjbwtekK",
+      "ext": "pdf",
+      "octets": 4529134,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "courriel Bertrand_ajout de prise_10-08-2026.pdf",
+      "id": "14ngltKQPmsBsOY0FnbV4YBHyRQOD4Sfd",
+      "ext": "pdf",
+      "octets": 258453,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "##Template soumission_CD -  Jonathan Parent.docx",
+      "id": "1w52s-t1IWKf98aFqcYN2z2NYtxEq2STY",
+      "ext": "docx",
+      "octets": 61518,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Photos/2.jpg",
+      "id": "1zMgsQs4vLL4J1fQgxB-2JjJVRzm1pCgb",
+      "ext": "jpg",
+      "octets": 1708614,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photos/1.jpg",
+      "id": "1p6Ku44OWoEVsw53CNK7UmjTgzuTfdDfU",
+      "ext": "jpg",
+      "octets": 1448282,
+      "mimeType": "image/jpeg"
+    }
+  ]
+}

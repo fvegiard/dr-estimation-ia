@@ -1,0 +1,62 @@
+{
+  "dossier": "S-1673 - St-Hilaire_poteau de bois",
+  "id": "19l1eKo_J0Sslv_mu42u2tnnfVB7TfPq0",
+  "fichiers": [
+    {
+      "chemin": "S-1673_Poteaux.docx",
+      "id": "1uPGNIeDuZOA5xvXc5T5RDVOqAR8lCHm5",
+      "ext": "docx",
+      "octets": 66369,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Thumbs.db",
+      "id": "1IhTtgLRSCBeVIH-yI1KtKnVTWZoJ14f7",
+      "ext": "db",
+      "octets": 13312,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1673-1_Boitier.pdf",
+      "id": "1QV6VevgfQukKp4pzizhosgQfuAH3QKV4",
+      "ext": "pdf",
+      "octets": 255350,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1673-2_Prises.docx",
+      "id": "17Uv52LPVvw1Gc_VOkUSVcPtFtjnpFr_t",
+      "ext": "docx",
+      "octets": 63921,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1673_Poteaux.pdf",
+      "id": "1jTnwwBhkOFe-sZ4He6Q_goTBNCiYGocv",
+      "ext": "pdf",
+      "octets": 265076,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1673-1_Boitier.docx",
+      "id": "1uiHe6o7Vq6fYHfvmjKVtB6XqsVGK8LAA",
+      "ext": "docx",
+      "octets": 63026,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1673-2_Prises.pdf",
+      "id": "181Fy-RHRqFFX-6ray1sLU1LkAWLO30ZT",
+      "ext": "pdf",
+      "octets": 254725,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "~$S-1673.docx",
+      "id": "1ddHNNB3h2dMg_t9F0tqvP75Dczds4pOU",
+      "ext": "docx",
+      "octets": 162,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

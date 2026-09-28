@@ -1,0 +1,55 @@
+{
+  "dossier": "S-1834 PROVIA ST-AMABLE",
+  "id": "1JWDN-9zsOiJs4OiA3izxLQ_oVLAx_0DL",
+  "fichiers": [
+    {
+      "chemin": "Soumission_S-1834_ProtectConstruction_ProviaStAmable_1.pdf",
+      "id": "1_0ry0_ckreJulaUaqGlS-OGB-cEVOtK4",
+      "ext": "pdf",
+      "octets": 208765,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Thumbs.db",
+      "id": "1DIw1POwrV9J8JZj3cxlrtk0TuYYImb2D",
+      "ext": "db",
+      "octets": 38400,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "IMG_3137.jpeg",
+      "id": "1APSVX0Q_OI6RGYKNgfcHVO39WimmcGb1",
+      "ext": "jpeg",
+      "octets": 4283851,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Soumission_S-1834_ProtectConstruction_ProviaStAmable_2.pdf",
+      "id": "1mOPH8Whlp8xDwc9maA3ZDa5oQ-TgUaPX",
+      "ext": "pdf",
+      "octets": 208765,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission_S-1834_ProtectConstruction_ProviaStAmable_3.pdf",
+      "id": "1TTYQWmBSRj0QVO_zrPmp5xzyh7TXg9F0",
+      "ext": "pdf",
+      "octets": 208783,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "wetransfer_plan-provia-saint-amable_2026-08-07_1344 (1).zip",
+      "id": "16BtzljISR0BjJ0R0_igkZop4wBl81E66",
+      "ext": "zip",
+      "octets": 69402957,
+      "mimeType": "application/zip"
+    },
+    {
+      "chemin": "plan electrique batiment st-amable 65 logements.pdf",
+      "id": "1oOCPIL-vDkHsro_Hn8r0tWgXh7OCLSIx",
+      "ext": "pdf",
+      "octets": 9104636,
+      "mimeType": "application/pdf"
+    }
+  ]
+}
