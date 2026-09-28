@@ -1,0 +1,80 @@
+label,famille,forme,rgb,jeton_regex,description,source
+A1 Troffer 2x4,luminaire,,,A1,Appareil volumétrique encastré 2'x4' 47W 120V,501B (S267_ADD_2) liste des appareils d'éclairage
+A1 Troffer 2x4 urgence,luminaire,trapeze,,,A1 dessiné plein gris = linéaire raccordé à l'urgence (mini-onduleur),501B légende « linéaire sur l'urgence » + 505B
+B1 Troffer 2x2,luminaire,,,B1,Appareil volumétrique encastré 2'x2' 27W 120V,501B liste des appareils d'éclairage
+C1 Spot encastré,luminaire,cercle,,C1,Spot encastré 4 po 13W 120V,501B liste des appareils d'éclairage
+C1 Spot encastré urgence,luminaire,losange,,,C1 dessiné plein gris = ponctuel sur l'urgence,501B légende « ponctuel sur l'urgence » + 505B
+C2 Spot lieux humides,luminaire,cercle,,C2,Spot encastré 4 po 10W lieux humides,501B liste (rév. 2 MEP-02)
+C3 Spot boîtier 2h,luminaire,cercle,,C3,Spot encastré 4 po 20W avec boîtier résistant 2 h,501B liste (rév. 2 MEP-02)
+C3 Spot boîtier 2h urgence,luminaire,losange,,,C3 dessiné plein = ponctuel sur l'urgence,501B légende + 505B
+D1 High bay,luminaire,cercle,,D1,High bay suspendu 12 po 100W,501B liste (rév. 2 MEP-02)
+D1 High bay urgence,luminaire,losange,,,D1 dessiné plein gris = ponctuel sur l'urgence,501B légende + 505B
+E1 Réglette 4 pi,luminaire,,,E1,Réglette en surface 4 pi 38W,501B liste des appareils d'éclairage
+E1 Réglette 4 pi urgence,luminaire,trapeze,,,E1 dessinée pleine grise = linéaire sur l'urgence,501B légende + 505B
+G2 Applique de zone type 2,luminaire,,,G2,Applique murale extérieure noire 40W distribution type 2,501B liste; 503B plan de site
+G3 Applique de zone type 3,luminaire,,,G3,Applique murale extérieure noire 40W distribution type 3,501B liste; 503B plan de site
+L2 Lampadaire type 2,luminaire,,,L2,Lampadaire sur poteau 65W 347V distribution type 2,501B liste; 503B plan de site
+L3 Lampadaire type 3,luminaire,,,L3,Lampadaire sur poteau 65W 347V distribution type 3,501B liste; 503B plan de site
+L5 Lampadaire type 5,luminaire,,,L5,Lampadaire sur poteau 65W 347V distribution type 5,501B liste; 503B plan de site
+X1 Enseigne d'issue,secours,,,X1,Pictogramme de sortie 3W universel (toutes variantes plafond/mur/flèche),501B liste + légende signalisation d'issue
+Mini-onduleur 12V,secours,carre,,,Mini-onduleur M1/M2 pour éclairage d'urgence (circuits 26/28 P1-2PDPN4N-1),505B détail 2 + identification 1
+Interrupteur unipolaire,commande,,,,Interrupteur unipolaire 120V,501B légende contrôle d'éclairage
+Interrupteur avec détecteur de présence,commande,,,,Interrupteur unipolaire 120V intégré avec détecteur de présence,501B légende contrôle d'éclairage
+Gradateur,commande,losange,,,Gradateur (symbole Ø avec flèche; variante avec détecteur non distinguée),501B légende contrôle d'éclairage
+Détecteur de présence plafond,commande,,,,Détecteur de présence omnidirectionnel au plafond,501B légende contrôle d'éclairage
+Prise double 5-15R,prise,,,,Prise double 15A 125V 5-15R,501B légende prises (1re ligne)
+Prise double 5-15R WP,prise,,,,Prise double 5-15R à l'épreuve des intempéries (mention WP),501B légende + abréviation WP; 506B
+Prise double 5-20R,prise,,,,Prise double 15/20A 125V 5-20R (symbole plein),501B légende prises (2e ligne)
+Prise double 5-15R (triangle),prise,triangle_inverse,,,Prise double 15A 5-15R symbole triangle (ligne distincte de légende),501B légende prises (6e ligne)
+Prise DDFT 5-15R (cercle),prise,,,,Prise double 5-15R c/a DDFT symbole cercle avec point,501B légende prises (5e ligne)
+Prise DDFT 5-15R (triangle),prise,triangle_inverse,,,Prise double 5-15R c/a DDFT symbole triangle avec point,501B légende prises (4e ligne)
+Sortie télécom,telecom,,,,Sortie pour télécommunication,501B légende télécommunications
+Point de raccordement porte automatique,distribution,,,,Point de raccordement ouvre-porte automatique,501B légende dispositif de filerie; 506B
+Point de raccordement volet coupe-feu,distribution,,,,Point de raccordement volet coupe-feu (fire-rated shutter),501B légende; 506B
+Point de raccordement plomberie,distribution,,,,Point de raccordement 15A 120V appareil de plomberie (identification 1),506B identification 1
+Point de raccordement panneau de contrôle,distribution,,,,Point de raccordement panneau de contrôle (circuit 60 P1-2PDPN4N-1),506B détail 2
+Raccordement prise UTA toit (fournie par fabricant),prise,,,,Prise fournie par le fabricant de l'UTA et alimentée par l'électricité,507B note sur plan
+C1.1 Plinthe 500W,chauffage,,,,Plinthe électrique 500W 347V 750 mm c/a relais triac (X.1),501B liste chauffage; 506B mot 500W
+C2.2 Convecteur 4000W,chauffage,,,,Aéroconvecteur mural 4000W 347V c/a thermostat intégré (X.2),501B liste chauffage; 506B mot 4000W
+C3.2 Aérotherme 8000W,chauffage,,,,Aéroconvecteur mural 8000W 347V c/a thermostat intégré (X.2),501B liste chauffage; 506B mot 8000W
+C4.1 Plinthe 1500W,chauffage,,,,Plinthe électrique au sol 1500W 347V 1700 mm c/a relais triac,501B liste chauffage; 506B mot 1500W
+C5.1 Convecteur 2000W,chauffage,,,,Aéroconvecteur mural 2000W 347V c/a relais triac,501B liste chauffage; 506B mot 2000W
+C5.2 Convecteur 2000W,chauffage,,,,Aéroconvecteur mural 2000W 347V c/a thermostat intégré,501B liste chauffage; 506B mot 2000W
+C6.1 Plinthe 1000W,chauffage,,,,Plinthe murale 1000W 347V 1250 mm c/a relais triac,501B liste chauffage; 506B mot 1000W
+Serpentin EHC1 19 kW,chauffage,carre,,,Serpentin électrique de conduit EHC1-001/002/003-101 19 kW,506B + 502B départs P1-3PPN4N-1
+Serpentin EHC2 15 kW,chauffage,carre,,,Serpentin électrique de conduit EHC2-001/002/003-101 15 kW,506B + 502B départs P1-3PPN4N-1
+Serpentin EHC3 3 kW douche,chauffage,carre,,,Serpentin EHC3-001-101 3 kW (HEATER SHOWER 52/54 P1-2PDPN4F-1),506B + 511B
+Serpentin EHC1-006 500W,chauffage,carre,,,Serpentin EHC1-006-101 500W (502B : ECH1-006-101 3X 1.5kW),506B + 502B
+Raccordement ventilateur HVLS CF,mecanique,,,,Ventilateur plafond grand volume basse vitesse CF1..CF4-005-101,506B + 402B tableau HVLS
+Raccordement évaporateur EV,mecanique,,,,EV1-006-101 / EV1-007-101,506B + 511B
+Raccordement condenseur CS,mecanique,,,,CS1-004/006/007-101 extérieur,506B + 511B
+Raccordement humidificateur HU,mecanique,,,,HU1-001/002/003-10R 15 kW,506B + 502B
+Raccordement ventilateur TF,mecanique,,,,TF1-004-101 / TF2-004-101,506B détail 2 + 511B
+Raccordement pompe PU1,mecanique,,,,PU1-REC-101 (circuit 37 P1-2PDPN4N-1),506B détail 2
+Raccordement chauffe-eau WH,mecanique,,,,Chauffe-eau WH1/WH2/WH3-DHW-101,506B détail 2 + 511B
+Raccordement UTA toit RT,mecanique,,,,Unité de toiture RT1-001/002/003-10R,507B + 502B
+Raccordement unité HE toit,mecanique,,,,HE1-001/002/003-10R (toit),507B + 502B
+Sectionneur ≤240V,distribution,,,,Interrupteur de sûreté jusqu'à 240V (30/15A ou 30/20A),501B légende distribution; 506B
+Sectionneur ≤240V WP,distribution,,,,Interrupteur de sûreté 30A sans fusible à l'épreuve des intempéries (WP 30/SF),501B légende; 506B
+Panneau 120/208V,distribution,,,,Panneau de distribution 120/208V 3Ø 4F (P1-2PDPN4N-1 600A / P1-2PDPN4F-1 200A),502B + 506B
+Panneau 347/600V,distribution,,,,Panneau P1-3PPN4N-1 400A 347/600V 22 kA,502B + 506B
+Transformateur sec 112.5 kVA,distribution,,,,Transformateur P1-3TRN4N-1 112.5 kVA 600-120/208V,502B + 506B
+Interrupteur principal 400A,distribution,,,,Interrupteur principal 400A-3P fusible (350A au 502B / 400A au 506B),502B + 506B
+Armoire de mesurage HQ type B,distribution,,,,Armoire de transformation Hydro-Québec type B pour mesurage,502B identification 1 + 506B « HQ »
+Dispositif de mesurage GTB,distribution,,,,Dispositif de mesurage client raccordé à la GTB (note B),502B note B
+Barre de mise à la terre,distribution,,,,Barre de mise à la terre (salle électrique principale / secondaire / télécom),502B schéma
+Départ futur ventilateur EF,distribution,,,,Départ réservé EF1/EF2/EF3-007-101 (FUTUR) au tableau P1-2PDPN4F-1,511B tableau de panneau
+Klaxon/stroboscope,alarme,,,,Klaxon combiné avec avertisseur visuel (candela indiquée),501B légende alarme; 508B
+Stroboscope mural,alarme,,,,Avertisseur visuel en applique (sans klaxon),501B légende alarme; 508B
+Détecteur de fumée photoélectrique,alarme,,,,Détecteur de fumée photoélectrique,501B légende alarme; 508B
+Détecteur faisceau émetteur FL-TX,alarme,,,FL-TX,Faisceau lumineux - module de transmission,501B légende alarme; 508B
+Détecteur faisceau récepteur FL-RX,alarme,,,FL-RX,Faisceau lumineux - module de réflexion/réception,501B légende alarme; 508B
+Déclencheur manuel,alarme,carre,,,Poste manuel d'alarme,501B légende alarme; 508B
+Panneau d'alarme incendie FAP,alarme,carre,,,Panneau de contrôle d'alarme incendie,501B légende; 508B
+Annonciateur FAAP,alarme,carre,,,Panneau annonciateur d'alarme incendie,501B légende; 508B
+Module d'interface AIM,alarme,carre,,,Module d'interface adressable (supervision),501B légende; 508B
+Module de relais ARM,alarme,carre,,,Module de relais adressable (arrêt ventilateurs HVLS / UTA / volets),501B légende; 507B-508B identification
+Bloc d'alimentation AI PS,alarme,carre,,,Bloc d'alimentation PS1/PS2 (circuits 34 P1-2PDPN4F-1 / 24 P1-2PDPN4N-1),508B identification 1 + 509B
+Poteau de bois,autre,,,,Poteau de bois (ligne aérienne client) montré au plan,503B + 510B détail 6/7
+Poteau de bois additionnel note D,autre,,,,Cinq poteaux de bois supplémentaires à prévoir (note D),503B note D
+Puits d'accès électrique/télécom,autre,carre,,,Puits d'accès carré béton préfabriqué 815x815x900 (identification 1),503B identification 1

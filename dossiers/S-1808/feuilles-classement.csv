@@ -1,0 +1,23 @@
+feuille,type,echelle,note
+E001,legende,,cartouche=E-001 · LÉGENDE ET LISTE DE PLANS (légende électrique + index des dessins)
+E002,autre,,cartouche=E-002 · DEVIS
+E003,autre,,cartouche=E-003 · DEVIS (SUITE)
+E004,tableau,,cartouche=E-004 · PANNEAUX (cédules PS / PSS1 / PCUI / PSS2 — page raster sans texte vectoriel)
+E005,autre,,cartouche=E-005 · CALCULS DE CHARGES (raster)
+E010,schema,,cartouche=E-010 · SCHÉMA UNIFILAIRE (+ contacteurs C1/C2 et contreplaqué télécom)
+E020,schema,,cartouche=E-020 · SCHÉMA UNIFILAIRE D'ALARME INCENDIE
+E030,autre,,cartouche=E-030 · TABLEAUX (extraits du Code / chutes de tension)
+E031,tableau,,cartouche=E-031 · TABLEAUX MÉCANIQUES (chauffe-eau / échangeurs / ventilateurs / humidificateurs / serpentins / AC / pompes)
+E032,legende,,cartouche=E-032 · TABLEAUX CHAUFFAGE ET ÉCL. (types A–F / EX1–EX3 / Z1–Z6 / SCR-OWC-M-OAC-OFM — raster)
+E040,detail,,cartouche=E-040 · DÉTAILS (normes HQ + détail fosse ascenseur)
+E041,detail,,cartouche=E-041 · DÉTAILS (SUITE) (raccordements hotte H-1 et serpentin VA-01)
+E042,detail,,cartouche=E-042 · DÉTAILS (SUITE) (schémas types contrôle d'éclairage)
+E050,plan,100,cartouche=E-050 · IMPLANTATION (1:100) — site; seul le point de raccordement HQ est relevé
+E051,plan,50,cartouche=E-051 · ÉLÉVATIONS LATÉRALES NORD ET OUEST (1:50) — appareils muraux extérieurs EX2/EX3 absents des plans d'étage
+E052,plan,50,cartouche=E-052 · ÉLÉVATIONS LATÉRALES SUD ET EST (1:50) — appareils muraux extérieurs EX2/EX3 absents des plans d'étage
+E100,plan,50,cartouche=E-100 · ÉLECTRIQUE ALARME INCENDIE ET ÉCL. REZ-DE-CHAUSSÉE (l'index E-001 l'appelle E-200)
+E101,plan,50,cartouche=E-101 · ÉLECTRIQUE ALARME INCENDIE ET ÉCL. ÉTAGE (l'index E-001 l'appelle E-201)
+E200,plan,50,cartouche=E-200 · ÉLECTRIQUE SERVICES REZ-DE-CHAUSSÉE
+E201,plan,50,cartouche=E-201 · ÉLECTRIQUE SERVICES ÉTAGE
+E202,plan,50,cartouche=E-202 · ÉLECTRIQUE SERVICES TOIT
+M606,autre,50,cartouche=M-606 · ÉQUIPEMENTS SANITAIRES (SUITE) — addenda ME-01 (2026-06-29) plomberie; aucune incidence électrique

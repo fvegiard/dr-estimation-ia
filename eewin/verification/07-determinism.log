@@ -1,0 +1,25 @@
+# 2026-09-27 14:33:55 EDT — déterminisme : re-scripter EE et EE_TEST doit redonner EE_DR.sql (seule la ligne '-- Generated' change)
+$ python eewin/tools/generate_ee_dr_sql.py --database EE --output EE_again.sql
+wrote /tmp/claude-0/-home-claude/c849371c-4dd2-571a-ba0c-5941ff45a8c1/scratchpad/EE_again.sql: 8080854 bytes, sha256 70156426dce87fce0ad63270b952c9e83330072cd27bb7b640c7c6c59e764269
+tables=60 indexes=61 fks=0 modules={'Stored procedures': 160, 'Functions (scalar, inline and multi-statement)': 18} rows=84837 identity_resync=17
+$ python eewin/tools/generate_ee_dr_sql.py --database EE_TEST --output EE_TEST_again.sql
+wrote /tmp/claude-0/-home-claude/c849371c-4dd2-571a-ba0c-5941ff45a8c1/scratchpad/EE_TEST_again.sql: 8080859 bytes, sha256 6ac5d14ef1fea9bb2248d7521efa6928114215bc261a989dab8eb5b949221530
+tables=60 indexes=61 fks=0 modules={'Stored procedures': 160, 'Functions (scalar, inline and multi-statement)': 18} rows=84837 identity_resync=17
+$ diff eewin/EE_DR.sql EE_again.sql
+2c2
+< -- Generated 2026-09-27 14:33:10 EDT by eewin/tools/generate_ee_dr_sql.py (pymssql 2.4.2)
+---
+> -- Generated 2026-09-27 14:33:57 EDT by eewin/tools/generate_ee_dr_sql.py (pymssql 2.4.2)
+diff exit=1
+$ diff eewin/EE_DR.sql EE_TEST_again.sql
+2,3c2,3
+< -- Generated 2026-09-27 14:33:10 EDT by eewin/tools/generate_ee_dr_sql.py (pymssql 2.4.2)
+< -- Source database: EE on Microsoft SQL Server 2022 (RTM-CU27) (KB5104824) - 16.0.4295.3 (X64)
+---
+> -- Generated 2026-09-27 14:34:06 EDT by eewin/tools/generate_ee_dr_sql.py (pymssql 2.4.2)
+> -- Source database: EE_TEST on Microsoft SQL Server 2022 (RTM-CU27) (KB5104824) - 16.0.4295.3 (X64)
+diff exit=1
+$ sha256sum <(grep -v '^-- Generated\|^-- Source database' eewin/EE_DR.sql) <(... EE_again.sql) <(... EE_TEST_again.sql)
+9b538eb1108b15d120c4f820b660548055a10d7b3f3483407856dfd24773695f  eewin/EE_DR.sql (sans les 2 lignes d'en-tête variables)
+9b538eb1108b15d120c4f820b660548055a10d7b3f3483407856dfd24773695f  /tmp/claude-0/-home-claude/c849371c-4dd2-571a-ba0c-5941ff45a8c1/scratchpad/EE_again.sql (sans les 2 lignes d'en-tête variables)
+9b538eb1108b15d120c4f820b660548055a10d7b3f3483407856dfd24773695f  /tmp/claude-0/-home-claude/c849371c-4dd2-571a-ba0c-5941ff45a8c1/scratchpad/EE_TEST_again.sql (sans les 2 lignes d'en-tête variables)

@@ -1,0 +1,34 @@
+{
+  "dossier": "S-1827 CANON A NEIGE BROMONT",
+  "id": "1Gd4bVM-R10UC_OvOjuubbCrKuA-XMUGU",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1ieWVGGMuJwaMLS285sp9G7rsu_P1gc2W",
+      "ext": "db",
+      "octets": 19456,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "MTR -00239275- B1 C604 SS2-VICTO GP.pdf",
+      "id": "1S_zqmKT5EXhokDPDhPSJLS15xwy4P5MF",
+      "ext": "pdf",
+      "octets": 509262,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "STSS-00239275-BAT-SS2 - C604.pdf",
+      "id": "1F7zARTeRrZh0j_ZyY0WcGMMdvGL7gbub",
+      "ext": "pdf",
+      "octets": 651376,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "STSS-00239275-E051_Piste Victo.pdf",
+      "id": "1qVdSdBaxbmpJGGXlC0_NkNpGOse_l66s",
+      "ext": "pdf",
+      "octets": 3268773,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Luminaire A1,luminaire,cercle,,A1,Encastré DEL Cooper 24CZSO13-UNV-LOW-3500K 24 VA 120 V,E101_ADD tableau des luminaires ligne A1 + E002_ADD légende éclairage
+Lampadaire D1,luminaire,cercle,,D1,Lampadaire Cooper G4LN-SA2B-830-U-T4W 82 VA 347 V sur fût 22 pi (base béton détail H/E-101),E101_ADD tableau des luminaires ligne D1
+Luminaire L1,luminaire,cercle,,L1,Encastré DEL Axis BBRLED-500-80-35-FL-8 78 VA,E101_ADD tableau des luminaires ligne L1
+Luminaire L2,luminaire,cercle,,L2,Encastré DEL Axis BBRLED-500-80-35-FL-28 269 VA,E101_ADD tableau des luminaires ligne L2
+Luminaire L3,luminaire,cercle,,L3,Surface Cooper 4SNX-41SL-LW-UNV-L840-CD 26 VA,E101_ADD tableau des luminaires ligne L3
+Luminaire L3A,luminaire,cercle,,L3A,Surface Cooper 4SNX-41SL-LW-UNV-L840-CD 26 VA (HM 2800),E101_ADD tableau des luminaires ligne L3A
+Luminaire L4,luminaire,cercle,,L4,Surface Cooper 4VT3-LD5-6-G-UNV-L840-CD1-U 51 VA,E101_ADD tableau des luminaires ligne L4
+Luminaire L4A,luminaire,cercle,,L4A,Surface Cooper 4VT3-LD5-6-G-UNV-L840-CD1-U + VT3-SS-VBK 51 VA,E101_ADD tableau des luminaires ligne L4A
+Luminaire mural M1,luminaire,cercle,,M1,Au mur Cooper GWC-SA1A-830-U-T4W 34 VA,E101_ADD tableau des luminaires ligne M1
+Projecteur P1,luminaire,cercle,,P1,Projecteur RGBW SSL CLZMF-UNV-RGBW-BK-80 sur colonne 85 VA (DMX),E101_ADD tableau des luminaires ligne P1 (rév. 2)
+Luminaire suspendu R1,luminaire,cercle,,R1,Suspendu Cooper UHBS2-2436-MV-L8C5-U 153 VA (patinoire),E101_ADD tableau des luminaires ligne R1 (rév. 2)
+Luminaire R2,luminaire,cercle,,R2,Encastré Cooper LCR4-08-RD-9FS-E020 11 VA,E101_ADD tableau des luminaires ligne R2
+Luminaire R3,luminaire,cercle,,R3,Encastré Cooper LCR615RD9FSE040-18W-3000K 18 VA (marquise),E101_ADD tableau des luminaires ligne R3
+Indicateur d'issue Z1 (mur) — à confirmer,secours,carre,,Z1,Indicateur d'issue au mur; type Z1 absent du tableau des luminaires,E002_ADD légende indicateurs d'issue + étiquette Z1 E201_ADD
+Indicateur d'issue Z2 (plafond) — à confirmer,secours,carre,,Z2,Indicateur d'issue au plafond; type Z2 absent du tableau des luminaires,E002_ADD légende indicateurs d'issue + étiquette Z2 E201_ADD
+Accumulateur AUBX,secours,carre,,,Accumulateur d'éclairage de secours avec tête double type AUBX (72 W),E002_ADD légende indicateurs d'issue ligne AUBX
+Tête d'éclairage simple,secours,cercle,,,Tête simple type A au mur alimentée par accumulateur,E002_ADD légende indicateurs d'issue
+Tête d'éclairage double,secours,cercle,,,Tête double type A au mur alimentée par accumulateur,E002_ADD légende indicateurs d'issue
+Détecteur de présence 360°,commande,cercle,,D,Détecteur de présence 360° (WaveLinx OSC-C-Pxx),E002_ADD légende contrôle d'éclairage de ligne
+Interrupteur basse tension,commande,cercle,,,Interrupteur basse tension (poste WaveLinx WST),E002_ADD légende contrôle d'éclairage de ligne
+Poste BT double (a/b),commande,cercle,,3a|c,Paire d'interrupteurs BT 3a/3b ou c/d = un poste WaveLinx WST-C-3 (une marque par paire),E002_ADD légende + E003_ADD schéma (WST-C-3)
+Gradateur basse tension,commande,cercle,,,Gradateur basse tension (poste WaveLinx WST-C-3D),E002_ADD légende contrôle d'éclairage de ligne
+Interrupteur unipolaire,commande,cercle,,,Interrupteur unipolaire 120 V,E002_ADD légende contrôle d'éclairage de ligne
+Panneau de contrôle P1 (note 1),commande,carre,,,Panneau de contrôle d'éclairage des appareils type P1 (note spécifique 1 E-201),E201_ADD note spécifique 1
+Armoire de relais BT (P.R.),commande,carre,,P\.R\.,Armoire de relais basse tension,E002_ADD légende contrôle d'éclairage basse tension
+Contrôleur WaveLinx RSP-C-347-Z1,commande,carre,,,Contrôleur de luminaire RSP-C-347-Z1 (schéma WaveLinx CAT),E003_ADD schéma de raccordement
+Terminaison ACC-C-TP,commande,carre,,,Terminaison RJ45 ACC-C-TP de fin de segment CAT5e,E003_ADD schéma de raccordement
+Concentrateur WAH-C-POE-ID,commande,carre,,,Concentrateur WaveLinx WAH-C-POE-ID (salle électrique 109),E003_ADD schéma de raccordement
+Commutateur PoE GS308PP,commande,carre,,,Commutateur PoE GS308PP (salle électrique 109),E003_ADD schéma de raccordement
+Contrôleur de zone WAC2-POE,commande,carre,,,Contrôleur de zone WaveLinx WAC2-POE (salle électrique 109),E003_ADD schéma de raccordement
+Poste manuel,alarme,carre,,F,Poste manuel d'alarme incendie,E002_ADD légende alarme incendie
+Klaxon alarme incendie,alarme,cercle,,,Signalisation sonore type klaxon (F avec triangle),E002_ADD légende alarme incendie
+Klaxon + stroboscope,alarme,cercle,,S,Klaxon et lampe stroboscopique au mur,E002_ADD légende alarme incendie
+Détecteur de fumée,alarme,cercle,,,Détecteur de fumée,E002_ADD légende alarme incendie
+Détecteur de fumée de conduit (note 2),alarme,cercle,,,Détecteur de fumée installé dans un conduit pour volets coupe-feu,E201_ADD note spécifique 2
+Relais adressable RA,alarme,carre,,RA,Relais adressable d'alarme incendie,E002_ADD légende alarme incendie
+Panneau d'alarme incendie (PAI),alarme,carre,,PAI,Panneau d'alarme incendie (cédule RC-PSNO-200 cct 61),E201_ADD étiquette PAI + E002_ADD cédule
+Prise double 15A,prise,cercle,,,Prise double 15A 120V (5-15R),E002_ADD légende prises de courant
+Prise au-dessus du comptoir,prise,cercle,,,Prise double 15A au-dessus du comptoir,E002_ADD légende prises de courant
+Prise double USB,prise,cercle,,USB,Prise double 15A avec port USB,E002_ADD légende prises de courant
+Prise hauteur spéciale,prise,cercle,,,Prise double 15A hauteur spéciale,E002_ADD légende prises de courant
+Prise 15/20A (5-20R),prise,cercle,,,Prise double 15A/20A 120V (5-20R),E002_ADD légende prises de courant
+Prise au plafond,prise,cercle,,,Prise double 15A installée au plafond,E002_ADD légende prises de courant
+Prise DDFT,prise,carre,,,Prise double 15A avec disjoncteur différentiel classe A,E002_ADD légende prises de courant
+Prise DDFT intempéries,prise,carre,,,Prise double DDFT à l'épreuve des intempéries,E002_ADD légende prises de courant
+Prise DDFT fontaine réfrigérée,prise,carre,,FR,Prise double DDFT pour fontaine réfrigérée,E002_ADD légende prises de courant
+Aérotherme mural A15,chauffage,losange,,A15,Aérotherme mural Stelpro WFA1503C24W 1500 W 347 V,E101_ADD caractéristiques chauffage ligne A15
+Plinthe B5,chauffage,losange,,B5,Plinthe Stelpro B0503W 500 W 347 V (relais),E101_ADD caractéristiques chauffage ligne B5
+Plinthe B10,chauffage,losange,,B10,Plinthe Stelpro B1003W 1000 W 347 V,E101_ADD caractéristiques chauffage ligne B10
+Plinthe B12,chauffage,losange,,B12,Plinthe Stelpro B1253W 1250 W 347 V,E101_ADD caractéristiques chauffage ligne B12
+Plinthe B15,chauffage,losange,,B15,Plinthe Stelpro B1503W 1500 W 347 V,E101_ADD caractéristiques chauffage ligne B15
+Plinthe B25,chauffage,losange,,B25,Plinthe Stelpro B2503W 2500 W 347 V,E101_ADD caractéristiques chauffage ligne B25
+Aérotherme plafond T4,chauffage,losange,,T4,Aérotherme plafond Stelpro SHU0431CCHAR 4000 W,E101_ADD caractéristiques chauffage ligne T4
+Aérotherme plafond T15,chauffage,losange,,T15,Aérotherme plafond Stelpro SHU1531CCHAR 15000 W,E101_ADD caractéristiques chauffage ligne T15
+Relais triac RT,chauffage,carre,,RT,Relais triac Stelpro RE253T avec transformateur (boîte 100x100),E002_ADD légende chauffage + E101_ADD ligne RT
+Raccordement serpentin SE,chauffage,carre,,SE,Serpentin électrique dans gaine de ventilation (étiquette SE-xx),E002_ADD légende chauffage + étiquettes E301_ADD
+Raccordement chauffe-eau CE (36 kW),mecanique,carre,,CE,Sortie de raccordement chauffe-eau CE-01/02/03 36 kW 60A-3P (symbole C/E relié à l'étiquette CE),E002_ADD légende appareils divers + cédule RC-PDNO-600
+Raccordement ventilateur VE,mecanique,carre,,VE,Moteur ventilateur VE-01..04,E301_ADD étiquettes + cédule RC-PSNO-200
+Raccordement VA,mecanique,carre,,VA,Moteur VA-01/02,E301_ADD étiquettes + cédule RC-PSNO-200
+Raccordement VC,mecanique,carre,,VC,Moteur VC-01,E301_ADD étiquettes + cédule RC-PSNO-200
+Raccordement ECH,mecanique,carre,,ECH,Équipement ECH-01 (5.6 RLA),E301_ADD étiquettes + cédule RC-PSNO-200
+Raccordement PECR,mecanique,carre,,PECR,Équipement PECR-01,E301_ADD étiquettes + cédule RC-PSNO-200
+Raccordement COND,mecanique,carre,,COND,Condenseur COND-01 19.8 MCA,E301_ADD étiquettes + cédule RC-PSNO-200
+Raccordement DEV,mecanique,carre,,DEV,Équipement DEV-01,E301_ADD étiquettes + cédule RC-PSNO-200
+Raccordement réfrigération de la glace,mecanique,carre,,,Système de réfrigération de la glace 350A-3P (cédule RC-PDNO-600 cct 12-16),E002_ADD cédule RC-PDNO-600 + unifilaire
+Raccordement régulation,mecanique,carre,,,Circuit RÉGULATION (contrôles mécaniques) sans symbole au plan,E002_ADD cédule RC-PSNO-200 cct 54 et 56
+Raccordement RCFFM — à confirmer,mecanique,carre,,,Circuit RCFFM 15A (équipement non identifié),E002_ADD cédule RC-PSNO-200 cct 59
+Sèche-mains,autre,trapeze,,,Sèche-mains électrique,E002_ADD légende appareils divers
+Panneau RC-PDNO-600,distribution,carre,,,Panneau de distribution 347/600V 600A 3ph 4F 22 kA,E002_ADD légende distribution + unifilaire
+Panneau RC-PSNO-200,distribution,carre,,,Panneau 120/208V 400A,E002_ADD légende distribution + unifilaire
+Transformateur RC-TRNO-600,distribution,carre,,,Transformateur 600-120/208V 75 kVA avec MALT,E002_ADD unifilaire
+Cabinet de mesurage HQ,distribution,carre,,HQ,Cabinet de mesurage Hydro-Québec,E002_ADD légende distribution + unifilaire
+Interrupteur de sûreté 600A,distribution,carre,,,Interrupteur de sûreté 600A (F:600A à l'entrée et 600A SF),E002_ADD unifilaire
+Interrupteur de sûreté 400A SF (réfrigération),distribution,carre,,,Interrupteur de sûreté 400A sans fusible du système de réfrigération (salle mécanique 111),E002_ADD unifilaire + E301_ADD
+Barre de mise à la terre,distribution,carre,,,Barre de mise à la terre (salle électrique 109),E002_ADD légende distribution + unifilaire
+Boîtier Camlock 200A,distribution,carre,,,Boîtier Camlock 200A 208V 3ph STA-205-40F-213 (cédule RC-PSNO-200 cct 53-57),E301_ADD note + E002_ADD cédule
+Boîtier borne de recharge future,distribution,carre,,,Boîtier Synertech 12x12x6 pour borne de recharge future,E102 note
+Puits de tirage,distribution,carre,,,Puits de tirage (détail J/E-101),E102 + E101_ADD détail J
+Poteau client — fourni par autres,distribution,carre,,,Poteau client pour liaison aérosouterraine (emplacement à coordonner),E102 note
+Sortie télécom VS,telecom,triangle,,VS,Sortie de communication affectée vidéosurveillance,T001 légende câblage structuré + affectation VS
+Sortie télécom WF,telecom,triangle,,WF,Sortie de communication affectée point d'accès sans-fil,T001 légende affectation WF
+Sortie télécom CB,telecom,triangle,,2CB|CB,Sortie de communication affectée contrôle de bâtiment,T001 légende affectation CB
+Sortie télécom D,telecom,triangle,,2D,Sortie de communication réseau de données,T001 légende affectation D
+Sortie télécom CA,telecom,triangle,,CA,Sortie de communication affectée contrôle d'accès,T001 légende affectation CA
+Sortie télécom (note),telecom,triangle,,,Sortie de communication sans affectation (notes 3 et 4 T-201),T201 notes spécifiques 3 et 4
+Sortie contrôle de volume,telecom,triangle,,,Sortie pour contrôle de volume,T001 légende câblage structuré
+Sortie microphone,telecom,triangle,,,Sortie pour microphone,T001 légende câblage structuré
+Haut-parleur — fourni par autres,telecom,triangle,,,Haut-parleur fourni et installé par le client (DR : crochets en J),T201 note spécifique 5
+Boîte de groupe sécurité BG,telecom,carre,,BG,Boîte de groupe pour système de sécurité,T001 légende sécurité
+Clavier d'intrusion CLI,telecom,carre,,CLI,Clavier de détection d'intrusion,T001 légende sécurité
+Détecteur de mouvement,telecom,cercle,,,Détecteur de mouvement (intrusion),T001 légende sécurité
+Panneau de contrôle d'accès PCA,telecom,carre,,PCA,Panneau de contrôle d'accès (fourni et installé par l'entrepreneur),T001 légende + T201 note 2
+Panneau de détection d'intrusion PDI,telecom,carre,,PDI,Panneau de détection d'intrusion,T001 légende sécurité
+Cabinet mural télécom — fourni par autres,telecom,carre,,CAB,Cabinet mural 9U fourni et installé par le client,T201 note 1 + T100 détail 3
+Barre MALT télécom (note 7),telecom,carre,,,Barre omnibus secondaire de MALT télécom fournie et installée par l'entrepreneur électricien,T201 note spécifique 7
+Porte contrôlée,telecom,carre,,P-EXT-0\d|P-1\d\d,Porte à quincaillerie électrifiée (réseau de conduits PCA/PDI; composantes selon T-101),T201 étiquettes de porte + T101 tableau des portes

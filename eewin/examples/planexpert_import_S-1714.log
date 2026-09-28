@@ -1,0 +1,31 @@
+=== 0. SYNTHETIC catalogue (composition invented for the proof; only ENS_ID/CLEPERS/DESC come from the .qpl) ===
+=== 1. Header (SOUMIS): EXTFILE = the .qpl file, UMPLAN = unit of plan measurements ===
+=== 2. One block per plan that carries a linked object (SOUBLO, BLO_ID numeric for fn_MultBlock), one division per layer (SOUDIV) ===
+=== 3. Quote copies of the catalogue: ENSEMBLE -> SOUENS, ENSCOMPO -> SOUENSCO, PRODUITS -> SOUPRO (no SQL procedure does this; the application does) ===
+=== 4. Takeoff lines (SOUREL, TYPERELEVE=P): one per plan x layer x linked group; EXT_ID = GroupID ===
+=== 5. Not importable: drawn objects whose group has no EEExchangeData (no ITEM_ID -> nothing to price) ===
+=== 6. Roll-up: sp_SOUPRO_Quantity_V2 -> SOUPRO.QTEENS / QTEOTH ===
+BLO_ID|DIV_ID|EXT_ID|TYPEITEM|ITEM_ID|DESCR|QTE|QTEUM
+------|------|------|--------|-------|-----|---|-----
+24|0|129|A|ENSCFFFDBD5146159B90|conduit 3/4 03c12|39083.0|F
+ENS_ID|ENS_ORG_ID|CLEPERS|DESC|COUUM
+------|----------|-------|----|-----
+ENSCFFFDBD5146159B90|ENSCFFFDBD5146159B90|19PE0.75 #12|SYNTHETIC conduit 3/4 03c12|F
+ENS_ID|PRO_ID|QTE|QTEUM|TYPRATIO|DIV|DIVUM
+------|------|---|-----|--------|---|-----
+ENSCFFFDBD5146159B90|ZZPE-CONDUIT|1.0|F|L|1.0|F
+ENSCFFFDBD5146159B90|ZZPE-WIRE|3.0|F|L|1.0|F
+PRO_ID|COUUM|QTEENS|QTEOTH|QTELOT|CALCTIMSTP
+------|-----|------|------|------|----------
+ZZPE-CONDUIT|CF|39083.0|0.0|0.0|20269271693343
+ZZPE-WIRE|CF|117249.0|0.0|0.0|20269271693343
+SOU_ID|EXTAPP|EXTFILE|UMPLAN|CALCTIMSTP
+------|------|-------|------|----------
+ZZTEST-PE1714| |S-1714-Dupuis-PlanExpert.qpl|F|20269271693343
+=== 7. Totals of the material takeoff (sp_SOU_CalculTotaux P, ModeCalcul=C, DoLog=1) ===
+ITEM_ID|BLO_ID|DIV_ID|TypeItem|QTE|QTEUM|COUTANBRUT|SECTION|PROFIT|TYPETAXE|MULT_BLOC|fCout|fCoutPortionTVP|fVendant|fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal|CoutantNetReel|CoutantNetSection|TempsUnitaireApprox|LandedCost|CoutantUnitaire|CoutantTotal|VendantUnitaire|VendantTotal|TaxeProv|VendantUnitaireIncluantTVP|VendantTotalIncluantTVP|TempsInstallationSection|TempsInstallationTotal
+-------|------|------|--------|---|-----|----------|-------|------|--------|---------|-----|---------------|--------|-------------|-----------------------|-------------|-----------|--------------|-----------------|-------------------|----------|---------------|------------|---------------|------------|--------|--------------------------|-----------------------|------------------------|----------------------
+ENSCFFFDBD5146159B90|24|0|A|39083.000000|F|.000000|.000000|.000000|M|1|85982.600000|-85982.600000|85982.600000|85982.600000|-85982.600000|85982.600000|.000000|2.200000|.000000|NULL|.000000|2.200000|85982.600000|2.200000|85982.600000|.000000|.000000|.000000|.000000|.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+85982.600000|-85982.600000|85982.600000|.000000

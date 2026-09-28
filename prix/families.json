@@ -1,0 +1,4810 @@
+[
+ {
+  "family": "PRISE",
+  "category": "dispositif",
+  "sous_type": "prise de courant standard (réceptacle duplex)",
+  "examples_labels": [
+   "PRISE",
+   "PRISE 15/20",
+   "prise",
+   "PRISE GFI",
+   "PRISE POELE",
+   "A PRISE",
+   "PRISE ENL",
+   "Prise GFi"
+  ],
+  "ee_codes": [
+   "LQE005029"
+  ],
+  "marks_total": 38156
+ },
+ {
+  "family": "INT",
+  "category": "dispositif",
+  "sous_type": "interrupteur (général)",
+  "examples_labels": [
+   "INT",
+   "INT 1 VOIE",
+   "INT B/V",
+   "B INT",
+   "interrupteur  15A 347V",
+   "int",
+   "INT PILOT",
+   "int 1 voie"
+  ],
+  "ee_codes": [
+   "ENSE9AC3454F2101550C",
+   "ENS70AB1935194109940",
+   "ENS8A1385CA9112E9210",
+   "ENS0A68F20F115FB1070"
+  ],
+  "marks_total": 7590
+ },
+ {
+  "family": "HAUT PARLEUR",
+  "category": "telecom_donnees",
+  "sous_type": "haut-parleur (système de sonorisation)",
+  "examples_labels": [
+   "HAUT PARLEUR",
+   "haut parleur",
+   "HAUT  PARLEUR"
+  ],
+  "ee_codes": [],
+  "marks_total": 4912
+ },
+ {
+  "family": "TH",
+  "category": "chauffage",
+  "sous_type": "thermostat de chauffage (plinthe électrique)",
+  "examples_labels": [
+   "TH",
+   "th"
+  ],
+  "ee_codes": [],
+  "marks_total": 4603
+ },
+ {
+  "family": "TEL",
+  "category": "telecom_donnees",
+  "sous_type": "sortie téléphone",
+  "examples_labels": [
+   "TEL",
+   "D TEL",
+   "B TEL",
+   "C TEL"
+  ],
+  "ee_codes": [],
+  "marks_total": 4599
+ },
+ {
+  "family": "FIXT TYPE A",
+  "category": "luminaire",
+  "sous_type": "luminaire type A",
+  "examples_labels": [
+   "FIXT TYPE A",
+   "FIXT A",
+   "fixt type a"
+  ],
+  "ee_codes": [],
+  "marks_total": 4060
+ },
+ {
+  "family": "SORTIE TEL",
+  "category": "telecom_donnees",
+  "sous_type": "sortie telephone",
+  "examples_labels": [
+   "SORTIE TEL",
+   "sortie tel",
+   "A TEL"
+  ],
+  "ee_codes": [],
+  "marks_total": 3986
+ },
+ {
+  "family": "PRISE 15A",
+  "category": "dispositif",
+  "sous_type": "prise duplex 15A",
+  "examples_labels": [
+   "Prise 15A",
+   "PRISE 15A",
+   "prise 15a"
+  ],
+  "ee_codes": [],
+  "marks_total": 3584
+ },
+ {
+  "family": "KS",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "KS"
+  ],
+  "ee_codes": [],
+  "marks_total": 2691
+ },
+ {
+  "family": "GFI",
+  "category": "dispositif",
+  "sous_type": "position GFCI (prise avec protection fuite à la terre)",
+  "examples_labels": [
+   "GFI",
+   "gfi"
+  ],
+  "ee_codes": [],
+  "marks_total": 2664
+ },
+ {
+  "family": "DETECTEUR",
+  "category": "securite_incendie",
+  "sous_type": "détecteur de fumée (générique)",
+  "examples_labels": [
+   "DETECTEUR",
+   "DETECTEUR DF1",
+   "DECT",
+   "DETECTEUR RELO",
+   "dect"
+  ],
+  "ee_codes": [],
+  "marks_total": 2653
+ },
+ {
+  "family": "ENSEIGNE SORTIE",
+  "category": "luminaire",
+  "sous_type": "enseigne lumineuse de sortie (EXIT)",
+  "examples_labels": [
+   "ENSEIGNE SORTIE",
+   "ENSEIGNE SORTIE 2T",
+   "ENL EXIT",
+   "EXIT 2 TETE",
+   "enseigne sortie"
+  ],
+  "ee_codes": [],
+  "marks_total": 2478
+ },
+ {
+  "family": "FIXT TYPE L1",
+  "category": "luminaire",
+  "sous_type": "luminaire type L1 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L1",
+   "Type L1",
+   "TYPE L1",
+   "L1",
+   "fixt type l1"
+  ],
+  "ee_codes": [],
+  "marks_total": 2474
+ },
+ {
+  "family": "THERMOSTAT",
+  "category": "dispositif",
+  "sous_type": "thermostat (type non precise)",
+  "examples_labels": [
+   "THERMOSTAT",
+   "Thermostat",
+   "A TH",
+   "thermostat"
+  ],
+  "ee_codes": [],
+  "marks_total": 2407
+ },
+ {
+  "family": "PRISE DUPLEX 15A 120V",
+  "category": "dispositif",
+  "sous_type": "prise duplex 15A 120V",
+  "examples_labels": [
+   "prise duplex 15A 120V",
+   "prise duplex 15A 120V GFI"
+  ],
+  "ee_codes": [
+   "ENS74EB26E819E18BF81",
+   "ENS904B2389107100B11",
+   "ENS9074DBC3FD84B7149"
+  ],
+  "marks_total": 2250
+ },
+ {
+  "family": "FIXT TYPE B",
+  "category": "luminaire",
+  "sous_type": "luminaire type B",
+  "examples_labels": [
+   "FIXT TYPE B",
+   "fixt type b"
+  ],
+  "ee_codes": [],
+  "marks_total": 2136
+ },
+ {
+  "family": "KLAXON",
+  "category": "securite_incendie",
+  "sous_type": "avertisseur sonore d'alarme incendie",
+  "examples_labels": [
+   "KLAXON",
+   "klaxon",
+   "Klaxon",
+   "KLAXON WP",
+   "klaxon wp"
+  ],
+  "ee_codes": [],
+  "marks_total": 2062
+ },
+ {
+  "family": "FIXT TYPE E1",
+  "category": "luminaire",
+  "sous_type": "luminaire type E1",
+  "examples_labels": [
+   "FIXT TYPE E1",
+   "TYPE E1",
+   "Type E1",
+   "fixt type e1",
+   "E1"
+  ],
+  "ee_codes": [],
+  "marks_total": 1911
+ },
+ {
+  "family": "EXIT",
+  "category": "securite_incendie",
+  "sous_type": "enseigne de sortie EXIT (éclairage d'urgence)",
+  "examples_labels": [
+   "EXIT",
+   "Exit",
+   "exit"
+  ],
+  "ee_codes": [],
+  "marks_total": 1908
+ },
+ {
+  "family": "TETE DOUBLE",
+  "category": "securite_incendie",
+  "sous_type": "luminaire de secours (batterie) à 2 têtes orientables",
+  "examples_labels": [
+   "TETE DOUBLE",
+   "tete double"
+  ],
+  "ee_codes": [],
+  "marks_total": 1900
+ },
+ {
+  "family": "FIXT TYPE D",
+  "category": "luminaire",
+  "sous_type": "luminaire type D",
+  "examples_labels": [
+   "FIXT TYPE D",
+   "FIXT D",
+   "TYPE D",
+   "fixt type d",
+   "Type D"
+  ],
+  "ee_codes": [],
+  "marks_total": 1753
+ },
+ {
+  "family": "RACCORD DIRECT",
+  "category": "dispositif",
+  "sous_type": "sortie de câblage - raccordement direct (sans prise)",
+  "examples_labels": [
+   "RACCORD DIRECT",
+   "raccord direct"
+  ],
+  "ee_codes": [],
+  "marks_total": 1724
+ },
+ {
+  "family": "PLINTHE",
+  "category": "chauffage",
+  "sous_type": "plinthe chauffante électrique (générique)",
+  "examples_labels": [
+   "1250W",
+   "500W",
+   "2000W",
+   "PLINTHE",
+   "500w",
+   "plinthe",
+   "2000w"
+  ],
+  "ee_codes": [],
+  "marks_total": 1629
+ },
+ {
+  "family": "FIXT TYPE E",
+  "category": "luminaire",
+  "sous_type": "luminaire type E",
+  "examples_labels": [
+   "FIXT TYPE E",
+   "TYPE E",
+   "Type E",
+   "fixt type e"
+  ],
+  "ee_codes": [],
+  "marks_total": 1536
+ },
+ {
+  "family": "STATION MANUEL",
+  "category": "securite_incendie",
+  "sous_type": "station manuelle d'alarme incendie (pull station)",
+  "examples_labels": [
+   "STATION MANUEL",
+   "station manuel",
+   "Station Manuel",
+   "RELO STATION",
+   "STATION WP"
+  ],
+  "ee_codes": [],
+  "marks_total": 1488
+ },
+ {
+  "family": "FIXT TYPE C",
+  "category": "luminaire",
+  "sous_type": "luminaire type C",
+  "examples_labels": [
+   "FIXT TYPE C",
+   "Type C",
+   "fixt type c",
+   "TYPE C"
+  ],
+  "ee_codes": [],
+  "marks_total": 1467
+ },
+ {
+  "family": "BOITE",
+  "category": "distribution",
+  "sous_type": "boîte électrique générique",
+  "examples_labels": [
+   "4X4",
+   "12X12",
+   "BOITE",
+   "4x4",
+   "BOITE CARRE 2-1/8PO KO 1/2-3/4PO (AI)",
+   "BOITE D 12X12X4PO CEMA1",
+   "12x12",
+   "BOITE CARRE 1-1/2PO KO 1/2-3/4PO"
+  ],
+  "ee_codes": [
+   "LQE008444",
+   "LQE008445",
+   "LQE011995",
+   "LQE010549",
+   "LQE004733",
+   "LQE011273"
+  ],
+  "marks_total": 1457
+ },
+ {
+  "family": "DETECTEUR FUMEE",
+  "category": "securite_incendie",
+  "sous_type": "detecteur de fumee",
+  "examples_labels": [
+   "DETECTEUR FUMER"
+  ],
+  "ee_codes": [],
+  "marks_total": 1404
+ },
+ {
+  "family": "SERPENTIN",
+  "category": "chauffage",
+  "sous_type": "serpentin chauffant électrique",
+  "examples_labels": [
+   "SERPENTIN",
+   "serpentin"
+  ],
+  "ee_codes": [],
+  "marks_total": 1402
+ },
+ {
+  "family": "GRADATEUR",
+  "category": "dispositif",
+  "sous_type": "gradateur d'éclairage",
+  "examples_labels": [
+   "GRADATEUR",
+   "gradateur"
+  ],
+  "ee_codes": [],
+  "marks_total": 1379
+ },
+ {
+  "family": "TEL/DATA",
+  "category": "telecom_donnees",
+  "sous_type": "sortie combinée téléphone/données",
+  "examples_labels": [
+   "tel/data",
+   "Tel/Data",
+   "TEL/DATA"
+  ],
+  "ee_codes": [
+   "ENS16390E3ECF14C14B0"
+  ],
+  "marks_total": 1329
+ },
+ {
+  "family": "1000W",
+  "category": "chauffage",
+  "sous_type": "plinthe électrique chauffante 1000W",
+  "examples_labels": [
+   "1000W",
+   "1000w",
+   "PLINTHE 1000W",
+   "Plinthe 1000W"
+  ],
+  "ee_codes": [],
+  "marks_total": 1297
+ },
+ {
+  "family": "PRISE DUPLEX 15/20A 120V",
+  "category": "dispositif",
+  "sous_type": "prise duplex 15/20A 120V",
+  "examples_labels": [
+   "PRISE 15/20A",
+   "prise duplex 15/20A 120V"
+  ],
+  "ee_codes": [
+   "ENSE03A359013913CDE1"
+  ],
+  "marks_total": 1255
+ },
+ {
+  "family": "FIXT TO REMOVE",
+  "category": "luminaire",
+  "sous_type": "luminaire existant à enlever (démolition)",
+  "examples_labels": [
+   "Fixt to Remove",
+   "Fixt to remove"
+  ],
+  "ee_codes": [],
+  "marks_total": 1140
+ },
+ {
+  "family": "FIXT ENL",
+  "category": "luminaire",
+  "sous_type": "luminaire existant à enlever (démolition)",
+  "examples_labels": [
+   "FIXT ENL",
+   "fixt enl"
+  ],
+  "ee_codes": [],
+  "marks_total": 1131
+ },
+ {
+  "family": "B1000W",
+  "category": "luminaire",
+  "sous_type": "luminaire type B, 1000W",
+  "examples_labels": [
+   "B1000W"
+  ],
+  "ee_codes": [],
+  "marks_total": 1123
+ },
+ {
+  "family": "HOTTE",
+  "category": "dispositif",
+  "sous_type": "sortie de câblage - hotte de cuisine",
+  "examples_labels": [
+   "HOTTE",
+   "Hotte",
+   "A HOTTE",
+   "D HOTTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 1109
+ },
+ {
+  "family": "SWITCH",
+  "category": "dispositif",
+  "sous_type": "interrupteur (terme anglais « switch »)",
+  "examples_labels": [
+   "Switch"
+  ],
+  "ee_codes": [],
+  "marks_total": 1092
+ },
+ {
+  "family": "DETECTEUR MOUVEMENT",
+  "category": "dispositif",
+  "sous_type": "détecteur de mouvement / capteur de présence (contrôle d'éclairage)",
+  "examples_labels": [
+   "DETECTEUR MOUVEMENT",
+   "DECT MOUV",
+   "dect mouv"
+  ],
+  "ee_codes": [],
+  "marks_total": 1079
+ },
+ {
+  "family": "HP",
+  "category": "telecom_donnees",
+  "sous_type": "haut-parleur (système de son)",
+  "examples_labels": [
+   "HP",
+   "Hp",
+   "hp"
+  ],
+  "ee_codes": [],
+  "marks_total": 1059
+ },
+ {
+  "family": "CAMERA",
+  "category": "securite_incendie",
+  "sous_type": "camera de surveillance",
+  "examples_labels": [
+   "CAMERA",
+   "CAM",
+   "Camera",
+   "RELO CAMERA",
+   "camera"
+  ],
+  "ee_codes": [],
+  "marks_total": 1018
+ },
+ {
+  "family": "FIXT TYPE A1",
+  "category": "luminaire",
+  "sous_type": "luminaire type A1",
+  "examples_labels": [
+   "FIXT TYPE A1",
+   "fixt type a1"
+  ],
+  "ee_codes": [],
+  "marks_total": 974
+ },
+ {
+  "family": "FIXT TYPE L6",
+  "category": "luminaire",
+  "sous_type": "luminaire type L6",
+  "examples_labels": [
+   "FIXT TYPE L6"
+  ],
+  "ee_codes": [],
+  "marks_total": 970
+ },
+ {
+  "family": "PRISE 15A 125V",
+  "category": "dispositif",
+  "sous_type": "prise duplex 15A/125V standard",
+  "examples_labels": [
+   "PRISE 15A 125V"
+  ],
+  "ee_codes": [],
+  "marks_total": 951
+ },
+ {
+  "family": "FIXT TYPE L3",
+  "category": "luminaire",
+  "sous_type": "luminaire type L3",
+  "examples_labels": [
+   "FIXT TYPE L3",
+   "TYPE L3",
+   "Type L3",
+   "fixt type l3"
+  ],
+  "ee_codes": [],
+  "marks_total": 931
+ },
+ {
+  "family": "STROB",
+  "category": "securite_incendie",
+  "sous_type": "stroboscope d'alarme incendie",
+  "examples_labels": [
+   "STROB"
+  ],
+  "ee_codes": [],
+  "marks_total": 927
+ },
+ {
+  "family": "INT ENL",
+  "category": "dispositif",
+  "sous_type": "interrupteur existant à enlever (démolition)",
+  "examples_labels": [
+   "int enl",
+   "INT ENL"
+  ],
+  "ee_codes": [],
+  "marks_total": 893
+ },
+ {
+  "family": "INTERRUPTEUR",
+  "category": "dispositif",
+  "sous_type": "interrupteur mural standard (unipolaire)",
+  "examples_labels": [
+   "INT 3 VOIE",
+   "3VOIE",
+   "INTERRUPTEUR",
+   "interrupteur"
+  ],
+  "ee_codes": [],
+  "marks_total": 890
+ },
+ {
+  "family": "STRIP",
+  "category": "luminaire",
+  "sous_type": "luminaire de type réglette/strip linéaire",
+  "examples_labels": [
+   "STRIP",
+   "strip"
+  ],
+  "ee_codes": [],
+  "marks_total": 886
+ },
+ {
+  "family": "RELAIS",
+  "category": "autre",
+  "sous_type": "relais de commande électrique (application précise incertaine)",
+  "examples_labels": [
+   "RELAIS"
+  ],
+  "ee_codes": [],
+  "marks_total": 885
+ },
+ {
+  "family": "B300W",
+  "category": "luminaire",
+  "sous_type": "luminaire type B, désigné par puissance (300W)",
+  "examples_labels": [
+   "B300W"
+  ],
+  "ee_codes": [],
+  "marks_total": 858
+ },
+ {
+  "family": "TV",
+  "category": "telecom_donnees",
+  "sous_type": "sortie/prise TV (câble ou antenne)",
+  "examples_labels": [
+   "TV",
+   "D TV",
+   "A TV",
+   "C TV",
+   "tv"
+  ],
+  "ee_codes": [],
+  "marks_total": 854
+ },
+ {
+  "family": "FIXT TYPE L2",
+  "category": "luminaire",
+  "sous_type": "luminaire type L2",
+  "examples_labels": [
+   "FIXT TYPE L2",
+   "Type L2",
+   "TYPE L2",
+   "FIXT TYPE   L2",
+   "FIXT  TYPE L2",
+   "fixt type l2"
+  ],
+  "ee_codes": [],
+  "marks_total": 847
+ },
+ {
+  "family": "FIXT TYPE F",
+  "category": "luminaire",
+  "sous_type": "luminaire type F",
+  "examples_labels": [
+   "FIXT TYPE F",
+   "fixt type f"
+  ],
+  "ee_codes": [],
+  "marks_total": 828
+ },
+ {
+  "family": "MA",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "MA"
+  ],
+  "ee_codes": [],
+  "marks_total": 790
+ },
+ {
+  "family": "PRISE SECHEUSE",
+  "category": "dispositif",
+  "sous_type": "prise secheuse 240V",
+  "examples_labels": [
+   "PRISE SECHEUSE",
+   "Prise Secheuse",
+   "B SECHEUSE",
+   "prise secheuse"
+  ],
+  "ee_codes": [],
+  "marks_total": 777
+ },
+ {
+  "family": "DETECTEUR GAINE",
+  "category": "securite_incendie",
+  "sous_type": "détecteur de fumée de gaine (conduit CVAC)",
+  "examples_labels": [
+   "DETECTEUR GAINE",
+   "detecteur gaine"
+  ],
+  "ee_codes": [],
+  "marks_total": 763
+ },
+ {
+  "family": "COND",
+  "category": "distribution",
+  "sous_type": "conduit électrique (canalisation)",
+  "examples_labels": [
+   "COND"
+  ],
+  "ee_codes": [],
+  "marks_total": 745
+ },
+ {
+  "family": "HORN",
+  "category": "securite_incendie",
+  "sous_type": "avertisseur sonore d'alarme (horn)",
+  "examples_labels": [
+   "HORN",
+   "HORN RELO"
+  ],
+  "ee_codes": [],
+  "marks_total": 740
+ },
+ {
+  "family": "P",
+  "category": "indetermine",
+  "sous_type": "lettre seule ambiguë (repère ou fixture « P »?)",
+  "examples_labels": [
+   "P",
+   "p"
+  ],
+  "ee_codes": [],
+  "marks_total": 696
+ },
+ {
+  "family": "300W",
+  "category": "chauffage",
+  "sous_type": "plinthe électrique chauffante 300W",
+  "examples_labels": [
+   "300W"
+  ],
+  "ee_codes": [],
+  "marks_total": 687
+ },
+ {
+  "family": "FIXT TYPE G",
+  "category": "luminaire",
+  "sous_type": "luminaire type G",
+  "examples_labels": [
+   "FIXT TYPE G",
+   "TYPE G",
+   "G",
+   "Type G",
+   "g",
+   "fixt type G",
+   "fixt type g"
+  ],
+  "ee_codes": [],
+  "marks_total": 672
+ },
+ {
+  "family": "8X8",
+  "category": "distribution",
+  "sous_type": "boîte électrique 8x8 po",
+  "examples_labels": [
+   "8X8",
+   "8x8"
+  ],
+  "ee_codes": [],
+  "marks_total": 652
+ },
+ {
+  "family": "BATTERIE UNIT",
+  "category": "securite_incendie",
+  "sous_type": "unite de batterie de secours (urgence)",
+  "examples_labels": [
+   "TETE SIMPLE",
+   "BATTERIE UNIT",
+   "tete simple",
+   "batterie unit"
+  ],
+  "ee_codes": [],
+  "marks_total": 652
+ },
+ {
+  "family": "DISCONN",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur (disconnect), générique",
+  "examples_labels": [
+   "30A NF",
+   "DISCONN",
+   "DISCONN 30A NF",
+   "disconn 30a nf"
+  ],
+  "ee_codes": [],
+  "marks_total": 631
+ },
+ {
+  "family": "TYPE B",
+  "category": "luminaire",
+  "sous_type": "luminaire type B (forme abregee probable)",
+  "examples_labels": [
+   "TYPE B",
+   "Type B"
+  ],
+  "ee_codes": [],
+  "marks_total": 622
+ },
+ {
+  "family": "ENCASTRE",
+  "category": "luminaire",
+  "sous_type": "luminaire encastré (pot lumineux)",
+  "examples_labels": [
+   "ENCASTRE",
+   "encastre"
+  ],
+  "ee_codes": [],
+  "marks_total": 611
+ },
+ {
+  "family": "1500W",
+  "category": "luminaire",
+  "sous_type": "luminaire coté par puissance, 1500W",
+  "examples_labels": [
+   "1500W"
+  ],
+  "ee_codes": [],
+  "marks_total": 587
+ },
+ {
+  "family": "FIXT TYPE L8",
+  "category": "luminaire",
+  "sous_type": "luminaire type L8",
+  "examples_labels": [
+   "FIXT TYPE L8",
+   "TYPE L8",
+   "Type L8"
+  ],
+  "ee_codes": [],
+  "marks_total": 574
+ },
+ {
+  "family": "LAMPE TEMOIN",
+  "category": "dispositif",
+  "sous_type": "lampe témoin (voyant de signalisation)",
+  "examples_labels": [
+   "LAMPE TEMOIN"
+  ],
+  "ee_codes": [],
+  "marks_total": 559
+ },
+ {
+  "family": "A",
+  "category": "indetermine",
+  "sous_type": "lettre isolee non resolue",
+  "examples_labels": [
+   "A",
+   "a"
+  ],
+  "ee_codes": [],
+  "marks_total": 555
+ },
+ {
+  "family": "ECH",
+  "category": "indetermine",
+  "sous_type": "sens incertain (échangeur d'air? ou variante de 'ECL'/éclairage?)",
+  "examples_labels": [
+   "ECH"
+  ],
+  "ee_codes": [],
+  "marks_total": 541
+ },
+ {
+  "family": "FIXT TYPE L4",
+  "category": "luminaire",
+  "sous_type": "luminaire type L4",
+  "examples_labels": [
+   "FIXT TYPE L4",
+   "fixt type l4"
+  ],
+  "ee_codes": [],
+  "marks_total": 525
+ },
+ {
+  "family": "FIXT TYPE E2",
+  "category": "luminaire",
+  "sous_type": "luminaire type E2",
+  "examples_labels": [
+   "FIXT TYPE E2",
+   "fixt type e2"
+  ],
+  "ee_codes": [],
+  "marks_total": 499
+ },
+ {
+  "family": "KLAXON STROB",
+  "category": "securite_incendie",
+  "sous_type": "appareil combiné klaxon et stroboscope",
+  "examples_labels": [
+   "KLAXON STROB",
+   "HORN STROB",
+   "klaxon strob"
+  ],
+  "ee_codes": [],
+  "marks_total": 496
+ },
+ {
+  "family": "B1250W",
+  "category": "luminaire",
+  "sous_type": "luminaire série/préfixe B, 1250W",
+  "examples_labels": [
+   "B1250W"
+  ],
+  "ee_codes": [],
+  "marks_total": 495
+ },
+ {
+  "family": "LECTEUR CARTE",
+  "category": "securite_incendie",
+  "sous_type": "lecteur de carte d'accès",
+  "examples_labels": [
+   "LECTEUR CARTE",
+   "LECTEUR",
+   "lecteur carte"
+  ],
+  "ee_codes": [],
+  "marks_total": 484
+ },
+ {
+  "family": "FIXT TYPE I",
+  "category": "luminaire",
+  "sous_type": "luminaire type I",
+  "examples_labels": [
+   "FIXT TYPE I",
+   "I",
+   "fixt type i",
+   "i"
+  ],
+  "ee_codes": [],
+  "marks_total": 473
+ },
+ {
+  "family": "FIXT TYPE H",
+  "category": "luminaire",
+  "sous_type": "luminaire type H (selon légende du plan)",
+  "examples_labels": [
+   "FIXT TYPE H"
+  ],
+  "ee_codes": [],
+  "marks_total": 473
+ },
+ {
+  "family": "PRISE WP",
+  "category": "dispositif",
+  "sous_type": "prise etanche exterieure (weatherproof)",
+  "examples_labels": [
+   "PRISE WP",
+   "prise wp"
+  ],
+  "ee_codes": [],
+  "marks_total": 466
+ },
+ {
+  "family": "FIXT TYPE B1",
+  "category": "luminaire",
+  "sous_type": "luminaire type B1",
+  "examples_labels": [
+   "FIXT TYPE B1"
+  ],
+  "ee_codes": [],
+  "marks_total": 464
+ },
+ {
+  "family": "TYPE A",
+  "category": "luminaire",
+  "sous_type": "luminaire type A (forme abregee probable)",
+  "examples_labels": [
+   "Type A",
+   "TYPE A"
+  ],
+  "ee_codes": [],
+  "marks_total": 446
+ },
+ {
+  "family": "FIXT TYPE L10",
+  "category": "luminaire",
+  "sous_type": "luminaire type L10 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L10"
+  ],
+  "ee_codes": [],
+  "marks_total": 436
+ },
+ {
+  "family": "FIXT TYPE D1",
+  "category": "luminaire",
+  "sous_type": "luminaire type D1",
+  "examples_labels": [
+   "FIXT TYPE D1"
+  ],
+  "ee_codes": [],
+  "marks_total": 410
+ },
+ {
+  "family": "FIXT TYPE J2",
+  "category": "luminaire",
+  "sous_type": "luminaire type J2",
+  "examples_labels": [
+   "FIXT TYPE J2"
+  ],
+  "ee_codes": [],
+  "marks_total": 409
+ },
+ {
+  "family": "FIXT TYPE C1",
+  "category": "luminaire",
+  "sous_type": "luminaire type C1",
+  "examples_labels": [
+   "FIXT TYPE C1",
+   "Type C1",
+   "TYPE C1"
+  ],
+  "ee_codes": [],
+  "marks_total": 399
+ },
+ {
+  "family": "FIXT TYPE L5",
+  "category": "luminaire",
+  "sous_type": "luminaire type L5 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L5"
+  ],
+  "ee_codes": [],
+  "marks_total": 387
+ },
+ {
+  "family": "DM",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "DM"
+  ],
+  "ee_codes": [],
+  "marks_total": 385
+ },
+ {
+  "family": "MONUMENT PLANCHER",
+  "category": "dispositif",
+  "sous_type": "boîtier de plancher (monument) avec prises",
+  "examples_labels": [
+   "MONUMENT PLANCHER",
+   "monument plancher"
+  ],
+  "ee_codes": [],
+  "marks_total": 384
+ },
+ {
+  "family": "FIXT TYPE T1",
+  "category": "luminaire",
+  "sous_type": "luminaire type T1 (abrégé)",
+  "examples_labels": [
+   "FIXT TYPE T1",
+   "T1"
+  ],
+  "ee_codes": [],
+  "marks_total": 380
+ },
+ {
+  "family": "POELE",
+  "category": "dispositif",
+  "sous_type": "sortie de câblage - cuisinière électrique",
+  "examples_labels": [
+   "POELE",
+   "B POELE"
+  ],
+  "ee_codes": [],
+  "marks_total": 378
+ },
+ {
+  "family": "PRISE 20A",
+  "category": "dispositif",
+  "sous_type": "prise duplex 20A",
+  "examples_labels": [
+   "Prise 20A",
+   "PRISE 20A",
+   "prise 20a"
+  ],
+  "ee_codes": [],
+  "marks_total": 375
+ },
+ {
+  "family": "52171",
+  "category": "indetermine",
+  "sous_type": "code numérique à 5 chiffres (catalogue?)",
+  "examples_labels": [
+   "52171"
+  ],
+  "ee_codes": [],
+  "marks_total": 365
+ },
+ {
+  "family": "FIXT TYPE A2",
+  "category": "luminaire",
+  "sous_type": "luminaire type A2",
+  "examples_labels": [
+   "FIXT TYPE A2"
+  ],
+  "ee_codes": [],
+  "marks_total": 365
+ },
+ {
+  "family": "RACCORD PARTITION",
+  "category": "dispositif",
+  "sous_type": "raccordement électrique dans cloison/partition",
+  "examples_labels": [
+   "RACCORD PARTITION"
+  ],
+  "ee_codes": [],
+  "marks_total": 363
+ },
+ {
+  "family": "FIXT TYPE 2X4",
+  "category": "luminaire",
+  "sous_type": "luminaire encastré 2x4 pieds (tuile de plafond)",
+  "examples_labels": [
+   "FIXT TYPE 2X4",
+   "FIXT  TYPE 2X4"
+  ],
+  "ee_codes": [],
+  "marks_total": 362
+ },
+ {
+  "family": "BOITE RACCORD",
+  "category": "distribution",
+  "sous_type": "boîte de raccordement/jonction",
+  "examples_labels": [
+   "6x6x4",
+   "BOITE RACCORD",
+   "6X6X4",
+   "boite raccord"
+  ],
+  "ee_codes": [],
+  "marks_total": 346
+ },
+ {
+  "family": "FIXT TYPE D2",
+  "category": "luminaire",
+  "sous_type": "luminaire type D2",
+  "examples_labels": [
+   "FIXT TYPE D2"
+  ],
+  "ee_codes": [],
+  "marks_total": 339
+ },
+ {
+  "family": "FIXT TYPE L9",
+  "category": "luminaire",
+  "sous_type": "luminaire type L9 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L9",
+   "FIXT TYPE  L9"
+  ],
+  "ee_codes": [],
+  "marks_total": 336
+ },
+ {
+  "family": "FIXT TYPE J",
+  "category": "luminaire",
+  "sous_type": "luminaire type J",
+  "examples_labels": [
+   "FIXT TYPE J",
+   "TYPE J",
+   "Type J",
+   "fixt type j"
+  ],
+  "ee_codes": [],
+  "marks_total": 310
+ },
+ {
+  "family": "WIFI",
+  "category": "telecom_donnees",
+  "sous_type": "point d'accès Wi-Fi",
+  "examples_labels": [
+   "WIFI",
+   "Wifi",
+   "wifi"
+  ],
+  "ee_codes": [],
+  "marks_total": 309
+ },
+ {
+  "family": "FIXT TYPE 1",
+  "category": "luminaire",
+  "sous_type": "luminaire type 1 (numérotation numérique)",
+  "examples_labels": [
+   "FIXT TYPE 1"
+  ],
+  "ee_codes": [],
+  "marks_total": 307
+ },
+ {
+  "family": "FIXT TYPE L1A",
+  "category": "luminaire",
+  "sous_type": "luminaire type L1A",
+  "examples_labels": [
+   "FIXT TYPE L1A"
+  ],
+  "ee_codes": [],
+  "marks_total": 299
+ },
+ {
+  "family": "FIXT TYPE D4",
+  "category": "luminaire",
+  "sous_type": "luminaire type D4",
+  "examples_labels": [
+   "FIXT TYPE D4"
+  ],
+  "ee_codes": [],
+  "marks_total": 298
+ },
+ {
+  "family": "FIXT TYPE L7",
+  "category": "luminaire",
+  "sous_type": "luminaire type L7 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L7"
+  ],
+  "ee_codes": [],
+  "marks_total": 291
+ },
+ {
+  "family": "FIXT TYPE R1",
+  "category": "luminaire",
+  "sous_type": "luminaire type R1",
+  "examples_labels": [
+   "FIXT TYPE R1"
+  ],
+  "ee_codes": [],
+  "marks_total": 283
+ },
+ {
+  "family": "RA",
+  "category": "indetermine",
+  "sous_type": "abréviation ambiguë (signification incertaine)",
+  "examples_labels": [
+   "RA",
+   "ra"
+  ],
+  "ee_codes": [],
+  "marks_total": 277
+ },
+ {
+  "family": "750W",
+  "category": "luminaire",
+  "sous_type": "luminaire coté par puissance, 750W",
+  "examples_labels": [
+   "750W"
+  ],
+  "ee_codes": [],
+  "marks_total": 254
+ },
+ {
+  "family": "30A NF WP",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur 30A non-fusible étanche (WP)",
+  "examples_labels": [
+   "30A NF WP",
+   "30A   NF WP"
+  ],
+  "ee_codes": [],
+  "marks_total": 251
+ },
+ {
+  "family": "12X12X4",
+  "category": "distribution",
+  "sous_type": "boîte de jonction 12x12x4 po",
+  "examples_labels": [
+   "12X12X4",
+   "12x12x4"
+  ],
+  "ee_codes": [],
+  "marks_total": 251
+ },
+ {
+  "family": "STATION",
+  "category": "securite_incendie",
+  "sous_type": "station manuelle d'alarme incendie",
+  "examples_labels": [
+   "STATION",
+   "STATION RELO",
+   "station"
+  ],
+  "ee_codes": [],
+  "marks_total": 250
+ },
+ {
+  "family": "MIA",
+  "category": "indetermine",
+  "sous_type": "signification inconnue",
+  "examples_labels": [
+   "MIA"
+  ],
+  "ee_codes": [],
+  "marks_total": 249
+ },
+ {
+  "family": "B750W",
+  "category": "chauffage",
+  "sous_type": "plinthe électrique chauffante 750W (série/type B)",
+  "examples_labels": [
+   "B750W",
+   "b750w"
+  ],
+  "ee_codes": [],
+  "marks_total": 242
+ },
+ {
+  "family": "CONDENSEUR",
+  "category": "mecanique_moteur",
+  "sous_type": "unite condenseur (climatisation)",
+  "examples_labels": [
+   "CONDENSEUR"
+  ],
+  "ee_codes": [],
+  "marks_total": 240
+ },
+ {
+  "family": "2#12 CONN",
+  "category": "autre",
+  "sous_type": "connexion filaire 2 conducteurs #12 AWG",
+  "examples_labels": [
+   "2#12 Conn"
+  ],
+  "ee_codes": [],
+  "marks_total": 240
+ },
+ {
+  "family": "FIXT TYPE E3",
+  "category": "luminaire",
+  "sous_type": "luminaire type E3 (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE E3",
+   "fixt type e3"
+  ],
+  "ee_codes": [],
+  "marks_total": 238
+ },
+ {
+  "family": "MRA",
+  "category": "indetermine",
+  "sous_type": "abréviation non identifiée (MRA)",
+  "examples_labels": [
+   "MRA"
+  ],
+  "ee_codes": [],
+  "marks_total": 230
+ },
+ {
+  "family": "FIXT TYPE L",
+  "category": "luminaire",
+  "sous_type": "luminaire type L (sans numéro)",
+  "examples_labels": [
+   "FIXT TYPE L",
+   "fixt type l"
+  ],
+  "ee_codes": [],
+  "marks_total": 229
+ },
+ {
+  "family": "B500W",
+  "category": "luminaire",
+  "sous_type": "luminaire type B, désigné par puissance (500W)",
+  "examples_labels": [
+   "B500W"
+  ],
+  "ee_codes": [],
+  "marks_total": 229
+ },
+ {
+  "family": "GFI WP",
+  "category": "dispositif",
+  "sous_type": "prise GFI extérieure étanche",
+  "examples_labels": [
+   "GFI WP"
+  ],
+  "ee_codes": [],
+  "marks_total": 216
+ },
+ {
+  "family": "GACHE",
+  "category": "securite_incendie",
+  "sous_type": "gâche électrique de porte (contrôle d'accès)",
+  "examples_labels": [
+   "GACHE"
+  ],
+  "ee_codes": [],
+  "marks_total": 214
+ },
+ {
+  "family": "PORTE",
+  "category": "indetermine",
+  "sous_type": "porte (fonction électrique non précisée)",
+  "examples_labels": [
+   "PORTE",
+   "porte"
+  ],
+  "ee_codes": [],
+  "marks_total": 214
+ },
+ {
+  "family": "DETECTEUR A FUMER",
+  "category": "securite_incendie",
+  "sous_type": "détecteur de fumée (avertisseur incendie)",
+  "examples_labels": [
+   "DETECTEUR A FUMER"
+  ],
+  "ee_codes": [],
+  "marks_total": 212
+ },
+ {
+  "family": "BATTERIE UNIT 2T",
+  "category": "securite_incendie",
+  "sous_type": "unité de batterie pour éclairage d'urgence (2 têtes)",
+  "examples_labels": [
+   "BATTERIE UNIT 2T"
+  ],
+  "ee_codes": [],
+  "marks_total": 212
+ },
+ {
+  "family": "EVAPORATEUR",
+  "category": "autre",
+  "sous_type": "évaporateur (raccordement électrique, équipement CVAC/réfrigération)",
+  "examples_labels": [
+   "EVAPORATEUR"
+  ],
+  "ee_codes": [],
+  "marks_total": 211
+ },
+ {
+  "family": "FIXT TYPE L12",
+  "category": "luminaire",
+  "sous_type": "luminaire type L12",
+  "examples_labels": [
+   "FIXT TYPE L12"
+  ],
+  "ee_codes": [],
+  "marks_total": 208
+ },
+ {
+  "family": "FIXT TYPE S1",
+  "category": "luminaire",
+  "sous_type": "luminaire type S1",
+  "examples_labels": [
+   "FIXT TYPE S1"
+  ],
+  "ee_codes": [],
+  "marks_total": 207
+ },
+ {
+  "family": "VE",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "VE",
+   "ve"
+  ],
+  "ee_codes": [],
+  "marks_total": 206
+ },
+ {
+  "family": "8X8X4",
+  "category": "distribution",
+  "sous_type": "boîte de jonction 8x8x4 po",
+  "examples_labels": [
+   "8x8x4",
+   "8X8X4"
+  ],
+  "ee_codes": [],
+  "marks_total": 201
+ },
+ {
+  "family": "CLOCHE",
+  "category": "securite_incendie",
+  "sous_type": "cloche d'alarme incendie",
+  "examples_labels": [
+   "CLOCHE",
+   "Cloche"
+  ],
+  "ee_codes": [],
+  "marks_total": 198
+ },
+ {
+  "family": "FIXT TYPE B3",
+  "category": "luminaire",
+  "sous_type": "luminaire type B3",
+  "examples_labels": [
+   "FIXT TYPE B3"
+  ],
+  "ee_codes": [],
+  "marks_total": 197
+ },
+ {
+  "family": "FIXT TYPE 2X2",
+  "category": "luminaire",
+  "sous_type": "luminaire encastre 2x2 (dalle de plafond)",
+  "examples_labels": [
+   "FIXT TYPE 2X2"
+  ],
+  "ee_codes": [],
+  "marks_total": 191
+ },
+ {
+  "family": "HP RELO",
+  "category": "telecom_donnees",
+  "sous_type": "haut-parleur relocalise",
+  "examples_labels": [
+   "HP RELO",
+   "RELO HP",
+   "relo hp"
+  ],
+  "ee_codes": [],
+  "marks_total": 189
+ },
+ {
+  "family": "FIXT TYPE D3",
+  "category": "luminaire",
+  "sous_type": "luminaire type D3",
+  "examples_labels": [
+   "FIXT TYPE D3"
+  ],
+  "ee_codes": [],
+  "marks_total": 188
+ },
+ {
+  "family": "FIXT TYPE L14",
+  "category": "luminaire",
+  "sous_type": "luminaire type L14 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L14",
+   "fixt type l14"
+  ],
+  "ee_codes": [],
+  "marks_total": 184
+ },
+ {
+  "family": "FIXT TYPE S3",
+  "category": "luminaire",
+  "sous_type": "luminaire type S3",
+  "examples_labels": [
+   "FIXT TYPE S3"
+  ],
+  "ee_codes": [],
+  "marks_total": 183
+ },
+ {
+  "family": "INT DECT",
+  "category": "dispositif",
+  "sous_type": "interrupteur avec détecteur de mouvement",
+  "examples_labels": [
+   "INT DECT"
+  ],
+  "ee_codes": [],
+  "marks_total": 183
+ },
+ {
+  "family": "DETECTEUR PRESENCE",
+  "category": "securite_incendie",
+  "sous_type": "détecteur de présence (sécurité/mouvement)",
+  "examples_labels": [
+   "DETECTEUR PRESENCE"
+  ],
+  "ee_codes": [],
+  "marks_total": 182
+ },
+ {
+  "family": "DD",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "DD"
+  ],
+  "ee_codes": [],
+  "marks_total": 182
+ },
+ {
+  "family": "FIXT TYPE L11",
+  "category": "luminaire",
+  "sous_type": "luminaire type L11 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L11"
+  ],
+  "ee_codes": [],
+  "marks_total": 178
+ },
+ {
+  "family": "DV",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "DV"
+  ],
+  "ee_codes": [],
+  "marks_total": 177
+ },
+ {
+  "family": "DETECTEUR MOUV",
+  "category": "securite_incendie",
+  "sous_type": "détecteur de mouvement (sécurité)",
+  "examples_labels": [
+   "DETECTEUR MOUV",
+   "DECT MOUVEMENT"
+  ],
+  "ee_codes": [],
+  "marks_total": 176
+ },
+ {
+  "family": "FIXT TYPE K",
+  "category": "luminaire",
+  "sous_type": "luminaire type K",
+  "examples_labels": [
+   "FIXT TYPE K",
+   "TYPE K",
+   "Type K",
+   "fixt type k"
+  ],
+  "ee_codes": [],
+  "marks_total": 176
+ },
+ {
+  "family": "FIXT TYPE M",
+  "category": "luminaire",
+  "sous_type": "luminaire type M (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE M",
+   "TYPE M",
+   "fixt type m",
+   "Type M"
+  ],
+  "ee_codes": [],
+  "marks_total": 174
+ },
+ {
+  "family": "HDMI",
+  "category": "telecom_donnees",
+  "sous_type": "sortie HDMI (signal vidéo)",
+  "examples_labels": [
+   "HDMI"
+  ],
+  "ee_codes": [],
+  "marks_total": 172
+ },
+ {
+  "family": "BORNE DE RECHARGE",
+  "category": "autre",
+  "sous_type": "borne de recharge pour véhicule électrique",
+  "examples_labels": [
+   "BORNE RECHARGE",
+   "BORNE DE RECHARGE"
+  ],
+  "ee_codes": [],
+  "marks_total": 169
+ },
+ {
+  "family": "FIXT TYPE X1",
+  "category": "luminaire",
+  "sous_type": "luminaire type X1",
+  "examples_labels": [
+   "FIXT TYPE X1"
+  ],
+  "ee_codes": [],
+  "marks_total": 169
+ },
+ {
+  "family": "MODULE ADRESSABLE",
+  "category": "securite_incendie",
+  "sous_type": "module adressable (boucle d'alarme incendie)",
+  "examples_labels": [
+   "MODULE ADRESSABLE"
+  ],
+  "ee_codes": [],
+  "marks_total": 167
+ },
+ {
+  "family": "DETECTEUR COMBUSTION",
+  "category": "securite_incendie",
+  "sous_type": "détecteur de combustion (CO/gaz)",
+  "examples_labels": [
+   "DETECTEUR COMBUSTION",
+   "detecteur combustion"
+  ],
+  "ee_codes": [],
+  "marks_total": 165
+ },
+ {
+  "family": "S",
+  "category": "indetermine",
+  "sous_type": "lettre seule, sens incertain",
+  "examples_labels": [
+   "S",
+   "s"
+  ],
+  "ee_codes": [],
+  "marks_total": 165
+ },
+ {
+  "family": "1/2 EMT 3#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1/2 po, 3 conducteurs #12 (Line traces; source spec '1/2 3c12')",
+  "examples_labels": [
+   "1/2 3c12"
+  ],
+  "ee_codes": [
+   "ENS0F6D73D2173137FF0"
+  ],
+  "marks_total": 160
+ },
+ {
+  "family": "SORTIE TV",
+  "category": "telecom_donnees",
+  "sous_type": "sortie coaxiale pour téléviseur",
+  "examples_labels": [
+   "SORTIE TV"
+  ],
+  "ee_codes": [],
+  "marks_total": 159
+ },
+ {
+  "family": "FIXT TYPE X",
+  "category": "luminaire",
+  "sous_type": "luminaire type X",
+  "examples_labels": [
+   "FIXT TYPE X"
+  ],
+  "ee_codes": [],
+  "marks_total": 158
+ },
+ {
+  "family": "FIXT TYPE C3",
+  "category": "luminaire",
+  "sous_type": "luminaire type C3",
+  "examples_labels": [
+   "FIXT TYPE C3"
+  ],
+  "ee_codes": [],
+  "marks_total": 157
+ },
+ {
+  "family": "FIXT TYPE F1",
+  "category": "luminaire",
+  "sous_type": "luminaire type F1",
+  "examples_labels": [
+   "FIXT TYPE F1"
+  ],
+  "ee_codes": [],
+  "marks_total": 154
+ },
+ {
+  "family": "B PRISE",
+  "category": "dispositif",
+  "sous_type": "prise, variante/série B",
+  "examples_labels": [
+   "B PRISE"
+  ],
+  "ee_codes": [],
+  "marks_total": 153
+ },
+ {
+  "family": "FIXT TYPE N",
+  "category": "luminaire",
+  "sous_type": "luminaire type N",
+  "examples_labels": [
+   "FIXT TYPE N",
+   "N",
+   "n"
+  ],
+  "ee_codes": [],
+  "marks_total": 152
+ },
+ {
+  "family": "MINI KLAXON",
+  "category": "securite_incendie",
+  "sous_type": "mini-klaxon (avertisseur sonore d'alarme)",
+  "examples_labels": [
+   "MINI KLAXON",
+   "mini klaxon"
+  ],
+  "ee_codes": [],
+  "marks_total": 144
+ },
+ {
+  "family": "FIXT TYPE E5",
+  "category": "luminaire",
+  "sous_type": "luminaire type E5",
+  "examples_labels": [
+   "FIXT TYPE E5"
+  ],
+  "ee_codes": [],
+  "marks_total": 143
+ },
+ {
+  "family": "B",
+  "category": "indetermine",
+  "sous_type": "lettre seule, sens incertain",
+  "examples_labels": [
+   "B",
+   "b"
+  ],
+  "ee_codes": [],
+  "marks_total": 143
+ },
+ {
+  "family": "FIXT TYPE C2",
+  "category": "luminaire",
+  "sous_type": "luminaire type C2",
+  "examples_labels": [
+   "FIXT TYPE C2"
+  ],
+  "ee_codes": [],
+  "marks_total": 142
+ },
+ {
+  "family": "PANN",
+  "category": "distribution",
+  "sous_type": "panneau électrique de distribution",
+  "examples_labels": [
+   "PANN"
+  ],
+  "ee_codes": [],
+  "marks_total": 141
+ },
+ {
+  "family": "PP",
+  "category": "indetermine",
+  "sous_type": "sigle de 2 lettres, sens incertain",
+  "examples_labels": [
+   "PP"
+  ],
+  "ee_codes": [],
+  "marks_total": 141
+ },
+ {
+  "family": "PRISE IG",
+  "category": "dispositif",
+  "sous_type": "prise avec mise à la terre isolée (IG)",
+  "examples_labels": [
+   "PRISE IG"
+  ],
+  "ee_codes": [],
+  "marks_total": 140
+ },
+ {
+  "family": "FIXT TYPE P1",
+  "category": "luminaire",
+  "sous_type": "luminaire type P1 (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE P1"
+  ],
+  "ee_codes": [],
+  "marks_total": 135
+ },
+ {
+  "family": "CONTACT PORTE",
+  "category": "securite_incendie",
+  "sous_type": "contact de porte (alarme/intrusion)",
+  "examples_labels": [
+   "CONTACT PORTE",
+   "contact porte"
+  ],
+  "ee_codes": [],
+  "marks_total": 134
+ },
+ {
+  "family": "TRIAC",
+  "category": "dispositif",
+  "sous_type": "module de gradation (relais triac)",
+  "examples_labels": [
+   "TRIAC"
+  ],
+  "ee_codes": [],
+  "marks_total": 133
+ },
+ {
+  "family": "FIXT TYPE N1",
+  "category": "luminaire",
+  "sous_type": "luminaire type N1",
+  "examples_labels": [
+   "FIXT TYPE N1"
+  ],
+  "ee_codes": [],
+  "marks_total": 131
+ },
+ {
+  "family": "FIXT TYPE R",
+  "category": "luminaire",
+  "sous_type": "luminaire type R",
+  "examples_labels": [
+   "FIXT TYPE R"
+  ],
+  "ee_codes": [],
+  "marks_total": 130
+ },
+ {
+  "family": "VC",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "VC"
+  ],
+  "ee_codes": [],
+  "marks_total": 129
+ },
+ {
+  "family": "PULL BOX",
+  "category": "distribution",
+  "sous_type": "boîte de tirage (pull box)",
+  "examples_labels": [
+   "PULL BOX"
+  ],
+  "ee_codes": [],
+  "marks_total": 128
+ },
+ {
+  "family": "WF1500W",
+  "category": "luminaire",
+  "sous_type": "luminaire type WF, 1500W (probable)",
+  "examples_labels": [
+   "WF1500W",
+   "wf1500w"
+  ],
+  "ee_codes": [],
+  "marks_total": 128
+ },
+ {
+  "family": "FIXT TYPE L15",
+  "category": "luminaire",
+  "sous_type": "luminaire type L15 (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L15"
+  ],
+  "ee_codes": [],
+  "marks_total": 126
+ },
+ {
+  "family": "K",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "K",
+   "k1",
+   "K1",
+   "k"
+  ],
+  "ee_codes": [],
+  "marks_total": 126
+ },
+ {
+  "family": "TEL POMPIER",
+  "category": "securite_incendie",
+  "sous_type": "téléphone d'intervention pompier",
+  "examples_labels": [
+   "TEL POMPIER"
+  ],
+  "ee_codes": [],
+  "marks_total": 124
+ },
+ {
+  "family": "RELAIS ADRESSABLE",
+  "category": "securite_incendie",
+  "sous_type": "relais adressable (système d'alarme incendie)",
+  "examples_labels": [
+   "RELAIS ADRESSABLE",
+   "Relais Adressable",
+   "relais adressable"
+  ],
+  "ee_codes": [],
+  "marks_total": 124
+ },
+ {
+  "family": "SORTIE TEL/DATA",
+  "category": "telecom_donnees",
+  "sous_type": "sortie téléphone/données combinée",
+  "examples_labels": [
+   "SORTIE TEL/DATA"
+  ],
+  "ee_codes": [],
+  "marks_total": 123
+ },
+ {
+  "family": "FIXT TYPE S6",
+  "category": "luminaire",
+  "sous_type": "luminaire type S6",
+  "examples_labels": [
+   "FIXT TYPE S6"
+  ],
+  "ee_codes": [],
+  "marks_total": 121
+ },
+ {
+  "family": "FIXT TYPE L4A",
+  "category": "luminaire",
+  "sous_type": "luminaire type L4A",
+  "examples_labels": [
+   "FIXT TYPE L4A"
+  ],
+  "ee_codes": [],
+  "marks_total": 120
+ },
+ {
+  "family": "VENTILATEUR",
+  "category": "mecanique_moteur",
+  "sous_type": "ventilateur (raccordement électrique)",
+  "examples_labels": [
+   "VENTILATEUR",
+   "VENT",
+   "vent",
+   "Ventilateur"
+  ],
+  "ee_codes": [],
+  "marks_total": 120
+ },
+ {
+  "family": "3/4 EMT 3#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 3 conducteurs #12 (Line traces; source spec '3/4 3c12')",
+  "examples_labels": [
+   "3/4 3c12"
+  ],
+  "ee_codes": [
+   "ENSCFFFDBD5146159B90"
+  ],
+  "marks_total": 118
+ },
+ {
+  "family": "1 VOIE",
+  "category": "dispositif",
+  "sous_type": "interrupteur simple / unipolaire (1 voie)",
+  "examples_labels": [
+   "1 VOIE"
+  ],
+  "ee_codes": [],
+  "marks_total": 116
+ },
+ {
+  "family": "RT",
+  "category": "indetermine",
+  "sous_type": "abréviation non identifiée (RT)",
+  "examples_labels": [
+   "RT"
+  ],
+  "ee_codes": [],
+  "marks_total": 116
+ },
+ {
+  "family": "MAT",
+  "category": "luminaire",
+  "sous_type": "mât d'éclairage extérieur (poteau lumineux)",
+  "examples_labels": [
+   "MAT"
+  ],
+  "ee_codes": [],
+  "marks_total": 115
+ },
+ {
+  "family": "FIXT TYPE P",
+  "category": "luminaire",
+  "sous_type": "luminaire type P (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE P"
+  ],
+  "ee_codes": [],
+  "marks_total": 113
+ },
+ {
+  "family": "PROJECTEUR",
+  "category": "luminaire",
+  "sous_type": "projecteur exterieur",
+  "examples_labels": [
+   "PROJECTEUR"
+  ],
+  "ee_codes": [],
+  "marks_total": 112
+ },
+ {
+  "family": "3 VOIE",
+  "category": "dispositif",
+  "sous_type": "interrupteur 3 voies",
+  "examples_labels": [
+   "3 VOIE"
+  ],
+  "ee_codes": [],
+  "marks_total": 111
+ },
+ {
+  "family": "M",
+  "category": "indetermine",
+  "sous_type": "lettre seule, sens incertain",
+  "examples_labels": [
+   "M",
+   "m"
+  ],
+  "ee_codes": [],
+  "marks_total": 111
+ },
+ {
+  "family": "E",
+  "category": "indetermine",
+  "sous_type": "lettre seule ambiguë (repère ou fixture « E »?)",
+  "examples_labels": [
+   "E",
+   "e"
+  ],
+  "ee_codes": [],
+  "marks_total": 111
+ },
+ {
+  "family": "MONUMENT",
+  "category": "luminaire",
+  "sous_type": "enseigne-monument extérieure (signalétique illuminée)",
+  "examples_labels": [
+   "MONUMENT"
+  ],
+  "ee_codes": [],
+  "marks_total": 107
+ },
+ {
+  "family": "C",
+  "category": "indetermine",
+  "sous_type": "lettre seule, sens incertain",
+  "examples_labels": [
+   "C",
+   "c"
+  ],
+  "ee_codes": [],
+  "marks_total": 106
+ },
+ {
+  "family": "COLONNETTE",
+  "category": "dispositif",
+  "sous_type": "colonnette électrique (borne d'alimentation sur pied)",
+  "examples_labels": [
+   "COLONNETTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 106
+ },
+ {
+  "family": "1750W",
+  "category": "chauffage",
+  "sous_type": "plinthe électrique chauffante 1750W",
+  "examples_labels": [
+   "1750W",
+   "1750w"
+  ],
+  "ee_codes": [],
+  "marks_total": 106
+ },
+ {
+  "family": "BOITE D 8X8X4PO CEMA1",
+  "category": "distribution",
+  "sous_type": "boîte de distribution 8x8x4 po, cote CEMA1 (NEMA1)",
+  "examples_labels": [
+   "BOITE D 8X8X4PO CEMA1"
+  ],
+  "ee_codes": [
+   "LQE004735"
+  ],
+  "marks_total": 104
+ },
+ {
+  "family": "3/4 EMT 3#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 3 conducteurs #10 (Line traces; source spec '3/4 3c10')",
+  "examples_labels": [
+   "3/4 3c10"
+  ],
+  "ee_codes": [
+   "ENS6730DA3DBD1321551"
+  ],
+  "marks_total": 104
+ },
+ {
+  "family": "LAMPADAIRE",
+  "category": "luminaire",
+  "sous_type": "lampadaire extérieur (poteau d'éclairage)",
+  "examples_labels": [
+   "LAMPADAIRE"
+  ],
+  "ee_codes": [],
+  "marks_total": 103
+ },
+ {
+  "family": "A/C UNIT",
+  "category": "mecanique_moteur",
+  "sous_type": "raccordement électrique pour unité de climatisation",
+  "examples_labels": [
+   "A/C UNIT",
+   "a/c unit"
+  ],
+  "ee_codes": [],
+  "marks_total": 99
+ },
+ {
+  "family": "FIXT TYPE D7",
+  "category": "luminaire",
+  "sous_type": "luminaire type D7",
+  "examples_labels": [
+   "FIXT TYPE D7"
+  ],
+  "ee_codes": [],
+  "marks_total": 99
+ },
+ {
+  "family": "RM",
+  "category": "indetermine",
+  "sous_type": "sigle de 2 lettres, sens incertain",
+  "examples_labels": [
+   "RM"
+  ],
+  "ee_codes": [],
+  "marks_total": 98
+ },
+ {
+  "family": "3/4 EMT 7#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 7 conducteurs #12 (Line traces; source spec '3/4 7c12')",
+  "examples_labels": [
+   "3/4 7c12"
+  ],
+  "ee_codes": [
+   "ENSAFF5D05713B179C81"
+  ],
+  "marks_total": 98
+ },
+ {
+  "family": "FIXT TYPE A3",
+  "category": "luminaire",
+  "sous_type": "luminaire type A3",
+  "examples_labels": [
+   "FIXT TYPE A3"
+  ],
+  "ee_codes": [],
+  "marks_total": 97
+ },
+ {
+  "family": "CHAUFFE-EAU",
+  "category": "chauffage",
+  "sous_type": "chauffe-eau (raccordement electrique)",
+  "examples_labels": [
+   "CHAUFFE-EAU",
+   "Chauffe-Eau"
+  ],
+  "ee_codes": [],
+  "marks_total": 92
+ },
+ {
+  "family": "FIXT TYPE S",
+  "category": "luminaire",
+  "sous_type": "luminaire type S (sans numéro)",
+  "examples_labels": [
+   "FIXT TYPE S",
+   "fixt type s"
+  ],
+  "ee_codes": [],
+  "marks_total": 92
+ },
+ {
+  "family": "BOITE VOLUME",
+  "category": "indetermine",
+  "sous_type": "fonction ambiguë (contrôle de volume ou boîte CVAC)",
+  "examples_labels": [
+   "BOITE VOLUME"
+  ],
+  "ee_codes": [],
+  "marks_total": 91
+ },
+ {
+  "family": "FIXT TYPE B2",
+  "category": "luminaire",
+  "sous_type": "luminaire type B2 (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE B2"
+  ],
+  "ee_codes": [],
+  "marks_total": 91
+ },
+ {
+  "family": "2#12 MOTOR",
+  "category": "mecanique_moteur",
+  "sous_type": "alimentation moteur (2 conducteurs #12 AWG)",
+  "examples_labels": [
+   "2#12 Motor"
+  ],
+  "ee_codes": [],
+  "marks_total": 91
+ },
+ {
+  "family": "EXIT COMBO",
+  "category": "securite_incendie",
+  "sous_type": "enseigne de sortie combinée à l'éclairage de secours",
+  "examples_labels": [
+   "EXIT COMBO",
+   "exit combo"
+  ],
+  "ee_codes": [],
+  "marks_total": 89
+ },
+ {
+  "family": "BORNE",
+  "category": "indetermine",
+  "sous_type": "borne electrique (type incertain)",
+  "examples_labels": [
+   "BORNE"
+  ],
+  "ee_codes": [],
+  "marks_total": 86
+ },
+ {
+  "family": "OPERATEUR PORTE",
+  "category": "mecanique_moteur",
+  "sous_type": "opérateur de porte automatique (moteur)",
+  "examples_labels": [
+   "OPERATEUR PORTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 86
+ },
+ {
+  "family": "FIXT TYPE R2",
+  "category": "luminaire",
+  "sous_type": "luminaire type R2",
+  "examples_labels": [
+   "FIXT TYPE R2"
+  ],
+  "ee_codes": [],
+  "marks_total": 83
+ },
+ {
+  "family": "30A 600V NF",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur 30A 600V non-fusible",
+  "examples_labels": [
+   "30A 600V NF"
+  ],
+  "ee_codes": [],
+  "marks_total": 83
+ },
+ {
+  "family": "USB",
+  "category": "dispositif",
+  "sous_type": "prise de courant avec chargeur USB intégré",
+  "examples_labels": [
+   "USB"
+  ],
+  "ee_codes": [],
+  "marks_total": 80
+ },
+ {
+  "family": "FIXT TYPE L13",
+  "category": "luminaire",
+  "sous_type": "luminaire type L13",
+  "examples_labels": [
+   "FIXT TYPE L13"
+  ],
+  "ee_codes": [],
+  "marks_total": 80
+ },
+ {
+  "family": "FIXT TYPE H1",
+  "category": "luminaire",
+  "sous_type": "luminaire type H1",
+  "examples_labels": [
+   "FIXT TYPE H1"
+  ],
+  "ee_codes": [],
+  "marks_total": 79
+ },
+ {
+  "family": "BA",
+  "category": "indetermine",
+  "sous_type": "abréviation ambiguë (signification incertaine)",
+  "examples_labels": [
+   "BA"
+  ],
+  "ee_codes": [],
+  "marks_total": 79
+ },
+ {
+  "family": "J",
+  "category": "indetermine",
+  "sous_type": "lettre seule ambiguë (repère ou fixture « J »?)",
+  "examples_labels": [
+   "J",
+   "j"
+  ],
+  "ee_codes": [],
+  "marks_total": 78
+ },
+ {
+  "family": "BOUTON RELACHE",
+  "category": "securite_incendie",
+  "sous_type": "bouton de relâche/déverrouillage de porte",
+  "examples_labels": [
+   "BOUTON RELACHE"
+  ],
+  "ee_codes": [],
+  "marks_total": 78
+ },
+ {
+  "family": "WF 2000W",
+  "category": "luminaire",
+  "sous_type": "luminaire (WF) 2000W",
+  "examples_labels": [
+   "WF 2000W"
+  ],
+  "ee_codes": [],
+  "marks_total": 77
+ },
+ {
+  "family": "CHAUFFE EAU",
+  "category": "autre",
+  "sous_type": "chauffe-eau (raccordement électrique)",
+  "examples_labels": [
+   "CHAUFFE EAU",
+   "CHAUFFEAU",
+   "chauffe eau"
+  ],
+  "ee_codes": [],
+  "marks_total": 76
+ },
+ {
+  "family": "FIXT TYPE K2",
+  "category": "luminaire",
+  "sous_type": "luminaire type K2",
+  "examples_labels": [
+   "FIXT TYPE K2",
+   "fixt type k2"
+  ],
+  "ee_codes": [],
+  "marks_total": 75
+ },
+ {
+  "family": "1 EMT 13#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 13 conducteurs #12 (Line traces; source spec '1 13c12')",
+  "examples_labels": [
+   "1 13c12"
+  ],
+  "ee_codes": [
+   "ENS2BE4B1181801EE197"
+  ],
+  "marks_total": 75
+ },
+ {
+  "family": "TR",
+  "category": "distribution",
+  "sous_type": "transformateur",
+  "examples_labels": [
+   "TR"
+  ],
+  "ee_codes": [],
+  "marks_total": 74
+ },
+ {
+  "family": "FIXT TYPE D6",
+  "category": "luminaire",
+  "sous_type": "luminaire type D6",
+  "examples_labels": [
+   "FIXT TYPE D6"
+  ],
+  "ee_codes": [],
+  "marks_total": 74
+ },
+ {
+  "family": "H",
+  "category": "indetermine",
+  "sous_type": "lettre isolee non resolue",
+  "examples_labels": [
+   "H",
+   "h"
+  ],
+  "ee_codes": [],
+  "marks_total": 74
+ },
+ {
+  "family": "3/4 EMT 9#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 9 conducteurs #12 (Line traces; source spec '3/4 9c12')",
+  "examples_labels": [
+   "3/4 9c12"
+  ],
+  "ee_codes": [
+   "ENS68FBD2DD139190131"
+  ],
+  "marks_total": 74
+ },
+ {
+  "family": "B 1500W",
+  "category": "luminaire",
+  "sous_type": "luminaire type B, désigné par puissance (1500W)",
+  "examples_labels": [
+   "B 1500W",
+   "b 1500w"
+  ],
+  "ee_codes": [],
+  "marks_total": 72
+ },
+ {
+  "family": "F",
+  "category": "indetermine",
+  "sous_type": "lettre isolee non resolue",
+  "examples_labels": [
+   "F",
+   "f"
+  ],
+  "ee_codes": [],
+  "marks_total": 71
+ },
+ {
+  "family": "20A 1P",
+  "category": "distribution",
+  "sous_type": "disjoncteur 20A 1 pôle",
+  "examples_labels": [
+   "20A 1P"
+  ],
+  "ee_codes": [],
+  "marks_total": 70
+ },
+ {
+  "family": "FIXT TYPE D5",
+  "category": "luminaire",
+  "sous_type": "luminaire type D5",
+  "examples_labels": [
+   "FIXT TYPE D5"
+  ],
+  "ee_codes": [],
+  "marks_total": 69
+ },
+ {
+  "family": "RS",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "RS"
+  ],
+  "ee_codes": [],
+  "marks_total": 69
+ },
+ {
+  "family": "FIXTURE TYPE B",
+  "category": "luminaire",
+  "sous_type": "luminaire type B (orthographe complète)",
+  "examples_labels": [
+   "FIXTURE TYPE B"
+  ],
+  "ee_codes": [],
+  "marks_total": 69
+ },
+ {
+  "family": "OS",
+  "category": "dispositif",
+  "sous_type": "détecteur de présence / occupancy sensor (plafonnier)",
+  "examples_labels": [
+   "OS"
+  ],
+  "ee_codes": [],
+  "marks_total": 68
+ },
+ {
+  "family": "R",
+  "category": "indetermine",
+  "sous_type": "lettre seule ambiguë (repère ou fixture « R »?)",
+  "examples_labels": [
+   "R",
+   "r"
+  ],
+  "ee_codes": [],
+  "marks_total": 67
+ },
+ {
+  "family": "FIXT TYPE BB",
+  "category": "luminaire",
+  "sous_type": "luminaire type BB",
+  "examples_labels": [
+   "FIXT TYPE BB"
+  ],
+  "ee_codes": [],
+  "marks_total": 66
+ },
+ {
+  "family": "FIXT TYPE N2",
+  "category": "luminaire",
+  "sous_type": "luminaire type N2",
+  "examples_labels": [
+   "FIXT TYPE N2",
+   "fixt type n2"
+  ],
+  "ee_codes": [],
+  "marks_total": 66
+ },
+ {
+  "family": "MOTEUR 600V",
+  "category": "mecanique_moteur",
+  "sous_type": "moteur électrique 600V",
+  "examples_labels": [
+   "MOTEUR 600V",
+   "moteur 600v"
+  ],
+  "ee_codes": [],
+  "marks_total": 65
+ },
+ {
+  "family": "HORN WP",
+  "category": "securite_incendie",
+  "sous_type": "avertisseur sonore (horn) étanche, extérieur",
+  "examples_labels": [
+   "HORN WP"
+  ],
+  "ee_codes": [],
+  "marks_total": 65
+ },
+ {
+  "family": "1/2 EMT 5#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1/2 po, 5 conducteurs #12 (Line traces; source spec '1/2 5c12')",
+  "examples_labels": [
+   "1/2 5c12"
+  ],
+  "ee_codes": [
+   "ENS4DDD71F9D514C715F"
+  ],
+  "marks_total": 65
+ },
+ {
+  "family": "FIXT TYPE S2",
+  "category": "luminaire",
+  "sous_type": "luminaire type S2",
+  "examples_labels": [
+   "FIXT TYPE S2"
+  ],
+  "ee_codes": [],
+  "marks_total": 64
+ },
+ {
+  "family": "HORLOGE",
+  "category": "dispositif",
+  "sous_type": "horloge de contrôle (minuterie électrique)",
+  "examples_labels": [
+   "HORLOGE",
+   "horloge"
+  ],
+  "ee_codes": [],
+  "marks_total": 63
+ },
+ {
+  "family": "FIXT TYPE G1",
+  "category": "luminaire",
+  "sous_type": "luminaire type G1 (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE G1"
+  ],
+  "ee_codes": [],
+  "marks_total": 62
+ },
+ {
+  "family": "GFI 15/20",
+  "category": "dispositif",
+  "sous_type": "disjoncteur/prise GFI 15/20A",
+  "examples_labels": [
+   "GFI 15/20"
+  ],
+  "ee_codes": [],
+  "marks_total": 61
+ },
+ {
+  "family": "L",
+  "category": "indetermine",
+  "sous_type": "lettre isolee non resolue",
+  "examples_labels": [
+   "L",
+   "l"
+  ],
+  "ee_codes": [],
+  "marks_total": 60
+ },
+ {
+  "family": "D",
+  "category": "indetermine",
+  "sous_type": "lettre seule ambiguë (repère ou fixture « D »?)",
+  "examples_labels": [
+   "D",
+   "d"
+  ],
+  "ee_codes": [],
+  "marks_total": 59
+ },
+ {
+  "family": "FIXT TYPE F3",
+  "category": "luminaire",
+  "sous_type": "luminaire type F3",
+  "examples_labels": [
+   "FIXT TYPE F3"
+  ],
+  "ee_codes": [],
+  "marks_total": 57
+ },
+ {
+  "family": "POMPE",
+  "category": "mecanique_moteur",
+  "sous_type": "pompe (raccordement moteur)",
+  "examples_labels": [
+   "POMPE"
+  ],
+  "ee_codes": [],
+  "marks_total": 57
+ },
+ {
+  "family": "15A 1P",
+  "category": "distribution",
+  "sous_type": "disjoncteur 15A, 1 pôle",
+  "examples_labels": [
+   "15A 1P"
+  ],
+  "ee_codes": [],
+  "marks_total": 56
+ },
+ {
+  "family": "NF 30A",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur non-fusible 30A",
+  "examples_labels": [
+   "NF 30A"
+  ],
+  "ee_codes": [],
+  "marks_total": 56
+ },
+ {
+  "family": "A INT",
+  "category": "dispositif",
+  "sous_type": "interrupteur, repère A",
+  "examples_labels": [
+   "A INT"
+  ],
+  "ee_codes": [],
+  "marks_total": 55
+ },
+ {
+  "family": "GRADATEUR 3 VOIE",
+  "category": "dispositif",
+  "sous_type": "gradateur 3 voies (3-way dimmer)",
+  "examples_labels": [
+   "GRADATEUR 3 VOIE"
+  ],
+  "ee_codes": [],
+  "marks_total": 55
+ },
+ {
+  "family": "1/2 EMT 3#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1/2 po, 3 conducteurs #10 (Line traces; source spec '1/2 3c10')",
+  "examples_labels": [
+   "1/2 3c10"
+  ],
+  "ee_codes": [
+   "ENSA25D66E8153101291"
+  ],
+  "marks_total": 55
+ },
+ {
+  "family": "FIXT TYPE F2",
+  "category": "luminaire",
+  "sous_type": "luminaire type F2",
+  "examples_labels": [
+   "FIXT TYPE F2"
+  ],
+  "ee_codes": [],
+  "marks_total": 54
+ },
+ {
+  "family": "SECHOIRE A MAIN",
+  "category": "dispositif",
+  "sous_type": "sortie de câblage - sèche-mains électrique",
+  "examples_labels": [
+   "SECHOIRE A MAIN"
+  ],
+  "ee_codes": [],
+  "marks_total": 54
+ },
+ {
+  "family": "D/M",
+  "category": "indetermine",
+  "sous_type": "abréviation incertaine",
+  "examples_labels": [
+   "D/M"
+  ],
+  "ee_codes": [],
+  "marks_total": 53
+ },
+ {
+  "family": "TH INTEGRE",
+  "category": "chauffage",
+  "sous_type": "thermostat intégré à la plinthe chauffante",
+  "examples_labels": [
+   "TH INT",
+   "TH INTEGRE"
+  ],
+  "ee_codes": [],
+  "marks_total": 53
+ },
+ {
+  "family": "VOLET MOTORIZER",
+  "category": "mecanique_moteur",
+  "sous_type": "volet motorisé (store ou clapet motorisé)",
+  "examples_labels": [
+   "VOLET MOTORIZER"
+  ],
+  "ee_codes": [],
+  "marks_total": 52
+ },
+ {
+  "family": "1 1/4 EMT 25#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 25 conducteurs #12 (Line traces; source spec '1''1/4 25c12')",
+  "examples_labels": [
+   "1''1/4 25c12"
+  ],
+  "ee_codes": [
+   "ENS83C7EEE51211BB561"
+  ],
+  "marks_total": 52
+ },
+ {
+  "family": "OPERATEUR DE PORTE",
+  "category": "autre",
+  "sous_type": "opérateur de porte automatique",
+  "examples_labels": [
+   "OP",
+   "OPERATEUR DE PORTE",
+   "op"
+  ],
+  "ee_codes": [],
+  "marks_total": 51
+ },
+ {
+  "family": "PRISE 20A 125V",
+  "category": "dispositif",
+  "sous_type": "prise duplex 20A 125V",
+  "examples_labels": [
+   "PRISE 20A 125V"
+  ],
+  "ee_codes": [],
+  "marks_total": 51
+ },
+ {
+  "family": "CLAVIER",
+  "category": "securite_incendie",
+  "sous_type": "clavier de système d'alarme / contrôle d'accès",
+  "examples_labels": [
+   "CLAVIER"
+  ],
+  "ee_codes": [],
+  "marks_total": 50
+ },
+ {
+  "family": "PORTE GARAGE",
+  "category": "mecanique_moteur",
+  "sous_type": "raccordement pour opérateur motorisé de porte de garage",
+  "examples_labels": [
+   "PORTE GARAGE"
+  ],
+  "ee_codes": [],
+  "marks_total": 50
+ },
+ {
+  "family": "FIXT TYPE C4",
+  "category": "luminaire",
+  "sous_type": "luminaire type C4",
+  "examples_labels": [
+   "FIXT TYPE C4"
+  ],
+  "ee_codes": [],
+  "marks_total": 50
+ },
+ {
+  "family": "TEE",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "TEE"
+  ],
+  "ee_codes": [],
+  "marks_total": 50
+ },
+ {
+  "family": "1 EMT 15#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 15 conducteurs #12 (Line traces; source spec '1 15c12')",
+  "examples_labels": [
+   "1 15c12"
+  ],
+  "ee_codes": [
+   "ENSD0FB00E612897E119"
+  ],
+  "marks_total": 50
+ },
+ {
+  "family": "FIXT TYPE G2",
+  "category": "luminaire",
+  "sous_type": "luminaire type G2",
+  "examples_labels": [
+   "FIXT TYPE G2"
+  ],
+  "ee_codes": [],
+  "marks_total": 49
+ },
+ {
+  "family": "COMBO",
+  "category": "luminaire",
+  "sous_type": "appareil combiné enseigne de sortie + éclairage de secours",
+  "examples_labels": [
+   "COMBO"
+  ],
+  "ee_codes": [],
+  "marks_total": 49
+ },
+ {
+  "family": "BOUTON POUSSOIRE",
+  "category": "dispositif",
+  "sous_type": "bouton poussoir (commande murale)",
+  "examples_labels": [
+   "BOUTON POUSSOIRE"
+  ],
+  "ee_codes": [],
+  "marks_total": 49
+ },
+ {
+  "family": "FIXT TYPE E7",
+  "category": "luminaire",
+  "sous_type": "luminaire type E7",
+  "examples_labels": [
+   "FIXT TYPE E7"
+  ],
+  "ee_codes": [],
+  "marks_total": 47
+ },
+ {
+  "family": "FIXT TYPE M1",
+  "category": "luminaire",
+  "sous_type": "luminaire type M1",
+  "examples_labels": [
+   "FIXT TYPE M1"
+  ],
+  "ee_codes": [],
+  "marks_total": 47
+ },
+ {
+  "family": "GFI 20A",
+  "category": "dispositif",
+  "sous_type": "disjoncteur de fuite a la terre (GFI) 20A",
+  "examples_labels": [
+   "GFI 20A"
+  ],
+  "ee_codes": [],
+  "marks_total": 47
+ },
+ {
+  "family": "FIXT TYPE Q",
+  "category": "luminaire",
+  "sous_type": "luminaire type Q (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE Q"
+  ],
+  "ee_codes": [],
+  "marks_total": 46
+ },
+ {
+  "family": "BRASSEUR AIR",
+  "category": "mecanique_moteur",
+  "sous_type": "brasseur d'air/ventilateur de circulation",
+  "examples_labels": [
+   "BRASSEUR AIR"
+  ],
+  "ee_codes": [],
+  "marks_total": 46
+ },
+ {
+  "family": "3/4 EMT 5#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 5 conducteurs #12 (Line traces; source spec '3/4 5c12')",
+  "examples_labels": [
+   "3/4 5c12"
+  ],
+  "ee_codes": [
+   "ENS5B4F85B31101A51A8"
+  ],
+  "marks_total": 46
+ },
+ {
+  "family": "LC",
+  "category": "indetermine",
+  "sous_type": "sigle de 2 lettres, sens incertain",
+  "examples_labels": [
+   "LC",
+   "lc"
+  ],
+  "ee_codes": [],
+  "marks_total": 45
+ },
+ {
+  "family": "PRISE 15/20A GFI",
+  "category": "dispositif",
+  "sous_type": "prise GFI 15/20A",
+  "examples_labels": [
+   "PRISE 15/20A GFI"
+  ],
+  "ee_codes": [],
+  "marks_total": 45
+ },
+ {
+  "family": "PRISE 15A GFI",
+  "category": "dispositif",
+  "sous_type": "prise GFI 15A",
+  "examples_labels": [
+   "Prise 15A GFI"
+  ],
+  "ee_codes": [],
+  "marks_total": 45
+ },
+ {
+  "family": "1 1/4 EMT 17#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 17 conducteurs #12 (Line traces; source spec '1''1/4 17c12')",
+  "examples_labels": [
+   "1''1/4 17c12"
+  ],
+  "ee_codes": [
+   "ENS588565C1185126AE0"
+  ],
+  "marks_total": 45
+ },
+ {
+  "family": "FIXT TYPE L3A",
+  "category": "luminaire",
+  "sous_type": "luminaire type L3A",
+  "examples_labels": [
+   "FIXT TYPE L3A"
+  ],
+  "ee_codes": [],
+  "marks_total": 44
+ },
+ {
+  "family": "PRISE TOIT",
+  "category": "dispositif",
+  "sous_type": "prise électrique de toiture",
+  "examples_labels": [
+   "PRISE TOIT",
+   "prise toit"
+  ],
+  "ee_codes": [],
+  "marks_total": 43
+ },
+ {
+  "family": "VOLET MOTORISER",
+  "category": "autre",
+  "sous_type": "volet/store motorisé",
+  "examples_labels": [
+   "VOLET MOTORISER"
+  ],
+  "ee_codes": [],
+  "marks_total": 43
+ },
+ {
+  "family": "SECHOIRE",
+  "category": "dispositif",
+  "sous_type": "sortie/circuit pour sécheuse électrique",
+  "examples_labels": [
+   "SECHOIRE",
+   "D SECHEUSE",
+   "A SECHEUSE"
+  ],
+  "ee_codes": [],
+  "marks_total": 42
+ },
+ {
+  "family": "CARILLON",
+  "category": "telecom_donnees",
+  "sous_type": "carillon de porte (sonnette)",
+  "examples_labels": [
+   "CARILLON",
+   "Carillon"
+  ],
+  "ee_codes": [],
+  "marks_total": 42
+ },
+ {
+  "family": "V",
+  "category": "indetermine",
+  "sous_type": "lettre isolee non resolue",
+  "examples_labels": [
+   "V",
+   "v"
+  ],
+  "ee_codes": [],
+  "marks_total": 41
+ },
+ {
+  "family": "3/4 EMT 4#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 4 conducteurs #10 (Line traces; source spec '3/4 4c10')",
+  "examples_labels": [
+   "3/4 4c10"
+  ],
+  "ee_codes": [
+   "ENSB04E387C10C4D1A1C"
+  ],
+  "marks_total": 40
+ },
+ {
+  "family": "T",
+  "category": "indetermine",
+  "sous_type": "lettre seule ambiguë",
+  "examples_labels": [
+   "T",
+   "t"
+  ],
+  "ee_codes": [],
+  "marks_total": 38
+ },
+ {
+  "family": "SECHOIR",
+  "category": "dispositif",
+  "sous_type": "raccordement/prise pour sécheuse",
+  "examples_labels": [
+   "SECHOIR"
+  ],
+  "ee_codes": [],
+  "marks_total": 38
+ },
+ {
+  "family": "LECTEUR DE CARTE",
+  "category": "securite_incendie",
+  "sous_type": "lecteur de carte d'accès",
+  "examples_labels": [
+   "LECTEUR DE CARTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 37
+ },
+ {
+  "family": "BOUTON",
+  "category": "indetermine",
+  "sous_type": "bouton, fonction incertaine",
+  "examples_labels": [
+   "BOUTON",
+   "Bouton"
+  ],
+  "ee_codes": [],
+  "marks_total": 37
+ },
+ {
+  "family": "A 1000W",
+  "category": "luminaire",
+  "sous_type": "luminaire type A, désigné par puissance (1000W)",
+  "examples_labels": [
+   "A 1000W",
+   "a 1000w"
+  ],
+  "ee_codes": [],
+  "marks_total": 37
+ },
+ {
+  "family": "1/2 EMT 4#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1/2 po, 4 conducteurs #12 (Line traces; source spec '1/2 4c12')",
+  "examples_labels": [
+   "1/2 4c12"
+  ],
+  "ee_codes": [
+   "ENS72A033C39816D16C0"
+  ],
+  "marks_total": 37
+ },
+ {
+  "family": "1 1/4 EMT 19#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 19 conducteurs #12 (Line traces; source spec '1''1/4 19c12')",
+  "examples_labels": [
+   "1''1/4 19c12"
+  ],
+  "ee_codes": [
+   "ENSCE207558DF9514513"
+  ],
+  "marks_total": 37
+ },
+ {
+  "family": "INT MOUV",
+  "category": "dispositif",
+  "sous_type": "interrupteur détecteur de mouvement (occupancy sensor switch)",
+  "examples_labels": [
+   "INT MOUV"
+  ],
+  "ee_codes": [],
+  "marks_total": 35
+ },
+ {
+  "family": "CP",
+  "category": "indetermine",
+  "sous_type": "abreviation non resolue",
+  "examples_labels": [
+   "CP",
+   "cp"
+  ],
+  "ee_codes": [],
+  "marks_total": 35
+ },
+ {
+  "family": "EXIT RELO",
+  "category": "luminaire",
+  "sous_type": "enseigne de sortie (EXIT) relocalisee",
+  "examples_labels": [
+   "EXIT RELO",
+   "exit relo"
+  ],
+  "ee_codes": [],
+  "marks_total": 35
+ },
+ {
+  "family": "30A 600V NF WP",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur 30A 600V non-fusible étanche",
+  "examples_labels": [
+   "30A 600V NF WP"
+  ],
+  "ee_codes": [],
+  "marks_total": 34
+ },
+ {
+  "family": "1/2 EMT 4#14",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1/2 po, 4 conducteurs #14 (Line traces; source spec '1/2 4c14')",
+  "examples_labels": [
+   "1/2 4c14"
+  ],
+  "ee_codes": [
+   "ENSC410F2AA176D25010"
+  ],
+  "marks_total": 34
+ },
+ {
+  "family": "CR10",
+  "category": "indetermine",
+  "sous_type": "code ambigu (relais de contrôle ou référence de circuit)",
+  "examples_labels": [
+   "CR10"
+  ],
+  "ee_codes": [],
+  "marks_total": 33
+ },
+ {
+  "family": "FIXT TYPE P3",
+  "category": "luminaire",
+  "sous_type": "luminaire type P3",
+  "examples_labels": [
+   "FIXT TYPE P3"
+  ],
+  "ee_codes": [],
+  "marks_total": 32
+ },
+ {
+  "family": "MOTEUR",
+  "category": "mecanique_moteur",
+  "sous_type": "moteur électrique (générique)",
+  "examples_labels": [
+   "MOTEUR",
+   "moteur"
+  ],
+  "ee_codes": [],
+  "marks_total": 31
+ },
+ {
+  "family": "FIXT TYPE P2",
+  "category": "luminaire",
+  "sous_type": "luminaire type P2",
+  "examples_labels": [
+   "FIXT TYPE P2"
+  ],
+  "ee_codes": [],
+  "marks_total": 30
+ },
+ {
+  "family": "FIXT TYPE M2",
+  "category": "luminaire",
+  "sous_type": "luminaire type M2",
+  "examples_labels": [
+   "FIXT TYPE M2"
+  ],
+  "ee_codes": [],
+  "marks_total": 29
+ },
+ {
+  "family": "2KW",
+  "category": "chauffage",
+  "sous_type": "plinthe électrique chauffante 2000W (2kW)",
+  "examples_labels": [
+   "2KW",
+   "2kw"
+  ],
+  "ee_codes": [],
+  "marks_total": 28
+ },
+ {
+  "family": "1/2 EMT 4#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1/2 po, 4 conducteurs #10 (Line traces; source spec '1/2 4c10')",
+  "examples_labels": [
+   "1/2 4c10"
+  ],
+  "ee_codes": [
+   "ENS8B6D59671591A6F61"
+  ],
+  "marks_total": 28
+ },
+ {
+  "family": "SECHOIR A MAIN",
+  "category": "dispositif",
+  "sous_type": "raccordement pour sécheur à main",
+  "examples_labels": [
+   "SECHOIR A MAIN"
+  ],
+  "ee_codes": [],
+  "marks_total": 27
+ },
+ {
+  "family": "INTERRUPTEUR 15A 120V",
+  "category": "dispositif",
+  "sous_type": "interrupteur unipolaire 15A 120V",
+  "examples_labels": [
+   "interrupteur  15A 120V"
+  ],
+  "ee_codes": [
+   "ENS9CA9981C195E71150"
+  ],
+  "marks_total": 27
+ },
+ {
+  "family": "MOTEUR FRACT",
+  "category": "mecanique_moteur",
+  "sous_type": "moteur fractionnaire (<1 HP)",
+  "examples_labels": [
+   "MOTEUR FRACT"
+  ],
+  "ee_codes": [],
+  "marks_total": 27
+ },
+ {
+  "family": "EXIT 2T",
+  "category": "luminaire",
+  "sous_type": "enseigne de sortie (EXIT) avec 2 têtes d'urgence",
+  "examples_labels": [
+   "EXIT 2T"
+  ],
+  "ee_codes": [],
+  "marks_total": 27
+ },
+ {
+  "family": "1 1/4 EMT 21#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 21 conducteurs #12 (Line traces; source spec '1''1/4 21c12')",
+  "examples_labels": [
+   "1''1/4 21c12"
+  ],
+  "ee_codes": [
+   "ENS2106BF6314A661491"
+  ],
+  "marks_total": 27
+ },
+ {
+  "family": "1 1/4 EMT 23#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 23 conducteurs #12 (Line traces; source spec '1''1/4 23c12')",
+  "examples_labels": [
+   "1''1/4 23c12"
+  ],
+  "ee_codes": [
+   "ENS85FC0360A011AC217"
+  ],
+  "marks_total": 27
+ },
+ {
+  "family": "DEBIT",
+  "category": "indetermine",
+  "sous_type": "sens incertain",
+  "examples_labels": [
+   "DEBIT"
+  ],
+  "ee_codes": [],
+  "marks_total": 26
+ },
+ {
+  "family": "BARRE MISE A LA TERRE",
+  "category": "distribution",
+  "sous_type": "barre de mise à la terre",
+  "examples_labels": [
+   "BARRE MISE A LA TERRE",
+   "barre mise a la terre"
+  ],
+  "ee_codes": [],
+  "marks_total": 26
+ },
+ {
+  "family": "PC",
+  "category": "indetermine",
+  "sous_type": "abréviation ambiguë (signification incertaine)",
+  "examples_labels": [
+   "PC",
+   "pc"
+  ],
+  "ee_codes": [],
+  "marks_total": 26
+ },
+ {
+  "family": "FIXT TYPE L3B",
+  "category": "luminaire",
+  "sous_type": "luminaire type L3B (famille L)",
+  "examples_labels": [
+   "FIXT TYPE L3B"
+  ],
+  "ee_codes": [],
+  "marks_total": 25
+ },
+ {
+  "family": "MOTEUR 120V",
+  "category": "mecanique_moteur",
+  "sous_type": "moteur 120V",
+  "examples_labels": [
+   "MOTEUR 120V"
+  ],
+  "ee_codes": [],
+  "marks_total": 25
+ },
+ {
+  "family": "FIXTURE TYPE C",
+  "category": "luminaire",
+  "sous_type": "luminaire type C",
+  "examples_labels": [
+   "FIXTURE TYPE C"
+  ],
+  "ee_codes": [],
+  "marks_total": 25
+ },
+ {
+  "family": "UTA",
+  "category": "mecanique_moteur",
+  "sous_type": "unite de traitement d'air (raccordement electrique)",
+  "examples_labels": [
+   "UTA"
+  ],
+  "ee_codes": [],
+  "marks_total": 24
+ },
+ {
+  "family": "1 EMT 7#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 7 conducteurs #10 (Line traces; source spec '1 7c10')",
+  "examples_labels": [
+   "1 7c10"
+  ],
+  "ee_codes": [
+   "ENSDDB0EBAFB4AE12C0D"
+  ],
+  "marks_total": 24
+ },
+ {
+  "family": "DETECTEUR THERMIQUE",
+  "category": "securite_incendie",
+  "sous_type": "detecteur thermique (chaleur)",
+  "examples_labels": [
+   "DETECTEUR THERMIQUE"
+  ],
+  "ee_codes": [],
+  "marks_total": 22
+ },
+ {
+  "family": "2 EMT 33#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 33 conducteurs #12 (Line traces; source spec '2 33c12')",
+  "examples_labels": [
+   "2 33c12"
+  ],
+  "ee_codes": [
+   "ENS9E93142F911561EE1"
+  ],
+  "marks_total": 22
+ },
+ {
+  "family": "2 EMT 42#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 42 conducteurs #12 (Line traces; source spec '2 42c12')",
+  "examples_labels": [
+   "2 42c12"
+  ],
+  "ee_codes": [
+   "ENS97D7F99411A1221C9"
+  ],
+  "marks_total": 22
+ },
+ {
+  "family": "1 EMT 12#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 12 conducteurs #12 (Line traces; source spec '1 12c12')",
+  "examples_labels": [
+   "1 12c12"
+  ],
+  "ee_codes": [
+   "ENSA806CB04CD12BE01A"
+  ],
+  "marks_total": 22
+ },
+ {
+  "family": "FIXT TYPE R3",
+  "category": "luminaire",
+  "sous_type": "luminaire type R3",
+  "examples_labels": [
+   "FIXT TYPE R3"
+  ],
+  "ee_codes": [],
+  "marks_total": 21
+ },
+ {
+  "family": "2 EMT 31#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 31 conducteurs #12 (Line traces; source spec '2 31c12')",
+  "examples_labels": [
+   "2 31c12"
+  ],
+  "ee_codes": [
+   "ENS1ED9F0B99FEBF209B"
+  ],
+  "marks_total": 21
+ },
+ {
+  "family": "PRISE 30A 250V",
+  "category": "dispositif",
+  "sous_type": "prise 30A 250V (ex. sécheuse)",
+  "examples_labels": [
+   "PRISE 30A 250V"
+  ],
+  "ee_codes": [],
+  "marks_total": 20
+ },
+ {
+  "family": "60A NF WP",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur 60A non-fusible étanche",
+  "examples_labels": [
+   "60A NF WP"
+  ],
+  "ee_codes": [],
+  "marks_total": 20
+ },
+ {
+  "family": "3/4 EMT 5#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 5 conducteurs #10 (Line traces; source spec '3/4 5c10')",
+  "examples_labels": [
+   "3/4 5c10"
+  ],
+  "ee_codes": [
+   "ENS05D76B4F160134D61"
+  ],
+  "marks_total": 20
+ },
+ {
+  "family": "MINUTERIE",
+  "category": "dispositif",
+  "sous_type": "minuterie (interrupteur temporise)",
+  "examples_labels": [
+   "MINUTERIE",
+   "Minuterie"
+  ],
+  "ee_codes": [],
+  "marks_total": 19
+ },
+ {
+  "family": "60A F",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur 60A fusible",
+  "examples_labels": [
+   "60A F",
+   "60a f"
+  ],
+  "ee_codes": [],
+  "marks_total": 19
+ },
+ {
+  "family": "PLINTHE 750W",
+  "category": "chauffage",
+  "sous_type": "plinthe électrique (baseboard) 750W",
+  "examples_labels": [
+   "PLINTHE 750W",
+   "plinthe 750w"
+  ],
+  "ee_codes": [],
+  "marks_total": 19
+ },
+ {
+  "family": "1 EMT 11#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 11 conducteurs #12 (Line traces; source spec '1 11c12')",
+  "examples_labels": [
+   "1 11c12"
+  ],
+  "ee_codes": [
+   "ENS40CCBCA3D01064E11"
+  ],
+  "marks_total": 19
+ },
+ {
+  "family": "FIXT TYPE S4",
+  "category": "luminaire",
+  "sous_type": "luminaire type S4 (selon légende)",
+  "examples_labels": [
+   "FIXT TYPE S4"
+  ],
+  "ee_codes": [],
+  "marks_total": 18
+ },
+ {
+  "family": "BATTERIE UNIT 2 TETE",
+  "category": "securite_incendie",
+  "sous_type": "unité de secours à piles, 2 têtes (éclairage d'urgence)",
+  "examples_labels": [
+   "BATTERIE UNIT 2 TETE"
+  ],
+  "ee_codes": [],
+  "marks_total": 18
+ },
+ {
+  "family": "CL",
+  "category": "indetermine",
+  "sous_type": "abréviation non identifiée (CL)",
+  "examples_labels": [
+   "CL"
+  ],
+  "ee_codes": [],
+  "marks_total": 18
+ },
+ {
+  "family": "DETECTEUR DE GAINE",
+  "category": "securite_incendie",
+  "sous_type": "détecteur de fumée de gaine (conduit CVAC)",
+  "examples_labels": [
+   "DETECTEUR DE GAINE"
+  ],
+  "ee_codes": [],
+  "marks_total": 17
+ },
+ {
+  "family": "2 EMT 27#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 27 conducteurs #12 (Line traces; source spec '2 27c12')",
+  "examples_labels": [
+   "2 27c12"
+  ],
+  "ee_codes": [
+   "ENS181CFDEE14FDA1271"
+  ],
+  "marks_total": 17
+ },
+ {
+  "family": "3/4 EMT 4#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 4 conducteurs #12 (Line traces; source spec '3/4 4c12')",
+  "examples_labels": [
+   "3/4 4c12"
+  ],
+  "ee_codes": [
+   "ENSBD0CD3CD111193D11"
+  ],
+  "marks_total": 17
+ },
+ {
+  "family": "PLINTHE 1500W",
+  "category": "chauffage",
+  "sous_type": "plinthe electrique 1500W",
+  "examples_labels": [
+   "PLINTHE 1500W"
+  ],
+  "ee_codes": [],
+  "marks_total": 16
+ },
+ {
+  "family": "VA",
+  "category": "indetermine",
+  "sous_type": "sigle incertain",
+  "examples_labels": [
+   "VA"
+  ],
+  "ee_codes": [],
+  "marks_total": 16
+ },
+ {
+  "family": "TYPE F",
+  "category": "luminaire",
+  "sous_type": "luminaire type F (forme abregee probable)",
+  "examples_labels": [
+   "Type F",
+   "TYPE F"
+  ],
+  "ee_codes": [],
+  "marks_total": 16
+ },
+ {
+  "family": "60A NF",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur 60A non-fusible",
+  "examples_labels": [
+   "60A NF"
+  ],
+  "ee_codes": [],
+  "marks_total": 16
+ },
+ {
+  "family": "3/4 EMT 3#8",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 3 conducteurs #8 (Line traces; source spec '3/4 3c8')",
+  "examples_labels": [
+   "3/4 3c8"
+  ],
+  "ee_codes": [
+   "ENS89E4264114A9B1051"
+  ],
+  "marks_total": 16
+ },
+ {
+  "family": "2 EMT 37#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 37 conducteurs #12 (Line traces; source spec '2 37c12')",
+  "examples_labels": [
+   "2 37c12"
+  ],
+  "ee_codes": [
+   "ENSB21032F0AA14CD512"
+  ],
+  "marks_total": 16
+ },
+ {
+  "family": "1 EMT 4#6",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 4 conducteurs #6 (Line traces; source spec '1 4c6')",
+  "examples_labels": [
+   "1 4c6"
+  ],
+  "ee_codes": [
+   "ENS199CAC4C18914BEE1"
+  ],
+  "marks_total": 16
+ },
+ {
+  "family": "1 1/4 EMT 13#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 13 conducteurs #10 (Line traces; source spec '1''1/4 13c10')",
+  "examples_labels": [
+   "1''1/4 13c10"
+  ],
+  "ee_codes": [
+   "ENSC3DFDBDA15919F560"
+  ],
+  "marks_total": 16
+ },
+ {
+  "family": "DISCONN 30A 600V NF",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur non fusible 30A 600V",
+  "examples_labels": [
+   "DISCONN 30A 600V NF"
+  ],
+  "ee_codes": [],
+  "marks_total": 15
+ },
+ {
+  "family": "DEMARREUR MANUEL",
+  "category": "mecanique_moteur",
+  "sous_type": "démarreur manuel de moteur",
+  "examples_labels": [
+   "DEMARREUR MANUEL"
+  ],
+  "ee_codes": [],
+  "marks_total": 15
+ },
+ {
+  "family": "OUVRE PORTE",
+  "category": "autre",
+  "sous_type": "ouvre-porte automatique",
+  "examples_labels": [
+   "OUVRE PORTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 15
+ },
+ {
+  "family": "INTERCOM",
+  "category": "telecom_donnees",
+  "sous_type": "système d'intercom (interphone)",
+  "examples_labels": [
+   "INTERCOM"
+  ],
+  "ee_codes": [],
+  "marks_total": 15
+ },
+ {
+  "family": "1 1/4 EMT 4#3",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 4 conducteurs #3 (Line traces; source spec '1''1/4 4c3')",
+  "examples_labels": [
+   "1''1/4 4c3"
+  ],
+  "ee_codes": [
+   "ENS5390A54F14C1C9DA1"
+  ],
+  "marks_total": 15
+ },
+ {
+  "family": "MOTEUR VE",
+  "category": "mecanique_moteur",
+  "sous_type": "moteur pour ventilateur d'extraction/évacuation (VE)",
+  "examples_labels": [
+   "MOTEUR VE",
+   "moteur ve"
+  ],
+  "ee_codes": [],
+  "marks_total": 13
+ },
+ {
+  "family": "BOUTON SONNETTE",
+  "category": "dispositif",
+  "sous_type": "bouton de sonnette (carillon)",
+  "examples_labels": [
+   "BOUTON SONNETTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 13
+ },
+ {
+  "family": "TA",
+  "category": "indetermine",
+  "sous_type": "sigle incertain",
+  "examples_labels": [
+   "TA"
+  ],
+  "ee_codes": [],
+  "marks_total": 13
+ },
+ {
+  "family": "PANN CONTROL",
+  "category": "indetermine",
+  "sous_type": "panneau de contrôle, type non précisé",
+  "examples_labels": [
+   "PANN CONTROL"
+  ],
+  "ee_codes": [],
+  "marks_total": 12
+ },
+ {
+  "family": "2 EMT 35#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 35 conducteurs #12 (Line traces; source spec '2 35c12')",
+  "examples_labels": [
+   "2 35c12"
+  ],
+  "ee_codes": [
+   "ENSFFA0DE0A11E16C171"
+  ],
+  "marks_total": 12
+ },
+ {
+  "family": "1 EMT 3#6",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 3 conducteurs #6 (Line traces; source spec '1 3c6')",
+  "examples_labels": [
+   "1 3c6"
+  ],
+  "ee_codes": [
+   "ENS95A3E880EC1C39414"
+  ],
+  "marks_total": 12
+ },
+ {
+  "family": "B TV",
+  "category": "telecom_donnees",
+  "sous_type": "sortie television, variante B",
+  "examples_labels": [
+   "B TV"
+  ],
+  "ee_codes": [],
+  "marks_total": 11
+ },
+ {
+  "family": "1 EMT 3#8",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 3 conducteurs #8 (Line traces; source spec '1 3c8')",
+  "examples_labels": [
+   "1 3c8"
+  ],
+  "ee_codes": [
+   "ENS4087D7CC105E611F1"
+  ],
+  "marks_total": 11
+ },
+ {
+  "family": "2 EMT 31#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 31 conducteurs #10 (Line traces; source spec '2 31c10')",
+  "examples_labels": [
+   "2 31c10"
+  ],
+  "ee_codes": [
+   "ENS09B0131412312115B"
+  ],
+  "marks_total": 11
+ },
+ {
+  "family": "HUM",
+  "category": "autre",
+  "sous_type": "humidificateur (raccordement électrique)",
+  "examples_labels": [
+   "HUM"
+  ],
+  "ee_codes": [],
+  "marks_total": 10
+ },
+ {
+  "family": "CABLE CHAUFFANT",
+  "category": "chauffage",
+  "sous_type": "câble chauffant (traçage/déglaçage)",
+  "examples_labels": [
+   "CABLE CHAUFFANT",
+   "Cable Chauffant"
+  ],
+  "ee_codes": [],
+  "marks_total": 10
+ },
+ {
+  "family": "3/4 EMT 6#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 6 conducteurs #12 (Line traces; source spec '3/4 6c12')",
+  "examples_labels": [
+   "3/4 6c12"
+  ],
+  "ee_codes": [
+   "ENS66D32ACE19F1BB320"
+  ],
+  "marks_total": 10
+ },
+ {
+  "family": "2 EMT 27#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 27 conducteurs #10 (Line traces; source spec '2 27c10')",
+  "examples_labels": [
+   "2 27c10"
+  ],
+  "ee_codes": [
+   "ENSEA79F6F3189190E81"
+  ],
+  "marks_total": 10
+ },
+ {
+  "family": "FIXT TYPE S5",
+  "category": "luminaire",
+  "sous_type": "luminaire type S5",
+  "examples_labels": [
+   "FIXT TYPE S5"
+  ],
+  "ee_codes": [],
+  "marks_total": 9
+ },
+ {
+  "family": "2 EMT 4#3",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 4 conducteurs #3 (Line traces; source spec '2 4c3')",
+  "examples_labels": [
+   "2 4c3"
+  ],
+  "ee_codes": [
+   "ENSACCF77E917D10EFA1"
+  ],
+  "marks_total": 9
+ },
+ {
+  "family": "2 EMT 39#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 39 conducteurs #12 (Line traces; source spec '2 39c12')",
+  "examples_labels": [
+   "2 39c12"
+  ],
+  "ee_codes": [
+   "ENSC44FBFD5B2C4EB148"
+  ],
+  "marks_total": 9
+ },
+ {
+  "family": "30A 600V F",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur fusible 30A/600V",
+  "examples_labels": [
+   "30A 600V F"
+  ],
+  "ee_codes": [],
+  "marks_total": 8
+ },
+ {
+  "family": "CONTACTEUR",
+  "category": "mecanique_moteur",
+  "sous_type": "contacteur (demarrage moteur)",
+  "examples_labels": [
+   "CONTACTEUR",
+   "contacteur"
+  ],
+  "ee_codes": [],
+  "marks_total": 8
+ },
+ {
+  "family": "GSM",
+  "category": "telecom_donnees",
+  "sous_type": "module de communication cellulaire (GSM)",
+  "examples_labels": [
+   "GSM"
+  ],
+  "ee_codes": [],
+  "marks_total": 8
+ },
+ {
+  "family": "1 1/4 EMT 3#4",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 3 conducteurs #4 (Line traces; source spec '1''1/4 3c4')",
+  "examples_labels": [
+   "1''1/4 3c4"
+  ],
+  "ee_codes": [
+   "ENSC947E397BBFDF8035"
+  ],
+  "marks_total": 8
+ },
+ {
+  "family": "1/2 EMT 6#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1/2 po, 6 conducteurs #12 (Line traces; source spec '1/2 6c12')",
+  "examples_labels": [
+   "1/2 6c12"
+  ],
+  "ee_codes": [
+   "ENS038655E0139123B21"
+  ],
+  "marks_total": 8
+ },
+ {
+  "family": "1 1/4 EMT 4#4",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 4 conducteurs #4 (Line traces; source spec '1''1/4 4c4')",
+  "examples_labels": [
+   "1''1/4 4c4"
+  ],
+  "ee_codes": [
+   "ENS77C38C36117947F09"
+  ],
+  "marks_total": 8
+ },
+ {
+  "family": "1 1/4 EMT 22#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 22 conducteurs #12 (Line traces; source spec '1''1/4 22c12')",
+  "examples_labels": [
+   "1''1/4 22c12"
+  ],
+  "ee_codes": [
+   "ENS8A7F3AB9191B71281"
+  ],
+  "marks_total": 8
+ },
+ {
+  "family": "PANN ALARME",
+  "category": "securite_incendie",
+  "sous_type": "panneau de contrôle d'alarme incendie (FACP)",
+  "examples_labels": [
+   "PANN ALARME"
+  ],
+  "ee_codes": [],
+  "marks_total": 7
+ },
+ {
+  "family": "ONDULATEUR",
+  "category": "distribution",
+  "sous_type": "onduleur / UPS (alimentation sans interruption)",
+  "examples_labels": [
+   "ONDULATEUR"
+  ],
+  "ee_codes": [],
+  "marks_total": 7
+ },
+ {
+  "family": "30A",
+  "category": "mecanique_moteur",
+  "sous_type": "sectionneur 30A (calibre de base)",
+  "examples_labels": [
+   "30A"
+  ],
+  "ee_codes": [],
+  "marks_total": 7
+ },
+ {
+  "family": "1 1/4 EMT 15#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 15 conducteurs #10 (Line traces; source spec '1''1/4 15c10')",
+  "examples_labels": [
+   "1''1/4 15c10"
+  ],
+  "ee_codes": [
+   "ENS0F1A3B80AD1929A16"
+  ],
+  "marks_total": 7
+ },
+ {
+  "family": "1 1/4 EMT 9#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 9 conducteurs #10 (Line traces; source spec '1''1/4 9c10')",
+  "examples_labels": [
+   "1''1/4 9c10"
+  ],
+  "ee_codes": [
+   "ENS5D2E5411131116131"
+  ],
+  "marks_total": 7
+ },
+ {
+  "family": "1 1/4 EMT 11#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 11 conducteurs #10 (Line traces; source spec '1''1/4 11c10')",
+  "examples_labels": [
+   "1''1/4 11c10"
+  ],
+  "ee_codes": [
+   "ENSB652A86DFC1481070"
+  ],
+  "marks_total": 7
+ },
+ {
+  "family": "3/4 HP",
+  "category": "mecanique_moteur",
+  "sous_type": "moteur électrique, puissance 3/4 HP",
+  "examples_labels": [
+   "3/4 HP"
+  ],
+  "ee_codes": [],
+  "marks_total": 6
+ },
+ {
+  "family": "750W 347V",
+  "category": "luminaire",
+  "sous_type": "luminaire coté par puissance, 750W/347V",
+  "examples_labels": [
+   "750W 347V"
+  ],
+  "ee_codes": [],
+  "marks_total": 6
+ },
+ {
+  "family": "1 1/4 EMT 16#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 16 conducteurs #12 (Line traces; source spec '1''1/4 16c12')",
+  "examples_labels": [
+   "1''1/4 16c12"
+  ],
+  "ee_codes": [
+   "ENS40793E2C16D120241"
+  ],
+  "marks_total": 6
+ },
+ {
+  "family": "2 EMT 25#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 25 conducteurs #10 (Line traces; source spec '2 25c10')",
+  "examples_labels": [
+   "2 25c10"
+  ],
+  "ee_codes": [
+   "ENS8524C64C9013A1130"
+  ],
+  "marks_total": 6
+ },
+ {
+  "family": "VE-1",
+  "category": "mecanique_moteur",
+  "sous_type": "ventilateur d'évacuation, tag mécanique VE-1",
+  "examples_labels": [
+   "VE-1"
+  ],
+  "ee_codes": [],
+  "marks_total": 5
+ },
+ {
+  "family": "B HOTTE",
+  "category": "mecanique_moteur",
+  "sous_type": "hotte de cuisine, unité B (raccordement électrique)",
+  "examples_labels": [
+   "B HOTTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 5
+ },
+ {
+  "family": "5KW",
+  "category": "indetermine",
+  "sous_type": "puissance seule, appareil non precise",
+  "examples_labels": [
+   "5KW"
+  ],
+  "ee_codes": [],
+  "marks_total": 5
+ },
+ {
+  "family": "1 EMT 10#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 10 conducteurs #12 (Line traces; source spec '1 10c12')",
+  "examples_labels": [
+   "1 10c12"
+  ],
+  "ee_codes": [
+   "ENSFA08B20A120A58B0D"
+  ],
+  "marks_total": 5
+ },
+ {
+  "family": "2 EMT 3#1",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 3 conducteurs #1 (Line traces; source spec '2 3c1')",
+  "examples_labels": [
+   "2 3c1"
+  ],
+  "ee_codes": [
+   "ENS7B933CC4DE1821E50"
+  ],
+  "marks_total": 5
+ },
+ {
+  "family": "C HOTTE",
+  "category": "mecanique_moteur",
+  "sous_type": "hotte de cuisine, unité C (raccordement électrique)",
+  "examples_labels": [
+   "C HOTTE"
+  ],
+  "ee_codes": [],
+  "marks_total": 4
+ },
+ {
+  "family": "A POELE",
+  "category": "dispositif",
+  "sous_type": "raccordement/sortie pour cuisiniere electrique",
+  "examples_labels": [
+   "A POELE"
+  ],
+  "ee_codes": [],
+  "marks_total": 4
+ },
+ {
+  "family": "1 EMT 8#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 8 conducteurs #10 (Line traces; source spec '1 8c10')",
+  "examples_labels": [
+   "1 8c10"
+  ],
+  "ee_codes": [
+   "ENS9FEEA3C3B011C1660"
+  ],
+  "marks_total": 4
+ },
+ {
+  "family": "3/4 EMT 4#8",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 4 conducteurs #8 (Line traces; source spec '3/4 4c8')",
+  "examples_labels": [
+   "3/4 4c8"
+  ],
+  "ee_codes": [
+   "ENSDD54E9FDA04F10F12"
+  ],
+  "marks_total": 4
+ },
+ {
+  "family": "2 EMT 29#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 29 conducteurs #12 (Line traces; source spec '2 29c12')",
+  "examples_labels": [
+   "2 29c12"
+  ],
+  "ee_codes": [
+   "ENS2957DE12104147E31"
+  ],
+  "marks_total": 4
+ },
+ {
+  "family": "2 EMT 29#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 29 conducteurs #10 (Line traces; source spec '2 29c10')",
+  "examples_labels": [
+   "2 29c10"
+  ],
+  "ee_codes": [
+   "ENSEEEC9BF5D01517F12"
+  ],
+  "marks_total": 4
+ },
+ {
+  "family": "3/4 EMT 3#6",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 3 conducteurs #6 (Line traces; source spec '3/4 3c6')",
+  "examples_labels": [
+   "3/4 3c6"
+  ],
+  "ee_codes": [
+   "ENS003DB51715411B191"
+  ],
+  "marks_total": 4
+ },
+ {
+  "family": "2 EMT 21#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 21 conducteurs #10 (Line traces; source spec '2 21c10')",
+  "examples_labels": [
+   "2 21c10"
+  ],
+  "ee_codes": [
+   "ENS80A7CC75E41101480"
+  ],
+  "marks_total": 4
+ },
+ {
+  "family": "1 1/4 EMT 6#6",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 6 conducteurs #6 (Line traces; source spec '1''1/4 6c6')",
+  "examples_labels": [
+   "1''1/4 6c6"
+  ],
+  "ee_codes": [
+   "ENSC2249CE81017D7B0D"
+  ],
+  "marks_total": 4
+ },
+ {
+  "family": "4 EMT 4#3",
+  "category": "conduit_filage",
+  "sous_type": "conduit 4 po, 4 conducteurs #3 (Line traces; source spec '4 4c3')",
+  "examples_labels": [
+   "4 4c3"
+  ],
+  "ee_codes": [],
+  "marks_total": 3
+ },
+ {
+  "family": "1 1/4 EMT 10#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 10 conducteurs #10 (Line traces; source spec '1''1/4 10c10')",
+  "examples_labels": [
+   "1''1/4 10c10"
+  ],
+  "ee_codes": [
+   "ENSC721B6D012816F123"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "1 EMT 4#8",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 4 conducteurs #8 (Line traces; source spec '1 4c8')",
+  "examples_labels": [
+   "1 4c8"
+  ],
+  "ee_codes": [
+   "ENS380E403B12BF115C1"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "2 EMT 41#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 41 conducteurs #12 (Line traces; source spec '2 41c12')",
+  "examples_labels": [
+   "2 41c12"
+  ],
+  "ee_codes": [
+   "ENS8B67FC7C14A19B199"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "2 EMT 4#4",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 4 conducteurs #4 (Line traces; source spec '2 4c4')",
+  "examples_labels": [
+   "2 4c4"
+  ],
+  "ee_codes": [
+   "ENS90C8793D101147321"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "3/4 EMT 8#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/4 po, 8 conducteurs #12 (Line traces; source spec '3/4 8c12')",
+  "examples_labels": [
+   "3/4 8c12"
+  ],
+  "ee_codes": [
+   "ENS2237888311317C128"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "2 EMT 22#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 22 conducteurs #10 (Line traces; source spec '2 22c10')",
+  "examples_labels": [
+   "2 22c10"
+  ],
+  "ee_codes": [
+   "ENSF6E4EAE013F106BC0"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "1 1/4 EMT 4#6",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 4 conducteurs #6 (Line traces; source spec '1''1/4 4c6')",
+  "examples_labels": [
+   "1''1/4 4c6"
+  ],
+  "ee_codes": [
+   "ENS7948F9C2157771120"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "2 EMT 23#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 23 conducteurs #10 (Line traces; source spec '2 23c10')",
+  "examples_labels": [
+   "2 23c10"
+  ],
+  "ee_codes": [
+   "ENSC2480F2116C11FFF0"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "2 EMT 19#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 19 conducteurs #10 (Line traces; source spec '2 19c10')",
+  "examples_labels": [
+   "2 19c10"
+  ],
+  "ee_codes": [
+   "ENS58AC240214948AC17"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "1 1/4 EMT 12#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 12 conducteurs #10 (Line traces; source spec '1''1/4 12c10')",
+  "examples_labels": [
+   "1''1/4 12c10"
+  ],
+  "ee_codes": [
+   "ENS5836706B1257013F1"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "3/1 EMT 2#3",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/1 po, 2 conducteurs #3 (Line traces; source spec '3/1 2c3')",
+  "examples_labels": [
+   "3/1 2c3"
+  ],
+  "ee_codes": [],
+  "marks_total": 3
+ },
+ {
+  "family": "2 EMT 4#2",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 4 conducteurs #2 (Line traces; source spec '2 4c2')",
+  "examples_labels": [
+   "2 4c2"
+  ],
+  "ee_codes": [
+   "ENSD607B57A1311A0DB0"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "1 EMT 5#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 5 conducteurs #10 (Line traces; source spec '1 5c10')",
+  "examples_labels": [
+   "1 5c10"
+  ],
+  "ee_codes": [
+   "ENSAE6AC3B6B3AB1220E"
+  ],
+  "marks_total": 3
+ },
+ {
+  "family": "1 EMT 6#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 6 conducteurs #10 (Line traces; source spec '1 6c10')",
+  "examples_labels": [
+   "1 6c10"
+  ],
+  "ee_codes": [
+   "ENS494DF2E117CC3DF1A"
+  ],
+  "marks_total": 2
+ },
+ {
+  "family": "2 EMT 4#1",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 4 conducteurs #1 (Line traces; source spec '2 4c1')",
+  "examples_labels": [
+   "2 4c1"
+  ],
+  "ee_codes": [
+   "ENS9B9D70EEE312B1000"
+  ],
+  "marks_total": 2
+ },
+ {
+  "family": "1 1/4 EMT 7#8",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 7 conducteurs #8 (Line traces; source spec '1''1/4 7c8')",
+  "examples_labels": [
+   "1''1/4 7c8"
+  ],
+  "ee_codes": [
+   "ENS2FDB39CD167147120"
+  ],
+  "marks_total": 2
+ },
+ {
+  "family": "3 EMT 3#30",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3 po, 3 conducteurs #30 (Line traces; source spec '3 3c30')",
+  "examples_labels": [
+   "3 3c30"
+  ],
+  "ee_codes": [],
+  "marks_total": 2
+ },
+ {
+  "family": "21/2 EMT 3#25",
+  "category": "conduit_filage",
+  "sous_type": "conduit 21/2 po, 3 conducteurs #25 (Line traces; source spec '21/2 3c25')",
+  "examples_labels": [
+   "21/2 3c25"
+  ],
+  "ee_codes": [],
+  "marks_total": 2
+ },
+ {
+  "family": "2 EMT 26#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 26 conducteurs #12 (Line traces; source spec '2 26c12')",
+  "examples_labels": [
+   "2 26c12"
+  ],
+  "ee_codes": [
+   "ENS34665FADAF69780AB"
+  ],
+  "marks_total": 2
+ },
+ {
+  "family": "2 EMT 32#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 32 conducteurs #12 (Line traces; source spec '2 32c12')",
+  "examples_labels": [
+   "2 32c12"
+  ],
+  "ee_codes": [
+   "ENS21745EF918813DCC0"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "13/1 EMT 2#1",
+  "category": "conduit_filage",
+  "sous_type": "conduit 13/1 po, 2 conducteurs #1 (Line traces; source spec '13/1 2c1')",
+  "examples_labels": [
+   "13/1 2c1"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "1 1/4 EMT 18#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 18 conducteurs #12 (Line traces; source spec '1''1/4 18c12')",
+  "examples_labels": [
+   "1''1/4 18c12"
+  ],
+  "ee_codes": [
+   "ENS1CB3C02FC288A70E1"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "1 1/4 EMT 4#8",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 4 conducteurs #8 (Line traces; source spec '1''1/4 4c8')",
+  "examples_labels": [
+   "1''1/4 4c8"
+  ],
+  "ee_codes": [
+   "ENS6849FF131861821AF"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "1 EMT 5#8",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 5 conducteurs #8 (Line traces; source spec '1 5c8')",
+  "examples_labels": [
+   "1 5c8"
+  ],
+  "ee_codes": [
+   "ENS161DAC2ABB1421B70"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "2 EMT 28#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 28 conducteurs #10 (Line traces; source spec '2 28c10')",
+  "examples_labels": [
+   "2 28c10"
+  ],
+  "ee_codes": [
+   "ENSD55378D214714E180"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "3/1 EMT 6#3",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3/1 po, 6 conducteurs #3 (Line traces; source spec '3/1 6c3')",
+  "examples_labels": [
+   "3/1 6c3"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "3 EMT 4#35",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3 po, 4 conducteurs #35 (Line traces; source spec '3 4c35')",
+  "examples_labels": [
+   "3 4c35"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "2 EMT 30#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 30 conducteurs #12 (Line traces; source spec '2 30c12')",
+  "examples_labels": [
+   "2 30c12"
+  ],
+  "ee_codes": [
+   "ENSD8BEE50B11843350E"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "2 EMT 3#4",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 3 conducteurs #4 (Line traces; source spec '2 3c4')",
+  "examples_labels": [
+   "2 3c4"
+  ],
+  "ee_codes": [
+   "ENS1698BC3F17216C138"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "1 EMT 3#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 3 conducteurs #10 (Line traces; source spec '1 3c10')",
+  "examples_labels": [
+   "1 3c10"
+  ],
+  "ee_codes": [
+   "ENS8D3877F819B1BD17D"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "2 EMT 36#12",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 36 conducteurs #12 (Line traces; source spec '2 36c12')",
+  "examples_labels": [
+   "2 36c12"
+  ],
+  "ee_codes": [
+   "ENS59AD1A18105E1A61A"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "1 EMT 7#14",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 po, 7 conducteurs #14 (Line traces; source spec '1 7c14')",
+  "examples_labels": [
+   "1 7c14"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "1 1/4 EMT 3#6",
+  "category": "conduit_filage",
+  "sous_type": "conduit 1 1/4 po, 3 conducteurs #6 (Line traces; source spec '1''1/4 3c6')",
+  "examples_labels": [
+   "1''1/4 3c6"
+  ],
+  "ee_codes": [
+   "ENS68E85707B51638E02"
+  ],
+  "marks_total": 1
+ },
+ {
+  "family": "3 EMT 3#35",
+  "category": "conduit_filage",
+  "sous_type": "conduit 3 po, 3 conducteurs #35 (Line traces; source spec '3 3c35')",
+  "examples_labels": [
+   "3 3c35"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "4 EMT 3#50",
+  "category": "conduit_filage",
+  "sous_type": "conduit 4 po, 3 conducteurs #50 (Line traces; source spec '4 3c50')",
+  "examples_labels": [
+   "4 3c50"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "4/1 EMT 2#3",
+  "category": "conduit_filage",
+  "sous_type": "conduit 4/1 po, 2 conducteurs #3 (Line traces; source spec '4/1 2c3')",
+  "examples_labels": [
+   "4/1 2c3"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "4/1 EMT 2#2",
+  "category": "conduit_filage",
+  "sous_type": "conduit 4/1 po, 2 conducteurs #2 (Line traces; source spec '4/1 2c2')",
+  "examples_labels": [
+   "4/1 2c2"
+  ],
+  "ee_codes": [],
+  "marks_total": 1
+ },
+ {
+  "family": "2 EMT 30#10",
+  "category": "conduit_filage",
+  "sous_type": "conduit 2 po, 30 conducteurs #10 (Line traces; source spec '2 30c10')",
+  "examples_labels": [
+   "2 30c10"
+  ],
+  "ee_codes": [
+   "ENS9CE4FFC1A312B1131"
+  ],
+  "marks_total": 1
+ }
+]

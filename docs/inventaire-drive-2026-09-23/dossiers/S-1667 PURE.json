@@ -1,0 +1,76 @@
+{
+  "dossier": "S-1667 PURE",
+  "id": "1t99JAHlOfbeEw9R1_gc_mFeIyy5mgV_L",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1Z8brqxMRtOGXxmuzbOXRMVg0vjsc3fjj",
+      "ext": "db",
+      "octets": 50176,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1667.docx",
+      "id": "1DXHJswnWbxGpodJhH5mwle7G5IvuPPCf",
+      "ext": "docx",
+      "octets": 62734,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1667.pdf",
+      "id": "1tHLfr6JaoBC5bkES30PvqnVpyA_NXf-l",
+      "ext": "pdf",
+      "octets": 1082824,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "bordereau de prix.pdf",
+      "id": "1M_DEP_5ak428gZep-gaOOejZS-xwsbsr",
+      "ext": "pdf",
+      "octets": 822366,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1JwXgGI5AvwUNPyx8bSDNxzPV9GbE9eNz",
+      "ext": "docx",
+      "octets": 62595,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "ANNEXE A.docx",
+      "id": "1s86I2Li9sHNVjSARcq0B8HPRpHl_ZiWU",
+      "ext": "docx",
+      "octets": 17225,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "2166 de la Province_VSP - Budget.xlsx",
+      "id": "1iGPGHLIr7p9gkYxgEIDnfGZuE6x-zf1X",
+      "ext": "xlsx",
+      "octets": 16663,
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "chemin": "unit2166-v1 Floor Plan - Extreme Measures - 2025.pdf",
+      "id": "1P_0criVlXGm62gIyP2HlkJkpcwwwmqXs",
+      "ext": "pdf",
+      "octets": 185314,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "2166 de la Province_Appel d'offre.docx",
+      "id": "1EuAwJMGsjWXWrK2Zvr2sTr6EKmV5MVTN",
+      "ext": "docx",
+      "octets": 36098,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Visite chantier PURE 031-2026-02-02.pdf",
+      "id": "1HCNyYk5jLZRDiQQf2-2lKhAyzhQHs-4j",
+      "ext": "pdf",
+      "octets": 7752996,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

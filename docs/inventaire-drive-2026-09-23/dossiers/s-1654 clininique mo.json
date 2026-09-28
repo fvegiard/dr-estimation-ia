@@ -1,0 +1,41 @@
+{
+  "dossier": "s-1654 clininique mo",
+  "id": "1ccj3uDC2Ygjp5_pfhsdl-JDEz2RuCQy2",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1uOW0lEpZsGGssKFIwj8F_6N29QPwmVga",
+      "ext": "db",
+      "octets": 23552,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Soumission_S-1654_Lecuyer_ClearPoint_1977.pdf",
+      "id": "157t4RnPuMSJhjRqEPKJtLQy5pNHQnH3q",
+      "ext": "pdf",
+      "octets": 206778,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "S-1654.docx",
+      "id": "10IHY_cl7f9wNNtXIsgxG_CSr7UP0tVyI",
+      "ext": "docx",
+      "octets": 61977,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1654.pdf",
+      "id": "1n9fJl2mRVbkfT_RK37aykHu2MzmI2x5v",
+      "ext": "pdf",
+      "octets": 280163,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1C6BKT6TvszxQHRrZkHlt13VhGTkRGWG-",
+      "ext": "docx",
+      "octets": 62637,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

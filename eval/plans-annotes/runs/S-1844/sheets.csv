@@ -1,0 +1,8 @@
+page,sheet,dispositif,luminaire,securite_incendie,telecom_donnees,chauffage,distribution,mecanique_moteur,autre,indetermine,total,unreadable_markup_zones,conduit_estimate_ft,flags
+1,E101,22,8,1,0,0,0,0,0,0,31,64,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+2,E200,128,50,19,0,3,0,0,0,16,216,110,3067.9,page_has_coloured_markup;unreadable_markup_zones
+3,E200D,76,74,1,1,1,0,0,0,16,169,88,2827.1,page_has_coloured_markup;unreadable_markup_zones
+4,E201,4,6,0,0,0,0,0,0,1,11,12,1117.5,page_has_coloured_markup;unreadable_markup_zones
+5,E300,87,81,17,1,4,0,0,0,30,220,238,3512.6,page_has_coloured_markup;unreadable_markup_zones
+6,E300D,106,75,7,0,0,0,0,0,27,215,255,3426.1,page_has_coloured_markup;unreadable_markup_zones
+7,E400,58,52,1,0,5,0,0,0,36,152,30,2966.0,page_has_coloured_markup;unreadable_markup_zones

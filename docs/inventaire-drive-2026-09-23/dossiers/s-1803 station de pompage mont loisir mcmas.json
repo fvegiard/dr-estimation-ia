@@ -1,0 +1,41 @@
+{
+  "dossier": "s-1803 station de pompage mont loisir mcmas",
+  "id": "1G4Qy3qh0xiEsYaXS_vlTnf7ZDa5Hyr1X",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1LmqgUsv1sULhl2LKVFTnjmiABbhV8vT7",
+      "ext": "db",
+      "octets": 28672,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Soumission_S-1803_McMasterville_StationPompage_MODIFIÉE.pdf",
+      "id": "1vi9oYzpHZhvcTD1k_5g2HT-WqZ_LnncG",
+      "ext": "pdf",
+      "octets": 344907,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission_S-1803_McMasterville_StationPompage.docx",
+      "id": "17Y8ywWVhpV3gdz2XnMR9aeq0_fhiAzl4",
+      "ext": "docx",
+      "octets": 44710,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1ZsBS4k5LWa2eeZUynaGDa6RqPDjbob0l",
+      "ext": "docx",
+      "octets": 62476,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Soumission_S-1803_McMasterville_StationPompage.pdf",
+      "id": "13cLrJ49gRmti43LdKnm2gFeQYKDu7wuU",
+      "ext": "pdf",
+      "octets": 49900,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

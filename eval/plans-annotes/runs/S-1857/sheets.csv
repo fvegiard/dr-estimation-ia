@@ -1,0 +1,13 @@
+page,sheet,dispositif,luminaire,securite_incendie,telecom_donnees,chauffage,distribution,mecanique_moteur,autre,indetermine,total,unreadable_markup_zones,conduit_estimate_ft,flags
+1,E200,17,59,2,1,0,0,0,0,1,80,21,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+2,E400,27,35,4,1,1,0,0,0,4,72,105,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+3,E401,46,38,6,1,0,0,0,0,3,94,288,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+4,E402,35,35,7,1,0,0,0,0,6,84,342,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+5,E403,35,36,5,1,0,0,0,0,11,88,195,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+6,E404,15,28,1,1,0,0,0,0,4,49,19,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+7,E405,35,48,6,1,1,0,0,0,6,97,106,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+8,E406,34,36,6,1,1,0,0,0,4,82,194,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+9,E407,26,28,4,2,0,0,0,0,3,63,182,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+10,E408,35,29,3,2,1,0,0,0,2,72,127,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+11,E409,12,26,1,1,0,0,0,0,3,43,25,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown
+12,E600,180,31,3,1,0,1,0,0,2,218,66,,page_has_coloured_markup;unreadable_markup_zones;scale_unknown

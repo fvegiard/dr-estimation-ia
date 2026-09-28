@@ -1,0 +1,54 @@
+libelle_humain,libelle_ia,proportion,appariees,humain,ia_libelle_total,humain_groupe,ecart_groupe,libelles_humains_partages,manquantes_ia,meme_position_libelle_different,repartition
+ADD PRISE,Prise double 5-15R,1.00,108,110,108,110,-2,,2,0,Prise double 5-15R=108
+ADD KLAXON STROB,Klaxon/stroboscope,1.00,63,63,63,63,0,,0,0,Klaxon/stroboscope=63
+ADD FIXTURE TYPE A1,A1 Troffer 2x4,0.90,59,59,53,59,-6,,0,6,A1 Troffer 2x4=53 ; A1 Troffer 2x4 urgence=6
+ADD DETECTEUR FUMÉE,Détecteur de fumée photoélectrique,1.00,44,44,50,50,0,ADD DETECTEUR FUMÉE ; ADD DETECTEUR GAINE,0,0,Détecteur de fumée photoélectrique=44
+ADD FIXTURE TYPE D1,D1 High bay,0.67,43,43,29,43,-14,,0,14,D1 High bay=29 ; D1 High bay urgence=14
+ADD FIXTURE TYPE C2,C2 Spot lieux humides,1.00,36,36,36,36,0,,0,0,C2 Spot lieux humides=36
+ADD C1.1 500W,C1.1 Plinthe 500W,1.00,34,34,34,34,0,,0,0,C1.1 Plinthe 500W=34
+ADD INT DETEC,Interrupteur avec détecteur de présence,1.00,34,34,37,34,3,,0,0,Interrupteur avec détecteur de présence=34
+ADD FIXTURE TYPE C1,C1 Spot encastré,0.86,28,28,24,28,-4,,0,4,C1 Spot encastré=24 ; C1 Spot encastré urgence=4
+ADD FIXTURE G2,G2 Applique de zone type 2,1.00,20,20,20,20,0,,0,0,G2 Applique de zone type 2=20
+ADD EXIT,X1 Enseigne d'issue,1.00,18,18,18,18,0,,0,0,X1 Enseigne d'issue=18
+ADD FIXTURE TYPE C3,C3 Spot boîtier 2h,0.62,16,16,10,16,-6,,0,6,C3 Spot boîtier 2h=10 ; C3 Spot boîtier 2h urgence=6
+ADD FIXTURE TYPE E1,E1 Réglette 4 pi,0.75,16,16,12,16,-4,,0,4,E1 Réglette 4 pi=12 ; E1 Réglette 4 pi urgence=4
+ADD FIXTURE TYPE G3,G3 Applique de zone type 3,1.00,10,11,11,14,-3,ADD FIXTURE TYPE G3 ; B2  2/6 1X12,1,0,G3 Applique de zone type 3=10
+ADD ARM,Module de relais ARM,1.00,10,10,13,10,3,,0,0,Module de relais ARM=10
+ADD C4.1  1500W,C4.1 Plinthe 1500W,1.00,10,10,11,11,0,ADD C1.1 1500W ; ADD C4.1  1500W,0,0,C4.1 Plinthe 1500W=10
+ADD SERPENTIN,Serpentin EHC1 19 kW,0.30,10,10,3,10,-7,,0,7,Serpentin EHC1-006 500W=3 ; Serpentin EHC1 19 kW=3 ; Serpentin EHC2 15 kW=3 ; Serpentin EHC3 3 kW douche=1
+ADD FIXTURE TYPE L5,L5 Lampadaire type 5,1.00,9,9,9,9,0,,0,0,L5 Lampadaire type 5=9
+ADD STATION MANUEL,Déclencheur manuel,1.00,9,9,9,9,0,,0,0,Déclencheur manuel=9
+ADD  30A 20A,Sectionneur ≤240V,1.00,8,8,8,8,0,,0,0,Sectionneur ≤240V=8
+ADD INT,Interrupteur unipolaire,0.57,7,7,4,7,-3,,0,3,Interrupteur unipolaire=4 ; Interrupteur avec détecteur de présence=3
+ADD DETECTEUR GAINE,Détecteur de fumée photoélectrique,1.00,6,6,50,50,0,ADD DETECTEUR FUMÉE ; ADD DETECTEUR GAINE,0,0,Détecteur de fumée photoélectrique=6
+ADD GRADATEUR,Gradateur,1.00,6,6,6,6,0,,0,0,Gradateur=6
+ADD STROB,Stroboscope mural,1.00,6,6,6,6,0,,0,0,Stroboscope mural=6
+ADD PUIT ACCES,Puits d'accès électrique/télécom,1.00,5,5,5,5,0,,0,0,Puits d'accès électrique/télécom=5
+ADD C6.1 1000W,C6.1 Plinthe 1000W,1.00,4,4,4,4,0,,0,0,C6.1 Plinthe 1000W=4
+ADD FIXTURE TYPE B1,B1 Troffer 2x2,1.00,4,4,4,4,0,,0,0,B1 Troffer 2x2=4
+ADDFIXTURE TYPE L3,L3 Lampadaire type 3,1.00,4,4,4,4,0,,0,0,L3 Lampadaire type 3=4
+ADD 30A NF WP,Sectionneur ≤240V WP,1.00,3,3,3,3,0,,0,0,Sectionneur ≤240V WP=3
+ADD C2.2  4000W,C2.2 Convecteur 4000W,1.00,3,3,3,3,0,,0,0,C2.2 Convecteur 4000W=3
+ADD DETECTEUR FL -RX,Détecteur faisceau récepteur FL-RX,1.00,3,3,3,3,0,,0,0,Détecteur faisceau récepteur FL-RX=3
+ADD DETECTEUR FL-TX,Détecteur faisceau émetteur FL-TX,1.00,3,3,3,3,0,,0,0,Détecteur faisceau émetteur FL-TX=3
+ADD FIXTURE TYPE L2,L2 Lampadaire type 2,1.00,3,3,3,3,0,,0,0,L2 Lampadaire type 2=3
+ADD HE,Raccordement unité HE toit,1.00,3,3,3,3,0,,0,0,Raccordement unité HE toit=3
+ADD HU1,Raccordement humidificateur HU,1.00,3,3,3,3,0,,0,0,Raccordement humidificateur HU=3
+ADD RT,Raccordement UTA toit RT,1.00,3,3,3,3,0,,0,0,Raccordement UTA toit RT=3
+ADDCS1,Raccordement condenseur CS,1.00,3,3,3,3,0,,0,0,Raccordement condenseur CS=3
+B2  2/6 1X12,G3 Applique de zone type 3,1.00,1,3,11,14,-3,ADD FIXTURE TYPE G3 ; B2  2/6 1X12,2,0,G3 Applique de zone type 3=1
+ADD AIM,Module d'interface AIM,1.00,2,2,2,2,0,,0,0,Module d'interface AIM=2
+ADD C5.1   2000W,C5.1 Convecteur 2000W,1.00,2,2,2,2,0,,0,0,C5.1 Convecteur 2000W=2
+ADD DETEC 360,Détecteur de présence plafond,1.00,2,2,2,2,0,,0,0,Détecteur de présence plafond=2
+ADD EV1,Raccordement évaporateur EV,1.00,2,2,2,2,0,,0,0,Raccordement évaporateur EV=2
+ADD TF2,Raccordement ventilateur TF,1.00,2,2,2,2,0,,0,0,Raccordement ventilateur TF=2
+ONDULATEUR,Mini-onduleur 12V,1.00,2,2,2,2,0,,0,0,Mini-onduleur 12V=2
+ADD C 5.2 2000W,C5.2 Convecteur 2000W,1.00,1,1,1,1,0,,0,0,C5.2 Convecteur 2000W=1
+ADD C1.1 1500W,C4.1 Plinthe 1500W,1.00,1,1,11,11,0,ADD C1.1 1500W ; ADD C4.1  1500W,0,0,C4.1 Plinthe 1500W=1
+ADD C3.2 8000W,C3.2 Aérotherme 8000W,1.00,1,1,1,1,0,,0,0,C3.2 Aérotherme 8000W=1
+ADD FAAP,Annonciateur FAAP,1.00,1,1,1,1,0,,0,0,Annonciateur FAAP=1
+ADD FAP,Panneau d'alarme incendie FAP,1.00,1,1,1,1,0,,0,0,Panneau d'alarme incendie FAP=1
+ADD PAN CONTROL,Point de raccordement panneau de contrôle,1.00,1,1,1,1,0,,0,0,Point de raccordement panneau de contrôle=1
+ADD PS1,Bloc d'alimentation AI PS,1.00,1,1,2,2,0,ADD PS1 ; ADD PS2,0,0,Bloc d'alimentation AI PS=1
+ADD PS2,Bloc d'alimentation AI PS,1.00,1,1,2,2,0,ADD PS1 ; ADD PS2,0,0,Bloc d'alimentation AI PS=1
+ADD PU1-REC,Raccordement pompe PU1,1.00,1,1,1,1,0,,0,0,Raccordement pompe PU1=1

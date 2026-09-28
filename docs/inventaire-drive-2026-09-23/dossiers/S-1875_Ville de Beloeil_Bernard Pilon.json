@@ -1,0 +1,41 @@
+{
+  "dossier": "S-1875_Ville de Beloeil_Bernard Pilon",
+  "id": "1-rTOYGEDmcMd2TTcpVP4mT9hfZV57OPx",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1BPf3JMy2XKppaQHZc7EezfVNkYJaJFTH",
+      "ext": "db",
+      "octets": 11264,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Demande de soumission.pdf",
+      "id": "12Gu4rdVKwlHSADaW3LTtckSFqoCOR1ym",
+      "ext": "pdf",
+      "octets": 855304,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "lampadaire_rue_bernard_pilon.png",
+      "id": "1bGTe98uMQM-KyopD2VPRjcIhtGua-xuQ",
+      "ext": "png",
+      "octets": 1748737,
+      "mimeType": "image/png"
+    },
+    {
+      "chemin": "Signaleur/Thumbs.db",
+      "id": "1NSsvz3aU_g3kiGmWSIR9xPcTgxKEuTHi",
+      "ext": "db",
+      "octets": 11776,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Signaleur/M4549.pdf",
+      "id": "13Kp4lqBztgGD9Fszju4OETAp2_NrBc_7",
+      "ext": "pdf",
+      "octets": 155006,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

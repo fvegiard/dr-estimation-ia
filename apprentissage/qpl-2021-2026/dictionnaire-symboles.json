@@ -1,0 +1,3180 @@
+{
+ "source": "664 relevés Plan Expert (.qpl) DR Électrique 2021-2026",
+ "symboles": [
+  {
+   "label": "PRISE",
+   "categorie": "dispositif",
+   "sous_type": "prise de courant standard (réceptacle duplex)",
+   "tension_bt": "BT",
+   "variantes": [
+    "PRISE 15/20",
+    "PRISE GFI",
+    "PRISE ENL",
+    "PRISE POELE",
+    "PRISE USB",
+    "RELO PRISE",
+    "A PRISE",
+    "D PRISE"
+   ],
+   "occurrences": 57406,
+   "projets": 369
+  },
+  {
+   "label": "INT",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur (général)",
+   "tension_bt": "BT",
+   "variantes": [
+    "INT 1 VOIE",
+    "INT B/V",
+    "INT PILOT",
+    "B INT"
+   ],
+   "occurrences": 9783,
+   "projets": 278
+  },
+  {
+   "label": "TEL",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie téléphone",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "B TEL",
+    "C TEL",
+    "D TEL"
+   ],
+   "occurrences": 7162,
+   "projets": 121
+  },
+  {
+   "label": "HAUT PARLEUR",
+   "categorie": "telecom_donnees",
+   "sous_type": "haut-parleur (système de sonorisation)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 7069,
+   "projets": 66
+  },
+  {
+   "label": "TH",
+   "categorie": "chauffage",
+   "sous_type": "thermostat de chauffage (plinthe électrique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 6724,
+   "projets": 91
+  },
+  {
+   "label": "FIXT TYPE A",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type A",
+   "tension_bt": "BT",
+   "variantes": [
+    "FIXT A"
+   ],
+   "occurrences": 6706,
+   "projets": 148
+  },
+  {
+   "label": "SORTIE TEL",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie telephone",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "A TEL"
+   ],
+   "occurrences": 5978,
+   "projets": 155
+  },
+  {
+   "label": "FIXT TYPE L1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L1 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE L1",
+    "L1"
+   ],
+   "occurrences": 4697,
+   "projets": 70
+  },
+  {
+   "label": "DETECTEUR",
+   "categorie": "securite_incendie",
+   "sous_type": "détecteur de fumée (générique)",
+   "tension_bt": "",
+   "variantes": [
+    "DECT",
+    "DETECTEUR RELO",
+    "DETECTEUR DF1"
+   ],
+   "occurrences": 4686,
+   "projets": 51
+  },
+  {
+   "label": "PRISE DUPLEX 15A 120V",
+   "categorie": "dispositif",
+   "sous_type": "prise duplex 15A 120V",
+   "tension_bt": "BT",
+   "variantes": [
+    "PRISE DUPLEX 15A 120V GFI"
+   ],
+   "occurrences": 4500,
+   "projets": 38
+  },
+  {
+   "label": "PRISE 15A",
+   "categorie": "dispositif",
+   "sous_type": "prise duplex 15A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 4362,
+   "projets": 39
+  },
+  {
+   "label": "GFI",
+   "categorie": "dispositif",
+   "sous_type": "position GFCI (prise avec protection fuite à la terre)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 4196,
+   "projets": 116
+  },
+  {
+   "label": "ENSEIGNE SORTIE",
+   "categorie": "luminaire",
+   "sous_type": "enseigne lumineuse de sortie (EXIT)",
+   "tension_bt": "BT",
+   "variantes": [
+    "ENSEIGNE SORTIE 2T",
+    "EXIT 2 TETE",
+    "ENL EXIT"
+   ],
+   "occurrences": 3878,
+   "projets": 170
+  },
+  {
+   "label": "KS",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 3744,
+   "projets": 16
+  },
+  {
+   "label": "TETE DOUBLE",
+   "categorie": "securite_incendie",
+   "sous_type": "luminaire de secours (batterie) à 2 têtes orientables",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 3399,
+   "projets": 191
+  },
+  {
+   "label": "FIXT TYPE B",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 3358,
+   "projets": 114
+  },
+  {
+   "label": "FIXT TYPE D",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D",
+   "tension_bt": "BT",
+   "variantes": [
+    "FIXT D",
+    "TYPE D"
+   ],
+   "occurrences": 3315,
+   "projets": 84
+  },
+  {
+   "label": "FIXT TYPE E1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type E1",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE E1",
+    "E1"
+   ],
+   "occurrences": 3079,
+   "projets": 36
+  },
+  {
+   "label": "KLAXON",
+   "categorie": "securite_incendie",
+   "sous_type": "avertisseur sonore d'alarme incendie",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "KLAXON WP"
+   ],
+   "occurrences": 3062,
+   "projets": 116
+  },
+  {
+   "label": "EXIT",
+   "categorie": "securite_incendie",
+   "sous_type": "enseigne de sortie EXIT (éclairage d'urgence)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 3034,
+   "projets": 185
+  },
+  {
+   "label": "RACCORD DIRECT",
+   "categorie": "dispositif",
+   "sous_type": "sortie de câblage - raccordement direct (sans prise)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 2715,
+   "projets": 117
+  },
+  {
+   "label": "BOITE",
+   "categorie": "distribution",
+   "sous_type": "boîte électrique générique",
+   "tension_bt": "BT",
+   "variantes": [
+    "4X4",
+    "12X12",
+    "BOITE D 12X12X4PO CEMA1"
+   ],
+   "occurrences": 2687,
+   "projets": 14
+  },
+  {
+   "label": "THERMOSTAT",
+   "categorie": "dispositif",
+   "sous_type": "thermostat (type non precise)",
+   "tension_bt": "BT",
+   "variantes": [
+    "A TH"
+   ],
+   "occurrences": 2574,
+   "projets": 34
+  },
+  {
+   "label": "FIXT TYPE C",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type C",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE C"
+   ],
+   "occurrences": 2566,
+   "projets": 104
+  },
+  {
+   "label": "PLINTHE",
+   "categorie": "chauffage",
+   "sous_type": "plinthe chauffante électrique (générique)",
+   "tension_bt": "BT",
+   "variantes": [
+    "1250W",
+    "500W",
+    "2000W"
+   ],
+   "occurrences": 2443,
+   "projets": 10
+  },
+  {
+   "label": "TEL/DATA",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie combinée téléphone/données",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 2416,
+   "projets": 48
+  },
+  {
+   "label": "FIXT TYPE E",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type E",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE E"
+   ],
+   "occurrences": 2323,
+   "projets": 76
+  },
+  {
+   "label": "GRADATEUR",
+   "categorie": "dispositif",
+   "sous_type": "gradateur d'éclairage",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 2288,
+   "projets": 131
+  },
+  {
+   "label": "SERPENTIN",
+   "categorie": "chauffage",
+   "sous_type": "serpentin chauffant électrique",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 2250,
+   "projets": 178
+  },
+  {
+   "label": "STATION MANUEL",
+   "categorie": "securite_incendie",
+   "sous_type": "station manuelle d'alarme incendie (pull station)",
+   "tension_bt": "",
+   "variantes": [
+    "RELO STATION",
+    "STATION WP"
+   ],
+   "occurrences": 2240,
+   "projets": 159
+  },
+  {
+   "label": "DETECTEUR FUMEE",
+   "categorie": "securite_incendie",
+   "sous_type": "detecteur de fumee",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "DETECTEUR FUMER"
+   ],
+   "occurrences": 2221,
+   "projets": 19
+  },
+  {
+   "label": "FIXT ENL",
+   "categorie": "luminaire",
+   "sous_type": "luminaire existant à enlever (démolition)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 2126,
+   "projets": 13
+  },
+  {
+   "label": "PRISE DUPLEX 15/20A 120V",
+   "categorie": "dispositif",
+   "sous_type": "prise duplex 15/20A 120V",
+   "tension_bt": "BT",
+   "variantes": [
+    "PRISE 15/20A"
+   ],
+   "occurrences": 2093,
+   "projets": 22
+  },
+  {
+   "label": "1000W",
+   "categorie": "chauffage",
+   "sous_type": "plinthe électrique chauffante 1000W",
+   "tension_bt": "BT",
+   "variantes": [
+    "PLINTHE 1000W"
+   ],
+   "occurrences": 1971,
+   "projets": 38
+  },
+  {
+   "label": "INT ENL",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur existant à enlever (démolition)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1778,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE L3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L3",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE L3"
+   ],
+   "occurrences": 1762,
+   "projets": 53
+  },
+  {
+   "label": "FIXT TYPE A1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type A1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1761,
+   "projets": 36
+  },
+  {
+   "label": "DETECTEUR MOUVEMENT",
+   "categorie": "dispositif",
+   "sous_type": "détecteur de mouvement / capteur de présence (contrôle d'éclairage)",
+   "tension_bt": "BT",
+   "variantes": [
+    "DECT MOUV"
+   ],
+   "occurrences": 1747,
+   "projets": 45
+  },
+  {
+   "label": "STROB",
+   "categorie": "securite_incendie",
+   "sous_type": "stroboscope d'alarme incendie",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 1641,
+   "projets": 48
+  },
+  {
+   "label": "HP",
+   "categorie": "telecom_donnees",
+   "sous_type": "haut-parleur (système de son)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 1596,
+   "projets": 62
+  },
+  {
+   "label": "FIXT TYPE F",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type F",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1531,
+   "projets": 77
+  },
+  {
+   "label": "B1000W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B, 1000W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1530,
+   "projets": 17
+  },
+  {
+   "label": "HOTTE",
+   "categorie": "dispositif",
+   "sous_type": "sortie de câblage - hotte de cuisine",
+   "tension_bt": "BT",
+   "variantes": [
+    "D HOTTE",
+    "A HOTTE"
+   ],
+   "occurrences": 1500,
+   "projets": 25
+  },
+  {
+   "label": "CAMERA",
+   "categorie": "securite_incendie",
+   "sous_type": "camera de surveillance",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "CAM",
+    "RELO CAMERA"
+   ],
+   "occurrences": 1497,
+   "projets": 104
+  },
+  {
+   "label": "FIXT TYPE L2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L2",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE L2"
+   ],
+   "occurrences": 1486,
+   "projets": 49
+  },
+  {
+   "label": "TV",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie/prise TV (câble ou antenne)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "D TV",
+    "A TV",
+    "C TV"
+   ],
+   "occurrences": 1412,
+   "projets": 57
+  },
+  {
+   "label": "HORN",
+   "categorie": "securite_incendie",
+   "sous_type": "avertisseur sonore d'alarme (horn)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "HORN RELO"
+   ],
+   "occurrences": 1356,
+   "projets": 71
+  },
+  {
+   "label": "RELAIS",
+   "categorie": "autre",
+   "sous_type": "relais de commande électrique (application précise incertaine)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 1347,
+   "projets": 60
+  },
+  {
+   "label": "COND",
+   "categorie": "distribution",
+   "sous_type": "conduit électrique (canalisation)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 1322,
+   "projets": 12
+  },
+  {
+   "label": "STRIP",
+   "categorie": "luminaire",
+   "sous_type": "luminaire de type réglette/strip linéaire",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1306,
+   "projets": 8
+  },
+  {
+   "label": "8X8",
+   "categorie": "distribution",
+   "sous_type": "boîte électrique 8x8 po",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1290,
+   "projets": 95
+  },
+  {
+   "label": "FIXT TYPE L6",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L6",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1240,
+   "projets": 35
+  },
+  {
+   "label": "INTERRUPTEUR",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur mural standard (unipolaire)",
+   "tension_bt": "BT",
+   "variantes": [
+    "INT 3 VOIE",
+    "3VOIE"
+   ],
+   "occurrences": 1235,
+   "projets": 11
+  },
+  {
+   "label": "B300W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B, désigné par puissance (300W)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1208,
+   "projets": 8
+  },
+  {
+   "label": "PRISE 15A 125V",
+   "categorie": "dispositif",
+   "sous_type": "prise duplex 15A/125V standard",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1202,
+   "projets": 14
+  },
+  {
+   "label": "FIXT TYPE G",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type G",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE G",
+    "G"
+   ],
+   "occurrences": 1199,
+   "projets": 62
+  },
+  {
+   "label": "BATTERIE UNIT",
+   "categorie": "securite_incendie",
+   "sous_type": "unite de batterie de secours (urgence)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "TETE SIMPLE"
+   ],
+   "occurrences": 1157,
+   "projets": 68
+  },
+  {
+   "label": "ENCASTRE",
+   "categorie": "luminaire",
+   "sous_type": "luminaire encastré (pot lumineux)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1157,
+   "projets": 44
+  },
+  {
+   "label": "FIXT TO REMOVE",
+   "categorie": "luminaire",
+   "sous_type": "luminaire existant à enlever (démolition)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1140,
+   "projets": 9
+  },
+  {
+   "label": "SWITCH",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur (terme anglais « switch »)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1097,
+   "projets": 9
+  },
+  {
+   "label": "DISCONN",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur (disconnect), générique",
+   "tension_bt": "BT",
+   "variantes": [
+    "30A NF",
+    "DISCONN 30A NF"
+   ],
+   "occurrences": 1087,
+   "projets": 10
+  },
+  {
+   "label": "TYPE B",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B (forme abregee probable)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1082,
+   "projets": 15
+  },
+  {
+   "label": "ECH",
+   "categorie": "indetermine",
+   "sous_type": "sens incertain (échangeur d'air? ou variante de 'ECL'/éclairage?)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 1082,
+   "projets": 10
+  },
+  {
+   "label": "300W",
+   "categorie": "chauffage",
+   "sous_type": "plinthe électrique chauffante 300W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 1020,
+   "projets": 8
+  },
+  {
+   "label": "1500W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire coté par puissance, 1500W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 958,
+   "projets": 26
+  },
+  {
+   "label": "FIXT TYPE L4",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L4",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 956,
+   "projets": 41
+  },
+  {
+   "label": "DETECTEUR GAINE",
+   "categorie": "securite_incendie",
+   "sous_type": "détecteur de fumée de gaine (conduit CVAC)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 930,
+   "projets": 47
+  },
+  {
+   "label": "FIXT TYPE I",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type I",
+   "tension_bt": "BT",
+   "variantes": [
+    "I"
+   ],
+   "occurrences": 926,
+   "projets": 18
+  },
+  {
+   "label": "MA",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 915,
+   "projets": 16
+  },
+  {
+   "label": "FIXT TYPE B1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 912,
+   "projets": 34
+  },
+  {
+   "label": "FIXT TYPE H",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type H (selon légende du plan)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 895,
+   "projets": 56
+  },
+  {
+   "label": "PRISE SECHEUSE",
+   "categorie": "dispositif",
+   "sous_type": "prise secheuse 240V",
+   "tension_bt": "BT",
+   "variantes": [
+    "B SECHEUSE"
+   ],
+   "occurrences": 851,
+   "projets": 46
+  },
+  {
+   "label": "FIXT TYPE L10",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L10 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 847,
+   "projets": 25
+  },
+  {
+   "label": "FIXT TYPE L8",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L8",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE L8"
+   ],
+   "occurrences": 843,
+   "projets": 27
+  },
+  {
+   "label": "KLAXON STROB",
+   "categorie": "securite_incendie",
+   "sous_type": "appareil combiné klaxon et stroboscope",
+   "tension_bt": "",
+   "variantes": [
+    "HORN STROB"
+   ],
+   "occurrences": 775,
+   "projets": 39
+  },
+  {
+   "label": "P",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule ambiguë (repère ou fixture « P »?)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 770,
+   "projets": 19
+  },
+  {
+   "label": "A",
+   "categorie": "indetermine",
+   "sous_type": "lettre isolee non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 742,
+   "projets": 23
+  },
+  {
+   "label": "FIXT TYPE C1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type C1",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE C1"
+   ],
+   "occurrences": 738,
+   "projets": 31
+  },
+  {
+   "label": "POELE",
+   "categorie": "dispositif",
+   "sous_type": "sortie de câblage - cuisinière électrique",
+   "tension_bt": "BT",
+   "variantes": [
+    "B POELE"
+   ],
+   "occurrences": 735,
+   "projets": 9
+  },
+  {
+   "label": "FIXT TYPE E2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type E2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 731,
+   "projets": 39
+  },
+  {
+   "label": "52171",
+   "categorie": "indetermine",
+   "sous_type": "code numérique à 5 chiffres (catalogue?)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 724,
+   "projets": 22
+  },
+  {
+   "label": "FIXT TYPE J2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type J2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 714,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE 2X4",
+   "categorie": "luminaire",
+   "sous_type": "luminaire encastré 2x4 pieds (tuile de plafond)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 692,
+   "projets": 13
+  },
+  {
+   "label": "LECTEUR CARTE",
+   "categorie": "securite_incendie",
+   "sous_type": "lecteur de carte d'accès",
+   "tension_bt": "",
+   "variantes": [
+    "LECTEUR"
+   ],
+   "occurrences": 689,
+   "projets": 66
+  },
+  {
+   "label": "FIXT TYPE A2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type A2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 662,
+   "projets": 22
+  },
+  {
+   "label": "LAMPE TEMOIN",
+   "categorie": "dispositif",
+   "sous_type": "lampe témoin (voyant de signalisation)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 649,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE 1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type 1 (numérotation numérique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 614,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE D1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 610,
+   "projets": 23
+  },
+  {
+   "label": "PRISE 20A",
+   "categorie": "dispositif",
+   "sous_type": "prise duplex 20A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 594,
+   "projets": 40
+  },
+  {
+   "label": "MONUMENT PLANCHER",
+   "categorie": "dispositif",
+   "sous_type": "boîtier de plancher (monument) avec prises",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 594,
+   "projets": 104
+  },
+  {
+   "label": "FIXT TYPE L9",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L9 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 591,
+   "projets": 24
+  },
+  {
+   "label": "TYPE A",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type A (forme abregee probable)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 586,
+   "projets": 20
+  },
+  {
+   "label": "FIXT TYPE J",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type J",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE J"
+   ],
+   "occurrences": 579,
+   "projets": 35
+  },
+  {
+   "label": "FIXT TYPE D4",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D4",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 577,
+   "projets": 11
+  },
+  {
+   "label": "FIXT TYPE L1A",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L1A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 577,
+   "projets": 13
+  },
+  {
+   "label": "FIXT TYPE L7",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L7 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 566,
+   "projets": 32
+  },
+  {
+   "label": "DM",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 561,
+   "projets": 25
+  },
+  {
+   "label": "B1250W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire série/préfixe B, 1250W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 558,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE L5",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L5 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 540,
+   "projets": 41
+  },
+  {
+   "label": "FIXT TYPE D2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 537,
+   "projets": 19
+  },
+  {
+   "label": "FIXT TYPE R1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type R1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 531,
+   "projets": 14
+  },
+  {
+   "label": "PRISE WP",
+   "categorie": "dispositif",
+   "sous_type": "prise etanche exterieure (weatherproof)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 497,
+   "projets": 20
+  },
+  {
+   "label": "30A NF WP",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur 30A non-fusible étanche (WP)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 486,
+   "projets": 42
+  },
+  {
+   "label": "STATION",
+   "categorie": "securite_incendie",
+   "sous_type": "station manuelle d'alarme incendie",
+   "tension_bt": "",
+   "variantes": [
+    "STATION RELO"
+   ],
+   "occurrences": 479,
+   "projets": 29
+  },
+  {
+   "label": "RACCORD PARTITION",
+   "categorie": "dispositif",
+   "sous_type": "raccordement électrique dans cloison/partition",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 466,
+   "projets": 13
+  },
+  {
+   "label": "MIA",
+   "categorie": "indetermine",
+   "sous_type": "signification inconnue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 459,
+   "projets": 13
+  },
+  {
+   "label": "CONDENSEUR",
+   "categorie": "mecanique_moteur",
+   "sous_type": "unite condenseur (climatisation)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 456,
+   "projets": 32
+  },
+  {
+   "label": "BOITE RACCORD",
+   "categorie": "distribution",
+   "sous_type": "boîte de raccordement/jonction",
+   "tension_bt": "BT",
+   "variantes": [
+    "6X6X4"
+   ],
+   "occurrences": 432,
+   "projets": 11
+  },
+  {
+   "label": "WIFI",
+   "categorie": "telecom_donnees",
+   "sous_type": "point d'accès Wi-Fi",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 427,
+   "projets": 34
+  },
+  {
+   "label": "DETECTEUR A FUMER",
+   "categorie": "securite_incendie",
+   "sous_type": "détecteur de fumée (avertisseur incendie)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 420,
+   "projets": 18
+  },
+  {
+   "label": "GFI WP",
+   "categorie": "dispositif",
+   "sous_type": "prise GFI extérieure étanche",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 416,
+   "projets": 9
+  },
+  {
+   "label": "MRA",
+   "categorie": "indetermine",
+   "sous_type": "abréviation non identifiée (MRA)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 413,
+   "projets": 16
+  },
+  {
+   "label": "RA",
+   "categorie": "indetermine",
+   "sous_type": "abréviation ambiguë (signification incertaine)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 407,
+   "projets": 39
+  },
+  {
+   "label": "EVAPORATEUR",
+   "categorie": "autre",
+   "sous_type": "évaporateur (raccordement électrique, équipement CVAC/réfrigération)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 407,
+   "projets": 20
+  },
+  {
+   "label": "750W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire coté par puissance, 750W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 400,
+   "projets": 26
+  },
+  {
+   "label": "BATTERIE UNIT 2T",
+   "categorie": "securite_incendie",
+   "sous_type": "unité de batterie pour éclairage d'urgence (2 têtes)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 393,
+   "projets": 60
+  },
+  {
+   "label": "FIXT TYPE E3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type E3 (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 386,
+   "projets": 23
+  },
+  {
+   "label": "12X12X4",
+   "categorie": "distribution",
+   "sous_type": "boîte de jonction 12x12x4 po",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 382,
+   "projets": 31
+  },
+  {
+   "label": "FIXT TYPE S1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type S1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 378,
+   "projets": 25
+  },
+  {
+   "label": "CLOCHE",
+   "categorie": "securite_incendie",
+   "sous_type": "cloche d'alarme incendie",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 367,
+   "projets": 54
+  },
+  {
+   "label": "HP RELO",
+   "categorie": "telecom_donnees",
+   "sous_type": "haut-parleur relocalise",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [
+    "RELO HP"
+   ],
+   "occurrences": 366,
+   "projets": 23
+  },
+  {
+   "label": "DETECTEUR MOUV",
+   "categorie": "securite_incendie",
+   "sous_type": "détecteur de mouvement (sécurité)",
+   "tension_bt": "",
+   "variantes": [
+    "DECT MOUVEMENT"
+   ],
+   "occurrences": 366,
+   "projets": 27
+  },
+  {
+   "label": "B750W",
+   "categorie": "chauffage",
+   "sous_type": "plinthe électrique chauffante 750W (série/type B)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 362,
+   "projets": 18
+  },
+  {
+   "label": "FIXT TYPE S3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type S3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 353,
+   "projets": 16
+  },
+  {
+   "label": "DETECTEUR PRESENCE",
+   "categorie": "securite_incendie",
+   "sous_type": "détecteur de présence (sécurité/mouvement)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 343,
+   "projets": 18
+  },
+  {
+   "label": "DETECTEUR COMBUSTION",
+   "categorie": "securite_incendie",
+   "sous_type": "détecteur de combustion (CO/gaz)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 339,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE L14",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L14 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 335,
+   "projets": 13
+  },
+  {
+   "label": "FIXT TYPE K",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type K",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE K"
+   ],
+   "occurrences": 331,
+   "projets": 39
+  },
+  {
+   "label": "FIXT TYPE 2X2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire encastre 2x2 (dalle de plafond)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 328,
+   "projets": 13
+  },
+  {
+   "label": "S",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule, sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 324,
+   "projets": 28
+  },
+  {
+   "label": "BORNE DE RECHARGE",
+   "categorie": "autre",
+   "sous_type": "borne de recharge pour véhicule électrique",
+   "tension_bt": "BT",
+   "variantes": [
+    "BORNE RECHARGE"
+   ],
+   "occurrences": 320,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE L",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L (sans numéro)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 316,
+   "projets": 28
+  },
+  {
+   "label": "VE",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 314,
+   "projets": 56
+  },
+  {
+   "label": "FIXT TYPE C3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type C3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 314,
+   "projets": 12
+  },
+  {
+   "label": "GACHE",
+   "categorie": "securite_incendie",
+   "sous_type": "gâche électrique de porte (contrôle d'accès)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 313,
+   "projets": 68
+  },
+  {
+   "label": "B500W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B, désigné par puissance (500W)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 312,
+   "projets": 13
+  },
+  {
+   "label": "FIXT TYPE F1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type F1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 308,
+   "projets": 14
+  },
+  {
+   "label": "2#12 CONN",
+   "categorie": "autre",
+   "sous_type": "connexion filaire 2 conducteurs #12 AWG",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 306,
+   "projets": 11
+  },
+  {
+   "label": "INT DECT",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur avec détecteur de mouvement",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 299,
+   "projets": 36
+  },
+  {
+   "label": "FIXT TYPE L11",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L11 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 296,
+   "projets": 23
+  },
+  {
+   "label": "FIXT TYPE M",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type M (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [
+    "TYPE M"
+   ],
+   "occurrences": 288,
+   "projets": 33
+  },
+  {
+   "label": "B PRISE",
+   "categorie": "dispositif",
+   "sous_type": "prise, variante/série B",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 286,
+   "projets": 11
+  },
+  {
+   "label": "SORTIE TV",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie coaxiale pour téléviseur",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 284,
+   "projets": 23
+  },
+  {
+   "label": "PANN",
+   "categorie": "distribution",
+   "sous_type": "panneau électrique de distribution",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 282,
+   "projets": 8
+  },
+  {
+   "label": "PRISE IG",
+   "categorie": "dispositif",
+   "sous_type": "prise avec mise à la terre isolée (IG)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 280,
+   "projets": 22
+  },
+  {
+   "label": "FIXT TYPE D3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 279,
+   "projets": 14
+  },
+  {
+   "label": "FIXT TYPE N",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type N",
+   "tension_bt": "BT",
+   "variantes": [
+    "N"
+   ],
+   "occurrences": 278,
+   "projets": 25
+  },
+  {
+   "label": "FIXT TYPE C2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type C2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 276,
+   "projets": 25
+  },
+  {
+   "label": "PP",
+   "categorie": "indetermine",
+   "sous_type": "sigle de 2 lettres, sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 270,
+   "projets": 18
+  },
+  {
+   "label": "FIXT TYPE P1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type P1 (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 262,
+   "projets": 13
+  },
+  {
+   "label": "FIXT TYPE L15",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L15 (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 252,
+   "projets": 10
+  },
+  {
+   "label": "K",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [
+    "K1"
+   ],
+   "occurrences": 248,
+   "projets": 17
+  },
+  {
+   "label": "FIXT TYPE N1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type N1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 246,
+   "projets": 12
+  },
+  {
+   "label": "TEL POMPIER",
+   "categorie": "securite_incendie",
+   "sous_type": "téléphone d'intervention pompier",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 246,
+   "projets": 9
+  },
+  {
+   "label": "SORTIE TEL/DATA",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie téléphone/données combinée",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 244,
+   "projets": 9
+  },
+  {
+   "label": "FIXT TYPE S6",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type S6",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 242,
+   "projets": 12
+  },
+  {
+   "label": "FIXT TYPE B3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 240,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE L4A",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L4A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 240,
+   "projets": 8
+  },
+  {
+   "label": "PORTE",
+   "categorie": "indetermine",
+   "sous_type": "porte (fonction électrique non précisée)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 239,
+   "projets": 18
+  },
+  {
+   "label": "MODULE ADRESSABLE",
+   "categorie": "securite_incendie",
+   "sous_type": "module adressable (boucle d'alarme incendie)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 237,
+   "projets": 9
+  },
+  {
+   "label": "FIXT TYPE E5",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type E5",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 236,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE L12",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L12",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 234,
+   "projets": 15
+  },
+  {
+   "label": "1 VOIE",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur simple / unipolaire (1 voie)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 232,
+   "projets": 8
+  },
+  {
+   "label": "VC",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 229,
+   "projets": 17
+  },
+  {
+   "label": "B",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule, sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 229,
+   "projets": 21
+  },
+  {
+   "label": "FIXT TYPE P",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type P (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 226,
+   "projets": 16
+  },
+  {
+   "label": "MINI KLAXON",
+   "categorie": "securite_incendie",
+   "sous_type": "mini-klaxon (avertisseur sonore d'alarme)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 226,
+   "projets": 8
+  },
+  {
+   "label": "PROJECTEUR",
+   "categorie": "luminaire",
+   "sous_type": "projecteur exterieur",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 224,
+   "projets": 10
+  },
+  {
+   "label": "PULL BOX",
+   "categorie": "distribution",
+   "sous_type": "boîte de tirage (pull box)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 222,
+   "projets": 8
+  },
+  {
+   "label": "3 VOIE",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur 3 voies",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 222,
+   "projets": 30
+  },
+  {
+   "label": "8X8X4",
+   "categorie": "distribution",
+   "sous_type": "boîte de jonction 8x8x4 po",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 221,
+   "projets": 26
+  },
+  {
+   "label": "VENTILATEUR",
+   "categorie": "mecanique_moteur",
+   "sous_type": "ventilateur (raccordement électrique)",
+   "tension_bt": "BT",
+   "variantes": [
+    "VENT"
+   ],
+   "occurrences": 221,
+   "projets": 35
+  },
+  {
+   "label": "DD",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 218,
+   "projets": 16
+  },
+  {
+   "label": "M",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule, sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 216,
+   "projets": 25
+  },
+  {
+   "label": "E",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule ambiguë (repère ou fixture « E »?)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 213,
+   "projets": 21
+  },
+  {
+   "label": "FIXT TYPE R",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type R",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 211,
+   "projets": 16
+  },
+  {
+   "label": "C",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule, sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 210,
+   "projets": 21
+  },
+  {
+   "label": "RT",
+   "categorie": "indetermine",
+   "sous_type": "abréviation non identifiée (RT)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 210,
+   "projets": 13
+  },
+  {
+   "label": "MAT",
+   "categorie": "luminaire",
+   "sous_type": "mât d'éclairage extérieur (poteau lumineux)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 209,
+   "projets": 18
+  },
+  {
+   "label": "BOITE D 8X8X4PO CEMA1",
+   "categorie": "distribution",
+   "sous_type": "boîte de distribution 8x8x4 po, cote CEMA1 (NEMA1)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 208,
+   "projets": 16
+  },
+  {
+   "label": "LAMPADAIRE",
+   "categorie": "luminaire",
+   "sous_type": "lampadaire extérieur (poteau d'éclairage)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 206,
+   "projets": 12
+  },
+  {
+   "label": "MONUMENT",
+   "categorie": "luminaire",
+   "sous_type": "enseigne-monument extérieure (signalétique illuminée)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 202,
+   "projets": 23
+  },
+  {
+   "label": "DV",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 201,
+   "projets": 8
+  },
+  {
+   "label": "HDMI",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie HDMI (signal vidéo)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 190,
+   "projets": 11
+  },
+  {
+   "label": "COLONNETTE",
+   "categorie": "dispositif",
+   "sous_type": "colonnette électrique (borne d'alimentation sur pied)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 188,
+   "projets": 22
+  },
+  {
+   "label": "FIXT TYPE X",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type X",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 187,
+   "projets": 11
+  },
+  {
+   "label": "A/C UNIT",
+   "categorie": "mecanique_moteur",
+   "sous_type": "raccordement électrique pour unité de climatisation",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 186,
+   "projets": 50
+  },
+  {
+   "label": "FIXT TYPE X1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type X1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 184,
+   "projets": 8
+  },
+  {
+   "label": "CONTACT PORTE",
+   "categorie": "securite_incendie",
+   "sous_type": "contact de porte (alarme/intrusion)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 175,
+   "projets": 26
+  },
+  {
+   "label": "BOITE VOLUME",
+   "categorie": "indetermine",
+   "sous_type": "fonction ambiguë (contrôle de volume ou boîte CVAC)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 175,
+   "projets": 15
+  },
+  {
+   "label": "FIXT TYPE B2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B2 (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 173,
+   "projets": 23
+  },
+  {
+   "label": "FIXT TYPE D7",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D7",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 172,
+   "projets": 9
+  },
+  {
+   "label": "BORNE",
+   "categorie": "indetermine",
+   "sous_type": "borne electrique (type incertain)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 172,
+   "projets": 8
+  },
+  {
+   "label": "TRIAC",
+   "categorie": "dispositif",
+   "sous_type": "module de gradation (relais triac)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 171,
+   "projets": 19
+  },
+  {
+   "label": "USB",
+   "categorie": "dispositif",
+   "sous_type": "prise de courant avec chargeur USB intégré",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 160,
+   "projets": 10
+  },
+  {
+   "label": "WF1500W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type WF, 1500W (probable)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 158,
+   "projets": 8
+  },
+  {
+   "label": "EXIT COMBO",
+   "categorie": "securite_incendie",
+   "sous_type": "enseigne de sortie combinée à l'éclairage de secours",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 157,
+   "projets": 18
+  },
+  {
+   "label": "FIXT TYPE R2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type R2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 157,
+   "projets": 12
+  },
+  {
+   "label": "FIXT TYPE H1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type H1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 156,
+   "projets": 19
+  },
+  {
+   "label": "FIXT TYPE L13",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L13",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 156,
+   "projets": 12
+  },
+  {
+   "label": "FIXT TYPE K2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type K2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 150,
+   "projets": 8
+  },
+  {
+   "label": "TR",
+   "categorie": "distribution",
+   "sous_type": "transformateur",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 148,
+   "projets": 16
+  },
+  {
+   "label": "J",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule ambiguë (repère ou fixture « J »?)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 148,
+   "projets": 15
+  },
+  {
+   "label": "OPERATEUR PORTE",
+   "categorie": "mecanique_moteur",
+   "sous_type": "opérateur de porte automatique (moteur)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 148,
+   "projets": 37
+  },
+  {
+   "label": "CHAUFFE-EAU",
+   "categorie": "chauffage",
+   "sous_type": "chauffe-eau (raccordement electrique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 146,
+   "projets": 92
+  },
+  {
+   "label": "WF 2000W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire (WF) 2000W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 146,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE T1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type T1 (abrégé)",
+   "tension_bt": "BT",
+   "variantes": [
+    "T1"
+   ],
+   "occurrences": 146,
+   "projets": 2
+  },
+  {
+   "label": "CHAUFFE EAU",
+   "categorie": "autre",
+   "sous_type": "chauffe-eau (raccordement électrique)",
+   "tension_bt": "BT",
+   "variantes": [
+    "CHAUFFEAU"
+   ],
+   "occurrences": 144,
+   "projets": 60
+  },
+  {
+   "label": "F",
+   "categorie": "indetermine",
+   "sous_type": "lettre isolee non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 137,
+   "projets": 21
+  },
+  {
+   "label": "FIXT TYPE A3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type A3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 134,
+   "projets": 12
+  },
+  {
+   "label": "20A 1P",
+   "categorie": "distribution",
+   "sous_type": "disjoncteur 20A 1 pôle",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 134,
+   "projets": 10
+  },
+  {
+   "label": "OS",
+   "categorie": "dispositif",
+   "sous_type": "détecteur de présence / occupancy sensor (plafonnier)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 131,
+   "projets": 9
+  },
+  {
+   "label": "FIXT TYPE D6",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D6",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 130,
+   "projets": 9
+  },
+  {
+   "label": "30A 600V NF",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur 30A 600V non-fusible",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 130,
+   "projets": 23
+  },
+  {
+   "label": "RELAIS ADRESSABLE",
+   "categorie": "securite_incendie",
+   "sous_type": "relais adressable (système d'alarme incendie)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 128,
+   "projets": 9
+  },
+  {
+   "label": "1750W",
+   "categorie": "chauffage",
+   "sous_type": "plinthe électrique chauffante 1750W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 126,
+   "projets": 20
+  },
+  {
+   "label": "RM",
+   "categorie": "indetermine",
+   "sous_type": "sigle de 2 lettres, sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 126,
+   "projets": 19
+  },
+  {
+   "label": "FIXT TYPE G1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type G1 (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 124,
+   "projets": 10
+  },
+  {
+   "label": "R",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule ambiguë (repère ou fixture « R »?)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 124,
+   "projets": 11
+  },
+  {
+   "label": "FIXT TYPE BB",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type BB",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 122,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE D5",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type D5",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 121,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE N2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type N2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 120,
+   "projets": 15
+  },
+  {
+   "label": "FIXT TYPE S2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type S2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 120,
+   "projets": 13
+  },
+  {
+   "label": "GFI 15/20",
+   "categorie": "dispositif",
+   "sous_type": "disjoncteur/prise GFI 15/20A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 120,
+   "projets": 8
+  },
+  {
+   "label": "B 1500W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B, désigné par puissance (1500W)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 117,
+   "projets": 16
+  },
+  {
+   "label": "D",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule ambiguë (repère ou fixture « D »?)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 117,
+   "projets": 23
+  },
+  {
+   "label": "L",
+   "categorie": "indetermine",
+   "sous_type": "lettre isolee non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 116,
+   "projets": 13
+  },
+  {
+   "label": "FIXT TYPE F3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type F3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 114,
+   "projets": 8
+  },
+  {
+   "label": "BOUTON RELACHE",
+   "categorie": "securite_incendie",
+   "sous_type": "bouton de relâche/déverrouillage de porte",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 110,
+   "projets": 23
+  },
+  {
+   "label": "A INT",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur, repère A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 110,
+   "projets": 8
+  },
+  {
+   "label": "H",
+   "categorie": "indetermine",
+   "sous_type": "lettre isolee non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 109,
+   "projets": 18
+  },
+  {
+   "label": "SECHOIRE",
+   "categorie": "dispositif",
+   "sous_type": "sortie/circuit pour sécheuse électrique",
+   "tension_bt": "BT",
+   "variantes": [
+    "A SECHEUSE",
+    "D SECHEUSE"
+   ],
+   "occurrences": 109,
+   "projets": 17
+  },
+  {
+   "label": "FIXT TYPE F2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type F2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 108,
+   "projets": 12
+  },
+  {
+   "label": "MOTEUR 600V",
+   "categorie": "mecanique_moteur",
+   "sous_type": "moteur électrique 600V",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 107,
+   "projets": 11
+  },
+  {
+   "label": "FIXT TYPE S",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type S (sans numéro)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 107,
+   "projets": 12
+  },
+  {
+   "label": "HORLOGE",
+   "categorie": "dispositif",
+   "sous_type": "horloge de contrôle (minuterie électrique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 105,
+   "projets": 9
+  },
+  {
+   "label": "SECHOIRE A MAIN",
+   "categorie": "dispositif",
+   "sous_type": "sortie de câblage - sèche-mains électrique",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 104,
+   "projets": 26
+  },
+  {
+   "label": "BA",
+   "categorie": "indetermine",
+   "sous_type": "abréviation ambiguë (signification incertaine)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 102,
+   "projets": 17
+  },
+  {
+   "label": "OPERATEUR DE PORTE",
+   "categorie": "autre",
+   "sous_type": "opérateur de porte automatique",
+   "tension_bt": "BT",
+   "variantes": [
+    "OP"
+   ],
+   "occurrences": 102,
+   "projets": 10
+  },
+  {
+   "label": "PRISE 20A 125V",
+   "categorie": "dispositif",
+   "sous_type": "prise duplex 20A 125V",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 102,
+   "projets": 8
+  },
+  {
+   "label": "RS",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 100,
+   "projets": 8
+  },
+  {
+   "label": "D/M",
+   "categorie": "indetermine",
+   "sous_type": "abréviation incertaine",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 100,
+   "projets": 28
+  },
+  {
+   "label": "FIXT TYPE G2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type G2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 98,
+   "projets": 8
+  },
+  {
+   "label": "15A 1P",
+   "categorie": "distribution",
+   "sous_type": "disjoncteur 15A, 1 pôle",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 96,
+   "projets": 13
+  },
+  {
+   "label": "FIXT TYPE Q",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type Q (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 92,
+   "projets": 14
+  },
+  {
+   "label": "2#12 MOTOR",
+   "categorie": "mecanique_moteur",
+   "sous_type": "alimentation moteur (2 conducteurs #12 AWG)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 92,
+   "projets": 15
+  },
+  {
+   "label": "CLAVIER",
+   "categorie": "securite_incendie",
+   "sous_type": "clavier de système d'alarme / contrôle d'accès",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 90,
+   "projets": 22
+  },
+  {
+   "label": "FIXT TYPE E7",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type E7",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 90,
+   "projets": 8
+  },
+  {
+   "label": "TH INTEGRE",
+   "categorie": "chauffage",
+   "sous_type": "thermostat intégré à la plinthe chauffante",
+   "tension_bt": "BT",
+   "variantes": [
+    "TH INT"
+   ],
+   "occurrences": 89,
+   "projets": 9
+  },
+  {
+   "label": "FIXT TYPE L3A",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L3A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 88,
+   "projets": 10
+  },
+  {
+   "label": "COMBO",
+   "categorie": "luminaire",
+   "sous_type": "appareil combiné enseigne de sortie + éclairage de secours",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 86,
+   "projets": 14
+  },
+  {
+   "label": "POMPE",
+   "categorie": "mecanique_moteur",
+   "sous_type": "pompe (raccordement moteur)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 84,
+   "projets": 22
+  },
+  {
+   "label": "LC",
+   "categorie": "indetermine",
+   "sous_type": "sigle de 2 lettres, sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 84,
+   "projets": 11
+  },
+  {
+   "label": "BOUTON POUSSOIRE",
+   "categorie": "dispositif",
+   "sous_type": "bouton poussoir (commande murale)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 84,
+   "projets": 8
+  },
+  {
+   "label": "PORTE GARAGE",
+   "categorie": "mecanique_moteur",
+   "sous_type": "raccordement pour opérateur motorisé de porte de garage",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 83,
+   "projets": 24
+  },
+  {
+   "label": "FIXT TYPE M1",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type M1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 83,
+   "projets": 16
+  },
+  {
+   "label": "V",
+   "categorie": "indetermine",
+   "sous_type": "lettre isolee non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 82,
+   "projets": 12
+  },
+  {
+   "label": "GRADATEUR 3 VOIE",
+   "categorie": "dispositif",
+   "sous_type": "gradateur 3 voies (3-way dimmer)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 82,
+   "projets": 17
+  },
+  {
+   "label": "NF 30A",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur non-fusible 30A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 77,
+   "projets": 11
+  },
+  {
+   "label": "HORN WP",
+   "categorie": "securite_incendie",
+   "sous_type": "avertisseur sonore (horn) étanche, extérieur",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 76,
+   "projets": 9
+  },
+  {
+   "label": "FIXT TYPE C4",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type C4",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 76,
+   "projets": 8
+  },
+  {
+   "label": "T",
+   "categorie": "indetermine",
+   "sous_type": "lettre seule ambiguë",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 74,
+   "projets": 12
+  },
+  {
+   "label": "DETECTEUR THERMIQUE",
+   "categorie": "securite_incendie",
+   "sous_type": "detecteur thermique (chaleur)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 74,
+   "projets": 21
+  },
+  {
+   "label": "LECTEUR DE CARTE",
+   "categorie": "securite_incendie",
+   "sous_type": "lecteur de carte d'accès",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 74,
+   "projets": 14
+  },
+  {
+   "label": "BOUTON",
+   "categorie": "indetermine",
+   "sous_type": "bouton, fonction incertaine",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 73,
+   "projets": 23
+  },
+  {
+   "label": "PRISE TOIT",
+   "categorie": "dispositif",
+   "sous_type": "prise électrique de toiture",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 72,
+   "projets": 15
+  },
+  {
+   "label": "SECHOIR",
+   "categorie": "dispositif",
+   "sous_type": "raccordement/prise pour sécheuse",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 71,
+   "projets": 15
+  },
+  {
+   "label": "INT MOUV",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur détecteur de mouvement (occupancy sensor switch)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 70,
+   "projets": 8
+  },
+  {
+   "label": "CP",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 69,
+   "projets": 11
+  },
+  {
+   "label": "FIXTURE TYPE B",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type B (orthographe complète)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 69,
+   "projets": 9
+  },
+  {
+   "label": "VOLET MOTORIZER",
+   "categorie": "mecanique_moteur",
+   "sous_type": "volet motorisé (store ou clapet motorisé)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 68,
+   "projets": 12
+  },
+  {
+   "label": "CR10",
+   "categorie": "indetermine",
+   "sous_type": "code ambigu (relais de contrôle ou référence de circuit)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 64,
+   "projets": 11
+  },
+  {
+   "label": "FIXT TYPE P3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type P3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 64,
+   "projets": 8
+  },
+  {
+   "label": "TEE",
+   "categorie": "indetermine",
+   "sous_type": "abreviation non resolue",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 63,
+   "projets": 8
+  },
+  {
+   "label": "BRASSEUR AIR",
+   "categorie": "mecanique_moteur",
+   "sous_type": "brasseur d'air/ventilateur de circulation",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 60,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE P2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type P2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 60,
+   "projets": 18
+  },
+  {
+   "label": "PRISE 15/20A GFI",
+   "categorie": "dispositif",
+   "sous_type": "prise GFI 15/20A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 60,
+   "projets": 14
+  },
+  {
+   "label": "SECHOIR A MAIN",
+   "categorie": "dispositif",
+   "sous_type": "raccordement pour sécheur à main",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 58,
+   "projets": 12
+  },
+  {
+   "label": "GFI 20A",
+   "categorie": "dispositif",
+   "sous_type": "disjoncteur de fuite a la terre (GFI) 20A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 58,
+   "projets": 11
+  },
+  {
+   "label": "VOLET MOTORISER",
+   "categorie": "autre",
+   "sous_type": "volet/store motorisé",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 57,
+   "projets": 11
+  },
+  {
+   "label": "MOTEUR",
+   "categorie": "mecanique_moteur",
+   "sous_type": "moteur électrique (générique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 56,
+   "projets": 19
+  },
+  {
+   "label": "INTERRUPTEUR 15A 120V",
+   "categorie": "dispositif",
+   "sous_type": "interrupteur unipolaire 15A 120V",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 54,
+   "projets": 12
+  },
+  {
+   "label": "FIXT TYPE M2",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type M2",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 54,
+   "projets": 11
+  },
+  {
+   "label": "MOTEUR FRACT",
+   "categorie": "mecanique_moteur",
+   "sous_type": "moteur fractionnaire (<1 HP)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 54,
+   "projets": 10
+  },
+  {
+   "label": "EXIT 2T",
+   "categorie": "luminaire",
+   "sous_type": "enseigne de sortie (EXIT) avec 2 têtes d'urgence",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 54,
+   "projets": 8
+  },
+  {
+   "label": "CARILLON",
+   "categorie": "telecom_donnees",
+   "sous_type": "carillon de porte (sonnette)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 52,
+   "projets": 12
+  },
+  {
+   "label": "EXIT RELO",
+   "categorie": "luminaire",
+   "sous_type": "enseigne de sortie (EXIT) relocalisee",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 52,
+   "projets": 14
+  },
+  {
+   "label": "A 1000W",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type A, désigné par puissance (1000W)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 50,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE L3B",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type L3B (famille L)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 50,
+   "projets": 8
+  },
+  {
+   "label": "PRISE 15A GFI",
+   "categorie": "dispositif",
+   "sous_type": "prise GFI 15A",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 50,
+   "projets": 10
+  },
+  {
+   "label": "MOTEUR 120V",
+   "categorie": "mecanique_moteur",
+   "sous_type": "moteur 120V",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 49,
+   "projets": 9
+  },
+  {
+   "label": "DEBIT",
+   "categorie": "indetermine",
+   "sous_type": "sens incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 49,
+   "projets": 9
+  },
+  {
+   "label": "DETECTEUR DE GAINE",
+   "categorie": "securite_incendie",
+   "sous_type": "détecteur de fumée de gaine (conduit CVAC)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 47,
+   "projets": 13
+  },
+  {
+   "label": "2KW",
+   "categorie": "chauffage",
+   "sous_type": "plinthe électrique chauffante 2000W (2kW)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 46,
+   "projets": 12
+  },
+  {
+   "label": "UTA",
+   "categorie": "mecanique_moteur",
+   "sous_type": "unite de traitement d'air (raccordement electrique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 45,
+   "projets": 17
+  },
+  {
+   "label": "30A 600V NF WP",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur 30A 600V non-fusible étanche",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 45,
+   "projets": 15
+  },
+  {
+   "label": "BARRE MISE A LA TERRE",
+   "categorie": "distribution",
+   "sous_type": "barre de mise à la terre",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 44,
+   "projets": 14
+  },
+  {
+   "label": "PC",
+   "categorie": "indetermine",
+   "sous_type": "abréviation ambiguë (signification incertaine)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 43,
+   "projets": 16
+  },
+  {
+   "label": "PRISE 30A 250V",
+   "categorie": "dispositif",
+   "sous_type": "prise 30A 250V (ex. sécheuse)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 36,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE S4",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type S4 (selon légende)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 35,
+   "projets": 15
+  },
+  {
+   "label": "BATTERIE UNIT 2 TETE",
+   "categorie": "securite_incendie",
+   "sous_type": "unité de secours à piles, 2 têtes (éclairage d'urgence)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 34,
+   "projets": 16
+  },
+  {
+   "label": "MINUTERIE",
+   "categorie": "dispositif",
+   "sous_type": "minuterie (interrupteur temporise)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 33,
+   "projets": 26
+  },
+  {
+   "label": "60A F",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur 60A fusible",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 33,
+   "projets": 9
+  },
+  {
+   "label": "CL",
+   "categorie": "indetermine",
+   "sous_type": "abréviation non identifiée (CL)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 32,
+   "projets": 8
+  },
+  {
+   "label": "FIXT TYPE R3",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type R3",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 31,
+   "projets": 8
+  },
+  {
+   "label": "PLINTHE 750W",
+   "categorie": "chauffage",
+   "sous_type": "plinthe électrique (baseboard) 750W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 30,
+   "projets": 12
+  },
+  {
+   "label": "DISCONN 30A 600V NF",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur non fusible 30A 600V",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 30,
+   "projets": 10
+  },
+  {
+   "label": "PLINTHE 1500W",
+   "categorie": "chauffage",
+   "sous_type": "plinthe electrique 1500W",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 28,
+   "projets": 8
+  },
+  {
+   "label": "60A NF WP",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur 60A non-fusible étanche",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 28,
+   "projets": 12
+  },
+  {
+   "label": "DEMARREUR MANUEL",
+   "categorie": "mecanique_moteur",
+   "sous_type": "démarreur manuel de moteur",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 26,
+   "projets": 10
+  },
+  {
+   "label": "OUVRE PORTE",
+   "categorie": "autre",
+   "sous_type": "ouvre-porte automatique",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 26,
+   "projets": 8
+  },
+  {
+   "label": "FIXTURE TYPE C",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type C",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 25,
+   "projets": 8
+  },
+  {
+   "label": "MOTEUR VE",
+   "categorie": "mecanique_moteur",
+   "sous_type": "moteur pour ventilateur d'extraction/évacuation (VE)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 24,
+   "projets": 8
+  },
+  {
+   "label": "VA",
+   "categorie": "indetermine",
+   "sous_type": "sigle incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 24,
+   "projets": 12
+  },
+  {
+   "label": "PANN CONTROL",
+   "categorie": "indetermine",
+   "sous_type": "panneau de contrôle, type non précisé",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 24,
+   "projets": 8
+  },
+  {
+   "label": "TYPE F",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type F (forme abregee probable)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 23,
+   "projets": 9
+  },
+  {
+   "label": "60A NF",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur 60A non-fusible",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 23,
+   "projets": 13
+  },
+  {
+   "label": "INTERCOM",
+   "categorie": "telecom_donnees",
+   "sous_type": "système d'intercom (interphone)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 21,
+   "projets": 11
+  },
+  {
+   "label": "B TV",
+   "categorie": "telecom_donnees",
+   "sous_type": "sortie television, variante B",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 19,
+   "projets": 9
+  },
+  {
+   "label": "BOUTON SONNETTE",
+   "categorie": "dispositif",
+   "sous_type": "bouton de sonnette (carillon)",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 17,
+   "projets": 11
+  },
+  {
+   "label": "HUM",
+   "categorie": "autre",
+   "sous_type": "humidificateur (raccordement électrique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 17,
+   "projets": 11
+  },
+  {
+   "label": "CABLE CHAUFFANT",
+   "categorie": "chauffage",
+   "sous_type": "câble chauffant (traçage/déglaçage)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 17,
+   "projets": 10
+  },
+  {
+   "label": "FIXT TYPE S5",
+   "categorie": "luminaire",
+   "sous_type": "luminaire type S5",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 17,
+   "projets": 9
+  },
+  {
+   "label": "30A 600V F",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur fusible 30A/600V",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 16,
+   "projets": 8
+  },
+  {
+   "label": "TA",
+   "categorie": "indetermine",
+   "sous_type": "sigle incertain",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 16,
+   "projets": 9
+  },
+  {
+   "label": "PANN ALARME",
+   "categorie": "securite_incendie",
+   "sous_type": "panneau de contrôle d'alarme incendie (FACP)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 14,
+   "projets": 14
+  },
+  {
+   "label": "ONDULATEUR",
+   "categorie": "distribution",
+   "sous_type": "onduleur / UPS (alimentation sans interruption)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 14,
+   "projets": 8
+  },
+  {
+   "label": "CONTACTEUR",
+   "categorie": "mecanique_moteur",
+   "sous_type": "contacteur (demarrage moteur)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 14,
+   "projets": 9
+  },
+  {
+   "label": "30A",
+   "categorie": "mecanique_moteur",
+   "sous_type": "sectionneur 30A (calibre de base)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 14,
+   "projets": 8
+  },
+  {
+   "label": "3/4 HP",
+   "categorie": "mecanique_moteur",
+   "sous_type": "moteur électrique, puissance 3/4 HP",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 12,
+   "projets": 8
+  },
+  {
+   "label": "VE-1",
+   "categorie": "mecanique_moteur",
+   "sous_type": "ventilateur d'évacuation, tag mécanique VE-1",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 10,
+   "projets": 8
+  },
+  {
+   "label": "B HOTTE",
+   "categorie": "mecanique_moteur",
+   "sous_type": "hotte de cuisine, unité B (raccordement électrique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 10,
+   "projets": 10
+  },
+  {
+   "label": "GSM",
+   "categorie": "telecom_donnees",
+   "sous_type": "module de communication cellulaire (GSM)",
+   "tension_bt": "BASSE_TENSION_COMM",
+   "variantes": [],
+   "occurrences": 10,
+   "projets": 8
+  },
+  {
+   "label": "750W 347V",
+   "categorie": "luminaire",
+   "sous_type": "luminaire coté par puissance, 750W/347V",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 10,
+   "projets": 8
+  },
+  {
+   "label": "C HOTTE",
+   "categorie": "mecanique_moteur",
+   "sous_type": "hotte de cuisine, unité C (raccordement électrique)",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 8,
+   "projets": 8
+  },
+  {
+   "label": "5KW",
+   "categorie": "indetermine",
+   "sous_type": "puissance seule, appareil non precise",
+   "tension_bt": "",
+   "variantes": [],
+   "occurrences": 8,
+   "projets": 8
+  },
+  {
+   "label": "A POELE",
+   "categorie": "dispositif",
+   "sous_type": "raccordement/sortie pour cuisiniere electrique",
+   "tension_bt": "BT",
+   "variantes": [],
+   "occurrences": 8,
+   "projets": 8
+  }
+ ]
+}

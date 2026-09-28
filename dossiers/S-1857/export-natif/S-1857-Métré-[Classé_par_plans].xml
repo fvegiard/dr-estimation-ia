@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Report Title="S-1857" Date="22 Septembre 2026">
+	<Project Name="S-1857">
+		<ContactName Value=""/>
+	</Project>
+	<Plans>
+		<Plan Name="E400">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Accumulateur 36W" GroupID="2" Type="Counter" Color="-9256314" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Accumulateur 36W + enseigne" GroupID="3" Type="Counter" Color="-2049944" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="15 Unités" TotalRawValue="15" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Bouton-poussoir B" GroupID="6" Type="Counter" Color="-16559169" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="58 Unités" TotalRawValue="58" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur inoccupation Do" GroupID="9" Type="Counter" Color="-13290019" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="14 Unités" RawValue="14" TotalValue="98 Unités" TotalRawValue="98" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="14" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Enseigne de sortie" GroupID="12" Type="Counter" Color="-3350344" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="28 Unités" TotalRawValue="28" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Interrupteur" GroupID="14" Type="Counter" Color="-15269633" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="5 Unités" TotalRawValue="5" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR2" GroupID="18" Type="Counter" Color="-3114403" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="4 Unités" TotalRawValue="4" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR5" GroupID="19" Type="Counter" Color="-3511" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="29 Unités" RawValue="29" TotalValue="50 Unités" TotalRawValue="50" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="29" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR51" GroupID="20" Type="Counter" Color="-5065163" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="8 Unités" RawValue="8" TotalValue="43 Unités" TotalRawValue="43" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="8" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR52" GroupID="21" Type="Counter" Color="-1145853" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DW4" GroupID="26" Type="Counter" Color="-6041" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="8 Unités" TotalRawValue="8" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare double" GroupID="36" Type="Counter" Color="-4031264" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare simple PH1" GroupID="37" Type="Counter" Color="-5987164" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E401">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Accumulateur 18W + enseigne" GroupID="1" Type="Counter" Color="-7968564" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Accumulateur 36W" GroupID="2" Type="Counter" Color="-9256314" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Accumulateur 36W + enseigne" GroupID="3" Type="Counter" Color="-2049944" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="15 Unités" TotalRawValue="15" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Bouton-poussoir B" GroupID="6" Type="Counter" Color="-16559169" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="17 Unités" RawValue="17" TotalValue="58 Unités" TotalRawValue="58" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="17" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur inoccupation Do" GroupID="9" Type="Counter" Color="-13290019" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="29 Unités" RawValue="29" TotalValue="98 Unités" TotalRawValue="98" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="29" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur occupation Di" GroupID="10" Type="Counter" Color="-11334145" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="14 Unités" RawValue="14" TotalValue="40 Unités" TotalRawValue="40" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="14" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Enseigne de sortie" GroupID="12" Type="Counter" Color="-3350344" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="10 Unités" RawValue="10" TotalValue="28 Unités" TotalRawValue="28" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="10" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Interrupteur" GroupID="14" Type="Counter" Color="-15269633" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="5 Unités" TotalRawValue="5" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR2" GroupID="18" Type="Counter" Color="-3114403" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="4 Unités" TotalRawValue="4" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR5" GroupID="19" Type="Counter" Color="-3511" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="11 Unités" RawValue="11" TotalValue="50 Unités" TotalRawValue="50" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="11" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR51" GroupID="20" Type="Counter" Color="-5065163" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="43 Unités" TotalRawValue="43" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR52" GroupID="21" Type="Counter" Color="-1145853" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS0" GroupID="22" Type="Counter" Color="-1133003" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="50 Unités" RawValue="50" TotalValue="176 Unités" TotalRawValue="176" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="50" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS1" GroupID="23" Type="Counter" Color="-29071" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="78 Unités" RawValue="78" TotalValue="201 Unités" TotalRawValue="201" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="78" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS2" GroupID="24" Type="Counter" Color="-4402153" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="2 Unités" TotalRawValue="2" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DW4" GroupID="26" Type="Counter" Color="-6041" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="8 Unités" TotalRawValue="8" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DW42" GroupID="27" Type="Counter" Color="-3744163" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire extérieur — à classer" GroupID="28" Type="Counter" Color="-4402153" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire mural DMW1" GroupID="29" Type="Counter" Color="-1133003" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="10 Unités" TotalRawValue="10" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire ovale — à classer" GroupID="30" Type="Counter" Color="-29071" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="2 Unités" TotalRawValue="2" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare double" GroupID="36" Type="Counter" Color="-4031264" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="7 Unités" RawValue="7" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="7" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare simple PH1" GroupID="37" Type="Counter" Color="-5987164" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E402">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Accumulateur 18W + enseigne" GroupID="1" Type="Counter" Color="-7968564" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Accumulateur 36W + enseigne" GroupID="3" Type="Counter" Color="-2049944" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="15 Unités" TotalRawValue="15" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Bloc d&apos;alimentation Ba" GroupID="5" Type="Counter" Color="-9352799" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="2 Unités" TotalRawValue="2" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Bouton-poussoir B" GroupID="6" Type="Counter" Color="-16559169" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="31 Unités" RawValue="31" TotalValue="58 Unités" TotalRawValue="58" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="31" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur inoccupation Do" GroupID="9" Type="Counter" Color="-13290019" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="42 Unités" RawValue="42" TotalValue="98 Unités" TotalRawValue="98" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="42" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur occupation Di" GroupID="10" Type="Counter" Color="-11334145" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="16 Unités" RawValue="16" TotalValue="40 Unités" TotalRawValue="40" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="16" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Enseigne de sortie" GroupID="12" Type="Counter" Color="-3350344" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="9 Unités" RawValue="9" TotalValue="28 Unités" TotalRawValue="28" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="9" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Interrupteur" GroupID="14" Type="Counter" Color="-15269633" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="5 Unités" TotalRawValue="5" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR2" GroupID="18" Type="Counter" Color="-3114403" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="4 Unités" TotalRawValue="4" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR5" GroupID="19" Type="Counter" Color="-3511" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="50 Unités" TotalRawValue="50" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR51" GroupID="20" Type="Counter" Color="-5065163" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="31 Unités" RawValue="31" TotalValue="43 Unités" TotalRawValue="43" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="31" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR52" GroupID="21" Type="Counter" Color="-1145853" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS0" GroupID="22" Type="Counter" Color="-1133003" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="100 Unités" RawValue="100" TotalValue="176 Unités" TotalRawValue="176" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="100" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS1" GroupID="23" Type="Counter" Color="-29071" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="60 Unités" RawValue="60" TotalValue="201 Unités" TotalRawValue="201" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="60" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS4" GroupID="25" Type="Counter" Color="-13824" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare double" GroupID="36" Type="Counter" Color="-4031264" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="8 Unités" RawValue="8" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="8" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare simple — sans étiquette" GroupID="38" Type="Counter" Color="-9919324" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare simple PH1" GroupID="37" Type="Counter" Color="-5987164" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E403">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Accumulateur 36W" GroupID="2" Type="Counter" Color="-9256314" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Accumulateur 36W + enseigne" GroupID="3" Type="Counter" Color="-2049944" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="15 Unités" TotalRawValue="15" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Bouton-poussoir B" GroupID="6" Type="Counter" Color="-16559169" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="9 Unités" RawValue="9" TotalValue="58 Unités" TotalRawValue="58" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="9" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Cercle barré fléché — à classer" GroupID="7" Type="Counter" Color="-8882056" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur inoccupation Do" GroupID="9" Type="Counter" Color="-13290019" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="13 Unités" RawValue="13" TotalValue="98 Unités" TotalRawValue="98" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="13" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur occupation Di" GroupID="10" Type="Counter" Color="-11334145" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="10 Unités" RawValue="10" TotalValue="40 Unités" TotalRawValue="40" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="10" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Enseigne de sortie" GroupID="12" Type="Counter" Color="-3350344" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="28 Unités" TotalRawValue="28" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Interrupteur" GroupID="14" Type="Counter" Color="-15269633" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="5 Unités" TotalRawValue="5" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR2" GroupID="18" Type="Counter" Color="-3114403" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="4 Unités" TotalRawValue="4" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR5" GroupID="19" Type="Counter" Color="-3511" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="7 Unités" RawValue="7" TotalValue="50 Unités" TotalRawValue="50" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="7" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR51" GroupID="20" Type="Counter" Color="-5065163" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="43 Unités" TotalRawValue="43" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DR52" GroupID="21" Type="Counter" Color="-1145853" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS0" GroupID="22" Type="Counter" Color="-1133003" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="26 Unités" RawValue="26" TotalValue="176 Unités" TotalRawValue="176" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="26" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS1" GroupID="23" Type="Counter" Color="-29071" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="63 Unités" RawValue="63" TotalValue="201 Unités" TotalRawValue="201" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="63" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire DS4" GroupID="25" Type="Counter" Color="-13824" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Luminaire mural DMW1" GroupID="29" Type="Counter" Color="-1133003" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="10 Unités" TotalRawValue="10" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare double" GroupID="36" Type="Counter" Color="-4031264" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Phare simple PH1" GroupID="37" Type="Counter" Color="-5987164" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E405">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Avertisseur visuel" GroupID="4" Type="Counter" Color="-13264487" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur de fumée" GroupID="8" Type="Counter" Color="-16533637" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Indicateur de débit ID" GroupID="13" Type="Counter" Color="-15875647" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="5 Unités" TotalRawValue="5" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Interrupteur fin de course Ls" GroupID="15" Type="Counter" Color="-9974837" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="6 Unités" RawValue="6" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="6" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Klaxon" GroupID="16" Type="Counter" Color="-13264487" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="13 Unités" RawValue="13" TotalValue="100 Unités" TotalRawValue="100" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="13" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Mesurage Hydro-Québec" GroupID="31" Type="Counter" Color="-36535" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Module de supervision Sx" GroupID="32" Type="Counter" Color="-16737895" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="6 Unités" RawValue="6" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="6" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Panneau" GroupID="34" Type="Counter" Color="-5090537" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Poste manuel" GroupID="39" Type="Counter" Color="-15245887" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise DDFT Ei" GroupID="41" Type="Counter" Color="-5451241" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex" GroupID="43" Type="Counter" Color="-2182091" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="26 Unités" RawValue="26" TotalValue="262 Unités" TotalRawValue="262" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="26" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex DDFT" GroupID="44" Type="Counter" Color="-226191" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="17 Unités" TotalRawValue="17" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise mobilier" GroupID="46" Type="Counter" Color="-4023" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord CC équipement" GroupID="47" Type="Counter" Color="-1821387" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="12 Unités" RawValue="12" TotalValue="22 Unités" TotalRawValue="22" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="12" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord pompe" GroupID="52" Type="Counter" Color="-2209536" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="10 Unités" TotalRawValue="10" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sectionneur" GroupID="56" Type="Counter" Color="-3800995" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="2 Unités" TotalRawValue="2" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sortie data mobilier" GroupID="58" Type="Counter" Color="-13290082" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="16 Unités" TotalRawValue="16" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Transformateur" GroupID="61" Type="Counter" Color="-46848" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="2 Unités" TotalRawValue="2" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E406">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Détecteur de fumée" GroupID="8" Type="Counter" Color="-16533637" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Klaxon" GroupID="16" Type="Counter" Color="-13264487" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="31 Unités" RawValue="31" TotalValue="100 Unités" TotalRawValue="100" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="31" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Module transmission TRA" GroupID="33" Type="Counter" Color="-11308587" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Panneau" GroupID="34" Type="Counter" Color="-5090537" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Panneau d&apos;alarme PAI" GroupID="35" Type="Counter" Color="-16533637" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Poste manuel" GroupID="39" Type="Counter" Color="-15245887" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Poste-maître intercom PMI" GroupID="40" Type="Counter" Color="-16559232" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise cuisinière C" GroupID="42" Type="Counter" Color="-14336" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise DDFT Ei" GroupID="41" Type="Counter" Color="-5451241" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex DDFT" GroupID="44" Type="Counter" Color="-226191" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="8 Unités" RawValue="8" TotalValue="17 Unités" TotalRawValue="17" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="8" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex" GroupID="43" Type="Counter" Color="-2182091" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="104 Unités" RawValue="104" TotalValue="262 Unités" TotalRawValue="262" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="104" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise micro-onde" GroupID="45" Type="Counter" Color="-4163491" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise mobilier" GroupID="46" Type="Counter" Color="-4023" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="12 Unités" RawValue="12" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="12" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord CC équipement" GroupID="47" Type="Counter" Color="-1821387" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="8 Unités" RawValue="8" TotalValue="22 Unités" TotalRawValue="22" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="8" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord hotte Ht" GroupID="50" Type="Counter" Color="-9415913" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord lave-vaisselle" GroupID="51" Type="Counter" Color="-6146763" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="7 Unités" TotalRawValue="7" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord sèche-main" GroupID="53" Type="Counter" Color="-4190863" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sortie data" GroupID="57" Type="Counter" Color="-11334182" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="18 Unités" RawValue="18" TotalValue="46 Unités" TotalRawValue="46" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="18" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sortie data mobilier" GroupID="58" Type="Counter" Color="-13290082" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="7 Unités" RawValue="7" TotalValue="16 Unités" TotalRawValue="16" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="7" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Symbole vert pointillé — à classer" GroupID="59" Type="Counter" Color="-12151206" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="TS — à classer" GroupID="60" Type="Counter" Color="-6926156" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E407">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Détecteur de fumée" GroupID="8" Type="Counter" Color="-16533637" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Klaxon" GroupID="16" Type="Counter" Color="-13264487" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="38 Unités" RawValue="38" TotalValue="100 Unités" TotalRawValue="100" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="38" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Panneau" GroupID="34" Type="Counter" Color="-5090537" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Poste manuel" GroupID="39" Type="Counter" Color="-15245887" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex" GroupID="43" Type="Counter" Color="-2182091" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="96 Unités" RawValue="96" TotalValue="262 Unités" TotalRawValue="262" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="96" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex DDFT" GroupID="44" Type="Counter" Color="-226191" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="17 Unités" TotalRawValue="17" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise micro-onde" GroupID="45" Type="Counter" Color="-4163491" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise mobilier" GroupID="46" Type="Counter" Color="-4023" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord lave-vaisselle" GroupID="51" Type="Counter" Color="-6146763" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="7 Unités" TotalRawValue="7" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord sèche-main" GroupID="53" Type="Counter" Color="-4190863" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sortie data" GroupID="57" Type="Counter" Color="-11334182" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="23 Unités" RawValue="23" TotalValue="46 Unités" TotalRawValue="46" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="23" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sortie data mobilier" GroupID="58" Type="Counter" Color="-13290082" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="16 Unités" TotalRawValue="16" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E408">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Avertisseur visuel" GroupID="4" Type="Counter" Color="-13264487" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur de fumée" GroupID="8" Type="Counter" Color="-16533637" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Détecteur thermique" GroupID="11" Type="Counter" Color="-9327267" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="1 Unité" TotalRawValue="1" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Klaxon" GroupID="16" Type="Counter" Color="-13264487" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="18 Unités" RawValue="18" TotalValue="100 Unités" TotalRawValue="100" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="18" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Klaxon Ei" GroupID="17" Type="Counter" Color="-11308587" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Panneau" GroupID="34" Type="Counter" Color="-5090537" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Poste manuel" GroupID="39" Type="Counter" Color="-15245887" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise DDFT Ei" GroupID="41" Type="Counter" Color="-5451241" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="3 Unités" RawValue="3" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="3" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex DDFT" GroupID="44" Type="Counter" Color="-226191" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="17 Unités" TotalRawValue="17" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise duplex" GroupID="43" Type="Counter" Color="-2182091" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="36 Unités" RawValue="36" TotalValue="262 Unités" TotalRawValue="262" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="36" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise micro-onde" GroupID="45" Type="Counter" Color="-4163491" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="11 Unités" TotalRawValue="11" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Prise mobilier" GroupID="46" Type="Counter" Color="-4023" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="21 Unités" TotalRawValue="21" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord lave-vaisselle" GroupID="51" Type="Counter" Color="-6146763" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="7 Unités" TotalRawValue="7" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord sèche-main" GroupID="53" Type="Counter" Color="-4190863" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sortie data" GroupID="57" Type="Counter" Color="-11334182" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="46 Unités" TotalRawValue="46" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Sortie data mobilier" GroupID="58" Type="Counter" Color="-13290082" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="4 Unités" RawValue="4" TotalValue="16 Unités" TotalRawValue="16" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="4" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E409">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Avertisseur visuel" GroupID="4" Type="Counter" Color="-13264487" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Klaxon Ei" GroupID="17" Type="Counter" Color="-11308587" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="3 Unités" TotalRawValue="3" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord CC équipement" GroupID="47" Type="Counter" Color="-1821387" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="22 Unités" TotalRawValue="22" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E200">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Raccord équipement — cédule" GroupID="54" Type="Counter" Color="-3509943" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="1 Unité" RawValue="1" TotalValue="17 Unités" TotalRawValue="17" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="1" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+		<Plan Name="E600">
+			<Objects>
+				<Layer Name="Releve automatique">
+					<Object Name="Raccord borne VE" GroupID="48" Type="Counter" Color="-62095" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="2 Unités" RawValue="2" TotalValue="2 Unités" TotalRawValue="2" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="2" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord chauffage" GroupID="49" Type="Counter" Color="-2083531" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="5 Unités" RawValue="5" TotalValue="5 Unités" TotalRawValue="5" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="5" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord pompe" GroupID="52" Type="Counter" Color="-2209536" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="7 Unités" RawValue="7" TotalValue="10 Unités" TotalRawValue="10" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="7" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord équipement — cédule" GroupID="54" Type="Counter" Color="-3509943" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="16 Unités" RawValue="16" TotalValue="17 Unités" TotalRawValue="17" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="16" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+					<Object Name="Raccord évier électrique" GroupID="55" Type="Counter" Color="-8126371" Layer="Releve automatique">
+						<Extensions>
+							<Extension Name="Résultats" BaseExtension="True">
+								<Results>
+									<Result Name="Count" Caption="Nombre d'objets" Unit="unité" Value="6 Unités" RawValue="6" TotalValue="6 Unités" TotalRawValue="6" EstimatingItem="True" EstimatingCaption="Nombre d&apos;objets" Quantity="6" EstimatingUnit="unité" CostEach="0,00 €" RawCostEach="0" MarkupEach="0,00 €" RawMarkupEach="0" CostTotal="0,00 €" RawCostTotal="0" PriceEach="0,00 €" RawPriceEach="0" PriceTotal="0,00 €" RawPriceTotal="0" Margin="0,00%" RawMargin="0"/>
+								</Results>
+							</Extension>
+						</Extensions>
+						<Summary CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0"/>
+					</Object>
+				</Layer>
+			</Objects>
+		</Plan>
+	</Plans>
+	<PlansSummaries>
+		<PlanSummaries Name="E400">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Accumulateur 36W" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9256314;"/>
+				<PlanSummary Name="Accumulateur 36W + enseigne" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2049944;"/>
+				<PlanSummary Name="Bouton-poussoir B" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16559169;"/>
+				<PlanSummary Name="Détecteur inoccupation Do" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290019;"/>
+				<PlanSummary Name="Enseigne de sortie" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3350344;"/>
+				<PlanSummary Name="Interrupteur" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15269633;"/>
+				<PlanSummary Name="Luminaire DR2" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3114403;"/>
+				<PlanSummary Name="Luminaire DR5" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3511;"/>
+				<PlanSummary Name="Luminaire DR51" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5065163;"/>
+				<PlanSummary Name="Luminaire DR52" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1145853;"/>
+				<PlanSummary Name="Luminaire DW4" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-6041;"/>
+				<PlanSummary Name="Phare double" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4031264;"/>
+				<PlanSummary Name="Phare simple PH1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5987164;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E401">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Accumulateur 18W + enseigne" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-7968564;"/>
+				<PlanSummary Name="Accumulateur 36W" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9256314;"/>
+				<PlanSummary Name="Accumulateur 36W + enseigne" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2049944;"/>
+				<PlanSummary Name="Bouton-poussoir B" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16559169;"/>
+				<PlanSummary Name="Détecteur inoccupation Do" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290019;"/>
+				<PlanSummary Name="Détecteur occupation Di" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11334145;"/>
+				<PlanSummary Name="Enseigne de sortie" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3350344;"/>
+				<PlanSummary Name="Interrupteur" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15269633;"/>
+				<PlanSummary Name="Luminaire DR2" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3114403;"/>
+				<PlanSummary Name="Luminaire DR5" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3511;"/>
+				<PlanSummary Name="Luminaire DR51" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5065163;"/>
+				<PlanSummary Name="Luminaire DR52" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1145853;"/>
+				<PlanSummary Name="Luminaire DS0" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1133003;"/>
+				<PlanSummary Name="Luminaire DS1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-29071;"/>
+				<PlanSummary Name="Luminaire DS2" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4402153;"/>
+				<PlanSummary Name="Luminaire DW4" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-6041;"/>
+				<PlanSummary Name="Luminaire DW42" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3744163;"/>
+				<PlanSummary Name="Luminaire extérieur — à classer" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4402153;"/>
+				<PlanSummary Name="Luminaire mural DMW1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1133003;"/>
+				<PlanSummary Name="Luminaire ovale — à classer" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-29071;"/>
+				<PlanSummary Name="Phare double" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4031264;"/>
+				<PlanSummary Name="Phare simple PH1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5987164;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E402">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Accumulateur 18W + enseigne" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-7968564;"/>
+				<PlanSummary Name="Accumulateur 36W + enseigne" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2049944;"/>
+				<PlanSummary Name="Bloc d&apos;alimentation Ba" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9352799;"/>
+				<PlanSummary Name="Bouton-poussoir B" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16559169;"/>
+				<PlanSummary Name="Détecteur inoccupation Do" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290019;"/>
+				<PlanSummary Name="Détecteur occupation Di" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11334145;"/>
+				<PlanSummary Name="Enseigne de sortie" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3350344;"/>
+				<PlanSummary Name="Interrupteur" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15269633;"/>
+				<PlanSummary Name="Luminaire DR2" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3114403;"/>
+				<PlanSummary Name="Luminaire DR5" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3511;"/>
+				<PlanSummary Name="Luminaire DR51" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5065163;"/>
+				<PlanSummary Name="Luminaire DR52" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1145853;"/>
+				<PlanSummary Name="Luminaire DS0" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1133003;"/>
+				<PlanSummary Name="Luminaire DS1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-29071;"/>
+				<PlanSummary Name="Luminaire DS4" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13824;"/>
+				<PlanSummary Name="Phare double" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4031264;"/>
+				<PlanSummary Name="Phare simple — sans étiquette" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9919324;"/>
+				<PlanSummary Name="Phare simple PH1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5987164;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E403">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Accumulateur 36W" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9256314;"/>
+				<PlanSummary Name="Accumulateur 36W + enseigne" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2049944;"/>
+				<PlanSummary Name="Bouton-poussoir B" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16559169;"/>
+				<PlanSummary Name="Cercle barré fléché — à classer" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-8882056;"/>
+				<PlanSummary Name="Détecteur inoccupation Do" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290019;"/>
+				<PlanSummary Name="Détecteur occupation Di" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11334145;"/>
+				<PlanSummary Name="Enseigne de sortie" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3350344;"/>
+				<PlanSummary Name="Interrupteur" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15269633;"/>
+				<PlanSummary Name="Luminaire DR2" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3114403;"/>
+				<PlanSummary Name="Luminaire DR5" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3511;"/>
+				<PlanSummary Name="Luminaire DR51" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5065163;"/>
+				<PlanSummary Name="Luminaire DR52" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1145853;"/>
+				<PlanSummary Name="Luminaire DS0" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1133003;"/>
+				<PlanSummary Name="Luminaire DS1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-29071;"/>
+				<PlanSummary Name="Luminaire DS4" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13824;"/>
+				<PlanSummary Name="Luminaire mural DMW1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1133003;"/>
+				<PlanSummary Name="Phare double" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4031264;"/>
+				<PlanSummary Name="Phare simple PH1" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5987164;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E405">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Avertisseur visuel" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13264487;"/>
+				<PlanSummary Name="Détecteur de fumée" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16533637;"/>
+				<PlanSummary Name="Indicateur de débit ID" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15875647;"/>
+				<PlanSummary Name="Interrupteur fin de course Ls" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9974837;"/>
+				<PlanSummary Name="Klaxon" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13264487;"/>
+				<PlanSummary Name="Mesurage Hydro-Québec" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-36535;"/>
+				<PlanSummary Name="Module de supervision Sx" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16737895;"/>
+				<PlanSummary Name="Panneau" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5090537;"/>
+				<PlanSummary Name="Poste manuel" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15245887;"/>
+				<PlanSummary Name="Prise DDFT Ei" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5451241;"/>
+				<PlanSummary Name="Prise duplex" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2182091;"/>
+				<PlanSummary Name="Prise duplex DDFT" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-226191;"/>
+				<PlanSummary Name="Prise mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4023;"/>
+				<PlanSummary Name="Raccord CC équipement" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1821387;"/>
+				<PlanSummary Name="Raccord pompe" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2209536;"/>
+				<PlanSummary Name="Sectionneur" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3800995;"/>
+				<PlanSummary Name="Sortie data mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290082;"/>
+				<PlanSummary Name="Transformateur" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-46848;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E406">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Détecteur de fumée" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16533637;"/>
+				<PlanSummary Name="Klaxon" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13264487;"/>
+				<PlanSummary Name="Module transmission TRA" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11308587;"/>
+				<PlanSummary Name="Panneau" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5090537;"/>
+				<PlanSummary Name="Panneau d&apos;alarme PAI" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16533637;"/>
+				<PlanSummary Name="Poste manuel" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15245887;"/>
+				<PlanSummary Name="Poste-maître intercom PMI" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16559232;"/>
+				<PlanSummary Name="Prise cuisinière C" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-14336;"/>
+				<PlanSummary Name="Prise DDFT Ei" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5451241;"/>
+				<PlanSummary Name="Prise duplex DDFT" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-226191;"/>
+				<PlanSummary Name="Prise duplex" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2182091;"/>
+				<PlanSummary Name="Prise micro-onde" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4163491;"/>
+				<PlanSummary Name="Prise mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4023;"/>
+				<PlanSummary Name="Raccord CC équipement" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1821387;"/>
+				<PlanSummary Name="Raccord hotte Ht" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9415913;"/>
+				<PlanSummary Name="Raccord lave-vaisselle" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-6146763;"/>
+				<PlanSummary Name="Raccord sèche-main" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4190863;"/>
+				<PlanSummary Name="Sortie data" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11334182;"/>
+				<PlanSummary Name="Sortie data mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290082;"/>
+				<PlanSummary Name="Symbole vert pointillé — à classer" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-12151206;"/>
+				<PlanSummary Name="TS — à classer" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-6926156;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E407">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Détecteur de fumée" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16533637;"/>
+				<PlanSummary Name="Klaxon" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13264487;"/>
+				<PlanSummary Name="Panneau" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5090537;"/>
+				<PlanSummary Name="Poste manuel" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15245887;"/>
+				<PlanSummary Name="Prise duplex" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2182091;"/>
+				<PlanSummary Name="Prise duplex DDFT" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-226191;"/>
+				<PlanSummary Name="Prise micro-onde" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4163491;"/>
+				<PlanSummary Name="Prise mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4023;"/>
+				<PlanSummary Name="Raccord lave-vaisselle" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-6146763;"/>
+				<PlanSummary Name="Raccord sèche-main" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4190863;"/>
+				<PlanSummary Name="Sortie data" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11334182;"/>
+				<PlanSummary Name="Sortie data mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290082;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E408">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Avertisseur visuel" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13264487;"/>
+				<PlanSummary Name="Détecteur de fumée" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16533637;"/>
+				<PlanSummary Name="Détecteur thermique" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-9327267;"/>
+				<PlanSummary Name="Klaxon" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13264487;"/>
+				<PlanSummary Name="Klaxon Ei" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11308587;"/>
+				<PlanSummary Name="Panneau" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5090537;"/>
+				<PlanSummary Name="Poste manuel" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-15245887;"/>
+				<PlanSummary Name="Prise DDFT Ei" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-5451241;"/>
+				<PlanSummary Name="Prise duplex DDFT" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-226191;"/>
+				<PlanSummary Name="Prise duplex" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2182091;"/>
+				<PlanSummary Name="Prise micro-onde" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4163491;"/>
+				<PlanSummary Name="Prise mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4023;"/>
+				<PlanSummary Name="Raccord lave-vaisselle" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-6146763;"/>
+				<PlanSummary Name="Raccord sèche-main" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4190863;"/>
+				<PlanSummary Name="Sortie data" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11334182;"/>
+				<PlanSummary Name="Sortie data mobilier" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13290082;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E409">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Avertisseur visuel" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-13264487;"/>
+				<PlanSummary Name="Klaxon Ei" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-11308587;"/>
+				<PlanSummary Name="Raccord CC équipement" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1821387;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E200">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Raccord équipement — cédule" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3509943;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="NaN" RawMarginTotal="NaN"/>
+		</PlanSummaries>
+		<PlanSummaries Name="E600">
+			<LayerSummaries Name="Releve automatique">
+				<PlanSummary Name="Raccord borne VE" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-62095;"/>
+				<PlanSummary Name="Raccord chauffage" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2083531;"/>
+				<PlanSummary Name="Raccord pompe" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-2209536;"/>
+				<PlanSummary Name="Raccord équipement — cédule" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-3509943;"/>
+				<PlanSummary Name="Raccord évier électrique" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-8126371;"/>
+				<PlanTotal CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+			</LayerSummaries>
+			<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0"/>
+		</PlanSummaries>
+	</PlansSummaries>
+	<Summaries>
+		<Summary Name="E200" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16776961;"/>
+		<Summary Name="E400" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-65281;"/>
+		<Summary Name="E401" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16711681;"/>
+		<Summary Name="E402" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-1;"/>
+		<Summary Name="E403" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-8388608;"/>
+		<Summary Name="E405" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16744448;"/>
+		<Summary Name="E406" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-8355840;"/>
+		<Summary Name="E407" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16777088;"/>
+		<Summary Name="E408" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-8388480;"/>
+		<Summary Name="E409" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-16744320;"/>
+		<Summary Name="E600" CostTotalSubTotal="0,00 €" RawCostTotalSubTotal="0" PriceTotalSubTotal="0,00 €" RawPriceTotalSubTotal="0" MarginSubTotal="0,00%" RawMarginSubTotal="0" TotalBreakdown="0,00%" RawTotalBreakdown="0" TotalBreakdownTag="0;-4144960;"/>
+		<Total CostTotal="0,00 €" RawCostTotal="0" PriceTotal="0,00 €" RawPriceTotal="0" MarginTotal="0,00%" RawMarginTotal="0" Taxe1Rate="0,00%" RawTaxe1Rate="0" Taxe2Rate="0,00%" RawTaxe2Rate="0" Taxe1Caption="Taxe 1 (0%) :" Taxe2Caption="Taxe 2 (0%) :" Taxe1Total="0,00 €" RawTaxe1Total="0" Taxe2Total="0,00 €" RawTaxe2Total="0" TotalAfterTaxes="0,00 €" RawTotalAfterTaxes="0"/>
+	</Summaries>
+</Report>

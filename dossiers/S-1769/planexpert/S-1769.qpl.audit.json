@@ -1,0 +1,81 @@
+{
+ "qpl": "/home/claude/releve-auto/runs/S-1769/OUTBOX/S-1769/S-1769-planexpert/S-1769.qpl",
+ "sha256": "6ec907da6def58330c8bce312334d3c0c1d88c6f6771e535e0300ca5c5b4619d",
+ "octets": 33127,
+ "plans": 7,
+ "compteurs": 60,
+ "marques": 141,
+ "libelles": 59,
+ "par_feuille": {
+  "250075EPER-p06": {
+   "Luminaire C applique ext.": 3,
+   "Luminaire D applique ext.": 1,
+   "Luminaire E encastré ext. 4po": 4
+  },
+  "E004": {
+   "Aéroconvecteur existant relocalisé": 1,
+   "Boîtier protection station manuelle": 1,
+   "Cercle gras — à classer": 1,
+   "Chauffage type A 1500W": 7,
+   "Chauffage type A 900W": 2,
+   "Commande éclairage ($)": 4,
+   "Démol. applique": 1,
+   "Démol. chauffage — à confirmer": 1,
+   "Démol. luminaire encastré": 5,
+   "Démol. prise": 1,
+   "Démol. station manuelle": 1,
+   "Détecteur de fumée": 5,
+   "Enseigne sortie mur tête double": 1,
+   "Gradateur à glissière": 4,
+   "Klaxon alarme-incendie": 2,
+   "Luminaire A 2x2 30W": 18,
+   "Luminaire A1 2x2 40W": 4,
+   "Luminaire B encastré 6po 18W": 8,
+   "Luminaire B1 encastré 6po 12W": 3,
+   "Luminaire D applique ext.": 1,
+   "Luminaire F sous armoire": 1,
+   "Luminaire F1 sous armoire": 1,
+   "Luminaire G applique toilette": 1,
+   "Panneau C 225A": 1,
+   "Plancher chauffant zone": 2,
+   "Prise 15-20A DDFT @48po": 2,
+   "Prise double 15A": 1,
+   "Prise double 15A @48po": 10,
+   "Prise extérieure DDFT EI": 1,
+   "Prise micro-onde 5-20R": 1,
+   "Prise réfrigérateur": 1,
+   "Raccordement chauffe-eau CE-1": 1,
+   "Raccordement condenseur CD": 2,
+   "Raccordement porte électrifiée": 1,
+   "Raccordement unité AC": 2,
+   "Raccordement échangeur d'air ECH": 2,
+   "Relais bas voltage RT": 4,
+   "Sectionneur 30A sans fusible": 2,
+   "Serpentin électrique SE": 4,
+   "Sonde plancher chauffant": 1,
+   "Sortie data murale": 1,
+   "Station manuelle existante relocalisée": 1,
+   "Thermostat esclave plancher — à confirmer": 1,
+   "Thermostat maître plancher": 1,
+   "Thermostat unipolaire": 2,
+   "Unité urgence UA mur tête double": 1,
+   "Unité urgence UA mur tête simple": 2,
+   "Unité urgence UA plafond": 2
+  },
+  "250075EPER-p03": {
+   "Détecteur de présence — à confirmer": 2,
+   "Minuterie astronomique": 1
+  },
+  "250075EPER-p04": {
+   "Boîte alimentation porte (BA)": 1,
+   "Boîte de jonction porte (BJ)": 1,
+   "Relais adressable porte (RA)": 1
+  },
+  "250075EPER-p05": {
+   "Artère panneau C — à métrer": 1,
+   "Interrupteur 200A F200A": 1,
+   "Raccordement mécanique circ. 22 — à confirmer": 1,
+   "Remplacement borniers": 1
+  }
+ }
+}

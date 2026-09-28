@@ -1,0 +1,46 @@
+# 2026-09-27 14:13-14:17 EDT — tentative d'utiliser mssql-scripter (outil Microsoft, PyPI) pour scripter EE
+# Sorties réelles du bac à sable (Ubuntu 24.04.4 LTS, Python 3.11.15, pip 24.0). Le journal complet du service .NET est
+# dans 00-mssql-scripter-sqltoolsservice.log (copie de ~/.mssqlscripter/sqltools_2026092714165623025.log).
+
+$ pip download mssql-scripter --no-deps -d mss
+Saved ./mss/mssql_scripter-1.0.0a23-py2.py3-none-manylinux1_x86_64.whl
+Successfully downloaded mssql-scripter
+
+$ python3 -m venv mssvenv && ./mssvenv/bin/pip install -q mssql-scripter && ./mssvenv/bin/python -m mssqlscripter --version
+1.0.0a23
+
+# PyPI JSON (eewin/docs/sources/pypi-mssql-scripter.json) : latest 1.0.0a23, upload_time 2018-06-28T21:16:16 — dernière
+# publication il y a plus de 8 ans ; le binaire embarqué est un SqlToolsService .NET Core 2.x (System.Data.SqlClient de 2018).
+
+# Essai 1 — tel quel
+$ ./mssvenv/bin/python -m mssqlscripter -S localhost,1433 -d EE -U sa -P '***' --schema-and-data --target-server-version 2016 --display-progress -f test_scripter.sql
+FailFast:
+Couldn't find a valid ICU package installed on the system. Set the configuration flag System.Globalization.Invariant to true if you want to run with no globalization support.
+Scripting request: 1 encountered error: Scripting request encountered a exception
+Error details: ('End of stream reached, no output.',)
+
+# Essai 2 — DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+No usable version of the libssl was found
+Scripting request: 1 encountered error: Scripting request encountered a exception
+Error details: ('End of stream reached, no output.',)
+# (le shim System.Security.Cryptography.Native.OpenSsl.so embarqué ne connaît que libssl.so.1.0.0 / 1.0.2 / 10 ;
+#  Ubuntu 24.04 n'a que libssl.so.3)
+
+# Essai 3 — libssl 1.0.0 fournie localement (paquet Ubuntu bionic libssl1.0.0_1.0.2n-1ubuntu5.13_amd64.deb,
+#  sha256 ed14555671475a2db481049b4b66ecd376f79a7ca6d4d78a1702feb037aa5422, extrait avec dpkg-deb -x, LD_LIBRARY_PATH)
+$ LD_LIBRARY_PATH=$PWD/ssl10/usr/lib/x86_64-linux-gnu DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 ./mssvenv/bin/python -m mssqlscripter -S localhost,1433 -d EE -U sa -P '***' --include-objects dbo.SOUMIS -f $PWD/t1.sql
+Scripting request: 171fda62-4a06-425c-b6d1-b7eeeb29fd6e encountered error: Failed to connect to server localhost,1433.
+Error details: Microsoft.SqlServer.Management.Common.ConnectionFailureException: Failed to connect to server localhost,1433. ---> System.InvalidOperationException: Internal connection fatal error.
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   ...
+# Le service .NET démarre, atteint le serveur (SQL Server 2022 RTM-CU27, TLS 1.0/1.1/1.2 autorisés d'après errorlog)
+# et échoue en analysant la réponse de LOGIN (TdsParser.TryRun → "Internal connection fatal error"). Le client TDS de 2018
+# n'est pas compatible avec la réponse de login de SQL Server 2022. Aucun fichier produit.
+
+# Décision : mssql-scripter est pip-installable mais INUTILISABLE contre SQL Server 2022 dans cet environnement.
+# sqlpackage (/Action:Script) ne produit qu'un script de schéma incrémental ("creates a Transact-SQL incremental update
+# script that updates the schema of a target database" — eewin/docs/sources/sqlpackage-script.txt l.38), pas les données :
+# écarté. bcp produit des fichiers binaires/texte par table, pas un .sql unique : écarté.
+# → Générateur Python eewin/tools/generate_ee_dr_sql.py (pymssql 2.4.2) sur les vues catalogue de la base vivante.

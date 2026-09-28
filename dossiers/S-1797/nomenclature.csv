@@ -1,0 +1,176 @@
+label,famille,forme,rgb,jeton_regex,description,source
+Armoire distribution CDP-1,distribution,carre,,,Armoire distribution CDP-1,EL201/EL202 unifilaire et distribution (add. 2)
+Barre MALT cuivre 6x50x508,distribution,carre,,,Barre MALT cuivre 6x50x508,EL201/EL202 unifilaire et distribution (add. 2)
+Batterie urgence UA,secours,cercle,,,Batterie urgence UA,EL001 (add. 4) légende éclairage d'urgence
+Bloc relais DP1,commande,cercle,,,Bloc relais DP1,EL001 (add. 4) tableau des contrôles d'éclairage
+Bloc relais DP3,commande,cercle,,,Bloc relais DP3,EL001 (add. 4) tableau des contrôles d'éclairage
+Bollard protection,distribution,carre,,,Bollard protection,EL201/EL202 unifilaire et distribution (add. 2)
+Borne recharge VE double,distribution,carre,,,Borne recharge VE double,EL201/EL202 unifilaire et distribution (add. 2)
+Bouton contrôle d'accès,autre,trapeze,,,Bouton contrôle d'accès,EL001 légende contrôle d'accès / EL403-EL405
+Boîte PS1 — à confirmer,commande,cercle,,,Boîte PS1 — à confirmer,EL001 (add. 4) tableau des contrôles d'éclairage — hors légende
+Boîte contact ascenseur,alarme,cercle,,,Boîte contact ascenseur,EL001 (add. 4) légende alarme incendie
+Boîte contrôle de porte,autre,trapeze,,,Boîte contrôle de porte,EL001 légende contrôle d'accès / EL403-EL405
+Boîte de jonction murale,distribution,carre,,,Boîte de jonction murale,EL201/EL202 unifilaire et distribution (add. 2)
+Boîte de tirage 30x20x10,distribution,carre,,,Boîte de tirage 30x20x10,EL201/EL202 unifilaire et distribution (add. 2)
+Boîte mesurage HQ,distribution,carre,,,Boîte mesurage HQ,EL201/EL202 unifilaire et distribution (add. 2)
+Bride MALT,distribution,carre,,,Bride MALT,EL201/EL202 unifilaire et distribution (add. 2)
+Cabinet mesurage HQ,distribution,carre,,,Cabinet mesurage HQ,EL201/EL202 unifilaire et distribution (add. 2)
+Cellule photoélectrique,commande,cercle,,,Cellule photoélectrique,EL001 (add. 4) tableau des contrôles d'éclairage
+Chauffage AC1 2kW,chauffage,losange,,,Chauffage AC1 2kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage AC1 3kW,chauffage,losange,,,Chauffage AC1 3kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage AC1 5kW,chauffage,losange,,,Chauffage AC1 5kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage AC2 2kW,chauffage,losange,,,Chauffage AC2 2kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage AC2 3kW,chauffage,losange,,,Chauffage AC2 3kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage AC2 4kW,chauffage,losange,,,Chauffage AC2 4kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage AC2 5kW,chauffage,losange,,,Chauffage AC2 5kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage P3 1.5kW,chauffage,losange,,,Chauffage P3 1.5kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Chauffage P3 1kW,chauffage,losange,,,Chauffage P3 1kW,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Cloche alarme extérieure,alarme,cercle,,,Cloche alarme extérieure,EL001 (add. 4) légende alarme incendie
+Communicateur GSM fourni par autres,autre,trapeze,,,Communicateur GSM fourni par autres,EL001 légende contrôle d'accès / EL403-EL405
+Contacteur éclairage extérieur,commande,cercle,,,Contacteur éclairage extérieur,EL001 (add. 4) tableau des contrôles d'éclairage
+Disjoncteur ajouté panneau existant,distribution,carre,,,Disjoncteur ajouté panneau existant,EL201/EL202 unifilaire et distribution (add. 2)
+Démolition enseigne sortie,demolition,triangle_inverse,,,Démolition enseigne sortie,plans (mention à démolir / à enlever)
+Démolition poteau client existant,demolition,triangle_inverse,,,Démolition poteau client existant,plans (mention à démolir / à enlever)
+Détecteur fumée,alarme,cercle,,,Détecteur fumée,EL001 (add. 4) légende alarme incendie
+Détecteur fumée conduit,alarme,cercle,,,Détecteur fumée conduit,EL001 (add. 4) légende alarme incendie
+Détecteur plafond OS2,commande,cercle,,,Détecteur plafond OS2,EL001 (add. 4) tableau des contrôles d'éclairage
+Détecteur plafond OS3,commande,cercle,,,Détecteur plafond OS3,EL001 (add. 4) tableau des contrôles d'éclairage
+Détecteur thermique — à confirmer,alarme,cercle,,,Détecteur thermique — à confirmer,EL001 (add. 4) légende alarme incendie — hors légende
+Enseigne existante relocalisée,secours,cercle,,,Enseigne existante relocalisée,EL001 (add. 4) légende éclairage d'urgence
+Enseigne sortie applique,secours,cercle,,,Enseigne sortie applique,EL001 (add. 4) légende éclairage d'urgence
+Enseigne sortie plafond,secours,cercle,,,Enseigne sortie plafond,EL001 (add. 4) légende éclairage d'urgence
+Enseigne sortie temporaire,secours,cercle,,,Enseigne sortie temporaire,EL001 (add. 4) légende éclairage d'urgence
+Interrupteur 3 voies temporaire,commande,cercle,,,Interrupteur 3 voies temporaire,EL001 (add. 4) tableau des contrôles d'éclairage
+Interrupteur débit gicleurs,alarme,cercle,,,Interrupteur débit gicleurs,EL001 (add. 4) légende alarme incendie
+Interrupteur pression gicleurs,alarme,cercle,,,Interrupteur pression gicleurs,EL001 (add. 4) légende alarme incendie
+Interrupteur valve surveillée,alarme,cercle,,,Interrupteur valve surveillée,EL001 (add. 4) légende alarme incendie
+Isolateur de ligne,alarme,cercle,,,Isolateur de ligne,EL001 (add. 4) légende alarme incendie
+Kit partition OS8,commande,cercle,,,Kit partition OS8,EL001 (add. 4) tableau des contrôles d'éclairage
+Klaxon alarme,alarme,cercle,,,Klaxon alarme,EL001 (add. 4) légende alarme incendie
+Klaxon-stroboscope,alarme,cercle,,,Klaxon-stroboscope,EL001 (add. 4) légende alarme incendie
+Luminaire A1,luminaire,cercle,,,Luminaire A1,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire A1 urgence,secours,cercle,,,Luminaire A1 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire A2,luminaire,cercle,,,Luminaire A2,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire A3,luminaire,cercle,,,Luminaire A3,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire A4,luminaire,cercle,,,Luminaire A4,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire A4 urgence,secours,cercle,,,Luminaire A4 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire B1,luminaire,cercle,,,Luminaire B1,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire B2,luminaire,cercle,,,Luminaire B2,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire B3,luminaire,cercle,,,Luminaire B3,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire C,luminaire,cercle,,,Luminaire C,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire C urgence,secours,cercle,,,Luminaire C urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire D12,luminaire,cercle,,,Luminaire D12,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire D18,luminaire,cercle,,,Luminaire D18,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire D18 urgence,secours,cercle,,,Luminaire D18 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire D24,luminaire,cercle,,,Luminaire D24,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire D24 urgence,secours,cercle,,,Luminaire D24 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire D36,luminaire,cercle,,,Luminaire D36,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire E,luminaire,cercle,,,Luminaire E,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire F,luminaire,cercle,,,Luminaire F,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire F urgence,secours,cercle,,,Luminaire F urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire G,luminaire,cercle,,,Luminaire G,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire G urgence,secours,cercle,,,Luminaire G urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire H,luminaire,cercle,,,Luminaire H,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire H urgence,secours,cercle,,,Luminaire H urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire J urgence,secours,cercle,,,Luminaire J urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire K,luminaire,cercle,,,Luminaire K,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L1,luminaire,cercle,,,Luminaire L1,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L1 urgence,secours,cercle,,,Luminaire L1 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire L1S,luminaire,cercle,,,Luminaire L1S,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L2,luminaire,cercle,,,Luminaire L2,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L2S,luminaire,cercle,,,Luminaire L2S,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L3,luminaire,cercle,,,Luminaire L3,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L3 urgence,secours,cercle,,,Luminaire L3 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire L3S,luminaire,cercle,,,Luminaire L3S,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L3S urgence,secours,cercle,,,Luminaire L3S urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire L4,luminaire,cercle,,,Luminaire L4,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L4 urgence,secours,cercle,,,Luminaire L4 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire L5,luminaire,cercle,,,Luminaire L5,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L5 urgence,secours,cercle,,,Luminaire L5 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire L6,luminaire,cercle,,,Luminaire L6,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L6 urgence,secours,cercle,,,Luminaire L6 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire L7,luminaire,cercle,,,Luminaire L7,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L8,luminaire,cercle,,,Luminaire L8,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire L8 urgence,secours,cercle,,,Luminaire L8 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire M,luminaire,cercle,,,Luminaire M,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire N,luminaire,cercle,,,Luminaire N,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire N urgence,secours,cercle,,,Luminaire N urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire P1,luminaire,cercle,,,Luminaire P1,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire P2,luminaire,cercle,,,Luminaire P2,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire S1,luminaire,cercle,,,Luminaire S1,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire S1 urgence,secours,cercle,,,Luminaire S1 urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire S2,luminaire,cercle,,,Luminaire S2,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire S3,luminaire,cercle,,,Luminaire S3,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire T temporaire,luminaire,cercle,,,Luminaire T temporaire,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire T urgence,secours,cercle,,,Luminaire T urgence,EL001 (add. 4) légende éclairage d'urgence
+Luminaire V,luminaire,cercle,,,Luminaire V,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire W,luminaire,cercle,,,Luminaire W,EL001 (add. 4) tableau des appareils d'éclairage
+Luminaire mural puits,luminaire,cercle,,,Luminaire mural puits,EL001 (add. 4) tableau des appareils d'éclairage
+Mini-onduleur 1440W,secours,cercle,,,Mini-onduleur 1440W,EL001 (add. 4) légende éclairage d'urgence
+Minuterie éclairage extérieur,commande,cercle,,,Minuterie éclairage extérieur,EL001 (add. 4) tableau des contrôles d'éclairage
+Minuterie éclairage puits,commande,cercle,,,Minuterie éclairage puits,EL001 (add. 4) tableau des contrôles d'éclairage
+Module adressable MA,alarme,cercle,,,Module adressable MA,EL001 (add. 4) légende alarme incendie
+Module gradation DE2,commande,cercle,,,Module gradation DE2,EL001 (add. 4) tableau des contrôles d'éclairage
+Module nLight NI1,commande,cercle,,,Module nLight NI1,EL001 (add. 4) tableau des contrôles d'éclairage
+Module nLight SC2,commande,cercle,,,Module nLight SC2,EL001 (add. 4) tableau des contrôles d'éclairage
+Mât branchement provisoire,distribution,carre,,,Mât branchement provisoire,EL201/EL202 unifilaire et distribution (add. 2)
+Opérateur de porte,autre,trapeze,,,Opérateur de porte,EL001 légende contrôle d'accès / EL403-EL405
+Panneau annonciateur,alarme,cercle,,,Panneau annonciateur,EL001 (add. 4) légende alarme incendie
+Panneau distribution,distribution,carre,,,Panneau distribution,EL201/EL202 unifilaire et distribution (add. 2)
+Panneau principal alarme,alarme,cercle,,,Panneau principal alarme,EL001 (add. 4) légende alarme incendie
+Passerelle communication bornes,distribution,carre,,,Passerelle communication bornes,EL201/EL202 unifilaire et distribution (add. 2)
+Phare double temporaire,secours,cercle,,,Phare double temporaire,EL001 (add. 4) légende éclairage d'urgence
+Pont nLight BG1,commande,cercle,,,Pont nLight BG1,EL001 (add. 4) tableau des contrôles d'éclairage
+Poste manuel,alarme,carre,,,Poste manuel,EL001 (add. 4) légende alarme incendie
+Poste mural SO1,commande,cercle,,,Poste mural SO1,EL001 (add. 4) tableau des contrôles d'éclairage
+Poste mural SO2,commande,cercle,,,Poste mural SO2,EL001 (add. 4) tableau des contrôles d'éclairage
+Poste mural SO3,commande,cercle,,,Poste mural SO3,EL001 (add. 4) tableau des contrôles d'éclairage
+Poste mural SW1,commande,cercle,,,Poste mural SW1,EL001 (add. 4) tableau des contrôles d'éclairage
+Poste mural SW2,commande,cercle,,,Poste mural SW2,EL001 (add. 4) tableau des contrôles d'éclairage
+Poste mural SW3,commande,cercle,,,Poste mural SW3,EL001 (add. 4) tableau des contrôles d'éclairage
+Poste mural SW5,commande,cercle,,,Poste mural SW5,EL001 (add. 4) tableau des contrôles d'éclairage
+Poteau branchement provisoire,distribution,carre,,,Poteau branchement provisoire,EL201/EL202 unifilaire et distribution (add. 2)
+Poteau client télécom,distribution,carre,,,Poteau client télécom,EL201/EL202 unifilaire et distribution (add. 2)
+Poteau liaison aérosouterraine,distribution,carre,,,Poteau liaison aérosouterraine,EL201/EL202 unifilaire et distribution (add. 2)
+Prise adoucisseur,prise,cercle,,,Prise adoucisseur,EL001 (add. 4) légende prises de courant
+Prise congélateur,prise,cercle,,,Prise congélateur,EL001 (add. 4) légende prises de courant
+Prise double,prise,cercle,,,Prise double,EL001 (add. 4) légende prises de courant
+Prise double 20A,prise,cercle,,,Prise double 20A,EL001 (add. 4) légende prises de courant
+Prise double 20A RA,prise,cercle,,,Prise double 20A RA,EL001 (add. 4) légende prises de courant
+Prise double DDFT,prise,cercle,,,Prise double DDFT,EL001 (add. 4) légende prises de courant
+Prise double DDFT 20A étanche,prise,cercle,,,Prise double DDFT 20A étanche,EL001 (add. 4) légende prises de courant
+Prise double comptoir,prise,cercle,,,Prise double comptoir,EL001 (add. 4) légende prises de courant
+Prise double comptoir 20A,prise,cercle,,,Prise double comptoir 20A,EL001 (add. 4) légende prises de courant
+Prise lave-vaisselle,prise,cercle,,,Prise lave-vaisselle,EL001 (add. 4) légende prises de courant
+Prise micro-onde,prise,cercle,,,Prise micro-onde,EL001 (add. 4) légende prises de courant
+Prise réfrigérateur,prise,cercle,,,Prise réfrigérateur,EL001 (add. 4) légende prises de courant
+Prise toiture DDFT 20A,prise,cercle,,,Prise toiture DDFT 20A,EL001 (add. 4) légende prises de courant
+Raccordement ascenseur,mecanique,carre,,,Raccordement ascenseur,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement barre multiprise télécom,mecanique,carre,,,Raccordement barre multiprise télécom,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement boîtier contrôle valves,mecanique,carre,,,Raccordement boîtier contrôle valves,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement chaudière électrique,mecanique,carre,,,Raccordement chaudière électrique,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement chauffe-eau,mecanique,carre,,,Raccordement chauffe-eau,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement cuisinière,mecanique,carre,,,Raccordement cuisinière,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement câble chauffant,chauffage,losange,,,Raccordement câble chauffant,EL001 tableau des appareils de chauffage / EL404-EL406 (add. 2)
+Raccordement entrée existante,mecanique,carre,,,Raccordement entrée existante,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement fontaine d'eau,mecanique,carre,,,Raccordement fontaine d'eau,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement moteur,mecanique,carre,,,Raccordement moteur,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement panneau régulation,mecanique,carre,,,Raccordement panneau régulation,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement pompe,mecanique,carre,,,Raccordement pompe,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement rideau motorisé,mecanique,carre,,,Raccordement rideau motorisé,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement thermopompe,mecanique,carre,,,Raccordement thermopompe,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement unité toiture,mecanique,carre,,,Raccordement unité toiture,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement ventilateur,mecanique,carre,,,Raccordement ventilateur,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Raccordement éclairage UR-01,mecanique,carre,,,Raccordement éclairage UR-01,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Rail éclairage R,luminaire,cercle,,,Rail éclairage R,EL001 (add. 4) tableau des appareils d'éclairage
+Relais adressable RA,alarme,cercle,,,Relais adressable RA,EL001 (add. 4) légende alarme incendie
+Retenue magnétique,autre,trapeze,,,Retenue magnétique,EL001 légende contrôle d'accès / EL403-EL405
+Sectionneur 30A,mecanique,carre,,,Sectionneur 30A,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Sectionneur 30A fusible,mecanique,carre,,,Sectionneur 30A fusible,EL408 tableau des raccordements mécaniques (add. 2) / EL404-EL406
+Symbole M carré — à classer,distribution,carre,,,Symbole M carré — à classer,EL201/EL202 unifilaire et distribution (add. 2) — hors légende
+Sèche-mains,prise,cercle,,,Sèche-mains,EL001 (add. 4) légende prises de courant
+Tige MALT,distribution,carre,,,Tige MALT,EL201/EL202 unifilaire et distribution (add. 2)
+Transformateur sec,distribution,carre,,,Transformateur sec,EL201/EL202 unifilaire et distribution (add. 2)
+Transformateur sur socle,distribution,carre,,,Transformateur sur socle,EL201/EL202 unifilaire et distribution (add. 2)
+Témoin visuel,alarme,cercle,,,Témoin visuel,EL001 (add. 4) légende alarme incendie
+Électro-aimant,autre,trapeze,,,Électro-aimant,EL001 légende contrôle d'accès / EL403-EL405

@@ -1,0 +1,36 @@
+tbl|SOU_ID|NODOC|DESCDOC|DATEDOC|CLIENTNO|CLIENTCIE|SITECIE|SITERUE1|SITEVILLE|MATCOUTREL|MATVENDCAL|AUTCOUTCAL|AUTVENDCAL|TOTCALCULE|EST_NAME|EXTFILE
+---|------|-----|-------|-------|--------|---------|-------|--------|---------|----------|----------|----------|----------|----------|--------|-------
+SOUMIS|1400-INDUSTRIEL|NULL|Soumission 1400 Industriel Laprairie — entrée électrique changée au complet (bâtisse de GE), avec Hydro-Québec|NULL|NULL|NULL|GE|1400 Industriel|La Prairie|96298.36|96298.36|NULL|NULL|1|NULL|eewin/soumissions-dr/1400-Industriel-Laprairie/1400 Industriel Laprairie.pdf.txt
+SOUMIS|S-1844|S-1844|SAQ — Travaux d'électricité (rez-de-chaussée)|2026-08-25|LC2000|LC 2000|SAQ|NULL|NULL|NULL|NULL|238744.00|238744.00|1|Daniel Dupuis|eewin/soumissions-dr/S-1844/Soumission_S-1844_LC2000_SAQ_.pdf.txt
+tbl|SOU_ID|BLO_ID|DIV_ID|TYPERELEVE|TYPEITEM|ORDRE|ITEM_ID|DESCR|QTE|QTEUM|PROFIT|CODEIMPR|COUTANBRUT
+---|------|------|------|----------|--------|-----|-------|-----|---|-----|------|--------|----------
+SOUREL|1400-INDUSTRIEL|1|1|P|P|1000|DR:SB2-1400IND|SB2 switchboard 4 sections - cotation Siemens 2025-12-22|1.0|U|0.0||NULL
+SOUREL|S-1844|1|1|O|O|1000|DR:S-1844-FORFAIT|SAQ RDC - travaux d'électricité, forfait (PDF p.1)|1.0|U|0.0||238744.00
+tbl|SOU_ID|PRO_ID|CLEMANU|CLEDIST|CLEPERS|DESC|QTEOTH|QTEENS|QTELOT|COUBRUTUNI|COUUM|QPP|DATECOUT|UnitSelling|CALCTIMSTP
+---|------|------|-------|-------|-------|----|------|------|------|----------|-----|---|--------|-----------|----------
+SOUPRO|1400-INDUSTRIEL|DR:SB2-1400IND|gemmox000_12222500_00_00_M00|FRANKLIN EMPIRE INC|DR:SB2 4 sect. 2000A|PPD--SB2 SWITCHBOARD - 4 SECTIONS 600Y/347 2000A 65kA|1.0|0.0|0.0|96298.36|U|1.0|2025-12-22|96298.36|NULL
+tbl|SOU_ID|ENS_ID|ENS_ORG_ID|DESC|QTETOT|COUUM|CLEPERS|TEMPUNI|PROFIT
+---|------|------|----------|----|------|-----|-------|-------|------
+SOUENS|S-1844|DR:S-1844-FORFAIT|DR:S-1844-FORFAIT|S-1844 SAQ RDC - forfait travaux d'électricité|1.0|U|DR:S-1844 SAQ RDC|NULL|NULL
+tbl|ENS_ID|CLEPERS|DESC|COUUM|PROFIT|TEMPUNI|DATECREE|SYSTEM|USES_DISC
+---|------|-------|----|-----|------|-------|--------|------|---------
+ENSEMBLE|DR:S-1844-FORFAIT|DR:S-1844 SAQ RDC|S-1844 SAQ RDC - forfait travaux d'électricité|U|NULL|NULL|2026-09-27|0|0
+tbl|SOU_ID|BLO_ID|DESC|MULT|ORDRE
+---|------|------|----|----|-----
+SOUBLO|S-1844|1|Rez-de-chaussée|1|1
+SOUBLO|1400-INDUSTRIEL|1|Entrée électrique|1|1
+tbl|SOU_ID|DIV_ID|DESC|ORDRE
+---|------|------|----|-----
+SOUDIV|S-1844|1|Travaux d'électricité|1
+SOUDIV|1400-INDUSTRIEL|1|Entrée électrique|1
+tbl|CLI_ID|NOMCIE|CONTACT|RUE1|VILLE|CODEPOSTAL|PROVINCE|EMAIL
+---|------|------|-------|----|-----|----------|--------|-----
+CLIENTS|LC2000|LC 2000|Tibor Demeter, Chef estimateur|4045, rue Lavoisier|Boisbriand|J7H 1N1|Québec|tdemeter@LC2000.com
+tbl|enscompo|souensco
+---|--------|--------
+ENSCOMPO/SOUENSCO|0|0
+tbl|soumis|sourel|soupro|souens|ensemble|clients|soublo|soudiv
+---|------|------|------|------|--------|-------|------|------
+ROWCOUNTS|2|2|1|1|1|1|2|2
+DBV_VersionNo|DBV_VersionFrom|DBV_DataPath|DBV_MachineID|DBV_UserID|DBV_SessionID|DBV_DateTimeStart|DBV_DateTimeEnd|DBV_Success|DBV_Error
+-------------|---------------|------------|-------------|----------|-------------|-----------------|---------------|-----------|---------

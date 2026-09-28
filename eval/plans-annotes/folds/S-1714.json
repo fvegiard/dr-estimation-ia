@@ -1,0 +1,845 @@
+{
+ "dossier": "S-1714",
+ "trained_on": [
+  "S-1715",
+  "S-1769",
+  "S-1811",
+  "S-1844"
+ ],
+ "threshold": 0.25,
+ "nms_radius": 18.0,
+ "conduit_ratio": 1.7099543089438174,
+ "calibration_best": {
+  "threshold": 0.25,
+  "nms_radius": 18.0,
+  "precision": 0.21642145230185098,
+  "recall_readable": 0.3225806451612903,
+  "f1": 0.25904675339430777,
+  "predicted": 2107,
+  "readable_gold": 372
+ },
+ "gold_type": "positions",
+ "notes": [],
+ "detection": {
+  "all_pages": {
+   "R15": {
+    "tp": 615,
+    "predicted": 4305,
+    "gold": 7502,
+    "precision": 0.14285714285714285,
+    "recall": 0.0819781391628899,
+    "f1": 0.10417548911662573
+   },
+   "R25": {
+    "tp": 1232,
+    "predicted": 4305,
+    "gold": 7502,
+    "precision": 0.2861788617886179,
+    "recall": 0.16422287390029325,
+    "f1": 0.2086897603116795
+   },
+   "R45": {
+    "tp": 1806,
+    "predicted": 4305,
+    "gold": 7502,
+    "precision": 0.4195121951219512,
+    "recall": 0.24073580378565715,
+    "f1": 0.3059202168205302
+   }
+  },
+  "estimator_marked_pages": {
+   "R15": {
+    "tp": 615,
+    "predicted": 4036,
+    "gold": 7502,
+    "precision": 0.15237859266600595,
+    "recall": 0.0819781391628899,
+    "f1": 0.10660426417056683
+   },
+   "R25": {
+    "tp": 1232,
+    "predicted": 4036,
+    "gold": 7502,
+    "precision": 0.30525272547076315,
+    "recall": 0.16422287390029325,
+    "f1": 0.21355520887502166
+   },
+   "R45": {
+    "tp": 1806,
+    "predicted": 4036,
+    "gold": 7502,
+    "precision": 0.4474727452923687,
+    "recall": 0.24073580378565715,
+    "f1": 0.313052522100884
+   }
+  }
+ },
+ "families": {
+  "dispositif": {
+   "tp": 42,
+   "predicted": 188,
+   "gold": 4676,
+   "precision": 0.22340425531914893,
+   "recall": 0.008982035928143712,
+   "f1": 0.01726973684210526,
+   "unplaced_gold": 0,
+   "count_error": -0.9597946963216424
+  },
+  "luminaire": {
+   "tp": 186,
+   "predicted": 2590,
+   "gold": 386,
+   "precision": 0.07181467181467181,
+   "recall": 0.48186528497409326,
+   "f1": 0.125,
+   "unplaced_gold": 0,
+   "count_error": 5.709844559585492
+  },
+  "securite_incendie": {
+   "tp": 65,
+   "predicted": 924,
+   "gold": 1020,
+   "precision": 0.07034632034632035,
+   "recall": 0.06372549019607843,
+   "f1": 0.0668724279835391,
+   "unplaced_gold": 0,
+   "count_error": -0.09411764705882353
+  },
+  "telecom_donnees": {
+   "tp": 0,
+   "predicted": 0,
+   "gold": 335,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "unplaced_gold": 0,
+   "count_error": -1.0
+  },
+  "chauffage": {
+   "tp": 5,
+   "predicted": 102,
+   "gold": 941,
+   "precision": 0.049019607843137254,
+   "recall": 0.005313496280552604,
+   "f1": 0.009587727708533078,
+   "unplaced_gold": 0,
+   "count_error": -0.8916046758767269
+  },
+  "distribution": {
+   "tp": 0,
+   "predicted": 15,
+   "gold": 17,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": -0.11764705882352941
+  },
+  "mecanique_moteur": {
+   "tp": 0,
+   "predicted": 0,
+   "gold": 38,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "unplaced_gold": 0,
+   "count_error": -1.0
+  },
+  "autre": {
+   "tp": 0,
+   "predicted": 0,
+   "gold": 31,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "unplaced_gold": 0,
+   "count_error": -1.0
+  },
+  "indetermine": {
+   "tp": 0,
+   "predicted": 486,
+   "gold": 58,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "unplaced_gold": 0,
+   "count_error": 7.379310344827586
+  }
+ },
+ "occlusion": {
+  "visible": {
+   "gold": 762,
+   "matched": 267,
+   "recall": 0.35039370078740156
+  },
+  "occluded": {
+   "gold": 6740,
+   "matched": 1047,
+   "recall": 0.15534124629080118
+  }
+ },
+ "leakage": {
+  "radius_px": 15.0,
+  "predictions_near_other_takeoff": 0.0910569105691057,
+  "gold_near_other_takeoff": 0.9561450279925353
+ },
+ "sheets": [
+  {
+   "page": 1,
+   "sheet": "E101",
+   "gold_total": 0,
+   "predicted_total": 40,
+   "gold": {},
+   "predicted": {
+    "luminaire": 33,
+    "securite_incendie": 3,
+    "indetermine": 4
+   }
+  },
+  {
+   "page": 2,
+   "sheet": "E200",
+   "gold_total": 74,
+   "predicted_total": 264,
+   "gold": {
+    "chauffage": 3,
+    "indetermine": 30,
+    "distribution": 3,
+    "dispositif": 35,
+    "mecanique_moteur": 3
+   },
+   "predicted": {
+    "securite_incendie": 64,
+    "luminaire": 164,
+    "indetermine": 23,
+    "chauffage": 5,
+    "dispositif": 8
+   }
+  },
+  {
+   "page": 3,
+   "sheet": "E201",
+   "gold_total": 792,
+   "predicted_total": 166,
+   "gold": {
+    "chauffage": 136,
+    "luminaire": 13,
+    "dispositif": 587,
+    "mecanique_moteur": 6,
+    "telecom_donnees": 47,
+    "indetermine": 3
+   },
+   "predicted": {
+    "securite_incendie": 45,
+    "luminaire": 90,
+    "indetermine": 25,
+    "dispositif": 4,
+    "chauffage": 2
+   }
+  },
+  {
+   "page": 4,
+   "sheet": "E202",
+   "gold_total": 800,
+   "predicted_total": 125,
+   "gold": {
+    "chauffage": 131,
+    "luminaire": 11,
+    "dispositif": 609,
+    "telecom_donnees": 48,
+    "mecanique_moteur": 1
+   },
+   "predicted": {
+    "luminaire": 82,
+    "securite_incendie": 17,
+    "indetermine": 18,
+    "dispositif": 8
+   }
+  },
+  {
+   "page": 5,
+   "sheet": "E203",
+   "gold_total": 818,
+   "predicted_total": 112,
+   "gold": {
+    "chauffage": 134,
+    "luminaire": 11,
+    "dispositif": 618,
+    "telecom_donnees": 50,
+    "mecanique_moteur": 5
+   },
+   "predicted": {
+    "securite_incendie": 20,
+    "luminaire": 72,
+    "indetermine": 10,
+    "dispositif": 9,
+    "chauffage": 1
+   }
+  },
+  {
+   "page": 6,
+   "sheet": "E204",
+   "gold_total": 818,
+   "predicted_total": 111,
+   "gold": {
+    "luminaire": 11,
+    "chauffage": 134,
+    "dispositif": 618,
+    "mecanique_moteur": 5,
+    "telecom_donnees": 50
+   },
+   "predicted": {
+    "securite_incendie": 21,
+    "luminaire": 65,
+    "indetermine": 18,
+    "chauffage": 4,
+    "dispositif": 3
+   }
+  },
+  {
+   "page": 7,
+   "sheet": "E205",
+   "gold_total": 817,
+   "predicted_total": 98,
+   "gold": {
+    "chauffage": 134,
+    "luminaire": 11,
+    "dispositif": 618,
+    "mecanique_moteur": 5,
+    "telecom_donnees": 49
+   },
+   "predicted": {
+    "securite_incendie": 18,
+    "luminaire": 61,
+    "indetermine": 12,
+    "chauffage": 2,
+    "dispositif": 5
+   }
+  },
+  {
+   "page": 8,
+   "sheet": "E206",
+   "gold_total": 819,
+   "predicted_total": 99,
+   "gold": {
+    "chauffage": 133,
+    "luminaire": 13,
+    "dispositif": 618,
+    "telecom_donnees": 50,
+    "mecanique_moteur": 5
+   },
+   "predicted": {
+    "luminaire": 64,
+    "securite_incendie": 18,
+    "indetermine": 13,
+    "dispositif": 2,
+    "chauffage": 2
+   }
+  },
+  {
+   "page": 9,
+   "sheet": "E207",
+   "gold_total": 422,
+   "predicted_total": 66,
+   "gold": {
+    "chauffage": 71,
+    "luminaire": 5,
+    "dispositif": 320,
+    "telecom_donnees": 23,
+    "mecanique_moteur": 2,
+    "indetermine": 1
+   },
+   "predicted": {
+    "securite_incendie": 17,
+    "luminaire": 36,
+    "chauffage": 2,
+    "indetermine": 7,
+    "dispositif": 4
+   }
+  },
+  {
+   "page": 10,
+   "sheet": "E208",
+   "gold_total": 300,
+   "predicted_total": 71,
+   "gold": {
+    "chauffage": 65,
+    "luminaire": 4,
+    "dispositif": 208,
+    "mecanique_moteur": 6,
+    "telecom_donnees": 17
+   },
+   "predicted": {
+    "securite_incendie": 21,
+    "luminaire": 34,
+    "dispositif": 9,
+    "indetermine": 3,
+    "distribution": 2,
+    "chauffage": 2
+   }
+  },
+  {
+   "page": 11,
+   "sheet": "E209",
+   "gold_total": 2,
+   "predicted_total": 24,
+   "gold": {
+    "dispositif": 1,
+    "indetermine": 1
+   },
+   "predicted": {
+    "securite_incendie": 12,
+    "luminaire": 11,
+    "indetermine": 1
+   }
+  },
+  {
+   "page": 12,
+   "sheet": "E300",
+   "gold_total": 187,
+   "predicted_total": 369,
+   "gold": {
+    "luminaire": 169,
+    "dispositif": 18
+   },
+   "predicted": {
+    "luminaire": 250,
+    "securite_incendie": 72,
+    "indetermine": 28,
+    "chauffage": 10,
+    "dispositif": 9
+   }
+  },
+  {
+   "page": 13,
+   "sheet": "E301",
+   "gold_total": 123,
+   "predicted_total": 209,
+   "gold": {
+    "dispositif": 95,
+    "luminaire": 28
+   },
+   "predicted": {
+    "securite_incendie": 48,
+    "luminaire": 113,
+    "indetermine": 38,
+    "dispositif": 3,
+    "chauffage": 7
+   }
+  },
+  {
+   "page": 14,
+   "sheet": "E302",
+   "gold_total": 30,
+   "predicted_total": 158,
+   "gold": {
+    "luminaire": 14,
+    "dispositif": 16
+   },
+   "predicted": {
+    "luminaire": 100,
+    "securite_incendie": 29,
+    "indetermine": 14,
+    "dispositif": 10,
+    "chauffage": 4,
+    "distribution": 1
+   }
+  },
+  {
+   "page": 15,
+   "sheet": "E303",
+   "gold_total": 31,
+   "predicted_total": 142,
+   "gold": {
+    "dispositif": 17,
+    "luminaire": 14
+   },
+   "predicted": {
+    "luminaire": 77,
+    "securite_incendie": 25,
+    "indetermine": 19,
+    "chauffage": 6,
+    "dispositif": 14,
+    "distribution": 1
+   }
+  },
+  {
+   "page": 16,
+   "sheet": "E304",
+   "gold_total": 31,
+   "predicted_total": 143,
+   "gold": {
+    "luminaire": 14,
+    "dispositif": 17
+   },
+   "predicted": {
+    "securite_incendie": 25,
+    "luminaire": 89,
+    "indetermine": 18,
+    "dispositif": 5,
+    "chauffage": 5,
+    "distribution": 1
+   }
+  },
+  {
+   "page": 17,
+   "sheet": "E305",
+   "gold_total": 31,
+   "predicted_total": 146,
+   "gold": {
+    "luminaire": 14,
+    "dispositif": 17
+   },
+   "predicted": {
+    "securite_incendie": 25,
+    "luminaire": 90,
+    "indetermine": 16,
+    "distribution": 1,
+    "dispositif": 12,
+    "chauffage": 2
+   }
+  },
+  {
+   "page": 18,
+   "sheet": "E306",
+   "gold_total": 31,
+   "predicted_total": 135,
+   "gold": {
+    "luminaire": 14,
+    "dispositif": 17
+   },
+   "predicted": {
+    "securite_incendie": 25,
+    "luminaire": 77,
+    "indetermine": 17,
+    "chauffage": 7,
+    "dispositif": 8,
+    "distribution": 1
+   }
+  },
+  {
+   "page": 19,
+   "sheet": "E307",
+   "gold_total": 24,
+   "predicted_total": 86,
+   "gold": {
+    "luminaire": 11,
+    "dispositif": 13
+   },
+   "predicted": {
+    "securite_incendie": 18,
+    "luminaire": 57,
+    "chauffage": 4,
+    "indetermine": 6,
+    "dispositif": 1
+   }
+  },
+  {
+   "page": 20,
+   "sheet": "E308",
+   "gold_total": 15,
+   "predicted_total": 81,
+   "gold": {
+    "luminaire": 8,
+    "dispositif": 7
+   },
+   "predicted": {
+    "securite_incendie": 22,
+    "luminaire": 45,
+    "dispositif": 5,
+    "indetermine": 6,
+    "chauffage": 3
+   }
+  },
+  {
+   "page": 21,
+   "sheet": "E309",
+   "gold_total": 0,
+   "predicted_total": 39,
+   "gold": {},
+   "predicted": {
+    "securite_incendie": 29,
+    "luminaire": 9,
+    "indetermine": 1
+   }
+  },
+  {
+   "page": 22,
+   "sheet": "E400",
+   "gold_total": 88,
+   "predicted_total": 257,
+   "gold": {
+    "securite_incendie": 74,
+    "indetermine": 8,
+    "autre": 6
+   },
+   "predicted": {
+    "luminaire": 156,
+    "securite_incendie": 57,
+    "indetermine": 35,
+    "chauffage": 6,
+    "dispositif": 2,
+    "distribution": 1
+   }
+  },
+  {
+   "page": 23,
+   "sheet": "E401",
+   "gold_total": 227,
+   "predicted_total": 204,
+   "gold": {
+    "securite_incendie": 147,
+    "autre": 4,
+    "indetermine": 2,
+    "distribution": 2,
+    "telecom_donnees": 1,
+    "dispositif": 71
+   },
+   "predicted": {
+    "securite_incendie": 47,
+    "luminaire": 116,
+    "indetermine": 32,
+    "chauffage": 5,
+    "dispositif": 4
+   }
+  },
+  {
+   "page": 24,
+   "sheet": "E402",
+   "gold_total": 314,
+   "predicted_total": 164,
+   "gold": {
+    "securite_incendie": 131,
+    "indetermine": 2,
+    "autre": 2,
+    "distribution": 2,
+    "dispositif": 156,
+    "luminaire": 21
+   },
+   "predicted": {
+    "luminaire": 109,
+    "securite_incendie": 27,
+    "indetermine": 12,
+    "dispositif": 11,
+    "chauffage": 4,
+    "distribution": 1
+   }
+  },
+  {
+   "page": 25,
+   "sheet": "E403",
+   "gold_total": 139,
+   "predicted_total": 156,
+   "gold": {
+    "securite_incendie": 133,
+    "indetermine": 2,
+    "distribution": 2,
+    "autre": 2
+   },
+   "predicted": {
+    "securite_incendie": 30,
+    "luminaire": 90,
+    "indetermine": 22,
+    "distribution": 2,
+    "dispositif": 8,
+    "chauffage": 4
+   }
+  },
+  {
+   "page": 26,
+   "sheet": "E404",
+   "gold_total": 138,
+   "predicted_total": 159,
+   "gold": {
+    "securite_incendie": 133,
+    "indetermine": 2,
+    "distribution": 2,
+    "autre": 1
+   },
+   "predicted": {
+    "securite_incendie": 28,
+    "dispositif": 15,
+    "luminaire": 92,
+    "indetermine": 20,
+    "chauffage": 4
+   }
+  },
+  {
+   "page": 27,
+   "sheet": "E405",
+   "gold_total": 140,
+   "predicted_total": 154,
+   "gold": {
+    "securite_incendie": 134,
+    "indetermine": 2,
+    "distribution": 2,
+    "autre": 2
+   },
+   "predicted": {
+    "securite_incendie": 34,
+    "luminaire": 85,
+    "indetermine": 21,
+    "dispositif": 11,
+    "distribution": 1,
+    "chauffage": 2
+   }
+  },
+  {
+   "page": 28,
+   "sheet": "E406",
+   "gold_total": 141,
+   "predicted_total": 163,
+   "gold": {
+    "securite_incendie": 134,
+    "indetermine": 2,
+    "distribution": 2,
+    "autre": 3
+   },
+   "predicted": {
+    "securite_incendie": 31,
+    "luminaire": 103,
+    "indetermine": 16,
+    "dispositif": 10,
+    "distribution": 1,
+    "chauffage": 2
+   }
+  },
+  {
+   "page": 29,
+   "sheet": "E407",
+   "gold_total": 84,
+   "predicted_total": 94,
+   "gold": {
+    "securite_incendie": 76,
+    "indetermine": 2,
+    "distribution": 1,
+    "autre": 5
+   },
+   "predicted": {
+    "securite_incendie": 24,
+    "luminaire": 53,
+    "indetermine": 10,
+    "chauffage": 2,
+    "dispositif": 5
+   }
+  },
+  {
+   "page": 30,
+   "sheet": "E408",
+   "gold_total": 66,
+   "predicted_total": 80,
+   "gold": {
+    "securite_incendie": 58,
+    "indetermine": 1,
+    "distribution": 1,
+    "autre": 6
+   },
+   "predicted": {
+    "securite_incendie": 24,
+    "luminaire": 43,
+    "chauffage": 5,
+    "indetermine": 5,
+    "distribution": 2,
+    "dispositif": 1
+   }
+  },
+  {
+   "page": 31,
+   "sheet": "E409",
+   "gold_total": 0,
+   "predicted_total": 41,
+   "gold": {},
+   "predicted": {
+    "securite_incendie": 28,
+    "luminaire": 11,
+    "indetermine": 2
+   }
+  },
+  {
+   "page": 32,
+   "sheet": "E500",
+   "gold_total": 0,
+   "predicted_total": 149,
+   "gold": {},
+   "predicted": {
+    "securite_incendie": 20,
+    "luminaire": 113,
+    "indetermine": 14,
+    "dispositif": 2
+   }
+  }
+ ],
+ "conduits": [
+  {
+   "page": 2,
+   "sheet": "E200",
+   "estimator_ft": 4730.2,
+   "estimated_ft": 7137.2,
+   "error": 0.508861595289933
+  },
+  {
+   "page": 3,
+   "sheet": "E201",
+   "estimator_ft": 791.6,
+   "estimated_ft": 4480.0,
+   "error": 4.659449268082872
+  },
+  {
+   "page": 12,
+   "sheet": "E300",
+   "estimator_ft": 2424.0,
+   "estimated_ft": 9328.1,
+   "error": 2.8481595353152045
+  },
+  {
+   "page": 22,
+   "sheet": "E400",
+   "estimator_ft": 2548.1,
+   "estimated_ft": 6739.3,
+   "error": 1.6448819198863107
+  },
+  {
+   "page": 23,
+   "sheet": "E401",
+   "estimator_ft": 4703.4,
+   "estimated_ft": 4932.2,
+   "error": 0.04865340121464032
+  },
+  {
+   "page": 24,
+   "sheet": "E402",
+   "estimator_ft": 4584.3,
+   "estimated_ft": 3934.9,
+   "error": -0.14164986871386676
+  },
+  {
+   "page": 25,
+   "sheet": "E403",
+   "estimator_ft": 149.6,
+   "estimated_ft": 4012.0,
+   "error": 25.816706779507548
+  },
+  {
+   "page": 29,
+   "sheet": "E407",
+   "estimator_ft": 2381.5,
+   "estimated_ft": 2786.9,
+   "error": 0.17023881414558495
+  },
+  {
+   "page": 30,
+   "sheet": "E408",
+   "estimator_ft": 1747.5,
+   "estimated_ft": 2643.1,
+   "error": 0.5125599252335326
+  }
+ ],
+ "totals": {
+  "gold_placed": 7502,
+  "gold_unplaced": 0,
+  "predicted": 4305,
+  "count_error_vs_placed": -0.4261530258597707,
+  "count_error_vs_all_estimator_marks": -0.4261530258597707
+ },
+ "elapsed_s": 1032.8
+}

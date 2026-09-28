@@ -1,0 +1,310 @@
+{
+ "dossier": "S-1857",
+ "trained_on": [
+  "S-1714",
+  "S-1715",
+  "S-1769",
+  "S-1811",
+  "S-1844"
+ ],
+ "threshold": 0.1,
+ "nms_radius": 24.0,
+ "conduit_ratio": 1.7557051546110072,
+ "calibration_best": {
+  "threshold": 0.1,
+  "nms_radius": 24.0,
+  "precision": 0.20353018086729135,
+  "recall_readable": 0.4261006289308176,
+  "f1": 0.27547679282646304,
+  "predicted": 4589,
+  "readable_gold": 636
+ },
+ "gold_type": "counts",
+ "notes": [
+  "count-only gold: reference-quantites.csv (transcription of the estimator's printed takeoff)"
+ ],
+ "families": {
+  "dispositif": {
+   "gold": 388,
+   "predicted": 497,
+   "gold_outside_pdf": 367,
+   "count_error": 0.2809278350515464
+  },
+  "luminaire": {
+   "gold": 532,
+   "predicted": 429,
+   "gold_outside_pdf": 32,
+   "count_error": -0.19360902255639098
+  },
+  "securite_incendie": {
+   "gold": 137,
+   "predicted": 48,
+   "gold_outside_pdf": 126,
+   "count_error": -0.6496350364963503
+  },
+  "telecom_donnees": {
+   "gold": 46,
+   "predicted": 14,
+   "gold_outside_pdf": 47,
+   "count_error": -0.6956521739130435
+  },
+  "chauffage": {
+   "gold": 2,
+   "predicted": 4,
+   "gold_outside_pdf": 1,
+   "count_error": 1.0
+  },
+  "distribution": {
+   "gold": 0,
+   "predicted": 1,
+   "gold_outside_pdf": 0,
+   "count_error": null
+  },
+  "mecanique_moteur": {
+   "gold": 23,
+   "predicted": 0,
+   "gold_outside_pdf": 133,
+   "count_error": -1.0
+  },
+  "autre": {
+   "gold": 2,
+   "predicted": 0,
+   "gold_outside_pdf": 0,
+   "count_error": -1.0
+  },
+  "indetermine": {
+   "gold": 234,
+   "predicted": 49,
+   "gold_outside_pdf": 878,
+   "count_error": -0.7905982905982906
+  }
+ },
+ "sheets": [
+  {
+   "sheet": "E200",
+   "gold_total": 0,
+   "predicted_total": 80,
+   "gold": {},
+   "predicted": {
+    "luminaire": 59,
+    "dispositif": 17,
+    "telecom_donnees": 1,
+    "securite_incendie": 2,
+    "indetermine": 1
+   }
+  },
+  {
+   "sheet": "E400",
+   "gold_total": 77,
+   "predicted_total": 72,
+   "gold": {
+    "indetermine": 22,
+    "securite_incendie": 3,
+    "luminaire": 50,
+    "dispositif": 2
+   },
+   "predicted": {
+    "dispositif": 27,
+    "luminaire": 35,
+    "securite_incendie": 4,
+    "telecom_donnees": 1,
+    "chauffage": 1,
+    "indetermine": 4
+   }
+  },
+  {
+   "sheet": "E401",
+   "gold_total": 240,
+   "predicted_total": 94,
+   "gold": {
+    "securite_incendie": 3,
+    "indetermine": 66,
+    "luminaire": 163,
+    "dispositif": 8
+   },
+   "predicted": {
+    "dispositif": 46,
+    "luminaire": 38,
+    "securite_incendie": 6,
+    "telecom_donnees": 1,
+    "indetermine": 3
+   }
+  },
+  {
+   "sheet": "E402",
+   "gold_total": 316,
+   "predicted_total": 84,
+   "gold": {
+    "indetermine": 96,
+    "securite_incendie": 5,
+    "luminaire": 206,
+    "dispositif": 9
+   },
+   "predicted": {
+    "dispositif": 35,
+    "luminaire": 35,
+    "securite_incendie": 7,
+    "indetermine": 6,
+    "telecom_donnees": 1
+   }
+  },
+  {
+   "sheet": "E403",
+   "gold_total": 161,
+   "predicted_total": 88,
+   "gold": {
+    "securite_incendie": 5,
+    "indetermine": 34,
+    "luminaire": 113,
+    "dispositif": 9
+   },
+   "predicted": {
+    "dispositif": 35,
+    "luminaire": 36,
+    "securite_incendie": 5,
+    "indetermine": 11,
+    "telecom_donnees": 1
+   }
+  },
+  {
+   "sheet": "E404",
+   "gold_total": 0,
+   "predicted_total": 49,
+   "gold": {},
+   "predicted": {
+    "luminaire": 28,
+    "dispositif": 15,
+    "indetermine": 4,
+    "telecom_donnees": 1,
+    "securite_incendie": 1
+   }
+  },
+  {
+   "sheet": "E405",
+   "gold_total": 77,
+   "predicted_total": 97,
+   "gold": {
+    "indetermine": 9,
+    "chauffage": 2,
+    "securite_incendie": 16,
+    "dispositif": 35,
+    "mecanique_moteur": 15
+   },
+   "predicted": {
+    "dispositif": 35,
+    "luminaire": 48,
+    "securite_incendie": 6,
+    "indetermine": 6,
+    "telecom_donnees": 1,
+    "chauffage": 1
+   }
+  },
+  {
+   "sheet": "E406",
+   "gold_total": 215,
+   "predicted_total": 82,
+   "gold": {
+    "dispositif": 148,
+    "autre": 2,
+    "securite_incendie": 36,
+    "indetermine": 5,
+    "mecanique_moteur": 6,
+    "telecom_donnees": 18
+   },
+   "predicted": {
+    "luminaire": 36,
+    "dispositif": 34,
+    "securite_incendie": 6,
+    "indetermine": 4,
+    "telecom_donnees": 1,
+    "chauffage": 1
+   }
+  },
+  {
+   "sheet": "E407",
+   "gold_total": 181,
+   "predicted_total": 63,
+   "gold": {
+    "securite_incendie": 42,
+    "dispositif": 117,
+    "telecom_donnees": 22
+   },
+   "predicted": {
+    "luminaire": 28,
+    "dispositif": 26,
+    "telecom_donnees": 2,
+    "securite_incendie": 4,
+    "indetermine": 3
+   }
+  },
+  {
+   "sheet": "E408",
+   "gold_total": 92,
+   "predicted_total": 72,
+   "gold": {
+    "dispositif": 60,
+    "securite_incendie": 26,
+    "telecom_donnees": 6
+   },
+   "predicted": {
+    "dispositif": 35,
+    "luminaire": 29,
+    "chauffage": 1,
+    "telecom_donnees": 2,
+    "indetermine": 2,
+    "securite_incendie": 3
+   }
+  },
+  {
+   "sheet": "E409",
+   "gold_total": 5,
+   "predicted_total": 43,
+   "gold": {
+    "mecanique_moteur": 2,
+    "securite_incendie": 1,
+    "indetermine": 2
+   },
+   "predicted": {
+    "luminaire": 26,
+    "dispositif": 12,
+    "telecom_donnees": 1,
+    "securite_incendie": 1,
+    "indetermine": 3
+   }
+  },
+  {
+   "sheet": "E600",
+   "gold_total": 0,
+   "predicted_total": 218,
+   "gold": {},
+   "predicted": {
+    "dispositif": 180,
+    "luminaire": 31,
+    "securite_incendie": 3,
+    "indetermine": 2,
+    "telecom_donnees": 1,
+    "distribution": 1
+   }
+  }
+ ],
+ "totals": {
+  "gold": 1364,
+  "gold_outside_pdf": 1584,
+  "predicted": 1042,
+  "count_error": -0.23607038123167157,
+  "count_error_vs_all_estimator_rows": -0.6465400271370421
+ },
+ "sheets_outside_pdf": [
+  "E15 (ADME-01 implantation HQ)",
+  "E400 (ADME-01)",
+  "E401 (ADME-01)",
+  "E402 (ADME-01)",
+  "E403 (ADME-01)",
+  "E405 (ADME-01 numerotee E404)",
+  "E406 (ADME-01 numerotee E405)",
+  "E407 (ADME-01 numerotee E406)",
+  "E408 (ADME-01 numerotee E407)",
+  "E409 (ADME-01 numerotee E408)"
+ ],
+ "elapsed_s": 113.7
+}

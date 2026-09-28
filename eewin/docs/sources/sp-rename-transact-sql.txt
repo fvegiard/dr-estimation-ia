@@ -1,0 +1,340 @@
+
+				 Table of contents
+
+				Exit editor mode
+
+			Ask Learn
+
+			Ask Learn
+
+			Reading mode
+
+			Table of contents
+
+			Read in English
+
+			Add
+
+			Add to Plans
+
+			Edit
+
+					Copy Markdown
+
+					Print
+
+						Note
+
+						Access to this page requires authorization. You can try signing in or changing directories.
+
+						Access to this page requires authorization. You can try changing directories.
+
+					sys.sp_rename (Transact-SQL)
+
+			Feedback
+
+						Summarize this article for me
+
+	 Applies to:
+ SQL Server
+ Azure SQL Database
+ Azure SQL Managed Instance
+ Azure Synapse Analytics
+ SQL analytics endpoint in Microsoft Fabric
+ Warehouse in Microsoft Fabric
+
+Changes the name of a user-created object in the current database. This object can be a table, index, column, alias data type, or Microsoft
+
+.NET Framework common language runtime (CLR) user-defined type.
+
+Important
+
+Some system objects and Transact-SQL syntax aren't supported in serverless SQL pools in Azure Synapse Analytics, including this article. For more information, visit T-SQL support.
+
+Caution
+
+Changing any part of an object name can break scripts and stored procedures. We recommend you don't use this statement to rename stored procedures, triggers, user-defined functions, or views; instead, drop the object and re-create it with the new name.
+
+ Transact-SQL syntax conventions
+
+Syntax
+
+Syntax for sp_rename in SQL Server and Azure SQL Database:
+
+sys.sp_rename
+    [ @objname = ] N'objname'
+    , [ @newname = ] N'newname'
+    [ , [ @objtype = ] 'objtype' ]
+[ ; ]
+
+Syntax for sp_rename (preview) in Azure Synapse Analytics:
+
+sp_rename [ @objname = ] 'object_name' , [ @newname = ] 'new_name'
+    , [ @objtype = ] 'COLUMN'
+
+Syntax for sp_rename in Microsoft Fabric:
+
+sp_rename [ @objname = ] 'object_name' , [ @newname = ] 'new_name'
+    [ , [ @objtype = ] 'OBJECT' ]
+
+Arguments
+
+[ @objname = ] N'objname'
+
+The current qualified or nonqualified name of the user object or data type. If the object to be renamed is a column in a table, object_name must be in the form table.column or schema.table.column. If the object to be renamed is an index, object_name must be in the form table.index or schema.table.index. If the object to be renamed is a constraint, object_name must be in the form schema.constraint.
+
+Quotation marks are only necessary if a qualified object is specified. If a fully qualified name, including a database name, is provided, the database name must be the name of the current database. object_name is nvarchar(776), with no default.
+
+[ @newname = ] N'newname'
+
+The new name for the specified object. new_name must be a one-part name and must follow the rules for identifiers. @newname is sysname, with no default.
+
+Trigger names can't start with # or ##.
+
+Applies to Warehouse in Microsoft Fabric:
+
+Schema names can't contain / or \ or end with a ..
+
+Table names can't contain / or \ or end with a ..
+
+[ @objtype = ] 'objtype'
+
+The type of object being renamed. object_type is varchar(13), with a default of NULL, and can be one of these values.
+
+Value
+Description
+
+COLUMN
+A column to be renamed.
+
+DATABASE
+A user-defined database. This object type is required when renaming a database.
+
+INDEX
+A user-defined index. Renaming an index with statistics, also automatically renames the statistics.
+
+OBJECT
+An item of a type tracked in sys.objects. For example, OBJECT could be used to rename objects including constraints (CHECK, FOREIGN KEY, PRIMARY/UNIQUE KEY), user tables, columns, stored procedures, inline table-valued functions, table-valued functions, and rules.
+
+STATISTICS
+Applies to: SQL Server 2012 (11.x) and later and Azure SQL Database.
+
+Statistics created explicitly by a user or created implicitly with an index. Renaming the statistics of an index automatically renames the index as well.
+
+USERDATATYPE
+A CLR user-defined type added by executing CREATE TYPE or sp_addtype.
+
+Applies to: Azure Synapse Analytics
+
+In sp_rename (preview) for Azure Synapse Analytics, COLUMN is a mandatory value specifying that the object type to be renamed is a column, and must always be included in the sp_rename statement. A column can only be renamed if it isn't a distribution column. sp_rename can only be used to rename a COLUMN in a user object.
+
+Applies to: Microsoft Fabric
+
+In sp_rename for the Warehouse in Microsoft Fabric, OBJECT is the only supported value for @objtype.
+
+In sp_rename for the SQL analytics endpoint in Microsoft Fabric, OBJECT is the only supported value for @objtype. Tables and columns can't be renamed.
+
+Return code values
+
+0 (success) or a nonzero number (failure).
+
+Remarks
+
+Applies to SQL Server (all supported versions) and Azure SQL Database:
+
+sp_rename automatically renames the associated index whenever a PRIMARY KEY or UNIQUE constraint is renamed. If a renamed index is tied to a PRIMARY KEY constraint, the PRIMARY KEY constraint is also automatically renamed by sp_rename.
+
+sp_rename can be used to rename primary and secondary XML indexes.
+
+Renaming a stored procedure, function, view, or trigger won't change the name of the corresponding object either in the definition column of the sys.sql_modules catalog view or obtained using the OBJECT_DEFINITION built-in function. Therefore, we recommend that sp_rename not be used to rename these object types. Instead, drop and re-create the object with its new name.
+
+Applies to SQL Server (all supported versions), Azure SQL Database, and Azure Synapse Analytics:
+
+Renaming an object such as a table or column won't automatically rename references to that object. You must modify any objects that reference the renamed object manually. For example, if you rename a table column and that column is referenced in a trigger, you must modify the trigger to reflect the new column name. Use sys.sql_expression_dependencies to list dependencies on the object before renaming it.
+
+Renaming a column doesn't automatically update the metadata for any objects which SELECT all columns (using the *) from that table. For example, if you rename a table column and that column is referenced by a non-schema-bound view or function that SELECTs all columns (using the *), the metadata for the view or function continues to reflect the original column name. Refresh the metadata using sp_refreshsqlmodule or sp_refreshview.
+
+You can change the name of an object or data type in the current database only. The names of most system data types and system objects can't be changed.
+
+If you use more than 128 characters for the new name, only the first 128 characters are used and the rest is truncated.
+
+Applies to Azure Synapse Analytics:
+
+In Azure Synapse Analytics, sp_rename is in Preview for dedicated SQL pools.
+
+Permissions
+
+To rename objects, columns, and indexes, requires ALTER permission on the object. To rename user types, requires CONTROL permission on the type. To rename a database, requires membership in the sysadmin or dbcreator fixed server roles. To rename a ledger table, ALTER LEDGER permission is required.
+
+Examples
+
+A. Rename a table
+
+The following example renames the SalesTerritory table to SalesTerr in the Sales schema.
+
+USE AdventureWorks2022;
+GO
+
+EXECUTE sp_rename 'Sales.SalesTerritory', 'SalesTerr';
+GO
+
+B. Rename a column
+
+The following example renames the TerritoryID column in the SalesTerritory table to TerrID.
+
+USE AdventureWorks2022;
+GO
+
+EXECUTE sp_rename 'Sales.SalesTerritory.TerritoryID', 'TerrID', 'COLUMN';
+GO
+
+C. Rename an index
+
+The following example renames the IX_ProductVendor_VendorID index to IX_VendorID.
+
+USE AdventureWorks2022;
+GO
+
+EXECUTE sp_rename N'Purchasing.ProductVendor.IX_ProductVendor_VendorID', N'IX_VendorID', N'INDEX';
+GO
+
+D. Rename an alias data type
+
+The following example renames the Phone alias data type to Telephone.
+
+USE AdventureWorks2022;
+GO
+
+EXECUTE sp_rename N'Phone', N'Telephone', N'USERDATATYPE';
+GO
+
+E. Rename constraints
+
+The following examples rename a PRIMARY KEY constraint, a CHECK constraint and a FOREIGN KEY constraint. When renaming a constraint, the schema to which the constraint belongs must be specified.
+
+USE AdventureWorks2022;
+GO
+
+-- Return the current Primary Key, Foreign Key and Check constraints for the Employee table.
+SELECT name,
+       SCHEMA_NAME(schema_id) AS schema_name,
+       type_desc
+FROM sys.objects
+WHERE parent_object_id = (OBJECT_ID('HumanResources.Employee'))
+      AND type IN ('C', 'F', 'PK');
+GO
+
+-- Rename the primary key constraint.
+EXECUTE sp_rename 'HumanResources.PK_Employee_BusinessEntityID', 'PK_EmployeeID';
+GO
+
+-- Rename a check constraint.
+EXECUTE sp_rename 'HumanResources.CK_Employee_BirthDate', 'CK_BirthDate';
+GO
+
+-- Rename a foreign key constraint.
+EXECUTE sp_rename 'HumanResources.FK_Employee_Person_BusinessEntityID', 'FK_EmployeeID';
+
+-- Return the current Primary Key, Foreign Key and Check constraints for the Employee table.
+SELECT name,
+       SCHEMA_NAME(schema_id) AS schema_name,
+       type_desc
+FROM sys.objects
+WHERE parent_object_id = (OBJECT_ID('HumanResources.Employee'))
+      AND type IN ('C', 'F', 'PK');
+GO
+
+name                                  schema_name        type_desc
+------------------------------------- ------------------ ----------------------
+FK_Employee_Person_BusinessEntityID   HumanResources     FOREIGN_KEY_CONSTRAINT
+PK_Employee_BusinessEntityID          HumanResources     PRIMARY_KEY_CONSTRAINT
+CK_Employee_BirthDate                 HumanResources     CHECK_CONSTRAINT
+CK_Employee_MaritalStatus             HumanResources     CHECK_CONSTRAINT
+CK_Employee_HireDate                  HumanResources     CHECK_CONSTRAINT
+CK_Employee_Gender                    HumanResources     CHECK_CONSTRAINT
+CK_Employee_VacationHours             HumanResources     CHECK_CONSTRAINT
+CK_Employee_SickLeaveHours            HumanResources     CHECK_CONSTRAINT
+
+(7 row(s) affected)
+
+name                                  schema_name        type_desc
+------------------------------------- ------------------ ----------------------
+FK_Employee_ID                        HumanResources     FOREIGN_KEY_CONSTRAINT
+PK_Employee_ID                        HumanResources     PRIMARY_KEY_CONSTRAINT
+CK_BirthDate                          HumanResources     CHECK_CONSTRAINT
+CK_Employee_MaritalStatus             HumanResources     CHECK_CONSTRAINT
+CK_Employee_HireDate                  HumanResources     CHECK_CONSTRAINT
+CK_Employee_Gender                    HumanResources     CHECK_CONSTRAINT
+CK_Employee_VacationHours             HumanResources     CHECK_CONSTRAINT
+CK_Employee_SickLeaveHours            HumanResources     CHECK_CONSTRAINT
+
+(7 row(s) affected)
+
+F. Rename statistics
+
+The following example creates a statistics object named contactMail1 and then renames the statistic to NewContact by using sp_rename. When you rename statistics, the object must be specified in the format `schema.table.statistics_name``.
+
+CREATE STATISTICS ContactMail1
+    ON Person.Person(BusinessEntityID, EmailPromotion)
+    WITH SAMPLE 5 PERCENT;
+
+EXECUTE sp_rename 'Person.Person.ContactMail1', 'NewContact', 'Statistics';
+
+Examples: Azure Synapse Analytics
+
+G. Rename a column
+
+The following example renames the c1 column in the table1 table to col1.
+
+Note
+
+This Azure Synapse Analytics feature is still in preview for dedicated SQL pools and is currently available only for objects in the dbo schema.
+
+CREATE TABLE table1 (c1 INT, c2 INT);
+
+EXECUTE sp_rename 'table1.c1', 'col1', 'COLUMN';
+GO
+
+H. Rename an object
+
+The following example renames the table dbo.table1 to dbo.table2, using the OBJECT type.
+
+EXECUTE sp_rename
+    @objname = 'dbo.table1',
+    @newname = 'table2',
+    @objtype = 'OBJECT';
+
+Related content
+
+sys.sql_expression_dependencies (Transact-SQL)
+
+sys.sql_modules (Transact-SQL)
+
+System stored procedures (Transact-SQL)
+
+Database Engine stored procedures (Transact-SQL)
+
+			Feedback
+
+					Was this page helpful?
+
+						Yes
+
+						No
+
+							No
+
+								Need help with this topic?
+
+								Want to try using Ask Learn to clarify or guide you through this topic?
+
+			Ask Learn
+
+			Ask Learn
+
+				 Suggest a fix?
+
+				Additional resources
+
+				Last updated on
+		2026-07-21

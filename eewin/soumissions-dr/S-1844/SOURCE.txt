@@ -1,0 +1,21 @@
+Courriel source (Microsoft 365, boîte fvegiard@dreelectrique.com)
+  Objet            : S-1844
+  De               : Daniel Dupuis <ddupuis@dreelectrique.com> (Estimateur Sénior, Le Groupe DR Électrique Inc.)
+  À                : Francis Végiard <fvegiard@dreelectrique.com>
+  Envoyé / reçu    : 2026-08-26T14:48:42Z / 2026-08-26T14:48:47Z (UTC) = 2026-08-26 10:48 heure de l'Est
+  Message id Graph : AAMkADJhMjI1YzY3LWI4MGEtNDRkOS05ZWZiLTEwZGRkYTJkY2QwYwBGAAAAAAC5ZzDQKaNrR7AbFwfy5erZBwB4pBUqXr6kRIq_rGIBBAT0AAAAAAEMAAB4pBUqXr6kRIq_rGIBBAT0AAItKnKGAAA=
+  Internet-Message-ID : <YQXPR01MB514091DFE7FA80721D88C041ADAE2@YQXPR01MB5140.CANPRD01.PROD.OUTLOOK.COM>
+  Corps            : signature seulement (aucun texte).
+
+Pièce jointe
+  Nom              : Soumission_S-1844_LC2000_SAQ_.pdf
+  Type / taille    : application/pdf / 212 641 octets (valeur « size » retournée par Graph)
+  Attachment id    : AAMkADJhMjI1YzY3LWI4MGEtNDRkOS05ZWZiLTEwZGRkYTJkY2QwYwBGAAAAAAC5ZzDQKaNrR7AbFwfy5erZBwB4pBUqXr6kRIq_rGIBBAT0AAAAAAEMAAB4pBUqXr6kRIq_rGIBBAT0AAItKnKGAAABEgAQANv0WCNmBvNAhGBuFL9Bnq0=
+  Obtenu           : 2026-09-27 via mcp__Microsoft_365__read_resource — le connecteur retourne le TEXTE extrait (3 pages), pas le binaire.
+  SHA256 du PDF original : NON DISPONIBLE (binaire non téléchargeable par le connecteur).
+  Fichier conservé : Soumission_S-1844_LC2000_SAQ_.pdf.txt (texte intégral extrait) — SHA256 dans ../SHA256SUMS
+
+Faits chiffrés contenus dans le document (page 1)
+  Soumission S-1844, date 25 août 2026, client LC 2000 (Tibor Demeter, Chef estimateur, tdemeter@LC2000.com),
+  projet « SAQ — Travaux d'électricité (rez-de-chaussée) », prix forfaitaire 238 744,00 $ avant TPS/TVQ (condition 3),
+  validité 30 jours (condition 1), net 30 jours (condition 4). Aucune ligne détaillée (quantité, matériel, main-d'œuvre).

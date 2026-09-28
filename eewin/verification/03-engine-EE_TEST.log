@@ -1,0 +1,45 @@
+# 2026-09-27 14:30:41 EDT — moteur de calcul officiel (sp_SOU_CalculTotaux) rejoué dans EE_TEST, mêmes paramètres que load_dr_submissions.sql §1.5/§2.4
+$ cat engine_test.sql
+SET NOCOUNT ON;
+PRINT 'Database: ' + DB_NAME();
+-- Same calls as eewin/soumissions-dr/load_dr_submissions.sql (1.5 and 2.4), @DoLog = 0 -> single result set
+EXEC dbo.sp_SOU_CalculTotaux @SOU_ID = 'S-1844', @TypeReleve = 'O', @EE_CALGARY = 0,
+  @ModeCalcul = 'C', @VendantUAvantVendantT = 1, @VPM = 2, @DoLog = 0;
+EXEC dbo.sp_SOU_CalculTotaux @SOU_ID = '1400-INDUSTRIEL', @TypeReleve = 'P', @EE_CALGARY = 0,
+  @ModeCalcul = 'C', @VendantUAvantVendantT = 1, @VPM = 2, @DoLog = 0;
+SELECT SOU_ID, AUTCOUTCAL, AUTVENDCAL, MATCOUTREL, MATVENDCAL FROM dbo.SOUMIS ORDER BY SOU_ID;
+SELECT SOU_ID, PRO_ID, COUBRUTUNI, UnitSelling FROM dbo.SOUPRO;
+
+$ sqlcmd -d EE -W -s '|' -i engine_test.sql
+Database: EE
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+238744.000000|-238744.000000|238744.000000|.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+96298.360000|-96298.360000|96298.360000|.000000
+SOU_ID|AUTCOUTCAL|AUTVENDCAL|MATCOUTREL|MATVENDCAL
+------|----------|----------|----------|----------
+1400-INDUSTRIEL|NULL|NULL|96298.360000000001|96298.360000000001
+S-1844|238744.0|238744.0|NULL|NULL
+SOU_ID|PRO_ID|COUBRUTUNI|UnitSelling
+------|------|----------|-----------
+1400-INDUSTRIEL|DR:SB2-1400IND|96298.360000000001|96298.360000000001
+exit=0
+
+$ sqlcmd -d EE_TEST -W -s '|' -i engine_test.sql
+Database: EE_TEST
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+238744.000000|-238744.000000|238744.000000|.000000
+fCoutantTotal|fCoutantTotalPortionTVP|fVendantTotal|fLaborTotal
+-------------|-----------------------|-------------|-----------
+96298.360000|-96298.360000|96298.360000|.000000
+SOU_ID|AUTCOUTCAL|AUTVENDCAL|MATCOUTREL|MATVENDCAL
+------|----------|----------|----------|----------
+1400-INDUSTRIEL|NULL|NULL|96298.360000000001|96298.360000000001
+S-1844|238744.0|238744.0|NULL|NULL
+SOU_ID|PRO_ID|COUBRUTUNI|UnitSelling
+------|------|----------|-----------
+1400-INDUSTRIEL|DR:SB2-1400IND|96298.360000000001|96298.360000000001
+exit=0

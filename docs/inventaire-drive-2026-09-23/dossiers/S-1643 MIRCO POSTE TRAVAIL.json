@@ -1,0 +1,34 @@
+{
+  "dossier": "S-1643 MIRCO POSTE TRAVAIL",
+  "id": "13I--1nWW63X1gIpfGi33UFr_bSVnNX2W",
+  "fichiers": [
+    {
+      "chemin": "Soumission S-1643.pdf",
+      "id": "1N7i8zbXjM7b3kBXKoiwxe5gXo66dsLFz",
+      "ext": "pdf",
+      "octets": 303342,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Soumission S-1643.docx",
+      "id": "1i2Fx9Za_u6fCh6-KObWaqgcvU95JRyfu",
+      "ext": "docx",
+      "octets": 62277,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "Thumbs.db",
+      "id": "1VVwTK7PEfalHIZwXPO921b-uLg_fwYmF",
+      "ext": "db",
+      "octets": 14336,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Modele soumission jonathan parent  - Copie - Copie (2).docx",
+      "id": "1vjaVYj7oOAFWHbr4NpQe9jWgliThbSDE",
+      "ext": "docx",
+      "octets": 62783,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+feuille,type,echelle,note
+E100,legende,,cartouche=E100 · ÉLECTRIQUE DEVIS GÉNÉRAL NOTES TABLEAUX & DÉTAILS (légendes prises/éclairage/alarme/communications/distribution + devis + tableau chauffage condos) · échelle AUCUNE
+E101,tableau,,cartouche=E101 · ÉLECTRIQUE PANNEAUX DIAGRAMMES TABLEAUX & DÉTAILS (cédules panneaux logements types 1.1 à 4 et communs S/S1.1/S2.1/UE/UNE/PC/PP · tableau chauffage · tableau enseignes/urgence · tableau luminaires « À VENIR » · diagramme télécom) · échelle AUCUNE
+E102,schema,,cartouche=E102 · ÉLECTRIQUE SCHÉMA UNIFILAIRE & DEVIS DE PERFORMANCE (unifilaire + bancs de compteurs + schémas typiques ascenseurs ; partie génératrice marquée « À VENIR ») · échelle AUCUNE
+E103,tableau,,cartouche=E103 · ÉLECTRIQUE RÉFÉRENCE ÉQUIPEMENT MÉCANIQUE DÉTAILS & DEVIS PERFORMANCE (tableaux pompes/aérothermes/évaporateurs/condenseurs/bouilloire · détails · éclairage devis de performance) · échelle AUCUNE
+E104,autre,,cartouche=E104 · ÉLECTRIQUE DEVIS GÉNÉRATRICE (texte de devis) · échelle AUCUNE
+E105,autre,,cartouche=E105 · ÉLECTRIQUE DEVIS ALARME INCENDIE (texte de devis) · échelle AUCUNE
+E106,schema,,cartouche=E106 · ÉLECTRIQUE DIAGRAMME D'ALARME INCENDIE DÉTECTION & LISTE DES ZONES · échelle AUCUNE
+E107,schema,,cartouche=E107 · ÉLECTRIQUE DIAGRAMME D'ALARME INCENDIE DÉTECTION (SUITE) TOUR-1 · échelle AUCUNE
+E108,schema,,cartouche=E108 · ÉLECTRIQUE DIAGRAMME D'ALARME INCENDIE SIGNALISATION (SUITE) TOUR-2 (titre de diagramme : DÉTECTION) · échelle AUCUNE
+E109,schema,,cartouche=E109 · ÉLECTRIQUE DIAGRAMME D'ALARME INCENDIE SIGNALISATION · échelle AUCUNE
+E110,schema,,cartouche=E110 · ÉLECTRIQUE DIAGRAMME D'ALARME INCENDIE DEVIS ALARME INCENDIE (signalisation TOUR-1) · échelle AUCUNE
+E111,schema,,cartouche=E111 · ÉLECTRIQUE DIAGRAMME D'ALARME INCENDIE SIGNALISATION (SUITE) TOUR-2 · échelle AUCUNE
+E200,plan,128,cartouche=E200 · PRISES ÉQUIPEMENTS RACCORDEMENT MÉCANIQUE : PLAN DU SOUS-SOL · 3/32po=1pi-0po (≈1:128)
+E201,plan,128,cartouche=E201 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUES : PLAN DU RDC · 3/32po=1pi-0po (≈1:128)
+E202,plan,128,cartouche=E202 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU 2E · 3/32po=1pi-0po (≈1:128)
+E203,plan,128,cartouche=E203 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU 3E · 3/32po=1pi-0po (≈1:128)
+E204,plan,128,cartouche=E204 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU 4E · 3/32po=1pi-0po (≈1:128)
+E205,plan,128,cartouche=E205 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU 5E · 3/32po=1pi-0po (≈1:128)
+E206,plan,128,cartouche=E206 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU 6E · 3/32po=1pi-0po (≈1:128)
+E207,plan,128,cartouche=E207 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU 7E (tour 1 + toit tour 2) · 3/32po=1pi-0po (≈1:128)
+E208,plan,128,cartouche=E208 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU 8E · 3/32po=1pi-0po (≈1:128)
+E209,plan,128,cartouche=E209 · PRISES ÉQUIPEMENTS & RACCORDEMENT MÉCANIQUE : PLAN DU TOIT · 3/32po=1pi-0po (≈1:128)
+E300,plan,128,cartouche=E300 · ÉCLAIRAGE : PLAN DU SOUS-SOL · 3/32po=1pi-0po (≈1:128)
+E301,plan,128,cartouche=E301 · ÉCLAIRAGE : PLAN DU RDC · 3/32po=1pi-0po (≈1:128)
+E302,plan,128,cartouche=E302 · ÉCLAIRAGE : PLAN DU 2E · 3/32po=1pi-0po (≈1:128)
+E303,plan,128,cartouche=E303 · ÉCLAIRAGE : PLAN DU 3E · 3/32po=1pi-0po (≈1:128)
+E304,plan,128,cartouche=E304 · ÉCLAIRAGE : PLAN DU 4E · 3/32po=1pi-0po (≈1:128)
+E305,plan,128,cartouche=E305 · ÉCLAIRAGE : PLAN DU 5E · 3/32po=1pi-0po (≈1:128)
+E306,plan,128,cartouche=E306 · ÉCLAIRAGE : PLAN DU 6E · 3/32po=1pi-0po (≈1:128)
+E307,plan,128,cartouche=E307 · ÉCLAIRAGE : PLAN DU 7E (tour 1 + toit tour 2) · 3/32po=1pi-0po (≈1:128)
+E308,plan,128,cartouche=E308 · ÉCLAIRAGE : PLAN DU 8E · 3/32po=1pi-0po (≈1:128)
+E309,plan,128,cartouche=E309 · ÉCLAIRAGE : PLAN DU TOIT (rév. 1 émis pour soumission ; aucun appareil électrique visible) · 3/32po=1pi-0po (≈1:128)
+E400,plan,128,cartouche=E400 · ALARME INCENDIE : PLAN DU SOUS-SOL · 3/32po=1pi-0po (≈1:128)
+E401,plan,128,cartouche=E401 · ALARME INCENDIE : PLAN DU RDC · 3/32po=1pi-0po (≈1:128)
+E402,plan,128,cartouche=E402 · ALARME INCENDIE : PLAN DU 2E · 3/32po=1pi-0po (≈1:128)
+E403,plan,128,cartouche=E403 · ALARME INCENDIE : PLAN DU 3E · 3/32po=1pi-0po (≈1:128)
+E404,plan,128,cartouche=E404 · ALARME INCENDIE : PLAN DU 4E · 3/32po=1pi-0po (≈1:128)
+E405,plan,128,cartouche=E405 · ALARME INCENDIE : PLAN DU 5E · 3/32po=1pi-0po (≈1:128)
+E406,plan,128,cartouche=E406 · ALARME INCENDIE : PLAN DU 6E · 3/32po=1pi-0po (≈1:128)
+E407,plan,128,cartouche=E407 · ALARME INCENDIE : PLAN DU 7E (tour 1 + toit tour 2) · 3/32po=1pi-0po (≈1:128)
+E408,plan,128,cartouche=E408 · ALARME INCENDIE : PLAN DU 8E · 3/32po=1pi-0po (≈1:128)
+E409,plan,128,cartouche=E409 · ALARME INCENDIE : PLAN DU TOIT (rév. 1 émis pour soumission ; aucun appareil visible) · 3/32po=1pi-0po (≈1:128)
+E500,plan,200,cartouche=E500 · ÉLECTRIQUE PLAN D'IMPLANTATION (site : branchement HQ souterrain, transformateur sur socle, massifs) · échelle 1:200 lue au cartouche
+E501,detail,,cartouche=E501 · ÉLECTRIQUE NORMES HYDRO-QUÉBEC (reproductions de normes HQ, rien à compter) · échelle AUCUNE

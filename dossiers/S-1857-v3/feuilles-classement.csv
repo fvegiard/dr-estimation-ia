@@ -1,0 +1,23 @@
+feuille,type,echelle,note
+E600,autre,,cartouche=E000 · PAGE TITRE / LISTE DES FEUILLES ÉLECTRICITÉ (no. absent du cartouche ; lu dans le nom de fichier E000_Rev0 — nom provisoire E600 de prepare.py erroné) ; aucun appareil
+E100,autre,,cartouche=E100 · DEVIS (notes générales texte) ; aucun appareil dessiné
+E101,autre,,cartouche=E101 · DEVIS (suite) ; texte seulement
+E102,legende,,cartouche=E102 · SPÉCIFICATIONS — tableau des appareils d'éclairage (DMW1 DR2 DR5 DR51 DR52 DS0 DS1 DS2 DS4 DW4 DW42) + tableau des spécifications E-01 à E-77
+E103,legende,,cartouche=E103 · LÉGENDE (panneaux · général · raccords · alarme incendie · téléphonie · prises et services · éclairage)
+E104,legende,,cartouche=E104 · LÉGENDE - SUITE (chauffage · distribution · sécurité intrusion · intercommunication · appel de garde · éclairage d'urgence)
+E150,plan,100,cartouche=E150 · IMPLANTATION (plan d'implantation 1:100) ; 5 luminaires DMW1 = mêmes appareils que E401 (RDC) → comptés sur E401 seulement
+E200,schema,,cartouche=E200 · SCHÉMA UNIFILAIRE DISTRIBUTION ÉLECTRIQUE (P-P1 600A 347/600V · Xfo 150 kVA et 112.5 kVA · PS-1 à PS-5 · départs équipements)
+E201,schema,,cartouche=E201 · SCHÉMA UNIFILAIRE ALARME INCENDIE (PAI · TRA · colonnes montantes par niveau)
+E400,plan,100,cartouche=E400 · SOUS-SOL - ÉCLAIRAGE
+E401,plan,100,cartouche=E401 · REZ DE CHAUSSÉE - ÉCLAIRAGE
+E402,plan,100,cartouche=E402 · NIVEAU 1 - ÉCLAIRAGE
+E403,plan,100,cartouche=E403 · NIVEAU 2 - ÉCLAIRAGE
+E404,plan,100,cartouche=E404 · ACCÈS TOITURE - ÉCLAIRAGE ; aucun appareil électrique dessiné (toiture architecturale + étiquettes THP-1 et VRT-1 grises)
+E405,plan,100,cartouche=E405 · SOUS-SOL - ALARME INCENDIE - PRISES ET SERVICES (+ détail ENTRÉE D'EAU N.A.É.)
+E406,plan,100,cartouche=E406 · REZ DE CHAUSSÉE - ALARME INCENDIE - PRISES ET SERVICES
+E407,plan,100,cartouche=E407 · NIVEAU 1 - ALARME INCENDIE - PRISES ET SERVICES
+E408,plan,100,cartouche=E408 · NIVEAU 2 - ALARME INCENDIE - PRISES ET SERVICES
+E409,plan,100,cartouche=E409 · ACCÈS TOITURE - ALARME INCENDIE - PRISES ET SERVICES
+E500,detail,,cartouche=E500 · DÉTAILS COMMUNS — feuille vide (cartouche seul) ; aucun détail émis
+E600_2,remplacee,,cartouche=E600 · PANNEAUX rév. 1 SOUMISSION 2026-08-17 — REMPLACÉE par l'addenda ADME-01 (E600_ADD rév. 2 2026-09-11) ; non relevée
+E600_ADD,tableau,,cartouche=E600 · PANNEAUX rév. 2 ADME-01 2026-09-11 (addenda 02 · scan sans texte) — cédules PS-1 PS-2 PS-3 PS-4 PS-5 P-P1 ; prime sur E600_2

@@ -1,0 +1,55 @@
+{
+  "dossier": "S-1662_Varennes 94 St-Laurent",
+  "id": "1MXL4TRhJyOA9o-7CAi8u2CsjZvGa-NCT",
+  "fichiers": [
+    {
+      "chemin": "Thumbs.db",
+      "id": "1DqPy17lGi9T_xEHkcxUBsnIEFdSgPXSX",
+      "ext": "db",
+      "octets": 13312,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "S-1662.docx",
+      "id": "1EzTuJK74JvjK7nGMmTEEY-GA5rey-FyE",
+      "ext": "docx",
+      "octets": 61778,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "S-1662.pdf",
+      "id": "1qpbPvXO9VizUFSc32ldNpu-RFKSP6fal",
+      "ext": "pdf",
+      "octets": 264332,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Photo/Thumbs.db",
+      "id": "1XOSpowBqPyKijClb2ncocZqD1hW_8pRt",
+      "ext": "db",
+      "octets": 52736,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Photo/WESCO International, Inc. Quote #040344.pdf",
+      "id": "1j-TE4IhO_jvv5m1zA4DeTI2RWXRsFFvO",
+      "ext": "pdf",
+      "octets": 66210,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Photo/Photo 1.jpg",
+      "id": "11vB1SJ-uGeAkCacJ9mkkx0HDKrksPCnP",
+      "ext": "jpg",
+      "octets": 757257,
+      "mimeType": "image/jpeg"
+    },
+    {
+      "chemin": "Photo/Photo 2.jpg",
+      "id": "1Mh4q7nk6qzoGS4hWWiu7_bzmGSDAazb0",
+      "ext": "jpg",
+      "octets": 1143714,
+      "mimeType": "image/jpeg"
+    }
+  ]
+}

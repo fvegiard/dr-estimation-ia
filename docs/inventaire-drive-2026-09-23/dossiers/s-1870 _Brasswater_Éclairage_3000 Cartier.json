@@ -1,0 +1,76 @@
+{
+  "dossier": "s-1870 _Brasswater_Éclairage_3000 Cartier",
+  "id": "1Zd3gNoypcT0TksivE9ItQ4yr9xJI98Qx",
+  "fichiers": [
+    {
+      "chemin": "Soumission_S-1870_Brasswater.pdf",
+      "id": "1zH5HMv2bUr9SS-2DSUZxsJHdxmahbVwk",
+      "ext": "pdf",
+      "octets": 331602,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Enregistrement automatique deModele soumission jonathan parent  - Copie - Copie (4).docx",
+      "id": "1zL33qBC1ZGZ1LYvfdrioS_VC_qPKIlnk",
+      "ext": "docx",
+      "octets": 62515,
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "chemin": "doc20260919131114.pdf",
+      "id": "1nEz1vl58TU-lf0TZzBzALL44ZPo0uJa2",
+      "ext": "pdf",
+      "octets": 627385,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Thumbs.db",
+      "id": "1mXX9wUHGALXKQpRhI6DH-UIKReBi6-I3",
+      "ext": "db",
+      "octets": 15872,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Highbay.pdf",
+      "id": "1rMC_AEYS6J1OcOhXC9uNiusHTLdXcq_w",
+      "ext": "pdf",
+      "octets": 1994508,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Elumen.pdf",
+      "id": "1axamo6wkph2RtCO0exLWEfNQ0iNwjGKA",
+      "ext": "pdf",
+      "octets": 3819858,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/QT3611855.pdf",
+      "id": "1gUBW28gZt3KaSLygPtVr-_s_9IPdlGl-",
+      "ext": "pdf",
+      "octets": 11726,
+      "mimeType": "application/pdf"
+    },
+    {
+      "chemin": "Westburn/Thumbs.db",
+      "id": "1VcHEfjH6STSjjTwg5t_PKUB3QWrz_i4O",
+      "ext": "db",
+      "octets": 13824,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Wesco/Thumbs.db",
+      "id": "1QT1Et4F8P5SHIGKyuaRzXfIbNmEYJMt3",
+      "ext": "db",
+      "octets": 16896,
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "chemin": "Wesco/WESCO International, Inc. Quote #224029.pdf",
+      "id": "1-OzvPtzwz35te6PLt_sD4KCzmFbagDZq",
+      "ext": "pdf",
+      "octets": 66187,
+      "mimeType": "application/pdf"
+    }
+  ]
+}

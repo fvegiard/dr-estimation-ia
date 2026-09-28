@@ -1,0 +1,516 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="S-1769">
+		<Description>CPE SOLEIL SOURIANT ST CONSTANT</Description>
+		<ContactName></ContactName>
+		<ContactInfo></ContactInfo>
+		<JobNumber></JobNumber>
+		<Comment></Comment>
+		<CreationDate>2026/5/13</CreationDate>
+		<LastModified>2026/5/13</LastModified>
+		<DisplayResultsForAllPlans>False</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+		<ActivePlan Name="25-0075_E_PERM_SOUM_20260507_Signed - 7"/>
+		<RecentPlans>
+			<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 2"/>
+			<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 6"/>
+			<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 5"/>
+			<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 1"/>
+			<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 7"/>
+			<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 4"/>
+			<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 3"/>
+		</RecentPlans>
+	</Workspace>
+	<Plans>
+		<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 1" FileName="25-0075_E_PERM_SOUM_20260507_Signed - 1.png">
+			<Thumbnail FileName="adf5b60f-1e79-4060-add3-82ebe8a14652"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="40" X="1451" Y="2950"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 2" FileName="25-0075_E_PERM_SOUM_20260507_Signed - 2.png">
+			<Thumbnail FileName="b1b354a1-33ad-4d2f-b767-589cd23d8c0c"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="16" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 3" FileName="25-0075_E_PERM_SOUM_20260507_Signed - 3.png">
+			<Thumbnail FileName="3f85d4f9-4ba9-4539-91a3-44941b6e0bcc"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="40" X="568" Y="255"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 4" FileName="25-0075_E_PERM_SOUM_20260507_Signed - 4.png">
+			<Thumbnail FileName="57987b38-f9cc-4c38-a725-f410d3f028d0"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="70" X="5318" Y="4107"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 5" FileName="25-0075_E_PERM_SOUM_20260507_Signed - 5.png">
+			<Thumbnail FileName="431d5e2f-7786-4de7-8f18-d12dc5aea346"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="46" X="586" Y="981"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 6" FileName="25-0075_E_PERM_SOUM_20260507_Signed - 6.png">
+			<Thumbnail FileName="5b819a00-7db3-4b7e-8698-da2a2853dbda"/>
+			<Scale Value="0,0625" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="52" X="2417" Y="1937"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+					<Legend Name="Légende" X="8512" Y="2613" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="FIXTURE TYPE C" GroupID="38" Shape="0" DefaultSize="43" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+						<Element X="5419" Y="2780" Width="43" Height="43"/>
+						<Element X="5420" Y="3488" Width="43" Height="43"/>
+						<Element X="4975" Y="3602" Width="43" Height="43"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE D" GroupID="39" Shape="0" DefaultSize="40" Text="1" Color="-38476" PenWidth="2" PenType="Generic" FillColor="-38476" ShowMeasure="True" Visible="True">
+						<Element X="5228" Y="2600" Width="40" Height="40"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE E" GroupID="40" Shape="0" DefaultSize="36" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+						<Element X="4813" Y="2617" Width="36" Height="36"/>
+						<Element X="4908" Y="2619" Width="36" Height="36"/>
+						<Element X="4997" Y="2621" Width="36" Height="36"/>
+						<Element X="5094" Y="2619" Width="36" Height="36"/>
+					</Counter>
+					<Line Name="ACWU 3/250MCM" GroupID="41" Color="-16711936" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="3237" Y1="2803" X2="4883" Y2="2803" />
+					</Line>
+					<Line Name="3/16 ALARME" GroupID="42" Color="-65281" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="3635" Y1="3496" X2="3635" Y2="2835" />
+						<Element X1="3633" Y1="2838" X2="4831" Y2="2838" />
+					</Line>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="25-0075_E_PERM_SOUM_20260507_Signed - 7" FileName="25-0075_E_PERM_SOUM_20260507_Signed - 7.png">
+			<Thumbnail FileName="ccd5fd26-48d0-49a5-b658-578a944b7441"/>
+			<Scale Value="0,125" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="16" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+				<Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="5806" Y="3588" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>
+					<Counter Name="FIXTURE TYPE A" GroupID="1" Shape="1" DefaultSize="77" Text="1" Color="-65536" PenWidth="2" PenType="Generic" FillColor="-65536" ShowMeasure="True" Visible="True">
+						<Element X="2720" Y="1425" Width="77" Height="77"/>
+						<Element X="3025" Y="1419" Width="77" Height="77"/>
+						<Element X="3027" Y="1648" Width="77" Height="77"/>
+						<Element X="2725" Y="1648" Width="77" Height="77"/>
+						<Element X="2720" Y="1873" Width="77" Height="77"/>
+						<Element X="3028" Y="1873" Width="77" Height="77"/>
+						<Element X="3250" Y="1875" Width="77" Height="77"/>
+						<Element X="3327" Y="2098" Width="77" Height="77"/>
+						<Element X="3028" Y="2099" Width="77" Height="77"/>
+						<Element X="2725" Y="2096" Width="77" Height="77"/>
+						<Element X="3025" Y="2321" Width="77" Height="77"/>
+						<Element X="3325" Y="2326" Width="77" Height="77"/>
+						<Element X="3022" Y="2581" Width="77" Height="77"/>
+						<Element X="2725" Y="2581" Width="77" Height="77"/>
+						<Element X="2421" Y="2578" Width="77" Height="77"/>
+						<Element X="2422" Y="2802" Width="77" Height="77"/>
+						<Element X="2722" Y="2801" Width="77" Height="77"/>
+						<Element X="3022" Y="2805" Width="77" Height="77"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE A1" GroupID="2" Shape="1" DefaultSize="76" Text="1" Color="-12525360" PenWidth="2" PenType="Generic" FillColor="-12525360" ShowMeasure="True" Visible="True">
+						<Element X="3288" Y="2541" Width="76" Height="76"/>
+						<Element X="3285" Y="2841" Width="76" Height="76"/>
+						<Element X="3285" Y="1422" Width="76" Height="76"/>
+						<Element X="3280" Y="1645" Width="76" Height="76"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE B" GroupID="3" Shape="0" DefaultSize="41" Text="1" Color="-8388864" PenWidth="2" PenType="Generic" FillColor="-8388864" ShowMeasure="True" Visible="True">
+						<Element X="3299" Y="1594" Width="41" Height="41"/>
+						<Element X="3308" Y="2720" Width="41" Height="41"/>
+						<Element X="2430" Y="1791" Width="41" Height="41"/>
+						<Element X="2430" Y="2077" Width="41" Height="41"/>
+						<Element X="2580" Y="1852" Width="41" Height="41"/>
+						<Element X="2432" Y="2364" Width="41" Height="41"/>
+						<Element X="2497" Y="2274" Width="41" Height="41"/>
+						<Element X="2430" Y="1929" Width="41" Height="41"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE B1" GroupID="4" Shape="0" DefaultSize="38" Text="1" Color="-989556" PenWidth="2" PenType="Generic" FillColor="-989556" ShowMeasure="True" Visible="True">
+						<Element X="2412" Y="1493" Width="38" Height="38"/>
+						<Element X="2543" Y="1497" Width="38" Height="38"/>
+						<Element X="2530" Y="1667" Width="38" Height="38"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE G" GroupID="5" Shape="1" DefaultSize="20" Text="1" Color="-1146130" PenWidth="2" PenType="Generic" FillColor="-1146130" ShowMeasure="True" Visible="True">
+						<Element X="2659" Y="2281" Width="20" Height="149"/>
+					</Counter>
+					<Counter Name="TETE DOUBLE" GroupID="6" Shape="0" DefaultSize="70" Text="1" Color="-5247250" PenWidth="2" PenType="Generic" FillColor="-5247250" ShowMeasure="True" Visible="True">
+						<Element X="3092" Y="1796" Width="70" Height="70"/>
+						<Element X="2583" Y="1469" Width="70" Height="70"/>
+						<Element X="3000" Y="2482" Width="70" Height="70"/>
+					</Counter>
+					<Counter Name="TETE SIMPLE" GroupID="7" Shape="0" DefaultSize="55" Text="1" Color="-24454" PenWidth="2" PenType="Generic" FillColor="-24454" ShowMeasure="True" Visible="True">
+						<Element X="3320" Y="2936" Width="55" Height="55"/>
+						<Element X="3281" Y="1354" Width="55" Height="55"/>
+					</Counter>
+					<Counter Name="ENSEIGNE SORTIE COMBO" GroupID="8" Shape="0" DefaultSize="80" Text="1" Color="-2968436" PenWidth="2" PenType="Generic" FillColor="-2968436" ShowMeasure="True" Visible="True">
+						<Element X="2393" Y="1648" Width="80" Height="80"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE F" GroupID="9" Shape="1" DefaultSize="22" Text="1" Color="-23296" PenWidth="2" PenType="Generic" FillColor="-23296" ShowMeasure="True" Visible="True">
+						<Element X="2659" Y="1670" Width="12" Height="77"/>
+					</Counter>
+					<Counter Name="FIXTURE TYPE F1" GroupID="10" Shape="1" DefaultSize="23" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True">
+						<Element X="2415" Y="2973" Width="106" Height="8"/>
+					</Counter>
+					<Counter Name="GRADATEUR" GroupID="11" Shape="0" DefaultSize="26" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+						<Element X="3264" Y="2475" Width="26" Height="26"/>
+						<Element X="3302" Y="2473" Width="26" Height="26"/>
+						<Element X="3312" Y="1748" Width="26" Height="26"/>
+						<Element X="3352" Y="1748" Width="26" Height="26"/>
+					</Counter>
+					<Counter Name="INT 1 VOIE" GroupID="12" Shape="0" DefaultSize="37" Text="1" Color="-38476" PenWidth="2" PenType="Generic" FillColor="-38476" ShowMeasure="True" Visible="True">
+						<Element X="2491" Y="2467" Width="37" Height="37"/>
+						<Element X="2682" Y="1888" Width="37" Height="37"/>
+						<Element X="2628" Y="2269" Width="37" Height="37"/>
+						<Element X="2361" Y="1840" Width="37" Height="37"/>
+					</Counter>
+					<Counter Name="KLAXON" GroupID="13" Shape="1" DefaultSize="35" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+						<Element X="2359" Y="2059" Width="36" Height="41"/>
+						<Element X="2680" Y="1926" Width="42" Height="50"/>
+						<Element X="2357" Y="2714" Width="37" Height="46"/>
+					</Counter>
+					<Counter Name="RELO STATION MANUEL" GroupID="14" Shape="1" DefaultSize="34" Text="1" Color="-16711936" PenWidth="2" PenType="Generic" FillColor="-16711936" ShowMeasure="True" Visible="True">
+						<Element X="2358" Y="1711" Width="34" Height="34"/>
+					</Counter>
+					<Counter Name="DÉTECTEUR FUMÉE" GroupID="15" Shape="0" DefaultSize="31" Text="1" Color="-12156236" PenWidth="2" PenType="Generic" FillColor="-12156236" ShowMeasure="True" Visible="True">
+						<Element X="3306" Y="1507" Width="31" Height="31"/>
+						<Element X="2887" Y="1712" Width="31" Height="31"/>
+						<Element X="3188" Y="2181" Width="31" Height="31"/>
+						<Element X="3313" Y="2655" Width="31" Height="31"/>
+						<Element X="2771" Y="2685" Width="31" Height="31"/>
+					</Counter>
+					<Counter Name="PLINTHE A 1500W" GroupID="17" Shape="1" DefaultSize="27" Text="1" Color="-3308225" PenWidth="2" PenType="Generic" FillColor="-3308225" ShowMeasure="True" Visible="True">
+						<Element X="5608" Y="1386" Width="327" Height="15"/>
+						<Element X="6007" Y="1396" Width="17" Height="353"/>
+						<Element X="6324" Y="1388" Width="16" Height="361"/>
+						<Element X="6315" Y="1983" Width="17" Height="356"/>
+						<Element X="6317" Y="2599" Width="15" Height="351"/>
+						<Element X="5228" Y="2539" Width="21" Height="364"/>
+						<Element X="5229" Y="1834" Width="16" Height="357"/>
+					</Counter>
+					<Counter Name="PLINTHE A 900W" GroupID="18" Shape="1" DefaultSize="27" Text="1" Color="-256" PenWidth="2" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True">
+						<Element X="5527" Y="2976" Width="222" Height="17"/>
+						<Element X="5781" Y="2978" Width="228" Height="13"/>
+					</Counter>
+					<Counter Name="TRIAC" GroupID="19" Shape="1" DefaultSize="30" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True">
+						<Element X="5628" Y="1452" Width="39" Height="37"/>
+						<Element X="5295" Y="1844" Width="37" Height="44"/>
+						<Element X="6228" Y="1973" Width="42" Height="44"/>
+						<Element X="5293" Y="2551" Width="43" Height="41"/>
+					</Counter>
+					<Counter Name="THERMOSTAT" GroupID="20" Shape="0" DefaultSize="45" Text="1" Color="-4144960" PenWidth="2" PenType="Generic" FillColor="-4144960" ShowMeasure="True" Visible="True">
+						<Element X="6161" Y="1728" Width="45" Height="45"/>
+						<Element X="6169" Y="2476" Width="45" Height="45"/>
+					</Counter>
+					<Counter Name="SERPENTIN" GroupID="21" Shape="1" DefaultSize="48" Text="1" Color="-7667712" PenWidth="2" PenType="Generic" FillColor="-7667712" ShowMeasure="True" Visible="True">
+						<Element X="5242" Y="2438" Width="48" Height="48"/>
+						<Element X="5746" Y="2197" Width="48" Height="48"/>
+						<Element X="6138" Y="2012" Width="48" Height="48"/>
+						<Element X="6201" Y="2001" Width="48" Height="48"/>
+					</Counter>
+					<Counter Name="EVAPORATEUR" GroupID="22" Shape="1" DefaultSize="55" Text="1" Color="-16777077" PenWidth="2" PenType="Generic" FillColor="-16777077" ShowMeasure="True" Visible="True">
+						<Element X="5999" Y="2602" Width="30" Height="114"/>
+						<Element X="5954" Y="2419" Width="103" Height="30"/>
+					</Counter>
+					<Counter Name="CONDENSEUR" GroupID="23" Shape="1" DefaultSize="25" Text="1" Color="-16744448" PenWidth="2" PenType="Generic" FillColor="-16744448" ShowMeasure="True" Visible="True">
+						<Element X="6384" Y="2772" Width="38" Height="94"/>
+						<Element X="6387" Y="2880" Width="35" Height="107"/>
+					</Counter>
+					<Counter Name="CHAUFFE-EAU" GroupID="24" Shape="0" DefaultSize="51" Text="1" Color="-10496" PenWidth="2" PenType="Generic" FillColor="-10496" ShowMeasure="True" Visible="True">
+						<Element X="5962" Y="2493" Width="51" Height="51"/>
+					</Counter>
+					<Counter Name="PRISE 15/20A GFI" GroupID="25" Shape="1" DefaultSize="34" Text="1" Color="-8388480" PenWidth="2" PenType="Generic" FillColor="-8388480" ShowMeasure="True" Visible="True">
+						<Element X="5314" Y="2954" Width="34" Height="34"/>
+						<Element X="5696" Y="2217" Width="34" Height="34"/>
+						<Element X="5506" Y="1323" Width="34" Height="34"/>
+					</Counter>
+					<Counter Name="PRISE 15/20A" GroupID="26" Shape="1" DefaultSize="34" Text="1" Color="-16744320" PenWidth="2" PenType="Generic" FillColor="-16744320" ShowMeasure="True" Visible="True">
+						<Element X="5511" Y="1531" Width="34" Height="34"/>
+					</Counter>
+					<Counter Name="PRISE" GroupID="27" Shape="0" DefaultSize="39" Text="1" Color="-47872" PenWidth="2" PenType="Generic" FillColor="-47872" ShowMeasure="True" Visible="True">
+						<Element X="5471" Y="2465" Width="39" Height="39"/>
+						<Element X="5460" Y="2955" Width="39" Height="39"/>
+						<Element X="6129" Y="2477" Width="39" Height="39"/>
+						<Element X="6115" Y="2420" Width="39" Height="39"/>
+						<Element X="5744" Y="2326" Width="39" Height="39"/>
+						<Element X="6207" Y="1740" Width="39" Height="39"/>
+						<Element X="6298" Y="1905" Width="39" Height="39"/>
+						<Element X="5934" Y="1384" Width="39" Height="39"/>
+						<Element X="5516" Y="1402" Width="39" Height="39"/>
+						<Element X="5240" Y="2062" Width="39" Height="39"/>
+						<Element X="5959" Y="2602" Width="39" Height="39"/>
+					</Counter>
+					<Counter Name="SORTIE TEL" GroupID="28" Shape="3" DefaultSize="29" Text="1" Color="-7650029" PenWidth="2" PenType="Generic" FillColor="-7650029" ShowMeasure="True" Visible="True">
+						<Element X="5424" Y="2468" Width="29" Height="29"/>
+						<Element X="5551" Y="1895" Width="29" Height="29"/>
+					</Counter>
+					<Counter Name="PRISE GFI" GroupID="29" Shape="0" DefaultSize="32" Text="1" Color="-9404272" PenWidth="2" PenType="Generic" FillColor="-9404272" ShowMeasure="True" Visible="True">
+						<Element X="5510" Y="1586" Width="32" Height="32"/>
+					</Counter>
+					<Area Name="PLANCHÉ CHAUFFANT" GroupID="32" Color="-65281" PenWidth="4" PenType="Generic" FillColor="-65281" Pattern="-1" ShowMeasure="False" Visible="True">
+						<Element>
+							<Point X="5612" Y="1402"/>
+							<Point X="5981" Y="1402"/>
+							<Point X="5981" Y="1405"/>
+							<Point X="5981" Y="1807"/>
+							<Point X="5984" Y="1807"/>
+							<Point X="6196" Y="1807"/>
+							<Point X="6196" Y="1817"/>
+							<Point X="6196" Y="1891"/>
+							<Point X="6196" Y="1891"/>
+							<Point X="6308" Y="1891"/>
+							<Point X="6308" Y="1897"/>
+							<Point X="6308" Y="2422"/>
+							<Point X="6310" Y="2422"/>
+							<Point X="5772" Y="2422"/>
+							<Point X="5772" Y="2433"/>
+							<Point X="5772" Y="1984"/>
+							<Point X="5769" Y="1983"/>
+							<Point X="5763" Y="1983"/>
+							<Point X="5763" Y="1981"/>
+							<Point X="5763" Y="1910"/>
+							<Point X="5758" Y="1910"/>
+							<Point X="5665" Y="1910"/>
+							<Point X="5665" Y="1914"/>
+							<Point X="5665" Y="1978"/>
+							<Point X="5662" Y="1978"/>
+							<Point X="5648" Y="1983"/>
+							<Point X="5648" Y="1983"/>
+							<Point X="5648" Y="2222"/>
+							<Point X="5646" Y="2222"/>
+							<Point X="5646" Y="2236"/>
+							<Point X="5646" Y="2236"/>
+							<Point X="5522" Y="2236"/>
+							<Point X="5522" Y="2228"/>
+							<Point X="5522" Y="2193"/>
+							<Point X="5520" Y="2193"/>
+							<Point X="5489" Y="2193"/>
+							<Point X="5489" Y="2190"/>
+							<Point X="5489" Y="2007"/>
+							<Point X="5489" Y="2007"/>
+							<Point X="5567" Y="2007"/>
+							<Point X="5567" Y="2002"/>
+							<Point X="5567" Y="1771"/>
+							<Point X="5572" Y="1771"/>
+							<Point X="5610" Y="1767"/>
+							<Point X="5610" Y="1767"/>
+							<Point X="5610" Y="1405"/>
+							<Point X="5613" Y="1403"/>
+						</Element>
+					</Area>
+					<Counter Name="ECHANGEUR AIR" GroupID="33" Shape="1" DefaultSize="80" Text="1" Color="-989556" PenWidth="2" PenType="Generic" FillColor="-989556" ShowMeasure="True" Visible="True">
+						<Element X="5318" Y="2243" Width="137" Height="102"/>
+						<Element X="5625" Y="2291" Width="106" Height="135"/>
+					</Counter>
+					<Counter Name="RELO FORCE FLOW" GroupID="34" Shape="1" DefaultSize="29" Text="1" Color="-1146130" PenWidth="2" PenType="Generic" FillColor="-1146130" ShowMeasure="True" Visible="True">
+						<Element X="5196" Y="1410" Width="18" Height="53"/>
+					</Counter>
+					<Counter Name="30A NF WP" GroupID="35" Shape="1" DefaultSize="29" Text="1" Color="-5247250" PenWidth="2" PenType="Generic" FillColor="-5247250" ShowMeasure="True" Visible="True">
+						<Element X="6367" Y="2999" Width="29" Height="29"/>
+						<Element X="6365" Y="2736" Width="29" Height="29"/>
+					</Counter>
+					<Counter Name="THERMOSTAT PLANCHER CHAUFFANT" GroupID="36" Shape="0" DefaultSize="53" Text="1" Color="-7667712" PenWidth="2" PenType="Generic" FillColor="-7667712" ShowMeasure="True" Visible="True">
+						<Element X="5981" Y="1689" Width="53" Height="53"/>
+						<Element X="5792" Y="2399" Width="53" Height="53"/>
+					</Counter>
+					<Line Name="3/16" GroupID="43" Color="-16776961" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="2785" Y1="2702" X2="3327" Y2="2702" />
+						<Element X1="3327" Y1="2711" X2="3327" Y2="2683" />
+						<Element X1="3327" Y1="2683" X2="3327" Y2="2202" />
+						<Element X1="3325" Y1="2200" X2="3185" Y2="2200" />
+						<Element X1="3199" Y1="2194" X2="3199" Y2="1522" />
+						<Element X1="3205" Y1="1522" X2="3316" Y2="1522" />
+						<Element X1="3316" Y1="1524" X2="2892" Y2="1524" />
+						<Element X1="2892" Y1="1507" X2="2892" Y2="1746" />
+						<Element X1="2901" Y1="1746" X2="2375" Y2="1746" />
+						<Element X1="2377" Y1="1726" X2="2377" Y2="2170" />
+						<Element X1="2379" Y1="2170" X2="2227" Y2="2170" />
+					</Line>
+					<Line Name="3/16 KL" GroupID="44" Color="-7667712" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="2359" Y1="2746" X2="2359" Y2="2076" />
+						<Element X1="2357" Y1="2076" X2="2703" Y2="2076" />
+						<Element X1="2703" Y1="2089" X2="2703" Y2="1950" />
+					</Line>
+					<Line Name="UR 3/10" GroupID="47" Color="-16744320" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="3346" Y1="2978" X2="3346" Y2="1376" />
+						<Element X1="3340" Y1="1376" X2="2614" Y2="1376" />
+						<Element X1="2614" Y1="1368" X2="2614" Y2="1511" />
+						<Element X1="2620" Y1="1513" X2="2620" Y2="1637" />
+						<Element X1="2618" Y1="1637" X2="2420" Y2="1637" />
+						<Element X1="3320" Y1="2985" X2="3042" Y2="2985" />
+						<Element X1="3042" Y1="2998" X2="3042" Y2="2507" />
+					</Line>
+					<Line Name="3/12" GroupID="48" Color="-47872" PenWidth="1" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="2362" Y1="2113" X2="2509" Y2="2113" />
+						<Element X1="2509" Y1="2115" X2="2509" Y2="2731" />
+						<Element X1="2492" Y1="2728" X2="3309" Y2="2728" />
+						<Element X1="3301" Y1="2728" X2="3301" Y2="1454" />
+						<Element X1="3292" Y1="1554" X2="2433" Y2="1554" />
+						<Element X1="3294" Y1="2032" X2="2933" Y2="2032" />
+						<Element X1="2496" Y1="1554" X2="2496" Y2="1915" />
+					</Line>
+					<Line Name="21/12" GroupID="49" Color="-7650029" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+						<Element X1="5213" Y1="2079" X2="5948" Y2="2079" />
+						<Element X1="5946" Y1="2082" X2="5946" Y2="1501" />
+						<Element X1="5956" Y1="1501" X2="5624" Y2="1501" />
+					</Line>
+					<Line Name="27/12" GroupID="50" Color="-10496" PenWidth="6" PenType="Generic" ShowMeasure="False" Visible="True">
+						<Element X1="5204" Y1="2077" X2="5500" Y2="2077" />
+						<Element X1="5500" Y1="2067" X2="5500" Y2="2779" />
+						<Element X1="5497" Y1="2779" X2="5988" Y2="2779" />
+					</Line>
+				</Layer>
+				<Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+				</Layer>
+				<Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="False">
+				</Layer>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+		<Price Key="11;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="18;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="23;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="8;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="41;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="28;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="17;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="48;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="47;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="27;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="43;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="34;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="9;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="39;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="32;;Area;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="44;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="13;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="15;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="1;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="3;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="22;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="5;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="12;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="36;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="42;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="33;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="10;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="2;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="38;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="14;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="6;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="20;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="24;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="26;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="25;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="29;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="40;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="19;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="49;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="21;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="4;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="50;;Line;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="35;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="7;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="1" Precision="2">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>
