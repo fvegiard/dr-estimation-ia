@@ -20,7 +20,21 @@ import os, sys, json, asyncio, datetime, argparse
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage, AssistantMessage, TextBlock, ToolUseBlock
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ALLOWED = ["Read", "Write", "Edit", "Glob", "Grep", "Bash(uv run releve/*)", "Bash(ls *)", "Bash(wc *)", "Bash(head *)", "Bash(sort *)", "Bash(cut *)", "Bash(cat *)"]
+TOOLS = ["Read", "Write", "Edit", "Glob", "Grep", "Bash"]
+ALLOWED = [
+    "Read",
+    "Write",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Bash(uv run releve/zoom.py *)",
+    "Bash(uv run releve/extract_occurrences.py *)",
+    "Bash(uv run releve/traits.py *)",
+    "Bash(head *)",
+    "Bash(sort *)",
+    "Bash(cut *)",
+    "Bash(cat *)",
+]
 
 async def run(workdir, out_json, model, max_turns, budget):
     log = open(os.path.join(workdir, "agent-journal.log"), "a", encoding="utf-8")
@@ -28,9 +42,9 @@ async def run(workdir, out_json, model, max_turns, budget):
         log.write(f"{datetime.datetime.now():%H:%M:%S} {msg}\n"); log.flush()
     opts = ClaudeAgentOptions(
         cwd=REPO, add_dirs=[workdir], setting_sources=["project"],      # charge .claude/skills/releve-planexpert du dépôt
-        allowed_tools=ALLOWED, permission_mode="acceptEdits",
+        tools=TOOLS, allowed_tools=ALLOWED, permission_mode="acceptEdits",
         model=model, max_turns=max_turns, max_budget_usd=(budget or None),
-        mcp_servers={}, stderr=lambda s: j("stderr: " + s.rstrip()),
+        mcp_servers={}, strict_mcp_config=True, stderr=lambda s: j("stderr: " + s.rstrip()),
     )
     res, text = None, []
     j(f"début  modèle={model} max_turns={max_turns} workdir={workdir}")

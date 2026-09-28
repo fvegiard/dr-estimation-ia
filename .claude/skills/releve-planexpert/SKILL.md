@@ -2,7 +2,7 @@
 name: releve-planexpert
 description: Relevé de quantités électrique automatique à partir d'un dossier de soumission préparé (plans PDF, addendas, relevé de l'estimateur). Produit nomenclature, occurrences positionnées, réserves et comparaison, que les scripts releve/ transforment en projet Plan Expert (.qpl) et en PDF « Plans annotés + rapport de métré ». Invoqué par releve/run.py ; ne pas lancer à la main sans dossier préparé.
 disable-model-invocation: true
-allowed-tools: Read Write Edit Glob Grep Bash(uv run releve/*) Bash(ls *) Bash(wc *) Bash(head *) Bash(sort *) Bash(cut *) Bash(cat *)
+allowed-tools: Read Write Edit Glob Grep Bash(uv run releve/zoom.py *) Bash(uv run releve/extract_occurrences.py *) Bash(uv run releve/traits.py *) Bash(head *) Bash(sort *) Bash(cut *) Bash(cat *)
 ---
 
 # Relevé de quantités électrique — dossier de travail : $ARGUMENTS

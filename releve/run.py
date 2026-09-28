@@ -28,6 +28,7 @@ LOG = os.path.join(BASE, "journal.log")
 MODEL = os.environ.get("RELEVE_MODEL", "opus")
 MAX_TURNS = os.environ.get("RELEVE_MAX_TURNS", "800")
 WSL_EXE = "/mnt/c/Windows/System32/wsl.exe"
+PLANEXPERT_VM_CLI = os.path.join(REPO, "mcp", "planexpert_vm", "server.py")
 
 def log(msg):
     line = f"{datetime.datetime.now():%Y-%m-%d %H:%M:%S}  {msg}"
@@ -43,10 +44,11 @@ def sha256(path):
             h.update(b)
     return h.hexdigest()
 
-def run(cmd, cwd=REPO, log_path=None):
+def run(cmd, cwd=REPO, log_path=None, env=None):
     """Exécute une commande, journalise, retourne (code, stdout)."""
     log("$ " + " ".join(cmd))
-    p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, stdin=subprocess.DEVNULL)
+    p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, stdin=subprocess.DEVNULL,
+                       env={**os.environ, **(env or {})})
     if log_path:
         with open(log_path, "a", encoding="utf-8") as fh:
             fh.write(f"\n### {' '.join(cmd)}\n--- stdout\n{p.stdout}\n--- stderr\n{p.stderr}\n")
@@ -99,9 +101,10 @@ def agent(workdir, log_path):
     Par défaut : Claude Agent SDK (releve/agent_sdk.py, OAuth claude.ai). RELEVE_AGENT=cli : `claude -p` headless (repli)."""
     res_path = os.path.join(workdir, "agent-resultat.json")
     t0 = time.time()
+    agent_env = {"RELEVE_TOOL_GUARD_ROOT": workdir}
     if os.environ.get("RELEVE_AGENT", "sdk") == "sdk":
         cmd = ["uv", "run", "releve/agent_sdk.py", workdir, res_path, "--model", MODEL, "--max-turns", MAX_TURNS]
-        code, out = run(cmd, cwd=REPO, log_path=log_path)
+        code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
             res = json.load(open(res_path, encoding="utf-8"))
         except Exception:  # noqa
@@ -109,10 +112,10 @@ def agent(workdir, log_path):
     else:
         cmd = ["claude", "-p", f"/releve-planexpert {workdir}", "--output-format", "json", "--permission-mode", "acceptEdits",
                "--permission-prompts", "none",
-               "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash(uv run releve/*),Bash(uv run " + os.path.join(REPO, "releve") + "/*),Bash(ls *),Bash(wc *),Bash(head *),Bash(sort *),Bash(cut *),Bash(cat *),Bash(grep *),Bash(python3 *)",
+               "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash(uv run releve/zoom.py *),Bash(uv run releve/extract_occurrences.py *),Bash(uv run releve/traits.py *),Bash(head *),Bash(sort *),Bash(cut *),Bash(cat *)",
                "--add-dir", workdir, "--max-turns", MAX_TURNS, "--model", MODEL,
                "--mcp-config", '{"mcpServers":{}}', "--strict-mcp-config"]
-        code, out = run(cmd, cwd=REPO, log_path=log_path)
+        code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
             data = json.loads(out)
             if isinstance(data, list):
@@ -199,6 +202,8 @@ def process(arg, reprendre=False):
                 if code: raise RuntimeError("prepare.py a échoué")
             code, res, dur = agent(workdir, log_path)
             steps.append(("agent Claude", dur, f"{res.get('subtype')} / code {code}"))
+            if code:
+                raise RuntimeError(f"agent en échec (code {code}, subtype {res.get('subtype')})")
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
                     raise RuntimeError(f"l'agent n'a pas produit {f}")
@@ -210,14 +215,18 @@ def process(arg, reprendre=False):
         if code: raise RuntimeError("render_pdf.py a échoué")
         ok = True
         if os.environ.get("RELEVE_NATIF", "1") == "1":     # export natif Plan Expert par la VM (MCP planexpert-vm) ; jamais bloquant
-            t = time.time(); code, out = run(["uv", "run", "mcp/planexpert_vm/server.py", "--cli", "natif", pe_dir, outdir], log_path=log_path)
-            nat_dir = os.path.join(outdir, "export-natif-planexpert"); os.makedirs(nat_dir, exist_ok=True)
-            try:
-                nat = json.loads(out)
-            except json.JSONDecodeError:
-                nat = {"ok": False, "erreur": "sortie non JSON : " + out[-500:]}
-            json.dump(nat, open(os.path.join(nat_dir, "resultat.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-            steps.append(("export natif Plan Expert", time.time() - t, "oui" if nat.get("ok") else f"non — {nat.get('erreur', '')[:120]}"))
+            if os.path.exists(PLANEXPERT_VM_CLI):
+                t = time.time(); code, out = run(["uv", "run", PLANEXPERT_VM_CLI, "--cli", "natif", pe_dir, outdir], log_path=log_path)
+                nat_dir = os.path.join(outdir, "export-natif-planexpert"); os.makedirs(nat_dir, exist_ok=True)
+                try:
+                    nat = json.loads(out)
+                except json.JSONDecodeError:
+                    nat = {"ok": False, "erreur": "sortie non JSON : " + out[-500:]}
+                json.dump(nat, open(os.path.join(nat_dir, "resultat.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+                steps.append(("export natif Plan Expert", time.time() - t, "oui" if nat.get("ok") else f"non — {nat.get('erreur', '')[:120]}"))
+            else:
+                log(f"export natif ignoré : composant absent ({PLANEXPERT_VM_CLI})")
+                steps.append(("export natif Plan Expert", 0, "ignoré — composant absent"))
     except Exception as e:  # noqa
         err = str(e); log("ÉCHEC : " + err)
     if reprendre and os.path.exists(os.path.join(workdir, "agent-resultat.json")):

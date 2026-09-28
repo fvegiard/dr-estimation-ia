@@ -28,6 +28,10 @@ def rows(p):
 def main(S, out, ref):
     dst = os.path.join("dossiers", S); os.makedirs(dst, exist_ok=True); os.makedirs(os.path.join(dst, "entree"), exist_ok=True)
     W = os.path.join(out, "travail")
+    ref_csv = os.path.join(out, "reference-quantites.csv")
+    dupuis_csv = os.path.join(out, "dupuis-quantites.csv")
+    if os.path.exists(ref_csv) and os.path.exists(dupuis_csv):
+        sys.exit("conflit : reference-quantites.csv et dupuis-quantites.csv présents tous les deux")
     nom = {r["label"]: r for r in rows(os.path.join(W, "nomenclature.csv"))}
     feuilles = {r["feuille"]: r for r in rows(os.path.join(W, "feuilles.csv"))}
     for r in rows(os.path.join(W, "feuilles-classement.csv")):
@@ -63,8 +67,8 @@ def main(S, out, ref):
     res = open(os.path.join(W, "reserves.md"), encoding="utf-8").read().splitlines() if os.path.exists(os.path.join(W, "reserves.md")) else []
     sheet("Réserves", ["Ligne"], [[l] for l in res if l.strip()], [140])
     del wb["Sheet"]; wb.save(os.path.join(dst, "releve.xlsx"))
-    for src, name in ((os.path.join(out, "ecart.md"), "ecart.md"), (os.path.join(out, "reference-quantites.csv"), "reference-quantites.csv"),
-                      (os.path.join(out, "dupuis-quantites.csv"), "reference-quantites.csv"), (os.path.join(out, "STATUT.md"), "STATUT.md"),
+    for src, name in ((os.path.join(out, "ecart.md"), "ecart.md"), (ref_csv, "reference-quantites.csv"),
+                      (dupuis_csv, "reference-quantites.csv"), (os.path.join(out, "STATUT.md"), "STATUT.md"),
                       (os.path.join(out, f"{S}-Plans-annotes.pdf"), "Plans-annotes.pdf"), (os.path.join(out, f"{S}-Rapport-de-metre.pdf"), "Rapport-de-metre.pdf"),
                       (os.path.join(out, f"{S}-Rapport-de-metre.md"), "Rapport-de-metre.md"), (os.path.join(out, f"{S}-Dossier-complet.pdf"), "Dossier-complet.pdf")):
         if os.path.exists(src): shutil.copy2(src, os.path.join(dst, name))

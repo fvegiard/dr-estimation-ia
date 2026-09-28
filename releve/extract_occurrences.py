@@ -19,13 +19,16 @@ from commun import read_csv
 def main(work):
     nom = read_csv(os.path.join(work, "nomenclature.csv"))
     rules = []
+    erreurs = []
     for r in nom:
         rx = (r.get("jeton_regex") or "").strip()
         if rx:
             try:
                 rules.append((re.compile(rx), r["label"].strip()))
             except re.error as e:
-                print(f"regex invalide pour {r['label']!r} : {rx!r} ({e})")
+                erreurs.append(f"regex invalide pour {r['label']!r} : {rx!r} ({e})")
+    if erreurs:
+        sys.exit("\n".join(erreurs))
     plans = [r["feuille"] for r in read_csv(os.path.join(work, "feuilles-classement.csv")) if (r.get("type") or "").strip() == "plan"]
     out = []
     stats = collections.Counter()
