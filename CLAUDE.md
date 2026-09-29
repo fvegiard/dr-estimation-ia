@@ -12,6 +12,21 @@ Relevé de quantités électrique automatique (Groupe DR Électrique) : plans PD
 - Toute modification de `releve/` ou de `.claude/skills/releve-planexpert/` doit passer le jeu de référence sans régression
   (`python -m src.validation.jeu_reference`) — c'est le test qui dit si l'agent s'améliore.
 
+## Autonomie et auto-supervision (obligatoire — Francis ne coache pas)
+Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu fais toi-même la supervision visuelle.
+1. Après chaque rendu, OUVRE l'image (Read du PNG), zoome repère par repère et juge : pastille visible (cercle pastel
+   r≈4,2 pt + contour 0,7 pt couleur famille, dessinée PAR-DESSUS le plan) ? sur le BON symbole (type = famille) ?
+   1 symbole = 1 repère ? étiquette lisible ? réserve * si doute ? Jamais sur un texte, un arc ou une ligne longue.
+2. Compare à l'exemplaire (même pastille, encadré « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes) — sauf pendant
+   l'essai à l'aveugle HR26-14 où tu ne compares qu'à la fin (étape 4).
+3. Écris toi-même le score x/N avec la liste des cases fausses et corrige jusqu'au seuil (≥ 17/18 sur une planche d'essai,
+   ≥ 95 % ensuite) sans attendre de message. Une régression (case bonne avant, fausse après) bloque le passage.
+4. Pour les vérifs importantes, lance le sous-agent `verificateur` sur les images seules (sans ton raisonnement).
+5. Rapport : l'image + ton score + le score du vérificateur. Jamais « fait » sans ces trois éléments.
+6. Enchaîne les étapes sans rendre la main. Fin = livrable prouvé OU blocage que seul Francis peut lever.
+   À chaque étape prouvée : commit + push + ligne « ÉTAPE n — FAIT ». Plus de 30 min sans commit → commit `wip` avec
+   l'état et les preuves. Si un tour dépasse 20 min sans sortie, découpe le travail (moins d'images par tour).
+
 ## Carte du dépôt
 - `releve/` — la chaîne qui marche : `prepare.py` (rasters, tuiles, mots) → agent (compétence `releve-planexpert`) →
   `extract_occurrences.py` → `build_qpl.py` → `render_pdf.py` ; `run.py` orchestre, `run.py --reprendre <S>` refait qpl + PDF.
@@ -32,7 +47,7 @@ uv run releve/run.py --reprendre <S>            # après l'agent : qpl + PDF
 
 ## Agents (`.claude/agents/`)
 - `releveur` (Opus) : relève un dossier préparé en appliquant la compétence `releve-planexpert`.
-- `verificateur` (Opus) : compare un relevé IA au relevé humain, prouve chaque écart sur le plan.
+- `verificateur` (Opus) : compare un relevé IA au relevé humain, prouve chaque écart sur le plan, et juge les rendus à l'œil.
 - `inventaire` (Haiku) : listages, tailles, dates, métadonnées — lecture seule.
 Lancer le relevé par sous-agent, pas par `claude -p` en arrière-plan (meurt après ~10 min dans le bac à sable cloud).
 
