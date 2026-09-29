@@ -128,6 +128,16 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **supports et accessoires comptés par règle** (J-hook télécom, boîtes de tirage, plafonds suspendus) : ne les invente pas,
      mais crée le compteur avec une réserve « quantité par règle à fixer » dès qu'une note ou la légende les mentionne (S-1715 :
      45 J-hook chez l'estimateur, 1 chez l'IA).
+5e. **Règles apprises de M. Dupuis** (S-1769 E401, S-1844 E200 ; rédigées par le superviseur, appliquées telles quelles) :
+   - **R1** Une famille = un type ET une caractéristique. Même symbole, puissance/calibre différent = familles séparées (ex. plinthe 1500 W ≠ plinthe 900 W ; lire le kW dans l'hexagone/étiquette de CHAQUE appareil). Erreur S-1769 : 11 plinthes en 1 famille au lieu de 7 × 1500 W + 2 × 900 W.
+   - **R2** Ne jamais fusionner un appareil de contrôle/protection avec l'appareil qu'il sert : sectionneur 30A/SF, WP, etc. = sa propre famille (Dupuis : « 30A NF WP »).
+   - **R3** Thermostats : séparer thermostat de plinthe et thermostat de plancher chauffant (sonde/note plancher chauffant à côté = famille « thermostat plancher chauffant »).
+   - **R4** Prises : séparer régulière, 15/20A, GFI/DDFT (lire « GFI », « DDFT », demi-plein selon la légende). Une prise GFI n'est jamais comptée comme prise ordinaire.
+   - **R5** Un symbole dont l'identification dépend de la légende (lettre dans un cercle, cercle mi-noir) : vérifier la légende AVANT de nommer ; si le même symbole existe comme luminaire ET comme détecteur, trancher par la légende, sinon réserve *. (Erreur S-1769 : « luminaire type F » compté 7 fois, Dupuis a 5 détecteurs de fumée + 1 F + 1 F1.)
+   - **R6** Les notes « RELO / relocaliser / déplacer » sont des appareils à compter (famille « RELO <appareil> »), même si l'appareil est existant.
+   - **R7** Nommer les familles comme la légende du plan (FIXTURE TYPE A, A1, B…) — le code 2 lettres reste pour l'étiquette.
+   - **R8** Choix de la feuille d'essai : c'est le SUPERVISEUR qui choisit une feuille que la référence a réellement relevée (tu ne regardes pas la référence). S-1844 E200 était invalide : Dupuis n'a aucune marque sur E200 (il a relevé les prises sur le plan d'architecte).
+   - **Porte de prévention** : pour chaque feuille, AVANT de placer les marques et AVANT tout commit, publier (a) capture zoom de la légende, (b) la liste des familles avec le symbole/étiquette qui les distingue et la règle R1-R7 appliquée, (c) 3 zooms des symboles ambigus, puis attendre « VALIDÉ » du superviseur.
 6. **Comparaison avec l'estimateur** (si `estimateur/` existe) → `comparaison-estimateur.md` : pour chaque feuille, tableau
    `famille/objet | estimateur | nous | écart | commentaire`, en lisant ses légendes (`estimateur/legendes/*-legende.png`, où
    chaque ligne porte symbole, nom et quantité). Explique les écarts (périmètre différent, oubli probable de l'un ou l'autre).

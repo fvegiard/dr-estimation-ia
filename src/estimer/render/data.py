@@ -25,7 +25,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
-REPERE_RE = re.compile(r"^([A-Z]+\d{2})-(\d+)$")
+REPERE_RE = re.compile(r"^([A-Z]+\d{0,2})-(\d+)$")   # I01-03, M12-01 (materiel) ; CH-01, IS-10 (agrege, travaux)
 
 # Default bordereau wording when only the estimator's family counts are available.
 DEFAULT_MODEL = "MODELE NON PRECISE"
@@ -54,6 +54,10 @@ class Item:
     shape: str = "circle"
     flags: list[str] = field(default_factory=list)
     reserve_override: bool | None = None
+    radius: float | None = None    # symbol half-size (pt) when anchored: marker circle drawn around it
+    color: tuple[float, float, float] | None = None   # family colour from the relevé palette (agrege sheets)
+    ref: str = ""                  # where the family definition was read (legend, devis section)
+    note: str = ""                 # relevé note / reserve motive for this repère
 
     @property
     def reserve(self) -> bool:
@@ -79,6 +83,8 @@ class Family:
     qty: float
     reserves: int
     index: int                     # position in the sheet's family order (colour cycle)
+    color: tuple[float, float, float] | None = None
+    modele: str = ""               # distinct models of the family ("; "-joined), for agrege legends
 
 
 @dataclass
@@ -89,6 +95,7 @@ class Sheet:
     height_px: float | None
     items: list[Item] = field(default_factory=list)
     reserves_text: list[str] = field(default_factory=list)
+    format: str = "materiel"       # bordereau format: materiel (per repere) | agrege (per family) | travaux (EU)
 
     def families(self) -> list[Family]:
         by: dict[str, list[Item]] = defaultdict(list)
@@ -103,7 +110,10 @@ class Sheet:
             shape = max(shapes, key=lambda s: (shapes[s], s == "circle"))
             mat = next((it.materiel for it in its if it.materiel), code)
             qty = len(its)          # EXEMPLE legend counts reperes; Qte multipliers stay in the bordereau
-            out.append(Family(code, mat, shape, qty, sum(1 for it in its if it.reserve), i))
+            color = next((it.color for it in its if it.color), None)
+            modeles = list(dict.fromkeys(it.modele for it in its if it.modele and it.modele != DEFAULT_MODEL))
+            out.append(Family(code, mat, shape, qty, sum(1 for it in its if it.reserve), i, color,
+                              "; ".join(modeles)))
         return out
 
     @property
@@ -150,6 +160,16 @@ def _parse_bool(v) -> bool | None:
     return str(v).strip().lower() in ("1", "true", "oui", "yes", "r", "res")
 
 
+def _parse_color(v):
+    """[r, g, b] in 0..1 or 0..255 -> 0..1 floats; None when absent."""
+    if not v:
+        return None
+    c = [float(x) for x in v][:3]
+    if max(c) > 1:
+        c = [x / 255 for x in c]
+    return tuple(c)
+
+
 def _parse_qte(v, default: float = 1) -> float:
     try:
         return float(str(v).replace(",", "."))
@@ -165,6 +185,9 @@ def load_input(in_dir: Path) -> list[Sheet]:
     bord = read_bordereau_csv(bpath) if bpath.is_file() else {}
     rpath = in_dir / "reserves.md"
     reserves = read_reserves_md(rpath) if rpath.is_file() else {}
+    fpath = in_dir / "feuilles.json"
+    formats = {m["sheet"]: m.get("format", "materiel") for m in json.loads(fpath.read_text(encoding="utf-8"))} \
+        if fpath.is_file() else {}
 
     sheets: dict[str, Sheet] = {}
     for s in est.get("sheets", []):
@@ -207,13 +230,21 @@ def load_input(in_dir: Path) -> list[Sheet]:
                 parent=(row.get("parent") or el.get("parent") or "").strip(),
                 bbox=tuple(bbox) if bbox else None,
                 shape=el.get("shape", "circle"),
-                flags=list(el.get("flags", [])) if not row else [],
+                flags=list(el.get("flags", [])),
                 reserve_override=_parse_bool(row.get("reserve")) if row else _parse_bool(el.get("reserve")),
+                color=_parse_color(el.get("color")),
+                radius=el.get("radius"),
+                ref=(row.get("ref") or el.get("ref") or "").strip(),
+                note=(row.get("note") or el.get("note") or "").strip(),
             )
             sh.items.append(it)
     for name, lines in reserves.items():
         if name in sheets:
             sheets[name].reserves_text = lines
+    for name, sh in sheets.items():
+        fmt = formats.get(name) or next((bord[(name, it.repere)].get("format") for it in sh.items
+                                         if bord.get((name, it.repere), {}).get("format")), None)
+        sh.format = fmt if fmt in ("materiel", "agrege", "travaux") else "materiel"
     return sorted((s for s in sheets.values() if s.items), key=lambda s: (s.page, s.name))
 
 

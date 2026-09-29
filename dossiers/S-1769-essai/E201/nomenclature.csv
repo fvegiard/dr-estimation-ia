@@ -1,0 +1,6 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription
+Luminaire extérieur type E,luminaire,,,,,visuel,LE,Luminaire extérieur type E (circuit C 33),INSTALLER,MODELE NON PRECISE,"Rangée de 4 sous le porche; type lu par lettre au plan, liste E004 non lisible (raster)"
+Luminaire extérieur type D,luminaire,,,,,visuel,LD,Luminaire extérieur type D sur pied mural (C 33),INSTALLER,MODELE NON PRECISE,"HM 8'-10"" indiqué"
+Luminaire extérieur type C,luminaire,,,,,visuel,LC,Luminaire extérieur type C mural (C 33),INSTALLER,MODELE NON PRECISE,"HM 8'-10"" indiqué"
+Interrupteur principal 600A — existant,distribution,,,,,visuel,IPX,Interrupteur principal 600 A / F 600 A EXISTANT,EXISTANT,,"Note du plan; existant, non chiffré"
+Panneau alarme incendie FW106 — par autres,alarme,,,,,visuel,PAI,Panneau d alarme incendie FW106 de Maple Armor,PAR AUTRES,,"Note du plan; fourni par autres, non chiffré"

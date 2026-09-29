@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pymupdf
 
-from .bordereau import add_bordereau
+from .bordereau import add_bordereau, add_bordereau_agrege
 from .data import Sheet, load_input
 from .plan import annotate_page
 from . import style as S
@@ -55,11 +55,13 @@ def render(sheets: list[Sheet], plans_pdf: Path, out_pdf: Path, log=print) -> di
                 ocgs[key] = out.add_ocg(f"RELEVE {f.code} - {f.materiel}", on=True)
             layers[f.code] = ocgs[key]
         box = annotate_page(plan, sh, pos + 2, layers, legend_oc)
-        bpages = add_bordereau(out, sh, plan.rect.width, plan.rect.height, at=pos + 1)
+        add = add_bordereau if sh.format == "materiel" else add_bordereau_agrege
+        bpages = add(out, sh, plan.rect.width, plan.rect.height, at=pos + 1)
         toc.append([1, f"{sh.name} - plan", pos + 1])
-        toc.append([2, f"Bordereau materiel {sh.name}", bpages[0] + 1])
+        kind = "travaux / achats" if sh.format == "travaux" else "materiel"
+        toc.append([2, f"Bordereau {kind} {sh.name}", bpages[0] + 1])
         fams = sh.families()
-        report.append({"sheet": sh.name, "plan_page": pos + 1, "bordereau_pages": [p + 1 for p in bpages],
+        report.append({"sheet": sh.name, "format": sh.format, "plan_page": pos + 1, "bordereau_pages": [p + 1 for p in bpages],
                        "reperes": len(sh.items), "familles": len(fams), "res": sh.n_reserves,
                        "box": [round(v, 1) for v in box.rect], "box_layout": [box.ncols, box.col_w, box.pitch],
                        "box_in_free_space": box.fits})

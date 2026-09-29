@@ -1,0 +1,35 @@
+famille_dupuis,qte_dupuis,qte_ia,ecart,appariees_position,libelles_ia_regroupes
+(sans équivalent Dupuis),0,3,3,0,"Accumulateur UA (C,2) + Luminaire type D + Sonde plancher chauffant (note 5)"
+30A NF WP,2,0,-2,2,
+CHAUFFE-EAU,1,1,0,1,Chauffe-eau CE-1
+CONDENSEUR,2,2,0,2,Condenseur CD
+DÉTECTEUR FUMÉE,5,7,2,5,Luminaire type F
+ECHANGEUR AIR,2,2,0,1,Échangeur ECH
+ENSEIGNE SORTIE COMBO,1,1,0,1,Luminaire urgence 3 têtes
+EVAPORATEUR,2,2,0,2,Aéro AC-1 / AC-2
+FIXTURE TYPE A,18,18,0,18,Luminaire type A (2x2)
+FIXTURE TYPE A1,4,4,0,4,Luminaire type A1 (2x2)
+FIXTURE TYPE B,8,8,0,8,Encastré type B
+FIXTURE TYPE B1,3,3,0,3,Encastré type B1
+FIXTURE TYPE F,1,0,-1,1,
+FIXTURE TYPE F1,1,0,-1,1,
+FIXTURE TYPE G,1,1,0,1,Luminaire type G
+GRADATEUR,4,4,0,4,Paire a/b (à confirmer)
+INT 1 VOIE,4,5,1,4,Interrupteur unipolaire
+KLAXON,3,3,0,3,Klaxon alarme incendie
+PLINTHE A 1500W,7,11,4,3,Plinthe chauffante (hexagone kW) + Sectionneur 30A/SF
+PLINTHE A 900W,2,0,-2,2,
+PRISE,11,10,-1,11,"Prise dédiée circuit C,x"
+PRISE 15/20A,1,0,-1,1,
+PRISE 15/20A GFI,3,5,2,2,Autres à confirmer
+PRISE GFI,1,0,-1,1,
+RELO FORCE FLOW,1,0,-1,0,
+RELO STATION MANUEL,1,0,-1,0,
+SERPENTIN,4,4,0,4,Serpentin électrique SE
+SORTIE TEL,2,2,0,2,Sortie téléphone/data (note 7)
+TETE DOUBLE,3,3,0,3,Luminaire urgence 2 têtes (UA)
+TETE SIMPLE,2,2,0,2,Luminaire urgence 1 tête (UA)
+THERMOSTAT,2,4,2,2,Thermostat T
+THERMOSTAT PLANCHER CHAUFFANT,2,0,-2,2,
+TRIAC,4,4,0,4,Relais RT
+TOTAL,108,109,1,100,
