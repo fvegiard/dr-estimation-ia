@@ -109,6 +109,34 @@ def test_doublon_bloque(tmp_path, monkeypatch):
     assert "doublon" in texte and "Y" in texte and "hors de la page" in texte
 
 
+def test_documents_recus(tmp_path, monkeypatch):
+    monkeypatch.setattr(serveur, "LIEN_HUMAIN", tmp_path)
+    (tmp_path / "documents.json").write_text(json.dumps({
+        "S-1645": {"01-PLANS": {"pages_marquees": {"3": 2}, "pages_sans_marque": [4]},
+                   "02-DETAILS": {"pages_marquees": {}, "pages_sans_marque": [1]}}
+    }), encoding="utf-8")
+    (tmp_path / "recus.json").write_text(json.dumps({
+        "S-1645": {"dossiers_recus": [{"nom": "S-1645", "url": "https://example.org/d"}],
+                   "fichiers_recus": ["S-1645/01-PLANS.pdf"],
+                   "document_qpl_vers_recu": {
+                       "01-PLANS": {"fichier": "S-1645/01-PLANS.pdf", "url": "https://example.org/f"},
+                       "02-DETAILS": None}}
+    }), encoding="utf-8")
+
+    async def verifier():
+        async with Client(serveur.mcp) as client:
+            assert "documents_recus" in {t.name for t in (await client.list_tools()).tools}
+            resultat = _texte(await client.call_tool("documents_recus", {"projet": "S-1645"}))
+            assert resultat["documents"]["01-PLANS"] == {
+                "recu": {"fichier": "S-1645/01-PLANS.pdf", "url": "https://example.org/f"},
+                "pages_marquees": {"3": 2}, "pages_sans_marque": [4]}
+            assert resultat["documents"]["02-DETAILS"]["recu"] is None
+            assert resultat["fichiers_recus"] == ["S-1645/01-PLANS.pdf"]
+            assert (await client.call_tool("documents_recus", {"projet": "inconnu"})).is_error
+
+    asyncio.run(verifier())
+
+
 def test_http_exige_cle(monkeypatch):
     from starlette.testclient import TestClient
 
@@ -154,4 +182,3 @@ def test_parite_claude_e103(tmp_path):
         assert "RELEVE E103 - MATERIEL" in d[0].get_text()
         texte = d[1].get_text()
         assert "BORDEREAU MATERIEL - E103" in texte and "M01-08" in texte and "R-012" in texte
-
