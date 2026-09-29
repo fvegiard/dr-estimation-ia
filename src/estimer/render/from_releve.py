@@ -38,7 +38,8 @@ import pymupdf
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "releve"))
-from commun import load_feuilles, read_csv  # noqa: E402  (releve/ helpers are the single source of truth)
+from commun import load_feuilles, load_nomenclature, read_csv  # noqa: E402  (releve/ helpers are the single source of truth)
+from .ancrage import SymbolIndex, anchor, word_boxes  # noqa: E402
 
 DEFAULT_MODEL = "MODELE NON PRECISE"
 DEFAULT_PORTEE = "A PRECISER"
@@ -49,6 +50,99 @@ URGENCE = {"secours", "urgence"}
 # releve shape (Plan Expert enum or name) -> renderer marker; boxes with a bbox are drawn as rectangles
 SHAPES = {"2": "diamond", "losange": "diamond"}
 READING_BAND_PT = 40.0     # reading order of sources: top-to-bottom bands of 40 pt, then left-to-right
+ANCHOR_TEXT_R = 14.0       # a text tag is attached to the closest vector symbol within 14 pt of the tag box
+REVALIDER = "revalider"
+
+
+def _touch(a: pymupdf.Rect, b: pymupdf.Rect, gap: float = 1.0) -> bool:
+    dx = max(b.x0 - a.x1, a.x0 - b.x1, 0.0)
+    dy = max(b.y0 - a.y1, a.y0 - b.y1, 0.0)
+    return dx <= gap and dy <= gap
+
+
+def _add_note(o: dict, text: str) -> None:
+    o["note"] = (_cell(o, "note") + "; " if _cell(o, "note") else "") + text
+
+
+def _to_text(o: dict, why: str, stats: dict, key: str) -> None:
+    """Keep the text position, reserve with '*' (identification a revalider)."""
+    o["flags"] = [REVALIDER]
+    o["reserve"] = o.get("reserve") or "1"
+    _add_note(o, why)
+    stats[key] += 1
+
+
+def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
+    """Move every text mark onto the symbol its tag designates (EXEMPLE: marker around the SYMBOL).
+
+    Pass 1 finds a symbol per text mark. Pass 2 settles claims: a symbol wanted by marks of different
+    families goes to the mark whose tag is closest; the others keep their text position with '*'.
+    Text marks with no symbol within ANCHOR_TEXT_R, or ambiguous between glued symbols, get '*' and a
+    reserve. Visual marks (placed on the symbol by the relevé) are not moved. Returns counts."""
+    idx = SymbolIndex(page)
+    words = word_boxes(page)
+    stats = defaultdict(int)
+    found = []
+    for o in items:
+        x, y = o["x"], o["y"]
+        o["x_texte"], o["y_texte"] = x, y
+        tok = _jeton(o)
+        if not (_cell(o, "source").lower() == "texte" or tok):
+            stats["visuel_inchange"] += 1
+            continue
+        near = [w for w in words if w[0].contains(pymupdf.Point(x, y)) or
+                abs((w[0].x0 + w[0].x1) / 2 - x) < 4 and abs((w[0].y0 + w[0].y1) / 2 - y) < 4]
+        if tok:
+            near = [w for w in near if w[1].strip() == tok] or near
+        tag, color = (near[0][0], near[0][2]) if near else (pymupdf.Rect(x - 1.5, y - 1.5, x + 1.5, y + 1.5), None)
+        a = anchor(idx, tag, ANCHOR_TEXT_R, color, words)
+        if a is None:
+            _to_text(o, "ancrage symbole non trouve: marque au texte (*)", stats, "texte_sans_symbole")
+            continue
+        found.append((o, a))
+    visuals = [o for o in items if not (_cell(o, "source").lower() == "texte" or _jeton(o))]
+    claims: dict[tuple, list] = defaultdict(list)
+    keys: list[pymupdf.Rect] = []         # one claim per physical symbol: boxes overlapping >= 50 % merge
+    for o, a in found:
+        r = pymupdf.Rect(a.bbox)
+        # one symbol = one repère: boxes overlapping >= 50 %, or touching parts of one symbol (S box + horn
+        # triangle of a klaxon), are the same physical symbol
+        key = next((k for k in keys if (k & r).get_area() >= 0.5 * min(k.get_area(), r.get_area())
+                    or _touch(k, r)), None)
+        if key is None:
+            keys.append(r)
+            key = r
+        claims[tuple(key)].append((a.dist, o, a))
+    for key, lst in claims.items():
+        lst.sort(key=lambda t: t[0])
+        owner_label = lst[0][1]["label"]
+        box = pymupdf.Rect(key)
+        taken_by = next((v["label"] for v in visuals if v["label"] != owner_label and
+                         (box + (-1.5, -1.5, 1.5, 1.5)).contains(pymupdf.Point(v["x"], v["y"]))), None)
+        for rank, (d, o, a) in enumerate(lst):
+            if taken_by and o["label"] != taken_by:   # a visual mark of another family already sits there
+                _to_text(o, f"symbole le plus proche deja releve comme {taken_by} (*)", stats, "symbole_pris")
+                continue
+            if o["label"] != owner_label:     # symbol belongs to another family's tag (closer)
+                _to_text(o, f"symbole le plus proche deja attribue a {owner_label} (*)", stats, "symbole_pris")
+                continue
+            if rank and o["label"] == owner_label:
+                o["flags"] = [REVALIDER]      # same family twice on one symbol: keep both, revalidate
+                _add_note(o, "meme symbole qu'une autre marque (*)")
+                stats["meme_symbole"] += 1
+            if a.ambiguous:
+                o["flags"] = [REVALIDER]
+                _add_note(o, "ancrage ambigu entre plusieurs symboles (*)")
+                stats["ambigu"] += 1
+            o["x"], o["y"] = a.x, a.y
+            w, h = a.bbox[2] - a.bbox[0], a.bbox[3] - a.bbox[1]
+            if max(w, h) > 30:                      # linear symbol (strip light, PL): rectangle on its length
+                o["x0_pt"], o["y0_pt"], o["x1_pt"], o["y1_pt"] = (a.bbox[0] - 1, a.bbox[1] - 1,
+                                                                  a.bbox[2] + 1, a.bbox[3] + 1)
+            else:
+                o["rayon"] = max(w, h) / 2 + 1.0   # marker circle drawn AROUND the symbol
+            stats["texte_ancre"] += 1
+    return dict(stats)
 
 
 def ascii_upper(s: str) -> str:
@@ -136,11 +230,15 @@ def letter_code(nom_row: dict, label: str) -> str:
     return re.sub(r"[^A-Z]", "", ascii_upper(label))[:3] or "X"
 
 
-def build(work: Path, out: Path) -> dict:
+def build(work: Path, out: Path, ancrage: bool = True) -> dict:
     work, out = Path(work), Path(out)
     out.mkdir(parents=True, exist_ok=True)
     feuilles = load_feuilles(str(work))
+    for r in read_csv(str(work / "feuilles-classement.csv")):   # optional `bordereau` column (not kept by commun)
+        if r.get("feuille") in feuilles and _cell(r, "bordereau"):
+            feuilles[r["feuille"]]["bordereau"] = _cell(r, "bordereau")
     nom = read_nomenclature(work)
+    palette = load_nomenclature(str(work))          # releve/ palette: rgb + Plan Expert shape per label
     occ = read_occurrences(work)
     unknown = sorted({o["label"] for o in occ if o["label"] not in nom})
     if unknown:
@@ -164,15 +262,17 @@ def build(work: Path, out: Path) -> dict:
         src = pymupdf.open(str(work / "feuilles" / f"{fid}.pdf"))
         plans.insert_pdf(src)
         W, H = src[0].rect.width, src[0].rect.height
-        src.close()
         items = by_sheet[fid]
+        anc = anchor_sheet(src[0], items) if ancrage else {}
+        src.close()
         fmt = sheet_format(info, items)
         sheets_json.append({"sheet": name, "page": page_no, "width_px": W, "height_px": H})
         meta.append({"sheet": name, "feuille": fid, "page": page_no, "format": fmt,
-                     "type": info.get("type", ""), "note": info.get("note_classement", "")})
+                     "type": info.get("type", ""), "note": info.get("note_classement", ""), "ancrage": anc})
 
         # source ids: reading order over the whole sheet
-        order = sorted(items, key=lambda o: (int(o["y"] // READING_BAND_PT), o["x"]))
+        order = sorted(items, key=lambda o: (int(o.get("y_texte", o["y"]) // READING_BAND_PT),
+                                             o.get("x_texte", o["x"])))
         for k, o in enumerate(order, start=1):
             o["source_id"] = f"{name}-{k:03d}"
 
@@ -188,7 +288,8 @@ def build(work: Path, out: Path) -> dict:
                 for i, m in enumerate(names, start=1):
                     fam_code[(prefix, m)] = f"{prefix}{i:02d}"
         seq: dict[str, int] = defaultdict(int)
-        for o in sorted(items, key=lambda o: (materiel_of(o), int(o["y"] // READING_BAND_PT), o["x"])):
+        for o in sorted(items, key=lambda o: (materiel_of(o), int(o.get("y_texte", o["y"]) // READING_BAND_PT),
+                                              o.get("x_texte", o["x"]))):
             n = nom[o["label"]]
             mat = materiel_of(o)
             if fmt == "materiel":
@@ -205,8 +306,16 @@ def build(work: Path, out: Path) -> dict:
             qte = _float(o.get("qte"), 1.0)
             reserve = _cell(o, "reserve")
             el = {"sheet": name, "page": page_no, "x": o["x"], "y": o["y"], "repere": repere, "code": code,
-                  "source": o["source_id"], "shape": SHAPES.get(_cell(n, "forme").lower(), "circle")}
-            bb = [_float(o.get(k)) for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
+                  "source": o["source_id"], "shape": SHAPES.get(_cell(n, "forme").lower(), "circle"),
+                  "flags": o.get("flags", [])}
+            if o.get("rayon"):
+                el["radius"] = round(o["rayon"], 2)
+            if fmt == "agrege":           # EXEMPLE E03: relevé palette colours and shapes per family
+                pal = palette.get(o["label"], {})
+                if pal.get("rgb"):
+                    el["color"] = list(pal["rgb"])
+                el["shape"] = {0: "circle", 1: "square", 2: "diamond"}.get(pal.get("forme"), "circle")
+            bb =[_float(o.get(k)) for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
             if all(v is not None for v in bb):
                 el["bbox"] = bb
                 el["shape"] = "rect"
@@ -214,14 +323,14 @@ def build(work: Path, out: Path) -> dict:
             bord_rows.append({"feuille": name, "repere": repere, "source": o["source_id"], "materiel": mat,
                               "designation": designation, "qte": f"{qte:g}", "portee": portee, "modele": modele,
                               "prescription": prescription, "parent": parent, "reserve": reserve,
-                              "code": code, "format": fmt, "note": ascii_text(_cell(o, "note"))})
+                              "ref": ascii_text(_cell(n, "source")), "code": code, "format": fmt, "note": ascii_text(_cell(o, "note"))})
 
     plans.save(str(out / "plans.pdf"), garbage=3, deflate=True)
     est = {"source": "releve", "workdir": str(work), "sheets": sheets_json,
            "counters": [{"family": label, "name": label, "elements": els} for label, els in sorted(counters.items())]}
     (out / "estimate.json").write_text(json.dumps(est, ensure_ascii=False, indent=1), encoding="utf-8")
     cols = ["feuille", "repere", "source", "materiel", "designation", "qte", "portee", "modele", "prescription",
-            "parent", "reserve", "code", "format", "note"]
+            "parent", "reserve", "ref", "code", "format", "note"]
     bord_rows.sort(key=lambda r: (natural_key(r["feuille"]), natural_key(r["repere"])))
     with open(out / "bordereau.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=cols)
@@ -274,8 +383,9 @@ def main(argv=None) -> int:
     ap.add_argument("out_dir", type=Path)
     ap.add_argument("--render", type=Path, default=None, help="also render the EXEMPLE-format PDF here")
     ap.add_argument("--report", type=Path, default=None)
+    ap.add_argument("--sans-ancrage", action="store_true", help="keep relevé positions (no symbol anchoring)")
     a = ap.parse_args(argv)
-    res = build(a.workdir, a.out_dir)
+    res = build(a.workdir, a.out_dir, ancrage=not a.sans_ancrage)
     print(f"{a.out_dir}: {res['sheets']} feuilles, {res['reperes']} reperes")
     if a.render:
         from . import load_input, render

@@ -19,7 +19,9 @@ PALETTE = (
 FILL_OPACITY = 0.28
 STROKE_OPACITY = 0.9
 MARK_LINE_W = 0.7
+HALO_W = 1.0                                  # white ring outside each plan marker
 MARK_RADIUS = 4.1859                          # default circle radius when no symbol bbox is known
+MARK_RADIUS_MAX = 8.0                         # cap of the circle drawn around an anchored (larger) symbol
 
 # Repère label next to each marker
 LABEL_FONT = "helv"
@@ -54,6 +56,25 @@ WARN_TEXT = ("RES = reserve source, modele, position, portee ou reconciliation; 
 HINT_TEXT = "Calques activables; modeles, prescriptions et reserves completes page {page}"
 FOOTER_TEXT = "Quantites source et renvois; voir bordereau detaille."
 LEGEND_LAYER = "RELEVE - Legende et avertissements"
+REVALIDER = "revalider"                       # item flag: identification a revalider, label gets "*"
+TRAVAUX_FOOTER_TEXT = ("Emplacements de travaux sur calques; achats, prescriptions et reserves detaillees "
+                       "page {page}.")
+
+# Aggregated-sheet legend box (EXEMPLE E03, page 50: 470 pt wide, one row per family with its model line)
+AGG_PAD_X = 12.0
+AGG_COL_W = 458.0
+AGG_FIRST_ROW = 92.0                          # baseline of the first family code, from the box top
+AGG_PITCHES = (36.57, 27.0, 20.0)
+AGG_QTY_X = 431.0                             # quantity x inside a column (E03: 443 from the box edge)
+AGG_ROWS_TO_FOOTER = 20.0
+AGG_FOOTER_STEP = 10.32
+AGG_FOOTER_BOTTOM = 19.8
+AGG_HINT_TEXT = "Calques activables; modeles, prescriptions et sources : bordereau page {page}."
+AGG_FOOTER = (
+    "RES = reserve source, modele, position ou portee; * = identification a revalider.",
+    "Quantites = reperes de cette feuille; les renvois ne s'additionnent pas.",
+    "Modeles, prescriptions et sources : bordereau page {page}.",
+)
 
 # Bordereau (table) page
 B_MARGIN = 55.0
