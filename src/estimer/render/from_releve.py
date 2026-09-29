@@ -260,8 +260,19 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
         info = feuilles[fid]
         name = info["nom"]
         src = pymupdf.open(str(work / "feuilles" / f"{fid}.pdf"))
-        plans.insert_pdf(src)
         W, H = src[0].rect.width, src[0].rect.height
+        plans.insert_pdf(src)
+        if src[0].rotation:                   # marks live in displayed coordinates: bake the rotation into the content stream
+            pg = plans[-1]
+            M = pymupdf.Matrix(1, 0, 0, -1, 0, src[0].mediabox.height) * src[0].rotation_matrix * pymupdf.Matrix(1, 0, 0, -1, 0, H)
+            data = pg.read_contents()
+            xr = plans.get_new_xref()
+            plans.update_object(xr, "<<>>")
+            plans.update_stream(xr, ("q %g %g %g %g %g %g cm\n" % (M.a, M.b, M.c, M.d, M.e, M.f)).encode() + data + b"\nQ")
+            pg.set_contents(xr)
+            pg.set_rotation(0)
+            pg.set_mediabox(pymupdf.Rect(0, 0, W, H))
+            pg.set_cropbox(pymupdf.Rect(0, 0, W, H))
         items = by_sheet[fid]
         anc = anchor_sheet(src[0], items) if ancrage else {}
         src.close()
