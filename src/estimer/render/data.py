@@ -13,6 +13,9 @@ Input directory layout (the `python -m src.estimer` output, optionally enriched)
                   descriptive bordereau fields. Without it, fields are derived from the estimator family.
   reserves.md     optional. `## <sheet>` sections; each following non-empty line is printed in the
                   "RESERVES ET COMPLEMENTS" block of that sheet's bordereau.
+  familles.csv    optional. Given family rows of agrege / travaux sheets
+                  (feuille,format,id,qte,famille,portee,lieux,afournir,modele,prescription,source), printed
+                  as-is instead of rows aggregated from the items.
 
 Positions are converted to PDF points of the plans page at render time (see `to_points`).
 """
@@ -58,6 +61,10 @@ class Item:
     color: tuple[float, float, float] | None = None   # family colour from the relevé palette (agrege sheets)
     ref: str = ""                  # where the family definition was read (legend, devis section)
     note: str = ""                 # relevé note / reserve motive for this repère
+    label_lines: list[str] = field(default_factory=list)   # detail lines under the repère label (E sheets)
+    label_bbox: tuple[float, float, float, float] | None = None   # imposed label box (same units as x, y)
+    leader_end: tuple[float, float] | None = None
+    legend_model: str = ""         # model line shown under the family name in the legend
 
     @property
     def reserve(self) -> bool:
@@ -96,6 +103,10 @@ class Sheet:
     items: list[Item] = field(default_factory=list)
     reserves_text: list[str] = field(default_factory=list)
     format: str = "materiel"       # bordereau format: materiel (per repere) | agrege (per family) | travaux (EU)
+    rows: list[dict] = field(default_factory=list)   # given family rows (familles.csv); else aggregated
+    box_hint: tuple[float, float, float, float] | None = None   # imposed RELEVE box (PDF points)
+    legend_shapes: dict[str, str] = field(default_factory=dict)   # imposed legend glyph per family code
+    legend_rows: tuple[float, float] | None = None   # imposed (first row offset, pitch) in the box, PDF points
 
     def families(self) -> list[Family]:
         by: dict[str, list[Item]] = defaultdict(list)
@@ -107,11 +118,11 @@ class Sheet:
             shapes = defaultdict(int)
             for it in its:
                 shapes[it.shape] += 1
-            shape = max(shapes, key=lambda s: (shapes[s], s == "circle"))
+            shape = self.legend_shapes.get(code) or max(shapes, key=lambda s: (shapes[s], s == "circle"))
             mat = next((it.materiel for it in its if it.materiel), code)
             qty = len(its)          # EXEMPLE legend counts reperes; Qte multipliers stay in the bordereau
             color = next((it.color for it in its if it.color), None)
-            modeles = list(dict.fromkeys(it.modele for it in its if it.modele and it.modele != DEFAULT_MODEL))
+            modeles = list(dict.fromkeys(it.legend_model for it in its if it.legend_model))
             out.append(Family(code, mat, shape, qty, sum(1 for it in its if it.reserve), i, color,
                               "; ".join(modeles)))
         return out
@@ -191,7 +202,10 @@ def load_input(in_dir: Path) -> list[Sheet]:
 
     sheets: dict[str, Sheet] = {}
     for s in est.get("sheets", []):
-        sheets[s["sheet"]] = Sheet(s["sheet"], int(s["page"]), s.get("width_px"), s.get("height_px"))
+        sheets[s["sheet"]] = Sheet(s["sheet"], int(s["page"]), s.get("width_px"), s.get("height_px"),
+                                   box_hint=tuple(s["box_hint"]) if s.get("box_hint") else None,
+                                   legend_shapes=dict(s.get("legend_shapes") or {}),
+                                   legend_rows=tuple(s["legend_rows"]) if s.get("legend_rows") else None)
 
     # family codes for plain estimator output: one code per estimator family, stable across sheets
     fam_codes: dict[str, str] = {}
@@ -236,11 +250,21 @@ def load_input(in_dir: Path) -> list[Sheet]:
                 radius=el.get("radius"),
                 ref=(row.get("ref") or el.get("ref") or "").strip(),
                 note=(row.get("note") or el.get("note") or "").strip(),
+                label_lines=[str(x) for x in el.get("label_lines", [])],
+                label_bbox=tuple(el["label_bbox"]) if el.get("label_bbox") else None,
+                leader_end=tuple(el["leader_end"]) if el.get("leader_end") else None,
+                legend_model=str(el.get("modele_legende") or ""),
             )
             sh.items.append(it)
     for name, lines in reserves.items():
         if name in sheets:
             sheets[name].reserves_text = lines
+    fam_path = in_dir / "familles.csv"
+    if fam_path.is_file():
+        with open(fam_path, newline="", encoding="utf-8") as fh:
+            for r in csv.DictReader(fh):
+                if r["feuille"] in sheets:
+                    sheets[r["feuille"]].rows.append(r)
     for name, sh in sheets.items():
         fmt = formats.get(name) or next((bord[(name, it.repere)].get("format") for it in sh.items
                                          if bord.get((name, it.repere), {}).get("format")), None)

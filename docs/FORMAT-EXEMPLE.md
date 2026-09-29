@@ -71,11 +71,49 @@ python -m src.estimer.render.from_exemple EXEMPLE.pdf bordereau-materiel.csv feu
 python -m src.estimer.render OUT OUT/plans.pdf HR26-14-rendu.pdf --report HR26-14-rendu.report.json
 python -m src.estimer.render.verify_exemple HR26-14-rendu.pdf HR26-14-rendu.report.json EXEMPLE.pdf OUT
 ```
-`from_exemple` reads each gold marker (centre, bbox, shape, repère) from the EXEMPLE overlay (886/886 matched to
-the CSV rows, 1:1) and writes `plans.pdf` = the 12 plan pages with the RELEVE overlay streams and layers removed
-(the original ARI vector drawing). Result (2026-09-27): 12 sheets, 59 pages; 886/886 markers within 0.001 pt of the
-EXEMPLE; 12/12 box headers and legends identical; 7797/7797 bordereau text spans identical (text + position at
-0.1 pt); bordereau page count identical for every sheet.
+`from_exemple` lit, pour les 26 feuilles de `feuilles.csv`, chaque marqueur de l'EXEMPLE (centre, bbox, forme,
+couleur, lignes de detail de l'etiquette, `*` -> drapeau revalider), les lignes du bordereau (materiel : CSV or ;
+agrege / travaux : lues cellule par cellule dans l'EXEMPLE par `tableau.read_table`, verifie 8196/8196 cellules
+egales aux CSV or) et les notes, puis applique les corrections journalisees (`corrections_exemple.py`,
+ecrites dans `OUT/corrections.json`). `plans.pdf` = les 26 pages plan sans la surcouche RELEVE.
 
-Not covered: the aggregated (E01, E03-E06, E08, E09, E11, E12, E14) and EU travaux/achats bordereau formats —
-their gold data is not in `bordereau-materiel.csv`.
+## Preuve (2026-09-27, 26 feuilles, 87 pages)
+- Pages : 87/87 ; nombre de pages de bordereau identique pour chaque feuille (E04/E05 : 23 lignes resserrees a
+  63,75 pt comme l'EXEMPLE).
+- Reperes : 2177/2177 marqueurs a moins de 0,001 pt de l'EXEMPLE (max 0,001 pt).
+- Encadres : 26/26 reperes / familles identiques ; RES identique la ou l'EXEMPLE l'affiche (E11/E14 RES 64,
+  EU02 RES 4) ; legendes : quantite et `/ Rn` identiques pour chaque famille.
+- Bordereaux : 8196/8196 cellules egales a la cellule de l'EXEMPLE apres corrections (7887 identiques meme sans
+  correction), memes lignes, memes notes, memes sous-titres, 0 troncature `...`.
+
+## Erreurs de l'EXEMPLE corrigees (au lieu d'etre reproduites)
+| Regle | Nb | Exemple |
+|---|--:|---|
+| ESPACE-MOT-CHIFFRE | 256 | `note7` -> `note 7`, `interconnexion3` -> `interconnexion 3` |
+| ESPACE-MOT-SIGLE | 19 | `lotA` -> `lot A`, `panneauPS` -> `panneau PS` |
+| ESPACE-NORME | 20 | `NEMA5-20R` -> `NEMA 5-20R`, `DEL5.5` -> `DEL 5.5` |
+| ESPACE-VIRGULE | 11 | `chauffages,24` -> `chauffages, 24` (`7,8,9` intact) |
+| ESPACE-UNITES | 3 | `120V15A` -> `120V 15A` |
+| PHRASE-DOUBLEE | 8 | phrases repetees mot pour mot dans les sources EU |
+| TRONCATURE | 16 | `a confirme...` -> `a confirmer.` ; sinon coupe a la derniere proposition + `(suite: notes de reserve source)` |
+| MODELE-VIDE | 11 | `Non renseigne` -> `MODELE NON INDIQUE` |
+| SOURCE-FICTIVE | 35 | `Preuve du releve (voir audit)` -> `Plan E03: reperes AF-01 a AF-04 (symboles de la legende du plan)` |
+| Sous-titre travaux | 4 | `travaux;9 appareils` -> `travaux; 9 appareils` |
+| Encadre v6 | 4 | E03/E04/E05/E08 : encadre standard (compteur RES, `/ Rn`), `[R-001]` -> `(hors legende - R-001)` |
+
+## Ecarts restants
+- Texte ASCII sans accents, comme l'EXEMPLE.
+- Texte coupe par l'EXEMPLE et non retrouvable : renvoi explicite aux notes de reserve (pas d'invention).
+- E03/E04/E05/E08 : l'EXEMPLE n'affiche pas de RES ; convention appliquee RES = tous les reperes.
+- Familles partiellement en reserve (E11/E14 PC `32 / R4`, EU02) : le compte est exact, mais l'EXEMPLE ne dit
+  pas quels reperes ; les n premiers par numero sont marques.
+- Position des etiquettes, des traits d'attache et de l'encadre : recopiees de l'EXEMPLE (preuve visuelle E01/E03/E11).
+  Hors EXEMPLE (dossier reel), le moteur place lui-meme etiquettes et encadre.
+- Texte des encadres (phrase d'aide, pied, renvoi de page) : style du moteur ; le renvoi de page est le vrai numero
+  (E11 : page 71 au lieu du "page 2" errone de l'EXEMPLE).
+- Legende : forme des glyphes (carre, triangle, losange, rond), colonnes, 1re ligne et interligne recopies de l'EXEMPLE ;
+  lignes modele (LEVITON T5820-W, CANARM OMNI...) affichees sous le nom sur E03/E04/E05/E08.
+- Encadre v6 (E03/E04/E05/E08) : corps de texte standard 5,2/8,2 pt au lieu des 10 pt de l'EXEMPLE (harmonisation).
+- Controle a l'oeil du sous-agent verificateur : plans E01/E03/E11 16/18 puis legendes E01/E03/E11/EU02 24/24
+  (constat "R-901" rejete : l'EXEMPLE porte bien R-001).
+- `feuilles.csv` or : lot de E14 vide (non rendu).

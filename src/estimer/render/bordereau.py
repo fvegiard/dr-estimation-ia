@@ -21,7 +21,8 @@ def column_x(page_w: float) -> list[tuple[str, str, float, float]]:
     return [(k, h, x0, x1 - x0 - 2 * S.B_CELL_PAD) for (k, h, _), x0, x1 in zip(S.B_COLUMNS, starts, ends)]
 
 
-def wrap(text: str, size: float, width: float, max_lines: int = S.B_MAX_CELL_LINES) -> list[str]:
+def wrap(text: str, size: float, width: float, max_lines: int | None = None) -> list[str]:
+    """Coupe en lignes de largeur `width`. Sans `max_lines`, rien n'est tronqué : la ligne du tableau grandit."""
     words, lines, cur = text.split(), [], ""
     for w in words:
         t = f"{cur} {w}".strip()
@@ -32,7 +33,7 @@ def wrap(text: str, size: float, width: float, max_lines: int = S.B_MAX_CELL_LIN
             cur = w
     if cur:
         lines.append(cur)
-    if len(lines) > max_lines:
+    if max_lines and len(lines) > max_lines:
         lines = lines[:max_lines]
         last = lines[-1]
         while last and text_width(last + "...", size) > width:
@@ -66,36 +67,44 @@ def reserves_height(n_lines: int) -> float:
     return S.B_RES_GAP + n_lines * S.B_RES_STEP + 10 if n_lines else 0.0
 
 
+def row_height(n_lines: int) -> float:
+    """Hauteur d'une ligne de bordereau : 65 pt (EXEMPLE) tant que les cellules tiennent, sinon elle grandit."""
+    return max(S.B_ROW_H, S.B_ROW_BASELINE + (n_lines - 1) * S.B_LINE_STEP + 8.0)
+
+
 def add_bordereau(doc: pymupdf.Document, sheet: Sheet, width: float, height: float, at: int = -1) -> list[int]:
     """Insert the bordereau pages of `sheet` at page index `at` (-1 = append); return their 0-based numbers."""
     cols = column_x(width)
     items = sheet.sorted_items()
-    per = rows_per_page(height)
-    chunks = [items[i:i + per] for i in range(0, len(items), per)] or [[]]
     res_lines = [S.B_RES_TITLE] + sheet.reserves_text if sheet.reserves_text else []
     pages = []
-    y = S.B_HEAD_TOP + S.B_HEAD_H
+    bottom = height - S.B_ROWS_BOTTOM + 0.5
+
     def new_page():
         pno = -1 if at < 0 else at + len(pages)
-        return doc.new_page(pno=pno, width=width, height=height)
-
-    for chunk in chunks:
-        page = new_page()
+        page = doc.new_page(pno=pno, width=width, height=height)
         pages.append(page.number)
-        _page_header(page, sheet, cols)
-        y = S.B_HEAD_TOP + S.B_HEAD_H
-        for it in chunk:
-            for key, _, x, w in cols:
-                for k, line in enumerate(cell_lines(key, it, S.B_ROW_SIZE, w)):
-                    page.insert_text((x, y + S.B_ROW_BASELINE + k * S.B_LINE_STEP), line, fontsize=S.B_ROW_SIZE,
-                                     color=(0, 0, 0))
-            y += S.B_ROW_H
-            page.draw_line((S.B_MARGIN, y), (width - S.B_MARGIN, y), color=S.B_SEP_COLOR, width=S.B_SEP_W)
+        return page
+
+    page = new_page()
+    _page_header(page, sheet, cols)
+    y = S.B_HEAD_TOP + S.B_HEAD_H
+    for it in items:
+        cells = [(x, cell_lines(key, it, S.B_ROW_SIZE, w)) for key, _, x, w in cols]
+        h = row_height(max(len(c) for _, c in cells))
+        if y + h > bottom and y > S.B_HEAD_TOP + S.B_HEAD_H:
+            page = new_page()
+            _page_header(page, sheet, cols)
+            y = S.B_HEAD_TOP + S.B_HEAD_H
+        for x, lines in cells:
+            for k, line in enumerate(lines):
+                page.insert_text((x, y + S.B_ROW_BASELINE + k * S.B_LINE_STEP), line, fontsize=S.B_ROW_SIZE,
+                                 color=(0, 0, 0))
+        y += h
+        page.draw_line((S.B_MARGIN, y), (width - S.B_MARGIN, y), color=S.B_SEP_COLOR, width=S.B_SEP_W)
     if res_lines:
-        page = doc[pages[-1]]
         if y + reserves_height(len(res_lines) - 1) > height - 20:
             page = new_page()
-            pages.append(page.number)
             page.insert_text((S.B_MARGIN, S.B_TITLE_Y), f"BORDEREAU MATERIEL - {sheet.name}", fontname="hebo",
                              fontsize=S.B_TITLE_SIZE, color=(0, 0, 0))
             y = S.B_HEAD_TOP - S.B_RES_GAP
@@ -115,7 +124,7 @@ AGREGE = {
     "title": "BORDEREAU MATERIEL - {sheet}",
     "margin": 65.0, "title_size": 28.0, "title_y": 70.0,
     "head_top": 148.0, "head_h": 30.0, "head_baseline": 20.0, "head_size": 12.0,
-    "row_h": 66.0, "row_size": 11.0, "row_baseline": 16.825, "line_step": 13.244, "bottom": 140.0,
+    "row_h": 66.0, "row_size": 11.0, "row_baseline": 16.825, "line_step": 13.244, "bottom": 85.0,
     "cols": (("id", "ID", 0.0), ("qte", "Qte", 0.035), ("famille", "Famille", 0.065),
              ("modele", "Modele / type", 0.245), ("prescription", "Prescription du devis", 0.445),
              ("source", "Source / reserve", 0.81)),
@@ -124,7 +133,7 @@ TRAVAUX = {
     "title": "BORDEREAU TRAVAUX / ACHATS - {sheet}",
     "margin": 65.0, "title_size": 28.0, "title_y": 70.0,
     "head_top": 132.0, "head_h": 30.0, "head_baseline": 20.0, "head_size": 12.0,
-    "row_h": 100.0, "row_size": 9.2, "row_baseline": 14.89, "line_step": 10.681, "bottom": 140.0,
+    "row_h": 100.0, "row_size": 9.2, "row_baseline": 14.89, "line_step": 10.681, "bottom": 85.0,
     "cols": (("id", "ID", 0.0), ("famille", "Famille", 0.04), ("portee", "Portee", 0.19),
              ("lieux", "Lieux", 0.285), ("afournir", "A fournir", 0.355), ("modele", "Modele", 0.43),
              ("prescription", "Prescription", 0.56), ("source", "Source / relation", 0.79)),
@@ -181,14 +190,28 @@ def aggregate_rows(sheet: Sheet) -> list[dict]:
     return rows
 
 
-def _cell_wrap(text: str, size: float, width: float, max_lines: int) -> list[str]:
+AGREGE_SUB1 = "{n} reperes sur cette feuille - prescriptions recopiees du devis et du releve verifie."
+AGREGE_SUB2 = "Les modeles non renseignes restent a preciser. Les circuits divergents exigent une clarification."
+TRAVAUX_SUB = "{lieux} emplacements de travaux; {af} appareils a fournir (configurations a confirmer)"
+
+
+def _cell_wrap(text: str, size: float, width: float) -> list[str]:
     out = []
     for para in str(text).split("\n"):
-        out += wrap(para, size, width, max_lines=max_lines) if para else []
-    if len(out) > max_lines:
-        out = out[:max_lines]
-        out[-1] = out[-1].rstrip(".") + "..."
+        out += wrap(para, size, width) if para.strip() else []
     return out
+
+
+def _num(v) -> float:
+    try:
+        return float(str(v).replace(",", "."))
+    except ValueError:
+        return 0.0
+
+
+def family_rows(sheet: Sheet) -> list[dict]:
+    """Lignes données (familles.csv, recopiées de l'EXEMPLE ou du relevé) ; à défaut, agrégées des repères."""
+    return [r for r in sheet.rows if r.get("format", sheet.format) == sheet.format] or aggregate_rows(sheet)
 
 
 def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, height: float,
@@ -198,66 +221,70 @@ def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, heig
     table_w = width - 2 * m
     starts = [m + f * table_w for _, _, f in spec["cols"]]
     ends = starts[1:] + [width - m]
-    rows = aggregate_rows(sheet)
-    max_lines = int((spec["row_h"] - spec["row_baseline"]) // spec["line_step"]) + 1
-    per = max(1, int((height - spec["head_top"] - spec["head_h"] - spec["bottom"]) // spec["row_h"]))
-    chunks = [rows[i:i + per] for i in range(0, len(rows), per)] or [[]]
+    rows = family_rows(sheet)
     if sheet.format == "agrege":
-        n = len(sheet.items)
-        subs = [(13.0, 98.0, f"{n} reperes sur cette feuille - prescriptions recopiees du devis et du releve."),
-                (12.0, 120.0, "Les modeles non renseignes restent a preciser (MODELE NON PRECISE); "
-                              "chaque quantite est un compte de reperes du plan.")]
+        subs = [(13.0, 98.0, AGREGE_SUB1.format(n=len(sheet.items))), (12.0, 120.0, AGREGE_SUB2)]
     else:
-        lieux = sum(int(r["lieux"]) for r in rows)
-        af = sum(float(r["afournir"]) for r in rows)
-        subs = [(13.0, 98.0, f"{lieux} emplacements de travaux;{fmt_qty(af)} appareils a fournir "
-                             "(configurations a confirmer)")]
+        lieux = sum(_num(r.get("lieux")) for r in rows)
+        af = sum(_num(r.get("afournir")) for r in rows)
+        subs = [(13.0, 98.0, TRAVAUX_SUB.format(lieux=fmt_qty(lieux), af=fmt_qty(af)))]
     pages = []
+    head_bottom = spec["head_top"] + spec["head_h"]
+    bottom = height - spec["bottom"]
 
-    def new_page():
+    def new_page(table: bool = True):
         pno = -1 if at < 0 else at + len(pages)
         pg = doc.new_page(pno=pno, width=width, height=height)
         pages.append(pg.number)
         pg.insert_text((m, spec["title_y"]), spec["title"].format(sheet=sheet.name), fontname="hebo",
                        fontsize=spec["title_size"], color=(0, 0, 0))
+        if table:
+            for size, yy, t in subs:
+                pg.insert_text((m, yy), t, fontsize=size, color=(0, 0, 0))
+            pg.draw_rect(pymupdf.Rect(m, spec["head_top"], width - m, head_bottom),
+                         color=None, fill=S.B_HEAD_FILL, width=0)
+            for (_, head, _), x0 in zip(spec["cols"], starts):
+                pg.insert_text((x0 + 6, spec["head_top"] + spec["head_baseline"]), head, fontname="hebo",
+                               fontsize=spec["head_size"], color=(0, 0, 0))
         return pg
 
-    y = spec["head_top"] + spec["head_h"]
-    for chunk in chunks:
-        page = new_page()
-        for size, yy, t in subs:
-            page.insert_text((m, yy), t, fontsize=size, color=(0, 0, 0))
-        page.draw_rect(pymupdf.Rect(m, spec["head_top"], width - m, spec["head_top"] + spec["head_h"]),
-                       color=None, fill=S.B_HEAD_FILL, width=0)
-        for (_, head, _), x0 in zip(spec["cols"], starts):
-            page.insert_text((x0 + 6, spec["head_top"] + spec["head_baseline"]), head, fontname="hebo",
-                             fontsize=spec["head_size"], color=(0, 0, 0))
-        y = spec["head_top"] + spec["head_h"]
-        for row in chunk:
-            for (key, _, _), x0, x1 in zip(spec["cols"], starts, ends):
-                lines = _cell_wrap(row.get(key, ""), spec["row_size"], x1 - x0 - 10, max_lines)
-                for k, line in enumerate(lines):
-                    page.insert_text((x0 + 5, y + spec["row_baseline"] + k * spec["line_step"]), line,
-                                     fontsize=spec["row_size"], color=(0, 0, 0))
-            y += spec["row_h"]
-            page.draw_line((m, y), (width - m, y), color=S.B_SEP_COLOR, width=0.5)
+    page = new_page()
+    y = head_bottom
+    table = [[(x0, _cell_wrap(row.get(key, ""), spec["row_size"], x1 - x0 - 10))
+              for (key, _, _), x0, x1 in zip(spec["cols"], starts, ends)] for row in rows]
+    need = [spec["row_baseline"] + (max((len(c) for _, c in cells), default=1) - 1) * spec["line_step"] + 8.0
+            for cells in table]
+    # EXEMPLE E04/E05 : 23 lignes resserrees a 63,75 pt pour tenir sur une page ; sinon 66 pt et pages suivantes
+    room = bottom - head_bottom
+    base = spec["row_h"]
+    if rows and sum(max(base, n) for n in need) > room:
+        squeezed = room / len(rows)
+        if sum(max(squeezed, n) for n in need) <= room:
+            base = squeezed
+    for cells, n in zip(table, need):
+        h = max(base, n)
+        if y + h > bottom + 0.5 and y > head_bottom:
+            page = new_page()
+            y = head_bottom
+        for x0, lines in cells:
+            for k, line in enumerate(lines):
+                page.insert_text((x0 + 5, y + spec["row_baseline"] + k * spec["line_step"]), line,
+                                 fontsize=spec["row_size"], color=(0, 0, 0))
+        y += h
+        page.draw_line((m, y), (width - m, y), color=S.B_SEP_COLOR, width=0.5)
     notes = []
     for line in sheet.reserves_text:
-        notes += wrap(line, 10.0, table_w, max_lines=6)
+        notes += wrap(line, 10.0, table_w)
     if notes:
-        page = doc[pages[-1]]
-        if y + 38.75 + len(notes) * S.B_RES_STEP > height - 20:
-            page = new_page()
-            y = spec["head_top"] - 18.0
+        if y + 38.75 + S.B_RES_STEP > height - 20:
+            page = new_page(table=False)
+            y = spec["head_top"] - 38.75
         page.insert_text((m, y + 18.0), NOTES_TITLE, fontname="hebo", fontsize=12.0, color=(0, 0, 0))
-        for k, line in enumerate(notes):
-            yy = y + 38.75 + k * S.B_RES_STEP
+        yy = y + 38.75
+        for line in notes:
             if yy > height - 20:
-                page = new_page()
-                y, k0 = spec["head_top"] - 38.75, k
-                notes_left = notes[k:]
-                for j, l2 in enumerate(notes_left):
-                    page.insert_text((m, spec["head_top"] + j * S.B_RES_STEP), l2, fontsize=10.0, color=(0, 0, 0))
-                break
+                page = new_page(table=False)
+                yy = spec["head_top"]
             page.insert_text((m, yy), line, fontsize=10.0, color=(0, 0, 0))
+            yy += S.B_RES_STEP
     return pages
