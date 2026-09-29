@@ -1,0 +1,12 @@
+label,famille,forme,rgb,jeton_regex,description,source
+DP1 - NPP16 D EFP 347,commande,carre,"216,25,25",DP1,nLight NPP16 D EFP 347,"E103 risers 1,3,8,9 + etiquettes plan-cle"
+DP2 - NPP PCD EFP,commande,carre,"25,89,229",DP2,nLight NPP PCD EFP,"E103 risers 2,5,6,7 + plan-cle"
+PP1 - NPP20 PL BP,commande,carre,"242,127,0",PP1,nLight NPP20 PL BP,E103 riser 4 + plan-cle
+SO3 - WSXA MWO PDT D WH,commande,cercle,"140,25,178",SO3,nLight WSXA MWO PDT D WH,E103 plan-cle (etiquette vectorielle)
+SO4 - WSXA MWO PDT WH,commande,cercle,"0,153,76",SO4,nLight WSXA MWO PDT WH,E103 plan-cle (etiquette vectorielle)
+SW1 - NPODMA WH,commande,cercle,"204,0,140",SW1,nLight NPODMA WH,E103 riser 3 + plan-cle
+SW6 - NPOD TOUCH WH,commande,cercle,"0,140,165",SW6,nLight NPOD TOUCH WH,E103 riser 2 + plan-cle
+PS 150 - a confirmer,commande,,,,"Bloc alim. NPOD TOUCH, vu au riser 2 seulement (reserve)",E103 riser 2
+CAT5e nLight - a metrer,distribution,,,,"Cable controle, lineaire, echelle AUCUNE (reserve)",E103 risers
+RJ45 - par regle,distribution,,,,"Terminaison CAT5e, quantite par regle a fixer (reserve)",E103 details CAT5E/6
+SN - a classer,indetermine,,,,"Symbole raster S/N hors perimetre, sans quantite (reserve)",E103 plan-cle raster
