@@ -128,6 +128,29 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **supports et accessoires comptés par règle** (J-hook télécom, boîtes de tirage, plafonds suspendus) : ne les invente pas,
      mais crée le compteur avec une réserve « quantité par règle à fixer » dès qu'une note ou la légende les mentionne (S-1715 :
      45 J-hook chez l'estimateur, 1 chez l'IA).
+5e. **Règles apprises de Dupuis** (boucle de correction du 2026-09-29, S-1769 E401 et S-1844 E200 ; causes dans
+   `dossiers/S-1769-essai/E401/ecarts-causes.md` et `dossiers/S-1844-essai/E200/ecarts-causes.md`). Règles générales : aucune quantité
+   de Dupuis n'est copiée, aucune règle ne vise une seule feuille.
+   - **R1 valeur dans le symbole = un compteur par valeur** : un symbole qui porte une valeur (hexagone de plinthe 0,9 / 1,5 kW, puissance
+     W, calibre A) se lit à chaque marque ; le libellé porte la valeur (« Plinthe 1500 W », « Plinthe 900 W »). Jamais un libellé « kW » unique.
+   - **R2 un accessoire n'est jamais fondu dans l'appareil qu'il alimente** : sectionneur, disjoncteur, boîte « 30A/SF », « NF », « WP »
+     → compteur propre, même s'il est collé à un appareil.
+   - **R3 un qualificatif change le libellé, pas le nombre de marques** : GFI/DDFT, contrôlée, WP, 15/20 A → « Prise GFI », « Prise contrôlée »…
+     Deux symboles identiques ou plus ne vont jamais dans « Autres à confirmer » : donne un libellé par forme + réserve.
+   - **R4 thermostat par usage** : une note ou un repère « plancher chauffant » (ou une sonde reliée) → « Thermostat plancher chauffant » ;
+     la sonde est un compteur à part ; thermostat d'ambiance = autre libellé.
+   - **R5 légende ligne par ligne** : cherche sur le plan CHAQUE ligne de la légende (relais, contacteurs, stations manuelles, force flow…).
+     Une ligne de légende sans marque sur le plan = une réserve « ligne de légende non retrouvée ».
+   - **R6 identifier par la légende, pas par la lettre** : un symbole de forme voisine d'un luminaire (F, F1, détecteur de fumée) s'identifie sur
+     sa ligne de légende ; suffixe (F1) = compteur distinct ; un détecteur n'est jamais un luminaire.
+   - **R7 surfaces et linéaires** : une zone hachurée ou coloriée décrite par une note (plancher chauffant, dalle) = compteur de surface ;
+     câbles/conduits/profilés = compteur linéaire par type ; si l'échelle est illisible, réserve « à métrer » (jamais silence).
+   - **R8 prises contrôlées** : si le plan ou la légende marque une prise « contrôlée » (interrupteur maître, relais), libellé séparé.
+   - **R9 sorties mobilier** : sortie « BX 24" », « monument plancher », raccordement de mobilier → famille « Sortie mobilier », pas télécom.
+   - **R10 conduits des notes** : chaque type de conduit cité par une note (PVC 1", 3/4", 2"…) devient un compteur linéaire avec le nombre de tronçons.
+   - **R11 mécanique en sous-total** : raccordements d'équipements mécaniques (T, R, SE, SM, moteur, VAV…) restent famille `mecanique` et
+     s'affichent en sous-total séparé des dispositifs électriques.
+   - **R12 appareils nommés dans les notes** (sécheuse, chauffe-eau, hotte) : un compteur chacun, source = la note.
 6. **Comparaison avec l'estimateur** (si `estimateur/` existe) → `comparaison-estimateur.md` : pour chaque feuille, tableau
    `famille/objet | estimateur | nous | écart | commentaire`, en lisant ses légendes (`estimateur/legendes/*-legende.png`, où
    chaque ligne porte symbole, nom et quantité). Explique les écarts (périmètre différent, oubli probable de l'un ou l'autre).
