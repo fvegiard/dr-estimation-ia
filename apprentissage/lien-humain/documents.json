@@ -1,2428 +1,4 @@
 {
- "S-1607 L'OREAL (18-Novembre-2025)": {
-  "S-1607 L'Oréal Budget SIP (18-Mars-2025)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19
-   ]
-  },
-  "8424-950-ELE-4000-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4001-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4002-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4003-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4004-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4005-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4006-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4007-1": {
-   "pages_marquees": {
-    "0": 2
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4008-1": {
-   "pages_marquees": {
-    "0": 64
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4009-1": {
-   "pages_marquees": {
-    "0": 71
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4016-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4010-1": {
-   "pages_marquees": {
-    "0": 65
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4011-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4012-1": {
-   "pages_marquees": {
-    "0": 58
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4013-1": {
-   "pages_marquees": {
-    "0": 11
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4014-1": {
-   "pages_marquees": {
-    "0": 6
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4015-1": {
-   "pages_marquees": {
-    "0": 7
-   },
-   "pages_sans_marque": []
-  },
-  "8424-950-ELE-4017-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4005.1-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4005.1-2 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4005-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4006-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4007-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4008-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4101-3": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4102-3": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4103-3": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4105-3": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4007-2 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4003-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-350-STR-4004.1-0": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4007-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4003-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4004-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4006-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4007-2 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4008-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4009-2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-550-MDP-4012-1": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "8424-950-ELE-4010-1 (1)": {
-   "pages_marquees": {
-    "0": 65
-   },
-   "pages_sans_marque": []
-  }
- },
- "S-1689 (19-Février-2026)": {
-  "PLANS ARCHITECTURE": {
-   "pages_marquees": {
-    "17": 56
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    18
-   ]
-  },
-  "PLANS ÉLECTRIQUES": {
-   "pages_marquees": {
-    "4": 146,
-    "5": 15
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3
-   ]
-  },
-  "Pultrusion Plan Électrique": {
-   "pages_marquees": {
-    "4": 228
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    5,
-    6
-   ]
-  }
- },
- "S-17-079 (3-Juin-2026)": {
-  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_002-unlocked-compressed": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_003-unlocked-compressed": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_004-unlocked-compressed": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_005-unlocked-compressed": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_006-unlocked-compressed": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_007-unlocked-compressed": {
-   "pages_marquees": {
-    "0": 519
-   },
-   "pages_sans_marque": []
-  },
-  "Hôtel Océania_SA-000@SA-300_2025-02-14-plans (1)-unlocked-compressed": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5
-   ]
-  },
-  "Hôtel Océania_SA-000@SA-300_2025-02-14-plans-unlocked-compressed": {
-   "pages_marquees": {
-    "5": 45
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4
-   ]
-  },
-  "Resto - 2023-12-19 Plan architecture pour construction  (2)-unlocked-compressed": {
-   "pages_marquees": {
-    "6": 14,
-    "11": 1,
-    "13": 65
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    7,
-    8,
-    9,
-    10,
-    12,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21
-   ]
-  },
-  "E-12 ENT-17-002_PS_Bâtiment A_Services_DIRECTIVE 2019-12-17 (3)": {
-   "pages_marquees": {
-    "5": 80,
-    "7": 65
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    6,
-    8,
-    9,
-    10,
-    11,
-    12
-   ]
-  }
- },
- "S-1738 (13-Avril-2026)": {
-  "Plans électricité (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5
-   ]
-  },
-  "Plans electrique bon format": {
-   "pages_marquees": {
-    "5": 93
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4
-   ]
-  }
- },
- "S-1741 (20-Avril-2026)": {
-  "Montreal_2ND FLOOR DRWGS SET_APRIL 08.26": {
-   "pages_marquees": {
-    "2": 14,
-    "3": 27
-   },
-   "pages_sans_marque": [
-    1,
-    4
-   ]
-  },
-  "Plan clé des projets": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8
-   ]
-  },
-  "Montreal_GR FLOOR DRWGS SET_APRIL 08.26": {
-   "pages_marquees": {
-    "3": 7,
-    "4": 20
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    5
-   ]
-  },
-  "PLANS ELECTRIQUES_Existant projet 2019": {
-   "pages_marquees": {
-    "3": 319,
-    "4": 441,
-    "5": 558,
-    "6": 331,
-    "7": 232,
-    "8": 301,
-    "9": 386,
-    "10": 243
-   },
-   "pages_sans_marque": [
-    1,
-    1,
-    2,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10
-   ]
-  },
-  "Hallway (2 trainings rooms)LINEAL LED STRIP_ADVANT LIGHTING_AVL-L3360": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3
-   ]
-  },
-  "Étendue des travaux_Croix bleue.2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
- "S-1766 (8-Mai-2026)": {
-  "S2645 - Plans électrique pour soumission": {
-   "pages_marquees": {
-    "4": 2,
-    "5": 3,
-    "6": 341,
-    "7": 498,
-    "8": 191,
-    "9": 6
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    10,
-    11,
-    12
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00004 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00005 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00006 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00007 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00008 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00009 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00010 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00011 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-02_ANNEXE-page-00012 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00004 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00005 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00006 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00007 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00008 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00009 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00010 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25031_ADD A-03_ANNEXE-page-00011 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-01-F2500017-20260514 Plans-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-01-F2500017-20260514 Plans-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-01-F2500017-20260514 Plans-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-01-F2500017-20260514 Plans-page-00004 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-02-F2500017-20260520 Plans-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-02-F2500017-20260520 Plans-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-03-F2500017-20260525 Plans-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-03-F2500017-20260525 Plans-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-03-F2500017-20260525 Plans-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-03-F2500017-20260525 Plans-page-00004 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-EL-03-F2500017-20260525 Plans-page-00005 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-PB-01-F2500017-20260520-PLAN-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-PB-01-F2500017-20260520-PLAN-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-PB-01-F2500017-20260520-PLAN-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-RE-01-F2500017-20260514-PLAN-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-VE-01-R1-F2500017-20260514_PLAN-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-VE-01-R1-F2500017-20260514_PLAN-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-VE-01-R1-F2500017-20260514_PLAN-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-VE-02-F2500017-20260525_PLAN-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD-VE-02-F2500017-20260525_PLAN-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda C-01 (plans)-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda C-01 (plans)-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda C-01 (plans)-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda C-01 (plans)-page-00004 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda C-01 (plans)-page-00005 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-02 (plans)-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-02 (plans)-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-02 (plans)-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-02 (plans)-page-00004 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-02 (plans)-page-00005 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00001 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00002 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00003 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00004 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00005 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00006 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00007 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00008 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00009 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00010 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00011 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00012 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00013 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S25-053_Addenda S-03 (plans)-page-00014 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Addenda 8 - PLANS-Electricite": {
-   "pages_marquees": {
-    "2": 16
-   },
-   "pages_sans_marque": [
-    1
-   ]
-  },
-  "SA-26-TP-0078-Annexe-PLANS": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
- "S-1767 (8-Mai-2026)": {
-  "SM_C26-8321-18_R26_ELE": {
-   "pages_marquees": {
-    "2": 434,
-    "4": 445,
-    "6": 36,
-    "7": 193,
-    "8": 17,
-    "13": 6
-   },
-   "pages_sans_marque": [
-    1,
-    3,
-    5,
-    9,
-    10,
-    11,
-    12,
-    14,
-    15
-   ]
-  },
-  "SM_C26-8323-14_Électricité PJC": {
-   "pages_marquees": {
-    "3": 366,
-    "7": 517,
-    "9": 22
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    8,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15
-   ]
-  },
-  "QJ0450_570MASCOUCHE_DECORSREV01(PDF)": {
-   "pages_marquees": {
-    "1": 131
-   },
-   "pages_sans_marque": [
-    2,
-    3,
-    4
-   ]
-  },
-  "SM_C26-8323-14_Électricité PJC VF": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15
-   ]
-  },
-  "Devis soumission (8321-18) mec, elec": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30,
-    31,
-    32,
-    33,
-    34,
-    35,
-    36,
-    37,
-    38,
-    39,
-    40,
-    41,
-    42,
-    43,
-    44,
-    45,
-    46,
-    47,
-    48,
-    49,
-    50,
-    51,
-    52,
-    53,
-    54,
-    55,
-    56,
-    57,
-    58,
-    59,
-    60,
-    61,
-    62,
-    63,
-    64,
-    65,
-    66,
-    67,
-    68,
-    69,
-    70,
-    71,
-    72,
-    73,
-    74,
-    75,
-    76,
-    77,
-    78,
-    79,
-    80,
-    81,
-    82,
-    83,
-    84,
-    85,
-    86,
-    87,
-    88,
-    89
-   ]
-  },
-  "QJ0450_570MASCOUCHE_AMREV01(PDF)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "X-0431_PRÉLIMINAIRE_REV00_FINI-PEINTURE": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "S-1098_26181_MASCOUCHE_AMREV02": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
- "S-1767 -1 (19-Mai-2026)": {
-  "QJ0450_570MASCOUCHE_DECORSREV01(PDF)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    1,
-    2,
-    2,
-    3,
-    3,
-    4
-   ]
-  }
- },
- "S-1769 (13-Mai-2026)": {
-  "25-0075_E_PERM_SOUM_20260507_Signed": {
-   "pages_marquees": {
-    "6": 8,
-    "7": 108
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5
-   ]
-  }
- },
- "S-1775 (20-Mai-2026)": {
-  "Electricité_Soumission_2026 04 03": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3
-   ]
-  }
- },
- "S-1775 (21-Mai-2026)": {
-  "Architechture & Electrique-unlocked": {
-   "pages_marquees": {
-    "37": 585,
-    "38": 359,
-    "39": 261
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30,
-    31,
-    32,
-    33,
-    34,
-    35,
-    36,
-    40,
-    41,
-    42
-   ]
-  },
-  "QRT_27-05-2026_CMME_LASALLE": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4
-   ]
-  },
-  "QRT_26-05-2026_CMME_LASALLE": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME_25-823_ARCH_R2_2026-05-12 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    1,
-    2,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25": {
-   "pages_marquees": {
-    "6": 422
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    7
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00001": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00002": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00003": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00004": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00005": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00006": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00007": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00008": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00009": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00010": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00011": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00012": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00013": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00014": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00015": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00016": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00017": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00018": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00019": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00020": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00021": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00022": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00023": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00024": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00025": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00026": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00027": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00028": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00029": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00030": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00031": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00032": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00033": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
- "S-1777 (19-Mai-2026)": {
-  "SCOTIA_BROSSARD_50__2026.05.13": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5
-   ]
-  }
- },
- "S-1777 (20-Mai-2026)": {
-  "25-027_ADD-01 (002)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25-027_ADD-02": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25-027_ADD-03": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "25-027_ADD-04": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Appendix F - Proposed floor plan  phasing plan  Design guidelines": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    1,
-    2,
-    2,
-    3,
-    3,
-    4,
-    4,
-    5,
-    5,
-    6,
-    6,
-    7,
-    7,
-    8,
-    8,
-    9,
-    9,
-    10,
-    10,
-    11,
-    11,
-    12,
-    12,
-    13,
-    13,
-    14,
-    14,
-    15,
-    15,
-    16,
-    16,
-    17,
-    17,
-    18,
-    18,
-    19,
-    19,
-    20,
-    20,
-    21,
-    21,
-    22,
-    22,
-    23,
-    23,
-    24
-   ]
-  },
-  "SCOTIA_BROSSARD_50__2026.05.13": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2
-   ]
-  }
- },
- "s-1777 (21-Mai-2026)": {
-  "Regroupe-unlocked": {
-   "pages_marquees": {
-    "38": 45
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30,
-    31,
-    32,
-    33,
-    34,
-    35,
-    36,
-    37,
-    39,
-    40,
-    41,
-    42,
-    43,
-    44
-   ]
-  },
-  "unlocked_SCOTIA-page-00001": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "unlocked_SCOTIA-page-00002": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "unlocked_SCOTIA-page-00003": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "unlocked_SCOTIA-page-00004": {
-   "pages_marquees": {
-    "0": 428
-   },
-   "pages_sans_marque": []
-  },
-  "unlocked_SCOTIA-page-00005": {
-   "pages_marquees": {
-    "0": 3
-   },
-   "pages_sans_marque": []
-  },
-  "unlocked_SCOTIA-page-00006": {
-   "pages_marquees": {
-    "0": 216
-   },
-   "pages_sans_marque": []
-  },
-  "unlocked_SCOTIA-page-00007": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "unlocked_SCOTIA-page-00008": {
-   "pages_marquees": {
-    "0": 40
-   },
-   "pages_sans_marque": []
-  }
- },
- "S-1780 (27-Mai-2026)": {
-  "Croquis conduit Sous-dalle": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "250142_E_C2026-02-06 (1)-Copy": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-   ]
-  }
- },
- "S-1782 (25-Mai-2026)": {
-  "7908-256_ELE_AO_2026-04-29": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4
-   ]
-  },
-  "7908-256_Addenda ME-01": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-   ]
-  },
-  "7908-256_MÉC_AO_2026-04-29": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
-   ]
-  },
-  "7908-256_Addenda ME-02": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-   ]
-  },
-  "7908-256_Addenda ME-03": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17
-   ]
-  },
-  "120626B-ADDA-A-01": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-   ]
-  },
-  "120626B_20260430_Dix30S9_DÉMOLITION ÉMISSION LOT 1_soumissions": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
-   ]
-  },
-  "TEMPLATE Schedule C  Shell_DIX30 - Lulu EAMM": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13
-   ]
-  },
-  "1706 SL Montreal Dix30- Architectural (Issued For Landlord Review) 20180305": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28
-   ]
-  },
-  "1706 SL Montreal Dix30- Electrical (Issued For Landlord Review) 20180305": {
-   "pages_marquees": {
-    "3": 11,
-    "6": 16
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    4,
-    5,
-    7
-   ]
-  },
-  "1706 SL Montreal Dix30- Mechanical (Issued For Landlord Review) 20180305": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8
-   ]
-  }
- },
- "S-1783 (27-Mai-2026)": {
-  "plans pour Soumission_Électricité": {
-   "pages_marquees": {
-    "5": 83,
-    "7": 153,
-    "8": 284
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    6
-   ]
-  },
-  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1783 (27-Mai-2026)\\..\\Mes plans\\20260522 Add 1_Dess Élec": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1
-   ]
-  },
-  "20260522 Add 1_Dess Élec": {
-   "pages_marquees": {
-    "2": 225
-   },
-   "pages_sans_marque": []
-  },
-  "Plan Data TCG v5-2-page-00001": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00002": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00003": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00004": {
-   "pages_marquees": {
-    "0": 121
-   },
-   "pages_sans_marque": []
-  },
-  "Plan Data TCG v5-2-page-00005": {
-   "pages_marquees": {
-    "0": 19
-   },
-   "pages_sans_marque": []
-  },
-  "Plan Data TCG v5-2-page-00006": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00007": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00008": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00009": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00010": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00011": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00012": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00013": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00014": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00015": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00016": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00017": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00018": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00019": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00020": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00021": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00022": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00023": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00024": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00025": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00026": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00027": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00028": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00029": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00030": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "20260522 Add 1_Dess Élec-unlocked-page-00001": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "20260522 Add 1_Dess Élec-unlocked-page-00002": {
-   "pages_marquees": {
-    "0": 140
-   },
-   "pages_sans_marque": []
-  },
-  "Addenda ing 01 (2)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Architectural plans v8 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2
-   ]
-  },
-  "Architectural plans v8 (1)-compressed-page-0000980": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
- "s-1783 (9-Juin-2026)": {
-  "20260522 Add 1_Dess Élec2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "20260522 Add 1_Dess Élec": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1
-   ]
-  },
-  "20260522 Add": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5 (2)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30
-   ]
-  },
-  "Plan Data TCG v5-2-page-00001": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00002": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00003": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00004": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00005": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00006": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00007": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00008": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00009": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00010": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00011": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00012": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00013": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00014": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00015": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00016": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00017": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00018": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00019": {
-   "pages_marquees": {
-    "0": 45
-   },
-   "pages_sans_marque": []
-  },
-  "Plan Data TCG v5-2-page-00020": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00021": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00022": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00023": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00024": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00025": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00026": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00027": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00028": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00029": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "Plan Data TCG v5-2-page-00030": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "plans pour Soumission_Électricité": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8
-   ]
-  },
-  "Architectural plans v8 (1)-page-00009": {
-   "pages_marquees": {
-    "0": 168
-   },
-   "pages_sans_marque": []
-  },
-  "Addenda ing 01 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
- "S-1787 (3-Juin-2026)": {
-  "Plan architecture du 29 mai 2026": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4
-   ]
-  },
-  "A-304 - COUPES MUR - ZONE RÉFRIGÉRÉE": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "2024.10.15 Bioscript - Revised CCU Package. (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-   ]
-  }
- },
- "S-1787-2 (3-Juin-2026)": {
-  "Plan architecture du 29 mai 2026": {
-   "pages_marquees": {
-    "2": 96
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    2,
-    3,
-    4
-   ]
-  },
-  "A-304 - COUPES MUR - ZONE RÉFRIGÉRÉE": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "24-1564-Bioscript-Questions MEP - PMG 2026-05-29 (commentaires réunion)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ETALEX_Plan 1B_2026_05_26": {
-   "pages_marquees": {
-    "0": 51
-   },
-   "pages_sans_marque": []
-  }
- },
  "EQUIJUSTICE RIVE-SUD (16-Août-2021)": {
   "21-153_ÉQUIJUSTICE RIVE-SUD_PLANS DESIGN POUR SOUMISSION ET PERMIS_2021-07-14": {
    "pages_marquees": {
@@ -3048,44 +624,6 @@
    ]
   }
  },
- "S-1384 Complexe Multisport St-Bruno (17-Mars-2025)": {
-  "25-05_plans_electricite": {
-   "pages_marquees": {
-    "9": 213,
-    "10": 940,
-    "11": 457
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30
-   ]
-  }
- },
  "S-1387 L'Oréal Budget SIP (18-Mars-2025)": {
   "2025-03-14_Plans électricité L'Oréal_20%": {
    "pages_marquees": {
@@ -3107,31 +645,6 @@
     "0": 2
    },
    "pages_sans_marque": []
-  },
-  "8424-9_complet": {
-   "pages_marquees": {
-    "1": 4,
-    "3": 56,
-    "4": 77,
-    "5": 47,
-    "7": 33
-   },
-   "pages_sans_marque": [
-    2,
-    6,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19
-   ]
   }
  },
  "S-1390 BDC Boucherville (21-Mars-2025)": {
@@ -18706,124 +16219,6 @@
    ]
   }
  },
- "s-0844 (13-Novembre-2023)": {
-  "169 - Electricite_plan (1)": {
-   "pages_marquees": {
-    "8": 15,
-    "9": 124
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29
-   ]
-  },
-  "20240313_Plans_Elec_Pour Changement 08": {
-   "pages_marquees": {
-    "3": 1,
-    "4": 4,
-    "5": 3
-   },
-   "pages_sans_marque": [
-    1,
-    1,
-    1,
-    2,
-    2,
-    6,
-    7
-   ]
-  },
-  "20240424_Plans Elec pour Changement 11": {
-   "pages_marquees": {
-    "2": 33
-   },
-   "pages_sans_marque": [
-    1,
-    1,
-    3,
-    4,
-    5,
-    6,
-    7
-   ]
-  },
-  "Changement 011": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    1,
-    2,
-    2,
-    3,
-    3,
-    4,
-    4
-   ]
-  },
-  "M03-MG-M-RC01_R05": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "M03-MG-M-RC01_R05 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "08-EE-M-RC01_R06-EE-M-RC01": {
-   "pages_marquees": {
-    "0": 5
-   },
-   "pages_sans_marque": []
-  },
-  "Plans_Mec_Pour Changement 13": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2
-   ]
-  },
-  "Plans_Elec_Pour Changement 13": {
-   "pages_marquees": {
-    "1": 2,
-    "2": 6
-   },
-   "pages_sans_marque": []
-  },
-  "connectrac vendant": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
  "S-0869 (28-Novembre-2023)": {
   "Section 10-3Plan Electricite": {
    "pages_marquees": {
@@ -20754,7 +18149,7 @@
    },
    "pages_sans_marque": []
   },
-  "EX-M-ST02-SITE-PLAN-SECTIONS-AND-DETAILS-Rev.0": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\EX-M-ST02-SITE-PLAN-SECTIONS-AND-DETAILS-Rev.0": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -20868,7 +18263,7 @@
     0
    ]
   },
-  "A-400-BUILDING-SECTIONS-Rev.3": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\A-400-BUILDING-SECTIONS-Rev.3": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -21060,7 +18455,7 @@
    },
    "pages_sans_marque": []
   },
-  "EX-M-ST02-SITE-PLAN-SECTIONS-AND-DETAILS-Rev.2": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\EX-M-ST02-SITE-PLAN-SECTIONS-AND-DETAILS-Rev.2": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -21404,7 +18799,7 @@
     0
    ]
   },
-  "A-400-BUILDING-SECTIONS-Rev.6": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\A-400-BUILDING-SECTIONS-Rev.6": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -21446,7 +18841,7 @@
     0
    ]
   },
-  "A-400-BUILDING-SECTIONS-Rev.6 (1)": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\A-400-BUILDING-SECTIONS-Rev.6 (1)": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -21856,7 +19251,7 @@
     0
    ]
   },
-  "A-400-BUILDING-SECTIONS-Rev.6 (6)": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\A-400-BUILDING-SECTIONS-Rev.6 (6)": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -21886,7 +19281,7 @@
     0
    ]
   },
-  "A-400-BUILDING-SECTIONS-Rev.6 (7)": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\A-400-BUILDING-SECTIONS-Rev.6 (7)": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -21972,7 +19367,7 @@
     0
    ]
   },
-  "A-400-BUILDING-SECTIONS-Rev.6 (8)": {
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1086 (1-Mai-2024)\\..\\Mes plans\\A-400-BUILDING-SECTIONS-Rev.6 (8)": {
    "pages_marquees": {},
    "pages_sans_marque": [
     0
@@ -22331,6 +19726,16 @@
     6
    ]
   },
+  "Plans_Elec_Changement 063": {
+   "pages_marquees": {
+    "3": 6
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    4
+   ]
+  },
   "Change Order 054": {
    "pages_marquees": {},
    "pages_sans_marque": [
@@ -22338,6 +19743,14 @@
     2,
     3,
     4
+   ]
+  },
+  "Change Order 063": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3
    ]
   }
  },
@@ -24860,6 +22273,44 @@
     2,
     3,
     4
+   ]
+  }
+ },
+ "S-1384 Complexe Multisport St-Bruno (17-Mars-2025)": {
+  "25-05_plans_electricite": {
+   "pages_marquees": {
+    "9": 213,
+    "10": 940,
+    "11": 457
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
    ]
   }
  },
@@ -28076,549 +25527,6 @@
    ]
   }
  },
- "s-1572-1 (21-Octobre-2025)": {
-  "27250002eAO": {
-   "pages_marquees": {
-    "3": 81,
-    "4": 255,
-    "5": 85,
-    "6": 143,
-    "7": 130,
-    "8": 133,
-    "9": 36,
-    "10": 174,
-    "11": 58,
-    "13": 48,
-    "14": 1
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    12,
-    15
-   ]
-  },
-  "27250002_A-E-01": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3
-   ]
-  },
-  "27250002eAE01": {
-   "pages_marquees": {
-    "3": 11,
-    "4": 11,
-    "5": 3,
-    "6": 12,
-    "7": 5,
-    "10": 5,
-    "11": 26,
-    "12": 22,
-    "14": 3
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    8,
-    9,
-    13,
-    15,
-    16
-   ]
-  },
-  "2025-10-17_MB West-Island_Issued for Addendum 02": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13
-   ]
-  },
-  "24073_Bid Form_Addenda 2": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4
-   ]
-  },
-  "Registre_documents": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2
-   ]
-  },
-  "IMG_1156": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1157": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1158": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1159": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1160": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1161": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1162": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1163": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1164": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1165": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1166": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1167": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1168": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1169": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1170": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1171": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1172": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1173": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1174": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1175": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1176": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1177": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1178": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1179": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1180": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1181": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1182": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1183": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1184": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1185": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1186": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1187": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1188": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1189": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1190": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1191": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1192": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1193": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1194": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1195": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1196": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1197": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1198": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1199": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1200": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1201": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1202": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1203": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1204": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1205": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1206": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1207": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1208": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1209": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1210": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1211": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1212": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1213": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1214": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1215": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "IMG_1216": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "24073_MBWI_Addenda A-04_2025-10-24": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3
-   ]
-  }
- },
- "s-1575A (15-Octobre-2025)": {
-  "BENEVOL IBERVILLE": {
-   "pages_marquees": {
-    "7": 121,
-    "8": 5,
-    "10": 76
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    9,
-    11,
-    12
-   ]
-  },
-  "ADD(E01)-GRA527144": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "CABI _ Directive A _ 25-02-2025": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11
-   ]
-  },
-  "Addenda A01": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16
-   ]
-  },
-  "ADD(M01)-GRA527430": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    1,
-    2
-   ]
-  },
-  "ADD(E02)-GRA527144": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "ADD(E01)-GRA527144 (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  }
- },
  "S-1580 (16-Octobre-2025)": {
   "250067- 4MDV MOD1 - SOUMISSION -R2- 2025-10-10": {
    "pages_marquees": {},
@@ -28998,73 +25906,8 @@
    ]
   }
  },
- "s-1606 (6-Novembre-2025) (1)": {
-  "Base Building - 17-21e - Électricté 2023-04-06": {
-   "pages_marquees": {
-    "4": 29,
-    "6": 20
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    5,
-    7,
-    8
-   ]
-  },
-  "Plans - ELEC_SOUMISSION_2025-11-04": {
-   "pages_marquees": {
-    "4": 39,
-    "5": 756,
-    "6": 71,
-    "7": 14,
-    "8": 564,
-    "9": 20,
-    "10": 28,
-    "16": 137
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    11,
-    12,
-    13,
-    14,
-    15,
-    17
-   ]
-  },
-  "VBMAAJJDmA1JcFN5ZkJkS25JMQA": {
-   "pages_marquees": {
-    "6": 186,
-    "7": 8
-   },
-   "pages_sans_marque": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16
-   ]
-  },
-  "2025-AD- 146 -Invitation - OACI, 19E 1001 R. Bourassa - Docu (Le groupe DR electrique inc.)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
-  },
-  "prix controle révision 1 1001 robert bourassa": {
+ "S-1607 L'OREAL (18-Novembre-2025)": {
+  "S-1607 L'Oréal Budget SIP (18-Mars-2025)": {
    "pages_marquees": {},
    "pages_sans_marque": [
     1,
@@ -29075,8 +25918,258 @@
     6,
     7,
     8,
-    9
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
    ]
+  },
+  "8424-950-ELE-4000-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4001-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4002-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4003-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4004-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4005-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4006-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4007-1": {
+   "pages_marquees": {
+    "0": 2
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4008-1": {
+   "pages_marquees": {
+    "0": 64
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4009-1": {
+   "pages_marquees": {
+    "0": 71
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4016-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4010-1": {
+   "pages_marquees": {
+    "0": 65
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4011-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4012-1": {
+   "pages_marquees": {
+    "0": 58
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4013-1": {
+   "pages_marquees": {
+    "0": 11
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4014-1": {
+   "pages_marquees": {
+    "0": 6
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4015-1": {
+   "pages_marquees": {
+    "0": 7
+   },
+   "pages_sans_marque": []
+  },
+  "8424-950-ELE-4017-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4005.1-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4005.1-2 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4005-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4006-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4007-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4008-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4101-3": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4102-3": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4103-3": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4105-3": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4007-2 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4003-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-350-STR-4004.1-0": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4007-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4003-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4004-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4006-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4007-2 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4008-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4009-2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-550-MDP-4012-1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "8424-950-ELE-4010-1 (1)": {
+   "pages_marquees": {
+    "0": 65
+   },
+   "pages_sans_marque": []
   }
  },
  "S-1608 (13-Novembre-2025)": {
@@ -31583,7 +28676,6 @@
    ]
   }
  },
- "s-16651 (19-Janvier-2026)": {},
  "S-1667 (4-Février-2026)": {
   "unit2166-v1 Floor Plan - Extreme Measures": {
    "pages_marquees": {},
@@ -31880,12 +28972,6 @@
     "0": 17
    },
    "pages_sans_marque": []
-  },
-  "25-392-E-AD-E1-TXT (1)": {
-   "pages_marquees": {},
-   "pages_sans_marque": [
-    0
-   ]
   }
  },
  "S-1687 LEVASSEUR NOTAIRE (18-Février-2026)": {
@@ -31944,6 +29030,55 @@
     20,
     21,
     22
+   ]
+  }
+ },
+ "S-1689 (19-Février-2026)": {
+  "PLANS ARCHITECTURE": {
+   "pages_marquees": {
+    "17": 56
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18
+   ]
+  },
+  "PLANS ÉLECTRIQUES": {
+   "pages_marquees": {
+    "4": 146,
+    "5": 15
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3
+   ]
+  },
+  "Pultrusion Plan Électrique": {
+   "pages_marquees": {
+    "4": 228
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    5,
+    6
    ]
   }
  },
@@ -32176,19 +29311,18 @@
  "S-1695 (2-Mars-2026)": {
   "2024-023_Playground Hotel électrique_Soumission REV1": {
    "pages_marquees": {
-    "3": 226,
-    "4": 104,
-    "5": 103,
+    "3": 198,
+    "4": 102,
+    "5": 100,
     "6": 44,
-    "7": 257,
-    "8": 137,
-    "9": 141,
-    "10": 38,
+    "7": 41,
+    "8": 29,
+    "9": 35,
+    "10": 34,
     "11": 20,
     "12": 17,
     "13": 22,
     "17": 485,
-    "18": 217,
     "19": 67,
     "20": 51,
     "21": 61,
@@ -32200,6 +29334,7 @@
     14,
     15,
     16,
+    18,
     23
    ]
   }
@@ -32336,6 +29471,136 @@
     1,
     2,
     3
+   ]
+  }
+ },
+ "S-17-079 (3-Juin-2026)": {
+  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_002-unlocked-compressed": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_003-unlocked-compressed": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_004-unlocked-compressed": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_005-unlocked-compressed": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_006-unlocked-compressed": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_007-unlocked-compressed": {
+   "pages_marquees": {
+    "0": 536
+   },
+   "pages_sans_marque": []
+  },
+  "Hôtel Océania_SA-000@SA-300_2025-02-14-plans (1)-unlocked-compressed": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "Hôtel Océania_SA-000@SA-300_2025-02-14-plans-unlocked-compressed": {
+   "pages_marquees": {
+    "5": 45
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "Resto - 2023-12-19 Plan architecture pour construction  (2)-unlocked-compressed": {
+   "pages_marquees": {
+    "6": 14,
+    "11": 1,
+    "13": 65
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+   ]
+  },
+  "E-12 ENT-17-002_PS_Bâtiment A_Services_DIRECTIVE 2019-12-17 (3)": {
+   "pages_marquees": {
+    "5": 80,
+    "7": 65
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "0510A01 - La Cache - Électricité (Soumission) 2017-12-12_008 (1)": {
+   "pages_marquees": {
+    "0": 64
+   },
+   "pages_sans_marque": []
+  },
+  "plan designer  affaire pour contsruction": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
    ]
   }
  },
@@ -32911,6 +30176,29 @@
    ]
   }
  },
+ "S-1738 (13-Avril-2026)": {
+  "Plans électricité (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "Plans electrique bon format": {
+   "pages_marquees": {
+    "5": 93
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ },
  "S-1740 (13-Avril-2026)": {
   "Elec_Plans_25-073": {
    "pages_marquees": {
@@ -32954,6 +30242,100 @@
     32,
     33,
     34
+   ]
+  }
+ },
+ "S-1741 (20-Avril-2026)": {
+  "Montreal_2ND FLOOR DRWGS SET_APRIL 08.26": {
+   "pages_marquees": {
+    "2": 14,
+    "3": 27
+   },
+   "pages_sans_marque": [
+    1,
+    4
+   ]
+  },
+  "Plan clé des projets": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "Montreal_GR FLOOR DRWGS SET_APRIL 08.26": {
+   "pages_marquees": {
+    "3": 7,
+    "4": 20
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    5
+   ]
+  },
+  "PLANS ELECTRIQUES_Existant projet 2019": {
+   "pages_marquees": {
+    "3": 319,
+    "4": 441,
+    "5": 558,
+    "6": 331,
+    "7": 232,
+    "8": 301,
+    "9": 386,
+    "10": 243
+   },
+   "pages_sans_marque": [
+    1,
+    1,
+    2,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "Hallway (2 trainings rooms)LINEAL LED STRIP_ADVANT LIGHTING_AVL-L3360": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3
+   ]
+  },
+  "Étendue des travaux_Croix bleue.2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "BLUE CROSS_MONTREAL_GR. FLOOR TRAINING ROOMS_PRESENTATION_JUNE 15.26_1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "BLUE CROSS_MONTREAL_MEETING ROOMS_PRESENTATION_REVISED JUNE 15.26_1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "BLUE CROSS_MONTREAL_GR. FLOOR TRAINING ROOMS_PRESENTATION_JUNE 15.26_1 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
    ]
   }
  },
@@ -33312,7 +30694,2977 @@
    ]
   }
  },
+ "S-1766 (8-Mai-2026)": {
+  "S2645 - Plans électrique pour soumission": {
+   "pages_marquees": {
+    "4": 2,
+    "5": 3,
+    "6": 341,
+    "7": 498,
+    "8": 191,
+    "9": 6
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    10,
+    11,
+    12
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00004 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00005 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00006 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00007 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00008 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00009 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00010 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00011 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-02_ANNEXE-page-00012 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00004 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00005 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00006 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00007 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00008 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00009 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00010 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "25031_ADD A-03_ANNEXE-page-00011 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-01-F2500017-20260514 Plans-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-01-F2500017-20260514 Plans-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-01-F2500017-20260514 Plans-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-01-F2500017-20260514 Plans-page-00004 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-02-F2500017-20260520 Plans-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-02-F2500017-20260520 Plans-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-03-F2500017-20260525 Plans-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-03-F2500017-20260525 Plans-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-03-F2500017-20260525 Plans-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-03-F2500017-20260525 Plans-page-00004 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-EL-03-F2500017-20260525 Plans-page-00005 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-PB-01-F2500017-20260520-PLAN-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-PB-01-F2500017-20260520-PLAN-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-PB-01-F2500017-20260520-PLAN-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-RE-01-F2500017-20260514-PLAN-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-VE-01-R1-F2500017-20260514_PLAN-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-VE-01-R1-F2500017-20260514_PLAN-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-VE-01-R1-F2500017-20260514_PLAN-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-VE-02-F2500017-20260525_PLAN-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD-VE-02-F2500017-20260525_PLAN-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda C-01 (plans)-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda C-01 (plans)-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda C-01 (plans)-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda C-01 (plans)-page-00004 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda C-01 (plans)-page-00005 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-02 (plans)-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-02 (plans)-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-02 (plans)-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-02 (plans)-page-00004 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-02 (plans)-page-00005 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00001 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00002 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00003 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00004 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00005 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00006 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00007 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00008 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00009 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00010 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00011 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00012 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00013 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S25-053_Addenda S-03 (plans)-page-00014 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Addenda 8 - PLANS-Electricite": {
+   "pages_marquees": {
+    "2": 16
+   },
+   "pages_sans_marque": [
+    1
+   ]
+  },
+  "SA-26-TP-0078-Annexe-PLANS": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "S-1767 (8-Mai-2026)": {
+  "SM_C26-8321-18_R26_ELE": {
+   "pages_marquees": {
+    "2": 434,
+    "4": 445,
+    "6": 36,
+    "7": 193,
+    "8": 17,
+    "13": 6
+   },
+   "pages_sans_marque": [
+    1,
+    3,
+    5,
+    9,
+    10,
+    11,
+    12,
+    14,
+    15
+   ]
+  },
+  "SM_C26-8323-14_Électricité PJC": {
+   "pages_marquees": {
+    "3": 366,
+    "7": 517,
+    "9": 22
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ]
+  },
+  "QJ0450_570MASCOUCHE_DECORSREV01(PDF)": {
+   "pages_marquees": {
+    "1": 131
+   },
+   "pages_sans_marque": [
+    2,
+    3,
+    4
+   ]
+  },
+  "SM_C26-8323-14_Électricité PJC VF": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ]
+  },
+  "Devis soumission (8321-18) mec, elec": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+   ]
+  },
+  "QJ0450_570MASCOUCHE_AMREV01(PDF)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "X-0431_PRÉLIMINAIRE_REV00_FINI-PEINTURE": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "S-1098_26181_MASCOUCHE_AMREV02": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "S-1767 -1 (19-Mai-2026)": {
+  "QJ0450_570MASCOUCHE_DECORSREV01(PDF)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4
+   ]
+  }
+ },
+ "S-1769 (13-Mai-2026)": {
+  "25-0075_E_PERM_SOUM_20260507_Signed": {
+   "pages_marquees": {
+    "6": 8,
+    "7": 108
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  }
+ },
+ "S-1775 (21-Mai-2026)": {
+  "Architechture & Electrique-unlocked": {
+   "pages_marquees": {
+    "37": 585,
+    "38": 359,
+    "39": 261
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    40,
+    41,
+    42
+   ]
+  },
+  "QRT_27-05-2026_CMME_LASALLE": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "QRT_26-05-2026_CMME_LASALLE": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME_25-823_ARCH_R2_2026-05-12 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    1,
+    2,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25": {
+   "pages_marquees": {
+    "6": 422
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00003": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00004": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00005": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00006": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00007": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00008": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00009": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00010": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00011": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00012": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00013": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00014": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00015": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00016": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00017": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00018": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00019": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00020": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00021": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00022": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00023": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00024": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00025": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00026": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00027": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00028": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00029": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00030": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00031": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00032": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CMME__25-823_TECH_ADD01__2026-05-25-unlocked-page-00033": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "S-1780 (27-Mai-2026)": {
+  "Croquis conduit Sous-dalle": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "250142_E_C2026-02-06 (1)-Copy": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  }
+ },
+ "S-1782 (25-Mai-2026)": {
+  "7908-256_ELE_AO_2026-04-29": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "7908-256_Addenda ME-01": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "7908-256_MÉC_AO_2026-04-29": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "7908-256_Addenda ME-02": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "7908-256_Addenda ME-03": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ]
+  },
+  "120626B-ADDA-A-01": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "120626B_20260430_Dix30S9_DÉMOLITION ÉMISSION LOT 1_soumissions": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "TEMPLATE Schedule C  Shell_DIX30 - Lulu EAMM": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  "1706 SL Montreal Dix30- Architectural (Issued For Landlord Review) 20180305": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ]
+  },
+  "1706 SL Montreal Dix30- Electrical (Issued For Landlord Review) 20180305": {
+   "pages_marquees": {
+    "3": 11,
+    "6": 16
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    4,
+    5,
+    7
+   ]
+  },
+  "1706 SL Montreal Dix30- Mechanical (Issued For Landlord Review) 20180305": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  }
+ },
+ "S-1783 (27-Mai-2026)": {
+  "plans pour Soumission_Électricité": {
+   "pages_marquees": {
+    "5": 83,
+    "7": 153,
+    "8": 284
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    6
+   ]
+  },
+  "C:\\Users\\ddupu\\OneDrive - GROUPE DR ELECTRIQUE INC\\Documents\\Plan Expert\\Mes projets\\S-1783 (27-Mai-2026)\\..\\Mes plans\\20260522 Add 1_Dess Élec": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1
+   ]
+  },
+  "20260522 Add 1_Dess Élec": {
+   "pages_marquees": {
+    "2": 225
+   },
+   "pages_sans_marque": []
+  },
+  "Plan Data TCG v5-2-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00003": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00004": {
+   "pages_marquees": {
+    "0": 121
+   },
+   "pages_sans_marque": []
+  },
+  "Plan Data TCG v5-2-page-00005": {
+   "pages_marquees": {
+    "0": 19
+   },
+   "pages_sans_marque": []
+  },
+  "Plan Data TCG v5-2-page-00006": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00007": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00008": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00009": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00010": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00011": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00012": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00013": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00014": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00015": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00016": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00017": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00018": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00019": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00020": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00021": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00022": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00023": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00024": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00025": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00026": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00027": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00028": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00029": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plan Data TCG v5-2-page-00030": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "20260522 Add 1_Dess Élec-unlocked-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "20260522 Add 1_Dess Élec-unlocked-page-00002": {
+   "pages_marquees": {
+    "0": 141
+   },
+   "pages_sans_marque": []
+  },
+  "Addenda ing 01 (2)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Architectural plans v8 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2
+   ]
+  },
+  "Architectural plans v8 (1)-compressed-page-0000980": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "PDF pour Construction_Électricit-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "PDF pour Construction_Électricit-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "PDF pour Construction_Électricit-page-00003": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "PDF pour Construction_Électricit-page-00004": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "PDF pour Construction_Électricit-page-00005": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "PDF pour Construction_Électricit-page-00006": {
+   "pages_marquees": {
+    "0": 199
+   },
+   "pages_sans_marque": []
+  },
+  "PDF pour Construction_Électricit-page-00007": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "PDF pour Construction_Électricit-page-00008": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
  "S-1787 (3-Juin-2026) (1)": {},
+ "S-1787-2 (3-Juin-2026)": {
+  "Plan architecture du 29 mai 2026": {
+   "pages_marquees": {
+    "2": 6
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "A-304 - COUPES MUR - ZONE RÉFRIGÉRÉE": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "24-1564-Bioscript-Questions MEP - PMG 2026-05-29 (commentaires réunion)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ETALEX_Plan 1B_2026_05_26": {
+   "pages_marquees": {
+    "0": 51
+   },
+   "pages_sans_marque": []
+  },
+  "1315, boulevard Ford (pl.projet-P2)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Devis de performance": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "24-1564-Bioscript-Questions MEP - PMG 2026-05-29 (commentaires réunion) (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "S-1793 (16-Juin-2026)": {
+  "Plans_electricite-unlocked-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00003": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00004": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00005": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00006": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00007": {
+   "pages_marquees": {
+    "0": 9
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00008": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00009": {
+   "pages_marquees": {
+    "0": 397
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00010": {
+   "pages_marquees": {
+    "0": 478
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00011": {
+   "pages_marquees": {
+    "0": 353
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00012": {
+   "pages_marquees": {
+    "0": 748
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00013": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00014": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00015": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00016": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00017": {
+   "pages_marquees": {
+    "0": 68
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00018": {
+   "pages_marquees": {
+    "0": 82
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00019": {
+   "pages_marquees": {
+    "0": 159
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_electricite-unlocked-page-00020": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "Plans_electricite-unlocked-page-00021": {
+   "pages_marquees": {
+    "0": 156
+   },
+   "pages_sans_marque": []
+  }
+ },
+ "S-1794 (23-Juin-2026)": {
+  "6002_8481__Place_Marien_SLD": {
+   "pages_marquees": {
+    "0": 10
+   },
+   "pages_sans_marque": []
+  },
+  "6003_2000__ch_Saint-Fran__ois_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "6029_625-651__rue_McCaffrey_SLD": {
+   "pages_marquees": {
+    "0": 10
+   },
+   "pages_sans_marque": []
+  },
+  "6030_601-623__rue_McCaffrey_SLD": {
+   "pages_marquees": {
+    "0": 8
+   },
+   "pages_sans_marque": []
+  },
+  "7032_770__boul_Guimond_SLD": {
+   "pages_marquees": {
+    "0": 24
+   },
+   "pages_sans_marque": []
+  },
+  "6009_18101__a._Trans-Canada_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "6010_18103__a._Trans-Canada_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "6012_19600__av_Clark-Graham_SLD": {
+   "pages_marquees": {
+    "0": 13
+   },
+   "pages_sans_marque": []
+  },
+  "6013_20375__av_Clark-Graham_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "6016_1600-1660__32e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 5
+   },
+   "pages_sans_marque": []
+  },
+  "6017_4300__rue_Hickmore_SLD": {
+   "pages_marquees": {
+    "0": 7
+   },
+   "pages_sans_marque": []
+  },
+  "6018_900__Place_Paul-Kane_SLD": {
+   "pages_marquees": {
+    "0": 12
+   },
+   "pages_sans_marque": []
+  },
+  "6019_5799__rte_de_l_A__roport_SLD": {
+   "pages_marquees": {
+    "0": 21
+   },
+   "pages_sans_marque": []
+  },
+  "6021_87__boul_Brunswick_SLD": {
+   "pages_marquees": {
+    "0": 11
+   },
+   "pages_sans_marque": []
+  },
+  "6022_3__rue_H__tel-de-Ville_SLD": {
+   "pages_marquees": {
+    "0": 43
+   },
+   "pages_sans_marque": []
+  },
+  "6031_5610-5660__rte_Bois-Franc_SLD": {
+   "pages_marquees": {
+    "0": 28
+   },
+   "pages_sans_marque": []
+  },
+  "6032_2970-3090__rue_Brabant-Marineau_SLD": {
+   "pages_marquees": {
+    "0": 42
+   },
+   "pages_sans_marque": []
+  },
+  "6033_1135__a._Chomedey_SLD": {
+   "pages_marquees": {
+    "0": 9
+   },
+   "pages_sans_marque": []
+  },
+  "6034_1101-1111__a._Chomedey_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "6035_9393__boul_M__tropolitain_Est_SLD": {
+   "pages_marquees": {
+    "0": 44
+   },
+   "pages_sans_marque": []
+  },
+  "6036_100-190__av_Voyageur_SLD": {
+   "pages_marquees": {
+    "0": 18
+   },
+   "pages_sans_marque": []
+  },
+  "6037_185__av_Voyageur_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "6038_195__av_Voyageur_SLD": {
+   "pages_marquees": {
+    "0": 30
+   },
+   "pages_sans_marque": []
+  },
+  "6039_200-290__av_Voyageur_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "6040-115__boul_Hymus_SLD": {
+   "pages_marquees": {
+    "0": 3
+   },
+   "pages_sans_marque": []
+  },
+  "6041_155-245__rue_Avro_SLD": {
+   "pages_marquees": {
+    "0": 16
+   },
+   "pages_sans_marque": []
+  },
+  "6042_340-380__rue_Isabey_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "6045_3540__rue_Griffith_SLD": {
+   "pages_marquees": {
+    "0": 19
+   },
+   "pages_sans_marque": []
+  },
+  "6046_6150__a._Trans-Canada_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "6062_2001__boul_Des_Sources_SLD": {
+   "pages_marquees": {
+    "0": 5
+   },
+   "pages_sans_marque": []
+  },
+  "6064_875__mont__e_Saint-Fran__ois_SLD": {
+   "pages_marquees": {
+    "0": 43
+   },
+   "pages_sans_marque": []
+  },
+  "7005_5205__rue_Fairway_SLD (1)": {
+   "pages_marquees": {
+    "0": 36
+   },
+   "pages_sans_marque": []
+  },
+  "7006_2103-2103__boul_Dagenais_Ouest_SLD": {
+   "pages_marquees": {
+    "0": 21
+   },
+   "pages_sans_marque": []
+  },
+  "7007_1225__rue_Volta_SLD": {
+   "pages_marquees": {
+    "0": 27
+   },
+   "pages_sans_marque": []
+  },
+  "7008_3300__rte_Transcanadienne_SLD": {
+   "pages_marquees": {
+    "0": 50
+   },
+   "pages_sans_marque": []
+  },
+  "7011_11000-11020__boul_Parkway_SLD": {
+   "pages_marquees": {
+    "0": 29
+   },
+   "pages_sans_marque": []
+  },
+  "7012_2199__boul_Fernand-Lafontaine_SLD": {
+   "pages_marquees": {
+    "0": 22
+   },
+   "pages_sans_marque": []
+  },
+  "7013_2025__rue_de_la_M__tropole_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "7014_2125__23e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 39
+   },
+   "pages_sans_marque": []
+  },
+  "7015_9100__rue_du_Parcours_SLD": {
+   "pages_marquees": {
+    "0": 55
+   },
+   "pages_sans_marque": []
+  },
+  "7016_3000__rte_Transcanadienne_SLD": {
+   "pages_marquees": {
+    "0": 19
+   },
+   "pages_sans_marque": []
+  },
+  "7017_4141-4949__a._Jean-No__l-Lavoie_SLD": {
+   "pages_marquees": {
+    "0": 28
+   },
+   "pages_sans_marque": []
+  },
+  "7018_3071-3075__rue_Louis-A.-Amos_SLD": {
+   "pages_marquees": {
+    "0": 27
+   },
+   "pages_sans_marque": []
+  },
+  "7019_8740-8878__boul_Pie-IX_SLD": {
+   "pages_marquees": {
+    "0": 19
+   },
+   "pages_sans_marque": []
+  },
+  "7021_40__ch_du_Tremblay_SLD": {
+   "pages_marquees": {
+    "0": 37
+   },
+   "pages_sans_marque": []
+  },
+  "6044_500-600__rue_Hodge_SLD": {
+   "pages_marquees": {
+    "0": 18
+   },
+   "pages_sans_marque": []
+  },
+  "7022_900-950__boul_Saint-Martin_SLD": {
+   "pages_marquees": {
+    "0": 34
+   },
+   "pages_sans_marque": []
+  },
+  "7024_8552-8648__boul_Pie-IX_SLD": {
+   "pages_marquees": {
+    "0": 43
+   },
+   "pages_sans_marque": []
+  },
+  "7026_375-455__rue_Deslauriers_SLD": {
+   "pages_marquees": {
+    "0": 37
+   },
+   "pages_sans_marque": []
+  },
+  "7027_295-371__rue_Deslauriers_SLD": {
+   "pages_marquees": {
+    "0": 22
+   },
+   "pages_sans_marque": []
+  },
+  "7028_457-485_et_491-533__rue_Deslauriers_SLD": {
+   "pages_marquees": {
+    "0": 49
+   },
+   "pages_sans_marque": []
+  },
+  "7075_295-341__rue_Benjamin-Hudon_et_255__rue_Deslauriers_SLD": {
+   "pages_marquees": {
+    "0": 29
+   },
+   "pages_sans_marque": []
+  },
+  "7029-4500-4536__rue_Louis-B.-Mayer_SLD": {
+   "pages_marquees": {
+    "0": 24
+   },
+   "pages_sans_marque": []
+  },
+  "7030_789-799__boul_Jean-Paul-Vincent_SLD": {
+   "pages_marquees": {
+    "0": 45
+   },
+   "pages_sans_marque": []
+  },
+  "7041_1925-1985__boul_Hymus_SLD": {
+   "pages_marquees": {
+    "0": 37
+   },
+   "pages_sans_marque": []
+  },
+  "7031_8288__boul_Pie-IX_SLD": {
+   "pages_marquees": {
+    "0": 26
+   },
+   "pages_sans_marque": []
+  },
+  "7033_3339-3403__rue_Griffith_SLD": {
+   "pages_marquees": {
+    "0": 62
+   },
+   "pages_sans_marque": []
+  },
+  "7034_10550__boul_Parkway_SLD": {
+   "pages_marquees": {
+    "0": 29
+   },
+   "pages_sans_marque": []
+  },
+  "7035_4451-4479__a._Laval_SLD": {
+   "pages_marquees": {
+    "0": 62
+   },
+   "pages_sans_marque": []
+  },
+  "7036_8100__boul_Cavendish_SLD": {
+   "pages_marquees": {
+    "0": 3
+   },
+   "pages_sans_marque": []
+  },
+  "7037_7527-7583__boul_Henri-Bourassa_Est_SLD": {
+   "pages_marquees": {
+    "0": 62
+   },
+   "pages_sans_marque": []
+  },
+  "7038_2900-2976__rue_Joseph-A.-Bombardier_SLD": {
+   "pages_marquees": {
+    "0": 44
+   },
+   "pages_sans_marque": []
+  },
+  "7039_1111__46e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 11
+   },
+   "pages_sans_marque": []
+  },
+  "7040_877__boul_Jean-Paul-Vincent_SLD": {
+   "pages_marquees": {
+    "0": 46
+   },
+   "pages_sans_marque": []
+  },
+  "7042_1949__rue_On__sime-Gagnon_SLD": {
+   "pages_marquees": {
+    "0": 16
+   },
+   "pages_sans_marque": []
+  },
+  "7044_1475__32e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 38
+   },
+   "pages_sans_marque": []
+  },
+  "7045_839-859__boul_Jean-Paul-Vincent_SLD": {
+   "pages_marquees": {
+    "0": 28
+   },
+   "pages_sans_marque": []
+  },
+  "7046-330__av_Avro_SLD": {
+   "pages_marquees": {
+    "0": 91
+   },
+   "pages_sans_marque": []
+  },
+  "7048-784-818__boul_Guimond_SLD": {
+   "pages_marquees": {
+    "0": 19
+   },
+   "pages_sans_marque": []
+  },
+  "7049_1520-1660__55e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 28
+   },
+   "pages_sans_marque": []
+  },
+  "7050_3025__rue_Joseph-A.-Bombardier_SLD": {
+   "pages_marquees": {
+    "0": 21
+   },
+   "pages_sans_marque": []
+  },
+  "7051_1730-1850__55e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 22
+   },
+   "pages_sans_marque": []
+  },
+  "7053_2177__boul_Fernand-Lafontaine_SLD": {
+   "pages_marquees": {
+    "0": 60
+   },
+   "pages_sans_marque": []
+  },
+  "7054_2525__boul_Fernand-Lafontaine_SLD": {
+   "pages_marquees": {
+    "0": 41
+   },
+   "pages_sans_marque": []
+  },
+  "7055_1415__32e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 16
+   },
+   "pages_sans_marque": []
+  },
+  "7056_9101-9175__boul_des_Sciences_SLD": {
+   "pages_marquees": {
+    "0": 42
+   },
+   "pages_sans_marque": []
+  },
+  "7057_1415-1531__rue_Berlier_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "7060_4140-4150__boul_de_Portland_SLD": {
+   "pages_marquees": {
+    "0": 54
+   },
+   "pages_sans_marque": []
+  },
+  "7061_290-316__rue_Benjamin-Hudon_SLD": {
+   "pages_marquees": {
+    "0": 18
+   },
+   "pages_sans_marque": []
+  },
+  "7062_555_et_604-678__rue_Deslauriers_SLD": {
+   "pages_marquees": {
+    "0": 36
+   },
+   "pages_sans_marque": []
+  },
+  "7064_2099-2109__boul_Fernand-Lafontaine_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "7065_2625__boul_Jacques-Cartier_Est_SLD": {
+   "pages_marquees": {
+    "0": 21
+   },
+   "pages_sans_marque": []
+  },
+  "7066_730__rue_Delage_SLD": {
+   "pages_marquees": {
+    "0": 24
+   },
+   "pages_sans_marque": []
+  },
+  "7067_20__boul_Hymus_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "7068_5055__rue_L__vy_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "7072_600-610__rue_B__riault_SLD": {
+   "pages_marquees": {
+    "0": 55
+   },
+   "pages_sans_marque": []
+  },
+  "7073_3401-3421__boul_Industriel_SLD": {
+   "pages_marquees": {
+    "0": 14
+   },
+   "pages_sans_marque": []
+  },
+  "7074_3370-3418__boul_Industriel_SLD": {
+   "pages_marquees": {
+    "0": 32
+   },
+   "pages_sans_marque": []
+  },
+  "7076_620-650__rue_Giffard_SLD": {
+   "pages_marquees": {
+    "0": 29
+   },
+   "pages_sans_marque": []
+  },
+  "7077_1280__rue_Nobel_SLD": {
+   "pages_marquees": {
+    "0": 50
+   },
+   "pages_sans_marque": []
+  },
+  "7078_2089-2111__de_la_Province_SLD": {
+   "pages_marquees": {
+    "0": 47
+   },
+   "pages_sans_marque": []
+  },
+  "7079-830__rue_Delage_SLD": {
+   "pages_marquees": {
+    "0": 38
+   },
+   "pages_sans_marque": []
+  },
+  "7080-2044__rue_de_la_Province_SLD": {
+   "pages_marquees": {
+    "0": 31
+   },
+   "pages_sans_marque": []
+  },
+  "7081-6445__ch_de_la_C__te-de-Liesse_SLD": {
+   "pages_marquees": {
+    "0": 4
+   },
+   "pages_sans_marque": []
+  },
+  "7082-601-623__rue_Le_Breton_SLD": {
+   "pages_marquees": {
+    "0": 13
+   },
+   "pages_sans_marque": []
+  },
+  "7083-601-631__rue_B__riault_SLD": {
+   "pages_marquees": {
+    "0": 22
+   },
+   "pages_sans_marque": []
+  },
+  "7084-2115-2147__rue_de_la_Province_SLD": {
+   "pages_marquees": {
+    "0": 28
+   },
+   "pages_sans_marque": []
+  },
+  "7085-4200__Louis_B._Mayer_SLD": {
+   "pages_marquees": {
+    "0": 8
+   },
+   "pages_sans_marque": []
+  },
+  "7086-5200__rue_J.-A.-Bombardier_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "7087-2060-2068__rue_de_la_Province_SLD": {
+   "pages_marquees": {
+    "0": 25
+   },
+   "pages_sans_marque": []
+  },
+  "7088-80-140__av_Lindsay_SLD": {
+   "pages_marquees": {
+    "0": 28
+   },
+   "pages_sans_marque": []
+  },
+  "7089-677-687__rue_Giffard_SLD": {
+   "pages_marquees": {
+    "0": 25
+   },
+   "pages_sans_marque": []
+  },
+  "7090-25__rue_de_Lauzon_SLD": {
+   "pages_marquees": {
+    "0": 27
+   },
+   "pages_sans_marque": []
+  },
+  "7091-3650__boul_Matte_SLD": {
+   "pages_marquees": {
+    "0": 29
+   },
+   "pages_sans_marque": []
+  },
+  "7092-605-607__rue_Deslauriers_SLD": {
+   "pages_marquees": {
+    "0": 4
+   },
+   "pages_sans_marque": []
+  },
+  "7093-730__boul_Industriel_SLD": {
+   "pages_marquees": {
+    "0": 57
+   },
+   "pages_sans_marque": []
+  },
+  "7094-901-937__rue_Michelin_SLD": {
+   "pages_marquees": {
+    "0": 12
+   },
+   "pages_sans_marque": []
+  },
+  "7096-8459-8497__ch_Dalton_SLD": {
+   "pages_marquees": {
+    "0": 25
+   },
+   "pages_sans_marque": []
+  },
+  "7097-243__boul_Hymus_SLD": {
+   "pages_marquees": {
+    "0": 3
+   },
+   "pages_sans_marque": []
+  },
+  "7102-731-749__av_Meloche_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "7103-679-701__av_Meloche_SLD": {
+   "pages_marquees": {
+    "0": 27
+   },
+   "pages_sans_marque": []
+  },
+  "7104-894-930__rue_Bergar_SLD": {
+   "pages_marquees": {
+    "0": 23
+   },
+   "pages_sans_marque": []
+  },
+  "7105-1405-1453__rue_Berga_SLD": {
+   "pages_marquees": {
+    "0": 33
+   },
+   "pages_sans_marque": []
+  },
+  "7106-1455__32e_Ave_SLD": {
+   "pages_marquees": {
+    "0": 27
+   },
+   "pages_sans_marque": []
+  },
+  "7107-703__av_Meloche_SLD": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "7109-2745__av_Francis-Hughes_SLD": {
+   "pages_marquees": {
+    "0": 16
+   },
+   "pages_sans_marque": []
+  },
+  "7111-874-896__rue_Jean_Neveu__Place_Trans-Canada__SLD (2)": {
+   "pages_marquees": {
+    "0": 17
+   },
+   "pages_sans_marque": []
+  },
+  "7113-982-1002__rue_JeanNeveu__Place_Trans-Canada__SLD (1)": {
+   "pages_marquees": {
+    "0": 16
+   },
+   "pages_sans_marque": []
+  },
+  "7115-938-952_rue_Jean_Neveu__Place_Trans-Canada__SLD (2)": {
+   "pages_marquees": {
+    "0": 15
+   },
+   "pages_sans_marque": []
+  },
+  "7117-3600__boul_Matte_SLD": {
+   "pages_marquees": {
+    "0": 21
+   },
+   "pages_sans_marque": []
+  },
+  "7118-19100-19180__rte_Transcanadienne_SLD": {
+   "pages_marquees": {
+    "0": 9
+   },
+   "pages_sans_marque": []
+  },
+  "7120-2156__rue_Province__715__rue_Delage__SLD": {
+   "pages_marquees": {
+    "0": 22
+   },
+   "pages_sans_marque": []
+  },
+  "7121-3300__boul_Jean-Baptiste-Deschamps_SLD": {
+   "pages_marquees": {
+    "0": 3
+   },
+   "pages_sans_marque": []
+  },
+  "7122-115__rue_de_Vaudreuil_SLD": {
+   "pages_marquees": {
+    "0": 17
+   },
+   "pages_sans_marque": []
+  },
+  "7123-3424-3428__av_Francis-Hughues_SLD": {
+   "pages_marquees": {
+    "0": 6
+   },
+   "pages_sans_marque": []
+  },
+  "7711-450-500__av_Saint-Jean-Baptiste__Qu__bec_SLD": {
+   "pages_marquees": {
+    "0": 64
+   },
+   "pages_sans_marque": []
+  },
+  "8008-1601__rue_Dickson__Montreal_SLD": {
+   "pages_marquees": {
+    "0": 12
+   },
+   "pages_sans_marque": []
+  },
+  "_6__Thermography_and_Arc_Flash_-_Service_Specifications_FR": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "6007_2200__rue_de_l_Aviation_SLD": {
+   "pages_marquees": {
+    "0": 26
+   },
+   "pages_sans_marque": []
+  }
+ },
+ "S-1795 (17-Juin-2026)": {
+  "Kelvin-Emtech -20260610- ELECTRIQUE- R20261029 (1)": {
+   "pages_marquees": {
+    "5": 27,
+    "6": 173
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9
+   ]
+  },
+  "Artesa-TABLEAU DE VENTILLATION ET LISTE DES DESSINS JARDINS INT (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  }
+ },
+ "S-1797 (19-Juin-2026)": {
+  "00 Électricité_Plans_pour AO": {
+   "pages_marquees": {
+    "6": 10,
+    "10": 83,
+    "11": 327,
+    "12": 3,
+    "13": 278,
+    "15": 23,
+    "16": 114,
+    "17": 77,
+    "18": 88,
+    "19": 37,
+    "20": 9,
+    "23": 39,
+    "24": 21
+   },
+   "pages_sans_marque": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    14,
+    21,
+    22,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00018": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00003": {
+   "pages_marquees": {
+    "0": 125
+   },
+   "pages_sans_marque": []
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00004": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00005": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00006": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00007": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00008": {
+   "pages_marquees": {
+    "0": 59
+   },
+   "pages_sans_marque": []
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00009": {
+   "pages_marquees": {
+    "0": 37
+   },
+   "pages_sans_marque": []
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00010": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda2_FormatA0_11Feuilles-unlocked-page-00011": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00003": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00004": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00005": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00006": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00007": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00008": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00009": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00010": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00011": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00012": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00013": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00014": {
+   "pages_marquees": {
+    "0": 25
+   },
+   "pages_sans_marque": []
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00015": {
+   "pages_marquees": {
+    "0": 17
+   },
+   "pages_sans_marque": []
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00016": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00017": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00018": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00019": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "AGR-2726_Plans_EL_Addenda1_FormatA0_20Feuilles-unlocked-page-00020": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "S-1805 (26-Juin-2026)": {
+  "Devis - ÉCLAIRAGE": {
+   "pages_marquees": {
+    "8": 4
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9
+   ]
+  }
+ },
+ "S-1807 (30-Juin-2026)": {
+  "A226-011_VentDeLOuest_GroupeMaurice_COMMUNS_Techniques_20260619": {
+   "pages_marquees": {
+    "4": 39,
+    "6": 25,
+    "7": 221
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    5,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "APPEL D offre": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "Corflex_DessinsTechniques_Cloisons (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  }
+ },
+ "S-1808 (1-Juillet-2026)": {
+  "25-64_CPE Copains d'Abord_SOUM_REV01": {
+   "pages_marquees": {
+    "15": 12,
+    "16": 8,
+    "17": 218,
+    "18": 235,
+    "19": 148,
+    "20": 126,
+    "21": 8
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  "25-64_CPE Copains d'Abord_SOUM_REV01 - 4 1": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "S-1809 (1-Juillet-2026)": {
+  "130 Place Charles-Lemoyne_Plans électriques": {
+   "pages_marquees": {
+    "4": 1,
+    "5": 2,
+    "6": 2,
+    "7": 29,
+    "8": 27
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3
+   ]
+  }
+ },
+ "S-1811 (2-Juillet-2026)": {
+  "00 Électricité_Plans_pour AO": {
+   "pages_marquees": {
+    "3": 47,
+    "5": 270,
+    "6": 262,
+    "7": 9,
+    "8": 142
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    4,
+    9,
+    10,
+    11
+   ]
+  },
+  "Addenda 02": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00003": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00004": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00005": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00006": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00007": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00008": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00009": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00010": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00011": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00012": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00013": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00014": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00015": {
+   "pages_marquees": {
+    "0": 55
+   },
+   "pages_sans_marque": []
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00016": {
+   "pages_marquees": {
+    "0": 271
+   },
+   "pages_sans_marque": []
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00017": {
+   "pages_marquees": {
+    "0": 89
+   },
+   "pages_sans_marque": []
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00018": {
+   "pages_marquees": {
+    "0": 6
+   },
+   "pages_sans_marque": []
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00019": {
+   "pages_marquees": {
+    "0": 150
+   },
+   "pages_sans_marque": []
+  },
+  "00 Addenda MEP01_Plans-unlocked-page-00020": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "00 Civil_Plans_pour AO": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ]
+  }
+ },
+ "S-1814 (6-Juillet-2026)": {
+  "2026-082 - Plans électriques 2026-07-02": {
+   "pages_marquees": {
+    "5": 134,
+    "6": 97,
+    "7": 155,
+    "8": 144,
+    "9": 129,
+    "10": 92,
+    "11": 32,
+    "12": 32,
+    "15": 3,
+    "18": 62
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    13,
+    14,
+    16,
+    17,
+    19,
+    20,
+    21,
+    22
+   ]
+  }
+ },
+ "S-1815 (7-Juillet-2026)": {
+  "25-979_FIERA CAPITAL-SOUMISSION": {
+   "pages_marquees": {
+    "5": 4,
+    "6": 3,
+    "8": 10,
+    "9": 4,
+    "10": 4,
+    "11": 7
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    7
+   ]
+  }
+ },
  "S-427 (2-Décembre-2022)": {
   "HUB - Plans lectrique - mis pour soumission": {
    "pages_marquees": {},
@@ -33984,5 +34336,848 @@
  "S21 (19-Août-2021)": {},
  "Ste Croix (16-Novembre-2021)": {},
  "TEST (2-Juillet-2025)": {},
+ "s-0844 (13-Novembre-2023)": {
+  "169 - Electricite_plan (1)": {
+   "pages_marquees": {
+    "8": 15,
+    "9": 124
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  "20240313_Plans_Elec_Pour Changement 08": {
+   "pages_marquees": {
+    "3": 1,
+    "4": 4,
+    "5": 3
+   },
+   "pages_sans_marque": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    6,
+    7
+   ]
+  },
+  "20240424_Plans Elec pour Changement 11": {
+   "pages_marquees": {
+    "2": 33
+   },
+   "pages_sans_marque": [
+    1,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "Changement 011": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4
+   ]
+  },
+  "M03-MG-M-RC01_R05": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "M03-MG-M-RC01_R05 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "08-EE-M-RC01_R06-EE-M-RC01": {
+   "pages_marquees": {
+    "0": 5
+   },
+   "pages_sans_marque": []
+  },
+  "Plans_Mec_Pour Changement 13": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2
+   ]
+  },
+  "Plans_Elec_Pour Changement 13": {
+   "pages_marquees": {
+    "1": 2,
+    "2": 6
+   },
+   "pages_sans_marque": []
+  },
+  "connectrac vendant": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "s-1572-1 (21-Octobre-2025)": {
+  "27250002eAO": {
+   "pages_marquees": {
+    "3": 81,
+    "4": 255,
+    "5": 85,
+    "6": 143,
+    "7": 130,
+    "8": 133,
+    "9": 36,
+    "10": 174,
+    "11": 58,
+    "13": 48,
+    "14": 1
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    12,
+    15
+   ]
+  },
+  "27250002_A-E-01": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3
+   ]
+  },
+  "27250002eAE01": {
+   "pages_marquees": {
+    "3": 11,
+    "4": 11,
+    "5": 3,
+    "6": 12,
+    "7": 5,
+    "10": 5,
+    "11": 26,
+    "12": 22,
+    "14": 3
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    8,
+    9,
+    13,
+    15,
+    16
+   ]
+  },
+  "2025-10-17_MB West-Island_Issued for Addendum 02": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  "24073_Bid Form_Addenda 2": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "Registre_documents": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2
+   ]
+  },
+  "IMG_1156": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1157": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1158": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1159": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1160": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1161": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1162": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1163": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1164": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1165": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1166": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1167": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1168": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1169": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1170": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1171": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1172": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1173": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1174": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1175": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1176": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1177": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1178": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1179": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1180": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1181": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1182": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1183": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1184": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1185": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1186": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1187": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1188": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1189": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1190": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1191": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1192": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1193": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1194": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1195": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1196": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1197": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1198": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1199": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1200": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1201": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1202": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1203": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1204": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1205": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1206": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1207": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1208": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1209": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1210": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1211": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1212": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1213": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1214": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1215": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "IMG_1216": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "24073_MBWI_Addenda A-04_2025-10-24": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3
+   ]
+  }
+ },
+ "s-1575A (15-Octobre-2025)": {
+  "BENEVOL IBERVILLE": {
+   "pages_marquees": {
+    "7": 121,
+    "8": 5,
+    "10": 76
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    11,
+    12
+   ]
+  },
+  "ADD(E01)-GRA527144": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "CABI _ Directive A _ 25-02-2025": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "Addenda A01": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ]
+  },
+  "ADD(M01)-GRA527430": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2
+   ]
+  },
+  "ADD(E02)-GRA527144": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "ADD(E01)-GRA527144 (1)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  }
+ },
+ "s-1606 (6-Novembre-2025) (1)": {
+  "Base Building - 17-21e - Électricté 2023-04-06": {
+   "pages_marquees": {
+    "4": 29,
+    "6": 20
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    8
+   ]
+  },
+  "Plans - ELEC_SOUMISSION_2025-11-04": {
+   "pages_marquees": {
+    "4": 39,
+    "5": 756,
+    "6": 71,
+    "7": 14,
+    "8": 564,
+    "9": 20,
+    "10": 28,
+    "16": 137
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17
+   ]
+  },
+  "VBMAAJJDmA1JcFN5ZkJkS25JMQA": {
+   "pages_marquees": {
+    "6": 186,
+    "7": 8
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ]
+  },
+  "2025-AD- 146 -Invitation - OACI, 19E 1001 R. Bourassa - Docu (Le groupe DR electrique inc.)": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "prix controle révision 1 1001 robert bourassa": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  }
+ },
+ "s-16651 (19-Janvier-2026)": {},
+ "s-1777 (21-Mai-2026)": {
+  "Regroupe-unlocked": {
+   "pages_marquees": {
+    "38": 45
+   },
+   "pages_sans_marque": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+   ]
+  },
+  "unlocked_SCOTIA-page-00001": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "unlocked_SCOTIA-page-00002": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "unlocked_SCOTIA-page-00003": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "unlocked_SCOTIA-page-00004": {
+   "pages_marquees": {
+    "0": 428
+   },
+   "pages_sans_marque": []
+  },
+  "unlocked_SCOTIA-page-00005": {
+   "pages_marquees": {
+    "0": 3
+   },
+   "pages_sans_marque": []
+  },
+  "unlocked_SCOTIA-page-00006": {
+   "pages_marquees": {
+    "0": 216
+   },
+   "pages_sans_marque": []
+  },
+  "unlocked_SCOTIA-page-00007": {
+   "pages_marquees": {},
+   "pages_sans_marque": [
+    0
+   ]
+  },
+  "unlocked_SCOTIA-page-00008": {
+   "pages_marquees": {
+    "0": 40
+   },
+   "pages_sans_marque": []
+  }
+ },
  "test 14oct (14-Octobre-2025)": {}
 }
