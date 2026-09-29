@@ -25,7 +25,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
-REPERE_RE = re.compile(r"^([A-Z]+\d{2})-(\d+)$")
+REPERE_RE = re.compile(r"^([A-Z]+\d{0,2})-(\d+)$")   # I01-03, M12-01 (materiel) ; CH-01, IS-10 (agrege, travaux)
 
 # Default bordereau wording when only the estimator's family counts are available.
 DEFAULT_MODEL = "MODELE NON PRECISE"
