@@ -145,15 +145,27 @@ def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
     return dict(stats)
 
 
+# symbols with no ASCII decomposition: spelled out instead of silently dropped by the ASCII fold
+ASCII_SYMBOLS = {"\u2192": "->", "\u2190": "<-", "\u00ab": '"', "\u00bb": '"', "\u2018": "'", "\u2019": "'",
+                 "\u201c": '"', "\u201d": '"', "\u00a7": "par. ", "\u2248": "~", "\u00d7": "x", "\u2260": "<>",
+                 "\u2264": "<=", "\u2265": ">=", "\u2013": "-", "\u2014": "-", "\u2026": "...", "\u00b0": " deg"}
+
+
+def _fold(s: str) -> str:
+    s = re.sub("\u00ab[\\s\u00a0\u202f]*", "\u00ab", s or "")      # French guillemets: drop the inner spaces
+    s = re.sub("[\\s\u00a0\u202f]*\u00bb", "\u00bb", s)
+    s = "".join(ASCII_SYMBOLS.get(ch, ch) for ch in s)
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def ascii_upper(s: str) -> str:
     """EXEMPLE text is unaccented upper-case ASCII (REPERES, QUANTITES)."""
-    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode("ascii")
-    return re.sub(r"\s+", " ", s).strip().upper()
+    return _fold(s).upper()
 
 
 def ascii_text(s: str) -> str:
-    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode("ascii")
-    return re.sub(r"\s+", " ", s).strip()
+    return _fold(s)
 
 
 def natural_key(name: str):

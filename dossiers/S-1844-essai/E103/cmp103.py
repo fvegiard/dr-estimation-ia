@@ -4,7 +4,7 @@ import numpy as np
 from pathlib import Path
 from scipy.optimize import linear_sum_assignment
 from src.validation.compare_qpl import lire_qpl
-plans=lire_qpl(Path('/mnt/user-data/uploads/cloud-transfert/s1844/S-1844-Dupuis.qpl'),'humain')
+plans=lire_qpl(Path(sys.argv[1]),'humain')
 p=[q for q in plans if 'POUR SOUMISSION-page-00006' in q.nom][0]
 H=np.array([[m.x,m.y] for m in p.marques]);Hl=[m.libelle for m in p.marques]
 rows=list(csv.DictReader(open('dossiers/S-1844-essai/E103/occurrences-visuel.csv')))

@@ -114,3 +114,9 @@ def test_render_from_bridge(tmp_path):
     for rep_id in ("I01-01", "I02-01", "I02-02", "I03-01"):
         assert rep_id in plan
     assert "DSI01" in plan                     # original page content kept
+
+
+def test_ascii_fold_keeps_symbols():
+    from src.estimer.render.from_releve import ascii_text, ascii_upper
+    assert ascii_text("échelle « AUCUNE » → à métrer (§5b), ≈9 vus") == 'echelle "AUCUNE" -> a metrer (par. 5b), ~9 vus'
+    assert ascii_upper("Réserve × 2") == "RESERVE X 2"

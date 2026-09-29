@@ -12,7 +12,7 @@ Entrées : `../E103-page6.pdf`, `../SKILL.md` uniquement. Porte de prévention :
 | SO4 - WSXA MWO PDT WH | 4 | #18 #25 #26 #37 |
 | SW1 - NPODMA WH | 2 | #34 #36 |
 | SW6 - NPOD TOUCH WH | 1 | #13 |
-Réserves sans quantité : PS 150, CAT5e (à métrer), RJ45 (par règle), SN (à classer). 13 réserves au total : `reserves.md`.
+Réserves sans quantité : PS 150, CAT5e (à métrer), RJ45 (par règle), SN (à classer). 12 réserves au total : reserves.md (R-001 à R-012 ; liées aux lignes du bordereau par la colonne prescription).
 
 ## Fichiers
 - `nomenclature.csv` — 7 familles comptées + 4 compteurs en réserve (colonnes code/materiel/portee/modele ajoutées, valeurs lues par le relevé, rien d'ajouté).
