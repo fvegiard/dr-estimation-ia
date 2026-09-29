@@ -43,6 +43,7 @@ RELEVE = RACINE / "releve"
 METHODE = RACINE / ".claude" / "skills" / "releve-planexpert" / "SKILL.md"
 STANDARD = RACINE / "apprentissage" / "hr26-14-exemplaire" / "STANDARD-RELEVE.md"
 LIBELLES = RACINE / "apprentissage" / "qpl-2021-2026" / "dictionnaire-symboles.json"
+LIEN_HUMAIN = Path(os.environ.get("ESTIMATEUR_LIEN_HUMAIN") or RACINE / "apprentissage" / "lien-humain")
 NOM_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 FEUILLE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 ECRITURE_PERMISE = {
@@ -58,8 +59,9 @@ dossier de plans PDF brut et tu livres le PDF annoté au format de l'exemplaire 
 Déroulement : deposer_fichier (ou preparer_dossier avec chemin_source) → preparer_dossier → lire la ressource
 estimateur://methode et l'appliquer (voir_image des aperçus/tuiles, zoomer, ecrire_fichier) → extraire_occurrences →
 verifier_releve jusqu'à « pret »: true → produire_livrables → voir_image du rendu pour te contrôler toi-même →
-comparer_estimateur si une référence existe. Rien n'est inventé : chaque quantité vient d'un symbole vu, d'une
-étiquette, d'une cédule ou d'une note ; le doute va dans reserves.md."""
+comparer_estimateur si une référence existe. Avant de nommer un article de nomenclature : chercher_libelle (nom
+employé par les estimateurs) puis exemples_humains (comment ils l'ont repéré sur leurs plans). Rien n'est inventé :
+chaque quantité vient d'un symbole vu, d'une étiquette, d'une cédule ou d'une note ; le doute va dans reserves.md."""
 
 mcp = MCPServer("expert-estimateur", instructions=INSTRUCTIONS, version="0.1.0")
 
@@ -223,6 +225,71 @@ def voir_image(dossier: str, chemin: str, largeur_max: int = 1600) -> Image:
     buf = io.BytesIO()
     im.convert("RGB").save(buf, "PNG", optimize=True)
     return Image(data=buf.getvalue(), format="png")
+
+
+# ---------------------------------------------------------------- outils : savoir des estimateurs (projets Plan Expert)
+_CONNAISSANCE: dict | None = None
+
+
+def connaissance() -> dict:
+    """apprentissage/lien-humain/connaissance.json : ce que les estimateurs ont fait des documents reçus."""
+    global _CONNAISSANCE
+    if _CONNAISSANCE is None:
+        p = LIEN_HUMAIN / "connaissance.json"
+        if not p.exists():
+            raise ToolError("base humaine absente : lancer python -m src.apprentissage.lien_humain")
+        _CONNAISSANCE = {s["libelle"]: s for s in json.loads(p.read_text(encoding="utf-8"))["symboles"]}
+    return _CONNAISSANCE
+
+
+def _pli(t: str) -> str:
+    import unicodedata
+
+    t = unicodedata.normalize("NFKD", t or "").encode("ascii", "ignore").decode("ascii").upper()
+    return re.sub(r"[^A-Z0-9]+", " ", t).strip()
+
+
+@mcp.tool()
+def chercher_libelle(texte: str, n: int = 8) -> list[dict]:
+    """Trouve les libellés que les estimateurs DR emploient dans Plan Expert pour un texte de légende ou un nom
+    d'appareil (ex. « prise duplex DDFT », « détecteur de fumée »). Renvoie libellé canonique, variantes, catégorie,
+    nombre de marques et de projets. Reprendre ce libellé dans nomenclature.csv."""
+    import difflib
+
+    q = _pli(texte)
+    mots = set(q.split())
+    res = []
+    for lab, s in connaissance().items():
+        noms = [lab, *s.get("variantes", [])]
+        ratio = max(difflib.SequenceMatcher(None, q, _pli(v)).ratio() for v in noms)
+        commun = max(len(mots & set(_pli(v).split())) / max(1, len(mots)) for v in noms)
+        score = max(ratio, commun) + min(0.1, s["projets"] / 2000)
+        res.append((score, s))
+    res.sort(key=lambda r: -r[0])
+    return [{"libelle": s["libelle"], "score": round(sc, 3), "categorie": s.get("categorie", ""),
+             "variantes": s.get("variantes", [])[:6], "marques": s["occurrences"], "projets": s["projets"]}
+            for sc, s in res[:max(1, min(n, 30))]]
+
+
+@mcp.tool()
+def exemples_humains(libelle: str) -> list:
+    """Montre comment les estimateurs ont repéré ce libellé sur les documents reçus : planche de découpes des pages
+    mêmes où ils ont cliqué dans Plan Expert (anneau rouge = marque humaine), + statistiques (marques, projets,
+    forme/couleur Plan Expert, libellés comptés juste à côté, exemples document/page)."""
+    c = connaissance()
+    import unicodedata
+
+    k = re.sub(r"\s+", " ", unicodedata.normalize("NFKD", libelle or "").encode("ascii", "ignore").decode("ascii"))
+    s = c.get(k.strip().upper()) or next((v for kk, v in c.items() if _pli(kk) == _pli(libelle)), None)
+    if s is None:
+        proches = chercher_libelle(libelle, 5)
+        raise ToolError(f"libellé inconnu : {libelle} ; proches : {[p['libelle'] for p in proches]}")
+    infos = {k: s[k] for k in ("libelle", "categorie", "sous_type", "occurrences", "projets", "variantes",
+                               "marque_planexpert", "voisins", "exemples") if k in s}
+    out = [json.dumps(infos, ensure_ascii=False)]
+    if s.get("galerie") and (LIEN_HUMAIN / s["galerie"]).exists():
+        out.append(Image(data=(LIEN_HUMAIN / s["galerie"]).read_bytes(), format="jpeg"))
+    return out
 
 
 # ---------------------------------------------------------------- outils : lecture fine
@@ -451,7 +518,19 @@ def _methode() -> str:
     entete = ("# Méthode de relevé (serveur MCP)\n\nOutils : preparer_dossier, voir_image (aperçus, tuiles), zoomer, "
               "nature_traits, ecrire_fichier (fichiers de travail/), extraire_occurrences, verifier_releve, "
               "produire_livrables, comparer_estimateur. Là où la méthode dit « lire » ou « Read », utiliser "
-              "voir_image ou lire_fichier ; « écrire » = ecrire_fichier.\n\n")
+              "voir_image ou lire_fichier ; « écrire » = ecrire_fichier.\n\n"
+              "## Colonnes du format EXEMPLE (rendu final, chaîne from_releve)\n\n"
+              "- feuilles-classement.csv : ajouter `bordereau` = materiel (1 ligne par repère, défaut des plans de "
+              "devis), agrege (1 ligne par famille) ou travaux ; mettre `cartouche=<NUMÉRO>` dans `note`.\n"
+              "- nomenclature.csv : ajouter `code` (étiquette du symbole sur le plan : DP1, K, CE2…), `materiel` "
+              "(nom de famille, ex. « Appareil de contrôle nLight DP1 »), `portee` (INSTALLER, FOURNIR ET "
+              "INSTALLER…), `modele`, `prescription`, `discipline` (incendie | electricite | urgence) — valeurs "
+              "lues sur le plan ou le devis seulement.\n"
+              "- occurrences-*.csv : `prescription`, `reserve` (1 si doute), `parent`, et si le symbole est une "
+              "boîte : `x0_pt,y0_pt,x1_pt,y1_pt`. La pastille est recentrée sur le symbole vectoriel le plus proche "
+              "(ancrage automatique) ; un repère = un symbole.\n"
+              "- reserves.md : R-001… une par ligne, en nommant la feuille ; renvoyer une ligne du bordereau par "
+              "« voir R-00n » dans sa prescription.\n\n")
     return entete + t
 
 
@@ -471,6 +550,13 @@ def ressource_standard() -> str:
               description="Libellés Plan Expert appris des projets humains 2021-2026 (orthographe à reprendre).")
 def ressource_libelles() -> str:
     return LIBELLES.read_text(encoding="utf-8") if LIBELLES.exists() else "{}"
+
+
+@mcp.resource("estimateur://pratiques-humaines", mime_type="text/markdown",
+              description="Ce que les estimateurs font des documents reçus dans Plan Expert (libellés, voisins, pages).")
+def ressource_pratiques() -> str:
+    p = LIEN_HUMAIN / "PRATIQUES.md"
+    return p.read_text(encoding="utf-8") if p.exists() else "Base humaine absente."
 
 
 @mcp.prompt(name="releve_planexpert", description="Faire le relevé complet d'un dossier de plans.")

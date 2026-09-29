@@ -122,3 +122,36 @@ def test_http_exige_cle(monkeypatch):
                         "protocolVersion": "2025-06-18", "capabilities": {},
                         "clientInfo": {"name": "essai", "version": "1"}}})
         assert r.status_code == 200
+
+
+def test_parite_claude_e103(tmp_path):
+    """Le relevé E103 (S-1844) de la chaîne Claude rendu par le serveur MCP : 23 repères, plan + bordereau materiel."""
+    import shutil
+    from pathlib import Path
+
+    from serveur_mcp.exemple import rendre
+    from serveur_mcp.serveur import controler
+
+    src = Path(__file__).resolve().parents[1] / "dossiers" / "S-1844-essai" / "E103"
+    t = tmp_path / "travail"
+    (t / "feuilles").mkdir(parents=True)
+    shutil.copy(src / "E103-page6.pdf", t / "feuilles" / "E103.pdf")
+    with pymupdf.open(src / "E103-page6.pdf") as d:
+        w, h = d[0].rect.width, d[0].rect.height
+    (t / "feuilles.csv").write_text(f"feuille,fichier,page,largeur_pt,hauteur_pt\nE103,E103-page6.pdf,1,{w},{h}\n",
+                                    encoding="utf-8")
+    (t / "feuilles-classement.csv").write_text("feuille,type,echelle,bordereau,note\nE103,plan,AUCUNE,materiel,cartouche=E103\n",
+                                               encoding="utf-8")
+    for f in ("nomenclature.csv", "occurrences-visuel.csv", "reserves.md"):
+        shutil.copy(src / f, t / f)
+    (t / "occurrences-texte.csv").write_text("feuille,label,x_pt,y_pt,source,note\n", encoding="utf-8")
+    ctl = controler(t)
+    assert ctl["pret"], ctl
+    r = rendre(t, tmp_path, "S-1844-E103")
+    assert r["reperes"] == 23
+    with pymupdf.open(tmp_path / "S-1844-E103-RELEVE.pdf") as d:
+        assert len(d) == 2
+        assert "RELEVE E103 - MATERIEL" in d[0].get_text()
+        texte = d[1].get_text()
+        assert "BORDEREAU MATERIEL - E103" in texte and "M01-08" in texte and "R-012" in texte
+

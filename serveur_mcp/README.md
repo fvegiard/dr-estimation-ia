@@ -74,9 +74,26 @@ Colonnes facultatives pour enrichir le bordereau (sinon « A PRECISER » / « MO
 | `extraire_occurrences`, `verifier_releve` | extraction par étiquettes, contrôles bloquants |
 | `produire_livrables`, `recuperer_livrable` | PDF format exemplaire, `.qpl`, rapport ; téléchargement |
 | `comparer_estimateur` | écart marque par marque avec l'estimateur |
+| `chercher_libelle` | nom employé par les estimateurs pour un texte de légende |
+| `exemples_humains` | planche des vrais symboles cliqués par les estimateurs pour un libellé + habitudes |
 
 Ressources : `estimateur://methode`, `estimateur://standard` (standard de l'exemplaire HR26-14),
-`estimateur://libelles` (libellés Plan Expert appris des projets 2021-2026). Prompt : `releve_planexpert(dossier)`.
+`estimateur://libelles` (libellés Plan Expert appris des projets 2021-2026),
+`estimateur://pratiques-humaines` (ce que les estimateurs font des documents reçus). Prompt : `releve_planexpert(dossier)`.
+
+## Savoir des estimateurs : document reçu ↔ ce qu'on en fait dans Plan Expert
+
+Deux choses distinctes : **le document reçu** (PDF du client) et **ce que l'estimateur en fait dans Plan Expert**
+(le `.qpl` : Plan Expert rastérise chaque page reçue en `<document> - <page>.png` et l'estimateur y pose une marque
+par appareil). Seuls les documents rattachés à un `.qpl` servent : ce sont eux qui disent ce qu'on a fait.
+`python -m src.apprentissage.lien_humain --racine <dossier des projets Plan Expert>` relit chaque marque sur la page
+même où elle a été cliquée et écrit `apprentissage/lien-humain/` (`connaissance.json`, `documents.json`,
+`galerie/*.jpg`, `PRATIQUES.md`). Ce dossier est dans le dépôt public : un LLM en nuage y a accès sans le serveur
+de fichiers.
+
+Le rendu passe par `src.estimer.render.from_releve` (même pont que la chaîne Claude : ancrage de la pastille sur
+le symbole vectoriel, formats materiel/agrege/travaux). Le test `test_parite_claude_e103` rend le relevé S-1844 E103
+de Claude par le serveur MCP (23 repères, plan + bordereau materiel + 12 réserves).
 
 ## Tests
 
