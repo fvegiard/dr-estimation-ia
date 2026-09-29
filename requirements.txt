@@ -12,3 +12,4 @@ markdown
 # serveur MCP Expert estimateur (serveur_mcp/)
 mcp>=2,<3
 uvicorn
+requests

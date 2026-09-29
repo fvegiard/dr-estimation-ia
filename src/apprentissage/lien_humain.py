@@ -16,13 +16,20 @@ Sorties (--sortie, défaut apprentissage/lien-humain) :
   galerie/<slug>.jpg  planche de 8 découpes max (projets différents), anneau rouge = point cliqué par l'humain
   PRATIQUES.md        résumé lisible (servi au LLM par le serveur MCP : estimateur://pratiques-humaines)
 
-    python -m src.apprentissage.lien_humain --racine "Z:\\Soumission\\mes projets"
+Sources — les deux liens publics, lus directement en ligne (ni Z:, ni G:, ni synchro) :
+  * OneDrive « Mes projets » (Daniel Dupuis) : ce qu'on fait dans Plan Expert (.qpl + PNG des pages).
+    Seuls les .qpl sont copiés (cache) ; chaque page PNG utile à une découpe est téléchargée puis effacée.
+  * Google Drive « original » : les documents reçus, reliés au projet par le numéro S-xxxx → recus.json.
+
+    python -m src.apprentissage.lien_humain                     # les deux liens publics (défaut)
+    python -m src.apprentissage.lien_humain --no-onedrive --racine <dossier .qpl+PNG>   # essai hors ligne
 """
 from __future__ import annotations
 
 import argparse
 import json
 import math
+import os
 import random
 import re
 import unicodedata
@@ -98,11 +105,19 @@ def couleur(argb) -> str:
         return ""
 
 
-def projets_uniques(racine: Path) -> list[Path]:
-    """Un .qpl par dossier de projet : on écarte les « - Copie » quand l'original existe."""
+def _racines(racine) -> list[Path]:
+    return [Path(r) for r in racine] if isinstance(racine, (list, tuple)) else [Path(racine)]
+
+
+def projets_uniques(racine) -> list[Path]:
+    """Un .qpl par dossier de projet : on écarte les « - Copie » quand l'original existe.
+    Plusieurs racines possibles (Z:, copie Drive de « Mes projets »…) : un même nom de dossier n'est lu qu'une fois."""
     par_dossier = defaultdict(list)
-    for q in racine.rglob("*.qpl"):
-        par_dossier[q.parent].append(q)
+    vus = {}
+    for r in _racines(racine):
+        for q in r.rglob("*.qpl"):
+            if vus.setdefault(q.parent.name, q.parent) == q.parent:
+                par_dossier[q.parent].append(q)
     out = []
     for qs in par_dossier.values():
         vrais = [q for q in qs if "copie" not in q.stem.lower()] or qs
@@ -110,8 +125,10 @@ def projets_uniques(racine: Path) -> list[Path]:
     return sorted(out)
 
 
-def collecter(racine: Path, canon: Canon, journal=print):
-    """Toutes les marques dont la page PNG est présente à côté du .qpl, + le bilan document reçu → pages."""
+def collecter(racine, canon: Canon, journal=print, distants: dict | None = None):
+    """Toutes les marques dont la page PNG est présente à côté du .qpl (sur disque ou en ligne),
+    + le bilan document reçu → pages."""
+    distants = distants or {}
     marques = []   # (canon, brut, projet, png, x, y, taille)
     formes, couleurs = defaultdict(Counter), defaultdict(Counter)
     documents = {}
@@ -131,7 +148,7 @@ def collecter(racine: Path, canon: Canon, journal=print):
                 docs[doc]["pages_sans_marque"].append(page)
                 continue
             docs[doc]["pages_marquees"][str(page)] = len(elements)
-            if not png.is_file():
+            if not (png.is_file() or png in distants):
                 continue
             for c, e in elements:
                 k = canon(c.get("Name", ""))
@@ -222,11 +239,15 @@ def planche(tuiles, titre):
     return m
 
 
-def construire(racine: Path, sortie: Path, par_libelle=PAR_LIBELLE, min_projets=MIN_PROJETS, fils=6,
-               appr: Path = APPR, journal=print, galerie_min=MIN_PROJETS_GALERIE):
+def construire(racine, sortie: Path, par_libelle=PAR_LIBELLE, min_projets=MIN_PROJETS, fils=6,
+               appr: Path = APPR, journal=print, galerie_min=MIN_PROJETS_GALERIE, distants: dict | None = None,
+               telecharger=None):
+    """`distants` : {chemin local attendu du PNG : ref distante} ; `telecharger(ref, dest)` rapatrie une page
+    dans un fichier temporaire, effacé dès la découpe faite."""
     canon = Canon(appr)
+    distants = distants or {}
     journal(f"lecture des .qpl sous {racine}")
-    marques, formes, couleurs, documents = collecter(racine, canon, journal)
+    marques, formes, couleurs, documents = collecter(racine, canon, journal, distants)
     journal(f"{len(marques)} marques avec image, {len(documents)} projets")
     par_label = defaultdict(list)
     for m in marques:
@@ -248,11 +269,21 @@ def construire(racine: Path, sortie: Path, par_libelle=PAR_LIBELLE, min_projets=
 
     def tache(item):
         png, pts = item
+        tmp = None
         try:
-            return decouper(png, pts)
+            if not png.is_file() and png in distants:
+                import tempfile
+                fd, nom = tempfile.mkstemp(suffix=".png")
+                os.close(fd)
+                tmp = Path(nom)
+                telecharger(distants[png], tmp)
+            return decouper(tmp or png, pts)
         except Exception as e:  # page illisible : on garde les autres
             journal(f"  page illisible {png.name} : {e}")
             return {}
+        finally:
+            if tmp is not None:
+                tmp.unlink(missing_ok=True)
 
     with ThreadPoolExecutor(fils) as ex:
         for i, res in enumerate(ex.map(tache, a_couper.items()), 1):
@@ -286,7 +317,7 @@ def construire(racine: Path, sortie: Path, par_libelle=PAR_LIBELLE, min_projets=
                          for m in ex],
         }
     (sortie / "connaissance.json").write_text(json.dumps({
-        "source": str(racine), "marques": len(marques), "projets": len(documents), "libelles": len(connaissance),
+        "source": [str(r) for r in _racines(racine)], "marques": len(marques), "projets": len(documents), "libelles": len(connaissance),
         "note": "document = PDF reçu, page = sa page ; x, y en pixels du PNG Plan Expert de cette page "
                 "(coin haut-gauche) ; galerie : anneau rouge = clic de l'estimateur",
         "symboles": sorted(connaissance.values(), key=lambda s: -s["occurrences"])}, ensure_ascii=False, indent=1),
@@ -324,15 +355,87 @@ def pratiques_md(conn: dict, documents: dict, n_marques: int, min_projets: int =
     return "\n".join(lignes)
 
 
+NUM_RE = re.compile(r"(?<![A-Za-z0-9])[sS]\s?-?\s?(\d{3,5})(?!\d)")
+EXT_RECUS = {".pdf", ".jpg", ".jpeg", ".png", ".tif", ".tiff", ".docx", ".doc", ".xlsx", ".xls", ".dwg", ".zip"}
+
+
+def numero(nom: str) -> str | None:
+    m = NUM_RE.search(nom)
+    return str(int(m.group(1))) if m else None
+
+
+def lier_recus(documents: dict, drive, racine_id: str, journal=print) -> dict:
+    """Relie chaque projet Plan Expert (OneDrive) au dossier des documents reçus (Google Drive, lu en ligne) par
+    son numéro S-xxxx, puis chaque document du .qpl au fichier reçu qui porte le même nom."""
+    import difflib
+
+    par_num = defaultdict(list)
+    for d in drive.lister(racine_id):
+        if d["dossier"] and (n := numero(d["nom"])):
+            par_num[n].append(d)
+    lien = {}
+    for projet, docs in sorted(documents.items()):
+        n = numero(projet)
+        if not n or n not in par_num:
+            continue
+        fichiers = []
+        for d in par_num[n]:
+            try:
+                fichiers += [{**f, "chemin": f"{d['nom']}/{f['chemin']}"} for f in drive.fichiers(d["id"])]
+            except Exception as e:  # noqa: BLE001
+                journal(f"  Drive {d['nom']} illisible : {e}")
+        fichiers = [f for f in fichiers if Path(f["nom"]).suffix.lower() in EXT_RECUS]
+        cles = {cle(Path(f["nom"]).stem): f for f in fichiers}
+        corr = {}
+        for doc in docs:
+            k = cle(doc)
+            f = cles.get(k) or next((v for c, v in cles.items() if k and (k in c or c in k)), None)
+            if f is None and cles:
+                m = difflib.get_close_matches(k, list(cles), n=1, cutoff=0.6)
+                f = cles[m[0]] if m else None
+            corr[doc] = {"fichier": f["chemin"], "url": f["url"]} if f else None
+        lien[projet] = {"dossiers_recus": [{"nom": d["nom"], "url": d["url"]} for d in par_num[n]],
+                        "fichiers_recus": sorted(f["chemin"] for f in fichiers),
+                        "document_qpl_vers_recu": corr}
+    journal(f"documents reçus (Google Drive) reliés : {len(lien)} projets / {len(documents)}, "
+            f"{sum(v is not None for p in lien.values() for v in p['document_qpl_vers_recu'].values())} documents")
+    return lien
+
+
 def main(argv=None):
-    ap = argparse.ArgumentParser(prog="python -m src.apprentissage.lien_humain")
-    ap.add_argument("--racine", type=Path, default=Path(r"Z:\Soumission\mes projets"))
+    ap = argparse.ArgumentParser(prog="python -m src.apprentissage.lien_humain", description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--onedrive", action=argparse.BooleanOptionalAction, default=True,
+                    help="lire « Mes projets » (qpl + pages PNG) par le lien public OneDrive (défaut : oui)")
+    ap.add_argument("--cache-qpl", type=Path, default=Path(os.environ.get("TEMP", "/tmp")) / "dr-mes-projets-qpl",
+                    help="où garder les seuls .qpl (≈ 90 Mo) ; les PNG ne sont jamais copiés en entier")
+    ap.add_argument("--racine", type=Path, nargs="*", default=[],
+                    help="dossiers supplémentaires de projets Plan Expert (.qpl + PNG), facultatif")
+    ap.add_argument("--drive", default=os.environ.get("DR_DRIVE_RECUS", "13JWszeHOEIM41Gf6GnNO0o4sOtWZHOW7"),
+                    help="identifiant du dossier Google Drive public des documents reçus (« original ») ; "
+                         "vide = ne pas relier")
     ap.add_argument("--sortie", type=Path, default=RACINE / "apprentissage" / "lien-humain")
     ap.add_argument("--par-libelle", type=int, default=PAR_LIBELLE)
     ap.add_argument("--min-projets", type=int, default=MIN_PROJETS)
     ap.add_argument("--fils", type=int, default=6)
     a = ap.parse_args(argv)
-    construire(a.racine, a.sortie, a.par_libelle, a.min_projets, a.fils, journal=lambda s: print(s, flush=True))
+    journal = lambda s: print(s, flush=True)  # noqa: E731
+    racines, distants, telecharger = list(a.racine), {}, None
+    if a.onedrive:
+        from src.apprentissage.sharepoint import MesProjets, miroir_qpl
+
+        mp = MesProjets()
+        distants = miroir_qpl(a.cache_qpl, a.fils, journal, mp)
+        racines.insert(0, a.cache_qpl)
+        telecharger = lambda ref, dest: mp.telecharger(ref[0], dest, -1)  # noqa: E731
+    construire(racines, a.sortie, a.par_libelle, a.min_projets, a.fils, journal=journal, distants=distants,
+               telecharger=telecharger)
+    if a.drive:
+        from src.apprentissage.gdrive import DossierDrive
+
+        documents = json.loads((a.sortie / "documents.json").read_text(encoding="utf-8"))
+        lien = lier_recus(documents, DossierDrive(), a.drive, journal)
+        (a.sortie / "recus.json").write_text(json.dumps(lien, ensure_ascii=False, indent=1), encoding="utf-8")
     return 0
 
 
