@@ -15,8 +15,9 @@ Entrées : `../E103-page6.pdf`, `../SKILL.md` uniquement. Porte de prévention :
 Réserves sans quantité : PS 150, CAT5e (à métrer), RJ45 (par règle), SN (à classer). 13 réserves au total : `reserves.md`.
 
 ## Fichiers
-- `nomenclature.csv` — 7 familles comptées + 4 compteurs en réserve.
+- `nomenclature.csv` — 7 familles comptées + 4 compteurs en réserve (colonnes code/materiel/portee/modele ajoutées, valeurs lues par le relevé, rien d'ajouté).
 - `occurrences-visuel.csv` — 23 lignes (x_pt, y_pt en points PDF, page 3456 × 2592).
-- `S-1844-E103-releve-HQ.pdf` — 1 page : plan d'origine + marques + encadré ; 8 calques (7 familles + encadré).
-- `S-1844-E103-releve-HQ.png` — rendu 100 dpi pour vérification visuelle.
-- Générateur : `../work/build_e103.py` (PyMuPDF).
+- `S-1844-E103-releve-HQ.pdf` — 2 pages produites par la chaîne (`python -m src.estimer.render.from_releve`, bordereau « materiel »): page 1 plan annoté + encadré + 8 calques; page 2 « BORDEREAU MATERIEL - E103 » (8 colonnes, 23 repères) + « RESERVES ET COMPLEMENTS ».
+- `S-1844-E103-releve-HQ.png`, `S-1844-E103-bordereau.png` — rendus de vérification. `bordereau.csv` — sortie de la chaîne.
+- `tableau-ia-vs-dupuis.md`, `cmp103.py`, `appariement.txt` — comparaison (commit d20dccc).
+- Le premier rendu (75cc5b8) venait d'un script à part (non commité, supprimé de la liste); remplacé par la chaîne. Réserve R-013 (rendu) retirée: obsolète.
