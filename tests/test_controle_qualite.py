@@ -113,6 +113,28 @@ def test_q10_releve_lu_sans_avertissement(tmp_path):
     assert not any(e.startswith("Q10") for e in r["erreurs"] + r["avertissements"])
 
 
+# kimi-k3 sur DSI01 : 38 % des marques sur un multiple de 10, mais 104/104 sur un multiple de 5.
+# L'arrondi fin ressemble à une lecture précise ; c'est la même invention, en plus discret.
+ARRONDI_FIN = [(15, 45), (55, 10), (25, 75), (90, 35), (45, 65), (5, 20), (60, 55), (35, 15), (80, 85), (20, 60)]
+
+
+def test_q10_grille_de_5_bloquante(tmp_path):
+    """Toutes les marques sur un multiple de 5 : bloqué même si peu sont multiples de 10.
+
+    Base mesurée sur les 319 marques des relevés humains du dépôt : 3,1 % seulement
+    tombent sur un multiple de 5 dans les deux axes. 100 % n'est pas une lecture."""
+    r = cq.controler(dossier(tmp_path, occ=_occ(ARRONDI_FIN)))
+    assert "Q10" in regles(r)
+    assert r["grilles_suspectes"]["P1"]["pas"] == 5
+    assert not r["conforme"]
+
+
+def test_q10_base_humaine_sous_le_seuil_de_5():
+    """Les coordonnées lues ne s'alignent pas non plus sur 5 pt : pas de fausse alerte."""
+    assert cq.grille_suspecte(LUES) is None
+    assert cq.part_arrondie(LUES, pas=5) == 0.0
+
+
 def test_q8_nomme_la_confusion_probable(tmp_path):
     """Un libellé jamais relevé est le plus souvent absorbé par un voisin de même famille et forme.
 

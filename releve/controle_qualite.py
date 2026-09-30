@@ -33,7 +33,7 @@ import sys
 
 REPERE = re.compile(r"\[?\b([A-Z]{1,4}\d?)(\d+)\.(\d+)\]?")
 TOLERANCE_REF = 0.05
-PAS_GRILLE = (10, 25, 50)     # pas ronds typiques d'une position inventée
+PAS_GRILLE = (5, 10, 25, 50)  # pas ronds typiques d'une position inventée
 MIN_GRILLE = 8                # en dessous, la coïncidence reste plausible
 SEUIL_GRILLE = 0.80           # part de marques alignées à partir de laquelle on bloque
 SEUIL_GRILLE_AVERT = 0.15     # au-dessus, le modèle arrondit trop (humains mesurés : 0,9 %)
@@ -48,14 +48,20 @@ def coordonnees(o):
 
 
 def grille_suspecte(points, pas=PAS_GRILLE, minimum=MIN_GRILLE, seuil=SEUIL_GRILLE):
-    """Plus petit pas sur lequel au moins `seuil` des points sont alignés en x ET en y.
+    """Plus grand pas sur lequel au moins `seuil` des points sont alignés en x ET en y.
 
     Renvoie (pas, nombre_aligné, total) ou None. Des positions lues sur un plan ne
     s'alignent pas : la probabilité que n marques tombent toutes sur un multiple de 10
-    dans les deux axes est de 100^-n."""
+    dans les deux axes est de 100^-n.
+
+    Le pas 5 compte aussi : mesuré sur le dépôt, les relevés humains n'y tombent que
+    dans 3,1 % des cas (319 marques) alors que kimi-k3 y tombe à 100 % sur 104 marques.
+    Un modèle peut arrondir finement et paraître précis ; c'est la même invention.
+    On renvoie le pas le plus grand qui tient, car c'est celui qui décrit vraiment la
+    maille employée : gemma-4-31b est à 100 % sur 10 pt, kimi-k3 seulement sur 5 pt."""
     if len(points) < minimum:
         return None
-    for p in sorted(pas):
+    for p in sorted(pas, reverse=True):
         n = sum(1 for x, y in points if x % p == 0 and y % p == 0)
         if n >= seuil * len(points):
             return p, n, len(points)
