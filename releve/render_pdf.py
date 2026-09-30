@@ -1,49 +1,22 @@
 # /// script
 # requires-python = ">=3.12"
-# dependencies = ["pymupdf>=1.24", "pillow>=10", "markdown>=3.6"]
+# dependencies = ["pymupdf>=1.24", "markdown>=3.6"]
 # ///
-"""Étape 4 (déterministe) : PDF « Plans annotés » (même présentation que l'export Plan Expert : fond du plan,
-marques colorées par famille, légende à droite) + « Rapport de métré (par plans) » + dossier complet.
+"""Étape 4b (déterministe) : « Rapport de métré (par plans) » + dossier complet, à partir du PDF « Plans
+annotés » déjà produit par releve/render_vectoriel.py (étape 4a — pastilles vectorielles par-dessus le plan
+d'origine, calques OCG, encadré « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes).
 
 Usage : uv run releve/render_pdf.py WORKDIR NOM_PROJET SORTIE_DIR
-Sorties : SORTIE_DIR/<NOM>-Plans-annotes.pdf, <NOM>-Rapport-de-metre.pdf (+ .md), <NOM>-Dossier-complet.pdf
+Entrée : SORTIE_DIR/<NOM>-Plans-annotes.pdf (produit par render_vectoriel.py, doit déjà exister).
+Sorties : <NOM>-Rapport-de-metre.pdf (+ .md), <NOM>-Dossier-complet.pdf (= rapport + plans annotés).
 """
 import os, sys, io, collections, datetime, html
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pymupdf, markdown
-from PIL import Image, ImageDraw
-from commun import load_nomenclature, load_occurrences, load_feuilles, draw_mark, sha256
-from prepare import font
-Image.MAX_IMAGE_PIXELS = None
-PAGE_W = 2997          # largeur de page de l'export Plan Expert (pt)
-MARK_R = 9             # rayon des marques (px à 2997 de large)
+from commun import load_nomenclature, load_occurrences, load_feuilles, sha256
 
-def annotate_sheet(work, f, info, occ_f, nom):
-    im = Image.open(os.path.join(work, "rasters", f + ".png")).convert("RGB")
-    W = float(info["largeur_pt"]); H = float(info["hauteur_pt"])
-    k = PAGE_W / W
-    im = im.resize((PAGE_W, int(round(H * k))), Image.LANCZOS)
-    dr = ImageDraw.Draw(im, "RGBA")
-    counts = collections.Counter()
-    for o in occ_f:
-        n = nom[o["label"]]
-        draw_mark(dr, n["forme"], o["x"] * k, o["y"] * k, MARK_R, n["rgb"], outline=(30, 30, 30), width=2)
-        counts[o["label"]] += 1
-    if counts:
-        rows = sorted(counts)
-        fnt = font(22)
-        lh = 30
-        tw = max(dr.textlength(f"{l}  ({counts[l]})", font=fnt) for l in rows) + 70
-        x0, y0 = int(im.width * 0.746), int(im.height * 0.336)
-        x0 = min(x0, im.width - int(tw) - 20)
-        bh = lh * len(rows) + 60
-        dr.rectangle([x0, y0, x0 + tw, y0 + bh], fill=(255, 255, 255, 235), outline=(0, 0, 0, 255), width=3)
-        dr.text((x0 + 15, y0 + 10), f"Légende — {info.get('nom', f)} ({sum(counts.values())} marques)", fill=(0, 0, 0, 255), font=font(22))
-        for i, l in enumerate(rows):
-            n = nom[l]; y = y0 + 50 + i * lh
-            draw_mark(dr, n["forme"], x0 + 25, y + 10, 10, n["rgb"], outline=(30, 30, 30), width=2)
-            dr.text((x0 + 45, y - 2), f"{l}  ({counts[l]})", fill=(0, 0, 0, 255), font=fnt)
-    return im, counts
+def count_sheet(occ_f):
+    return collections.Counter(o["label"] for o in occ_f)
 
 def md_to_pdf(md_text):
     body = markdown.markdown(md_text, extensions=["tables"])
@@ -69,15 +42,14 @@ def main(work, name, out_dir):
     for o in occ:
         by_sheet[o["feuille"]].append(o)
     sheets = sorted(f for f in feuilles if feuilles[f].get("type") == "plan" or by_sheet.get(f))
-    plans = pymupdf.open(); per_sheet = {}; grand = collections.Counter()
+    per_sheet = {}; grand = collections.Counter()
     for f in sheets:
-        im, counts = annotate_sheet(work, f, feuilles[f], by_sheet.get(f, []), nom)
+        counts = count_sheet(by_sheet.get(f, []))
         per_sheet[f] = counts; grand.update(counts)
-        buf = io.BytesIO(); im.save(buf, "JPEG", quality=85, subsampling=0)
-        pg = plans.new_page(width=im.width, height=im.height); pg.insert_image(pg.rect, stream=buf.getvalue())
         print(f"  {f}: {sum(counts.values())} marques", flush=True)
     p_plans = os.path.join(out_dir, f"{name}-Plans-annotes.pdf")
-    plans.save(p_plans, garbage=3, deflate=True)
+    if not os.path.exists(p_plans):
+        sys.exit(f"{p_plans} introuvable : lancer releve/render_vectoriel.py avant render_pdf.py (étape 4a)")
     # --- rapport de métré
     today = datetime.date.today().strftime("%Y-%m-%d")
     L = [f"# Rapport de métré (par plans) — {name}", "", f"Généré le {today} par le pipeline `releve/` (relevé automatique Claude + scripts déterministes). "

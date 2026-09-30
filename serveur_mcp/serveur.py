@@ -443,6 +443,7 @@ def produire_livrables(dossier: str, nom: str = "") -> dict:
         return {"produit": False, "raison": "relevé non prêt", "erreurs": ctl["erreurs"]}
     sortie = d / "sortie"
     journal = [lancer("build_qpl.py", str(d / "travail"), nom, str(sortie)),
+               lancer("render_vectoriel.py", str(d / "travail"), nom, str(sortie)),
                lancer("render_pdf.py", str(d / "travail"), nom, str(sortie))]
     rapport = rendre(d / "travail", sortie, nom)
     return {"produit": True, "releve_pdf": f"sortie/{nom}-RELEVE.pdf", "pages": rapport["pages"],
