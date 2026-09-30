@@ -75,6 +75,63 @@ def test_union_rejects_central_hole_then_accepts_repair(tmp_path):
     assert an.manquantes(w) == {}
 
 
+@pytest.mark.parametrize("requested,expected", [
+    ((1900, 100, 2200, 700), (1750, 100, 2350, 700)),
+    ((2800, 100, 3000, 700), (2400, 100, 3000, 700)),
+    ((0, 0, 600, 600), (0, 0, 600, 600)),
+])
+def test_zoom_expands_to_square_preserving_requested_area(tmp_path, monkeypatch, requested, expected):
+    w = _work(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,3000,2000\n", encoding="utf-8")
+    image = tmp_path / "zoom.png"
+    image.write_bytes(b"image-test-only")
+    calls = []
+    def fake_script(workdir, name, args):
+        calls.append(args)
+        return 0, str(image)
+    monkeypatch.setattr(an, "script", fake_script)
+    args = dict(zip(("x0", "y0", "x1", "y1"), requested), feuille="P1")
+    description, actual_image = an.outil(w, "zoom", args)
+    assert calls == [["P1", *expected]]
+    assert actual_image == str(image)
+    assert an.VUS == [("P1", *expected)]
+    assert json.loads(description)["bounds_pt"] == list(expected)
+    assert json.loads(description)["coordinate_system"] == "absolute PDF points"
+    assert expected[0] <= requested[0] < requested[2] <= expected[2]
+    assert expected[1] <= requested[1] < requested[3] <= expected[3]
+
+
+@pytest.mark.parametrize("bounds", [
+    (-1, 0, 100, 100), (0, 0, 1201, 100), (0, 0, 100, 601),
+    (100, 0, 100, 100), (200, 0, 100, 100), (0, 100, 100, 50),
+    (float("nan"), 0, 100, 100), (0, 0, float("inf"), 100),
+    (0, 0, 800, 300),  # Cannot expand to an 800-point square on a 600-point-high page.
+])
+def test_invalid_or_unfittable_square_zoom_rejected(tmp_path, monkeypatch, bounds):
+    w = _work(tmp_path)
+    monkeypatch.setattr(an, "script", lambda *_: pytest.fail("invalid zoom must not render"))
+    args = dict(zip(("x0", "y0", "x1", "y1"), bounds), feuille="P1")
+    with pytest.raises(ValueError):
+        an.outil(w, "zoom", args)
+    assert an.VUS == []
+
+
+def test_tall_request_renders_actual_square_image(tmp_path):
+    import pymupdf
+    from PIL import Image
+    w = _work(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,3000,2000\n", encoding="utf-8")
+    (tmp_path / "feuilles").mkdir()
+    with pymupdf.open() as doc:
+        page = doc.new_page(width=3000, height=2000)
+        page.draw_rect(pymupdf.Rect(1900, 100, 2200, 700))
+        doc.save(tmp_path / "feuilles" / "P1.pdf")
+    description, path = an.outil(w, "zoom", {"feuille": "P1", "x0": 1900, "y0": 100, "x1": 2200, "y1": 700})
+    assert json.loads(description)["bounds_pt"] == [1750, 100, 2350, 700]
+    with Image.open(path) as image:
+        assert image.size == (1800, 1800)
+
+
 def test_structured_occurrences_escape_commas(tmp_path):
     w = _work(tmp_path)
     row = {"feuille": "P1", "label": "KLAXON", "x_pt": 12.5, "y_pt": 23.75, "note": "[K1.1], corridor"}

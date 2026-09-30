@@ -170,5 +170,13 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
 ## Sorties attendues (toutes dans `$ARGUMENTS/`)
 `feuilles-classement.csv`, `nomenclature.csv`, `occurrences-texte.csv`, `occurrences-visuel.csv`, `reserves.md`,
 `rapport-releve.md`, et `comparaison-estimateur.md` si un export d'estimateur était fourni.
+
+### Informations nécessaires au bordereau final
+Le rendu utilise les colonnes suivantes lorsqu'elles sont renseignées. Lis les notes, la légende et les cédules du dossier courant pour les remplir; ne recopie jamais un résultat de référence.
+- `feuilles-classement.csv` : `bordereau` = `materiel` (une ligne par repère, notamment incendie), `agrege` (quantités par famille électrique) ou `travaux` (emplacements et appareils à fournir, notamment urgence).
+- `nomenclature.csv` : `code` (désignation exacte du symbole), `materiel`, `portee` (existant conservé, à enlever, à installer, à remplacer, etc.), `modele`, `prescription`, `discipline` (`incendie`, `electricite`, `urgence`). Ces informations partagées s'appliquent aux occurrences de cette famille.
+- `occurrences-*.csv` : `designation`, `portee`, `modele`, `prescription`, `parent`, `qte`, `reserve` si une occurrence diffère de sa famille. Une ligne de note prescrivant plusieurs appareils garde sa quantité explicite; ce n'est pas plusieurs symboles à inventer au même point.
+Enrichis au besoin les CSV complets avec `ecrire` après les ajouts de positions. Une valeur absente reste vide et fait l'objet d'une réserve; aucun modèle de fabricant, portée ou prescription ne doit être inventé pour remplir le tableau.
+
 Quand tout est écrit, réponds par un résumé de 10 lignes maximum : feuilles traitées, total de marques, nombre de réserves,
 ce qui manque.

@@ -67,7 +67,7 @@ OUTILS = [
      "parameters": {"type": "object", "properties": {"chemin": {"type": "string"}, "debut": {"type": "integer"}, "lignes": {"type": "integer"}}, "required": ["chemin"]}}},
     {"type": "function", "function": {"name": "ecrire", "description": "Écrit (remplace) un fichier de sortie du dossier de travail : " + ", ".join(sorted(SORTIES)) + ".",
      "parameters": {"type": "object", "properties": {"chemin": {"type": "string"}, "contenu": {"type": "string"}}, "required": ["chemin", "contenu"]}}},
-    {"type": "function", "function": {"name": "zoom", "description": "Rend la zone x0 y0 x1 y1 (points PDF) d'une feuille avec règles et marques déjà relevées, puis la montre.",
+    {"type": "function", "function": {"name": "zoom", "description": "Rend la zone demandée en points PDF, agrandie en carré sans retirer de contenu. Retourne les bornes PDF absolues réellement montrées, avec règles et marques déjà relevées.",
      "parameters": {"type": "object", "properties": {"feuille": {"type": "string"}, "x0": {"type": "number"}, "y0": {"type": "number"}, "x1": {"type": "number"}, "y1": {"type": "number"}},
                     "required": ["feuille", "x0", "y0", "x1", "y1"]}}},
     {"type": "function", "function": {"name": "ajouter_occurrences", "description": "Ajoute les occurrences structurées après chaque zoom. Le lot entier est refusé si un libellé, une feuille ou une coordonnée est invalide. Utilise occurrences de préférence; lignes accepte l'ancien CSV.",
@@ -146,6 +146,28 @@ def manquantes(workdir):
             res[f] = reste
     return res
 
+def bornes_zoom_carrees(workdir, a):
+    """Expand to a square inside the page without scaling or discarding requested content."""
+    with open(dans(workdir, "feuilles.csv"), encoding="utf-8", newline="") as fh:
+        feuilles = {r["feuille"]: r for r in csv.DictReader(fh)}
+    if a["feuille"] not in feuilles:
+        raise ValueError("Feuille de zoom inconnue")
+    try:
+        f = feuilles[a["feuille"]]
+        W, H = float(f["largeur_pt"]), float(f["hauteur_pt"])
+        x0, y0, x1, y1 = (float(a[k]) for k in ("x0", "y0", "x1", "y1"))
+    except (TypeError, ValueError) as e:
+        raise ValueError("Le zoom exige des bornes PDF numériques") from e
+    if not all(math.isfinite(v) for v in (W, H, x0, y0, x1, y1)) or not (0 <= x0 < x1 <= W and 0 <= y0 < y1 <= H):
+        raise ValueError("Bornes de zoom non finies, inversées ou hors feuille")
+    cote = max(x1 - x0, y1 - y0)
+    if cote > min(W, H):
+        raise ValueError("Impossible de contenir cette zone dans un carré sur la feuille; demande plusieurs zooms carrés plus petits")
+    gauche = min(max((x0 + x1 - cote) / 2, 0), W - cote)
+    haut = min(max((y0 + y1 - cote) / 2, 0), H - cote)
+    return gauche, haut, gauche + cote, haut + cote
+
+
 def outil(workdir, nom, a):
     """Exécute un outil ; retourne (texte, chemin_image_ou_None)."""
     if nom == "ajouter_occurrences":
@@ -218,12 +240,16 @@ def outil(workdir, nom, a):
         open(dans(workdir, rel), "w", encoding="utf-8", newline="\n").write(a["contenu"])
         return f"écrit {rel} ({len(a['contenu'])} caractères)", None
     if nom == "zoom":
-        c, out = script(workdir, "zoom", [a["feuille"], a["x0"], a["y0"], a["x1"], a["y1"]])
+        bounds = bornes_zoom_carrees(workdir, a)
+        c, out = script(workdir, "zoom", [a["feuille"], *bounds])
         png = out.strip().splitlines()[-1] if c == 0 and out.strip() else ""
         png = png if os.path.isabs(png) else os.path.join(workdir, png)
-        if c == 0 and 0 < a["x1"] - a["x0"] <= FENETRE and 0 < a["y1"] - a["y0"] <= FENETRE:
-            VUS.append((a["feuille"], a["x0"], a["y0"], a["x1"], a["y1"]))
-        return (out, png) if c == 0 and os.path.isfile(png) else (f"échec zoom : {out}", None)
+        if c != 0 or not os.path.isfile(png):
+            return f"échec zoom : {out}", None
+        if max(bounds[2] - bounds[0], bounds[3] - bounds[1]) <= FENETRE:
+            VUS.append((a["feuille"], *bounds))
+        return json.dumps({"feuille": a["feuille"], "bounds_pt": bounds,
+                           "coordinate_system": "absolute PDF points", "image": png}), png
     if nom == "extract_occurrences":
         return script(workdir, "extract_occurrences", [])[1] or "fait", None
     if nom == "traits":

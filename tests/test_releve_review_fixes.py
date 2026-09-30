@@ -320,6 +320,30 @@ def test_failed_attempt_preserves_but_does_not_publish_outputs(monkeypatch, tmp_
     assert "Plan Expert (VM mxlinux, MCP planexpert-vm) : oui" not in status
     assert (mirror / "STATUT.md").read_text(encoding="utf-8") == status
 
+    (project / "stale.png").write_bytes(b"keep old raster")
+    def successful_run(cmd, **kwargs):
+        if "releve/build_qpl.py" in cmd:
+            (project / "demo.qpl").write_text('<QuoterPlanSession><Plans><Plan FileName="P1.png"/></Plans></QuoterPlanSession>', encoding="utf-8")
+            (project / "P1.png").write_bytes(b"current raster")
+        if "releve/render_pdf.py" in cmd:
+            (outdir / "demo-Plans-annotes.pdf").write_bytes(b"current PDF")
+        if "src.estimer.render.from_releve" in cmd:
+            (outdir / "demo-format-exemple.pdf").write_bytes(b"current example")
+            (outdir / "demo-format-exemple.report.json").write_text("{}", encoding="utf-8")
+        return 0, ""
+
+    monkeypatch.setattr(releve_run, "run", successful_run)
+    assert releve_run.process("demo", reprendre=True)
+    status = (outdir / "STATUT.md").read_text(encoding="utf-8")
+    assert "previous.pdf" not in status and "partial.pdf" not in status and "stale.png" not in status
+    assert "demo-format-exemple.pdf" in status and "demo-planexpert/demo.qpl" in status
+    assert (mirror / "previous.pdf").read_bytes() == b"previous accepted mirror"
+    assert not (mirror / "partial.pdf").exists()
+    assert not (mirror / "demo-planexpert" / "stale.png").exists()
+    assert (project / "stale.png").read_bytes() == b"keep old raster"
+    assert (mirror / "demo-planexpert" / "P1.png").read_bytes() == b"current raster"
+    assert (mirror / "demo-format-exemple.pdf").read_bytes() == b"current example"
+
 
 def test_run_process_creates_example_format(monkeypatch, tmp_path):
     outbox = tmp_path / "OUTBOX"

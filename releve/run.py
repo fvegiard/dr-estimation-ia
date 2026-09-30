@@ -28,6 +28,7 @@ import subprocess
 import datetime
 import hashlib
 import argparse
+import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = os.environ.get("RELEVE_BASE", "D:/claude/releve-auto" if os.name == "nt" else "/mnt/d/claude/releve-auto")
@@ -157,7 +158,36 @@ def agent(workdir, log_path):
         f"entrée {usage.get('input_tokens')} + cache {usage.get('cache_read_input_tokens')} / sortie {usage.get('output_tokens')} ; subtype {res.get('subtype')}")
     return code, res, dur
 
-def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
+def current_outputs(name, outdir, steps):
+    """Only outputs owned by stages completed in this invocation; never scan output folders."""
+    done = {s for s, _, result in steps if result == "ok"}
+    paths = []
+    if "render_pdf" in done:
+        paths += [f"{name}-{suffix}" for suffix in (
+            "Plans-annotes.pdf", "Rapport-de-metre.pdf", "Rapport-de-metre.md", "Dossier-complet.pdf")]
+    if "format_exemple" in done:
+        paths += [f"{name}-format-exemple.pdf", f"{name}-format-exemple.report.json"]
+        paths += [f"format-exemple/{f}" for f in ("estimate.json", "bordereau.csv", "plans.pdf", "reserves.md", "feuilles.json")]
+    if "build_qpl" in done:
+        project = f"{name}-planexpert"
+        qpl = f"{project}/{name}.qpl"
+        paths += [qpl, qpl + ".audit.json"]
+        if os.path.isfile(os.path.join(outdir, qpl)):
+            tree = ET.parse(os.path.join(outdir, qpl))
+            paths += [f"{project}/{p.attrib['FileName']}" for p in tree.findall(".//Plans/Plan")
+                      if p.get("FileName") and os.path.basename(p.attrib["FileName"]) == p.attrib["FileName"]]
+    if any(s == "export natif Plan Expert" and result == "oui" for s, _, result in steps):
+        native = "export-natif-planexpert/resultat.json"
+        with open(os.path.join(outdir, native), encoding="utf-8") as fh:
+            result = json.load(fh)
+        paths += [native] + [f"export-natif-planexpert/{f}" for f in
+                            (result.get("etapes", {}).get("download", {}) or {}).get("fichiers", {})]
+    root = os.path.realpath(outdir)
+    return sorted({p for p in paths if os.path.isfile(os.path.join(outdir, p))
+                   and os.path.commonpath([root, os.path.realpath(os.path.join(outdir, p))]) == root})
+
+
+def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None):
     L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{'TERMINÉ' if ok else 'ÉCHEC'}**"]
     if err: L += ["", f"Erreur : `{err}`"]
     L += ["", "## Entrées", "", "| fichier | octets | sha256 |", "|---|--:|---|"]
@@ -167,13 +197,10 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
     L += ["", "## Sorties", ""]
     if ok:
         L += ["| fichier | octets | sha256 |", "|---|--:|---|"]
-        for f in sorted(os.listdir(outdir)):
+        for f in outputs if outputs is not None else current_outputs(name, outdir, steps):
             p = os.path.join(outdir, f)
-            if os.path.isfile(p) and not f.endswith(".png") and f != "STATUT.md" and not f.startswith("."):
+            if os.path.isfile(p):
                 L.append(f"| {f} | {os.path.getsize(p)} | {sha256(p)} |")
-        pe = os.path.join(outdir, f"{name}-planexpert", f"{name}.qpl")
-        if os.path.exists(pe):
-            L.append(f"| {name}-planexpert/{name}.qpl | {os.path.getsize(pe)} | {sha256(pe)} |")
         L += ["", f"Le projet Plan Expert `{name}.qpl` est dans `{name}-planexpert/` avec ses rasters PNG : copier le dossier entier, "
               "puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » et le rapport de métré ci-dessus sont rendus par `releve/render_pdf.py` à partir du même .qpl.", ""]
     else:
@@ -276,16 +303,23 @@ def process(arg, reprendre=False):
     if reprendre and os.path.exists(os.path.join(workdir, "agent-resultat.json")):
         res = json.load(open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8"))
     steps.append(("total", time.time() - T, ""))
-    statut(name, inbox, outdir, workdir, steps, res, ok, err)
+    outputs = []
+    if ok:
+        try:
+            outputs = current_outputs(name, outdir, steps)
+        except (OSError, ValueError, ET.ParseError) as e:
+            ok, err = False, f"manifeste des livrables invalide : {e}"
+    statut(name, inbox, outdir, workdir, steps, res, ok, err, outputs=outputs)
     try: os.remove(marker)
     except FileNotFoundError: pass
     if drive_mounted():
         try:
             dst = os.path.join(DRIVE, "OUTBOX", name); os.makedirs(dst, exist_ok=True)
-            for f in os.listdir(outdir) if ok else ["STATUT.md"]:
+            for f in ([*outputs, "STATUT.md"] if ok else ["STATUT.md"]):
                 p = os.path.join(outdir, f)
-                if os.path.isfile(p): shutil.copy2(p, dst)
-            if ok and os.path.isdir(pe_dir): shutil.copytree(pe_dir, os.path.join(dst, os.path.basename(pe_dir)), dirs_exist_ok=True)
+                target = os.path.join(dst, f)
+                os.makedirs(os.path.dirname(target), exist_ok=True)
+                if os.path.isfile(p): shutil.copy2(p, target)
             log(f"{'livrables copiés' if ok else 'statut d’échec uniquement copié'} sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
