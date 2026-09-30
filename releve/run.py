@@ -262,6 +262,17 @@ def publish_outputs(generation, outdir, outputs):
             shutil.rmtree(transaction, ignore_errors=True)
 
 
+def cleanup_generation(generation, outdir):
+    """Remove only this attempt's direct staging child; never follow a redirected path."""
+    root = os.path.realpath(outdir)
+    candidate = os.path.realpath(generation)
+    if (os.path.dirname(candidate) != root
+            or not os.path.basename(candidate).startswith(".generation-")
+            or candidate != os.path.abspath(generation)):
+        raise ValueError(f"nettoyage de génération non confiné : {generation}")
+    shutil.rmtree(candidate)
+
+
 def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None):
     L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{'TERMINÉ' if ok else 'ÉCHEC'}**"]
     if err: L += ["", f"Erreur : `{err}`"]
@@ -282,12 +293,10 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None)
         L += ["**Aucun livrable validé pour cette exécution.** Les fichiers conservés dans ce dossier ou son miroir "
               "sont des sorties antérieures ou partielles, non validées pour cette tentative. "
               "Ne pas les utiliser comme résultat courant. Seul ce statut d'échec est publié.", ""]
-    natif = os.path.join(outdir, "export-natif-planexpert", "resultat.json")
-    native_ran = any(s == "export natif Plan Expert" and not r.startswith("ignoré") for s, _, r in steps)
-    if ok and native_ran and os.path.exists(natif):
-        n = json.load(open(natif, encoding="utf-8"))
-        L += [f"**Export natif Plan Expert (VM mxlinux, MCP planexpert-vm) : {'oui' if n.get('ok') else 'non'}**"]
-        if n.get("erreur"): L += [f"- erreur : `{n['erreur']}`" + (f" · capture `{n.get('capture_erreur')}`" if n.get("capture_erreur") else "")]
+    native_result = next((r for s, _, r in reversed(steps) if s == "export natif Plan Expert"), None)
+    if ok and native_result is not None and not native_result.startswith("ignoré"):
+        L += [f"**Export natif Plan Expert (VM mxlinux, MCP planexpert-vm) : {'oui' if native_result == 'oui' else 'non'}**"]
+        if native_result != "oui": L += [f"- résultat de cette exécution : `{native_result}`"]
         L += [""]
     else:
         L += ["**Export natif Plan Expert : non** (étape non exécutée)", ""]
@@ -324,6 +333,7 @@ def process(arg, reprendre=False):
     marker = os.path.join(outdir, ".en-cours"); open(marker, "w").write(str(os.getpid()))
     log_path = os.path.join(outdir, "journal-etapes.log")
     steps, res, ok, err = [], None, False, None
+    generation = None
     T = time.time()
     try:
         if not reprendre:
@@ -401,6 +411,13 @@ def process(arg, reprendre=False):
             log(f"{'livrables copiés' if ok else 'statut d’échec uniquement copié'} sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
+    # Only the exact successful attempt is disposable; preserve failed native evidence too.
+    native_failed = any(s == "export natif Plan Expert" and r.startswith("non") for s, _, r in steps)
+    if ok and generation is not None and not native_failed:
+        try:
+            cleanup_generation(generation, outdir)
+        except (OSError, ValueError) as e:
+            log(f"génération conservée, nettoyage impossible : {e}")
     log(f"{'TERMINÉ' if ok else 'ÉCHEC'} {name} → {outdir}")
     return ok
 
