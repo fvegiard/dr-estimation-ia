@@ -4,6 +4,7 @@ import csv
 import os
 import re
 import hashlib
+import math
 
 # Enum Plan Expert (lu dans PlanExpert.exe, QuoterPlan.DrawCounter+CounterShapeTypeEnum) :
 CIRCLE, SQUARE, DIAMOND, TRI, TRI_REV, TRAP, TRAP_REV = 0, 1, 2, 3, 4, 5, 6
@@ -68,8 +69,15 @@ def load_occurrences(work):
         if (r.get("exclure") or "").strip().lower() in ("1", "oui", "x", "true"):
             continue
         try:
+            qte = float((r.get("qte") or "").strip() or "1")
+        except ValueError as exc:
+            raise ValueError("qte invalide dans les occurrences") from exc
+        if not math.isfinite(qte) or qte <= 0:
+            raise ValueError("qte doit être finie et strictement positive")
+        qte = int(qte) if qte.is_integer() else qte
+        try:
             out.append({"feuille": r["feuille"].strip(), "label": r["label"].strip(), "x": float(r["x_pt"]), "y": float(r["y_pt"]),
-                        "source": r.get("source") or "", "note": r.get("note") or ""})
+                        "qte": qte, "source": r.get("source") or "", "note": r.get("note") or ""})
         except (KeyError, ValueError, AttributeError):
             continue
     return out

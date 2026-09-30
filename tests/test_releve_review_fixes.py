@@ -198,6 +198,39 @@ def test_run_status_reports_actual_nvidia_model(tmp_path):
     assert "claude -p" not in status
 
 
+def test_native_manifest_rejects_traversal_and_keeps_nested_current_files(tmp_path):
+    native = tmp_path / "export-natif-planexpert"
+    (native / "reports").mkdir(parents=True)
+    (native / "reports" / "current.pdf").write_bytes(b"current")
+    (tmp_path / "partial.pdf").write_bytes(b"stale")
+    names = ["reports/current.pdf", "../partial.pdf", r"..\partial.pdf", str(tmp_path / "partial.pdf")]
+    (native / "resultat.json").write_text(json.dumps({
+        "etapes": {"download": {"fichiers": dict.fromkeys(names, {})}},
+    }), encoding="utf-8")
+    result = releve_run.current_outputs("demo", str(tmp_path), [("export natif Plan Expert", 0, "oui")])
+    assert result == ["export-natif-planexpert/reports/current.pdf", "export-natif-planexpert/resultat.json"]
+    releve_run.statut("demo", str(tmp_path / "input"), str(tmp_path), str(tmp_path / "work"),
+                      [("export natif Plan Expert", 0, "oui")], None, True, outputs=result)
+    assert "partial.pdf" not in (tmp_path / "STATUT.md").read_text(encoding="utf-8")
+
+
+@pytest.mark.parametrize("relative", ["../old.png", r"..\old.png", "/old.png", r"C:\old.png", "C:old.png", r"\\server\old.png"])
+def test_output_child_rejects_foreign_paths_on_every_platform(tmp_path, relative):
+    assert not releve_run.confined_output_child(str(tmp_path), relative)
+
+
+def test_qpl_manifest_only_publishes_flat_current_raster_names(tmp_path):
+    project = tmp_path / "demo-planexpert"
+    project.mkdir()
+    (tmp_path / "old.png").write_bytes(b"stale")
+    (project / "current.png").write_bytes(b"current")
+    (project / "demo.qpl").write_text(
+        '<QuoterPlanSession><Plans><Plan FileName="current.png"/>'
+        '<Plan FileName="../old.png"/><Plan FileName="..\\old.png"/></Plans></QuoterPlanSession>', encoding="utf-8")
+    assert releve_run.current_outputs("demo", str(tmp_path), [("build_qpl", 0, "ok")]) == [
+        "demo-planexpert/current.png", "demo-planexpert/demo.qpl"]
+
+
 def test_run_keeps_claude_oauth_sdk_as_existing_default(monkeypatch, tmp_path):
     monkeypatch.delenv("RELEVE_AGENT", raising=False)
     monkeypatch.setenv("RELEVE_MODEL", "claude-choice")

@@ -288,6 +288,40 @@ def test_invalid_kimi_reasoning_rejected_before_api(tmp_path, monkeypatch):
     assert "RELEVE_NVIDIA_REASONING" in json.loads(out.read_text(encoding="utf-8"))["subtype"]
 
 
+@pytest.mark.parametrize("task", [None, "Review existing CSV against source diagnostics. Correct only demonstrated errors."])
+def test_initial_task_override_keeps_default_and_quality_gates(tmp_path, monkeypatch, task):
+    work = _work(tmp_path)
+    monkeypatch.setenv("NVIDIA_API_KEY", "test-only")
+    requests = []
+    def fake_call(body, key, **kwargs):
+        requests.append(json.loads(json.dumps(body)))
+        return {"choices": [{"message": {"role": "assistant", "content": None, "tool_calls": [{
+            "id": "finish", "type": "function", "function": {"name": "terminer", "arguments": '{"resume":"done"}'}}]}}]}
+    monkeypatch.setattr(an, "appel", fake_call)
+    an.VUS.extend([("P1", 0, 0, 600, 600), ("P1", 600, 0, 1200, 600)])
+    result = tmp_path / "result.json"
+    kwargs = {} if task is None else {"task": task}
+    assert an.run(work, str(result), "test/model", 1, **kwargs) == 1
+    expected = task if task is not None else "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."
+    assert requests[0]["messages"][1] == {"role": "user", "content": expected}
+    assert requests[0]["tools"] == an.OUTILS
+    assert an.VUS == []
+    assert an.manquantes(work)
+    assert json.loads(result.read_text(encoding="utf-8"))["qualite"]["conforme"] is False
+    assert "contrôle couverture : terminer refusé" in (tmp_path / "agent-journal.log").read_text(encoding="utf-8")
+
+
+def test_cli_forwards_explicit_task(monkeypatch, tmp_path):
+    task = "Review current occurrences using the source plan."
+    monkeypatch.setattr(an.sys, "argv", ["agent_nvidia.py", str(tmp_path), "result.json", "--task", task])
+    calls = []
+    monkeypatch.setattr(an, "run", lambda *args, **kwargs: calls.append((args, kwargs)) or 0)
+    with pytest.raises(SystemExit) as exc:
+        an.main()
+    assert exc.value.code == 0
+    assert calls[0][1] == {"task": task}
+
+
 @pytest.mark.parametrize("tools_after_two_empty,expected_calls", [(False, 3), (True, 6)])
 def test_empty_replies_stop_with_quality_failure(tmp_path, monkeypatch, tools_after_two_empty, expected_calls):
     w = _work(tmp_path)

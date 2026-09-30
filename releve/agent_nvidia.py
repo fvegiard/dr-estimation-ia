@@ -294,7 +294,7 @@ def alleger(messages):
     for i in idx[:-IMAGES_GARDEES]:
         messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (déjà vue, retirée du contexte)"}
 
-def run(workdir, out_json, model, max_turns):
+def run(workdir, out_json, model, max_turns, task=None):
     VUS.clear()
     cle = os.environ.get("NVIDIA_API_KEY")
     log = open(os.path.join(workdir, "agent-journal.log"), "a", encoding="utf-8")
@@ -318,7 +318,8 @@ def run(workdir, out_json, model, max_turns):
                "et tant que le contrôle qualité (un libellé par appareil, repère cohérent avec le libellé, pas de doublon ni de trou "
                "de numérotation non justifié, chaque appareil de la nomenclature relevé ou mis en réserve) échoue.")
     messages = [{"role": "system", "content": systeme},
-                {"role": "user", "content": "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."}]
+                {"role": "user", "content": task if task is not None else
+                 "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."}]
     j(f"début  modèle={model} max_tours={max_turns} workdir={workdir}")
     resume, tours, refus_q, reponses_vides = None, 0, 0, 0
     try:
@@ -414,8 +415,9 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("out_json")
     ap.add_argument("--model", default=os.environ.get("RELEVE_NVIDIA_MODEL", MODELE))
     ap.add_argument("--max-turns", type=int, default=int(os.environ.get("RELEVE_MAX_TURNS", "200")))
+    ap.add_argument("--task", help="Consigne initiale explicite (ex. correction d'un relevé existant); contrôles inchangés")
     a = ap.parse_args()
-    sys.exit(run(os.path.abspath(a.workdir), a.out_json, a.model, a.max_turns))
+    sys.exit(run(os.path.abspath(a.workdir), a.out_json, a.model, a.max_turns, task=a.task))
 
 if __name__ == "__main__":
     main()

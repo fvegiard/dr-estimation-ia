@@ -46,6 +46,10 @@ def canoniser(nom, occ):
 def main(work, name, out_dir):
     os.makedirs(out_dir, exist_ok=True)
     nom = load_nomenclature(work); occ = load_occurrences(work); feuilles = load_feuilles(work)
+    # No native multiplier semantics have been validated for Counter.Text or Element.
+    # Refuse a lossy export instead of silently turning an aggregate into one device.
+    if any(o["qte"] != 1 for o in occ):
+        raise ValueError("QPL : qte différente de 1 non prise en charge ; export bloqué pour éviter un sous-comptage")
     if os.environ.get("RELEVE_LIBELLES_CANONIQUES") == "1":
         nom, occ = canoniser(nom, occ)
     labels = sorted({o["label"] for o in occ})

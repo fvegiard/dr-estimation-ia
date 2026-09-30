@@ -28,6 +28,7 @@ import subprocess
 import datetime
 import hashlib
 import argparse
+import ntpath
 import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -158,6 +159,21 @@ def agent(workdir, log_path):
         f"entrée {usage.get('input_tokens')} + cache {usage.get('cache_read_input_tokens')} / sortie {usage.get('output_tokens')} ; subtype {res.get('subtype')}")
     return code, res, dur
 
+def confined_output_child(folder, relative, *, flat=False):
+    """Validate either separator style and real-path confinement before publication."""
+    if not isinstance(relative, str) or not relative or ntpath.splitdrive(relative)[0]:
+        return False
+    normalized = relative.replace("\\", "/")
+    if normalized.startswith("/") or ".." in normalized.split("/") or (flat and "/" in normalized):
+        return False
+    root = os.path.realpath(folder)
+    candidate = os.path.realpath(os.path.join(folder, normalized))
+    try:
+        return os.path.commonpath([root, candidate]) == root
+    except ValueError:
+        return False
+
+
 def current_outputs(name, outdir, steps):
     """Only outputs owned by stages completed in this invocation; never scan output folders."""
     done = {s for s, _, result in steps if result == "ok"}
@@ -175,13 +191,14 @@ def current_outputs(name, outdir, steps):
         if os.path.isfile(os.path.join(outdir, qpl)):
             tree = ET.parse(os.path.join(outdir, qpl))
             paths += [f"{project}/{p.attrib['FileName']}" for p in tree.findall(".//Plans/Plan")
-                      if p.get("FileName") and os.path.basename(p.attrib["FileName"]) == p.attrib["FileName"]]
+                      if confined_output_child(os.path.join(outdir, project), p.get("FileName"), flat=True)]
     if any(s == "export natif Plan Expert" and result == "oui" for s, _, result in steps):
         native = "export-natif-planexpert/resultat.json"
         with open(os.path.join(outdir, native), encoding="utf-8") as fh:
             result = json.load(fh)
-        paths += [native] + [f"export-natif-planexpert/{f}" for f in
-                            (result.get("etapes", {}).get("download", {}) or {}).get("fichiers", {})]
+        paths += [native] + ["export-natif-planexpert/" + f.replace("\\", "/") for f in
+                            (result.get("etapes", {}).get("download", {}) or {}).get("fichiers", {})
+                            if confined_output_child(os.path.join(outdir, "export-natif-planexpert"), f)]
     root = os.path.realpath(outdir)
     return sorted({p for p in paths if os.path.isfile(os.path.join(outdir, p))
                    and os.path.commonpath([root, os.path.realpath(os.path.join(outdir, p))]) == root})
@@ -213,8 +230,6 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None)
         n = json.load(open(natif, encoding="utf-8"))
         L += [f"**Export natif Plan Expert (VM mxlinux, MCP planexpert-vm) : {'oui' if n.get('ok') else 'non'}**"]
         if n.get("erreur"): L += [f"- erreur : `{n['erreur']}`" + (f" · capture `{n.get('capture_erreur')}`" if n.get("capture_erreur") else "")]
-        for k, v in (n.get("etapes", {}).get("download", {}) or {}).get("fichiers", {}).items():
-            L += [f"- `export-natif-planexpert/{k}` · {v['octets']} o · sha256 {v['sha256']}"]
         L += [""]
     else:
         L += ["**Export natif Plan Expert : non** (étape non exécutée)", ""]
