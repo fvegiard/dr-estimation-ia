@@ -13,7 +13,9 @@ en général du texte noir ou un tracé plein noir d'épaisseur normale ; un EXI
 Rien n'est interprété ici : l'agent conclut.
 """
 from __future__ import annotations
-import csv, os, sys
+import csv
+import os
+import sys
 import pymupdf
 
 def gris(c):

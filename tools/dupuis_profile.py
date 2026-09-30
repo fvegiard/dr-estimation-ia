@@ -1,5 +1,7 @@
 """Profile Dupuis gold .qpl takeoffs. Run from data/dossiers: python3 tools/dupuis_profile.py"""
-import xml.etree.ElementTree as ET,collections,glob,sys
+import xml.etree.ElementTree as ET
+import collections
+import glob
 for f in sorted(glob.glob('S-*/reference/*Dupuis*.qpl')):
     t=ET.parse(f).getroot()
     plans=t.findall('Plans/Plan'); grp=t.findall('Plans/Group')

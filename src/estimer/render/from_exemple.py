@@ -21,7 +21,6 @@ import csv
 import hashlib
 import json
 import re
-import shutil
 import sys
 from collections import defaultdict
 from pathlib import Path

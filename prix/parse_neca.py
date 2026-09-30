@@ -35,7 +35,7 @@ import csv
 import hashlib
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -597,7 +597,7 @@ def main(argv=None) -> int:
         f"- Output: `{args.out.name}`, **{len(rows)} rows**, {complete} with all three labor units, {blank} with a unit but no number printed",
         f"- Pages with a table header: {len(stats['rows_per_page'])}; pages read from the OCR layer only: "
         f"{len(stats['ocr_pages'])} {stats['ocr_pages'] if stats['ocr_pages'] else ''}",
-        f"- Units: " + ", ".join(f"{u or '(none)'}={c}" for u, c in units.most_common()),
+        "- Units: " + ", ".join(f"{u or '(none)'}={c}" for u, c in units.most_common()),
         f"- Sections: {len(sections)}; divisions: {len(divisions)}; sub-headings: {len(stats['headings'])}",
         "",
         "## Method",

@@ -1,4 +1,5 @@
-import sys,csv
+import sys
+import csv
 from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0,'.')
 T='/home/claude/releve-auto/runs/S-1857/OUTBOX/S-1857/travail/'
@@ -10,7 +11,7 @@ def sbs(sheet,x0,y0,w,h,out,z=4,labels=None):
     r=Image.open(T+f'rasters/{sheet}.png').convert('RGB').crop((int(x0*R),int(y0*R),int((x0+w)*R),int((y0+h)*R))).resize((int(w*z),int(h*z)))
     dr=ImageDraw.Draw(r)
     try: f=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',14)
-    except: f=None
+    except Exception: f=None
     for fn in ['occurrences-texte.csv','occurrences-visuel.csv']:
         for row in csv.DictReader(open(T+fn)):
             if row['feuille']!=sheet: continue

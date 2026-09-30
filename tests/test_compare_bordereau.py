@@ -7,7 +7,6 @@ l'exemplaire HR26-14 : le comparateur ne savait pas lire la sortie du pont
 feuille relevée aux 26 feuilles de l'exemplaire.
 """
 import csv
-import json
 
 import pytest
 

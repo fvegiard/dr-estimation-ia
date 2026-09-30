@@ -23,7 +23,10 @@ Règle : ce script ne décide rien. Il propose des groupes ; l'association
 groupe → symbole de légende et la validation (recomptage visuel) restent
 à faire et à prouver.
 """
-import argparse, json, os, collections
+import argparse
+import json
+import os
+import collections
 import fitz  # pymupdf
 
 

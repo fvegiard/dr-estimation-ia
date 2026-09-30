@@ -33,7 +33,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 import sys
 import time
 from collections import Counter, defaultdict
@@ -51,7 +50,7 @@ from . import gold as G
 from . import model as M
 from . import pipeline
 from . import train as T
-from .families import FAMILIES, INDETERMINE, LabelFamilyMap
+from .families import FAMILIES, LabelFamilyMap
 
 RADII = (15.0, 25.0, 45.0)
 PRIMARY_R = 25.0
@@ -197,9 +196,7 @@ def score_position_dossier(g: G.DossierGold, sheets: list[E.SheetResult], ai_xy:
 
 
 def _gold_occlusion(g: G.DossierGold, pg: int, gds) -> np.ndarray:
-    from scipy import ndimage
     import pymupdf
-    from . import features as F
     from . import pages as P
     key = (str(g.pdf), pg)
     if key not in _OCC_CACHE:

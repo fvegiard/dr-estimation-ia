@@ -2,7 +2,9 @@
 # requires-python = ">=3.12"
 # dependencies = ["claude-agent-sdk==0.2.154"]
 # ///
-import asyncio, json, os
+import asyncio
+import json
+import os
 from pathlib import Path
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage, AssistantMessage, TextBlock
 

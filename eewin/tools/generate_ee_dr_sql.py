@@ -633,7 +633,6 @@ def main() -> int:
     info = cat.database_info()
 
     out: list[str] = []
-    hdr = out  # header is completed at the end (counts), placeholders kept as index
     hdr_index = len(out)
     out.append("")  # header placeholder
 

@@ -1,11 +1,14 @@
-import json, re, unicodedata, collections, glob, statistics
+import json
+import re
+import unicodedata
+import collections
 from xml.etree import ElementTree as ET
 rows=json.load(open('parsed.json'))
 def readq(p):
     b=open(p,'rb').read()
     for enc in ('utf-8-sig','utf-16','utf-8','latin-1'):
         try: return b.decode(enc)
-        except: pass
+        except Exception: pass
     return b.decode('utf-8','replace')
 def canon(s):
     s=unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode().upper()
@@ -17,7 +20,7 @@ projlabels=[]  # (name, year, {canon:count})
 for r in rows:
     p=r['file']
     try: s=readq(p); root=ET.fromstring((s[1:] if s.startswith('﻿') else s).encode('utf-8'))
-    except: continue
+    except Exception: continue
     yr=(r['created'] or '')[:4]
     lc=collections.Counter()
     for c in root.iter('Counter'):

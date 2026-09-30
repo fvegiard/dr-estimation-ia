@@ -17,7 +17,14 @@ doc : docs/code.claude.com_docs_en_headless.md) → build_qpl.py → render_pdf.
 Un seul relevé à la fois (verrou). Journal : D:\\claude\\releve-auto\\journal.log
 """
 from __future__ import annotations
-import os, sys, json, time, shutil, subprocess, datetime, hashlib
+import os
+import sys
+import json
+import time
+import shutil
+import subprocess
+import datetime
+import hashlib
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = os.environ.get("RELEVE_BASE", "/mnt/d/claude/releve-auto")

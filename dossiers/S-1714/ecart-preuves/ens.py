@@ -1,4 +1,6 @@
-import pymupdf,sys,json
+import pymupdf
+import sys
+import json
 doc=pymupdf.open('01-PLANS.pdf')
 res={}
 for pg in range(22,32):

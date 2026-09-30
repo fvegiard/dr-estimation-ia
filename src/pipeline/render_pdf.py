@@ -8,7 +8,12 @@ md_to_pdf).
 Usage : python -m src.pipeline.render_pdf WORKDIR NOM_PROJET SORTIE_DIR
 Sorties : SORTIE_DIR/<NOM>-Plans-annotes.pdf, <NOM>-Rapport-de-metre.pdf (+ .md), <NOM>-Dossier-complet.pdf
 """
-import os, sys, io, collections, datetime, html
+import os
+import sys
+import io
+import collections
+import datetime
+import html
 import pymupdf
 from PIL import Image, ImageDraw
 from .commun import load_nomenclature, load_occurrences, load_feuilles, draw_mark, sha256

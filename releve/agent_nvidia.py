@@ -33,7 +33,7 @@ import urllib.request
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "releve"))
-from controle_qualite import (
+from controle_qualite import (  # noqa: E402  (import après sys.path.insert voulu)
     controler,
 )
 

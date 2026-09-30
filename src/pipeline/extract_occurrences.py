@@ -12,7 +12,11 @@ exactement (fullmatch, sensible à la casse) à un `jeton_regex` devient une occ
 Écrit WORKDIR/occurrences-texte.csv (feuille, label, x_pt, y_pt, source, note) — l'agent peut ensuite l'éditer
 (retirer les faux positifs : bulles d'axes, numéros de circuits…) et compléter occurrences-visuel.csv.
 """
-import csv, os, re, sys, collections
+import csv
+import os
+import re
+import sys
+import collections
 from .commun import read_csv
 
 def main(work):

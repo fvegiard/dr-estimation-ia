@@ -11,7 +11,7 @@ import csv
 import hashlib
 import json
 from collections import Counter, defaultdict
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from PIL import Image

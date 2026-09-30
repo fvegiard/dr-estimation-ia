@@ -10,7 +10,11 @@ un CSV corrompu ne doit jamais être certifié « exact » silencieusement.
 
 Usage : python regen_derives.py <dossier>  (défaut : dossier courant)
 """
-import sys, os, csv, json, re
+import sys
+import os
+import csv
+import json
+import re
 from collections import defaultdict, Counter
 
 REP   = re.compile(r"^[A-Z]\d{2}-\d+$")

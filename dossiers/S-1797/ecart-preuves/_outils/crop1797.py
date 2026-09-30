@@ -1,4 +1,5 @@
-import sys,csv
+import sys
+import csv
 from PIL import Image,ImageDraw,ImageFont
 Image.MAX_IMAGE_PIXELS=None
 T='/home/claude/releve-auto/runs/S-1797/OUTBOX/S-1797/travail/'
@@ -11,7 +12,7 @@ im=Image.open(T+'rasters/'+sheet+'.png').convert('RGB')
 c=im.crop((int(x0*s),int(y0*s),int(x1*s),int(y1*s)))
 d=ImageDraw.Draw(c)
 try: f=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',22)
-except: f=None
+except Exception: f=None
 n=0
 for r in csv.DictReader(open(T+'occurrences-visuel.csv')):
   if r['feuille']!=sheet: continue

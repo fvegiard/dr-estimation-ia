@@ -8,9 +8,15 @@ marques colorées par famille, légende à droite) + « Rapport de métré (par 
 Usage : uv run releve/render_pdf.py WORKDIR NOM_PROJET SORTIE_DIR
 Sorties : SORTIE_DIR/<NOM>-Plans-annotes.pdf, <NOM>-Rapport-de-metre.pdf (+ .md), <NOM>-Dossier-complet.pdf
 """
-import os, sys, io, collections, datetime, html
+import os
+import sys
+import io
+import collections
+import datetime
+import html
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import pymupdf, markdown
+import pymupdf
+import markdown
 from PIL import Image, ImageDraw
 from commun import load_nomenclature, load_occurrences, load_feuilles, draw_mark, sha256
 from prepare import font

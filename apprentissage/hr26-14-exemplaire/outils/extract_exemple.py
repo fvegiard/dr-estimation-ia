@@ -12,7 +12,10 @@ Puis appelle regen_derives.main() pour les dérivés : familles-par-feuille.csv,
 (source unique de la logique des dérivés ; échoue si la validation de schéma du bordereau matériel échoue).
 Usage : python extract_exemple.py EXEMPLE.pdf [dossier_sortie]
 """
-import sys, os, re, csv
+import sys
+import os
+import re
+import csv
 from collections import defaultdict
 import pymupdf
 
@@ -206,7 +209,7 @@ with open(os.path.join(OUT,"reserves.md"),"w",encoding="utf-8") as f:
 
 # ---------- dérivés (source unique : regen_derives) ----------
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import regen_derives
+import regen_derives  # noqa: E402  (import après sys.path.insert voulu)
 regen_derives.main(OUT)
 
 if __name__=="__main__":

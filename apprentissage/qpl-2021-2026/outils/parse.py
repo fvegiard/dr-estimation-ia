@@ -1,11 +1,14 @@
-import glob, re, json, collections, os
+import glob
+import re
+import json
+import collections
 from xml.etree import ElementTree as ET
 
 def readq(p):
     b=open(p,'rb').read()
     for enc in ('utf-8-sig','utf-16','utf-8','latin-1'):
         try: return b.decode(enc)
-        except: pass
+        except Exception: pass
     return b.decode('utf-8','replace')
 
 fs=sorted(glob.glob('**/*.qpl',recursive=True))
@@ -18,7 +21,7 @@ for p in fs:
     try:
         s=readq(p)
         root=ET.fromstring(s.encode('utf-8')) if not s.startswith('﻿') else ET.fromstring(s[1:].encode('utf-8'))
-    except Exception as e:
+    except Exception:
         bad+=1; continue
     proj=root.find('Project')
     name=proj.findtext('Name','') if proj is not None else ''

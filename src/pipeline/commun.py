@@ -1,6 +1,9 @@
 """Fonctions partagées du pipeline de relevé (lecture des CSV de travail, palette, dessin des formes)."""
 from __future__ import annotations
-import csv, os, re, hashlib
+import csv
+import os
+import re
+import hashlib
 
 # Enum Plan Expert (lu dans PlanExpert.exe, QuoterPlan.DrawCounter+CounterShapeTypeEnum) :
 CIRCLE, SQUARE, DIAMOND, TRI, TRI_REV, TRAP, TRAP_REV = 0, 1, 2, 3, 4, 5, 6

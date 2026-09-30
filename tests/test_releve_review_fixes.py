@@ -62,7 +62,7 @@ def test_tool_guard_allows_expected_releve_commands(tmp_path):
     )
     bad = tool_guard.validate(
         "Bash",
-        {"command": f"uv run releve/zoom.py /etc E100 0 0 100 100"},
+        {"command": "uv run releve/zoom.py /etc E100 0 0 100 100"},
         str(ROOT),
         str(work),
     )

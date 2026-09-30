@@ -1,0 +1,43 @@
+[project]
+name = "dr-estimation-ia"
+version = "0.0.0"
+description = "Relevé de quantités électrique (IA) et rendu Plan Expert / estimer"
+requires-python = ">=3.12"
+# Miroir de requirements.txt (que la CI installe avec pip). Déclaré ici aussi
+# pour que `uv run` construise un environnement de projet complet : sans ça,
+# pytest ne pouvait même pas collecter les tests (ModuleNotFoundError sur
+# openpyxl / pymupdf).
+dependencies = [
+    "pymupdf",
+    "pillow",
+    "openpyxl",
+    "pydantic",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "joblib",
+    "markdown",
+    "mcp>=2,<3",
+    "uvicorn",
+    "requests",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+# Règles figées ici, volontairement. Sans config, `uv tool run ruff` tire la
+# dernière version de ruff (0.16.x) dont le jeu par défaut est devenu très large
+# : le dépôt échouait alors avec 352 erreurs, alors que la CI ne lance pas ruff
+# du tout et passait. On fige donc la classe "vrais bugs" (pyflakes + erreurs
+# pycodestyle) et on exclut le style (une instruction par ligne, noms courts),
+# qui correspond à l'écriture dense du code.
+select = ["E4", "E711", "E712", "E713", "E714", "E721", "E722", "E9", "F"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+

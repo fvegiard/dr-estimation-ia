@@ -22,7 +22,14 @@ Sortie  : WORKDIR/
 Aucune valeur n'est inventée : tout vient des PDF. Les rasters et les mots sont la base du relevé.
 """
 from __future__ import annotations
-import csv, hashlib, json, os, re, sys, collections, shutil
+import csv
+import hashlib
+import json
+import os
+import re
+import sys
+import collections
+import shutil
 import pymupdf
 from PIL import Image, ImageDraw, ImageFont
 

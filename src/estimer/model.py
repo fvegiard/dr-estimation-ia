@@ -42,7 +42,7 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 
 from . import features as F
 from . import pages as P
-from .families import INDETERMINE, LabelFamilyMap
+from .families import LabelFamilyMap
 from .gold import DossierGold
 
 NONE = "none"

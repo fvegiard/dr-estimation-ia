@@ -8,7 +8,8 @@ et, par-dessus, les occurrences déjà relevées (pour vérifier / compléter).
 Usage : uv run releve/zoom.py WORKDIR FEUILLE X0 Y0 X1 Y1 [--px 1800] [--sans-marques]
 Sortie : WORKDIR/zooms/<FEUILLE>_<X0>_<Y0>_<X1>_<Y1>.png (le chemin est imprimé).
 """
-import os, sys
+import os
+import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pymupdf
 from PIL import Image, ImageDraw
