@@ -105,9 +105,14 @@ def _is_safe_shell_path(token: str, cwd: str, root: str) -> bool:
         return False
     if any(ch in token for ch in ("*", "?", "[")):
         return False
-    if "\\" in token:
-        # Jamais légitime ici (aucun nom de fichier du dépôt n'en contient) : peut déguiser un
-        # séparateur Windows (« ..\secret.txt ») qui échapperait au dossier de travail sur cet OS.
+    if "\\" in token and os.name != "nt":
+        # Jamais légitime ici sur POSIX (aucun nom de fichier du dépôt n'en contient), et os.path n'y
+        # traite pas « \ » comme séparateur : impossible d'y résoudre en confiance un séparateur Windows
+        # déguisé (« ..\secret.txt »), donc refus direct. Sur Windows natif, « \ » EST le vrai séparateur
+        # (os.path = ntpath là-bas) : on laisse tomber jusqu'à la résolution + vérification de confinement
+        # ci-dessous, exactement comme un chemin à « / » — un chemin Windows légitime ne doit pas être
+        # refusé juste parce qu'il contient son séparateur natif (régression constatée par Francis sur
+        # poste Windows réel : un chemin absolu valide DANS le dossier de travail était rejeté).
         return False
     # Nom simple seulement : ni séparateur (les chemins Windows utilisent « \\ »), ni lettre de lecteur.
     nu = "/" not in token and "\\" not in token and not os.path.splitdrive(token)[0]

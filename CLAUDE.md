@@ -25,8 +25,12 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
    fichier PDF réellement produit, jamais seulement le journal de l'agent.
 3. Écris toi-même le score x/N avec la liste des cases fausses et corrige jusqu'au seuil (≥ 17/18 sur une planche d'essai,
    ≥ 95 % ensuite) sans attendre de message. Une régression (case bonne avant, fausse après) bloque le passage.
-4. Pour les vérifs importantes, lance le sous-agent `verificateur` sur les images seules (sans ton raisonnement).
-5. Rapport : l'image + ton score + le score du vérificateur. Jamais « fait » sans ces trois éléments.
+4. Vérification visuelle directe, par toi-même, par défaut — jamais de sous-agent de ta propre initiative,
+   y compris pour une vérification importante. Un sous-agent `verificateur` ne s'utilise que si Francis
+   l'autorise explicitement pour ce dossier précis (§Agents).
+5. Rapport : l'image + ton score. Jamais « fait » sans ces deux éléments. Si Francis a autorisé un
+   sous-agent `verificateur` pour ce dossier, ajoute aussi son score — son absence ne bloque jamais un
+   rapport par défaut, puisque la délégation n'est pas la voie par défaut.
 6. Enchaîne les étapes sans rendre la main. Fin = livrable prouvé OU blocage que seul Francis peut lever.
    À chaque étape prouvée : commit + push + ligne « ÉTAPE n — FAIT ». Plus de 30 min sans commit → commit `wip` avec
    l'état et les preuves. Si un tour dépasse 20 min sans sortie, découpe le travail (moins d'images par tour).
@@ -47,7 +51,8 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
    à sable cloud), gate officiel de non-régression (quantité/position, jamais le rendu visuel).
 2. `releve/render_vectoriel.py` écrit `<SORTIE>/<NOM>-rendu-rapport.json` à chaque rendu (repères/familles/RES par feuille,
    encadré hors espace libre ou non) — à relire avant de livrer, pas seulement le journal texte de l'agent.
-3. Auto-supervision visuelle (§Autonomie ci-dessus) + sous-agent `verificateur` sur les images seules.
+3. Auto-supervision visuelle (§Autonomie ci-dessus), directement par toi-même par défaut. Le sous-agent
+   `verificateur` n'intervient que si Francis l'autorise explicitement (§Agents) — jamais par défaut.
 4. `python -m src.estimer.render.verify_exemple RENDU.pdf RENDU.report.json EXEMPLE.pdf GOLD_INPUT_DIR` — comparaison
    octet-près au gold HR26-14 (marqueurs à 0,05 pt, bordereau cellule par cellule). Exige le EXEMPLE.pdf complet
    (87 p., non versionné, sur le Drive/PC de Francis) : **indisponible en bac à sable cloud**, à lancer sur un poste
@@ -104,17 +109,19 @@ avant d'agir, ne jamais supposer** (`python3 -c "import claude_agent_sdk"`, `whi
 
 Ces sous-agents servent une session interactive (Claude Code, OpenHands) qui travaille directement dans ce
 dépôt. **Par défaut, une session interactive travaille elle-même** — lit les tuiles, écrit les CSV, exécute
-les scripts — sans déléguer. Ne lancer un sous-agent que si Francis le demande explicitement, ou pour la
-tâche de lecture visuelle longue elle-même (relever un dossier entier, tuile par tuile), où un contexte
-dédié est justifié par la taille de la tâche, pas par défaut :
+les scripts, fait elle-même sa vérification visuelle — sans déléguer. **Aucune exception implicite** : ni
+la taille du dossier, ni la durée de la tâche, ni l'importance de la vérification ne justifient seuls une
+délégation — une tâche longue se découpe en plusieurs tours (§Autonomie point 6), elle ne se délègue pas.
+Ne lancer un sous-agent QUE si Francis l'autorise explicitement, pour ce dossier précis :
 - `releveur` (Opus) : relève un dossier déjà préparé par `prepare.py`, en appliquant la compétence
-  `releve-planexpert` — utilisé quand la session fait elle-même ce travail (hors `run.py`).
+  `releve-planexpert` — seulement si Francis autorise explicitement que la session délègue ce travail (hors
+  `run.py`, qui utilise sa propre route d'agent séparée ci-dessus, indépendante de ce sous-agent).
 - `verificateur` (Opus) : compare un relevé IA au relevé humain, prouve chaque écart sur le plan, et juge
-  les rendus à l'œil — à lancer pour toute vérification importante (§Autonomie point 4), quel que soit le
-  parcours utilisé pour produire le relevé.
+  les rendus à l'œil — seulement si Francis l'autorise explicitement pour ce dossier ; par défaut, sans
+  cette autorisation, la vérification visuelle se fait directement (§Autonomie, §Contrôles de conformité).
 - `inventaire` (Haiku) : listages, tailles, dates, métadonnées — lecture seule.
-Toujours passer par l'outil Agent d'une session interactive, jamais par `claude -p` détaché en arrière-plan
-(meurt après ~10 min dans le bac à sable cloud).
+Si un sous-agent est autorisé et lancé, toujours passer par l'outil Agent d'une session interactive, jamais
+par `claude -p` détaché en arrière-plan (meurt après ~10 min dans le bac à sable cloud).
 
 ## Ajouter un dossier
 Le parcours canonique (§Commandes) couvre tout sauf le classement final dans le dépôt :
@@ -124,6 +131,7 @@ Le parcours canonique (§Commandes) couvre tout sauf le classement final dans le
 4. Si l'estimateur fournit son projet Plan Expert : `reference/<S>-Dupuis-PlanExpert.qpl` + `dupuis-png-dimensions.txt` +
    `feuilles-ia.csv` → le dossier entre automatiquement dans le jeu de référence.
 
-Débogage étape par étape (à la place de l'étape 2, seulement si `run.py` échoue ou qu'une inspection entre
-étapes est nécessaire) : `prepare.py` → agent `releveur` (§Agents, session interactive seulement) →
-`run.py --reprendre <S>` (rejoue qpl + render) → étape 3 ci-dessus.
+Débogage étape par étape (à la place de l'étape 2 ci-dessus, seulement si `run.py` échoue ou qu'une inspection
+entre étapes est nécessaire) : `prepare.py` → la session fait elle-même le relevé par défaut (§Agents — le
+sous-agent `releveur` seulement si Francis l'autorise explicitement) → `run.py --reprendre <S>` (rejoue qpl +
+render) → étape 3 ci-dessus.

@@ -101,6 +101,50 @@ def test_tool_guard_refuse_chemin_absolu_hors_travail(tmp_path):
     assert tool_guard.validate("Bash", {"command": f'cat "{work / "a b.csv"}"'}, str(work), str(work)) is None
 
 
+def _simuler_windows(monkeypatch):
+    """Remplace `os` dans le module tool_guard par un faux `os` (name='nt', path=ntpath), sans toucher
+    le vrai module `os` global (donc sans risque pour le reste du test ou de pytest) : ntpath fait de la
+    pure manipulation de chaînes, sans accès disque, donc utilisable tel quel sur un hôte Linux pour
+    vérifier la résolution de chemins Windows natifs sans machine Windows réelle."""
+    import ntpath
+    import types
+    monkeypatch.setattr(tool_guard, "os", types.SimpleNamespace(name="nt", path=ntpath))
+
+
+def test_tool_guard_accepts_legitimate_windows_path_inside_workdir(monkeypatch):
+    """Régression constatée par Francis sur poste Windows réel (commit da9da39) : un chemin absolu Windows
+    LÉGITIME et DANS le dossier de travail (ex. C:\\...\\travail\\a.csv) était refusé, parce que le refus
+    de tout antislash ne distinguait pas Windows natif (où « \\ » est le vrai séparateur) de POSIX (où il
+    ne l'est jamais). Sur Windows natif, un tel chemin doit être accepté."""
+    _simuler_windows(monkeypatch)
+    root = r"C:\work\S-TEST\travail"
+    dedans = root + r"\a.csv"
+    assert tool_guard.validate("Bash", {"command": f"cat {dedans}"}, root, root) is None
+
+
+def test_tool_guard_still_refuses_windows_path_outside_workdir(monkeypatch):
+    """Ne pas relâcher le refus hors-dossier en corrigeant la régression ci-dessus : sur Windows natif,
+    un chemin absolu hors du dossier de travail, ou une remontée `..\\..\\`, doivent rester refusés."""
+    _simuler_windows(monkeypatch)
+    root = r"C:\work\S-TEST\travail"
+    dehors = r"C:\work\secret.txt"
+    remontee = root + r"\..\..\secret.txt"     # travail -> S-TEST -> work : sort bien du dossier de travail
+    for commande in (f"cat {dehors}", f"cat {remontee}"):
+        reason = tool_guard.validate("Bash", {"command": commande}, root, root)
+        assert reason and "hors du dossier de travail" in reason
+
+
+def test_tool_guard_refuses_disguised_windows_traversal_on_posix():
+    """Sur POSIX (l'hôte réel de ce test), un antislash reste refusé d'office : il ne peut jamais y être
+    un séparateur légitime (aucun nom de fichier du dépôt n'en contient) et pourrait déguiser une
+    tentative d'évasion écrite en syntaxe Windows — non couvert par la simulation `_simuler_windows`
+    ci-dessus, qui ne s'applique que quand `os.name == "nt"`."""
+    import os
+    assert os.name != "nt", "ce test vérifie le comportement POSIX réel, pas simulé"
+    reason = tool_guard.validate("Bash", {"command": r"cat ..\secret.txt"}, "/tmp/travail", "/tmp/travail")
+    assert reason and "hors du dossier de travail" in reason
+
+
 def test_extract_occurrences_invalid_regex_aborts(tmp_path):
     work = _make_workdir(tmp_path)
     _write_csv(

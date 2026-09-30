@@ -17,7 +17,9 @@ nouveau relevé généré :
 Extrait VERSIONNÉ dans ce dépôt (contrairement à EXEMPLE.pdf, trop volumineux) :
   fichier : cible-visuelle/HR26-14-E08-E09-approuve.pdf (2 pages = E08 p.62 + E09 p.64, dessin non modifié)
   sha256  : 036454aa36ed7ba2505a4e451e0fb53ae2b32395de9b501e3dca8e7bb30ad22f
-  fourni par Francis le 2026-09-30, vérifié identique à l'original par Francis avant envoi.
+  fourni par Francis le 2026-09-30, qui a approuvé l'apparence (le rendu visuel, la cible de style) ;
+  la vérification technique d'identité (sha256, rendu octet/pixel identique à l'original) a été faite
+  par Codex, pas par Francis personnellement — ne pas lui attribuer cette étape de vérification.
   Usage : référence visuelle UNIQUEMENT (comparaison de style) — ne jamais le faire passer dans
   releve/prepare.py ni le traiter comme un plan brut à relever, c'est déjà un relevé fini.
 
