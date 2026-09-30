@@ -186,6 +186,45 @@ def test_run_nvidia_uses_selected_model_and_reports_provider(monkeypatch, tmp_pa
     assert commands[0][commands[0].index("--model") + 1] == "candidate/vision-model"
 
 
+def _write_required_outputs(outdir, name="demo"):
+    files = [f"{name}-{suffix}" for suffix in (
+        "Plans-annotes.pdf", "Rapport-de-metre.pdf", "Rapport-de-metre.md", "Dossier-complet.pdf",
+        "format-exemple.pdf", "format-exemple.report.json")]
+    files += [f"format-exemple/{f}" for f in ("estimate.json", "bordereau.csv", "plans.pdf", "reserves.md", "feuilles.json")]
+    files += [f"{name}-planexpert/{name}.qpl.audit.json", f"{name}-planexpert/P1.png"]
+    for relative in files:
+        path = outdir / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(b"current")
+    (outdir / f"{name}-planexpert/{name}.qpl").write_text(
+        '<QuoterPlanSession><Plans><Plan FileName="P1.png"/></Plans></QuoterPlanSession>', encoding="utf-8")
+
+
+@pytest.mark.parametrize("missing", [
+    "demo-Plans-annotes.pdf", "demo-Rapport-de-metre.pdf", "demo-format-exemple.report.json",
+    "demo-planexpert/demo.qpl", "demo-planexpert/demo.qpl.audit.json", "demo-planexpert/P1.png",
+    "format-exemple/estimate.json",
+])
+def test_missing_required_output_fails_pipeline_and_does_not_publish(monkeypatch, tmp_path, missing):
+    outbox, drive = tmp_path / "out", tmp_path / "drive"
+    outdir = outbox / "demo"
+    (outdir / "travail").mkdir(parents=True)
+    _write_required_outputs(outdir)
+    (outdir / missing).unlink()
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "DRIVE", str(drive))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("demo", str(tmp_path / "input")))
+    monkeypatch.setattr(releve_run, "run", lambda *args, **kwargs: (0, ""))
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: True)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    monkeypatch.setenv("RELEVE_NATIF", "0")
+    assert not releve_run.process("demo", reprendre=True)
+    mirror = drive / "OUTBOX" / "demo"
+    assert [p.name for p in mirror.iterdir()] == ["STATUT.md"]
+    status = (mirror / "STATUT.md").read_text(encoding="utf-8")
+    assert "ÉCHEC" in status and missing in status
+
+
 def test_run_status_reports_actual_nvidia_model(tmp_path):
     inbox, outdir = tmp_path / "in", tmp_path / "out"
     inbox.mkdir()
@@ -224,11 +263,12 @@ def test_qpl_manifest_only_publishes_flat_current_raster_names(tmp_path):
     project.mkdir()
     (tmp_path / "old.png").write_bytes(b"stale")
     (project / "current.png").write_bytes(b"current")
+    (project / "demo.qpl.audit.json").write_text("{}", encoding="utf-8")
     (project / "demo.qpl").write_text(
         '<QuoterPlanSession><Plans><Plan FileName="current.png"/>'
         '<Plan FileName="../old.png"/><Plan FileName="..\\old.png"/></Plans></QuoterPlanSession>', encoding="utf-8")
     assert releve_run.current_outputs("demo", str(tmp_path), [("build_qpl", 0, "ok")]) == [
-        "demo-planexpert/current.png", "demo-planexpert/demo.qpl"]
+        "demo-planexpert/current.png", "demo-planexpert/demo.qpl", "demo-planexpert/demo.qpl.audit.json"]
 
 
 def test_run_keeps_claude_oauth_sdk_as_existing_default(monkeypatch, tmp_path):
@@ -272,6 +312,7 @@ def test_run_process_skips_native_export_when_component_missing(monkeypatch, tmp
     workdir = outdir / "travail"
     workdir.mkdir(parents=True)
     (workdir / "agent-resultat.json").write_text("{}", encoding="utf-8")
+    _write_required_outputs(outdir, "S-TEST")
     commands: list[list[str]] = []
 
     monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
@@ -356,6 +397,7 @@ def test_failed_attempt_preserves_but_does_not_publish_outputs(monkeypatch, tmp_
     (project / "stale.png").write_bytes(b"keep old raster")
     def successful_run(cmd, **kwargs):
         if "releve/build_qpl.py" in cmd:
+            _write_required_outputs(outdir)
             (project / "demo.qpl").write_text('<QuoterPlanSession><Plans><Plan FileName="P1.png"/></Plans></QuoterPlanSession>', encoding="utf-8")
             (project / "P1.png").write_bytes(b"current raster")
         if "releve/render_pdf.py" in cmd:
@@ -381,6 +423,7 @@ def test_failed_attempt_preserves_but_does_not_publish_outputs(monkeypatch, tmp_
 def test_run_process_creates_example_format(monkeypatch, tmp_path):
     outbox = tmp_path / "OUTBOX"
     (outbox / "S-TEST" / "travail").mkdir(parents=True)
+    _write_required_outputs(outbox / "S-TEST", "S-TEST")
     commands: list[list[str]] = []
 
     monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))

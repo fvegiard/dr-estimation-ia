@@ -199,9 +199,12 @@ def current_outputs(name, outdir, steps):
         paths += [native] + ["export-natif-planexpert/" + f.replace("\\", "/") for f in
                             (result.get("etapes", {}).get("download", {}) or {}).get("fichiers", {})
                             if confined_output_child(os.path.join(outdir, "export-natif-planexpert"), f)]
-    root = os.path.realpath(outdir)
-    return sorted({p for p in paths if os.path.isfile(os.path.join(outdir, p))
-                   and os.path.commonpath([root, os.path.realpath(os.path.join(outdir, p))]) == root})
+    for relative in paths:
+        if not confined_output_child(outdir, relative):
+            raise ValueError(f"livrable hors du dossier de sortie : {relative}")
+        if not os.path.isfile(os.path.join(outdir, relative)):
+            raise ValueError(f"livrable requis absent : {relative}")
+    return sorted(set(paths))
 
 
 def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None):
