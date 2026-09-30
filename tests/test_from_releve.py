@@ -116,7 +116,35 @@ def test_render_from_bridge(tmp_path):
     assert "DSI01" in plan                     # original page content kept
 
 
-def test_ascii_fold_keeps_symbols():
-    from src.estimer.render.from_releve import ascii_text, ascii_upper
-    assert ascii_text("échelle « AUCUNE » → à métrer (§5b), ≈9 vus") == 'echelle "AUCUNE" -> a metrer (par. 5b), ~9 vus'
+def test_texte_lisible_garde_les_accents():
+    """Le texte libre garde ses accents ; seuls les signes hors Latin-1 sont remplacés.
+
+    L'EXEMPLE a perdu les siens (« Calibre et caracteristiques a verifier ») ; c'est un
+    défaut de son export, pas une présentation à reproduire — la police `helv` du rendu
+    est en Latin-1 et restitue les accents sans perte (vérifié par aller-retour PDF)."""
+    from src.estimer.render.from_releve import texte_lisible
+    assert texte_lisible("échelle « AUCUNE » → à métrer (§5b), ≈9 vus") == 'échelle "AUCUNE" -> à métrer (par. 5b), ~9 vus'
+    assert texte_lisible("Détecteur de fumée exécuté déjà à côté du boîtier") == "Détecteur de fumée exécuté déjà à côté du boîtier"
+
+
+def test_texte_lisible_remplace_les_ligatures():
+    """`œ` n'est pas en Latin-1 et NFKD ne le décompose pas : sans table il disparaissait."""
+    from src.estimer.render.from_releve import texte_lisible
+    assert texte_lisible("œuvre — cœur") == "oeuvre - coeur"
+
+
+def test_accents_rendus_par_la_police_du_pdf():
+    """Preuve que l'écart corrigé en est bien un : `helv` restitue les accents."""
+    import pymupdf
+    phrase = "Détecteur de fumée exécuté déjà à côté du boîtier"
+    doc = pymupdf.open()
+    doc.new_page(width=400, height=80).insert_text((20, 40), phrase, fontname="helv", fontsize=10)
+    relu = pymupdf.open("pdf", doc.tobytes())
+    assert phrase in relu[0].get_text()
+
+
+def test_ascii_upper_reste_plie():
+    """Écart conservé : les colonnes de code servent de clé de jointure avec le bordereau
+    de l'estimateur, lui-même sans accents. Les plier des deux côtés garde le rapprochement."""
+    from src.estimer.render.from_releve import ascii_upper
     assert ascii_upper("Réserve × 2") == "RESERVE X 2"

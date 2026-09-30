@@ -148,24 +148,59 @@ def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
 # symbols with no ASCII decomposition: spelled out instead of silently dropped by the ASCII fold
 ASCII_SYMBOLS = {"\u2192": "->", "\u2190": "<-", "\u00ab": '"', "\u00bb": '"', "\u2018": "'", "\u2019": "'",
                  "\u201c": '"', "\u201d": '"', "\u00a7": "par. ", "\u2248": "~", "\u00d7": "x", "\u2260": "<>",
-                 "\u2264": "<=", "\u2265": ">=", "\u2013": "-", "\u2014": "-", "\u2026": "...", "\u00b0": " deg"}
+                 "\u2264": "<=", "\u2265": ">=", "\u2013": "-", "\u2014": "-", "\u2026": "...", "\u00b0": " deg",
+                 # ligatures : NFKD ne les décompose pas, elles disparaissaient sans trace (« œuvre » -> « uvre »)
+                 "\u0153": "oe", "\u0152": "OE", "\u00e6": "ae", "\u00c6": "AE"}
 
 
 def _fold(s: str) -> str:
-    s = re.sub("\u00ab[\\s\u00a0\u202f]*", "\u00ab", s or "")      # French guillemets: drop the inner spaces
-    s = re.sub("[\\s\u00a0\u202f]*\u00bb", "\u00bb", s)
-    s = "".join(ASCII_SYMBOLS.get(ch, ch) for ch in s)
+    s = _normaliser(s)
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
     return re.sub(r"\s+", " ", s).strip()
 
 
+def _normaliser(s: str) -> str:
+    """Nettoyage commun : guillemets français resserrés et symboles hors Latin-1 remplacés."""
+    s = re.sub("\u00ab[\\s\u00a0\u202f]*", "\u00ab", s or "")      # French guillemets: drop the inner spaces
+    s = re.sub("[\\s\u00a0\u202f]*\u00bb", "\u00bb", s)
+    return "".join(ASCII_SYMBOLS.get(ch, ch) for ch in s)
+
+
 def ascii_upper(s: str) -> str:
-    """EXEMPLE text is unaccented upper-case ASCII (REPERES, QUANTITES)."""
+    """EXEMPLE text is unaccented upper-case ASCII (REPERES, QUANTITES).
+
+    Écart conservé volontairement : ces colonnes (code, designation, portee, parent,
+    materiel) servent de clés de jointure avec `nomenclature.csv` et avec le bordereau
+    de l'estimateur, lui-même sans accents. Plier ici garde le rapprochement stable ;
+    l'accent reviendrait des deux côtés ou d'aucun, jamais d'un seul."""
     return _fold(s).upper()
 
 
+def texte_lisible(s: str) -> str:
+    """Texte libre (modèle, prescription, note, réserve) : les accents sont conservés.
+
+    L'EXEMPLE les a perdus (« Calibre et caracteristiques a verifier ») ; c'est un défaut
+    de son export, pas une règle de présentation — vérifié : la police `helv` du rendu est
+    en Latin-1 et restitue é è à ç î ô û sans perte après aller-retour PDF. On ne reproduit
+    donc pas ce défaut. Tout caractère hors Latin-1 reste plié, sinon le PDF afficherait
+    un signe faux à la place."""
+    s = _normaliser(s)
+    s = "".join(ch if _latin1(ch) else unicodedata.normalize("NFKD", ch).encode("ascii", "ignore").decode("ascii")
+                for ch in s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _latin1(ch: str) -> bool:
+    try:
+        ch.encode("latin-1")
+    except UnicodeEncodeError:
+        return False
+    return True
+
+
 def ascii_text(s: str) -> str:
-    return _fold(s)
+    """Conservé pour compatibilité : redirige vers `texte_lisible`."""
+    return texte_lisible(s)
 
 
 def natural_key(name: str):
