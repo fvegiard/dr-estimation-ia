@@ -93,3 +93,21 @@ def test_q10_ignore_les_petits_releves():
 def test_q10_tolere_quelques_coincidences():
     """Une minorité de coordonnées rondes dans un relevé lu ne doit pas bloquer."""
     assert cq.grille_suspecte(LUES + INVENTEES[:2]) is None
+
+
+def test_q10_lectures_arrondies_averties_sans_bloquer(tmp_path):
+    """Entre le relevé lu et le relevé inventé : kimi-k3 arrondit 38 % de ses marques.
+
+    Ce n'est pas une fabrication (Q10 ne bloque pas) mais c'est 40 fois le taux mesuré
+    chez les humains (0,9 %) : l'avertissement le dit au lieu de laisser croire à un
+    relevé precis."""
+    melange = LUES + INVENTEES[:6]           # 6 rondes sur 16, soit 38 %
+    r = cq.controler(dossier(tmp_path, occ=_occ(melange)))
+    assert "Q10" not in regles(r)
+    assert any(e.startswith("Q10") and "arrondies" in e for e in r["avertissements"])
+
+
+def test_q10_releve_lu_sans_avertissement(tmp_path):
+    """Un relevé aux coordonnées lues ne déclenche ni erreur ni avertissement Q10."""
+    r = cq.controler(dossier(tmp_path, occ=_occ(LUES)))
+    assert not any(e.startswith("Q10") for e in r["erreurs"] + r["avertissements"])

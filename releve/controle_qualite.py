@@ -36,6 +36,7 @@ TOLERANCE_REF = 0.05
 PAS_GRILLE = (10, 25, 50)     # pas ronds typiques d'une position inventée
 MIN_GRILLE = 8                # en dessous, la coïncidence reste plausible
 SEUIL_GRILLE = 0.80           # part de marques alignées à partir de laquelle on bloque
+SEUIL_GRILLE_AVERT = 0.15     # au-dessus, le modèle arrondit trop (humains mesurés : 0,9 %)
 
 
 def coordonnees(o):
@@ -59,6 +60,17 @@ def grille_suspecte(points, pas=PAS_GRILLE, minimum=MIN_GRILLE, seuil=SEUIL_GRIL
         if n >= seuil * len(points):
             return p, n, len(points)
     return None
+
+
+def part_arrondie(points, pas=10):
+    """Part des marques tombant sur un multiple de `pas` dans les deux axes.
+
+    Repère mesuré sur les relevés humains du dépôt : 3 coordonnées rondes sur 319
+    marques, soit 0,9 %. Un taux nettement supérieur sans atteindre SEUIL_GRILLE
+    signale un modèle qui arrondit ses lectures — imprécis sans être inventé."""
+    if not points:
+        return 0.0
+    return sum(1 for x, y in points if x % pas == 0 and y % pas == 0) / len(points)
 
 
 def lire_csv(p, mal_formees=None):
@@ -200,6 +212,9 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
             grilles[f] = {"pas": pas, "alignees": n, "total": tot}
             err.append(f"Q10 {f} : {n}/{tot} marques sur une grille de {pas} pt (x et y) — positions "
                        f"inventées, pas lues sur le plan")
+        elif len(pts) >= MIN_GRILLE and (part := part_arrondie(pts)) >= SEUIL_GRILLE_AVERT:
+            avert.append(f"Q10 {f} : {part:.0%} des marques sur un multiple de 10 pt (relevés humains "
+                         f"mesurés : 0,9 %) — lectures arrondies, positions à revalider")
     res = {"conforme": not err, "erreurs": err, "avertissements": avert, "occurrences": len(occ), "reperes_lus": n_reperes,
            "comparaison_reference": comparaison, "grilles_suspectes": grilles}
     json.dump(res, open(os.path.join(work, "qualite.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
