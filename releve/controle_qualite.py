@@ -210,6 +210,22 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
     for (f, rep), l in vus.items():
         if len(l) > 1:
             err.append(f"Q5 repère {rep} relevé {len(l)} fois sur {f}")
+    # Distinct repère names must not count the same physical symbol twice.
+    # Match the MCP control: same sheet/label, within 4 pt on both axes.
+    positions = collections.defaultdict(list)
+    for o in occ:
+        point = coordonnees(o)
+        if point is not None and all(math.isfinite(c) for c in point):
+            positions[(o.get("feuille"), o.get("label"))].append(point)
+    for (f, label), points in positions.items():
+        points.sort()
+        for i, (x, y) in enumerate(points):
+            for x2, y2 in points[i + 1:]:
+                if x2 - x > 4:
+                    break
+                if abs(y2 - y) <= 4:
+                    err.append(f"Q5 position en double sur {f} pour {label!r} : "
+                               f"({x:g}, {y:g}) et ({x2:g}, {y2:g})")
     suites = collections.defaultdict(set)
     for (f, rep) in vus:
         m = REPERE.search(rep)

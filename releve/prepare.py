@@ -91,8 +91,8 @@ def classify(path: str, doc: pymupdf.Document) -> str:
     text_pages = sum(1 for p in doc if p.get_text().strip())
     if re.search(r"addenda|adme|addendum", name):
         return "addenda"
-    if re.search(r"dupuis|estimateur|releve|relevé|plan ?expert", name) or (text_pages == 0 and abs(p0.rect.width - 2997) < 40 and len(doc) > 1):
-        return "estimateur"          # export Plan Expert (rasterisé, page 2997 × 2116 pt)
+    if re.search(r"dupuis|estimateur|releve|relevé|plan ?expert", name):
+        return "estimateur"          # explicit reference name; raster size alone also matches blank input plans
     if text_pages == 0:
         return "scan"
     full = " ".join(doc[i].get_text() for i in range(min(3, len(doc)))).lower()

@@ -26,6 +26,20 @@ def test_releve_propre_conforme(tmp_path):
     assert cq.controler(dossier(tmp_path))["conforme"]
 
 
+@pytest.mark.parametrize("offset", [0, 3.9, 4])
+def test_q5_rejects_same_label_near_duplicate_with_distinct_reperes(tmp_path, offset):
+    occ = OCC.replace("P1,KLAXON,20,10", f"P1,KLAXON,{10 + offset},{10 + offset}")
+    result = cq.controler(dossier(tmp_path, occ=occ))
+    assert not result["conforme"]
+    assert any(e.startswith("Q5") and "position" in e for e in result["erreurs"])
+
+
+def test_q5_allows_distinct_labels_at_same_position_and_points_beyond_tolerance(tmp_path):
+    occ = OCC.replace("P1,KLAXON,20,10", "P1,KLAXON,14.1,10")
+    occ = occ.replace("P1,DETECTEUR THERMIQUE,30,10", "P1,DETECTEUR THERMIQUE,10,10")
+    assert cq.controler(dossier(tmp_path, occ=occ))["conforme"]
+
+
 @pytest.mark.parametrize("classement", [
     "P1,plan,,\n",  # P2 missing
     "P1,plan,,\nP2,legende,,\nP2,autre,,\n",  # duplicate classification
