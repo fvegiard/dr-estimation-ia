@@ -34,8 +34,8 @@ line-length = 120
 [tool.ruff.lint]
 # Règles figées ici, volontairement. Sans config, `uv tool run ruff` tire la
 # dernière version de ruff (0.16.x) dont le jeu par défaut est devenu très large
-# : le dépôt échouait alors avec 352 erreurs, alors que la CI ne lance pas ruff
-# du tout et passait. On fige donc la classe "vrais bugs" (pyflakes + erreurs
+# : le dépôt échouait alors avec 352 erreurs. La CI applique désormais ces règles.
+# On fige donc la classe "vrais bugs" (pyflakes + erreurs
 # pycodestyle) et on exclut le style (une instruction par ligne, noms courts),
 # qui correspond à l'écriture dense du code.
 select = ["E4", "E711", "E712", "E713", "E714", "E721", "E722", "E9", "F"]

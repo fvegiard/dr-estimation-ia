@@ -23,6 +23,7 @@ import os
 import sys
 import json
 import time
+import tempfile
 import shutil
 import subprocess
 import datetime
@@ -264,7 +265,7 @@ def prepare_a_jour(inbox, workdir):
 
 def process(arg, reprendre=False):
     name, inbox = resolve_inbox(arg)
-    outdir = os.path.join(OUTBOX, name); workdir = os.path.join(outdir, "travail"); pe_dir = os.path.join(outdir, f"{name}-planexpert")
+    outdir = os.path.join(OUTBOX, name); workdir = os.path.join(outdir, "travail")
     os.makedirs(outdir, exist_ok=True)
     marker = os.path.join(outdir, ".en-cours"); open(marker, "w").write(str(os.getpid()))
     log_path = os.path.join(outdir, "journal-etapes.log")
@@ -289,24 +290,28 @@ def process(arg, reprendre=False):
         t = time.time(); code, _ = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
         steps.append(("controle_qualite", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("controle_qualite.py a échoué")
+        # A fresh destination proves this attempt produced every published artifact.
+        # Keep failed attempts and previous public deliverables recoverable.
+        generation = tempfile.mkdtemp(prefix=".generation-", dir=outdir)
+        pe_dir = os.path.join(generation, f"{name}-planexpert")
         t = time.time(); code, _ = run(["uv", "run", "releve/build_qpl.py", workdir, name, pe_dir], log_path=log_path)
         steps.append(("build_qpl", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("build_qpl.py a échoué")
-        t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
+        t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, generation], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
         t = time.time(); code, _ = run(["uv", "run", "-m", "src.estimer.render.from_releve",
-                                       workdir, os.path.join(outdir, "format-exemple"),
-                                       "--render", os.path.join(outdir, f"{name}-format-exemple.pdf"),
-                                       "--report", os.path.join(outdir, f"{name}-format-exemple.report.json")],
+                                       workdir, os.path.join(generation, "format-exemple"),
+                                       "--render", os.path.join(generation, f"{name}-format-exemple.pdf"),
+                                       "--report", os.path.join(generation, f"{name}-format-exemple.report.json")],
                                       log_path=log_path)
         steps.append(("format_exemple", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("format-exemple a échoué")
         ok = True
         if os.environ.get("RELEVE_NATIF", "1") == "1":     # export natif Plan Expert par la VM (MCP planexpert-vm) ; jamais bloquant
             if os.path.exists(PLANEXPERT_VM_CLI):
-                t = time.time(); code, out = run(["uv", "run", PLANEXPERT_VM_CLI, "--cli", "natif", pe_dir, outdir], log_path=log_path)
-                nat_dir = os.path.join(outdir, "export-natif-planexpert"); os.makedirs(nat_dir, exist_ok=True)
+                t = time.time(); code, out = run(["uv", "run", PLANEXPERT_VM_CLI, "--cli", "natif", pe_dir, generation], log_path=log_path)
+                nat_dir = os.path.join(generation, "export-natif-planexpert"); os.makedirs(nat_dir, exist_ok=True)
                 try:
                     nat = json.loads(out)
                 except json.JSONDecodeError:
@@ -317,14 +322,21 @@ def process(arg, reprendre=False):
                 log(f"export natif ignoré : composant absent ({PLANEXPERT_VM_CLI})")
                 steps.append(("export natif Plan Expert", 0, "ignoré — composant absent"))
     except Exception as e:  # noqa
-        err = str(e); log("ÉCHEC : " + err)
+        ok = False; err = str(e); log("ÉCHEC : " + err)
     if reprendre and os.path.exists(os.path.join(workdir, "agent-resultat.json")):
         res = json.load(open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8"))
     steps.append(("total", time.time() - T, ""))
     outputs = []
     if ok:
         try:
-            outputs = current_outputs(name, outdir, steps)
+            outputs = current_outputs(name, generation, steps)
+            for relative in outputs:
+                if not confined_output_child(outdir, relative):
+                    raise ValueError(f"destination de publication non confinée : {relative}")
+            for relative in outputs:
+                target = os.path.join(outdir, relative)
+                os.makedirs(os.path.dirname(target), exist_ok=True)
+                shutil.copy2(os.path.join(generation, relative), target)
         except (OSError, ValueError, ET.ParseError) as e:
             ok, err = False, f"manifeste des livrables invalide : {e}"
     statut(name, inbox, outdir, workdir, steps, res, ok, err, outputs=outputs)

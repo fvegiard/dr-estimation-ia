@@ -415,7 +415,7 @@ def test_cli_forwards_explicit_task(monkeypatch, tmp_path):
     assert calls[0][1] == {"task": task}
 
 
-@pytest.mark.parametrize("tools_after_two_empty,expected_calls", [(False, 3), (True, 6)])
+@pytest.mark.parametrize("tools_after_two_empty,expected_calls", [(False, 6), (True, 9)])
 def test_empty_replies_stop_with_quality_failure(tmp_path, monkeypatch, tools_after_two_empty, expected_calls):
     w = _work(tmp_path)
     monkeypatch.setenv("NVIDIA_API_KEY", "test-only")
@@ -441,6 +441,116 @@ def test_empty_replies_stop_with_quality_failure(tmp_path, monkeypatch, tools_af
     assert result["qualite"] == {"conforme": False, "erreurs": 1, "detail": "qualite.json"}
     assert result["is_error"] is True
     assert "private-marker" not in out.read_text(encoding="utf-8")
+
+
+def _empty_reply():
+    return {"choices": [{"message": {"role": "assistant", "content": None,
+                         "reasoning_content": "old-private-history"}, "finish_reason": "stop"}]}
+
+
+def _tool_reply(name, arguments):
+    return {"choices": [{"message": {"role": "assistant", "content": None, "tool_calls": [
+        {"id": "call", "type": "function", "function": {"name": name, "arguments": json.dumps(arguments)}}]},
+        "finish_reason": "tool_calls"}]}
+
+
+def test_fresh_recovery_keeps_files_task_and_can_resume_valid_tool(tmp_path, monkeypatch):
+    w = _work(tmp_path)
+    monkeypatch.setenv("NVIDIA_API_KEY", "test-only")
+    (tmp_path / "occurrences-visuel.csv").write_bytes(b"existing-output-must-not-be-reset")
+    (tmp_path / ".env").write_text("SECRET-MUST-NOT-BE-READ", encoding="utf-8")
+    before = {p.name: p.read_bytes() for p in tmp_path.iterdir()}
+    requests = []
+    def fake_call(body, *_args, **_kwargs):
+        requests.append(json.loads(json.dumps(body)))
+        if len(requests) <= 3:
+            return _empty_reply()
+        if len(requests) == 4:
+            return _tool_reply("lister", {"motif": "feuilles.csv"})
+        return _tool_reply("terminer", {"resume": "done"})
+    monkeypatch.setattr(an, "appel", fake_call)
+    monkeypatch.setattr(an, "manquantes", lambda *_: {})
+    monkeypatch.setattr(an, "controler", lambda *_: {"conforme": True, "erreurs": []})
+    out = tmp_path / "result.json"
+    assert an.run(w, str(out), "test/model", 5, task="Continue existing takeoff; do not reset.") == 0
+    assert len(requests) == 5
+    fresh = requests[3]["messages"]
+    assert [m["role"] for m in fresh] == ["system", "user", "user"]
+    assert fresh[0] == requests[0]["messages"][0]
+    assert fresh[1] == requests[0]["messages"][1]
+    assert "occurrences-visuel.csv" in fresh[2]["content"]
+    assert "old-private-history" not in json.dumps(fresh)
+    assert "SECRET-MUST-NOT-BE-READ" not in json.dumps(fresh) and ".env" not in fresh[2]["content"]
+    assert all((tmp_path / name).read_bytes() == content for name, content in before.items())
+    assert json.loads(out.read_text(encoding="utf-8"))["fresh_recoveries"] == 1
+
+
+def test_fresh_recovery_preserves_global_turn_budget(tmp_path, monkeypatch):
+    w = _work(tmp_path)
+    monkeypatch.setenv("NVIDIA_API_KEY", "test-only")
+    calls = []
+    monkeypatch.setattr(an, "appel", lambda body, *_a, **_kw: calls.append(body) or _empty_reply())
+    monkeypatch.setattr(an, "controler", lambda *_: {"conforme": False, "erreurs": ["unfinished"]})
+    out = tmp_path / "result.json"
+    assert an.run(w, str(out), "test/model", 4) == 1
+    result = json.loads(out.read_text(encoding="utf-8"))
+    assert len(calls) == result["num_turns"] == 4
+    assert result["subtype"] == "error_max_turns"
+    assert result["fresh_recoveries"] == 1
+
+
+@pytest.mark.parametrize("max_turns,expected_calls,recoveries", [(3, 3, 0), (20, 7, 1)])
+def test_fresh_recovery_never_restarts_twice_after_progress(tmp_path, monkeypatch, max_turns, expected_calls, recoveries):
+    w = _work(tmp_path)
+    monkeypatch.setenv("NVIDIA_API_KEY", "test-only")
+    calls = []
+    def fake_call(body, *_args, **_kwargs):
+        calls.append(body)
+        return _tool_reply("lister", {"motif": "feuilles.csv"}) if len(calls) == 4 else _empty_reply()
+    monkeypatch.setattr(an, "appel", fake_call)
+    monkeypatch.setattr(an, "controler", lambda *_: {"conforme": False, "erreurs": ["unfinished"]})
+    out = tmp_path / "result.json"
+    assert an.run(w, str(out), "test/model", max_turns) == 1
+    result = json.loads(out.read_text(encoding="utf-8"))
+    assert len(calls) == expected_calls
+    assert result["fresh_recoveries"] == recoveries
+    assert result["subtype"].startswith("error_no_progress")
+
+
+def test_fresh_recovery_keeps_pending_region_uncredited_and_qa_blocking(tmp_path, monkeypatch):
+    w = _work(tmp_path)
+    monkeypatch.setenv("NVIDIA_API_KEY", "test-only")
+    acquired = ("P1", 0, 0, 600, 600)
+    pending = ("P1", 600, 0, 1200, 600)
+    requests = []
+    def fake_call(body, *_args, **_kwargs):
+        requests.append(json.loads(json.dumps(body)))
+        n = len(requests)
+        if n == 1:
+            an.VUS.append(acquired)
+            return _tool_reply("terminer", {"resume": "not yet"})
+        if n == 2:
+            return _tool_reply("zoom", {"feuille": "P1", "x0": 600, "y0": 0, "x1": 1200, "y1": 600})
+        if n <= 5:
+            return _empty_reply()
+        assert an.VUS == [acquired]
+        fresh = body["messages"]
+        assert len(fresh) == 3 and not any(m["role"] in {"tool", "assistant"} for m in fresh)
+        assert '"regions_a_revoir": [["P1", 600, 0, 1200, 600]]' in fresh[2]["content"]
+        assert '"refus_qualite": 1' in fresh[2]["content"]
+        assert all(isinstance(m["content"], str) for m in fresh)
+        return _tool_reply("terminer", {"resume": "still not valid"})
+    monkeypatch.setattr(an, "appel", fake_call)
+    monkeypatch.setattr(an, "manquantes", lambda *_: {})
+    monkeypatch.setattr(an, "controler", lambda *_: {"conforme": False, "erreurs": ["unfinished"]})
+    monkeypatch.setattr(an, "outil", lambda *_: (json.dumps({"feuille": "P1", "bounds_pt": list(pending[1:])}), "fake.png"))
+    monkeypatch.setattr(an, "image_msg", lambda *_: {"role": "user", "content": [
+        {"type": "text", "text": "pending image"}, {"type": "image_url", "image_url": {"url": "data:image/png;base64,AA=="}}]})
+    out = tmp_path / "result.json"
+    assert an.run(w, str(out), "test/model", 6) == 1
+    assert len(requests) == 6 and an.VUS == [acquired]
+    assert json.loads(out.read_text(encoding="utf-8"))["qualite"]["conforme"] is False
+    assert "terminer refusé" in (tmp_path / "agent-journal.log").read_text(encoding="utf-8")
 
 
 def test_image_absente_ne_tue_pas_le_releve(tmp_path):

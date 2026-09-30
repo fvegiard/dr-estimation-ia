@@ -339,6 +339,29 @@ def alleger(messages):
     for i in idx[:-IMAGES_GARDEES]:
         messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (image retirée du contexte; consulter couverture)"}
 
+def checkpoint_reprise(workdir, tours, max_turns, refus_q, regions):
+    """Compact persisted-state inventory: allowlisted names/sizes, never file contents."""
+    fichiers = {}
+    for nom in sorted(SORTIES | {"MANIFESTE.md", "feuilles.csv", "inventaire.json"}):
+        try:
+            chemin = dans(workdir, nom)
+            if os.path.isfile(chemin):
+                fichiers[nom] = os.path.getsize(chemin)
+        except (OSError, ValueError):
+            continue  # Inaccessible files or links outside the workdir are not inspected.
+    etat = {"etape": "reprise du relevé incomplet après réponses vides",
+            "tours_effectues": tours, "tours_restants": max(0, max_turns - tours),
+            "refus_qualite": refus_q, "regions_acquises": len(VUS),
+            "regions_a_revoir": list(dict.fromkeys(regions)), "fichiers_octets": fichiers}
+    return ("Reprise unique avec un contexte neuf. Les sorties existantes sont conservées : "
+            "relis-les avec les outils avant de compléter ou réparer, sans les réinitialiser. "
+            "Ne recrée pas la nomenclature ou les occurrences depuis zéro; évite tout doublon. "
+            "Les régions à revoir ci-dessous n'ont pas été confirmées; redemande leurs zooms. "
+            "Consulte couverture pour toutes les autres régions manquantes. Les contrôles qualité "
+            "et le budget de tours restent inchangés. État persistant (noms et tailles seulement) :\n"
+            + json.dumps(etat, ensure_ascii=False))
+
+
 def run(workdir, out_json, model, max_turns, task=None):
     VUS.clear()
     cle = os.environ.get("NVIDIA_API_KEY")
@@ -363,11 +386,11 @@ def run(workdir, out_json, model, max_turns, task=None):
                "la transmission ne prouve pas une lecture correcte. `terminer` est refusé tant que la couverture n'est pas complète "
                "et tant que le contrôle qualité (un libellé par appareil, repère cohérent avec le libellé, pas de doublon ni de trou "
                "de numérotation non justifié, chaque appareil de la nomenclature relevé ou mis en réserve) échoue.")
-    messages = [{"role": "system", "content": systeme},
-                {"role": "user", "content": task if task is not None else
-                 "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."}]
+    tache_initiale = task if task is not None else "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."
+    messages = [{"role": "system", "content": systeme}, {"role": "user", "content": tache_initiale}]
     j(f"début  modèle={model} max_tours={max_turns} workdir={workdir}")
     resume, tours, refus_q, reponses_vides = None, 0, 0, 0
+    reprises_vides = 0
     images_en_attente = {}   # id(message) -> region; local uniquement, jamais ajouté au JSON API
     try:
         model_options = {}
@@ -406,6 +429,17 @@ def run(workdir, out_json, model, max_turns, task=None):
             if not appels:
                 reponses_vides = reponses_vides + 1 if not (m.get("content") or "").strip() else 0
                 if reponses_vides >= REPONSES_VIDES_MAX:
+                    if reprises_vides == 0 and tours < max_turns:
+                        checkpoint = checkpoint_reprise(workdir, tours, max_turns, refus_q,
+                                                       images_en_attente.values())
+                        messages = [{"role": "system", "content": systeme},
+                                    {"role": "user", "content": tache_initiale},
+                                    {"role": "user", "content": checkpoint}]
+                        images_en_attente.clear()
+                        reprises_vides = 1
+                        reponses_vides = 0
+                        j(f"reprise contexte frais 1/1 après réponses vides; tours_restants={max_turns - tours}")
+                        continue
                     data.update(subtype=f"error_no_progress : {reponses_vides} réponses consécutives sans texte ni outil; "
                                         f"finish_reason={reason}. Vérifier la réponse fournisseur avant de relancer.",
                                 is_error=True)
@@ -471,6 +505,7 @@ def run(workdir, out_json, model, max_turns, task=None):
         data.update(subtype="success" if ok else ("error_max_turns" if resume is None else "sorties manquantes : " + ", ".join(manquants)),
                     is_error=not ok)
     data.update(num_turns=tours, duration_ms=int((time.time() - t0) * 1000), total_cost_usd=None, usage=usage,
+                fresh_recoveries=reprises_vides,
                 result=resume or "")
     j(f"fin  subtype={data['subtype']} tours={tours} jetons={usage}")
     json.dump(data, open(out_json, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
