@@ -9,8 +9,10 @@ comme consigne et des outils limités au dossier de travail. Bibliothèque stand
 Clé : variable d'environnement NVIDIA_API_KEY (jamais journalisée ni écrite). Sous WSL, la transmettre au processus
 seulement (WSLENV=NVIDIA_API_KEY/u), sans configuration globale.
 
-Modèle par défaut : google/gemma-4-31b-it — choisi le 2026-09-26 sur essai réel (docs/NVIDIA-AGENT.md) :
-extrait RDC de DSI01 (HR26-14, plan raster), 11/12 puis 12/12, aucun repère inventé, 39-58 s.
+Modèle par défaut : moonshotai/kimi-k3 — choisi le 2026-09-29 sur feuille complète (voir MODELE ci-dessous).
+gemma-4-31b-it gagnait l'essai du 2026-09-26 sur un extrait RDC (12/12, 39-58 s), mais l'essai sur la
+feuille entière l'a écarté : 53 marques sur 122 et toutes ses coordonnées posées sur une grille de 10 pt.
+Un bon résultat sur une vignette ne prédit pas un relevé de feuille.
 
 Usage : python releve/agent_nvidia.py WORKDIR RESULTAT_JSON [--model M] [--max-turns 200]
 Écrit RESULTAT_JSON (mêmes champs que agent_sdk.py) et WORKDIR/agent-journal.log. Code 0 si subtype == success.
@@ -37,7 +39,15 @@ from controle_qualite import (
 
 REFUS_QUALITE_MAX = 3       # refus de `terminer` pour qualité avant d'accepter en « qualite_insuffisante »
 URL = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1") + "/chat/completions"
-MODELE = "google/gemma-4-31b-it"
+MODELE = "moonshotai/kimi-k3"
+# Essai DSI01 (HR26-14, 122 marques chez l'estimateur), 2026-09-29, même consigne et mêmes outils :
+#   kimi-k3          104 marques, rappel 63 %, 38 tours, 49 min — DT/K/F/RA quasi exacts
+#   gemma-4-31b-it    53 marques, rappel 33 %, 36 tours, 31 min — 53/53 coordonnées sur une grille
+#                     de 10 pt (positions inventées, bloquées par Q10)
+#   glm-5.3-flash      0 marque en 71 min, 7 zooms — abandonné
+#   nemotron-3-nano-omni  HTTP 503 ResourceExhausted (16/16) — limite de concurrence NVIDIA
+# Aucun modèle n'atteint le seuil : kimi-k3 reste « qualite_insuffisante » au contrôle aveugle
+# (20 erreurs, dont la confusion AVERTISSEUR FUMEE AUTONOME → DETECTEUR FUMEE qui coûte 36 marques).
 SORTIES = {"feuilles-classement.csv", "nomenclature.csv", "occurrences-texte.csv", "occurrences-visuel.csv",
            "reserves.md", "rapport-releve.md", "comparaison-estimateur.md"}
 SCRIPTS = {"zoom": "releve/zoom.py", "extract_occurrences": "releve/extract_occurrences.py", "traits": "releve/traits.py"}
