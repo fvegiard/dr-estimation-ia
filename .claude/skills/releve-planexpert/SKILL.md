@@ -98,7 +98,13 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **détecteur thermique 135°F** ≠ **200°F** : si la température n'est pas lisible, relève un seul libellé générique
      ET mets la distinction en réserve — n'invente pas la répartition ;
    - **klaxon** (avertisseur sonore d'alarme) ≠ **avertisseur piezo** ≠ **strobe** ;
-   - **module adressable** simple ≠ double ≠ **relais adressable**.
+   - **module adressable** simple ≠ double ≠ **relais adressable**;
+   - **phare simple** ≠ **phare double** : compter les têtes dessinées sur CHAQUE symbole et comparer au dessin
+     de la légende. Un modèle commun aux deux variantes ou le libellé canonique `TETE DOUBLE` ne tranche pas.
+     Une note prescrivant une conversion ne vaut que pour les symboles auxquels cette note est rattachée.
+   - **enlever** ≠ **remplacer** : rattacher le numéro de note à chaque appareil. Un ancien bloc à enlever et un
+     nouveau bloc prévu ailleurs sont deux travaux distincts; le modèle neuf ne décrit pas l'ancien matériel.
+     Un appareil à enlever reste compté comme travail, avec portée explicite, sans quantité neuve à fournir.
    Quand deux appareils partagent la forme et la famille, c'est la position qui tranche (logement privé vs aire commune,
    mur vs plafond) : dis dans `note` ce qui a tranché.
 4. **Occurrences visuelles** → `occurrences-visuel.csv` (`feuille,label,x_pt,y_pt,source,note`, `source=visuel`) : parcours
@@ -175,6 +181,8 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
 Le rendu utilise les colonnes suivantes lorsqu'elles sont renseignées. Lis les notes, la légende et les cédules du dossier courant pour les remplir; ne recopie jamais un résultat de référence.
 - `feuilles-classement.csv` : `bordereau` = `materiel` (une ligne par repère, notamment incendie), `agrege` (quantités par famille électrique) ou `travaux` (emplacements et appareils à fournir, notamment urgence).
 - `nomenclature.csv` : `code` (désignation exacte du symbole), `materiel`, `portee` (existant conservé, à enlever, à installer, à remplacer, etc.), `modele`, `prescription`, `discipline` (`incendie`, `electricite`, `urgence`). Ces informations partagées s'appliquent aux occurrences de cette famille.
+  Un numéro de note commune n'est pas un code de matériel : conserver cette note dans `description`/`prescription`.
+  Sans code explicite de symbole, utiliser un code court distinct par matériel et expliquer ce choix dans le rapport.
 - `occurrences-*.csv` : `designation`, `portee`, `modele`, `prescription`, `parent`, `qte`, `reserve` si une occurrence diffère de sa famille. Une ligne de note prescrivant plusieurs appareils garde sa quantité explicite; ce n'est pas plusieurs symboles à inventer au même point.
 Enrichis au besoin les CSV complets avec `ecrire` après les ajouts de positions. Une valeur absente reste vide et fait l'objet d'une réserve; aucun modèle de fabricant, portée ou prescription ne doit être inventé pour remplir le tableau.
 

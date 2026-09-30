@@ -117,6 +117,11 @@ def agent(workdir, log_path):
         raise ValueError(f"RELEVE_AGENT invalide : {provider!r}; choisir nvidia, sdk ou cli")
     model = os.environ.get("RELEVE_NVIDIA_MODEL", "") if provider == "nvidia" else os.environ.get("RELEVE_MODEL", MODEL)
     res_path = os.path.join(workdir, "agent-resultat.json")
+    # A successful old run is not evidence for this provider invocation.
+    try:
+        os.remove(res_path)
+    except FileNotFoundError:
+        pass
     t0 = time.time()
     agent_env = {"RELEVE_TOOL_GUARD_ROOT": workdir}
     if provider == "nvidia":
@@ -146,11 +151,15 @@ def agent(workdir, log_path):
         try:
             data = json.loads(out)
             if isinstance(data, list):
-                data = next((d for d in data if d.get("type") == "result"), data[-1] if data else {})
+                data = next((d for d in data if isinstance(d, dict) and d.get("type") == "result"), data[-1] if data else {})
             res = data
         except json.JSONDecodeError:
             res = {"result": out[-2000:], "is_error": True, "subtype": "sortie non JSON"}
         json.dump(res, open(res_path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    if (not isinstance(res, dict) or not isinstance(res.get("is_error"), bool)
+            or not isinstance(res.get("subtype"), str) or not res["subtype"]
+            or (not res["is_error"] and res["subtype"] != "success")):
+        res = {"is_error": True, "subtype": f"agent_{provider} résultat invalide"}
     res["provider"] = provider
     res.setdefault("model", model or "non communiqué")
     json.dump(res, open(res_path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
@@ -206,6 +215,51 @@ def current_outputs(name, outdir, steps):
         if not os.path.isfile(os.path.join(outdir, relative)):
             raise ValueError(f"livrable requis absent : {relative}")
     return sorted(set(paths))
+
+
+def publish_outputs(generation, outdir, outputs):
+    """Stage then replace, rolling back caught errors; not crash-safe or reader-atomic."""
+    for relative in outputs:
+        if not confined_output_child(outdir, relative):
+            raise ValueError(f"destination de publication non confinée : {relative}")
+    transaction = tempfile.mkdtemp(prefix=".publication-", dir=outdir)
+    prepared, promoted, created_dirs = [], [], []
+    keep_backup = False
+    try:
+        for index, relative in enumerate(outputs):
+            target = os.path.join(outdir, relative)
+            staged = os.path.join(transaction, f"new-{index}")
+            backup = os.path.join(transaction, f"old-{index}") if os.path.exists(target) else None
+            shutil.copy2(os.path.join(generation, relative), staged)
+            if backup is not None:
+                shutil.copy2(target, backup)
+            prepared.append((target, staged, backup))
+        for target, staged, backup in prepared:
+            missing, parent = [], os.path.dirname(target)
+            while not os.path.isdir(parent):
+                missing.append(parent)
+                parent = os.path.dirname(parent)
+            for directory in reversed(missing):
+                os.mkdir(directory)
+                created_dirs.append(directory)
+            os.replace(staged, target)
+            promoted.append((target, backup))
+    except Exception:
+        try:
+            for target, backup in reversed(promoted):
+                if backup is None:
+                    os.remove(target)
+                else:
+                    os.replace(backup, target)
+            for directory in reversed(created_dirs):
+                os.rmdir(directory)
+        except OSError as rollback_error:
+            keep_backup = True
+            raise OSError(f"restauration de publication incomplète; sauvegardes conservées : {transaction}") from rollback_error
+        raise
+    finally:
+        if not keep_backup:
+            shutil.rmtree(transaction, ignore_errors=True)
 
 
 def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None):
@@ -330,13 +384,7 @@ def process(arg, reprendre=False):
     if ok:
         try:
             outputs = current_outputs(name, generation, steps)
-            for relative in outputs:
-                if not confined_output_child(outdir, relative):
-                    raise ValueError(f"destination de publication non confinée : {relative}")
-            for relative in outputs:
-                target = os.path.join(outdir, relative)
-                os.makedirs(os.path.dirname(target), exist_ok=True)
-                shutil.copy2(os.path.join(generation, relative), target)
+            publish_outputs(generation, outdir, outputs)
         except (OSError, ValueError, ET.ParseError) as e:
             ok, err = False, f"manifeste des livrables invalide : {e}"
     statut(name, inbox, outdir, workdir, steps, res, ok, err, outputs=outputs)

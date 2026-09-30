@@ -338,12 +338,31 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
         def materiel_of(o):
             n = nom[o["label"]]
             return ascii_upper(_cell(n, "materiel") or _cell(n, "description") or o["label"])
-        fam_code: dict[str, str] = {}
+        fam_code: dict[tuple[str, str], str] = {}
         if fmt == "materiel":
             for prefix, disc_set in (("I", {"incendie"}), ("M", {"electricite", "urgence"})):
                 names = sorted({materiel_of(o) for o in items if o["discipline"] in disc_set})
                 for i, m in enumerate(names, start=1):
                     fam_code[(prefix, m)] = f"{prefix}{i:02d}"
+        else:
+            # A source note may describe several materially different devices.
+            # Renderer codes identify families in both the table and the legend;
+            # preserve the source code in designation, disambiguate only collisions.
+            materials: dict[str, set[str]] = defaultdict(set)
+            for o in items:
+                materials[letter_code(nom[o["label"]], o["label"])].add(materiel_of(o))
+            used = set(materials)
+            for base, names in sorted(materials.items()):
+                for mat in sorted(names):
+                    code = base
+                    if len(names) > 1:
+                        prefix = re.sub(r"[^A-Z]", "", base) or "F"
+                        index = 1
+                        while f"{prefix}{index:02d}" in used:
+                            index += 1
+                        code = f"{prefix}{index:02d}"
+                        used.add(code)
+                    fam_code[(base, mat)] = code
         seq: dict[str, int] = defaultdict(int)
         for o in sorted(items, key=lambda o: (materiel_of(o), int(o.get("y_texte", o["y"]) // READING_BAND_PT),
                                               o.get("x_texte", o["x"]))):
@@ -352,7 +371,7 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
             if fmt == "materiel":
                 code = fam_code[("I" if o["discipline"] == "incendie" else "M", mat)]
             else:
-                code = letter_code(n, o["label"])
+                code = fam_code[(letter_code(n, o["label"]), mat)]
             seq[code] += 1
             repere = f"{code}-{seq[code]:02d}"
             designation = ascii_upper(_cell(o, "designation") or _cell(n, "code") or _jeton(o) or o["label"])

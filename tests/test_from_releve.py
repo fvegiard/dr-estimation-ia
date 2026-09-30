@@ -3,6 +3,7 @@ import csv
 import json
 
 import pymupdf
+import pytest
 
 from src.estimer.render import load_input, render
 from src.estimer.render.from_releve import build, reserves_by_sheet
@@ -89,6 +90,53 @@ def test_build_writes_renderer_input(tmp_path):
     pai = [e for c in est["counters"] if c["family"] == "Panneau alarme" for e in c["elements"]]
     assert pai[0]["shape"] == "rect" and pai[0]["bbox"] == [490, 190, 510, 215]
     assert pymupdf.open(out / "plans.pdf").page_count == 2
+
+
+@pytest.mark.parametrize("fmt", ["agrege", "travaux"])
+def test_shared_note_code_keeps_distinct_materials_and_true_family_aggregation(tmp_path, fmt):
+    from src.estimer.render.bordereau import aggregate_rows
+    work = make_workdir(tmp_path)
+    _write(work / "feuilles-classement.csv", [
+        {"feuille": "P2", "type": "plan", "note": "cartouche=EU01", "bordereau": fmt}],
+        ["feuille", "type", "note", "bordereau"])
+    _write(work / "nomenclature.csv", [
+        {"label": "TETE DOUBLE REMPLACEMENT", "code": "Note 1", "materiel": "TETE DOUBLE", "modele": "MODEL T", "portee": "REMPLACER"},
+        {"label": "EXIT REMPLACEMENT", "code": "Note 1", "materiel": "ENSEIGNE DE SORTIE", "modele": "MODEL E", "portee": "REMPLACER"},
+        {"label": "PS A", "code": "PS", "materiel": "PRISE SIMPLE", "modele": "MODEL A", "portee": "INSTALLER"},
+        {"label": "PS B", "code": "PS", "materiel": "PRISE SIMPLE", "modele": "MODEL B", "portee": "INSTALLER"},
+        {"label": "AUTRE", "code": "NOTE01", "materiel": "AUTRE APPAREIL", "modele": "MODEL O", "portee": "INSTALLER"},
+    ], ["label", "code", "materiel", "modele", "portee"])
+    _write(work / "occurrences-visuel.csv", [
+        {"feuille": "P2", "label": label, "x_pt": 100 + 100 * i, "y_pt": 100, "qte": qty}
+        for i, (label, qty) in enumerate([
+            ("TETE DOUBLE REMPLACEMENT", 16), ("EXIT REMPLACEMENT", 9), ("PS A", 2), ("PS B", 3), ("AUTRE", 4)])
+    ], ["feuille", "label", "x_pt", "y_pt", "qte"])
+    out = tmp_path / "out"
+    build(work, out, ancrage=False)
+    sheet, = load_input(out)
+    rows = aggregate_rows(sheet)
+    assert len(rows) == 4
+    qty_key = "qte" if fmt == "agrege" else "afournir"
+    assert {r["famille"]: r[qty_key] for r in rows} == {
+        "TETE DOUBLE": "16", "ENSEIGNE DE SORTIE": "9", "PRISE SIMPLE": "5", "AUTRE APPAREIL": "4"}
+    assert len(sheet.families()) == 4
+    by_material = {r["famille"]: r for r in rows}
+    assert by_material["TETE DOUBLE"]["id"] != by_material["ENSEIGNE DE SORTIE"]["id"]
+    assert by_material["PRISE SIMPLE"]["id"] == "PS"
+    assert by_material["AUTRE APPAREIL"]["id"] == "NOTE01"
+    assert len({r["id"] for r in rows}) == 4
+    assert "MODEL E" not in by_material["TETE DOUBLE"]["modele"]
+    assert "MODEL T" not in by_material["ENSEIGNE DE SORTIE"]["modele"]
+    assert all(it.designation == "NOTE 1" for it in sheet.items if it.materiel in ("TETE DOUBLE", "ENSEIGNE DE SORTIE"))
+    estimate = json.loads((out / "estimate.json").read_text(encoding="utf-8"))
+    codes = {c["family"]: c["elements"][0]["code"] for c in estimate["counters"]}
+    assert codes["TETE DOUBLE REMPLACEMENT"] != codes["EXIT REMPLACEMENT"]
+    pdf = tmp_path / "render.pdf"
+    result = render([sheet], out / "plans.pdf", pdf)
+    with pymupdf.open(pdf) as doc:
+        text = " ".join(page.get_text() for page in doc)
+    assert "TETE DOUBLE" in text and "ENSEIGNE DE SORTIE" in text
+    assert result["sheets"][0]["familles"] == 4
 
 
 def test_reserves_split_by_sheet(tmp_path):
