@@ -49,6 +49,21 @@ def coordonnees(o):
         return None
 
 
+def quantite(o, reference=False):
+    """Occurrences: défaut 1, positif. Référence: explicite, zéro permis. Toujours fini."""
+    valeur = o.get("qte")
+    texte = "" if valeur is None else str(valeur).strip()
+    if reference and not texte:
+        return None
+    try:
+        qte = float(texte or "1")
+    except (TypeError, ValueError):
+        return None
+    if isinstance(valeur, bool) or not math.isfinite(qte) or qte < 0 or (qte == 0 and not reference):
+        return None
+    return int(qte) if qte.is_integer() else qte
+
+
 def grille_suspecte(points, pas=PAS_GRILLE, minimum=MIN_GRILLE, seuil=SEUIL_GRILLE):
     """Plus grand pas sur lequel au moins `seuil` des points sont alignés en x ET en y.
 
@@ -148,7 +163,8 @@ def labels_justifies(reserves, labels):
     connus = {" ".join(lab.casefold().split()): lab for lab in labels if lab}
     if not connus:
         return set()
-    motifs = [r"\s+".join(re.escape(mot) for mot in lab.split())
+    # Horizontal spaces (including Unicode spaces), never a new line/paragraph.
+    motifs = [r"[^\S\r\n\v\f\x1c-\x1f\x85\u2028\u2029]+".join(re.escape(mot) for mot in lab.split())
               for lab in sorted(connus, key=len, reverse=True)]
     rx = re.compile(r"(?<!\w)(?:" + "|".join(motifs) + r")(?!\w)", re.IGNORECASE)
     return {connus[" ".join(m.group().casefold().split())] for m in rx.finditer(reserves)}
@@ -178,6 +194,9 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
     # Q0 : lignes mal formées (champ en trop = virgule non échappée dans un libellé ou une note)
     for m in mal:
         err.append(f"Q0 ligne mal formée : {m}")
+    for o in occ:
+        if quantite(o) is None:
+            err.append(f"Q0 quantité invalide : {o.get('feuille')} {o.get('label')} (qte doit être finie et strictement positive)")
     # Q1
     for f in ("feuilles.csv", "feuilles-classement.csv", "nomenclature.csv", "reserves.md", "rapport-releve.md"):
         p = os.path.join(work, f)
@@ -281,17 +300,28 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
     # Q9
     comparaison = None
     if reference and feuille_ref:
-        ref = {r["designation"]: int(r["qte"]) for r in lire_csv(reference) if r.get("feuille") == feuille_ref}
+        ref = collections.Counter()
+        for r in lire_csv(reference):
+            if r.get("feuille") != feuille_ref:
+                continue
+            qte = quantite(r, reference=True)
+            if qte is None:
+                err.append(f"Q9 quantité de référence invalide : {feuille_ref} {r.get('designation')}")
+                continue
+            ref[r["designation"]] += qte
         ia = collections.Counter()
         for o in occ:
             if feuille and o.get("feuille") != feuille:
                 continue
+            qte = quantite(o)
+            if qte is None:
+                continue  # Invalid quantities are already blocking Q0 errors.
             m = REPERE.search((o.get("note") or "").upper())
             fam = m.group(1) if m and m.group(1) in ref else None
             if fam is None:
                 cand = [j for n in nomen if n.get("label") == o.get("label") for j in [n.get("jeton_regex") or ""] if j in ref]
                 fam = cand[0] if len(set(cand)) == 1 else "?"
-            ia[fam] += 1
+            ia[fam] += qte
         comparaison = {f: {"reference": ref.get(f, 0), "ia": ia.get(f, 0)} for f in sorted(set(ref) | set(ia))}
         for f, c in comparaison.items():
             if abs(c["ia"] - c["reference"]) > TOLERANCE_REF * max(c["reference"], 1):

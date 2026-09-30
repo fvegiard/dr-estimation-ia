@@ -58,6 +58,7 @@ SCRIPTS = {"zoom": "releve/zoom.py", "extract_occurrences": "releve/extract_occu
 IMAGES_GARDEES = 4          # images conservées dans l'historique (les plus anciennes sont remplacées par leur chemin)
 MAX_TEXTE = 30000           # troncature d'un fichier texte renvoyé au modèle
 FENETRE = 600               # côté max (pt) d'un zoom qui compte pour la couverture : essai réel 2026-09-26, 480×500 pt → 12/12
+EPS_FENETRE = 1e-9          # bruit de soustraction flottante uniquement, en points PDF
 COUVERTURE_MIN = 0.95       # part de chaque feuille « plan » à parcourir en zooms fins avant `terminer`
 ENTETE_VISUEL = "feuille,label,x_pt,y_pt,source,note"
 METADONNEES_VISUEL = ("designation", "portee", "modele", "prescription", "parent", "qte", "reserve",
@@ -146,7 +147,7 @@ def manquantes(workdir):
     for f, W, H in feuilles_plan(workdir):
         cases = [(x, y) for x in range(0, int(W), FENETRE) for y in range(0, int(H), FENETRE)]
         fins = [v[1:] for v in VUS if v[0] == f and all(math.isfinite(c) for c in v[1:])
-                and 0 < v[3] - v[1] <= FENETRE and 0 < v[4] - v[2] <= FENETRE]
+                and 0 < v[3] - v[1] <= FENETRE + EPS_FENETRE and 0 < v[4] - v[2] <= FENETRE + EPS_FENETRE]
         fenetres = [(x, y, min(x + FENETRE, W), min(y + FENETRE, H)) for x, y in cases]
         reste = [r for r in fenetres if not rectangle_couvert(r, fins)]
         if len(reste) > (1 - COUVERTURE_MIN) * len(cases):
@@ -444,7 +445,7 @@ def run(workdir, out_json, model, max_turns, task=None):
                     if nom == "zoom":
                         zoom = json.loads(texte)
                         bounds = zoom["bounds_pt"]
-                        if max(bounds[2] - bounds[0], bounds[3] - bounds[1]) <= FENETRE:
+                        if max(bounds[2] - bounds[0], bounds[3] - bounds[1]) <= FENETRE + EPS_FENETRE:
                             region = (zoom["feuille"], *bounds)
                     images.append((img, os.path.relpath(img, workdir), region))
             for img, rel, region in images:

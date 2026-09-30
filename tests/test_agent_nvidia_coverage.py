@@ -179,3 +179,30 @@ def test_delivered_regions_survive_context_eviction_without_duplicate_credit(tmp
         for message in request["messages"]:
             if isinstance(message.get("content"), list):
                 assert set(message) == {"role", "content"}, "Private coverage tracking must not enter API messages"
+
+
+@pytest.mark.parametrize('side,credited', [(600.0000000000002, True), (601.0, False)])
+def test_window_width_float_noise_does_not_drop_delivered_zoom(tmp_path, monkeypatch, side, credited):
+    work, _ = _work(tmp_path, monkeypatch, windows=2)
+    (tmp_path / 'feuilles.csv').write_text('feuille,largeur_pt,hauteur_pt\nP1,1200,1200\n', encoding='utf-8')
+    requests = []
+
+    def fake_api(body, key, **kwargs):
+        requests.append(copy.deepcopy(body))
+        if len(requests) == 1:
+            return _reply([_call('zoom', dict(feuille='P1', x0=0, y0=0, x1=side, y1=side), 'zoom')])
+        return _reply([_call('couverture', {}, 'coverage')])
+
+    monkeypatch.setattr(an, 'appel', fake_api)
+    an.run(work, str(tmp_path / 'result.json'), 'unit-test/model', 2)
+    assert _images(requests)
+    assert bool(an.VUS) is credited
+
+
+@pytest.mark.parametrize('side,covered', [(600.0000000000002, True), (601.0, False)])
+def test_coverage_union_tolerates_roundoff_but_not_larger_windows(tmp_path, monkeypatch, side, covered):
+    work, _ = _work(tmp_path, monkeypatch, windows=2)
+    (tmp_path / 'feuilles.csv').write_text('feuille,largeur_pt,hauteur_pt\nP1,1200,1200\n', encoding='utf-8')
+    an.VUS.extend([('P1', 0, 0, side, side), ('P1', 600, 0, 1200, 600),
+                   ('P1', 0, 600, 600, 1200), ('P1', 600, 600, 1200, 1200)])
+    assert (an.manquantes(work) == {}) is covered

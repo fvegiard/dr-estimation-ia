@@ -294,3 +294,95 @@ def test_q8_plaintext_complete_label_with_punctuation_is_preserved(tmp_path):
     nomen = NOMEN + "PRISE,prise,cercle,,PC,Prise,leg\n"
     result = cq.controler(dossier(tmp_path, nomen=nomen, reserves="R-001: ‘prise’ — non localisée"))
     assert result["conforme"]
+
+
+@pytest.mark.parametrize("separator", ["\n", "\r\n", "\r", "\v", "\f", "\x85", "\u2028", "\u2029"])
+def test_q8_label_split_over_lines_is_not_a_reserve(tmp_path, separator):
+    nomen = NOMEN + "PRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen, reserves=f"R-001 PRISE{separator}GFI autre ligne"))
+    assert any(e.startswith("Q8 'PRISE GFI'") for e in result["erreurs"])
+
+
+@pytest.mark.parametrize("separator", [" ", "   ", "\t", "\u00a0", "\u2003", "\u202f", "\u3000"])
+def test_q8_horizontal_unicode_whitespace_still_justifies_label(tmp_path, separator):
+    nomen = NOMEN + "PRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    assert cq.controler(dossier(tmp_path, nomen=nomen,
+        reserves=f"R-001 prise{separator}gfi : à confirmer"))["conforme"]
+
+
+@pytest.mark.parametrize("qte", ["20", "20.5", "0.5", ""])
+def test_q9_sums_explicit_quantity_without_integer_rounding(tmp_path, qte):
+    occ = ("feuille,label,x_pt,y_pt,source,note,qte\n"
+           f"P1,KLAXON,10,10,visuel,[K1.1],{qte}\n"
+           "P1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1],1\n")
+    expected = float(qte or 1)
+    work = dossier(tmp_path, occ=occ)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text(f"feuille,designation,qte\nP1,K,{qte or 1}\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert result["conforme"]
+    assert result["comparaison_reference"]["K"] == {"reference": expected, "ia": expected}
+
+
+def test_q9_legacy_rows_default_to_one(tmp_path):
+    work = dossier(tmp_path)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text("feuille,designation,qte\nP1,K,2\nP1,DT,1\n", encoding="utf-8")
+    assert cq.controler(work, str(reference), "P1", "P1")["conforme"]
+
+
+@pytest.mark.parametrize("reference_invalid,qte", [
+    (False, q) for q in ("nan", "inf", "-inf", "0", "-1", "invalid")
+] + [(True, q) for q in ("nan", "inf", "-inf", "-1", "invalid")])
+def test_invalid_quantity_blocks_quality_without_crashing(tmp_path, qte, reference_invalid):
+    occ = ("feuille,label,x_pt,y_pt,source,note,qte\n"
+           f"P1,KLAXON,10,10,visuel,[K1.1],{1 if reference_invalid else qte}\n"
+           "P1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1],1\n")
+    work = dossier(tmp_path, occ=occ)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text(f"feuille,designation,qte\nP1,K,{qte if reference_invalid else 1}\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert not result["conforme"]
+    assert any("quantité" in e or "qte" in e for e in result["erreurs"])
+
+
+def test_invalid_quantity_blocks_even_without_reference(tmp_path):
+    occ = OCC.replace("source,note\n", "source,note,qte\n")
+    occ = occ.replace("[K1.1]\n", "[K1.1],nan\n").replace("[K1.2]\n", "[K1.2],1\n").replace("[DT1.1]\n", "[DT1.1],1\n")
+    result = cq.controler(dossier(tmp_path, occ=occ))
+    assert not result["conforme"] and "Q0" in regles(result)
+
+
+def test_q9_quantity_sum_keeps_existing_five_percent_threshold(tmp_path):
+    occ = ("feuille,label,x_pt,y_pt,source,note,qte\n"
+           "P1,KLAXON,10,10,visuel,[K1.1],12.5\n"
+           "P1,KLAXON,20,10,visuel,[K1.2],7.5\n"
+           "P1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1],1\n")
+    work = dossier(tmp_path, occ=occ)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text("feuille,designation,qte\nP1,K,19\nP1,DT,1\n", encoding="utf-8")
+    assert "Q9" in regles(cq.controler(work, str(reference), "P1", "P1"))
+    reference.write_text("feuille,designation,qte\nP1,K,20\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert result["conforme"] and result["comparaison_reference"]["K"]["ia"] == 20
+    assert cq.TOLERANCE_REF == 0.05
+
+
+def test_q9_zero_reference_is_valid_when_family_is_absent(tmp_path):
+    occ = "feuille,label,x_pt,y_pt,source,note\nP1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1]\n"
+    work = dossier(tmp_path, occ=occ, reserves="KLAXON absent sur cette feuille")
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text("feuille,designation,qte\nP1,K,0\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert result["conforme"]
+    assert result["comparaison_reference"]["K"] == {"reference": 0, "ia": 0}
+
+
+@pytest.mark.parametrize("body", ["feuille,designation,qte\nP1,K,\n", "feuille,designation\nP1,K\n"])
+def test_q9_reference_quantity_must_be_explicit(tmp_path, body):
+    work = dossier(tmp_path)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text(body, encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert not result["conforme"]
+    assert any(e.startswith("Q9 quantité de référence invalide") for e in result["erreurs"])
