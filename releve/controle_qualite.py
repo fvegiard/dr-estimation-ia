@@ -38,6 +38,7 @@ PAS_GRILLE = (5, 10, 25, 50)  # pas ronds typiques d'une position inventée
 MIN_GRILLE = 8                # en dessous, la coïncidence reste plausible
 SEUIL_GRILLE = 0.80           # part de marques alignées à partir de laquelle on bloque
 SEUIL_GRILLE_AVERT = 0.15     # au-dessus, le modèle arrondit trop (humains mesurés : 0,9 %)
+TYPES_FEUILLE = {"plan", "legende", "schema", "tableau", "detail", "autre", "remplacee"}
 
 
 def coordonnees(o):
@@ -193,6 +194,8 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
             err.append(f"Q1 classement d'une feuille inconnue : {r.get('feuille')!r}")
         if not r.get("type"):
             err.append(f"Q1 type de feuille manquant : {r.get('feuille')!r}")
+        elif r["type"] not in TYPES_FEUILLE:
+            err.append(f"Q1 type de feuille invalide : {r.get('feuille')!r} ({r['type']!r})")
     plans = [r.get("feuille") for r in classement if r.get("type") == "plan"]
     par_feuille = collections.Counter(o.get("feuille") for o in occ)
     for f in plans:

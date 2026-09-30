@@ -61,6 +61,25 @@ def test_q1_accepts_legends_and_other_sheets_without_occurrences(tmp_path):
     assert cq.controler(work)["conforme"]
 
 
+@pytest.mark.parametrize("sheet_type,occ", [("plans", "feuille,label,x_pt,y_pt,source,note\n"), ("plna", OCC)])
+def test_q1_rejects_unknown_type_even_with_reserves(tmp_path, sheet_type, occ):
+    work = dossier(tmp_path, occ=occ, reserves="KLAXON absent; DETECTEUR THERMIQUE absent")
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,{sheet_type},,\n", encoding="utf-8")
+    result = cq.controler(work)
+    assert not result["conforme"]
+    assert any(e.startswith("Q1") and "type" in e for e in result["erreurs"])
+
+
+@pytest.mark.parametrize("sheet_type", ["legende", "schema", "tableau", "detail", "autre", "remplacee"])
+def test_q1_accepts_documented_nonplan_types(tmp_path, sheet_type):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,100,100\nX1,100,100\n", encoding="utf-8")
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,plan,,\nX1,{sheet_type},,\n", encoding="utf-8")
+    assert cq.controler(work)["conforme"]
+
+
 @pytest.mark.parametrize("width", ["0", "-10", "nan", "inf", "invalid"])
 def test_q7_rejects_invalid_sheet_dimensions(tmp_path, width):
     work = dossier(tmp_path)
