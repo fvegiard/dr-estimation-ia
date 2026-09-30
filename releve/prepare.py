@@ -145,7 +145,7 @@ def main(inbox: str, work: str):
         if kind == "estimateur":
             prepare_estimateur(doc, work, rel)
             continue
-        if kind in ("plans", "addenda"):
+        if kind in ("plans", "addenda", "scan"):     # scan = plan raster sans texte (HR26-14) : relevé visuel seulement
             for i, page in enumerate(doc):
                 sid = sheet_id(page)
                 if sid is None and kind == "addenda":

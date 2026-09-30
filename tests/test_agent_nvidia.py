@@ -1,0 +1,49 @@
+"""Tests hors réseau de releve/agent_nvidia.py : confinement au dossier de travail, sorties autorisées, contrôle de couverture."""
+import importlib.util, os, pathlib, pytest
+
+SPEC = importlib.util.spec_from_file_location("agent_nvidia", pathlib.Path(__file__).resolve().parents[1] / "releve" / "agent_nvidia.py")
+an = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(an)
+
+
+def _work(tmp_path):
+    (tmp_path / "feuilles.csv").write_text("feuille,fichier,page,largeur_pt,hauteur_pt\nP1,a.pdf,1,1200,600\n", encoding="utf-8")
+    (tmp_path / "feuilles-classement.csv").write_text("feuille,type,echelle,note\nP1,plan,,\n", encoding="utf-8")
+    an.VUS.clear()
+    return str(tmp_path)
+
+
+def test_hors_dossier_refuse(tmp_path):
+    with pytest.raises(ValueError):
+        an.dans(str(tmp_path), "../secret.txt")
+
+
+def test_ecrire_limite_aux_sorties(tmp_path):
+    w = _work(tmp_path)
+    assert an.outil(w, "ecrire", {"chemin": "MANIFESTE.md", "contenu": "x"})[0].startswith("refusé")
+    assert an.outil(w, "ecrire", {"chemin": "reserves.md", "contenu": "R-001"})[0].startswith("écrit")
+
+
+def test_ajouter_occurrences_entete_unique(tmp_path):
+    w = _work(tmp_path)
+    an.outil(w, "ajouter_occurrences", {"lignes": ["P1,KLAXON,10,20,visuel,[K1.1]"]})
+    an.outil(w, "ajouter_occurrences", {"lignes": ["feuille,label,x_pt,y_pt,source,note", "P1,KLAXON,30,20,visuel,[K1.2]"]})
+    lignes = open(os.path.join(w, "occurrences-visuel.csv"), encoding="utf-8").read().splitlines()
+    assert lignes == [an.ENTETE_VISUEL, "P1,KLAXON,10,20,visuel,[K1.1]", "P1,KLAXON,30,20,visuel,[K1.2]"]
+
+
+def test_couverture_exige_zooms_fins(tmp_path):
+    w = _work(tmp_path)
+    assert set(an.manquantes(w)) == {"P1"}                      # rien vu : 2 fenêtres de 600 pt manquent
+    an.VUS.append(("P1", 0, 0, 1200, 600))                       # un zoom grossier ne compte pas (non ajouté par `zoom`)
+    an.VUS.clear(); an.VUS.append(("P1", 0, 0, 600, 600))
+    assert an.manquantes(w)["P1"] == [(600, 0, 1200, 600)]
+    an.VUS.append(("P1", 600, 0, 1200, 600))
+    assert an.manquantes(w) == {}
+
+
+def test_cle_absente_echec_propre(tmp_path, monkeypatch):
+    w = _work(tmp_path)
+    monkeypatch.delenv("NVIDIA_API_KEY", raising=False)
+    out = os.path.join(w, "res.json")
+    assert an.run(w, out, "m", 1) == 1
+    assert "absente" in open(out, encoding="utf-8").read()
