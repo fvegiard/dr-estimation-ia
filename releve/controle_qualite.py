@@ -12,7 +12,7 @@ Un succès technique de l'agent (fichiers écrits) ne prouve pas un relevé exac
   Q5 repère en double sur une même feuille ;
   Q6 trous dans une suite de repères (K1.1, K1.2, K1.6 → K1.3-K1.5 manquent) non expliqués dans reserves.md ;
   Q7 coordonnées hors de la feuille ;
-  Q8 appareil de la nomenclature jamais relevé sur les plans et absent de reserves.md ;
+  Q8 appareil jamais relevé sur les plans/schémas/tableaux et sans libellé complet dans reserves.md ;
   Q9 (si une référence est fournie) écart par famille > 5 % de la référence ;
   Q10 coordonnées fabriquées sur une grille mentale au lieu d'être lues sur le plan.
 
@@ -138,6 +138,21 @@ def piste_confusion(lab, comptes, fiche):
     return f" — confusion probable avec {autre!r} ({n} marques, {motif})"
 
 
+def labels_justifies(reserves, labels):
+    """Libellés complets cités en réserve, avec priorité au plus long libellé connu.
+
+    « PRISE GFI » ne justifie pas aussi « PRISE »; une seconde mention distincte
+    de « PRISE » le peut. La prose existante, sa casse et ses espaces sont conservés.
+    """
+    connus = {" ".join(lab.casefold().split()): lab for lab in labels if lab}
+    if not connus:
+        return set()
+    motifs = [r"\s+".join(re.escape(mot) for mot in lab.split())
+              for lab in sorted(connus, key=len, reverse=True)]
+    rx = re.compile(r"(?<!\w)(?:" + "|".join(motifs) + r")(?!\w)", re.IGNORECASE)
+    return {connus[" ".join(m.group().casefold().split())] for m in rx.finditer(reserves)}
+
+
 def controler(work, reference=None, feuille_ref=None, feuille=None):
     err, avert, mal = [], [], []
     classement = lire_csv(os.path.join(work, "feuilles-classement.csv"), mal)
@@ -252,11 +267,13 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         if not (0 <= x <= W and 0 <= y <= H):
             err.append(f"Q7 coordonnées hors feuille : {o.get('feuille')} {o.get('label')} ({x}, {y})")
     # Q8
-    comptes = collections.Counter(o.get("label") for o in occ if o.get("feuille") in plans)
+    feuilles_releve = {r.get("feuille") for r in classement if r.get("type") in {"plan", "schema", "tableau"}}
+    comptes = collections.Counter(o.get("label") for o in occ if o.get("feuille") in feuilles_releve)
     fiche = {n.get("label"): (n.get("famille", ""), n.get("forme", "")) for n in nomen}
+    justifies = labels_justifies(reserves, labels)
     for lab in sorted(labels):
-        if lab and not comptes.get(lab) and lab not in reserves:
-            err.append(f"Q8 {lab!r} est dans la nomenclature mais n'est relevé sur aucun plan "
+        if lab and not comptes.get(lab) and lab not in justifies:
+            err.append(f"Q8 {lab!r} est dans la nomenclature mais n'est relevé sur aucun plan, schéma ou tableau "
                        f"(ni justifié en réserve){piste_confusion(lab, comptes, fiche)}")
     # Q9
     comparaison = None

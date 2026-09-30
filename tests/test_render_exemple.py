@@ -17,7 +17,7 @@ import pytest
 from src.estimer.render import from_exemple as FX
 from src.estimer.render import load_input, render
 from src.estimer.render import style as S
-from src.estimer.render.verify_exemple import verify
+from src.estimer.render.verify_exemple import verify, main as verify_main
 from src.estimer.render.bordereau import rows_per_page, wrap
 from src.estimer.render.data import Item, Sheet
 
@@ -47,6 +47,31 @@ def test_verify_rejects_missing_sheets_even_with_matching_page_count(tmp_path: P
 
     assert not result["ok"]
     assert not result["sheets_ok"]
+
+
+@pytest.mark.parametrize("extra", [{"sheet": "EXTRA"}, {"sheet": "EXTRA", "plan_page": 1}])
+def test_verify_reports_extra_sheet_and_still_checks_known_sheet(tmp_path: Path, extra):
+    pdf = tmp_path / "pages.pdf"
+    with pymupdf.open() as doc:
+        doc.new_page()
+        doc.save(pdf)
+    report = tmp_path / "report.json"
+    known = {"sheet": "E01", "plan_page": 1, "format": "materiel", "box": [0, 0, 10, 10], "bordereau_pages": []}
+    report.write_text(json.dumps({"sheets": [extra, known]}), encoding="utf-8")
+    gold = tmp_path / "gold"
+    gold.mkdir()
+    (gold / "provenance.json").write_text('{"sheets": [{"sheet": "E01", "exemple_page": 1}]}', encoding="utf-8")
+
+    result = verify(pdf, report, pdf, gold)
+
+    assert result["ok"] is False and result["sheets_ok"] is False
+    assert result["unexpected_sheets"] == ["EXTRA"]
+    assert result["actual_sheets"] == ["EXTRA", "E01"]
+    assert [row["sheet"] for row in result["sheets"]] == ["E01"]
+    assert result["sheets"][0]["header_ok"] is False
+    output = tmp_path / "verification.json"
+    assert verify_main([str(pdf), str(report), str(pdf), str(gold), "--json", str(output)]) == 1
+    assert json.loads(output.read_text(encoding="utf-8"))["unexpected_sheets"] == ["EXTRA"]
 
 
 def draw_plan(path: Path, n_pages: int = 1) -> list[list[tuple[float, float]]]:

@@ -164,18 +164,25 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
     for dp, _, fs in os.walk(inbox):
         for f in sorted(fs):
             p = os.path.join(dp, f); L.append(f"| {os.path.relpath(p, inbox)} | {os.path.getsize(p)} | {sha256(p)} |")
-    L += ["", "## Sorties", "", "| fichier | octets | sha256 |", "|---|--:|---|"]
-    for f in sorted(os.listdir(outdir)):
-        p = os.path.join(outdir, f)
-        if os.path.isfile(p) and not f.endswith(".png") and f != "STATUT.md" and not f.startswith("."):
-            L.append(f"| {f} | {os.path.getsize(p)} | {sha256(p)} |")
-    pe = os.path.join(outdir, f"{name}-planexpert", f"{name}.qpl")
-    if os.path.exists(pe):
-        L.append(f"| {name}-planexpert/{name}.qpl | {os.path.getsize(pe)} | {sha256(pe)} |")
-    L += ["", f"Le projet Plan Expert `{name}.qpl` est dans `{name}-planexpert/` avec ses rasters PNG : copier le dossier entier, "
-          "puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » et le rapport de métré ci-dessus sont rendus par `releve/render_pdf.py` à partir du même .qpl.", ""]
+    L += ["", "## Sorties", ""]
+    if ok:
+        L += ["| fichier | octets | sha256 |", "|---|--:|---|"]
+        for f in sorted(os.listdir(outdir)):
+            p = os.path.join(outdir, f)
+            if os.path.isfile(p) and not f.endswith(".png") and f != "STATUT.md" and not f.startswith("."):
+                L.append(f"| {f} | {os.path.getsize(p)} | {sha256(p)} |")
+        pe = os.path.join(outdir, f"{name}-planexpert", f"{name}.qpl")
+        if os.path.exists(pe):
+            L.append(f"| {name}-planexpert/{name}.qpl | {os.path.getsize(pe)} | {sha256(pe)} |")
+        L += ["", f"Le projet Plan Expert `{name}.qpl` est dans `{name}-planexpert/` avec ses rasters PNG : copier le dossier entier, "
+              "puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » et le rapport de métré ci-dessus sont rendus par `releve/render_pdf.py` à partir du même .qpl.", ""]
+    else:
+        L += ["**Aucun livrable validé pour cette exécution.** Les fichiers conservés dans ce dossier ou son miroir "
+              "sont des sorties antérieures ou partielles, non validées pour cette tentative. "
+              "Ne pas les utiliser comme résultat courant. Seul ce statut d'échec est publié.", ""]
     natif = os.path.join(outdir, "export-natif-planexpert", "resultat.json")
-    if os.path.exists(natif):
+    native_ran = any(s == "export natif Plan Expert" and not r.startswith("ignoré") for s, _, r in steps)
+    if ok and native_ran and os.path.exists(natif):
         n = json.load(open(natif, encoding="utf-8"))
         L += [f"**Export natif Plan Expert (VM mxlinux, MCP planexpert-vm) : {'oui' if n.get('ok') else 'non'}**"]
         if n.get("erreur"): L += [f"- erreur : `{n['erreur']}`" + (f" · capture `{n.get('capture_erreur')}`" if n.get("capture_erreur") else "")]
@@ -190,7 +197,7 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
           f"- coût estimé (client, `total_cost_usd`) : {(res or {}).get('total_cost_usd')} $ US",
           f"- jetons : entrée {usage.get('input_tokens')}, cache créé {usage.get('cache_creation_input_tokens')}, cache lu {usage.get('cache_read_input_tokens')}, sortie {usage.get('output_tokens')}",
           f"- session : `{(res or {}).get('session_id')}` · dossier de travail : `{workdir}`", ""]
-    if res and res.get("result"):
+    if ok and res and res.get("result"):
         L += ["### Résumé de l'agent", "", str(res["result"]).strip(), ""]
     for extra in ("reserves.md", "comparaison-estimateur.md"):
         p = os.path.join(workdir, extra)
@@ -275,11 +282,11 @@ def process(arg, reprendre=False):
     if drive_mounted():
         try:
             dst = os.path.join(DRIVE, "OUTBOX", name); os.makedirs(dst, exist_ok=True)
-            for f in os.listdir(outdir):
+            for f in os.listdir(outdir) if ok else ["STATUT.md"]:
                 p = os.path.join(outdir, f)
                 if os.path.isfile(p): shutil.copy2(p, dst)
-            if os.path.isdir(pe_dir): shutil.copytree(pe_dir, os.path.join(dst, os.path.basename(pe_dir)), dirs_exist_ok=True)
-            log(f"copié sur Drive : {dst}")
+            if ok and os.path.isdir(pe_dir): shutil.copytree(pe_dir, os.path.join(dst, os.path.basename(pe_dir)), dirs_exist_ok=True)
+            log(f"{'livrables copiés' if ok else 'statut d’échec uniquement copié'} sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
     log(f"{'TERMINÉ' if ok else 'ÉCHEC'} {name} → {outdir}")

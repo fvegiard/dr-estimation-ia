@@ -275,6 +275,52 @@ def test_run_process_blocks_resume_when_quality_fails(monkeypatch, tmp_path):
     assert not any("releve/build_qpl.py" in cmd for cmd in commands)
 
 
+@pytest.mark.parametrize("reprendre", [False, True])
+@pytest.mark.parametrize("failure", ["releve/controle_qualite.py", "src.estimer.render.from_releve"])
+def test_failed_attempt_preserves_but_does_not_publish_outputs(monkeypatch, tmp_path, reprendre, failure):
+    outbox, drive = tmp_path / "out", tmp_path / "drive"
+    outdir, mirror = outbox / "demo", drive / "OUTBOX" / "demo"
+    workdir = outdir / "travail"
+    workdir.mkdir(parents=True)
+    mirror.mkdir(parents=True)
+    for name in ("nomenclature.csv", "feuilles-classement.csv"):
+        (workdir / name).write_text("placeholder", encoding="utf-8")
+    (outdir / "previous.pdf").write_bytes(b"local previous output")
+    (mirror / "previous.pdf").write_bytes(b"previous accepted mirror")
+    project = outdir / "demo-planexpert"
+    project.mkdir()
+    (project / "demo.qpl").write_bytes(b"previous QPL")
+    native = outdir / "export-natif-planexpert"
+    native.mkdir()
+    (native / "resultat.json").write_text('{"ok": true}', encoding="utf-8")
+
+    def fake_run(cmd, **kwargs):
+        if failure == "src.estimer.render.from_releve" and "releve/render_pdf.py" in cmd:
+            (outdir / "partial.pdf").write_bytes(b"partial new output")
+        return (2, "failed") if failure in cmd else (0, "")
+
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "DRIVE", str(drive))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("demo", str(tmp_path / "input")))
+    monkeypatch.setattr(releve_run, "prepare_a_jour", lambda *args: True)
+    monkeypatch.setattr(releve_run, "agent", lambda *args: (0, {"is_error": False}, 0))
+    monkeypatch.setattr(releve_run, "run", fake_run)
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: True)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    monkeypatch.setenv("RELEVE_NATIF", "0")
+
+    assert not releve_run.process("demo", reprendre=reprendre)
+    assert (outdir / "previous.pdf").read_bytes() == b"local previous output"
+    assert (project / "demo.qpl").read_bytes() == b"previous QPL"
+    assert (mirror / "previous.pdf").read_bytes() == b"previous accepted mirror"
+    assert set(p.name for p in mirror.iterdir()) == {"previous.pdf", "STATUT.md"}
+    status = (outdir / "STATUT.md").read_text(encoding="utf-8")
+    assert "ÉCHEC" in status and "Aucun livrable validé" in status
+    assert "previous.pdf" not in status and "demo.qpl" not in status and "partial.pdf" not in status
+    assert "Plan Expert (VM mxlinux, MCP planexpert-vm) : oui" not in status
+    assert (mirror / "STATUT.md").read_text(encoding="utf-8") == status
+
+
 def test_run_process_creates_example_format(monkeypatch, tmp_path):
     outbox = tmp_path / "OUTBOX"
     (outbox / "S-TEST" / "travail").mkdir(parents=True)

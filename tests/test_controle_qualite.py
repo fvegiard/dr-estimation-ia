@@ -239,3 +239,39 @@ def test_q8_sans_voisin_reste_simple(tmp_path):
     e = [x for x in cq.controler(dossier(tmp_path, nomen=nomen))["erreurs"]
          if x.startswith("Q8") and "RELAIS" in x]
     assert e and "confusion probable" not in e[0]
+
+
+@pytest.mark.parametrize("sheet_type", ["schema", "tableau"])
+def test_q8_counts_legitimate_nonplan_takeoffs(tmp_path, sheet_type):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,{sheet_type},,\n", encoding="utf-8")
+    assert cq.controler(work)["conforme"]
+
+
+@pytest.mark.parametrize("sheet_type", ["legende", "autre"])
+def test_q8_does_not_count_legend_examples_as_takeoffs(tmp_path, sheet_type):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,{sheet_type},,\n", encoding="utf-8")
+    assert "Q8" in regles(cq.controler(work))
+
+
+@pytest.mark.parametrize("reserve", ["R-001 PRISE GFI : emplacement à confirmer", "R-001 ENTREPRISE : à confirmer"])
+def test_q8_reserve_for_longer_label_does_not_justify_shorter_label(tmp_path, reserve):
+    nomen = NOMEN + "PRISE,prise,cercle,,PC,Prise,leg\nPRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen, reserves=reserve))
+    assert any(e.startswith("Q8 'PRISE'") for e in result["erreurs"])
+
+
+def test_q8_distinct_complete_reserve_mentions_justify_both_labels(tmp_path):
+    nomen = NOMEN + "PRISE,prise,cercle,,PC,Prise,leg\nPRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen,
+        reserves="R-001 PRISE GFI : emplacement inconnu; R-002 PRISE : quantité à confirmer"))
+    assert result["conforme"]
+
+
+def test_q8_plaintext_complete_label_with_punctuation_is_preserved(tmp_path):
+    nomen = NOMEN + "PRISE,prise,cercle,,PC,Prise,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen, reserves="R-001: ‘prise’ — non localisée"))
+    assert result["conforme"]
