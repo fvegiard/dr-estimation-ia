@@ -103,8 +103,13 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    mur vs plafond) : dis dans `note` ce qui a tranché.
 4. **Occurrences visuelles** → `occurrences-visuel.csv` (`feuille,label,x_pt,y_pt,source,note`, `source=visuel`) : parcours
    **toutes** les tuiles de chaque feuille `plan` et relève les symboles sans étiquette (prises duplex, DDFT, enseignes de sortie,
-   phares, postes manuels, klaxons non étiquetés, sectionneurs, raccordements d'équipements…). Coordonnées lues sur les règles
-   (précision ≈ 5 pt suffit). Utilise `zoom.py` pour les zones denses. Chaque label utilisé doit exister dans `nomenclature.csv`.
+   phares, postes manuels, klaxons non étiquetés, sectionneurs, raccordements d'équipements…). Coordonnées lues sur les règles,
+   **au centre du symbole, sans arrondir** : interpole entre deux graduations au lieu de prendre la graduation la plus proche.
+   Une pastille fait ≈ 4,2 pt de rayon — arrondir à 5 pt la déplace de plus que sa propre taille et la fait rater le symbole.
+   Repère mesuré : sur les 319 marques relevées à la main dans le dépôt, 3,1 % seulement tombent sur un multiple de 5 pt dans
+   les deux axes. Si presque toutes tes coordonnées sont rondes, tu ne lis pas le plan — tu poses une grille mentale, et le
+   contrôle Q10 le bloque (gemma-4-31b : 53/53 sur 10 pt ; kimi-k3 : 104/104 sur 5 pt, familles correctes mais positions fausses).
+   Utilise `zoom.py` pour les zones denses. Chaque label utilisé doit exister dans `nomenclature.csv`.
 5. **Addendas** : si un fichier `addenda` existe, lis-le (aperçus/texte) et applique ce qui touche l'électricité : feuilles
    remplacées (la version d'addenda prime), ajouts/retraits d'appareils. Note chaque application dans `reserves.md`.
    Si une feuille d'addenda remplace une feuille de base, relève l'addenda et retire la feuille de base du classement (`type=remplacee`) ;
