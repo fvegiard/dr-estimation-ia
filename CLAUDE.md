@@ -18,7 +18,11 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
    r≈4,2 pt + contour 0,7 pt couleur famille, dessinée PAR-DESSUS le plan) ? sur le BON symbole (type = famille) ?
    1 symbole = 1 repère ? étiquette lisible ? réserve * si doute ? Jamais sur un texte, un arc ou une ligne longue.
 2. Compare à l'exemplaire (même pastille, encadré « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes) — sauf pendant
-   l'essai à l'aveugle HR26-14 où tu ne compares qu'à la fin (étape 4).
+   l'essai à l'aveugle HR26-14 où tu ne compares qu'à la fin (étape 4). Cible visuelle approuvée par Francis,
+   ancrée et vérifiable : `apprentissage/hr26-14-exemplaire/SOURCE.txt` (E08 = p.62, E09 = p.64 de EXEMPLE.pdf,
+   sha256 0861bc3a…) et `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` (format, vocabulaire, règles).
+   Chaque dossier doit produire ce format via `releve/render_vectoriel.py` (pas de rastérisation) — vérifie le
+   fichier PDF réellement produit, jamais seulement le journal de l'agent.
 3. Écris toi-même le score x/N avec la liste des cases fausses et corrige jusqu'au seuil (≥ 17/18 sur une planche d'essai,
    ≥ 95 % ensuite) sans attendre de message. Une régression (case bonne avant, fausse après) bloque le passage.
 4. Pour les vérifs importantes, lance le sous-agent `verificateur` sur les images seules (sans ton raisonnement).
@@ -38,13 +42,33 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
 - `dossiers/_jeu-reference/` — résultats et ligne de base du jeu de référence.
 - `src/` (autres modules), `tests/` (pytest, fixtures synthétiques), `docs/`, `infra/` (VM Plan Expert sur mxlinux).
 
+## Contrôles de conformité (du plus léger au plus profond)
+1. `python -m pytest tests -q` et `python -m src.validation.jeu_reference` — déterministes, tournent partout (y compris en bac
+   à sable cloud), gate officiel de non-régression (quantité/position, jamais le rendu visuel).
+2. `releve/render_vectoriel.py` écrit `<SORTIE>/<NOM>-rendu-rapport.json` à chaque rendu (repères/familles/RES par feuille,
+   encadré hors espace libre ou non) — à relire avant de livrer, pas seulement le journal texte de l'agent.
+3. Auto-supervision visuelle (§Autonomie ci-dessus) + sous-agent `verificateur` sur les images seules.
+4. `python -m src.estimer.render.verify_exemple RENDU.pdf RENDU.report.json EXEMPLE.pdf GOLD_INPUT_DIR` — comparaison
+   octet-près au gold HR26-14 (marqueurs à 0,05 pt, bordereau cellule par cellule). Exige le EXEMPLE.pdf complet
+   (87 p., non versionné, sur le Drive/PC de Francis) : **indisponible en bac à sable cloud**, à lancer sur un poste
+   qui a le fichier.
+5. `infra/pe-batch.ps1` — ouvre le `.qpl` dans le vrai Plan Expert (VM mxlinux, PowerShell + SSH + pilotage VNC) et
+   exporte son propre rapport/PDF natifs : la vérification la plus forte (le logiciel du client accepte le fichier),
+   mais **Windows + VM uniquement**, aucun équivalent possible en bac à sable cloud.
+
 ## Commandes
+Action unique pour un nouveau dossier (parcours canonique — tout le reste orchestré par `run.py` lui-même :
+`prepare.py` → agent `releveur` → `build_qpl.py` → `render_vectoriel.py` → `render_pdf.py` → `STATUT.md`) :
+```bash
+uv run releve/run.py <NOM>                       # dépose d'abord les PDF dans INBOX/<NOM>/ — c'est tout
+```
+Reste (débogage, développement) :
 ```bash
 pip install -r requirements.txt
 python -m pytest tests -q                       # tests unitaires
 python -m src.validation.jeu_reference          # jeu de référence (code 1 si régression)
 uv run releve/prepare.py INBOX/<S> OUTBOX/<S>/travail
-uv run releve/run.py --reprendre <S>            # après l'agent : qpl + PDF
+uv run releve/run.py --reprendre <S>            # rejoue seulement qpl + render_vectoriel + render_pdf (sans agent)
 ```
 
 ## Agents (`.claude/agents/`)

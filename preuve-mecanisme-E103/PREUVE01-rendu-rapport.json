@@ -1,0 +1,32 @@
+{
+ "pages": 2,
+ "sheets": [
+  {
+   "sheet": "E103",
+   "format": "materiel",
+   "plan_page": 1,
+   "bordereau_pages": [
+    2
+   ],
+   "reperes": 6,
+   "familles": 6,
+   "res": 6,
+   "box": [
+    65.0,
+    940.0,
+    2085.0,
+    1050.0
+   ],
+   "box_layout": [
+    4,
+    505.0,
+    27.0
+   ],
+   "box_in_free_space": true
+  }
+ ],
+ "conformite": {
+  "encadre_hors_espace_libre": [],
+  "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+ }
+}

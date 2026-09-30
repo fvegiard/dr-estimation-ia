@@ -12,7 +12,7 @@ Produit SORTIE_DIR/<NOM_PROJET>-Plans-annotes.pdf (+ SORTIE_DIR/vecteur/{estimat
 reserves.md,feuilles.json,plans.pdf} : données intermédiaires, utiles pour audit/débogage).
 Étape suivante : releve/render_pdf.py assemble Rapport-de-metre + Dossier-complet à partir de ce PDF.
 """
-import os, sys
+import json, os, sys
 from pathlib import Path
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,9 +33,23 @@ def main(work, name, out_dir):
     p_plans = out_dir / f"{name}-Plans-annotes.pdf"
     rep = render(sheets, vec_dir / "plans.pdf", p_plans)
     print(f"{p_plans}: {rep['pages']} pages, {len(rep['sheets'])} feuilles")
+    chevauche = []
     for s in rep["sheets"]:
         marque = "" if s["box_in_free_space"] else " (encadre chevauche le dessin)"
+        if not s["box_in_free_space"]:
+            chevauche.append(s["sheet"])
         print(f"  {s['sheet']}: {s['reperes']} reperes / {s['familles']} familles / RES {s['res']}{marque}")
+    # Contrôle de conformité versionné (pas seulement informatif au journal) : le rapport persiste sur disque
+    # pour que STATUT.md, un futur jeu_reference_visuel.py ou une relecture humaine puisse le relire sans
+    # rejouer le rendu. N'échoue pas le pipeline sur un chevauchement (une feuille très dense peut n'avoir
+    # aucun espace libre) mais le signale de façon non manquable : c'est à l'auto-supervision (CLAUDE.md) de
+    # juger si c'est acceptable.
+    rep["conformite"] = {"encadre_hors_espace_libre": chevauche,
+                         "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"}
+    (out_dir / f"{name}-rendu-rapport.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
+    if chevauche:
+        print(f"ATTENTION conformité : encadré hors espace libre sur {', '.join(chevauche)} — vérifier visuellement "
+              f"avant de livrer (voir {name}-rendu-rapport.json)", file=sys.stderr)
     return 0
 
 

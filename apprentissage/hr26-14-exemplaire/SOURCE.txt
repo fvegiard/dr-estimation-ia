@@ -6,3 +6,23 @@ sha256    : 0861bc3a0e9697f7f2764fba85f0cc35bc8c5b8a3d06ce3ff2b11b32432eb84b
 provenance: fourni par Francis (Google Drive) — non versionné ici (binaire volumineux)
 contenu   : relevé IA complet du dossier HR26-14 (OMH Haut-Richelieu, 145 rue Latour),
             4 lots, feuilles DSI01-08 (incendie), E01-14 (électricité), EU01-04 (éclairage urgence).
+
+CIBLE VISUELLE APPROUVÉE (confirmée par Francis, 2026-09-30) — référence existante, pas la preuve d'un
+nouveau relevé généré :
+  E08 = page 62 de EXEMPLE.pdf (sha256 ci-dessus) · LOT B 155 MERCIER · logements types A/B
+  E09 = page 64 de EXEMPLE.pdf (sha256 ci-dessus) · LOT C 290 MONTCALM · étage/RDC/sous-sol
+  (numéros de page confirmés par feuilles.csv de ce dossier, extraits indépendamment le 2026-09-29 —
+  cohérence numéro de page ↔ sha256 ↔ cartouche vérifiée, pas une nouvelle affirmation non recoupée.)
+
+Extrait VERSIONNÉ dans ce dépôt (contrairement à EXEMPLE.pdf, trop volumineux) :
+  fichier : cible-visuelle/HR26-14-E08-E09-approuve.pdf (2 pages = E08 p.62 + E09 p.64, dessin non modifié)
+  sha256  : 036454aa36ed7ba2505a4e451e0fb53ae2b32395de9b501e3dca8e7bb30ad22f
+  fourni par Francis le 2026-09-30, vérifié identique à l'original par Francis avant envoi.
+  Usage : référence visuelle UNIQUEMENT (comparaison de style) — ne jamais le faire passer dans
+  releve/prepare.py ni le traiter comme un plan brut à relever, c'est déjà un relevé fini.
+
+Tout rendu produit par releve/render_vectoriel.py (src/estimer/render/) doit reproduire cette forme :
+plan source intact (aucune rastérisation), pastilles pastel ancrées sur le symbole, calques OCG par
+famille, encadré « RELEVE <feuille> - MATERIEL », bordereau et réserves conformes à STANDARD-RELEVE.md
+du même dossier. Voir CLAUDE.md §Autonomie et auto-supervision pour les critères de jugement (pastille
+visible, bon symbole, 1 symbole = 1 repère, étiquette lisible, réserve si doute).

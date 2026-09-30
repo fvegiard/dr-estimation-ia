@@ -1,0 +1,7 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription,discipline
+DP1 nLight,commande,carre,,DP1,Dispositif de controle nLight DP1 (carre etiquete sur le plan),E103 symboles carres etiquetes + detail riser,DP1,DISPOSITIF NLIGHT DP1,A PRECISER,NPP16 D EFP 347,,electricite
+DP2 nLight,commande,carre,,DP2,Dispositif de controle nLight DP2 (carre etiquete sur le plan),E103 symboles carres etiquetes + detail riser,DP2,DISPOSITIF NLIGHT DP2,A PRECISER,NPP PCD EFP,,electricite
+PP1 nLight,commande,carre,,PP1,Dispositif de controle nLight PP1 (carre etiquete sur le plan),E103 symboles carres etiquetes + detail riser,PP1,DISPOSITIF NLIGHT PP1,A PRECISER,NPP20 PL BP,,electricite
+SO3 nLight,commande,carre,,SO3,Detecteur/capteur nLight SO3 (carre etiquete sur le plan),E103 symboles carres etiquetes + detail riser,SO3,DETECTEUR NLIGHT SO3,A PRECISER,WSXA MWO PDT D WH,,electricite
+SO4 nLight,commande,carre,,SO4,Detecteur/capteur nLight SO4 (carre etiquete sur le plan),E103 symboles carres etiquetes + detail riser,SO4,DETECTEUR NLIGHT SO4,A PRECISER,WSXA MWO PDT WH,,electricite
+SW1 nLight,commande,carre,,SW1,Interrupteur nLight SW1 (carre etiquete sur le plan),E103 symboles carres etiquetes + detail riser,SW1,INTERRUPTEUR NLIGHT SW1,A PRECISER,NPODMA WH,,electricite
