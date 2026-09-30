@@ -211,6 +211,72 @@ def test_optional_quantity_matches_loader_defaults(tmp_path, qte, expected):
     assert load_occurrences(w)[0]["qte"] == expected
 
 
+@pytest.mark.parametrize("supply", [0, 2.5, "3", "", None])
+def test_supply_quantity_survives_legacy_migration_and_renderer(tmp_path, supply):
+    from src.estimer.render.from_releve import read_occurrences
+    w = _work(tmp_path)
+    an.outil(w, "ajouter_occurrences", {"lignes": ["P1,KLAXON,10,20,visuel,legacy"]})
+    an.outil(w, "ajouter_occurrences", {"occurrences": [
+        {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40,
+         "qte": 4, "portee": "RACCORDER", "qte_fourniture": supply}]})
+    an.outil(w, "ajouter_occurrences", {"lignes": ["P1,KLAXON,60,70,visuel,legacy-after"]})
+    with (tmp_path / "occurrences-visuel.csv").open(encoding="utf-8", newline="") as fh:
+        rows = list(csv.DictReader(fh))
+    assert [r["qte_fourniture"] for r in rows] == ["", "" if supply is None else str(supply), ""]
+    loaded = read_occurrences(tmp_path)
+    assert loaded[1]["qte_fourniture"] == rows[1]["qte_fourniture"]
+    assert loaded[1]["portee"] == "RACCORDER"
+    assert loaded[1]["qte"] == "4"
+
+
+def test_supply_quantity_is_available_in_nvidia_tool_schema():
+    tool = next(t["function"] for t in an.OUTILS if t["function"]["name"] == "ajouter_occurrences")
+    schema = tool["parameters"]["properties"]["occurrences"]["items"]["properties"]["qte_fourniture"]
+    assert schema["type"] == "number"
+    assert schema["minimum"] == 0
+
+
+def test_nvidia_zero_supply_reaches_estimate_and_pdf(tmp_path):
+    import pymupdf
+    from src.estimer.render import load_input, render
+    from src.estimer.render.bordereau import aggregate_rows
+    from src.estimer.render.from_releve import build
+    w = _work(tmp_path)
+    (tmp_path / "feuilles-classement.csv").write_text(
+        "feuille,type,bordereau\nP1,plan,travaux\n", encoding="utf-8")
+    (tmp_path / "feuilles").mkdir()
+    with pymupdf.open() as doc:
+        doc.new_page(width=1200, height=600)
+        doc.save(tmp_path / "feuilles/P1.pdf")
+    an.outil(w, "ajouter_occurrences", {"occurrences": [
+        {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40,
+         "qte": 4, "portee": "RACCORDER", "qte_fourniture": 0}]})
+    out = tmp_path / "render"
+    build(tmp_path, out, ancrage=False)
+    sheet, = load_input(out)
+    assert sheet.items[0].qte == 4
+    assert sheet.items[0].qte_fourniture == 0
+    row, = aggregate_rows(sheet)
+    assert row["afournir"] == "0" and row["portee"] == "RACCORDER"
+    pdf = tmp_path / "nvidia-zero-supply.pdf"
+    render([sheet], out / "plans.pdf", pdf)
+    with pymupdf.open(pdf) as doc:
+        text = " ".join(page.get_text() for page in doc)
+    assert "RACCORDER" in text and "0 appareils a fournir" in text
+
+
+@pytest.mark.parametrize("supply", [-1, float("nan"), float("inf"), "invalid", True, False])
+def test_invalid_supply_quantity_preserves_whole_existing_file(tmp_path, supply):
+    w = _work(tmp_path)
+    an.outil(w, "ajouter_occurrences", {"lignes": ["P1,KLAXON,10,20,visuel,legacy"]})
+    path = tmp_path / "occurrences-visuel.csv"
+    before = path.read_bytes()
+    good = {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40, "qte_fourniture": 0}
+    with pytest.raises(ValueError, match="qte_fourniture"):
+        an.outil(w, "ajouter_occurrences", {"occurrences": [good, {**good, "qte_fourniture": supply}]})
+    assert path.read_bytes() == before
+
+
 @pytest.mark.parametrize("suffix", [",extra\nP1,KLAXON,10,20,visuel,note\n",
                                      "\nP1,KLAXON,10,20,visuel,note,unexpected\n"])
 def test_malformed_existing_csv_is_not_migrated(tmp_path, suffix):

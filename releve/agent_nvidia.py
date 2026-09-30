@@ -61,8 +61,9 @@ FENETRE = 600               # côté max (pt) d'un zoom qui compte pour la couve
 EPS_FENETRE = 1e-9          # bruit de soustraction flottante uniquement, en points PDF
 COUVERTURE_MIN = 0.95       # part de chaque feuille « plan » à parcourir en zooms fins avant `terminer`
 ENTETE_VISUEL = "feuille,label,x_pt,y_pt,source,note"
+CHAMPS_BOITE = ("x0_pt", "y0_pt", "x1_pt", "y1_pt")
 METADONNEES_VISUEL = ("designation", "portee", "modele", "prescription", "parent", "qte", "reserve",
-                      "x0_pt", "y0_pt", "x1_pt", "y1_pt")
+                      *CHAMPS_BOITE, "qte_fourniture")
 
 OUTILS = [
     {"type": "function", "function": {"name": "lister", "description": "Liste les fichiers du dossier de travail qui correspondent au motif glob (relatif au dossier).",
@@ -82,7 +83,9 @@ OUTILS = [
              **{k: {"type": "string"} for k in METADONNEES_VISUEL[:5] + ("reserve",)},
              "qte": {"type": "number", "exclusiveMinimum": 0,
                      "description": "Quantité prescrite à cet emplacement; défaut 1. Ne pas inventer des symboles supplémentaires."},
-             **{k: {"type": "number"} for k in METADONNEES_VISUEL[7:]}},
+             "qte_fourniture": {"type": "number", "minimum": 0,
+                                "description": "Quantité à fournir si explicitement prescrite; zéro conserve le travail sans achat. Omettre si inconnue."},
+             **{k: {"type": "number"} for k in CHAMPS_BOITE}},
              "required": ["feuille", "label", "x_pt", "y_pt", "note"]}},
          "lignes": {"type": "array", "items": {"type": "string"}}}}}},
     {"type": "function", "function": {"name": "couverture", "description": "Indique, pour chaque feuille plan, les fenêtres de ≤600 pt pas encore zoomées.",
@@ -225,7 +228,15 @@ def outil(workdir, nom, a):
                 raise ValueError("qte numérique requise") from e
             if isinstance(qte, bool) or not math.isfinite(nombre) or nombre <= 0:
                 raise ValueError("qte doit être finie et strictement positive")
-            bbox = [row.get(k, "") for k in METADONNEES_VISUEL[7:]]
+            fourniture = row.get("qte_fourniture", "")
+            if str(fourniture).strip():
+                try:
+                    nombre_fourniture = float(fourniture)
+                except (TypeError, ValueError) as e:
+                    raise ValueError("qte_fourniture numérique requise") from e
+                if isinstance(fourniture, bool) or not math.isfinite(nombre_fourniture) or nombre_fourniture < 0:
+                    raise ValueError("qte_fourniture doit être finie et positive ou nulle")
+            bbox = [row.get(k, "") for k in CHAMPS_BOITE]
             if any(v != "" for v in bbox):
                 try:
                     x0, y0, x1, y1 = map(float, bbox)

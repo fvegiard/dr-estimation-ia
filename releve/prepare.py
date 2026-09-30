@@ -107,15 +107,15 @@ def classify(path: str, doc: pymupdf.Document) -> str:
     name = unicodedata.normalize("NFKD", os.path.basename(path)).encode("ascii", "ignore").decode().lower()
     p0 = doc[0]
     text_pages = sum(1 for p in doc if p.get_text().strip())
-    if re.search(r"(?:^|[\W_])(?:dupuis|estimateur|estimator|releve|reference|exemple|bordereau|take[\s_-]*off|plan[\s_-]*expert)(?=$|[\W_])", name):
-        return "estimateur"          # explicit reference name; raster size alone also matches blank input plans
     if re.search(r"addenda|adme|addendum", name):
         return "addenda"
-    if text_pages == 0:
-        return "scan"
     full = " ".join(doc[i].get_text() for i in range(min(3, len(doc)))).lower()
     if "addenda" in full[:4000] and len(doc) <= 6 and not sheet_id(p0):
         return "addenda"
+    if re.search(r"(?:^|[\W_])(?:dupuis|estimateur|estimator|releve|reference|exemple|bordereau|take[\s_-]*off|plan[\s_-]*expert)(?=$|[\W_])", name):
+        return "estimateur"          # explicit reference name; raster size alone also matches blank input plans
+    if text_pages == 0:
+        return "scan"
     return "plans"
 
 def draw_rulers(im: Image.Image, x0: float, y0: float, x1: float, y1: float, step: float):

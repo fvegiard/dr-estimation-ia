@@ -34,8 +34,6 @@ import os
 import re
 import sys
 
-from PIL import Image
-
 REPERE = re.compile(r"\[?\b([A-Z]{1,4}\d?)(\d+)\.(\d+)\]?")
 TOLERANCE_REF = 0.05
 PAS_GRILLE = (5, 10, 25, 50)  # pas ronds typiques d'une position inventée
@@ -81,6 +79,23 @@ def fichier_preuve(work, relative, folder):
 def empreinte(path):
     with open(path, "rb") as stream:
         return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def verifier_image_preuve(path):
+    """Decode image evidence when present; ordinary QA remains standard-library-only."""
+    try:
+        from PIL import Image
+    except ImportError as exc:
+        raise ValueError("Pillow requis pour vérifier les images de preuve") from exc
+    try:
+        with Image.open(path) as decoded:
+            if decoded.format != "PNG":
+                raise ValueError("preuve image PNG requise")
+            decoded.verify()
+        with Image.open(path) as decoded:
+            decoded.load()
+    except Image.DecompressionBombError as exc:
+        raise ValueError(f"image de preuve trop grande : {exc}") from exc
 
 
 def collisions_source(work, vus, reserves):
@@ -150,16 +165,11 @@ def collisions_source(work, vus, reserves):
                 raise ValueError("images de preuve requises")
             for image in images:
                 proof = fichier_preuve(work, image["path"], "evidence")
-                with Image.open(proof) as decoded:
-                    if decoded.format != "PNG":
-                        raise ValueError("preuve image PNG requise")
-                    decoded.verify()
-                with Image.open(proof) as decoded:
-                    decoded.load()
+                verifier_image_preuve(proof)
                 if empreinte(proof) != image["sha256"]:
                     raise ValueError("empreinte image différente")
             valid[key] = entry
-        except (OSError, ValueError, KeyError, TypeError, AttributeError, SyntaxError, Image.DecompressionBombError) as exc:
+        except (OSError, ValueError, KeyError, TypeError, AttributeError, SyntaxError) as exc:
             errors.append(f"Q5 preuve source invalide {key!r} : {exc}")
     return valid, errors
 
@@ -404,7 +414,9 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         suites[(f, m.group(1), m.group(2))].add(int(m.group(3)))
     for (f, pref, niv), nums in suites.items():
         trous = [f"{pref}{niv}.{i}" for i in range(1, max(nums)) if i not in nums]
-        trous = [t for t in trous if t not in reserves]
+        # A reserve for K1.20 (or AK1.2) cannot excuse K1.2. A final prose
+        # period is allowed, but a dotted identifier suffix is not.
+        trous = [t for t in trous if not re.search(r"(?<![\w.])" + re.escape(t) + r"(?!\w|\.\w)", reserves)]
         if trous:
             err.append(f"Q6 {f} : repères manquants dans la suite {pref}{niv}.x : {', '.join(trous[:15])}{' …' if len(trous) > 15 else ''}")
     n_reperes = len(vus)

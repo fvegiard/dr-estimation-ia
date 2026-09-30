@@ -99,7 +99,14 @@ def test_unrelated_or_ambiguous_name_does_not_imply_estimator(name):
         assert classify(name, doc) == 'scan'
 
 
-def test_explicit_reference_name_wins_over_addendum_name():
+@pytest.mark.parametrize('name', ['addenda-reference.pdf', 'addenda-bordereau.pdf', 'releve-addenda.pdf'])
+def test_explicit_addendum_name_keeps_source_pages(name):
     with pymupdf.open() as doc:
         doc.new_page()
-        assert classify('addenda-reference.pdf', doc) == 'estimateur'
+        assert classify(name, doc) == 'addenda'
+
+
+def test_addendum_content_precedes_broad_estimator_hint():
+    with pymupdf.open() as doc:
+        doc.new_page().insert_text((30, 30), 'ADDENDA 03 - modifications')
+        assert classify('bordereau-reference.pdf', doc) == 'addenda'

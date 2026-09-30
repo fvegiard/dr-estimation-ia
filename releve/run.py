@@ -397,7 +397,16 @@ def process(arg, reprendre=False):
     except Exception as e:  # noqa
         ok = False; err = str(e); log("ÉCHEC : " + err)
     if reprendre and os.path.exists(os.path.join(workdir, "agent-resultat.json")):
-        res = json.load(open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8"))
+        # Historical diagnostics are optional; the current QA/export steps decide success.
+        try:
+            with open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8") as fh:
+                previous = json.load(fh)
+            if isinstance(previous, dict):
+                res = previous
+            else:
+                log("diagnostic historique ignoré : objet JSON attendu")
+        except (OSError, ValueError, UnicodeError):
+            log("diagnostic historique ignoré : fichier illisible")
     steps.append(("total", time.time() - T, ""))
     outputs = []
     status_ready, preserve_previous_status = False, False
