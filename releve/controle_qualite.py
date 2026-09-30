@@ -177,7 +177,8 @@ def collisions_source(work, vus, reserves):
 def coordonnees(o):
     """(x, y) d'une occurrence, ou None si illisible."""
     try:
-        return float(o.get("x_pt") or o.get("x")), float(o.get("y_pt") or o.get("y"))
+        x, y = o.get("x_pt"), o.get("y_pt")
+        return float(o.get("x") if x in (None, "") else x), float(o.get("y") if y in (None, "") else y)
     except (TypeError, ValueError):
         return None
 
@@ -463,7 +464,10 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
             qte = quantite(o)
             if qte is None:
                 continue  # Invalid quantities are already blocking Q0 errors.
-            m = REPERE.search((o.get("note") or "").upper())
+            try:
+                m = repere_propre(o)
+            except ValueError:
+                continue  # Invalid own identifiers are already blocking Q4 errors.
             fam = m.group(1) if m and m.group(1) in ref else None
             if fam is None:
                 cand = [j for n in nomen if n.get("label") == o.get("label") for j in [n.get("jeton_regex") or ""] if j in ref]

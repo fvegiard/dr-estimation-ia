@@ -275,7 +275,7 @@ def outil(workdir, nom, a):
         return f"{len(valides)} lignes ajoutées", None
     if nom == "couverture":
         m = manquantes(workdir)
-        return ("couverture complète" if not m else json.dumps({f: [[round(v) for v in r] for r in rs] for f, rs in m.items()})), None
+        return ("couverture complète" if not m else json.dumps(m)), None
     if nom == "lister":
         fs = sorted(os.path.relpath(f, workdir) for f in glob.glob(dans(workdir, a.get("motif", "*")), recursive=True))
         return "\n".join(fs[:400]) + (f"\n… {len(fs) - 400} de plus" if len(fs) > 400 else "") or "(aucun)", None
@@ -469,7 +469,7 @@ def run(workdir, out_json, model, max_turns, task=None):
                 j(f"outil {nom} {json.dumps({k: (v if k != 'contenu' else f'<{len(v)} car.>') for k, v in a.items()}, ensure_ascii=False)[:200]}")
                 if nom == "terminer" and manquantes(workdir):
                     texte, img = ("refusé : feuille(s) plan pas entièrement parcourues en zooms de ≤600 pt. Fenêtres restantes "
-                                  "(x0,y0,x1,y1) : " + json.dumps({f: [[round(v) for v in r] for r in rs] for f, rs in manquantes(workdir).items()})), None
+                                  "(x0,y0,x1,y1) : " + json.dumps(manquantes(workdir))), None
                     j("contrôle couverture : terminer refusé")
                 elif nom == "terminer" and refus_q < REFUS_QUALITE_MAX and not controler(workdir)["conforme"]:
                     refus_q += 1
