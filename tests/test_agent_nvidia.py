@@ -1,7 +1,10 @@
-"""Tests hors réseau de releve/agent_nvidia.py : confinement au dossier de travail, sorties autorisées, contrôle de couverture."""
+"""Tests hors réseau de releve/agent_nvidia.py : confinement au dossier de travail, sorties autorisées, contrôle de couverture, reprises journalisées."""
 import importlib.util
+import io
+import json
 import os
 import pathlib
+import urllib.error
 
 import pytest
 
@@ -51,3 +54,33 @@ def test_cle_absente_echec_propre(tmp_path, monkeypatch):
     out = os.path.join(w, "res.json")
     assert an.run(w, out, "m", 1) == 1
     assert "absente" in open(out, encoding="utf-8").read()
+
+
+def test_reprise_journalisee_et_erreur_fatale(monkeypatch):
+    """Une attente longue doit être discernable d'un blocage : chaque reprise est journalisée."""
+    monkeypatch.setattr(an.time, "sleep", lambda *_: None)
+    lignes, n = [], {"v": 0}
+
+    class Rep:
+        def __enter__(self):
+            return io.BytesIO(json.dumps({"ok": 1}).encode())
+        def __exit__(self, *a):
+            return False
+
+    def repond(req, timeout=0):
+        n["v"] += 1
+        if n["v"] < 3:
+            raise urllib.error.HTTPError("u", 503, "busy", {}, io.BytesIO(b"service indisponible"))
+        return Rep()
+
+    monkeypatch.setattr(an.urllib.request, "urlopen", repond)
+    assert an.appel({}, "cle", j=lignes.append) == {"ok": 1}
+    assert n["v"] == 3
+    assert [l[:8] for l in lignes] == ["reprise ", "reprise "] and "503" in lignes[0]
+
+    def refuse(req, timeout=0):
+        raise urllib.error.HTTPError("u", 400, "bad", {}, io.BytesIO("multimodal non activé".encode()))
+
+    monkeypatch.setattr(an.urllib.request, "urlopen", refuse)
+    with pytest.raises(RuntimeError, match="HTTP 400"):
+        an.appel({}, "cle", j=lignes.append)

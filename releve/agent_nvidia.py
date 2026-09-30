@@ -155,7 +155,8 @@ def outil(workdir, nom, a):
         return script(workdir, "traits", [a["feuille"], a["x"], a["y"]])[1], None
     return f"outil inconnu : {nom}", None
 
-def appel(corps, cle, essais=5):
+def appel(corps, cle, essais=5, j=None):
+    """Appelle l'API. Journalise chaque reprise : sans cela, une attente longue est indiscernable d'un blocage."""
     for k in range(essais):
         req = urllib.request.Request(URL, data=json.dumps(corps).encode(), headers={
             "Authorization": "Bearer " + cle, "Content-Type": "application/json", "Accept": "application/json"})
@@ -166,9 +167,13 @@ def appel(corps, cle, essais=5):
             msg = e.read().decode(errors="replace")[:300]
             if e.code not in (429, 500, 502, 503, 504) or k == essais - 1:
                 raise RuntimeError(f"HTTP {e.code} : {msg}")
+            if j:
+                j(f"reprise {k + 1}/{essais - 1} après HTTP {e.code} : {msg[:120]}")
         except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
             if k == essais - 1:
                 raise RuntimeError(f"réseau : {e}")
+            if j:
+                j(f"reprise {k + 1}/{essais - 1} après erreur réseau : {str(e)[:120]}")
         time.sleep(15 * (k + 1))
 
 def alleger(messages):
@@ -208,7 +213,7 @@ def run(workdir, out_json, model, max_turns):
             tours += 1
             alleger(messages)
             r = appel({"model": model, "messages": messages, "tools": OUTILS, "tool_choice": "auto",
-                       "max_tokens": 16000, "temperature": 0.2}, cle)
+                       "max_tokens": 16000, "temperature": 0.2}, cle, j=j)
             u = r.get("usage") or {}
             usage["input_tokens"] += u.get("prompt_tokens", 0); usage["output_tokens"] += u.get("completion_tokens", 0)
             m = r["choices"][0]["message"]
