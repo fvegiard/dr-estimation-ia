@@ -292,6 +292,27 @@ def exemples_humains(libelle: str) -> list:
     return out
 
 
+@mcp.tool()
+def documents_recus(projet: str) -> dict:
+    """Relie les fichiers reçus du projet aux pages marquées ou ignorées dans Plan Expert."""
+    recus = LIEN_HUMAIN / "recus.json"
+    documents = LIEN_HUMAIN / "documents.json"
+    if not recus.is_file() or not documents.is_file():
+        raise ToolError("base humaine absente : lancer python -m src.apprentissage.lien_humain")
+    liens = json.loads(recus.read_text(encoding="utf-8"))
+    pages = json.loads(documents.read_text(encoding="utf-8"))
+    if projet not in pages:
+        raise ToolError(f"projet inconnu : {projet}")
+    lien = liens.get(projet, {})
+    return {
+        "projet": projet,
+        "dossiers_recus": lien.get("dossiers_recus", []),
+        "fichiers_recus": lien.get("fichiers_recus", []),
+        "documents": {nom: {"recu": lien.get("document_qpl_vers_recu", {}).get(nom), **bilan}
+                      for nom, bilan in pages[projet].items()},
+    }
+
+
 # ---------------------------------------------------------------- outils : lecture fine
 def _feuille(d: Path, feuille: str) -> None:
     if not FEUILLE_RE.match(feuille or "") or not (d / "travail" / "feuilles" / f"{feuille}.pdf").exists():
