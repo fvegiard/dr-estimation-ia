@@ -400,7 +400,7 @@ def controler(travail: Path) -> dict:
             pass
     doublons = []
     for (f, lab), pts in par.items():
-        pts.sort()
+        pts.sort(key=lambda point: point[:2])
         for i, (x, y, o) in enumerate(pts):
             for x2, y2, o2 in pts[i + 1:]:
                 if x2 - x > 4:

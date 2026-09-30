@@ -35,7 +35,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 RASTER_W = 5694          # largeur raster Plan Expert (px) pour une feuille 2383,92 pt
 TILE_ROWS, TILE_COLS = 3, 4
-SHEET_RE = re.compile(r"\b([A-Z]{1,2}-?\d{3}[A-Z]?)\b")   # E401, E-401, A101, ME-101…
+SHEET_RE = re.compile(r"\b([A-Z]{1,3}-?\d{2,3}[A-Z]?)\b")   # E401, E-01, EU04, DSI01…
 WORK_SUBDIRS = ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "zooms")
 WORK_FILES = (
     "inventaire.json",
@@ -66,9 +66,9 @@ def font(size: int):
     return ImageFont.load_default()
 
 def sheet_id(page: pymupdf.Page) -> str | None:
-    """Identifiant de feuille lu dans le cartouche (quart bas-droit), sinon dans toute la page."""
+    """Identifiant au bas du cartouche; les renvois dans le corps ne nomment pas la feuille."""
     r = page.rect
-    zones = [pymupdf.Rect(r.width * 0.70, r.height * 0.70, r.width, r.height), r]
+    zones = [pymupdf.Rect(r.width * 0.70, r.height * 0.70, r.width, r.height)]
     for z in zones:
         best = None
         d = page.get_text("dict", clip=z * page.derotation_matrix)   # clip exprimé dans le repère tourné (page.rect)
@@ -77,7 +77,8 @@ def sheet_id(page: pymupdf.Page) -> str | None:
                 for s in l.get("spans", []):
                     for m in SHEET_RE.findall(s["text"]):
                         k = m.replace("-", "")
-                        key = (round(s["size"], 1), s["bbox"][3])   # le numéro de feuille du cartouche est en gros caractères (puis le plus bas)
+                        box = pymupdf.Rect(s["bbox"]) * page.rotation_matrix
+                        key = (round(box.y1, 1), round(s["size"], 1))
                         if best is None or key > best[0]:
                             best = (key, k)
         if best:

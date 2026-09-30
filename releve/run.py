@@ -5,15 +5,17 @@
 
     uv run releve/run.py <nom-de-soumission | chemin-du-dossier>     traite un dossier
     uv run releve/run.py --watch                                      surveille les INBOX et traite les nouveaux dossiers
-    uv run releve/run.py --reprendre <nom>                            rejoue seulement build_qpl + render_pdf (sans agent)
+    uv run releve/run.py --reprendre <nom>                            contrôle puis régénère les sorties (sans agent)
+    uv run releve/run.py <dossier> --agent nvidia --model <identifiant>  utilise explicitement NVIDIA
 
 Dossiers (hors du dépôt, données de Francis) :
     D:\\claude\\releve-auto\\INBOX\\<nom>\\      dépôt des PDF (plans, addendas, relevé de l'estimateur)
     D:\\claude\\releve-auto\\OUTBOX\\<nom>\\     résultat : .qpl + rasters, Plans-annotes.pdf, Rapport-de-metre.pdf, STATUT.md
     G:\\My Drive\\AI\\Releves-auto\\INBOX|OUTBOX  miroir Google Drive (utilisé si G: est monté dans WSL)
 
-Étapes : prepare.py (déterministe) → agent Claude Code en mode headless (`claude -p "/releve-planexpert …"`,
-doc : docs/code.claude.com_docs_en_headless.md) → build_qpl.py → render_pdf.py → STATUT.md.
+Étapes : prepare.py → agent NVIDIA ou Claude OAuth → controle_qualite.py → build_qpl.py
+→ render_pdf.py → rendu format-exemple → STATUT.md. Fournisseur explicite : --agent nvidia|sdk|cli.
+Sans option : RELEVE_AGENT, ou sdk (Claude OAuth) pour conserver la compatibilité.
 Un seul relevé à la fois (verrou). Journal : D:\\claude\\releve-auto\\journal.log
 """
 from __future__ import annotations
@@ -25,9 +27,10 @@ import shutil
 import subprocess
 import datetime
 import hashlib
+import argparse
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = os.environ.get("RELEVE_BASE", "/mnt/d/claude/releve-auto")
+BASE = os.environ.get("RELEVE_BASE", "D:/claude/releve-auto" if os.name == "nt" else "/mnt/d/claude/releve-auto")
 INBOX, OUTBOX = os.path.join(BASE, "INBOX"), os.path.join(BASE, "OUTBOX")
 DRIVE = os.environ.get("RELEVE_DRIVE", "/mnt/g/My Drive/AI/Releves-auto")
 LOCK = os.path.join(BASE, ".verrou")
@@ -106,19 +109,25 @@ def release_lock():
 def agent(workdir, log_path):
     """Lance l'agent de relevé avec la compétence releve-planexpert (.claude/skills/releve-planexpert/SKILL.md).
     Par défaut : Claude Agent SDK (releve/agent_sdk.py, OAuth claude.ai). RELEVE_AGENT=nvidia : API NVIDIA (releve/agent_nvidia.py). RELEVE_AGENT=cli : `claude -p` headless (repli)."""
+    provider = os.environ.get("RELEVE_AGENT", "sdk")
+    if provider not in {"nvidia", "sdk", "cli"}:
+        raise ValueError(f"RELEVE_AGENT invalide : {provider!r}; choisir nvidia, sdk ou cli")
+    model = os.environ.get("RELEVE_NVIDIA_MODEL", "") if provider == "nvidia" else os.environ.get("RELEVE_MODEL", MODEL)
     res_path = os.path.join(workdir, "agent-resultat.json")
     t0 = time.time()
     agent_env = {"RELEVE_TOOL_GUARD_ROOT": workdir}
-    if os.environ.get("RELEVE_AGENT", "sdk") == "nvidia":
+    if provider == "nvidia":
         # Clé NVIDIA_API_KEY héritée du processus ; sous WSL : WSLENV=NVIDIA_API_KEY/u au lancement (jamais journalisée).
         cmd = [sys.executable, "releve/agent_nvidia.py", workdir, res_path, "--max-turns", MAX_TURNS]
+        if model:
+            cmd += ["--model", model]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
             res = json.load(open(res_path, encoding="utf-8"))
         except Exception:  # noqa
             res = {"result": out[-2000:], "is_error": True, "subtype": "agent_nvidia sans résultat"}
-    elif os.environ.get("RELEVE_AGENT", "sdk") == "sdk":
-        cmd = ["uv", "run", "releve/agent_sdk.py", workdir, res_path, "--model", MODEL, "--max-turns", MAX_TURNS]
+    elif provider == "sdk":
+        cmd = ["uv", "run", "releve/agent_sdk.py", workdir, res_path, "--model", model, "--max-turns", MAX_TURNS]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
             res = json.load(open(res_path, encoding="utf-8"))
@@ -128,7 +137,7 @@ def agent(workdir, log_path):
         cmd = ["claude", "-p", f"/releve-planexpert {workdir}", "--output-format", "json", "--permission-mode", "acceptEdits",
                "--permission-prompts", "none",
                "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash(uv run releve/zoom.py *),Bash(uv run releve/extract_occurrences.py *),Bash(uv run releve/traits.py *),Bash(head *),Bash(sort *),Bash(cut *),Bash(cat *)",
-               "--add-dir", workdir, "--max-turns", MAX_TURNS, "--model", MODEL,
+               "--add-dir", workdir, "--max-turns", MAX_TURNS, "--model", model,
                "--mcp-config", '{"mcpServers":{}}', "--strict-mcp-config"]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
@@ -139,9 +148,12 @@ def agent(workdir, log_path):
         except json.JSONDecodeError:
             res = {"result": out[-2000:], "is_error": True, "subtype": "sortie non JSON"}
         json.dump(res, open(res_path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    res["provider"] = provider
+    res.setdefault("model", model or "non communiqué")
+    json.dump(res, open(res_path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     dur = time.time() - t0
     usage = res.get("usage", {}) or {}
-    log(f"agent terminé en {dur / 60:.1f} min ; tours {res.get('num_turns')} ; coût estimé {res.get('total_cost_usd')} $ ; "
+    log(f"agent {provider} ({res['model']}) terminé en {dur / 60:.1f} min ; tours {res.get('num_turns')} ; coût estimé {res.get('total_cost_usd')} $ ; "
         f"entrée {usage.get('input_tokens')} + cache {usage.get('cache_read_input_tokens')} / sortie {usage.get('output_tokens')} ; subtype {res.get('subtype')}")
     return code, res, dur
 
@@ -174,7 +186,7 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
         L += ["**Export natif Plan Expert : non** (étape non exécutée)", ""]
     L += ["## Étapes", "", "| étape | durée | résultat |", "|---|--:|---|"] + [f"| {s} | {d / 60:.1f} min | {r} |" for s, d, r in steps]
     usage = (res or {}).get("usage", {}) or {}
-    L += ["", f"## Agent de relevé — {(res or {}).get('lanceur') or 'claude -p (headless)'}", "", f"- modèle : `{MODEL}` · tours : {(res or {}).get('num_turns')} · sous-type : {(res or {}).get('subtype')}",
+    L += ["", f"## Agent de relevé — {(res or {}).get('lanceur') or (res or {}).get('provider') or 'non communiqué'}", "", f"- modèle : `{(res or {}).get('model', 'non communiqué')}` · tours : {(res or {}).get('num_turns')} · sous-type : {(res or {}).get('subtype')}",
           f"- coût estimé (client, `total_cost_usd`) : {(res or {}).get('total_cost_usd')} $ US",
           f"- jetons : entrée {usage.get('input_tokens')}, cache créé {usage.get('cache_creation_input_tokens')}, cache lu {usage.get('cache_read_input_tokens')}, sortie {usage.get('output_tokens')}",
           f"- session : `{(res or {}).get('session_id')}` · dossier de travail : `{workdir}`", ""]
@@ -216,8 +228,8 @@ def process(arg, reprendre=False):
                 steps.append(("prepare", time.time() - t, "ok" if code == 0 else f"code {code}"))
                 if code: raise RuntimeError("prepare.py a échoué")
             code, res, dur = agent(workdir, log_path)
-            steps.append(("agent Claude", dur, f"{res.get('subtype')} / code {code}"))
-            if code:
+            steps.append((f"agent {res.get('provider', os.environ.get('RELEVE_AGENT', 'sdk'))}", dur, f"{res.get('subtype')} / code {code}"))
+            if code or res.get("is_error"):
                 raise RuntimeError(f"agent en échec (code {code}, subtype {res.get('subtype')})")
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
@@ -290,23 +302,42 @@ def ready_dirs():
     return out
 
 def main():
-    a = sys.argv[1:]
-    if not a: sys.exit(__doc__)
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("dossier", nargs="?")
+    parser.add_argument("--watch", action="store_true")
+    parser.add_argument("--reprendre", action="store_true")
+    parser.add_argument("--agent", choices=("nvidia", "sdk", "cli"), default=os.environ.get("RELEVE_AGENT", "sdk"))
+    parser.add_argument("--model", help="identifiant du modèle chez le fournisseur choisi")
+    a = parser.parse_args()
+    if a.agent not in {"nvidia", "sdk", "cli"}:
+        parser.error("RELEVE_AGENT doit être nvidia, sdk ou cli")
+    if a.watch and (a.dossier or a.reprendre):
+        parser.error("--watch ne se combine pas avec un dossier ou --reprendre")
+    if not a.watch and not a.dossier:
+        parser.error("un dossier est requis")
     os.makedirs(INBOX, exist_ok=True); os.makedirs(OUTBOX, exist_ok=True)
     acquire_lock()
+    overrides = {"RELEVE_AGENT": a.agent}
+    if a.model:
+        overrides["RELEVE_NVIDIA_MODEL" if a.agent == "nvidia" else "RELEVE_MODEL"] = a.model
+    previous = {key: os.environ.get(key) for key in overrides}
+    os.environ.update(overrides)
     try:
-        if a[0] == "--watch":
+        if a.watch:
             log("surveillance des INBOX (Ctrl-C pour arrêter)")
             while True:
                 for n in ready_dirs():
                     process(n)
                 time.sleep(60)
-        elif a[0] == "--reprendre":
-            process(a[1], reprendre=True)
         else:
-            process(a[0])
+            return 0 if process(a.dossier, reprendre=a.reprendre) else 1
     finally:
         release_lock()
+        for key, value in previous.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

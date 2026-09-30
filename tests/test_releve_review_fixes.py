@@ -133,17 +133,22 @@ def test_prepare_cleans_stale_outputs(dossier_inbox, tmp_path):
     assert (work / "rasters").is_dir()
 
 
-def test_run_process_stops_after_agent_failure(monkeypatch, tmp_path):
+@pytest.mark.parametrize("exit_code,is_error", [(1, False), (0, True)])
+def test_run_process_stops_after_agent_failure(monkeypatch, tmp_path, exit_code, is_error):
     inbox = tmp_path / "INBOX" / "S-TEST"
     inbox.mkdir(parents=True)
     outbox = tmp_path / "OUTBOX"
+    work = outbox / "S-TEST" / "travail"
+    work.mkdir(parents=True)
+    for filename in ("nomenclature.csv", "feuilles-classement.csv"):
+        (work / filename).write_text("existing stale output\n", encoding="utf-8")
     commands: list[list[str]] = []
 
     monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
     monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(inbox)))
     monkeypatch.setattr(releve_run, "prepare_a_jour", lambda inbox, workdir: False)
     monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd) or True) and (0, ""))
-    monkeypatch.setattr(releve_run, "agent", lambda workdir, log_path: (1, {"subtype": "error"}, 0.01))
+    monkeypatch.setattr(releve_run, "agent", lambda workdir, log_path: (exit_code, {"subtype": "error", "is_error": is_error}, 0.01))
     monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
     monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
     monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
@@ -154,6 +159,78 @@ def test_run_process_stops_after_agent_failure(monkeypatch, tmp_path):
     assert any("releve/prepare.py" in part for cmd in commands for part in cmd)
     assert not any("releve/build_qpl.py" in part for cmd in commands for part in cmd)
     assert not any("releve/render_pdf.py" in part for cmd in commands for part in cmd)
+
+
+def test_run_agent_rejects_unknown_provider(monkeypatch, tmp_path):
+    monkeypatch.setenv("RELEVE_AGENT", "nvida")
+    monkeypatch.setattr(releve_run, "run", lambda *args, **kwargs: pytest.fail("must not launch Claude"))
+    with pytest.raises(ValueError, match="RELEVE_AGENT"):
+        releve_run.agent(str(tmp_path), str(tmp_path / "log"))
+
+
+def test_run_nvidia_uses_selected_model_and_reports_provider(monkeypatch, tmp_path):
+    monkeypatch.setenv("RELEVE_AGENT", "nvidia")
+    monkeypatch.setenv("RELEVE_NVIDIA_MODEL", "candidate/vision-model")
+    commands = []
+    def fake_run(cmd, **kwargs):
+        commands.append(cmd)
+        (tmp_path / "agent-resultat.json").write_text(json.dumps({
+            "model": "candidate/vision-model", "is_error": False, "subtype": "success",
+        }), encoding="utf-8")
+        return 0, ""
+    monkeypatch.setattr(releve_run, "run", fake_run)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    code, result, _ = releve_run.agent(str(tmp_path), str(tmp_path / "log"))
+    assert code == 0
+    assert result["provider"] == "nvidia"
+    assert commands[0][commands[0].index("--model") + 1] == "candidate/vision-model"
+
+
+def test_run_status_reports_actual_nvidia_model(tmp_path):
+    inbox, outdir = tmp_path / "in", tmp_path / "out"
+    inbox.mkdir()
+    outdir.mkdir()
+    releve_run.statut("demo", str(inbox), str(outdir), str(tmp_path / "work"), [],
+                      {"provider": "nvidia", "model": "candidate/vision-model"}, True)
+    status = (outdir / "STATUT.md").read_text(encoding="utf-8")
+    assert "candidate/vision-model" in status
+    assert "nvidia" in status
+    assert "claude -p" not in status
+
+
+def test_run_keeps_claude_oauth_sdk_as_existing_default(monkeypatch, tmp_path):
+    monkeypatch.delenv("RELEVE_AGENT", raising=False)
+    monkeypatch.setenv("RELEVE_MODEL", "claude-choice")
+    commands = []
+    def fake_run(cmd, **kwargs):
+        commands.append(cmd)
+        (tmp_path / "agent-resultat.json").write_text('{"is_error": false}', encoding="utf-8")
+        return 0, ""
+    monkeypatch.setattr(releve_run, "run", fake_run)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    code, result, _ = releve_run.agent(str(tmp_path), str(tmp_path / "log"))
+    assert code == 0
+    assert "releve/agent_sdk.py" in commands[0]
+    assert commands[0][commands[0].index("--model") + 1] == "claude-choice"
+    assert result["provider"] == "sdk"
+    assert result["model"] == "claude-choice"
+
+
+def test_run_main_explicit_provider_and_failure_exit(monkeypatch, tmp_path):
+    monkeypatch.setattr(releve_run.sys, "argv", ["run.py", "demo", "--agent", "nvidia", "--model", "candidate/vision-model"])
+    monkeypatch.setattr(releve_run, "INBOX", str(tmp_path / "in"))
+    monkeypatch.setattr(releve_run, "OUTBOX", str(tmp_path / "out"))
+    monkeypatch.setattr(releve_run, "acquire_lock", lambda: None)
+    monkeypatch.setattr(releve_run, "release_lock", lambda: None)
+    def fake_process(arg, reprendre=False):
+        assert arg == "demo"
+        assert releve_run.os.environ.get("RELEVE_AGENT") == "nvidia"
+        assert releve_run.os.environ.get("RELEVE_NVIDIA_MODEL") == "candidate/vision-model"
+        return False
+    monkeypatch.setattr(releve_run, "process", fake_process)
+    monkeypatch.delenv("RELEVE_AGENT", raising=False)
+    monkeypatch.delenv("RELEVE_NVIDIA_MODEL", raising=False)
+    assert releve_run.main() == 1
 
 
 def test_run_process_skips_native_export_when_component_missing(monkeypatch, tmp_path):

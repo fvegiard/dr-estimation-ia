@@ -89,9 +89,9 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    libellé jamais employé : soit l'appareil est réellement absent du projet — alors écris-le dans `reserves.md` avec la
    feuille et la zone vérifiées — soit tu l'as compté sous le libellé d'un appareil voisin, et le relevé est faux.
    Le contrôle `Q8` bloque ce cas ; ne le contourne pas en effaçant la ligne de la nomenclature.
-   Constaté sur DSI01 (kimi-k3, 2026-09-29) : `AVERTISSEUR FUMEE AUTONOME` lu dans la légende, écrit dans la nomenclature,
-   jamais relevé — ses 36 appareils comptés en `DETECTEUR FUMEE` (13 attendus, 40 relevés). Une seule confusion coûtait
-   36 marques sur 122, soit le tiers de la feuille.
+   Une confusion déjà constatée : `AVERTISSEUR FUMEE AUTONOME` lu dans la légende, écrit dans la nomenclature,
+   jamais relevé parce que ses appareils avaient été comptés en `DETECTEUR FUMEE`. Lis chaque symbole du plan courant;
+   aucune quantité d'un ancien relevé ne constitue une réponse pour ce dossier.
    Les paires qui se confondent le plus (même forme, même famille, étiquette voisine ou absente) :
    - **avertisseur de fumée autonome 120V** (alimenté, souvent mural, dans les logements) ≠ **détecteur de fumée** du réseau
      d'alarme (relié au panneau, souvent au plafond des corridors et locaux communs) ;
@@ -108,7 +108,7 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    Une pastille fait ≈ 4,2 pt de rayon — arrondir à 5 pt la déplace de plus que sa propre taille et la fait rater le symbole.
    Repère mesuré : sur les 319 marques relevées à la main dans le dépôt, 3,1 % seulement tombent sur un multiple de 5 pt dans
    les deux axes. Si presque toutes tes coordonnées sont rondes, tu ne lis pas le plan — tu poses une grille mentale, et le
-   contrôle Q10 le bloque (gemma-4-31b : 53/53 sur 10 pt ; kimi-k3 : 104/104 sur 5 pt, familles correctes mais positions fausses).
+   contrôle Q10 le bloque même si les familles semblent correctes.
    Utilise `zoom.py` pour les zones denses. Chaque label utilisé doit exister dans `nomenclature.csv`.
 5. **Addendas** : si un fichier `addenda` existe, lis-le (aperçus/texte) et applique ce qui touche l'électricité : feuilles
    remplacées (la version d'addenda prime), ajouts/retraits d'appareils. Note chaque application dans `reserves.md`.
@@ -159,7 +159,7 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **R6** Les notes « RELO / relocaliser / déplacer » sont des appareils à compter (famille « RELO <appareil> »), même si l'appareil est existant.
    - **R7** Nommer les familles comme la légende du plan (FIXTURE TYPE A, A1, B…) — le code 2 lettres reste pour l'étiquette.
    - **R8** Choix de la feuille d'essai : c'est le SUPERVISEUR qui choisit une feuille que la référence a réellement relevée (tu ne regardes pas la référence). S-1844 E200 était invalide : Dupuis n'a aucune marque sur E200 (il a relevé les prises sur le plan d'architecte).
-   - **Porte de prévention** : pour chaque feuille, AVANT de placer les marques et AVANT tout commit, publier (a) capture zoom de la légende, (b) la liste des familles avec le symbole/étiquette qui les distingue et la règle R1-R7 appliquée, (c) 3 zooms des symboles ambigus, puis attendre « VALIDÉ » du superviseur.
+   - **Porte de prévention** : pour chaque feuille, AVANT de placer les marques, enregistrer (a) capture zoom de la légende, (b) la liste des familles avec le symbole/étiquette qui les distingue et la règle R1-R7 appliquée, (c) zooms des symboles ambigus. En exécution autonome autorisée, vérifier ces preuves, consigner les incertitudes en réserve et poursuivre sans attendre une réponse humaine. Le contrôle qualité reste bloquant.
 6. **Comparaison avec l'estimateur** (si `estimateur/` existe) → `comparaison-estimateur.md` : pour chaque feuille, tableau
    `famille/objet | estimateur | nous | écart | commentaire`, en lisant ses légendes (`estimateur/legendes/*-legende.png`, où
    chaque ligne porte symbole, nom et quantité). Explique les écarts (périmètre différent, oubli probable de l'un ou l'autre).

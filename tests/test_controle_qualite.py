@@ -1,6 +1,7 @@
 """Tests du contrôle qualité bloquant (releve/controle_qualite.py) : chaque règle détecte l'erreur introduite, et un relevé propre passe."""
 import importlib.util
 import pathlib
+import pytest
 
 SPEC = importlib.util.spec_from_file_location("cq", pathlib.Path(__file__).resolve().parents[1] / "releve" / "controle_qualite.py")
 cq = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(cq)
@@ -23,6 +24,60 @@ def regles(res):
 
 def test_releve_propre_conforme(tmp_path):
     assert cq.controler(dossier(tmp_path))["conforme"]
+
+
+@pytest.mark.parametrize("classement", [
+    "P1,plan,,\n",  # P2 missing
+    "P1,plan,,\nP2,legende,,\nP2,autre,,\n",  # duplicate classification
+    "P1,plan,,\nP2,legende,,\nUNKNOWN,autre,,\n",
+])
+def test_q1_requires_each_input_sheet_classified_once(tmp_path, classement):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,100,100\nP2,100,100\n", encoding="utf-8")
+    (tmp_path / "feuilles-classement.csv").write_text("feuille,type,echelle,note\n" + classement, encoding="utf-8")
+    result = cq.controler(work)
+    assert not result["conforme"]
+    assert "Q1" in regles(result)
+
+
+def test_q1_accepts_legends_and_other_sheets_without_occurrences(tmp_path):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,100,100\nL1,100,100\nX1,100,100\n", encoding="utf-8")
+    (tmp_path / "feuilles-classement.csv").write_text("feuille,type,echelle,note\nP1,plan,,\nL1,legende,,\nX1,autre,,\n", encoding="utf-8")
+    assert cq.controler(work)["conforme"]
+
+
+@pytest.mark.parametrize("width", ["0", "-10", "nan", "inf", "invalid"])
+def test_q7_rejects_invalid_sheet_dimensions(tmp_path, width):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text(f"feuille,largeur_pt,hauteur_pt\nP1,{width},100\n", encoding="utf-8")
+    result = cq.controler(work)
+    assert not result["conforme"]
+    assert "Q7" in regles(result)
+
+
+@pytest.mark.parametrize("x", ["15", "nan", "inf"])
+def test_q7_rejects_unknown_occurrence_sheet(tmp_path, x):
+    result = cq.controler(dossier(tmp_path, occ=OCC + f"UNKNOWN,KLAXON,{x},20,visuel,[K1.1]\n"))
+    assert not result["conforme"]
+    assert "Q7" in regles(result)
+
+
+@pytest.mark.parametrize("x", ["nan", "inf", "-inf"])
+def test_q7_rejects_nonfinite_coordinates(tmp_path, x):
+    result = cq.controler(dossier(tmp_path, occ=OCC.replace("P1,KLAXON,10,10", f"P1,KLAXON,{x},10")))
+    assert not result["conforme"]
+    assert "Q7" in regles(result)
+
+
+@pytest.mark.parametrize("excluded", ["1", "oui", "x", "true", " TRUE ", "X", " OUI "])
+def test_exclusions_match_renderer_without_false_duplicates(tmp_path, excluded):
+    rows = OCC.rstrip().splitlines()
+    occ = rows[0] + ",exclure\n" + "".join(row + ",\n" for row in rows[1:])
+    occ += f"P1,KLAXON,10,10,visuel,[K1.1],{excluded}\n"
+    result = cq.controler(dossier(tmp_path, occ=occ))
+    assert result["conforme"]
+    assert result["occurrences"] == 3
 
 
 def test_erreurs_introduites_detectees(tmp_path):

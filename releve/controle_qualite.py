@@ -27,6 +27,7 @@ import argparse
 import collections
 import csv
 import json
+import math
 import os
 import re
 import sys
@@ -142,19 +143,42 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
     classement = lire_csv(os.path.join(work, "feuilles-classement.csv"), mal)
     nomen = lire_csv(os.path.join(work, "nomenclature.csv"), mal)
     occ = lire_csv(os.path.join(work, "occurrences-visuel.csv"), mal) + lire_csv(os.path.join(work, "occurrences-texte.csv"), mal)
-    occ = [o for o in occ if o.get("exclure") not in ("1", "oui")]
-    tailles = {r["feuille"]: (float(r["largeur_pt"] or 0), float(r["hauteur_pt"] or 0)) for r in lire_csv(os.path.join(work, "feuilles.csv"))}
+    occ = [o for o in occ if (o.get("exclure") or "").strip().lower() not in ("1", "oui", "x", "true")]
+    feuilles = lire_csv(os.path.join(work, "feuilles.csv"), mal)
+    tailles = {}
+    for r in feuilles:
+        f = r.get("feuille", "")
+        if not f or f in tailles:
+            err.append(f"Q1 identifiant de feuille vide ou en double dans feuilles.csv : {f!r}")
+        try:
+            W, H = float(r.get("largeur_pt", "")), float(r.get("hauteur_pt", ""))
+        except (TypeError, ValueError):
+            W = H = 0
+        if not (math.isfinite(W) and math.isfinite(H) and W > 0 and H > 0):
+            err.append(f"Q7 dimensions de feuille invalides : {f!r} ({W}, {H})")
+        tailles[f] = (W, H)
     reserves = open(os.path.join(work, "reserves.md"), encoding="utf-8").read() if os.path.isfile(os.path.join(work, "reserves.md")) else ""
 
     # Q0 : lignes mal formées (champ en trop = virgule non échappée dans un libellé ou une note)
     for m in mal:
         err.append(f"Q0 ligne mal formée : {m}")
     # Q1
-    for f in ("feuilles-classement.csv", "nomenclature.csv", "reserves.md", "rapport-releve.md"):
+    for f in ("feuilles.csv", "feuilles-classement.csv", "nomenclature.csv", "reserves.md", "rapport-releve.md"):
         p = os.path.join(work, f)
         if not os.path.isfile(p) or os.path.getsize(p) == 0:
             err.append(f"Q1 sortie manquante ou vide : {f}")
-    plans = [r["feuille"] for r in classement if r.get("type") == "plan"]
+    if not feuilles:
+        err.append("Q1 aucune feuille d'entrée dans feuilles.csv")
+    classes = collections.Counter(r.get("feuille", "") for r in classement)
+    for f in tailles:
+        if classes[f] != 1:
+            err.append(f"Q1 feuille à classer exactement une fois : {f!r} ({classes[f]} classements)")
+    for r in classement:
+        if r.get("feuille") not in tailles:
+            err.append(f"Q1 classement d'une feuille inconnue : {r.get('feuille')!r}")
+        if not r.get("type"):
+            err.append(f"Q1 type de feuille manquant : {r.get('feuille')!r}")
+    plans = [r.get("feuille") for r in classement if r.get("type") == "plan"]
     par_feuille = collections.Counter(o.get("feuille") for o in occ)
     for f in plans:
         if not par_feuille.get(f):
@@ -200,12 +224,16 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         avert.append("aucun repère lu dans les notes : Q4-Q6 non vérifiables (classement non contrôlé)")
     # Q7
     for o in occ:
-        W, H = tailles.get(o.get("feuille"), (0, 0))
-        try:
-            x, y = float(o.get("x_pt") or o.get("x") or -1), float(o.get("y_pt") or o.get("y") or -1)
-        except ValueError:
-            x = y = -1
-        if W and not (0 <= x <= W and 0 <= y <= H):
+        if o.get("feuille") not in tailles:
+            err.append(f"Q7 occurrence sur une feuille inconnue : {o.get('feuille')!r} {o.get('label')}")
+            continue
+        W, H = tailles[o.get("feuille")]
+        point = coordonnees(o)
+        if point is None or not all(math.isfinite(c) for c in point):
+            err.append(f"Q7 coordonnées invalides ou non finies : {o.get('feuille')} {o.get('label')}")
+            continue
+        x, y = point
+        if not (0 <= x <= W and 0 <= y <= H):
             err.append(f"Q7 coordonnées hors feuille : {o.get('feuille')} {o.get('label')} ({x}, {y})")
     # Q8
     comptes = collections.Counter(o.get("label") for o in occ if o.get("feuille") in plans)

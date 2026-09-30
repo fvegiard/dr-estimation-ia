@@ -117,6 +117,10 @@ def _validate_bash(root: str, tool_input: dict, cwd: str) -> str | None:
         return "Commande Bash vide"
     if any(ch in command for ch in (";", "\n", "\r", "|", "&", "`", ">", "<")) or "$(" in command:
         return "Commande Bash chaînée ou redirigée refusée"
+    # POSIX shlex removes unquoted backslashes, hiding Windows traversal (..\secret).
+    # Reject ambiguous syntax before tokenization; POSIX paths with spaces can be quoted.
+    if os.name != "nt" and "\\" in command:
+        return "Argument Bash hors du dossier de travail : syntaxe antislash ambiguë sous POSIX"
     try:
         argv = _decouper(command)
     except ValueError as exc:

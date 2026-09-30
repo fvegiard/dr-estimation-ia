@@ -21,9 +21,11 @@ from __future__ import annotations
 
 import argparse
 import base64
+import csv
 import datetime
 import glob
 import json
+import math
 import os
 import subprocess
 import sys
@@ -38,6 +40,7 @@ from controle_qualite import (  # noqa: E402  (import après sys.path.insert vou
 )
 
 REFUS_QUALITE_MAX = 3       # refus de `terminer` pour qualité avant d'accepter en « qualite_insuffisante »
+REPONSES_VIDES_MAX = 3      # arrêt explicite si le modèle ne produit ni texte ni outil
 URL = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1") + "/chat/completions"
 MODELE = "moonshotai/kimi-k3"
 # Essai DSI01 (HR26-14, 122 marques chez l'estimateur), 2026-09-29, même consigne et mêmes outils :
@@ -67,8 +70,13 @@ OUTILS = [
     {"type": "function", "function": {"name": "zoom", "description": "Rend la zone x0 y0 x1 y1 (points PDF) d'une feuille avec règles et marques déjà relevées, puis la montre.",
      "parameters": {"type": "object", "properties": {"feuille": {"type": "string"}, "x0": {"type": "number"}, "y0": {"type": "number"}, "x1": {"type": "number"}, "y1": {"type": "number"}},
                     "required": ["feuille", "x0", "y0", "x1", "y1"]}}},
-    {"type": "function", "function": {"name": "ajouter_occurrences", "description": "Ajoute des lignes CSV `feuille,label,x_pt,y_pt,source,note` (source=visuel) à occurrences-visuel.csv, après chaque zoom.",
-     "parameters": {"type": "object", "properties": {"lignes": {"type": "array", "items": {"type": "string"}}}, "required": ["lignes"]}}},
+    {"type": "function", "function": {"name": "ajouter_occurrences", "description": "Ajoute les occurrences structurées après chaque zoom. Le lot entier est refusé si un libellé, une feuille ou une coordonnée est invalide. Utilise occurrences de préférence; lignes accepte l'ancien CSV.",
+     "parameters": {"type": "object", "properties": {
+         "occurrences": {"type": "array", "items": {"type": "object", "properties": {
+             "feuille": {"type": "string"}, "label": {"type": "string"}, "x_pt": {"type": "number"},
+             "y_pt": {"type": "number"}, "note": {"type": "string"}},
+             "required": ["feuille", "label", "x_pt", "y_pt", "note"]}},
+         "lignes": {"type": "array", "items": {"type": "string"}}}}}},
     {"type": "function", "function": {"name": "couverture", "description": "Indique, pour chaque feuille plan, les fenêtres de ≤600 pt pas encore zoomées.",
      "parameters": {"type": "object", "properties": {}}}},
     {"type": "function", "function": {"name": "extract_occurrences", "description": "Applique nomenclature.csv aux mots des feuilles → occurrences-texte.csv.",
@@ -108,15 +116,32 @@ def feuilles_plan(workdir):
     return [(r["feuille"].strip(), *tailles[r["feuille"].strip()]) for r in rows
             if (r.get("type") or r.get(" type") or "").strip() == "plan" and r["feuille"].strip() in tailles]
 
+def rectangle_couvert(cible, rectangles):
+    """Exact rectangle union coverage using vertical strips and merged Y intervals."""
+    x0, y0, x1, y1 = cible
+    clips = [(max(x0, a), max(y0, b), min(x1, c), min(y1, d))
+             for a, b, c, d in rectangles if a < x1 and c > x0 and b < y1 and d > y0]
+    bornes = sorted({x0, x1, *(r[0] for r in clips), *(r[2] for r in clips)})
+    for gauche, droite in zip(bornes, bornes[1:]):
+        jusqua = y0
+        for bas, haut in sorted((b, d) for a, b, c, d in clips if a <= gauche and c >= droite):
+            if bas > jusqua:
+                return False
+            jusqua = max(jusqua, haut)
+        if jusqua < y1:
+            return False
+    return True
+
+
 def manquantes(workdir):
-    """Fenêtres (grille de FENETRE pt) non couvertes par un zoom fin, par feuille plan."""
+    """Fenêtres non couvertes par l'union des zooms fins, par feuille plan."""
     res = {}
     for f, W, H in feuilles_plan(workdir):
         cases = [(x, y) for x in range(0, int(W), FENETRE) for y in range(0, int(H), FENETRE)]
-        def vue(x, y, f=f, W=W, H=H):
-            cx, cy = x + min(FENETRE, W - x) / 2, y + min(FENETRE, H - y) / 2
-            return any(v[0] == f and v[1] <= cx <= v[3] and v[2] <= cy <= v[4] for v in VUS)
-        reste = [(x, y, min(x + FENETRE, W), min(y + FENETRE, H)) for x, y in cases if not vue(x, y)]
+        fins = [v[1:] for v in VUS if v[0] == f and all(math.isfinite(c) for c in v[1:])
+                and 0 < v[3] - v[1] <= FENETRE and 0 < v[4] - v[2] <= FENETRE]
+        fenetres = [(x, y, min(x + FENETRE, W), min(y + FENETRE, H)) for x, y in cases]
+        reste = [r for r in fenetres if not rectangle_couvert(r, fins)]
         if len(reste) > (1 - COUVERTURE_MIN) * len(cases):
             res[f] = reste
     return res
@@ -125,13 +150,49 @@ def outil(workdir, nom, a):
     """Exécute un outil ; retourne (texte, chemin_image_ou_None)."""
     if nom == "ajouter_occurrences":
         p = dans(workdir, "occurrences-visuel.csv")
+        champs = ENTETE_VISUEL.split(",")
+        rows = list(a.get("occurrences", []))
+        for ligne in a.get("lignes", []):
+            if not ligne.strip():
+                continue
+            try:
+                parsed = list(csv.reader([ligne], strict=True))
+            except csv.Error as e:
+                raise ValueError("CSV invalide; utilise occurrences structurées") from e
+            if parsed == [champs]:
+                continue
+            if len(parsed) != 1 or len(parsed[0]) != len(champs):
+                raise ValueError("CSV invalide : six champs requis; utilise occurrences structurées")
+            rows.append(dict(zip(champs, parsed[0])))
+        with open(dans(workdir, "nomenclature.csv"), encoding="utf-8", newline="") as fh:
+            labels = {r["label"].strip() for r in csv.DictReader(fh)}
+        with open(dans(workdir, "feuilles.csv"), encoding="utf-8", newline="") as fh:
+            tailles = {r["feuille"].strip(): (float(r["largeur_pt"]), float(r["hauteur_pt"])) for r in csv.DictReader(fh)}
+        valides = []
+        for row in rows:
+            if not isinstance(row, dict) or not {"feuille", "label", "x_pt", "y_pt"}.issubset(row):
+                raise ValueError("Occurrence incomplète : feuille, label, x_pt, y_pt requis")
+            row = {k: row.get(k, "visuel" if k == "source" else "") for k in champs}
+            if row["label"] not in labels or row["feuille"] not in tailles:
+                raise ValueError("Occurrence refusée : libellé ou feuille inconnu")
+            try:
+                x, y = float(row["x_pt"]), float(row["y_pt"])
+            except (TypeError, ValueError) as e:
+                raise ValueError("Coordonnées numériques requises") from e
+            W, H = tailles[row["feuille"]]
+            if not (math.isfinite(x) and math.isfinite(y) and 0 <= x <= W and 0 <= y <= H):
+                raise ValueError("Coordonnées non finies ou hors feuille")
+            if row["source"] != "visuel":
+                raise ValueError("La source doit être visuel")
+            valides.append(row)
+        # Validate the whole batch before opening the output: failures preserve it byte for byte.
         neuf = not os.path.isfile(p) or os.path.getsize(p) == 0
-        lignes = [l.strip() for l in a.get("lignes", []) if l.strip() and not l.startswith("feuille,")]
-        with open(p, "a", encoding="utf-8", newline="\n") as fh:
+        with open(p, "a", encoding="utf-8", newline="") as fh:
+            writer = csv.DictWriter(fh, fieldnames=champs, lineterminator="\n")
             if neuf:
-                fh.write(ENTETE_VISUEL + "\n")
-            fh.writelines(l + "\n" for l in lignes)
-        return f"{len(lignes)} lignes ajoutées", None
+                writer.writeheader()
+            writer.writerows(valides)
+        return f"{len(valides)} lignes ajoutées", None
     if nom == "couverture":
         m = manquantes(workdir)
         return ("couverture complète" if not m else json.dumps({f: [[round(v) for v in r] for r in rs] for f, rs in m.items()})), None
@@ -160,7 +221,7 @@ def outil(workdir, nom, a):
         c, out = script(workdir, "zoom", [a["feuille"], a["x0"], a["y0"], a["x1"], a["y1"]])
         png = out.strip().splitlines()[-1] if c == 0 and out.strip() else ""
         png = png if os.path.isabs(png) else os.path.join(workdir, png)
-        if c == 0 and max(a["x1"] - a["x0"], a["y1"] - a["y0"]) <= FENETRE + 1:
+        if c == 0 and 0 < a["x1"] - a["x0"] <= FENETRE and 0 < a["y1"] - a["y0"] <= FENETRE:
             VUS.append((a["feuille"], a["x0"], a["y0"], a["x1"], a["y1"]))
         return (out, png) if c == 0 and os.path.isfile(png) else (f"échec zoom : {out}", None)
     if nom == "extract_occurrences":
@@ -169,25 +230,35 @@ def outil(workdir, nom, a):
         return script(workdir, "traits", [a["feuille"], a["x"], a["y"]])[1], None
     return f"outil inconnu : {nom}", None
 
-def appel(corps, cle, essais=5, j=None):
+def appel(corps, cle, essais=None, j=None, timeout=None):
     """Appelle l'API. Journalise chaque reprise : sans cela, une attente longue est indiscernable d'un blocage."""
+    essais = int(os.environ.get("RELEVE_NVIDIA_ATTEMPTS", "2")) if essais is None else essais
+    timeout = float(os.environ.get("RELEVE_NVIDIA_TIMEOUT", "120")) if timeout is None else timeout
+    if not 1 <= essais <= 5 or not math.isfinite(timeout) or not 1 <= timeout <= 600:
+        raise ValueError("NVIDIA attempts doit être entre 1 et 5; timeout entre 1 et 600 secondes")
     for k in range(essais):
         req = urllib.request.Request(URL, data=json.dumps(corps).encode(), headers={
             "Authorization": "Bearer " + cle, "Content-Type": "application/json", "Accept": "application/json"})
+        started = time.monotonic()
+        if j:
+            j(f"API début tentative={k + 1}/{essais} timeout_s={timeout:g}")
         try:
-            with urllib.request.urlopen(req, timeout=600) as f:
+            with urllib.request.urlopen(req, timeout=timeout) as f:
                 return json.load(f)
         except urllib.error.HTTPError as e:
-            msg = e.read().decode(errors="replace")[:300]
+            # Do not journal provider bodies: they can echo request data or credentials.
             if e.code not in (429, 500, 502, 503, 504) or k == essais - 1:
-                raise RuntimeError(f"HTTP {e.code} : {msg}")
+                raise RuntimeError(f"HTTP {e.code}") from e
             if j:
-                j(f"reprise {k + 1}/{essais - 1} après HTTP {e.code} : {msg[:120]}")
+                j(f"reprise {k + 1}/{essais - 1} après HTTP {e.code}")
         except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
             if k == essais - 1:
-                raise RuntimeError(f"réseau : {e}")
+                raise RuntimeError(f"réseau : {type(e).__name__}") from e
             if j:
-                j(f"reprise {k + 1}/{essais - 1} après erreur réseau : {str(e)[:120]}")
+                j(f"reprise {k + 1}/{essais - 1} après erreur réseau : {type(e).__name__}")
+        finally:
+            if j:
+                j(f"API fin tentative={k + 1}/{essais} durée_s={time.monotonic() - started:.3f}")
         time.sleep(15 * (k + 1))
 
 def alleger(messages):
@@ -198,10 +269,11 @@ def alleger(messages):
         messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (déjà vue, retirée du contexte)"}
 
 def run(workdir, out_json, model, max_turns):
+    VUS.clear()
     cle = os.environ.get("NVIDIA_API_KEY")
     log = open(os.path.join(workdir, "agent-journal.log"), "a", encoding="utf-8")
     def j(msg):
-        log.write(f"{datetime.datetime.now():%H:%M:%S} {msg}\n"); log.flush()
+        log.write(f"{datetime.datetime.now().astimezone().isoformat(timespec='seconds')} {msg}\n"); log.flush()
     t0 = time.time(); usage = {"input_tokens": 0, "output_tokens": 0}
     data = {"lanceur": f"agent_nvidia.py (API NVIDIA, {model})", "model": model}
     if not cle:
@@ -213,31 +285,53 @@ def run(workdir, out_json, model, max_turns):
                "(lister, lire, ecrire, zoom, extract_occurrences, traits). Les chemins sont relatifs au dossier de travail « . ». "
                "Lis une image avec `lire` (tuiles/…, apercus/…) ou `zoom`. Écris chaque sortie avec `ecrire` (contenu complet). "
                "Plans raster (0 mot) : tout se relève à l'œil. Parcours CHAQUE feuille plan en zooms de 600 pt × 600 pt au plus "
-               "(grille x=0,600,1200… ; y=0,600,…), et après chaque zoom ajoute avec `ajouter_occurrences` une ligne par symbole vu "
-               "(coordonnées lues sur les règles, repère écrit entre crochets dans la colonne note). Ne saute aucune fenêtre ; "
+               "(grille x=0,600,1200… ; y=0,600,…), et après chaque zoom ajoute avec `ajouter_occurrences` un objet par symbole vu "
+               "dans occurrences (feuille, label, x_pt, y_pt, note; coordonnées absolues lues sur les règles du PDF, "
+               "repère écrit entre crochets dans note). Ne saute aucune fenêtre ; "
                "`couverture` liste celles qui restent. `terminer` est refusé tant que la couverture n'est pas complète "
                "et tant que le contrôle qualité (un libellé par appareil, repère cohérent avec le libellé, pas de doublon ni de trou "
                "de numérotation non justifié, chaque appareil de la nomenclature relevé ou mis en réserve) échoue.")
     messages = [{"role": "system", "content": systeme},
                 {"role": "user", "content": "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."}]
     j(f"début  modèle={model} max_tours={max_turns} workdir={workdir}")
-    resume, tours, refus_q = None, 0, 0
+    resume, tours, refus_q, reponses_vides = None, 0, 0, 0
     try:
+        model_options = {}
+        if model == "moonshotai/kimi-k3":
+            effort = os.environ.get("RELEVE_NVIDIA_REASONING", "high")
+            if effort not in {"low", "high", "max"}:
+                raise ValueError("RELEVE_NVIDIA_REASONING doit être low, high ou max")
+            model_options["reasoning_effort"] = effort
         while tours < max_turns and resume is None:
             tours += 1
             alleger(messages)
             r = appel({"model": model, "messages": messages, "tools": OUTILS, "tool_choice": "auto",
-                       "max_tokens": 16000, "temperature": 0.2}, cle, j=j)
+                       "max_tokens": 16000, "temperature": 0.2, **model_options}, cle, j=j)
             u = r.get("usage") or {}
-            usage["input_tokens"] += u.get("prompt_tokens", 0); usage["output_tokens"] += u.get("completion_tokens", 0)
+            input_tokens, output_tokens = int(u.get("prompt_tokens") or 0), int(u.get("completion_tokens") or 0)
+            usage["input_tokens"] += input_tokens; usage["output_tokens"] += output_tokens
             m = r["choices"][0]["message"]
             appels = m.get("tool_calls") or []
-            messages.append({"role": "assistant", "content": m.get("content") or "", **({"tool_calls": appels} if appels else {})})
+            reason = r["choices"][0].get("finish_reason")
+            reason = reason if reason in {"stop", "length", "tool_calls", "content_filter", "function_call"} else "unknown"
+            j(f"API réponse finish_reason={reason} tool_calls={len(appels)} input_tokens={input_tokens} output_tokens={output_tokens}")
+            # NVIDIA Kimi-K3 requires the complete prior assistant message, including
+            # reasoning_content and tool_calls. Keep it in memory only, never in logs.
+            # https://build.nvidia.com/moonshotai/kimi-k3/modelcard
+            messages.append(m)
             if (m.get("content") or "").strip():
                 j("texte " + m["content"].strip()[:200].replace("\n", " "))
             if not appels:
+                reponses_vides = reponses_vides + 1 if not (m.get("content") or "").strip() else 0
+                if reponses_vides >= REPONSES_VIDES_MAX:
+                    data.update(subtype=f"error_no_progress : {reponses_vides} réponses consécutives sans texte ni outil; "
+                                        f"finish_reason={reason}. Vérifier la réponse fournisseur avant de relancer.",
+                                is_error=True)
+                    j(data["subtype"])
+                    break
                 messages.append({"role": "user", "content": "Continue avec les outils ; appelle `terminer` quand toutes les sorties sont écrites."})
                 continue
+            reponses_vides = 0
             images = []
             for tc in appels:
                 nom = tc["function"]["name"]
