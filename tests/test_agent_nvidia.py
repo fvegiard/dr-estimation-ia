@@ -84,3 +84,25 @@ def test_reprise_journalisee_et_erreur_fatale(monkeypatch):
     monkeypatch.setattr(an.urllib.request, "urlopen", refuse)
     with pytest.raises(RuntimeError, match="HTTP 400"):
         an.appel({}, "cle", j=lignes.append)
+
+
+def test_image_absente_ne_tue_pas_le_releve(tmp_path):
+    """Une image manquante est une erreur d'outil, pas la fin du relevé.
+
+    Essai réel du 2026-09-29 : `apercus/HR2614plan-p01.png` avait été oublié dans la copie
+    du dossier de travail. `lire` renvoyait le chemin sans vérifier, `image_msg` l'ouvrait
+    hors du try du dispatch et le run mourait au 3e tour sur `subtype=erreur API`.
+    """
+    w = _work(tmp_path)
+    texte, img = an.outil(w, "lire", {"chemin": "apercus/absente.png"})
+    assert img is None
+    assert "absente" in texte and texte.startswith("erreur")
+
+
+def test_image_presente_est_jointe(tmp_path):
+    """Contre-épreuve : une image existante est bien transmise au modèle."""
+    w = _work(tmp_path)
+    d = tmp_path / "apercus"; d.mkdir()
+    (d / "p1.png").write_bytes(b"\x89PNG\r\n\x1a\n")
+    texte, img = an.outil(w, "lire", {"chemin": "apercus/p1.png"})
+    assert img is not None and texte.startswith("image jointe")

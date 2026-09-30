@@ -141,6 +141,10 @@ def outil(workdir, nom, a):
     if nom == "lire":
         p = dans(workdir, a["chemin"])
         if p.lower().endswith(".png"):
+            if not os.path.isfile(p):
+                # sans ce contrôle le chemin remonte jusqu'à image_msg, hors du try du dispatch,
+                # et une image absente tue le run entier au lieu d'être une erreur d'outil
+                return f"erreur : image absente : {a['chemin']}", None
             return f"image jointe : {a['chemin']}", p
         L = open(p, encoding="utf-8", errors="replace").read().splitlines()
         d = int(a.get("debut") or 0); n = int(a.get("lignes") or 2000)
@@ -263,7 +267,11 @@ def run(workdir, out_json, model, max_turns):
                 if img:
                     images.append((img, os.path.relpath(img, workdir)))
             for img, rel in images:
-                messages.append(image_msg(img, rel))
+                try:
+                    messages.append(image_msg(img, rel))
+                except Exception as e:  # noqa — une image illisible ne doit pas tuer le relevé
+                    j(f"image ignorée {rel} : {e}")
+                    messages.append({"role": "user", "content": f"image {rel} illisible ({e}) — continue sans elle"})
     except Exception as e:  # noqa
         data.update(subtype=f"erreur API : {e}", is_error=True)
     manquants = [f for f in ("feuilles-classement.csv", "nomenclature.csv") if not os.path.isfile(os.path.join(workdir, f))]
