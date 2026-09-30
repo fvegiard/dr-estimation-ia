@@ -3,7 +3,9 @@ import csv
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
+import subprocess
 
 import pymupdf
 import pytest
@@ -11,6 +13,29 @@ import pytest
 SPEC = importlib.util.spec_from_file_location('source_identifiers_qc', Path(__file__).resolve().parents[1] / 'releve/controle_qualite.py')
 cq = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(cq)
+
+
+@pytest.mark.parametrize('folder', ['evidence', 'feuilles'])
+def test_real_directory_redirect_cannot_escape_work(tmp_path, folder):
+    work = tmp_path / 'work'
+    outside = tmp_path / 'outside'
+    work.mkdir()
+    outside.mkdir()
+    (outside / 'proof.dat').write_bytes(b'outside proof')
+    link = work / folder
+    if os.name == 'nt':
+        result = subprocess.run(['pwsh', '-NoProfile', '-Command',
+            'New-Item -ItemType Junction -Path $env:PROOF_TEST_LINK -Target $env:PROOF_TEST_TARGET | Out-Null'],
+            env={**os.environ, 'PROOF_TEST_LINK': str(link), 'PROOF_TEST_TARGET': str(outside)},
+            capture_output=True, text=True)
+        assert result.returncode == 0, result.stderr
+    else:
+        link.symlink_to(outside, target_is_directory=True)
+    try:
+        with pytest.raises(ValueError, match='non confinée'):
+            cq.fichier_preuve(str(work), folder + '/proof.dat', folder)
+    finally:
+        link.rmdir() if os.name == 'nt' else link.unlink()
 
 
 def write_rows(work, rows):

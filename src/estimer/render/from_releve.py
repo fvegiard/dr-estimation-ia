@@ -19,7 +19,7 @@ nomenclature/occurrence columns the relevé wrote, otherwise the neutral wording
 Optional columns read when present (written by the `releve-planexpert` skill since 2026-09-29):
   nomenclature.csv : code (symbol tag on the plan, e.g. DF, K, CE2), materiel (family name), portee, modele,
                      prescription, discipline (incendie | electricite | urgence)
-  occurrences-*.csv: designation, portee, modele, prescription, parent, qte, reserve, x0_pt, y0_pt, x1_pt, y1_pt
+  occurrences-*.csv: designation, portee, modele, prescription, parent, qte, qte_fourniture, reserve, x0_pt, y0_pt, x1_pt, y1_pt
   feuilles-classement.csv : bordereau (materiel | agrege | travaux)
 """
 from __future__ import annotations
@@ -39,6 +39,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "releve"))
 from commun import load_feuilles, load_nomenclature, read_csv  # noqa: E402  (releve/ helpers are the single source of truth)
 from .ancrage import SymbolIndex, anchor, word_boxes  # noqa: E402
+from .data import parse_supply_quantity  # noqa: E402
 
 DEFAULT_MODEL = "MODELE NON PRECISE"
 DEFAULT_PORTEE = "A PRECISER"
@@ -380,10 +381,13 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
             prescription = ascii_text(_cell(o, "prescription") or _cell(n, "prescription") or _cell(n, "description"))
             parent = ascii_upper(_cell(o, "parent"))
             qte = _float(o.get("qte"), 1.0)
+            supply = parse_supply_quantity(o.get("qte_fourniture"))
             reserve = _cell(o, "reserve")
             el = {"sheet": name, "page": page_no, "x": o["x"], "y": o["y"], "repere": repere, "code": code,
                   "source": o["source_id"], "shape": SHAPES.get(_cell(n, "forme").lower(), "circle"),
                   "flags": o.get("flags", [])}
+            if supply is not None:
+                el["qte_fourniture"] = supply
             if o.get("rayon"):
                 el["radius"] = round(o["rayon"], 2)
             if fmt == "agrege":           # EXEMPLE E03: relevé palette colours and shapes per family
@@ -397,7 +401,8 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
                 el["shape"] = "rect"
             counters[o["label"]].append(el)
             bord_rows.append({"feuille": name, "repere": repere, "source": o["source_id"], "materiel": mat,
-                              "designation": designation, "qte": f"{qte:g}", "portee": portee, "modele": modele,
+                              "designation": designation, "qte": f"{qte:g}", "qte_fourniture": "" if supply is None else f"{supply:g}",
+                              "portee": portee, "modele": modele,
                               "prescription": prescription, "parent": parent, "reserve": reserve,
                               "ref": ascii_text(_cell(n, "source")), "code": code, "format": fmt, "note": ascii_text(_cell(o, "note"))})
 
@@ -405,7 +410,7 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
     est = {"source": "releve", "workdir": str(work), "sheets": sheets_json,
            "counters": [{"family": label, "name": label, "elements": els} for label, els in sorted(counters.items())]}
     (out / "estimate.json").write_text(json.dumps(est, ensure_ascii=False, indent=1), encoding="utf-8")
-    cols = ["feuille", "repere", "source", "materiel", "designation", "qte", "portee", "modele", "prescription",
+    cols = ["feuille", "repere", "source", "materiel", "designation", "qte", "qte_fourniture", "portee", "modele", "prescription",
             "parent", "reserve", "ref", "code", "format", "note"]
     bord_rows.sort(key=lambda r: (natural_key(r["feuille"]), natural_key(r["repere"])))
     with open(out / "bordereau.csv", "w", newline="", encoding="utf-8") as fh:

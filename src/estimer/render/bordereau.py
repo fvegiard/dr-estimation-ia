@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import pymupdf
+import unicodedata
 
 from . import style as S
-from .data import Item, Sheet, fmt_qty
+from .data import Item, Sheet, fmt_qty, parse_supply_quantity
 from .plan import text_width
 
 
@@ -120,6 +121,17 @@ def add_bordereau(doc: pymupdf.Document, sheet: Sheet, width: float, height: flo
 # 2464 pt table (65 -> 2529); header text at start + 6, cell text at start + 5.
 NO_PURCHASE = ("ENLEVER", "CONVERTIR", "CONSERVER")        # portees with nothing to buy (A fournir = 0)
 
+
+def purchase_quantity(item: Item) -> float:
+    explicit = parse_supply_quantity(item.qte_fourniture)
+    if explicit is not None:
+        return explicit
+    scope = " ".join(unicodedata.normalize("NFKD", item.portee or "")
+                     .encode("ascii", "ignore").decode().upper().split())
+    scope = {"A ENLEVER": "ENLEVER", "EXISTANT CONSERVE": "CONSERVER",
+             "EXISTANTE CONSERVEE": "CONSERVER"}.get(scope, scope)
+    return 0 if scope in NO_PURCHASE or scope.startswith("RENVOI") else item.qte
+
 AGREGE = {
     "title": "BORDEREAU MATERIEL - {sheet}",
     "margin": 65.0, "title_size": 28.0, "title_y": 70.0,
@@ -184,7 +196,7 @@ def aggregate_rows(sheet: Sheet) -> list[dict]:
             portee = key[1]
             row["portee"] = portee
             row["lieux"] = str(len(its))
-            buy = 0 if portee in NO_PURCHASE or portee.startswith("RENVOI") else qte
+            buy = parse_supply_quantity(sum(purchase_quantity(it) for it in its))
             row["afournir"] = fmt_qty(buy)
         rows.append(row)
     return rows

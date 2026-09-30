@@ -10,7 +10,8 @@ Input directory layout (the `python -m src.estimer` output, optionally enriched)
   bordereau.csv   optional. One row per repere, columns
                   feuille,repere,source,materiel,designation,qte,portee,modele,prescription,parent[,reserve]
                   (the HR26-14 gold `bordereau-materiel.csv` schema). Joined on (feuille, repere); gives the
-                  descriptive bordereau fields. Without it, fields are derived from the estimator family.
+                  descriptive bordereau fields. Optional qte_fourniture gives explicit purchases (finite >=0).
+                  Without it, fields are derived from the estimator family.
   reserves.md     optional. `## <sheet>` sections; each following non-empty line is printed in the
                   "RESERVES ET COMPLEMENTS" block of that sheet's bordereau.
   familles.csv    optional. Given family rows of agrege / travaux sheets
@@ -23,6 +24,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 import re
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -65,6 +67,7 @@ class Item:
     label_bbox: tuple[float, float, float, float] | None = None   # imposed label box (same units as x, y)
     leader_end: tuple[float, float] | None = None
     legend_model: str = ""         # model line shown under the family name in the legend
+    qte_fourniture: float | None = None  # explicit purchases; zero keeps work without buying equipment
 
     @property
     def reserve(self) -> bool:
@@ -181,6 +184,19 @@ def _parse_color(v):
     return tuple(c)
 
 
+def parse_supply_quantity(value) -> float | None:
+    """Optional explicit purchase quantity; never silently replace invalid data."""
+    if value is None or (isinstance(value, str) and not value.strip()):
+        return None
+    try:
+        quantity = float(str(value).replace(",", "."))
+    except (ValueError, TypeError) as exc:
+        raise ValueError("qte_fourniture must be a finite nonnegative number") from exc
+    if not math.isfinite(quantity) or quantity < 0:
+        raise ValueError("qte_fourniture must be a finite nonnegative number")
+    return quantity
+
+
 def _parse_qte(v, default: float = 1) -> float:
     try:
         return float(str(v).replace(",", "."))
@@ -238,6 +254,7 @@ def load_input(in_dir: Path) -> list[Sheet]:
                 materiel=(row.get("materiel") or counter.get("name") or family).strip(),
                 designation=(row.get("designation") or el.get("designation") or family).strip(),
                 qte=_parse_qte(row.get("qte", el.get("qte", 1))),
+                qte_fourniture=parse_supply_quantity(row.get("qte_fourniture", el.get("qte_fourniture"))),
                 portee=(row.get("portee") if row else el.get("portee", DEFAULT_PORTEE)) or "",
                 modele=(row.get("modele") if row else el.get("modele", DEFAULT_MODEL)) or "",
                 prescription=(row.get("prescription") if row else el.get("prescription", DEFAULT_PRESCRIPTION)) or "",

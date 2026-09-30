@@ -182,6 +182,12 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
 `feuilles-classement.csv`, `nomenclature.csv`, `occurrences-texte.csv`, `occurrences-visuel.csv`, `reserves.md`,
 `rapport-releve.md`, et `comparaison-estimateur.md` si un export d'estimateur était fourni.
 
+Écris des CSV valides : un champ contenant une virgule, un saut de ligne ou un guillemet doit être entouré
+de guillemets doubles; un guillemet interne se double. Exemple de note de circuit : `"circuit S18,20"`.
+Chaque ligne doit avoir exactement les colonnes de son en-tête. Relis les fichiers écrits, surtout les notes
+et prescriptions; une virgule de circuit ne doit jamais devenir une colonne supplémentaire. Conserve
+les informations source en corrigeant l'échappement, sans supprimer le texte ni modifier les quantités.
+
 ### Informations nécessaires au bordereau final
 Le rendu utilise les colonnes suivantes lorsqu'elles sont renseignées. Lis les notes, la légende et les cédules du dossier courant pour les remplir; ne recopie jamais un résultat de référence.
 - `feuilles-classement.csv` : `bordereau` = `materiel` (une ligne par repère, notamment incendie), `agrege` (quantités par famille électrique) ou `travaux` (emplacements et appareils à fournir, notamment urgence).
@@ -189,6 +195,10 @@ Le rendu utilise les colonnes suivantes lorsqu'elles sont renseignées. Lis les 
   Un numéro de note commune n'est pas un code de matériel : conserver cette note dans `description`/`prescription`.
   Sans code explicite de symbole, utiliser un code court distinct par matériel et expliquer ce choix dans le rapport.
 - `occurrences-*.csv` : `designation`, `portee`, `modele`, `prescription`, `parent`, `qte`, `reserve` si une occurrence diffère de sa famille. Une ligne de note prescrivant plusieurs appareils garde sa quantité explicite; ce n'est pas plusieurs symboles à inventer au même point.
+  `qte_fourniture` peut préciser séparément le nombre d'appareils à acheter pour le bordereau travaux :
+  nombre fini positif ou zéro, uniquement si la source le justifie. Un raccordement d'appareil existant
+  conserve sa portée `RACCORDER` et peut avoir `qte_fourniture=0`; ne le renomme pas `CONSERVER`
+  pour changer le calcul. Valeur absente = déduction habituelle par portée; ne présume pas zéro pour un cas inconnu.
 Enrichis au besoin les CSV complets avec `ecrire` après les ajouts de positions. Une valeur absente reste vide et fait l'objet d'une réserve; aucun modèle de fabricant, portée ou prescription ne doit être inventé pour remplir le tableau.
 
 Quand tout est écrit, réponds par un résumé de 10 lignes maximum : feuilles traitées, total de marques, nombre de réserves,

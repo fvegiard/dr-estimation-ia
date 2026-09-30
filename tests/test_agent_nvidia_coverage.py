@@ -61,6 +61,20 @@ def _images(requests):
             if part.get("type") == "image_url"}
 
 
+@pytest.mark.parametrize('width,height', [(1200.5, 600), (600, 1200.5), (1200.5, 1200.5), (0.5, 0.5)])
+def test_fractional_page_edges_remain_missing_until_delivered(tmp_path, monkeypatch, width, height):
+    work, _ = _work(tmp_path, monkeypatch)
+    monkeypatch.setattr(an, 'feuilles_plan', lambda _: [('P1', width, height)])
+    missing = an.manquantes(work)['P1']
+    assert max(r[2] for r in missing) == width
+    assert max(r[3] for r in missing) == height
+    assert all(0 <= x0 < x1 <= width and 0 <= y0 < y1 <= height for x0, y0, x1, y1 in missing)
+    an.VUS[:] = [('P1', *r) for r in missing if r[2] <= int(width) and r[3] <= int(height)]
+    assert 'P1' in an.manquantes(work), 'Fractional edge strips have not been delivered'
+    an.VUS[:] = [('P1', *r) for r in missing]
+    assert an.manquantes(work) == {}
+
+
 def test_local_zoom_render_without_api_delivery_does_not_credit_coverage(tmp_path, monkeypatch):
     work, _ = _work(tmp_path, monkeypatch)
     args = json.loads(_zoom(0)["function"]["arguments"])

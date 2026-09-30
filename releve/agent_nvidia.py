@@ -145,7 +145,7 @@ def manquantes(workdir):
     """Fenêtres non couvertes par l'union des zooms fins, par feuille plan."""
     res = {}
     for f, W, H in feuilles_plan(workdir):
-        cases = [(x, y) for x in range(0, int(W), FENETRE) for y in range(0, int(H), FENETRE)]
+        cases = [(x, y) for x in range(0, math.ceil(W), FENETRE) for y in range(0, math.ceil(H), FENETRE)]
         fins = [v[1:] for v in VUS if v[0] == f and all(math.isfinite(c) for c in v[1:])
                 and 0 < v[3] - v[1] <= FENETRE + EPS_FENETRE and 0 < v[4] - v[2] <= FENETRE + EPS_FENETRE]
         fenetres = [(x, y, min(x + FENETRE, W), min(y + FENETRE, H)) for x, y in cases]
