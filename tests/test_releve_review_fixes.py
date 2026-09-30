@@ -180,6 +180,41 @@ def test_run_process_skips_native_export_when_component_missing(monkeypatch, tmp
     assert not any("planexpert_vm" in part for cmd in commands for part in cmd)
 
 
+def test_run_process_blocks_resume_when_quality_fails(monkeypatch, tmp_path):
+    outbox = tmp_path / "OUTBOX"
+    (outbox / "S-TEST" / "travail").mkdir(parents=True)
+    commands: list[list[str]] = []
+
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(tmp_path / "INBOX" / "S-TEST")))
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd), (2, "quality failed"))[1]
+                    if "releve/controle_qualite.py" in cmd else (commands.append(cmd), (0, ""))[1])
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
+    monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
+    monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
+
+    assert not releve_run.process("S-TEST", reprendre=True)
+    assert any("releve/controle_qualite.py" in cmd for cmd in commands)
+    assert not any("releve/build_qpl.py" in cmd for cmd in commands)
+
+
+def test_run_process_creates_example_format(monkeypatch, tmp_path):
+    outbox = tmp_path / "OUTBOX"
+    (outbox / "S-TEST" / "travail").mkdir(parents=True)
+    commands: list[list[str]] = []
+
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(tmp_path / "INBOX" / "S-TEST")))
+    monkeypatch.setattr(releve_run, "PLANEXPERT_VM_CLI", str(tmp_path / "missing-planexpert.py"))
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd), (0, ""))[1])
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
+    monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
+    monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
+
+    assert releve_run.process("S-TEST", reprendre=True)
+    assert any("src.estimer.render.from_releve" in cmd for cmd in commands)
+
+
 def test_jeu_reference_requires_baseline(monkeypatch, tmp_path, capsys):
     monkeypatch.setattr(jeu_reference, "SORTIE", tmp_path / "_jeu-reference")
     monkeypatch.setattr(jeu_reference, "dossiers_du_jeu", lambda: ["S-TEST"])

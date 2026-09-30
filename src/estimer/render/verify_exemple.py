@@ -101,6 +101,9 @@ def verify(rendu: Path, report: Path, exemple: Path, gold_dir: Path) -> dict:
     ex = pymupdf.open(exemple)
     rep = json.loads(report.read_text(encoding="utf-8"))
     prov = json.loads((gold_dir / "provenance.json").read_text(encoding="utf-8"))
+    expected_sheets = [s["sheet"] for s in prov["sheets"]]
+    actual_sheets = [s["sheet"] for s in rep["sheets"]]
+    sheets_ok = bool(expected_sheets) and actual_sheets == expected_sheets
     ex_page = {s["sheet"]: s["exemple_page"] - 1 for s in prov["sheets"]}
     ex_bords = T.sheet_bordereaux(ex)
     rows = []
@@ -166,7 +169,8 @@ def verify(rendu: Path, report: Path, exemple: Path, gold_dir: Path) -> dict:
         row["ok"] = row["markers_ok"] and row["header_ok"] and row["legend_ok"] and row["bordereau_ok"]
         rows.append(row)
     pages_ok = out.page_count == ex.page_count
-    return {"sheets": rows, "ok": all(r["ok"] for r in rows) and pages_ok,
+    return {"sheets": rows, "ok": sheets_ok and all(r["ok"] for r in rows) and pages_ok,
+            "sheets_ok": sheets_ok, "expected_sheets": expected_sheets, "actual_sheets": actual_sheets,
             "pages": [out.page_count, ex.page_count], "pages_ok": pages_ok,
             "markers": sum(r["markers_gold"] for r in rows),
             "cells": sum(r["cells"] for r in rows), "cells_same": sum(r["cells_same"] for r in rows),

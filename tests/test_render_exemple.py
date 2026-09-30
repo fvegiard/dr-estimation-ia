@@ -17,6 +17,7 @@ import pytest
 from src.estimer.render import from_exemple as FX
 from src.estimer.render import load_input, render
 from src.estimer.render import style as S
+from src.estimer.render.verify_exemple import verify
 from src.estimer.render.bordereau import rows_per_page, wrap
 from src.estimer.render.data import Item, Sheet
 
@@ -27,7 +28,25 @@ TITLE_X = 2216.0
 FIELDS = ["feuille", "repere", "source", "materiel", "designation", "qte", "portee", "modele", "prescription",
           "parent"]
 FAMS = [("I01", "AVERTISSEUR DE FUMEE AUTONOME 120V MURAL", "A"), ("I02", "AVERTISSEUR INCENDIE KLAXON", "K"),
-        ("I03", "DECLENCHEUR MANUEL ADRESSABLE", "F")]
+          ("I03", "DECLENCHEUR MANUEL ADRESSABLE", "F")]
+
+
+def test_verify_rejects_missing_sheets_even_with_matching_page_count(tmp_path: Path):
+    pdf = tmp_path / "pages.pdf"
+    doc = pymupdf.open()
+    doc.new_page()
+    doc.save(pdf)
+    doc.close()
+    report = tmp_path / "report.json"
+    report.write_text('{"sheets": []}', encoding="utf-8")
+    gold = tmp_path / "gold"
+    gold.mkdir()
+    (gold / "provenance.json").write_text('{"sheets": [{"sheet": "E01", "exemple_page": 1}]}', encoding="utf-8")
+
+    result = verify(pdf, report, pdf, gold)
+
+    assert not result["ok"]
+    assert not result["sheets_ok"]
 
 
 def draw_plan(path: Path, n_pages: int = 1) -> list[list[tuple[float, float]]]:

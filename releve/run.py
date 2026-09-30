@@ -222,12 +222,22 @@ def process(arg, reprendre=False):
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
                     raise RuntimeError(f"l'agent n'a pas produit {f}")
+        t = time.time(); code, _ = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
+        steps.append(("controle_qualite", time.time() - t, "ok" if code == 0 else f"code {code}"))
+        if code: raise RuntimeError("controle_qualite.py a échoué")
         t = time.time(); code, _ = run(["uv", "run", "releve/build_qpl.py", workdir, name, pe_dir], log_path=log_path)
         steps.append(("build_qpl", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("build_qpl.py a échoué")
         t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
+        t = time.time(); code, _ = run(["uv", "run", "-m", "src.estimer.render.from_releve",
+                                       workdir, os.path.join(outdir, "format-exemple"),
+                                       "--render", os.path.join(outdir, f"{name}-format-exemple.pdf"),
+                                       "--report", os.path.join(outdir, f"{name}-format-exemple.report.json")],
+                                      log_path=log_path)
+        steps.append(("format_exemple", time.time() - t, "ok" if code == 0 else f"code {code}"))
+        if code: raise RuntimeError("format-exemple a échoué")
         ok = True
         if os.environ.get("RELEVE_NATIF", "1") == "1":     # export natif Plan Expert par la VM (MCP planexpert-vm) ; jamais bloquant
             if os.path.exists(PLANEXPERT_VM_CLI):
