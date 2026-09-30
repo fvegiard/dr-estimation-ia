@@ -269,9 +269,13 @@ def load_input(in_dir: Path) -> list[Sheet]:
         fmt = formats.get(name) or next((bord[(name, it.repere)].get("format") for it in sh.items
                                          if bord.get((name, it.repere), {}).get("format")), None)
         sh.format = fmt if fmt in ("materiel", "agrege", "travaux") else "materiel"
-    # Keep every sheet the producer declared, even with zero items: a classified plan sheet with no
-    # counted symbol yet must still ship in the output instead of silently vanishing from it.
-    return sorted(sheets.values(), key=lambda s: (s.page, s.name))
+    # releve/'s bridge (from_releve.py, est["source"] == "releve") declares every classified plan sheet
+    # up front, even ones with zero occurrences so far: keep those instead of letting them silently
+    # vanish from the output. Generic estimator input (no such marker: the CV detector's own export.py,
+    # from_exemple.py, ad hoc estimate.json) keeps its prior behaviour — sheets with no items are
+    # dropped — so an entirely empty estimate can't produce a nominal-looking PDF from those routes.
+    keep_empty = est.get("source") == "releve"
+    return sorted((s for s in sheets.values() if keep_empty or s.items), key=lambda s: (s.page, s.name))
 
 
 def to_points(sheet: Sheet, page_w: float, page_h: float):

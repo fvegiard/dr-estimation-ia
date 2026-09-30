@@ -69,6 +69,17 @@ def base(rel):
     return subprocess.run(["git", "show", f"{BASE_REV}:dossiers/{S}/{rel}"], cwd=REPO, check=True, capture_output=True, text=True).stdout
 
 
+def a_verifier_de(outbox, s):
+    """Encadré(s) hors espace libre pour le dossier `s`, lu dans <outbox>/<s>-rendu-rapport.json (écrit par
+    render_vectoriel.py) ; [] si le rapport est absent ou propre. Sans cette lecture, statut() ne peut pas
+    savoir qu'un encadré chevauche le dessin et publie un État TERMINÉ non qualifié même quand une
+    vérification visuelle reste nécessaire (CLAUDE.md §Autonomie)."""
+    p = os.path.join(outbox, f"{s}-rendu-rapport.json")
+    if not os.path.exists(p):
+        return []
+    return json.load(open(p, encoding="utf-8")).get("conformite", {}).get("encadre_hors_espace_libre") or []
+
+
 def write(p, s):
     open(p, "w", encoding="utf-8").write(s)
 
@@ -236,9 +247,11 @@ def main(inbox, outbox, dossier):
         shutil.copy2(os.path.join(tmp, "dossiers", S, "releve.xlsx"), os.path.join(dossier, "releve.xlsx"))
 
     import run as runmod
-    runmod.statut(S, inbox, outbox, work, steps, None, True)
+    a_verifier = a_verifier_de(outbox, S)
+    runmod.statut(S, inbox, outbox, work, steps, None, True, None, a_verifier)
     st = read(os.path.join(outbox, "STATUT.md"))
-    st = re.sub(r"État : \*\*TERMINÉ\*\*", "État : **TERMINÉ** (addendas E-01 et T-01 intégrés ; reprise T-01 du 2026-09-24)", st)
+    st = re.sub(r"État : \*\*(TERMINÉ(?: — À VÉRIFIER)?)\*\*",
+               r"État : **\1** (addendas E-01 et T-01 intégrés ; reprise T-01 du 2026-09-24)", st)
     per_sheet = rows("avant-apres-haut-parleurs.csv")
     labels = rows("avant-apres-libelles.csv")
     add = ["## Addendas", "",

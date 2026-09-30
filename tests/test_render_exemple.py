@@ -207,6 +207,25 @@ def test_aggrege_does_not_merge_distinct_portee():
     assert len(aggregate_rows(uniform)) == 1
 
 
+def test_load_input_drops_empty_sheets_without_releve_marker(tmp_path):
+    """Generic estimator input (no est['source'] == 'releve' bridge marker) keeps the prior behaviour:
+    a declared sheet with zero items is dropped, so an entirely empty estimate can't produce a nominal-
+    looking PDF. Only the releve/ bridge keeps empty classified plan sheets (test_from_releve.py ::
+    test_zero_occurrence_plan_sheet_is_kept) — that's what est["source"] == "releve" scopes this to."""
+    plans = tmp_path / "plans.pdf"
+    pts = draw_plan(plans)[0]
+    d = tmp_path / "in"
+    write_input(d, pts)
+    est = json.loads((d / "estimate.json").read_text(encoding="utf-8"))
+    assert "source" not in est, "sanity check: write_input() must stay the non-releve, generic case"
+    est["sheets"].append({"page": 2, "sheet": "E200", "width_px": W, "height_px": H})
+    (d / "estimate.json").write_text(json.dumps(est), encoding="utf-8")
+
+    sheets = load_input(d)
+
+    assert [s.name for s in sheets] == ["DSI01"]
+
+
 def test_plain_estimator_output_px_scaling(tmp_path):
     """No repere / bordereau.csv: codes F01.., default wording, raster px mapped onto PDF points."""
     plans = tmp_path / "plans.pdf"
