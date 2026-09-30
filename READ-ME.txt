@@ -1,0 +1,19 @@
+GRANBY — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL
+
+La E401 approuvée est conservée sans changement dans Granby-approved-reference-20260930.
+14 JPEG couvrent les feuilles de plan E201 à E901 (pages PDF 6 à 19).
+Les pages 1 à 5 sont la couverture, le devis et la légende; elles ne sont pas des plans à relever.
+
+Nouvelles feuilles : E303, E402, E403, E501, E502, E503, E601, E801, E901.
+Plan original conservé avec annotations couleur et légende intégrée. JPEG en haute résolution.
+
+ÉTAT : relevé supervisé encore partiel; ce dossier n'est pas une soumission exhaustive.
+E501 : DATA, téléphone, TV non comptés; 8 puissances source restent ancrées aux notes plutôt qu'aux appareils physiques.
+E801 : quantités pour UN dessin de chaque type; aucune multiplication hôtel. Interrupteurs, DATA et téléphone encore à compléter.
+E601 : symboles représentés au schéma, pas une commande globale; multiplicateurs et réserves du plan conservés.
+Câbles et conduits non métrés. Familles non surlignées non réputées comptées.
+Disjoncteurs : détails par panneau dans le classeur; marque, série, protections et pouvoir de coupure à confirmer.
+Contradictions : ascenseurs 20 kVA E901 / 30 kVA E501; sectionneurs 30 A au dessin / 60 A et fusibles 40 A aux notes E901.
+Prise toiture : 20 A au détail E901 / symbole 15 A dans E104. Aucun calibre choisi arbitrairement.
+
+Travail local, sans GitHub ni Copilot. Les listes ne doivent pas être additionnées entre schémas, plans d'étage et chambres types sans contrôle des doublons.

@@ -1,0 +1,132 @@
+[
+  {
+    "file": "Granby-breakers-by-panel.xlsx",
+    "bytes": 91793,
+    "sha256": "262ad31a6907b5bdeab044732aee1823f1bf1340f993814e762bf9d2a51dfdff"
+  },
+  {
+    "file": "Granby-breakers-detailed.csv",
+    "bytes": 43996,
+    "sha256": "1a43a03f03fe2dfd4f69c124db5477fe2b2809558f665c65eb888c3b8e434f5b"
+  },
+  {
+    "file": "Granby-E201-page06-releve.jpg",
+    "bytes": 2568534,
+    "sha256": "f4608829b052040651d089bd4b3e1aee7bfccaab9dfcbb5744c771564a3639a1"
+  },
+  {
+    "file": "Granby-E202-page07-releve.jpg",
+    "bytes": 4642571,
+    "sha256": "d30324faa0572fb43eedd2f953ee959427c15aded8f98e29648767fd35f03393"
+  },
+  {
+    "file": "Granby-E301-page08-releve.jpg",
+    "bytes": 2767393,
+    "sha256": "f79485afab37ee5b2aace540a6d0fd316f645f352ac8f945bb52b754c81ea084"
+  },
+  {
+    "file": "Granby-E302-page09-releve.jpg",
+    "bytes": 6657658,
+    "sha256": "461354d423160f891824425e902c9b9c8cda37cc1822a7162c24d3ae7026c90a"
+  },
+  {
+    "file": "Granby-E303-breakers.csv",
+    "bytes": 469,
+    "sha256": "b15b5587354f8aa264135a7f5b3c9388a481c064e12183df60fcfaf16c1b5565"
+  },
+  {
+    "file": "Granby-E303-releve.jpg",
+    "bytes": 5173054,
+    "sha256": "ef58fe077a6d06492d4af4d22dc99a32f386f20f281adcbf4b049eb2fd8146c9"
+  },
+  {
+    "file": "Granby-E401-equipment.csv",
+    "bytes": 823,
+    "sha256": "284b766d6e5587c3ecb9523aa2544c754cc3aa9ad93c336797d9ee7a293b2062"
+  },
+  {
+    "file": "Granby-E401-releve.jpg",
+    "bytes": 4962261,
+    "sha256": "d14ee302ecb17549f41e2190f0ac924db7dd1e99e39639bdb581e74116a38e39"
+  },
+  {
+    "file": "Granby-E402-equipment.csv",
+    "bytes": 232,
+    "sha256": "a10b9f8e5fcfecc08de22f6cf7b0bd384ce862ac63df4b2b05b2e0f8f920def5"
+  },
+  {
+    "file": "Granby-E402-releve.jpg",
+    "bytes": 7373286,
+    "sha256": "a729d512af9f7c0a5ea9834898f924b4dc681040e4863893c44e66137a36ca56"
+  },
+  {
+    "file": "Granby-E403-equipment.csv",
+    "bytes": 226,
+    "sha256": "b1e513cd478dc1a7be479bbb49e4234e68510e72683f115bbd9789276aad7659"
+  },
+  {
+    "file": "Granby-E403-releve.jpg",
+    "bytes": 4698516,
+    "sha256": "8d4bca5f3dcfcfa27beaa976b5008c7273ed6a9f6ed84d817ae5170bda2f76d0"
+  },
+  {
+    "file": "Granby-E501-equipment.csv",
+    "bytes": 11909,
+    "sha256": "81f0a3846b7e1fdd2c17c9d0da7c67be6df31a0c1fec816441255d727d949140"
+  },
+  {
+    "file": "Granby-E501-releve.jpg",
+    "bytes": 4854119,
+    "sha256": "eab8ba5e42257abff176b2c6f95f43ddc639864f8963489572b8803651c2c053"
+  },
+  {
+    "file": "Granby-E502-equipment.csv",
+    "bytes": 4480,
+    "sha256": "3367daf90a7098177848c84c0188405278ef6402b74cb4589cb78bf44325694c"
+  },
+  {
+    "file": "Granby-E502-releve.jpg",
+    "bytes": 6647801,
+    "sha256": "6237fa5fb25687b73c601f67874e0115f63e30595ff9e9987af245861caba67d"
+  },
+  {
+    "file": "Granby-E503-equipment.csv",
+    "bytes": 5115,
+    "sha256": "0cde0ad0e105883ad868660cc36d69fb08e0725dbc21585cb5354d31125afc77"
+  },
+  {
+    "file": "Granby-E503-releve.jpg",
+    "bytes": 4628884,
+    "sha256": "9aadab2a2de4f1c12d77a5ec95d8dc2a7582cacf0e17d83e1249ed5972703c65"
+  },
+  {
+    "file": "Granby-E601-releve.jpg",
+    "bytes": 2588908,
+    "sha256": "8cf7b287be26490cd0fabf451f17d2c73e91a9c0539c32cd0b10968379488c9c"
+  },
+  {
+    "file": "Granby-E601-symbols.csv",
+    "bytes": 470,
+    "sha256": "f9bc8d8a0b889bfe2afc05c4cebb6a8f81d1f78b9d0468e73033b4cf4f6ee52f"
+  },
+  {
+    "file": "Granby-E801-by-room-type.csv",
+    "bytes": 397,
+    "sha256": "fa1c2584eaa8e264186d99d21d4ff1f7ac1f56b3162aa764c516def75c29739d"
+  },
+  {
+    "file": "Granby-E801-releve.jpg",
+    "bytes": 4105829,
+    "sha256": "a17de6044aacc8641614dbfe14e668b764b54abcf9f47d4765aa45cf2f2d6cf9"
+  },
+  {
+    "file": "Granby-E901-details.csv",
+    "bytes": 1101,
+    "sha256": "892f0a1fe8260d38771f622d398be7fb1bb615b1090b0cca5fe612cba5f36f3b"
+  },
+  {
+    "file": "Granby-E901-releve.jpg",
+    "bytes": 4401601,
+    "sha256": "0b7f2714cf4e6d916d9deac08a4890d00ec8ea8d4817d9e2f902d7ced585d2ad"
+  }
+]

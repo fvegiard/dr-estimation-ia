@@ -1,0 +1,13 @@
+﻿Type,Description,Symboles dessinés - pas quantité finale
+D,Détection fumée (D),14
+F,Détection combinée CO/fumée (F),10
+G,Détection de gaine (G),21
+SF,Signalisation à repère F : symbole source,16
+MIB,Module isolateur de boucle,11
+MIR,Module de relais,8
+MIS,Module de surveillance,6
+MIA,Module d’activation,6
+RFL,Résistance fin de ligne,4
+PAD,Panneau annonciateur distant,1
+SGM,Signal général de dérangement,1
+A,Détecteur de chaleur (A),1

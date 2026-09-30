@@ -1,0 +1,9 @@
+﻿Type de chambre - un extrait,PC,MF,PTAC,LC,LA,AP,CH,TH,DF,SF,RCFF,TV,CUI
+Studio QQ,9,2,1,4,1,0,0,1,1,1,2,1,1
+Studio King,9,2,1,5,1,0,0,1,1,1,2,1,1
+Studio King ADA,8,2,1,5,1,0,0,1,1,1,2,1,1
+Chambre QQ,7,0,1,3,1,0,0,0,1,1,2,1,0
+Chambre QQ + sofa,8,0,0,3,1,0,1,0,1,1,2,1,0
+Chambre King,7,0,1,3,0,1,0,0,1,1,2,1,0
+Chambre King ADA,7,1,1,3,1,0,0,0,1,1,2,1,0
+Suite,10,2,2,6,1,0,0,1,2,2,2,2,1

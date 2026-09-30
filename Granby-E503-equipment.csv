@@ -1,0 +1,75 @@
+﻿Type,Repère,Description,X points,Y points
+PC,,Prise dessinée; variante suivant symbole source,317.96,664.28
+PC,,Prise dessinée; variante suivant symbole source,345.93,745.53
+PC,,Prise dessinée; variante suivant symbole source,565.64,745.53
+PC,,Prise dessinée; variante suivant symbole source,1203.48,745.53
+PC,,Prise dessinée; variante suivant symbole source,1737.97,745.53
+PC,,Prise dessinée; variante suivant symbole source,2027.36,745.53
+PC,,Prise dessinée; variante suivant symbole source,2375.82,745.53
+PC,,Prise dessinée; variante suivant symbole source,2728.94,745.53
+PC,,Prise dessinée; variante suivant symbole source,2790.45,798.04
+PC,,Prise dessinée; variante suivant symbole source,2851.67,796.2
+PC,,Prise dessinée; variante suivant symbole source,855.62,745.53
+PC,,Prise dessinée; variante suivant symbole source,1501.73,745.53
+PC,,Prise dessinée; variante suivant symbole source,1366.32,549.1
+PC,,Prise dessinée; variante suivant symbole source,2724.87,820.49
+PC,,Prise dessinée; variante suivant symbole source,2687.74,948.04
+PC,,Prise dessinée; variante suivant symbole source,2701.99,791.71
+PC-EI,,Prise dessinée; variante suivant symbole source,1290.09,515.79
+PC-EI,,Prise dessinée; variante suivant symbole source,1290.2,661.89
+TH,,Thermostat,330.12,699.18
+TH,,Thermostat,294.54,658.61
+TH,,Thermostat,2828.69,723.45
+TH,,Thermostat,2902.32,765.84
+TH,,Thermostat,2809.63,898.82
+TH,,Thermostat,1360.78,531.85
+TH,,Thermostat,2712.82,980.57
+PC-EI,,Prise dessinée; variante suivant symbole source,1582.6,2139.98
+PC,,Prise dessinée; variante suivant symbole source,2685.49,2139.15
+PC-EI,,Prise dessinée; variante suivant symbole source,813.9,1623.78
+PC-EI,,Prise dessinée; variante suivant symbole source,1011.05,2139.98
+UAF,UAF-1,Raccordement équipement mécanique nommé au plan,1570.28,2078.4
+VE,VE-1,Raccordement équipement mécanique nommé au plan,2682.57,2186.88
+VE,VE-5,Raccordement équipement mécanique nommé au plan,745.13,1627.4
+CA,CA-1,Raccordement équipement mécanique nommé au plan,939.88,1489.58
+COND,COND-1,Raccordement équipement mécanique nommé au plan,868.83,1455.37
+UC,UC-1,Raccordement équipement mécanique nommé au plan,1325.38,2112.9
+UC,UC-2,Raccordement équipement mécanique nommé au plan,1240.43,2086.58
+UC,UC-213,Raccordement équipement mécanique nommé au plan,946.06,2083.67
+UC,UC-214,Raccordement équipement mécanique nommé au plan,982.36,2083.67
+UC,UC-215,Raccordement équipement mécanique nommé au plan,1090.22,2083.67
+UC,UC-216,Raccordement équipement mécanique nommé au plan,1017.73,2083.67
+UC,UC-218,Raccordement équipement mécanique nommé au plan,1053.66,2083.67
+UC,UC-313,Raccordement équipement mécanique nommé au plan,952.19,1941.57
+UC,UC-314,Raccordement équipement mécanique nommé au plan,989.06,1941.57
+UC,UC-315,Raccordement équipement mécanique nommé au plan,1095.14,1941.55
+UC,UC-316,Raccordement équipement mécanique nommé au plan,1023.84,1941.55
+UC,UC-318,Raccordement équipement mécanique nommé au plan,1060.98,1941.55
+UC,UC-415,Raccordement équipement mécanique nommé au plan,915.67,1941.55
+UC,UC-416,Raccordement équipement mécanique nommé au plan,842.57,1941.55
+UC,UC-418,Raccordement équipement mécanique nommé au plan,880.85,1941.55
+UC,UC-413,Raccordement équipement mécanique nommé au plan,771.75,1941.55
+UC,UC-414,Raccordement équipement mécanique nommé au plan,809.45,1941.55
+UC,UC-428,Raccordement équipement mécanique nommé au plan,2127.32,1866.35
+UC,UC-328,Raccordement équipement mécanique nommé au plan,2055.28,1866.35
+UC,UC-228,Raccordement équipement mécanique nommé au plan,2092.41,1866.35
+UC,UC-429,Raccordement équipement mécanique nommé au plan,2125.4,1967.33
+UC,UC-329,Raccordement équipement mécanique nommé au plan,2053.29,1967.33
+UC,UC-229,Raccordement équipement mécanique nommé au plan,2089.22,1967.33
+CH,750 W,Chauffage dessiné; puissance source 750 W,322.61,709.6
+CH,500 W,Chauffage dessiné; puissance source 500 W,2719.55,988.09
+CH,500 W,Chauffage dessiné; puissance source 500 W,2816.35,906.34
+CH,750 W,Chauffage dessiné; puissance source 750 W,2836.2,713.0
+CH,500 W,Chauffage dessiné; puissance source 500 W,301.3,666.12
+CH,500 W,Chauffage dessiné; puissance source 500 W,2895.55,758.33
+CH,500 W,Chauffage dessiné; puissance source 500 W,1368.3,524.35
+CH,1250 W,Chauffage dessiné; puissance source 1250 W,1431.5,398.11
+CH,1250 W,Chauffage dessiné; puissance source 1250 W,1555.75,398.11
+CH,1250 W,Chauffage dessiné; puissance source 1250 W,1665.55,398.11
+CH,750 W,Chauffage dessiné; puissance source 750 W,1141.1,993.01
+CH,750 W,Chauffage dessiné; puissance source 750 W,1321.4,993.01
+CH,300 W,Chauffage dessiné; puissance source 300 W,1224.13,967.75
+CH,300 W,Chauffage dessiné; puissance source 300 W,1234.39,967.75
+CH,750 W,Chauffage dessiné; puissance source 750 W,2142.45,988.13
+CH,750 W,Chauffage dessiné; puissance source 750 W,2262.1,437.87
+CH-NOTE,78000 W,Puissance indiquée; annotation source conservée,1453.34,2170.21

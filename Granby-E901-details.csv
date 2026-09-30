@@ -1,0 +1,14 @@
+﻿Détail,Sujet,Portée / réserve
+A,Détecteurs / portes corridor,Placement et relais; aucune quantité globale déduite
+B,Prise au toit,"5-20R 125 V, DDFT, boîte FS / couvercle étanche, support"
+C,Tiges de mise à la terre,"Détail : 2 tiges 3/4 po × 10 pi, boîtes ERICO T416B"
+D,Barre principale MALT,Cuivre 24 × 3 × 1/4 po; cosses à 2 trous et isolateurs
+E,Lampadaire,Mât 15 pi; fondation et base selon détail
+F,Tranchée,"PVC, sable, ruban; longueurs et diamètres suivant plans"
+G,Recharge véhicules,"Détail bornes #1/#2, piédestal, ancrages, conduits et câbles"
+H,Contrôle éclairage extérieur,Horloge / contacteur / manuel / photocellule; repères à valider
+I,Transformateur mural,"Support, ancrages et boulons; pas un transformateur ajouté"
+J,Raccordement ascenseur,T1/T2 20 kVA 600/480 V indiqués ici; voir réserve ci-dessous
+K,Arrêt ventilation / incendie,Interface à relais MIR et circuit de commande
+L,Climatisation,"Principe UC/UE : alimentation, sectionneurs et coordination"
+M,Ventilation,"Principe UAF-1, VE-1 et registres RCFF; pas un inventaire"
