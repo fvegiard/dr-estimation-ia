@@ -94,7 +94,7 @@ def test_zoom_expands_to_square_preserving_requested_area(tmp_path, monkeypatch,
     description, actual_image = an.outil(w, "zoom", args)
     assert calls == [["P1", *expected]]
     assert actual_image == str(image)
-    assert an.VUS == [("P1", *expected)]
+    assert an.VUS == []  # Rendering alone is not delivery to the model.
     assert json.loads(description)["bounds_pt"] == list(expected)
     assert json.loads(description)["coordinate_system"] == "absolute PDF points"
     assert expected[0] <= requested[0] < requested[2] <= expected[2]
@@ -140,6 +140,99 @@ def test_structured_occurrences_escape_commas(tmp_path):
         rows = list(csv.DictReader(fh))
     assert len(rows) == 1 and rows[0]["note"] == row["note"]
     assert rows[0]["source"] == "visuel" and None not in rows[0]
+
+
+def test_occurrence_metadata_migrates_legacy_and_reaches_loader(tmp_path):
+    from commun import load_occurrences
+    from src.estimer.render.from_releve import read_occurrences
+    w = _work(tmp_path)
+    original = "P1,KLAXON,10,20,visuel,[K1.1]"
+    an.outil(w, "ajouter_occurrences", {"lignes": [original]})
+    metadata = {"designation": "Deux commandes", "portee": "À remplacer", "modele": "M,2",
+                "prescription": "Fournir deux commandes, même emplacement", "parent": "PA",
+                "qte": 2, "reserve": "Calibre à confirmer",
+                "x0_pt": 20, "y0_pt": 30, "x1_pt": 40, "y1_pt": 50}
+    an.outil(w, "ajouter_occurrences", {"occurrences": [
+        {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40, "note": "[K1.2]", **metadata}]})
+    an.outil(w, "ajouter_occurrences", {"lignes": ["P1,KLAXON,60,70,visuel,[K1.3]"]})
+    with (tmp_path / "occurrences-visuel.csv").open(encoding="utf-8", newline="") as fh:
+        rows = list(csv.DictReader(fh))
+    assert len(rows) == 3
+    assert [rows[0][k] for k in an.ENTETE_VISUEL.split(",")] == next(csv.reader([original]))
+    assert all(rows[1][k] == str(v) for k, v in metadata.items())
+    assert rows[0]["qte"] == rows[2]["qte"] == ""
+    loaded = load_occurrences(w)
+    assert [r["qte"] for r in loaded] == [1, 2, 1]
+    assert read_occurrences(tmp_path)[1]["prescription"] == metadata["prescription"]
+    properties = next(t for t in an.OUTILS if t["function"]["name"] == "ajouter_occurrences")["function"]["parameters"]["properties"]["occurrences"]["items"]["properties"]
+    assert set(metadata) <= set(properties)
+
+
+@pytest.mark.parametrize("qte", [0, -1, float("nan"), float("inf"), "invalid", True])
+def test_invalid_quantity_preserves_whole_existing_file(tmp_path, qte):
+    w = _work(tmp_path)
+    an.outil(w, "ajouter_occurrences", {"lignes": ["P1,KLAXON,10,20,visuel,old"]})
+    path = tmp_path / "occurrences-visuel.csv"
+    before = path.read_bytes()
+    good = {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40, "qte": 2}
+    with pytest.raises(ValueError):
+        an.outil(w, "ajouter_occurrences", {"occurrences": [good, {**good, "qte": qte}]})
+    assert path.read_bytes() == before
+
+
+def test_migration_preserves_unknown_existing_columns_and_failed_replace(tmp_path, monkeypatch):
+    w = _work(tmp_path)
+    path = tmp_path / "occurrences-visuel.csv"
+    path.write_text(an.ENTETE_VISUEL + ',custom\nP1,KLAXON,10,20,visuel,"old, note",kept\n', encoding="utf-8")
+    before = path.read_bytes()
+    row = {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40, "qte": 2}
+    original_replace = an.os.replace
+    def failed_replace(*args):
+        raise OSError("simulated replace failure")
+    monkeypatch.setattr(an.os, "replace", failed_replace)
+    with pytest.raises(OSError):
+        an.outil(w, "ajouter_occurrences", {"occurrences": [row]})
+    assert path.read_bytes() == before
+    assert not list(tmp_path.glob(".occurrences-*.tmp"))
+    monkeypatch.setattr(an.os, "replace", original_replace)
+    an.outil(w, "ajouter_occurrences", {"occurrences": [row]})
+    with path.open(encoding="utf-8", newline="") as fh:
+        rows = list(csv.DictReader(fh))
+    assert rows[0]["custom"] == "kept" and rows[0]["note"] == "old, note"
+    assert rows[1]["qte"] == "2" and rows[1]["custom"] == ""
+
+
+@pytest.mark.parametrize("qte,expected", [(0.5, 0.5), ("2.5", 2.5), ("", 1), (None, 1)])
+def test_optional_quantity_matches_loader_defaults(tmp_path, qte, expected):
+    from commun import load_occurrences
+    w = _work(tmp_path)
+    an.outil(w, "ajouter_occurrences", {"occurrences": [
+        {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40, "qte": qte}]})
+    assert load_occurrences(w)[0]["qte"] == expected
+
+
+@pytest.mark.parametrize("suffix", [",extra\nP1,KLAXON,10,20,visuel,note\n",
+                                     "\nP1,KLAXON,10,20,visuel,note,unexpected\n"])
+def test_malformed_existing_csv_is_not_migrated(tmp_path, suffix):
+    w = _work(tmp_path)
+    path = tmp_path / "occurrences-visuel.csv"
+    path.write_text(an.ENTETE_VISUEL + suffix, encoding="utf-8")
+    before = path.read_bytes()
+    with pytest.raises(ValueError):
+        an.outil(w, "ajouter_occurrences", {"occurrences": [
+            {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40, "qte": 2}]})
+    assert path.read_bytes() == before
+
+
+@pytest.mark.parametrize("change", [{"x0_pt": float("nan")}, {"x1_pt": 1300},
+                                     {"y1_pt": 20}, {"x1_pt": None}])
+def test_invalid_optional_bbox_is_atomic(tmp_path, change):
+    w = _work(tmp_path)
+    row = {"feuille": "P1", "label": "KLAXON", "x_pt": 30, "y_pt": 40,
+           "x0_pt": 20, "y0_pt": 30, "x1_pt": 40, "y1_pt": 50}
+    with pytest.raises(ValueError):
+        an.outil(w, "ajouter_occurrences", {"occurrences": [row, {**row, **change}]})
+    assert not (tmp_path / "occurrences-visuel.csv").exists()
 
 
 @pytest.mark.parametrize("bad", [

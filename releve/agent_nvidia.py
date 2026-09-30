@@ -29,6 +29,7 @@ import math
 import os
 import subprocess
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -59,6 +60,8 @@ MAX_TEXTE = 30000           # troncature d'un fichier texte renvoyé au modèle
 FENETRE = 600               # côté max (pt) d'un zoom qui compte pour la couverture : essai réel 2026-09-26, 480×500 pt → 12/12
 COUVERTURE_MIN = 0.95       # part de chaque feuille « plan » à parcourir en zooms fins avant `terminer`
 ENTETE_VISUEL = "feuille,label,x_pt,y_pt,source,note"
+METADONNEES_VISUEL = ("designation", "portee", "modele", "prescription", "parent", "qte", "reserve",
+                      "x0_pt", "y0_pt", "x1_pt", "y1_pt")
 
 OUTILS = [
     {"type": "function", "function": {"name": "lister", "description": "Liste les fichiers du dossier de travail qui correspondent au motif glob (relatif au dossier).",
@@ -74,7 +77,11 @@ OUTILS = [
      "parameters": {"type": "object", "properties": {
          "occurrences": {"type": "array", "items": {"type": "object", "properties": {
              "feuille": {"type": "string"}, "label": {"type": "string"}, "x_pt": {"type": "number"},
-             "y_pt": {"type": "number"}, "note": {"type": "string"}},
+             "y_pt": {"type": "number"}, "note": {"type": "string"},
+             **{k: {"type": "string"} for k in METADONNEES_VISUEL[:5] + ("reserve",)},
+             "qte": {"type": "number", "exclusiveMinimum": 0,
+                     "description": "Quantité prescrite à cet emplacement; défaut 1. Ne pas inventer des symboles supplémentaires."},
+             **{k: {"type": "number"} for k in METADONNEES_VISUEL[7:]}},
              "required": ["feuille", "label", "x_pt", "y_pt", "note"]}},
          "lignes": {"type": "array", "items": {"type": "string"}}}}}},
     {"type": "function", "function": {"name": "couverture", "description": "Indique, pour chaque feuille plan, les fenêtres de ≤600 pt pas encore zoomées.",
@@ -104,7 +111,7 @@ def script(workdir, nom, args):
                        capture_output=True, text=True, timeout=600, stdin=subprocess.DEVNULL)
     return p.returncode, (p.stdout + ("\n" + p.stderr if p.returncode else "")).strip()[-4000:]
 
-VUS = []                    # zooms fins réalisés : (feuille, x0, y0, x1, y1)
+VUS = []                    # zooms transmis avec retour API non vide; pas une preuve de lecture correcte
 
 def feuilles_plan(workdir):
     import csv
@@ -194,7 +201,8 @@ def outil(workdir, nom, a):
         for row in rows:
             if not isinstance(row, dict) or not {"feuille", "label", "x_pt", "y_pt"}.issubset(row):
                 raise ValueError("Occurrence incomplète : feuille, label, x_pt, y_pt requis")
-            row = {k: row.get(k, "visuel" if k == "source" else "") for k in champs}
+            row = {**{k: row.get(k, "visuel" if k == "source" else "") for k in champs},
+                   **{k: row[k] if row[k] is not None else "" for k in METADONNEES_VISUEL if k in row}}
             if row["label"] not in labels or row["feuille"] not in tailles:
                 raise ValueError("Occurrence refusée : libellé ou feuille inconnu")
             try:
@@ -206,14 +214,52 @@ def outil(workdir, nom, a):
                 raise ValueError("Coordonnées non finies ou hors feuille")
             if row["source"] != "visuel":
                 raise ValueError("La source doit être visuel")
+            for k in METADONNEES_VISUEL[:5] + ("reserve",):
+                if k in row and not isinstance(row[k], str):
+                    raise ValueError(f"Métadonnée {k} : texte requis")
+            qte = row.get("qte", "")
+            try:
+                nombre = float(str(qte).strip() or "1")
+            except (TypeError, ValueError) as e:
+                raise ValueError("qte numérique requise") from e
+            if isinstance(qte, bool) or not math.isfinite(nombre) or nombre <= 0:
+                raise ValueError("qte doit être finie et strictement positive")
+            bbox = [row.get(k, "") for k in METADONNEES_VISUEL[7:]]
+            if any(v != "" for v in bbox):
+                try:
+                    x0, y0, x1, y1 = map(float, bbox)
+                except (TypeError, ValueError) as e:
+                    raise ValueError("Les quatre bornes de boîte doivent être numériques") from e
+                if not all(math.isfinite(v) for v in (x0, y0, x1, y1)) or not (0 <= x0 < x1 <= W and 0 <= y0 < y1 <= H):
+                    raise ValueError("Bornes de boîte non finies, inversées ou hors feuille")
             valides.append(row)
-        # Validate the whole batch before opening the output: failures preserve it byte for byte.
-        neuf = not os.path.isfile(p) or os.path.getsize(p) == 0
-        with open(p, "a", encoding="utf-8", newline="") as fh:
-            writer = csv.DictWriter(fh, fieldnames=champs, lineterminator="\n")
-            if neuf:
+        # Keep historical/custom columns and migrate six-column files without losing rows.
+        anciennes = []
+        if os.path.isfile(p) and os.path.getsize(p):
+            with open(p, encoding="utf-8-sig", newline="") as fh:
+                reader = csv.DictReader(fh, strict=True)
+                existants = reader.fieldnames or []
+                if not set(champs).issubset(existants) or len(set(existants)) != len(existants) or "" in existants:
+                    raise ValueError("En-tête occurrences existant invalide; fichier conservé")
+                anciennes = list(reader)
+                if any(None in r or any(v is None for v in r.values()) for r in anciennes):
+                    raise ValueError("Ligne occurrences existante mal formée; fichier conservé")
+                champs = existants
+        champs = [*champs, *(k for k in METADONNEES_VISUEL if k not in champs and any(k in r for r in valides))]
+        # Validate first, write alongside, then replace: even a failed migration keeps the old file.
+        temporaire = None
+        try:
+            with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", newline="", dir=workdir,
+                                             prefix=".occurrences-", suffix=".tmp", delete=False) as fh:
+                temporaire = fh.name
+                writer = csv.DictWriter(fh, fieldnames=champs, lineterminator="\n")
                 writer.writeheader()
-            writer.writerows(valides)
+                writer.writerows(anciennes)
+                writer.writerows(valides)
+            os.replace(temporaire, p)
+        finally:
+            if temporaire is not None and os.path.exists(temporaire):
+                os.unlink(temporaire)
         return f"{len(valides)} lignes ajoutées", None
     if nom == "couverture":
         m = manquantes(workdir)
@@ -246,8 +292,6 @@ def outil(workdir, nom, a):
         png = png if os.path.isabs(png) else os.path.join(workdir, png)
         if c != 0 or not os.path.isfile(png):
             return f"échec zoom : {out}", None
-        if max(bounds[2] - bounds[0], bounds[3] - bounds[1]) <= FENETRE:
-            VUS.append((a["feuille"], *bounds))
         return json.dumps({"feuille": a["feuille"], "bounds_pt": bounds,
                            "coordinate_system": "absolute PDF points", "image": png}), png
     if nom == "extract_occurrences":
@@ -292,7 +336,7 @@ def alleger(messages):
     idx = [i for i, m in enumerate(messages) if m["role"] == "user" and isinstance(m["content"], list)
            and any(c.get("type") == "image_url" for c in m["content"])]
     for i in idx[:-IMAGES_GARDEES]:
-        messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (déjà vue, retirée du contexte)"}
+        messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (image retirée du contexte; consulter couverture)"}
 
 def run(workdir, out_json, model, max_turns, task=None):
     VUS.clear()
@@ -314,7 +358,8 @@ def run(workdir, out_json, model, max_turns, task=None):
                "(grille x=0,600,1200… ; y=0,600,…), et après chaque zoom ajoute avec `ajouter_occurrences` un objet par symbole vu "
                "dans occurrences (feuille, label, x_pt, y_pt, note; coordonnées absolues lues sur les règles du PDF, "
                "repère écrit entre crochets dans note). Ne saute aucune fenêtre ; "
-               "`couverture` liste celles qui restent. `terminer` est refusé tant que la couverture n'est pas complète "
+               "Demande au plus quatre zooms par réponse. `couverture` liste les régions dont l'image reste à transmettre; "
+               "la transmission ne prouve pas une lecture correcte. `terminer` est refusé tant que la couverture n'est pas complète "
                "et tant que le contrôle qualité (un libellé par appareil, repère cohérent avec le libellé, pas de doublon ni de trou "
                "de numérotation non justifié, chaque appareil de la nomenclature relevé ou mis en réserve) échoue.")
     messages = [{"role": "system", "content": systeme},
@@ -322,6 +367,7 @@ def run(workdir, out_json, model, max_turns, task=None):
                  "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."}]
     j(f"début  modèle={model} max_tours={max_turns} workdir={workdir}")
     resume, tours, refus_q, reponses_vides = None, 0, 0, 0
+    images_en_attente = {}   # id(message) -> region; local uniquement, jamais ajouté au JSON API
     try:
         model_options = {}
         if model == "moonshotai/kimi-k3":
@@ -332,6 +378,9 @@ def run(workdir, out_json, model, max_turns, task=None):
         while tours < max_turns and resume is None:
             tours += 1
             alleger(messages)
+            transmis = {id(message) for message in messages if isinstance(message.get("content"), list)
+                        and any(part.get("type") == "image_url" for part in message["content"])}
+            images_en_attente = {mid: region for mid, region in images_en_attente.items() if mid in transmis}
             r = appel({"model": model, "messages": messages, "tools": OUTILS, "tool_choice": "auto",
                        "max_tokens": 16000, "temperature": 0.2, **model_options}, cle, j=j)
             u = r.get("usage") or {}
@@ -339,6 +388,11 @@ def run(workdir, out_json, model, max_turns, task=None):
             usage["input_tokens"] += input_tokens; usage["output_tokens"] += output_tokens
             m = r["choices"][0]["message"]
             appels = m.get("tool_calls") or []
+            if appels or (m.get("content") or "").strip():
+                for region in images_en_attente.values():
+                    if region not in VUS:
+                        VUS.append(region)
+                images_en_attente.clear()
             reason = r["choices"][0].get("finish_reason")
             reason = reason if reason in {"stop", "length", "tool_calls", "content_filter", "function_call"} else "unknown"
             j(f"API réponse finish_reason={reason} tool_calls={len(appels)} input_tokens={input_tokens} output_tokens={output_tokens}")
@@ -386,10 +440,19 @@ def run(workdir, out_json, model, max_turns, task=None):
                         texte, img = f"erreur : {e}", None
                 messages.append({"role": "tool", "tool_call_id": tc.get("id", nom), "content": texte})
                 if img:
-                    images.append((img, os.path.relpath(img, workdir)))
-            for img, rel in images:
+                    region = None
+                    if nom == "zoom":
+                        zoom = json.loads(texte)
+                        bounds = zoom["bounds_pt"]
+                        if max(bounds[2] - bounds[0], bounds[3] - bounds[1]) <= FENETRE:
+                            region = (zoom["feuille"], *bounds)
+                    images.append((img, os.path.relpath(img, workdir), region))
+            for img, rel, region in images:
                 try:
-                    messages.append(image_msg(img, rel))
+                    message = image_msg(img, rel)
+                    messages.append(message)
+                    if region is not None:
+                        images_en_attente[id(message)] = region
                 except Exception as e:  # noqa — une image illisible ne doit pas tuer le relevé
                     j(f"image ignorée {rel} : {e}")
                     messages.append({"role": "user", "content": f"image {rel} illisible ({e}) — continue sans elle"})
