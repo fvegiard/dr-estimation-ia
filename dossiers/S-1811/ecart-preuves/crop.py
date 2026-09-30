@@ -1,6 +1,9 @@
 # Usage: crop.py FEUILLE x0 y0 x1 y1 out.png [zoom] [labels-regex]
 # Rend la zone (pt, repère des CSV) depuis le PDF vectoriel de la feuille et entoure les marques IA.
-import sys, csv, re, pymupdf
+import sys
+import csv
+import re
+import pymupdf
 from PIL import Image, ImageDraw
 T='/home/claude/releve-auto/runs/S-1811/OUTBOX/S-1811/travail/'
 f,x0,y0,x1,y1,out=sys.argv[1],*map(float,sys.argv[2:6]),sys.argv[6]

@@ -10,7 +10,13 @@ Format XML observé sur les fichiers natifs Plan Expert 3.0.17 (voir HANDOFF §3
   <Counter Name GroupID Shape DefaultSize Text Color PenWidth PenType FillColor ShowMeasure Visible> + <Element X Y Width Height/>
   Couleurs = ARGB signé 32 bits ; pixels = points PDF × largeur_raster / largeur_page_pt ; Element X,Y = coin haut-gauche.
 """
-import os, sys, shutil, uuid, json, datetime, collections
+import os
+import sys
+import shutil
+import uuid
+import json
+import datetime
+import collections
 from xml.sax.saxutils import escape
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from commun import load_nomenclature, load_occurrences, load_feuilles, argb, sha256
@@ -40,6 +46,10 @@ def canoniser(nom, occ):
 def main(work, name, out_dir):
     os.makedirs(out_dir, exist_ok=True)
     nom = load_nomenclature(work); occ = load_occurrences(work); feuilles = load_feuilles(work)
+    # No native multiplier semantics have been validated for Counter.Text or Element.
+    # Refuse a lossy export instead of silently turning an aggregate into one device.
+    if any(o["qte"] != 1 for o in occ):
+        raise ValueError("QPL : qte différente de 1 non prise en charge ; export bloqué pour éviter un sous-comptage")
     if os.environ.get("RELEVE_LIBELLES_CANONIQUES") == "1":
         nom, occ = canoniser(nom, occ)
     labels = sorted({o["label"] for o in occ})

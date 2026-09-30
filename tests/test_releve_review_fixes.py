@@ -62,7 +62,7 @@ def test_tool_guard_allows_expected_releve_commands(tmp_path):
     )
     bad = tool_guard.validate(
         "Bash",
-        {"command": f"uv run releve/zoom.py /etc E100 0 0 100 100"},
+        {"command": "uv run releve/zoom.py /etc E100 0 0 100 100"},
         str(ROOT),
         str(work),
     )
@@ -133,17 +133,22 @@ def test_prepare_cleans_stale_outputs(dossier_inbox, tmp_path):
     assert (work / "rasters").is_dir()
 
 
-def test_run_process_stops_after_agent_failure(monkeypatch, tmp_path):
+@pytest.mark.parametrize("exit_code,is_error", [(1, False), (0, True)])
+def test_run_process_stops_after_agent_failure(monkeypatch, tmp_path, exit_code, is_error):
     inbox = tmp_path / "INBOX" / "S-TEST"
     inbox.mkdir(parents=True)
     outbox = tmp_path / "OUTBOX"
+    work = outbox / "S-TEST" / "travail"
+    work.mkdir(parents=True)
+    for filename in ("nomenclature.csv", "feuilles-classement.csv"):
+        (work / filename).write_text("existing stale output\n", encoding="utf-8")
     commands: list[list[str]] = []
 
     monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
     monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(inbox)))
     monkeypatch.setattr(releve_run, "prepare_a_jour", lambda inbox, workdir: False)
     monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd) or True) and (0, ""))
-    monkeypatch.setattr(releve_run, "agent", lambda workdir, log_path: (1, {"subtype": "error"}, 0.01))
+    monkeypatch.setattr(releve_run, "agent", lambda workdir, log_path: (exit_code, {"subtype": "error", "is_error": is_error}, 0.01))
     monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
     monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
     monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
@@ -156,20 +161,243 @@ def test_run_process_stops_after_agent_failure(monkeypatch, tmp_path):
     assert not any("releve/render_pdf.py" in part for cmd in commands for part in cmd)
 
 
+def test_run_agent_rejects_unknown_provider(monkeypatch, tmp_path):
+    monkeypatch.setenv("RELEVE_AGENT", "nvida")
+    monkeypatch.setattr(releve_run, "run", lambda *args, **kwargs: pytest.fail("must not launch Claude"))
+    with pytest.raises(ValueError, match="RELEVE_AGENT"):
+        releve_run.agent(str(tmp_path), str(tmp_path / "log"))
+
+
+def test_run_nvidia_uses_selected_model_and_reports_provider(monkeypatch, tmp_path):
+    monkeypatch.setenv("RELEVE_AGENT", "nvidia")
+    monkeypatch.setenv("RELEVE_NVIDIA_MODEL", "candidate/vision-model")
+    commands = []
+    def fake_run(cmd, **kwargs):
+        commands.append(cmd)
+        (tmp_path / "agent-resultat.json").write_text(json.dumps({
+            "model": "candidate/vision-model", "is_error": False, "subtype": "success",
+        }), encoding="utf-8")
+        return 0, ""
+    monkeypatch.setattr(releve_run, "run", fake_run)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    code, result, _ = releve_run.agent(str(tmp_path), str(tmp_path / "log"))
+    assert code == 0
+    assert result["provider"] == "nvidia"
+    assert commands[0][commands[0].index("--model") + 1] == "candidate/vision-model"
+
+
+def _write_required_outputs(outdir, name="demo"):
+    files = [f"{name}-{suffix}" for suffix in (
+        "Plans-annotes.pdf", "Rapport-de-metre.pdf", "Rapport-de-metre.md", "Dossier-complet.pdf",
+        "format-exemple.pdf", "format-exemple.report.json")]
+    files += [f"format-exemple/{f}" for f in ("estimate.json", "bordereau.csv", "plans.pdf", "reserves.md", "feuilles.json")]
+    files += [f"{name}-planexpert/{name}.qpl.audit.json", f"{name}-planexpert/P1.png"]
+    for relative in files:
+        path = outdir / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(b"current")
+    (outdir / f"{name}-planexpert/{name}.qpl").write_text(
+        '<QuoterPlanSession><Plans><Plan FileName="P1.png"/></Plans></QuoterPlanSession>', encoding="utf-8")
+
+
+def _generate_stage_outputs(cmd, missing=None):
+    from pathlib import Path
+    files = {}
+    if "releve/build_qpl.py" in cmd:
+        name, project = cmd[-2], Path(cmd[-1])
+        root = project.parent
+        files = {f"{project.name}/{name}.qpl": b'<QuoterPlanSession><Plans><Plan FileName="P1.png"/></Plans></QuoterPlanSession>',
+                 f"{project.name}/{name}.qpl.audit.json": b"{}", f"{project.name}/P1.png": b"current raster"}
+    elif "releve/render_pdf.py" in cmd:
+        name, root = cmd[-2], Path(cmd[-1])
+        files = {f"{name}-{suffix}": b"current PDF" for suffix in (
+            "Plans-annotes.pdf", "Rapport-de-metre.pdf", "Rapport-de-metre.md", "Dossier-complet.pdf")}
+    elif "src.estimer.render.from_releve" in cmd:
+        root = Path(cmd[cmd.index("--render") + 1]).parent
+        files = {f"format-exemple/{f}": b"current" for f in (
+            "estimate.json", "bordereau.csv", "plans.pdf", "reserves.md", "feuilles.json")}
+        files[Path(cmd[cmd.index("--render") + 1]).name] = b"current example"
+        files[Path(cmd[cmd.index("--report") + 1]).name] = b"{}"
+    for relative, content in files.items():
+        if relative != missing:
+            target = root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(content)
+    return 0, ""
+
+
+@pytest.mark.parametrize("missing", [
+    "demo-Plans-annotes.pdf", "demo-Rapport-de-metre.pdf", "demo-format-exemple.report.json",
+    "demo-planexpert/demo.qpl", "demo-planexpert/demo.qpl.audit.json", "demo-planexpert/P1.png",
+    "format-exemple/estimate.json",
+])
+def test_missing_required_output_fails_pipeline_and_does_not_publish(monkeypatch, tmp_path, missing):
+    outbox, drive = tmp_path / "out", tmp_path / "drive"
+    outdir = outbox / "demo"
+    (outdir / "travail").mkdir(parents=True)
+    _write_required_outputs(outdir)
+    (outdir / missing).unlink()
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "DRIVE", str(drive))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("demo", str(tmp_path / "input")))
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: _generate_stage_outputs(cmd, missing))
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: True)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    monkeypatch.setenv("RELEVE_NATIF", "0")
+    assert not releve_run.process("demo", reprendre=True)
+    mirror = drive / "OUTBOX" / "demo"
+    assert [p.name for p in mirror.iterdir()] == ["STATUT.md"]
+    status = (mirror / "STATUT.md").read_text(encoding="utf-8")
+    assert "ÉCHEC" in status and missing in status
+
+
+@pytest.mark.parametrize("missing", [None, "demo-Plans-annotes.pdf", "demo-Rapport-de-metre.md",
+    "demo-Dossier-complet.pdf", "demo-planexpert/demo.qpl", "demo-planexpert/demo.qpl.audit.json",
+    "demo-planexpert/P1.png", "demo-format-exemple.pdf", "demo-format-exemple.report.json",
+    "format-exemple/plans.pdf", "format-exemple/estimate.json"])
+def test_stale_outputs_cannot_satisfy_successful_noop_generators(monkeypatch, tmp_path, missing):
+    outbox = tmp_path / "out"
+    outdir = outbox / "demo"
+    (outdir / "travail").mkdir(parents=True)
+    _write_required_outputs(outdir)
+    previous = {p: p.read_bytes() for p in outdir.rglob("*") if p.is_file()}
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("demo", str(tmp_path / "input")))
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs:
+                        _generate_stage_outputs(cmd, missing) if missing else (0, ""))
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    monkeypatch.setenv("RELEVE_NATIF", "0")
+    assert not releve_run.process("demo", reprendre=True)
+    assert all(p.read_bytes() == contents for p, contents in previous.items())
+
+
+@pytest.mark.parametrize("produce_native", [False, True])
+def test_native_export_cannot_reuse_old_download(monkeypatch, tmp_path, produce_native):
+    from pathlib import Path
+    outbox = tmp_path / "out"
+    outdir = outbox / "demo"
+    (outdir / "travail").mkdir(parents=True)
+    _write_required_outputs(outdir)
+    old = outdir / "export-natif-planexpert" / "report.pdf"
+    old.parent.mkdir()
+    old.write_bytes(b"identical native")
+    cli = tmp_path / "native.py"
+    cli.write_text("placeholder", encoding="utf-8")
+    def fake_run(cmd, **kwargs):
+        if str(cli) in cmd:
+            if produce_native:
+                dest = Path(cmd[-1]) / "export-natif-planexpert" / "report.pdf"
+                dest.parent.mkdir(parents=True)
+                dest.write_bytes(b"identical native")
+            return 0, json.dumps({"ok": True, "etapes": {"download": {"fichiers": {"report.pdf": {}}}}})
+        return _generate_stage_outputs(cmd)
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("demo", str(tmp_path / "input")))
+    monkeypatch.setattr(releve_run, "PLANEXPERT_VM_CLI", str(cli))
+    monkeypatch.setattr(releve_run, "run", fake_run)
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    monkeypatch.setenv("RELEVE_NATIF", "1")
+    assert releve_run.process("demo", reprendre=True) is produce_native
+    assert old.read_bytes() == b"identical native"
+
+
+def test_run_status_reports_actual_nvidia_model(tmp_path):
+    inbox, outdir = tmp_path / "in", tmp_path / "out"
+    inbox.mkdir()
+    outdir.mkdir()
+    releve_run.statut("demo", str(inbox), str(outdir), str(tmp_path / "work"), [],
+                      {"provider": "nvidia", "model": "candidate/vision-model"}, True)
+    status = (outdir / "STATUT.md").read_text(encoding="utf-8")
+    assert "candidate/vision-model" in status
+    assert "nvidia" in status
+    assert "claude -p" not in status
+
+
+def test_native_manifest_rejects_traversal_and_keeps_nested_current_files(tmp_path):
+    native = tmp_path / "export-natif-planexpert"
+    (native / "reports").mkdir(parents=True)
+    (native / "reports" / "current.pdf").write_bytes(b"current")
+    (tmp_path / "partial.pdf").write_bytes(b"stale")
+    names = ["reports/current.pdf", "../partial.pdf", r"..\partial.pdf", str(tmp_path / "partial.pdf")]
+    (native / "resultat.json").write_text(json.dumps({
+        "etapes": {"download": {"fichiers": dict.fromkeys(names, {})}},
+    }), encoding="utf-8")
+    result = releve_run.current_outputs("demo", str(tmp_path), [("export natif Plan Expert", 0, "oui")])
+    assert result == ["export-natif-planexpert/reports/current.pdf", "export-natif-planexpert/resultat.json"]
+    releve_run.statut("demo", str(tmp_path / "input"), str(tmp_path), str(tmp_path / "work"),
+                      [("export natif Plan Expert", 0, "oui")], None, True, outputs=result)
+    assert "partial.pdf" not in (tmp_path / "STATUT.md").read_text(encoding="utf-8")
+
+
+@pytest.mark.parametrize("relative", ["../old.png", r"..\old.png", "/old.png", r"C:\old.png", "C:old.png", r"\\server\old.png"])
+def test_output_child_rejects_foreign_paths_on_every_platform(tmp_path, relative):
+    assert not releve_run.confined_output_child(str(tmp_path), relative)
+
+
+def test_qpl_manifest_only_publishes_flat_current_raster_names(tmp_path):
+    project = tmp_path / "demo-planexpert"
+    project.mkdir()
+    (tmp_path / "old.png").write_bytes(b"stale")
+    (project / "current.png").write_bytes(b"current")
+    (project / "demo.qpl.audit.json").write_text("{}", encoding="utf-8")
+    (project / "demo.qpl").write_text(
+        '<QuoterPlanSession><Plans><Plan FileName="current.png"/>'
+        '<Plan FileName="../old.png"/><Plan FileName="..\\old.png"/></Plans></QuoterPlanSession>', encoding="utf-8")
+    assert releve_run.current_outputs("demo", str(tmp_path), [("build_qpl", 0, "ok")]) == [
+        "demo-planexpert/current.png", "demo-planexpert/demo.qpl", "demo-planexpert/demo.qpl.audit.json"]
+
+
+def test_run_keeps_claude_oauth_sdk_as_existing_default(monkeypatch, tmp_path):
+    monkeypatch.delenv("RELEVE_AGENT", raising=False)
+    monkeypatch.setenv("RELEVE_MODEL", "claude-choice")
+    commands = []
+    def fake_run(cmd, **kwargs):
+        commands.append(cmd)
+        (tmp_path / "agent-resultat.json").write_text('{"is_error": false}', encoding="utf-8")
+        return 0, ""
+    monkeypatch.setattr(releve_run, "run", fake_run)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    code, result, _ = releve_run.agent(str(tmp_path), str(tmp_path / "log"))
+    assert code == 0
+    assert "releve/agent_sdk.py" in commands[0]
+    assert commands[0][commands[0].index("--model") + 1] == "claude-choice"
+    assert result["provider"] == "sdk"
+    assert result["model"] == "claude-choice"
+
+
+def test_run_main_explicit_provider_and_failure_exit(monkeypatch, tmp_path):
+    monkeypatch.setattr(releve_run.sys, "argv", ["run.py", "demo", "--agent", "nvidia", "--model", "candidate/vision-model"])
+    monkeypatch.setattr(releve_run, "INBOX", str(tmp_path / "in"))
+    monkeypatch.setattr(releve_run, "OUTBOX", str(tmp_path / "out"))
+    monkeypatch.setattr(releve_run, "acquire_lock", lambda: None)
+    monkeypatch.setattr(releve_run, "release_lock", lambda: None)
+    def fake_process(arg, reprendre=False):
+        assert arg == "demo"
+        assert releve_run.os.environ.get("RELEVE_AGENT") == "nvidia"
+        assert releve_run.os.environ.get("RELEVE_NVIDIA_MODEL") == "candidate/vision-model"
+        return False
+    monkeypatch.setattr(releve_run, "process", fake_process)
+    monkeypatch.delenv("RELEVE_AGENT", raising=False)
+    monkeypatch.delenv("RELEVE_NVIDIA_MODEL", raising=False)
+    assert releve_run.main() == 1
+
+
 def test_run_process_skips_native_export_when_component_missing(monkeypatch, tmp_path):
     outbox = tmp_path / "OUTBOX"
     outdir = outbox / "S-TEST"
     workdir = outdir / "travail"
     workdir.mkdir(parents=True)
     (workdir / "agent-resultat.json").write_text("{}", encoding="utf-8")
+    _write_required_outputs(outdir, "S-TEST")
     commands: list[list[str]] = []
 
     monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
     monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(tmp_path / "INBOX" / "S-TEST")))
     monkeypatch.setattr(releve_run, "PLANEXPERT_VM_CLI", str(tmp_path / "missing-planexpert.py"))
-    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd) or True) and (0, "{}"))
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd), _generate_stage_outputs(cmd))[1])
     monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
-    monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
     monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
 
     ok = releve_run.process("S-TEST", reprendre=True)
@@ -178,6 +406,103 @@ def test_run_process_skips_native_export_when_component_missing(monkeypatch, tmp
     assert any("releve/build_qpl.py" in part for cmd in commands for part in cmd)
     assert any("releve/render_pdf.py" in part for cmd in commands for part in cmd)
     assert not any("planexpert_vm" in part for cmd in commands for part in cmd)
+
+
+def test_run_process_blocks_resume_when_quality_fails(monkeypatch, tmp_path):
+    outbox = tmp_path / "OUTBOX"
+    (outbox / "S-TEST" / "travail").mkdir(parents=True)
+    commands: list[list[str]] = []
+
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(tmp_path / "INBOX" / "S-TEST")))
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd), (2, "quality failed"))[1]
+                    if "releve/controle_qualite.py" in cmd else (commands.append(cmd), (0, ""))[1])
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
+    monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
+    monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
+
+    assert not releve_run.process("S-TEST", reprendre=True)
+    assert any("releve/controle_qualite.py" in cmd for cmd in commands)
+    assert not any("releve/build_qpl.py" in cmd for cmd in commands)
+
+
+@pytest.mark.parametrize("reprendre", [False, True])
+@pytest.mark.parametrize("failure", ["releve/controle_qualite.py", "src.estimer.render.from_releve"])
+def test_failed_attempt_preserves_but_does_not_publish_outputs(monkeypatch, tmp_path, reprendre, failure):
+    outbox, drive = tmp_path / "out", tmp_path / "drive"
+    outdir, mirror = outbox / "demo", drive / "OUTBOX" / "demo"
+    workdir = outdir / "travail"
+    workdir.mkdir(parents=True)
+    mirror.mkdir(parents=True)
+    for name in ("nomenclature.csv", "feuilles-classement.csv"):
+        (workdir / name).write_text("placeholder", encoding="utf-8")
+    (outdir / "previous.pdf").write_bytes(b"local previous output")
+    (mirror / "previous.pdf").write_bytes(b"previous accepted mirror")
+    project = outdir / "demo-planexpert"
+    project.mkdir()
+    (project / "demo.qpl").write_bytes(b"previous QPL")
+    native = outdir / "export-natif-planexpert"
+    native.mkdir()
+    (native / "resultat.json").write_text('{"ok": true}', encoding="utf-8")
+
+    def fake_run(cmd, **kwargs):
+        if failure == "src.estimer.render.from_releve" and "releve/render_pdf.py" in cmd:
+            (outdir / "partial.pdf").write_bytes(b"partial new output")
+        return (2, "failed") if failure in cmd else (0, "")
+
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "DRIVE", str(drive))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("demo", str(tmp_path / "input")))
+    monkeypatch.setattr(releve_run, "prepare_a_jour", lambda *args: True)
+    monkeypatch.setattr(releve_run, "agent", lambda *args: (0, {"is_error": False}, 0))
+    monkeypatch.setattr(releve_run, "run", fake_run)
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: True)
+    monkeypatch.setattr(releve_run, "log", lambda *args: None)
+    monkeypatch.setenv("RELEVE_NATIF", "0")
+
+    assert not releve_run.process("demo", reprendre=reprendre)
+    assert (outdir / "previous.pdf").read_bytes() == b"local previous output"
+    assert (project / "demo.qpl").read_bytes() == b"previous QPL"
+    assert (mirror / "previous.pdf").read_bytes() == b"previous accepted mirror"
+    assert set(p.name for p in mirror.iterdir()) == {"previous.pdf", "STATUT.md"}
+    status = (outdir / "STATUT.md").read_text(encoding="utf-8")
+    assert "ÉCHEC" in status and "Aucun livrable validé" in status
+    assert "previous.pdf" not in status and "demo.qpl" not in status and "partial.pdf" not in status
+    assert "Plan Expert (VM mxlinux, MCP planexpert-vm) : oui" not in status
+    assert (mirror / "STATUT.md").read_text(encoding="utf-8") == status
+
+    (project / "stale.png").write_bytes(b"keep old raster")
+    def successful_run(cmd, **kwargs):
+        return _generate_stage_outputs(cmd)
+
+    monkeypatch.setattr(releve_run, "run", successful_run)
+    assert releve_run.process("demo", reprendre=True)
+    status = (outdir / "STATUT.md").read_text(encoding="utf-8")
+    assert "previous.pdf" not in status and "partial.pdf" not in status and "stale.png" not in status
+    assert "demo-format-exemple.pdf" in status and "demo-planexpert/demo.qpl" in status
+    assert (mirror / "previous.pdf").read_bytes() == b"previous accepted mirror"
+    assert not (mirror / "partial.pdf").exists()
+    assert not (mirror / "demo-planexpert" / "stale.png").exists()
+    assert (project / "stale.png").read_bytes() == b"keep old raster"
+    assert (mirror / "demo-planexpert" / "P1.png").read_bytes() == b"current raster"
+    assert (mirror / "demo-format-exemple.pdf").read_bytes() == b"current example"
+
+
+def test_run_process_creates_example_format(monkeypatch, tmp_path):
+    outbox = tmp_path / "OUTBOX"
+    (outbox / "S-TEST" / "travail").mkdir(parents=True)
+    _write_required_outputs(outbox / "S-TEST", "S-TEST")
+    commands: list[list[str]] = []
+
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(tmp_path / "INBOX" / "S-TEST")))
+    monkeypatch.setattr(releve_run, "PLANEXPERT_VM_CLI", str(tmp_path / "missing-planexpert.py"))
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd), _generate_stage_outputs(cmd))[1])
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
+    monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
+
+    assert releve_run.process("S-TEST", reprendre=True)
+    assert any("src.estimer.render.from_releve" in cmd for cmd in commands)
 
 
 def test_jeu_reference_requires_baseline(monkeypatch, tmp_path, capsys):

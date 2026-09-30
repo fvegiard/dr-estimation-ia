@@ -22,13 +22,21 @@ Sortie  : WORKDIR/
 Aucune valeur n'est inventée : tout vient des PDF. Les rasters et les mots sont la base du relevé.
 """
 from __future__ import annotations
-import csv, hashlib, json, os, re, sys, collections, shutil
+import csv
+import hashlib
+import json
+import os
+import re
+import sys
+import collections
+import shutil
+import unicodedata
 import pymupdf
 from PIL import Image, ImageDraw, ImageFont
 
 RASTER_W = 5694          # largeur raster Plan Expert (px) pour une feuille 2383,92 pt
 TILE_ROWS, TILE_COLS = 3, 4
-SHEET_RE = re.compile(r"\b([A-Z]{1,2}-?\d{3}[A-Z]?)\b")   # E401, E-401, A101, ME-101…
+SHEET_RE = re.compile(r"\b([A-Z]{1,3}-?\d{2,3}[A-Z]?)\b")   # E401, E-01, EU04, DSI01…
 WORK_SUBDIRS = ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "zooms")
 WORK_FILES = (
     "inventaire.json",
@@ -59,37 +67,55 @@ def font(size: int):
     return ImageFont.load_default()
 
 def sheet_id(page: pymupdf.Page) -> str | None:
-    """Identifiant de feuille lu dans le cartouche (quart bas-droit), sinon dans toute la page."""
+    """Prefer the labelled sheet field; never use an adjacent revision field as its ID."""
     r = page.rect
-    zones = [pymupdf.Rect(r.width * 0.70, r.height * 0.70, r.width, r.height), r]
-    for z in zones:
-        best = None
-        d = page.get_text("dict", clip=z * page.derotation_matrix)   # clip exprimé dans le repère tourné (page.rect)
-        for b in d.get("blocks", []):
-            for l in b.get("lines", []):
-                for s in l.get("spans", []):
-                    for m in SHEET_RE.findall(s["text"]):
-                        k = m.replace("-", "")
-                        key = (round(s["size"], 1), s["bbox"][3])   # le numéro de feuille du cartouche est en gros caractères (puis le plus bas)
-                        if best is None or key > best[0]:
-                            best = (key, k)
-        if best:
-            return best[1]
-    return None
+    zone = pymupdf.Rect(r.width * 0.70, r.height * 0.70, r.width, r.height)
+    words = [(pymupdf.Rect(w[:4]) * page.rotation_matrix, w[4])
+             for w in page.get_text("words", clip=zone * page.derotation_matrix)]
+    fields, candidates = [], []
+    for box, text in words:
+        token = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().upper().strip(".:#")
+        if token in {"FEUILLE", "SHEET", "REVISION", "REV"}:
+            fields.append((box, "sheet" if token in {"FEUILLE", "SHEET"} else "revision"))
+        for match in SHEET_RE.findall(text):
+            candidates.append((box, match.replace("-", "")))
+    labelled, fallback = set(), []
+    for box, identifier in candidates:
+        nearby = []
+        for heading, kind in fields:
+            height = max(heading.height, 1)
+            # A field value can follow its heading on the same row or below it in the same column.
+            same_row = abs((box.y0 + box.y1 - heading.y0 - heading.y1) / 2) <= max(height, box.height) * .6
+            if same_row and 0 <= box.x0 - heading.x1 <= 12 * height:
+                nearby.append(((box.x0 - heading.x1) / height, kind))
+            overlap = min(box.x1, heading.x1) - max(box.x0, heading.x0)
+            if overlap > 0 and -2 <= box.y0 - heading.y1 <= 5 * height:
+                nearby.append((max(0, box.y0 - heading.y1) / height, kind))
+        if nearby:
+            nearest = min(score for score, _ in nearby)
+            kinds = {kind for score, kind in nearby if abs(score - nearest) < .01}
+            if kinds == {"sheet"}:
+                labelled.add(identifier)
+            # Revision values and ambiguous field associations are not fallback candidates.
+            continue
+        fallback.append(((round(box.y1, 1), round(box.height, 1)), identifier))
+    if labelled:
+        return next(iter(labelled)) if len(labelled) == 1 else None
+    return max(fallback)[1] if fallback else None
 
 def classify(path: str, doc: pymupdf.Document) -> str:
-    name = os.path.basename(path).lower()
+    name = unicodedata.normalize("NFKD", os.path.basename(path)).encode("ascii", "ignore").decode().lower()
     p0 = doc[0]
     text_pages = sum(1 for p in doc if p.get_text().strip())
     if re.search(r"addenda|adme|addendum", name):
         return "addenda"
-    if re.search(r"dupuis|estimateur|releve|relevé|plan ?expert", name) or (text_pages == 0 and abs(p0.rect.width - 2997) < 40 and len(doc) > 1):
-        return "estimateur"          # export Plan Expert (rasterisé, page 2997 × 2116 pt)
-    if text_pages == 0:
-        return "scan"
     full = " ".join(doc[i].get_text() for i in range(min(3, len(doc)))).lower()
     if "addenda" in full[:4000] and len(doc) <= 6 and not sheet_id(p0):
         return "addenda"
+    if re.search(r"(?:^|[\W_])(?:dupuis|estimateur|estimator|releve|reference|exemple|bordereau|take[\s_-]*off|plan[\s_-]*expert)(?=$|[\W_])", name):
+        return "estimateur"          # explicit reference name; raster size alone also matches blank input plans
+    if text_pages == 0:
+        return "scan"
     return "plans"
 
 def draw_rulers(im: Image.Image, x0: float, y0: float, x1: float, y1: float, step: float):

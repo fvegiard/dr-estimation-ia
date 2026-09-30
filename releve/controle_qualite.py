@@ -12,7 +12,7 @@ Un succès technique de l'agent (fichiers écrits) ne prouve pas un relevé exac
   Q5 repère en double sur une même feuille ;
   Q6 trous dans une suite de repères (K1.1, K1.2, K1.6 → K1.3-K1.5 manquent) non expliqués dans reserves.md ;
   Q7 coordonnées hors de la feuille ;
-  Q8 appareil de la nomenclature jamais relevé sur les plans et absent de reserves.md ;
+  Q8 appareil jamais relevé sur les plans/schémas/tableaux et sans libellé complet dans reserves.md ;
   Q9 (si une référence est fournie) écart par famille > 5 % de la référence ;
   Q10 coordonnées fabriquées sur une grille mentale au lieu d'être lues sur le plan.
 
@@ -26,7 +26,10 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
+import hashlib
 import json
+import math
+import ntpath
 import os
 import re
 import sys
@@ -37,14 +40,162 @@ PAS_GRILLE = (5, 10, 25, 50)  # pas ronds typiques d'une position inventée
 MIN_GRILLE = 8                # en dessous, la coïncidence reste plausible
 SEUIL_GRILLE = 0.80           # part de marques alignées à partir de laquelle on bloque
 SEUIL_GRILLE_AVERT = 0.15     # au-dessus, le modèle arrondit trop (humains mesurés : 0,9 %)
+TYPES_FEUILLE = {"plan", "legende", "schema", "tableau", "detail", "autre", "remplacee"}
+
+
+def repere_propre(occurrence):
+    """Explicit own ID (even blank), else a leading tag; contextual mentions are not IDs."""
+    if "repere" in occurrence:
+        value = occurrence["repere"].strip().upper()
+        if not value:
+            return None
+        if value.startswith("[") and value.endswith("]"):
+            value = value[1:-1]
+        if not re.fullmatch(r"[A-Z]{1,4}\d?\d+\.\d+", value):
+            raise ValueError("champ repere invalide")
+        match = REPERE.fullmatch(value)
+        if not match:
+            raise ValueError("champ repere invalide")
+        return match
+    note = (occurrence.get("note") or "").strip().upper()
+    leading = re.match(r"^(?:\[([A-Z]{1,4}\d?\d+\.\d+)\]|([A-Z]{1,4}\d?\d+\.\d+)(?=\s|$|[,;:]))", note)
+    return REPERE.fullmatch(leading.group(1) or leading.group(2)) if leading else None
+
+
+def fichier_preuve(work, relative, folder):
+    """Evidence must be a real file under the prescribed work subfolder, without redirects."""
+    if not isinstance(relative, str) or ntpath.isabs(relative) or ntpath.splitdrive(relative)[0]:
+        raise ValueError("chemin de preuve invalide")
+    relative = relative.replace("\\", "/")
+    if not relative.startswith(folder + "/") or ".." in relative.split("/"):
+        raise ValueError("preuve hors du sous-dossier autorisé")
+    allowed = os.path.join(os.path.realpath(work), folder)
+    path = os.path.realpath(os.path.join(work, relative))
+    if os.path.commonpath([allowed, path]) != allowed or not os.path.isfile(path):
+        raise ValueError("preuve absente ou non confinée")
+    return path
+
+
+def empreinte(path):
+    with open(path, "rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def verifier_image_preuve(path):
+    """Decode image evidence when present; ordinary QA remains standard-library-only."""
+    try:
+        from PIL import Image
+    except ImportError as exc:
+        raise ValueError("Pillow requis pour vérifier les images de preuve") from exc
+    try:
+        with Image.open(path) as decoded:
+            if decoded.format != "PNG":
+                raise ValueError("preuve image PNG requise")
+            decoded.verify()
+        with Image.open(path) as decoded:
+            decoded.load()
+    except Image.DecompressionBombError as exc:
+        raise ValueError(f"image de preuve trop grande : {exc}") from exc
+
+
+def collisions_source(work, vus, reserves):
+    """Validate optional source-collisions.json; provenance is not automatic visual approval.
+
+    Each collision needs feuille, repere, source_sha256 (feuilles/<sheet>.pdf),
+    exact occurrences [{label,x_pt,y_pt}], reason, reserve_id, reserve_text and
+    proof_images [{path: evidence/<file>.png, sha256}]. reserves.md must contain
+    the exact line '<reserve_id>: <reserve_text>'. Images document a review;
+    hashes and row matching cannot establish that their pixels show the claimed tag.
+    """
+    path = os.path.join(work, "source-collisions.json")
+    if not os.path.isfile(path):
+        return {}, []
+    valid, errors, seen = {}, [], set()
+    try:
+        with open(path, encoding="utf-8") as stream:
+            manifest = json.load(stream)
+        if not isinstance(manifest, dict) or not isinstance(manifest.get("collisions"), list):
+            raise ValueError("liste collisions requise")
+    except (OSError, ValueError) as exc:
+        return {}, [f"Q5 preuve source invalide : {exc}"]
+    for entry in manifest["collisions"]:
+        key = None
+        try:
+            if not isinstance(entry, dict):
+                raise ValueError("collision doit être un objet")
+            key = (entry["feuille"], entry["repere"])
+            if not all(isinstance(value, str) and value for value in key):
+                raise ValueError("feuille/repere requis")
+            if key in seen:
+                valid.pop(key, None)
+                raise ValueError("collision documentée plusieurs fois")
+            seen.add(key)
+            current = vus.get(key, [])
+            if len(current) < 2:
+                raise ValueError("collision absente du relevé courant")
+            source = fichier_preuve(work, f"feuilles/{key[0]}.pdf", "feuilles")
+            with open(source, "rb") as stream:
+                if stream.read(5) != b"%PDF-":
+                    raise ValueError("source PDF invalide")
+            if empreinte(source) != entry["source_sha256"]:
+                raise ValueError("empreinte PDF source différente")
+            for field in ("reason", "reserve_id", "reserve_text"):
+                if not isinstance(entry[field], str) or not entry[field].strip():
+                    raise ValueError(f"{field} requis")
+            if f"{entry['reserve_id']}: {entry['reserve_text']}" not in {line.strip() for line in reserves.splitlines()}:
+                raise ValueError("réserve exacte absente de reserves.md")
+            documented = entry["occurrences"]
+            if not isinstance(documented, list):
+                raise ValueError("occurrences doit être une liste")
+
+            def identity(row):
+                point = coordonnees(row)
+                if not isinstance(row.get("label"), str) or not point or not all(math.isfinite(v) for v in point):
+                    raise ValueError("identité d'occurrence invalide")
+                return row["label"], *point
+
+            actual = [identity(row) for row in current]
+            if collections.Counter(identity(row) for row in documented) != collections.Counter(actual):
+                raise ValueError("identités/positions/nombre des occurrences différents")
+            if any(abs(x - x2) <= 4 and abs(y - y2) <= 4
+                   for i, (_, x, y) in enumerate(actual) for _, x2, y2 in actual[i + 1:]):
+                raise ValueError("positions identiques ou proches : doublon physique toujours bloquant")
+            images = entry["proof_images"]
+            if not isinstance(images, list) or not images:
+                raise ValueError("images de preuve requises")
+            for image in images:
+                proof = fichier_preuve(work, image["path"], "evidence")
+                verifier_image_preuve(proof)
+                if empreinte(proof) != image["sha256"]:
+                    raise ValueError("empreinte image différente")
+            valid[key] = entry
+        except (OSError, ValueError, KeyError, TypeError, AttributeError, SyntaxError) as exc:
+            errors.append(f"Q5 preuve source invalide {key!r} : {exc}")
+    return valid, errors
 
 
 def coordonnees(o):
     """(x, y) d'une occurrence, ou None si illisible."""
     try:
-        return float(o.get("x_pt") or o.get("x")), float(o.get("y_pt") or o.get("y"))
+        x, y = o.get("x_pt"), o.get("y_pt")
+        return float(o.get("x") if x in (None, "") else x), float(o.get("y") if y in (None, "") else y)
     except (TypeError, ValueError):
         return None
+
+
+def quantite(o, reference=False):
+    """Occurrences: défaut 1, positif. Référence: explicite, zéro permis. Toujours fini."""
+    valeur = o.get("qte")
+    texte = "" if valeur is None else str(valeur).strip()
+    if reference and not texte:
+        return None
+    try:
+        qte = float(texte or "1")
+    except (TypeError, ValueError):
+        return None
+    if isinstance(valeur, bool) or not math.isfinite(qte) or qte < 0 or (qte == 0 and not reference):
+        return None
+    return int(qte) if qte.is_integer() else qte
 
 
 def grille_suspecte(points, pas=PAS_GRILLE, minimum=MIN_GRILLE, seuil=SEUIL_GRILLE):
@@ -137,24 +288,68 @@ def piste_confusion(lab, comptes, fiche):
     return f" — confusion probable avec {autre!r} ({n} marques, {motif})"
 
 
+def labels_justifies(reserves, labels):
+    """Libellés complets cités en réserve, avec priorité au plus long libellé connu.
+
+    « PRISE GFI » ne justifie pas aussi « PRISE »; une seconde mention distincte
+    de « PRISE » le peut. La prose existante, sa casse et ses espaces sont conservés.
+    """
+    connus = {" ".join(lab.casefold().split()): lab for lab in labels if lab}
+    if not connus:
+        return set()
+    # Horizontal spaces (including Unicode spaces), never a new line/paragraph.
+    motifs = [r"[^\S\r\n\v\f\x1c-\x1f\x85\u2028\u2029]+".join(re.escape(mot) for mot in lab.split())
+              for lab in sorted(connus, key=len, reverse=True)]
+    rx = re.compile(r"(?<!\w)(?:" + "|".join(motifs) + r")(?!\w)", re.IGNORECASE)
+    return {connus[" ".join(m.group().casefold().split())] for m in rx.finditer(reserves)}
+
+
 def controler(work, reference=None, feuille_ref=None, feuille=None):
     err, avert, mal = [], [], []
     classement = lire_csv(os.path.join(work, "feuilles-classement.csv"), mal)
     nomen = lire_csv(os.path.join(work, "nomenclature.csv"), mal)
     occ = lire_csv(os.path.join(work, "occurrences-visuel.csv"), mal) + lire_csv(os.path.join(work, "occurrences-texte.csv"), mal)
-    occ = [o for o in occ if o.get("exclure") not in ("1", "oui")]
-    tailles = {r["feuille"]: (float(r["largeur_pt"] or 0), float(r["hauteur_pt"] or 0)) for r in lire_csv(os.path.join(work, "feuilles.csv"))}
+    occ = [o for o in occ if (o.get("exclure") or "").strip().lower() not in ("1", "oui", "x", "true")]
+    feuilles = lire_csv(os.path.join(work, "feuilles.csv"), mal)
+    tailles = {}
+    for r in feuilles:
+        f = r.get("feuille", "")
+        if not f or f in tailles:
+            err.append(f"Q1 identifiant de feuille vide ou en double dans feuilles.csv : {f!r}")
+        try:
+            W, H = float(r.get("largeur_pt", "")), float(r.get("hauteur_pt", ""))
+        except (TypeError, ValueError):
+            W = H = 0
+        if not (math.isfinite(W) and math.isfinite(H) and W > 0 and H > 0):
+            err.append(f"Q7 dimensions de feuille invalides : {f!r} ({W}, {H})")
+        tailles[f] = (W, H)
     reserves = open(os.path.join(work, "reserves.md"), encoding="utf-8").read() if os.path.isfile(os.path.join(work, "reserves.md")) else ""
 
     # Q0 : lignes mal formées (champ en trop = virgule non échappée dans un libellé ou une note)
     for m in mal:
         err.append(f"Q0 ligne mal formée : {m}")
+    for o in occ:
+        if quantite(o) is None:
+            err.append(f"Q0 quantité invalide : {o.get('feuille')} {o.get('label')} (qte doit être finie et strictement positive)")
     # Q1
-    for f in ("feuilles-classement.csv", "nomenclature.csv", "reserves.md", "rapport-releve.md"):
+    for f in ("feuilles.csv", "feuilles-classement.csv", "nomenclature.csv", "reserves.md", "rapport-releve.md"):
         p = os.path.join(work, f)
         if not os.path.isfile(p) or os.path.getsize(p) == 0:
             err.append(f"Q1 sortie manquante ou vide : {f}")
-    plans = [r["feuille"] for r in classement if r.get("type") == "plan"]
+    if not feuilles:
+        err.append("Q1 aucune feuille d'entrée dans feuilles.csv")
+    classes = collections.Counter(r.get("feuille", "") for r in classement)
+    for f in tailles:
+        if classes[f] != 1:
+            err.append(f"Q1 feuille à classer exactement une fois : {f!r} ({classes[f]} classements)")
+    for r in classement:
+        if r.get("feuille") not in tailles:
+            err.append(f"Q1 classement d'une feuille inconnue : {r.get('feuille')!r}")
+        if not r.get("type"):
+            err.append(f"Q1 type de feuille manquant : {r.get('feuille')!r}")
+        elif r["type"] not in TYPES_FEUILLE:
+            err.append(f"Q1 type de feuille invalide : {r.get('feuille')!r} ({r['type']!r})")
+    plans = [r.get("feuille") for r in classement if r.get("type") == "plan"]
     par_feuille = collections.Counter(o.get("feuille") for o in occ)
     for f in plans:
         if not par_feuille.get(f):
@@ -174,7 +369,11 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
     # Q4 / Q5 / Q6
     vus = collections.defaultdict(list)
     for o in occ:
-        m = REPERE.search((o.get("note") or "").upper())
+        try:
+            m = repere_propre(o)
+        except ValueError as exc:
+            err.append(f"Q4 repère propre invalide : {o.get('feuille')} {o.get('label')} ({exc})")
+            continue
         if not m:
             continue
         pref, niv, num = m.group(1), m.group(2), int(m.group(3))
@@ -183,16 +382,42 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         attendus = famille_de_repere(pref, nomen)
         if attendus and o.get("label") not in attendus:
             err.append(f"Q4 classement : {rep} ({o.get('feuille')}) relevé comme {o.get('label')!r}, attendu {sorted(attendus)}")
+    documented, evidence_errors = collisions_source(work, vus, reserves)
+    err.extend(evidence_errors)
     for (f, rep), l in vus.items():
         if len(l) > 1:
-            err.append(f"Q5 repère {rep} relevé {len(l)} fois sur {f}")
+            if (f, rep) in documented:
+                evidence = documented[(f, rep)]
+                avert.append(f"Q5 collision source documentée {f} {rep} ({len(l)} appareils) — "
+                             f"{evidence['reserve_id']}: {evidence['reserve_text']}; "
+                             "provenance vérifiée, lecture visuelle non approuvée automatiquement")
+            else:
+                err.append(f"Q5 repère {rep} relevé {len(l)} fois sur {f}")
+    # Distinct repère names must not count the same physical symbol twice.
+    # Match the MCP control: same sheet/label, within 4 pt on both axes.
+    positions = collections.defaultdict(list)
+    for o in occ:
+        point = coordonnees(o)
+        if point is not None and all(math.isfinite(c) for c in point):
+            positions[(o.get("feuille"), o.get("label"))].append(point)
+    for (f, label), points in positions.items():
+        points.sort()
+        for i, (x, y) in enumerate(points):
+            for x2, y2 in points[i + 1:]:
+                if x2 - x > 4:
+                    break
+                if abs(y2 - y) <= 4:
+                    err.append(f"Q5 position en double sur {f} pour {label!r} : "
+                               f"({x:g}, {y:g}) et ({x2:g}, {y2:g})")
     suites = collections.defaultdict(set)
     for (f, rep) in vus:
         m = REPERE.search(rep)
         suites[(f, m.group(1), m.group(2))].add(int(m.group(3)))
     for (f, pref, niv), nums in suites.items():
         trous = [f"{pref}{niv}.{i}" for i in range(1, max(nums)) if i not in nums]
-        trous = [t for t in trous if t not in reserves]
+        # A reserve for K1.20 (or AK1.2) cannot excuse K1.2. A final prose
+        # period is allowed, but a dotted identifier suffix is not.
+        trous = [t for t in trous if not re.search(r"(?<![\w.])" + re.escape(t) + r"(?!\w|\.\w)", reserves)]
         if trous:
             err.append(f"Q6 {f} : repères manquants dans la suite {pref}{niv}.x : {', '.join(trous[:15])}{' …' if len(trous) > 15 else ''}")
     n_reperes = len(vus)
@@ -200,34 +425,54 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         avert.append("aucun repère lu dans les notes : Q4-Q6 non vérifiables (classement non contrôlé)")
     # Q7
     for o in occ:
-        W, H = tailles.get(o.get("feuille"), (0, 0))
-        try:
-            x, y = float(o.get("x_pt") or o.get("x") or -1), float(o.get("y_pt") or o.get("y") or -1)
-        except ValueError:
-            x = y = -1
-        if W and not (0 <= x <= W and 0 <= y <= H):
+        if o.get("feuille") not in tailles:
+            err.append(f"Q7 occurrence sur une feuille inconnue : {o.get('feuille')!r} {o.get('label')}")
+            continue
+        W, H = tailles[o.get("feuille")]
+        point = coordonnees(o)
+        if point is None or not all(math.isfinite(c) for c in point):
+            err.append(f"Q7 coordonnées invalides ou non finies : {o.get('feuille')} {o.get('label')}")
+            continue
+        x, y = point
+        if not (0 <= x <= W and 0 <= y <= H):
             err.append(f"Q7 coordonnées hors feuille : {o.get('feuille')} {o.get('label')} ({x}, {y})")
     # Q8
-    comptes = collections.Counter(o.get("label") for o in occ if o.get("feuille") in plans)
+    feuilles_releve = {r.get("feuille") for r in classement if r.get("type") in {"plan", "schema", "tableau"}}
+    comptes = collections.Counter(o.get("label") for o in occ if o.get("feuille") in feuilles_releve)
     fiche = {n.get("label"): (n.get("famille", ""), n.get("forme", "")) for n in nomen}
+    justifies = labels_justifies(reserves, labels)
     for lab in sorted(labels):
-        if lab and not comptes.get(lab) and lab not in reserves:
-            err.append(f"Q8 {lab!r} est dans la nomenclature mais n'est relevé sur aucun plan "
+        if lab and not comptes.get(lab) and lab not in justifies:
+            err.append(f"Q8 {lab!r} est dans la nomenclature mais n'est relevé sur aucun plan, schéma ou tableau "
                        f"(ni justifié en réserve){piste_confusion(lab, comptes, fiche)}")
     # Q9
     comparaison = None
     if reference and feuille_ref:
-        ref = {r["designation"]: int(r["qte"]) for r in lire_csv(reference) if r.get("feuille") == feuille_ref}
+        ref = collections.Counter()
+        for r in lire_csv(reference):
+            if r.get("feuille") != feuille_ref:
+                continue
+            qte = quantite(r, reference=True)
+            if qte is None:
+                err.append(f"Q9 quantité de référence invalide : {feuille_ref} {r.get('designation')}")
+                continue
+            ref[r["designation"]] += qte
         ia = collections.Counter()
         for o in occ:
             if feuille and o.get("feuille") != feuille:
                 continue
-            m = REPERE.search((o.get("note") or "").upper())
+            qte = quantite(o)
+            if qte is None:
+                continue  # Invalid quantities are already blocking Q0 errors.
+            try:
+                m = repere_propre(o)
+            except ValueError:
+                continue  # Invalid own identifiers are already blocking Q4 errors.
             fam = m.group(1) if m and m.group(1) in ref else None
             if fam is None:
                 cand = [j for n in nomen if n.get("label") == o.get("label") for j in [n.get("jeton_regex") or ""] if j in ref]
                 fam = cand[0] if len(set(cand)) == 1 else "?"
-            ia[fam] += 1
+            ia[fam] += qte
         comparaison = {f: {"reference": ref.get(f, 0), "ia": ia.get(f, 0)} for f in sorted(set(ref) | set(ia))}
         for f, c in comparaison.items():
             if abs(c["ia"] - c["reference"]) > TOLERANCE_REF * max(c["reference"], 1):

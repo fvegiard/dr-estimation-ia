@@ -1,4 +1,6 @@
-import sys,csv,re
+import sys
+import csv
+import re
 sys.path.insert(0,'.')
 import numpy as np
 from pathlib import Path

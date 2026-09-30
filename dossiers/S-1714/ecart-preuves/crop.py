@@ -1,5 +1,6 @@
-import sys,csv
-from PIL import Image,ImageDraw,ImageFont
+import sys
+import csv
+from PIL import Image,ImageDraw
 Image.MAX_IMAGE_PIXELS=None
 T='/home/claude/releve-auto/runs/S-1714/OUTBOX/S-1714/travail/'
 def marks(sheet):

@@ -7,7 +7,6 @@ and its outputs are checked (JSON readable by ecart, xlsx, .qpl verified).
 """
 from __future__ import annotations
 
-import json
 from collections import Counter
 from pathlib import Path
 

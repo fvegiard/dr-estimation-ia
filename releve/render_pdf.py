@@ -8,9 +8,15 @@ marques colorées par famille, légende à droite) + « Rapport de métré (par 
 Usage : uv run releve/render_pdf.py WORKDIR NOM_PROJET SORTIE_DIR
 Sorties : SORTIE_DIR/<NOM>-Plans-annotes.pdf, <NOM>-Rapport-de-metre.pdf (+ .md), <NOM>-Dossier-complet.pdf
 """
-import os, sys, io, collections, datetime, html
+import os
+import sys
+import io
+import collections
+import datetime
+import html
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import pymupdf, markdown
+import pymupdf
+import markdown
 from PIL import Image, ImageDraw
 from commun import load_nomenclature, load_occurrences, load_feuilles, draw_mark, sha256
 from prepare import font
@@ -28,7 +34,7 @@ def annotate_sheet(work, f, info, occ_f, nom):
     for o in occ_f:
         n = nom[o["label"]]
         draw_mark(dr, n["forme"], o["x"] * k, o["y"] * k, MARK_R, n["rgb"], outline=(30, 30, 30), width=2)
-        counts[o["label"]] += 1
+        counts[o["label"]] += o.get("qte", 1)
     if counts:
         rows = sorted(counts)
         fnt = font(22)
@@ -38,7 +44,7 @@ def annotate_sheet(work, f, info, occ_f, nom):
         x0 = min(x0, im.width - int(tw) - 20)
         bh = lh * len(rows) + 60
         dr.rectangle([x0, y0, x0 + tw, y0 + bh], fill=(255, 255, 255, 235), outline=(0, 0, 0, 255), width=3)
-        dr.text((x0 + 15, y0 + 10), f"Légende — {info.get('nom', f)} ({sum(counts.values())} marques)", fill=(0, 0, 0, 255), font=font(22))
+        dr.text((x0 + 15, y0 + 10), f"Légende — {info.get('nom', f)} ({len(occ_f)} marques)", fill=(0, 0, 0, 255), font=font(22))
         for i, l in enumerate(rows):
             n = nom[l]; y = y0 + 50 + i * lh
             draw_mark(dr, n["forme"], x0 + 25, y + 10, 10, n["rgb"], outline=(30, 30, 30), width=2)
@@ -75,17 +81,17 @@ def main(work, name, out_dir):
         per_sheet[f] = counts; grand.update(counts)
         buf = io.BytesIO(); im.save(buf, "JPEG", quality=85, subsampling=0)
         pg = plans.new_page(width=im.width, height=im.height); pg.insert_image(pg.rect, stream=buf.getvalue())
-        print(f"  {f}: {sum(counts.values())} marques", flush=True)
+        print(f"  {f}: {len(by_sheet.get(f, []))} marques, quantité {sum(counts.values())}", flush=True)
     p_plans = os.path.join(out_dir, f"{name}-Plans-annotes.pdf")
     plans.save(p_plans, garbage=3, deflate=True)
     # --- rapport de métré
     today = datetime.date.today().strftime("%Y-%m-%d")
     L = [f"# Rapport de métré (par plans) — {name}", "", f"Généré le {today} par le pipeline `releve/` (relevé automatique Claude + scripts déterministes). "
          "Chaque marque est une occurrence relevée sur le plan (étiquette texte vectorielle ou lecture visuelle) ; les quantités sont des comptes d'objets, sans métrage de câble.", ""]
-    L += ["## Résumé", "", "| Feuille | Marques | Libellés |", "|---|--:|--:|"]
+    L += ["## Résumé", "", "| Feuille | Marques | Quantité | Libellés |", "|---|--:|--:|--:|"]
     for f in sheets:
-        L.append(f"| {feuilles[f].get('nom', f)} | {sum(per_sheet[f].values())} | {len(per_sheet[f])} |")
-    L.append(f"| **Total** | **{sum(grand.values())}** | **{len(grand)}** |")
+        L.append(f"| {feuilles[f].get('nom', f)} | {len(by_sheet.get(f, []))} | {sum(per_sheet[f].values())} | {len(per_sheet[f])} |")
+    L.append(f"| **Total** | **{len(occ)}** | **{sum(grand.values())}** | **{len(grand)}** |")
     L += ["", "## Tous les plans", "", "| Libellé | Famille | Quantité |", "|---|---|--:|"]
     for l in sorted(grand):
         L.append(f"| {html.escape(l)} | {nom[l]['famille']} | {grand[l]} |")

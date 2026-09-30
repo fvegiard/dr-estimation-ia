@@ -1,4 +1,6 @@
-import csv,random,subprocess
+import csv
+import random
+import subprocess
 T='/home/claude/releve-auto/runs/S-1811/OUTBOX/S-1811/travail/'
 rows=[r for f in ['occurrences-texte.csv','occurrences-visuel.csv'] for r in csv.DictReader(open(T+f)) if r.get('exclure','')!='1']
 random.seed(1811); s=random.sample(rows,10)

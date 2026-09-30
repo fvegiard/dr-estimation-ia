@@ -89,16 +89,22 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    libellé jamais employé : soit l'appareil est réellement absent du projet — alors écris-le dans `reserves.md` avec la
    feuille et la zone vérifiées — soit tu l'as compté sous le libellé d'un appareil voisin, et le relevé est faux.
    Le contrôle `Q8` bloque ce cas ; ne le contourne pas en effaçant la ligne de la nomenclature.
-   Constaté sur DSI01 (kimi-k3, 2026-09-29) : `AVERTISSEUR FUMEE AUTONOME` lu dans la légende, écrit dans la nomenclature,
-   jamais relevé — ses 36 appareils comptés en `DETECTEUR FUMEE` (13 attendus, 40 relevés). Une seule confusion coûtait
-   36 marques sur 122, soit le tiers de la feuille.
+   Une confusion déjà constatée : `AVERTISSEUR FUMEE AUTONOME` lu dans la légende, écrit dans la nomenclature,
+   jamais relevé parce que ses appareils avaient été comptés en `DETECTEUR FUMEE`. Lis chaque symbole du plan courant;
+   aucune quantité d'un ancien relevé ne constitue une réponse pour ce dossier.
    Les paires qui se confondent le plus (même forme, même famille, étiquette voisine ou absente) :
    - **avertisseur de fumée autonome 120V** (alimenté, souvent mural, dans les logements) ≠ **détecteur de fumée** du réseau
      d'alarme (relié au panneau, souvent au plafond des corridors et locaux communs) ;
    - **détecteur thermique 135°F** ≠ **200°F** : si la température n'est pas lisible, relève un seul libellé générique
      ET mets la distinction en réserve — n'invente pas la répartition ;
    - **klaxon** (avertisseur sonore d'alarme) ≠ **avertisseur piezo** ≠ **strobe** ;
-   - **module adressable** simple ≠ double ≠ **relais adressable**.
+   - **module adressable** simple ≠ double ≠ **relais adressable**;
+   - **phare simple** ≠ **phare double** : compter les têtes dessinées sur CHAQUE symbole et comparer au dessin
+     de la légende. Un modèle commun aux deux variantes ou le libellé canonique `TETE DOUBLE` ne tranche pas.
+     Une note prescrivant une conversion ne vaut que pour les symboles auxquels cette note est rattachée.
+   - **enlever** ≠ **remplacer** : rattacher le numéro de note à chaque appareil. Un ancien bloc à enlever et un
+     nouveau bloc prévu ailleurs sont deux travaux distincts; le modèle neuf ne décrit pas l'ancien matériel.
+     Un appareil à enlever reste compté comme travail, avec portée explicite, sans quantité neuve à fournir.
    Quand deux appareils partagent la forme et la famille, c'est la position qui tranche (logement privé vs aire commune,
    mur vs plafond) : dis dans `note` ce qui a tranché.
 4. **Occurrences visuelles** → `occurrences-visuel.csv` (`feuille,label,x_pt,y_pt,source,note`, `source=visuel`) : parcours
@@ -108,8 +114,13 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    Une pastille fait ≈ 4,2 pt de rayon — arrondir à 5 pt la déplace de plus que sa propre taille et la fait rater le symbole.
    Repère mesuré : sur les 319 marques relevées à la main dans le dépôt, 3,1 % seulement tombent sur un multiple de 5 pt dans
    les deux axes. Si presque toutes tes coordonnées sont rondes, tu ne lis pas le plan — tu poses une grille mentale, et le
-   contrôle Q10 le bloque (gemma-4-31b : 53/53 sur 10 pt ; kimi-k3 : 104/104 sur 5 pt, familles correctes mais positions fausses).
+   contrôle Q10 le bloque même si les familles semblent correctes.
    Utilise `zoom.py` pour les zones denses. Chaque label utilisé doit exister dans `nomenclature.csv`.
+   Les bandes des règles sont **superposées au dessin, sans marge ajoutée** : ne soustrais jamais une largeur
+   de règle aux coordonnées lues. Interpole entre les graduations PDF visibles. Si tu convertis des pixels,
+   utilise les dimensions et l'origine réelles retournées par le zoom; un aperçu redimensionné à l'écran
+   n'a pas les mêmes coordonnées pixel que le PNG original. Vérifie quelques marques sur les symboles
+   avant de poursuivre chaque nouvelle zone; un décalage uniforme est une erreur de repérage à corriger.
 5. **Addendas** : si un fichier `addenda` existe, lis-le (aperçus/texte) et applique ce qui touche l'électricité : feuilles
    remplacées (la version d'addenda prime), ajouts/retraits d'appareils. Note chaque application dans `reserves.md`.
    Si une feuille d'addenda remplace une feuille de base, relève l'addenda et retire la feuille de base du classement (`type=remplacee`) ;
@@ -159,7 +170,7 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **R6** Les notes « RELO / relocaliser / déplacer » sont des appareils à compter (famille « RELO <appareil> »), même si l'appareil est existant.
    - **R7** Nommer les familles comme la légende du plan (FIXTURE TYPE A, A1, B…) — le code 2 lettres reste pour l'étiquette.
    - **R8** Choix de la feuille d'essai : c'est le SUPERVISEUR qui choisit une feuille que la référence a réellement relevée (tu ne regardes pas la référence). S-1844 E200 était invalide : Dupuis n'a aucune marque sur E200 (il a relevé les prises sur le plan d'architecte).
-   - **Porte de prévention** : pour chaque feuille, AVANT de placer les marques et AVANT tout commit, publier (a) capture zoom de la légende, (b) la liste des familles avec le symbole/étiquette qui les distingue et la règle R1-R7 appliquée, (c) 3 zooms des symboles ambigus, puis attendre « VALIDÉ » du superviseur.
+   - **Porte de prévention** : pour chaque feuille, AVANT de placer les marques, enregistrer (a) capture zoom de la légende, (b) la liste des familles avec le symbole/étiquette qui les distingue et la règle R1-R7 appliquée, (c) zooms des symboles ambigus. En exécution autonome autorisée, vérifier ces preuves, consigner les incertitudes en réserve et poursuivre sans attendre une réponse humaine. Le contrôle qualité reste bloquant.
 6. **Comparaison avec l'estimateur** (si `estimateur/` existe) → `comparaison-estimateur.md` : pour chaque feuille, tableau
    `famille/objet | estimateur | nous | écart | commentaire`, en lisant ses légendes (`estimateur/legendes/*-legende.png`, où
    chaque ligne porte symbole, nom et quantité). Explique les écarts (périmètre différent, oubli probable de l'un ou l'autre).
@@ -170,5 +181,25 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
 ## Sorties attendues (toutes dans `$ARGUMENTS/`)
 `feuilles-classement.csv`, `nomenclature.csv`, `occurrences-texte.csv`, `occurrences-visuel.csv`, `reserves.md`,
 `rapport-releve.md`, et `comparaison-estimateur.md` si un export d'estimateur était fourni.
+
+Écris des CSV valides : un champ contenant une virgule, un saut de ligne ou un guillemet doit être entouré
+de guillemets doubles; un guillemet interne se double. Exemple de note de circuit : `"circuit S18,20"`.
+Chaque ligne doit avoir exactement les colonnes de son en-tête. Relis les fichiers écrits, surtout les notes
+et prescriptions; une virgule de circuit ne doit jamais devenir une colonne supplémentaire. Conserve
+les informations source en corrigeant l'échappement, sans supprimer le texte ni modifier les quantités.
+
+### Informations nécessaires au bordereau final
+Le rendu utilise les colonnes suivantes lorsqu'elles sont renseignées. Lis les notes, la légende et les cédules du dossier courant pour les remplir; ne recopie jamais un résultat de référence.
+- `feuilles-classement.csv` : `bordereau` = `materiel` (une ligne par repère, notamment incendie), `agrege` (quantités par famille électrique) ou `travaux` (emplacements et appareils à fournir, notamment urgence).
+- `nomenclature.csv` : `code` (désignation exacte du symbole), `materiel`, `portee` (existant conservé, à enlever, à installer, à remplacer, etc.), `modele`, `prescription`, `discipline` (`incendie`, `electricite`, `urgence`). Ces informations partagées s'appliquent aux occurrences de cette famille.
+  Un numéro de note commune n'est pas un code de matériel : conserver cette note dans `description`/`prescription`.
+  Sans code explicite de symbole, utiliser un code court distinct par matériel et expliquer ce choix dans le rapport.
+- `occurrences-*.csv` : `designation`, `portee`, `modele`, `prescription`, `parent`, `qte`, `reserve` si une occurrence diffère de sa famille. Une ligne de note prescrivant plusieurs appareils garde sa quantité explicite; ce n'est pas plusieurs symboles à inventer au même point.
+  `qte_fourniture` peut préciser séparément le nombre d'appareils à acheter pour le bordereau travaux :
+  nombre fini positif ou zéro, uniquement si la source le justifie. Un raccordement d'appareil existant
+  conserve sa portée `RACCORDER` et peut avoir `qte_fourniture=0`; ne le renomme pas `CONSERVER`
+  pour changer le calcul. Valeur absente = déduction habituelle par portée; ne présume pas zéro pour un cas inconnu.
+Enrichis au besoin les CSV complets avec `ecrire` après les ajouts de positions. Une valeur absente reste vide et fait l'objet d'une réserve; aucun modèle de fabricant, portée ou prescription ne doit être inventé pour remplir le tableau.
+
 Quand tout est écrit, réponds par un résumé de 10 lignes maximum : feuilles traitées, total de marques, nombre de réserves,
 ce qui manque.

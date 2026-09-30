@@ -16,7 +16,12 @@ Usage : uv run releve/agent_sdk.py WORKDIR RESULTAT_JSON [--model opus] [--max-t
 et WORKDIR/agent-journal.log (chaque outil appelé, horodaté). Code de sortie 0 si subtype == success.
 """
 from __future__ import annotations
-import os, sys, json, asyncio, datetime, argparse
+import os
+import sys
+import json
+import asyncio
+import datetime
+import argparse
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage, AssistantMessage, TextBlock, ToolUseBlock
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

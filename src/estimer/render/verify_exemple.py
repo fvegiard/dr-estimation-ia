@@ -101,10 +101,17 @@ def verify(rendu: Path, report: Path, exemple: Path, gold_dir: Path) -> dict:
     ex = pymupdf.open(exemple)
     rep = json.loads(report.read_text(encoding="utf-8"))
     prov = json.loads((gold_dir / "provenance.json").read_text(encoding="utf-8"))
+    expected_sheets = [s["sheet"] for s in prov["sheets"]]
+    actual_sheets = [s["sheet"] for s in rep["sheets"]]
+    sheets_ok = bool(expected_sheets) and actual_sheets == expected_sheets
     ex_page = {s["sheet"]: s["exemple_page"] - 1 for s in prov["sheets"]}
+    unexpected_sheets = [name for name in actual_sheets if name not in ex_page]
     ex_bords = T.sheet_bordereaux(ex)
     rows = []
     for s in rep["sheets"]:
+        if s["sheet"] not in ex_page:
+            # Coverage fails for this entry; continue inspecting all known sheets.
+            continue
         name, pno, fmt = s["sheet"], s["plan_page"] - 1, s.get("format", "materiel")
         gold = read_markers(ex, ex_page[name])
         g = np.array([(m["x"], m["y"]) for m in gold]).reshape(-1, 2)
@@ -166,7 +173,9 @@ def verify(rendu: Path, report: Path, exemple: Path, gold_dir: Path) -> dict:
         row["ok"] = row["markers_ok"] and row["header_ok"] and row["legend_ok"] and row["bordereau_ok"]
         rows.append(row)
     pages_ok = out.page_count == ex.page_count
-    return {"sheets": rows, "ok": all(r["ok"] for r in rows) and pages_ok,
+    return {"sheets": rows, "ok": sheets_ok and all(r["ok"] for r in rows) and pages_ok,
+            "sheets_ok": sheets_ok, "expected_sheets": expected_sheets, "actual_sheets": actual_sheets,
+            "unexpected_sheets": unexpected_sheets,
             "pages": [out.page_count, ex.page_count], "pages_ok": pages_ok,
             "markers": sum(r["markers_gold"] for r in rows),
             "cells": sum(r["cells"] for r in rows), "cells_same": sum(r["cells_same"] for r in rows),
@@ -185,6 +194,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--json", type=Path, default=None)
     a = ap.parse_args(argv)
     res = verify(a.rendu, a.report, a.exemple, a.gold_dir)
+    if res["unexpected_sheets"]:
+        print("UNEXPECTED sheets:", ", ".join(res["unexpected_sheets"]))
     for r in res["sheets"]:
         h = r["header"] or {}
         print(f"{r['sheet']:5} {r['format']:8} reperes {r['markers_drawn']}/{r['markers_gold']} "

@@ -4,6 +4,13 @@ from __future__ import annotations
 import asyncio
 import base64
 import json
+import os
+from pathlib import Path
+import secrets
+import socket
+import subprocess
+import sys
+import time
 
 import pymupdf
 import pytest
@@ -32,8 +39,8 @@ def _texte(res) -> dict:
     return json.loads(res.content[0].text)
 
 
-async def _chaine(tmp_path):
-    async with Client(serveur.mcp) as c:
+async def _chaine(tmp_path, target=None):
+    async with Client(serveur.mcp if target is None else target, read_timeout_seconds=60) as c:
         outils = {t.name for t in (await c.list_tools()).tools}
         assert {"preparer_dossier", "zoomer", "verifier_releve", "produire_livrables", "comparer_estimateur"} <= outils
         methode = await c.read_resource("estimateur://methode")
@@ -71,13 +78,91 @@ async def _chaine(tmp_path):
         assert ctl["pret"], ctl
         assert ctl["occurrences"] == 9 and ctl["reserves"] == 1
 
+        # Deliberately duplicate a mark: reject delivery, repair, and recover the identical control result.
+        original = ecrits["occurrences-visuel.csv"]
+        duplicate = original + original.splitlines()[-1] + "\n"
+        _texte(await c.call_tool("ecrire_fichier", {
+            "dossier": "ESSAI", "nom": "occurrences-visuel.csv", "contenu": duplicate}))
+        broken = _texte(await c.call_tool("verifier_releve", {"dossier": "ESSAI"}))
+        assert not broken["pret"] and any("doublon" in e for e in broken["erreurs"])
+        blocked = _texte(await c.call_tool("produire_livrables", {"dossier": "ESSAI"}))
+        assert not blocked["produit"]
+        assert not (tmp_path / "ESSAI" / "sortie" / "ESSAI-RELEVE.pdf").exists()
+        _texte(await c.call_tool("ecrire_fichier", {
+            "dossier": "ESSAI", "nom": "occurrences-visuel.csv", "contenu": original}))
+        assert _texte(await c.call_tool("verifier_releve", {"dossier": "ESSAI"})) == ctl
+
         liv = _texte(await c.call_tool("produire_livrables", {"dossier": "ESSAI"}))
         assert liv["produit"], liv
         assert liv["reperes"] == 9
         assert {"ESSAI-RELEVE.pdf", "ESSAI.qpl"} <= set(liv["fichiers"])
+        download = _texte(await c.call_tool("recuperer_livrable", {
+            "dossier": "ESSAI", "chemin": "ESSAI-RELEVE.pdf"}))
+        assert base64.b64decode(download["contenu_base64"]) == (
+            tmp_path / "ESSAI" / "sortie" / "ESSAI-RELEVE.pdf").read_bytes()
         page = await c.call_tool("voir_image", {"dossier": "ESSAI", "chemin": "sortie/ESSAI-RELEVE.pdf#1", "largeur_max": 800})
         assert page.content[0].type == "image"
     return tmp_path / "ESSAI" / "sortie" / "ESSAI-RELEVE.pdf"
+
+
+def test_chaine_stdio_process(tmp_path):
+    """Exercise JSON-RPC over the actual command used by desktop MCP clients."""
+    from mcp import StdioServerParameters
+
+    target = StdioServerParameters(
+        command=sys.executable, args=["-m", "serveur_mcp"],
+        cwd=str(Path(__file__).resolve().parents[1]),
+        env={"ESTIMATEUR_BASE": str(tmp_path), "PYTHONUTF8": "1"},
+    )
+    pdf = asyncio.run(_chaine(tmp_path, target))
+    assert pdf.is_file()
+
+
+def test_chaine_http_process(tmp_path):
+    """Exercise the cloud transport on loopback, including its authentication gate."""
+    import httpx2
+    from mcp.client.streamable_http import streamable_http_client
+
+    with socket.socket() as listener:
+        listener.bind(("127.0.0.1", 0))
+        port = listener.getsockname()[1]
+    token = secrets.token_urlsafe(32)
+    env = dict(os.environ, ESTIMATEUR_BASE=str(tmp_path), ESTIMATEUR_MCP_CLE=token, PYTHONUTF8="1")
+    with (tmp_path / "http-server.log").open("w", encoding="utf-8") as log:
+        process = subprocess.Popen(
+            [sys.executable, "-m", "serveur_mcp", "--transport", "http", "--port", str(port)],
+            cwd=Path(__file__).resolve().parents[1], env=env,
+            stdin=subprocess.DEVNULL, stdout=log, stderr=log,
+        )
+        try:
+            deadline = time.monotonic() + 20
+            while True:
+                assert process.poll() is None, "MCP HTTP server exited before accepting connections"
+                try:
+                    with socket.create_connection(("127.0.0.1", port), timeout=0.2):
+                        break
+                except OSError:
+                    if time.monotonic() >= deadline:
+                        pytest.fail("MCP HTTP server did not start within 20 seconds")
+                    time.sleep(0.05)
+
+            async def exercise():
+                url = f"http://127.0.0.1:{port}/mcp"
+                async with httpx2.AsyncClient(timeout=60) as unauthorized:
+                    response = await unauthorized.post(url, json={})
+                    assert response.status_code == 401
+                async with httpx2.AsyncClient(headers={"Authorization": f"Bearer {token}"}, timeout=60) as http:
+                    pdf = await _chaine(tmp_path, streamable_http_client(url, http_client=http))
+                    assert pdf.is_file()
+
+            asyncio.run(exercise())
+        finally:
+            process.terminate()
+            try:
+                process.wait(timeout=10)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait(timeout=10)
 
 
 def test_chaine_complete(tmp_path, monkeypatch):

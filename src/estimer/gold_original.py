@@ -39,7 +39,6 @@ cached PDF so the pipeline runs unchanged; the mapping is kept in the notes.
 """
 from __future__ import annotations
 
-import csv
 import json
 import unicodedata
 from collections import Counter, defaultdict

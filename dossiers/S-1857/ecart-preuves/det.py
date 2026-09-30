@@ -1,4 +1,5 @@
-import numpy as np, csv, sys
+import numpy as np
+import csv
 from PIL import Image
 from scipy import ndimage
 from scipy.optimize import linear_sum_assignment

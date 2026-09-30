@@ -10,7 +10,11 @@ Produit : releve.xlsx (Résumé, Par feuille, Marques, Nomenclature, Réserves),
 Plans-annotes.pdf, Rapport-de-metre.pdf, Dossier-complet.pdf, STATUT.md, projet Plan Expert (.qpl + PNG) dans planexpert/.
 Rien n'est inventé : tout est copié ou tabulé depuis les fichiers du run.
 """
-import csv, os, shutil, sys, hashlib
+import csv
+import os
+import shutil
+import sys
+import hashlib
 from collections import Counter, defaultdict
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment

@@ -6,7 +6,8 @@ Porté depuis planexpert-core/releve/zoom.py (imports relatifs de package).
 Usage : python -m src.pipeline.zoom WORKDIR FEUILLE X0 Y0 X1 Y1 [--px 1800] [--sans-marques]
 Sortie : WORKDIR/zooms/<FEUILLE>_<X0>_<Y0>_<X1>_<Y1>.png (le chemin est imprimé).
 """
-import os, sys
+import os
+import sys
 import pymupdf
 from PIL import Image, ImageDraw
 from .commun import load_nomenclature, load_occurrences, draw_mark

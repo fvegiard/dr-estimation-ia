@@ -10,11 +10,41 @@ Liste, dans le rayon donné autour du point (coordonnées PDF en points), les mo
 et les tracés vectoriels (épaisseur de trait, couleur, remplissage, pointillé, taille de la boîte). Un appareil NEUF est
 en général du texte noir ou un tracé plein noir d'épaisseur normale ; un EXISTANT est gris, fin, hachuré ou pointillé
 (audit S-1769 du 2026-09-22 : le « $ » existant était un tracé à 0,48 pt sans cercle, les neufs du texte ArialMT + barre 0,96 pt).
-Rien n'est interprété ici : l'agent conclut.
+Ajoute jusqu'à cinq centres de contours fermés les plus proches, avec distance et boîte, calculés sur le PDF source.
+Ces candidats ne sont ni une identification ni un déplacement automatique. Une page raster reste lisible sans candidats.
+Le PDF de feuille préparé est utilisé en priorité, sinon le fichier d'entrée original. Rien n'est interprété ici : l'agent conclut.
 """
 from __future__ import annotations
-import csv, os, sys
+import csv
+import importlib.util
+import json
+import math
+import os
+import sys
 import pymupdf
+
+
+def closed_shape_candidates(page, x, y, limit=5):
+    """Nearest source-only closed outlines; evidence, not classified or snapped marks.
+
+    Load the standalone geometry module without the render package, whose optional
+    numpy/scipy dependencies are unnecessary for this pymupdf-only CLI tool.
+    """
+    module_name = "_releve_symbol_geometry"
+    if module_name not in sys.modules:
+        path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "src", "estimer", "render", "ancrage.py")
+        spec = importlib.util.spec_from_file_location(module_name, path)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = module
+        spec.loader.exec_module(module)
+    index = sys.modules[module_name].SymbolIndex(page)
+    rows = []
+    for rect, color in index.shapes:
+        cx, cy = (rect.x0 + rect.x1) / 2, (rect.y0 + rect.y1) / 2
+        rows.append({"center_pt": [round(cx, 3), round(cy, 3)],
+                     "distance_pt": round(math.hypot(cx - x, cy - y), 3),
+                     "bbox_pt": [round(v, 3) for v in rect], "color": gris(color)})
+    return sorted(rows, key=lambda row: row["distance_pt"])[:limit]
 
 def gris(c):
     if c is None: return "sans"
@@ -25,9 +55,11 @@ def main(work, feuille, x, y, rayon=12.0):
     row = next((r for r in csv.DictReader(open(os.path.join(work, "feuilles.csv"), encoding="utf-8")) if r["feuille"] == feuille), None)
     if not row:
         sys.exit(f"feuille inconnue : {feuille}")
-    src = None
+    prepared = os.path.join(work, "feuilles", feuille + ".pdf")
+    src = prepared if os.path.isfile(prepared) else None
     # le chemin source est dans inventaire : feuilles.csv donne fichier + page (relatifs à l'INBOX de run.py)
     for cand in (os.environ.get("RELEVE_INBOX"), os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(work))), "INBOX")):
+        if src: break
         if not cand: continue
         for dp, _, fs in os.walk(cand):
             for f in fs:
@@ -37,7 +69,7 @@ def main(work, feuille, x, y, rayon=12.0):
         sys.exit(f"PDF source introuvable pour {row['fichier']} (définir RELEVE_INBOX)")
     doc = pymupdf.open(src)
     try:
-        page = doc[int(row["page"]) - 1]
+        page = doc[0 if src == prepared else int(row["page"]) - 1]
         z = pymupdf.Rect(x - rayon, y - rayon, x + rayon, y + rayon) * page.derotation_matrix   # repère tourné → repère natif
         z.normalize()
         print(f"# {feuille} = {row['fichier']} page {row['page']} ; zone {z}")
@@ -60,6 +92,14 @@ def main(work, feuille, x, y, rayon=12.0):
                   f"boîte={r.width:.1f}×{r.height:.1f} pt à ({r.x0:.1f},{r.y0:.1f}) items={len(d.get('items', []))}")
         if n == 0:
             print("  aucun tracé dans la zone")
+        candidates = closed_shape_candidates(page, x, y)
+        if candidates:
+            print("## Formes fermées candidates (centres en coordonnées PDF tournées, points)")
+            print("  Proximité géométrique seulement : vérifier le symbole au zoom; aucune position déplacée.")
+            for candidate in candidates:
+                print("  " + json.dumps(candidate, ensure_ascii=False))
+        else:
+            print("## Formes fermées candidates : aucune (page raster ou sans contour vectoriel admissible)")
     finally:
         doc.close()
 

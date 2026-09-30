@@ -21,23 +21,27 @@ from __future__ import annotations
 
 import argparse
 import base64
+import csv
 import datetime
 import glob
 import json
+import math
 import os
 import subprocess
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.request
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "releve"))
-from controle_qualite import (
+from controle_qualite import (  # noqa: E402  (import après sys.path.insert voulu)
     controler,
 )
 
 REFUS_QUALITE_MAX = 3       # refus de `terminer` pour qualité avant d'accepter en « qualite_insuffisante »
+REPONSES_VIDES_MAX = 3      # arrêt explicite si le modèle ne produit ni texte ni outil
 URL = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1") + "/chat/completions"
 MODELE = "moonshotai/kimi-k3"
 # Essai DSI01 (HR26-14, 122 marques chez l'estimateur), 2026-09-29, même consigne et mêmes outils :
@@ -54,8 +58,12 @@ SCRIPTS = {"zoom": "releve/zoom.py", "extract_occurrences": "releve/extract_occu
 IMAGES_GARDEES = 4          # images conservées dans l'historique (les plus anciennes sont remplacées par leur chemin)
 MAX_TEXTE = 30000           # troncature d'un fichier texte renvoyé au modèle
 FENETRE = 600               # côté max (pt) d'un zoom qui compte pour la couverture : essai réel 2026-09-26, 480×500 pt → 12/12
+EPS_FENETRE = 1e-9          # bruit de soustraction flottante uniquement, en points PDF
 COUVERTURE_MIN = 0.95       # part de chaque feuille « plan » à parcourir en zooms fins avant `terminer`
 ENTETE_VISUEL = "feuille,label,x_pt,y_pt,source,note"
+CHAMPS_BOITE = ("x0_pt", "y0_pt", "x1_pt", "y1_pt")
+METADONNEES_VISUEL = ("designation", "portee", "modele", "prescription", "parent", "qte", "reserve",
+                      *CHAMPS_BOITE, "qte_fourniture")
 
 OUTILS = [
     {"type": "function", "function": {"name": "lister", "description": "Liste les fichiers du dossier de travail qui correspondent au motif glob (relatif au dossier).",
@@ -64,11 +72,22 @@ OUTILS = [
      "parameters": {"type": "object", "properties": {"chemin": {"type": "string"}, "debut": {"type": "integer"}, "lignes": {"type": "integer"}}, "required": ["chemin"]}}},
     {"type": "function", "function": {"name": "ecrire", "description": "Écrit (remplace) un fichier de sortie du dossier de travail : " + ", ".join(sorted(SORTIES)) + ".",
      "parameters": {"type": "object", "properties": {"chemin": {"type": "string"}, "contenu": {"type": "string"}}, "required": ["chemin", "contenu"]}}},
-    {"type": "function", "function": {"name": "zoom", "description": "Rend la zone x0 y0 x1 y1 (points PDF) d'une feuille avec règles et marques déjà relevées, puis la montre.",
+    {"type": "function", "function": {"name": "zoom", "description": "Rend la zone demandée en points PDF, agrandie en carré sans retirer de contenu. Retourne les bornes PDF absolues réellement montrées, avec règles et marques déjà relevées.",
      "parameters": {"type": "object", "properties": {"feuille": {"type": "string"}, "x0": {"type": "number"}, "y0": {"type": "number"}, "x1": {"type": "number"}, "y1": {"type": "number"}},
                     "required": ["feuille", "x0", "y0", "x1", "y1"]}}},
-    {"type": "function", "function": {"name": "ajouter_occurrences", "description": "Ajoute des lignes CSV `feuille,label,x_pt,y_pt,source,note` (source=visuel) à occurrences-visuel.csv, après chaque zoom.",
-     "parameters": {"type": "object", "properties": {"lignes": {"type": "array", "items": {"type": "string"}}}, "required": ["lignes"]}}},
+    {"type": "function", "function": {"name": "ajouter_occurrences", "description": "Ajoute les occurrences structurées après chaque zoom. Le lot entier est refusé si un libellé, une feuille ou une coordonnée est invalide. Utilise occurrences de préférence; lignes accepte l'ancien CSV.",
+     "parameters": {"type": "object", "properties": {
+         "occurrences": {"type": "array", "items": {"type": "object", "properties": {
+             "feuille": {"type": "string"}, "label": {"type": "string"}, "x_pt": {"type": "number"},
+             "y_pt": {"type": "number"}, "note": {"type": "string"},
+             **{k: {"type": "string"} for k in METADONNEES_VISUEL[:5] + ("reserve",)},
+             "qte": {"type": "number", "exclusiveMinimum": 0,
+                     "description": "Quantité prescrite à cet emplacement; défaut 1. Ne pas inventer des symboles supplémentaires."},
+             "qte_fourniture": {"type": "number", "minimum": 0,
+                                "description": "Quantité à fournir si explicitement prescrite; zéro conserve le travail sans achat. Omettre si inconnue."},
+             **{k: {"type": "number"} for k in CHAMPS_BOITE}},
+             "required": ["feuille", "label", "x_pt", "y_pt", "note"]}},
+         "lignes": {"type": "array", "items": {"type": "string"}}}}}},
     {"type": "function", "function": {"name": "couverture", "description": "Indique, pour chaque feuille plan, les fenêtres de ≤600 pt pas encore zoomées.",
      "parameters": {"type": "object", "properties": {}}}},
     {"type": "function", "function": {"name": "extract_occurrences", "description": "Applique nomenclature.csv aux mots des feuilles → occurrences-texte.csv.",
@@ -96,7 +115,7 @@ def script(workdir, nom, args):
                        capture_output=True, text=True, timeout=600, stdin=subprocess.DEVNULL)
     return p.returncode, (p.stdout + ("\n" + p.stderr if p.returncode else "")).strip()[-4000:]
 
-VUS = []                    # zooms fins réalisés : (feuille, x0, y0, x1, y1)
+VUS = []                    # zooms transmis avec retour API non vide; pas une preuve de lecture correcte
 
 def feuilles_plan(workdir):
     import csv
@@ -108,33 +127,155 @@ def feuilles_plan(workdir):
     return [(r["feuille"].strip(), *tailles[r["feuille"].strip()]) for r in rows
             if (r.get("type") or r.get(" type") or "").strip() == "plan" and r["feuille"].strip() in tailles]
 
+def rectangle_couvert(cible, rectangles):
+    """Exact rectangle union coverage using vertical strips and merged Y intervals."""
+    x0, y0, x1, y1 = cible
+    clips = [(max(x0, a), max(y0, b), min(x1, c), min(y1, d))
+             for a, b, c, d in rectangles if a < x1 and c > x0 and b < y1 and d > y0]
+    bornes = sorted({x0, x1, *(r[0] for r in clips), *(r[2] for r in clips)})
+    for gauche, droite in zip(bornes, bornes[1:]):
+        jusqua = y0
+        for bas, haut in sorted((b, d) for a, b, c, d in clips if a <= gauche and c >= droite):
+            if bas > jusqua:
+                return False
+            jusqua = max(jusqua, haut)
+        if jusqua < y1:
+            return False
+    return True
+
+
 def manquantes(workdir):
-    """Fenêtres (grille de FENETRE pt) non couvertes par un zoom fin, par feuille plan."""
+    """Fenêtres non couvertes par l'union des zooms fins, par feuille plan."""
     res = {}
     for f, W, H in feuilles_plan(workdir):
-        cases = [(x, y) for x in range(0, int(W), FENETRE) for y in range(0, int(H), FENETRE)]
-        def vue(x, y, f=f, W=W, H=H):
-            cx, cy = x + min(FENETRE, W - x) / 2, y + min(FENETRE, H - y) / 2
-            return any(v[0] == f and v[1] <= cx <= v[3] and v[2] <= cy <= v[4] for v in VUS)
-        reste = [(x, y, min(x + FENETRE, W), min(y + FENETRE, H)) for x, y in cases if not vue(x, y)]
+        cases = [(x, y) for x in range(0, math.ceil(W), FENETRE) for y in range(0, math.ceil(H), FENETRE)]
+        fins = [v[1:] for v in VUS if v[0] == f and all(math.isfinite(c) for c in v[1:])
+                and 0 < v[3] - v[1] <= FENETRE + EPS_FENETRE and 0 < v[4] - v[2] <= FENETRE + EPS_FENETRE]
+        fenetres = [(x, y, min(x + FENETRE, W), min(y + FENETRE, H)) for x, y in cases]
+        reste = [r for r in fenetres if not rectangle_couvert(r, fins)]
         if len(reste) > (1 - COUVERTURE_MIN) * len(cases):
             res[f] = reste
     return res
+
+def bornes_zoom_carrees(workdir, a):
+    """Expand to a square inside the page without scaling or discarding requested content."""
+    with open(dans(workdir, "feuilles.csv"), encoding="utf-8", newline="") as fh:
+        feuilles = {r["feuille"]: r for r in csv.DictReader(fh)}
+    if a["feuille"] not in feuilles:
+        raise ValueError("Feuille de zoom inconnue")
+    try:
+        f = feuilles[a["feuille"]]
+        W, H = float(f["largeur_pt"]), float(f["hauteur_pt"])
+        x0, y0, x1, y1 = (float(a[k]) for k in ("x0", "y0", "x1", "y1"))
+    except (TypeError, ValueError) as e:
+        raise ValueError("Le zoom exige des bornes PDF numériques") from e
+    if not all(math.isfinite(v) for v in (W, H, x0, y0, x1, y1)) or not (0 <= x0 < x1 <= W and 0 <= y0 < y1 <= H):
+        raise ValueError("Bornes de zoom non finies, inversées ou hors feuille")
+    cote = max(x1 - x0, y1 - y0)
+    if cote > min(W, H):
+        raise ValueError("Impossible de contenir cette zone dans un carré sur la feuille; demande plusieurs zooms carrés plus petits")
+    gauche = min(max((x0 + x1 - cote) / 2, 0), W - cote)
+    haut = min(max((y0 + y1 - cote) / 2, 0), H - cote)
+    return gauche, haut, gauche + cote, haut + cote
+
 
 def outil(workdir, nom, a):
     """Exécute un outil ; retourne (texte, chemin_image_ou_None)."""
     if nom == "ajouter_occurrences":
         p = dans(workdir, "occurrences-visuel.csv")
-        neuf = not os.path.isfile(p) or os.path.getsize(p) == 0
-        lignes = [l.strip() for l in a.get("lignes", []) if l.strip() and not l.startswith("feuille,")]
-        with open(p, "a", encoding="utf-8", newline="\n") as fh:
-            if neuf:
-                fh.write(ENTETE_VISUEL + "\n")
-            fh.writelines(l + "\n" for l in lignes)
-        return f"{len(lignes)} lignes ajoutées", None
+        champs = ENTETE_VISUEL.split(",")
+        rows = list(a.get("occurrences", []))
+        for ligne in a.get("lignes", []):
+            if not ligne.strip():
+                continue
+            try:
+                parsed = list(csv.reader([ligne], strict=True))
+            except csv.Error as e:
+                raise ValueError("CSV invalide; utilise occurrences structurées") from e
+            if parsed == [champs]:
+                continue
+            if len(parsed) != 1 or len(parsed[0]) != len(champs):
+                raise ValueError("CSV invalide : six champs requis; utilise occurrences structurées")
+            rows.append(dict(zip(champs, parsed[0])))
+        with open(dans(workdir, "nomenclature.csv"), encoding="utf-8", newline="") as fh:
+            labels = {r["label"].strip() for r in csv.DictReader(fh)}
+        with open(dans(workdir, "feuilles.csv"), encoding="utf-8", newline="") as fh:
+            tailles = {r["feuille"].strip(): (float(r["largeur_pt"]), float(r["hauteur_pt"])) for r in csv.DictReader(fh)}
+        valides = []
+        for row in rows:
+            if not isinstance(row, dict) or not {"feuille", "label", "x_pt", "y_pt"}.issubset(row):
+                raise ValueError("Occurrence incomplète : feuille, label, x_pt, y_pt requis")
+            row = {**{k: row.get(k, "visuel" if k == "source" else "") for k in champs},
+                   **{k: row[k] if row[k] is not None else "" for k in METADONNEES_VISUEL if k in row}}
+            if row["label"] not in labels or row["feuille"] not in tailles:
+                raise ValueError("Occurrence refusée : libellé ou feuille inconnu")
+            try:
+                x, y = float(row["x_pt"]), float(row["y_pt"])
+            except (TypeError, ValueError) as e:
+                raise ValueError("Coordonnées numériques requises") from e
+            W, H = tailles[row["feuille"]]
+            if not (math.isfinite(x) and math.isfinite(y) and 0 <= x <= W and 0 <= y <= H):
+                raise ValueError("Coordonnées non finies ou hors feuille")
+            if row["source"] != "visuel":
+                raise ValueError("La source doit être visuel")
+            for k in METADONNEES_VISUEL[:5] + ("reserve",):
+                if k in row and not isinstance(row[k], str):
+                    raise ValueError(f"Métadonnée {k} : texte requis")
+            qte = row.get("qte", "")
+            try:
+                nombre = float(str(qte).strip() or "1")
+            except (TypeError, ValueError) as e:
+                raise ValueError("qte numérique requise") from e
+            if isinstance(qte, bool) or not math.isfinite(nombre) or nombre <= 0:
+                raise ValueError("qte doit être finie et strictement positive")
+            fourniture = row.get("qte_fourniture", "")
+            if str(fourniture).strip():
+                try:
+                    nombre_fourniture = float(fourniture)
+                except (TypeError, ValueError) as e:
+                    raise ValueError("qte_fourniture numérique requise") from e
+                if isinstance(fourniture, bool) or not math.isfinite(nombre_fourniture) or nombre_fourniture < 0:
+                    raise ValueError("qte_fourniture doit être finie et positive ou nulle")
+            bbox = [row.get(k, "") for k in CHAMPS_BOITE]
+            if any(v != "" for v in bbox):
+                try:
+                    x0, y0, x1, y1 = map(float, bbox)
+                except (TypeError, ValueError) as e:
+                    raise ValueError("Les quatre bornes de boîte doivent être numériques") from e
+                if not all(math.isfinite(v) for v in (x0, y0, x1, y1)) or not (0 <= x0 < x1 <= W and 0 <= y0 < y1 <= H):
+                    raise ValueError("Bornes de boîte non finies, inversées ou hors feuille")
+            valides.append(row)
+        # Keep historical/custom columns and migrate six-column files without losing rows.
+        anciennes = []
+        if os.path.isfile(p) and os.path.getsize(p):
+            with open(p, encoding="utf-8-sig", newline="") as fh:
+                reader = csv.DictReader(fh, strict=True)
+                existants = reader.fieldnames or []
+                if not set(champs).issubset(existants) or len(set(existants)) != len(existants) or "" in existants:
+                    raise ValueError("En-tête occurrences existant invalide; fichier conservé")
+                anciennes = list(reader)
+                if any(None in r or any(v is None for v in r.values()) for r in anciennes):
+                    raise ValueError("Ligne occurrences existante mal formée; fichier conservé")
+                champs = existants
+        champs = [*champs, *(k for k in METADONNEES_VISUEL if k not in champs and any(k in r for r in valides))]
+        # Validate first, write alongside, then replace: even a failed migration keeps the old file.
+        temporaire = None
+        try:
+            with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", newline="", dir=workdir,
+                                             prefix=".occurrences-", suffix=".tmp", delete=False) as fh:
+                temporaire = fh.name
+                writer = csv.DictWriter(fh, fieldnames=champs, lineterminator="\n")
+                writer.writeheader()
+                writer.writerows(anciennes)
+                writer.writerows(valides)
+            os.replace(temporaire, p)
+        finally:
+            if temporaire is not None and os.path.exists(temporaire):
+                os.unlink(temporaire)
+        return f"{len(valides)} lignes ajoutées", None
     if nom == "couverture":
         m = manquantes(workdir)
-        return ("couverture complète" if not m else json.dumps({f: [[round(v) for v in r] for r in rs] for f, rs in m.items()})), None
+        return ("couverture complète" if not m else json.dumps(m)), None
     if nom == "lister":
         fs = sorted(os.path.relpath(f, workdir) for f in glob.glob(dans(workdir, a.get("motif", "*")), recursive=True))
         return "\n".join(fs[:400]) + (f"\n… {len(fs) - 400} de plus" if len(fs) > 400 else "") or "(aucun)", None
@@ -157,37 +298,49 @@ def outil(workdir, nom, a):
         open(dans(workdir, rel), "w", encoding="utf-8", newline="\n").write(a["contenu"])
         return f"écrit {rel} ({len(a['contenu'])} caractères)", None
     if nom == "zoom":
-        c, out = script(workdir, "zoom", [a["feuille"], a["x0"], a["y0"], a["x1"], a["y1"]])
+        bounds = bornes_zoom_carrees(workdir, a)
+        c, out = script(workdir, "zoom", [a["feuille"], *bounds])
         png = out.strip().splitlines()[-1] if c == 0 and out.strip() else ""
         png = png if os.path.isabs(png) else os.path.join(workdir, png)
-        if c == 0 and max(a["x1"] - a["x0"], a["y1"] - a["y0"]) <= FENETRE + 1:
-            VUS.append((a["feuille"], a["x0"], a["y0"], a["x1"], a["y1"]))
-        return (out, png) if c == 0 and os.path.isfile(png) else (f"échec zoom : {out}", None)
+        if c != 0 or not os.path.isfile(png):
+            return f"échec zoom : {out}", None
+        return json.dumps({"feuille": a["feuille"], "bounds_pt": bounds,
+                           "coordinate_system": "absolute PDF points", "image": png}), png
     if nom == "extract_occurrences":
         return script(workdir, "extract_occurrences", [])[1] or "fait", None
     if nom == "traits":
         return script(workdir, "traits", [a["feuille"], a["x"], a["y"]])[1], None
     return f"outil inconnu : {nom}", None
 
-def appel(corps, cle, essais=5, j=None):
+def appel(corps, cle, essais=None, j=None, timeout=None):
     """Appelle l'API. Journalise chaque reprise : sans cela, une attente longue est indiscernable d'un blocage."""
+    essais = int(os.environ.get("RELEVE_NVIDIA_ATTEMPTS", "2")) if essais is None else essais
+    timeout = float(os.environ.get("RELEVE_NVIDIA_TIMEOUT", "120")) if timeout is None else timeout
+    if not 1 <= essais <= 5 or not math.isfinite(timeout) or not 1 <= timeout <= 600:
+        raise ValueError("NVIDIA attempts doit être entre 1 et 5; timeout entre 1 et 600 secondes")
     for k in range(essais):
         req = urllib.request.Request(URL, data=json.dumps(corps).encode(), headers={
             "Authorization": "Bearer " + cle, "Content-Type": "application/json", "Accept": "application/json"})
+        started = time.monotonic()
+        if j:
+            j(f"API début tentative={k + 1}/{essais} timeout_s={timeout:g}")
         try:
-            with urllib.request.urlopen(req, timeout=600) as f:
+            with urllib.request.urlopen(req, timeout=timeout) as f:
                 return json.load(f)
         except urllib.error.HTTPError as e:
-            msg = e.read().decode(errors="replace")[:300]
+            # Do not journal provider bodies: they can echo request data or credentials.
             if e.code not in (429, 500, 502, 503, 504) or k == essais - 1:
-                raise RuntimeError(f"HTTP {e.code} : {msg}")
+                raise RuntimeError(f"HTTP {e.code}") from e
             if j:
-                j(f"reprise {k + 1}/{essais - 1} après HTTP {e.code} : {msg[:120]}")
+                j(f"reprise {k + 1}/{essais - 1} après HTTP {e.code}")
         except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
             if k == essais - 1:
-                raise RuntimeError(f"réseau : {e}")
+                raise RuntimeError(f"réseau : {type(e).__name__}") from e
             if j:
-                j(f"reprise {k + 1}/{essais - 1} après erreur réseau : {str(e)[:120]}")
+                j(f"reprise {k + 1}/{essais - 1} après erreur réseau : {type(e).__name__}")
+        finally:
+            if j:
+                j(f"API fin tentative={k + 1}/{essais} durée_s={time.monotonic() - started:.3f}")
         time.sleep(15 * (k + 1))
 
 def alleger(messages):
@@ -195,13 +348,37 @@ def alleger(messages):
     idx = [i for i, m in enumerate(messages) if m["role"] == "user" and isinstance(m["content"], list)
            and any(c.get("type") == "image_url" for c in m["content"])]
     for i in idx[:-IMAGES_GARDEES]:
-        messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (déjà vue, retirée du contexte)"}
+        messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (image retirée du contexte; consulter couverture)"}
 
-def run(workdir, out_json, model, max_turns):
+def checkpoint_reprise(workdir, tours, max_turns, refus_q, regions):
+    """Compact persisted-state inventory: allowlisted names/sizes, never file contents."""
+    fichiers = {}
+    for nom in sorted(SORTIES | {"MANIFESTE.md", "feuilles.csv", "inventaire.json"}):
+        try:
+            chemin = dans(workdir, nom)
+            if os.path.isfile(chemin):
+                fichiers[nom] = os.path.getsize(chemin)
+        except (OSError, ValueError):
+            continue  # Inaccessible files or links outside the workdir are not inspected.
+    etat = {"etape": "reprise du relevé incomplet après réponses vides",
+            "tours_effectues": tours, "tours_restants": max(0, max_turns - tours),
+            "refus_qualite": refus_q, "regions_acquises": len(VUS),
+            "regions_a_revoir": list(dict.fromkeys(regions)), "fichiers_octets": fichiers}
+    return ("Reprise unique avec un contexte neuf. Les sorties existantes sont conservées : "
+            "relis-les avec les outils avant de compléter ou réparer, sans les réinitialiser. "
+            "Ne recrée pas la nomenclature ou les occurrences depuis zéro; évite tout doublon. "
+            "Les régions à revoir ci-dessous n'ont pas été confirmées; redemande leurs zooms. "
+            "Consulte couverture pour toutes les autres régions manquantes. Les contrôles qualité "
+            "et le budget de tours restent inchangés. État persistant (noms et tailles seulement) :\n"
+            + json.dumps(etat, ensure_ascii=False))
+
+
+def run(workdir, out_json, model, max_turns, task=None):
+    VUS.clear()
     cle = os.environ.get("NVIDIA_API_KEY")
     log = open(os.path.join(workdir, "agent-journal.log"), "a", encoding="utf-8")
     def j(msg):
-        log.write(f"{datetime.datetime.now():%H:%M:%S} {msg}\n"); log.flush()
+        log.write(f"{datetime.datetime.now().astimezone().isoformat(timespec='seconds')} {msg}\n"); log.flush()
     t0 = time.time(); usage = {"input_tokens": 0, "output_tokens": 0}
     data = {"lanceur": f"agent_nvidia.py (API NVIDIA, {model})", "model": model}
     if not cle:
@@ -213,31 +390,75 @@ def run(workdir, out_json, model, max_turns):
                "(lister, lire, ecrire, zoom, extract_occurrences, traits). Les chemins sont relatifs au dossier de travail « . ». "
                "Lis une image avec `lire` (tuiles/…, apercus/…) ou `zoom`. Écris chaque sortie avec `ecrire` (contenu complet). "
                "Plans raster (0 mot) : tout se relève à l'œil. Parcours CHAQUE feuille plan en zooms de 600 pt × 600 pt au plus "
-               "(grille x=0,600,1200… ; y=0,600,…), et après chaque zoom ajoute avec `ajouter_occurrences` une ligne par symbole vu "
-               "(coordonnées lues sur les règles, repère écrit entre crochets dans la colonne note). Ne saute aucune fenêtre ; "
-               "`couverture` liste celles qui restent. `terminer` est refusé tant que la couverture n'est pas complète "
+               "(grille x=0,600,1200… ; y=0,600,…), et après chaque zoom ajoute avec `ajouter_occurrences` un objet par symbole vu "
+               "dans occurrences (feuille, label, x_pt, y_pt, note; coordonnées absolues lues sur les règles du PDF, "
+               "repère écrit entre crochets dans note). Ne saute aucune fenêtre ; "
+               "Demande au plus quatre zooms par réponse. `couverture` liste les régions dont l'image reste à transmettre; "
+               "la transmission ne prouve pas une lecture correcte. `terminer` est refusé tant que la couverture n'est pas complète "
                "et tant que le contrôle qualité (un libellé par appareil, repère cohérent avec le libellé, pas de doublon ni de trou "
                "de numérotation non justifié, chaque appareil de la nomenclature relevé ou mis en réserve) échoue.")
-    messages = [{"role": "system", "content": systeme},
-                {"role": "user", "content": "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."}]
+    tache_initiale = task if task is not None else "Relève le dossier de travail « . ». Commence par lire MANIFESTE.md."
+    messages = [{"role": "system", "content": systeme}, {"role": "user", "content": tache_initiale}]
     j(f"début  modèle={model} max_tours={max_turns} workdir={workdir}")
-    resume, tours, refus_q = None, 0, 0
+    resume, tours, refus_q, reponses_vides = None, 0, 0, 0
+    reprises_vides = 0
+    images_en_attente = {}   # id(message) -> region; local uniquement, jamais ajouté au JSON API
     try:
+        model_options = {}
+        if model == "moonshotai/kimi-k3":
+            effort = os.environ.get("RELEVE_NVIDIA_REASONING", "high")
+            if effort not in {"low", "high", "max"}:
+                raise ValueError("RELEVE_NVIDIA_REASONING doit être low, high ou max")
+            model_options["reasoning_effort"] = effort
         while tours < max_turns and resume is None:
             tours += 1
             alleger(messages)
+            transmis = {id(message) for message in messages if isinstance(message.get("content"), list)
+                        and any(part.get("type") == "image_url" for part in message["content"])}
+            images_en_attente = {mid: region for mid, region in images_en_attente.items() if mid in transmis}
             r = appel({"model": model, "messages": messages, "tools": OUTILS, "tool_choice": "auto",
-                       "max_tokens": 16000, "temperature": 0.2}, cle, j=j)
+                       "max_tokens": 16000, "temperature": 0.2, **model_options}, cle, j=j)
             u = r.get("usage") or {}
-            usage["input_tokens"] += u.get("prompt_tokens", 0); usage["output_tokens"] += u.get("completion_tokens", 0)
+            input_tokens, output_tokens = int(u.get("prompt_tokens") or 0), int(u.get("completion_tokens") or 0)
+            usage["input_tokens"] += input_tokens; usage["output_tokens"] += output_tokens
             m = r["choices"][0]["message"]
             appels = m.get("tool_calls") or []
-            messages.append({"role": "assistant", "content": m.get("content") or "", **({"tool_calls": appels} if appels else {})})
+            if appels or (m.get("content") or "").strip():
+                for region in images_en_attente.values():
+                    if region not in VUS:
+                        VUS.append(region)
+                images_en_attente.clear()
+            reason = r["choices"][0].get("finish_reason")
+            reason = reason if reason in {"stop", "length", "tool_calls", "content_filter", "function_call"} else "unknown"
+            j(f"API réponse finish_reason={reason} tool_calls={len(appels)} input_tokens={input_tokens} output_tokens={output_tokens}")
+            # NVIDIA Kimi-K3 requires the complete prior assistant message, including
+            # reasoning_content and tool_calls. Keep it in memory only, never in logs.
+            # https://build.nvidia.com/moonshotai/kimi-k3/modelcard
+            messages.append(m)
             if (m.get("content") or "").strip():
                 j("texte " + m["content"].strip()[:200].replace("\n", " "))
             if not appels:
+                reponses_vides = reponses_vides + 1 if not (m.get("content") or "").strip() else 0
+                if reponses_vides >= REPONSES_VIDES_MAX:
+                    if reprises_vides == 0 and tours < max_turns:
+                        checkpoint = checkpoint_reprise(workdir, tours, max_turns, refus_q,
+                                                       images_en_attente.values())
+                        messages = [{"role": "system", "content": systeme},
+                                    {"role": "user", "content": tache_initiale},
+                                    {"role": "user", "content": checkpoint}]
+                        images_en_attente.clear()
+                        reprises_vides = 1
+                        reponses_vides = 0
+                        j(f"reprise contexte frais 1/1 après réponses vides; tours_restants={max_turns - tours}")
+                        continue
+                    data.update(subtype=f"error_no_progress : {reponses_vides} réponses consécutives sans texte ni outil; "
+                                        f"finish_reason={reason}. Vérifier la réponse fournisseur avant de relancer.",
+                                is_error=True)
+                    j(data["subtype"])
+                    break
                 messages.append({"role": "user", "content": "Continue avec les outils ; appelle `terminer` quand toutes les sorties sont écrites."})
                 continue
+            reponses_vides = 0
             images = []
             for tc in appels:
                 nom = tc["function"]["name"]
@@ -248,7 +469,7 @@ def run(workdir, out_json, model, max_turns):
                 j(f"outil {nom} {json.dumps({k: (v if k != 'contenu' else f'<{len(v)} car.>') for k, v in a.items()}, ensure_ascii=False)[:200]}")
                 if nom == "terminer" and manquantes(workdir):
                     texte, img = ("refusé : feuille(s) plan pas entièrement parcourues en zooms de ≤600 pt. Fenêtres restantes "
-                                  "(x0,y0,x1,y1) : " + json.dumps({f: [[round(v) for v in r] for r in rs] for f, rs in manquantes(workdir).items()})), None
+                                  "(x0,y0,x1,y1) : " + json.dumps(manquantes(workdir))), None
                     j("contrôle couverture : terminer refusé")
                 elif nom == "terminer" and refus_q < REFUS_QUALITE_MAX and not controler(workdir)["conforme"]:
                     refus_q += 1
@@ -265,13 +486,24 @@ def run(workdir, out_json, model, max_turns):
                         texte, img = f"erreur : {e}", None
                 messages.append({"role": "tool", "tool_call_id": tc.get("id", nom), "content": texte})
                 if img:
-                    images.append((img, os.path.relpath(img, workdir)))
-            for img, rel in images:
-                try:
-                    messages.append(image_msg(img, rel))
-                except Exception as e:  # noqa — une image illisible ne doit pas tuer le relevé
-                    j(f"image ignorée {rel} : {e}")
-                    messages.append({"role": "user", "content": f"image {rel} illisible ({e}) — continue sans elle"})
+                    region = None
+                    if nom == "zoom":
+                        zoom = json.loads(texte)
+                        bounds = zoom["bounds_pt"]
+                        if max(bounds[2] - bounds[0], bounds[3] - bounds[1]) <= FENETRE + EPS_FENETRE:
+                            region = (zoom["feuille"], *bounds)
+                    rel = os.path.relpath(img, workdir)
+                    try:
+                        # Freeze bytes before another tool can overwrite the same PNG.
+                        # Defer messages until every tool result has been appended.
+                        images.append((image_msg(img, rel), region))
+                    except Exception as e:  # noqa — une image illisible ne doit pas tuer le relevé
+                        j(f"image ignorée {rel} : {e}")
+                        images.append(({"role": "user", "content": f"image {rel} illisible ({e}) — continue sans elle"}, None))
+            for message, region in images:
+                messages.append(message)
+                if region is not None:
+                    images_en_attente[id(message)] = region
     except Exception as e:  # noqa
         data.update(subtype=f"erreur API : {e}", is_error=True)
     manquants = [f for f in ("feuilles-classement.csv", "nomenclature.csv") if not os.path.isfile(os.path.join(workdir, f))]
@@ -284,6 +516,7 @@ def run(workdir, out_json, model, max_turns):
         data.update(subtype="success" if ok else ("error_max_turns" if resume is None else "sorties manquantes : " + ", ".join(manquants)),
                     is_error=not ok)
     data.update(num_turns=tours, duration_ms=int((time.time() - t0) * 1000), total_cost_usd=None, usage=usage,
+                fresh_recoveries=reprises_vides,
                 result=resume or "")
     j(f"fin  subtype={data['subtype']} tours={tours} jetons={usage}")
     json.dump(data, open(out_json, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
@@ -294,8 +527,9 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("out_json")
     ap.add_argument("--model", default=os.environ.get("RELEVE_NVIDIA_MODEL", MODELE))
     ap.add_argument("--max-turns", type=int, default=int(os.environ.get("RELEVE_MAX_TURNS", "200")))
+    ap.add_argument("--task", help="Consigne initiale explicite (ex. correction d'un relevé existant); contrôles inchangés")
     a = ap.parse_args()
-    sys.exit(run(os.path.abspath(a.workdir), a.out_json, a.model, a.max_turns))
+    sys.exit(run(os.path.abspath(a.workdir), a.out_json, a.model, a.max_turns, task=a.task))
 
 if __name__ == "__main__":
     main()

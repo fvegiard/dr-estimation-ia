@@ -84,7 +84,6 @@ def read_table(pages: list[pymupdf.Page], fmt: str) -> dict:
             body = [sp for sp in body if sp["origin"][1] < notes_y]
         subtitles += [sp["text"] for sp in spans if sp["origin"][1] < head_bottom - 25
                       and not sp["text"].startswith("BORDEREAU") and sp["size"] > 11.5 and sp["size"] < 14]
-        x0 = cols[0][1]
         seps = sorted({round(it[1].y, 1) for d in page.get_drawings() for it in d["items"]
                        if it[0] == "l" and abs(it[1].y - it[2].y) < 0.1 and abs(it[2].x - it[1].x) > 0.8 * W
                        and it[1].y > head_bottom})

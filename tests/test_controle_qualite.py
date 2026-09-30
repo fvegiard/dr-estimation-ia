@@ -1,6 +1,7 @@
 """Tests du contrôle qualité bloquant (releve/controle_qualite.py) : chaque règle détecte l'erreur introduite, et un relevé propre passe."""
 import importlib.util
 import pathlib
+import pytest
 
 SPEC = importlib.util.spec_from_file_location("cq", pathlib.Path(__file__).resolve().parents[1] / "releve" / "controle_qualite.py")
 cq = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(cq)
@@ -23,6 +24,93 @@ def regles(res):
 
 def test_releve_propre_conforme(tmp_path):
     assert cq.controler(dossier(tmp_path))["conforme"]
+
+
+@pytest.mark.parametrize("offset", [0, 3.9, 4])
+def test_q5_rejects_same_label_near_duplicate_with_distinct_reperes(tmp_path, offset):
+    occ = OCC.replace("P1,KLAXON,20,10", f"P1,KLAXON,{10 + offset},{10 + offset}")
+    result = cq.controler(dossier(tmp_path, occ=occ))
+    assert not result["conforme"]
+    assert any(e.startswith("Q5") and "position" in e for e in result["erreurs"])
+
+
+def test_q5_allows_distinct_labels_at_same_position_and_points_beyond_tolerance(tmp_path):
+    occ = OCC.replace("P1,KLAXON,20,10", "P1,KLAXON,14.1,10")
+    occ = occ.replace("P1,DETECTEUR THERMIQUE,30,10", "P1,DETECTEUR THERMIQUE,10,10")
+    assert cq.controler(dossier(tmp_path, occ=occ))["conforme"]
+
+
+@pytest.mark.parametrize("classement", [
+    "P1,plan,,\n",  # P2 missing
+    "P1,plan,,\nP2,legende,,\nP2,autre,,\n",  # duplicate classification
+    "P1,plan,,\nP2,legende,,\nUNKNOWN,autre,,\n",
+])
+def test_q1_requires_each_input_sheet_classified_once(tmp_path, classement):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,100,100\nP2,100,100\n", encoding="utf-8")
+    (tmp_path / "feuilles-classement.csv").write_text("feuille,type,echelle,note\n" + classement, encoding="utf-8")
+    result = cq.controler(work)
+    assert not result["conforme"]
+    assert "Q1" in regles(result)
+
+
+def test_q1_accepts_legends_and_other_sheets_without_occurrences(tmp_path):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,100,100\nL1,100,100\nX1,100,100\n", encoding="utf-8")
+    (tmp_path / "feuilles-classement.csv").write_text("feuille,type,echelle,note\nP1,plan,,\nL1,legende,,\nX1,autre,,\n", encoding="utf-8")
+    assert cq.controler(work)["conforme"]
+
+
+@pytest.mark.parametrize("sheet_type,occ", [("plans", "feuille,label,x_pt,y_pt,source,note\n"), ("plna", OCC)])
+def test_q1_rejects_unknown_type_even_with_reserves(tmp_path, sheet_type, occ):
+    work = dossier(tmp_path, occ=occ, reserves="KLAXON absent; DETECTEUR THERMIQUE absent")
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,{sheet_type},,\n", encoding="utf-8")
+    result = cq.controler(work)
+    assert not result["conforme"]
+    assert any(e.startswith("Q1") and "type" in e for e in result["erreurs"])
+
+
+@pytest.mark.parametrize("sheet_type", ["legende", "schema", "tableau", "detail", "autre", "remplacee"])
+def test_q1_accepts_documented_nonplan_types(tmp_path, sheet_type):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text("feuille,largeur_pt,hauteur_pt\nP1,100,100\nX1,100,100\n", encoding="utf-8")
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,plan,,\nX1,{sheet_type},,\n", encoding="utf-8")
+    assert cq.controler(work)["conforme"]
+
+
+@pytest.mark.parametrize("width", ["0", "-10", "nan", "inf", "invalid"])
+def test_q7_rejects_invalid_sheet_dimensions(tmp_path, width):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles.csv").write_text(f"feuille,largeur_pt,hauteur_pt\nP1,{width},100\n", encoding="utf-8")
+    result = cq.controler(work)
+    assert not result["conforme"]
+    assert "Q7" in regles(result)
+
+
+@pytest.mark.parametrize("x", ["15", "nan", "inf"])
+def test_q7_rejects_unknown_occurrence_sheet(tmp_path, x):
+    result = cq.controler(dossier(tmp_path, occ=OCC + f"UNKNOWN,KLAXON,{x},20,visuel,[K1.1]\n"))
+    assert not result["conforme"]
+    assert "Q7" in regles(result)
+
+
+@pytest.mark.parametrize("x", ["nan", "inf", "-inf"])
+def test_q7_rejects_nonfinite_coordinates(tmp_path, x):
+    result = cq.controler(dossier(tmp_path, occ=OCC.replace("P1,KLAXON,10,10", f"P1,KLAXON,{x},10")))
+    assert not result["conforme"]
+    assert "Q7" in regles(result)
+
+
+@pytest.mark.parametrize("excluded", ["1", "oui", "x", "true", " TRUE ", "X", " OUI "])
+def test_exclusions_match_renderer_without_false_duplicates(tmp_path, excluded):
+    rows = OCC.rstrip().splitlines()
+    occ = rows[0] + ",exclure\n" + "".join(row + ",\n" for row in rows[1:])
+    occ += f"P1,KLAXON,10,10,visuel,[K1.1],{excluded}\n"
+    result = cq.controler(dossier(tmp_path, occ=occ))
+    assert result["conforme"]
+    assert result["occurrences"] == 3
 
 
 def test_erreurs_introduites_detectees(tmp_path):
@@ -170,3 +258,131 @@ def test_q8_sans_voisin_reste_simple(tmp_path):
     e = [x for x in cq.controler(dossier(tmp_path, nomen=nomen))["erreurs"]
          if x.startswith("Q8") and "RELAIS" in x]
     assert e and "confusion probable" not in e[0]
+
+
+@pytest.mark.parametrize("sheet_type", ["schema", "tableau"])
+def test_q8_counts_legitimate_nonplan_takeoffs(tmp_path, sheet_type):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,{sheet_type},,\n", encoding="utf-8")
+    assert cq.controler(work)["conforme"]
+
+
+@pytest.mark.parametrize("sheet_type", ["legende", "autre"])
+def test_q8_does_not_count_legend_examples_as_takeoffs(tmp_path, sheet_type):
+    work = dossier(tmp_path)
+    (tmp_path / "feuilles-classement.csv").write_text(
+        f"feuille,type,echelle,note\nP1,{sheet_type},,\n", encoding="utf-8")
+    assert "Q8" in regles(cq.controler(work))
+
+
+@pytest.mark.parametrize("reserve", ["R-001 PRISE GFI : emplacement à confirmer", "R-001 ENTREPRISE : à confirmer"])
+def test_q8_reserve_for_longer_label_does_not_justify_shorter_label(tmp_path, reserve):
+    nomen = NOMEN + "PRISE,prise,cercle,,PC,Prise,leg\nPRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen, reserves=reserve))
+    assert any(e.startswith("Q8 'PRISE'") for e in result["erreurs"])
+
+
+def test_q8_distinct_complete_reserve_mentions_justify_both_labels(tmp_path):
+    nomen = NOMEN + "PRISE,prise,cercle,,PC,Prise,leg\nPRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen,
+        reserves="R-001 PRISE GFI : emplacement inconnu; R-002 PRISE : quantité à confirmer"))
+    assert result["conforme"]
+
+
+def test_q8_plaintext_complete_label_with_punctuation_is_preserved(tmp_path):
+    nomen = NOMEN + "PRISE,prise,cercle,,PC,Prise,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen, reserves="R-001: ‘prise’ — non localisée"))
+    assert result["conforme"]
+
+
+@pytest.mark.parametrize("separator", ["\n", "\r\n", "\r", "\v", "\f", "\x85", "\u2028", "\u2029"])
+def test_q8_label_split_over_lines_is_not_a_reserve(tmp_path, separator):
+    nomen = NOMEN + "PRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    result = cq.controler(dossier(tmp_path, nomen=nomen, reserves=f"R-001 PRISE{separator}GFI autre ligne"))
+    assert any(e.startswith("Q8 'PRISE GFI'") for e in result["erreurs"])
+
+
+@pytest.mark.parametrize("separator", [" ", "   ", "\t", "\u00a0", "\u2003", "\u202f", "\u3000"])
+def test_q8_horizontal_unicode_whitespace_still_justifies_label(tmp_path, separator):
+    nomen = NOMEN + "PRISE GFI,prise,cercle,,GFI,Prise GFI,leg\n"
+    assert cq.controler(dossier(tmp_path, nomen=nomen,
+        reserves=f"R-001 prise{separator}gfi : à confirmer"))["conforme"]
+
+
+@pytest.mark.parametrize("qte", ["20", "20.5", "0.5", ""])
+def test_q9_sums_explicit_quantity_without_integer_rounding(tmp_path, qte):
+    occ = ("feuille,label,x_pt,y_pt,source,note,qte\n"
+           f"P1,KLAXON,10,10,visuel,[K1.1],{qte}\n"
+           "P1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1],1\n")
+    expected = float(qte or 1)
+    work = dossier(tmp_path, occ=occ)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text(f"feuille,designation,qte\nP1,K,{qte or 1}\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert result["conforme"]
+    assert result["comparaison_reference"]["K"] == {"reference": expected, "ia": expected}
+
+
+def test_q9_legacy_rows_default_to_one(tmp_path):
+    work = dossier(tmp_path)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text("feuille,designation,qte\nP1,K,2\nP1,DT,1\n", encoding="utf-8")
+    assert cq.controler(work, str(reference), "P1", "P1")["conforme"]
+
+
+@pytest.mark.parametrize("reference_invalid,qte", [
+    (False, q) for q in ("nan", "inf", "-inf", "0", "-1", "invalid")
+] + [(True, q) for q in ("nan", "inf", "-inf", "-1", "invalid")])
+def test_invalid_quantity_blocks_quality_without_crashing(tmp_path, qte, reference_invalid):
+    occ = ("feuille,label,x_pt,y_pt,source,note,qte\n"
+           f"P1,KLAXON,10,10,visuel,[K1.1],{1 if reference_invalid else qte}\n"
+           "P1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1],1\n")
+    work = dossier(tmp_path, occ=occ)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text(f"feuille,designation,qte\nP1,K,{qte if reference_invalid else 1}\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert not result["conforme"]
+    assert any("quantité" in e or "qte" in e for e in result["erreurs"])
+
+
+def test_invalid_quantity_blocks_even_without_reference(tmp_path):
+    occ = OCC.replace("source,note\n", "source,note,qte\n")
+    occ = occ.replace("[K1.1]\n", "[K1.1],nan\n").replace("[K1.2]\n", "[K1.2],1\n").replace("[DT1.1]\n", "[DT1.1],1\n")
+    result = cq.controler(dossier(tmp_path, occ=occ))
+    assert not result["conforme"] and "Q0" in regles(result)
+
+
+def test_q9_quantity_sum_keeps_existing_five_percent_threshold(tmp_path):
+    occ = ("feuille,label,x_pt,y_pt,source,note,qte\n"
+           "P1,KLAXON,10,10,visuel,[K1.1],12.5\n"
+           "P1,KLAXON,20,10,visuel,[K1.2],7.5\n"
+           "P1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1],1\n")
+    work = dossier(tmp_path, occ=occ)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text("feuille,designation,qte\nP1,K,19\nP1,DT,1\n", encoding="utf-8")
+    assert "Q9" in regles(cq.controler(work, str(reference), "P1", "P1"))
+    reference.write_text("feuille,designation,qte\nP1,K,20\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert result["conforme"] and result["comparaison_reference"]["K"]["ia"] == 20
+    assert cq.TOLERANCE_REF == 0.05
+
+
+def test_q9_zero_reference_is_valid_when_family_is_absent(tmp_path):
+    occ = "feuille,label,x_pt,y_pt,source,note\nP1,DETECTEUR THERMIQUE,30,10,visuel,[DT1.1]\n"
+    work = dossier(tmp_path, occ=occ, reserves="KLAXON absent sur cette feuille")
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text("feuille,designation,qte\nP1,K,0\nP1,DT,1\n", encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert result["conforme"]
+    assert result["comparaison_reference"]["K"] == {"reference": 0, "ia": 0}
+
+
+@pytest.mark.parametrize("body", ["feuille,designation,qte\nP1,K,\n", "feuille,designation\nP1,K\n"])
+def test_q9_reference_quantity_must_be_explicit(tmp_path, body):
+    work = dossier(tmp_path)
+    reference = tmp_path / "synthetic-reference.csv"
+    reference.write_text(body, encoding="utf-8")
+    result = cq.controler(work, str(reference), "P1", "P1")
+    assert not result["conforme"]
+    assert any(e.startswith("Q9 quantité de référence invalide") for e in result["erreurs"])

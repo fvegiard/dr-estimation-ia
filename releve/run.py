@@ -5,22 +5,35 @@
 
     uv run releve/run.py <nom-de-soumission | chemin-du-dossier>     traite un dossier
     uv run releve/run.py --watch                                      surveille les INBOX et traite les nouveaux dossiers
-    uv run releve/run.py --reprendre <nom>                            rejoue seulement build_qpl + render_pdf (sans agent)
+    uv run releve/run.py --reprendre <nom>                            contrôle puis régénère les sorties (sans agent)
+    uv run releve/run.py <dossier> --agent nvidia --model <identifiant>  utilise explicitement NVIDIA
 
 Dossiers (hors du dépôt, données de Francis) :
     D:\\claude\\releve-auto\\INBOX\\<nom>\\      dépôt des PDF (plans, addendas, relevé de l'estimateur)
     D:\\claude\\releve-auto\\OUTBOX\\<nom>\\     résultat : .qpl + rasters, Plans-annotes.pdf, Rapport-de-metre.pdf, STATUT.md
     G:\\My Drive\\AI\\Releves-auto\\INBOX|OUTBOX  miroir Google Drive (utilisé si G: est monté dans WSL)
 
-Étapes : prepare.py (déterministe) → agent Claude Code en mode headless (`claude -p "/releve-planexpert …"`,
-doc : docs/code.claude.com_docs_en_headless.md) → build_qpl.py → render_pdf.py → STATUT.md.
+Étapes : prepare.py → agent NVIDIA ou Claude OAuth → controle_qualite.py → build_qpl.py
+→ render_pdf.py → rendu format-exemple → STATUT.md. Fournisseur explicite : --agent nvidia|sdk|cli.
+Sans option : RELEVE_AGENT, ou sdk (Claude OAuth) pour conserver la compatibilité.
 Un seul relevé à la fois (verrou). Journal : D:\\claude\\releve-auto\\journal.log
 """
 from __future__ import annotations
-import os, sys, json, time, shutil, subprocess, datetime, hashlib
+import os
+import sys
+import json
+import time
+import tempfile
+import shutil
+import subprocess
+import datetime
+import hashlib
+import argparse
+import ntpath
+import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = os.environ.get("RELEVE_BASE", "/mnt/d/claude/releve-auto")
+BASE = os.environ.get("RELEVE_BASE", "D:/claude/releve-auto" if os.name == "nt" else "/mnt/d/claude/releve-auto")
 INBOX, OUTBOX = os.path.join(BASE, "INBOX"), os.path.join(BASE, "OUTBOX")
 DRIVE = os.environ.get("RELEVE_DRIVE", "/mnt/g/My Drive/AI/Releves-auto")
 LOCK = os.path.join(BASE, ".verrou")
@@ -99,19 +112,30 @@ def release_lock():
 def agent(workdir, log_path):
     """Lance l'agent de relevé avec la compétence releve-planexpert (.claude/skills/releve-planexpert/SKILL.md).
     Par défaut : Claude Agent SDK (releve/agent_sdk.py, OAuth claude.ai). RELEVE_AGENT=nvidia : API NVIDIA (releve/agent_nvidia.py). RELEVE_AGENT=cli : `claude -p` headless (repli)."""
+    provider = os.environ.get("RELEVE_AGENT", "sdk")
+    if provider not in {"nvidia", "sdk", "cli"}:
+        raise ValueError(f"RELEVE_AGENT invalide : {provider!r}; choisir nvidia, sdk ou cli")
+    model = os.environ.get("RELEVE_NVIDIA_MODEL", "") if provider == "nvidia" else os.environ.get("RELEVE_MODEL", MODEL)
     res_path = os.path.join(workdir, "agent-resultat.json")
+    # A successful old run is not evidence for this provider invocation.
+    try:
+        os.remove(res_path)
+    except FileNotFoundError:
+        pass
     t0 = time.time()
     agent_env = {"RELEVE_TOOL_GUARD_ROOT": workdir}
-    if os.environ.get("RELEVE_AGENT", "sdk") == "nvidia":
+    if provider == "nvidia":
         # Clé NVIDIA_API_KEY héritée du processus ; sous WSL : WSLENV=NVIDIA_API_KEY/u au lancement (jamais journalisée).
         cmd = [sys.executable, "releve/agent_nvidia.py", workdir, res_path, "--max-turns", MAX_TURNS]
+        if model:
+            cmd += ["--model", model]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
             res = json.load(open(res_path, encoding="utf-8"))
         except Exception:  # noqa
             res = {"result": out[-2000:], "is_error": True, "subtype": "agent_nvidia sans résultat"}
-    elif os.environ.get("RELEVE_AGENT", "sdk") == "sdk":
-        cmd = ["uv", "run", "releve/agent_sdk.py", workdir, res_path, "--model", MODEL, "--max-turns", MAX_TURNS]
+    elif provider == "sdk":
+        cmd = ["uv", "run", "releve/agent_sdk.py", workdir, res_path, "--model", model, "--max-turns", MAX_TURNS]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
             res = json.load(open(res_path, encoding="utf-8"))
@@ -121,63 +145,183 @@ def agent(workdir, log_path):
         cmd = ["claude", "-p", f"/releve-planexpert {workdir}", "--output-format", "json", "--permission-mode", "acceptEdits",
                "--permission-prompts", "none",
                "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash(uv run releve/zoom.py *),Bash(uv run releve/extract_occurrences.py *),Bash(uv run releve/traits.py *),Bash(head *),Bash(sort *),Bash(cut *),Bash(cat *)",
-               "--add-dir", workdir, "--max-turns", MAX_TURNS, "--model", MODEL,
+               "--add-dir", workdir, "--max-turns", MAX_TURNS, "--model", model,
                "--mcp-config", '{"mcpServers":{}}', "--strict-mcp-config"]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
             data = json.loads(out)
             if isinstance(data, list):
-                data = next((d for d in data if d.get("type") == "result"), data[-1] if data else {})
+                data = next((d for d in data if isinstance(d, dict) and d.get("type") == "result"), data[-1] if data else {})
             res = data
         except json.JSONDecodeError:
             res = {"result": out[-2000:], "is_error": True, "subtype": "sortie non JSON"}
         json.dump(res, open(res_path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    if (not isinstance(res, dict) or not isinstance(res.get("is_error"), bool)
+            or not isinstance(res.get("subtype"), str) or not res["subtype"]
+            or (not res["is_error"] and res["subtype"] != "success")):
+        res = {"is_error": True, "subtype": f"agent_{provider} résultat invalide"}
+    res["provider"] = provider
+    res.setdefault("model", model or "non communiqué")
+    json.dump(res, open(res_path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     dur = time.time() - t0
     usage = res.get("usage", {}) or {}
-    log(f"agent terminé en {dur / 60:.1f} min ; tours {res.get('num_turns')} ; coût estimé {res.get('total_cost_usd')} $ ; "
+    log(f"agent {provider} ({res['model']}) terminé en {dur / 60:.1f} min ; tours {res.get('num_turns')} ; coût estimé {res.get('total_cost_usd')} $ ; "
         f"entrée {usage.get('input_tokens')} + cache {usage.get('cache_read_input_tokens')} / sortie {usage.get('output_tokens')} ; subtype {res.get('subtype')}")
     return code, res, dur
 
-def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
+def confined_output_child(folder, relative, *, flat=False):
+    """Validate either separator style and real-path confinement before publication."""
+    if not isinstance(relative, str) or not relative or ntpath.splitdrive(relative)[0]:
+        return False
+    normalized = relative.replace("\\", "/")
+    if normalized.startswith("/") or ".." in normalized.split("/") or (flat and "/" in normalized):
+        return False
+    root = os.path.realpath(folder)
+    candidate = os.path.realpath(os.path.join(folder, normalized))
+    try:
+        return os.path.commonpath([root, candidate]) == root
+    except ValueError:
+        return False
+
+
+def current_outputs(name, outdir, steps):
+    """Only outputs owned by stages completed in this invocation; never scan output folders."""
+    done = {s for s, _, result in steps if result == "ok"}
+    paths = []
+    if "render_pdf" in done:
+        paths += [f"{name}-{suffix}" for suffix in (
+            "Plans-annotes.pdf", "Rapport-de-metre.pdf", "Rapport-de-metre.md", "Dossier-complet.pdf")]
+    if "format_exemple" in done:
+        paths += [f"{name}-format-exemple.pdf", f"{name}-format-exemple.report.json"]
+        paths += [f"format-exemple/{f}" for f in ("estimate.json", "bordereau.csv", "plans.pdf", "reserves.md", "feuilles.json")]
+    if "build_qpl" in done:
+        project = f"{name}-planexpert"
+        qpl = f"{project}/{name}.qpl"
+        paths += [qpl, qpl + ".audit.json"]
+        if os.path.isfile(os.path.join(outdir, qpl)):
+            tree = ET.parse(os.path.join(outdir, qpl))
+            paths += [f"{project}/{p.attrib['FileName']}" for p in tree.findall(".//Plans/Plan")
+                      if confined_output_child(os.path.join(outdir, project), p.get("FileName"), flat=True)]
+    if any(s == "export natif Plan Expert" and result == "oui" for s, _, result in steps):
+        native = "export-natif-planexpert/resultat.json"
+        with open(os.path.join(outdir, native), encoding="utf-8") as fh:
+            result = json.load(fh)
+        paths += [native] + ["export-natif-planexpert/" + f.replace("\\", "/") for f in
+                            (result.get("etapes", {}).get("download", {}) or {}).get("fichiers", {})
+                            if confined_output_child(os.path.join(outdir, "export-natif-planexpert"), f)]
+    for relative in paths:
+        if not confined_output_child(outdir, relative):
+            raise ValueError(f"livrable hors du dossier de sortie : {relative}")
+        if not os.path.isfile(os.path.join(outdir, relative)):
+            raise ValueError(f"livrable requis absent : {relative}")
+    return sorted(set(paths))
+
+
+def publish_outputs(generation, outdir, outputs):
+    """Stage then replace, rolling back caught errors; not crash-safe or reader-atomic."""
+    for relative in outputs:
+        if not confined_output_child(outdir, relative):
+            raise ValueError(f"destination de publication non confinée : {relative}")
+    transaction = tempfile.mkdtemp(prefix=".publication-", dir=outdir)
+    prepared, promoted, created_dirs = [], [], []
+    keep_backup = False
+    try:
+        for index, relative in enumerate(outputs):
+            target = os.path.join(outdir, relative)
+            staged = os.path.join(transaction, f"new-{index}")
+            backup = os.path.join(transaction, f"old-{index}") if os.path.exists(target) else None
+            shutil.copy2(os.path.join(generation, relative), staged)
+            if backup is not None:
+                shutil.copy2(target, backup)
+            prepared.append((target, staged, backup))
+        for target, staged, backup in prepared:
+            missing, parent = [], os.path.dirname(target)
+            while not os.path.isdir(parent):
+                missing.append(parent)
+                parent = os.path.dirname(parent)
+            for directory in reversed(missing):
+                os.mkdir(directory)
+                created_dirs.append(directory)
+            os.replace(staged, target)
+            promoted.append((target, backup))
+    except Exception:
+        try:
+            for target, backup in reversed(promoted):
+                if backup is None:
+                    os.remove(target)
+                else:
+                    os.replace(backup, target)
+            for directory in reversed(created_dirs):
+                os.rmdir(directory)
+        except OSError as rollback_error:
+            keep_backup = True
+            raise OSError(f"restauration de publication incomplète; sauvegardes conservées : {transaction}") from rollback_error
+        raise
+    finally:
+        if not keep_backup:
+            shutil.rmtree(transaction, ignore_errors=True)
+
+
+def cleanup_generation(generation, outdir):
+    """Remove only this attempt's direct staging child; never follow a redirected path."""
+    root = os.path.realpath(outdir)
+    candidate = os.path.realpath(generation)
+    if (os.path.dirname(candidate) != root
+            or not os.path.basename(candidate).startswith(".generation-")
+            or candidate != os.path.abspath(generation)):
+        raise ValueError(f"nettoyage de génération non confiné : {generation}")
+    shutil.rmtree(candidate)
+
+
+def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None):
     L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{'TERMINÉ' if ok else 'ÉCHEC'}**"]
     if err: L += ["", f"Erreur : `{err}`"]
     L += ["", "## Entrées", "", "| fichier | octets | sha256 |", "|---|--:|---|"]
     for dp, _, fs in os.walk(inbox):
         for f in sorted(fs):
             p = os.path.join(dp, f); L.append(f"| {os.path.relpath(p, inbox)} | {os.path.getsize(p)} | {sha256(p)} |")
-    L += ["", "## Sorties", "", "| fichier | octets | sha256 |", "|---|--:|---|"]
-    for f in sorted(os.listdir(outdir)):
-        p = os.path.join(outdir, f)
-        if os.path.isfile(p) and not f.endswith(".png") and f != "STATUT.md" and not f.startswith("."):
-            L.append(f"| {f} | {os.path.getsize(p)} | {sha256(p)} |")
-    pe = os.path.join(outdir, f"{name}-planexpert", f"{name}.qpl")
-    if os.path.exists(pe):
-        L.append(f"| {name}-planexpert/{name}.qpl | {os.path.getsize(pe)} | {sha256(pe)} |")
-    L += ["", f"Le projet Plan Expert `{name}.qpl` est dans `{name}-planexpert/` avec ses rasters PNG : copier le dossier entier, "
-          "puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » et le rapport de métré ci-dessus sont rendus par `releve/render_pdf.py` à partir du même .qpl.", ""]
-    natif = os.path.join(outdir, "export-natif-planexpert", "resultat.json")
-    if os.path.exists(natif):
-        n = json.load(open(natif, encoding="utf-8"))
-        L += [f"**Export natif Plan Expert (VM mxlinux, MCP planexpert-vm) : {'oui' if n.get('ok') else 'non'}**"]
-        if n.get("erreur"): L += [f"- erreur : `{n['erreur']}`" + (f" · capture `{n.get('capture_erreur')}`" if n.get("capture_erreur") else "")]
-        for k, v in (n.get("etapes", {}).get("download", {}) or {}).get("fichiers", {}).items():
-            L += [f"- `export-natif-planexpert/{k}` · {v['octets']} o · sha256 {v['sha256']}"]
+    L += ["", "## Sorties", ""]
+    if ok:
+        L += ["| fichier | octets | sha256 |", "|---|--:|---|"]
+        for f in outputs if outputs is not None else current_outputs(name, outdir, steps):
+            p = os.path.join(outdir, f)
+            if os.path.isfile(p):
+                L.append(f"| {f} | {os.path.getsize(p)} | {sha256(p)} |")
+        L += ["", f"Le projet Plan Expert `{name}.qpl` est dans `{name}-planexpert/` avec ses rasters PNG : copier le dossier entier, "
+              "puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » et le rapport de métré ci-dessus sont rendus par `releve/render_pdf.py` à partir du même .qpl.", ""]
+    else:
+        L += ["**Aucun livrable validé pour cette exécution.** Les fichiers conservés dans ce dossier ou son miroir "
+              "sont des sorties antérieures ou partielles, non validées pour cette tentative. "
+              "Ne pas les utiliser comme résultat courant. Seul ce statut d'échec est publié.", ""]
+    native_result = next((r for s, _, r in reversed(steps) if s == "export natif Plan Expert"), None)
+    if ok and native_result is not None and not native_result.startswith("ignoré"):
+        L += [f"**Export natif Plan Expert (VM mxlinux, MCP planexpert-vm) : {'oui' if native_result == 'oui' else 'non'}**"]
+        if native_result != "oui": L += [f"- résultat de cette exécution : `{native_result}`"]
         L += [""]
     else:
         L += ["**Export natif Plan Expert : non** (étape non exécutée)", ""]
     L += ["## Étapes", "", "| étape | durée | résultat |", "|---|--:|---|"] + [f"| {s} | {d / 60:.1f} min | {r} |" for s, d, r in steps]
     usage = (res or {}).get("usage", {}) or {}
-    L += ["", f"## Agent de relevé — {(res or {}).get('lanceur') or 'claude -p (headless)'}", "", f"- modèle : `{MODEL}` · tours : {(res or {}).get('num_turns')} · sous-type : {(res or {}).get('subtype')}",
+    L += ["", f"## Agent de relevé — {(res or {}).get('lanceur') or (res or {}).get('provider') or 'non communiqué'}", "", f"- modèle : `{(res or {}).get('model', 'non communiqué')}` · tours : {(res or {}).get('num_turns')} · sous-type : {(res or {}).get('subtype')}",
           f"- coût estimé (client, `total_cost_usd`) : {(res or {}).get('total_cost_usd')} $ US",
           f"- jetons : entrée {usage.get('input_tokens')}, cache créé {usage.get('cache_creation_input_tokens')}, cache lu {usage.get('cache_read_input_tokens')}, sortie {usage.get('output_tokens')}",
           f"- session : `{(res or {}).get('session_id')}` · dossier de travail : `{workdir}`", ""]
-    if res and res.get("result"):
+    if ok and res and res.get("result"):
         L += ["### Résumé de l'agent", "", str(res["result"]).strip(), ""]
     for extra in ("reserves.md", "comparaison-estimateur.md"):
         p = os.path.join(workdir, extra)
         if os.path.exists(p):
             L += [f"## {extra}", "", open(p, encoding="utf-8").read(), ""]
-    open(os.path.join(outdir, "STATUT.md"), "w", encoding="utf-8").write("\n".join(L))
+    pending = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=outdir,
+                                         prefix=".statut-", suffix=".tmp", delete=False) as fh:
+            pending = fh.name
+            fh.write("\n".join(L))
+        os.replace(pending, os.path.join(outdir, "STATUT.md"))
+    finally:
+        if pending is not None and os.path.exists(pending):
+            os.remove(pending)
 
 def prepare_a_jour(inbox, workdir):
     """Vrai si inventaire.json du dossier de travail décrit exactement les fichiers actuels de l'INBOX (mêmes sha256)."""
@@ -193,11 +337,12 @@ def prepare_a_jour(inbox, workdir):
 
 def process(arg, reprendre=False):
     name, inbox = resolve_inbox(arg)
-    outdir = os.path.join(OUTBOX, name); workdir = os.path.join(outdir, "travail"); pe_dir = os.path.join(outdir, f"{name}-planexpert")
+    outdir = os.path.join(OUTBOX, name); workdir = os.path.join(outdir, "travail")
     os.makedirs(outdir, exist_ok=True)
     marker = os.path.join(outdir, ".en-cours"); open(marker, "w").write(str(os.getpid()))
     log_path = os.path.join(outdir, "journal-etapes.log")
     steps, res, ok, err = [], None, False, None
+    generation = None
     T = time.time()
     try:
         if not reprendre:
@@ -209,23 +354,37 @@ def process(arg, reprendre=False):
                 steps.append(("prepare", time.time() - t, "ok" if code == 0 else f"code {code}"))
                 if code: raise RuntimeError("prepare.py a échoué")
             code, res, dur = agent(workdir, log_path)
-            steps.append(("agent Claude", dur, f"{res.get('subtype')} / code {code}"))
-            if code:
+            steps.append((f"agent {res.get('provider', os.environ.get('RELEVE_AGENT', 'sdk'))}", dur, f"{res.get('subtype')} / code {code}"))
+            if code or res.get("is_error"):
                 raise RuntimeError(f"agent en échec (code {code}, subtype {res.get('subtype')})")
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
                     raise RuntimeError(f"l'agent n'a pas produit {f}")
+        t = time.time(); code, _ = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
+        steps.append(("controle_qualite", time.time() - t, "ok" if code == 0 else f"code {code}"))
+        if code: raise RuntimeError("controle_qualite.py a échoué")
+        # A fresh destination proves this attempt produced every published artifact.
+        # Keep failed attempts and previous public deliverables recoverable.
+        generation = tempfile.mkdtemp(prefix=".generation-", dir=outdir)
+        pe_dir = os.path.join(generation, f"{name}-planexpert")
         t = time.time(); code, _ = run(["uv", "run", "releve/build_qpl.py", workdir, name, pe_dir], log_path=log_path)
         steps.append(("build_qpl", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("build_qpl.py a échoué")
-        t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
+        t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, generation], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
+        t = time.time(); code, _ = run(["uv", "run", "-m", "src.estimer.render.from_releve",
+                                       workdir, os.path.join(generation, "format-exemple"),
+                                       "--render", os.path.join(generation, f"{name}-format-exemple.pdf"),
+                                       "--report", os.path.join(generation, f"{name}-format-exemple.report.json")],
+                                      log_path=log_path)
+        steps.append(("format_exemple", time.time() - t, "ok" if code == 0 else f"code {code}"))
+        if code: raise RuntimeError("format-exemple a échoué")
         ok = True
         if os.environ.get("RELEVE_NATIF", "1") == "1":     # export natif Plan Expert par la VM (MCP planexpert-vm) ; jamais bloquant
             if os.path.exists(PLANEXPERT_VM_CLI):
-                t = time.time(); code, out = run(["uv", "run", PLANEXPERT_VM_CLI, "--cli", "natif", pe_dir, outdir], log_path=log_path)
-                nat_dir = os.path.join(outdir, "export-natif-planexpert"); os.makedirs(nat_dir, exist_ok=True)
+                t = time.time(); code, out = run(["uv", "run", PLANEXPERT_VM_CLI, "--cli", "natif", pe_dir, generation], log_path=log_path)
+                nat_dir = os.path.join(generation, "export-natif-planexpert"); os.makedirs(nat_dir, exist_ok=True)
                 try:
                     nat = json.loads(out)
                 except json.JSONDecodeError:
@@ -236,23 +395,58 @@ def process(arg, reprendre=False):
                 log(f"export natif ignoré : composant absent ({PLANEXPERT_VM_CLI})")
                 steps.append(("export natif Plan Expert", 0, "ignoré — composant absent"))
     except Exception as e:  # noqa
-        err = str(e); log("ÉCHEC : " + err)
+        ok = False; err = str(e); log("ÉCHEC : " + err)
     if reprendre and os.path.exists(os.path.join(workdir, "agent-resultat.json")):
-        res = json.load(open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8"))
+        # Historical diagnostics are optional; the current QA/export steps decide success.
+        try:
+            with open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8") as fh:
+                previous = json.load(fh)
+            if isinstance(previous, dict):
+                res = previous
+            else:
+                log("diagnostic historique ignoré : objet JSON attendu")
+        except (OSError, ValueError, UnicodeError):
+            log("diagnostic historique ignoré : fichier illisible")
     steps.append(("total", time.time() - T, ""))
-    statut(name, inbox, outdir, workdir, steps, res, ok, err)
+    outputs = []
+    status_ready, preserve_previous_status = False, False
+    if ok:
+        try:
+            outputs = current_outputs(name, generation, steps)
+            # A status-generation/publication failure must preserve the previous bundle.
+            preserve_previous_status = True
+            statut(name, inbox, generation, workdir, steps, res, True, outputs=outputs)
+            publish_outputs(generation, outdir, [*outputs, "STATUT.md"])
+            status_ready = True
+        except Exception as e:  # noqa
+            ok, err = False, f"finalisation des livrables impossible : {e}"
+            log("ÉCHEC : " + err)
+    if not ok and not preserve_previous_status:
+        try:
+            statut(name, inbox, outdir, workdir, steps, res, False, err, outputs=outputs)
+            status_ready = True
+        except Exception as e:  # noqa
+            log(f"ÉCHEC : statut non publié, ancien statut conservé : {e}")
     try: os.remove(marker)
     except FileNotFoundError: pass
-    if drive_mounted():
+    if status_ready and drive_mounted():
         try:
             dst = os.path.join(DRIVE, "OUTBOX", name); os.makedirs(dst, exist_ok=True)
-            for f in os.listdir(outdir):
+            for f in ([*outputs, "STATUT.md"] if ok else ["STATUT.md"]):
                 p = os.path.join(outdir, f)
-                if os.path.isfile(p): shutil.copy2(p, dst)
-            if os.path.isdir(pe_dir): shutil.copytree(pe_dir, os.path.join(dst, os.path.basename(pe_dir)), dirs_exist_ok=True)
-            log(f"copié sur Drive : {dst}")
+                target = os.path.join(dst, f)
+                os.makedirs(os.path.dirname(target), exist_ok=True)
+                if os.path.isfile(p): shutil.copy2(p, target)
+            log(f"{'livrables copiés' if ok else 'statut d’échec uniquement copié'} sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
+    # Only the exact successful attempt is disposable; preserve failed native evidence too.
+    native_failed = any(s == "export natif Plan Expert" and r.startswith("non") for s, _, r in steps)
+    if ok and generation is not None and not native_failed:
+        try:
+            cleanup_generation(generation, outdir)
+        except (OSError, ValueError) as e:
+            log(f"génération conservée, nettoyage impossible : {e}")
     log(f"{'TERMINÉ' if ok else 'ÉCHEC'} {name} → {outdir}")
     return ok
 
@@ -273,23 +467,42 @@ def ready_dirs():
     return out
 
 def main():
-    a = sys.argv[1:]
-    if not a: sys.exit(__doc__)
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("dossier", nargs="?")
+    parser.add_argument("--watch", action="store_true")
+    parser.add_argument("--reprendre", action="store_true")
+    parser.add_argument("--agent", choices=("nvidia", "sdk", "cli"), default=os.environ.get("RELEVE_AGENT", "sdk"))
+    parser.add_argument("--model", help="identifiant du modèle chez le fournisseur choisi")
+    a = parser.parse_args()
+    if a.agent not in {"nvidia", "sdk", "cli"}:
+        parser.error("RELEVE_AGENT doit être nvidia, sdk ou cli")
+    if a.watch and (a.dossier or a.reprendre):
+        parser.error("--watch ne se combine pas avec un dossier ou --reprendre")
+    if not a.watch and not a.dossier:
+        parser.error("un dossier est requis")
     os.makedirs(INBOX, exist_ok=True); os.makedirs(OUTBOX, exist_ok=True)
     acquire_lock()
+    overrides = {"RELEVE_AGENT": a.agent}
+    if a.model:
+        overrides["RELEVE_NVIDIA_MODEL" if a.agent == "nvidia" else "RELEVE_MODEL"] = a.model
+    previous = {key: os.environ.get(key) for key in overrides}
+    os.environ.update(overrides)
     try:
-        if a[0] == "--watch":
+        if a.watch:
             log("surveillance des INBOX (Ctrl-C pour arrêter)")
             while True:
                 for n in ready_dirs():
                     process(n)
                 time.sleep(60)
-        elif a[0] == "--reprendre":
-            process(a[1], reprendre=True)
         else:
-            process(a[0])
+            return 0 if process(a.dossier, reprendre=a.reprendre) else 1
     finally:
         release_lock()
+        for key, value in previous.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
