@@ -29,11 +29,22 @@ REPERE = re.compile(r"\[?\b([A-Z]{1,4}\d?)(\d+)\.(\d+)\]?")
 TOLERANCE_REF = 0.05
 
 
-def lire_csv(p):
+def lire_csv(p, mal_formees=None):
+    """Lit un CSV en normalisant les clés. Une ligne ayant plus de champs que d'en-têtes
+    est signalée (csv.DictReader range le surplus dans une liste sous la clé None) : le
+    contrôle doit la rapporter comme erreur, jamais planter dessus."""
     if not os.path.isfile(p):
         return []
+    out = []
     with open(p, encoding="utf-8", newline="") as fh:
-        return [{(k or "").strip(): (v or "").strip() for k, v in r.items()} for r in csv.DictReader(fh)]
+        for i, r in enumerate(csv.DictReader(fh), start=2):
+            surplus = r.pop(None, None)
+            if surplus is not None and mal_formees is not None:
+                mal_formees.append(f"{os.path.basename(p)} ligne {i} : {len(surplus)} champ(s) en trop "
+                                   f"({', '.join(str(s) for s in surplus)[:80]}) — virgule non échappée ?")
+            out.append({(k or "").strip(): (v if isinstance(v, str) else " ".join(map(str, v or []))).strip()
+                        for k, v in r.items()})
+    return out
 
 
 def famille_de_repere(prefixe, nomenclature):
@@ -51,14 +62,17 @@ def famille_de_repere(prefixe, nomenclature):
 
 
 def controler(work, reference=None, feuille_ref=None, feuille=None):
-    err, avert = [], []
-    classement = lire_csv(os.path.join(work, "feuilles-classement.csv"))
-    nomen = lire_csv(os.path.join(work, "nomenclature.csv"))
-    occ = lire_csv(os.path.join(work, "occurrences-visuel.csv")) + lire_csv(os.path.join(work, "occurrences-texte.csv"))
+    err, avert, mal = [], [], []
+    classement = lire_csv(os.path.join(work, "feuilles-classement.csv"), mal)
+    nomen = lire_csv(os.path.join(work, "nomenclature.csv"), mal)
+    occ = lire_csv(os.path.join(work, "occurrences-visuel.csv"), mal) + lire_csv(os.path.join(work, "occurrences-texte.csv"), mal)
     occ = [o for o in occ if o.get("exclure") not in ("1", "oui")]
     tailles = {r["feuille"]: (float(r["largeur_pt"] or 0), float(r["hauteur_pt"] or 0)) for r in lire_csv(os.path.join(work, "feuilles.csv"))}
     reserves = open(os.path.join(work, "reserves.md"), encoding="utf-8").read() if os.path.isfile(os.path.join(work, "reserves.md")) else ""
 
+    # Q0 : lignes mal formées (champ en trop = virgule non échappée dans un libellé ou une note)
+    for m in mal:
+        err.append(f"Q0 ligne mal formée : {m}")
     # Q1
     for f in ("feuilles-classement.csv", "nomenclature.csv", "reserves.md", "rapport-releve.md"):
         p = os.path.join(work, f)

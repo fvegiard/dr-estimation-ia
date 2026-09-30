@@ -39,6 +39,19 @@ def test_trou_justifie_en_reserve(tmp_path):
     assert cq.controler(dossier(tmp_path, occ=occ, reserves="R-001 K1.3 hors feuille\nR-002 K1.3 et K1.4? non : K1.3"))["conforme"]
 
 
+def test_ligne_mal_formee_signalee_sans_planter(tmp_path):
+    """Un CSV d'agent avec une virgule non échappée ne doit pas faire planter le contrôle.
+
+    csv.DictReader range le surplus dans une liste sous la clé None : le contrôle
+    plantait dessus (AttributeError) au lieu de rapporter la ligne. Constaté sur la
+    nomenclature produite par gemma-4-31b.
+    """
+    nomen = NOMEN + "SIRENE, extérieure,alarme,carre,,S,SIRENE,leg,champ en trop\n"
+    r = cq.controler(dossier(tmp_path, nomen=nomen))
+    assert "Q0" in regles(r)
+    assert any("champ" in e and "trop" in e for e in r["erreurs"])
+
+
 def test_ecart_reference_bloquant(tmp_path):
     w = dossier(tmp_path)
     ref = tmp_path / "ref.csv"; ref.write_text("feuille,designation,qte\nX,K,2\nX,DT,5\n", encoding="utf-8")
