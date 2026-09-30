@@ -61,6 +61,42 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
    exporte son propre rapport/PDF natifs : la vérification la plus forte (le logiciel du client accepte le fichier),
    mais **Windows + VM uniquement**, aucun équivalent possible en bac à sable cloud.
 
+## Critère d'acceptation (obligatoire — jamais en dessous de l'estimateur)
+Le relevé IA peut améliorer sur l'estimateur, mais **ne doit jamais être accepté s'il est pire** que son
+relevé de référence (`.qpl`, `releve.xlsx` ou équivalent). Ce n'est pas une aspiration : c'est une porte
+mesurée, avec une procédure fixe, jamais une affirmation de supériorité garantie.
+1. **Identification d'abord, à l'aveugle.** Relève depuis les plans et addendas originaux SEULEMENT,
+   avant d'ouvrir le `.qpl`/relevé de l'estimateur. Ne jamais lire la réponse de l'estimateur pendant
+   l'identification — ça invalide la mesure (comme l'essai HR26-14, §Autonomie point 2).
+2. **Geler ce premier résultat** (commit) avant toute comparaison.
+3. **Comparer ensuite** au `.qpl`/relevé de l'estimateur (`src/validation/compare_qpl.py`).
+4. **Classer chaque désaccord** : omission, doublon, mauvaise famille, mauvaise portée (scope), mauvais
+   rattachement de feuille. Un simple compte global (rappel/précision) ne suffit pas comme preuve
+   d'acceptation — chaque désaccord individuel doit être expliqué.
+5. **Justifier chaque désaccord sur la source originale** (le plan, pas l'un ou l'autre relevé) : retourner
+   au plan/à la cédule/à l'addenda pour trancher, y compris quand c'est l'ESTIMATEUR qui s'est trompé —
+   une erreur constatée chez l'estimateur ne s'accepte pas sans preuve sur le plan non plus.
+6. **Corriger et revérifier** avant d'accepter — pas seulement noter l'écart et livrer quand même.
+7. **Une quantité plus élevée seule n'est jamais une amélioration.** Une IA qui compte plus n'est pas
+   automatiquement meilleure ; seule la justification plan-par-plan (étape 5) compte.
+8. **Si le gold/la référence ou une portée nécessaire est indisponible**, le rapport dit « vérification
+   incomplète » — ne jamais certifier « pas pire que l'estimateur » sans avoir pu vérifier. L'absence de
+   preuve n'est pas une preuve d'absence de régression.
+9. Le format visuel approuvé (§Autonomie point 2, E08/E09) reste inchangé par ce critère : l'acceptation
+   porte sur les quantités/positions, jamais sur une dégradation du rendu pour gagner du temps.
+
+Sources de plans originaux disponibles pour l'identification (accès vérifié, procédure détaillée et
+limites exactes : `docs/sources-cloud-plans-originaux.md`) :
+- Google Drive « plan expert qpl » (lien public, lecture anonyme) → sous-dossier `original` = dossiers de
+  soumission bruts ; `EXEMPLE SORTIE LLM AI` et `SORTIE LLM AI - S-*` = sorties déjà produites, jamais une
+  entrée de relevé.
+- SharePoint « Mes projets » (Daniel Dupuis, lien public, module `src/apprentissage/sharepoint.py::MesProjets`
+  avec `racine="/personal/ddupuis_dreelectrique_com/Documents/Documents/DANIEL-FRANCIS-JO/Mes projets"` —
+  **pas** la racine par défaut du module, périmée).
+Avant de relever depuis l'une ou l'autre source : vérifier le rôle réel de chaque fichier (un dossier de
+soumission mélange plans, correspondance, devis/prix — ne jamais relever depuis un sous-dossier `Prix` ou
+une pièce jointe de courriel comme s'il s'agissait d'un plan).
+
 ## Commandes
 Action unique pour un nouveau dossier (parcours canonique — tout le reste orchestré par `run.py` lui-même :
 `prepare.py` → son propre agent (§Agents, processus séparé — pas un sous-agent de session) → `build_qpl.py`
