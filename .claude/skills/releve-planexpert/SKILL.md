@@ -84,6 +84,23 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
      plan et en détail) se compte UNE fois, sur la feuille de son niveau ; note la feuille écartée dans `reserves.md` ;
    - un symbole visible mais absent de la légende (« TS », « CME », équipement mécanique, borne de recharge…) se relève quand même
      sous un label « à confirmer » ET s'inscrit dans `reserves.md` — un objet vu et non relevé sans réserve est une faute.
+3b. **Un libellé que tu as écrit et que tu ne relèves jamais est presque toujours une confusion, pas une absence.**
+   Avant de terminer, compare `nomenclature.csv` aux libellés réellement employés dans les `occurrences-*.csv`. Pour chaque
+   libellé jamais employé : soit l'appareil est réellement absent du projet — alors écris-le dans `reserves.md` avec la
+   feuille et la zone vérifiées — soit tu l'as compté sous le libellé d'un appareil voisin, et le relevé est faux.
+   Le contrôle `Q8` bloque ce cas ; ne le contourne pas en effaçant la ligne de la nomenclature.
+   Constaté sur DSI01 (kimi-k3, 2026-09-29) : `AVERTISSEUR FUMEE AUTONOME` lu dans la légende, écrit dans la nomenclature,
+   jamais relevé — ses 36 appareils comptés en `DETECTEUR FUMEE` (13 attendus, 40 relevés). Une seule confusion coûtait
+   36 marques sur 122, soit le tiers de la feuille.
+   Les paires qui se confondent le plus (même forme, même famille, étiquette voisine ou absente) :
+   - **avertisseur de fumée autonome 120V** (alimenté, souvent mural, dans les logements) ≠ **détecteur de fumée** du réseau
+     d'alarme (relié au panneau, souvent au plafond des corridors et locaux communs) ;
+   - **détecteur thermique 135°F** ≠ **200°F** : si la température n'est pas lisible, relève un seul libellé générique
+     ET mets la distinction en réserve — n'invente pas la répartition ;
+   - **klaxon** (avertisseur sonore d'alarme) ≠ **avertisseur piezo** ≠ **strobe** ;
+   - **module adressable** simple ≠ double ≠ **relais adressable**.
+   Quand deux appareils partagent la forme et la famille, c'est la position qui tranche (logement privé vs aire commune,
+   mur vs plafond) : dis dans `note` ce qui a tranché.
 4. **Occurrences visuelles** → `occurrences-visuel.csv` (`feuille,label,x_pt,y_pt,source,note`, `source=visuel`) : parcours
    **toutes** les tuiles de chaque feuille `plan` et relève les symboles sans étiquette (prises duplex, DDFT, enseignes de sortie,
    phares, postes manuels, klaxons non étiquetés, sectionneurs, raccordements d'équipements…). Coordonnées lues sur les règles

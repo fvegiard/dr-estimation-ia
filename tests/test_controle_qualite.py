@@ -111,3 +111,40 @@ def test_q10_releve_lu_sans_avertissement(tmp_path):
     """Un relevé aux coordonnées lues ne déclenche ni erreur ni avertissement Q10."""
     r = cq.controler(dossier(tmp_path, occ=_occ(LUES)))
     assert not any(e.startswith("Q10") for e in r["erreurs"] + r["avertissements"])
+
+
+def test_q8_nomme_la_confusion_probable(tmp_path):
+    """Un libellé jamais relevé est le plus souvent absorbé par un voisin de même famille et forme.
+
+    Cas réel kimi-k3 sur DSI01 : AVERTISSEUR FUMEE AUTONOME lu dans la légende, écrit dans la
+    nomenclature, jamais relevé ; ses 36 appareils comptés en DETECTEUR FUMEE. Q8 doit nommer le
+    voisin pour que « il manque un appareil » devienne « lequel l'a absorbé »."""
+    nomen = (NOMEN + "AVERTISSEUR FUMEE AUTONOME,alarme,cercle,,,avertisseur 120V,leg\n"
+                     "DETECTEUR FUMEE,alarme,cercle,,,detecteur reseau,leg\n")
+    occ = OCC + "P1,DETECTEUR FUMEE,45,10,visuel,[DF1.1]\nP1,DETECTEUR FUMEE,55,10,visuel,[DF1.2]\n"
+    e = [x for x in cq.controler(dossier(tmp_path, nomen=nomen, occ=occ))["erreurs"]
+         if x.startswith("Q8") and "AVERTISSEUR FUMEE AUTONOME" in x]
+    assert e and "confusion probable avec 'DETECTEUR FUMEE'" in e[0] and "2 marques" in e[0]
+
+
+def test_q8_prefere_le_voisin_qui_partage_les_mots(tmp_path):
+    """Le voisin le plus probable partage le vocabulaire, pas seulement la famille.
+
+    Sans ce classement, DETECTEUR THERMIQUE 135F était rattaché au libellé le plus fréquent
+    (DETECTEUR FUMEE) au lieu du générique qui l'absorbe réellement."""
+    nomen = (NOMEN + "DETECTEUR THERMIQUE 135F,alarme,cercle,,,thermique fixe,leg\n"
+                     "DETECTEUR FUMEE,alarme,cercle,,,fumee,leg\n")
+    occ = ("feuille,label,x_pt,y_pt,source,note\n"
+           + "".join(f"P1,DETECTEUR FUMEE,{10+i},10,visuel,[DF1.{i+1}]\n" for i in range(5))
+           + "P1,DETECTEUR THERMIQUE,80,10,visuel,[DT1.1]\n")
+    e = [x for x in cq.controler(dossier(tmp_path, nomen=nomen, occ=occ))["erreurs"]
+         if x.startswith("Q8") and "135F" in x]
+    assert e and "'DETECTEUR THERMIQUE'" in e[0] and "mot(s) en commun" in e[0]
+
+
+def test_q8_sans_voisin_reste_simple(tmp_path):
+    """Sans voisin de même famille et forme, Q8 ne doit pas inventer de piste."""
+    nomen = NOMEN + "RELAIS ADRESSABLE,distribution,losange,,,relais,leg\n"
+    e = [x for x in cq.controler(dossier(tmp_path, nomen=nomen))["erreurs"]
+         if x.startswith("Q8") and "RELAIS" in x]
+    assert e and "confusion probable" not in e[0]

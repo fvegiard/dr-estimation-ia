@@ -105,6 +105,32 @@ def famille_de_repere(prefixe, nomenclature):
     return out
 
 
+MOTS_VIDES = {"DE", "DU", "LA", "LE", "ET", "A", "D", "L", "UNITE", "TYPE"}
+
+
+def piste_confusion(lab, comptes, fiche):
+    """Nomme le libellé qui a probablement absorbé `lab`, ou '' si aucun candidat.
+
+    Un libellé jamais employé est rarement un appareil absent : il est compté sous un voisin.
+    On classe les libellés employés par mots significatifs partagés (DETECTEUR THERMIQUE 135F →
+    DETECTEUR THERMIQUE), puis par nombre de marques. Sans mot commun, on accepte un voisin de
+    même famille et même forme ; sinon on n'invente pas de piste."""
+    mots = {m for m in re.split(r"[^A-Z0-9]+", (lab or "").upper()) if m and m not in MOTS_VIDES}
+    meilleurs = []
+    for autre, n in comptes.items():
+        if not autre or autre == lab or not n:
+            continue
+        communs = len(mots & {m for m in re.split(r"[^A-Z0-9]+", autre.upper()) if m and m not in MOTS_VIDES})
+        meme_type = fiche.get(autre) is not None and fiche.get(autre) == fiche.get(lab)
+        if communs or meme_type:
+            meilleurs.append((communs, n, autre, meme_type))
+    if not meilleurs:
+        return ""
+    communs, n, autre, meme_type = max(meilleurs)
+    motif = (f"{communs} mot(s) en commun" if communs else "même famille et même forme")
+    return f" — confusion probable avec {autre!r} ({n} marques, {motif})"
+
+
 def controler(work, reference=None, feuille_ref=None, feuille=None):
     err, avert, mal = [], [], []
     classement = lire_csv(os.path.join(work, "feuilles-classement.csv"), mal)
@@ -177,9 +203,11 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
             err.append(f"Q7 coordonnées hors feuille : {o.get('feuille')} {o.get('label')} ({x}, {y})")
     # Q8
     comptes = collections.Counter(o.get("label") for o in occ if o.get("feuille") in plans)
+    fiche = {n.get("label"): (n.get("famille", ""), n.get("forme", "")) for n in nomen}
     for lab in sorted(labels):
         if lab and not comptes.get(lab) and lab not in reserves:
-            err.append(f"Q8 {lab!r} est dans la nomenclature mais n'est relevé sur aucun plan (ni justifié en réserve)")
+            err.append(f"Q8 {lab!r} est dans la nomenclature mais n'est relevé sur aucun plan "
+                       f"(ni justifié en réserve){piste_confusion(lab, comptes, fiche)}")
     # Q9
     comparaison = None
     if reference and feuille_ref:
