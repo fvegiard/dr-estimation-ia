@@ -85,17 +85,20 @@ mesurée, avec une procédure fixe, jamais une affirmation de supériorité gara
 9. Le format visuel approuvé (§Autonomie point 2, E08/E09) reste inchangé par ce critère : l'acceptation
    porte sur les quantités/positions, jamais sur une dégradation du rendu pour gagner du temps.
 
-Sources de plans originaux disponibles pour l'identification (accès vérifié, procédure détaillée et
-limites exactes : `docs/sources-cloud-plans-originaux.md`) :
+Sources cloud disponibles pour l'identification (accès vérifié, procédure détaillée, rôle exact des
+dossiers et limites : `docs/sources-cloud-plans-originaux.md`) :
 - Google Drive « plan expert qpl » (lien public, lecture anonyme) → sous-dossier `original` = dossiers de
-  soumission bruts ; `EXEMPLE SORTIE LLM AI` et `SORTIE LLM AI - S-*` = sorties déjà produites, jamais une
-  entrée de relevé.
+  soumission, à rôle mixte (voir ci-dessous) ; `EXEMPLE SORTIE LLM AI` et `SORTIE LLM AI - S-*` = sorties
+  déjà produites, jamais une entrée de relevé.
 - SharePoint « Mes projets » (Daniel Dupuis, lien public, module `src/apprentissage/sharepoint.py::MesProjets`
   avec `racine="/personal/ddupuis_dreelectrique_com/Documents/Documents/DANIEL-FRANCIS-JO/Mes projets"` —
-  **pas** la racine par défaut du module, périmée).
-Avant de relever depuis l'une ou l'autre source : vérifier le rôle réel de chaque fichier (un dossier de
-soumission mélange plans, correspondance, devis/prix — ne jamais relever depuis un sous-dossier `Prix` ou
-une pièce jointe de courriel comme s'il s'agissait d'un plan).
+  **pas** la racine par défaut du module, périmée). **C'est d'abord l'emplacement de la référence de
+  l'estimateur** (le module y rapatrie le `.qpl` et les PNG marqués de Daniel Dupuis) — ne jamais présenter
+  ce dossier comme un corpus de plans bruts ; chaque fichier y est à vérifier individuellement avant usage.
+Chaque fichier, dans l'une ou l'autre source, se vérifie individuellement avant d'être relevé : exclure
+systématiquement un sous-dossier `Prix`/devis ou la réponse de l'estimateur (`.qpl`, PNG marqués). Un plan
+ou un addenda réellement joint à un courriel reste une source légitime une fois son contenu extrait et son
+rôle vérifié — la vérification porte sur le fichier, pas sur son type de contenant.
 
 ## Commandes
 Action unique pour un nouveau dossier (parcours canonique — tout le reste orchestré par `run.py` lui-même :
