@@ -59,3 +59,37 @@ def test_ecart_reference_bloquant(tmp_path):
     assert not r["conforme"] and any("famille DT" in e for e in r["erreurs"])
     ref.write_text("feuille,designation,qte\nX,K,2\nX,DT,1\n", encoding="utf-8")
     assert cq.controler(w, str(ref), "X")["conforme"]
+
+
+def _occ(points):
+    lignes = "".join(f"P1,KLAXON,{x},{y},visuel,[K1.{i}]\n" for i, (x, y) in enumerate(points, start=1))
+    return "feuille,label,x_pt,y_pt,source,note\n" + lignes
+
+
+# un relevé lu sur un plan : coordonnées quelconques (aucun alignement)
+LUES = [(13, 47), (56, 12), (28, 73), (91, 35), (44, 68), (7, 22), (62, 51), (35, 19), (78, 84), (21, 60)]
+# un relevé inventé : tout tombe sur des multiples de 10, comme gemma-4-31b sur DSI01
+INVENTEES = [(10, 40), (50, 10), (30, 70), (90, 30), (40, 60), (10, 20), (60, 50), (30, 10), (80, 80), (20, 60)]
+
+
+def test_q10_coordonnees_lues_ne_declenchent_pas():
+    """Aucune fausse alerte : des positions réelles ne s'alignent pas sur une grille."""
+    assert cq.grille_suspecte(LUES) is None
+
+
+def test_q10_grille_inventee_bloquante(tmp_path):
+    """53/53 marques multiples de 10 en x ET en y : le modèle invente au lieu de lire."""
+    r = cq.controler(dossier(tmp_path, occ=_occ(INVENTEES)))
+    assert "Q10" in regles(r)
+    assert r["grilles_suspectes"]["P1"] == {"pas": 10, "alignees": 10, "total": 10}
+    assert not r["conforme"]
+
+
+def test_q10_ignore_les_petits_releves():
+    """Sous le seuil, l'alignement reste une coïncidence plausible : on n'accuse pas."""
+    assert cq.grille_suspecte(INVENTEES[:4]) is None
+
+
+def test_q10_tolere_quelques_coincidences():
+    """Une minorité de coordonnées rondes dans un relevé lu ne doit pas bloquer."""
+    assert cq.grille_suspecte(LUES + INVENTEES[:2]) is None

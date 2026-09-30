@@ -13,7 +13,13 @@ Un succès technique de l'agent (fichiers écrits) ne prouve pas un relevé exac
   Q6 trous dans une suite de repères (K1.1, K1.2, K1.6 → K1.3-K1.5 manquent) non expliqués dans reserves.md ;
   Q7 coordonnées hors de la feuille ;
   Q8 appareil de la nomenclature jamais relevé sur les plans et absent de reserves.md ;
-  Q9 (si une référence est fournie) écart par famille > 5 % de la référence.
+  Q9 (si une référence est fournie) écart par famille > 5 % de la référence ;
+  Q10 coordonnées fabriquées sur une grille mentale au lieu d'être lues sur le plan.
+
+Q10 : un symbole réel tombe sur une coordonnée quelconque. Si presque toutes les marques sont des
+multiples ronds (10 pt, 25 pt…), le modèle a inventé des positions au lieu de les lire — run2 Gemma
+DSI01 du 2026-09-29 : 53/53 marques multiples de 10 en x ET en y, soit une chance sur 100^53, et
+aucune ne tombait sur un symbole. Contrôle aveugle : il ne demande ni référence ni ancrage.
 """
 from __future__ import annotations
 
@@ -27,6 +33,32 @@ import sys
 
 REPERE = re.compile(r"\[?\b([A-Z]{1,4}\d?)(\d+)\.(\d+)\]?")
 TOLERANCE_REF = 0.05
+PAS_GRILLE = (10, 25, 50)     # pas ronds typiques d'une position inventée
+MIN_GRILLE = 8                # en dessous, la coïncidence reste plausible
+SEUIL_GRILLE = 0.80           # part de marques alignées à partir de laquelle on bloque
+
+
+def coordonnees(o):
+    """(x, y) d'une occurrence, ou None si illisible."""
+    try:
+        return float(o.get("x_pt") or o.get("x")), float(o.get("y_pt") or o.get("y"))
+    except (TypeError, ValueError):
+        return None
+
+
+def grille_suspecte(points, pas=PAS_GRILLE, minimum=MIN_GRILLE, seuil=SEUIL_GRILLE):
+    """Plus petit pas sur lequel au moins `seuil` des points sont alignés en x ET en y.
+
+    Renvoie (pas, nombre_aligné, total) ou None. Des positions lues sur un plan ne
+    s'alignent pas : la probabilité que n marques tombent toutes sur un multiple de 10
+    dans les deux axes est de 100^-n."""
+    if len(points) < minimum:
+        return None
+    for p in sorted(pas):
+        n = sum(1 for x, y in points if x % p == 0 and y % p == 0)
+        if n >= seuil * len(points):
+            return p, n, len(points)
+    return None
 
 
 def lire_csv(p, mal_formees=None):
@@ -154,8 +186,22 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         for f, c in comparaison.items():
             if abs(c["ia"] - c["reference"]) > TOLERANCE_REF * max(c["reference"], 1):
                 err.append(f"Q9 {feuille_ref} famille {f} : IA {c['ia']} / référence {c['reference']}")
+    # Q10 : positions inventées sur une grille au lieu d'être lues sur le plan
+    par_feuille = collections.defaultdict(list)
+    for o in occ:
+        c = coordonnees(o)
+        if c:
+            par_feuille[o.get("feuille")].append(c)
+    grilles = {}
+    for f, pts in sorted(par_feuille.items()):
+        g = grille_suspecte(pts)
+        if g:
+            pas, n, tot = g
+            grilles[f] = {"pas": pas, "alignees": n, "total": tot}
+            err.append(f"Q10 {f} : {n}/{tot} marques sur une grille de {pas} pt (x et y) — positions "
+                       f"inventées, pas lues sur le plan")
     res = {"conforme": not err, "erreurs": err, "avertissements": avert, "occurrences": len(occ), "reperes_lus": n_reperes,
-           "comparaison_reference": comparaison}
+           "comparaison_reference": comparaison, "grilles_suspectes": grilles}
     json.dump(res, open(os.path.join(work, "qualite.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     return res
 
