@@ -143,6 +143,40 @@ def test_accents_rendus_par_la_police_du_pdf():
     assert phrase in relu[0].get_text()
 
 
+def test_zero_occurrence_plan_sheet_is_kept(tmp_path):
+    """A classified `plan` sheet with no counted symbol must still ship in the output (old renderer:
+    `sheets = ... type == "plan" or by_sheet.get(f)`), not silently vanish from Plans-annotes.pdf."""
+    work = make_workdir(tmp_path)
+    doc = pymupdf.open()
+    doc.new_page(width=W, height=H).insert_text((650, 480), "E02", fontsize=14)
+    doc.save(str(work / "feuilles" / "P3.pdf"))
+    with open(work / "feuilles.csv", "a", newline="", encoding="utf-8") as fh:
+        csv.DictWriter(fh, fieldnames=["feuille", "fichier", "page", "largeur_pt", "hauteur_pt"]).writerow(
+            {"feuille": "P3", "fichier": "plans.pdf", "page": 3, "largeur_pt": W, "hauteur_pt": H})
+    with open(work / "feuilles-classement.csv", "a", newline="", encoding="utf-8") as fh:
+        csv.DictWriter(fh, fieldnames=["feuille", "type", "echelle", "note"]).writerow(
+            {"feuille": "P3", "type": "plan", "echelle": "", "note": "cartouche=E02 · aucun appareil relevé"})
+
+    out = tmp_path / "out"
+    res = build(work, out)
+    assert res["sheets"] == 3, "P3 (classé plan, 0 occurrence) doit être compté"
+    est = json.loads((out / "estimate.json").read_text(encoding="utf-8"))
+    assert "E02" in [s["sheet"] for s in est["sheets"]]
+    assert pymupdf.open(out / "plans.pdf").page_count == 3, "la page P3 doit être copiée dans plans.pdf"
+
+    sheets = load_input(out)
+    names = [s.name for s in sheets]
+    assert "E02" in names, "load_input() ne doit pas filtrer les feuilles sans repère"
+    e02 = next(s for s in sheets if s.name == "E02")
+    assert e02.items == []
+
+    pdf = tmp_path / "rendu.pdf"
+    rep = render(sheets, out / "plans.pdf", pdf)
+    assert len(rep["sheets"]) == 3
+    doc = pymupdf.open(pdf)
+    assert any("E02" in doc[p - 1].get_text() for p in (s["plan_page"] for s in rep["sheets"]))
+
+
 def test_ascii_upper_reste_plie():
     """Écart conservé : les colonnes de code servent de clé de jointure avec le bordereau
     de l'estimateur, lui-même sans accents. Les plier des deux côtés garde le rapprochement."""

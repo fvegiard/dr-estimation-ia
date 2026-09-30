@@ -269,7 +269,9 @@ def load_input(in_dir: Path) -> list[Sheet]:
         fmt = formats.get(name) or next((bord[(name, it.repere)].get("format") for it in sh.items
                                          if bord.get((name, it.repere), {}).get("format")), None)
         sh.format = fmt if fmt in ("materiel", "agrege", "travaux") else "materiel"
-    return sorted((s for s in sheets.values() if s.items), key=lambda s: (s.page, s.name))
+    # Keep every sheet the producer declared, even with zero items: a classified plan sheet with no
+    # counted symbol yet must still ship in the output instead of silently vanishing from it.
+    return sorted(sheets.values(), key=lambda s: (s.page, s.name))
 
 
 def to_points(sheet: Sheet, page_w: float, page_h: float):

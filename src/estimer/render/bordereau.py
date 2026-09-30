@@ -165,14 +165,17 @@ def _modele_cell(its: list[Item], code: str, materiel: str) -> str:
 
 
 def aggregate_rows(sheet: Sheet) -> list[dict]:
-    """One row per family (agrege) or per family + portee (travaux), in legend order."""
+    """One row per family + portee, in legend order (travaux always showed `portee`; agrege now groups by it
+    too, even though its columns don't display it, so an INSTALLER and a CONSERVER device sharing a code no
+    longer silently combine into one quantity — a sheet genuinely uniform in portee, the normal case for an
+    agrege sheet of existing equipment, renders identically to before: one row per code either way)."""
     by: dict = {}
     for it in sheet.sorted_items():
-        key = it.code if sheet.format == "agrege" else (it.code, it.portee or "A PRECISER")
+        key = (it.code, it.portee or "A PRECISER")
         by.setdefault(key, []).append(it)
     rows = []
     for key, its in by.items():
-        code = key if isinstance(key, str) else key[0]
+        code = key[0]
         mat = next((it.materiel for it in its if it.materiel), code)
         presc = "; ".join(_distinct(it.prescription for it in its)) or "Aucune prescription ajoutee au releve."
         row = {"id": code, "famille": mat, "modele": _modele_cell(its, code, mat), "prescription": presc,

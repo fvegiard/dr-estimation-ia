@@ -17,7 +17,7 @@ import pytest
 from src.estimer.render import from_exemple as FX
 from src.estimer.render import load_input, render
 from src.estimer.render import style as S
-from src.estimer.render.bordereau import rows_per_page, wrap
+from src.estimer.render.bordereau import aggregate_rows, rows_per_page, wrap
 from src.estimer.render.data import Item, Sheet
 
 from conftest import run_cli
@@ -185,6 +185,26 @@ def test_reserve_override(tmp_path):
     write_input(tmp_path / "in", pts, reserve_cleared=5)
     sheets = load_input(tmp_path / "in")
     assert sheets[0].n_reserves == len(pts) - 5
+
+
+def test_aggrege_does_not_merge_distinct_portee():
+    """An `agrege` sheet mixing an INSTALLER and a CONSERVER device under the same code must not silently
+    combine their quantities into one row (the code used to group by `code` alone on agrege sheets)."""
+    sheet = Sheet("E01", 1, W, H, format="agrege", items=[
+        Item(sheet="E01", page=1, x=0, y=0, code="PC", repere="PC-01", materiel="PRISE", portee="INSTALLER", qte=1),
+        Item(sheet="E01", page=1, x=0, y=0, code="PC", repere="PC-02", materiel="PRISE", portee="INSTALLER", qte=1),
+        Item(sheet="E01", page=1, x=0, y=0, code="PC", repere="PC-03", materiel="PRISE", portee="CONSERVER", qte=1),
+    ])
+    rows = aggregate_rows(sheet)
+    assert len(rows) == 2, "INSTALLER et CONSERVER doivent rester deux lignes, pas une quantite fusionnee"
+    qte_by_portee = {r["items"][0].portee: r["qte"] for r in rows}
+    assert qte_by_portee == {"INSTALLER": "2", "CONSERVER": "1"}
+    # a sheet uniform in portee (the normal agrege case: existing equipment, all CONSERVER) is unaffected
+    uniform = Sheet("E06", 1, W, H, format="agrege", items=[
+        Item(sheet="E06", page=1, x=0, y=0, code="T", repere="T-01", materiel="THERMOSTAT", portee="CONSERVER", qte=1),
+        Item(sheet="E06", page=1, x=0, y=0, code="T", repere="T-02", materiel="THERMOSTAT", portee="CONSERVER", qte=1),
+    ])
+    assert len(aggregate_rows(uniform)) == 1
 
 
 def test_plain_estimator_output_px_scaling(tmp_path):

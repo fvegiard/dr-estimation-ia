@@ -44,6 +44,7 @@ def main(work, name, out_dir):
     # rejouer le rendu. N'échoue pas le pipeline sur un chevauchement (une feuille très dense peut n'avoir
     # aucun espace libre) mais le signale de façon non manquable : c'est à l'auto-supervision (CLAUDE.md) de
     # juger si c'est acceptable.
+    rep["reperes"] = res["reperes"]
     rep["conformite"] = {"encadre_hors_espace_libre": chevauche,
                          "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"}
     (out_dir / f"{name}-rendu-rapport.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")

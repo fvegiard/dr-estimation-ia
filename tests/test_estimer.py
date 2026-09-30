@@ -281,6 +281,51 @@ def test_legend_codes_learnt_from_text_layer(tmp_path):
     assert LG.tag_detections({0: []}) == ([], {})
 
 
+def test_sheet_table_resolves_interleaved_bordereau_pages(tmp_path):
+    """Plans-annotes.pdf now interleaves each sheet's bordereau page(s) after its plan page (render_vectoriel.py),
+    so page index != sheet index. sheet_table() must use the `<name> - plan` bookmarks to find the right page,
+    not assume doc[i] is sheet i."""
+    from src.estimer import gold as G
+
+    d = tmp_path / "S-TEST"
+    d.mkdir()
+    (d / "feuilles-classement.csv").write_text(
+        "feuille,type,echelle,note\nA,plan,,cartouche=E100\nB,plan,,cartouche=E200\n", encoding="utf-8")
+    doc = pymupdf.open()
+    for i, (name, tag) in enumerate((("E100", "plan-A"), ("E200", "plan-B"))):
+        p = doc.new_page(width=200 + i, height=100)   # distinct size per sheet, to tell pages apart
+        p.insert_text((10, 50), tag, fontsize=10)
+        b = doc.new_page(width=300, height=150)        # its bordereau page, same-ish shape regardless of sheet
+        b.insert_text((10, 50), f"bordereau-{name}", fontsize=10)
+    doc.set_toc([[1, "E100 - plan", 1], [2, "Bordereau materiel E100", 2],
+                [1, "E200 - plan", 3], [2, "Bordereau materiel E200", 4]])
+    doc.save(d / "Plans-annotes.pdf")
+
+    sheets = {s.display: s for s in G.sheet_table(d)}
+    assert sheets["E100"].page == 0 and sheets["E200"].page == 2
+    opened = pymupdf.open(d / "Plans-annotes.pdf")
+    assert "plan-A" in opened[sheets["E100"].page].get_text()
+    assert "plan-B" in opened[sheets["E200"].page].get_text()
+
+
+def test_sheet_table_falls_back_without_bookmarks(tmp_path):
+    """Older raster Plans-annotes.pdf (releve/render_pdf.py, pre-vector) never wrote bookmarks: one page per
+    sheet stays the rule, unchanged."""
+    from src.estimer import gold as G
+
+    d = tmp_path / "S-OLD"
+    d.mkdir()
+    (d / "feuilles-classement.csv").write_text(
+        "feuille,type,echelle,note\nA,plan,,cartouche=E100\nB,plan,,cartouche=E200\n", encoding="utf-8")
+    doc = pymupdf.open()
+    doc.new_page(width=200, height=100)
+    doc.new_page(width=201, height=100)
+    doc.save(d / "Plans-annotes.pdf")   # no set_toc(): no bookmarks, like the old renderer
+
+    sheets = {s.display: s for s in G.sheet_table(d)}
+    assert sheets["E100"].page == 0 and sheets["E200"].page == 1
+
+
 def test_merge_tags_labels_nearby_visual_detection():
     from src.estimer import legend as LG
     from src.estimer.pipeline import merge_tags

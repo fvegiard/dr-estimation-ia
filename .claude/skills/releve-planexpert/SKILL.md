@@ -58,9 +58,17 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
 - **indetermine** : `KS`
 
 ## Méthode (dans cet ordre)
-1. **Classer les feuilles** → `feuilles-classement.csv` (`feuille,type,echelle,note`). `type` ∈ `plan` (plan d'étage/toiture
+1. **Classer les feuilles** → `feuilles-classement.csv` (`feuille,type,echelle,note,bordereau`). `type` ∈ `plan` (plan d'étage/toiture
    avec appareils à compter), `legende`, `schema` (unifilaire, distribution), `tableau` (cédules de panneaux), `detail`, `autre`.
    `echelle` = dénominateur métrique lu dans le cartouche (ex. `100` pour 1:100), vide si non lu. Ouvre chaque aperçu.
+   `bordereau` (optionnel — voir `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` §4) choisit le format du bordereau
+   produit ; vide = déduit automatiquement (`materiel` si `type=schema` ou discipline incendie, `travaux` si toute la
+   feuille est en secours/urgence, sinon `agrege`). **Renseigne `bordereau=materiel` explicitement dès que la feuille
+   mélange des portées différentes** (`INSTALLER` et `CONSERVER`/`REMPLACER` du même appareil, ex. une feuille de
+   rénovation avec du neuf ET de l'existant conservé) : `agrege` n'affiche pas la colonne portée et n'est correct que
+   pour une feuille entièrement homogène (typiquement : que de l'existant conservé, comme les feuilles E01/E06/E09
+   de l'exemplaire). En cas de doute entre `materiel` (une ligne par repère, portée visible) et `agrege` (une ligne
+   par famille, plus compact), préfère `materiel` — il ne perd jamais d'information.
    Le nom de feuille donné par `prepare.py` est provisoire (lu par regex, parfois pris dans une bulle de détail ou absent :
    `<fichier>-pNN`) : lis le VRAI numéro et le titre dans le cartouche de l'aperçu et écris-les dans la colonne `note`
    (`cartouche=E401 · REZ-DE-CHAUSSÉE ÉCLAIRAGE`). AUCUNE page ne doit rester non classée. Distingue aussi le neuf de l'existant

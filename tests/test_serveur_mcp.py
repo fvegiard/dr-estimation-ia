@@ -75,9 +75,15 @@ async def _chaine(tmp_path):
         assert liv["produit"], liv
         assert liv["reperes"] == 9
         assert {"ESSAI-RELEVE.pdf", "ESSAI.qpl"} <= set(liv["fichiers"])
+        assert liv["a_verifier"] == [], "l'encadré doit tenir dans l'espace libre sur ce plan synthétique"
         page = await c.call_tool("voir_image", {"dossier": "ESSAI", "chemin": "sortie/ESSAI-RELEVE.pdf#1", "largeur_max": 800})
         assert page.content[0].type == "image"
-    return tmp_path / "ESSAI" / "sortie" / "ESSAI-RELEVE.pdf"
+    sortie = tmp_path / "ESSAI" / "sortie"
+    # -RELEVE.pdf doit être une copie du rendu déjà produit par render_vectoriel.py (même build()+render()),
+    # pas un second rendu indépendant dans un répertoire séparé (sortie/format-exemple/) : même contenu.
+    assert (sortie / "ESSAI-RELEVE.pdf").read_bytes() == (sortie / "ESSAI-Plans-annotes.pdf").read_bytes()
+    assert not (sortie / "format-exemple").exists()
+    return sortie / "ESSAI-RELEVE.pdf"
 
 
 def test_chaine_complete(tmp_path, monkeypatch):

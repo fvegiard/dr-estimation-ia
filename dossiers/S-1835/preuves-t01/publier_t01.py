@@ -4,7 +4,7 @@
 
 Run after analyse_t01.py (which rewrote WORKDIR/occurrences-*.csv). OUTBOX_DIR = <OUTBOX>/S-1835, WORKDIR = OUTBOX_DIR/travail.
 Steps: classement + nomenclature + reserves (+ the proposed rapport-releve.md, embedded in the report) in WORKDIR,
-build_qpl.py and render_pdf.py (no agent, no native Plan Expert export: RELEVE_NATIF=0), releve.xlsx through
+build_qpl.py, render_vectoriel.py and render_pdf.py (no agent, no native Plan Expert export: RELEVE_NATIF=0), releve.xlsx through
 outils/assembler_dossier.py run in a scratch directory (so it cannot overwrite files owned by others), STATUT.md through
 releve/run.py::statut plus the addendum sections, then copies the files this fix owns into DOSSIER_DIR and rewrites
 SHA256SUMS.txt. Every figure written here comes from resume-t01.json, the CSV next to it or the Drive inventory.
@@ -223,7 +223,9 @@ def main(inbox, outbox, dossier):
     write(os.path.join(work, "rapport-releve.md"), proposals(dossier, R))
 
     steps, pe = [], os.path.join(outbox, f"{S}-planexpert")
-    for name, cmd in (("build_qpl", ["releve/build_qpl.py", work, S, pe]), ("render_pdf", ["releve/render_pdf.py", work, S, outbox])):
+    for name, cmd in (("build_qpl", ["releve/build_qpl.py", work, S, pe]),
+                      ("render_vectoriel", ["releve/render_vectoriel.py", work, S, outbox]),
+                      ("render_pdf", ["releve/render_pdf.py", work, S, outbox])):
         t = time.time()
         subprocess.run([sys.executable] + cmd, cwd=REPO, check=True, env=dict(os.environ, RELEVE_NATIF="0"))
         steps.append((name, time.time() - t, "ok"))

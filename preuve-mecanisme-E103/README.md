@@ -34,10 +34,31 @@ par Francis (`apprentissage/hr26-14-exemplaire/SOURCE.txt`, E08/E09) à partir d
 
 Scripts lancés directement en Python (pas `uv run` : l'environnement de cette session a déjà tous les
 paquets requis installés globalement — voir le rapport de routage dans la conversation pour le détail des
-vérifications de disponibilité). **Aucun agent Claude n'a été invoqué** (`releve/agent_sdk.py`,
-`agent_nvidia.py`, `claude -p` sont tous indisponibles dans ce bac à sable — voir audit de routage) :
-l'étape « agent » a été remplacée par mon identification directe (§2 ci-dessus), conformément à la demande
-explicite de Francis de travailler sans délégation pour cette preuve.
+vérifications de disponibilité). **Aucun agent Claude imbriqué n'a été invoqué** (`releve/agent_sdk.py`,
+`agent_nvidia.py`, `claude -p` sont tous indisponibles dans ce bac à sable — vérifié : `claude_agent_sdk`
+non installé, `CLAUDE_CODE_OAUTH_TOKEN`/`NVIDIA_API_KEY` absents, binaire `claude` introuvable) : l'étape
+« agent » de `run.py` n'a PAS tourné. Elle a été remplacée par mon identification directe (§2 ci-dessus),
+conformément à la demande explicite de Francis de travailler sans délégation — c'est la route documentée
+pour toute session OpenHands cloud sans ces accès (voir `CLAUDE.md` §Agents, « Session cloud OpenHands »).
+
+**Modèle demandé vs modèle réellement exécuté** : `releve/run.py` demande `RELEVE_MODEL` (défaut `"opus"`
+dans le code) pour SA route automatisée — non pertinent ici puisque cette route n'a pas tourné. Le modèle
+qui a réellement produit ce dossier est celui de la session elle-même, tel qu'observé dans son propre
+contexte système au moment de l'exécution (pas déduit d'un défaut de code) : Claude Sonnet 5
+(`claude-sonnet-5`), session OpenHands Cloud, 2026-09-30.
+
+## Régénéré le 2026-09-30 après les corrections issues de la revue de PR #9
+
+Les livrables ont été reproduits avec les mêmes données sources (`nomenclature.csv`, `occurrences-visuel.csv`,
+`feuilles-classement.csv`, `reserves.md` — inchangés) mais le moteur corrigé, pour rester une preuve à jour :
+- `PREUVE01-Dossier-complet.pdf` garde maintenant ses 7 calques OCG (0 avant le correctif — voir §Contrôles
+  de conformité de `CLAUDE.md`).
+- `PREUVE01-rendu-rapport.json` porte désormais un champ `reperes` au niveau racine (6), lu par le serveur
+  MCP sans refaire le rendu une seconde fois.
+Sans effet visible sur cet échantillon (une seule feuille, format `materiel`, 0 chevauchement d'encadré) :
+le correctif des feuilles à zéro repère (rien à ajouter ici, la feuille en a 6), le correctif du bordereau
+`agrege`/portée (cette feuille est en format `materiel`, non concerné) et le statut « À VÉRIFIER » (aucun
+chevauchement sur cette feuille).
 
 ## Cible visuelle de comparaison
 

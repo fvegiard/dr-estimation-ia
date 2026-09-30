@@ -19,11 +19,13 @@ DENY = "deny"
 def _decouper(command: str) -> list[str]:
     """Découpe une commande en arguments sans manger les antislash des chemins Windows.
 
-    En mode POSIX, shlex traite « \\ » comme une échappement : « C:\\Users\\f » devient « C:Usersf »,
-    et tout argument Windows légitime se retrouve refusé comme « hors du dossier de travail ».
+    shlex.split() en mode POSIX traite « \\ » comme une échappement : « ..\\secret.txt » devient
+    silencieusement « ..secret.txt » (le séparateur Windows disparaît sans laisser de trace, et avec
+    lui la preuve d'une tentative de sortie du dossier de travail écrite en syntaxe Windows) ; « C:\\Users\\f »
+    devient « C:Usersf ». Toujours utiliser le mode non-POSIX (aucune interprétation d'échappement) avec
+    un retrait manuel des guillemets appariés : les antislash survivent intacts jusqu'à
+    `_is_safe_shell_path`, qui les traite comme un séparateur suspect quel que soit l'OS d'exécution.
     """
-    if os.name != "nt":
-        return shlex.split(command)
     argv = []
     for token in shlex.split(command, posix=False):
         if len(token) >= 2 and token[0] == token[-1] and token[0] in "\"'":
@@ -102,6 +104,10 @@ def _is_safe_shell_path(token: str, cwd: str, root: str) -> bool:
     if token in {".", ".."}:
         return False
     if any(ch in token for ch in ("*", "?", "[")):
+        return False
+    if "\\" in token:
+        # Jamais légitime ici (aucun nom de fichier du dépôt n'en contient) : peut déguiser un
+        # séparateur Windows (« ..\secret.txt ») qui échapperait au dossier de travail sur cet OS.
         return False
     # Nom simple seulement : ni séparateur (les chemins Windows utilisent « \\ »), ni lettre de lecteur.
     nu = "/" not in token and "\\" not in token and not os.path.splitdrive(token)[0]

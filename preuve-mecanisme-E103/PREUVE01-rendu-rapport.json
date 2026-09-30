@@ -25,6 +25,7 @@
    "box_in_free_space": true
   }
  ],
+ "reperes": 6,
  "conformite": {
   "encadre_hors_espace_libre": [],
   "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
