@@ -127,6 +127,38 @@ def test_one_delivered_zoom_can_finish_with_independent_quality_pass(tmp_path, m
     assert an.manquantes(work) == {}
 
 
+def test_batch_freezes_each_zoom_before_shared_image_path_is_overwritten(tmp_path, monkeypatch):
+    work, _ = _work(tmp_path, monkeypatch, windows=2)
+    requests, rendered = [], {}
+
+    def render_same_path(workdir, name, args):
+        assert name == "zoom"
+        region = tuple(args)
+        # Like zoom.py's integer-based names, these fractional crops collide.
+        image = tmp_path / ("zoom-" + "-".join(str(int(v)) for v in args[1:]) + ".png")
+        image.write_bytes(repr(region).encode())
+        rendered[region] = "data:image/png;base64," + base64.b64encode(image.read_bytes()).decode()
+        return 0, str(image)
+
+    calls = [_call("zoom", dict(feuille="P1", x0=x, y0=0, x1=x + 599, y1=599), f"zoom-{i}")
+             for i, x in enumerate((0.1, 0.2))]
+
+    def fake_api(body, key, **kwargs):
+        requests.append(copy.deepcopy(body))
+        return _reply(calls if len(requests) == 1 else [_call("couverture", {}, "coverage")])
+
+    monkeypatch.setattr(an, "script", render_same_path)
+    monkeypatch.setattr(an, "appel", fake_api)
+    an.run(work, str(tmp_path / "result.json"), "unit-test/model", 2)
+    assert len(list(tmp_path.glob("zoom-*.png"))) == 1, "Fixture must overwrite one path"
+    assert len(rendered) == 2 and len(set(rendered.values())) == 2
+    assert _images(requests) == set(rendered.values()), "Each crop's original bytes must reach the API"
+    assert set(an.VUS) == set(rendered), "Credited regions must match the distinct delivered crops"
+    batch = requests[1]["messages"][3:]
+    assert [message["role"] for message in batch] == ["tool", "tool", "user", "user"]
+    assert [message["tool_call_id"] for message in batch[:2]] == ["zoom-0", "zoom-1"]
+
+
 def test_failed_api_exchange_does_not_confirm_image_delivery(tmp_path, monkeypatch):
     work, _ = _work(tmp_path, monkeypatch)
     requests = []

@@ -447,16 +447,18 @@ def run(workdir, out_json, model, max_turns, task=None):
                         bounds = zoom["bounds_pt"]
                         if max(bounds[2] - bounds[0], bounds[3] - bounds[1]) <= FENETRE + EPS_FENETRE:
                             region = (zoom["feuille"], *bounds)
-                    images.append((img, os.path.relpath(img, workdir), region))
-            for img, rel, region in images:
-                try:
-                    message = image_msg(img, rel)
-                    messages.append(message)
-                    if region is not None:
-                        images_en_attente[id(message)] = region
-                except Exception as e:  # noqa — une image illisible ne doit pas tuer le relevé
-                    j(f"image ignorée {rel} : {e}")
-                    messages.append({"role": "user", "content": f"image {rel} illisible ({e}) — continue sans elle"})
+                    rel = os.path.relpath(img, workdir)
+                    try:
+                        # Freeze bytes before another tool can overwrite the same PNG.
+                        # Defer messages until every tool result has been appended.
+                        images.append((image_msg(img, rel), region))
+                    except Exception as e:  # noqa — une image illisible ne doit pas tuer le relevé
+                        j(f"image ignorée {rel} : {e}")
+                        images.append(({"role": "user", "content": f"image {rel} illisible ({e}) — continue sans elle"}, None))
+            for message, region in images:
+                messages.append(message)
+                if region is not None:
+                    images_en_attente[id(message)] = region
     except Exception as e:  # noqa
         data.update(subtype=f"erreur API : {e}", is_error=True)
     manquants = [f for f in ("feuilles-classement.csv", "nomenclature.csv") if not os.path.isfile(os.path.join(workdir, f))]
