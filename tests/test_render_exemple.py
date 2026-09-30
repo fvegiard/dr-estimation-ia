@@ -228,9 +228,27 @@ def test_two_sheets_order(tmp_path):
     assert "page 5" in doc[3].get_text()
 
 
-def test_wrap_truncates_long_cells():
+def test_wrap_never_truncates_long_cells():
+    """Plus de '...' : la ligne du bordereau grandit (correction des cellules tronquées de l'EXEMPLE)."""
     lines = wrap("mot " * 400, 9, 300)
-    assert len(lines) == S.B_MAX_CELL_LINES and lines[-1].endswith("...")
+    assert " ".join(lines).split() == ["mot"] * 400 and not lines[-1].endswith("...")
+    assert len(wrap("mot " * 400, 9, 300, max_lines=S.B_MAX_CELL_LINES)) == S.B_MAX_CELL_LINES
+
+
+def test_corrections_exemple_journal():
+    from src.estimer.render import corrections_exemple as C
+    j = []
+    assert C.corriger_cellule("E01", "T", "source", "voir note7 lotA circuit120V15A", {}, j) \
+        == "voir note 7 lot A circuit 120V 15A"
+    assert C.corriger_cellule("E03", "AF", "modele", "Non renseigne", {}, j) == C.MODELE_NON_INDIQUE
+    assert C.corriger_cellule("E01", "I", "source", "quantite physique a confirme...", {}, j) \
+        == "quantite physique a confirmer."
+    assert C.corriger_cellule("E06", "CH", "source", "Conserve (note 8). Forme compacte...", {}, j) \
+        == "Conserve (note 8). " + C.RENVOI_NOTES
+    assert C.corriger_cellule("EU", "BD", "source", "A enlever. B. A enlever. C.", {}, j) == "A enlever. B. C."
+    assert C.corriger_cellule("E01", "I", "source", "7,8,9 NEMA5-20R", {}, j) == "7,8,9 NEMA 5-20R"
+    assert {r for e in j for r in e["regles"]} >= {"ESPACE-MOT-CHIFFRE", "MODELE-VIDE", "TRONCATURE",
+                                                     "PHRASE-DOUBLEE", "ESPACE-NORME"}
 
 
 def test_item_reserve_default_and_seq():

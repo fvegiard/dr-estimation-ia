@@ -44,3 +44,6 @@ refs/normes/*
 !refs/normes/INDEX.md
 
 dossiers/*/export-natif/[sS]-1???.pdf
+
+# serveur MCP : dossiers de travail locaux
+travail-mcp/

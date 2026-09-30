@@ -1,0 +1,58 @@
+name: Savoir humain (OneDrive + Google Drive)
+
+# Reconstruit apprentissage/lien-humain directement depuis les deux liens publics :
+#   - OneDrive « Mes projets » (Daniel Dupuis) : .qpl + pages PNG = ce que l'estimateur fait dans Plan Expert
+#   - Google Drive « original » : les documents reçus
+# Rien ne passe par le PC de Francis (ni Z:, ni G:, ni synchro).
+
+on:
+  push:
+    branches: [Copilot_Pcunderstand-desktop-goal]
+    paths: [".github/workflows/savoir-humain.yml", "src/apprentissage/**"]
+  workflow_dispatch:
+    inputs:
+      fils:
+        description: "Téléchargements en parallèle"
+        default: "12"
+  schedule:
+    - cron: "0 7 * * 1"   # chaque lundi : prend les nouveaux projets
+
+permissions:
+  contents: write
+
+concurrency:
+  group: savoir-humain
+  cancel-in-progress: false
+
+jobs:
+  construire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Construire le savoir humain depuis les liens publics
+        run: |
+          python -m src.apprentissage.lien_humain --fils "${{ inputs.fils || '12' }}" \
+            --cache-qpl "$RUNNER_TEMP/qpl"
+      - name: Contrôle
+        run: |
+          python - <<'PY'
+          import json
+          c = json.load(open("apprentissage/lien-humain/connaissance.json", encoding="utf-8"))
+          r = json.load(open("apprentissage/lien-humain/recus.json", encoding="utf-8"))
+          print(f"{c['projets']} projets, {c['marques']} marques, {c['libelles']} libellés, {len(r)} projets reliés aux documents reçus")
+          assert c["projets"] > 300 and c["marques"] > 100000, "corpus anormalement petit"
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apprentissage/lien-humain
+          git diff --cached --quiet && exit 0
+          git commit -m "Savoir humain reconstruit depuis OneDrive + Google Drive (action) [skip ci]"
+          git pull --rebase -q
+          git push

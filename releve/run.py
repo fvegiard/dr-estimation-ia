@@ -98,11 +98,19 @@ def release_lock():
 
 def agent(workdir, log_path):
     """Lance l'agent de relevé avec la compétence releve-planexpert (.claude/skills/releve-planexpert/SKILL.md).
-    Par défaut : Claude Agent SDK (releve/agent_sdk.py, OAuth claude.ai). RELEVE_AGENT=cli : `claude -p` headless (repli)."""
+    Par défaut : Claude Agent SDK (releve/agent_sdk.py, OAuth claude.ai). RELEVE_AGENT=nvidia : API NVIDIA (releve/agent_nvidia.py). RELEVE_AGENT=cli : `claude -p` headless (repli)."""
     res_path = os.path.join(workdir, "agent-resultat.json")
     t0 = time.time()
     agent_env = {"RELEVE_TOOL_GUARD_ROOT": workdir}
-    if os.environ.get("RELEVE_AGENT", "sdk") == "sdk":
+    if os.environ.get("RELEVE_AGENT", "sdk") == "nvidia":
+        # Clé NVIDIA_API_KEY héritée du processus ; sous WSL : WSLENV=NVIDIA_API_KEY/u au lancement (jamais journalisée).
+        cmd = [sys.executable, "releve/agent_nvidia.py", workdir, res_path, "--max-turns", MAX_TURNS]
+        code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
+        try:
+            res = json.load(open(res_path, encoding="utf-8"))
+        except Exception:  # noqa
+            res = {"result": out[-2000:], "is_error": True, "subtype": "agent_nvidia sans résultat"}
+    elif os.environ.get("RELEVE_AGENT", "sdk") == "sdk":
         cmd = ["uv", "run", "releve/agent_sdk.py", workdir, res_path, "--model", MODEL, "--max-turns", MAX_TURNS]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:

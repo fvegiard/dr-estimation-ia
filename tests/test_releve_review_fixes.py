@@ -82,6 +82,22 @@ def test_tool_guard_allows_expected_releve_commands(tmp_path):
     assert "hors du dossier de travail" in globbed
 
 
+def test_tool_guard_refuse_chemin_absolu_hors_travail(tmp_path):
+    """Un chemin absolu hors du dossier de travail doit être refusé, y compris en écriture Windows.
+
+    Les chemins Windows n'ont pas de « / » : tant que le garde ne regardait que ce séparateur,
+    « cat C:\\Windows\\win.ini » passait pour un nom de fichier simple et était autorisé.
+    """
+    work = tmp_path / "travail"
+    work.mkdir()
+    dehors = tmp_path / "secret.txt"
+    for commande in (f"cat {dehors}", f"cat {str(dehors).replace(chr(92), '/')}", "cat ..{}secret.txt".format(chr(92))):
+        assert "hors du dossier de travail" in (tool_guard.validate("Bash", {"command": commande}, str(work), str(work)) or "")
+    dedans = work / "a.csv"
+    assert tool_guard.validate("Bash", {"command": f"cat {dedans}"}, str(work), str(work)) is None
+    assert tool_guard.validate("Bash", {"command": f'cat "{work / "a b.csv"}"'}, str(work), str(work)) is None
+
+
 def test_extract_occurrences_invalid_regex_aborts(tmp_path):
     work = _make_workdir(tmp_path)
     _write_csv(

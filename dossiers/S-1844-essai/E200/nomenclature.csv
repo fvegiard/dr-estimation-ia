@@ -1,0 +1,15 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription
+Prise duplex 15A (cercle ligné),prise,,,,,visuel,PD,Prise de courant duplex 15A neuve (N.),INSTALLER,MODELE NON PRECISE,"Symbole cercle ligné; hauteurs 8"" 22"" 80"" lues au plan"
+Prise duplex demi-pleine (à confirmer),prise,,,,,visuel,PH,Prise duplex demi-pleine neuve (20A ou DDFT selon légende),INSTALLER,MODELE NON PRECISE,Symbole cercle à demi plein; type exact à confirmer à la légende
+Prise TL 30A verrouillable,prise,,,,,visuel,TL,Prise 30A verrouillable (TL) neuve,INSTALLER,MODELE NON PRECISE,Symbole TL; légende : prise simple 30A 120V L5-30R
+"Sortie BX 24"" (demi-cercle vert)",telecom,,,,,visuel,BX,"Boîte de sortie BX à 24"" (raccordement mobilier)",INSTALLER,MODELE NON PRECISE,"Étiquette BX 24"" au plan"
+Triangle vert (téléphone/data ou alarme),telecom,,,,,visuel,TRI,Sortie triangle verte (téléphone/data ou alarme),INSTALLER,MODELE NON PRECISE,Triangle vert à côté de prises
+Boîte de sortie carrée (verte),telecom,,,,,visuel,BC,"Boîte de sortie carrée (data/alarme, à confirmer)",INSTALLER,MODELE NON PRECISE,Carré vert à croix
+Thermostat T (magenta),chauffage,,,,,visuel,T,Thermostat (T) neuf,INSTALLER,MODELE NON PRECISE,Thermostat à action inverse / programmable selon légende
+Relais basse tension R,chauffage,,,,,visuel,R,Relais basse tension 24V (R),INSTALLER,MODELE NON PRECISE,Relais R magenta; STELPRO/OUELLET selon tableau CVC
+Embase HQ / interrupteur,distribution,,,,,visuel,HQ,Équipement HQ (embase) magenta,INSTALLER,MODELE NON PRECISE,Rectangle magenta avec cercle HQ
+Démarreur SM,mecanique,,,,,visuel,SM,Démarreur / SM (rectangle magenta),INSTALLER,MODELE NON PRECISE,Étiquette SM
+Serpentin électrique SE,chauffage,,,,,visuel,SE,Serpentin électrique de chauffage (SE-01 / SE-02),INSTALLER,MODELE NON PRECISE,Fourni par mécanique; raccordement seulement
+Moteur / ventilateur (violet),mecanique,,,,,visuel,MOT,Moteur ou ventilateur à raccorder (symbole violet),INSTALLER,MODELE NON PRECISE,Symboles violets à confirmer
+Boîte à volume d'air variable,mecanique,,,,,visuel,VAV,Boîte VAV à raccorder,INSTALLER,MODELE NON PRECISE,Rectangle violet
+Boîte bleue H,autre,,,,,visuel,BH,Boîte H bleue (à confirmer),INSTALLER,MODELE NON PRECISE,Carré bleu H près thermostat

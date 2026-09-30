@@ -1,0 +1,28 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription
+Luminaire type A (2x2),luminaire,,,,,visuel,LA,Luminaire encastré 2x2 type A,INSTALLER,"STANPRO L3PNV-2LPS40 (E004, non confirmé au plan)",Liste E004 : STANPRO L3PNV 30 W; lu au tableau
+Luminaire type A1 (2x2),luminaire,,,,,visuel,LA1,Luminaire encastré 2x2 type A1,INSTALLER,STANPRO L3PNV-2LPS40 40 W (E004),Liste E004 : STANPRO L3PNV 40 W
+Encastré type B,luminaire,,,,,visuel,LB,"Luminaire encastré rond 6"" type B",INSTALLER,STANPRO DCO6R (E004),Liste E004 : STANPRO COMETO CHOICE 18 W
+Encastré type B1,luminaire,,,,,visuel,LB1,"Luminaire encastré rond 6"" type B1",INSTALLER,STANPRO DLCO6R (E004),Liste E004 : COMETO CHOICE 12 W
+Luminaire type F,luminaire,,,,,visuel,LF,Luminaire dessous armoire type F,INSTALLER,STANPRO UCFL23 (E004),Symbole cercle mi-noir + F; liste E004 UCFL 10 W
+Luminaire type D,luminaire,,,,,visuel,LD,Luminaire applique extérieur type D,INSTALLER,STANPRO FLM-PS60B (E004),Liste E004 : STANPRO FLM 35 W
+Luminaire type G,luminaire,,,,,visuel,LG,Applique mural toilette type G,INSTALLER,STANPRO L2SNQ (E004),Liste E004 : STANPRO L2SNQ 30 W
+Luminaire urgence 2 têtes (UA),secours,,,,,visuel,UA2,Luminaire d'urgence à 2 têtes sur accumulateur UA,INSTALLER,MODELE NON PRECISE,Symbole 2 têtes + UA; modèle non lu
+Luminaire urgence 3 têtes,secours,,,,,visuel,UA3,Luminaire d'urgence à 3 têtes,INSTALLER,MODELE NON PRECISE,Symbole 3 têtes (plein au centre)
+Luminaire urgence 1 tête (UA),secours,,,,,visuel,UA1,Luminaire d'urgence à 1 tête sur accumulateur UA,INSTALLER,MODELE NON PRECISE,Symbole 1 tête + UA
+"Accumulateur UA (C,2)",secours,,,,,visuel,ACC,Accumulateur d'urgence UA,INSTALLER,MODELE NON PRECISE,Boîtier UA circuit 2
+Interrupteur unipolaire,commande,,,,,visuel,IU,Interrupteur d'éclairage unipolaire,INSTALLER,MODELE NON PRECISE,Symbole $
+Paire a/b (à confirmer),commande,,,,,visuel,AB,Symbole cercle barré + flèche a/b (à confirmer),INSTALLER,MODELE NON PRECISE,Deux symboles a et b voisins; sens non lu
+Klaxon alarme incendie,alarme,,,,,visuel,K,Klaxon d'alarme incendie,INSTALLER,"MAPLE ARMOR FW511/FW521 (E004, non confirmé)",Note 4 : raccorder à la boucle d'alarme existante
+Plinthe chauffante (hexagone kW),chauffage,,,,,visuel,PL,Plinthe / appareil de chauffage radiant (hexagone puissance kW),INSTALLER,"OUELLET (E004, non confirmé)",Un hexagone A/kW par appareil; puissances 1.5 et 0.9
+Thermostat T,chauffage,,,,,visuel,T,Thermostat de plinthe / plancher (T),INSTALLER,MODELE NON PRECISE,Symbole T dans cercle
+Serpentin électrique SE,chauffage,,,,,visuel,SE,Serpentin électrique à raccorder (SE-1 à SE-4),INSTALLER,MODELE NON PRECISE,Fourni par mécanique; raccordement seulement
+Relais RT,chauffage,,,,,visuel,RT,Relais bas voltage avec transformateur RT (a-d),INSTALLER,MODELE NON PRECISE,"Étiquettes RT a,b,c,d"
+"Prise dédiée circuit C,x",prise,,,,,visuel,PD,Prise / raccordement dédié (cercle croisé) circuits 4-6,INSTALLER,MODELE NON PRECISE,"Circuits C,4 C,5 C,6 lus"
+Sortie téléphone/data (note 7),telecom,,,,,visuel,TD,Sortie téléphone/data (triangle),INSTALLER,MODELE NON PRECISE,Note 7 : emplacement exact à coordonner
+Sonde plancher chauffant (note 5),chauffage,,,,,visuel,SP,Sonde pour plancher chauffant,INSTALLER,MODELE NON PRECISE,Note 5
+Condenseur CD,mecanique,,,,,visuel,CD,Unité de condensation CD-1/CD-2 (raccordement),INSTALLER,MODELE NON PRECISE,Sectionneurs 30A/SF associés
+Sectionneur 30A/SF,distribution,,,,,visuel,S30,Sectionneur 30 A sans fusible,INSTALLER,MODELE NON PRECISE,Étiquette 30A/SF
+Chauffe-eau CE-1,mecanique,,,,,visuel,CE,Chauffe-eau CE-1 à raccorder,INSTALLER,MODELE NON PRECISE,"C,35,37"
+Échangeur ECH,mecanique,,,,,visuel,ECH,Échangeur ECH-1 / ECH-2 (à confirmer),INSTALLER,MODELE NON PRECISE,"C,19,21 et C,24,26"
+Aéro AC-1 / AC-2,chauffage,,,,,visuel,AC,"Appareil AC-1 / AC-2 (chauffage mural, à confirmer)",INSTALLER,MODELE NON PRECISE,"Étiquettes AC-1, AC-2"
+Autres à confirmer,autre,,,,,visuel,AUT,"Symboles non identifiés (C,17 C,40 C,31 C,7 EI)",INSTALLER,MODELE NON PRECISE,Voir réserves

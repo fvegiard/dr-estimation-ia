@@ -84,10 +84,32 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
      plan et en détail) se compte UNE fois, sur la feuille de son niveau ; note la feuille écartée dans `reserves.md` ;
    - un symbole visible mais absent de la légende (« TS », « CME », équipement mécanique, borne de recharge…) se relève quand même
      sous un label « à confirmer » ET s'inscrit dans `reserves.md` — un objet vu et non relevé sans réserve est une faute.
+3b. **Un libellé que tu as écrit et que tu ne relèves jamais est presque toujours une confusion, pas une absence.**
+   Avant de terminer, compare `nomenclature.csv` aux libellés réellement employés dans les `occurrences-*.csv`. Pour chaque
+   libellé jamais employé : soit l'appareil est réellement absent du projet — alors écris-le dans `reserves.md` avec la
+   feuille et la zone vérifiées — soit tu l'as compté sous le libellé d'un appareil voisin, et le relevé est faux.
+   Le contrôle `Q8` bloque ce cas ; ne le contourne pas en effaçant la ligne de la nomenclature.
+   Constaté sur DSI01 (kimi-k3, 2026-09-29) : `AVERTISSEUR FUMEE AUTONOME` lu dans la légende, écrit dans la nomenclature,
+   jamais relevé — ses 36 appareils comptés en `DETECTEUR FUMEE` (13 attendus, 40 relevés). Une seule confusion coûtait
+   36 marques sur 122, soit le tiers de la feuille.
+   Les paires qui se confondent le plus (même forme, même famille, étiquette voisine ou absente) :
+   - **avertisseur de fumée autonome 120V** (alimenté, souvent mural, dans les logements) ≠ **détecteur de fumée** du réseau
+     d'alarme (relié au panneau, souvent au plafond des corridors et locaux communs) ;
+   - **détecteur thermique 135°F** ≠ **200°F** : si la température n'est pas lisible, relève un seul libellé générique
+     ET mets la distinction en réserve — n'invente pas la répartition ;
+   - **klaxon** (avertisseur sonore d'alarme) ≠ **avertisseur piezo** ≠ **strobe** ;
+   - **module adressable** simple ≠ double ≠ **relais adressable**.
+   Quand deux appareils partagent la forme et la famille, c'est la position qui tranche (logement privé vs aire commune,
+   mur vs plafond) : dis dans `note` ce qui a tranché.
 4. **Occurrences visuelles** → `occurrences-visuel.csv` (`feuille,label,x_pt,y_pt,source,note`, `source=visuel`) : parcours
    **toutes** les tuiles de chaque feuille `plan` et relève les symboles sans étiquette (prises duplex, DDFT, enseignes de sortie,
-   phares, postes manuels, klaxons non étiquetés, sectionneurs, raccordements d'équipements…). Coordonnées lues sur les règles
-   (précision ≈ 5 pt suffit). Utilise `zoom.py` pour les zones denses. Chaque label utilisé doit exister dans `nomenclature.csv`.
+   phares, postes manuels, klaxons non étiquetés, sectionneurs, raccordements d'équipements…). Coordonnées lues sur les règles,
+   **au centre du symbole, sans arrondir** : interpole entre deux graduations au lieu de prendre la graduation la plus proche.
+   Une pastille fait ≈ 4,2 pt de rayon — arrondir à 5 pt la déplace de plus que sa propre taille et la fait rater le symbole.
+   Repère mesuré : sur les 319 marques relevées à la main dans le dépôt, 3,1 % seulement tombent sur un multiple de 5 pt dans
+   les deux axes. Si presque toutes tes coordonnées sont rondes, tu ne lis pas le plan — tu poses une grille mentale, et le
+   contrôle Q10 le bloque (gemma-4-31b : 53/53 sur 10 pt ; kimi-k3 : 104/104 sur 5 pt, familles correctes mais positions fausses).
+   Utilise `zoom.py` pour les zones denses. Chaque label utilisé doit exister dans `nomenclature.csv`.
 5. **Addendas** : si un fichier `addenda` existe, lis-le (aperçus/texte) et applique ce qui touche l'électricité : feuilles
    remplacées (la version d'addenda prime), ajouts/retraits d'appareils. Note chaque application dans `reserves.md`.
    Si une feuille d'addenda remplace une feuille de base, relève l'addenda et retire la feuille de base du classement (`type=remplacee`) ;
@@ -128,6 +150,16 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **supports et accessoires comptés par règle** (J-hook télécom, boîtes de tirage, plafonds suspendus) : ne les invente pas,
      mais crée le compteur avec une réserve « quantité par règle à fixer » dès qu'une note ou la légende les mentionne (S-1715 :
      45 J-hook chez l'estimateur, 1 chez l'IA).
+5e. **Règles apprises de M. Dupuis** (S-1769 E401, S-1844 E200 ; rédigées par le superviseur, appliquées telles quelles) :
+   - **R1** Une famille = un type ET une caractéristique. Même symbole, puissance/calibre différent = familles séparées (ex. plinthe 1500 W ≠ plinthe 900 W ; lire le kW dans l'hexagone/étiquette de CHAQUE appareil). Erreur S-1769 : 11 plinthes en 1 famille au lieu de 7 × 1500 W + 2 × 900 W.
+   - **R2** Ne jamais fusionner un appareil de contrôle/protection avec l'appareil qu'il sert : sectionneur 30A/SF, WP, etc. = sa propre famille (Dupuis : « 30A NF WP »).
+   - **R3** Thermostats : séparer thermostat de plinthe et thermostat de plancher chauffant (sonde/note plancher chauffant à côté = famille « thermostat plancher chauffant »).
+   - **R4** Prises : séparer régulière, 15/20A, GFI/DDFT (lire « GFI », « DDFT », demi-plein selon la légende). Une prise GFI n'est jamais comptée comme prise ordinaire.
+   - **R5** Un symbole dont l'identification dépend de la légende (lettre dans un cercle, cercle mi-noir) : vérifier la légende AVANT de nommer ; si le même symbole existe comme luminaire ET comme détecteur, trancher par la légende, sinon réserve *. (Erreur S-1769 : « luminaire type F » compté 7 fois, Dupuis a 5 détecteurs de fumée + 1 F + 1 F1.)
+   - **R6** Les notes « RELO / relocaliser / déplacer » sont des appareils à compter (famille « RELO <appareil> »), même si l'appareil est existant.
+   - **R7** Nommer les familles comme la légende du plan (FIXTURE TYPE A, A1, B…) — le code 2 lettres reste pour l'étiquette.
+   - **R8** Choix de la feuille d'essai : c'est le SUPERVISEUR qui choisit une feuille que la référence a réellement relevée (tu ne regardes pas la référence). S-1844 E200 était invalide : Dupuis n'a aucune marque sur E200 (il a relevé les prises sur le plan d'architecte).
+   - **Porte de prévention** : pour chaque feuille, AVANT de placer les marques et AVANT tout commit, publier (a) capture zoom de la légende, (b) la liste des familles avec le symbole/étiquette qui les distingue et la règle R1-R7 appliquée, (c) 3 zooms des symboles ambigus, puis attendre « VALIDÉ » du superviseur.
 6. **Comparaison avec l'estimateur** (si `estimateur/` existe) → `comparaison-estimateur.md` : pour chaque feuille, tableau
    `famille/objet | estimateur | nous | écart | commentaire`, en lisant ses légendes (`estimateur/legendes/*-legende.png`, où
    chaque ligne porte symbole, nom et quantité). Explique les écarts (périmètre différent, oubli probable de l'un ou l'autre).

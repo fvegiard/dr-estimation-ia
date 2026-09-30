@@ -8,13 +8,28 @@ from __future__ import annotations
 
 import json
 import os
-import pathlib
 import shlex
 import sys
 
 FILE_TOOL_PATH_KEYS = {"file_path", "path", "paths"}
 SAFE_SHELL_TOOLS = {"head", "cat", "sort", "cut"}
 DENY = "deny"
+
+
+def _decouper(command: str) -> list[str]:
+    """Découpe une commande en arguments sans manger les antislash des chemins Windows.
+
+    En mode POSIX, shlex traite « \\ » comme une échappement : « C:\\Users\\f » devient « C:Usersf »,
+    et tout argument Windows légitime se retrouve refusé comme « hors du dossier de travail ».
+    """
+    if os.name != "nt":
+        return shlex.split(command)
+    argv = []
+    for token in shlex.split(command, posix=False):
+        if len(token) >= 2 and token[0] == token[-1] and token[0] in "\"'":
+            token = token[1:-1]
+        argv.append(token)
+    return argv
 
 
 def _real(path: str) -> str:
@@ -88,7 +103,9 @@ def _is_safe_shell_path(token: str, cwd: str, root: str) -> bool:
         return False
     if any(ch in token for ch in ("*", "?", "[")):
         return False
-    if "/" not in token and not token.startswith("."):
+    # Nom simple seulement : ni séparateur (les chemins Windows utilisent « \\ »), ni lettre de lecteur.
+    nu = "/" not in token and "\\" not in token and not os.path.splitdrive(token)[0]
+    if nu and not token.startswith("."):
         return True
     resolved = _resolve_arg_path(token, cwd)
     return _under(root, resolved)
@@ -101,7 +118,7 @@ def _validate_bash(root: str, tool_input: dict, cwd: str) -> str | None:
     if any(ch in command for ch in (";", "\n", "\r", "|", "&", "`", ">", "<")) or "$(" in command:
         return "Commande Bash chaînée ou redirigée refusée"
     try:
-        argv = shlex.split(command)
+        argv = _decouper(command)
     except ValueError as exc:
         return f"Commande Bash illisible : {exc}"
     if tuple(argv[:3]) == ("uv", "run", "releve/extract_occurrences.py"):

@@ -1,0 +1,22 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription
+Avertisseur fumee,alarme,cercle,,,Avertisseur de fumee mural 120V (note 11),E05 notes en plan 11,AF,AVERTISSEUR DE FUMEE MURAL 120V,INSTALLER,,Nouvel avertisseur d'incendie autonome (voir detection et signalisation incendie) - note 11
+Boite jonction LV,distribution,carre,,,Boite de jonction lave-vaisselle (BJ L.V.),E05 plan cuisine,BJ,BOITE DE JONCTION POUR LAVE-VAISSELLE,A PRECISER,,
+Prise cuisiniere,prise,cercle,,,Prise de courant cuisiniere C9/C11,E05 plan cuisine,CP,PRISE DE COURANT POUR CUISINIERE,A PRECISER,,
+Prise comptoir,prise,cercle,,,Prise de courant au-dessus du comptoir (gfi/afi),E05 plan cuisine,CT,PRISE DE COURANT AU DESSUS D'UN COMPTOIR,A PRECISER,,
+Commutateur,commande,cercle,,,Interrupteur ($),E05 notes en plan 6,CU,COMMUTATEUR UNIPOLAIRE,REMPLACER,,Interrupteur existant a remplacer - note 6
+Evacuateur,mecanique,carre,,,Evacuateur de toilette (EVAC),E05 plan salle de bain,EV,EVACUATEUR DE TOILETTE,A PRECISER,,Voir ventilation
+Prise DDFT,prise,cercle,,,Prise gfi salle de bain,E05 plan salle de bain,GF,PRISE DE COURANT AVEC DISJONCTEUR DIFFERENTIEL DE FUITE A LA TERRE,A PRECISER,,
+Intercom,telecom,losange,,,Intercom (controle de porte) note 9,E05 notes en plan 9,IC,INTERCOM (CONTROLE DE PORTE),CONSERVER,EXISTANT - MODELE NON INDIQUE,Intercom existant a conserver - note 9
+Luminaire A,luminaire,cercle,,,Luminaire type A,E05 plan (A),LA,LUMINAIRE TYPE A,REMPLACER,,Appareil d'eclairage existant a remplacer - note 5
+Luminaire B,luminaire,cercle,,,Luminaire type B,E05 plan (B),LB,LUMINAIRE TYPE B,REMPLACER,,Appareil d'eclairage existant a remplacer - note 5
+Luminaire C,luminaire,cercle,,,Luminaire type C (sous armoire),E05 plan (C),LC,LUMINAIRE TYPE C,A PRECISER,,
+Luminaire F,luminaire,cercle,,,Luminaire type F,E05 plan (F),LF,LUMINAIRE TYPE F,REMPLACER,,Appareil d'eclairage existant a remplacer - note 5
+Luminaire G,luminaire,cercle,,,Luminaire type G,E05 plan (G),LG,LUMINAIRE TYPE G,REMPLACER,,Appareil d'eclairage existant a remplacer - note 5
+Prise double,prise,cercle,,,Prise de courant double existante a remplacer (note 4),E05 notes en plan 4,PC,PRISE DE COURANT DOUBLE,REMPLACER,,Prise de service existante a remplacer - note 4
+Plinthe,chauffage,carre,,,Plinthe de chauffage electrique (note 10),E05 notes en plan 10,PL,PLINTHE DE CHAUFFAGE,REMPLACER,,Plinthe de chauffage electrique existante a remplacer - note 10; puissance selon plan
+Panneau logement,distribution,carre,,,Panneau de logement (PC),E05 plan cuisine,PN,PANNEAU DE LOGEMENT,A PRECISER,,Capacite et circuits selon cedule
+Raccord hotte,mecanique,carre,,,Raccordement hotte,E05 plan cuisine (HOTTE),RA,RACCORD DIRECT HOTTE,A PRECISER,,
+Prise secheuse,prise,cercle,,,Prise secheuse C6/C8,E05 plan (SECH.),SE,PRISE DE COURANT SECHEUSE,A PRECISER,,
+Sortie telephone,telecom,losange,,,Plaque de service telephone (note 7),E05 notes en plan 7,TE,SORTIE TELEPHONIQUE,REMPLACER,,Plaque de service existante a remplacer - note 7
+Thermostat,chauffage,cercle,,,Thermostat de piece (note 8),E05 notes en plan 8,TH,THERMOSTAT,CONSERVER,EXISTANT - MODELE NON INDIQUE,Thermostat de piece electronique existant a conserver - note 8
+Sortie cablo,telecom,losange,,,Plaque de service cablodistribution (note 7),E05 notes en plan 7,TV,SORTIE POUR CABLO-DISTRIBUTION (TV),REMPLACER,,Plaque de service existante a remplacer - note 7
