@@ -16,7 +16,14 @@ Un succès technique de l'agent (fichiers écrits) ne prouve pas un relevé exac
   Q9 (si une référence est fournie) écart par famille > 5 % de la référence.
 """
 from __future__ import annotations
-import csv, os, re, sys, json, argparse, collections
+
+import argparse
+import collections
+import csv
+import json
+import os
+import re
+import sys
 
 REPERE = re.compile(r"\[?\b([A-Z]{1,4}\d?)(\d+)\.(\d+)\]?")
 TOLERANCE_REF = 0.05

@@ -1,5 +1,9 @@
 """Tests hors réseau de releve/agent_nvidia.py : confinement au dossier de travail, sorties autorisées, contrôle de couverture."""
-import importlib.util, os, pathlib, pytest
+import importlib.util
+import os
+import pathlib
+
+import pytest
 
 SPEC = importlib.util.spec_from_file_location("agent_nvidia", pathlib.Path(__file__).resolve().parents[1] / "releve" / "agent_nvidia.py")
 an = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(an)

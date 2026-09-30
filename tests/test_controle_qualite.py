@@ -1,5 +1,6 @@
 """Tests du contrôle qualité bloquant (releve/controle_qualite.py) : chaque règle détecte l'erreur introduite, et un relevé propre passe."""
-import os, importlib.util, pathlib
+import importlib.util
+import pathlib
 
 SPEC = importlib.util.spec_from_file_location("cq", pathlib.Path(__file__).resolve().parents[1] / "releve" / "controle_qualite.py")
 cq = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(cq)

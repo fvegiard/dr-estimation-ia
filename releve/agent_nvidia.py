@@ -16,11 +16,25 @@ Usage : python releve/agent_nvidia.py WORKDIR RESULTAT_JSON [--model M] [--max-t
 Écrit RESULTAT_JSON (mêmes champs que agent_sdk.py) et WORKDIR/agent-journal.log. Code 0 si subtype == success.
 """
 from __future__ import annotations
-import os, sys, json, time, glob, base64, datetime, argparse, subprocess, urllib.request, urllib.error
+
+import argparse
+import base64
+import datetime
+import glob
+import json
+import os
+import subprocess
+import sys
+import time
+import urllib.error
+import urllib.request
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "releve"))
-from controle_qualite import controler  # noqa: E402  contrôle qualité bloquant (Q1-Q8, à l'aveugle : sans référence)
+from controle_qualite import (
+    controler,
+)
+
 REFUS_QUALITE_MAX = 3       # refus de `terminer` pour qualité avant d'accepter en « qualite_insuffisante »
 URL = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1") + "/chat/completions"
 MODELE = "google/gemma-4-31b-it"
@@ -89,7 +103,7 @@ def manquantes(workdir):
     res = {}
     for f, W, H in feuilles_plan(workdir):
         cases = [(x, y) for x in range(0, int(W), FENETRE) for y in range(0, int(H), FENETRE)]
-        def vue(x, y):
+        def vue(x, y, f=f, W=W, H=H):
             cx, cy = x + min(FENETRE, W - x) / 2, y + min(FENETRE, H - y) / 2
             return any(v[0] == f and v[1] <= cx <= v[3] and v[2] <= cy <= v[4] for v in VUS)
         reste = [(x, y, min(x + FENETRE, W), min(y + FENETRE, H)) for x, y in cases if not vue(x, y)]
