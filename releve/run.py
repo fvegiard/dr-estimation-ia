@@ -312,7 +312,16 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, outputs=None)
         p = os.path.join(workdir, extra)
         if os.path.exists(p):
             L += [f"## {extra}", "", open(p, encoding="utf-8").read(), ""]
-    open(os.path.join(outdir, "STATUT.md"), "w", encoding="utf-8").write("\n".join(L))
+    pending = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=outdir,
+                                         prefix=".statut-", suffix=".tmp", delete=False) as fh:
+            pending = fh.name
+            fh.write("\n".join(L))
+        os.replace(pending, os.path.join(outdir, "STATUT.md"))
+    finally:
+        if pending is not None and os.path.exists(pending):
+            os.remove(pending)
 
 def prepare_a_jour(inbox, workdir):
     """Vrai si inventaire.json du dossier de travail décrit exactement les fichiers actuels de l'INBOX (mêmes sha256)."""
@@ -391,16 +400,27 @@ def process(arg, reprendre=False):
         res = json.load(open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8"))
     steps.append(("total", time.time() - T, ""))
     outputs = []
+    status_ready, preserve_previous_status = False, False
     if ok:
         try:
             outputs = current_outputs(name, generation, steps)
-            publish_outputs(generation, outdir, outputs)
-        except (OSError, ValueError, ET.ParseError) as e:
-            ok, err = False, f"manifeste des livrables invalide : {e}"
-    statut(name, inbox, outdir, workdir, steps, res, ok, err, outputs=outputs)
+            # A status-generation/publication failure must preserve the previous bundle.
+            preserve_previous_status = True
+            statut(name, inbox, generation, workdir, steps, res, True, outputs=outputs)
+            publish_outputs(generation, outdir, [*outputs, "STATUT.md"])
+            status_ready = True
+        except Exception as e:  # noqa
+            ok, err = False, f"finalisation des livrables impossible : {e}"
+            log("ÉCHEC : " + err)
+    if not ok and not preserve_previous_status:
+        try:
+            statut(name, inbox, outdir, workdir, steps, res, False, err, outputs=outputs)
+            status_ready = True
+        except Exception as e:  # noqa
+            log(f"ÉCHEC : statut non publié, ancien statut conservé : {e}")
     try: os.remove(marker)
     except FileNotFoundError: pass
-    if drive_mounted():
+    if status_ready and drive_mounted():
         try:
             dst = os.path.join(DRIVE, "OUTBOX", name); os.makedirs(dst, exist_ok=True)
             for f in ([*outputs, "STATUT.md"] if ok else ["STATUT.md"]):

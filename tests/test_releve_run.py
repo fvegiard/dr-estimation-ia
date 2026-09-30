@@ -91,7 +91,11 @@ def test_publication_preserves_previous_set_on_later_failure(tmp_path, monkeypat
     monkeypatch.setattr(launcher, 'current_outputs', lambda *args: relatives)
     monkeypatch.setattr(launcher, 'drive_mounted', lambda: False)
     monkeypatch.setattr(launcher, 'log', lambda *_: None)
-    monkeypatch.setattr(launcher, 'statut', lambda *args, **kwargs: statuses.append(args[6]))
+    original_status = launcher.statut
+    def status(*args, **kwargs):
+        statuses.append(args[6])
+        return original_status(*args, **kwargs)
+    monkeypatch.setattr(launcher, 'statut', status)
     monkeypatch.setattr(launcher.shutil, 'copy2', copy)
     monkeypatch.setattr(launcher.os, 'replace', replace)
     ok = launcher.process('demo', reprendre=True)
@@ -100,9 +104,11 @@ def test_publication_preserves_previous_set_on_later_failure(tmp_path, monkeypat
     if failure:
         assert injected
         assert actual == baseline
-        assert statuses == [False]
+        assert statuses == [True]  # Prepared success status stays private when promotion fails.
+        assert not (public / 'STATUT.md').exists()
         assert (public / 'new').exists() is nested_exists, 'Rollback must preserve old directories and remove new ones'
     else:
         assert actual == {relative: ('new-' + relative).encode() for relative in relatives}
         assert statuses == [True]
+        assert 'TERMINÉ' in (public / 'STATUT.md').read_text(encoding='utf-8')
     assert not list(public.glob('.publication-*')), 'Completed staging/rollback must clean its transaction'

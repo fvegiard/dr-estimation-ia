@@ -26,11 +26,15 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
+import hashlib
 import json
 import math
+import ntpath
 import os
 import re
 import sys
+
+from PIL import Image
 
 REPERE = re.compile(r"\[?\b([A-Z]{1,4}\d?)(\d+)\.(\d+)\]?")
 TOLERANCE_REF = 0.05
@@ -39,6 +43,125 @@ MIN_GRILLE = 8                # en dessous, la coïncidence reste plausible
 SEUIL_GRILLE = 0.80           # part de marques alignées à partir de laquelle on bloque
 SEUIL_GRILLE_AVERT = 0.15     # au-dessus, le modèle arrondit trop (humains mesurés : 0,9 %)
 TYPES_FEUILLE = {"plan", "legende", "schema", "tableau", "detail", "autre", "remplacee"}
+
+
+def repere_propre(occurrence):
+    """Explicit own ID (even blank), else a leading tag; contextual mentions are not IDs."""
+    if "repere" in occurrence:
+        value = occurrence["repere"].strip().upper()
+        if not value:
+            return None
+        if value.startswith("[") and value.endswith("]"):
+            value = value[1:-1]
+        if not re.fullmatch(r"[A-Z]{1,4}\d?\d+\.\d+", value):
+            raise ValueError("champ repere invalide")
+        match = REPERE.fullmatch(value)
+        if not match:
+            raise ValueError("champ repere invalide")
+        return match
+    note = (occurrence.get("note") or "").strip().upper()
+    leading = re.match(r"^(?:\[([A-Z]{1,4}\d?\d+\.\d+)\]|([A-Z]{1,4}\d?\d+\.\d+)(?=\s|$|[,;:]))", note)
+    return REPERE.fullmatch(leading.group(1) or leading.group(2)) if leading else None
+
+
+def fichier_preuve(work, relative, folder):
+    """Evidence must be a real file under the prescribed work subfolder, without redirects."""
+    if not isinstance(relative, str) or ntpath.isabs(relative) or ntpath.splitdrive(relative)[0]:
+        raise ValueError("chemin de preuve invalide")
+    relative = relative.replace("\\", "/")
+    if not relative.startswith(folder + "/") or ".." in relative.split("/"):
+        raise ValueError("preuve hors du sous-dossier autorisé")
+    allowed = os.path.join(os.path.realpath(work), folder)
+    path = os.path.realpath(os.path.join(work, relative))
+    if os.path.commonpath([allowed, path]) != allowed or not os.path.isfile(path):
+        raise ValueError("preuve absente ou non confinée")
+    return path
+
+
+def empreinte(path):
+    with open(path, "rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def collisions_source(work, vus, reserves):
+    """Validate optional source-collisions.json; provenance is not automatic visual approval.
+
+    Each collision needs feuille, repere, source_sha256 (feuilles/<sheet>.pdf),
+    exact occurrences [{label,x_pt,y_pt}], reason, reserve_id, reserve_text and
+    proof_images [{path: evidence/<file>.png, sha256}]. reserves.md must contain
+    the exact line '<reserve_id>: <reserve_text>'. Images document a review;
+    hashes and row matching cannot establish that their pixels show the claimed tag.
+    """
+    path = os.path.join(work, "source-collisions.json")
+    if not os.path.isfile(path):
+        return {}, []
+    valid, errors, seen = {}, [], set()
+    try:
+        with open(path, encoding="utf-8") as stream:
+            manifest = json.load(stream)
+        if not isinstance(manifest, dict) or not isinstance(manifest.get("collisions"), list):
+            raise ValueError("liste collisions requise")
+    except (OSError, ValueError) as exc:
+        return {}, [f"Q5 preuve source invalide : {exc}"]
+    for entry in manifest["collisions"]:
+        key = None
+        try:
+            if not isinstance(entry, dict):
+                raise ValueError("collision doit être un objet")
+            key = (entry["feuille"], entry["repere"])
+            if not all(isinstance(value, str) and value for value in key):
+                raise ValueError("feuille/repere requis")
+            if key in seen:
+                valid.pop(key, None)
+                raise ValueError("collision documentée plusieurs fois")
+            seen.add(key)
+            current = vus.get(key, [])
+            if len(current) < 2:
+                raise ValueError("collision absente du relevé courant")
+            source = fichier_preuve(work, f"feuilles/{key[0]}.pdf", "feuilles")
+            with open(source, "rb") as stream:
+                if stream.read(5) != b"%PDF-":
+                    raise ValueError("source PDF invalide")
+            if empreinte(source) != entry["source_sha256"]:
+                raise ValueError("empreinte PDF source différente")
+            for field in ("reason", "reserve_id", "reserve_text"):
+                if not isinstance(entry[field], str) or not entry[field].strip():
+                    raise ValueError(f"{field} requis")
+            if f"{entry['reserve_id']}: {entry['reserve_text']}" not in {line.strip() for line in reserves.splitlines()}:
+                raise ValueError("réserve exacte absente de reserves.md")
+            documented = entry["occurrences"]
+            if not isinstance(documented, list):
+                raise ValueError("occurrences doit être une liste")
+
+            def identity(row):
+                point = coordonnees(row)
+                if not isinstance(row.get("label"), str) or not point or not all(math.isfinite(v) for v in point):
+                    raise ValueError("identité d'occurrence invalide")
+                return row["label"], *point
+
+            actual = [identity(row) for row in current]
+            if collections.Counter(identity(row) for row in documented) != collections.Counter(actual):
+                raise ValueError("identités/positions/nombre des occurrences différents")
+            if any(abs(x - x2) <= 4 and abs(y - y2) <= 4
+                   for i, (_, x, y) in enumerate(actual) for _, x2, y2 in actual[i + 1:]):
+                raise ValueError("positions identiques ou proches : doublon physique toujours bloquant")
+            images = entry["proof_images"]
+            if not isinstance(images, list) or not images:
+                raise ValueError("images de preuve requises")
+            for image in images:
+                proof = fichier_preuve(work, image["path"], "evidence")
+                with Image.open(proof) as decoded:
+                    if decoded.format != "PNG":
+                        raise ValueError("preuve image PNG requise")
+                    decoded.verify()
+                with Image.open(proof) as decoded:
+                    decoded.load()
+                if empreinte(proof) != image["sha256"]:
+                    raise ValueError("empreinte image différente")
+            valid[key] = entry
+        except (OSError, ValueError, KeyError, TypeError, AttributeError, SyntaxError, Image.DecompressionBombError) as exc:
+            errors.append(f"Q5 preuve source invalide {key!r} : {exc}")
+    return valid, errors
 
 
 def coordonnees(o):
@@ -235,7 +358,11 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
     # Q4 / Q5 / Q6
     vus = collections.defaultdict(list)
     for o in occ:
-        m = REPERE.search((o.get("note") or "").upper())
+        try:
+            m = repere_propre(o)
+        except ValueError as exc:
+            err.append(f"Q4 repère propre invalide : {o.get('feuille')} {o.get('label')} ({exc})")
+            continue
         if not m:
             continue
         pref, niv, num = m.group(1), m.group(2), int(m.group(3))
@@ -244,9 +371,17 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         attendus = famille_de_repere(pref, nomen)
         if attendus and o.get("label") not in attendus:
             err.append(f"Q4 classement : {rep} ({o.get('feuille')}) relevé comme {o.get('label')!r}, attendu {sorted(attendus)}")
+    documented, evidence_errors = collisions_source(work, vus, reserves)
+    err.extend(evidence_errors)
     for (f, rep), l in vus.items():
         if len(l) > 1:
-            err.append(f"Q5 repère {rep} relevé {len(l)} fois sur {f}")
+            if (f, rep) in documented:
+                evidence = documented[(f, rep)]
+                avert.append(f"Q5 collision source documentée {f} {rep} ({len(l)} appareils) — "
+                             f"{evidence['reserve_id']}: {evidence['reserve_text']}; "
+                             "provenance vérifiée, lecture visuelle non approuvée automatiquement")
+            else:
+                err.append(f"Q5 repère {rep} relevé {len(l)} fois sur {f}")
     # Distinct repère names must not count the same physical symbol twice.
     # Match the MCP control: same sheet/label, within 4 pt on both axes.
     positions = collections.defaultdict(list)

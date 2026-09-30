@@ -398,7 +398,6 @@ def test_run_process_skips_native_export_when_component_missing(monkeypatch, tmp
     monkeypatch.setattr(releve_run, "PLANEXPERT_VM_CLI", str(tmp_path / "missing-planexpert.py"))
     monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd), _generate_stage_outputs(cmd))[1])
     monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
-    monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
     monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
 
     ok = releve_run.process("S-TEST", reprendre=True)
@@ -500,7 +499,6 @@ def test_run_process_creates_example_format(monkeypatch, tmp_path):
     monkeypatch.setattr(releve_run, "PLANEXPERT_VM_CLI", str(tmp_path / "missing-planexpert.py"))
     monkeypatch.setattr(releve_run, "run", lambda cmd, **kwargs: (commands.append(cmd), _generate_stage_outputs(cmd))[1])
     monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
-    monkeypatch.setattr(releve_run, "statut", lambda *args, **kwargs: None)
     monkeypatch.setattr(releve_run, "log", lambda *args, **kwargs: None)
 
     assert releve_run.process("S-TEST", reprendre=True)

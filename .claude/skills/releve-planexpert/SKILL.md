@@ -116,6 +116,11 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    les deux axes. Si presque toutes tes coordonnées sont rondes, tu ne lis pas le plan — tu poses une grille mentale, et le
    contrôle Q10 le bloque même si les familles semblent correctes.
    Utilise `zoom.py` pour les zones denses. Chaque label utilisé doit exister dans `nomenclature.csv`.
+   Les bandes des règles sont **superposées au dessin, sans marge ajoutée** : ne soustrais jamais une largeur
+   de règle aux coordonnées lues. Interpole entre les graduations PDF visibles. Si tu convertis des pixels,
+   utilise les dimensions et l'origine réelles retournées par le zoom; un aperçu redimensionné à l'écran
+   n'a pas les mêmes coordonnées pixel que le PNG original. Vérifie quelques marques sur les symboles
+   avant de poursuivre chaque nouvelle zone; un décalage uniforme est une erreur de repérage à corriger.
 5. **Addendas** : si un fichier `addenda` existe, lis-le (aperçus/texte) et applique ce qui touche l'électricité : feuilles
    remplacées (la version d'addenda prime), ajouts/retraits d'appareils. Note chaque application dans `reserves.md`.
    Si une feuille d'addenda remplace une feuille de base, relève l'addenda et retire la feuille de base du classement (`type=remplacee`) ;
