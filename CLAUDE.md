@@ -29,7 +29,9 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
 
 ## Carte du dépôt
 - `releve/` — la chaîne qui marche : `prepare.py` (rasters, tuiles, mots) → agent (compétence `releve-planexpert`) →
-  `extract_occurrences.py` → `build_qpl.py` → `render_pdf.py` ; `run.py` orchestre, `run.py --reprendre <S>` refait qpl + PDF.
+  `extract_occurrences.py` → `build_qpl.py` → `render_vectoriel.py` (PDF « Plans annotés » vectoriel — pastilles OCG
+  par-dessus le plan d'origine, encadré RELEVE-MATERIEL, bordereau 8 colonnes ; `src/estimer/render/`) →
+  `render_pdf.py` (rapport de métré + dossier complet) ; `run.py` orchestre, `run.py --reprendre <S>` refait qpl + PDF.
 - `src/validation/compare_qpl.py` — comparaison marque par marque humain/IA ; `jeu_reference.py` — la rejoue sur tous les dossiers.
 - `dossiers/<S>/` — un dossier de soumission : `releve.xlsx`, `ecart.md`, `planexpert/<S>.qpl`, `export-natif/` (sorties du vrai
   Plan Expert), `reference/` (projet de l'estimateur + dimensions + feuilles), `comparaison-dupuis-qpl/`.

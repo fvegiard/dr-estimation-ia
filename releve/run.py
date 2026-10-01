@@ -13,7 +13,7 @@ Dossiers (hors du dépôt, données de Francis) :
     G:\\My Drive\\AI\\Releves-auto\\INBOX|OUTBOX  miroir Google Drive (utilisé si G: est monté dans WSL)
 
 Étapes : prepare.py (déterministe) → agent Claude Code en mode headless (`claude -p "/releve-planexpert …"`,
-doc : docs/code.claude.com_docs_en_headless.md) → build_qpl.py → render_pdf.py → STATUT.md.
+doc : docs/code.claude.com_docs_en_headless.md) → build_qpl.py → render_vectoriel.py → render_pdf.py → STATUT.md.
 Un seul relevé à la fois (verrou). Journal : D:\\claude\\releve-auto\\journal.log
 """
 from __future__ import annotations
@@ -154,7 +154,8 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
     if os.path.exists(pe):
         L.append(f"| {name}-planexpert/{name}.qpl | {os.path.getsize(pe)} | {sha256(pe)} |")
     L += ["", f"Le projet Plan Expert `{name}.qpl` est dans `{name}-planexpert/` avec ses rasters PNG : copier le dossier entier, "
-          "puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » et le rapport de métré ci-dessus sont rendus par `releve/render_pdf.py` à partir du même .qpl.", ""]
+          "puis Fichier → Ouvrir dans Plan Expert. Le PDF « Plans annotés » (pastilles vectorielles, calques OCG, bordereau) est rendu par "
+          "`releve/render_vectoriel.py` à partir des mêmes CSV ; le rapport de métré ci-dessus par `releve/render_pdf.py`.", ""]
     natif = os.path.join(outdir, "export-natif-planexpert", "resultat.json")
     if os.path.exists(natif):
         n = json.load(open(natif, encoding="utf-8"))
@@ -218,6 +219,9 @@ def process(arg, reprendre=False):
         t = time.time(); code, _ = run(["uv", "run", "releve/build_qpl.py", workdir, name, pe_dir], log_path=log_path)
         steps.append(("build_qpl", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("build_qpl.py a échoué")
+        t = time.time(); code, _ = run(["uv", "run", "releve/render_vectoriel.py", workdir, name, outdir], log_path=log_path)
+        steps.append(("render_vectoriel", time.time() - t, "ok" if code == 0 else f"code {code}"))
+        if code: raise RuntimeError("render_vectoriel.py a échoué (PDF « Plans annotés » vectoriel)")
         t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
