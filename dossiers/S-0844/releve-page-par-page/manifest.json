@@ -1,13 +1,23 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 1298,
-    "sha256": "142588f23f280a07fc199636d337db71d4783ddd812f222133a6862469da1783"
+    "bytes": 1681,
+    "sha256": "6e5c77420161b40e9f32ffea2bc0f08c070d471f8e41ad57a3fccfe4a39cd61b"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 3192,
-    "sha256": "aff57eec7cc7ec48526070cfe0f7c00ba935913cc95c3174d6c16c3321bf4ed2"
+    "bytes": 3260,
+    "sha256": "0228eb4d8838edea97047559a47b97b8180c90fdf4da9a36d7cc61d2d764db26"
+  },
+  {
+    "file": "S-0844-EX-E-PE01-breakers.csv",
+    "bytes": 16240,
+    "sha256": "70029d4ac4e5dc40837572f1b39cdc44b0b7de8341cd7d5bd2a63ac902545e32"
+  },
+  {
+    "file": "S-0844-EX-E-PE01-releve.jpg",
+    "bytes": 3628779,
+    "sha256": "c26bb202bdd24d9318c2c131039441895a52d13f2601ac45e5840529ed34d024"
   },
   {
     "file": "S-0844-EX-M-PE01-breakers.csv",
@@ -18,6 +28,16 @@
     "file": "S-0844-EX-M-PE01-releve.jpg",
     "bytes": 8759169,
     "sha256": "dc10df96f4ff2447b13fa58d95135bb222a153b4d0cf7499f5fbe56f3c6dd99e"
+  },
+  {
+    "file": "S-0844-breakers-by-panel.xlsx",
+    "bytes": 51603,
+    "sha256": "fa4c113d7a02cff49dea5ef5b7ba04a28446b9abc4124496e2e01c29870ada11"
+  },
+  {
+    "file": "S-0844-breakers-detailed.csv",
+    "bytes": 46104,
+    "sha256": "c1e47ddace989f844a478c2771723895404169d89aa183f437b3651d8178c96f"
   },
   {
     "file": "S-0844-inventaire-feuilles.csv",
