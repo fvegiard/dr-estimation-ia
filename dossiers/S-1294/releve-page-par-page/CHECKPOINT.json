@@ -111,6 +111,15 @@
       "jpeg_sha256": "0deae9e9a7c9d8a1f4dee61360a8b89c4c6c4bd8b835eb842be3758689cdb881",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 4
+    },
+    {
+      "sheet": "E400-page22",
+      "markers": 0,
+      "visual_score": "0/0",
+      "review": "Quatre zones façade inspectées au zoom : repères architecturaux sans appareils électriques; JPEG complet et légende vérifiés, zéro pastille.",
+      "jpeg_sha256": "3560b733c7c4aff0d015c95cad72ea8aeb25a06c07a91db04f608e9ddea1fee7",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 0
     }
   ],
   "remaining": [
@@ -123,7 +132,6 @@
     "E206",
     "E300",
     "E301",
-    "E400-page22",
     "E400-page23"
   ],
   "reserves": [

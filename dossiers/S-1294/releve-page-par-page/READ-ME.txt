@@ -68,9 +68,14 @@ E100 : 88 pastilles; 4 réserves; contrôle visuel 88/88.
   Batterie2phares : 320 W près du symbole contre 144 W dans remarque. Câblodistribution : RG58/U ici contre RG6/U sur E107.
   Calibres de prises reproduits de la légende; aucun calibre de protection associé choisi. Aucune longueur de câble déduite.
   Notes logements : cuisinières maximum12 kW; modèles mentionnés peuvent être équivalents approuvés. Aucun fabricant imposé par ce relevé.
+E400-page22 : 0 pastilles; 0 réserves; contrôle visuel 0/0.
+  Aucun symbole électrique ni appel de note électrique identifié sur cette page après inspection des quatre zones de façade.
+  Les cercles F2, F16, P20, P24 et similaires sont des repères de fenêtres/portes du fond architectural; ils ne sont pas des luminaires.
+  Zéro pastille ne signifie pas absence d’éclairage extérieur au projet. Les plans et logements types portent les autres prescriptions.
+  Aucune quantité d’appareil déduite des fenêtres, portes, enseignes ou garde-corps. Plan original intégralement conservé.
 
 LIMITES ET RÉSERVES :
-Feuilles restant à traiter : E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
+Feuilles restant à traiter : E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page23.
 Numéros de cartouche répétés : E002 pages 2–3, E105 pages 9–10, E400 pages 22–23. Les suffixes page distinguent les fichiers.
 Aucune feuille M-, A- ou S- dans la série principale de 23 pages. Les 11 scans complémentaires restent à classer et à contrôler.
 Les détails types et diagrammes ne constituent pas une quantité globale de chantier. Ne pas additionner schémas, plans de niveau et logements types.
