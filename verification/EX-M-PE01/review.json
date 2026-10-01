@@ -1,0 +1,10 @@
+{
+  "feuille": "EX-M-PE01",
+  "pastilles": 235,
+  "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+  "score": "235/235",
+  "erreurs_restantes": [],
+  "legende_lisible": true,
+  "source_conservee": true,
+  "sha256_jpeg": "dc10df96f4ff2447b13fa58d95135bb222a153b4d0cf7499f5fbe56f3c6dd99e"
+}

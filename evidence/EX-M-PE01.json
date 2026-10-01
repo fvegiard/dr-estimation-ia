@@ -1,0 +1,3599 @@
+{
+  "sheet": "EX-M-PE01",
+  "source": "sources/20240424_Plans Elec pour Changement 11 - 7.png",
+  "markers": [
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 1",
+      "parent": "C1-2",
+      "circuits": [
+        1
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 222.0,
+      "y": 137.7,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 2",
+      "parent": "C1-2",
+      "circuits": [
+        2
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 250.6,
+      "y": 137.7,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 3",
+      "parent": "C1-2",
+      "circuits": [
+        3
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 222.0,
+      "y": 148.32,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 4",
+      "parent": "C1-2",
+      "circuits": [
+        4
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 250.6,
+      "y": 148.32,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 5",
+      "parent": "C1-2",
+      "circuits": [
+        5
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 158.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 6",
+      "parent": "C1-2",
+      "circuits": [
+        6
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 158.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 7",
+      "parent": "C1-2",
+      "circuits": [
+        7
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 169.56,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 8",
+      "parent": "C1-2",
+      "circuits": [
+        8
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 169.56,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 9",
+      "parent": "C1-2",
+      "circuits": [
+        9
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 180.17999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 10",
+      "parent": "C1-2",
+      "circuits": [
+        10
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 180.17999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 11",
+      "parent": "C1-2",
+      "circuits": [
+        11
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 190.79999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 12",
+      "parent": "C1-2",
+      "circuits": [
+        12
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 190.79999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 13",
+      "parent": "C1-2",
+      "circuits": [
+        13
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 201.42,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 14",
+      "parent": "C1-2",
+      "circuits": [
+        14
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 201.42,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 15",
+      "parent": "C1-2",
+      "circuits": [
+        15
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 212.03999999999996,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 16",
+      "parent": "C1-2",
+      "circuits": [
+        16
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 250.6,
+      "y": 212.03999999999996,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 17",
+      "parent": "C1-2",
+      "circuits": [
+        17
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 222.65999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 18",
+      "parent": "C1-2",
+      "circuits": [
+        18
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 250.6,
+      "y": 222.65999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 19",
+      "parent": "C1-2",
+      "circuits": [
+        19
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 222.0,
+      "y": 233.27999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 20",
+      "parent": "C1-2",
+      "circuits": [
+        20
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 233.27999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 21",
+      "parent": "C1-2",
+      "circuits": [
+        21
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 243.89999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 22",
+      "parent": "C1-2",
+      "circuits": [
+        22
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 250.6,
+      "y": 243.89999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 23",
+      "parent": "C1-2",
+      "circuits": [
+        23
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 254.51999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 24",
+      "parent": "C1-2",
+      "circuits": [
+        24
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 254.51999999999998,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 25",
+      "parent": "C1-2",
+      "circuits": [
+        25
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 265.14,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 26",
+      "parent": "C1-2",
+      "circuits": [
+        26
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 265.14,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 27",
+      "parent": "C1-2",
+      "circuits": [
+        27
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 275.76,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 28",
+      "parent": "C1-2",
+      "circuits": [
+        28
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 275.76,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 29",
+      "parent": "C1-2",
+      "circuits": [
+        29
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 286.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 30",
+      "parent": "C1-2",
+      "circuits": [
+        30
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 286.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 31",
+      "parent": "C1-2",
+      "circuits": [
+        31
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 297.0,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 32",
+      "parent": "C1-2",
+      "circuits": [
+        32
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 297.0,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 33",
+      "parent": "C1-2",
+      "circuits": [
+        33
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 307.62,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 34",
+      "parent": "C1-2",
+      "circuits": [
+        34
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 307.62,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 35",
+      "parent": "C1-2",
+      "circuits": [
+        35
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 318.24,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 36",
+      "parent": "C1-2",
+      "circuits": [
+        36
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 318.24,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 37",
+      "parent": "C1-2",
+      "circuits": [
+        37
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 328.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 38",
+      "parent": "C1-2",
+      "circuits": [
+        38
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 328.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 39",
+      "parent": "C1-2",
+      "circuits": [
+        39
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 339.47999999999996,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 40",
+      "parent": "C1-2",
+      "circuits": [
+        40
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 339.47999999999996,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 41",
+      "parent": "C1-2",
+      "circuits": [
+        41
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 350.09999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 42",
+      "parent": "C1-2",
+      "circuits": [
+        42
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 350.09999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 43",
+      "parent": "C1-2",
+      "circuits": [
+        43
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 360.71999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 44",
+      "parent": "C1-2",
+      "circuits": [
+        44
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 360.71999999999997,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 45",
+      "parent": "C1-2",
+      "circuits": [
+        45
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 371.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 46",
+      "parent": "C1-2",
+      "circuits": [
+        46
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 371.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 47",
+      "parent": "C1-2",
+      "circuits": [
+        47
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 222.0,
+      "y": 381.96,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 48",
+      "parent": "C1-2",
+      "circuits": [
+        48
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 381.96,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 49",
+      "parent": "C1-2",
+      "circuits": [
+        49
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 392.58,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 50",
+      "parent": "C1-2",
+      "circuits": [
+        50
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 392.58,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 51",
+      "parent": "C1-2",
+      "circuits": [
+        51
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.0,
+      "y": 403.2,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-2 — circuits 52",
+      "parent": "C1-2",
+      "circuits": [
+        52
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 250.6,
+      "y": 403.2,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C1-2 — circuits 53",
+      "parent": "C1-2",
+      "circuits": [
+        53
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 222.0,
+      "y": 413.82,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 1",
+      "parent": "C3-2",
+      "circuits": [
+        1
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 590.2,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 2",
+      "parent": "C3-2",
+      "circuits": [
+        2
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 614.4,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 3",
+      "parent": "C3-2",
+      "circuits": [
+        3
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 590.2,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 4",
+      "parent": "C3-2",
+      "circuits": [
+        4
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 614.4,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 5",
+      "parent": "C3-2",
+      "circuits": [
+        5
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 590.2,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 6",
+      "parent": "C3-2",
+      "circuits": [
+        6
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 614.4,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 7",
+      "parent": "C3-2",
+      "circuits": [
+        7
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 8",
+      "parent": "C3-2",
+      "circuits": [
+        8
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 614.4,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 9",
+      "parent": "C3-2",
+      "circuits": [
+        9
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 10",
+      "parent": "C3-2",
+      "circuits": [
+        10
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 11",
+      "parent": "C3-2",
+      "circuits": [
+        11
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 12",
+      "parent": "C3-2",
+      "circuits": [
+        12
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 13",
+      "parent": "C3-2",
+      "circuits": [
+        13
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 14",
+      "parent": "C3-2",
+      "circuits": [
+        14
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 15",
+      "parent": "C3-2",
+      "circuits": [
+        15
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 16",
+      "parent": "C3-2",
+      "circuits": [
+        16
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 17",
+      "parent": "C3-2",
+      "circuits": [
+        17
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 18",
+      "parent": "C3-2",
+      "circuits": [
+        18
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 19",
+      "parent": "C3-2",
+      "circuits": [
+        19
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 20",
+      "parent": "C3-2",
+      "circuits": [
+        20
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 21",
+      "parent": "C3-2",
+      "circuits": [
+        21
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 22",
+      "parent": "C3-2",
+      "circuits": [
+        22
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 23",
+      "parent": "C3-2",
+      "circuits": [
+        23
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 24",
+      "parent": "C3-2",
+      "circuits": [
+        24
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 25",
+      "parent": "C3-2",
+      "circuits": [
+        25
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 26",
+      "parent": "C3-2",
+      "circuits": [
+        26
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 27",
+      "parent": "C3-2",
+      "circuits": [
+        27
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 590.2,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 28",
+      "parent": "C3-2",
+      "circuits": [
+        28
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 29",
+      "parent": "C3-2",
+      "circuits": [
+        29
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 30",
+      "parent": "C3-2",
+      "circuits": [
+        30
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 31",
+      "parent": "C3-2",
+      "circuits": [
+        31
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 32",
+      "parent": "C3-2",
+      "circuits": [
+        32
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 33",
+      "parent": "C3-2",
+      "circuits": [
+        33
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 34",
+      "parent": "C3-2",
+      "circuits": [
+        34
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 35",
+      "parent": "C3-2",
+      "circuits": [
+        35
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 289.82000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 36",
+      "parent": "C3-2",
+      "circuits": [
+        36
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 289.82000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 37",
+      "parent": "C3-2",
+      "circuits": [
+        37
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 298.78000000000003,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 38",
+      "parent": "C3-2",
+      "circuits": [
+        38
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 298.78000000000003,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 39",
+      "parent": "C3-2",
+      "circuits": [
+        39
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 307.74,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 40",
+      "parent": "C3-2",
+      "circuits": [
+        40
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 307.74,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 41",
+      "parent": "C3-2",
+      "circuits": [
+        41
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 590.2,
+      "y": 316.70000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 42",
+      "parent": "C3-2",
+      "circuits": [
+        42
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 614.4,
+      "y": 316.70000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 43",
+      "parent": "C3-2",
+      "circuits": [
+        43
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 44",
+      "parent": "C3-2",
+      "circuits": [
+        44
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 811.5,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 45",
+      "parent": "C3-2",
+      "circuits": [
+        45
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 787.0,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 46",
+      "parent": "C3-2",
+      "circuits": [
+        46
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 811.5,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 47",
+      "parent": "C3-2",
+      "circuits": [
+        47
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 787.0,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 48",
+      "parent": "C3-2",
+      "circuits": [
+        48
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 811.5,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 49",
+      "parent": "C3-2",
+      "circuits": [
+        49
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 50",
+      "parent": "C3-2",
+      "circuits": [
+        50
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 51",
+      "parent": "C3-2",
+      "circuits": [
+        51
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 52",
+      "parent": "C3-2",
+      "circuits": [
+        52
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 53",
+      "parent": "C3-2",
+      "circuits": [
+        53
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 787.0,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 54",
+      "parent": "C3-2",
+      "circuits": [
+        54
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 55",
+      "parent": "C3-2",
+      "circuits": [
+        55
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 787.0,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 56",
+      "parent": "C3-2",
+      "circuits": [
+        56
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 57",
+      "parent": "C3-2",
+      "circuits": [
+        57
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C3-2 — circuits 58",
+      "parent": "C3-2",
+      "circuits": [
+        58
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 811.5,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 59",
+      "parent": "C3-2",
+      "circuits": [
+        59
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 60",
+      "parent": "C3-2",
+      "circuits": [
+        60
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 61",
+      "parent": "C3-2",
+      "circuits": [
+        61
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 62",
+      "parent": "C3-2",
+      "circuits": [
+        62
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 63",
+      "parent": "C3-2",
+      "circuits": [
+        63
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 64",
+      "parent": "C3-2",
+      "circuits": [
+        64
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 65",
+      "parent": "C3-2",
+      "circuits": [
+        65
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 66",
+      "parent": "C3-2",
+      "circuits": [
+        66
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 67",
+      "parent": "C3-2",
+      "circuits": [
+        67
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 68",
+      "parent": "C3-2",
+      "circuits": [
+        68
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 69",
+      "parent": "C3-2",
+      "circuits": [
+        69
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 70",
+      "parent": "C3-2",
+      "circuits": [
+        70
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 71",
+      "parent": "C3-2",
+      "circuits": [
+        71
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 72",
+      "parent": "C3-2",
+      "circuits": [
+        72
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 73",
+      "parent": "C3-2",
+      "circuits": [
+        73
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 74",
+      "parent": "C3-2",
+      "circuits": [
+        74
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 25 A / 2P",
+      "description": "C3-2 — circuits 75,77",
+      "parent": "C3-2",
+      "circuits": [
+        75,
+        77
+      ],
+      "amps": 25,
+      "poles": 2,
+      "x": 787.0,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 76",
+      "parent": "C3-2",
+      "circuits": [
+        76
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 78",
+      "parent": "C3-2",
+      "circuits": [
+        78
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 811.5,
+      "y": 289.82000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 79",
+      "parent": "C3-2",
+      "circuits": [
+        79
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 298.78000000000003,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 81",
+      "parent": "C3-2",
+      "circuits": [
+        81
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 307.74,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C3-2 — circuits 83",
+      "parent": "C3-2",
+      "circuits": [
+        83
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 787.0,
+      "y": 316.70000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 1",
+      "parent": "C4-2",
+      "circuits": [
+        1
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 2",
+      "parent": "C4-2",
+      "circuits": [
+        2
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 3",
+      "parent": "C4-2",
+      "circuits": [
+        3
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 4",
+      "parent": "C4-2",
+      "circuits": [
+        4
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 5",
+      "parent": "C4-2",
+      "circuits": [
+        5
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 6",
+      "parent": "C4-2",
+      "circuits": [
+        6
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 7",
+      "parent": "C4-2",
+      "circuits": [
+        7
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 8",
+      "parent": "C4-2",
+      "circuits": [
+        8
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 9",
+      "parent": "C4-2",
+      "circuits": [
+        9
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 10",
+      "parent": "C4-2",
+      "circuits": [
+        10
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 11",
+      "parent": "C4-2",
+      "circuits": [
+        11
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 12",
+      "parent": "C4-2",
+      "circuits": [
+        12
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 13",
+      "parent": "C4-2",
+      "circuits": [
+        13
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 14",
+      "parent": "C4-2",
+      "circuits": [
+        14
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 15",
+      "parent": "C4-2",
+      "circuits": [
+        15
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 16",
+      "parent": "C4-2",
+      "circuits": [
+        16
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 17",
+      "parent": "C4-2",
+      "circuits": [
+        17
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 18",
+      "parent": "C4-2",
+      "circuits": [
+        18
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 19",
+      "parent": "C4-2",
+      "circuits": [
+        19
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 20",
+      "parent": "C4-2",
+      "circuits": [
+        20
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 21",
+      "parent": "C4-2",
+      "circuits": [
+        21
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 22",
+      "parent": "C4-2",
+      "circuits": [
+        22
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 23",
+      "parent": "C4-2",
+      "circuits": [
+        23
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 24",
+      "parent": "C4-2",
+      "circuits": [
+        24
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 25",
+      "parent": "C4-2",
+      "circuits": [
+        25
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 26",
+      "parent": "C4-2",
+      "circuits": [
+        26
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 27",
+      "parent": "C4-2",
+      "circuits": [
+        27
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 28",
+      "parent": "C4-2",
+      "circuits": [
+        28
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 29",
+      "parent": "C4-2",
+      "circuits": [
+        29
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 30",
+      "parent": "C4-2",
+      "circuits": [
+        30
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 31",
+      "parent": "C4-2",
+      "circuits": [
+        31
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 32",
+      "parent": "C4-2",
+      "circuits": [
+        32
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 33",
+      "parent": "C4-2",
+      "circuits": [
+        33
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 34",
+      "parent": "C4-2",
+      "circuits": [
+        34
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 35",
+      "parent": "C4-2",
+      "circuits": [
+        35
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 289.82000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 36",
+      "parent": "C4-2",
+      "circuits": [
+        36
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 289.82000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 37",
+      "parent": "C4-2",
+      "circuits": [
+        37
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 298.78000000000003,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 38",
+      "parent": "C4-2",
+      "circuits": [
+        38
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 298.78000000000003,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 39",
+      "parent": "C4-2",
+      "circuits": [
+        39
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 307.74,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 40",
+      "parent": "C4-2",
+      "circuits": [
+        40
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 307.74,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 41",
+      "parent": "C4-2",
+      "circuits": [
+        41
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1126.2,
+      "y": 316.70000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 42",
+      "parent": "C4-2",
+      "circuits": [
+        42
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1150.5,
+      "y": 316.70000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 43",
+      "parent": "C4-2",
+      "circuits": [
+        43
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 44",
+      "parent": "C4-2",
+      "circuits": [
+        44
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 137.5,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 45",
+      "parent": "C4-2",
+      "circuits": [
+        45
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 46",
+      "parent": "C4-2",
+      "circuits": [
+        46
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 146.46,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 47",
+      "parent": "C4-2",
+      "circuits": [
+        47
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 48",
+      "parent": "C4-2",
+      "circuits": [
+        48
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 155.42000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 49",
+      "parent": "C4-2",
+      "circuits": [
+        49
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 50",
+      "parent": "C4-2",
+      "circuits": [
+        50
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 164.38,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 51",
+      "parent": "C4-2",
+      "circuits": [
+        51
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 52",
+      "parent": "C4-2",
+      "circuits": [
+        52
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 173.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 53",
+      "parent": "C4-2",
+      "circuits": [
+        53
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 54",
+      "parent": "C4-2",
+      "circuits": [
+        54
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 182.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 55",
+      "parent": "C4-2",
+      "circuits": [
+        55
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 56",
+      "parent": "C4-2",
+      "circuits": [
+        56
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 191.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 57",
+      "parent": "C4-2",
+      "circuits": [
+        57
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 58",
+      "parent": "C4-2",
+      "circuits": [
+        58
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 200.22,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 59",
+      "parent": "C4-2",
+      "circuits": [
+        59
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 60",
+      "parent": "C4-2",
+      "circuits": [
+        60
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 209.18,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 61",
+      "parent": "C4-2",
+      "circuits": [
+        61
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 62",
+      "parent": "C4-2",
+      "circuits": [
+        62
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 218.14000000000001,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 63",
+      "parent": "C4-2",
+      "circuits": [
+        63
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 64",
+      "parent": "C4-2",
+      "circuits": [
+        64
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 227.10000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 65",
+      "parent": "C4-2",
+      "circuits": [
+        65
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 66",
+      "parent": "C4-2",
+      "circuits": [
+        66
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 236.06,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 67",
+      "parent": "C4-2",
+      "circuits": [
+        67
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 68",
+      "parent": "C4-2",
+      "circuits": [
+        68
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 245.02,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 69",
+      "parent": "C4-2",
+      "circuits": [
+        69
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 70",
+      "parent": "C4-2",
+      "circuits": [
+        70
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 253.98000000000002,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 71",
+      "parent": "C4-2",
+      "circuits": [
+        71
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 72",
+      "parent": "C4-2",
+      "circuits": [
+        72
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 262.94,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 73",
+      "parent": "C4-2",
+      "circuits": [
+        73
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "C4-2 — circuits 74",
+      "parent": "C4-2",
+      "circuits": [
+        74
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 271.9,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 25 A / 2P",
+      "description": "C4-2 — circuits 75,77",
+      "parent": "C4-2",
+      "circuits": [
+        75,
+        77
+      ],
+      "amps": 25,
+      "poles": 2,
+      "x": 1323.0,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 76",
+      "parent": "C4-2",
+      "circuits": [
+        76
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1347.4,
+      "y": 280.86,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 79",
+      "parent": "C4-2",
+      "circuits": [
+        79
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 298.78000000000003,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 81",
+      "parent": "C4-2",
+      "circuits": [
+        81
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 307.74,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C4-2 — circuits 83",
+      "parent": "C4-2",
+      "circuits": [
+        83
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1323.0,
+      "y": 316.70000000000005,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 90 A / 3P",
+      "description": "C1-3 — circuits 1,3,5",
+      "parent": "C1-3",
+      "circuits": [
+        1,
+        3,
+        5
+      ],
+      "amps": 90,
+      "poles": 3,
+      "x": 222.7,
+      "y": 729.0,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 130 A / 3P",
+      "description": "C1-3 — circuits 2,4,6",
+      "parent": "C1-3",
+      "circuits": [
+        2,
+        4,
+        6
+      ],
+      "amps": 130,
+      "poles": 3,
+      "x": 252.7,
+      "y": 729.0,
+      "radius": 2.7,
+      "reserve": "* Calibre 130 A conservé littéralement; série et disponibilité à confirmer.",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 3P",
+      "description": "C1-3 — circuits 7,9,11",
+      "parent": "C1-3",
+      "circuits": [
+        7,
+        9,
+        11
+      ],
+      "amps": 20,
+      "poles": 3,
+      "x": 222.7,
+      "y": 762.39,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 3P",
+      "description": "C1-3 — circuits 8,10,12",
+      "parent": "C1-3",
+      "circuits": [
+        8,
+        10,
+        12
+      ],
+      "amps": 15,
+      "poles": 3,
+      "x": 252.7,
+      "y": 762.39,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 3P",
+      "description": "C1-3 — circuits 13,15,17",
+      "parent": "C1-3",
+      "circuits": [
+        13,
+        15,
+        17
+      ],
+      "amps": 30,
+      "poles": 3,
+      "x": 222.7,
+      "y": 795.78,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 25 A / 3P",
+      "description": "C1-3 — circuits 14,16,18",
+      "parent": "C1-3",
+      "circuits": [
+        14,
+        16,
+        18
+      ],
+      "amps": 25,
+      "poles": 3,
+      "x": 252.7,
+      "y": 795.78,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-3 — circuits 19",
+      "parent": "C1-3",
+      "circuits": [
+        19
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.7,
+      "y": 829.17,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "C1-3 — circuits 21",
+      "parent": "C1-3",
+      "circuits": [
+        21
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 222.7,
+      "y": 840.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 1,3",
+      "parent": "CA1-1",
+      "circuits": [
+        1,
+        3
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 602.0,
+      "y": 729.0,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 2,4",
+      "parent": "CA1-1",
+      "circuits": [
+        2,
+        4
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 631.7,
+      "y": 729.0,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 5,7",
+      "parent": "CA1-1",
+      "circuits": [
+        5,
+        7
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 602.0,
+      "y": 751.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 6,8",
+      "parent": "CA1-1",
+      "circuits": [
+        6,
+        8
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 631.7,
+      "y": 751.26,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 9,11",
+      "parent": "CA1-1",
+      "circuits": [
+        9,
+        11
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 602.0,
+      "y": 773.52,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 10,12",
+      "parent": "CA1-1",
+      "circuits": [
+        10,
+        12
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 631.7,
+      "y": 773.52,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 13,15",
+      "parent": "CA1-1",
+      "circuits": [
+        13,
+        15
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 602.0,
+      "y": 795.78,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 14,16",
+      "parent": "CA1-1",
+      "circuits": [
+        14,
+        16
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 631.7,
+      "y": 795.78,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 17,19",
+      "parent": "CA1-1",
+      "circuits": [
+        17,
+        19
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 602.0,
+      "y": 818.04,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 30 A / 2P",
+      "description": "CA1-1 — circuits 21,23",
+      "parent": "CA1-1",
+      "circuits": [
+        21,
+        23
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 602.0,
+      "y": 840.3,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 2P",
+      "description": "CA1-1 — circuits 25,27",
+      "parent": "CA1-1",
+      "circuits": [
+        25,
+        27
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 602.0,
+      "y": 862.56,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 2P",
+      "description": "CA1-1 — circuits 29,31",
+      "parent": "CA1-1",
+      "circuits": [
+        29,
+        31
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 602.0,
+      "y": 884.82,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 20 A / 1P",
+      "description": "CA1-1 — circuits 33",
+      "parent": "CA1-1",
+      "circuits": [
+        33
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 602.0,
+      "y": 907.08,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "CA1-1 — circuits 35",
+      "parent": "CA1-1",
+      "circuits": [
+        35
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 602.0,
+      "y": 918.21,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    },
+    {
+      "family": "Disjoncteur 15 A / 1P",
+      "description": "CA1-1 — circuits 37",
+      "parent": "CA1-1",
+      "circuits": [
+        37
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 602.0,
+      "y": 929.34,
+      "radius": 2.7,
+      "reserve": "",
+      "scope": "CÉDULE NOUVEAU — non additionnable aux plans"
+    }
+  ],
+  "csv_type": "breakers",
+  "scope": "Cédule du 24 avril 2024 — révision 06",
+  "legend_box": [
+    790,
+    660,
+    945,
+    445
+  ],
+  "notes": [
+    "Un appareil multipolaire = une pastille sur son premier pôle; pôles liés exclus du total.",
+    "LIBRE avec calibre : disjoncteur compté. Tiret sans calibre : espace exclu.",
+    "C1-2 : 53; C3-2 : 80; C4-2 : 79; C1-3 : 8; CA1-1 : 15 appareils.",
+    "* 130 A C1-3 conservé tel qu’indiqué. Aucun calibre choisi arbitrairement.",
+    "Marque, série, protections, pouvoir de coupure et principaux non déterminés.",
+    "La cédule ne donne pas une quantité supplémentaire de prises ou de luminaires."
+  ],
+  "review_zones": {
+    "C1-2": [
+      85,
+      75,
+      365,
+      560
+    ],
+    "C3-2": [
+      470,
+      80,
+      920,
+      365
+    ],
+    "C4-2": [
+      1010,
+      80,
+      1460,
+      365
+    ],
+    "C1-3-CA1-1": [
+      90,
+      660,
+      750,
+      1050
+    ]
+  }
+}
