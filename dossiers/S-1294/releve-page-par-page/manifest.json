@@ -1,0 +1,237 @@
+[
+  {
+    "file": "CHECKPOINT.json",
+    "bytes": 7239,
+    "sha256": "0d034fea251b8628f108638a327c994a9386800d5dac9c33732c2d47bfce30c4"
+  },
+  {
+    "file": "READ-ME.txt",
+    "bytes": 10952,
+    "sha256": "70370a6876b43894a8ffc2a783ed7b59eff52847971e788463f76c7f73ed7052"
+  },
+  {
+    "file": "S-1294-E001-details.csv",
+    "bytes": 1242,
+    "sha256": "e59e4302d5f7478f8dc5e30a9fb7b583688743680668aae992383167066d0119"
+  },
+  {
+    "file": "S-1294-E001-releve.jpg",
+    "bytes": 17579993,
+    "sha256": "fda90bcffa7d3bf29713f40612e95ee1d6ce3127f8ea0a06c4cce702df5fb6e3"
+  },
+  {
+    "file": "S-1294-E002-page02-details.csv",
+    "bytes": 1748,
+    "sha256": "50b0ea1ded2dae6c3c9e5d623125d6377e31b92e606e9d53e5e17178e9a4a686"
+  },
+  {
+    "file": "S-1294-E002-page02-releve.jpg",
+    "bytes": 19616536,
+    "sha256": "8a3df152da04a2982d7c4c45046169879986957a6e80144765316a1628b88e6d"
+  },
+  {
+    "file": "S-1294-E002-page03-details.csv",
+    "bytes": 1984,
+    "sha256": "1b6f2bfcd4a7e2500bf8a5ba6094af295c59953ce0299592536768a05cfdf41e"
+  },
+  {
+    "file": "S-1294-E002-page03-releve.jpg",
+    "bytes": 12515272,
+    "sha256": "68de50baf71cd321bc9b4c8ac2a8da305461405c1eeae0e0bc90b578c52eb25c"
+  },
+  {
+    "file": "S-1294-E100-releve.jpg",
+    "bytes": 14643653,
+    "sha256": "0deae9e9a7c9d8a1f4dee61360a8b89c4c6c4bd8b835eb842be3758689cdb881"
+  },
+  {
+    "file": "S-1294-E100-symbols.csv",
+    "bytes": 11542,
+    "sha256": "2991309fd78a302e9471d0cf9568289b53dd7516db85bd3e526b44db604c9849"
+  },
+  {
+    "file": "S-1294-E101-details.csv",
+    "bytes": 2796,
+    "sha256": "da89b64b4e769afe0cccf4b3cbccdfc1612e20dd2ba5825712e45e83eb282d04"
+  },
+  {
+    "file": "S-1294-E101-releve.jpg",
+    "bytes": 6574539,
+    "sha256": "c4345fe74428d9ce7f9cf45e3700f843624660a40256890b3f476c8d0e85766f"
+  },
+  {
+    "file": "S-1294-E102-equipment.csv",
+    "bytes": 8762,
+    "sha256": "371f8d5684f6ce3ee004a19cdaa7d4c4da76c05d6b8f1d4f0fed38e8315fde2c"
+  },
+  {
+    "file": "S-1294-E102-releve.jpg",
+    "bytes": 9862996,
+    "sha256": "89df3197ba8b473dd6471472069ee5dbbea0876e81749d807a04f155491fb6f3"
+  },
+  {
+    "file": "S-1294-E103-equipment.csv",
+    "bytes": 27978,
+    "sha256": "de2e640a2447dc044d6b81be8a8bed6b58d917cbd8446b2fb2bf1b4390e42f01"
+  },
+  {
+    "file": "S-1294-E103-releve.jpg",
+    "bytes": 7383479,
+    "sha256": "434981ad3fa3a5346f6d950342a50a1518ceff5e9dc8e8ac141ce577441b9f72"
+  },
+  {
+    "file": "S-1294-E104-equipment.csv",
+    "bytes": 22594,
+    "sha256": "4ba06e915807b643eb271a10cd60ec773e3d27155005ff0141ddb8761f4d86ca"
+  },
+  {
+    "file": "S-1294-E104-releve.jpg",
+    "bytes": 6726387,
+    "sha256": "43828ecca1393fff45d2fc31c6ad061cc6ac7ecf8d0e4583a4634af7149ccff7"
+  },
+  {
+    "file": "S-1294-E105-page09-breakers.csv",
+    "bytes": 33334,
+    "sha256": "6c140519bf357cb29fa341e7374e4a5945b9a077bf9dafc70a14b198c517d4a5"
+  },
+  {
+    "file": "S-1294-E105-page09-releve.jpg",
+    "bytes": 10448395,
+    "sha256": "8c48cf0847276542e3f7205caead1ae998180d148481f80927207d1e7f7e64b5"
+  },
+  {
+    "file": "S-1294-E105-page10-releve.jpg",
+    "bytes": 10390428,
+    "sha256": "c7e0576361e9c4484c94bea1296fefce3c3b074f3c44f2e064c9a187025fa2b5"
+  },
+  {
+    "file": "S-1294-E105-page10-symbols.csv",
+    "bytes": 38264,
+    "sha256": "e6d56da28a1a0963a8b81659f4a8106c85c844c7f2b1f85e67cb839746878ed4"
+  },
+  {
+    "file": "S-1294-E107-details.csv",
+    "bytes": 14826,
+    "sha256": "9372dbbcc2767a98a79d2f3574e3204c088ad8bdcc47ba98c3bb92a34b3daf60"
+  },
+  {
+    "file": "S-1294-E107-releve.jpg",
+    "bytes": 10261147,
+    "sha256": "f720581d868b8daf91110d68d72f01d193f7d25f5c666938e942b8db7a6ad53b"
+  },
+  {
+    "file": "S-1294-E108-details.csv",
+    "bytes": 7202,
+    "sha256": "2ce315ff39ee7b54db2246691dc5986dabd27415f9e33c1f40fbe8eb51c7cc12"
+  },
+  {
+    "file": "S-1294-E108-releve.jpg",
+    "bytes": 11538446,
+    "sha256": "30975a748bc16614e8ecfa16e7b51e23df50261955426f62e280b8e840e59b4b"
+  },
+  {
+    "file": "S-1294-E400-page22-equipment.csv",
+    "bytes": 429,
+    "sha256": "f1ca55ab0995bac8a7f6a88fe37c6cfe1ad735ae7ce97b2bf1d6562879e4b63e"
+  },
+  {
+    "file": "S-1294-E400-page22-releve.jpg",
+    "bytes": 9910938,
+    "sha256": "3560b733c7c4aff0d015c95cad72ea8aeb25a06c07a91db04f608e9ddea1fee7"
+  },
+  {
+    "file": "S-1294-E400-page23-equipment.csv",
+    "bytes": 673,
+    "sha256": "5cd705ca6085b304b910ebb180ea66159f7af318c52739cc4ce21d85e0dc0189"
+  },
+  {
+    "file": "S-1294-E400-page23-releve.jpg",
+    "bytes": 6068728,
+    "sha256": "6fe29e360cae95626e5c44b9681c4acd21e607370fe51a88cf4ff33bbe1b8da2"
+  },
+  {
+    "file": "S-1294-breakers-by-panel.xlsx",
+    "bytes": 25339,
+    "sha256": "44896c800a9b1d0332f5db7620c3aab9c2c332f9c196fe714c4fec3526f69405"
+  },
+  {
+    "file": "S-1294-breakers-detailed.csv",
+    "bytes": 19333,
+    "sha256": "7ea0b5ed22e9431adfd4d61d0820762afbbf329b50e87ad4ec09a31bbb2d1784"
+  },
+  {
+    "file": "methode/build_elevation_records.py",
+    "bytes": 2062,
+    "sha256": "3fcfabbdee4a9aa21a4212a3503b695dd48dcbb5ed7c81a3f6ef9818bd982946"
+  },
+  {
+    "file": "methode/build_fire_records.py",
+    "bytes": 5388,
+    "sha256": "87d9b087230d28a53a432fdebbe224d36335e42f6e30afbc54ab9cbf9793612f"
+  },
+  {
+    "file": "methode/build_legend_records.py",
+    "bytes": 5526,
+    "sha256": "fe14cb0d9a669f2b29eb74954d9a01f85854698fa6c8a03c148ed15df775cc09"
+  },
+  {
+    "file": "methode/build_lighting_records.py",
+    "bytes": 4459,
+    "sha256": "7dc9a697be6d73276635dc53bf5e6c823a552ba328cc76c25ca73ff0f4e6db6d"
+  },
+  {
+    "file": "methode/build_panel_records.py",
+    "bytes": 7408,
+    "sha256": "0b057d5e3f373142345fdff0a6fc1621946806d6999a528c13700fe594318cec"
+  },
+  {
+    "file": "methode/build_spec_records.py",
+    "bytes": 5232,
+    "sha256": "4606160c05c4779db53271db0a9daba139055d184a1cd6518817ed51afcaf1a7"
+  },
+  {
+    "file": "methode/build_telecom_records.py",
+    "bytes": 4568,
+    "sha256": "09be6a31eb4b3297303694898aa38dde394c850fe08ff1c35d79ff2279b2f113"
+  },
+  {
+    "file": "methode/build_workbook.py",
+    "bytes": 5008,
+    "sha256": "ced3c265e5a9aef04ba817c03d49787b18b97c7d1dd4c50da34050ba9acc9eef"
+  },
+  {
+    "file": "methode/crop_view.py",
+    "bytes": 529,
+    "sha256": "fd1fa4f9fa9a02746de87e665bef6101f4b4217f744e9a6c88251481d809e657"
+  },
+  {
+    "file": "methode/fetch_sources.py",
+    "bytes": 2144,
+    "sha256": "89ca89181cb065a5632e7d0bd8d7d73f318954abbbf0ab07e3ec346739c47168"
+  },
+  {
+    "file": "methode/ocr_sources.py",
+    "bytes": 698,
+    "sha256": "454244afd7096c99b7b0381b8f97c7d40ddd97889b3d0aefef648a4a6c923fe3"
+  },
+  {
+    "file": "methode/package_delivery.py",
+    "bytes": 6009,
+    "sha256": "103bdca7939e45e68bf3aa891840d17cb72fefb3700b92650b92a0282e2f7b4d"
+  },
+  {
+    "file": "methode/prepare_views.py",
+    "bytes": 1111,
+    "sha256": "02ebb11aee0b426c28361f385711e2f94782bc8ee3f58ea21d87fa4174da2d3f"
+  },
+  {
+    "file": "methode/render_sheet.py",
+    "bytes": 5129,
+    "sha256": "196f842efb55a97c873b4d426e0f30e2738a9ea6b606f4f4bbb1001d5fc20d67"
+  },
+  {
+    "file": "methode/validate_sheet.py",
+    "bytes": 1049,
+    "sha256": "50fc9767d97023a7f029b178bf5ba636a413206c4f9e9b91d4b735c491a5c514"
+  }
+]
