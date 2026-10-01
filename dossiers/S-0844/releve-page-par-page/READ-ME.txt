@@ -11,11 +11,12 @@ EX-E-PE01 : 103 pastilles; 0 réserve(s) de repère; contrôle visuel 103/103.
 ES-M-0T01 : 4 pastilles; 2 réserve(s) de repère; contrôle visuel 4/4.
 EX-M-DG02 : 2 pastilles; 0 réserve(s) de repère; contrôle visuel 2/2.
 EX-M-DT02 : 7 pastilles; 0 réserve(s) de repère; contrôle visuel 7/7.
+EE-M-RC01 : 149 pastilles; 6 réserve(s) de repère; contrôle visuel 149/149.
 Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
 JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
 
 RESTANT À RELEVER
-ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-RC01, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
+ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
 
 NON COMPTÉ / PORTÉES
 Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
@@ -69,6 +70,15 @@ Quantités de symboles au diagramme seulement : recouper avec les vues agrandies
 Libellés source : 1#6V, C.21 mm et 1#1/0V, C.21 mm conservés sans choix de calibre.
 Longueurs des conducteurs et conduits non déterminées; aucun métré au diagramme.
 Modèles et dimensions des barres non précisés.
+
+EE-M-RC01 — PRÉCISIONS
+* Ordre des révisions contradictoire : R06 du 12 janvier / R05 du 24 avril 2024. R05 utilisée ici.
+L05m/n/o : 9 panneaux acoustiques, pas des luminaires (cédule EX-M-LG02).
+L06f : 3 flèches, mentions 3x + 4x + 4x = 11 segments; longueurs inconnues, pas de métré.
+EX1/EX7 et issues ER séparés : existants à relocaliser. EX3 existants distingués.
+* Commande M, charge du point 1mm et interface IC : spécifications à confirmer.
+Les traits de liaison et extrémités noires des commandes ne sont pas des détecteurs.
+Ne pas additionner les mêmes appareils aux vues agrandies EX-M-DT01.
 Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
 
 MÉTHODE

@@ -27,9 +27,14 @@ def render(data):
     reserves=sum(bool(m.get('reserve')) for m in data['markers'])
     text(x+15,y+39,f'{len(data["markers"])} repères / {len(counts)} familles / RES {reserves} — '+data['scope'],11)
     cursor=y+65
-    for family,count in counts.items():
-        c=colors[family];draw.ellipse(tuple(round(v*scale) for v in (x+16,cursor+2,x+24,cursor+10)),fill=c+'35',outline=c,width=2)
-        text(x+34,cursor,f'{family} : {count}',11);cursor+=20
+    columns=data.get('legend_columns',1)
+    rows=(len(counts)+columns-1)//columns
+    for index,(family,count) in enumerate(counts.items()):
+        cx=x+(index//rows)*w/columns
+        cy=cursor+(index%rows)*20
+        c=colors[family];draw.ellipse(tuple(round(v*scale) for v in (cx+16,cy+2,cx+24,cy+10)),fill=c+'35',outline=c,width=2)
+        text(cx+34,cy,f'{family} : {count}',11)
+    cursor+=rows*20
     for note in data['notes']:text(x+15,cursor,note,10);cursor+=18
     assert cursor<y+h-4,(sheet,cursor,y+h)
     final=Image.alpha_composite(im.convert('RGBA'),layer).convert('RGB')

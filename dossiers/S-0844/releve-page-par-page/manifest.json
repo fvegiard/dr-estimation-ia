@@ -1,13 +1,23 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 2812,
-    "sha256": "fe61e5f2828f6296b153ebfae549f04b5f74810234db2c30a898a0724f2f9091"
+    "bytes": 3195,
+    "sha256": "007c4195b787518c3ea6dd447f81158fd5aa268b0ddcd1cf8df4b84dde50426c"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 5785,
-    "sha256": "06602a01317b35a6f73e9209ce6b1baf8f2047530c1ccfc5b39c0e2ce48c97af"
+    "bytes": 6475,
+    "sha256": "34a12a4a685bf442cd7ad3529f06fdd72ccb1a052677fee8e8080dd328fb45b5"
+  },
+  {
+    "file": "S-0844-EE-M-RC01-equipment.csv",
+    "bytes": 18432,
+    "sha256": "5923174fb4e66bb3499bc1e4cb2be6be036338849c235438cc66da09c85465df"
+  },
+  {
+    "file": "S-0844-EE-M-RC01-releve.jpg",
+    "bytes": 13204086,
+    "sha256": "c99d585bba37e565edcae2e865d599d9b4ccdb28f77ae10e1c1ab423bf2cf346"
   },
   {
     "file": "S-0844-ES-M-0T01-equipment.csv",
@@ -80,6 +90,11 @@
     "sha256": "88e2f7f4ef969622fb347426e93ceb32fa7841682e2fa890986e9dee5f938ce4"
   },
   {
+    "file": "methode/build_ground_lighting.py",
+    "bytes": 5737,
+    "sha256": "155eccff4e519de380c7f5da0302c512b6ede14721fa7181be3d077975d5a93e"
+  },
+  {
     "file": "methode/build_panels.py",
     "bytes": 2907,
     "sha256": "7536a163d4beaaf29dc591bff607088ce06e735764d81c74315746b6849700de"
@@ -126,7 +141,7 @@
   },
   {
     "file": "methode/render_sheet.py",
-    "bytes": 3402,
-    "sha256": "3c7819a3cfe09d955ad91a591c5e17f4ed691a1b6f87e58cd8266e8b2049b1d8"
+    "bytes": 3575,
+    "sha256": "bcbf6a518d0cc623d5668cb1c197869e73c304c1169ec349881c29d8fc94c23b"
   }
 ]
