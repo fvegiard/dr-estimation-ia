@@ -8,11 +8,12 @@ Aucun QPL de l’estimateur ouvert ni téléchargé depuis SharePoint. Aucune co
 FEUILLES VÉRIFIÉES
 EX-M-PE01 : 235 pastilles; 1 réserve(s) de repère; contrôle visuel 235/235.
 EX-E-PE01 : 103 pastilles; 0 réserve(s) de repère; contrôle visuel 103/103.
-Les scores concernent les repères annotés de ces cédules; ils ne certifient pas le dossier complet.
+ES-M-0T01 : 4 pastilles; 2 réserve(s) de repère; contrôle visuel 4/4.
+Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
 JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
 
 RESTANT À RELEVER
-ES-D-SS01, ES-D-0301, ES-M-0T01, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DG02, EX-M-DT01, EX-M-DT02, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-RC01, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
+ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DG02, EX-M-DT01, EX-M-DT02, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-RC01, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
 
 NON COMPTÉ / PORTÉES
 Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
@@ -29,6 +30,28 @@ RÉSERVES / CONTRADICTIONS
 * C1-3, circuits 2/4/6 : 130 A / 3P conservé tel qu’écrit; série et disponibilité à confirmer. Aucun calibre choisi arbitrairement.
 * UE-1, C1-1, C3-1, C4-1 : barres omnibus indiquées 0 A aux tableaux existants; valeur inutilisable, vérification sur place requise.
 Marques, modèles, séries, protections, pouvoirs de coupure et principaux non précisés. Reconciliation interfeuilles encore en cours.
+
+EX-M-PE01 — PRÉCISIONS
+Un appareil multipolaire = une pastille sur son premier pôle; pôles liés exclus du total.
+LIBRE avec calibre : disjoncteur compté. Tiret sans calibre : espace exclu.
+C1-2 : 53; C3-2 : 80; C4-2 : 79; C1-3 : 8; CA1-1 : 15 appareils.
+* 130 A C1-3 conservé tel qu’indiqué. Aucun calibre choisi arbitrairement.
+Marque, série, protections, pouvoir de coupure et principaux non déterminés.
+La cédule ne donne pas une quantité supplémentaire de prises ou de luminaires.
+
+EX-E-PE01 — PRÉCISIONS
+Un appareil multipolaire = un repère au premier pôle. Espaces sans calibre exclus.
+S1 : 26; UE-1 : 21; C1-1 : 20; C3-1 : 18; C4-1 : 18 appareils existants.
+Aucun achat déduit de cette feuille. Modifications à recouper aux plans modifiés.
+* Les barres omnibus indiquées 0 A sur quatre tableaux ne constituent pas un calibre utilisable.
+Marques, séries, protections et pouvoirs de coupure non précisés. Vérification sur place requise.
+
+ES-M-0T01 — PRÉCISIONS
+Deux appareils mécaniques et leurs deux interrupteurs EI représentés au toit.
+CS2-001-006 : C3-2 / 75,77. CS3-001-006 : C4-2 / 75,77.
+* Aucun calibre de sectionneur choisi. Les disjoncteurs sont déjà comptés à EX-M-PE01.
+Appareils mécaniques : points de raccordement, aucune fourniture mécanique déduite.
+Câbles, conduits et longueurs non métrés. Modèles non précisés.
 Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
 
 MÉTHODE

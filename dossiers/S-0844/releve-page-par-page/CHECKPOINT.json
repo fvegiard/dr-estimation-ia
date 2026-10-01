@@ -24,12 +24,22 @@
       "source_conservee": true,
       "sha256_jpeg": "c26bb202bdd24d9318c2c131039441895a52d13f2601ac45e5840529ed34d024",
       "reserves_repere": 0
+    },
+    {
+      "feuille": "ES-M-0T01",
+      "pastilles": 4,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "4/4",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "e82c29438f3f681d4f7976b4785c2ff0b88e3c27f69c0372dff6228c83215e68",
+      "reserves_repere": 2
     }
   ],
   "feuilles_restantes": [
     "ES-D-SS01",
     "ES-D-0301",
-    "ES-M-0T01",
     "EC-M-RC01",
     "EC-M-0301",
     "EA-M-0301",

@@ -16,7 +16,7 @@ def package(sheets, destination):
     text+='Sources : SharePoint Mes projets / s-0844 (13-Novembre-2023). 75 PNG, 63 SHA-256 distincts, 12 doublons retirés. Aucun PDF reçu.\n'
     text+='Aucun QPL de l’estimateur ouvert ni téléchargé depuis SharePoint. Aucune comparaison à son relevé.\n\nFEUILLES VÉRIFIÉES\n'
     for r in completed:text+=f"{r['feuille']} : {r['pastilles']} pastilles; {r['reserves_repere']} réserve(s) de repère; contrôle visuel {r['score']}.\n"
-    text+='Les scores concernent les repères annotés de ces cédules; ils ne certifient pas le dossier complet.\n'
+    text+='Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.\n'
     text+='JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.\n\nRESTANT À RELEVER\n'+', '.join(pending)+'\n'
     text+='\nNON COMPTÉ / PORTÉES\nLes autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.\n'
     text+='Câbles, conduits, chemins de câbles et longueurs non métrés. Aucun prix. Aucun total global d’achat.\n'
@@ -30,6 +30,9 @@ def package(sheets, destination):
     text+='* C1-3, circuits 2/4/6 : 130 A / 3P conservé tel qu’écrit; série et disponibilité à confirmer. Aucun calibre choisi arbitrairement.\n'
     text+='* UE-1, C1-1, C3-1, C4-1 : barres omnibus indiquées 0 A aux tableaux existants; valeur inutilisable, vérification sur place requise.\n'
     text+='Marques, modèles, séries, protections, pouvoirs de coupure et principaux non précisés. Reconciliation interfeuilles encore en cours.\n'
+    for row in completed:
+        data=json.loads((ROOT/'evidence'/f"{row['feuille']}.json").read_text())
+        text+='\n'+row['feuille']+' — PRÉCISIONS\n'+'\n'.join(data['notes'])+'\n'
     text+='Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.\n\nMÉTHODE\n'
     text+='Scripts Python réellement utilisés dans methode/. Ils ont été exécutés à la racine du dossier de travail avec sources/, inspection/ et evidence/ locaux.\n'
     text+='Ces entrées de travail et les zooms ne sont pas publiés. Le clonage de référence et les fichiers sources ne font pas partie de ce livrable.\n'
@@ -55,7 +58,15 @@ def package(sheets, destination):
         body+=f"| {r['feuille']} | {r['pastilles']} | {r['reserves_repere']} | [{f}](dossiers/S-0844/releve-page-par-page/{f}) |\n"
     body+='\nContrôle visuel direct : JPEG ouverts en vue générale puis au zoom par panneau; pastilles sur les symboles, groupes multipolaires comptés une fois, légendes relues.\n'
     body+='\nLimites et contradictions :\n\n- 26 feuilles encore à relever; câbles et conduits non métrés; rapprochement interfeuilles incomplet.\n- 235 disjoncteurs aux tableaux nouveaux; 103 existants séparés. Aucun total global d’achat.\n- C1-3 : 130 A / 3P conservé littéralement, en réserve.\n- Quatre tableaux existants indiquent 0 A aux barres omnibus : à vérifier.\n- EE-M-RC01 : ordre des révisions 06/04/05 incompatible avec les dates janvier/mars/avril 2024.\n- Marques, séries, protections, principaux et pouvoirs de coupure non déterminés.\n- MG-M-RC01, MX-M-LG01 et MV-M-0401 non électriques : non relevées.\n- Aucun QPL estimateur lu; sources et zooms non publiés.\n'
-    body+='\nValidation : classeur rouvert, 338 lignes et quantités contrôlées. Tests du dépôt et contrôles CI en attente; la PR reste en brouillon.\n'
+    body=body.replace('26 feuilles encore à relever',f'{len(pending)} feuilles encore à relever')
+    for row in completed:
+        if row['feuille'] not in {'EX-M-PE01','EX-E-PE01'}:
+            data=json.loads((ROOT/'evidence'/f"{row['feuille']}.json").read_text())
+            body+='\n'+row['feuille']+' : '+' '.join(data['notes'])+'\n'
+    body+='\nValidation : classeur rouvert, 338 lignes et quantités contrôlées. La PR reste en brouillon pendant le relevé.\n'
+    test_log=ROOT/'pytest-output.txt'
+    if test_log.exists() and (' passed' in test_log.read_text() or ' failed' in test_log.read_text()):
+        body+='\nSortie réelle de `python -m pytest tests -q` (pr-repo) :\n```text\n'+test_log.read_text()[-6000:]+'\n```\n'
     (ROOT/'pr-body.md').write_text(body,encoding='utf-8')
     print(f'{len(completed)} feuilles; {len(manifest)} fichiers livrés')
 

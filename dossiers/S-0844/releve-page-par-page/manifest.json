@@ -1,13 +1,23 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 1681,
-    "sha256": "6e5c77420161b40e9f32ffea2bc0f08c070d471f8e41ad57a3fccfe4a39cd61b"
+    "bytes": 2058,
+    "sha256": "93e2565b3049bc6042e993fdb1f3fe8288ae04d5df484767c3cb451613fab340"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 3260,
-    "sha256": "0228eb4d8838edea97047559a47b97b8180c90fdf4da9a36d7cc61d2d764db26"
+    "bytes": 4705,
+    "sha256": "5587791a6eefe52071bbe9e53cc07d94eb7c1d1e211af8e628a9e639079e81a2"
+  },
+  {
+    "file": "S-0844-ES-M-0T01-equipment.csv",
+    "bytes": 956,
+    "sha256": "eaf38c7bd4eb4d8ce719577527e4fe9a418cf62fe3c82c9477fa6a73043701fd"
+  },
+  {
+    "file": "S-0844-ES-M-0T01-releve.jpg",
+    "bytes": 2690113,
+    "sha256": "e82c29438f3f681d4f7976b4785c2ff0b88e3c27f69c0372dff6228c83215e68"
   },
   {
     "file": "S-0844-EX-E-PE01-breakers.csv",
@@ -55,6 +65,11 @@
     "sha256": "7536a163d4beaaf29dc591bff607088ce06e735764d81c74315746b6849700de"
   },
   {
+    "file": "methode/build_small_sheets.py",
+    "bytes": 4074,
+    "sha256": "2ea6ed3f68f4807ff17ff43ad640c92bfa430cff2b707328f3ae9a446272cfa3"
+  },
+  {
     "file": "methode/catalog_sources.py",
     "bytes": 4772,
     "sha256": "32cf49690376c68fd1d9713feb587417b43ba2dd4813a522b8c439c1337fdfaf"
@@ -81,8 +96,8 @@
   },
   {
     "file": "methode/package_delivery.py",
-    "bytes": 7084,
-    "sha256": "02c91580e9e3676a859086ea80254f750f617f4fda10dfbdc021adfa2c368cc9"
+    "bytes": 7856,
+    "sha256": "769ae4a3a5eb4702d682dd9de59747c51b1ad768a1169c3fe089ac0c6f124244"
   },
   {
     "file": "methode/prepare_inspection.py",
