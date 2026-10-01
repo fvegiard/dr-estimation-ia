@@ -21,10 +21,14 @@
       "sheet": "E-3",
       "markers": 223,
       "visual_check": "223/223 ancrages vérifiés sur six zones du JPEG; 6 repères en réserve de configuration des sorties."
+    },
+    {
+      "sheet": "E-4",
+      "markers": 109,
+      "visual_check": "109/109 ancrages vérifiés; 1 DATA ajouté et 4 positions corrigées avant validation; 34 repères en réserve."
     }
   ],
   "remaining": [
-    "E-4",
     "E-5"
   ],
   "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",

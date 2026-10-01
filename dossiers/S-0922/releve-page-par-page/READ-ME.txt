@@ -12,7 +12,8 @@ FEUILLES COUVERTES
 E-1 : 0 pastilles. 3/3 : plan conservé, légende lisible, aucune quantité inventée; déplacement de légende corrigé.
 E-2 : 19 pastilles. 19/19 ancrages revus sur JPEG; cédules 91/91 lignes rapprochées; 3 lignes en réserve de lecture.
 E-3 : 223 pastilles. 223/223 ancrages vérifiés sur six zones du JPEG; 6 repères en réserve de configuration des sorties.
-À terminer : E-4, E-5
+E-4 : 109 pastilles. 109/109 ancrages vérifiés; 1 DATA ajouté et 4 positions corrigées avant validation; 34 repères en réserve.
+À terminer : E-5
 
 RÉVISIONS ET RÉSERVES
 E-1 / E-2 / E-3 : construction et changement E-1 du 22 avril 2024.
