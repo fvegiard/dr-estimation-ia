@@ -13,11 +13,12 @@ EX-M-DG02 : 2 pastilles; 0 réserve(s) de repère; contrôle visuel 2/2.
 EX-M-DT02 : 7 pastilles; 0 réserve(s) de repère; contrôle visuel 7/7.
 EE-M-RC01 : 149 pastilles; 6 réserve(s) de repère; contrôle visuel 149/149.
 ES-M-RC01 : 110 pastilles; 25 réserve(s) de repère; contrôle visuel 110/110.
+EA-M-RC01 : 17 pastilles; 1 réserve(s) de repère; contrôle visuel 17/17.
 Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
 JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
 
 RESTANT À RELEVER
-ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
+ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EA-M-RC02, EX-M-DE01, ES-M-0301
 
 NON COMPTÉ / PORTÉES
 Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
@@ -90,6 +91,15 @@ Les panneaux et équipements de distribution sont des renvois.
 * TP-RDC-3 : deux raccordements, circuits différents; identité à confirmer.
 * Charges de cuisine / toiles : renvois architecture non reçus.
 * Sectionneur EI sans calibre; longueurs de câbles/conduits non métrées.
+
+EA-M-RC01 — PRÉCISIONS
+MIA : une pastille sur le symbole 3x; quantité CSV = 3 modules pour préaction.
+Déclencheur cafétéria ER : déplacement et recâblage selon note A; pas un achat neuf.
+MRA : contrôle de porte ESC.2; coordination avec contrôle d’accès, pas de doublon au détail.
+Les appareils des zones hachurées sont conservés séparément comme représentations existantes.
+* Type du détecteur près ESC.2 non précisé; aucun modèle ni sous-type inventé.
+Aucun ajout de quantité depuis le diagramme existant EX-E-DG01.
+Marques/modèles et longueurs de câbles/conduits non déterminés.
 Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
 
 MÉTHODE
