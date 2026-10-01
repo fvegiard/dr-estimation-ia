@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 3605,
-    "sha256": "d05cedc570889c61aa648a4bf373bad2a0e214c091b290fbfb87ba866e03e002"
+    "bytes": 4074,
+    "sha256": "5f9303f71746455a42549f8b60df476fb4e5f57afde97dd39d8cf704fc679ef4"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 5672,
-    "sha256": "b793488a0019925d9edda105e64ddedf8641546f0c86fad0a401bc04fd9a0040"
+    "bytes": 6536,
+    "sha256": "26253004a4949d44d4f170374811f254f9801c9894c4f5d08c4655d09171bac9"
   },
   {
     "file": "S-1294-E101-details.csv",
@@ -70,6 +70,16 @@
     "sha256": "e6d56da28a1a0963a8b81659f4a8106c85c844c7f2b1f85e67cb839746878ed4"
   },
   {
+    "file": "S-1294-E107-details.csv",
+    "bytes": 14826,
+    "sha256": "9372dbbcc2767a98a79d2f3574e3204c088ad8bdcc47ba98c3bb92a34b3daf60"
+  },
+  {
+    "file": "S-1294-E107-releve.jpg",
+    "bytes": 10261147,
+    "sha256": "f720581d868b8daf91110d68d72f01d193f7d25f5c666938e942b8db7a6ad53b"
+  },
+  {
     "file": "S-1294-breakers-by-panel.xlsx",
     "bytes": 25339,
     "sha256": "44896c800a9b1d0332f5db7620c3aab9c2c332f9c196fe714c4fec3526f69405"
@@ -88,6 +98,11 @@
     "file": "methode/build_panel_records.py",
     "bytes": 7408,
     "sha256": "0b057d5e3f373142345fdff0a6fc1621946806d6999a528c13700fe594318cec"
+  },
+  {
+    "file": "methode/build_telecom_records.py",
+    "bytes": 4568,
+    "sha256": "09be6a31eb4b3297303694898aa38dde394c850fe08ff1c35d79ff2279b2f113"
   },
   {
     "file": "methode/build_workbook.py",

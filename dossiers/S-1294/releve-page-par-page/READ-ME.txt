@@ -32,9 +32,16 @@ E105-page10 : 216 pastilles; 23 réserves; contrôle visuel 216/216.
   PAI apparaît deux fois (détection / signalisation) : un renvoi, pas deux panneaux physiques. BA : 12 en détection, 4 exemples en signalisation.
   Note BA : 12 boîtiers. Les adresses proposées ne constituent pas un nombre supplémentaire de boîtiers. Soupapes et débit : fourniture mécanique.
   UCA01 : seuls le détecteur et le relais d’alarme sont comptés; organes internes de ventilation non comptés. Tableau de légende exclu des quantités.
+E107 : 83 pastilles; 31 réserves; contrôle visuel 83/83.
+  Quantités : représentations uniquement; voir plans de niveau et logements types pour la quantité physique. Aucun câble ou conduit métré.
+  Portes simple et double : composants dessinés comptés séparément. Légende, charnières et renvois ascenseurs exclus.
+  Quincaillerie fournie par architecture identifiée en réserve; SB et K non définis dans la légende de cette feuille.
+  BELL : installation filerie par spécialiste; conduits par électricien. Vidéotron : point de raccordement, ramifications locales et portée selon notes.
+  Prises des systèmes BELL / Vidéotron marquées une fois par groupe dessiné « 2 PU » / « 4 PU »; pas de quantité physique déduite.
+  Le panneau incendie et les renvois intercom ne doivent pas être additionnés aux représentations des autres feuilles.
 
 LIMITES ET RÉSERVES :
-Feuilles restant à traiter : E001, E002-page02, E002-page03, E100, E107, E108, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
+Feuilles restant à traiter : E001, E002-page02, E002-page03, E100, E108, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
 Numéros de cartouche répétés : E002 pages 2–3, E105 pages 9–10, E400 pages 22–23. Les suffixes page distinguent les fichiers.
 Aucune feuille M-, A- ou S- dans la série principale de 23 pages. Les 11 scans complémentaires restent à classer et à contrôler.
 Les détails types et diagrammes ne constituent pas une quantité globale de chantier. Ne pas additionner schémas, plans de niveau et logements types.

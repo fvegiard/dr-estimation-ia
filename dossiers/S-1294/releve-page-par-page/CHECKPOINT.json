@@ -57,6 +57,15 @@
       "jpeg_sha256": "c7e0576361e9c4484c94bea1296fefce3c3b074f3c44f2e064c9a187025fa2b5",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 23
+    },
+    {
+      "sheet": "E107",
+      "markers": 83,
+      "visual_score": "83/83",
+      "review": "83 pastilles contrôlées individuellement sur trois planches de zoom, vue globale et légende. Représentations de groupes PU réservées; aucun multiplicateur.",
+      "jpeg_sha256": "f720581d868b8daf91110d68d72f01d193f7d25f5c666938e942b8db7a6ad53b",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 31
     }
   ],
   "remaining": [
@@ -64,7 +73,6 @@
     "E002-page02",
     "E002-page03",
     "E100",
-    "E107",
     "E108",
     "E200",
     "E201",
