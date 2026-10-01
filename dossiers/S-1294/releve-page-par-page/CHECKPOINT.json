@@ -30,6 +30,15 @@
       "jpeg_sha256": "434981ad3fa3a5346f6d950342a50a1518ceff5e9dc8e8ac141ce577441b9f72",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 86
+    },
+    {
+      "sheet": "E104",
+      "markers": 114,
+      "visual_score": "114/114",
+      "review": "114/114 repères vérifiés sur quatre planches, plan entier et légende. PL-206 et PL-208 apparaissent deux fois sur le schéma; réserve explicite sans déduction de quantité physique.",
+      "jpeg_sha256": "43828ecca1393fff45d2fc31c6ad061cc6ac7ecf8d0e4583a4634af7149ccff7",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 72
     }
   ],
   "remaining": [
@@ -37,7 +46,6 @@
     "E002-page02",
     "E002-page03",
     "E100",
-    "E104",
     "E105-page09",
     "E105-page10",
     "E107",
