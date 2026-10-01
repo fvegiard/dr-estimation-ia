@@ -1,0 +1,57 @@
+[
+  {
+    "file": "CHECKPOINT.json",
+    "bytes": 1191,
+    "sha256": "f602091158a59ecfd080b5e3271b45fcb7ed8ad17aef0ccb7e498d954565a356"
+  },
+  {
+    "file": "READ-ME.txt",
+    "bytes": 2268,
+    "sha256": "747df764005ab9b8830347e7db72b9735cb06a47e66cf2e43c87a0d2f8b5c1a5"
+  },
+  {
+    "file": "S-1294-E101-details.csv",
+    "bytes": 2796,
+    "sha256": "da89b64b4e769afe0cccf4b3cbccdfc1612e20dd2ba5825712e45e83eb282d04"
+  },
+  {
+    "file": "S-1294-E101-releve.jpg",
+    "bytes": 6574539,
+    "sha256": "c4345fe74428d9ce7f9cf45e3700f843624660a40256890b3f476c8d0e85766f"
+  },
+  {
+    "file": "methode/crop_view.py",
+    "bytes": 529,
+    "sha256": "fd1fa4f9fa9a02746de87e665bef6101f4b4217f744e9a6c88251481d809e657"
+  },
+  {
+    "file": "methode/fetch_sources.py",
+    "bytes": 2144,
+    "sha256": "89ca89181cb065a5632e7d0bd8d7d73f318954abbbf0ab07e3ec346739c47168"
+  },
+  {
+    "file": "methode/ocr_sources.py",
+    "bytes": 698,
+    "sha256": "454244afd7096c99b7b0381b8f97c7d40ddd97889b3d0aefef648a4a6c923fe3"
+  },
+  {
+    "file": "methode/package_delivery.py",
+    "bytes": 5225,
+    "sha256": "6cea02f21c49c1da8bbf29d04f9504688433ba9bd692edc40f98d54a961e9b9f"
+  },
+  {
+    "file": "methode/prepare_views.py",
+    "bytes": 1111,
+    "sha256": "02ebb11aee0b426c28361f385711e2f94782bc8ee3f58ea21d87fa4174da2d3f"
+  },
+  {
+    "file": "methode/render_sheet.py",
+    "bytes": 4923,
+    "sha256": "f729dcb11ada093988123afbfb424f38dfee4bc333d77d8720f1e88a6edc2101"
+  },
+  {
+    "file": "methode/validate_sheet.py",
+    "bytes": 1049,
+    "sha256": "50fc9767d97023a7f029b178bf5ba636a413206c4f9e9b91d4b735c491a5c514"
+  }
+]
