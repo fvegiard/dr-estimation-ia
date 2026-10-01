@@ -35,6 +35,17 @@
       "source_conservee": true,
       "sha256_jpeg": "e82c29438f3f681d4f7976b4785c2ff0b88e3c27f69c0372dff6228c83215e68",
       "reserves_repere": 2
+    },
+    {
+      "feuille": "EX-M-DG02",
+      "pastilles": 2,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "2/2",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "12b2403ea035ed80d18ad3d7fb8885fcf54e72db2baceda84d2002f71fa1df0e",
+      "reserves_repere": 0
     }
   ],
   "feuilles_restantes": [
@@ -45,7 +56,6 @@
     "EA-M-0301",
     "EA-M-0302",
     "EX-E-DG01",
-    "EX-M-DG02",
     "EX-M-DT01",
     "EX-M-DT02",
     "EX-M-DT04",

@@ -9,11 +9,12 @@ FEUILLES VÉRIFIÉES
 EX-M-PE01 : 235 pastilles; 1 réserve(s) de repère; contrôle visuel 235/235.
 EX-E-PE01 : 103 pastilles; 0 réserve(s) de repère; contrôle visuel 103/103.
 ES-M-0T01 : 4 pastilles; 2 réserve(s) de repère; contrôle visuel 4/4.
+EX-M-DG02 : 2 pastilles; 0 réserve(s) de repère; contrôle visuel 2/2.
 Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
 JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
 
 RESTANT À RELEVER
-ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DG02, EX-M-DT01, EX-M-DT02, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-RC01, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
+ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT02, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-RC01, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
 
 NON COMPTÉ / PORTÉES
 Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
@@ -52,6 +53,14 @@ CS2-001-006 : C3-2 / 75,77. CS3-001-006 : C4-2 / 75,77.
 * Aucun calibre de sectionneur choisi. Les disjoncteurs sont déjà comptés à EX-M-PE01.
 Appareils mécaniques : points de raccordement, aucune fourniture mécanique déduite.
 Câbles, conduits et longueurs non métrés. Modèles non précisés.
+
+EX-M-DG02 — PRÉCISIONS
+Deux cabinets dessinés; aucune quantité supplémentaire aux armoires du plan agrandi.
+RDC–niveau 3 : 1 conduit 63 mm / 2 fibres OM4 12 brins; 1 conduit 63 mm / corde DAS.
+Niveau 3–niveau 4 : 1 conduit 63 mm / fibre OM4 12 brins; 1 conduit 63 mm / corde DAS.
+Entre cabinets RDC : 2 fibres OM4 12 brins. Vers sous-sol : conduit 63 mm / corde.
+Note A : utiliser le conduit déjà présent indiqué. Longueurs non déterminables au diagramme.
+Les rectangles pointillés sont des locaux, pas des appareils. Aucune extrapolation.
 Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
 
 MÉTHODE
