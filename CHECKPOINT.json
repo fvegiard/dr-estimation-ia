@@ -1,0 +1,10 @@
+{
+  "projet": "S-0844",
+  "etat": "Inventaire et inspection des sources en cours",
+  "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",
+  "feuilles_terminees": [],
+  "feuilles_restantes": "Identification des cartouches en cours",
+  "qpl_estimateur_ouvert": false,
+  "qpl_estimateur_telecharge_depuis_sharepoint": false,
+  "verification_estimateur": "Non effectuée : relevé à l’aveugle demandé"
+}
