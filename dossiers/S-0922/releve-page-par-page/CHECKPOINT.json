@@ -1,0 +1,20 @@
+{
+  "project": "S-0922",
+  "status": "Relevé en cours — PR brouillon",
+  "completed": [
+    {
+      "sheet": "E-1",
+      "markers": 0,
+      "visual_check": "3/3 : plan conservé, légende lisible, aucune quantité inventée; déplacement de légende corrigé."
+    }
+  ],
+  "remaining": [
+    "E-2",
+    "E-3",
+    "E-4",
+    "E-5"
+  ],
+  "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",
+  "qpl_opened_or_downloaded": false,
+  "source_note": "Sources raster PNG. Révisions antérieures non cumulées. Documents de relevé et propositions exclus sans ouverture."
+}

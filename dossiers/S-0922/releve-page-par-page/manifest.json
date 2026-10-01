@@ -1,0 +1,47 @@
+[
+  {
+    "file": "CHECKPOINT.json",
+    "bytes": 585,
+    "sha256": "29c9f5894d77d31574f153a8ea277bc2a423b57c3425cbe8b73d6402cc7801b6"
+  },
+  {
+    "file": "READ-ME.txt",
+    "bytes": 3483,
+    "sha256": "01adab37de0e3f0cdedec667b6a5321dcac9777280b11fac721f0af6f49a7904"
+  },
+  {
+    "file": "S-0922-E-1-details.csv",
+    "bytes": 1089,
+    "sha256": "c4493a1489933e6f4e287dda0a9f3711b4782c85dfb1fd515d1b8c13bacdfb20"
+  },
+  {
+    "file": "S-0922-E-1-releve.jpg",
+    "bytes": 22945136,
+    "sha256": "10c7ac4319bf781ec455cc7ce348a8b5288a227f1191eb5ab9704c158ceeb1cb"
+  },
+  {
+    "file": "methode/download_plans.py",
+    "bytes": 2174,
+    "sha256": "66231f73caf0f6198b9c0e89e22fd4e29ff03d7a1e5dd96c7312bc6eadaf540b"
+  },
+  {
+    "file": "methode/package_delivery.py",
+    "bytes": 7204,
+    "sha256": "0ebf326b6d70cb228d83a9e97fdd2564183c58d30ffb8ee3d68c03db5dfa91f5"
+  },
+  {
+    "file": "methode/prepare_images.py",
+    "bytes": 972,
+    "sha256": "a7ffad1c5fda8b19abe7a1b1241ddd647b50e55a1ae35b8fedda4fdd3d97b9a6"
+  },
+  {
+    "file": "methode/render_sheet.py",
+    "bytes": 4188,
+    "sha256": "643361bebc374962a64e2e945ca7aba89767c64518d825197b43564816105d85"
+  },
+  {
+    "file": "methode/sheet_data.py",
+    "bytes": 1166,
+    "sha256": "2b26c88bcbe7462d0afe311ab335ba12e506ce78622884109b174a4df797ab72"
+  }
+]
