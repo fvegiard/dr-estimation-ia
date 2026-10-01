@@ -14,11 +14,12 @@ EX-M-DT02 : 7 pastilles; 0 réserve(s) de repère; contrôle visuel 7/7.
 EE-M-RC01 : 149 pastilles; 6 réserve(s) de repère; contrôle visuel 149/149.
 ES-M-RC01 : 110 pastilles; 25 réserve(s) de repère; contrôle visuel 110/110.
 EA-M-RC01 : 17 pastilles; 1 réserve(s) de repère; contrôle visuel 17/17.
+EA-M-RC02 : 25 pastilles; 11 réserve(s) de repère; contrôle visuel 25/25.
 Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
 JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
 
 RESTANT À RELEVER
-ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EA-M-RC02, EX-M-DE01, ES-M-0301
+ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EX-M-DE01, ES-M-0301
 
 NON COMPTÉ / PORTÉES
 Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
@@ -100,6 +101,16 @@ Les appareils des zones hachurées sont conservés séparément comme représent
 * Type du détecteur près ESC.2 non précisé; aucun modèle ni sous-type inventé.
 Aucun ajout de quantité depuis le diagramme existant EX-E-DG01.
 Marques/modèles et longueurs de câbles/conduits non déterminés.
+
+EA-M-RC02 — PRÉCISIONS
+5 sorties caméra : 4 au plafond, 1 murale; appareils/patch cords installés par le client.
+4 groupes de porte représentés : deux groupes 01, un groupe 09 et un groupe 13.
+1 contact isolé à la porte extérieure de la cafétéria, en plus des contacts des groupes.
+* Groupes central 01 et ESC.2 / caméras centrales : symboles en zone HORS CONTRAT; portée à confirmer.
+Les sorties CAM du plan ES-M-RC01 sont les mêmes infrastructures : ne pas additionner.
+Panneau de sécurité 1200 × 250 mm : une enveloppe; composants au détail, sans doublon.
+Les groupes décrivent des sorties, pas une fourniture arbitraire de quincaillerie.
+Longueurs de câbles et conduits non métrées; aucun modèle choisi.
 Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
 
 MÉTHODE

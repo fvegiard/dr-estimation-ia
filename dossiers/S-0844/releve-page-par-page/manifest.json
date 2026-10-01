@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 3959,
-    "sha256": "49cbc6e7868e5e20b7006e656086b175cb1d8c2a0345db65c4585f675c353537"
+    "bytes": 4340,
+    "sha256": "a97a8baada9d602d40025e7f0cb05b5b1e48b07eac58511f2d52dbf04b636c11"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 7813,
-    "sha256": "c2cd200fe148248f9dbbd8c9650475ecd0775bd1b53920754a6b56d1044d1506"
+    "bytes": 8613,
+    "sha256": "12d9792efddf6c1a8778d6e8286f6e844bb77535bd96e1b62704a6a43ebf83c9"
   },
   {
     "file": "S-0844-EA-M-RC01-releve.jpg",
@@ -18,6 +18,16 @@
     "file": "S-0844-EA-M-RC01-symbols.csv",
     "bytes": 2479,
     "sha256": "58757f697939a47842036924de550920f2d98f6cd692198cbf2cb4d0d5be470c"
+  },
+  {
+    "file": "S-0844-EA-M-RC02-releve.jpg",
+    "bytes": 11995749,
+    "sha256": "9f085bc8d7630738741c9db8d2df0af7a465195444ba7fd97fed49ddb1432efd"
+  },
+  {
+    "file": "S-0844-EA-M-RC02-symbols.csv",
+    "bytes": 4854,
+    "sha256": "13a031ab468435f48f4ac96a9d4e7f16678df1fcec6884781207c4af7bf4276e"
   },
   {
     "file": "S-0844-EE-M-RC01-equipment.csv",
@@ -118,6 +128,11 @@
     "file": "methode/build_ground_lighting.py",
     "bytes": 5737,
     "sha256": "155eccff4e519de380c7f5da0302c512b6ede14721fa7181be3d077975d5a93e"
+  },
+  {
+    "file": "methode/build_ground_security.py",
+    "bytes": 3731,
+    "sha256": "c444be0628c6e70676d7178c356faad859005e85bd7550eaa275a2a4c9db1da0"
   },
   {
     "file": "methode/build_ground_services.py",
