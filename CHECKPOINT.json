@@ -12,6 +12,16 @@
       "legende_lisible": true,
       "source_conservee": true,
       "sha256_jpeg": "dc10df96f4ff2447b13fa58d95135bb222a153b4d0cf7499f5fbe56f3c6dd99e"
+    },
+    {
+      "feuille": "EX-E-PE01",
+      "pastilles": 103,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "103/103",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "c26bb202bdd24d9318c2c131039441895a52d13f2601ac45e5840529ed34d024"
     }
   ],
   "feuilles_restantes": [
@@ -28,7 +38,6 @@
     "EX-M-DT02",
     "EX-M-DT04",
     "EX-M-DT05",
-    "EX-E-PE01",
     "EX-E-DE01",
     "EM-D-SS01",
     "EM-D-0301",

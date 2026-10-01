@@ -1,0 +1,1642 @@
+{
+  "sheet": "EX-E-PE01",
+  "source": "sources/169 - Electricite_plan (1) - 28.png",
+  "markers": [
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 1",
+      "parent": "S1",
+      "circuits": [
+        1
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 197.6,
+      "y": 110.5,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 2",
+      "parent": "S1",
+      "circuits": [
+        2
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 226.2,
+      "y": 110.5,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 5",
+      "parent": "S1",
+      "circuits": [
+        5
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 197.6,
+      "y": 131.76,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 7",
+      "parent": "S1",
+      "circuits": [
+        7
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 142.39,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 8",
+      "parent": "S1",
+      "circuits": [
+        8
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 226.2,
+      "y": 142.39,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 9",
+      "parent": "S1",
+      "circuits": [
+        9
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 153.02,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 40 A / 2P",
+      "description": "S1 — circuits 10,12",
+      "parent": "S1",
+      "circuits": [
+        10,
+        12
+      ],
+      "amps": 40,
+      "poles": 2,
+      "x": 226.2,
+      "y": 153.02,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 11",
+      "parent": "S1",
+      "circuits": [
+        11
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 197.6,
+      "y": 163.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 16",
+      "parent": "S1",
+      "circuits": [
+        16
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 226.2,
+      "y": 184.91000000000003,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 17",
+      "parent": "S1",
+      "circuits": [
+        17
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 195.54000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 18",
+      "parent": "S1",
+      "circuits": [
+        18
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 226.2,
+      "y": 195.54000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 19",
+      "parent": "S1",
+      "circuits": [
+        19
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 206.17000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 20",
+      "parent": "S1",
+      "circuits": [
+        20
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 226.2,
+      "y": 206.17000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 21",
+      "parent": "S1",
+      "circuits": [
+        21
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 216.8,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 23",
+      "parent": "S1",
+      "circuits": [
+        23
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 227.43,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "S1 — circuits 24,26",
+      "parent": "S1",
+      "circuits": [
+        24,
+        26
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 226.2,
+      "y": 227.43,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "S1 — circuits 25",
+      "parent": "S1",
+      "circuits": [
+        25
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 197.6,
+      "y": 238.06,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 27",
+      "parent": "S1",
+      "circuits": [
+        27
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 248.69,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 32",
+      "parent": "S1",
+      "circuits": [
+        32
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 226.2,
+      "y": 269.95000000000005,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 34",
+      "parent": "S1",
+      "circuits": [
+        34
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 226.2,
+      "y": 280.58000000000004,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 35",
+      "parent": "S1",
+      "circuits": [
+        35
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 291.21000000000004,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "S1 — circuits 40,42",
+      "parent": "S1",
+      "circuits": [
+        40,
+        42
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 226.2,
+      "y": 312.47,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 43",
+      "parent": "S1",
+      "circuits": [
+        43
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 333.73,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 45",
+      "parent": "S1",
+      "circuits": [
+        45
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 344.36,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 47",
+      "parent": "S1",
+      "circuits": [
+        47
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 354.99,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "S1 — circuits 49",
+      "parent": "S1",
+      "circuits": [
+        49
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 197.6,
+      "y": 365.62,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "UE-1 — circuits 1",
+      "parent": "UE-1",
+      "circuits": [
+        1
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 486.7,
+      "y": 124.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 2",
+      "parent": "UE-1",
+      "circuits": [
+        2
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 516.5,
+      "y": 124.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 3",
+      "parent": "UE-1",
+      "circuits": [
+        3
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 4",
+      "parent": "UE-1",
+      "circuits": [
+        4
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 516.5,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 5",
+      "parent": "UE-1",
+      "circuits": [
+        5
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 147.01,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "UE-1 — circuits 6",
+      "parent": "UE-1",
+      "circuits": [
+        6
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 516.5,
+      "y": 147.01,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 7",
+      "parent": "UE-1",
+      "circuits": [
+        7
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "UE-1 — circuits 8",
+      "parent": "UE-1",
+      "circuits": [
+        8
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 516.5,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 9",
+      "parent": "UE-1",
+      "circuits": [
+        9
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 169.37,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 10",
+      "parent": "UE-1",
+      "circuits": [
+        10
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 516.5,
+      "y": 169.37,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 11",
+      "parent": "UE-1",
+      "circuits": [
+        11
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 180.55,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "UE-1 — circuits 12",
+      "parent": "UE-1",
+      "circuits": [
+        12
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 516.5,
+      "y": 180.55,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 13",
+      "parent": "UE-1",
+      "circuits": [
+        13
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "UE-1 — circuits 14",
+      "parent": "UE-1",
+      "circuits": [
+        14
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 516.5,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 15",
+      "parent": "UE-1",
+      "circuits": [
+        15
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 202.91,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 16",
+      "parent": "UE-1",
+      "circuits": [
+        16
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 516.5,
+      "y": 202.91,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 17",
+      "parent": "UE-1",
+      "circuits": [
+        17
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 214.09,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 18",
+      "parent": "UE-1",
+      "circuits": [
+        18
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 516.5,
+      "y": 214.09,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 19",
+      "parent": "UE-1",
+      "circuits": [
+        19
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 40 A / 2P",
+      "description": "UE-1 — circuits 20,22",
+      "parent": "UE-1",
+      "circuits": [
+        20,
+        22
+      ],
+      "amps": 40,
+      "poles": 2,
+      "x": 516.5,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "UE-1 — circuits 21",
+      "parent": "UE-1",
+      "circuits": [
+        21
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 486.7,
+      "y": 236.45,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C1-1 — circuits 2",
+      "parent": "C1-1",
+      "circuits": [
+        2
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 805.0,
+      "y": 124.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C1-1 — circuits 3",
+      "parent": "C1-1",
+      "circuits": [
+        3
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 774.8,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 2P",
+      "description": "C1-1 — circuits 4,6",
+      "parent": "C1-1",
+      "circuits": [
+        4,
+        6
+      ],
+      "amps": 15,
+      "poles": 2,
+      "x": 805.0,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C1-1 — circuits 5",
+      "parent": "C1-1",
+      "circuits": [
+        5
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 774.8,
+      "y": 147.01,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 25 A / 2P",
+      "description": "C1-1 — circuits 7,9",
+      "parent": "C1-1",
+      "circuits": [
+        7,
+        9
+      ],
+      "amps": 25,
+      "poles": 2,
+      "x": 774.8,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 3P",
+      "description": "C1-1 — circuits 8,10,12",
+      "parent": "C1-1",
+      "circuits": [
+        8,
+        10,
+        12
+      ],
+      "amps": 20,
+      "poles": 3,
+      "x": 805.0,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C1-1 — circuits 11",
+      "parent": "C1-1",
+      "circuits": [
+        11
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 774.8,
+      "y": 180.55,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 80 A / 3P",
+      "description": "C1-1 — circuits 13,15,17",
+      "parent": "C1-1",
+      "circuits": [
+        13,
+        15,
+        17
+      ],
+      "amps": 80,
+      "poles": 3,
+      "x": 774.8,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C1-1 — circuits 14,16,18",
+      "parent": "C1-1",
+      "circuits": [
+        14,
+        16,
+        18
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 805.0,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C1-1 — circuits 19,21,23",
+      "parent": "C1-1",
+      "circuits": [
+        19,
+        21,
+        23
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 774.8,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C1-1 — circuits 20",
+      "parent": "C1-1",
+      "circuits": [
+        20
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 805.0,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "C1-1 — circuits 22,24",
+      "parent": "C1-1",
+      "circuits": [
+        22,
+        24
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 805.0,
+      "y": 236.45,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C1-1 — circuits 25",
+      "parent": "C1-1",
+      "circuits": [
+        25
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 774.8,
+      "y": 258.81,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 2P",
+      "description": "C1-1 — circuits 26,28",
+      "parent": "C1-1",
+      "circuits": [
+        26,
+        28
+      ],
+      "amps": 15,
+      "poles": 2,
+      "x": 805.0,
+      "y": 258.81,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "C1-1 — circuits 27,29",
+      "parent": "C1-1",
+      "circuits": [
+        27,
+        29
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 774.8,
+      "y": 269.99,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C1-1 — circuits 30",
+      "parent": "C1-1",
+      "circuits": [
+        30
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 805.0,
+      "y": 281.16999999999996,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C1-1 — circuits 31",
+      "parent": "C1-1",
+      "circuits": [
+        31
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 774.8,
+      "y": 292.35,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 30 A / 2P",
+      "description": "C1-1 — circuits 32,34",
+      "parent": "C1-1",
+      "circuits": [
+        32,
+        34
+      ],
+      "amps": 30,
+      "poles": 2,
+      "x": 805.0,
+      "y": 292.35,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C1-1 — circuits 36",
+      "parent": "C1-1",
+      "circuits": [
+        36
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 805.0,
+      "y": 314.71000000000004,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C1-1 — circuits 38",
+      "parent": "C1-1",
+      "circuits": [
+        38
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 805.0,
+      "y": 325.89,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C3-1 — circuits 1",
+      "parent": "C3-1",
+      "circuits": [
+        1
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1063.3,
+      "y": 124.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C3-1 — circuits 2",
+      "parent": "C3-1",
+      "circuits": [
+        2
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1093.3,
+      "y": 124.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C3-1 — circuits 3",
+      "parent": "C3-1",
+      "circuits": [
+        3
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1063.3,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 2P",
+      "description": "C3-1 — circuits 4,6",
+      "parent": "C3-1",
+      "circuits": [
+        4,
+        6
+      ],
+      "amps": 15,
+      "poles": 2,
+      "x": 1093.3,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C3-1 — circuits 5",
+      "parent": "C3-1",
+      "circuits": [
+        5
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1063.3,
+      "y": 147.01,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 25 A / 2P",
+      "description": "C3-1 — circuits 7,9",
+      "parent": "C3-1",
+      "circuits": [
+        7,
+        9
+      ],
+      "amps": 25,
+      "poles": 2,
+      "x": 1063.3,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C3-1 — circuits 8,10,12",
+      "parent": "C3-1",
+      "circuits": [
+        8,
+        10,
+        12
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1093.3,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C3-1 — circuits 11",
+      "parent": "C3-1",
+      "circuits": [
+        11
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1063.3,
+      "y": 180.55,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C3-1 — circuits 13,15,17",
+      "parent": "C3-1",
+      "circuits": [
+        13,
+        15,
+        17
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1063.3,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C3-1 — circuits 14,16,18",
+      "parent": "C3-1",
+      "circuits": [
+        14,
+        16,
+        18
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1093.3,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C3-1 — circuits 19,21,23",
+      "parent": "C3-1",
+      "circuits": [
+        19,
+        21,
+        23
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1063.3,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C3-1 — circuits 20",
+      "parent": "C3-1",
+      "circuits": [
+        20
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1093.3,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "C3-1 — circuits 22,24",
+      "parent": "C3-1",
+      "circuits": [
+        22,
+        24
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 1093.3,
+      "y": 236.45,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C3-1 — circuits 25",
+      "parent": "C3-1",
+      "circuits": [
+        25
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1063.3,
+      "y": 258.81,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 2P",
+      "description": "C3-1 — circuits 26,28",
+      "parent": "C3-1",
+      "circuits": [
+        26,
+        28
+      ],
+      "amps": 15,
+      "poles": 2,
+      "x": 1093.3,
+      "y": 258.81,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "C3-1 — circuits 27,29",
+      "parent": "C3-1",
+      "circuits": [
+        27,
+        29
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 1063.3,
+      "y": 269.99,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C3-1 — circuits 30",
+      "parent": "C3-1",
+      "circuits": [
+        30
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1093.3,
+      "y": 281.16999999999996,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C3-1 — circuits 31",
+      "parent": "C3-1",
+      "circuits": [
+        31
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1063.3,
+      "y": 292.35,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C4-1 — circuits 1",
+      "parent": "C4-1",
+      "circuits": [
+        1
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1351.8,
+      "y": 124.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C4-1 — circuits 2",
+      "parent": "C4-1",
+      "circuits": [
+        2
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1381.5,
+      "y": 124.65,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C4-1 — circuits 3",
+      "parent": "C4-1",
+      "circuits": [
+        3
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1351.8,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 2P",
+      "description": "C4-1 — circuits 4,6",
+      "parent": "C4-1",
+      "circuits": [
+        4,
+        6
+      ],
+      "amps": 15,
+      "poles": 2,
+      "x": 1381.5,
+      "y": 135.83,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C4-1 — circuits 5",
+      "parent": "C4-1",
+      "circuits": [
+        5
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1351.8,
+      "y": 147.01,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 25 A / 2P",
+      "description": "C4-1 — circuits 7,9",
+      "parent": "C4-1",
+      "circuits": [
+        7,
+        9
+      ],
+      "amps": 25,
+      "poles": 2,
+      "x": 1351.8,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C4-1 — circuits 8,10,12",
+      "parent": "C4-1",
+      "circuits": [
+        8,
+        10,
+        12
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1381.5,
+      "y": 158.19,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C4-1 — circuits 11",
+      "parent": "C4-1",
+      "circuits": [
+        11
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1351.8,
+      "y": 180.55,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C4-1 — circuits 13,15,17",
+      "parent": "C4-1",
+      "circuits": [
+        13,
+        15,
+        17
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1351.8,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C4-1 — circuits 14,16,18",
+      "parent": "C4-1",
+      "circuits": [
+        14,
+        16,
+        18
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1381.5,
+      "y": 191.73000000000002,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 50 A / 3P",
+      "description": "C4-1 — circuits 19,21,23",
+      "parent": "C4-1",
+      "circuits": [
+        19,
+        21,
+        23
+      ],
+      "amps": 50,
+      "poles": 3,
+      "x": 1351.8,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C4-1 — circuits 20",
+      "parent": "C4-1",
+      "circuits": [
+        20
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1381.5,
+      "y": 225.27,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "C4-1 — circuits 22,24",
+      "parent": "C4-1",
+      "circuits": [
+        22,
+        24
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 1381.5,
+      "y": 236.45,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 1P",
+      "description": "C4-1 — circuits 25",
+      "parent": "C4-1",
+      "circuits": [
+        25
+      ],
+      "amps": 15,
+      "poles": 1,
+      "x": 1351.8,
+      "y": 258.81,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 15 A / 2P",
+      "description": "C4-1 — circuits 26,28",
+      "parent": "C4-1",
+      "circuits": [
+        26,
+        28
+      ],
+      "amps": 15,
+      "poles": 2,
+      "x": 1381.5,
+      "y": 258.81,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 2P",
+      "description": "C4-1 — circuits 27,29",
+      "parent": "C4-1",
+      "circuits": [
+        27,
+        29
+      ],
+      "amps": 20,
+      "poles": 2,
+      "x": 1351.8,
+      "y": 269.99,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C4-1 — circuits 30",
+      "parent": "C4-1",
+      "circuits": [
+        30
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1381.5,
+      "y": 281.16999999999996,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    },
+    {
+      "family": "Existant 20 A / 1P",
+      "description": "C4-1 — circuits 31",
+      "parent": "C4-1",
+      "circuits": [
+        31
+      ],
+      "amps": 20,
+      "poles": 1,
+      "x": 1351.8,
+      "y": 292.35,
+      "radius": 2.7,
+      "scope": "CONSERVER / RÉFÉRENCE EXISTANTE — aucun achat déduit",
+      "reserve": ""
+    }
+  ],
+  "csv_type": "breakers",
+  "scope": "Panneaux existants — référence du 31 octobre 2023",
+  "legend_box": [
+    150,
+    600,
+    1500,
+    440
+  ],
+  "notes": [
+    "Un appareil multipolaire = un repère au premier pôle. Espaces sans calibre exclus.",
+    "S1 : 26; UE-1 : 21; C1-1 : 20; C3-1 : 18; C4-1 : 18 appareils existants.",
+    "Aucun achat déduit de cette feuille. Modifications à recouper aux plans modifiés.",
+    "* Les barres omnibus indiquées 0 A sur quatre tableaux ne constituent pas un calibre utilisable.",
+    "Marques, séries, protections et pouvoirs de coupure non précisés. Vérification sur place requise."
+  ],
+  "review_zones": {
+    "S1": [
+      80,
+      65,
+      335,
+      530
+    ],
+    "UE-1": [
+      365,
+      65,
+      625,
+      435
+    ],
+    "C1-1": [
+      660,
+      65,
+      920,
+      435
+    ],
+    "C3-1": [
+      945,
+      65,
+      1205,
+      435
+    ],
+    "C4-1": [
+      1230,
+      65,
+      1490,
+      435
+    ]
+  }
+}
