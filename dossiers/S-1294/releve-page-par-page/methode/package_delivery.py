@@ -29,7 +29,7 @@ def main():
     for entry in completed:
         key = entry['sheet']
         data = json.loads((ROOT/'audit'/f'{key}-records.json').read_text())
-        reserved = sum(bool(r.get('reserve')) for r in data['records'] if r.get('mark',True))
+        reserved = sum(bool(r.get('reserve')) for r in data['records'])
         entry['reserves'] = reserved
         for source in ROOT.glob(f'S-1294-{key}-*'):
             if source.suffix.lower() in {'.csv','.jpg'}:

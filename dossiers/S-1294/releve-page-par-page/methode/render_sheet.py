@@ -38,7 +38,7 @@ def render(key):
         draw.text((round(x*scale), base.height+round(y*scale)), value, font=ImageFont.truetype(FONT, round(size*scale)), fill=color)
     draw.rectangle((25*scale, base.height+15*scale, base.width-25*scale, canvas.height-15*scale), outline='#909090', width=3)
     text(45, 27, f'RELEVÉ {key} — {data["title"]}', 21)
-    reserved = sum(bool(r.get('reserve')) for r in records if r.get('mark', True))
+    reserved = sum(bool(r.get('reserve')) for r in records)
     text(45, 61, f'{sum(counts.values())} pastilles / {len(counts)} familles / RES {reserved} — source : page {page} — {data["scope"]}', 13)
     for i, (family, count) in enumerate(counts.items()):
         x, y = 48+(i%3)*620, 99+(i//3)*27
