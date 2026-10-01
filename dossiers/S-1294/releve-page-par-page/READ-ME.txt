@@ -26,9 +26,15 @@ E105-page09 : 197 pastilles; 10 réserves; contrôle visuel 197/197.
   * ESPACE avec calibre : présence réservée. Principaux isolés des départs; N/A non compté. Un circuit simple occupe une seule position.
   Contradictions E102 / cédule : PS1 120/208 V / 347/600 V; PP1 Icc 35 / 14 kA; plusieurs valeurs de barres et Icc diffèrent. Aucun choix arbitraire.
   PSU1A : principal N/A mais « 100A » dans la colonne adjacente; PP1A départ 1-3 = 15 A 2P avec deux puissances. À clarifier.
+E105-page10 : 216 pastilles; 23 réserves; contrôle visuel 216/216.
+  Un symbole dessiné = une pastille. Les coupures de lignes et flèches ne sont pas extrapolées; légende et raccords de fil non comptés.
+  La note du plan donne priorité aux plans d’étage. Ces représentations ne sont pas des quantités globales de chantier.
+  PAI apparaît deux fois (détection / signalisation) : un renvoi, pas deux panneaux physiques. BA : 12 en détection, 4 exemples en signalisation.
+  Note BA : 12 boîtiers. Les adresses proposées ne constituent pas un nombre supplémentaire de boîtiers. Soupapes et débit : fourniture mécanique.
+  UCA01 : seuls le détecteur et le relais d’alarme sont comptés; organes internes de ventilation non comptés. Tableau de légende exclu des quantités.
 
 LIMITES ET RÉSERVES :
-Feuilles restant à traiter : E001, E002-page02, E002-page03, E100, E105-page10, E107, E108, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
+Feuilles restant à traiter : E001, E002-page02, E002-page03, E100, E107, E108, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
 Numéros de cartouche répétés : E002 pages 2–3, E105 pages 9–10, E400 pages 22–23. Les suffixes page distinguent les fichiers.
 Aucune feuille M-, A- ou S- dans la série principale de 23 pages. Les 11 scans complémentaires restent à classer et à contrôler.
 Les détails types et diagrammes ne constituent pas une quantité globale de chantier. Ne pas additionner schémas, plans de niveau et logements types.

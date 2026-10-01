@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 3100,
-    "sha256": "67e18222d78ff67aee6b7d1101a33aad26cb7bad3945c14f34a6fc51536f1d96"
+    "bytes": 3605,
+    "sha256": "d05cedc570889c61aa648a4bf373bad2a0e214c091b290fbfb87ba866e03e002"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 4890,
-    "sha256": "057e5847f311e9992fbe6596d9ad7d3d95b04212a0ced514ab3b7ea4aaaffef1"
+    "bytes": 5672,
+    "sha256": "b793488a0019925d9edda105e64ddedf8641546f0c86fad0a401bc04fd9a0040"
   },
   {
     "file": "S-1294-E101-details.csv",
@@ -60,6 +60,16 @@
     "sha256": "8c48cf0847276542e3f7205caead1ae998180d148481f80927207d1e7f7e64b5"
   },
   {
+    "file": "S-1294-E105-page10-releve.jpg",
+    "bytes": 10390428,
+    "sha256": "c7e0576361e9c4484c94bea1296fefce3c3b074f3c44f2e064c9a187025fa2b5"
+  },
+  {
+    "file": "S-1294-E105-page10-symbols.csv",
+    "bytes": 38264,
+    "sha256": "e6d56da28a1a0963a8b81659f4a8106c85c844c7f2b1f85e67cb839746878ed4"
+  },
+  {
     "file": "S-1294-breakers-by-panel.xlsx",
     "bytes": 25339,
     "sha256": "44896c800a9b1d0332f5db7620c3aab9c2c332f9c196fe714c4fec3526f69405"
@@ -68,6 +78,11 @@
     "file": "S-1294-breakers-detailed.csv",
     "bytes": 19333,
     "sha256": "7ea0b5ed22e9431adfd4d61d0820762afbbf329b50e87ad4ec09a31bbb2d1784"
+  },
+  {
+    "file": "methode/build_fire_records.py",
+    "bytes": 5388,
+    "sha256": "87d9b087230d28a53a432fdebbe224d36335e42f6e30afbc54ab9cbf9793612f"
   },
   {
     "file": "methode/build_panel_records.py",

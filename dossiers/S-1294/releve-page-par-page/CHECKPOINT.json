@@ -48,6 +48,15 @@
       "jpeg_sha256": "8c48cf0847276542e3f7205caead1ae998180d148481f80927207d1e7f7e64b5",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 10
+    },
+    {
+      "sheet": "E105-page10",
+      "markers": 216,
+      "visual_score": "216/216",
+      "review": "216 repères contrôlés sur huit planches de zoom, ajout du détecteur escalier 3 RDC et exclusion des organes internes UCA; modèles recopiés depuis zoom de légende; légende finale lisible.",
+      "jpeg_sha256": "c7e0576361e9c4484c94bea1296fefce3c3b074f3c44f2e064c9a187025fa2b5",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 23
     }
   ],
   "remaining": [
@@ -55,7 +64,6 @@
     "E002-page02",
     "E002-page03",
     "E100",
-    "E105-page10",
     "E107",
     "E108",
     "E200",
