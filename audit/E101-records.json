@@ -1,0 +1,132 @@
+{
+  "page": 5,
+  "title": "DÉTAILS ET DIAGRAMMES",
+  "type": "details",
+  "scope": "DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS",
+  "records": [
+    {
+      "family": "Boîte",
+      "label": "Protection des câbles en installations dissimulées",
+      "x": 258,
+      "y": 363,
+      "id": "E101-0001"
+    },
+    {
+      "family": "Boîte",
+      "label": "Protection des câbles en installations dissimulées",
+      "x": 349,
+      "y": 313,
+      "id": "E101-0002"
+    },
+    {
+      "family": "Transformateur",
+      "label": "Fixation au plancher",
+      "x": 782,
+      "y": 225,
+      "id": "E101-0003"
+    },
+    {
+      "family": "Bloc alimentation",
+      "label": "Power pack",
+      "x": 193,
+      "y": 658,
+      "id": "E101-0004"
+    },
+    {
+      "family": "Interrupteur",
+      "label": "Interrupteur local OFF",
+      "x": 354,
+      "y": 648,
+      "id": "E101-0005"
+    },
+    {
+      "family": "Détecteur présence",
+      "label": "24 VDC, quantité dessinée; ellipses non extrapolées",
+      "x": 370,
+      "y": 746,
+      "id": "E101-0006"
+    },
+    {
+      "family": "Détecteur présence",
+      "label": "24 VDC, quantité dessinée; ellipses non extrapolées",
+      "x": 370,
+      "y": 827,
+      "id": "E101-0007"
+    },
+    {
+      "family": "Détecteur présence",
+      "label": "24 VDC, quantité dessinée; ellipses non extrapolées",
+      "x": 370,
+      "y": 908,
+      "id": "E101-0008"
+    },
+    {
+      "family": "Disjoncteur contrôle",
+      "label": "Calibre non indiqué",
+      "x": 513,
+      "y": 601,
+      "reserve": "* Calibre absent; diagramme de principe, aucune quantité globale.",
+      "id": "E101-0009"
+    },
+    {
+      "family": "Minuterie",
+      "label": "M",
+      "x": 536,
+      "y": 624,
+      "id": "E101-0010"
+    },
+    {
+      "family": "Cellule photoélectrique",
+      "label": "PE",
+      "x": 567,
+      "y": 646,
+      "id": "E101-0011"
+    },
+    {
+      "family": "Sélecteur",
+      "label": "3 positions AUTO / OFF / MANUEL",
+      "x": 623,
+      "y": 694,
+      "id": "E101-0012"
+    },
+    {
+      "family": "Contacteur",
+      "label": "CR; contacts rattachés non recomptés",
+      "x": 707,
+      "y": 704,
+      "id": "E101-0013"
+    },
+    {
+      "family": "Électrode terre",
+      "label": "Avec boîte de vérification; trois représentées au détail",
+      "x": 1007,
+      "y": 600,
+      "id": "E101-0014"
+    },
+    {
+      "family": "Électrode terre",
+      "label": "Avec boîte de vérification; trois représentées au détail",
+      "x": 1023,
+      "y": 655,
+      "id": "E101-0015"
+    },
+    {
+      "family": "Électrode terre",
+      "label": "Avec boîte de vérification; trois représentées au détail",
+      "x": 1092,
+      "y": 620,
+      "id": "E101-0016"
+    },
+    {
+      "family": "Barre terre",
+      "label": "Cuivre 6 x 50 x 305 mm; vue en plan = renvoi",
+      "x": 1185,
+      "y": 978,
+      "id": "E101-0017"
+    }
+  ],
+  "notes": [
+    "Quantités des composants représentés seulement; aucun multiplicateur chantier. Les contacts M, PE et CR ne sont pas des appareils supplémentaires.",
+    "RES = réserve; * = identification ou prescription à revalider. Câbles, conduits, fixations et longueurs non métrés."
+  ]
+}

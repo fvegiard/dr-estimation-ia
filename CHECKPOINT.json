@@ -1,15 +1,23 @@
 {
-  "status": "Relevé en cours, aucune feuille validée",
+  "status": "Relevé en cours",
   "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",
   "source_unique_files": 34,
   "source_duplicates_removed": 1,
-  "completed": [],
+  "completed": [
+    {
+      "sheet": "E101",
+      "markers": 17,
+      "visual_score": "17/17",
+      "review": "17/17 repères contrôlés sur plan entier, planche de zoom et légende; six ancrages déplacés pour dégager les inscriptions; barre déplacée hors trait de rupture.",
+      "jpeg_sha256": "c4345fe74428d9ce7f9cf45e3700f843624660a40256890b3f476c8d0e85766f",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues."
+    }
+  ],
   "remaining": [
     "E001",
     "E002-page02",
     "E002-page03",
     "E100",
-    "E101",
     "E102",
     "E103",
     "E104",
