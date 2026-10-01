@@ -1,0 +1,130 @@
+S-0844 — RELEVÉ PAGE PAR PAGE
+
+ÉTAT : EN COURS — LIVRAISON PARTIELLE VÉRIFIÉE
+Projet des cartouches : POLARIS, KEURIG - DR PEPPER MONTRÉAL, 7260 rue St-Urbain.
+Sources : SharePoint Mes projets / s-0844 (13-Novembre-2023). 75 PNG, 63 SHA-256 distincts, 12 doublons retirés. Aucun PDF reçu.
+Aucun QPL de l’estimateur ouvert ni téléchargé depuis SharePoint. Aucune comparaison à son relevé.
+
+FEUILLES VÉRIFIÉES
+EX-M-PE01 : 235 pastilles; 1 réserve(s) de repère; contrôle visuel 235/235.
+EX-E-PE01 : 103 pastilles; 0 réserve(s) de repère; contrôle visuel 103/103.
+ES-M-0T01 : 4 pastilles; 2 réserve(s) de repère; contrôle visuel 4/4.
+EX-M-DG02 : 2 pastilles; 0 réserve(s) de repère; contrôle visuel 2/2.
+EX-M-DT02 : 7 pastilles; 0 réserve(s) de repère; contrôle visuel 7/7.
+EE-M-RC01 : 149 pastilles; 6 réserve(s) de repère; contrôle visuel 149/149.
+ES-M-RC01 : 110 pastilles; 25 réserve(s) de repère; contrôle visuel 110/110.
+EA-M-RC01 : 17 pastilles; 1 réserve(s) de repère; contrôle visuel 17/17.
+EA-M-RC02 : 25 pastilles; 11 réserve(s) de repère; contrôle visuel 25/25.
+EC-M-RC01 : 7 pastilles; 2 réserve(s) de repère; contrôle visuel 7/7.
+Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
+JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
+
+RESTANT À RELEVER
+ES-D-SS01, ES-D-0301, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EX-M-DE01, ES-M-0301
+
+NON COMPTÉ / PORTÉES
+Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
+Câbles, conduits, chemins de câbles et longueurs non métrés. Aucun prix. Aucun total global d’achat.
+Un disjoncteur multipolaire = un appareil, une pastille sur le premier pôle. LIBRE avec calibre compté; espace sans calibre exclu.
+EX-M-PE01 : 235 appareils aux cinq panneaux nouveaux. EX-E-PE01 : 103 appareils existants, séparés des achats.
+Ne pas additionner les schémas, plans, détails et cédules. Les versions antérieures ne sont pas additionnées.
+EX-M-0000 est une page de garde/liste de dessins, sans décompte d’appareils. Les légendes ne créent aucune quantité de chantier.
+Feuilles non électriques non relevées : MG-M-RC01 (protection incendie), MX-M-LG01 (mécanique, légende/tableaux), MV-M-0401 (ventilation niveau 4).
+Documents Changement 011 : examen textuel encore à faire. Documents commerciaux Connectrac exclus du relevé aveugle.
+
+RÉSERVES / CONTRADICTIONS
+* EE-M-RC01 : révision 06 datée du 2024-01-12 puis 04 en mars et 05 en avril. Version du 24 avril retenue pour lecture; ordre contractuel à confirmer.
+* C1-3, circuits 2/4/6 : 130 A / 3P conservé tel qu’écrit; série et disponibilité à confirmer. Aucun calibre choisi arbitrairement.
+* UE-1, C1-1, C3-1, C4-1 : barres omnibus indiquées 0 A aux tableaux existants; valeur inutilisable, vérification sur place requise.
+Marques, modèles, séries, protections, pouvoirs de coupure et principaux non précisés. Reconciliation interfeuilles encore en cours.
+
+EX-M-PE01 — PRÉCISIONS
+Un appareil multipolaire = une pastille sur son premier pôle; pôles liés exclus du total.
+LIBRE avec calibre : disjoncteur compté. Tiret sans calibre : espace exclu.
+C1-2 : 53; C3-2 : 80; C4-2 : 79; C1-3 : 8; CA1-1 : 15 appareils.
+* 130 A C1-3 conservé tel qu’indiqué. Aucun calibre choisi arbitrairement.
+Marque, série, protections, pouvoir de coupure et principaux non déterminés.
+La cédule ne donne pas une quantité supplémentaire de prises ou de luminaires.
+
+EX-E-PE01 — PRÉCISIONS
+Un appareil multipolaire = un repère au premier pôle. Espaces sans calibre exclus.
+S1 : 26; UE-1 : 21; C1-1 : 20; C3-1 : 18; C4-1 : 18 appareils existants.
+Aucun achat déduit de cette feuille. Modifications à recouper aux plans modifiés.
+* Les barres omnibus indiquées 0 A sur quatre tableaux ne constituent pas un calibre utilisable.
+Marques, séries, protections et pouvoirs de coupure non précisés. Vérification sur place requise.
+
+ES-M-0T01 — PRÉCISIONS
+Deux appareils mécaniques et leurs deux interrupteurs EI représentés au toit.
+CS2-001-006 : C3-2 / 75,77. CS3-001-006 : C4-2 / 75,77.
+* Aucun calibre de sectionneur choisi. Les disjoncteurs sont déjà comptés à EX-M-PE01.
+Appareils mécaniques : points de raccordement, aucune fourniture mécanique déduite.
+Câbles, conduits et longueurs non métrés. Modèles non précisés.
+
+EX-M-DG02 — PRÉCISIONS
+Deux cabinets dessinés; aucune quantité supplémentaire aux armoires du plan agrandi.
+RDC–niveau 3 : 1 conduit 63 mm / 2 fibres OM4 12 brins; 1 conduit 63 mm / corde DAS.
+Niveau 3–niveau 4 : 1 conduit 63 mm / fibre OM4 12 brins; 1 conduit 63 mm / corde DAS.
+Entre cabinets RDC : 2 fibres OM4 12 brins. Vers sous-sol : conduit 63 mm / corde.
+Note A : utiliser le conduit déjà présent indiqué. Longueurs non déterminables au diagramme.
+Les rectangles pointillés sont des locaux, pas des appareils. Aucune extrapolation.
+
+EX-M-DT02 — PRÉCISIONS
+Six barres aux niveaux 4, 3 et RDC; une barre existante au sous-sol.
+Quantités de symboles au diagramme seulement : recouper avec les vues agrandies.
+Libellés source : 1#6V, C.21 mm et 1#1/0V, C.21 mm conservés sans choix de calibre.
+Longueurs des conducteurs et conduits non déterminées; aucun métré au diagramme.
+Modèles et dimensions des barres non précisés.
+
+EE-M-RC01 — PRÉCISIONS
+* Ordre des révisions contradictoire : R06 du 12 janvier / R05 du 24 avril 2024. R05 utilisée ici.
+L05m/n/o : 9 panneaux acoustiques, pas des luminaires (cédule EX-M-LG02).
+L06f : 3 flèches, mentions 3x + 4x + 4x = 11 segments; longueurs inconnues, pas de métré.
+EX1/EX7 et issues ER séparés : existants à relocaliser. EX3 existants distingués.
+* Commande M, charge du point 1mm et interface IC : spécifications à confirmer.
+Les traits de liaison et extrémités noires des commandes ne sont pas des détecteurs.
+Ne pas additionner les mêmes appareils aux vues agrandies EX-M-DT01.
+
+ES-M-RC01 — PRÉCISIONS
+Une pastille par symbole; le groupe M.-O. x2 a une quantité CSV de 2.
+Monuments C : 3 ensembles, chacun contient 2 prises; pas de second total.
+Les zones 02/03 sont comptées uniquement sur leurs vues agrandies.
+MDF 1.34 : renvoi EX-M-DT03, pas de décompte supplémentaire ici.
+Les panneaux et équipements de distribution sont des renvois.
+* TP-RDC-3 : deux raccordements, circuits différents; identité à confirmer.
+* Charges de cuisine / toiles : renvois architecture non reçus.
+* Sectionneur EI sans calibre; longueurs de câbles/conduits non métrées.
+
+EA-M-RC01 — PRÉCISIONS
+MIA : une pastille sur le symbole 3x; quantité CSV = 3 modules pour préaction.
+Déclencheur cafétéria ER : déplacement et recâblage selon note A; pas un achat neuf.
+MRA : contrôle de porte ESC.2; coordination avec contrôle d’accès, pas de doublon au détail.
+Les appareils des zones hachurées sont conservés séparément comme représentations existantes.
+* Type du détecteur près ESC.2 non précisé; aucun modèle ni sous-type inventé.
+Aucun ajout de quantité depuis le diagramme existant EX-E-DG01.
+Marques/modèles et longueurs de câbles/conduits non déterminés.
+
+EA-M-RC02 — PRÉCISIONS
+5 sorties caméra : 4 au plafond, 1 murale; appareils/patch cords installés par le client.
+4 groupes de porte représentés : deux groupes 01, un groupe 09 et un groupe 13.
+1 contact isolé à la porte extérieure de la cafétéria, en plus des contacts des groupes.
+* Groupes central 01 et ESC.2 / caméras centrales : symboles en zone HORS CONTRAT; portée à confirmer.
+Les sorties CAM du plan ES-M-RC01 sont les mêmes infrastructures : ne pas additionner.
+Panneau de sécurité 1200 × 250 mm : une enveloppe; composants au détail, sans doublon.
+Les groupes décrivent des sorties, pas une fourniture arbitraire de quincaillerie.
+Longueurs de câbles et conduits non métrées; aucun modèle choisi.
+
+EC-M-RC01 — PRÉCISIONS
+6 parcours de conduits distingués : 2 × 25 mm, 3 × 63 mm et 1 selon note B.
+Les deux conduits 63 mm EH sont dessinés et repérés individuellement (petites pastilles).
+1 réseau continu de chemin de câbles en H : pas un nombre de pièces ou de mètres.
+Note A : bas du chemin à 3300 mm du sol. Section et longueurs non déterminées.
+Note B : corde de tirage, raccord au conduit existant DEMARC / mécanique niveau 03.
+Recouper avec EX-M-DG02 et EX-M-DT03 : aucune addition automatique des parcours.
+Coudes, tés, supports, manchons, raccords et métrés non quantifiés.
+Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
+
+MÉTHODE
+Scripts Python réellement utilisés dans methode/. Ils ont été exécutés à la racine du dossier de travail avec sources/, inspection/ et evidence/ locaux.
+Ces entrées de travail et les zooms ne sont pas publiés. Le clonage de référence et les fichiers sources ne font pas partie de ce livrable.
+Session interactive Codex (GPT-6), lecture et contrôle visuels directs, sans sous-agent.
+manifest.json couvre les fichiers livrés sauf lui-même, par taille et SHA-256.
