@@ -6,10 +6,19 @@
       "sheet": "E-1",
       "markers": 0,
       "visual_check": "3/3 : plan conservé, légende lisible, aucune quantité inventée; déplacement de légende corrigé."
+    },
+    {
+      "sheet": "E-2",
+      "markers": 19,
+      "visual_check": "19/19 ancrages revus sur JPEG; cédules 91/91 lignes rapprochées; 3 lignes en réserve de lecture.",
+      "breakers": {
+        "P1": 49,
+        "P2": 42,
+        "new_source": 8
+      }
     }
   ],
   "remaining": [
-    "E-2",
     "E-3",
     "E-4",
     "E-5"
