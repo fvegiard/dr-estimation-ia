@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 2435,
-    "sha256": "d29dbcaab2430cfb521243b3a368b4e6ee47fd0fd751af4d01a5be861d3966bf"
+    "bytes": 2812,
+    "sha256": "fe61e5f2828f6296b153ebfae549f04b5f74810234db2c30a898a0724f2f9091"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 5324,
-    "sha256": "6a0709eb83357003465797a4db36926c7931a9763f21933dedd58e6bf2833d6a"
+    "bytes": 5785,
+    "sha256": "06602a01317b35a6f73e9209ce6b1baf8f2047530c1ccfc5b39c0e2ce48c97af"
   },
   {
     "file": "S-0844-ES-M-0T01-equipment.csv",
@@ -38,6 +38,16 @@
     "file": "S-0844-EX-M-DG02-releve.jpg",
     "bytes": 2274450,
     "sha256": "12b2403ea035ed80d18ad3d7fb8885fcf54e72db2baceda84d2002f71fa1df0e"
+  },
+  {
+    "file": "S-0844-EX-M-DT02-details.csv",
+    "bytes": 1048,
+    "sha256": "af83d6e062b2aa9d15e059fca622792b023bd217714a03d052c1c5c01dcb8587"
+  },
+  {
+    "file": "S-0844-EX-M-DT02-releve.jpg",
+    "bytes": 2322849,
+    "sha256": "ddf84f15e2b608e553d2d042954eeaf3754012833d941684fb4731f1d27b499c"
   },
   {
     "file": "S-0844-EX-M-PE01-breakers.csv",
