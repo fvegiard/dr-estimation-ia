@@ -66,6 +66,15 @@
       "jpeg_sha256": "f720581d868b8daf91110d68d72f01d193f7d25f5c666938e942b8db7a6ad53b",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 31
+    },
+    {
+      "sheet": "E108",
+      "markers": 32,
+      "visual_score": "32/32",
+      "review": "32 repères contrôlés sur deux planches de zoom; cédule modèles lue au zoom; portée références distincte du principe répété E101; légende lisible.",
+      "jpeg_sha256": "30975a748bc16614e8ecfa16e7b51e23df50261955426f62e280b8e840e59b4b",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 3
     }
   ],
   "remaining": [
@@ -73,7 +82,6 @@
     "E002-page02",
     "E002-page03",
     "E100",
-    "E108",
     "E200",
     "E201",
     "E202",
