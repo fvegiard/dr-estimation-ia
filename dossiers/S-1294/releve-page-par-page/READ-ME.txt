@@ -55,9 +55,15 @@ E002-page02 : 0 pastilles; 4 réserves; contrôle visuel 0/0.
   LIBRE inclut le disjoncteur; ESPACE et absence d’indication l’excluent. ESPACE avec calibre en cédule demeure une contradiction.
   Icc : 10 kA / 250 V, 22 kA / 600 V et commutation 35 kA dans le devis; ne pas remplacer arbitrairement les valeurs des cédules.
   Panneau incendie FX-2003 dans le devis contre FX-2000 aux légendes : réserve de modèle.
+E002-page03 : 0 pastilles; 5 réserves; contrôle visuel 0/0.
+  Feuille textuelle, sans symboles matériels : zéro pastille. Prescriptions et caractéristiques au CSV, pas de quantités supplémentaires.
+  Groupe : 154 kW / 193 kVA au devis contre 150 kW sur E102. Réservoir 2930 L; autonomie 24 h; aucun dimensionnement choisi.
+  Inverseurs : paragraphe 100 A, liste finale 200 A et 100 A. Préfixes 1-/2- à réconcilier avec les trois représentations E102.
+  Intercom : références MIRCOM; les 16 boutons mentionnés ne sont pas une quantité de logements ou de stations.
+  Index E001 nomme cette page E003; cartouche E002 conservé dans le nom avec suffixe page03.
 
 LIMITES ET RÉSERVES :
-Feuilles restant à traiter : E002-page03, E100, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
+Feuilles restant à traiter : E100, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
 Numéros de cartouche répétés : E002 pages 2–3, E105 pages 9–10, E400 pages 22–23. Les suffixes page distinguent les fichiers.
 Aucune feuille M-, A- ou S- dans la série principale de 23 pages. Les 11 scans complémentaires restent à classer et à contrôler.
 Les détails types et diagrammes ne constituent pas une quantité globale de chantier. Ne pas additionner schémas, plans de niveau et logements types.
