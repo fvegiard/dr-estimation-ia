@@ -101,12 +101,22 @@
       "source_conservee": true,
       "sha256_jpeg": "9f085bc8d7630738741c9db8d2df0af7a465195444ba7fd97fed49ddb1432efd",
       "reserves_repere": 11
+    },
+    {
+      "feuille": "EC-M-RC01",
+      "pastilles": 7,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "7/7",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "9b923ec9a9ba4c8fca82c829717c23bc71c32fef17976dc94ff8109bf4a10498",
+      "reserves_repere": 2
     }
   ],
   "feuilles_restantes": [
     "ES-D-SS01",
     "ES-D-0301",
-    "EC-M-RC01",
     "EC-M-0301",
     "EA-M-0301",
     "EA-M-0302",

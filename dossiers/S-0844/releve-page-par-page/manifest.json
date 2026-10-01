@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 4340,
-    "sha256": "a97a8baada9d602d40025e7f0cb05b5b1e48b07eac58511f2d52dbf04b636c11"
+    "bytes": 4717,
+    "sha256": "6d133216ff85470894c0cbea4bd5a6785751e5b82c15d9093993a9833d0a13a6"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 8613,
-    "sha256": "12d9792efddf6c1a8778d6e8286f6e844bb77535bd96e1b62704a6a43ebf83c9"
+    "bytes": 9280,
+    "sha256": "4afa936e139510a60da9d6b0b97935b55e5ad3b293f1327b69ca460ec1c75503"
   },
   {
     "file": "S-0844-EA-M-RC01-releve.jpg",
@@ -28,6 +28,16 @@
     "file": "S-0844-EA-M-RC02-symbols.csv",
     "bytes": 4854,
     "sha256": "13a031ab468435f48f4ac96a9d4e7f16678df1fcec6884781207c4af7bf4276e"
+  },
+  {
+    "file": "S-0844-EC-M-RC01-details.csv",
+    "bytes": 1389,
+    "sha256": "f7cd07bfa2f67b2e14f474636632eb02f342c84edff47f30e531328598424632"
+  },
+  {
+    "file": "S-0844-EC-M-RC01-releve.jpg",
+    "bytes": 4749950,
+    "sha256": "9b923ec9a9ba4c8fca82c829717c23bc71c32fef17976dc94ff8109bf4a10498"
   },
   {
     "file": "S-0844-EE-M-RC01-equipment.csv",
@@ -113,6 +123,11 @@
     "file": "S-0844-inventaire-feuilles.csv",
     "bytes": 9616,
     "sha256": "cff6e4c33da5c272952e45cae823b56c4d78f18b58bf688129cd76be770276e0"
+  },
+  {
+    "file": "methode/build_cable_routes.py",
+    "bytes": 2684,
+    "sha256": "10bd11a7a1b4e03501c2e66fc08bfe3ec3bd9bd263bd9478f137265ee38c331a"
   },
   {
     "file": "methode/build_existing_panels.py",

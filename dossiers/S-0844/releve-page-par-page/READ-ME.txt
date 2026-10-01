@@ -15,11 +15,12 @@ EE-M-RC01 : 149 pastilles; 6 réserve(s) de repère; contrôle visuel 149/149.
 ES-M-RC01 : 110 pastilles; 25 réserve(s) de repère; contrôle visuel 110/110.
 EA-M-RC01 : 17 pastilles; 1 réserve(s) de repère; contrôle visuel 17/17.
 EA-M-RC02 : 25 pastilles; 11 réserve(s) de repère; contrôle visuel 25/25.
+EC-M-RC01 : 7 pastilles; 2 réserve(s) de repère; contrôle visuel 7/7.
 Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
 JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
 
 RESTANT À RELEVER
-ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EX-M-DE01, ES-M-0301
+ES-D-SS01, ES-D-0301, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EX-M-DE01, ES-M-0301
 
 NON COMPTÉ / PORTÉES
 Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
@@ -111,6 +112,15 @@ Les sorties CAM du plan ES-M-RC01 sont les mêmes infrastructures : ne pas addit
 Panneau de sécurité 1200 × 250 mm : une enveloppe; composants au détail, sans doublon.
 Les groupes décrivent des sorties, pas une fourniture arbitraire de quincaillerie.
 Longueurs de câbles et conduits non métrées; aucun modèle choisi.
+
+EC-M-RC01 — PRÉCISIONS
+6 parcours de conduits distingués : 2 × 25 mm, 3 × 63 mm et 1 selon note B.
+Les deux conduits 63 mm EH sont dessinés et repérés individuellement (petites pastilles).
+1 réseau continu de chemin de câbles en H : pas un nombre de pièces ou de mètres.
+Note A : bas du chemin à 3300 mm du sol. Section et longueurs non déterminées.
+Note B : corde de tirage, raccord au conduit existant DEMARC / mécanique niveau 03.
+Recouper avec EX-M-DG02 et EX-M-DT03 : aucune addition automatique des parcours.
+Coudes, tés, supports, manchons, raccords et métrés non quantifiés.
 Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
 
 MÉTHODE
