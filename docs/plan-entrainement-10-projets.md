@@ -10,14 +10,23 @@ il ouvre le .qpl humain, identifie les écarts avec son propre relevé, et on en
 - Travail uniquement sur `test-comparaison` (ou une branche par lot) ; fusion dans `main` par PR relue.
 - La PR #10 a déjà été fusionnée dans `main` (01:38) : décider si on la garde ou si on la revert.
 
-## 1. Constat de départ
-- 5 dossiers ont un .qpl humain exploitable (`dossiers/<S>/reference/<S>-Dupuis-PlanExpert.qpl`) ; il en faut 10.
-- Le jeu de référence (`python -m src.validation.jeu_reference`) rejoue déjà la comparaison marque par marque.
-- Dépendance manquante dans ce conteneur : `numpy` (`pip install -r requirements.txt`).
+## 1. Constat de départ (lu en entier)
+- Le **critère d'acceptation** de la branche `agent/openhands/repeatable-pdf` (PR #9, pas encore dans `main`) décrit déjà la
+  procédure voulue : identifier à l'aveugle → geler (commit) → comparer (`compare_qpl`) → classer chaque désaccord
+  (omission, doublon, mauvaise famille, portée, feuille) → justifier sur le plan → corriger → revérifier.
+  Le plan ci-dessous l'applique à 10 projets ; il ne la remplace pas.
+- Seuls 5 dossiers du dépôt ont le .qpl humain dans `reference/` : S-1714, S-1715, S-1769, S-1811, S-1844.
+- `apprentissage/qpl-2021-2026/recensement-complet/appariement-plans-qpl.csv` : 41 numéros S ont plans (Drive) + .qpl
+  de M. Dupuis avec marques > 0. Les plus riches : S-1741 (5758 marques), S-1767 (4334), S-1692 (3656), S-1775 (3231),
+  S-1706 (2722), S-1740, S-1783, S-1766 (hors les 5 déjà au dépôt).
+- Les plans bruts sont à prendre dans Drive « original » (`docs/sources-cloud-plans-originaux.md` sur la PR #9) ;
+  exclure le sous-dossier `Prix` et tout .qpl/PNG marqué de l'estimateur.
+- Limite : le dossier S-1714 (8503 marques) est très lourd ; commencer par des projets de taille moyenne.
 
 ## 2. Choix des 10 projets
-- Lister les dossiers S-* ayant plans + .qpl humain ; compléter à 10 avec les projets où l'estimateur fournit son .qpl.
-- Mélanger types (bureaux, industriel, résidentiel…) pour ne pas entraîner sur un seul style.
+- Les 5 déjà au dépôt + 5 pris dans la liste ci-dessus (S-1692, S-1740, S-1766, S-1775, S-1706 : tailles moyennes, types variés
+  — écoles, clinique, caserne, logements).
+- Un projet à la fois ; pas de .qpl humain téléchargé avant que le relevé IA soit gelé.
 
 ## 3. Boucle par projet (répétée 10 fois)
 1. **Aveugle** : `releve/prepare.py` puis agent `releveur`. Le .qpl humain reste hors de portée
@@ -39,6 +48,6 @@ il ouvre le .qpl humain, identifie les écarts avec son propre relevé, et on en
 - Rapport final : écarts classés par cause, règles ajoutées, gain mesuré.
 
 ## 6. Points à trancher par Francis
-1. Garder ou revert la PR #10 ?
-2. Quels sont les 5 projets supplémentaires avec .qpl humain ?
+1. PR #10 : garder ou revert ? (elle n'a fusionné que le 1er des 7 commits de la PR #9)
+2. Valider les 5 projets proposés (S-1692, S-1740, S-1766, S-1775, S-1706)
 3. Le .qpl humain peut-il rester public dans le dépôt (décision du 22/09 : oui) ?
