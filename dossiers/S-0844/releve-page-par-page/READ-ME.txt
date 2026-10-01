@@ -1,0 +1,37 @@
+S-0844 — RELEVÉ PAGE PAR PAGE
+
+ÉTAT : EN COURS — LIVRAISON PARTIELLE VÉRIFIÉE
+Projet des cartouches : POLARIS, KEURIG - DR PEPPER MONTRÉAL, 7260 rue St-Urbain.
+Sources : SharePoint Mes projets / s-0844 (13-Novembre-2023). 75 PNG, 63 SHA-256 distincts, 12 doublons retirés. Aucun PDF reçu.
+Aucun QPL de l’estimateur ouvert ni téléchargé depuis SharePoint. Aucune comparaison à son relevé.
+
+FEUILLES VÉRIFIÉES
+EX-M-PE01 : 235 pastilles; 1 réserve(s) de repère; contrôle visuel 235/235.
+Les scores concernent les repères annotés de ces cédules; ils ne certifient pas le dossier complet.
+JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
+
+RESTANT À RELEVER
+ES-D-SS01, ES-D-0301, ES-M-0T01, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DG02, EX-M-DT01, EX-M-DT02, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-RC01, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301, EX-E-PE01
+
+NON COMPTÉ / PORTÉES
+Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
+Câbles, conduits, chemins de câbles et longueurs non métrés. Aucun prix. Aucun total global d’achat.
+Un disjoncteur multipolaire = un appareil, une pastille sur le premier pôle. LIBRE avec calibre compté; espace sans calibre exclu.
+EX-M-PE01 : 235 appareils aux cinq panneaux nouveaux. EX-E-PE01 : 103 appareils existants, séparés des achats.
+Ne pas additionner les schémas, plans, détails et cédules. Les versions antérieures ne sont pas additionnées.
+EX-M-0000 est une page de garde/liste de dessins, sans décompte d’appareils. Les légendes ne créent aucune quantité de chantier.
+Feuilles non électriques non relevées : MG-M-RC01 (protection incendie), MX-M-LG01 (mécanique, légende/tableaux), MV-M-0401 (ventilation niveau 4).
+Documents Changement 011 : examen textuel encore à faire. Documents commerciaux Connectrac exclus du relevé aveugle.
+
+RÉSERVES / CONTRADICTIONS
+* EE-M-RC01 : révision 06 datée du 2024-01-12 puis 04 en mars et 05 en avril. Version du 24 avril retenue pour lecture; ordre contractuel à confirmer.
+* C1-3, circuits 2/4/6 : 130 A / 3P conservé tel qu’écrit; série et disponibilité à confirmer. Aucun calibre choisi arbitrairement.
+* UE-1, C1-1, C3-1, C4-1 : barres omnibus indiquées 0 A aux tableaux existants; valeur inutilisable, vérification sur place requise.
+Marques, modèles, séries, protections, pouvoirs de coupure et principaux non précisés. Reconciliation interfeuilles encore en cours.
+Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
+
+MÉTHODE
+Scripts Python réellement utilisés dans methode/. Ils ont été exécutés à la racine du dossier de travail avec sources/, inspection/ et evidence/ locaux.
+Ces entrées de travail et les zooms ne sont pas publiés. Le clonage de référence et les fichiers sources ne font pas partie de ce livrable.
+Session interactive Codex (GPT-6), lecture et contrôle visuels directs, sans sous-agent.
+manifest.json couvre les fichiers livrés sauf lui-même, par taille et SHA-256.

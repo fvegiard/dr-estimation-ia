@@ -1,0 +1,77 @@
+[
+  {
+    "file": "CHECKPOINT.json",
+    "bytes": 1298,
+    "sha256": "142588f23f280a07fc199636d337db71d4783ddd812f222133a6862469da1783"
+  },
+  {
+    "file": "READ-ME.txt",
+    "bytes": 3192,
+    "sha256": "aff57eec7cc7ec48526070cfe0f7c00ba935913cc95c3174d6c16c3321bf4ed2"
+  },
+  {
+    "file": "S-0844-EX-M-PE01-breakers.csv",
+    "bytes": 35534,
+    "sha256": "8649a9e78034fe29ce988ce7abb3c9b0820756ebf4176467b62a89c3cd18cff4"
+  },
+  {
+    "file": "S-0844-EX-M-PE01-releve.jpg",
+    "bytes": 8759169,
+    "sha256": "dc10df96f4ff2447b13fa58d95135bb222a153b4d0cf7499f5fbe56f3c6dd99e"
+  },
+  {
+    "file": "S-0844-inventaire-feuilles.csv",
+    "bytes": 9616,
+    "sha256": "cff6e4c33da5c272952e45cae823b56c4d78f18b58bf688129cd76be770276e0"
+  },
+  {
+    "file": "methode/build_existing_panels.py",
+    "bytes": 2659,
+    "sha256": "88e2f7f4ef969622fb347426e93ceb32fa7841682e2fa890986e9dee5f938ce4"
+  },
+  {
+    "file": "methode/build_panels.py",
+    "bytes": 2907,
+    "sha256": "7536a163d4beaaf29dc591bff607088ce06e735764d81c74315746b6849700de"
+  },
+  {
+    "file": "methode/catalog_sources.py",
+    "bytes": 4772,
+    "sha256": "32cf49690376c68fd1d9713feb587417b43ba2dd4813a522b8c439c1337fdfaf"
+  },
+  {
+    "file": "methode/download_sources.py",
+    "bytes": 2231,
+    "sha256": "226297fa1087438a0228142253a9dd8d8e23c769c9809a9fe6bcc7844c824929"
+  },
+  {
+    "file": "methode/export_breakers.py",
+    "bytes": 2877,
+    "sha256": "565213dc1fff8a302b1de21f58ac3db4fd517edf6b909e7e6333d5b0d5cad265"
+  },
+  {
+    "file": "methode/finish_sheet.py",
+    "bytes": 1106,
+    "sha256": "abe50cca88b684bfb3cd9bc1ec124e3a40eb306ca3ee4a17132a524974daf85b"
+  },
+  {
+    "file": "methode/inspect_crop.py",
+    "bytes": 603,
+    "sha256": "8b95160aee5fdbfb7cf430bc16d887086da3a6a73bf103c55c9f48cdb952da75"
+  },
+  {
+    "file": "methode/package_delivery.py",
+    "bytes": 7084,
+    "sha256": "02c91580e9e3676a859086ea80254f750f617f4fda10dfbdc021adfa2c368cc9"
+  },
+  {
+    "file": "methode/prepare_inspection.py",
+    "bytes": 1488,
+    "sha256": "315407bde8ac32052664daf22cae90fe264a82c7dac7596a439b61f79dca6504"
+  },
+  {
+    "file": "methode/render_sheet.py",
+    "bytes": 3402,
+    "sha256": "3c7819a3cfe09d955ad91a591c5e17f4ed691a1b6f87e58cd8266e8b2049b1d8"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "projet": "S-0844",
+  "etat": "Relevé en cours — livraison partielle vérifiée",
+  "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",
+  "feuilles_terminees": [
+    {
+      "feuille": "EX-M-PE01",
+      "pastilles": 235,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "235/235",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "dc10df96f4ff2447b13fa58d95135bb222a153b4d0cf7499f5fbe56f3c6dd99e",
+      "reserves_repere": 1
+    }
+  ],
+  "feuilles_restantes": [
+    "ES-D-SS01",
+    "ES-D-0301",
+    "ES-M-0T01",
+    "EC-M-RC01",
+    "EC-M-0301",
+    "EA-M-0301",
+    "EA-M-0302",
+    "EX-E-DG01",
+    "EX-M-DG02",
+    "EX-M-DT01",
+    "EX-M-DT02",
+    "EX-M-DT04",
+    "EX-M-DT05",
+    "EX-E-DE01",
+    "EM-D-SS01",
+    "EM-D-0301",
+    "EX-M-LG01",
+    "EX-M-DT03",
+    "EX-M-LG02",
+    "EE-M-RC01",
+    "EE-M-0301",
+    "ES-M-RC01",
+    "EA-M-RC01",
+    "EA-M-RC02",
+    "EX-M-DE01",
+    "ES-M-0301",
+    "EX-E-PE01"
+  ],
+  "qpl_estimateur_ouvert": false,
+  "qpl_estimateur_telecharge_depuis_sharepoint": false,
+  "verification_estimateur": "Non effectuée : relevé à l’aveugle demandé",
+  "sources_distinctes": 63,
+  "doublons_sha256": 12
+}
