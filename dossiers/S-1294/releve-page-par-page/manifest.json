@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 1626,
-    "sha256": "27ea40e7dcf28cfc8b48175923aad2cc2e3988af2ffd1a2d3cf05a3d44d9cfe8"
+    "bytes": 2125,
+    "sha256": "dcf7f7738730a26fc101f49e7fbbcf45c4fe5a57bd965bd13cfa5eb1d99439cf"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 2665,
-    "sha256": "2f31a3ea745d519315133bb83f584951f9e3e18afa04b9e103072d77cc2bd69e"
+    "bytes": 3298,
+    "sha256": "b01495cf669e71fc401a3a3d624a90d622485df26a6c972cacae2bc2aaca5fa1"
   },
   {
     "file": "S-1294-E101-details.csv",
@@ -28,6 +28,16 @@
     "file": "S-1294-E102-releve.jpg",
     "bytes": 9862996,
     "sha256": "89df3197ba8b473dd6471472069ee5dbbea0876e81749d807a04f155491fb6f3"
+  },
+  {
+    "file": "S-1294-E103-equipment.csv",
+    "bytes": 27978,
+    "sha256": "de2e640a2447dc044d6b81be8a8bed6b58d917cbd8446b2fb2bf1b4390e42f01"
+  },
+  {
+    "file": "S-1294-E103-releve.jpg",
+    "bytes": 7383479,
+    "sha256": "434981ad3fa3a5346f6d950342a50a1518ceff5e9dc8e8ac141ce577441b9f72"
   },
   {
     "file": "methode/crop_view.py",
