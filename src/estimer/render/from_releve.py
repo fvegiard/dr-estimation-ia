@@ -300,7 +300,11 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
         it = dict(o, discipline=discipline(n))
         by_sheet[o["feuille"]].append(it)
 
-    fids = sorted(by_sheet, key=lambda f: natural_key(feuilles[f]["nom"]))
+    # Every classified `plan` sheet is included even with zero occurrences (matches the old renderer:
+    # render_pdf.py's `sheets = ... feuilles[f].get("type") == "plan" or by_sheet.get(f)`), so a floor that
+    # genuinely has no devices yet still ships in Plans-annotes.pdf instead of silently vanishing.
+    fids = sorted({f for f in feuilles if feuilles[f].get("type") == "plan"} | set(by_sheet),
+                  key=lambda f: natural_key(feuilles[f]["nom"]))
     plans = pymupdf.open()
     sheets_json, counters, bord_rows, meta = [], defaultdict(list), [], []
     for page_no, fid in enumerate(fids, start=1):

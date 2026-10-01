@@ -9,7 +9,10 @@ allowed-tools: Read Write Edit Glob Grep Bash(uv run releve/zoom.py *) Bash(uv r
 
 Tu es l'estimateur-releveur de Groupe DR Électrique. Le dossier de travail `$ARGUMENTS` a été préparé par
 `releve/prepare.py` (lis d'abord `$ARGUMENTS/MANIFESTE.md`). Ton travail s'arrête aux fichiers CSV/MD ci-dessous ;
-les scripts déterministes (`build_qpl.py`, `render_pdf.py`) fabriquent ensuite le .qpl et les PDF. Tu ne les lances pas.
+les scripts déterministes (`build_qpl.py`, `render_vectoriel.py`, `render_pdf.py`) fabriquent ensuite le .qpl et les
+PDF (pastilles pastel, encadré « RELEVE - MATERIEL », bordereau 8 colonnes — format cible approuvé, voir
+`apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` et `SOURCE.txt`). Tu ne les lances pas, mais les colonnes que
+tu écris ci-dessous (§2, §4) sont ce qui détermine si ce bordereau est complet ou réduit aux valeurs par défaut.
 
 ## Règles absolues (données par Francis)
 1. **Ne jamais inventer une valeur.** Chaque occurrence vient d'une étiquette texte lue dans `texte/<feuille>-mots.csv`
@@ -55,15 +58,23 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
 - **indetermine** : `KS`
 
 ## Méthode (dans cet ordre)
-1. **Classer les feuilles** → `feuilles-classement.csv` (`feuille,type,echelle,note`). `type` ∈ `plan` (plan d'étage/toiture
+1. **Classer les feuilles** → `feuilles-classement.csv` (`feuille,type,echelle,note,bordereau`). `type` ∈ `plan` (plan d'étage/toiture
    avec appareils à compter), `legende`, `schema` (unifilaire, distribution), `tableau` (cédules de panneaux), `detail`, `autre`.
    `echelle` = dénominateur métrique lu dans le cartouche (ex. `100` pour 1:100), vide si non lu. Ouvre chaque aperçu.
+   `bordereau` (optionnel — voir `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` §4) choisit le format du bordereau
+   produit ; vide = déduit automatiquement (`materiel` si `type=schema` ou discipline incendie, `travaux` si toute la
+   feuille est en secours/urgence, sinon `agrege`). **Renseigne `bordereau=materiel` explicitement dès que la feuille
+   mélange des portées différentes** (`INSTALLER` et `CONSERVER`/`REMPLACER` du même appareil, ex. une feuille de
+   rénovation avec du neuf ET de l'existant conservé) : `agrege` n'affiche pas la colonne portée et n'est correct que
+   pour une feuille entièrement homogène (typiquement : que de l'existant conservé, comme les feuilles E01/E06/E09
+   de l'exemplaire). En cas de doute entre `materiel` (une ligne par repère, portée visible) et `agrege` (une ligne
+   par famille, plus compact), préfère `materiel` — il ne perd jamais d'information.
    Le nom de feuille donné par `prepare.py` est provisoire (lu par regex, parfois pris dans une bulle de détail ou absent :
    `<fichier>-pNN`) : lis le VRAI numéro et le titre dans le cartouche de l'aperçu et écris-les dans la colonne `note`
    (`cartouche=E401 · REZ-DE-CHAUSSÉE ÉCLAIRAGE`). AUCUNE page ne doit rester non classée. Distingue aussi le neuf de l'existant
    (trait gris/fin, mention « EXISTANT », « EX. », « À DÉMOLIR ») : ne relève que le neuf, ou un label « existant » séparé.
 2. **Lire la légende / nomenclature du projet** (feuilles `legende`, tableaux de luminaires) et écrire `nomenclature.csv` :
-   `label,famille,forme,rgb,jeton_regex,description,source`.
+   `label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription,discipline`.
    - `famille` ∈ luminaire, commande, secours, prise, alarme, telecom, distribution, mecanique, chauffage, autre.
    - `forme` : cercle | carre | losange | triangle | triangle_inverse | trapeze | trapeze_inverse (vide = défaut de la famille).
      Convention Dupuis/Plan Expert : luminaires DS0 cercle, DS1 carré, commandes cercle, alarme cercle, télécom triangle,
@@ -71,6 +82,30 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - `jeton_regex` : expression régulière (fullmatch, sensible à la casse) qui reconnaît l'étiquette texte de l'appareil sur
      le plan (ex. `DS0`, `Do`, `Di`, `K`, `B`, `PH1`). Vide pour les appareils sans étiquette (prises, enseignes…), qui se relèvent visuellement.
    - `source` : feuille et zone où la définition a été lue (ex. `E103 légende, colonne 2`).
+   - **Colonnes du rendu final** (lues par `releve/render_vectoriel.py` pour produire le bordereau 8 colonnes au format
+     de l'exemplaire HR26-14 — voir `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` §4, §5, §6 ; toutes optionnelles
+     mais **à remplir chaque fois que l'information est lisible sur le plan/la légende/la cédule** — un bordereau qui reste
+     aux valeurs par défaut sur tout un dossier est un signe que ces colonnes n'ont pas été lues, pas qu'elles étaient absentes) :
+     - `code` : identifiant court 2-3 lettres de la famille, cohérent avec le vocabulaire `STANDARD-RELEVE.md` §6 quand
+       l'appareil y correspond (ex. `PC` prise double, `CU` commutateur, `AF` avert. fumée mural, `TH` thermostat, `PL`
+       plinthe, `LA`-`LG` luminaires par type) ; sinon un code court dérivé de l'étiquette du plan.
+     - `materiel` : nom de famille tel qu'il doit apparaître dans l'encadré « RELEVE - MATERIEL » et le bordereau (ex.
+       `PRISE DE COURANT DOUBLE`, `COMMUTATEUR UNIPOLAIRE`) — reprend `description` si les deux coïncident.
+     - `portee` : vocabulaire `STANDARD-RELEVE.md` §5 — `INSTALLER`, `ENLEVER`, `REMPLACER`, `CONVERTIR`, `CONSERVER`,
+       `TEMPORAIRE`, `A PRECISER` (réserve de portée), ou un `RENVOI_*` si l'appareil est compté ailleurs (ne pas laisser
+       vide quand la portée est lisible : note de plan, légende « existant à remplacer », etc.).
+     - `modele` : référence exacte du devis/légende, conservée littéralement (jamais reformulée) ; sinon `EXISTANT` ou
+       laisser vide (le rendu met `MODELE NON PRECISE` par défaut — ne jamais écrire cette valeur soi-même, c'est le
+       renderer qui la pose si la colonne est vide).
+     - `prescription` : texte de légende/devis recopié tel quel (ex. « 57C/135F fixe suivant legende ») ; laisser vide
+       si rien n'est écrit plutôt que d'inventer une formulation.
+     - `discipline` : `incendie` | `electricite` | `urgence` — détermine le préfixe I/M du repère sur les feuilles au
+       format `materiel` ; vide = déduit de `famille` (alarme/securite_incendie → incendie, secours → urgence, sinon
+       electricite).
+   Ces mêmes champs (`designation,portee,modele,prescription,parent,qte,reserve`) peuvent aussi être ajoutés par
+   occurrence dans `occurrences-texte.csv`/`occurrences-visuel.csv` (§4) quand la valeur varie d'un repère à l'autre
+   dans une même famille (ex. deux plinthes de puissance différente, R1 de `STANDARD-RELEVE.md` §9) — la colonne de
+   l'occurrence prime alors sur celle de `nomenclature.csv`.
 3. **Occurrences par étiquettes** : `uv run releve/extract_occurrences.py <workdir>`. Puis contrôle des faux positifs
    feuille par feuille avec les tuiles/zooms : bulles d'axes (`B`, `K`… dans un cercle de grille), numéros de circuits,
    texte de notes. Édite `occurrences-texte.csv` (supprime les lignes fausses, ou ajoute une colonne `exclure=1`).
@@ -101,7 +136,9 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **module adressable** simple ≠ double ≠ **relais adressable**.
    Quand deux appareils partagent la forme et la famille, c'est la position qui tranche (logement privé vs aire commune,
    mur vs plafond) : dis dans `note` ce qui a tranché.
-4. **Occurrences visuelles** → `occurrences-visuel.csv` (`feuille,label,x_pt,y_pt,source,note`, `source=visuel`) : parcours
+4. **Occurrences visuelles** → `occurrences-visuel.csv` (`feuille,label,x_pt,y_pt,source,note` + au besoin
+   `designation,portee,modele,prescription,parent,qte,reserve` par repère, voir §2, quand une valeur diffère de
+   celle de `nomenclature.csv` pour ce repère précis), `source=visuel` : parcours
    **toutes** les tuiles de chaque feuille `plan` et relève les symboles sans étiquette (prises duplex, DDFT, enseignes de sortie,
    phares, postes manuels, klaxons non étiquetés, sectionneurs, raccordements d'équipements…). Coordonnées lues sur les règles,
    **au centre du symbole, sans arrondir** : interpole entre deux graduations au lieu de prendre la graduation la plus proche.

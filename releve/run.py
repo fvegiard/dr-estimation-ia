@@ -5,7 +5,7 @@
 
     uv run releve/run.py <nom-de-soumission | chemin-du-dossier>     traite un dossier
     uv run releve/run.py --watch                                      surveille les INBOX et traite les nouveaux dossiers
-    uv run releve/run.py --reprendre <nom>                            rejoue seulement build_qpl + render_pdf (sans agent)
+    uv run releve/run.py --reprendre <nom>                            rejoue build_qpl + render_vectoriel + render_pdf (sans agent)
 
 Dossiers (hors du dépôt, données de Francis) :
     D:\\claude\\releve-auto\\INBOX\\<nom>\\      dépôt des PDF (plans, addendas, relevé de l'estimateur)
@@ -138,9 +138,15 @@ def agent(workdir, log_path):
         f"entrée {usage.get('input_tokens')} + cache {usage.get('cache_read_input_tokens')} / sortie {usage.get('output_tokens')} ; subtype {res.get('subtype')}")
     return code, res, dur
 
-def statut(name, inbox, outdir, workdir, steps, res, ok, err=None):
-    L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{'TERMINÉ' if ok else 'ÉCHEC'}**"]
+def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None):
+    a_verifier = a_verifier or []
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{etat}**"]
     if err: L += ["", f"Erreur : `{err}`"]
+    if a_verifier:
+        L += ["", f"⚠️ **Encadré RELEVE-MATERIEL hors de l'espace libre du plan sur : {', '.join(a_verifier)}** "
+              f"(voir `{name}-rendu-rapport.json`) — vérifier visuellement (Read du PDF, zoome) avant de "
+              "considérer ce livrable terminé ou de le diffuser au client, conformément à l'auto-supervision (CLAUDE.md)."]
     L += ["", "## Entrées", "", "| fichier | octets | sha256 |", "|---|--:|---|"]
     for dp, _, fs in os.walk(inbox):
         for f in sorted(fs):
@@ -198,7 +204,7 @@ def process(arg, reprendre=False):
     os.makedirs(outdir, exist_ok=True)
     marker = os.path.join(outdir, ".en-cours"); open(marker, "w").write(str(os.getpid()))
     log_path = os.path.join(outdir, "journal-etapes.log")
-    steps, res, ok, err = [], None, False, None
+    steps, res, ok, err, a_verifier = [], None, False, None, []
     T = time.time()
     try:
         if not reprendre:
@@ -222,6 +228,9 @@ def process(arg, reprendre=False):
         t = time.time(); code, _ = run(["uv", "run", "releve/render_vectoriel.py", workdir, name, outdir], log_path=log_path)
         steps.append(("render_vectoriel", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_vectoriel.py a échoué (PDF « Plans annotés » vectoriel)")
+        rapport_path = os.path.join(outdir, f"{name}-rendu-rapport.json")
+        if os.path.exists(rapport_path):
+            a_verifier = json.load(open(rapport_path, encoding="utf-8")).get("conformite", {}).get("encadre_hors_espace_libre") or []
         t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
@@ -244,7 +253,7 @@ def process(arg, reprendre=False):
     if reprendre and os.path.exists(os.path.join(workdir, "agent-resultat.json")):
         res = json.load(open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8"))
     steps.append(("total", time.time() - T, ""))
-    statut(name, inbox, outdir, workdir, steps, res, ok, err)
+    statut(name, inbox, outdir, workdir, steps, res, ok, err, a_verifier)
     try: os.remove(marker)
     except FileNotFoundError: pass
     if drive_mounted():
@@ -257,7 +266,8 @@ def process(arg, reprendre=False):
             log(f"copié sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
-    log(f"{'TERMINÉ' if ok else 'ÉCHEC'} {name} → {outdir}")
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    log(f"{etat} {name} → {outdir}")
     return ok
 
 def ready_dirs():

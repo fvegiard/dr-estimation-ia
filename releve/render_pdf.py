@@ -79,7 +79,11 @@ def main(work, name, out_dir):
     rap = md_to_pdf(md)
     p_rap = os.path.join(out_dir, f"{name}-Rapport-de-metre.pdf"); rap.save(p_rap, garbage=3, deflate=True)
     # --- dossier complet
-    full = pymupdf.open(); full.insert_pdf(rap); full.insert_pdf(pymupdf.open(p_plans))
+    # Build from p_plans (it owns the /OCProperties catalog entry for the RELEVE layers) and prepend the
+    # report pages, rather than starting from a fresh document and inserting p_plans into it: pymupdf's
+    # insert_pdf() does not carry the source document's OCG catalog into an unrelated destination, so the
+    # family layers silently stopped being toggleable in Dossier-complet.pdf (verified empirically).
+    full = pymupdf.open(p_plans); full.insert_pdf(rap, start_at=0)
     p_full = os.path.join(out_dir, f"{name}-Dossier-complet.pdf"); full.save(p_full, garbage=3, deflate=True)
     for p in (p_plans, p_rap, p_full):
         print(f"{os.path.basename(p)}  {os.path.getsize(p)} o  {len(pymupdf.open(p))} p  sha256 {sha256(p)}")

@@ -4,7 +4,7 @@
 
 Run after analyse_t01.py (which rewrote WORKDIR/occurrences-*.csv). OUTBOX_DIR = <OUTBOX>/S-1835, WORKDIR = OUTBOX_DIR/travail.
 Steps: classement + nomenclature + reserves (+ the proposed rapport-releve.md, embedded in the report) in WORKDIR,
-build_qpl.py and render_pdf.py (no agent, no native Plan Expert export: RELEVE_NATIF=0), releve.xlsx through
+build_qpl.py, render_vectoriel.py and render_pdf.py (no agent, no native Plan Expert export: RELEVE_NATIF=0), releve.xlsx through
 outils/assembler_dossier.py run in a scratch directory (so it cannot overwrite files owned by others), STATUT.md through
 releve/run.py::statut plus the addendum sections, then copies the files this fix owns into DOSSIER_DIR and rewrites
 SHA256SUMS.txt. Every figure written here comes from resume-t01.json, the CSV next to it or the Drive inventory.
@@ -67,6 +67,17 @@ def read(p):
 def base(rel):
     """Content of dossiers/S-1835/<rel> at BASE_REV."""
     return subprocess.run(["git", "show", f"{BASE_REV}:dossiers/{S}/{rel}"], cwd=REPO, check=True, capture_output=True, text=True).stdout
+
+
+def a_verifier_de(outbox, s):
+    """Encadré(s) hors espace libre pour le dossier `s`, lu dans <outbox>/<s>-rendu-rapport.json (écrit par
+    render_vectoriel.py) ; [] si le rapport est absent ou propre. Sans cette lecture, statut() ne peut pas
+    savoir qu'un encadré chevauche le dessin et publie un État TERMINÉ non qualifié même quand une
+    vérification visuelle reste nécessaire (CLAUDE.md §Autonomie)."""
+    p = os.path.join(outbox, f"{s}-rendu-rapport.json")
+    if not os.path.exists(p):
+        return []
+    return json.load(open(p, encoding="utf-8")).get("conformite", {}).get("encadre_hors_espace_libre") or []
 
 
 def write(p, s):
@@ -223,7 +234,9 @@ def main(inbox, outbox, dossier):
     write(os.path.join(work, "rapport-releve.md"), proposals(dossier, R))
 
     steps, pe = [], os.path.join(outbox, f"{S}-planexpert")
-    for name, cmd in (("build_qpl", ["releve/build_qpl.py", work, S, pe]), ("render_pdf", ["releve/render_pdf.py", work, S, outbox])):
+    for name, cmd in (("build_qpl", ["releve/build_qpl.py", work, S, pe]),
+                      ("render_vectoriel", ["releve/render_vectoriel.py", work, S, outbox]),
+                      ("render_pdf", ["releve/render_pdf.py", work, S, outbox])):
         t = time.time()
         subprocess.run([sys.executable] + cmd, cwd=REPO, check=True, env=dict(os.environ, RELEVE_NATIF="0"))
         steps.append((name, time.time() - t, "ok"))
@@ -234,9 +247,11 @@ def main(inbox, outbox, dossier):
         shutil.copy2(os.path.join(tmp, "dossiers", S, "releve.xlsx"), os.path.join(dossier, "releve.xlsx"))
 
     import run as runmod
-    runmod.statut(S, inbox, outbox, work, steps, None, True)
+    a_verifier = a_verifier_de(outbox, S)
+    runmod.statut(S, inbox, outbox, work, steps, None, True, None, a_verifier)
     st = read(os.path.join(outbox, "STATUT.md"))
-    st = re.sub(r"État : \*\*TERMINÉ\*\*", "État : **TERMINÉ** (addendas E-01 et T-01 intégrés ; reprise T-01 du 2026-09-24)", st)
+    st = re.sub(r"État : \*\*(TERMINÉ(?: — À VÉRIFIER)?)\*\*",
+               r"État : **\1** (addendas E-01 et T-01 intégrés ; reprise T-01 du 2026-09-24)", st)
     per_sheet = rows("avant-apres-haut-parleurs.csv")
     labels = rows("avant-apres-libelles.csv")
     add = ["## Addendas", "",

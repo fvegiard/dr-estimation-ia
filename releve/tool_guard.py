@@ -19,11 +19,13 @@ DENY = "deny"
 def _decouper(command: str) -> list[str]:
     """Découpe une commande en arguments sans manger les antislash des chemins Windows.
 
-    En mode POSIX, shlex traite « \\ » comme une échappement : « C:\\Users\\f » devient « C:Usersf »,
-    et tout argument Windows légitime se retrouve refusé comme « hors du dossier de travail ».
+    shlex.split() en mode POSIX traite « \\ » comme une échappement : « ..\\secret.txt » devient
+    silencieusement « ..secret.txt » (le séparateur Windows disparaît sans laisser de trace, et avec
+    lui la preuve d'une tentative de sortie du dossier de travail écrite en syntaxe Windows) ; « C:\\Users\\f »
+    devient « C:Usersf ». Toujours utiliser le mode non-POSIX (aucune interprétation d'échappement) avec
+    un retrait manuel des guillemets appariés : les antislash survivent intacts jusqu'à
+    `_is_safe_shell_path`, qui les traite comme un séparateur suspect quel que soit l'OS d'exécution.
     """
-    if os.name != "nt":
-        return shlex.split(command)
     argv = []
     for token in shlex.split(command, posix=False):
         if len(token) >= 2 and token[0] == token[-1] and token[0] in "\"'":
@@ -102,6 +104,15 @@ def _is_safe_shell_path(token: str, cwd: str, root: str) -> bool:
     if token in {".", ".."}:
         return False
     if any(ch in token for ch in ("*", "?", "[")):
+        return False
+    if "\\" in token and os.name != "nt":
+        # Jamais légitime ici sur POSIX (aucun nom de fichier du dépôt n'en contient), et os.path n'y
+        # traite pas « \ » comme séparateur : impossible d'y résoudre en confiance un séparateur Windows
+        # déguisé (« ..\secret.txt »), donc refus direct. Sur Windows natif, « \ » EST le vrai séparateur
+        # (os.path = ntpath là-bas) : on laisse tomber jusqu'à la résolution + vérification de confinement
+        # ci-dessous, exactement comme un chemin à « / » — un chemin Windows légitime ne doit pas être
+        # refusé juste parce qu'il contient son séparateur natif (régression constatée par Francis sur
+        # poste Windows réel : un chemin absolu valide DANS le dossier de travail était rejeté).
         return False
     # Nom simple seulement : ni séparateur (les chemins Windows utilisent « \\ »), ni lettre de lecteur.
     nu = "/" not in token and "\\" not in token and not os.path.splitdrive(token)[0]

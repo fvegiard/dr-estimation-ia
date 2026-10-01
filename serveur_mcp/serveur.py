@@ -29,6 +29,7 @@ import io
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from collections import Counter, defaultdict
@@ -431,9 +432,8 @@ def verifier_releve(dossier: str) -> dict:
 def produire_livrables(dossier: str, nom: str = "") -> dict:
     """Produit les livrables dans sortie/ : <S>-RELEVE.pdf au format de l'exemplaire (plans annotés + bordereau
     matériel + réserves), <S>.qpl (projet Plan Expert), Plans-annotes.pdf, Rapport-de-metre.pdf/.md,
-    Dossier-complet.pdf. Refuse si verifier_releve n'est pas « pret »."""
-    from .exemple import rendre
-
+    Dossier-complet.pdf. Refuse si verifier_releve n'est pas « pret ». `produit: true` signifie que les
+    fichiers existent, PAS qu'ils sont validés visuellement — voir `a_verifier` et `controle`."""
     d = dossier_de(dossier)
     nom = nom or dossier
     if not NOM_RE.match(nom):
@@ -445,14 +445,25 @@ def produire_livrables(dossier: str, nom: str = "") -> dict:
     journal = [lancer("build_qpl.py", str(d / "travail"), nom, str(sortie)),
                lancer("render_vectoriel.py", str(d / "travail"), nom, str(sortie)),
                lancer("render_pdf.py", str(d / "travail"), nom, str(sortie))]
-    rapport = rendre(d / "travail", sortie, nom)
+    # render_vectoriel.py a déjà fait build()+render() (sortie/vecteur/, <nom>-Plans-annotes.pdf) : ne pas
+    # refaire le même rendu une seconde fois (sortie/format-exemple/) pour produire -RELEVE.pdf, juste copier
+    # le PDF et relire son rapport déjà écrit sur disque.
+    rapport = json.loads((sortie / f"{nom}-rendu-rapport.json").read_text(encoding="utf-8"))
+    releve_pdf = sortie / f"{nom}-RELEVE.pdf"
+    shutil.copyfile(sortie / f"{nom}-Plans-annotes.pdf", releve_pdf)
+    a_verifier = rapport.get("conformite", {}).get("encadre_hors_espace_libre") or []
+    controle = "Regarder chaque page de plan avec voir_image('sortie/<S>-RELEVE.pdf#<page>')."
+    if a_verifier:
+        controle += (f" ATTENTION : encadré RELEVE-MATERIEL hors de l'espace libre du plan sur "
+                     f"{', '.join(a_verifier)} — valider visuellement avant de considérer ce relevé terminé.")
     return {"produit": True, "releve_pdf": f"sortie/{nom}-RELEVE.pdf", "pages": rapport["pages"],
             "reperes": rapport["reperes"],
             "feuilles": [{k: s[k] for k in ("sheet", "plan_page", "reperes", "familles", "res", "box_in_free_space")}
                          for s in rapport["sheets"]],
+            "a_verifier": a_verifier,
             "fichiers": sorted(p.name for p in sortie.iterdir() if p.is_file()),
             "journal": "\n".join(journal)[-2000:],
-            "controle": "Regarder chaque page de plan avec voir_image('sortie/<S>-RELEVE.pdf#<page>')."}
+            "controle": controle}
 
 
 @mcp.tool()

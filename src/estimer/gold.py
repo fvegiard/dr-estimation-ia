@@ -113,8 +113,23 @@ def _scale_ratio(txt: str) -> float | None:
     return v if v > 0 else None
 
 
+def _plan_pages_by_name(doc: "pymupdf.Document") -> dict[str, int]:
+    """Display name -> 0-based page index of its plan page, read from the bookmarks render() writes
+    (title `<name> - plan`). render_vectoriel.py's Plans-annotes.pdf interleaves each sheet's bordereau
+    page(s) right after its plan page, so page index no longer equals sheet index; older raster renders
+    (releve/render_pdf.py, pre-vector) never wrote bookmarks, so this returns {} for them and callers must
+    fall back to the old one-page-per-sheet position."""
+    out = {}
+    for _level, title, page in doc.get_toc():
+        if title.endswith(" - plan"):
+            out[title[: -len(" - plan")]] = page - 1
+    return out
+
+
 def sheet_table(dossier_dir: Path) -> list[SheetInfo]:
-    """Sheets of Plans-annotes.pdf in page order (render_pdf.py rule)."""
+    """Sheets of Plans-annotes.pdf in page order (render_pdf.py rule). Locates each sheet's own plan page
+    by bookmark when present (vector renders with interleaved bordereau pages); falls back to the legacy
+    assumption (page i = sheet i, no bordereau pages mixed in) for older raster renders with no bookmarks."""
     s = dossier_dir.name
     cls = {r["feuille"]: r for r in _read_csv(dossier_dir / "feuilles-classement.csv")}
     ia_qpl = dossier_dir / "planexpert" / f"{s}.qpl"
@@ -133,7 +148,10 @@ def sheet_table(dossier_dir: Path) -> list[SheetInfo]:
             except (KeyError, ValueError):
                 pass
     doc = pymupdf.open(dossier_dir / "Plans-annotes.pdf")
-    if doc.page_count != len(names):
+    plan_pages = _plan_pages_by_name(doc)
+    if not plan_pages and doc.page_count != len(names):
+        # No bookmarks (old raster render, one page per sheet, `render_pdf.py` rule) and the page count
+        # doesn't even match that assumption: genuinely can't locate the sheets.
         raise ValueError(f"{s}: Plans-annotes.pdf has {doc.page_count} pages, sheet rule gives {len(names)}")
     seen: Counter = Counter()
     out = []
@@ -142,8 +160,11 @@ def sheet_table(dossier_dir: Path) -> list[SheetInfo]:
         seen[disp] += 1
         if seen[disp] > 1:
             disp = f"{disp}_{seen[disp]}"
-        r = doc[i].rect
-        out.append(SheetInfo(f, disp, i, cls[f].get("type", "").strip(), _scale_ratio(cls[f].get("echelle", "")),
+        page_index = plan_pages[disp] if disp in plan_pages else i
+        if not 0 <= page_index < doc.page_count:
+            raise ValueError(f"{s}: sheet {disp!r} resolves to page {page_index}, Plans-annotes.pdf has {doc.page_count}")
+        r = doc[page_index].rect
+        out.append(SheetInfo(f, disp, page_index, cls[f].get("type", "").strip(), _scale_ratio(cls[f].get("echelle", "")),
                              widths.get(f), float(r.width), float(r.height)))
     return out
 

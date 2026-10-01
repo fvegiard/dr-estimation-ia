@@ -1,0 +1,19 @@
+{
+ "qpl": "/tmp/preuve-outbox/sortie/PREUVE01-planexpert/PREUVE01.qpl",
+ "sha256": "5405fc3f36e2126285c4962d065d68bd83afa855fb68aa0328ac2051666ecd48",
+ "octets": 4225,
+ "plans": 1,
+ "compteurs": 6,
+ "marques": 6,
+ "libelles": 6,
+ "par_feuille": {
+  "E103": {
+   "DP1 nLight": 1,
+   "DP2 nLight": 1,
+   "PP1 nLight": 1,
+   "SO3 nLight": 1,
+   "SO4 nLight": 1,
+   "SW1 nLight": 1
+  }
+ }
+}
