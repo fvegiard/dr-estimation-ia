@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 1200,
-    "sha256": "21ad401d2ea5c1ed0ebb4194fe85b2e4bf713db69be5c57607614c2a8d7351c5"
+    "bytes": 2859,
+    "sha256": "7fbc9e08e8661d97858a28cf4b0737a88edf274dcd7064de3900f73cee539dd3"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 3847,
-    "sha256": "b3b1a58e632b6c2f4d434545d8371545eec1be281089dfc3737030a6779a7091"
+    "bytes": 4777,
+    "sha256": "fb78b1aa6ed15e6c7f052b46d3350ef959a7ed53be974f9e0cfbc80cdef21146"
   },
   {
     "file": "S-0922-E-1-details.csv",
@@ -60,6 +60,16 @@
     "sha256": "a9109178a547c0de80f5320f3ea3ddd3f4fa8d94230087921bb1e429dc9eadb1"
   },
   {
+    "file": "S-0922-E-5-equipment.csv",
+    "bytes": 22449,
+    "sha256": "d87b0a8e0589d59ebf22dce81b3dfe254c7953a1dd93a5c516214cef7b917fd7"
+  },
+  {
+    "file": "S-0922-E-5-releve.jpg",
+    "bytes": 6565768,
+    "sha256": "144dda8ca8e9ae1aeff686cd74ad11b7c2a0e52b42a28576705bd870e94a3f91"
+  },
+  {
     "file": "S-0922-breakers-by-panel.xlsx",
     "bytes": 18089,
     "sha256": "263e85ab38326c0b0b9a9cbc90f741015da7e1f36ee1d09ba767b32edb7c37b5"
@@ -68,6 +78,11 @@
     "file": "S-0922-breakers-detailed.csv",
     "bytes": 12143,
     "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
+  },
+  {
+    "file": "methode/build_led.py",
+    "bytes": 4246,
+    "sha256": "076ffd3b0169b40e86842a6e6319c65272e5ac98ff5d3f807475305975f1e446"
   },
   {
     "file": "methode/build_lighting.py",
@@ -91,8 +106,8 @@
   },
   {
     "file": "methode/package_delivery.py",
-    "bytes": 7204,
-    "sha256": "0ebf326b6d70cb228d83a9e97fdd2564183c58d30ffb8ee3d68c03db5dfa91f5"
+    "bytes": 8121,
+    "sha256": "b5e8403c949c70e6dbb3b9c173db36ca34c853c5c1871752bdc2b695eabbc165"
   },
   {
     "file": "methode/prepare_images.py",
@@ -106,7 +121,12 @@
   },
   {
     "file": "methode/sheet_data.py",
-    "bytes": 68952,
-    "sha256": "7776126f00c9d855862e605dc4f2fea58937c10a438467d0351399f0a36de4e7"
+    "bytes": 97697,
+    "sha256": "4c13cc3a8bad83980d7ab6edf4ef64bece896a8d7891c2f943cd1d6661978809"
+  },
+  {
+    "file": "methode/verify_delivery.py",
+    "bytes": 2157,
+    "sha256": "33608a7792155013a300a9716010b11fbfbb641d9320e2ee5baa3dcba5da7695"
   }
 ]

@@ -1,5 +1,5 @@
 S-0922 — NIKE QUARTIER DIX30, UNITÉ S9D, BROSSARD
-Relevé en cours — PR brouillon
+Relevé page par page terminé avec réserves; vérification à l’aveugle
 
 Identification depuis les plans PNG seulement; aucun QPL ouvert ni téléchargé.
 Référence de présentation : Granby du 30 septembre 2026. Plans originaux conservés et légendes intégrées.
@@ -13,7 +13,7 @@ E-1 : 0 pastilles. 3/3 : plan conservé, légende lisible, aucune quantité inve
 E-2 : 19 pastilles. 19/19 ancrages revus sur JPEG; cédules 91/91 lignes rapprochées; 3 lignes en réserve de lecture.
 E-3 : 223 pastilles. 223/223 ancrages vérifiés sur six zones du JPEG; 6 repères en réserve de configuration des sorties.
 E-4 : 109 pastilles. 109/109 ancrages vérifiés; 1 DATA ajouté et 4 positions corrigées avant validation; 34 repères en réserve.
-À terminer : E-5
+E-5 : 71 pastilles. 71/71 ancrages vérifiés sur neuf zones du JPEG; 71 repères en réserve de version et segmentation.
 
 RÉVISIONS ET RÉSERVES
 E-1 / E-2 / E-3 : construction et changement E-1 du 22 avril 2024.
@@ -27,11 +27,19 @@ Contradiction E-2 : répartiteur secondaire noté 600 V après transformateur 60
 E-2 : transformateur existant 112,5 kVA à suspendre; détail de suspension et représentation E-4 non additionnés.
 E-2 : détail incendie = 3 symboles de principe, aucun multiplicateur déduit.
 E-3 : faces et flèches des 6 indicateurs de sortie à confirmer.
+E-4 : 17 repères C/W/TC cerclés sans définition dans la légende disponible; aucune fonction supposée.
+E-4 / E-2 : 5 sectionneurs existants au plan contre 4 au schéma; calibres et correspondance non établis.
+E-4 : relais vers déclenchement shunt-trip sonore prescrit; circuit et calibre non précisés.
+E-4 : 4 serpentins et 2 boîtes terminales représentés; caractéristiques à coordonner avec mécanique.
+E-5 : 71 repères en réserve, dont 45 tronçons D. Aucun nombre de modules ou de longueurs déduit.
+E-5 : 2 sections N sans définition à la cédule; circuit 14 nommé TYPE N à E-2 mais inscrit aux sections J à E-5.
+E-5 : limites de segmentation aux jonctions courbe/droite D et aux sections F à confirmer avant achat.
 Les images de présentation architecturale ne donnent aucune quantité de luminaires.
 Comparaison à l’estimateur volontairement absente : relevé à l’aveugle, aucune certification de supériorité.
 
 DOCUMENTS NON RELEVÉS
-23-357-M-PE-2 - 1.png et - 2.png : mécanique (devis/légendes et implantation), non relevés.
+M-1 : 23-357-M-PE-2 - 1.png, légende et devis mécanique, non relevé.
+M-2 : 23-357-M-PE-2 - 2.png, ventilation mécanique, non relevé.
 NSP_DIX 30 - 1.png à - 16.png : présentation architecturale (vues et matériaux), non relevées.
 Nike - Gicleurs - Directive #1 - 2024-01-25.png : directive gicleurs, non relevée.
 Nike - Gicleurs - Directive #1 - Plan PI-04 2024-01-25.png : plan gicleurs PI-04, non relevé.

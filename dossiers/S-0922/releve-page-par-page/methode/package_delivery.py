@@ -36,10 +36,18 @@ lines+=['','RÉVISIONS ET RÉSERVES',
     'E-2 : transformateur existant 112,5 kVA à suspendre; détail de suspension et représentation E-4 non additionnés.',
     'E-2 : détail incendie = 3 symboles de principe, aucun multiplicateur déduit.',
     'E-3 : faces et flèches des 6 indicateurs de sortie à confirmer.',
+    'E-4 : 17 repères C/W/TC cerclés sans définition dans la légende disponible; aucune fonction supposée.',
+    'E-4 / E-2 : 5 sectionneurs existants au plan contre 4 au schéma; calibres et correspondance non établis.',
+    'E-4 : relais vers déclenchement shunt-trip sonore prescrit; circuit et calibre non précisés.',
+    'E-4 : 4 serpentins et 2 boîtes terminales représentés; caractéristiques à coordonner avec mécanique.',
+    'E-5 : 71 repères en réserve, dont 45 tronçons D. Aucun nombre de modules ou de longueurs déduit.',
+    'E-5 : 2 sections N sans définition à la cédule; circuit 14 nommé TYPE N à E-2 mais inscrit aux sections J à E-5.',
+    'E-5 : limites de segmentation aux jonctions courbe/droite D et aux sections F à confirmer avant achat.',
     'Les images de présentation architecturale ne donnent aucune quantité de luminaires.',
     'Comparaison à l’estimateur volontairement absente : relevé à l’aveugle, aucune certification de supériorité.',
     '', 'DOCUMENTS NON RELEVÉS',
-    '23-357-M-PE-2 - 1.png et - 2.png : mécanique (devis/légendes et implantation), non relevés.',
+    'M-1 : 23-357-M-PE-2 - 1.png, légende et devis mécanique, non relevé.',
+    'M-2 : 23-357-M-PE-2 - 2.png, ventilation mécanique, non relevé.',
     'NSP_DIX 30 - 1.png à - 16.png : présentation architecturale (vues et matériaux), non relevées.',
     'Nike - Gicleurs - Directive #1 - 2024-01-25.png : directive gicleurs, non relevée.',
     'Nike - Gicleurs - Directive #1 - Plan PI-04 2024-01-25.png : plan gicleurs PI-04, non relevé.',
@@ -65,6 +73,7 @@ if stage>=2:
     for name in ['S-0922-breakers-by-panel.xlsx','S-0922-breakers-detailed.csv']:shutil.copy2(ROOT/name,target/name)
 method=target/'methode';method.mkdir(exist_ok=True)
 scripts=['download_plans.py','prepare_images.py','render_sheet.py','package_delivery.py']
+if (ROOT/'verify_delivery.py').exists():scripts.append('verify_delivery.py')
 if stage>=2:scripts+=['build_panels.py']
 if stage>=3:scripts+=['build_lighting.py']
 for name in ['build_services.py','build_led.py']:
