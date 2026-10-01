@@ -12,10 +12,18 @@
       "jpeg_sha256": "c4345fe74428d9ce7f9cf45e3700f843624660a40256890b3f476c8d0e85766f",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 1
+    },
+    {
+      "sheet": "E102",
+      "markers": 58,
+      "visual_score": "58/58",
+      "review": "58/58 repères vérifiés au zoom; cinq ancrages ajustés; légende contrôlée. Modules MRA en réserve pour niveaux de rappel.",
+      "jpeg_sha256": "89df3197ba8b473dd6471472069ee5dbbea0876e81749d807a04f155491fb6f3",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 4
     }
   ],
   "remaining": [
-    "E102",
     "E001",
     "E002-page02",
     "E002-page03",

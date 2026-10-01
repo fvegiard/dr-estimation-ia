@@ -9,9 +9,13 @@ FEUILLES VÉRIFIÉES :
 E101 : 17 pastilles; 1 réserves; contrôle visuel 17/17.
   Quantités des composants représentés seulement; aucun multiplicateur chantier. Les contacts M, PE et CR ne sont pas des appareils supplémentaires.
   RES = réserve; * = identification ou prescription à revalider. Câbles, conduits, fixations et longueurs non métrés.
+E102 : 58 pastilles; 4 réserves; contrôle visuel 58/58.
+  Un appareil multipolaire = un repère. Fusibles inclus dans la désignation de leur interrupteur; aucun deuxième décompte de fusibles.
+  Modules incendie et équipements fournis par autres identifiés séparément; aucun cumul avec les plans de niveau.
+  Câbles et conduits non métrés. Les valeurs sont celles de la source; * = réserve.
 
 LIMITES ET RÉSERVES :
-Feuilles restant à traiter : E102, E001, E002-page02, E002-page03, E100, E103, E104, E105-page09, E105-page10, E107, E108, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
+Feuilles restant à traiter : E001, E002-page02, E002-page03, E100, E103, E104, E105-page09, E105-page10, E107, E108, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
 Numéros de cartouche répétés : E002 pages 2–3, E105 pages 9–10, E400 pages 22–23. Les suffixes page distinguent les fichiers.
 Aucune feuille M-, A- ou S- dans la série principale de 23 pages. Les 11 scans complémentaires restent à classer et à contrôler.
 Les détails types et diagrammes ne constituent pas une quantité globale de chantier. Ne pas additionner schémas, plans de niveau et logements types.
