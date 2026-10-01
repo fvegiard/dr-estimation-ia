@@ -52,6 +52,12 @@ def main():
     ]
     if any(e['sheet']=='E103' for e in completed):
         limits.append('E103 : repères PL incompatibles avec les numéros d’unités aux centres CM-01 à CM-03; correspondance réservée. Disjoncteurs 100 A : pôles non indiqués.')
+    if any(e['sheet']=='E104' for e in completed):
+        limits.append('E104 : repères PL206 et PL208 répétés; correspondance logements / centres réservée. Les 36 représentations PL ne prouvent pas 36 panneaux distincts.')
+    if any(e['sheet']=='E105-page09' for e in completed):
+        for filename in ['S-1294-breakers-by-panel.xlsx','S-1294-breakers-detailed.csv']:
+            shutil.copy2(ROOT/filename, DEST/filename)
+        limits.append('E105 page 9 : 194 départs et 3 principaux; six ESPACE avec calibre réservés. PS1 : tension 347/600 V en cédule contre 120/208 V sur E102. PP1 : Icc 14 kA contre 35 kA. Autres divergences de barres, principaux et Icc consignées au classeur; aucun arbitrage. Les 86 disjoncteurs de centres CM restent dans un onglet séparé, non additionné.')
     lines += ['', 'LIMITES ET RÉSERVES :'] + limits
     (DEST/'READ-ME.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     (DEST/'CHECKPOINT.json').write_text(json.dumps(checkpoint,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

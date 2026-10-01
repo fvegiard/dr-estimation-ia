@@ -39,6 +39,15 @@
       "jpeg_sha256": "43828ecca1393fff45d2fc31c6ad061cc6ac7ecf8d0e4583a4634af7149ccff7",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 72
+    },
+    {
+      "sheet": "E105-page09",
+      "markers": 197,
+      "visual_score": "197/197",
+      "review": "197 repères contrôlés sur sept planches de zoom; astérisques réduits puis revérifiés; légende lisible. Classeur relu automatiquement, aucun circuit dupliqué.",
+      "jpeg_sha256": "8c48cf0847276542e3f7205caead1ae998180d148481f80927207d1e7f7e64b5",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 10
     }
   ],
   "remaining": [
@@ -46,7 +55,6 @@
     "E002-page02",
     "E002-page03",
     "E100",
-    "E105-page09",
     "E105-page10",
     "E107",
     "E108",

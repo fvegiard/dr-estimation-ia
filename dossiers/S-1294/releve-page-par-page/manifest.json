@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 2623,
-    "sha256": "2bcb02c4077db7002295122f1a99205aac11a71d4b64e71a28d1e9f9344ca1a9"
+    "bytes": 3100,
+    "sha256": "67e18222d78ff67aee6b7d1101a33aad26cb7bad3945c14f34a6fc51536f1d96"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 3771,
-    "sha256": "1246bcfff579331cb4b15c996e0ba67617c065e9c75b72323c50987ab07cb9d5"
+    "bytes": 4890,
+    "sha256": "057e5847f311e9992fbe6596d9ad7d3d95b04212a0ced514ab3b7ea4aaaffef1"
   },
   {
     "file": "S-1294-E101-details.csv",
@@ -50,6 +50,36 @@
     "sha256": "43828ecca1393fff45d2fc31c6ad061cc6ac7ecf8d0e4583a4634af7149ccff7"
   },
   {
+    "file": "S-1294-E105-page09-breakers.csv",
+    "bytes": 33334,
+    "sha256": "6c140519bf357cb29fa341e7374e4a5945b9a077bf9dafc70a14b198c517d4a5"
+  },
+  {
+    "file": "S-1294-E105-page09-releve.jpg",
+    "bytes": 10448395,
+    "sha256": "8c48cf0847276542e3f7205caead1ae998180d148481f80927207d1e7f7e64b5"
+  },
+  {
+    "file": "S-1294-breakers-by-panel.xlsx",
+    "bytes": 25339,
+    "sha256": "44896c800a9b1d0332f5db7620c3aab9c2c332f9c196fe714c4fec3526f69405"
+  },
+  {
+    "file": "S-1294-breakers-detailed.csv",
+    "bytes": 19333,
+    "sha256": "7ea0b5ed22e9431adfd4d61d0820762afbbf329b50e87ad4ec09a31bbb2d1784"
+  },
+  {
+    "file": "methode/build_panel_records.py",
+    "bytes": 7408,
+    "sha256": "0b057d5e3f373142345fdff0a6fc1621946806d6999a528c13700fe594318cec"
+  },
+  {
+    "file": "methode/build_workbook.py",
+    "bytes": 5008,
+    "sha256": "ced3c265e5a9aef04ba817c03d49787b18b97c7d1dd4c50da34050ba9acc9eef"
+  },
+  {
     "file": "methode/crop_view.py",
     "bytes": 529,
     "sha256": "fd1fa4f9fa9a02746de87e665bef6101f4b4217f744e9a6c88251481d809e657"
@@ -66,8 +96,8 @@
   },
   {
     "file": "methode/package_delivery.py",
-    "bytes": 5225,
-    "sha256": "6cea02f21c49c1da8bbf29d04f9504688433ba9bd692edc40f98d54a961e9b9f"
+    "bytes": 6031,
+    "sha256": "ee4b20f02621c3e71753de5f2dc1170657fbc7427c070d091d0ca1c6faf58773"
   },
   {
     "file": "methode/prepare_views.py",
@@ -76,8 +106,8 @@
   },
   {
     "file": "methode/render_sheet.py",
-    "bytes": 4923,
-    "sha256": "f729dcb11ada093988123afbfb424f38dfee4bc333d77d8720f1e88a6edc2101"
+    "bytes": 5152,
+    "sha256": "9020399ce33a0acc86894d3f56c9a29ebefb1308ce1ad9c7babf02e187ac06a0"
   },
   {
     "file": "methode/validate_sheet.py",
