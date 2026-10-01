@@ -120,6 +120,15 @@
       "jpeg_sha256": "3560b733c7c4aff0d015c95cad72ea8aeb25a06c07a91db04f608e9ddea1fee7",
       "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
       "reserves": 0
+    },
+    {
+      "sheet": "E400-page23",
+      "markers": 2,
+      "visual_score": "2/2",
+      "review": "Deux pastilles centrées sur deux carrés noirs au zoom; note A lue; JPEG global et légende vérifiés.",
+      "jpeg_sha256": "6fe29e360cae95626e5c44b9681c4acd21e607370fe51a88cf4ff33bbe1b8da2",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 2
     }
   ],
   "remaining": [
@@ -131,8 +140,7 @@
     "E205",
     "E206",
     "E300",
-    "E301",
-    "E400-page23"
+    "E301"
   ],
   "reserves": [
     "Numéros répétés aux cartouches : E002 pages 2 et 3; E105 pages 9 et 10; E400 pages 22 et 23. Identifiants distingués par page."

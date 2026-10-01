@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 6831,
-    "sha256": "aa1126723763123e1f2a125c59d401476811656f9ad03e5cc5fe83eae649eeac"
+    "bytes": 7239,
+    "sha256": "0d034fea251b8628f108638a327c994a9386800d5dac9c33732c2d47bfce30c4"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 10402,
-    "sha256": "55bebd5cab18797e0ac359f8adc4d569424cd1634cd54272401c728ff331c727"
+    "bytes": 10952,
+    "sha256": "70370a6876b43894a8ffc2a783ed7b59eff52847971e788463f76c7f73ed7052"
   },
   {
     "file": "S-1294-E001-details.csv",
@@ -138,6 +138,16 @@
     "file": "S-1294-E400-page22-releve.jpg",
     "bytes": 9910938,
     "sha256": "3560b733c7c4aff0d015c95cad72ea8aeb25a06c07a91db04f608e9ddea1fee7"
+  },
+  {
+    "file": "S-1294-E400-page23-equipment.csv",
+    "bytes": 673,
+    "sha256": "5cd705ca6085b304b910ebb180ea66159f7af318c52739cc4ce21d85e0dc0189"
+  },
+  {
+    "file": "S-1294-E400-page23-releve.jpg",
+    "bytes": 6068728,
+    "sha256": "6fe29e360cae95626e5c44b9681c4acd21e607370fe51a88cf4ff33bbe1b8da2"
   },
   {
     "file": "S-1294-breakers-by-panel.xlsx",
