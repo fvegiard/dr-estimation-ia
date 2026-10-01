@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 4969,
-    "sha256": "0963bdb34f1f4af17188afb88b8d3f8ad658872a0a85dd5ead41d70f6a82588a"
+    "bytes": 5442,
+    "sha256": "e933f30b7ba125446886a974387e30e6a2a7e5da9242ec7398019ebe7d3587f4"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 7808,
-    "sha256": "fa655028a957ede3be3534135c1e0e05db93d185cf7ec2215a0afee32b4c8a01"
+    "bytes": 8333,
+    "sha256": "bffb6ae802d58777ca72f890282a2b2b9b38ae0a6b80d8ac2ce84407d1eb9690"
   },
   {
     "file": "S-1294-E001-details.csv",
@@ -18,6 +18,16 @@
     "file": "S-1294-E001-releve.jpg",
     "bytes": 17579993,
     "sha256": "fda90bcffa7d3bf29713f40612e95ee1d6ce3127f8ea0a06c4cce702df5fb6e3"
+  },
+  {
+    "file": "S-1294-E002-page02-details.csv",
+    "bytes": 1748,
+    "sha256": "50b0ea1ded2dae6c3c9e5d623125d6377e31b92e606e9d53e5e17178e9a4a686"
+  },
+  {
+    "file": "S-1294-E002-page02-releve.jpg",
+    "bytes": 19616536,
+    "sha256": "8a3df152da04a2982d7c4c45046169879986957a6e80144765316a1628b88e6d"
   },
   {
     "file": "S-1294-E101-details.csv",

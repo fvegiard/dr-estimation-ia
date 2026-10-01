@@ -50,9 +50,14 @@ E001 : 0 pastilles; 1 réserves; contrôle visuel 0/0.
   Feuille textuelle : zéro symbole matériel à pastiller. CSV de prescriptions; aucune quantité de chantier ajoutée.
   Liste E001 : 23 pages électriques. Index E003/E106/E401 différent des cartouches E002/E105/E400 pages 3/10/23.
   Percements, parasismique, mise en marche, essais, formation et documents de fin de chantier : obligations, pas quantités inventées.
+E002-page02 : 0 pastilles; 4 réserves; contrôle visuel 0/0.
+  Feuille textuelle : aucune pastille matériel. Les prescriptions sont au CSV; aucune quantité physique ajoutée.
+  LIBRE inclut le disjoncteur; ESPACE et absence d’indication l’excluent. ESPACE avec calibre en cédule demeure une contradiction.
+  Icc : 10 kA / 250 V, 22 kA / 600 V et commutation 35 kA dans le devis; ne pas remplacer arbitrairement les valeurs des cédules.
+  Panneau incendie FX-2003 dans le devis contre FX-2000 aux légendes : réserve de modèle.
 
 LIMITES ET RÉSERVES :
-Feuilles restant à traiter : E002-page02, E002-page03, E100, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
+Feuilles restant à traiter : E002-page03, E100, E200, E201, E202, E203, E204, E205, E206, E300, E301, E400-page22, E400-page23.
 Numéros de cartouche répétés : E002 pages 2–3, E105 pages 9–10, E400 pages 22–23. Les suffixes page distinguent les fichiers.
 Aucune feuille M-, A- ou S- dans la série principale de 23 pages. Les 11 scans complémentaires restent à classer et à contrôler.
 Les détails types et diagrammes ne constituent pas une quantité globale de chantier. Ne pas additionner schémas, plans de niveau et logements types.
