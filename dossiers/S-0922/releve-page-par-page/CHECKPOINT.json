@@ -16,10 +16,14 @@
         "P2": 42,
         "new_source": 8
       }
+    },
+    {
+      "sheet": "E-3",
+      "markers": 223,
+      "visual_check": "223/223 ancrages vérifiés sur six zones du JPEG; 6 repères en réserve de configuration des sorties."
     }
   ],
   "remaining": [
-    "E-3",
     "E-4",
     "E-5"
   ],

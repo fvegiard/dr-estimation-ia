@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 843,
-    "sha256": "1b9292fe49d5f15e1f5cf87ef521d3280ac96c625986e68749a156aded099c18"
+    "bytes": 1017,
+    "sha256": "8b0be53eac66cf4b07d46fad532079dbcf40d2891252cd7acdc43ce025f95349"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 3598,
-    "sha256": "082c8e4df5c02a663d811356a58f5587d85a433b65087dc5e101102b23d02d87"
+    "bytes": 3718,
+    "sha256": "e007b1e4b0d4e4bcc5b5d72e637df0e0b698d669f83e8cb5eeab03724889ba56"
   },
   {
     "file": "S-0922-E-1-details.csv",
@@ -40,6 +40,16 @@
     "sha256": "68d094f3c58b46a7772bb6849cc153b9aeb8d14e8bfd5fe796b5bd56c051595e"
   },
   {
+    "file": "S-0922-E-3-equipment.csv",
+    "bytes": 26168,
+    "sha256": "58c87f8f055a71f143e45cdb0f2747e96741e9989922a8210f37fbd78edc8416"
+  },
+  {
+    "file": "S-0922-E-3-releve.jpg",
+    "bytes": 14060929,
+    "sha256": "94d6048e641f3742505a1ece6c84628195e3e72612268cfb90a40b213b39d059"
+  },
+  {
     "file": "S-0922-breakers-by-panel.xlsx",
     "bytes": 18089,
     "sha256": "263e85ab38326c0b0b9a9cbc90f741015da7e1f36ee1d09ba767b32edb7c37b5"
@@ -48,6 +58,11 @@
     "file": "S-0922-breakers-detailed.csv",
     "bytes": 12143,
     "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
+  },
+  {
+    "file": "methode/build_lighting.py",
+    "bytes": 4142,
+    "sha256": "06ccf4a68cc4010bcde7d60ce038fc285f8905669e1df866511505414b166213"
   },
   {
     "file": "methode/build_panels.py",
@@ -76,7 +91,7 @@
   },
   {
     "file": "methode/sheet_data.py",
-    "bytes": 5679,
-    "sha256": "618092636045125045e34d816aa24290199db7f506df754ee5e70a5355f647f6"
+    "bytes": 44355,
+    "sha256": "9eb0dc13e519f76fbe0f72844056ce686aa4639ae02819fbbcf61d9fdb5a793e"
   }
 ]
