@@ -48,7 +48,7 @@ def render(data):
     with (ROOT/f'S-0844-{sheet}-{data["csv_type"]}.csv').open('w',encoding='utf-8-sig',newline='') as f:
         writer=csv.writer(f);writer.writerow(fields)
         for i,m in enumerate(data['markers'],1):
-            writer.writerow([f'{sheet}-{i:03d}',m['family'],m.get('description',m['family']),1,m.get('scope',data['scope']),m.get('model','MODÈLE NON PRÉCISÉ'),m.get('reserve',''),m.get('parent',''),round(m['x']*scale,1),round(m['y']*scale,1)])
+            writer.writerow([f'{sheet}-{i:03d}',m['family'],m.get('description',m['family']),m.get('quantity',1),m.get('scope',data['scope']),m.get('model','MODÈLE NON PRÉCISÉ'),m.get('reserve',''),m.get('parent',''),round(m['x']*scale,1),round(m['y']*scale,1)])
     print(sheet,len(data['markers']),dict(counts),flush=True)
     return destination
 

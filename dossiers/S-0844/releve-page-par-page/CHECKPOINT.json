@@ -68,6 +68,17 @@
       "source_conservee": true,
       "sha256_jpeg": "c99d585bba37e565edcae2e865d599d9b4ccdb28f77ae10e1c1ab423bf2cf346",
       "reserves_repere": 6
+    },
+    {
+      "feuille": "ES-M-RC01",
+      "pastilles": 110,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "110/110",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "020b571b68ceb06454889e2826cf37ec96681b4c11f0553315fd3be93784e4b4",
+      "reserves_repere": 25
     }
   ],
   "feuilles_restantes": [
@@ -88,7 +99,6 @@
     "EX-M-DT03",
     "EX-M-LG02",
     "EE-M-0301",
-    "ES-M-RC01",
     "EA-M-RC01",
     "EA-M-RC02",
     "EX-M-DE01",

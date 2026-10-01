@@ -1,13 +1,13 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 3195,
-    "sha256": "007c4195b787518c3ea6dd447f81158fd5aa268b0ddcd1cf8df4b84dde50426c"
+    "bytes": 3579,
+    "sha256": "f502da1e6b0720b0a81548266fba5d6cfde8d9bcef375049da401e3633c87992"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 6475,
-    "sha256": "34a12a4a685bf442cd7ad3529f06fdd72ccb1a052677fee8e8080dd328fb45b5"
+    "bytes": 7134,
+    "sha256": "654614c137d3910eefdebd7809a80244352f708ab1b538c13f35a4f7963389e8"
   },
   {
     "file": "S-0844-EE-M-RC01-equipment.csv",
@@ -28,6 +28,16 @@
     "file": "S-0844-ES-M-0T01-releve.jpg",
     "bytes": 2690113,
     "sha256": "e82c29438f3f681d4f7976b4785c2ff0b88e3c27f69c0372dff6228c83215e68"
+  },
+  {
+    "file": "S-0844-ES-M-RC01-equipment.csv",
+    "bytes": 18607,
+    "sha256": "7d9a596206667b46c54e25a1fa21966bae0a755f19a95be9693cfe59ac193d61"
+  },
+  {
+    "file": "S-0844-ES-M-RC01-releve.jpg",
+    "bytes": 13463511,
+    "sha256": "020b571b68ceb06454889e2826cf37ec96681b4c11f0553315fd3be93784e4b4"
   },
   {
     "file": "S-0844-EX-E-PE01-breakers.csv",
@@ -95,6 +105,11 @@
     "sha256": "155eccff4e519de380c7f5da0302c512b6ede14721fa7181be3d077975d5a93e"
   },
   {
+    "file": "methode/build_ground_services.py",
+    "bytes": 10772,
+    "sha256": "c8493f5af0ad3f61a948ef8b47c1914aed0b20111600ad6855e1608cf1897a3e"
+  },
+  {
     "file": "methode/build_panels.py",
     "bytes": 2907,
     "sha256": "7536a163d4beaaf29dc591bff607088ce06e735764d81c74315746b6849700de"
@@ -141,7 +156,7 @@
   },
   {
     "file": "methode/render_sheet.py",
-    "bytes": 3575,
-    "sha256": "bcbf6a518d0cc623d5668cb1c197869e73c304c1169ec349881c29d8fc94c23b"
+    "bytes": 3593,
+    "sha256": "2291b946321b6195ec35b5d52954e32045dc94cd96f190a6932d3b31964c25f3"
   }
 ]

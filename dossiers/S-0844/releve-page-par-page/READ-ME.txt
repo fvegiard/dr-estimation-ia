@@ -12,11 +12,12 @@ ES-M-0T01 : 4 pastilles; 2 réserve(s) de repère; contrôle visuel 4/4.
 EX-M-DG02 : 2 pastilles; 0 réserve(s) de repère; contrôle visuel 2/2.
 EX-M-DT02 : 7 pastilles; 0 réserve(s) de repère; contrôle visuel 7/7.
 EE-M-RC01 : 149 pastilles; 6 réserve(s) de repère; contrôle visuel 149/149.
+ES-M-RC01 : 110 pastilles; 25 réserve(s) de repère; contrôle visuel 110/110.
 Les scores concernent les repères annotés et vérifiés; ils ne certifient pas le dossier complet.
 JPEG à résolution source, plan conservé, pastilles et légende intégrée. CSV : une ligne par appareil.
 
 RESTANT À RELEVER
-ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, ES-M-RC01, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
+ES-D-SS01, ES-D-0301, EC-M-RC01, EC-M-0301, EA-M-0301, EA-M-0302, EX-E-DG01, EX-M-DT01, EX-M-DT04, EX-M-DT05, EX-E-DE01, EM-D-SS01, EM-D-0301, EX-M-LG01, EX-M-DT03, EX-M-LG02, EE-M-0301, EA-M-RC01, EA-M-RC02, EX-M-DE01, ES-M-0301
 
 NON COMPTÉ / PORTÉES
 Les autres plans ne sont pas encore relevés. Aucune quantité nulle ne doit en être déduite.
@@ -79,6 +80,16 @@ EX1/EX7 et issues ER séparés : existants à relocaliser. EX3 existants disting
 * Commande M, charge du point 1mm et interface IC : spécifications à confirmer.
 Les traits de liaison et extrémités noires des commandes ne sont pas des détecteurs.
 Ne pas additionner les mêmes appareils aux vues agrandies EX-M-DT01.
+
+ES-M-RC01 — PRÉCISIONS
+Une pastille par symbole; le groupe M.-O. x2 a une quantité CSV de 2.
+Monuments C : 3 ensembles, chacun contient 2 prises; pas de second total.
+Les zones 02/03 sont comptées uniquement sur leurs vues agrandies.
+MDF 1.34 : renvoi EX-M-DT03, pas de décompte supplémentaire ici.
+Les panneaux et équipements de distribution sont des renvois.
+* TP-RDC-3 : deux raccordements, circuits différents; identité à confirmer.
+* Charges de cuisine / toiles : renvois architecture non reçus.
+* Sectionneur EI sans calibre; longueurs de câbles/conduits non métrées.
 Les autres sources sont accessibles; aucune feuille déclarée illisible à ce stade.
 
 MÉTHODE
