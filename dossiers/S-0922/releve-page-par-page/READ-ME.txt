@@ -54,3 +54,9 @@ Scripts en anglais dans methode/. Les coordonnées des CSV sont en pixels des so
 Les zooms de vérification restent dans le dossier de travail local et ne sont pas publiés.
 manifest.json : empreintes et tailles des fichiers publiés (hors manifest lui-même).
 CHECKPOINT.json : état par feuille et scores de vérification visuelle.
+
+CONTRÔLE DU SUPERVISEUR — ARRÊT LOCAL
+E-5 prête : S-0922-E-5-releve.jpg — 71 pastilles, 71 repères en réserve.
+Attente de validation ou corrections; aucune feuille suivante sans « OK suivante ».
+Depuis cette reprise : commits locaux uniquement; aucun push ni action GitHub.
+Les cinq feuilles disponibles avaient déjà été relevées; aucune nouvelle feuille électrique identifiée dans l’inventaire local.

@@ -78,5 +78,15 @@
     "electrical_unique_versions": 10,
     "electrical_sheets": 5,
     "nonelectrical_retained": 20
+  },
+  "supervision": {
+    "mode": "Contrôle feuille par feuille; commits locaux uniquement",
+    "sheet_ready": "E-5",
+    "jpeg": "S-0922-E-5-releve.jpg",
+    "markers": 71,
+    "reserved_markers": 71,
+    "state": "En attente de validation ou corrections du superviseur",
+    "advance_requires": "OK suivante",
+    "github_actions_allowed": false
   }
 }
