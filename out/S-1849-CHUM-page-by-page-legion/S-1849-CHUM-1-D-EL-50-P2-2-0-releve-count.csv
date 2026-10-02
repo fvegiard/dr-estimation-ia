@@ -1,0 +1,12 @@
+﻿Type,Description,Quantité,Source
+FGG1,Luminaire existant T5HO étanche 1x4 — remplacé 1:1 par DEL (BOM corrigé) — Normal (NA),37,1-D-EL-50-P2-2-0
+FGG1,Luminaire existant T5HO étanche 1x4 — remplacé 1:1 par DEL (BOM corrigé) — Secours (SA),31,1-D-EL-50-P2-2-0
+FS,Repère au plan; description selon légende du projet — Normal (NA),12,1-D-EL-50-P2-2-0
+FS,Repère au plan; description selon légende du projet — Secours (SA),14,1-D-EL-50-P2-2-0
+FS,Repère au plan; description selon légende du projet — X (XA),3,1-D-EL-50-P2-2-0
+X2,Repère au plan; description selon légende du projet — Secours (SA),15,1-D-EL-50-P2-2-0
+CC7,Repère au plan; description selon légende du projet — Normal (NA),5,1-D-EL-50-P2-2-0
+CC7,Repère au plan; description selon légende du projet — Secours (SA),5,1-D-EL-50-P2-2-0
+FR1,Repère au plan; description selon légende du projet — sans circuit,2,"1-D-EL-50-P2-2-0 (repère sans circuit, non compté)"
+FF,Repère au plan; description selon légende du projet — Secours (SA),1,1-D-EL-50-P2-2-0
+FR,Repère au plan; description selon légende du projet — Normal (NA),1,1-D-EL-50-P2-2-0

@@ -5,9 +5,39 @@
     "sha256": "e47885aafdb8a89e1d4b02506281ef205d03e9870647f3b9ed91a2f2e4110c2c"
   },
   {
+    "file": "S-1849-CHUM-1-B1-EL-50-01-2-0-releve-count.csv",
+    "bytes": 5893,
+    "sha256": "8b77f4a8450f7a8098c22235e653eb6ae347ba21d38623806d669bdcdd5e502f"
+  },
+  {
+    "file": "S-1849-CHUM-1-B1-EL-50-01-2-0-releve-points.csv",
+    "bytes": 9049,
+    "sha256": "a04301500cb2697a47addb8a91edee48b38ed08045db34d574b02e7b045fd550"
+  },
+  {
+    "file": "S-1849-CHUM-1-B1-EL-50-01-2-0-releve.jpg",
+    "bytes": 3586693,
+    "sha256": "4dd08a5638148df6a5d2946fdc2ca79ae50c360b0e8b11d66ec18f7987a93a7f"
+  },
+  {
     "file": "S-1849-CHUM-1-B1-EL-50-RC-0-0-equipment.csv",
     "bytes": 433,
     "sha256": "b49d337e96e25b71e4513dda3cf1cf6f9137429fdb2393d8195b98dfcca5bacc"
+  },
+  {
+    "file": "S-1849-CHUM-1-B1-EL-50-RC-0-0-releve-count.csv",
+    "bytes": 3573,
+    "sha256": "a1048a501a3354418d82cf7e0d022bd4d22f086c274df3cde4b16dd219afa6db"
+  },
+  {
+    "file": "S-1849-CHUM-1-B1-EL-50-RC-0-0-releve-points.csv",
+    "bytes": 5881,
+    "sha256": "5ad1edd15acb2631c2515c7d2fd7c1cdc2362385958ebdaf7a01a1703c834468"
+  },
+  {
+    "file": "S-1849-CHUM-1-B1-EL-50-RC-0-0-releve.jpg",
+    "bytes": 2736378,
+    "sha256": "b3f36e89e183f44ea8fe30cf32223cdc7657b4768db5557c332d6599b97f53f1"
   },
   {
     "file": "S-1849-CHUM-1-D-EL-50-P1-2-0-equipment.csv",
@@ -15,14 +45,59 @@
     "sha256": "1aa73c364c412bc523749c150022a2fd908bb8efee4eceab235ba9136e0bfe40"
   },
   {
+    "file": "S-1849-CHUM-1-D-EL-50-P1-2-0-releve-count.csv",
+    "bytes": 1345,
+    "sha256": "c874a86b701f3b17d5d3e600e47ffa54709091c51adaed48d14db7d117eceb83"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P1-2-0-releve-points.csv",
+    "bytes": 3937,
+    "sha256": "12b7730a2789b39fb3e88ee5f91ab1d885c20b2e0344312cf5ac437762cbb65b"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P1-2-0-releve.jpg",
+    "bytes": 4779755,
+    "sha256": "f0abb68c284ce70621675d8207fb23d23932361217c4ee7ff15a75eb135643b3"
+  },
+  {
     "file": "S-1849-CHUM-1-D-EL-50-P2-2-0-equipment.csv",
     "bytes": 245,
     "sha256": "7c4f6810b0b8067f71cac6b4b6aa7ce8f0bad064427347be15bcc8b36c372061"
   },
   {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-2-0-releve-count.csv",
+    "bytes": 1160,
+    "sha256": "4850bb1563e42f80cb0491d5a4279c76e0726ac032dcb7ab038aab8dd8947247"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-2-0-releve-points.csv",
+    "bytes": 4872,
+    "sha256": "01eec4ae1e66b2d6d253945330558c8e48885ec02aeff83fc4d2ccf9fea6b599"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-2-0-releve.jpg",
+    "bytes": 3429607,
+    "sha256": "d900448fa333cb3df0a454888238da1ef2ac1d828da6102c33165f1c92ae4b47"
+  },
+  {
     "file": "S-1849-CHUM-1-D-EL-50-P2-3-0-equipment.csv",
     "bytes": 243,
     "sha256": "9c5032d46e0091a2d7c203f4edcfc38da81f42ca3d14cadeb666cfd2959d3f64"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-3-0-releve-count.csv",
+    "bytes": 467,
+    "sha256": "eefe182743700c2c5de830ccf3716fe0e6038073d78e34435bab0e214edbd225"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-3-0-releve-points.csv",
+    "bytes": 1708,
+    "sha256": "067c55bb92ecee8da6b8e706777376e036de2e66908d0963ce95d3171487539c"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-3-0-releve.jpg",
+    "bytes": 4072278,
+    "sha256": "31c365b647cf15087afe45f3487237853593199840450c18b07e6679d47762c3"
   },
   {
     "file": "S-1849-CHUM-1-D-EL-50-P2-depose-2-0+3-0-equipment.csv",
@@ -35,9 +110,39 @@
     "sha256": "dfd0657e014e46c8ac65d6923a1e22b08d1ff4836e10eafde725817c89846954"
   },
   {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-2-0-releve-count.csv",
+    "bytes": 694,
+    "sha256": "ee4c19510c42be971179096ea43797c756380979001db022e1c39ded169390f1"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-2-0-releve-points.csv",
+    "bytes": 3630,
+    "sha256": "4e21e8f5e021e91c630144a9f53f1acd9a07ffc07739418c04e5daca126cc2f5"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-2-0-releve.jpg",
+    "bytes": 3086466,
+    "sha256": "99b70c381fa64b52b1b900e587dea94eb305e209b5d4dc656b70f4cdf93ef92b"
+  },
+  {
     "file": "S-1849-CHUM-1-D-EL-50-P3-3-0-equipment.csv",
     "bytes": 243,
     "sha256": "de5274ee3a15d967a96a87a078de7e66c432829ca876c214705c30be3eb481fe"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-3-0-releve-count.csv",
+    "bytes": 467,
+    "sha256": "240886a37bae28d5ac1f8011ec01a7140c26031407dd77499862df4a457a0224"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-3-0-releve-points.csv",
+    "bytes": 1738,
+    "sha256": "dda8ef34889fbc1a60f93c65a4c5ba4690a2f1f7047fa11affce2efef277c142"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-3-0-releve.jpg",
+    "bytes": 4102771,
+    "sha256": "3df6126c5f44fee9714fedd44fa65a22e80476ae237671831254641d1ad3a15e"
   },
   {
     "file": "S-1849-CHUM-1-D-EL-50-P3-depose-2-0+3-0-equipment.csv",
@@ -50,9 +155,39 @@
     "sha256": "9844f70dd5797ffe4d0533114337bf092024e167fe849fa89c097e15428eb7e1"
   },
   {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-2-0-releve-count.csv",
+    "bytes": 694,
+    "sha256": "7153c536a2073bb45e532318d556b6b1b14c902cf85f8f79a05ae3bd63ae923c"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-2-0-releve-points.csv",
+    "bytes": 3536,
+    "sha256": "650fb6383fb614cc1b5b3fa3a9b4983f5a5387cde7ee247b7eb6c2b050448cb0"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-2-0-releve.jpg",
+    "bytes": 2973102,
+    "sha256": "7baa7524e6e501d209a99d72208a5bf59707d9d8244e7338c9e8407a49542137"
+  },
+  {
     "file": "S-1849-CHUM-1-D-EL-50-P4-3-0-equipment.csv",
     "bytes": 239,
     "sha256": "66114cea09a0be001f157d46206ad03d7f5bc2b42897970537dfc0efb65e7951"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-3-0-releve-count.csv",
+    "bytes": 467,
+    "sha256": "a033df3644a331704084fbce1942c80b9f439cea74d939be4b67ed0356a1f3c1"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-3-0-releve-points.csv",
+    "bytes": 1744,
+    "sha256": "f6d06aad4da97e209bf9024dfc3413cf9051648e224c6e658c4e295fffecd258"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-3-0-releve.jpg",
+    "bytes": 3804351,
+    "sha256": "137cab6c607654b1f4b6d9a19ec7fc6745e9633d83d6cbd8bbe55ce1f833c34c"
   },
   {
     "file": "S-1849-CHUM-1-D-EL-50-P4-depose-2-0+3-0-equipment.csv",
@@ -65,9 +200,39 @@
     "sha256": "f8708b05ebbfce06c41e22da59ec362fcab387ee54bb27ea59a7f2309ecb76eb"
   },
   {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-2-0-releve-count.csv",
+    "bytes": 788,
+    "sha256": "4bcf5b6542f44a54995d5b766c3ad5d3a49bc5f565d5750faef3bf29c92127d7"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-2-0-releve-points.csv",
+    "bytes": 3493,
+    "sha256": "613b3eb1043b44520e0266ee0d512887bd3564ef898882f0dcdae4f141171e12"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-2-0-releve.jpg",
+    "bytes": 3078430,
+    "sha256": "7896020287b8001f31af448ae8c2e6390bc02673e976f58b8d062a56d980c0a0"
+  },
+  {
     "file": "S-1849-CHUM-1-D-EL-50-P5-3-0-equipment.csv",
     "bytes": 238,
     "sha256": "2df03135ce673651ff881d99f6db8363263080fc2edf5a0db0b282ef30e339a6"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-3-0-releve-count.csv",
+    "bytes": 467,
+    "sha256": "87637e9faef5ddcda7e5678df35f91f9d5890d1f722919e116d04eed79fcb414"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-3-0-releve-points.csv",
+    "bytes": 1319,
+    "sha256": "5c55ad264608698da78e8a9b9816bb9eec2c2de60cfff90ba833f00416424c1b"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-3-0-releve.jpg",
+    "bytes": 3645016,
+    "sha256": "b070d8558c98bc4e9b5a221017570a828ea829cd2a5b041473e419cf5ee2a693"
   },
   {
     "file": "S-1849-CHUM-1-D-EL-50-P5-depose-2-0+3-0-equipment.csv",

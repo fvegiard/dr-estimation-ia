@@ -1,0 +1,59 @@
+﻿Type,Description,Quantité,Source
+CC,Repère au plan; description selon légende du projet — Normal (NA),20,1-B1-EL-50-01-2-0
+CC,Repère au plan; description selon légende du projet — Normal (NB),10,1-B1-EL-50-01-2-0
+CC,Repère au plan; description selon légende du projet — Secours (SA),9,1-B1-EL-50-01-2-0
+CC,Repère au plan; description selon légende du projet — Secours (SC),7,1-B1-EL-50-01-2-0
+LF,Repère au plan; description selon légende du projet — Normal (NB),23,1-B1-EL-50-01-2-0
+LF,Repère au plan; description selon légende du projet — UPS (UC),14,1-B1-EL-50-01-2-0
+FS,Repère au plan; description selon légende du projet — Normal (NB),9,1-B1-EL-50-01-2-0
+FS,Repère au plan; description selon légende du projet — Secours (SC),10,1-B1-EL-50-01-2-0
+FS,Repère au plan; description selon légende du projet — sans circuit,1,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+CC7,Repère au plan; description selon légende du projet — Normal (NA),2,1-B1-EL-50-01-2-0
+CC7,Repère au plan; description selon légende du projet — Normal (NB),4,1-B1-EL-50-01-2-0
+CC7,Repère au plan; description selon légende du projet — Secours (SA),1,1-B1-EL-50-01-2-0
+CC7,Repère au plan; description selon légende du projet — Secours (SC),3,1-B1-EL-50-01-2-0
+CC7,Repère au plan; description selon légende du projet — UPS (UC),3,1-B1-EL-50-01-2-0
+CC7,Repère au plan; description selon légende du projet — sans circuit,3,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+FGG1,Luminaire existant T5HO étanche 1x4 — remplacé 1:1 par DEL (BOM corrigé) — Normal (NB),7,1-B1-EL-50-01-2-0
+FGG1,Luminaire existant T5HO étanche 1x4 — remplacé 1:1 par DEL (BOM corrigé) — Secours (SC),8,1-B1-EL-50-01-2-0
+LF1,Repère au plan; description selon légende du projet — Normal (NB),13,1-B1-EL-50-01-2-0
+LF1,Repère au plan; description selon légende du projet — sans circuit,1,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+LC,Repère au plan; description selon légende du projet — X (XB),1,1-B1-EL-50-01-2-0
+LC,Repère au plan; description selon légende du projet — sans circuit,9,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+X1,Repère au plan; description selon légende du projet — Secours (SA),5,1-B1-EL-50-01-2-0
+X1,Repère au plan; description selon légende du projet — Secours (SC),2,1-B1-EL-50-01-2-0
+CC8,Repère au plan; description selon légende du projet — Normal (NA),4,1-B1-EL-50-01-2-0
+CC8,Repère au plan; description selon légende du projet — Secours (SA),2,1-B1-EL-50-01-2-0
+FE,Repère au plan; description selon légende du projet — UPS (UC),6,1-B1-EL-50-01-2-0
+FF2,Repère au plan; description selon légende du projet — Normal (NB),6,1-B1-EL-50-01-2-0
+FPP,Repère au plan; description selon légende du projet — Secours (SB),6,1-B1-EL-50-01-2-0
+FT1,Repère au plan; description selon légende du projet — Normal (NA),1,1-B1-EL-50-01-2-0
+FT1,Repère au plan; description selon légende du projet — Normal (NB),2,1-B1-EL-50-01-2-0
+FT1,Repère au plan; description selon légende du projet — Secours (SA),1,1-B1-EL-50-01-2-0
+FT1,Repère au plan; description selon légende du projet — Secours (SC),1,1-B1-EL-50-01-2-0
+FT1,Repère au plan; description selon légende du projet — UPS (UC),1,1-B1-EL-50-01-2-0
+LK1,Repère au plan; description selon légende du projet — Normal (NB),6,1-B1-EL-50-01-2-0
+X2,Repère au plan; description selon légende du projet — Secours (SA),1,1-B1-EL-50-01-2-0
+X2,Repère au plan; description selon légende du projet — Secours (SC),4,1-B1-EL-50-01-2-0
+X2,Repère au plan; description selon légende du projet — sans circuit,1,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+FR1,Repère au plan; description selon légende du projet — Normal (NA),1,1-B1-EL-50-01-2-0
+FR1,Repère au plan; description selon légende du projet — Normal (NB),1,1-B1-EL-50-01-2-0
+FR1,Repère au plan; description selon légende du projet — Secours (SA),1,1-B1-EL-50-01-2-0
+FR1,Repère au plan; description selon légende du projet — sans circuit,2,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+CC2,Repère au plan; description selon légende du projet — Normal (NB),2,1-B1-EL-50-01-2-0
+CC2,Repère au plan; description selon légende du projet — Secours (SC),2,1-B1-EL-50-01-2-0
+FF4,Repère au plan; description selon légende du projet — Normal (NB),2,1-B1-EL-50-01-2-0
+FF4,Repère au plan; description selon légende du projet — UPS (UC),2,1-B1-EL-50-01-2-0
+FR,Repère au plan; description selon légende du projet — Normal (NB),2,1-B1-EL-50-01-2-0
+FR,Repère au plan; description selon légende du projet — Secours (SC),1,1-B1-EL-50-01-2-0
+FR,Repère au plan; description selon légende du projet — sans circuit,1,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+LL4,Repère au plan; description selon légende du projet — Normal (NB),3,1-B1-EL-50-01-2-0
+CL,Repère au plan; description selon légende du projet — Secours (SD),2,1-B1-EL-50-01-2-0
+FMM,Repère au plan; description selon légende du projet — Normal (NA),1,1-B1-EL-50-01-2-0
+FMM,Repère au plan; description selon légende du projet — Secours (SC),1,1-B1-EL-50-01-2-0
+FT10,Repère au plan; description selon légende du projet — Normal (NB),2,1-B1-EL-50-01-2-0
+FT11,Repère au plan; description selon légende du projet — sans circuit,2,"1-B1-EL-50-01-2-0 (repère sans circuit, non compté)"
+LK,Repère au plan; description selon légende du projet — Normal (NB),1,1-B1-EL-50-01-2-0
+LK,Repère au plan; description selon légende du projet — Secours (SC),1,1-B1-EL-50-01-2-0
+A,Repère au plan; description selon légende du projet — Normal (NB),1,1-B1-EL-50-01-2-0
+CL1,Repère au plan; description selon légende du projet — Normal (NB),1,1-B1-EL-50-01-2-0
