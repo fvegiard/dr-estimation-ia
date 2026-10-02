@@ -1,0 +1,77 @@
+S-1866-GARAGE-ST-AMABLE — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL
+Dossier : S-1866 — Garage municipal de Saint-Amable (APP-25-053-GE) — relevé électrique
+Projet : Aménagement des bureaux du garage municipal de la Ville de Saint-Amable, 460 rue Charbonneau, Saint-Amable (QC) J0L 1N0
+Ingénieur électricité : Desjardins Experts Conseils, dossier 25043 — plans émis pour soumission 2026-08-12 (rév. 0)
+Dépôt des soumissions : jeudi 24 septembre 2026, 11 h 00 (Addenda 5) — début des travaux reporté avant le 6 novembre 2026 (Addenda 7)
+Relevé construit le 2026-10-02 (heure de l'Est) à partir du texte extrait des PDF du dossier Drive 1thEgxWvk8uGpJU9Em6YGE0Hj53FQZW0-.
+ÉTAT : relevé supervisé encore partiel; ce dossier n'est pas une soumission exhaustive.
+
+SOURCES
+- 25043- Garage Municipale St Amable-E-Soumission.pdf — Drive 15z4VqKl-5-abqD5A9pqO6Xy3xeafn-TK (6 249 517 octets) — jeu électrique complet E-100 à E-600, rév. 0 du 2026-08-12.
+- Addenda 4_plan E-300.pdf — Drive 1S27ZEija_dDjj1BHhGhgSGJ-W8WSSsc_ — E-300 rév. 2 (ADDENDA ME-01 2026-08-26, ADDENDA ME-03 2026-09-01). Remplace E-300 rév. 0.
+- Addenda 4_plan E-402.pdf — Drive 1dfiXZ-pIIdmn7M_SsqhW1wP7K_DdpMhQ — E-402 rév. 1 (ADDENDA ME-03 2026-09-01). Remplace E-402 rév. 0.
+- S129-2026-Addend 5 -Devis.pdf — Drive 1WTGkWCtZ5ZuRifai7pzci9uF8cnY8gAn — Addenda 5 (14 sept. 2026) : report de date, questions-réponses architecture/plomberie. Aucune quantité électrique.
+- S129-2026-Addenda 7-Devis.pdf — Drive 1rwVMrTBuqOjvrqQoso4qMgT-IVM0OxMT — Addenda 7 (21 sept. 2026) : report de la mobilisation. Aucune quantité électrique.
+- 25043- Garage Municipale St Amable-E-Soumission - Copy.pdf — Drive 1iYX3yxU6sVD1dqsvz61_cWBD9FcLfb8c — doublon confirmé : les deux fichiers Drive téléchargés le 2026-10-02 ont le même sha256 d14e0a67a499c0782700e1a3ac7c5b915ac98b7c9a660f27c59f6acbe02a1613 (6 249 517 octets, md5 33da4d776afd64c3bc786f8cc6933b96) ; identiques octet par octet (cmp), donc non relu.
+
+CONTENU (feuilles électriques, liste de plans E-100 confirmée par les cartouches)
+- E-100 Légende
+- E-101 Devis - instructions générales
+- E-102 Devis - instructions spécifiques, devis parasismique
+- E-103 Légende, schémas et séquences de contrôle d'éclairage
+- E-104 Type(s) d'espace(s) d'éclairage
+- E-200 Éclairage - rez-de-chaussée
+- E-201 Éclairage - 2e étage
+- E-300 Services - rez-de-chaussée (rév. 2 par Addenda 4)
+- E-301 Services - 2e étage
+- E-302 Services - toit
+- E-400 Tableaux électriques - détails
+- E-401 Tableaux mécaniques
+- E-402 Distribution unifilaire (rév. 1 par Addenda 4)
+- E-500 Cédules des panneaux
+- E-600 Légende et schémas de contrôle
+Un CSV par feuille : S-1866-Garage-St-Amable-<feuille>-equipment.csv (en-tête Type,Description,Quantité,Source). Une feuille sans quantité explicite n'a pas de CSV.
+Aucun fichier consolidé : les feuilles ne doivent pas être additionnées sans contrôle des doublons (voir RÈGLE).
+
+PORTÉE (quantités explicitement écrites — chaque ligne avec sa source)
+- E-200 : Batterie #1 RDC (indicateurs de sortie cct 7(P-1) + éclairage d'urgence RDC) — 1 — E-Soumission.pdf / E-200 / NOTE(S) ÉCLAIRAGE D'URGENCE.
+- E-201 : Batterie #1 2e étage (indicateurs de sortie cct 5(P-2) + éclairage d'urgence 2e) — 1 — E-Soumission.pdf / E-201 / NOTE(S) ÉCLAIRAGE D'URGENCE.
+- E-300 : sorties cct 27(P-1) H:48'' marquées « x6 » — 6 — Addenda 4_plan E-300.pdf (idem rév. 0).
+- E-300 : alimentation transformateur bas voltage mécanique cct 3(P-1) — 1 ; prise câblodistribution cct 2(P-1) — 1 ; prise téléphonie cct 4(P-1) — 1 ; m.à.l.t. à l'entrée d'eau — 1 — Addenda 4_plan E-300.pdf.
+- E-301 : sorties « (2) » cct 22(P-2) pour panneau acoustique de poste de travail, local 206 — 2 — E-Soumission.pdf / E-301.
+- E-401 : VRE-01, VRE-02, VE-01, CE-01, UCD-01, UCD-02, UAC-01, UAC-02, UTA-01, SE-01 — 1 chacun, données électriques telles qu'écrites — E-Soumission.pdf / E-401 (tableaux mécaniques, « pour fin de coordination seulement »).
+- E-402 : entrée 200 A 347/600V — 1 ; EM-1 — 1 ; armoire de mesurage type A — 1 ; S-1 200 A SF3P — 1 ; T-1 75 kVA — 1 ; ST-1 100 A F90A — 1 ; S-UTA (attribution F110A à confirmer, voir RÉSERVES) — 1 ; S-S01 + S-S02 30 A F15A — 2 ; auget 400 A 120/208V — 1 ; panneaux P1 + P2 200 A — 2 ; panneaux existants PE, PC, PCC à enlever — 3 ; barre de m.à.l.t. 1#6 CU-NU à l'entrée d'eau — 1 — Addenda 4_plan E-402.pdf.
+- E-402 (information, pas une quantité) : calcul de charge écrit au plan — charge existante 53 750 W ; climatisation 7 501 W ; chauffage 90 000 W ; ventilation 611 W ; total 144 361 W ; 138,91 A à 600 V ; entrée 200 A à 347/600V.
+- E-102 (allocations écrites au devis, par panneau — nombre de panneaux à confirmer, non mises en CSV) : art. 2.27.2.2.4 « à chaque panneau … deux (2) conduits vides de 38 mm (1-1/2 po) » prolongés jusque dans le plafond suspendu ; art. 2.27.2.2.6 « pour fin de soumission, il en prévoira trois (3) par panneau » (dispositifs de verrouillage de disjoncteurs) ; art. 2.27 fusibles : « un jeu de fusibles de rechange qui comprendra deux (2) fusibles pour » chaque calibre ; devis 16000 2.4.1 : nouvelle entrée électrique aérienne 347/600V 3Ø 4 fils et réseau de distribution 347/600V + 120/208V.
+Quantité 1 = un équipement nommément identifié (tag) sur la feuille ou dans un tableau. Aucune quantité n'a été comptée à partir de symboles.
+
+RÉSERVES (relevé supervisé à compléter)
+- Feuilles sans quantité explicite — aucun CSV livré (Granby ne livre pas de CSV vide) ; relevé supervisé requis : E-100, E-101, E-102 (allocations écrites par panneau / par calibre, sans total absolu — non mises en CSV, voir PORTÉE), E-103, E-104, E-302, E-400, E-500, E-600.
+- E-200 / E-201 : appareils d'éclairage identifiés par types A1, B1, C1, C2, contrôleurs RG10N, zones Z1/Z2/Z4, indicateurs de sortie, phares — AUCUN tableau de luminaires ni quantité dans le jeu électrique ; note en plan : « le calcul d'éclairage ayant été réalisé par un designer, Desjardins Experts Conseils décline toute responsabilité quant au choix des luminaires ». Comptage visuel supervisé requis ; descriptions des types à obtenir des plans de design.
+- E-300 / E-301 / E-302 : prises, interrupteurs, sorties, plinthes PES, thermostats, TI (250 W) et sorties DATA/téléphone montrés par symboles sans quantité — non comptés. Le groupe « x6 » cct 27(P-1) : type de symbole à confirmer visuellement.
+- E-300 rév. 2 (Addenda 4) ajoute : « les travaux de télécommunication, incluant le câblage, les conduits, les boîtes, les prises DATA ainsi que leur raccordement, sont à la charge de l'entrepreneur électricien » — portée à chiffrer, aucune quantité écrite.
+- E-301 : « (2) H:60'' 15(P-2) » et autres « (2) » sans description lisible dans le texte — non comptés, à relever visuellement.
+- E-302 : prise de courant de toit (« installée à moins de 7,5 m d'un équipement mécanique au toit, sur poteau à 750 mm ») — note sans quantité ; UCD-01 / UCD-02 au toit comptés une seule fois sur E-401.
+- E-400 : tableau descriptif des appareils de chauffage = TYPES seulement (PES Stelpro série B 208V ; T thermostat Stelpro STE403NPW24 347V ; T 24V Stelpro ET180 ; couvre-thermostat F29 ou TG511A1000 ; R relais RE15 ; RT relais RE30) — aucune quantité ; « se référer aux plans pour la puissance des appareils de chauffage ».
+- E-500 : cédules des panneaux non extractibles en texte (contenu graphique) — disjoncteurs, calibres et nombre de circuits de P1/P2 à relever visuellement.
+- E-402 : câbles et conduits écrits sans longueur (4#250 kcmil NUAL+1#2V C.63 mm ; 2(4#2/0 AWG NUAL+1#4V C.53 mm) ; 4#1/0 AWG NUAL+1#4V C.41/C.53 mm ; 3#1 AWG NUAL+1#4V C.35/C.41 mm ; 3#12 AWG NUAL+1#12V C.27 mm ; 1#6 CU-NU ; 1#3 CU-vert) — non métrés.
+- E-402 : distribution temporaire par génératrice fournie par le client, boîte de jonction et panneau temporaire dans le garage — portée écrite, aucune quantité.
+- Contradiction textuelle (serpentins) : E-401 TABLEAU DES SERPENTINS ÉLECTRIQUES ne liste que « SE 01 — salle électrique — Thermolec 7 kW 600/3/60 » et E-300 écrit « SERPENTIN SE-01 7KW - 600V-3P » ; E-301 écrit « SERPENTIN SE-01 2W - 600V-3P », « SERPENTIN SE-02 1.5W - 600V-3P » et « SERPENTIN SE-03 2KW - 600V-3P » vers S-S02. SE-02 et SE-03 absents du tableau E-401 ; puissance de SE-01 au 2e étage incohérente. Non comptés ; à confirmer par l'ingénieur.
+- Contradiction textuelle (panneaux) : note E-402 « raccorder aux nouveaux panneaux PE et PC » vs note « les nouveaux panneaux P1 et P2 doivent être installés aux mêmes emplacements que ceux enlevés PE et PC ».
+- Contradiction textuelle (sectionneur S-1) : « 200A SF3P » et « 200A PRINCIPAL F110A 3P » lus à proximité sur le même diagramme ; le F110A est attribué ici à S-UTA (MOP 110 A de UTA-01) — à confirmer visuellement.
+- E-401 : UAC-01 « voir UCD-02 » dans la colonne alimentation alors que UCD-01 (MCA 29 A) correspond à la capacité 54 000 btu/h — à confirmer.
+- Tableau des calibres de fils pour les appareils d'urgence (E-400) : valeurs présentes mais illisibles en texte extrait — à relire visuellement.
+- Addendas manquants dans le dossier Drive : addendas municipaux 1, 2, 3, 4 (seuls les plans E-300 et E-402 de l'Addenda 4 sont présents), 6 ; addendas d'ingénierie ME-01, ME-02, ME-04 (cités par les cartouches et par l'Addenda 5) — portée électrique possiblement modifiée.
+- Fichiers non lus (non électriques par titre) : 25043- Garage Municipale St Amable-M-Soumission.pdf (mécanique, 5 918 094 octets) ; 25-151-ST-AMABLE GARAGE_PLAN-SOUM PERMIS.pdf (2 959 666 octets, présumé architecture) ; APP-25-053-GE - Contrat.pdf ; APP-25-053-GE - Formulaire de Soumission.pdf ; APP-25-053-GE - Régie.pdf (documents administratifs). Aucun fichier > 30 Mo.
+
+CHIFFRAGE
+- Taux électricien : 72 $/h (taux par défaut, MCP dre-estimation labor_rates).
+- Taux de pose à ancrer (heures par unité) sur la base prix + main-d'œuvre DR Électrique (MCP dre-estimation) — aucun taux n'est fixé dans ce dossier.
+- Aucun prix produit dans ce dossier.
+- Avant chiffrage : compléter le relevé supervisé (luminaires, prises, interrupteurs, DATA, plinthes, cédules E-500, câbles/conduits), lever les contradictions ci-dessus et obtenir les addendas manquants.
+
+RÈGLE
+- Rien n'est inventé : une quantité n'entre dans le relevé que si elle est explicitement écrite dans un document (tableau, cédule, bordereau, devis, légende avec quantité). Sinon elle est une réserve.
+- Ne pas additionner les feuilles entre elles sans contrôle des doublons : les équipements mécaniques (VRE, VE, CE, UCD, UAC, UTA, SE) apparaissent en plan (E-300/E-301/E-302) et en tableau (E-401) ; ils sont comptés UNE fois, sur E-401. Les sectionneurs S-S01/S-S02/S-UTA/ST-1/S-1 sont comptés sur E-402 seulement.
+- La mise à la terre à l'entrée d'eau apparaît sur E-300 (« Raccorder la mise à la terre à l'entrée d'eau », 1) et sur E-402 (« Barre principale de mise à la terre, 1#6 CU-NU raccordé à l'entrée d'eau », 1) : les deux lignes visent le même raccordement à l'entrée d'eau et ne doivent pas être additionnées.
+- manifest.json = [file, bytes, sha256] de tous les fichiers de données (csv/xlsx), tri insensible à la casse ; exclut READ-ME.txt et manifest.json

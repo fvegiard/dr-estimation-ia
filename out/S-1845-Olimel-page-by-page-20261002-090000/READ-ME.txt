@@ -1,0 +1,13 @@
+S-1845 OLIMEL — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL
+
+Un seul document lu : AO_ROS-250506-CON-001.pdf (appel d'offres, 24 pages, lu en entier).
+Aucune feuille de plan électrique (E-xxx) n'a été identifiée dans le document lu; selon l'AO, les plans sont à produire par l'entrepreneur adjudicataire. La présence de feuilles électriques dans les fichiers non lus (voir réserves) n'est pas vérifiée.
+
+1 CSV, 1 ligne : S-1845-Olimel-AO-ROS-250506-CON-001-equipment.csv.
+Prise de courant : 2 (« au moins 2 »), roulotte de chantier, Partie 3, §3.3.14 h). Installation temporaire, seule quantité électrique écrite dans le document.
+
+ÉTAT : relevé supervisé encore partiel; ce dossier n'est pas une soumission exhaustive.
+Portée électrique décrite sans aucune quantité (§3.1.1, §3.3.2, §3.3.14, §3.4) : non quantifiée, non chiffrée.
+Fichiers non lus : ROS-250506_RemplacementMurs.pdf; ROS-250506_BordereauSoumission.xlsx; ROS-250506_mapFM.pdf; ROS-250506_superficieMur.pdf; OLYMEL ST-ROSALIE_SYNAIRTECH_SYNAIRTECH.dwg; dossier 5.Standards Olymel; _layoutSainteRosalie-ET; ROS-E1-PLANDEBASE; ROS-EX-PLANDEBASE; ROS-RC-PLANDEBASE; ReleveMur-FM.pdf.
+
+Rien d'inventé : seules les quantités explicitement écrites dans un document lu figurent dans le CSV. Tout le reste est une réserve.

@@ -1,0 +1,92 @@
+[
+  {
+    "file": "S-1849-CHUM-1-B1-EL-50-01-2-0-equipment.csv",
+    "bytes": 433,
+    "sha256": "e47885aafdb8a89e1d4b02506281ef205d03e9870647f3b9ed91a2f2e4110c2c"
+  },
+  {
+    "file": "S-1849-CHUM-1-B1-EL-50-RC-0-0-equipment.csv",
+    "bytes": 433,
+    "sha256": "b49d337e96e25b71e4513dda3cf1cf6f9137429fdb2393d8195b98dfcca5bacc"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P1-2-0-equipment.csv",
+    "bytes": 413,
+    "sha256": "1aa73c364c412bc523749c150022a2fd908bb8efee4eceab235ba9136e0bfe40"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-2-0-equipment.csv",
+    "bytes": 245,
+    "sha256": "7c4f6810b0b8067f71cac6b4b6aa7ce8f0bad064427347be15bcc8b36c372061"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-3-0-equipment.csv",
+    "bytes": 243,
+    "sha256": "9c5032d46e0091a2d7c203f4edcfc38da81f42ca3d14cadeb666cfd2959d3f64"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P2-depose-2-0+3-0-equipment.csv",
+    "bytes": 130,
+    "sha256": "a47700ea2885edd4adfca7f22d60386207b000e043ac875b86a329a7f6970665"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-2-0-equipment.csv",
+    "bytes": 339,
+    "sha256": "dfd0657e014e46c8ac65d6923a1e22b08d1ff4836e10eafde725817c89846954"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-3-0-equipment.csv",
+    "bytes": 243,
+    "sha256": "de5274ee3a15d967a96a87a078de7e66c432829ca876c214705c30be3eb481fe"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P3-depose-2-0+3-0-equipment.csv",
+    "bytes": 130,
+    "sha256": "848caaa9794104009ef2f4f5e57d0184b7433c62378d2349a7cc0a365c85738d"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-2-0-equipment.csv",
+    "bytes": 343,
+    "sha256": "9844f70dd5797ffe4d0533114337bf092024e167fe849fa89c097e15428eb7e1"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-3-0-equipment.csv",
+    "bytes": 239,
+    "sha256": "66114cea09a0be001f157d46206ad03d7f5bc2b42897970537dfc0efb65e7951"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P4-depose-2-0+3-0-equipment.csv",
+    "bytes": 131,
+    "sha256": "72f57ea3eb0874790e796ef5bc685013e93787519455a9292b652712fc88a47e"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-2-0-equipment.csv",
+    "bytes": 346,
+    "sha256": "f8708b05ebbfce06c41e22da59ec362fcab387ee54bb27ea59a7f2309ecb76eb"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-3-0-equipment.csv",
+    "bytes": 238,
+    "sha256": "2df03135ce673651ff881d99f6db8363263080fc2edf5a0db0b282ef30e339a6"
+  },
+  {
+    "file": "S-1849-CHUM-1-D-EL-50-P5-depose-2-0+3-0-equipment.csv",
+    "bytes": 130,
+    "sha256": "5bd9a0e3f13fad5356bb5c56907a9d037ce310032b16224158092634978f85dd"
+  },
+  {
+    "file": "S-1849-CHUM-Devis-RFQ35768-equipment.csv",
+    "bytes": 649,
+    "sha256": "af19961d1689d15e35632a590215f79cdeb7f554be319a89782549f7c2a4455c"
+  },
+  {
+    "file": "S-1849-CHUM-equipment-consolidated.csv",
+    "bytes": 11043,
+    "sha256": "451a62374a5e6e0487e27ff2a368ec04f29eae0c87cb165eba73182c2acd3b42"
+  },
+  {
+    "file": "S-1849-CHUM-summary.csv",
+    "bytes": 404,
+    "sha256": "056d6695b6d1e5bcb18fc10cabafd531a3fb0cfc1dfb047bf2d7919c09fa1282"
+  }
+]

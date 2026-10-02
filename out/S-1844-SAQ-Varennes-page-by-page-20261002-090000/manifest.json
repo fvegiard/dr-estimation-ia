@@ -1,0 +1,17 @@
+[
+  {
+    "file": "S-1844-SAQ-Varennes-E100-equipment.csv",
+    "bytes": 728,
+    "sha256": "b84b7a553254b2b9c654ff30d088d25fa22fb1495de30ab11121e6cb9b4e7785"
+  },
+  {
+    "file": "S-1844-SAQ-Varennes-E103-equipment.csv",
+    "bytes": 4571,
+    "sha256": "ce9ca903f03ca9026b3afb93580367d955a80274f18c405656cfce52289b2337"
+  },
+  {
+    "file": "S-1844-SAQ-Varennes-E400-equipment.csv",
+    "bytes": 448,
+    "sha256": "16201b2c52590314352b52e3d4c4e58d38a21c846d1952c5eae71ac40f7562ba"
+  }
+]

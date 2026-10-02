@@ -1,0 +1,102 @@
+S-1844 — SAQ VARENNES — RELEVÉ ÉLECTRIQUE PAGE PAR PAGE — ÉTAT DU TRAVAIL
+Généré le 2026-10-02 (heure de l'Est). Dossier : S-1844-SAQ-Varennes-page-by-page-20261002-090000
+Contrat de sortie : format Granby (1 CSV par feuille, en-tête « Type,Description,Quantité,Source », UTF-8 BOM, CRLF).
+ÉTAT : relevé supervisé non commencé sur E102, E200D, E200, E201, E300D, E300; ce dossier n'est pas une soumission exhaustive (28 lignes documentaires seulement).
+
+SOURCES LUES (Drive, dossier 1_SesCH4mFfblmH6wjfyB6p3XVJPBzyx4)
+- 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf — id 1umNVbQxhkAOuHT5VCWbrzfyyOV7bWZxW — 16,9 Mo — 12 pages — ingénieur Direktion 360, projet SAQ VARENNES, 1797 Q-132 Varennes QC J3X 1P7, révision 0 « 2026-08-26 POUR SOUMISSIONS ». SOURCE PRINCIPALE du relevé.
+- plan pour soumission en date du 26 aout.pdf — id 1f_ROCf9Y24wLiEKuj1Vu0UmCu2Qx3u5F — capture de la liste des dessins (même liste que la page 1 ci-dessus, OCR partiel).
+- 23347_SELECTION_VARENNES_ELECT-MEC_PHASE 1..pdf — id 18QTP6-VzsUk0Vml89deO6Skgp3H0noQ2 — feuille 07 Artesa (architecture, plan élec./mécanique).
+- 23347_SELECTION_VARENNES_ELECT-MEC_PHASE 2_REV_02..pdf — id 1YA_UPiqGDiye4eUjwy76weHCdvaW1VF8 — feuille 07A Artesa.
+- 23347_SELECTION_VARENNES_ELECT-MEC_PHASE 3..pdf — id 12Nrxou-LW5BoS1ju7BcG1OGJ7hzmim4Q — feuille 07A Artesa.
+- 23347_SELECTION_VARENNES_ELECT-MEC_PHASE 4..pdf — id 1U9RhCC1bQY12qROHd8L0RVZE0Lyq_YV0 — feuille 07A Artesa, rév. 05 2026-08-13 « AJOUT SÈCHES-MAIN, TRANCHÉE ».
+- E-02-PLAN-CLÉ-Rev.0.pdf (1U3k5Ik5atZua_NfsQdeHkHlMh6kAEgbd), E-07-PLAN-DE-TOIT-Rev.1.pdf (1E2Gs_LYhPZO00jpC77NMZ00LdX8M2SPw), E-08-DISTRIBUTION-ÉLECTRIQUE-PANNEAUX-Rev.1.pdf (1wiZo_YBXK5vtwJ-MK7riFU7dlwOBTIsO), E-09-DEVIS-1-DE-2-Rev.0.pdf (1HV66-Uo8EJuaGuJlDM-mYLqkvwM97T2b), E-10-DEVIS-2-DE-2-Rev.0.pdf (1NpWdc0Y5Xzh8Al68k4hQzbptzzGOKxq9) — LUS mais NON RETENUS : cartouche « DANONE BOUCHERVILLE — RÉCEPTION DU LAIT », projet 2245, CDI groupe conseil, 05-06-2026. Ce sont les feuilles d'un AUTRE PROJET classées dans ce dossier Drive. Aucune ligne n'en est tirée.
+Les feuilles d'architecture ELECT-MEC (Artesa) ne reçoivent pas de CSV : elles ne sont pas des feuilles « E » ; leurs notes sont reportées en RÉSERVES.
+
+CONTENU (feuilles électriques réelles — « LISTE DES DESSINS », page 1 de 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf)
+- E001 — DEVIS - CONDITIONS GÉNÉRALES ET TECHNIQUES
+- E002 — DEVIS - SAQ
+- E100 — LÉGENDE
+- E101 — LÉGENDE - SUITE
+- E102 — DIAGRAMMES, PANNEAUX ET CALCULS
+- E103 — DÉTAILS CONTRÔLE D'ÉCLAIRAGE
+- E200D — ÉLECTRICITÉ - PRISES & SERVICES - REZ-DE-CHAUSSÉE - DÉMOLITION
+- E200 — ÉLECTRICITÉ - PRISES & SERVICES - REZ-DE-CHAUSSÉE - CONSTRUCTION
+- E201 — ÉLECTRICITÉ - PLAN DE TOITURE - EXISTANT / CONSTRUCTION
+- E300D — ÉLECTRICITÉ - ÉCLAIRAGE - REZ-DE-CHAUSSÉE - DÉMOLITION
+- E300 — ÉLECTRICITÉ - ÉCLAIRAGE - REZ-DE-CHAUSSÉE - CONSTRUCTION
+- E400 — ÉLECTRICITÉ - CONDUITS DU SYSTÈME DE SÉCURITÉ
+Fichiers : 3 CSV, un par feuille (E100, E103, E400) + manifest.json + READ-ME.txt.
+Les feuilles E001, E002 et E101 ne reçoivent aucun CSV : leurs notes sont reportées en RÉSERVES. E100 reçoit un CSV par exception : ses notes écrivent des quantités explicites (« UN DANS L'ENTREPÔT », « UN DANS L'AIRE DE VENTE », « UN BOUTON POUSSOIR »). Granby ne relève pas les légendes : choix à valider par le client (voir RÉSERVES C).
+Feuilles avec quantités explicites : E100, E103, E400.
+Feuilles sans quantité explicite — aucun CSV livré : E102, E200D, E200, E201, E300D, E300.
+
+PORTÉE (quantités citées — chaque ligne avec sa source ; 28 lignes)
+- E100 | Signalisation | Carillon Edwards C210-W — entrepôt @ 114'' du plancher (texte : « UN DANS L'ENTREPÔT ») | Qté 1 | E100 / légende électrique, note carillon — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E100 | Signalisation | Carillon Edwards C210-W — aire de vente (texte : « UN DANS L'AIRE DE VENTE (POUR SONNETTE COIN LICENCIÉS SI REQUIS) ») | Qté 1 | E100 / légende électrique, note carillon — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E100 | Signalisation | Bouton poussoir pour sonnette, à l'épreuve des intempéries, sur le cadre à 60'', tel que Edwards 1786 C (texte : « UN BOUTON POUSSOIR ») | Qté 1 | E100 / légende électrique, note sonnette — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #13 — groupe SW6 — NPOD TOUCH WH (NPOD) | Qté 1 | E103 / liste des dispositifs nLight, tag #13 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #16 — groupe DP2 — NPP PCD EFP (NPP16) — Type D3-N / D4-N | Qté 1 | E103 / liste des dispositifs nLight, tag #16 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #17 — groupe SO3 — WSXA MWO PDT D WH (WSXA-G) — Type J1 | Qté 1 | E103 / liste des dispositifs nLight, tag #17 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #18 — groupe SO4 — WSXA MWO PDT WH (WSXA) — Type G4 | Qté 1 | E103 / liste des dispositifs nLight, tag #18 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #19 — groupe PP1 — NPP20 PL BP (NPP20) — Prise | Qté 1 | E103 / liste des dispositifs nLight, tag #19 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #20 — groupe PP1 — NPP20 PL BP (NPP20) — Prise | Qté 1 | E103 / liste des dispositifs nLight, tag #20 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #21 — groupe DP2 — NPP PCD EFP (NPPPC) — Type D3-N | Qté 1 | E103 / liste des dispositifs nLight, tag #21 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #22 — groupe DP2 — NPP PCD EFP (NPPPC) — Type D3-N / D4-N | Qté 1 | E103 / liste des dispositifs nLight, tag #22 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #23 — groupe DP2 — NPP PCD EFP (NPPPC) — Type D3-N / D4-N | Qté 1 | E103 / liste des dispositifs nLight, tag #23 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #24 — groupe SO3 — WSXA MWO PDT D WH (WSXA-G) — Type J1 | Qté 1 | E103 / liste des dispositifs nLight, tag #24 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #25 — groupe SO4 — WSXA MWO PDT WH (WSXA) — Type G4 | Qté 1 | E103 / liste des dispositifs nLight, tag #25 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #26 — groupe SO4 — WSXA MWO PDT WH (WSXA) — Type G3 | Qté 1 | E103 / liste des dispositifs nLight, tag #26 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #27 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type O8-N | Qté 1 | E103 / liste des dispositifs nLight, tag #27 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #28 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type B-B | Qté 1 | E103 / liste des dispositifs nLight, tag #28 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #29 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type T | Qté 1 | E103 / liste des dispositifs nLight, tag #29 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #30 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type T | Qté 1 | E103 / liste des dispositifs nLight, tag #30 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #31 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type T | Qté 1 | E103 / liste des dispositifs nLight, tag #31 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #32 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type S20N 24H | Qté 1 | E103 / liste des dispositifs nLight, tag #32 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #33 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type S20-N | Qté 1 | E103 / liste des dispositifs nLight, tag #33 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #34 — groupe SW1 — NPODMA WH (NPODMA) — Type P1 / P2 | Qté 1 | E103 / liste des dispositifs nLight, tag #34 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #35 — groupe DP1 — NPP16 D EFP 347 (NPP16) — Type P1 / P2 | Qté 1 | E103 / liste des dispositifs nLight, tag #35 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #36 — groupe SW1 — NPODMA WH (NPODMA) — Type P1 / P2 | Qté 1 | E103 / liste des dispositifs nLight, tag #36 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E103 | Contrôle d'éclairage | Dispositif nLight #37 — groupe SO4 — WSXA MWO PDT WH (WSXA) — Type G4 | Qté 1 | E103 / liste des dispositifs nLight, tag #37 — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E400 | Conduit | Conduits EMT 1-1/4'' se terminant dans l'entrepôt, accessibles, entre 10'-0'' et 12'-0'' du sol (texte : « DEUX CONDUITS EMT 1-1/4'' ») | Qté 2 | E400 / note au plan — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+- E400 | Conduit | Conduits se terminant au-dessus du plafond de tuiles acoustiques du bureau (texte : « FIN DE CES 3 CONDUITS ») | Qté 3 | E400 / note au plan — 26-0108-02_ELECTRICITE_POUR SOUMISSION.pdf
+
+RÉSERVES (relevé supervisé à compléter — rien ci-dessous n'est compté)
+A) Feuilles sans quantité explicite
+- E001 / E002 : devis (clauses générales et notes SAQ). Aucun bordereau. Clauses à chiffrer en main-d'œuvre : traçage/identification des circuits, deux copies papier des documents, deux fusibles de rechange par capacité installée, mise en marche et programmation du contrôle d'éclairage par le fournisseur (frais à inclure, E002 notes 1-2), panneau de contreplaqué télécom peint.
+- E101 : tableau des luminaires (SAQ, mise à jour 2026-08-13) donne types et modèles SANS quantité ; mention « VOIR AU PLAN POUR QUANTITÉ ET TYPE D'APP. D'ÉCLAIRAGE SUR RAIL » ; « TABLEAU … À TITRE INFORMATIF SEULEMENT ». Types listés : T, AA, U1, U2, U3, U6, U7, U9, B, D3 (-B/-N/-BT1/-BT2/-NT1/-NT2), D4 (idem), F, F1, G3, G4, J, J1, K2, K3, O(X)-N, P, P1, P1A, P2, P2A, R(X)-B/BS/N/NS, S-(X)-B/N. Contrôles : NPOD, NPP16, NPP20, WSXA-G, WSXA, NPODMA, NPPPC + « MISE EN ROUTE / PROGRAMMATION — FRANKLIN EMPIRE — DÉMARRAGE PRIX FIXE PAR SUCCURSALE ».
+- E102 : diagramme « DISTRIBUTION ÉLECTRIQUE EXISTANT À MODIFIER » : entrée HQ 347/600V 200A, compteur G4AE0030701, PP 347/600V 42 cts 400A, TX 45 kVA 600-120/208V 3PH-4F, PA 120/208V 84 cts 225A, sect. 30A compacteur, 100A unité au toit, télécom TV/PH TBB. Statuts E.C./E.M. non attribuables par le texte. « 2 CALCUL DE CHARGES » et « 3 PANNEAUX ÉLECTRIQUES » (cédules de panneaux) NON extractibles en texte : relevé visuel obligatoire pour les disjoncteurs.
+- E200D : plan de démolition ; 84 étiquettes « E.D. » et 6 « E.R. » dans le texte extrait (indicatif, non compté). Notes : tous les services de l'aire de vente à retirer et condamner ; thermostat de l'aire de vente à retirer et en fournir un nouveau au bureau ; sonde existante à réinstaller sur la colonne ; PR1 panneau à relais pour éclairage (ED) ; presse à carton (EC) disj. 30A ; chauffe-eau à retirer par le bailleur.
+- E200 : 65 étiquettes « N. » et 6 « R. » dans le texte extrait (indicatif). Éléments nommés au plan, à relever un à un : équipements mécaniques VE 01, SE 01, SE 02, BV 01, CE 1, PR 1 ; pompe de recirculation + démarreur manuel ; nouveau volet motorisé dans le conduit E.M. ; thermostat à action inversée pour le nouveau ventilateur d'évacuation ; minuterie programmable (par division 25) pour VE-02 ; prise en affleurement ; BX de 4'-0'' à 12'' du sol ; charges 1050W ×3, 750W, 1200W, 1 kW ×2 ; « NOUVEAU TÉLÉPHONE URGENCE PAR SAQ » (exclu) ; chauffe-eau à remplacer par le bailleur ; note 4 « 2 CONDUITS RIGIDES DE 2'' » (nombre d'occurrences au plan non lisible en texte). Circuits : PP (1-35) et PA (1-84) listés par étiquette.
+- E201 : « UNITÉ AU TOIT » E.C. ; VE 02 (PP 7,9,11 / PA 12) « VENTILATEUR VE-02 CONTRÔLÉ PAR MINUTERIE PROGRAMMABLE INSTALLÉE DANS LA SALLE ÉLECTRIQUE (PAR DIVISION 25) À RACCORDER ».
+- E300D : démolition éclairage ; étiquettes dans le texte (indicatif) : C 34, H 35, R 32, W 18, J 10, S2 9, A1 7, D2 4, EP 4, C1 3, D1 3, E 2, M 2, A2 1 ; rails « NIV. 12'-6'' / L.: 6' à 22' » ×18 ; haut-parleurs (EC) ×3, transformateur au plancher (EC), enseigne de sortie (AR). Remplacement des luminaires extérieurs PAR LE BAILLEUR.
+- E300 : éclairage construction ; AUCUNE quantité écrite. Occurrences brutes dans le texte extrait (incluent les répétitions de légende, NON un relevé) : D3-N 101, D4-N 27, D4-NT1 22, D3-NT1 21, P2 28 (+ P2. 24H 3), R12-NS 23, R8-NS 8, R4-NS 5, R6-NS/R6NS 3, S20-N 5, T 15, AA 9, SN 9, J1 8, U2 8, X2 8, U3 6, G4 6, WSXA 6, X1 5, P1 4, WSXA-G 4, TIROIR-CAISSE 4, K3 3, NPODMA 3, NPPPC 3, NPP16 10, U1 3, G3 2, O8-N 2, B-B 2, F 2, NPOD 2, NPP20 2, U6 1, U9 1. Mention « Tx 2 / Tx 5 / Tx 5 / Tx 5 / Tx 5 » près des appareils type T : interprétation (T × n ?) à confirmer visuellement. Note 1 : boîtes de jonction pour type T « QUANTITÉ À VALIDER AU CHANTIER ».
+- E400 : conduits du système de sécurité (« EXTRAIT DU PLAN D'ARCHITECTURE … À TITRE INFORMATIF »). Occurrences de texte (indicatif) : 11 descentes « CONDUIT EMT 1/2'' OU 3/4'' … BOÎTE 4''X4'' » (hauteurs 9'-0'', 11'-0'', 12'-0''), 5 « BOÎTE DE TRIAGE MINIMUM 8''X8'' », 1 boîte 2020 entre les fenêtres à 10'-0'', EMT 1-1/4'' et EMT 3/4'' en tronc. Longueurs non métrées.
+B) Fichiers non lus
+- 23347_SELECTION_GLOBAL_SOUM_2026-08-13.pdf (113nqpGH8XA_pgcA8W-cW5kPmWYOr_Apr, 14,5 Mo) — jeu architectural global : non lu (architecture). Pourrait contenir le registre complet des plans.
+- 23347_SELECTION_NOTES GÉNÉRALES_2026-08-13.pdf (1Ho2Z6RUpNlb5GeraPerLG2GjigwE92dF) — non lu (architecture) ; MAIS les feuilles ELECT-MEC y renvoient (section 15.2.1 minuterie d'évacuation, section 16 système de musique, note 16.11 toiles motorisées, 15.1.4 thermostat) : à lire avant chiffrage.
+- 23347_SELECTION_DETAILS_2026-08-13.pdf (1tefJDwg-uCPksFUh4FjfPL_Gj9jDIkF9), 23347-Sélection Varennes-Échéancier préliminaire_REV_04.pdf (1iAD5xjY35TzN0-TBieUBczShBJe0Xq1a), PLAFOND PHASE 2/3/4 (1pCXTe-KI5ujuCZYC8dkNgFzvXxO85BJc, 1ATN5nKUNjpAenQuekY_SAnL0xXEVTIvl, 1it_aE65ftSlxseyNZTYE0ZMls5AhxjKj) — non lus (architecture / échéancier). Aucun fichier > 30 Mo dans le dossier.
+C) Contradictions et notes à confirmer (textuel)
+- Cartouche des 12 feuilles E : « NO DE PROJET 26-0094-02 » alors que le nom du fichier et du DWG est « 26-0108-02_E.DWG ».
+- Transformateur : « TX 45 kVA 600-120/208V » au diagramme E102 vs « TRANSFO 75 KVA » sur E200D, E200 et sur les feuilles ELECT-MEC Artesa.
+- Distribution : E102 « DISTRIBUTION ÉLECTRIQUE EXISTANT À MODIFIER » et Artesa « DISTRIBUTION ÉLECTRIQUE ET DISJONCTEUR À MODIFIER … (20% DE LA CAPACITÉ DOIT ÊTRE LIBRE) » vs Artesa (même feuille) « LA DISTRIBUTION ÉLECTRIQUE EXISTANTE EST À CONSERVER ».
+- Réseau de conduits informatiques : E200 « RÉALISÉ PAR L'ENTREPRENEUR ÉLECTRICIEN » vs Artesa ELECT-MEC « RÉALISÉ PAR L'ENTREPRENEUR GÉNÉRAL ».
+- Contrôle d'éclairage : E101 (tableau SAQ) donne des modèles LEGRAND (LMGS-150, LMRC-111/211, DW-311, LMSW-211, LMAC-131) ; E103 détaille des dispositifs nLight/Acuity (NPP16, NPPPC, NPOD, WSXA…). Annotation manuscrite sur E103 : « POURQUOI NPP16? ». Tag #16 étiqueté NPP16 alors que les autres « NPP PCD EFP » sont NPPPC. Tags #14 et #15 absents de la liste. Le riser #10 (VESTIBULE) répète le dispositif #27 du riser #1.
+- Haut-parleurs : E100 renvoie à « VOIR QUANTITÉ AU PLAN » ; aucune quantité trouvée sur E200/E300 (texte). « ± 5 CONTRÔLES DE VOLUME » = approximatif, non compté.
+- Luminaires extérieurs (AA) : « REMPLACEMENT DES LUMINAIRES EXTÉRIEURS PAR LE BAILLEUR » (E300/E300D) — à exclure ou confirmer.
+- Artesa : « 2X PANNEAUX D'ALARME … (PAR SAQ) », câblage informatique/sécurité par sous-traitant SAQ, lave-verre fourni par la SAQ (prévoir 120/208 V / 50 A et régulateur de pression), colonnettes de service noires (note A, phase 2), sèche-mains ajoutés rév. 05 — portée électricien à confirmer.
+- High bay type P : « TENSION À SPÉCIFIER PAR INGÉNIEUR (120V OU 347V) ».
+- Les feuilles « E-0x » CDI/Danone présentes dans le dossier Drive sont hors projet : signaler au responsable du dossier.
+- Taux horaire électricien : à confirmer par le client (aucune source citée, aucune valeur chiffrée).
+- E103 / E300 : probablement les mêmes dispositifs — correspondance E103/E300 à confirmer au relevé visuel (ex. NPP16 : 9 tags E103 vs 10 occurrences de texte E300).
+- E100 (légende) : CSV livré par exception car ses notes écrivent des quantités explicites; Granby ne relève pas les légendes — choix à valider par le client.
+
+CHIFFRAGE
+- Taux de pose à ancrer sur la base main-d'œuvre DR (MCP dre-estimation) une fois le relevé supervisé complété.
+- Aucun prix produit dans ce dossier. Aucune quantité de câble ni de conduit métrée.
+- Items chiffrables aujourd'hui sur base documentaire : 28 lignes (voir PORTÉE). Tout le reste = relevé visuel sur les PDF : E102 (cédules), E200D, E200, E201, E300D, E300 ; E400 : descentes/boîtes indicatives hors CSV.
+
+RÈGLE
+- Rien n'est inventé : une ligne n'existe que si la quantité est écrite dans le document cité (« UN », « DEUX », « 3 », ou liste de dispositifs numérotés).
+- Aucun fichier consolidé n'est fourni : les CSV par feuille sont la seule source, à ne pas additionner entre feuilles sans contrôle des doublons. Ne pas additionner E103 (liste de dispositifs) avec les étiquettes NPP/WSXA visibles sur E300 sans contrôle des doublons (voir RÉSERVES C).
+- Les occurrences de texte listées en RÉSERVES ne sont pas des quantités.

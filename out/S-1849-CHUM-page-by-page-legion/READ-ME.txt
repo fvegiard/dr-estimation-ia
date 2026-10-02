@@ -1,0 +1,47 @@
+S-1849 SIP CHUM — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL
+
+Source unique : BOM corrigé S-1849 SIP CHUM (bom_s1849.b64 : 13433 octets décodés, 41 lignes, 13 colonnes).
+SHA-256 de la source décodée : a0d00619afa5686aa524f38e926bf0a30775d8c4c75305bda3124e2ad49f8d91
+Projet : remplacement 1:1 des luminaires fluorescents étanches par des luminaires DEL (niveau 01 N, RDC, stationnements P1 à P5), devis RFQ35768.
+
+CONTENU
+11 feuilles réelles + 4 déposes consolidées (P2 à P5) + 1 groupe lots devis = 16 CSV par plan ; 18 CSV avec le consolidé et le sommaire.
+Feuilles réelles : 1-B1-EL-50-01-2-0, 1-B1-EL-50-RC-0-0, 1-D-EL-50-P1-2-0, 1-D-EL-50-P2-2-0, 1-D-EL-50-P2-3-0, 1-D-EL-50-P3-2-0, 1-D-EL-50-P3-3-0, 1-D-EL-50-P4-2-0, 1-D-EL-50-P4-3-0, 1-D-EL-50-P5-2-0, 1-D-EL-50-P5-3-0.
+Déposes consolidées : une ligne par niveau (P2 99, P3 98, P4 100, P5 90), à cheval sur les feuilles 2-0 et 3-0. Ce ne sont PAS des feuilles : fichiers nommés « depose-2-0+3-0 ».
+Groupe lots devis : S-1849-CHUM-Devis-RFQ35768-equipment.csv (6 lignes : 2 inventaire magasin + 4 lots).
+CSV par plan au schéma Granby « Type,Description,Quantité,Source » (UTF-8 avec BOM, CRLF), sans ligne TOTAL ajoutée.
+S-1849-CHUM-equipment-consolidated.csv : consolidé enrichi, 41 lignes, traçabilité Plan / Discipline / Code / Description / Modèle / Localisation / Quantité / Unité / Action / Règle / Ref feuille.
+S-1849-CHUM-summary.csv : sommaire Discipline × Action × Unité.
+manifest.json : fichier, octets et SHA-256 des 18 CSV. Ce READ-ME.
+
+PORTÉE (chiffres tirés du BOM corrigé, colonne « Qte Finale »)
+- Luminaires DEL à INSTALLER : 507 un (sans contrôle 317 + avec contrôle intégré 190).
+- Modèles : V3W470L835-UNV-DIM-LFA-SSL (Signify) sans contrôle ; V3W470L835-UNV-DIM-LFA-SWZCSH (Signify) avec contrôle SpaceWise.
+- Luminaires FOURNIS CLIENT / installés entrepreneur (notes chantier du BOM).
+- Dépose des luminaires fluorescents existants (FIXT ENL) : 507 un.
+- Grillage de protection : 4 un.
+- Inventaire magasin (réserve 1 %) : 5 un (3 + 2), livraison sans installation.
+- CONSERVÉS : 12 luminaires de lobby ascenseurs P1 (type CC7) et 3 enseignes de sortie (niveau 01 N).
+- Lots : 4 (PROGRAMMATION, RECYCLAGE, CADENASSAGE, TQC), 1 chacun.
+
+RÉSERVES (reportées telles quelles du BOM — aucune résolution tacite)
+- CCT : 3500K au BOM, Annexe D note 4000K — À CONFIRMER.
+- P1 : quantités confirmées par le tableau devis sec. 1 (42 NA / 31 SA) ; feuille P1-3-0 manquante.
+- Grillage (4 un) : quantité brute 0, correction d'ingénierie selon la Note 1 de la feuille RC ; à prévoir si hauteur libre < 2100 mm.
+- Inventaire magasin (5 un) : quantité brute 0, exigence devis sec. 1 (1 % inventaire pièces).
+- Lobby ascenseurs P1 (12 un, type CC7) : non mentionnés au devis de remplacement ; conserver en place sauf avis contraire.
+- Lots : unité « Lot », à chiffrer, non additionnés aux unités.
+
+ÉLÉMENTS RÉSERVÉS — NON PRODUITS (contrairement au dossier Granby de référence)
+- Relevé JPG annoté par feuille (plan couleur + légende intégrée) : NON produit — relevé supervisé à faire sur les plans ; aucune annotation n'est inventée.
+- Estimation chiffrée (.xlsx) : NON produite — le taux de pose par appareil reste à ancrer (voir CHIFFRAGE) ; aucun prix n'est inventé.
+- Feuille 1-D-EL-50-P1-3-0 : absente de la source ; aucun CSV n'est créé pour elle.
+
+CHIFFRAGE (MCP dre-estimation, consulté le 2026-10-02)
+- Aucun prix ni total n'est produit dans ce dossier.
+- Luminaires fournis client : pas de matériel luminaire à chiffrer ; restent la pose, la dépose, le grillage et les lots.
+- Seul taux relevé : électricien de jour 72 $/h (EEWin, code 001000).
+- Recherche d'assemblée « luminaire étanche DEL 4pi » : 0 résultat ; le taux de pose par appareil doit être ancré avant tout total. Les quantités, elles, sont fermes.
+
+RÈGLE : rien n'est inventé. Chaque quantité vient du BOM corrigé et cite sa feuille (colonne « Source » des CSV par plan, « Ref feuille » du consolidé).
+Les listes ne doivent pas être additionnées entre feuilles, déposes consolidées, consolidé et sommaire sans contrôle des doublons.

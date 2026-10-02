@@ -1,0 +1,5 @@
+ralph/*.log
+ralph/claude.debug.log
+ralph/status.json
+*.b64
+

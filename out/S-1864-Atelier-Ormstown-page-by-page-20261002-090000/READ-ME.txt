@@ -1,0 +1,60 @@
+S-1864 — ATELIER ORMSTOWN — RELEVÉ ÉLECTRIQUE PAGE PAR PAGE — 2026-10-02 09:00 (heure de l'Est)
+
+Projet tel qu'écrit au cartouche : « CENTRE PROFESSIONNEL CVCEC — NOUVEL ATELIER », client COMMISSION SCOLAIRE NEW FRONTIER (214 rue McLeod, Châteauguay), Groupe Conseil inc. (Salaberry-de-Valleyfield), no projet 01-06377, révision 0 « POUR SOUMISSION » du 2026-09-04 (rév. A « POUR COMMENTAIRES » 2026-07-01). Plan de site : rue Roy / route 138.
+
+SOURCES LUES
+- PLANS Électricité - Soumission.pdf — Drive id 1zXu71DVU6tlHHZzNARdNiurXNsLY_o-0 — 2 426 666 octets — texte extrait (7 feuilles E-01 à E-07).
+- Dossier Drive parent 1rJt6ufvRuE8MlUDuaKk7lugqxmqrvORH : 6 PDF au total. Les 5 autres (PLANS STRUCTURE, PLANS MÉCANIQUE, PLANS ARCHI, DEVIS ARCHI, Plans Civil) sont hors discipline électrique et n'ont pas été lus.
+- AUCUN devis électrique ni addenda dans le dossier Drive, alors que la note E-01/E-02 exige de « consulter le devis technique au même titre que les plans ».
+ÉTAT : relevé supervisé encore partiel (E-01, E-02, E-04, E-05 non relevées; JPG annotés non produits); ce dossier n'est pas une soumission exhaustive.
+
+CONTENU (feuilles réelles, selon « LISTE DES PLANS ÉLECTRIQUES » sur E-01 et cartouches)
+- E-01 ÉLECTRICITÉ — LÉGENDE ET PLAN DE SITE
+- E-02 ÉLECTRICITÉ — DEVIS SUR PLAN
+- E-03 ÉLECTRICITÉ — ALIMENTATION DU NOUVEL ATELIER — CONSTRUCTION
+- E-04 ÉLECTRICITÉ — POUVOIR ET SERVICES — CONSTRUCTION
+- E-05 ÉLECTRICITÉ — ÉCLAIRAGE ET ÉCL. D'URGENCE — CONSTRUCTION
+- E-06 ÉLECTRICITÉ — PANNEAUX DE DISTRIBUTION, SCHÉMA UNIFILAIRE (cartouche : « PANNEAUX, SCHÉMA ET DÉTAILS »)
+- E-07 ÉLECTRICITÉ — TABLEAUX ET DÉTAILS (cartouche : « TABLEAUX ET DÉMARREURS »)
+Un CSV par feuille portant une quantité explicite (E-03, E-06, E-07 ; aucun CSV pour une feuille sans quantité), en-tête « Type,Description,Quantité,Source », UTF-8 BOM, CRLF.
+Feuilles avec quantités explicites : E-03, E-06, E-07. Feuilles sans quantité explicite (aucun CSV livré) : E-01, E-02, E-04, E-05.
+Disjoncteurs (format Granby, séparés des équipements) :
+- S-1864-Atelier-Ormstown-E-06-breakers.csv — en-tête « Panel,Ampere,Poles,Quantity », regroupé par panneau/calibre/pôles (10 lignes, somme 26) ; pôles = nombre de numéros de circuit (1/3/5 = 3).
+- S-1864-Atelier-Ormstown-breakers-detailed.csv — en-tête « panel,circuits,ampere,poles,quantity,description,protection_source,sheet », une ligne par rangée de cédule (26 lignes, sheet=E-06, protection_source « Non indiquée » : aucune marque/série/pouvoir de coupure dans les cellules).
+- S-1864-Atelier-Ormstown-breakers-by-panel.xlsx — onglets Purchase list, All breakers, PP-1, PS-1, Before ordering (inclus au manifest avec les CSV).
+Les 26 rangées de disjoncteurs ne figurent PAS dans E-06-equipment.csv (évite le doublon) ; les disjoncteurs principaux 200 A / 125 A restent portés par les rangées « Panneau ». Aucun fichier consolidé : chaque fichier porte sa propre feuille.
+
+PORTÉE (quantités citées — chaque ligne du CSV porte sa source)
+- E-03 : « 2 ARTÈRES 100A (120/240V & 600V) » existantes à enlever — qté 2 (note texte du plan d'alimentation).
+- E-06 cédule PP-1 (347/600V, 225 A, disj. principal 200 A, 25 kA) : 5 rangées de disjoncteurs (→ fichiers breakers) — SERPENTIN 61KW 80 A (cct 1/3/5), TR-1 45KVA 50 A (2/4/6), AÉROTHERME 10KW 20 A (7/9/11), AUGET 100A 100 A note 1 (8/10/12), AÉROTHERME 10KW 20 A (13/15/17). Contrôle : 61 000 + 19 388 + 10 000 + 80 000 + 10 000 = 180 388 W = TOTAL imprimé (180 388 W / 173,6 A).
+- E-06 cédule PS-1 (120/208V, 125 A, disj. principal 125 A, 10 kA) : 21 rangées (16 circuits chargés + 5 LIBRE avec calibre) (→ fichiers breakers). Contrôle : impairs 8 848 W + pairs 10 540 W = 19 388 W = TOTAL imprimé (19 388 W / 53,8 A).
+- E-06 : panneaux PP-1 et PS-1 (en-têtes de cédule) — qté 1 chacun ; transformateur TR-1 45 kVA (rangée de cédule + schéma) — qté 1.
+- E-06 : portées de la nouvelle ligne aérienne 200 A quadruplex 4/0 NS1 — « ENVIRON 20M (MAX 21M) », « ENVIRON 20M (MAX 21M) », « ENVIRON 15M (MAX 21M) » — 3 lignes en mètres (valeurs « environ », non additionnées).
+- E-07 : « NOUVEAUX CÂBLES 2X 4C#16FAS105 - C19mm PVC » (schéma d'alarme incendie) — qté 2.
+Total : 34 lignes = 8 lignes d'équipement (E-03 : 1, E-06 : 6, E-07 : 1) + 26 rangées de disjoncteurs (breakers-detailed).
+
+RÉSERVES (relevé supervisé à compléter — aucune mention ci-dessous n'est reportée en quantité dans les CSV)
+1) Feuilles sans quantité explicite : E-01 (légende, liste des plans, plan de site), E-02 (devis sur plan), E-04 (plan pouvoir et services), E-05 (plan éclairage et éclairage d'urgence). Les symboles dessinés (prises, interrupteurs, luminaires A/B/C/D/E/F, P1/P2/C1, BATT.A/BATT.B, MO, détecteurs, etc.) doivent être comptés sur le plan graphique ; le texte extrait n'en donne aucun total.
+2) Tableaux E-07 sans colonne quantité : appareils d'éclairage (types A–F Lithonia), éclairage d'urgence (P1, P2 Stanpro N ; C1 Stanpro PRMS), contrôle d'éclairage (SW1 RPODLA DX, SO1 WSXA MWO PDT, A18 NLAIR2 APIRH — « à titre indicatif seulement »), chauffage (voir contradiction 7), hauteurs de montage, scénarios.
+3) Équipements nommés une seule fois au schéma unifilaire E-06 (aucun nombre écrit) : coffret de branchement cadenassable 200 A CB-1 (F : SF) ; armoire de mesurage M-1 ; sectionneur SEC-1 200 A type A cadenassable (F : SF) ; 4C#4/0 AL RW90 conduit rigide 63 mm (×2 tronçons dessinés) ; 4C#4/0 AL TECK 90 1000V ; 3C#6 CU TECK 90 ; 3C#3 CU TECK 90 ; 4C#1 CU TECK 90 ; 4C#3 AWG TECK90 ; 1#6 vers barre MALT ; auget existant 600V 100A 3PH 3F 22kA 48" ; trois sectionneurs à fusibles type J (30A F:30A ; 60A F:60A ; 60A F:40A) associés à « DÉPOUSSIEREUR (10HP ESTIMÉ) », « AÉROTHERME (25KW ESTIMÉ) », « PLANCHER CHAUFFANT (45KW ESTIMÉ) » ; démarreurs VA-1 (120V) et VE-1 (208V) FVNR ; deux « NOUVEAU POTEAU CLIENT CLASSE 4 HORS RÉSEAU » et un « MÂT CLIENT » dessinés ; « débrancher et retirer le sectionneur, remettre au client » ; « débrancher et abandonner l'alimentation existante ».
+4) E-04 : barre MALT en cuivre 2"x1/4"x24" ; dépoussiéreur 600/3/60 ; VA-1 0,75 HP 120/1/60 ; VE-1 0,25 HP 208/1/60 ; 2 étiquettes « 10KW TYPE B 600/3/60 » (cohérent avec les 2 rangées AÉROTHERME de PP-1, mais le compte vient de la cédule, pas du plan).
+5) E-07 détails : tige et boucle de M.A.L.T., boîte d'inspection PTS « DN6MC1-RTP », soudures Cadweld, tranchée « 1 OU 2 CONDUITS EN PVC 53mm DIA. » (nombre non tranché), traverse de rue PEHD/PVC DR-35 150Ø. Aucune longueur de tranchée, conduit ou câble n'est écrite (sauf les 3 portées aériennes citées).
+6) Hydro-Québec : nouvelle ligne aérienne 200 A par l'entrepreneur ; frais de raccordement HQ à acquitter (E-02 §8) ; poteau HQ existant « AVE 3 TRANSFOS ». Coordination non chiffrée.
+7) CONTRADICTIONS TEXTUELLES (à confirmer avec l'ingénieur, aucun choix fait ici) :
+   - E-07 tableau des appareils de chauffage : deux versions superposées dans le texte — (a) A STELPRO PLINTHE BA0501W 120V + B STELPRO PLINTHE BA2008W 208V 1PH depuis triac, thermostat intégré #BA2T1W ; (b) A STELPRO PLINTHE B0501W 120V + B STELPRO AÉROTHERME SHU1063CTCHAR 600V 3PH plafond, thermostat #SIBT2W, sectionneur intégré #SHUDIS. La cédule PP-1 (AÉROTHERME 10KW 600 V) et E-04 (10KW TYPE B 600/3/60) concordent avec la version (b).
+   - E-06 : « PLANCHER CHAUFFANT (45KW ESTIMÉ) » au schéma vs « SERPENTIN 61KW 61 000 W » à la cédule PP-1 ; « AÉROTHERME (25KW ESTIMÉ) » vs 2 × 10 kW à la cédule.
+   - E-06 : le DÉPOUSSIÉREUR (600/3/60 sur E-04, « 10HP ESTIMÉ » au schéma) n'a aucune rangée dans la cédule PP-1 ; son alimentation (via AUGET 100A ?) n'est pas écrite.
+   - E-06 cédule PS-1 note 1 : « PROTECTION & CÂBLAGE À CONFIRMER SELON LE MODÈLE D'OUVRE-PORTE SÉLECTIONNÉ » (cct 13 et 15, 30 A) ; note 2 : « CHARGES ESTIMÉES » (PS-X). Cédule PP-1 note 1 : « CHARGES MAXIMALES ESTIMÉES ».
+   - E-06 notes spécifiques 1 et 2 : valider si l'auget existant est 3 ou 4 fils et le calibre des panneaux existants ; ajuster câbles/protections au besoin.
+   - Nom du projet : le mandat dit « Atelier Ormstown » ; les cartouches disent « Centre professionnel CVCEC — Nouvel atelier » (adresse client Châteauguay ; plan de site rue Roy / route 138). À confirmer que c'est bien le même dossier.
+8) Mention « CE DOCUMENT NE DOIT PAS ÊTRE UTILISÉ À DES FINS DE CONSTRUCTION » sur toutes les feuilles ; révision 0 pour soumission.
+9) Fichiers non lus : aucun fichier électrique > 30 Mo ; pas de devis électrique ni d'addenda dans le dossier Drive (absence, pas blocage de lecture).
+
+CHIFFRAGE
+- Taux électricien : 72 $/h (MCP dre-estimation labor_rates, code 001000, prix au 2026-09-30).
+- Taux de pose : à ancrer sur la base DR Électrique (EEWin) par type d'item ; aucun taux de pose fixé dans ce dossier.
+- Aucun prix produit dans ce dossier.
+
+RÈGLE
+- Rien n'est inventé : une quantité n'apparaît que si elle est écrite dans le document (cédule de panneaux, note « 2X », « 2 ARTÈRES », cotes de portée). Les symboles dessinés, les équipements nommés une fois au schéma et les « ESTIMÉ » restent des réserves.
+- Ne pas additionner les fichiers entre eux sans contrôle des doublons (ex. TR-1 figure comme équipement dans E-06-equipment.csv et comme rangée de disjoncteur PP-1 cct 2/4/6 dans breakers-detailed ; les portées « environ » ne se somment pas en longueur de câble).

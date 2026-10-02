@@ -1,0 +1,57 @@
+S-1832 DANONE BOUCHERVILLE — RÉCEPTION DU LAIT — RELEVÉ ÉLECTRIQUE PAGE PAR PAGE — ÉTAT DU TRAVAIL
+Dossier Drive : 1e1ZfnlXxGtT0DFNNh1p9gaUIIncL1Enm — généré le 2026-10-02 (heure de l'Est)
+Ingénieur : CDI Groupe Conseil, dossier 2245, Sylvain Allard ing. — Entrepreneur général : Frare & Gallant Ltd, projet 26-3146 « Danone - Projet Bowling », 100, rue de Lazon, Boucherville
+
+SOURCES LUES (texte extrait par Google Drive, aucune lecture visuelle)
+- Registre_plans_Actuel.pdf — id 1hIRauISrSOCoX7-8ARfEcmEDZfoScAud — 68 537 octets — registre des plans, section « Electricité » E-01 à E-10, tous Rév. 0 datés 16/07/2026, reçus 04/08/2026.
+- 2245-Elec (2).pdf — id 1jj3xeVTlvoNdATjhGVe9HuizYD03GhvF — 8 358 037 octets — jeu complet E-01 à E-10 (cartouches lisibles; contenu des tableaux NON présent dans la couche texte).
+- E-02-PLAN-CLÉ-Rev.0.pdf — id 1YtQTKGzKDdmkGZyRslcTvX7jZb3IDRcs — 2 479 401 octets — plan clé 1:250, Rév. 0.
+- E-07-PLAN-DE-TOIT-Rev.1.pdf — id 1cidJT7QqECkxenhJVBXsEwBz3NxNOS6C — 497 037 octets — plan de toit 1:100, cartouche Rév. 1.
+- E-08-DISTRIBUTION-ÉLECTRIQUE-PANNEAUX-Rev.1.pdf — id 1mbiurxRiostO0jEVLFfFmr-WB3_LNoCa — 599 083 octets — cartouche Rév. 1; cédules de panneaux NON présentes dans la couche texte.
+- E-09-DEVIS-1-DE-2-Rev.0.pdf — id 1X9XdIOs6-pzI_NmEs5_JftM70iOhGD4j — 1 163 957 octets — cartouche seulement; texte du devis NON présent dans la couche texte.
+- E-10-DEVIS-2-DE-2-Rev.0.pdf — id 1IBpFp6p9r09aYnUTvYIO-Hc3LwogCFwb — 1 314 895 octets — cartouche seulement; texte du devis NON présent dans la couche texte.
+- DEVIS.pdf — id 151swkJNofdx5KTlj19H9uh9JllDgdKut — 596 588 octets — « Danone – Bowling 2, Devis Plomberie et ventilation », Division 15 (CDI 2245, Claude Dupuis ing.). Seule la section 15000/16000 « Conditions générales – Mécanique/électricité » touche la Division 16 (partage des responsabilités : démarreurs, câblage de puissance jusqu'aux bornes des moteurs, sectionneurs des assemblages intégrés, relais de surcharge). Aucune quantité électrique.
+Tous les fichiers du dossier Drive font moins de 30 Mo; aucun n'a été exclu pour la taille.
+
+CONTENU (feuilles électriques réelles, selon le registre et les cartouches)
+- E-01 LÉGENDE TABLEAUX — Rév. 0 — tableaux annoncés au cartouche : TABLEAU DESCRIPTIF DES APPAREILS D'ÉCLAIRAGE; TABLEAU DESCRIPTIF DES APPAREILS D'ÉCLAIRAGE D'URGENCE; TABLEAU DESCRIPTIF DES APPAREILS DE CHAUFFAGE; TABLEAU DES CALIBRES DE FILS POUR LES APPAREILS D'URGENCE.
+- E-02 PLAN CLÉ — 1:250 — Rév. 0.
+- E-03 SECTEUR SILOS — 1:100 — Rév. 0.
+- E-04 SECTEUR MÉLANGES — 1:100 — Rév. 0.
+- E-05 SECTEUR RÉCEPTION DU LAIT DÉMOLITION — 1:100 — Rév. 0.
+- E-06 SECTEUR RÉCEPTION DU LAIT RÉAMÉNAGEMENT — 1:100 — Rév. 0.
+- E-07 PLAN DE TOIT — 1:100 — Rév. 0 au registre et dans 2245-Elec (2).pdf; Rév. 1 au fichier individuel.
+- E-08 DISTRIBUTION ÉLECTRIQUE PANNEAUX — Rév. 0 au registre et dans 2245-Elec (2).pdf; Rév. 1 au fichier individuel.
+- E-09 DEVIS 1 DE 2 — Rév. 0.
+- E-10 DEVIS 2 DE 2 — Rév. 0.
+Aucun CSV livré : aucune feuille ne porte de quantité explicite (voir RÉSERVES).
+
+PORTÉE (quantités citées, chaque ligne avec sa source)
+- AUCUNE. La couche texte des 8 PDF ne contient aucun tableau de luminaires, aucune cédule de panneaux, aucun bordereau ni aucune légende avec quantités. Les seuls textes extraits sont les cartouches, les titres des tableaux de E-01 et les repères architecturaux de fond de plan (axes, « 2H », « 45M », superficies en pi.ca., notes de démolition civile).
+- Aucun CSV livré : 0 item, 0 quantité. Aucune ligne n'a été inventée.
+
+RÉSERVES (relevé supervisé à compléter)
+- E-01 à E-10 : aucune quantité explicite ; aucun CSV livré ; relevé supervisé requis.
+- E-01 : les quatre tableaux (éclairage, éclairage d'urgence, chauffage, calibres de fils d'urgence) existent mais leur contenu est absent de la couche texte (nature à vérifier par lecture visuelle supervisée) — relevé visuel supervisé requis (ouvrir 2245-Elec (2).pdf page 1).
+- E-08 : cédules de panneaux non extractibles en texte — relevé visuel supervisé requis (disjoncteurs, calibres, alimentation).
+- E-09 / E-10 : devis électrique (2 feuilles) non extractible en texte — lecture visuelle supervisée requise avant tout chiffrage (clauses de fourniture, équivalences, exclusions).
+- E-03 à E-07 : symboles de plan (luminaires, prises, sectionneurs, moteurs, chemins de câbles) non comptés — aucun comptage de symboles n'a été fait.
+- Fichiers non lus : aucun. Fichiers lus mais sans contenu électrique exploitable : voir ci-dessus.
+- Contradictions textuelles :
+  * Révision : le registre (16/07/2026) donne E-07 et E-08 en Rév. 0; les fichiers « E-07-PLAN-DE-TOIT-Rev.1.pdf » et « E-08-DISTRIBUTION-ÉLECTRIQUE-PANNEAUX-Rev.1.pdf » portent « 1 » au cartouche; 2245-Elec (2).pdf porte « 0 » pour les mêmes feuilles. Vérifier si une émission Rév. 1 (addenda) a été reçue et ce qu'elle change.
+  * Numéro de dessin : dans 2245-Elec (2).pdf, la feuille E-06 (SECTEUR RÉCEPTION DU LAIT RÉAMÉNAGEMENT) porte le numéro de dessin « 2245-E08 » au cartouche alors que la case feuille indique « E-06 ».
+  * Dates : cartouches datés 05-06-2026; registre « Date du plan » 16/07/2026, réception 04/08/2026.
+  * Appellation du projet : registre Frare & Gallant « Danone - Projet Bowling » (26-3146); plans CDI « DANONE BOUCHERVILLE – RÉCEPTION DU LAIT » (2245); DEVIS.pdf « Danone – Bowling 2 ».
+  * Tous les plans portent la mention « PLANS NON DESTINÉS OU NE DOIVENT PAS SERVIR À LA CONSTRUCTION, À L'INSTALLATION OU À LA FABRICATION ».
+  * Devis : le dossier Drive ne contient pas de devis Division 16 en texte; DEVIS.pdf est la Division 15 (plomberie/ventilation) avec conditions générales communes 15000/16000.
+
+CHIFFRAGE
+- Taux électricien : 72 $/h (DR Électrique) — À CONFIRMER par le client ; non appliqué.
+- Taux de pose : à ancrer item par item une fois le relevé supervisé complété; aucun taux appliqué dans ce dossier.
+- Aucun prix produit dans ce dossier.
+- Aucun montant ne peut être produit tant que la PORTÉE est vide.
+
+RÈGLE
+- Rien d'inventé : une quantité n'entre dans le relevé que si elle est écrite explicitement dans un document, avec sa source.
+- Ne pas additionner les feuilles entre elles sans contrôle des doublons (un même appareil peut apparaître sur un plan de secteur, le plan clé et un tableau).
+- Les cartouches, repères d'axes et notes de fond de plan ne sont pas des quantités.

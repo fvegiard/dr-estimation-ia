@@ -1,0 +1,32 @@
+[
+  {
+    "file": "S-1864-Atelier-Ormstown-breakers-by-panel.xlsx",
+    "bytes": 11388,
+    "sha256": "e89bfa23719311cddc7a36efd163ba0775d8e81e1e2537dee343aafb9f64724c"
+  },
+  {
+    "file": "S-1864-Atelier-Ormstown-breakers-detailed.csv",
+    "bytes": 1461,
+    "sha256": "bf42a32f1b5098bc0391f6102b10a30ab002e199c266615f6c4b68945bed57df"
+  },
+  {
+    "file": "S-1864-Atelier-Ormstown-E-03-equipment.csv",
+    "bytes": 275,
+    "sha256": "038920314cd3e05ed48a09169df156d5b2b5d1fd44b582e1897523ca0dd13751"
+  },
+  {
+    "file": "S-1864-Atelier-Ormstown-E-06-breakers.csv",
+    "bytes": 165,
+    "sha256": "0ce55d7dbafefdd1b8ae91a162473894ca66557385821c4dc7563c880e7cffd4"
+  },
+  {
+    "file": "S-1864-Atelier-Ormstown-E-06-equipment.csv",
+    "bytes": 1601,
+    "sha256": "8d535aafebe990fe4e019246485403a77ee9c7bdaf23325f0fea90a5cad0ee6c"
+  },
+  {
+    "file": "S-1864-Atelier-Ormstown-E-07-equipment.csv",
+    "bytes": 280,
+    "sha256": "0c0bc815a42d0c53634c84fb2b76a0e3bc3621ffeb81969df99996bc56df95b3"
+  }
+]

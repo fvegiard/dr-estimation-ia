@@ -1,0 +1,7 @@
+﻿Type,Description,Quantité,Source
+Panneau,"NOUVEAU PP-1 347/600V 3ph 4f — boîtier NEMA 1, intensité 225 A, barres cuivre, court-circuit 25 kA, disj. principal 200 A, MALT cuivre",1,PLANS Électricité - Soumission.pdf / E-06 / en-tête cédule PP-1
+Panneau,"NOUVEAU PS-1 120/208V 3ph 4f — boîtier NEMA 1, intensité 125 A, barres cuivre, court-circuit 10 kA, disj. principal 125 A, MALT cuivre",1,PLANS Électricité - Soumission.pdf / E-06 / en-tête cédule PS-1
+Transformateur,TR-1 45 kVA 600-120/208V (rangée cédule PP-1; schéma unifilaire « TR-1 - 45KVA 600-120/208V »),1,PLANS Électricité - Soumission.pdf / E-06 / cédule PP-1 cct 2/4/6 + schéma unifilaire
+"Ligne aérienne (portée, m)",Portée 1 de la nouvelle ligne aérienne 200 A 347/600V 3PH 4F 25 kA quadruplex 4/0 NS1 — « ENVIRON 20M (MAX 21M) »,20,"PLANS Électricité - Soumission.pdf / E-06 / schéma unifilaire, cotes « ENVIRON 20M (MAX 21M) / ENVIRON 20M (MAX 21M) / ENVIRON 15M (MAX 21M) »"
+"Ligne aérienne (portée, m)",Portée 2 de la nouvelle ligne aérienne 200 A 347/600V 3PH 4F 25 kA quadruplex 4/0 NS1 — « ENVIRON 20M (MAX 21M) »,20,"PLANS Électricité - Soumission.pdf / E-06 / schéma unifilaire, cotes « ENVIRON 20M (MAX 21M) / ENVIRON 20M (MAX 21M) / ENVIRON 15M (MAX 21M) »"
+"Ligne aérienne (portée, m)",Portée 3 de la nouvelle ligne aérienne 200 A 347/600V 3PH 4F 25 kA quadruplex 4/0 NS1 — « ENVIRON 15M (MAX 21M) »,15,"PLANS Électricité - Soumission.pdf / E-06 / schéma unifilaire, cotes « ENVIRON 20M (MAX 21M) / ENVIRON 20M (MAX 21M) / ENVIRON 15M (MAX 21M) »"

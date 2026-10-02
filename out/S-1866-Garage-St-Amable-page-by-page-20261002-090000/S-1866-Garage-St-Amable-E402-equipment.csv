@@ -1,0 +1,13 @@
+﻿Type,Description,Quantité,Source
+Entrée électrique,"Nouvelle entrée électrique aérienne 200 A à 347/600V-3Ø-4 fils (auget 200 A 347/600V), 1 conducteur par phase",1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 347/600V et calcul de charge"
+Mesurage HQ,Embase de mesurage Hydro-Québec EM-1,1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 347/600V"
+Mesurage HQ,Armoire de mesurage Hydro-Québec type A - 750x750x250 mm,1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 347/600V"
+Sectionneur,"Sectionneur principal S-1 200 A SF3P, 347/600V (verrouillable en position ouverte)",1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 347/600V"
+Transformateur,"Transformateur T-1 75 kVA, 600V-3Ø à 120/208V-3Ø, impédance 4 %, protection primaire 90 A",1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution"
+Sectionneur,"Sectionneur ST-1 100 A, fusibles F90A 3P (primaire T-1), m.à.l.t. 1#3 CU-vert",1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution"
+Sectionneur,"Sectionneur S-UTA, fusibles F110A 3P (alimentation UTA-01, MOP 110 A) — attribution F110A à confirmer visuellement (voir réserve)",1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 347/600V"
+Sectionneur,"Sectionneurs S-S01 et S-S02, 30 A, fusibles F15A 3P, 600V (serpentins)",2,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 347/600V"
+Auget,Auget 400 A 120/208V (répartition vers P1 et P2),1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 120/208V"
+Panneau,"Panneaux P1 et P2, 200 A, 120/208V-3Ø-4 fils, installés aux emplacements des panneaux enlevés PE et PC — voir réserve contradiction PE/PC",2,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution 120/208V et notes"
+Démolition,"Panneaux existants à enlever PE, PC et PCC (120/240V) — intercepter tous les circuits et les raccorder aux nouveaux panneaux",3,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / notes « INTERCEPTER TOUS LES CIRCUITS DANS LES PANNEAUX EXISTANTS ENLEVÉS (PE, PC ET PCC) »"
+Mise à la terre,"Barre principale de mise à la terre, 1#6 CU-NU raccordé à l'entrée d'eau (art. 10-700 CCÉ)",1,"Addenda 4_plan E-402.pdf (E-402 rév. 1, ADDENDA ME-03 2026-09-01) / diagramme de distribution"

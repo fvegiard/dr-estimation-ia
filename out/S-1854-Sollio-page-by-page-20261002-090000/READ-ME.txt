@@ -1,0 +1,77 @@
+S-1854 SOLLIO — PROJET NOYAU (7975, rue John Molson, St-Hubert) — RELEVÉ ÉLECTRIQUE PAGE PAR PAGE
+Dossier généré le 2026-10-02 (heure de l'Est). Contrat de livraison : convention Granby (1 CSV par feuille, en-tête « Type,Description,Quantité,Source », UTF-8 BOM, CRLF).
+
+SOURCES LUES (dossier Drive 1cagbJVkfBUs1qux_5GrGU2JcCQvM7X9S)
+- FD_26-1807_DEVIS DESCRIPTIF SOLLIO_ PROJET NOYAU_R1_01-09-2026 (3).pdf — id 12dAqPyNLGdmuC1aEeSdT57Mai5Hg887b — Folio Design, devis descriptif sommaire no 1, Révision 1 du 1er septembre 2026 (folio 24-1360). SOURCE DE RÉFÉRENCE pour les quantités.
+- 1_Devis descriptif des travaux (4).pdf — id 15cRsXUnnaE3kaWXD4ko6ryg-si4DCUdh — même devis, version du 21 août 2026 (R0), remplacée par la R1.
+- 1_Devis descriptif des travaux.pdf — id 1ysGrQo9e_AxKXw-4YdR6k2YH5m6qsH9N — texte identique à la copie « (4) » (R0, 21 août 2026).
+- 5_Plans_Électriques_Existants.pdf — id 116qc0DZshwIyMA21mwW1YIKDoB1pa2Y3 — plans électriques existants, projet « WIPTEC - LONGUEUIL », no projet 19G1008-001, juin 2020, émissions 2020-09-11 à 2021-09-21 (F. Carrier, ing. / A. Côté, ing.).
+
+CONTENU (feuilles)
+Feuilles électriques trouvées dans les cartouches de 5_Plans_Électriques_Existants.pdf :
+- E206 — ÉLECTRICITÉ BUREAUX RDC ÉCLAIRAGE - ALARME-INCENDIE (1/8"=1'-0") — aucun CSV (aucune quantité explicite ; voir RÉSERVES)
+- E207 — ÉLECTRICITÉ BUREAUX NIV. 2 ÉCLAIRAGE - ALARME-INCENDIE — aucun CSV (aucune quantité explicite ; voir RÉSERVES)
+- E208 — ÉLECTRICITÉ BUREAUX NIV. 3 ÉCLAIRAGE - ALARME-INCENDIE — aucun CSV (aucune quantité explicite ; voir RÉSERVES)
+- E302 — ÉLECTRICITÉ BUREAUX RDC SERVICES — aucun CSV (aucune quantité explicite ; voir RÉSERVES)
+- E303 — ÉLECTRICITÉ BUREAUX NIV. 2 SERVICES — aucun CSV (aucune quantité explicite ; voir RÉSERVES)
+- E304 — ÉLECTRICITÉ BUREAUX NIV. 3 SERVICES — aucun CSV (aucune quantité explicite ; voir RÉSERVES)
+Document hors plan :
+- DEVIS-R1 — S-1854-Sollio-DEVIS-R1-equipment.csv — quantités explicitement écrites aux sections 6.0 et 7.0 du devis Folio Design R1 (30 lignes).
+Aucun tableau de luminaires, aucune cédule de panneaux ni légende avec quantités n'apparaît dans le texte extrait des 6 feuilles : aucun CSV n'est livré pour ces feuilles.
+
+PORTÉE (quantités citées — chaque ligne porte sa source exacte dans le CSV)
+Éclairage (devis R1, section 6.0 « à valider avec les ingénieurs ») :
+- art. 6.5 : « environ 6 appareils » Luminart Team (acoustique suspendu, gradateur chacun) — 6
+- art. 6.6 : suspendu décoratif moyen format — 20 unités (650 $/unité au devis)
+- art. 6.7 : plafonnier décoratif moyen format — 20 unités (650 $/unité au devis)
+- art. 6.8 : monopoint tubulaire plafonds exposés — 50 unités (250 $/unité au devis)
+- art. 6.10 : appareil mural comptoir cuisine (x3) — 3 ; comptoir café exécutif (x3) — 3 (450 $/unité au devis)
+Électricité (devis R1, section 7.0 « à valider avec les ingénieurs ») :
+- art. 7.22 bureau de réception : 2 quadruples, 2 prises, 2 data
+- art. 7.23 bureau de sécurité : 2 quadruples, 3 prises, 2 data
+- art. 7.24 salle de copieur : 2 prises dédiées 20 A, 4 prises comptoir, 3 data
+- art. 7.25 cuisine : 10 micro-ondes, 6 prises comptoir circuit dédié, 3 prises lave-vaisselle, 3 frigos commerciaux, 1 prise télé, 1 data, 3 prises élec/USB
+- art. 7.26 mini-marché : 8 prises circuit dédié, 2 boîtes de jonction plancher (caisse libre-service), 2 quadruples
+- art. 7.27 salle conférence (24 ordinateurs) : 8 prises murales chacune sur circuit indépendant, 1 prise téléviseur, 4 data
+- art. 7.28 infirmerie : 1 quadruple, 1 prise
+Les sorties « data » sont comptées pour le conduit, la boîte métal et la corde de tirage seulement (art. 7.2 et NOTE : câblage data/téléphone par le client).
+
+RÉSERVES (relevé supervisé à compléter)
+Feuilles sans quantité explicite :
+- E206, E207, E208, E302, E303, E304 : aucun CSV livré (Granby ne livre pas de CSV vide); le texte extrait ne contient aucune quantité; le relevé graphique des symboles (luminaires, prises, détecteurs, alarme-incendie) reste à faire sur le PDF rendu en image, feuille par feuille (relevé supervisé requis).
+- E208 et E304 (niveau 3) portent la mention « CETTE SECTION N'EST PAS ÉMISE POUR CONSTRUCTION, AMÉNAGEMENT À VENIR » (répétée quatre fois sur chaque feuille).
+- E206 et E207 : « GRADATEURS 15A. 120V. POUR L'ÉCLAIRAGE DE LA PARTIE BISTRO #101 » / « ...DE LA PARTIE CAFÉTÉRIA #208 » — sans nombre.
+- Les plans sont ceux d'un autre projet (« WIPTEC - LONGUEUIL », 19G1008-001, 2020-2021); un tampon textuel y renvoie au devis descriptif pour la portée (fragments extraits : « PLANS EXISTANTS pour INFO SEULEMENT », « référez ... au devis descriptif ... scope of work »). Aucun plan électrique du nouvel aménagement Sollio n'est dans le dossier.
+Fichiers non lus :
+- 8_Plans_Architecture_complets_Existants.pdf (80,8 Mo) — trop volumineux pour lecture en session; non électrique.
+- 2_Plans_de_blocage_préliminaires (Nouvel aménagement) (1).pdf et 3_Plans_Design_Existants_pour_info.pdf — architecture/design, non retenus (le devis R1 est basé sur le plan de blocage préliminaire révision 2 du 17 juillet 2026 : le décompte des pièces doit s'y faire).
+Quantités conditionnelles du devis R1 (ratios « par pièce » — le nombre de pièces n'est écrit nulle part) :
+- 6.2 : 1 interrupteur sur gradateur par pièce (plaques DEL 24x24 graduables, partout sauf indication contraire)
+- 6.3 : 1 projecteur encastré 4" avec gradateur à chaque 72" dans tous les plafonds de gypse (2.16 : 17 000 pi² de plafond de gypse)
+- 6.4 : allocation 20 000 $ — luminaire très grand format escalier communiquant
+- 6.9 : linéaire direct/indirect 12' à chaque 96" dans la salle à manger de la cafétéria, 200 $/pi lin.
+- 6.10 : appareil mural pour toutes les cabines téléphoniques, toutes les salles focus 1-2 pers., tous les bureaux « petit », entrée de tous les blocs sanitaires, comptoir café
+- 6.11, 6.12, 7.35 : interrupteurs, détecteurs de présence, contrôles, éclairage d'urgence et signalisation d'issues — « selon la réglementation »
+- 7.1 : panneau électrique « selon les besoins requis »
+- 7.4 : 1 prise électrique tous les 25 pieds linéaires
+- 7.6 à 7.11 : besoins par bureau typique / petit / premium / président / poste de travail / hotelling
+- 7.13 à 7.21 : besoins par cabine téléphonique, salle focus, salles de réunion 4 et 5 pers., salles de conférence 8-10 et 10+, salle de formation (6 + 1 monuments), salle du conseil (4 + 1 monuments) — art. 3.5 mentionne « les deux salles de formation » et « les deux salles du conseil »
+- 7.29 : 1 monument encastré (4 prises) par zone lounge ; 7.30 : 1 prise intégrée par 6'-0" de banquette
+- 7.32 lecteurs de carte, 7.34 plinthes électriques (R1 : même concept de chauffage que l'existant), 7.36 alarme incendie et haut-parleurs d'urgence, 11.4 (R1) infrastructures et connexions électriques des enseignes extérieures, 11.1 percements de dalle
+- 7.33 et NOTE : audiovisuel, câblodistribution et câblage data/téléphone hors contrat; conduits, cordes et boîtiers métal par l'entrepreneur (R1).
+Contradictions et notes textuelles :
+- 7.16 et 7.17 décrivent tous deux « salle de réunion 5 personnes » avec les mêmes besoins (doublon dans le devis).
+- R0 (21 août) vs R1 (1er sept) : 2.13 trame de plafond (R1 : remplacement complet), 7.34 (R1 ajoute « même concept de chauffage que l'existant »), 11.4 (R0 : « installer des nouvelles enseignes » ; R1 : enseignes fournies et installées par d'autres, infrastructures et connexions électriques par l'entrepreneur), NOTE data (R1 ajoute conduits, cordes, boîtiers). Seule la R1 est retenue.
+- Sections 6.0, 7.0 et 8.0 portent la mention « à valider avec les ingénieurs » : aucun plan d'ingénieur électrique du nouvel aménagement n'est au dossier.
+- 6.5 : « environ 6 » — nombre indicatif, retenu tel qu'écrit.
+
+
+CHIFFRAGE
+- Taux électricien : 72 $/h — base main-d'œuvre DR Électrique (MCP dre-estimation, labor_rates, code 001000, au 2026-09-30).
+- Taux de pose : à ancrer sur la base main-d'œuvre DR Électrique (dre-estimation) par type d'appareil; non appliqué ici.
+- Aucun prix produit dans ce dossier. Les montants cités (650 $, 250 $, 450 $, 20 000 $, 200 $/pi) sont les budgets du devis Folio Design, pas des prix DR Électrique.
+
+RÈGLE
+- Rien n'est inventé : chaque quantité provient d'une phrase du devis R1 citée par son numéro d'article. Les feuilles de plan n'ayant aucune quantité écrite, aucun CSV n'est livré pour elles.
+- Aucun fichier consolidé (conforme au dossier Granby de référence) : DEVIS-R1 est la seule source de quantités ; aucun CSV de feuille de plan — aucun double comptage possible.
+- Les ratios « par pièce » doivent être multipliés par un décompte de pièces pris sur le plan de blocage préliminaire rév. 2 (non lu ici), puis validés par les ingénieurs.

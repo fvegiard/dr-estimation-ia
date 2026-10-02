@@ -1,0 +1,76 @@
+S-1835 ESBG — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL (2026-10-02)
+
+Projet : Réhabilitation et travaux connexes — École secondaire Bernard-Gariépy (ESBG), Sorel-Tracy
+Client : Centre de services scolaire de Sorel-Tracy — Projet no P0002920 — LOT DÉMOLITION
+Émission : 00 — Émis pour appel d'offres 2026-07-08/09 ; Addenda E-01 2026-08-20 ; Addenda T-01 2026-08-18
+ÉTAT : relevé supervisé non commencé; 0 fichier de données, 22 feuilles sans quantité explicite dans le texte extrait; ce dossier n'est pas une soumission.
+
+SOURCES LUES (dossier Drive 17amoKZ1IDd6aXO4z1-QNmLROADfySwZx)
+- 49-366 (D) - ESBG - Plans électriques_10 pages (2).pdf — id 1mqXc4ZvRg9-3tU0o2c1LJficXj-B1_Za (5 787 167 o)
+- 49-366 (D) - ESBG - Addenda - E-01 - Plans.pdf — id 1UBBmcxLA-8zOYa3Zrro93t6qKTs9vJZr (4 553 010 o)
+- 49-366 (D) - ESBG - Plans de télécommunications_12 pages.pdf — id 1dv-Nse1SvfNdlQtGx836jU0kawRyeHEw (4 435 312 o)
+- 49-366 (D) - ESBG - Addenda - T-01 - Plans.pdf — id 1gd7eJq8vIDVe8ftrA44ifj75trusX5pb (2 372 905 o)
+Doublons présumés NON lus (même nom de base ; taille identique selon les métadonnées Drive, non vérifiée — doublons non ouverts) :
+- Plans électriques_10 pages (4).pdf — id 1SfA5VmowlHmwmT9hTrmB74VDo-LN_nAh
+- Addenda - E-01 - Plans (3).pdf — id 124HlgUdqOwZh_Yufj07MoHlDGamGqr9V
+- Plans de télécommunications_12 pages (1).pdf — id 1OXQa2S_vhVFUzUwUBlHUa8mF-j0piFUy ; (3).pdf — id 1cmSOD3tfVQYzaZUjEoqt7y_PNC_pZA1z
+- Addenda - T-01 - Plans (2).pdf — id 1O1eIJPCnRBuDmUJN9tt4U2LQXKyxrfC9
+Hors discipline, non lus : Plans d'architecture_17 pages (12 653 501 o), Plans mécaniques_7 pages, Devis d'architecture_93 pages.
+Aucun fichier > 30 Mo dans le dossier.
+
+CONTENU (feuilles)
+Électricité (liste des plans E-000, 10 feuilles, « 01 DE 10 » à « 10 DE 10 ») :
+E-000 Page titre et liste des plans ; E-001 Légende ; E-002 Devis (rev 01 à l'Addenda E-01) ;
+E-D210 Éclairage RDC zone B existant/démolition ; E-D211 RDC zone C ; E-D212 RDC zone C1 ; E-D213 RDC zone D ;
+E-D220 Éclairage étage zone B ; E-D221 étage zone C ; E-D222 étage zone D.
+Télécommunications (12 feuilles, se réfèrent au devis d'électricité) :
+T-001 Légende ; T-D400/401/402/403 Sous-sol blocs B, C, C1, D existant/démolition ;
+T-D410/411/412/413 RDC blocs B, C, C1, D ; T-D420/421/422 Étage blocs B, C, D (rev 1 à l'Addenda T-01).
+Fichiers de données livrés : 0 (aucun CSV, aucun xlsx). 22 feuilles sans quantité explicite dans le texte extrait ; relevé supervisé requis.
+
+PORTÉE (aucune quantité citée dans le texte extrait)
+Aucune quantité explicite dans le texte extrait des documents lus (E-002, feuille image, non lu ; marqueurs « x3 » non interprétés — à confirmer au relevé visuel) : pas de tableau d'appareils d'éclairage,
+pas de cédule de panneaux, pas de bordereau, pas de légende avec quantités. Aucun fichier de données n'est livré :
+0 fichier, 22 feuilles sans quantité explicite dans le texte extrait, relevé supervisé requis.
+Nature du lot : DÉMOLITION / EXISTANT. Notes générales E-D2xx : « À MOINS D'INDICATIONS CONTRAIRES, TOUS LES
+ÉQUIPEMENTS MONTRÉS SUR CE PLAN SONT EXISTANTS À ENLEVER. » Addenda E-01 ajoute : « TOUS LES SERVICES INSTALLÉS
+AUX MURS SONT EXISTANTS À CONSERVER. »
+Portée textuelle (sans quantité) relevée aux notes :
+- Luminaires existants à enlever (E.A.E.) ; luminaires DEL à enlever et remettre au propriétaire (note 2, E-D210/211/213/220/222) ;
+- Addenda E-01 : luminaires 24 h, détecteurs de fumée, enseignes de sortie et prise de projecteur à ENLEVER et SUSPENDRE
+  TEMPORAIREMENT du plafond (notes 1, 3, 4, 6) ; décontamination : luminaires et détecteurs à suspendre (note 7/5) ;
+- E-D220 Addenda E-01 note 7 : prise et conduit en surface à démanteler jusqu'à la boîte de raccord ; note 8 : prise dans
+  caniveau à enlever, couper une section de caniveau pour l'ouverture d'une porte, embout et continuité des services ;
+- E-D222 note 3 : colonnette de services à supporter temporairement à la dalle ;
+- Télécom : haut-parleurs blocs B, C, C1 retirés, entreposés par l'entrepreneur et réinstallés ; haut-parleurs bloc D démantelés
+  (non entreposés) ; aucun câble télécom démantelé ; protéger le lien fibre optique B-111.4 ↔ D-132.2 ;
+- Addenda T-01 (T-D420/421/422) : protéger le câble de fibre optique dans un conduit 63 mm reliant S-006 à B-111.4 via S-003 et B-116.
+
+RÉSERVES (relevé supervisé à compléter)
+- Aucune quantité explicite dans le texte extrait des 22 feuilles (E-002 non lu, marqueurs « x3 » non interprétés — à confirmer au relevé visuel) : le comptage des symboles (luminaires E.A.E., détecteurs, enseignes,
+  prises, haut-parleurs, colonnettes) exige un relevé VISUEL page par page ; non réalisé ici (texte seulement).
+- E-002 DEVIS D'ÉLECTRICITÉ (rev 00 et rev 01) : texte du devis NON extrait par la lecture Drive (feuille image) — à lire
+  visuellement ; peut contenir des exigences chiffrées.
+- Marqueurs « x3 » visibles au texte des feuilles E-D211 et E-D213 : multiplicateur non interprété (réserve).
+- Devis d'architecture_93 pages non lu : peut contenir des clauses de démolition touchant l'électricité (à vérifier).
+- Doublons (5) non ouverts : vérifier qu'ils sont identiques aux originaux lus.
+- Contradictions / notes à confirmer (textuel) :
+  * E-D213 : le titre de vue indique « REZ-DE-CHAUSSÉE - BLOC D - EXISTANT/ DÉMOLITION E-D212 » alors que la feuille est E-D213
+    (rev 00 et Addenda E-01) ;
+  * Liste des plans E-000 dit « ZONE B/C/C1/D » ; cartouches des feuilles disent « BLOC B/C/C1/D » ;
+  * Rev 00 note 1 : « APPAREIL D'ÉCLAIRAGE 24H À CONSERVER EN FONCTION DURANT LES TRAVAUX » ; Addenda E-01 note 1 :
+    « À ENLEVER … ET SUSPENDRE TEMPORAIREMENT » — l'addenda prévaut, à confirmer ;
+  * E-D213/E-D222 : « IL N'Y A PRÉSENTEMENT PAS D'ALIMENTATION DANS LE BLOC D » ;
+  * Addenda E-01 : l'index E-000 n'a pas été réémis ; seules E-002 et E-D210 à E-D222 portent la rev 01 ;
+  * Télécom : cartouche T-001 « 1 DE 1 » puis T-D400 « 1 DE 11 » — deux numérotations dans le même jeu.
+
+- Taux électricien : 72 $/h (taux de base DR Électrique) — hypothèse de chiffrage, non tirée des plans ; taux à confirmer par le client.
+- Feuilles sans quantité explicite dans le texte extrait — aucun CSV livré (Granby ne livre pas de CSV vide) ; relevé supervisé requis : E-000, E-001, E-002, E-D210, E-D211, E-D212, E-D213, E-D220, E-D221, E-D222, T-001, T-D400, T-D401, T-D402, T-D403, T-D410, T-D411, T-D412, T-D413, T-D420, T-D421, T-D422
+
+CHIFFRAGE
+- Taux de pose à ancrer : démolition/dépose par type d'appareil, suspension temporaire, entreposage — à fixer après relevé visuel.
+- Aucun prix produit : lot démolition, aucune fourniture identifiée dans les documents lus.
+
+RÈGLE
+Rien d'inventé : une quantité n'entre que si elle est écrite dans un document, avec sa source. Aucun fichier de données n'est livré ; les quantités du relevé supervisé futur ne devront pas être additionnées sans
+contrôle des doublons (plans d'étage vs légendes vs addenda).

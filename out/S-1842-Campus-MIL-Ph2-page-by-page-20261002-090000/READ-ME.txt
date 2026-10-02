@@ -1,0 +1,42 @@
+S-1842 — CAMPUS MIL PHASE 2 (UdeM, Complexe des sciences, SCD / Institut Courtois, no 70100) — RELEVÉ ÉLECTRIQUE PAGE PAR PAGE
+Généré le 2026-10-02 09:00 (heure de l'Est). Dossier : S-1842-Campus-MIL-Ph2-page-by-page-20261002-090000
+
+== SOURCES LUES ==
+- Plans pour raccords 25Kv.pdf — Drive id 1QNBuHFlKkHJdKXnDF_-xNvLxS1z3zW-R — 21,9 Mo — LU (texte extrait par read_file_content).
+  Cartouche : « UNIVERSITÉ DE MONTRÉAL — Complexe des sciences — Campus MIL PHASE 2 — Sciences des données (SCD) / Institut Courtois (IC) — No. 70100 — ÉLECTRICITÉ — ÉMISSION ADDENDA E-02 — 2026-07-09 ».
+  Le texte extractible est très mince (plan scanné, OCR partiel) : cartouche + plan clé avec renvois de feuilles. Aucun tableau, aucune cédule, aucune légende avec quantités n'est lisible dans le texte.
+- Devis électricité.PDF — Drive id 1oJ7wRbnY6DHrOymd-uTnqPfwu2rxMQX3 — 216,4 Mo — NON LU (trop volumineux pour lecture en session, limite 30 Mo).
+
+Liste complète du dossier Drive 1GSl6OaD4r9vqzofcqn1EtNGPKIofAnne : 2 fichiers seulement (les deux ci-dessus). Aucun plan E-xxx individuel, aucune cédule, aucun bordereau séparé dans ce dossier.
+
+== CONTENU (feuilles) ==
+Feuilles électriques nommées textuellement dans « Plans pour raccords 25Kv.pdf » (renvois du plan clé, pas un registre de plans) :
+- E2-100A.00 — « VOIR PLAN E2-100A.00 » (renvoi, 2 occurrences)
+- E-100B — « VERS E-100B » (renvoi)
+- E2-190 — « VERS PAVILLON "C" … VOIR E2-190 » (renvoi)
+- E2-200 — « VERS PAVILLON "D" … VOIR E2-200 » (renvoi)
+Aucun CSV livré : aucune feuille ne porte de quantité explicite (Granby ne livre pas de CSV vide).
+
+== PORTÉE (quantités citées) ==
+AUCUNE. Aucune quantité n'est écrite explicitement dans le texte lisible des documents lus. Le relevé compte 0 item.
+Note : la mention « (40) » apparaît isolée dans le texte OCR à côté de « VOIR E2-200 … PAS DE PLAN » ; sa nature (numéro de note, de repère ou de quantité) n'est pas déterminable — NON retenue comme quantité.
+
+== RÉSERVES (relevé supervisé à compléter) ==
+1) Feuilles sans quantité explicite : E2-100A.00, E-100B, E2-190, E2-200 — à relever visuellement (plan scanné, texte OCR insuffisant) ; relevé supervisé requis, aucun CSV livré.
+2) La liste des feuilles ci-dessus provient de RENVOIS sur un plan clé, pas d'un index/registre de plans : le registre réel des feuilles E de l'addenda E-02 et du jeu de base reste à établir.
+3) Fichier non lu : « Devis électricité.PDF » (216,4 Mo) — à découper/alléger avant lecture ; sections à viser : cédules de panneaux, tableau de luminaires, bordereau, portée des travaux 25 kV.
+4) Contradictions / notes textuelles relevées :
+   - « VERS PAVILLON D — PAS DE PLAN » et « VOIR E2-200 (40) PAS DE PLAN » : des raccordements vers les pavillons C et D sont indiqués sans plan correspondant — à confirmer avec l'ingénieur.
+   - « LIGNE 2? » : point d'interrogation textuel sur une ligne 25 kV — ambiguïté à lever.
+5) Portée 25 kV (raccords, câbles, conduits, appareillage HT) : non métrée — aucun document lu ne donne de quantité.
+6) Pas d'addenda autre que E-02 dans le dossier ; les addendas E-01 et suivants (s'ils existent) ne sont pas présents.
+7) Taux main-d'œuvre : à confirmer (aucune source dans le dossier).
+
+== CHIFFRAGE ==
+- Taux de pose : à ancrer sur la base main-d'œuvre DR Électrique une fois le relevé complété.
+- Aucun prix produit dans ce dossier.
+- Aucune heure ni aucun montant ne peut être calculé : 0 item relevé.
+
+== RÈGLE ==
+Rien n'est inventé : une quantité n'entre dans le relevé que si elle est explicitement écrite dans un document (tableau de luminaires, cédule de panneaux, bordereau, devis, légende avec quantités). Sinon elle est une RÉSERVE, pas un chiffre.
+Ne pas additionner les feuilles entre elles sans contrôle des doublons.

@@ -1,0 +1,57 @@
+[
+  {
+    "file": "S-1878-Drumco-Granby-BatD-E02-equipment.csv",
+    "bytes": 772,
+    "sha256": "351ad7c34351c8959dddc7dae965ce5e1609519640ed68d4b4de90b6b7c7e49f"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatD-E03-equipment.csv",
+    "bytes": 939,
+    "sha256": "8bc485daed000158698617e7ada992f5e220930dcfb611243db4302bb08024e6"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatD-E04-equipment.csv",
+    "bytes": 1355,
+    "sha256": "2a313b7308e0324469f48cd58542246c8564172374d527605a65a8bd24455659"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatD-E05-equipment.csv",
+    "bytes": 227,
+    "sha256": "01557e60c1839b4196a374710ad5878ed71d8e5440d7dbe5f5187d9d9dde5e8a"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatD-E07-equipment.csv",
+    "bytes": 977,
+    "sha256": "21ea45cfd7b395464d59be67a470f4e21aebd701848701c0ef5db172c37ac87f"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatE-E03-equipment.csv",
+    "bytes": 333,
+    "sha256": "67d6f0b8bc96e987f80ced363f5c398dafd2dc4b8fbfc41da3cec9e84cb22664"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatE-E04-equipment.csv",
+    "bytes": 1403,
+    "sha256": "e6424e673c712496b62fa3441039c5695e10329e38da0dec73dfbc18cadad16b"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatE-E05-equipment.csv",
+    "bytes": 445,
+    "sha256": "8cfb21820829acf5e6e31e3ef6ea514e07c09ccc704947d2535f62cf475bfd1f"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatF-E05-equipment.csv",
+    "bytes": 360,
+    "sha256": "83596588c553715d0a92aa65b4a907b1c2b5988f6550874e2ae22886a853f717"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatF-E06-equipment.csv",
+    "bytes": 1371,
+    "sha256": "544e562c1a28c373ada677a3768e1b23f3da2a41cc6de9e0901ba04f8959eff5"
+  },
+  {
+    "file": "S-1878-Drumco-Granby-BatF-E07-equipment.csv",
+    "bytes": 482,
+    "sha256": "6bda70f1d4e509d7cbffb7ec976ff36dde2455cdf5ef309ca10ab0a4a224f417"
+  }
+]

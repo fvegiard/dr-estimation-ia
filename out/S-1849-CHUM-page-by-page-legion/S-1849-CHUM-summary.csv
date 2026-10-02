@@ -1,0 +1,12 @@
+﻿Discipline,Action,Quantité,Unité
+Éclairage DEL,INSTALLER,317,un
+Démolition,ENLEVER,507,un
+Signalisation,CONSERVER,3,un
+Accessoires,INSTALLER,4,un
+Éclairage Existant,CONSERVER,12,un
+Éclairage DEL Contrôlé,INSTALLER,190,un
+Inventaire Magasin,INSTALLER,5,un
+Mise en service,INSTALLER,1,Lot
+Gestion déchet,ENLEVER,1,Lot
+Sécurité chantier,INSTALLER,1,Lot
+Ingénierie,INSTALLER,1,Lot

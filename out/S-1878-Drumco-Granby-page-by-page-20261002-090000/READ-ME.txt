@@ -1,0 +1,54 @@
+S-1878 DRUMCO GRANBY — RELEVÉ ÉLECTRIQUE PAGE PAR PAGE — ÉTAT DU TRAVAIL
+Généré le 2026-10-02 (heure de l'Est). Projet ingénieur C26-8366 — DÉVELOPPEMENT COMMERCIAL GRANBY, rue Denison-Ouest, Granby (QC). Émission 1 — 14/08/2026 — ÉMIS POUR PERMIS. Client : Cloriacité Développement inc.
+ÉTAT : relevé supervisé encore partiel (texte extrait seulement; luminaires, lampadaires, embases des unifilaires et alarme incendie non dénombrés); ce dossier n'est pas une soumission exhaustive.
+
+SOURCES LUES
+- 04a-Plans d'électricité pour permis - Bâtiment D (20260814).pdf — Drive ID 14WllFnx8S1Sw2fqhKIgP0Y5SsjWYLeF3 — 8 773 921 octets — lu intégralement (texte extrait).
+- 04b-Plans d'électricité pour permis - Bâtiment E (20260814).pdf — Drive ID 1Sy7bu-6erohQI7V_ap3fXTFh4SSey-zZ — 4 825 673 octets — lu intégralement (texte extrait).
+- 04c-Plans d'électricité pour permis - Bâtiment F (20260814).pdf — Drive ID 1RV5rlSg5hl2QiiUpIEA1dPX86Gqem_I1 — 6 531 137 octets — lu intégralement (texte extrait).
+- Dossier Drive parent : 1YBwt9-J-OfzT82x-uJMGCPE83vpmiKlb (14 fichiers listés). Architecture (01a/01b/01c), structure (02a/02b/02c), mécanique (03a/03b/03c), paysage (07) : hors périmètre, non lus. 06-Plans de protection incendie pour permis des bâtiments (20260814).pdf (597 343 octets) : non lu — discipline protection incendie (gicleurs); à vérifier s'il contient des exigences d'alarme incendie.
+- Lecture = texte extrait par l'outil Drive (pas de rendu visuel des plans). Le devis E01 est essentiellement le même dans les trois bâtiments, à l'exception de la hauteur des commutateurs (voir contradiction 6); la légende (D-E08, E-E06, F-E08) est identique dans les trois fichiers (texte extrait).
+
+CONTENU (feuilles)
+Bâtiment D (9 feuilles) : E00 PAGE TITRE, E01 DEVIS GÉNÉRALE, E02 BÂTIMENT, E03 PLAN DE TOIT, E04 DISTRIBUTION, E05 ÉLÉVATION ET DÉTAILS, E06 IMPLANTATION GÉNÉRALE, E07 DÉTAIL IMPLANTATION, E08 LÉGENDE.
+Bâtiment E (7 feuilles) : E00 PAGE TITRE, E01 DEVIS GÉNÉRALE, E02 BÂTIMENT, E03 PLAN DE TOIT, E04 DISTRIBUTION, E05 ÉLÉVATIONS, E06 LÉGENDE.
+Bâtiment F (9 feuilles) : E00 PAGE TITRE, E01 DEVIS GÉNÉRALE, E02 BÂTIMENT SUITE A, E03 BÂTIMENT SUITE B ET C, E04 PLAN DE TOIT SUITE A, E05 PLAN DE TOIT SUITE B ET C, E06 DISTRIBUTION, E07 ÉLÉVATIONS ET DÉTAILS, E08 LÉGENDE.
+Un CSV par feuille de plan à relever : S-1878-Drumco-Granby-<BatX-Eyy>-equipment.csv (en-tête « Type,Description,Quantité,Source »). Plan sans quantité explicite = aucun CSV. Feuilles non relevées (titre/devis/légende), aucun CSV produit : D-E00, D-E01, D-E08; E-E00, E-E01, E-E06; F-E00, F-E01, F-E08. Aucun consolidé : les listes par feuille ne s'additionnent pas sans contrôle des doublons (voir RÈGLE).
+
+PORTÉE (quantités citées — chaque ligne du CSV porte sa source)
+Bâtiment D
+- E02 : 4 mesurages étiquetés (locataire 1 à 347/600V-200A; locataires 2, 3 : calibre non indiqué; commun).
+- E03 TABLEAU MÉCANIQUE : sectionneurs par l'électricien — 3 x 100A-3PH S.F. (K01, K02, D01, 65 kW), 1 x 60A (D02, 50 kW), 2 x 30A (AC1, AC-2, 14 kW) (association kW/ligne à confirmer — voir RÉSERVES). Tous 600V-3P.
+- E04 DISTRIBUTION : 1 disjoncteur maître ajustable 1200A-3P LSIG 35 kA; entrée 4x(4#500 kcmil AL + 1#1/0 V AL, C.103 mm); 4 disjoncteurs cadenassables (P3-.A006, A004, A004, A002); 1 TX 75 kVA 600V→208/120V « P2 »; 1 voltmètre-ampèremètre 3 phases IQ.
+- E05 : 1 auget 347/600V-225A.
+- E07 : pour UNE base de lampadaire (détail) — 4 boulons d'ancrage 25 mm L 1015 mm (pavage), 1 tige MALT 19x3000 mm + conduit 19 mm (pavage), 4 boulons (gazon). Nombre de bases NON indiqué : ne pas multiplier.
+Bâtiment E
+- E03 TABLEAU MÉCANIQUE : 6 sectionneurs 600V-3P 40A-3PH S.F. (AC1 à AC6).
+- E04 DISTRIBUTION : 1 disjoncteur maître 1200A-3P LSIG (voir contradiction 1000A); entrée 4x(4#500 kcmil AL…); 5 disjoncteurs cadenassables P3-.A002 (dont 1 vers PANNEAU LOCAL FUTUR); 1 TX 75 kVA « P2 »; 1 voltmètre-ampèremètre.
+- E05 : 1 auget 347/600V-200A; 6 boîtes de mesurage H-Q étiquetées (COMMUN, P1, P2, P3, P4, FUTUR).
+Bâtiment F
+- E05 TABLEAU MÉCANIQUE : 16 sectionneurs 600V-3P 60A-3PH S.F. (AC-1 à AC-16, 31 kW chacun).
+- E06 DISTRIBUTION : 1 disjoncteur maître 1200A-3P LSIG (voir contradiction 1000A); entrée 4x(4#500 kcmil AL…); 5 disjoncteurs cadenassables P3-.A002; 1 TX 75 kVA; 1 voltmètre-ampèremètre.
+- E07 : 1 auget 347/600V-225A; 5 embases H-Q étiquetées (P1, P2, P3, COMMUN, P FUTUR).
+
+RÉSERVES (relevé supervisé à compléter)
+Plans sans quantité explicite (aucun CSV livré) : D-E06; E-E02; F-E02, F-E03, F-E04. Feuilles non relevées (titre/devis/légende, aucun CSV) : D-E00, D-E01, D-E08; E-E00, E-E01, E-E06; F-E00, F-E01, F-E08.
+- Luminaires : les tableaux APPAREILS D'ÉCLAIRAGE (D-E02, E-E02, F-E02) ne comportent AUCUNE colonne quantité. Types définis : LX1 R.A.B WRUD4-LED30-B-4K-M-BLCK 120 V applique 28 W; LX2 Stanpro CDU6R-G2-PS3Q/3C 120 V encastré 16 W; LX4 Lampiste 1070-10-01D-24-M-Y-PAR30-120-FBK 120 V surface 11 W col de cygne; U1 Stanpro SLB12100-2N4LJWH 12/120 V 100 W; U2 Stanpro N1-12246LAWH 12 V 6 W; U3 Stanpro N2-12246LAWH 12 V 12 W; U4 Stanpro PRMS10360-#2N4WLJWH 120 V 9 W. Notes spécifiques : « 1. FOURNI, INSTALLÉ ET RACCORDÉ PAR LOCATAIRE. 2. FOURNI, INSTALLÉ ET RACCORDÉ AU PANNEAU DE SERVICES DU LOCATAIRE ». Le dénombrement des symboles LX-1, U1–U4, K, F, ANN, BAT#1–3 sur les plans d'étage exige une lecture visuelle des feuilles — NON FAIT ici (texte seulement).
+- Lampadaires (D-E06) : « L2 LAMPADAIRE QUADRUPULE, MODÈLE À CONFIRMER », « L3 LAMPADAIRE QUADRUPULE, MODÈLE À CONFIRMER », « POTEAU CLIENT »; conduit « A 2#8 RWU90XLPE -40°C + 1#8 VERT MALT - C.35mm PVC — CONDUIT DANS UN MASSIF DE BÉTON ». Nombre de lampadaires et longueurs : non écrits → à relever visuellement.
+- Embases / boîtes de mesurage (unifilaires D-E04, E-E04, F-E06) : le texte porte « EMBASE 600A », « EMBASE 400A » (2 mentions), « EMBASE 200A », tous « 347/600V 3P 4F DE TYPE A MESURAGE HYDRO-QUÉBEC »; les calibres par locataire ne sont pas attribuables sans lecture visuelle. Les disjoncteurs « 200A-3P » (plusieurs mentions) et « 600A-3P » (PS, Bât. D) ne sont pas dénombrés.
+- Câbles et conduits de distribution : « 2(4#300 kcmil CU + 1#1/0 V — C.53 mm) », « 4#3/0 CU + 1#6 V — C.53 mm » (répété), « 1#2/0 NU CU ÉTAMÉ », « 1#8 CU NU » : aucune longueur → non métrés.
+- Tableau mécanique D-E03 : l'association kW / ampérage par ligne (D02 = 50 kW/60A; AC1, AC-2 = 14 kW/30A) est lue dans l'ordre du texte extrait; confirmer au dessin. Tableau E-E03 : valeurs kW « 21KW, 21KW, 28KW, 21KW, 23.3KW, 28.5KW » non attribuables ligne à ligne (seul l'ampérage 40A x 6 est certain).
+- Alarme incendie (devis 3.1) : panneau adressable Mircom, détecteurs, stations manuelles, klaxons, annonciateur (ANN sur plans) — aucune quantité au devis ni bordereau; « SELON LES INDICATIONS AU BORDEREAU » : aucun bordereau dans les fichiers lus.
+- Contradictions textuelles : (1) E-E04 et F-E06 : « DISJONCTEUR AJUSTABLE 1200A-3P » et « 1000A 35KA MIN.(SYM.) » sur la même feuille (D-E04 : 1200A / 1200A cohérent). (2) Bât. D : « PS 347/600V 600A-3P » (E04) vs « 120/208V-400A PS » (E05) vs « 400A S.F. » (E02). (3) Bât. E : E04 montre 4 embases (600A, 400A, 400A, 200A) et E05 montre 6 boîtes de mesurage (COMMUN, P1, P2, P3, P4, FUTUR). (4) Bât. F : E06 montre 4 embases, E07 en nomme 5 (P1, P2, P3, COMMUN, P FUTUR). (5) Auget : 225A (D-E05, F-E07) vs 200A (E-E05). (6) Devis E01 : hauteur des commutateurs « ENTRE 1066 À 1200MM (42") » (Bât. D) vs « 1200MM » (Bât. E et F).
+- Travaux par d'autres cités : transformateur sur socle et canalisation souterraine « PAR D'AUTRES » — « L'ENTREPRENEUR DOIT FOURNIR, INSTALLER ET RACCORDER LE FILAGE ET CONDUIT ENTRE TSS ET PPD »; boîtes de jonction pour futur opérateur de porte « RACCORD FINAL PAR LE LOCATAIRE »; deux conduits pour l'entrée télécom (D-E02).
+- Fichiers non lus : 06-Plans de protection incendie (voir SOURCES LUES). Aucun fichier > 30 Mo dans le dossier.
+
+CHIFFRAGE
+- Taux électricien : 72 $/h (taux de main-d'œuvre DR Électrique, base dre-estimation).
+- Taux de pose (heures par unité) : à ancrer sur la base main-d'œuvre dre-estimation par type (sectionneur 30/40/60/100A, disjoncteur cadenassable, TX 75 kVA, auget, embase) — non appliqué ici.
+- Aucun prix produit dans ce dossier.
+
+RÈGLE
+- Rien d'inventé : seules les quantités écrites dans les documents figurent dans les CSV; tout le reste est en RÉSERVES.
+- Ne pas additionner les feuilles entre elles sans contrôle des doublons (ex. : TX 75 kVA apparaît sur E04/E06 ET sur les élévations E05/E07; il n'est compté qu'une fois, sur l'unifilaire; les boîtes de mesurage / embases des élévations (E-E05 : 6, F-E07 : 5) et les embases des unifilaires (4) recoupent probablement le même équipement, mais leur nombre diffère — à confirmer, voir contradictions 3 et 4; seules les quantités des élévations figurent aux CSV).
+- Détails E07 (Bât. D) : quantités pour UN dessin de détail, aucune multiplication par le nombre de bases.
