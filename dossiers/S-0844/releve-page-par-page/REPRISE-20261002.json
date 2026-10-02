@@ -49,6 +49,27 @@
       "reviewed_utc": "2026-10-02T08:43:31.573895+00:00",
       "independent_qpl_comparison": "non effectuée",
       "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
+    },
+    {
+      "sheet": "EA-M-0301",
+      "source": "sources/169 - Electricite_plan (1) - 19.png",
+      "source_sha256": "2bb95cfa720d9c2f2f95fb37b2592fe79a02fa0182e23780d7f6e9f0b20fc860",
+      "markers": 58,
+      "families": {
+        "Klaxon": 37,
+        "Klaxon LO": 11,
+        "Détecteur de fumée F": 4,
+        "Klaxon avec avertisseur visuel": 2,
+        "Détecteur existant — type réservé": 1,
+        "Déclencheur manuel existant": 2,
+        "Module de relais adressable MRA": 1
+      },
+      "image_sha256": "889af3bba7f54115c326a913e576919d4b72e22eb1cada6f1b0d5b459da5f131",
+      "visual_review": "58/58 ancrages contrôlés dans six zooms; vérification complémentaire ESC.1 aux deux niveaux; familles recoupées avec EX-M-LG01, légende finale et note installation en surface relues",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T08:48:35.185792+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
     }
   ],
   "original_ten_preserved": true,
