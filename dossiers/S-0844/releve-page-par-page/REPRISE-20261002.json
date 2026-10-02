@@ -101,7 +101,7 @@
       "markers": 77,
       "families": {
         "Prise double existante": 32,
-        "Prise repérée P — existante": 2,
+        "Prise au plafond existante": 2,
         "Aérotherme existant": 4,
         "Boîte de tirage ou jonction": 8,
         "Enveloppe de distribution existante": 8,
@@ -117,10 +117,35 @@
         "Sectionneur existant": 1,
         "Panneau existant": 1
       },
-      "image_sha256": "89536ecf0eeaa827ee117b487a3aa12f2da9b3ca68dbcfaeaacd8b34fa1d7f7f",
-      "visual_review": "77/77 ancrages contrôlés dans cinq zones; balayage complémentaire complet de la façade sud; libellés T5/T6 à quantité zéro; légende relue, retraits non présumés",
+      "image_sha256": "be2abe786664abc45c773361ca71ee119520ff084ff0078d1f5b8a1cfece9c15",
+      "visual_review": "77/77 ancrages contrôlés dans cinq zones et façade sud complète; familles P et portée des hachures précisées après lecture EX-M-LG01; positions inchangées, légende finale relue",
       "qpl_opened": false,
-      "reviewed_utc": "2026-10-02T08:58:46.561148+00:00",
+      "reviewed_utc": "2026-10-02T09:02:35.253101+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
+    },
+    {
+      "sheet": "EM-D-0301",
+      "source": "sources/169 - Electricite_plan (1) - 7.png",
+      "source_sha256": "e46a30cc4ddb497c5cbceaf1533ce5170407de8776f4fdbf26a5a3868ffc5a0b",
+      "markers": 43,
+      "families": {
+        "Luminaire EX7 — EAR": 12,
+        "Luminaire EX1 normal — EAR": 6,
+        "Luminaire EX1 urgence — EAR": 2,
+        "Interrupteur existant": 2,
+        "Luminaire EX2 existant": 4,
+        "Klaxon au plafond — existant": 8,
+        "Signalisation issue — EAR": 2,
+        "Signalisation issue existante": 2,
+        "Prise double existante": 2,
+        "Déclencheur manuel existant": 2,
+        "Détecteur existant — type réservé": 1
+      },
+      "image_sha256": "a76755ed8b81439c3f95b4a382d8834bf2f25d91b97ec3256822a7c46276b5c8",
+      "visual_review": "43/43 ancrages contrôlés dans les deux plans complets et quatre détails; recentrage des deux issues ESC.2 revérifié; légende et note A relues",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T09:03:05.051812+00:00",
       "independent_qpl_comparison": "non effectuée",
       "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
     }

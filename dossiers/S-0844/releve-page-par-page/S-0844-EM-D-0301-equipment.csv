@@ -1,0 +1,44 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X source px,Y source px
+EM-D-0301-001,Luminaire EX7 — EAR,"Niveau 03 — EX7-16(UE1), repère 1",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,2660.2,1140.4
+EM-D-0301-002,Luminaire EX7 — EAR,"Niveau 03 — EX7-16(UE1), repère 2",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,3866.3,1140.4
+EM-D-0301-003,Luminaire EX7 — EAR,"Niveau 03 — EX7-16(UE1), repère 3",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,5569.1,1140.4
+EM-D-0301-004,Luminaire EX7 — EAR,"Niveau 03 — EX7-16(UE1), repère 4",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,1820.7,1390.2
+EM-D-0301-005,Luminaire EX7 — EAR,"Niveau 03 — EX7-16(UE1), repère 5",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,4363.0,1948.0
+EM-D-0301-006,Luminaire EX7 — EAR,"Niveau 03 — EX7-16(UE1), repère 6",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,5569.1,1948.0
+EM-D-0301-007,Luminaire EX1 normal — EAR,"Niveau 03 — EX1-3(C5.1), ouest",1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3448.7,1720.3
+EM-D-0301-008,Luminaire EX1 normal — EAR,"Niveau 03 — EX1-3(C5.1), nord",1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3703.7,1785.3
+EM-D-0301-009,Luminaire EX1 normal — EAR,"Niveau 03 — EX1-3(C5.1), sud",1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3703.7,2070.3
+EM-D-0301-010,Luminaire EX1 urgence — EAR,Niveau 03 — EX1-16(E1),1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3703.7,1927.3
+EM-D-0301-011,Interrupteur existant,Niveau 03 — Salle mécanique/électrique,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,3370.7,1737.3
+EM-D-0301-012,Luminaire EX2 existant,Niveau 03 — ESC.2 ouest / EX2-9(UE),1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5226.4,1435.3
+EM-D-0301-013,Luminaire EX2 existant,Niveau 03 — ESC.2 est / EX2-9(UE),1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5566.4,1430.0
+EM-D-0301-014,Klaxon au plafond — existant,Niveau 03 — ouest,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,1820.7,1523.0
+EM-D-0301-015,Klaxon au plafond — existant,Niveau 03 — près noyau central,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,3393.4,1623.9
+EM-D-0301-016,Klaxon au plafond — existant,Niveau 03 — est,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,4873.1,1525.6
+EM-D-0301-017,Klaxon au plafond — existant,Niveau 03 — façade est,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,6267.7,1477.8
+EM-D-0301-018,Signalisation issue — EAR,"Niveau 03 — 8(UE1), aire ouverte",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,4663.2,1549.5
+EM-D-0301-019,Signalisation issue existante,Niveau 03 — ESC.2 / 8(UE1),1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5245.0,1549.5
+EM-D-0301-020,Prise double existante,Niveau 03 — ESC.2,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5245.0,1517.7
+EM-D-0301-021,Déclencheur manuel existant,Niveau 03 — Porte ESC.2,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5308.7,1538.9
+EM-D-0301-022,Luminaire EX7 — EAR,"Niveau 04 — EX7-17(UE1), repère 1",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,2660.2,3723.3
+EM-D-0301-023,Luminaire EX7 — EAR,"Niveau 04 — EX7-17(UE1), repère 2",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,3863.6,3723.3
+EM-D-0301-024,Luminaire EX7 — EAR,"Niveau 04 — EX7-17(UE1), repère 3",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,5574.4,3723.3
+EM-D-0301-025,Luminaire EX7 — EAR,"Niveau 04 — EX7-17(UE1), repère 4",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,1820.7,3973.0
+EM-D-0301-026,Luminaire EX7 — EAR,"Niveau 04 — EX7-17(UE1), repère 5",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,4442.7,4530.9
+EM-D-0301-027,Luminaire EX7 — EAR,"Niveau 04 — EX7-17(UE1), repère 6",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,5574.4,4530.9
+EM-D-0301-028,Luminaire EX1 normal — EAR,"Niveau 04 — EX1-3(C6.1), ouest",1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3448.7,4305.4
+EM-D-0301-029,Luminaire EX1 normal — EAR,"Niveau 04 — EX1-3(C6.1), nord",1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3703.7,4372.4
+EM-D-0301-030,Luminaire EX1 normal — EAR,"Niveau 04 — EX1-3(C6.1), sud",1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3703.7,4654.5
+EM-D-0301-031,Luminaire EX1 urgence — EAR,Niveau 04 — EX1-16(E1),1,DÉPOSE / ENTREPOSAGE / REPOSE — note A,MODÈLE NON PRÉCISÉ,,,3703.7,4513.4
+EM-D-0301-032,Interrupteur existant,Niveau 04 — Salle mécanique/électrique,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,3370.7,4321.4
+EM-D-0301-033,Luminaire EX2 existant,Niveau 04 — ESC.2 ouest / EX2-9(UE),1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5226.4,4020.8
+EM-D-0301-034,Luminaire EX2 existant,Niveau 04 — ESC.2 est / EX2-9(UE),1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5566.4,4012.8
+EM-D-0301-035,Klaxon au plafond — existant,Niveau 04 — ouest,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,1820.7,4108.5
+EM-D-0301-036,Klaxon au plafond — existant,Niveau 04 — près noyau central,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,3393.4,4206.8
+EM-D-0301-037,Klaxon au plafond — existant,Niveau 04 — est,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,4873.1,4108.5
+EM-D-0301-038,Klaxon au plafond — existant,Niveau 04 — façade est,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Tracé discontinu; portée à rapprocher des plans modifiés. Indice P = au plafond.,,6310.2,4060.7
+EM-D-0301-039,Signalisation issue — EAR,"Niveau 04 — 8(UE1), aire ouverte",1,EXISTANT À RELOCALISER — EAR,MODÈLE NON PRÉCISÉ,,,4663.2,4132.4
+EM-D-0301-040,Signalisation issue existante,Niveau 04 — ESC.2 / 8(UE1),1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5245.0,4132.4
+EM-D-0301-041,Prise double existante,Niveau 04 — ESC.2,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5245.0,4105.8
+EM-D-0301-042,Déclencheur manuel existant,Niveau 04 — Porte ESC.2,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,,,5308.7,4124.4
+EM-D-0301-043,Détecteur existant — type réservé,Niveau 03 — ESC.2,1,EXISTANT représenté — statut à confirmer,MODÈLE NON PRÉCISÉ,* Symbole de détecteur sans indice F/CH lisible; aucun type ou remplacement supposé.,,5407.0,1390.2
