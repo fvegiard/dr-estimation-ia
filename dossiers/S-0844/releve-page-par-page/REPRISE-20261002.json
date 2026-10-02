@@ -93,6 +93,36 @@
       "reviewed_utc": "2026-10-02T08:53:00.804864+00:00",
       "independent_qpl_comparison": "non effectuée",
       "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
+    },
+    {
+      "sheet": "ES-D-SS01",
+      "source": "sources/169 - Electricite_plan (1) - 10.png",
+      "source_sha256": "d975c49849516d48ffda6c339213793bbab0a04809b688e8ecc2d8fd6f531a94",
+      "markers": 77,
+      "families": {
+        "Prise double existante": 32,
+        "Prise repérée P — existante": 2,
+        "Aérotherme existant": 4,
+        "Boîte de tirage ou jonction": 8,
+        "Enveloppe de distribution existante": 8,
+        "Libellé T5 / T6 sans appareil délimité": 2,
+        "Chauffe-eau existant": 1,
+        "Thermostat existant": 3,
+        "Chauffage linéaire existant": 4,
+        "Bouton / commande carré à point": 4,
+        "Commande M existante — type réservé": 1,
+        "Dispositif EI / A — type réservé": 4,
+        "Interrupteur avec fusibles existant": 1,
+        "Transformateur existant": 1,
+        "Sectionneur existant": 1,
+        "Panneau existant": 1
+      },
+      "image_sha256": "89536ecf0eeaa827ee117b487a3aa12f2da9b3ca68dbcfaeaacd8b34fa1d7f7f",
+      "visual_review": "77/77 ancrages contrôlés dans cinq zones; balayage complémentaire complet de la façade sud; libellés T5/T6 à quantité zéro; légende relue, retraits non présumés",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T08:58:46.561148+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
     }
   ],
   "original_ten_preserved": true,
