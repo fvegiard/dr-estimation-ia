@@ -1,0 +1,35 @@
+{
+  "baseline_sha": "e56a9ed46db2215c9284800c159163cb0ecc4510",
+  "writer": "S-0844 unique",
+  "qpl_opened": false,
+  "new_sheets_reviewed": [
+    {
+      "sheet": "ES-D-0301",
+      "source": "sources/169 - Electricite_plan (1) - 12.png",
+      "source_sha256": "d49ca4cc82973cdd348db25633a9c78f2704d36c6adfc578fe6196817840a339",
+      "markers": 26,
+      "families": {
+        "Boîte de tirage ou jonction": 8,
+        "Chauffe-eau représenté": 2,
+        "Thermostat": 2,
+        "Prise de courant double": 2,
+        "Chauffage électrique linéaire": 4,
+        "Interrupteur avec fusibles": 2,
+        "Transformateur représenté": 2,
+        "Sectionneur représenté": 2,
+        "Panneau existant représenté": 2
+      },
+      "image_sha256": "f0ef8c3a3b7fe7a29e08471d8800ed26fec8087459a53be35d3da83b14af4234",
+      "visual_review": "26/26 ancrages contrôlés dans les deux zooms; familles recoupées avec EX-M-LG01; légende relue",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T08:34:22.104116+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison",
+      "corrections": [
+        "Carrés TP classés boîtes de tirage ou jonction après lecture de la légende; pas de fourniture mécanique supposée."
+      ]
+    }
+  ],
+  "original_ten_preserved": true,
+  "next": "EC-M-0301"
+}
