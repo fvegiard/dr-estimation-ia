@@ -28,8 +28,29 @@
       "corrections": [
         "Carrés TP classés boîtes de tirage ou jonction après lecture de la légende; pas de fourniture mécanique supposée."
       ]
+    },
+    {
+      "sheet": "EC-M-0301",
+      "source": "sources/169 - Electricite_plan (1) - 16.png",
+      "source_sha256": "a3cd1119de8e90850d8cca9848aa8e64b0904fd1041d78adb5e8c2ea55f9ce30",
+      "markers": 28,
+      "families": {
+        "Réseau de chemin de câbles 152 × 100 mm": 4,
+        "Conduits 76 mm": 4,
+        "Conduits 63 mm — représentations": 3,
+        "Manchons 63 mm": 2,
+        "Conduit DATA 41 mm — libellé source": 6,
+        "Conduit DATA 42 mm — libellé source": 6,
+        "Conduit 21 mm": 3
+      },
+      "image_sha256": "3aa787c08914cd0d5a065b813e9ef01925d4ab1d9adb8fdac4468c86ca3f7214",
+      "visual_review": "28/28 ancrages contrôlés dans les cinq zooms; diamètres et réserves relus dans la légende rendue; doubles représentations interétages signalées",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T08:43:31.573895+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
     }
   ],
   "original_ten_preserved": true,
-  "next": "EC-M-0301"
+  "next": "Poursuite des feuilles restantes du CHECKPOINT initial"
 }
