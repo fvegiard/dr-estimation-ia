@@ -1,0 +1,83 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X source px,Y source px
+EA-M-0302-001,Sortie lecteur de cartes,"03 — Groupe 03, rangement finance 3.15",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2017.7,1899.2
+EA-M-0302-002,Sortie gâche électrique,"03 — Groupe 03, rangement finance 3.15",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2032.7,1933.2
+EA-M-0302-003,Sortie contact magnétique,"03 — Groupe 03, rangement finance 3.15",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2032.7,1974.3
+EA-M-0302-004,Sortie requête de sortie,"03 — Groupe 03, rangement finance 3.15",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2057.7,1952.2
+EA-M-0302-005,Module relais MRA,"03 — Groupe 03, rangement finance 3.15",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,2093.8,1967.3
+EA-M-0302-006,Sortie lecteur de cartes,"03 — Groupe 03, facilities 3.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2297.5,1674.0
+EA-M-0302-007,Sortie gâche électrique,"03 — Groupe 03, facilities 3.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2334.2,1658.1
+EA-M-0302-008,Sortie contact magnétique,"03 — Groupe 03, facilities 3.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2370.9,1658.1
+EA-M-0302-009,Sortie requête de sortie,"03 — Groupe 03, facilities 3.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2352.5,1633.6
+EA-M-0302-010,Module relais MRA,"03 — Groupe 03, facilities 3.13",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,2364.8,1599.3
+EA-M-0302-011,Sortie lecteur de cartes,"03 — Groupe 03, tech bar 3.12",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2689.1,1402.3
+EA-M-0302-012,Sortie gâche électrique,"03 — Groupe 03, tech bar 3.12",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2703.8,1434.1
+EA-M-0302-013,Sortie contact magnétique,"03 — Groupe 03, tech bar 3.12",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2703.8,1473.3
+EA-M-0302-014,Sortie requête de sortie,"03 — Groupe 03, tech bar 3.12",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2730.7,1454.9
+EA-M-0302-015,Module relais MRA,"03 — Groupe 03, tech bar 3.12",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,2769.8,1467.2
+EA-M-0302-016,Sortie lecteur de cartes,"03 — Groupe 03, rangement COMM 3.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3064.7,1511.2
+EA-M-0302-017,Sortie gâche électrique,"03 — Groupe 03, rangement COMM 3.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3097.8,1496.5
+EA-M-0302-018,Sortie contact magnétique,"03 — Groupe 03, rangement COMM 3.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3138.1,1496.5
+EA-M-0302-019,Sortie requête de sortie,"03 — Groupe 03, rangement COMM 3.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3117.4,1470.8
+EA-M-0302-020,Module relais MRA,"03 — Groupe 03, rangement COMM 3.07",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,3132.0,1534.5
+EA-M-0302-021,Sortie lecteur de cartes,"03 — Groupe 14, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2689.1,1857.5
+EA-M-0302-022,Sortie gâche électrique,"03 — Groupe 14, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2620.5,1762.1
+EA-M-0302-023,Sortie contact magnétique,"03 — Groupe 14, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2659.7,1762.1
+EA-M-0302-024,Sortie requête de sortie,"03 — Groupe 14, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2640.1,1736.4
+EA-M-0302-025,Module relais MRA,"03 — Groupe 14, hall ascenseur",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,2653.6,1802.4
+EA-M-0302-026,Sortie lecteur de cartes,"03 — Groupe 08, IDF 3.54",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3933.6,1890.1
+EA-M-0302-027,Sortie gâche électrique,"03 — Groupe 08, IDF 3.54",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3918.2,1862.4
+EA-M-0302-028,Sortie contact magnétique,"03 — Groupe 08, IDF 3.54",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3918.2,1816.1
+EA-M-0302-029,Sortie requête de sortie,"03 — Groupe 08, IDF 3.54",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3893.5,1839.2
+EA-M-0302-030,Sortie lecteur de cartes,"03 — Groupe 03, rangement EAS 3.49",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4435.1,1925.6
+EA-M-0302-031,Sortie gâche électrique,"03 — Groupe 03, rangement EAS 3.49",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4399.6,1910.2
+EA-M-0302-032,Sortie contact magnétique,"03 — Groupe 03, rangement EAS 3.49",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4359.5,1910.2
+EA-M-0302-033,Sortie requête de sortie,"03 — Groupe 03, rangement EAS 3.49",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4379.5,1884.0
+EA-M-0302-034,Module relais MRA,"03 — Groupe 03, rangement EAS 3.49",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,4368.7,1847.0
+EA-M-0302-035,Sortie lecteur de cartes,"03 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5201.9,1677.2
+EA-M-0302-036,Sortie gâche électrique,"03 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5168.0,1694.2
+EA-M-0302-037,Sortie contact magnétique,"03 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5126.3,1694.2
+EA-M-0302-038,Sortie requête de sortie,"03 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5146.4,1718.9
+EA-M-0302-039,Sortie lecteur de cartes,"03 — Groupe 03, rangement légal 3.36",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,6078.8,1666.9
+EA-M-0302-040,Sortie gâche électrique,"03 — Groupe 03, rangement légal 3.36",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,6005.7,1683.9
+EA-M-0302-041,Sortie contact magnétique,"03 — Groupe 03, rangement légal 3.36",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,6044.7,1683.9
+EA-M-0302-042,Sortie requête de sortie,"03 — Groupe 03, rangement légal 3.36",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,6025.7,1709.9
+EA-M-0302-043,Module relais MRA,"03 — Groupe 03, rangement légal 3.36",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,6012.7,1754.0
+EA-M-0302-044,Sortie lecteur de cartes,"04 — Groupe 03, rangement OMNI 4.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2013.7,4235.7
+EA-M-0302-045,Sortie gâche électrique,"04 — Groupe 03, rangement OMNI 4.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2029.8,4264.8
+EA-M-0302-046,Sortie contact magnétique,"04 — Groupe 03, rangement OMNI 4.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2029.8,4304.7
+EA-M-0302-047,Sortie requête de sortie,"04 — Groupe 03, rangement OMNI 4.13",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2056.7,4284.7
+EA-M-0302-048,Module relais MRA,"04 — Groupe 03, rangement OMNI 4.13",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,2092.8,4299.7
+EA-M-0302-049,Sortie lecteur de cartes,"04 — Groupe 03, rangement 4.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3131.9,3839.4
+EA-M-0302-050,Sortie gâche électrique,"04 — Groupe 03, rangement 4.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3060.8,3822.4
+EA-M-0302-051,Sortie contact magnétique,"04 — Groupe 03, rangement 4.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3099.9,3823.4
+EA-M-0302-052,Sortie requête de sortie,"04 — Groupe 03, rangement 4.07",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3080.9,3797.3
+EA-M-0302-053,Module relais MRA,"04 — Groupe 03, rangement 4.07",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,3066.8,3862.5
+EA-M-0302-054,Sortie lecteur de cartes,"04 — Groupe 05, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2687.9,4193.6
+EA-M-0302-055,Sortie gâche électrique,"04 — Groupe 05, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2637.6,4097.9
+EA-M-0302-056,Sortie contact magnétique,"04 — Groupe 05, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2675.4,4097.9
+EA-M-0302-057,Sortie requête de sortie,"04 — Groupe 05, hall ascenseur",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,2656.5,4072.8
+EA-M-0302-058,Module relais MRA,"04 — Groupe 05, hall ascenseur",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,2669.1,4135.7
+EA-M-0302-059,Sortie lecteur de cartes,"04 — Groupe 08, IDF 4.48",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3933.6,4230.8
+EA-M-0302-060,Sortie gâche électrique,"04 — Groupe 08, IDF 4.48",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3918.2,4196.9
+EA-M-0302-061,Sortie contact magnétique,"04 — Groupe 08, IDF 4.48",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3918.2,4150.6
+EA-M-0302-062,Sortie requête de sortie,"04 — Groupe 08, IDF 4.48",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,3893.5,4173.7
+EA-M-0302-063,Sortie lecteur de cartes,"04 — Groupe 03, rangement 4.28",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4762.2,3784.9
+EA-M-0302-064,Sortie gâche électrique,"04 — Groupe 03, rangement 4.28",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4776.1,3718.6
+EA-M-0302-065,Sortie contact magnétique,"04 — Groupe 03, rangement 4.28",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4776.1,3757.1
+EA-M-0302-066,Sortie requête de sortie,"04 — Groupe 03, rangement 4.28",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,4802.3,3735.5
+EA-M-0302-067,Module relais MRA,"04 — Groupe 03, rangement 4.28",1,MODULE REPRÉSENTÉ — renvoi alarme incendie,MODÈLE NON PRÉCISÉ,,,4842.4,3724.7
+EA-M-0302-068,Sortie lecteur de cartes,"04 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5195.8,4014.8
+EA-M-0302-069,Sortie gâche électrique,"04 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5166.4,4030.2
+EA-M-0302-070,Sortie contact magnétique,"04 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5126.3,4030.2
+EA-M-0302-071,Sortie requête de sortie,"04 — Groupe 13, ESC.2",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,,,5146.4,4058.0
+EA-M-0302-072,Sortie caméra en applique,03 — près impression 3.10,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,2674.4,1649.5
+EA-M-0302-073,Sortie caméra en applique,03 — IDF 3.54,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,3750.0,1822.2
+EA-M-0302-074,Sortie caméra en applique,04 — IDF 4.48,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,3750.0,4156.7
+EA-M-0302-075,Sortie caméra plafond,03 — café 3.01,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,3756.2,1236.0
+EA-M-0302-076,Sortie caméra plafond,03 — corridor ESC.2,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,4981.3,1779.1
+EA-M-0302-077,Sortie caméra plafond,04 — réception 4.10,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,2578.5,3841.4
+EA-M-0302-078,Sortie caméra plafond,04 — café 4.01,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,3671.3,3589.0
+EA-M-0302-079,Sortie caméra plafond,04 — corridor ESC.2,1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Sortie selon symbole EX-M-LG01; fourniture de caméra à vérifier au devis et aux détails.,,5024.5,4104.3
+EA-M-0302-080,Sortie déverrouillage à distance,"04 — réception, bouton PORTE / note A",1,INFRASTRUCTURE — sortie représentée,MODÈLE NON PRÉCISÉ,* Bouton dans mobilier; position finale à coordonner au chantier (note A).,,2389.8,3960.8
+EA-M-0302-081,Panneau de sécurité — enveloppe,03 — IDF 3.54 — 1200 × 250 mm,1,RENVOI DÉTAIL — enveloppe représentée,MODÈLE NON PRÉCISÉ,* Composants au détail EX-M-DT05; éviter tout double comptage.,,3734.6,1894.8
+EA-M-0302-082,Panneau de sécurité — enveloppe,04 — IDF 4.48 — 1200 × 250 mm,1,RENVOI DÉTAIL — enveloppe représentée,MODÈLE NON PRÉCISÉ,* Composants au détail EX-M-DT05; éviter tout double comptage.,,3734.6,4229.3

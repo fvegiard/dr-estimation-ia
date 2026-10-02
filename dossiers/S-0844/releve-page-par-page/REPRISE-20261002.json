@@ -70,6 +70,29 @@
       "reviewed_utc": "2026-10-02T08:48:35.185792+00:00",
       "independent_qpl_comparison": "non effectuée",
       "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
+    },
+    {
+      "sheet": "EA-M-0302",
+      "source": "sources/169 - Electricite_plan (1) - 20.png",
+      "source_sha256": "9f3e2c846ae7805c871346059899d847584d068e842c80a74d4838b42d4d84c7",
+      "markers": 82,
+      "families": {
+        "Sortie lecteur de cartes": 15,
+        "Sortie gâche électrique": 15,
+        "Sortie contact magnétique": 15,
+        "Sortie requête de sortie": 15,
+        "Module relais MRA": 11,
+        "Sortie caméra en applique": 3,
+        "Sortie caméra plafond": 5,
+        "Sortie déverrouillage à distance": 1,
+        "Panneau de sécurité — enveloppe": 2
+      },
+      "image_sha256": "b39c5c9edd9b8262d1b8e66caccd26735682ed0bc2d15f0072eec9fbb959c9a8",
+      "visual_review": "82/82 ancrages contrôlés dans les huit zones; page entière balayée; groupe légal inclus; familles de sorties recoupées avec EX-M-LG01; légende finale et note A relues",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T08:53:00.804864+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
     }
   ],
   "original_ten_preserved": true,
