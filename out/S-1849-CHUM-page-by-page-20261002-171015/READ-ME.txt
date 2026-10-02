@@ -1,0 +1,28 @@
+﻿S-1849 SIP CHUM — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL
+
+11 JPEG couvrent les 11 feuilles d'éclairage reçues (B1-01, RC, P1 NE, P2 à P5 NE et SE). La feuille P1 SE (1-D-EL-50-P1-3-0) n'est pas au dossier.
+Plan original conservé sans retouche; pastilles couleur sur les appareils; encadré RELEVÉ ajouté sous le plan. JPEG 6854 px de large.
+Un bordereau par feuille (« -equipment.csv », une ligne par repère : repère, matériel, désignation, qté, portée, modèle, réserve).
+
+QUANTITÉS PAR FEUILLE (comptées sur les repères imprimés au plan)
+1-B1-EL-50-01-2-0 : 239 pastilles, dont FGG1 à remplacer 15 (normal 7, secours 8, circuit non indiqué 0); RES 65
+1-B1-EL-50-RC-0-0 : 156 pastilles, dont FGG1 à remplacer 32 (normal 14, secours 17, circuit non indiqué 1); RES 33
+1-D-EL-50-P1-2-0 : 102 pastilles, dont FGG1 à remplacer 64 (normal 34, secours 30, circuit non indiqué 0); RES 12
+1-D-EL-50-P2-2-0 : 126 pastilles, dont FGG1 à remplacer 68 (normal 37, secours 31, circuit non indiqué 0); RES 22
+1-D-EL-50-P2-3-0 : 43 pastilles, dont FGG1 à remplacer 37 (normal 23, secours 14, circuit non indiqué 0); RES 3
+1-D-EL-50-P3-2-0 : 93 pastilles, dont FGG1 à remplacer 67 (normal 35, secours 32, circuit non indiqué 0); RES 12
+1-D-EL-50-P3-3-0 : 44 pastilles, dont FGG1 à remplacer 37 (normal 23, secours 14, circuit non indiqué 0); RES 3
+1-D-EL-50-P4-2-0 : 91 pastilles, dont FGG1 à remplacer 69 (normal 37, secours 32, circuit non indiqué 0); RES 12
+1-D-EL-50-P4-3-0 : 44 pastilles, dont FGG1 à remplacer 37 (normal 23, secours 14, circuit non indiqué 0); RES 3
+1-D-EL-50-P5-2-0 : 89 pastilles, dont FGG1 à remplacer 66 (normal 35, secours 31, circuit non indiqué 0); RES 13
+1-D-EL-50-P5-3-0 : 33 pastilles, dont FGG1 à remplacer 27 (normal 16, secours 11, circuit non indiqué 0); RES 2
+TOTAL : 1060 pastilles; FGG1 à remplacer 519 (normal 284, secours 234, circuit non indiqué 1).
+
+ÉTAT : relevé des repères de type imprimés seulement. Aucun appareil déduit d'un symbole sans repère.
+RES 180 : pastilles marquées * — symbole dessiné à côté du repère (pastille posée à côté du repère) ou circuit non indiqué. À revalider.
+FGG1 : luminaire étanche existant remplacé 1:1 par DEL (Signify V3W470L835-UNV-DIM-LFA-SSL; -SWZCSH avec contrôle SpaceWise aux niveaux P4 et P5), fourni client, posé entrepreneur.
+Familles « existant » : non listées au BOM corrigé du client; portée À PRÉCISER; type selon légende du consultant (non jointe).
+Le BOM corrigé du client indique 507 luminaires à remplacer; les plans en montrent 519 (P1 SE manquante). Écart à trancher par l'estimateur avant prix.
+Grillages (4 au BOM, feuille RC), lots du devis, câbles et conduits : non relevés ici. Aucun prix.
+Preuves : dossier audit/ (vue d'ensemble, encadré, planches de 30 pastilles par feuille, records JSON).
+Les listes ne doivent pas être additionnées entre feuilles sans contrôle des recouvrements.

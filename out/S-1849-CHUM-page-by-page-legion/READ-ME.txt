@@ -1,4 +1,4 @@
-﻿S-1849 SIP CHUM — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL
+S-1849 SIP CHUM — RELEVÉ PAGE PAR PAGE — ÉTAT DU TRAVAIL
 
 Source unique : BOM corrigé S-1849 SIP CHUM (bom_s1849.b64 : 13433 octets décodés, 41 lignes, 13 colonnes).
 SHA-256 de la source décodée : a0d00619afa5686aa524f38e926bf0a30775d8c4c75305bda3124e2ad49f8d91
@@ -32,13 +32,9 @@ RÉSERVES (reportées telles quelles du BOM — aucune résolution tacite)
 - Lobby ascenseurs P1 (12 un, type CC7) : non mentionnés au devis de remplacement ; conserver en place sauf avis contraire.
 - Lots : unité « Lot », à chiffrer, non additionnés aux unités.
 
-PLANS AVEC LISTE DE MATÉRIEL
-11 JPG « -releve.jpg » : plan original, 1 cercle par luminaire à remplacer (bleu = normal, rouge = secours), liste de matériel (BOM) imprimée sur la feuille.
-Par feuille : « -bom.csv ». Toutes les feuilles : « S-1849-CHUM-BOM-toutes-feuilles.csv ». Quantités = luminaires 'FGG1' comptés au plan.
-
-CHIFFRAGE); aucun prix n'est inventé.
-
-CHIFFRAGE) ; aucun prix n'est inventé.
+ÉLÉMENTS RÉSERVÉS — NON PRODUITS (contrairement au dossier Granby de référence)
+- Relevé JPG annoté par feuille (plan couleur + légende intégrée) : NON produit — relevé supervisé à faire sur les plans ; aucune annotation n'est inventée.
+- Estimation chiffrée (.xlsx) : NON produite — le taux de pose par appareil reste à ancrer (voir CHIFFRAGE) ; aucun prix n'est inventé.
 - Feuille 1-D-EL-50-P1-3-0 : absente de la source ; aucun CSV n'est créé pour elle.
 
 CHIFFRAGE (MCP dre-estimation, consulté le 2026-10-02)

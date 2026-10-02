@@ -1,0 +1,82 @@
+{
+ "prefix": "S-1849-CHUM",
+ "scope": "RELEVÉ DES REPÈRES D'ÉCLAIRAGE IMPRIMÉS AU PLAN",
+ "replaced_tags": [
+  "FGG1"
+ ],
+ "max_dist": 60,
+ "notes": [
+  "Une pastille = un repère de type imprimé au plan ('FGG1', 'FS'…), posée sur l'appareil; ancrage PDF exact. Aucune quantité déduite d'un symbole sans repère.",
+  "FGG1 : luminaire étanche existant, remplacé 1:1 par DEL 4 pi {model}; fourni par le client, posé par l'entrepreneur; dépose 1:1.",
+  "Normal / secours selon le circuit inscrit sous le repère (N… / S…). * = symbole adjacent au repère ou circuit non indiqué : pastille posée à côté du repère, à revalider (bordereau).",
+  "Familles « existant » : non listées au BOM corrigé du client; type selon légende du consultant (non jointe). Aucun modèle choisi arbitrairement.",
+  "Quantités de cette feuille seulement; ne pas additionner entre feuilles sans contrôle des recouvrements."
+ ],
+ "sheets": [
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-B1-EL-50-01-2-0-PDF(19).pdf",
+   "sheet": "1-B1-EL-50-01-2-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SSL",
+   "kept_tags": [
+    "X1",
+    "X2"
+   ]
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-B1-EL-50-RC-0-0-PDF(10).pdf",
+   "sheet": "1-B1-EL-50-RC-0-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SSL",
+   "notes": [
+    "Grillage de protection : 4 un. au BOM du client (note 1, luminaire sous 2100 mm) — non localisés au plan, aucune pastille."
+   ]
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P1-2-0-PDF(19).pdf",
+   "sheet": "1-D-EL-50-P1-2-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SSL",
+   "kept_tags": [
+    "CC7"
+   ]
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P2-2-0-PDF(13).pdf",
+   "sheet": "1-D-EL-50-P2-2-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SSL"
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P2-3-0-PDF[09].pdf",
+   "sheet": "1-D-EL-50-P2-3-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SSL"
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P3-2-0-PDF(10).pdf",
+   "sheet": "1-D-EL-50-P3-2-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SSL"
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P3-3-0-PDF[08].pdf",
+   "sheet": "1-D-EL-50-P3-3-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SSL"
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P4-2-0-PDF[09].pdf",
+   "sheet": "1-D-EL-50-P4-2-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SWZCSH"
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P4-3-0-PDF[08].pdf",
+   "sheet": "1-D-EL-50-P4-3-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SWZCSH"
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P5-2-0-PDF.pdf",
+   "sheet": "1-D-EL-50-P5-2-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SWZCSH"
+  },
+  {
+   "pdf": "D:\\claude\\releve-auto\\plan-expert-qpl-2026-09-22\\S-1849SIP CHUM ECLAIRAGE STATIONNEMENT\\CHUM-HHA-DRW-1-D-EL-50-P5-3-0-PDF.pdf",
+   "sheet": "1-D-EL-50-P5-3-0",
+   "model": "SIGNIFY V3W470L835-UNV-DIM-LFA-SWZCSH"
+  }
+ ]
+}
