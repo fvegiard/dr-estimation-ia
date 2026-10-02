@@ -1,0 +1,296 @@
+compteur_humain,x_h,y_h,libelle_ia,x_ia,y_ia,distance_px_humain
+SERV  TYPE H,4409,5345,Cercle à point (près de H) — à classer,4409,5345,0.0
+SERV  TYPE H,4505,1620,Cercle à point (près de H) — à classer,4505,1619,1.0
+SERV  TYPE H,5333,1616,Cercle à point (près de H) — à classer,5333,1615,1.0
+SERV  TYPE H,3770,5345,Luminaire cercle+support (corridor/hall) — à classer,3769,5345,1.0
+SERV  TYPE H,4030,5345,Luminaire cercle+support (corridor/hall) — à classer,4031,5345,1.0
+SERV  TYPE H,4504,5365,Cercle à point (près de H) — à classer,4503,5365,1.0
+SERV  TYPE H,4408,1596,Cercle à point (près de H) — à classer,4407,1595,1.4
+SERV  TYPE H,3522,5346,Luminaire cercle+support (corridor/hall) — à classer,3523,5345,1.4
+SERV  TYPE H,5336,5362,Cercle à point (près de H) — à classer,5335,5361,1.4
+SERV  TYPE H,4664,5220,Cercle à point (près de H) — à classer,4663,5219,1.4
+SERV  TYPE H,8263,1507,Luminaire cercle+support (corridor/hall) — à classer,8265,1507,2.0
+SERV  TYPE H,1573,5259,Luminaire cercle+support (corridor/hall) — à classer,1573,5257,2.0
+SERV  TYPE H,4789,5343,Luminaire cercle+support (corridor/hall) — à classer,4789,5341,2.0
+SERV  TYPE H,3770,1597,Luminaire cercle+support (corridor/hall) — à classer,3769,1595,2.2
+SERV  TYPE H,2998,1597,Luminaire cercle+support (corridor/hall) — à classer,2999,1595,2.2
+SERV  TYPE H,1571,1506,Luminaire cercle+support (corridor/hall) — à classer,1573,1507,2.2
+SERV  TYPE H,7626,1597,Luminaire cercle+support (corridor/hall) — à classer,7625,1595,2.2
+SERV  TYPE H,6838,1597,Luminaire cercle+support (corridor/hall) — à classer,6839,1595,2.2
+SERV  TYPE H,6575,1596,Luminaire cercle+support (corridor/hall) — à classer,6577,1595,2.2
+SERV  TYPE H,4947,1438,Luminaire cercle+support (corridor/hall) — à classer,4945,1437,2.2
+SERV  TYPE H,4787,1280,Luminaire cercle+support (corridor/hall) — à classer,4789,1279,2.2
+SERV  TYPE H,2212,5347,Luminaire cercle+support (corridor/hall) — à classer,2213,5345,2.2
+SERV  TYPE H,2997,5346,Luminaire cercle+support (corridor/hall) — à classer,2999,5345,2.2
+SERV  TYPE H,3263,5346,Luminaire cercle+support (corridor/hall) — à classer,3261,5345,2.2
+SERV  TYPE H,5077,5342,Luminaire cercle+support (corridor/hall) — à classer,5079,5341,2.2
+SERV  TYPE H,6575,5346,Luminaire cercle+support (corridor/hall) — à classer,6577,5345,2.2
+SERV  TYPE H,6838,5347,Luminaire cercle+support (corridor/hall) — à classer,6839,5345,2.2
+SERV  TYPE H,3259,1597,Luminaire cercle+support (corridor/hall) — à classer,3261,1595,2.8
+SERV  TYPE H,2471,1597,Luminaire cercle+support (corridor/hall) — à classer,2473,1595,2.8
+SERV  TYPE H,5803,1597,Luminaire cercle+support (corridor/hall) — à classer,5805,1595,2.8
+SERV  TYPE H,4787,4871,Luminaire cercle+support (corridor/hall) — à classer,4789,4873,2.8
+SERV  TYPE H,4947,4875,Luminaire cercle+support (corridor/hall) — à classer,4945,4873,2.8
+SERV  TYPE H,4787,5189,Luminaire cercle+support (corridor/hall) — à classer,4789,5187,2.8
+SERV  TYPE H,6331,5347,Luminaire cercle+support (corridor/hall) — à classer,6329,5345,2.8
+SERV  TYPE H,1684,1595,Luminaire cercle+support (corridor/hall) — à classer,1687,1595,3.0
+SERV  TYPE H,8265,5254,Luminaire cercle+support (corridor/hall) — à classer,8265,5257,3.0
+SERV  TYPE H,4032,1598,Luminaire cercle+support (corridor/hall) — à classer,4031,1595,3.2
+SERV  TYPE H,4786,1438,Luminaire cercle+support (corridor/hall) — à classer,4789,1437,3.2
+SERV  TYPE H,7362,5348,Luminaire cercle+support (corridor/hall) — à classer,7363,5345,3.2
+SERV  TYPE H,7890,5348,Luminaire cercle+support (corridor/hall) — à classer,7889,5345,3.2
+SERV  TYPE H,3520,1597,Luminaire cercle+support (corridor/hall) — à classer,3523,1595,3.6
+SERV  TYPE H,4292,1597,Luminaire cercle+support (corridor/hall) — à classer,4295,1595,3.6
+SERV  TYPE H,2210,1597,Luminaire cercle+support (corridor/hall) — à classer,2213,1595,3.6
+SERV  TYPE H,1685,5348,Luminaire cercle+support (corridor/hall) — à classer,1687,5345,3.6
+SERV  TYPE H,2476,5347,Luminaire cercle+support (corridor/hall) — à classer,2473,5345,3.6
+SERV  TYPE H,4293,5348,Luminaire cercle+support (corridor/hall) — à classer,4295,5345,3.6
+SERV  TYPE H,6065,5348,Luminaire cercle+support (corridor/hall) — à classer,6067,5345,3.6
+SERV  TYPE H,6067,1599,Luminaire cercle+support (corridor/hall) — à classer,6067,1595,4.0
+SERV  TYPE H,8147,5345,Luminaire cercle+support (corridor/hall) — à classer,8151,5345,4.0
+SERV  TYPE H,2733,1596,Luminaire cercle+support (corridor/hall) — à classer,2737,1595,4.1
+SERV  TYPE H,1945,1594,Luminaire cercle+support (corridor/hall) — à classer,1949,1595,4.1
+SERV  TYPE H,8148,1598,Luminaire cercle+support (corridor/hall) — à classer,8151,1595,4.2
+SERV  TYPE H,7098,1598,Luminaire cercle+support (corridor/hall) — à classer,7101,1595,4.2
+SERV  TYPE H,1946,5348,Luminaire cercle+support (corridor/hall) — à classer,1949,5345,4.2
+SERV  TYPE H,4648,5344,Luminaire cercle+support (corridor/hall) — à classer,4651,5341,4.2
+SERV  TYPE H,7361,1599,Luminaire cercle+support (corridor/hall) — à classer,7363,1595,4.5
+SERV  TYPE H,5075,1593,Luminaire cercle+support (corridor/hall) — à classer,5079,1591,4.5
+SERV  TYPE H,4949,1277,Luminaire cercle+support (corridor/hall) — à classer,4945,1279,4.5
+SERV  TYPE H,2733,5347,Luminaire cercle+support (corridor/hall) — à classer,2737,5345,4.5
+SERV  TYPE H,5195,5345,Luminaire cercle+support (corridor/hall) — à classer,5197,5341,4.5
+SERV  TYPE H,7099,5349,Luminaire cercle+support (corridor/hall) — à classer,7101,5345,4.5
+SERV  TYPE H,7885,1598,Luminaire cercle+support (corridor/hall) — à classer,7889,1595,5.0
+SERV  TYPE H,4785,1126,Luminaire cercle+support (corridor/hall) — à classer,4789,1123,5.0
+SERV  TYPE H,4785,5032,Luminaire cercle+support (corridor/hall) — à classer,4789,5029,5.0
+SERV  TYPE H,7625,5350,Luminaire cercle+support (corridor/hall) — à classer,7625,5345,5.0
+SERV  TYPE H,6330,1600,Luminaire cercle+support (corridor/hall) — à classer,6329,1595,5.1
+SERV  TYPE H,5171,1480,Luminaire cercle+support (corridor/hall) — à classer,5169,1475,5.4
+SERV  TYPE H,4649,1596,Luminaire cercle+support (corridor/hall) — à classer,4651,1591,5.4
+SERV  TYPE H,4940,5189,Luminaire cercle+support (corridor/hall) — à classer,4945,5187,5.4
+SERV  TYPE H,5803,5350,Luminaire cercle+support (corridor/hall) — à classer,5805,5345,5.4
+SERV  TYPE H,4940,1126,Luminaire cercle+support (corridor/hall) — à classer,4945,1123,5.8
+SERV  TYPE H,4936,5346,Luminaire cercle+support (corridor/hall) — à classer,4933,5341,5.8
+SERV  TYPE H,4945,5035,Luminaire cercle+support (corridor/hall) — à classer,4945,5029,6.0
+SERV  TYPE H,5199,1597,Luminaire cercle+support (corridor/hall) — à classer,5197,1591,6.3
+SERV  TYPE H,4787,1598,Luminaire cercle+support (corridor/hall) — à classer,4789,1591,7.3
+SERV  TYPE H,4929,1598,Luminaire cercle+support (corridor/hall) — à classer,4933,1591,8.1
+SERV  TYPE H,5165,5232,Luminaire cercle+support (corridor/hall) — à classer,5169,5225,8.1
+SERV  TYPE H,5540,1597,Luminaire cercle+support (corridor/hall) — à classer,5549,1595,9.2
+SERV  TYPE H,5538,5345,Luminaire cercle+support (corridor/hall) — à classer,5549,5345,11.0
+SERV C 750W,8201,1043,Hexagone C (chauffage 1250 W ?) — à classer,8201,1043,0.0
+SERV C 750W,4774,1028,Hexagone C (chauffage 1250 W ?) — à classer,4771,1031,4.2
+SERV C 750W,4777,4780,Hexagone C (chauffage 1250 W ?) — à classer,4771,4781,6.1
+SERV C 750W,5119,1024,Hexagone C (chauffage 1250 W ?) — à classer,5117,1031,7.3
+SERV C 750W,5136,4777,Hexagone C (chauffage 1250 W ?) — à classer,5117,4781,19.4
+SERV DEBIT,1691,1425,Icône sous Mx2/T (débit) — à classer,1691,1425,0.0
+SERV DEBIT,8147,5175,Icône sous Mx2/T (débit) — à classer,8147,5175,0.0
+SERV DEBIT,1694,5175,Icône sous Mx2/T (débit) — à classer,1693,5175,1.0
+SERV DEBIT,5222,1396,Icône sous Mx2/T (débit) — à classer,5221,1395,1.4
+SERV DEBIT,8146,1428,Icône sous Mx2/T (débit) — à classer,8145,1427,1.4
+SERV DEBIT,5224,5148,Icône sous Mx2/T (débit) — à classer,5223,5147,1.4
+SERV DECT,2823,5347,Disque B1-xxx (secours ou détecteur) — à classer,2823,5347,0.0
+SERV DECT,1615,5082,Disque B1-xxx (secours ou détecteur) — à classer,1615,5081,1.0
+SERV DECT,4444,5347,Disque B1-xxx (secours ou détecteur) — à classer,4443,5347,1.0
+SERV DECT,8224,5106,Disque B1-xxx (secours ou détecteur) — à classer,8223,5105,1.4
+SERV DECT,3693,1595,Disque B1-xxx (secours ou détecteur) — à classer,3693,1593,2.0
+SERV DECT,1915,5349,Disque B1-xxx (secours ou détecteur) — à classer,1915,5347,2.0
+SERV DECT,7011,5347,Disque B1-xxx (secours ou détecteur) — à classer,7013,5347,2.0
+SERV DECT,7922,1599,Disque B1-xxx (secours ou détecteur) — à classer,7921,1597,2.2
+SERV DECT,6141,1594,Disque B1-xxx (secours ou détecteur) — à classer,6143,1595,2.2
+SERV DECT,5155,1312,Disque B1-xxx (secours ou détecteur) — à classer,5157,1311,2.2
+SERV DECT,2824,1599,Disque B1-xxx (secours ou détecteur) — à classer,2823,1597,2.2
+SERV DECT,5392,5341,Disque B1-xxx (secours ou détecteur) — à classer,5393,5343,2.2
+SERV DECT,5391,1595,Disque B1-xxx (secours ou détecteur) — à classer,5393,1593,2.8
+SERV DECT,4893,1579,Disque B1-xxx (secours ou détecteur) — à classer,4895,1577,2.8
+SERV DECT,7924,5347,Disque B1-xxx (secours ou détecteur) — à classer,7921,5347,3.0
+SERV DECT,4442,1594,Disque B1-xxx (secours ou détecteur) — à classer,4443,1597,3.2
+SERV DECT,4755,5053,Disque B1-xxx (secours ou détecteur) — à classer,4759,5053,4.0
+SERV DECT,3697,5344,Disque B1-xxx (secours ou détecteur) — à classer,3693,5343,4.1
+SERV DECT,1912,1600,Disque B1-xxx (secours ou détecteur) — à classer,1915,1597,4.2
+SERV DECT,4760,4876,Disque B1-xxx (secours ou détecteur) — à classer,4763,4873,4.2
+SERV DECT,7011,1601,Disque B1-xxx (secours ou détecteur) — à classer,7013,1597,4.5
+SERV DECT,4759,1125,Disque B1-xxx (secours ou détecteur) — à classer,4763,1123,4.5
+SERV DECT,4755,1300,Disque B1-xxx (secours ou détecteur) — à classer,4759,1303,5.0
+SERV DECT,4895,5333,Disque B1-xxx (secours ou détecteur) — à classer,4895,5327,6.0
+SERV DECT,6137,5341,Disque B1-xxx (secours ou détecteur) — à classer,6143,5345,7.2
+SERV PRISE,8143,1345,Appareil mural de porte (cercle à tige) — à classer,8143,1345,0.0
+SERV PRISE,1691,5083,Appareil mural de porte (cercle à tige) — à classer,1691,5083,0.0
+SERV PRISE,1697,1342,Appareil mural de porte (cercle à tige) — à classer,1697,1341,1.0
+SERV PRISE,8145,5096,Appareil mural de porte (cercle à tige) — à classer,8145,5095,1.0
+SERV PRISE,3994,1560,Appareil mural de porte (cercle à tige) — à classer,3993,1559,1.4
+SERV PRISE,8080,1564,Appareil mural de porte (cercle à tige) — à classer,8081,1565,1.4
+SERV PRISE,2867,5309,Appareil mural de porte (cercle à tige) — à classer,2869,5309,2.0
+SERV PRISE,5227,1344,Appareil mural de porte (cercle à tige) — à classer,5225,1343,2.2
+SERV PRISE,7035,5310,Appareil mural de porte (cercle à tige) — à classer,7033,5309,2.2
+SERV PRISE,5219,5224,Appareil mural de porte (cercle à tige) — à classer,5221,5225,2.2
+SERV PRISE,4737,5278,Appareil mural de porte (cercle à tige) — à classer,4739,5277,2.2
+SERV PRISE,5219,1477,Appareil mural de porte (cercle à tige) — à classer,5221,1475,2.8
+SERV PRISE,8083,5313,Appareil mural de porte (cercle à tige) — à classer,8081,5315,2.8
+SERV PRISE,4616,1464,Appareil mural de porte (cercle à tige) — à classer,4615,1461,3.2
+SERV PRISE,3994,5312,Appareil mural de porte (cercle à tige) — à classer,3993,5309,3.2
+SERV PRISE,5225,5097,Appareil mural de porte (cercle à tige) — à classer,5225,5093,4.0
+SERV PRISE,1740,5312,Appareil mural de porte (cercle à tige) — à classer,1743,5315,4.2
+SERV PRISE,6467,1563,Appareil mural de porte (cercle à tige) — à classer,6469,1559,4.5
+SERV PRISE,2308,5311,Appareil mural de porte (cercle à tige) — à classer,2305,5315,5.0
+SERV PRISE,7032,1564,Appareil mural de porte (cercle à tige) — à classer,7033,1559,5.1
+SERV PRISE,7594,5314,Appareil mural de porte (cercle à tige) — à classer,7595,5309,5.1
+SERV PRISE,4480,5314,Appareil mural de porte (cercle à tige) — à classer,4481,5309,5.1
+SERV PRISE,5009,4782,Appareil mural de porte (cercle à tige) — à classer,5007,4777,5.4
+SERV PRISE,5345,1563,Appareil mural de porte (cercle à tige) — à classer,5349,1559,5.7
+SERV PRISE,4478,1564,Appareil mural de porte (cercle à tige) — à classer,4481,1559,5.8
+SERV PRISE,2868,1565,Appareil mural de porte (cercle à tige) — à classer,2869,1559,6.1
+SERV PRISE,7596,1565,Appareil mural de porte (cercle à tige) — à classer,7595,1559,6.1
+SERV PRISE,5903,5311,Appareil mural de porte (cercle à tige) — à classer,5909,5309,6.3
+SERV PRISE,6469,5316,Appareil mural de porte (cercle à tige) — à classer,6469,5309,7.0
+SERV PRISE,5910,1566,Appareil mural de porte (cercle à tige) — à classer,5909,1559,7.1
+SERV PRISE,2297,1562,Appareil mural de porte (cercle à tige) — à classer,2305,1565,8.5
+SERV PRISE,1750,1560,Appareil mural de porte (cercle à tige) — à classer,1743,1565,8.6
+SERV PRISE,5342,5316,Appareil mural de porte (cercle à tige) — à classer,5349,5309,9.9
+SERV PRISE,5012,1036,Appareil mural de porte (cercle à tige) — à classer,5007,1027,10.3
+SERV PRISE,3433,1573,Appareil mural de porte (cercle à tige) — à classer,3431,1559,14.1
+SERV PRISE,3428,5329,Appareil mural de porte (cercle à tige) — à classer,3431,5309,20.2
+SERV TYPE E,8213,5135,Boîte à diagonale + E (escalier) — à classer,8213,5135,0.0
+SERV TYPE E,1609,1078,Boîte à diagonale + E (escalier) — à classer,1615,1075,6.7
+SERV TYPE E,1613,1356,Boîte à diagonale + E (escalier) — à classer,1625,1355,12.0
+SERV TYPE E,5147,1331,Boîte à diagonale + E (escalier) — à classer,5155,1341,12.8
+SERV TYPE E,1604,4818,Boîte à diagonale + E (escalier) — à classer,1615,4825,13.0
+SERV TYPE E,5148,1043,Boîte à diagonale + E (escalier) — à classer,5159,1051,13.6
+SERV TYPE E,5145,4794,Boîte à diagonale + E (escalier) — à classer,5159,4801,15.7
+SERV TYPE E,8210,1360,Boîte à diagonale + E (escalier) — à classer,8219,1345,17.5
+SERV TYPE E,5141,5079,Boîte à diagonale + E (escalier) — à classer,5155,5091,18.4
+SERV TYPE E,1604,5107,Boîte à diagonale + E (escalier) — à classer,1625,5105,21.1
+SERV TYPE E,8210,1071,Boîte à diagonale + E (escalier) — à classer,8219,1095,25.6
+SERV TYPE E,8214,4814,Boîte à diagonale + E (escalier) — à classer,8219,4845,31.4
+SERV EXIT,4870,1645,Enseigne de sortie,4869,1645,1.0
+SERV EXIT,4868,5367,Enseigne de sortie,4867,5367,1.0
+SERV EXIT,8276,1568,Enseigne de sortie,8283,1579,13.0
+SERV EXIT,1548,1566,Enseigne de sortie,1553,1579,13.9
+SERV EXIT,4935,5367,Enseigne de sortie,4921,5371,14.6
+SERV EXIT,4937,1644,Enseigne de sortie,4921,1647,16.3
+SERV EXIT,8276,5313,Enseigne de sortie,8283,5329,17.5
+SERV EXIT,1548,5312,Enseigne de sortie,1553,5329,17.7
+SERV EXIT,5093,5192,Enseigne de sortie,5115,5201,23.8
+SERV EXIT,5090,1447,Enseigne de sortie,5115,1451,25.3
+SERV OS3,7519,1598,Capteur OS3 (étiqueté),7519,1597,1.0
+SERV OS3,5371,5366,Capteur OS3 (étiqueté),5371,5365,1.0
+SERV OS3,4898,4913,Capteur OS3 (étiqueté),4897,4913,1.0
+SERV OS3,3122,5342,Capteur OS3 (étiqueté),3121,5343,1.4
+SERV OS3,6770,1599,Capteur OS3 (étiqueté),6769,1597,2.2
+SERV OS3,2372,1593,Capteur OS3 (étiqueté),2371,1595,2.2
+SERV OS3,6767,5348,Capteur OS3 (étiqueté),6769,5347,2.2
+SERV OS3,8219,1599,Capteur OS3 (étiqueté),8221,1597,2.8
+SERV OS3,3872,1593,Capteur OS3 (étiqueté),3869,1593,3.0
+SERV OS3,1620,1595,Capteur OS3 (étiqueté),1623,1595,3.0
+SERV OS3,4907,5296,Capteur OS3 (étiqueté),4907,5293,3.0
+SERV OS3,1623,5342,Capteur OS3 (étiqueté),1623,5345,3.0
+SERV OS3,6019,5350,Capteur OS3 (étiqueté),6019,5347,3.0
+SERV OS3,4476,1618,Capteur OS3 (étiqueté),4477,1615,3.2
+SERV OS3,2372,5342,Capteur OS3 (étiqueté),2371,5345,3.2
+SERV OS3,6017,1600,Capteur OS3 (étiqueté),6019,1597,3.6
+SERV OS3,4905,1546,Capteur OS3 (étiqueté),4907,1543,3.6
+SERV OS3,3121,1597,Capteur OS3 (étiqueté),3121,1593,4.0
+SERV OS3,4896,1167,Capteur OS3 (étiqueté),4897,1163,4.1
+SERV OS3,8222,5351,Capteur OS3 (étiqueté),8221,5347,4.1
+SERV OS3,5367,1617,Capteur OS3 (étiqueté),5371,1615,4.5
+SERV OS3,4478,5370,Capteur OS3 (étiqueté),4477,5365,5.1
+SERV OS3,7522,5352,Capteur OS3 (étiqueté),7519,5347,5.8
+SERV OS3,3875,5344,Capteur OS3 (étiqueté),3869,5343,6.1
+SERV RM,5228,5381,Module RM,5229,5381,1.0
+SERV RM,5227,1631,Module RM,5229,1631,2.0
+SERV RM,5262,5345,Module RM,5261,5343,2.2
+SERV RM,4613,5371,Module RM,4615,5369,2.8
+SERV RM,5264,1595,Module RM,5261,1593,3.6
+SERV RM,4565,1595,Module RM,4565,1591,4.0
+SERV RM,4618,1623,Module RM,4615,1619,5.0
+SERV RM,4561,5344,Module RM,4565,5341,5.0
+SERV TYPE K,4617,5896,Symbole K○ (sas ascenseur) — à classer,4617,5895,1.0
+SERV TYPE K,5218,5531,Symbole K○ (sas ascenseur) — à classer,5215,5529,3.6
+SERV TYPE K,4613,5526,Symbole K○ (sas ascenseur) — à classer,4615,5529,3.6
+SERV TYPE K,4618,5703,Symbole K○ (sas ascenseur) — à classer,4615,5699,5.0
+SW1,4706,5274,Icône ≈ sous T (compté SW1 par l'estimateur) — à classer,4705,5273,1.4
+SW1,1659,5221,SW1 (étiqueté),1663,5223,4.5
+SW1,1658,1471,SW1 (étiqueté),1663,1473,5.4
+SW1,8169,5222,SW1 (étiqueté),8173,5243,21.4
+SW1,8171,1471,SW1 (étiqueté),8173,1493,22.1
+SERV KLAXON,1613,1493,Carré K (station/module) — à classer,1613,1491,2.0
+SERV KLAXON,3891,5314,Carré K (station/module) — à classer,3891,5311,3.0
+SERV KLAXON,3890,1564,Carré K (station/module) — à classer,3891,1561,3.2
+SERV KLAXON,1612,5244,Carré K (station/module) — à classer,1613,5241,3.2
+SERV KLAXON,8224,5242,Carré K (station/module) — à classer,8221,5241,3.2
+SERV KLAXON,4616,5398,Carré K (station/module) — à classer,4619,5397,3.2
+SERV KLAXON,4621,1650,Carré K (station/module) — à classer,4619,1647,3.6
+SERV KLAXON,8220,1495,Carré K (station/module) — à classer,8221,1491,4.1
+SERV KLAXON,5868,1565,Carré K (station/module) — à classer,5869,1561,4.1
+SERV KLAXON,5980,5316,Carré K (station/module) — à classer,5979,5311,5.1
+SERV STATION,8219,1467,Carré F,8221,1467,2.0
+SERV STATION,5165,5189,Carré F,5165,5187,2.0
+SERV STATION,5166,1439,Carré F,5165,1437,2.2
+SERV STATION,5223,5286,Carré F,5223,5283,3.0
+SERV STATION,8221,5220,Carré F,8221,5217,3.0
+SERV STATION,1612,5218,Carré F,1613,5215,3.2
+SERV STATION,5220,1535,Carré F,5223,1533,3.6
+SERV STATION,4618,5421,Carré F,4619,5417,4.1
+SERV STATION,1616,1468,Carré F,1613,1465,4.2
+SERV STATION,4622,1672,Carré F,4619,1667,5.8
+SERV TH,5172,1402,Carré T (étiqueté),5171,1399,3.2
+SERV TH,8221,1401,Carré T (étiqueté),8223,1397,4.5
+SERV TH,1622,1423,Carré T (étiqueté),1627,1423,5.0
+SERV TH,4708,5254,Carré T (étiqueté),4709,5249,5.1
+SERV TH,5166,5151,Carré T (étiqueté),5171,5149,5.4
+SERV ISO,5228,1581,Module ISO,5227,1585,4.1
+SERV ISO,4619,1571,Module ISO,4617,1575,4.5
+SERV ISO,4620,5320,Module ISO,4617,5325,5.8
+SERV ISO,5296,5347,Module ISO,5303,5343,8.1
+SERV ISO,5223,5328,Module ISO,5227,5335,8.1
+SERV ISO,4551,5315,Module ISO,4561,5313,10.2
+SERV ISO,5291,1594,Module ISO,5303,1593,12.0
+SERV ISO,4547,1564,Module ISO,4561,1563,14.0
+SERV DIRECT,4687,1457,Carré à croix PSU1A-41 (étiqueté),4683,1455,4.5
+SERV DIRECT,4688,5226,Carré à croix PSU1A-41 (étiqueté),4685,5221,5.8
+SERV DIRECT,5263,5370,Bulle B (boîtiers quincaillerie),5275,5397,29.5
+SERV DIRECT,5262,1618,Bulle B (boîtiers quincaillerie),5275,1647,31.8
+SERV DIRECT,4575,5369,Bulle B (boîtiers quincaillerie),4551,5399,38.4
+SERV DIRECT,4575,1618,Bulle B (boîtiers quincaillerie),4551,1649,39.2
+SERV TH R,4734,1391,Carré T (étiqueté),4739,1391,5.0
+SERV TH R,4734,5142,Carré T (étiqueté),4739,5141,5.1
+SERV RELAIS,4836,1682,Carré R — à classer,4835,1677,5.1
+SERV RELAIS,5076,5424,Carré R — à classer,5073,5419,5.8
+SERV RELAIS,4835,5421,Carré R — à classer,4833,5413,8.2
+SERV RELAIS,4826,4795,Carré R — à classer,4821,4787,9.4
+SERV RELAIS,4828,1044,Carré R — à classer,4821,1037,9.9
+SERV RELAIS,5076,1681,Carré R — à classer,5073,1669,12.4
+SERV DP2,4908,4941,Boîtier DP2 avec batterie — à classer,4913,4939,5.4
+SERV DP2,4905,1190,Boîtier DP2 avec batterie — à classer,4913,1189,8.1
+SERV DP2,5971,1612,Boîtier DP2 avec batterie — à classer,5979,1609,8.5
+SERV DP2,2364,5321,Boîtier DP2 avec batterie — à classer,2373,5319,9.2
+SERV DP2,5970,5363,Boîtier DP2 avec batterie — à classer,5979,5359,9.8
+SERV DP2,2363,1572,Boîtier DP2 avec batterie — à classer,2373,1569,10.4
+SERV C 1750W,4872,1028,Hexagone C (chauffage 1250 W ?) — à classer,4867,1033,7.1
+SERV C 1750W,4659,5168,Hexagone C (chauffage 1250 W ?) — à classer,4651,5171,8.5
+SERV C 1750W,4874,4778,Hexagone C (chauffage 1250 W ?) — à classer,4867,4783,8.6
+SERV MRA,4532,5368,Module MRA,4539,5365,7.6
+SERV MRA,4650,5276,Module MRA,4655,5269,8.6
+SERV MRA,5291,5368,Module MRA,5301,5365,10.4
+SERV MRA,4529,1619,Module MRA,4539,1615,10.8
+SERV MRA,5290,1621,Module MRA,5301,1615,12.5
+SERV MRA,4679,1517,Module MRA,4691,1513,12.6
+SERV MX2,1636,1404,Module Mx2,1643,1401,7.6
+SERV MX2,1636,5154,Module Mx2,1643,5151,7.6
+SERV MX2,5173,1379,Module Mx2,5183,1375,10.8
+SERV MX2,4681,1493,Module Mx2,4691,1487,11.7
+SERV MX2,8205,5178,Module Mx2,8217,5175,12.4
+SERV MX2,8205,1429,Module Mx2,8217,1425,12.6
+SERV MX2,4647,5250,Module Mx2,4659,5245,13.0
+SERV MX2,5171,5130,Module Mx2,5183,5125,13.0
+SERV DECT GAINE,4701,1422,Appareil mural de porte (cercle à tige) — à classer,4709,1423,8.1
+SERV DECT GAINE,4701,5189,Appareil mural de porte (cercle à tige) — à classer,4709,5191,8.2
+SERV C 1250W,5004,1693,Hexagone C (chauffage 1250 W ?) — à classer,4999,1677,16.8
+SERV C 1250W,4655,1694,Hexagone C (chauffage 1250 W ?) — à classer,4651,1677,17.5
+SERV C 1250W,5111,1694,Hexagone C (chauffage 1250 W ?) — à classer,5107,1677,17.5
+SERV C 1250W,4659,5444,Hexagone C (chauffage 1250 W ?) — à classer,4651,5427,18.8
+SERV C 1250W,4765,1695,Hexagone C (chauffage 1250 W ?) — à classer,4759,1677,19.0
+SERV C 1250W,5005,5445,Hexagone C (chauffage 1250 W ?) — à classer,4999,5427,19.0
+SERV C 1250W,5111,5446,Hexagone C (chauffage 1250 W ?) — à classer,5107,5427,19.4
+SERV C 1250W,4770,5446,Hexagone C (chauffage 1250 W ?) — à classer,4759,5427,22.0
+SERV VE-12,4624,5207,Boîte VE-12 (étiquetée),4559,5219,66.1

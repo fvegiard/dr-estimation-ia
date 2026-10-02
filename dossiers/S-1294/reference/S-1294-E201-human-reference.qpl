@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<QuoterPlanSession>
+  <Project Name="S-1294">
+    <Description>POINT CARDINAL ST AMABLE REV</Description>
+    <ContactName>
+    </ContactName>
+    <ContactInfo>
+    </ContactInfo>
+    <JobNumber>
+    </JobNumber>
+    <Comment>
+    </Comment>
+    <CreationDate>2024/12/10</CreationDate>
+    <LastModified>2025/1/14</LastModified>
+    <DisplayResultsForAllPlans>False</DisplayResultsForAllPlans>
+  </Project>
+  <Workspace>
+    <ActivePlan Name="STAM23A - E - Pour construction - 2024-10-08 - 14" />
+  </Workspace>
+  <Plans>
+    <Plan Name="STAM23A - E - Pour construction - 2024-10-08 - 14" FileName="STAM23A - E - Pour construction - 2024-10-08 - 14.png">
+      <Thumbnail FileName="d6cf23d7-e0e4-43a4-bd23-d6b643fbd3f6" />
+      <Scale Value="0.0625" Type="1" Precision="2" SetManually="False" Engineering="False" />
+      <Bookmarks>
+        <Bookmark Name="Default" LayerIndex="0" Zoom="11" X="0" Y="0" />
+      </Bookmarks>
+      <Comment>
+      </Comment>
+      <Layers>
+        <Layer Index="0" Name="Calque par défaut" Opacity="150" Visible="True" Active="False">
+          <Legend Name="Légende" X="3883" Y="2835" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True" />
+          <Counter Name="SERV  TYPE H" GroupID="217" Shape="0" DefaultSize="25" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True">
+            <Element X="3770" Y="1597" Width="25" Height="25" />
+            <Element X="3520" Y="1597" Width="25" Height="25" />
+            <Element X="3259" Y="1597" Width="25" Height="25" />
+            <Element X="2998" Y="1597" Width="25" Height="25" />
+            <Element X="2733" Y="1596" Width="25" Height="25" />
+            <Element X="2471" Y="1597" Width="25" Height="25" />
+            <Element X="4032" Y="1598" Width="25" Height="25" />
+            <Element X="4292" Y="1597" Width="25" Height="25" />
+            <Element X="2210" Y="1597" Width="25" Height="25" />
+            <Element X="1945" Y="1594" Width="25" Height="25" />
+            <Element X="1684" Y="1595" Width="25" Height="25" />
+            <Element X="1571" Y="1506" Width="25" Height="25" />
+            <Element X="4408" Y="1596" Width="25" Height="25" />
+            <Element X="4505" Y="1620" Width="25" Height="25" />
+            <Element X="8148" Y="1598" Width="25" Height="25" />
+            <Element X="8263" Y="1507" Width="25" Height="25" />
+            <Element X="7885" Y="1598" Width="25" Height="25" />
+            <Element X="7626" Y="1597" Width="25" Height="25" />
+            <Element X="7361" Y="1599" Width="25" Height="25" />
+            <Element X="7098" Y="1598" Width="25" Height="25" />
+            <Element X="6838" Y="1597" Width="25" Height="25" />
+            <Element X="6575" Y="1596" Width="25" Height="25" />
+            <Element X="6330" Y="1600" Width="25" Height="25" />
+            <Element X="6067" Y="1599" Width="25" Height="25" />
+            <Element X="5803" Y="1597" Width="25" Height="25" />
+            <Element X="5540" Y="1597" Width="25" Height="25" />
+            <Element X="5333" Y="1616" Width="25" Height="25" />
+            <Element X="5199" Y="1597" Width="25" Height="25" />
+            <Element X="5075" Y="1593" Width="25" Height="25" />
+            <Element X="5171" Y="1480" Width="25" Height="25" />
+            <Element X="4947" Y="1438" Width="25" Height="25" />
+            <Element X="4929" Y="1598" Width="25" Height="25" />
+            <Element X="4787" Y="1598" Width="25" Height="25" />
+            <Element X="4649" Y="1596" Width="25" Height="25" />
+            <Element X="4786" Y="1438" Width="25" Height="25" />
+            <Element X="4787" Y="1280" Width="25" Height="25" />
+            <Element X="4949" Y="1277" Width="25" Height="25" />
+            <Element X="4940" Y="1126" Width="25" Height="25" />
+            <Element X="4785" Y="1126" Width="25" Height="25" />
+            <Element X="1685" Y="5348" Width="25" Height="25" />
+            <Element X="1573" Y="5259" Width="25" Height="25" />
+            <Element X="1946" Y="5348" Width="25" Height="25" />
+            <Element X="2212" Y="5347" Width="25" Height="25" />
+            <Element X="2476" Y="5347" Width="25" Height="25" />
+            <Element X="2733" Y="5347" Width="25" Height="25" />
+            <Element X="2997" Y="5346" Width="25" Height="25" />
+            <Element X="3263" Y="5346" Width="25" Height="25" />
+            <Element X="3522" Y="5346" Width="25" Height="25" />
+            <Element X="3770" Y="5345" Width="25" Height="25" />
+            <Element X="4030" Y="5345" Width="25" Height="25" />
+            <Element X="4293" Y="5348" Width="25" Height="25" />
+            <Element X="4787" Y="4871" Width="25" Height="25" />
+            <Element X="4947" Y="4875" Width="25" Height="25" />
+            <Element X="4945" Y="5035" Width="25" Height="25" />
+            <Element X="4785" Y="5032" Width="25" Height="25" />
+            <Element X="4787" Y="5189" Width="25" Height="25" />
+            <Element X="4940" Y="5189" Width="25" Height="25" />
+            <Element X="5077" Y="5342" Width="25" Height="25" />
+            <Element X="4936" Y="5346" Width="25" Height="25" />
+            <Element X="4789" Y="5343" Width="25" Height="25" />
+            <Element X="4409" Y="5345" Width="25" Height="25" />
+            <Element X="4504" Y="5365" Width="25" Height="25" />
+            <Element X="5195" Y="5345" Width="25" Height="25" />
+            <Element X="5165" Y="5232" Width="25" Height="25" />
+            <Element X="5336" Y="5362" Width="25" Height="25" />
+            <Element X="5538" Y="5345" Width="25" Height="25" />
+            <Element X="5803" Y="5350" Width="25" Height="25" />
+            <Element X="6065" Y="5348" Width="25" Height="25" />
+            <Element X="6331" Y="5347" Width="25" Height="25" />
+            <Element X="6575" Y="5346" Width="25" Height="25" />
+            <Element X="6838" Y="5347" Width="25" Height="25" />
+            <Element X="7099" Y="5349" Width="25" Height="25" />
+            <Element X="7362" Y="5348" Width="25" Height="25" />
+            <Element X="7625" Y="5350" Width="25" Height="25" />
+            <Element X="7890" Y="5348" Width="25" Height="25" />
+            <Element X="8147" Y="5345" Width="25" Height="25" />
+            <Element X="8265" Y="5254" Width="25" Height="25" />
+            <Element X="4648" Y="5344" Width="25" Height="25" />
+            <Element X="4664" Y="5220" Width="25" Height="25" />
+          </Counter>
+          <Counter Name="SERV PRISE" GroupID="218" Shape="0" DefaultSize="24" Text="1" Color="-12156236" PenWidth="2" PenType="Generic" FillColor="-12156236" ShowMeasure="True" Visible="True">
+            <Element X="3994" Y="1560" Width="24" Height="24" />
+            <Element X="4478" Y="1564" Width="24" Height="24" />
+            <Element X="3433" Y="1573" Width="24" Height="24" />
+            <Element X="2868" Y="1565" Width="24" Height="24" />
+            <Element X="2297" Y="1562" Width="24" Height="24" />
+            <Element X="1750" Y="1560" Width="24" Height="24" />
+            <Element X="1697" Y="1342" Width="24" Height="24" />
+            <Element X="5345" Y="1563" Width="24" Height="24" />
+            <Element X="4616" Y="1464" Width="24" Height="24" />
+            <Element X="5012" Y="1036" Width="24" Height="24" />
+            <Element X="5227" Y="1344" Width="24" Height="24" />
+            <Element X="5219" Y="1477" Width="24" Height="24" />
+            <Element X="5910" Y="1566" Width="24" Height="24" />
+            <Element X="6467" Y="1563" Width="24" Height="24" />
+            <Element X="7032" Y="1564" Width="24" Height="24" />
+            <Element X="7596" Y="1565" Width="24" Height="24" />
+            <Element X="8080" Y="1564" Width="24" Height="24" />
+            <Element X="8143" Y="1345" Width="24" Height="24" />
+            <Element X="8083" Y="5313" Width="24" Height="24" />
+            <Element X="7594" Y="5314" Width="24" Height="24" />
+            <Element X="8145" Y="5096" Width="24" Height="24" />
+            <Element X="7035" Y="5310" Width="24" Height="24" />
+            <Element X="6469" Y="5316" Width="24" Height="24" />
+            <Element X="5903" Y="5311" Width="24" Height="24" />
+            <Element X="5342" Y="5316" Width="24" Height="24" />
+            <Element X="5219" Y="5224" Width="24" Height="24" />
+            <Element X="5225" Y="5097" Width="24" Height="24" />
+            <Element X="4737" Y="5278" Width="24" Height="24" />
+            <Element X="4480" Y="5314" Width="24" Height="24" />
+            <Element X="3994" Y="5312" Width="24" Height="24" />
+            <Element X="3428" Y="5329" Width="24" Height="24" />
+            <Element X="2867" Y="5309" Width="24" Height="24" />
+            <Element X="2308" Y="5311" Width="24" Height="24" />
+            <Element X="1740" Y="5312" Width="24" Height="24" />
+            <Element X="1691" Y="5083" Width="24" Height="24" />
+            <Element X="5009" Y="4782" Width="24" Height="24" />
+          </Counter>
+          <Counter Name="SERV TYPE E" GroupID="219" Shape="1" DefaultSize="48" Text="1" Color="-23296" PenWidth="2" PenType="Generic" FillColor="-23296" ShowMeasure="True" Visible="True">
+            <Element X="5148" Y="1043" Width="48" Height="48" />
+            <Element X="5147" Y="1331" Width="48" Height="48" />
+            <Element X="8210" Y="1071" Width="48" Height="48" />
+            <Element X="8210" Y="1360" Width="48" Height="48" />
+            <Element X="1609" Y="1078" Width="48" Height="48" />
+            <Element X="1613" Y="1356" Width="48" Height="48" />
+            <Element X="8214" Y="4814" Width="48" Height="48" />
+            <Element X="8213" Y="5135" Width="48" Height="48" />
+            <Element X="5145" Y="4794" Width="48" Height="48" />
+            <Element X="5141" Y="5079" Width="48" Height="48" />
+            <Element X="1604" Y="4818" Width="48" Height="48" />
+            <Element X="1604" Y="5107" Width="48" Height="48" />
+          </Counter>
+          <Counter Name="SERV EXIT" GroupID="220" Shape="1" DefaultSize="37" Text="1" Color="-3308225" PenWidth="2" PenType="Generic" FillColor="-3308225" ShowMeasure="True" Visible="True">
+            <Element X="1548" Y="1566" Width="37" Height="66" />
+            <Element X="4870" Y="1645" Width="64" Height="37" />
+            <Element X="4937" Y="1644" Width="62" Height="37" />
+            <Element X="5090" Y="1447" Width="68" Height="37" />
+            <Element X="8276" Y="1568" Width="37" Height="68" />
+            <Element X="1548" Y="5312" Width="37" Height="68" />
+            <Element X="4868" Y="5367" Width="65" Height="37" />
+            <Element X="4935" Y="5367" Width="68" Height="37" />
+            <Element X="5093" Y="5192" Width="67" Height="37" />
+            <Element X="8276" Y="5313" Width="37" Height="74" />
+          </Counter>
+          <Counter Name="SERV OS3" GroupID="221" Shape="0" DefaultSize="23" Text="1" Color="-4144960" PenWidth="2" PenType="Generic" FillColor="-4144960" ShowMeasure="True" Visible="True">
+            <Element X="8219" Y="1599" Width="23" Height="23" />
+            <Element X="7519" Y="1598" Width="23" Height="23" />
+            <Element X="6770" Y="1599" Width="23" Height="23" />
+            <Element X="6017" Y="1600" Width="23" Height="23" />
+            <Element X="5367" Y="1617" Width="23" Height="23" />
+            <Element X="4905" Y="1546" Width="23" Height="23" />
+            <Element X="4896" Y="1167" Width="23" Height="23" />
+            <Element X="4476" Y="1618" Width="23" Height="23" />
+            <Element X="3872" Y="1593" Width="23" Height="23" />
+            <Element X="3121" Y="1597" Width="23" Height="23" />
+            <Element X="2372" Y="1593" Width="23" Height="23" />
+            <Element X="1620" Y="1595" Width="23" Height="23" />
+            <Element X="6767" Y="5348" Width="23" Height="23" />
+            <Element X="7522" Y="5352" Width="23" Height="23" />
+            <Element X="8222" Y="5351" Width="23" Height="23" />
+            <Element X="5371" Y="5366" Width="23" Height="23" />
+            <Element X="4907" Y="5296" Width="23" Height="23" />
+            <Element X="4898" Y="4913" Width="23" Height="23" />
+            <Element X="4478" Y="5370" Width="23" Height="23" />
+            <Element X="3875" Y="5344" Width="23" Height="23" />
+            <Element X="3122" Y="5342" Width="23" Height="23" />
+            <Element X="2372" Y="5342" Width="23" Height="23" />
+            <Element X="1623" Y="5342" Width="23" Height="23" />
+            <Element X="6019" Y="5350" Width="23" Height="23" />
+          </Counter>
+          <Counter Name="SERV STATION" GroupID="222" Shape="1" DefaultSize="24" Text="1" Color="-7667712" PenWidth="2" PenType="Generic" FillColor="-7667712" ShowMeasure="True" Visible="True">
+            <Element X="1616" Y="1468" Width="24" Height="24" />
+            <Element X="4622" Y="1672" Width="24" Height="24" />
+            <Element X="5166" Y="1439" Width="24" Height="24" />
+            <Element X="8219" Y="1467" Width="24" Height="24" />
+            <Element X="5220" Y="1535" Width="24" Height="24" />
+            <Element X="5165" Y="5189" Width="24" Height="24" />
+            <Element X="4618" Y="5421" Width="24" Height="24" />
+            <Element X="5223" Y="5286" Width="24" Height="24" />
+            <Element X="8221" Y="5220" Width="24" Height="24" />
+            <Element X="1612" Y="5218" Width="24" Height="24" />
+          </Counter>
+          <Counter Name="SERV KLAXON" GroupID="223" Shape="1" DefaultSize="23" Text="1" Color="-16777077" PenWidth="2" PenType="Generic" FillColor="-16777077" ShowMeasure="True" Visible="True">
+            <Element X="8220" Y="1495" Width="23" Height="23" />
+            <Element X="5868" Y="1565" Width="23" Height="23" />
+            <Element X="4621" Y="1650" Width="23" Height="23" />
+            <Element X="3890" Y="1564" Width="23" Height="23" />
+            <Element X="1613" Y="1493" Width="23" Height="23" />
+            <Element X="1612" Y="5244" Width="23" Height="23" />
+            <Element X="3891" Y="5314" Width="23" Height="23" />
+            <Element X="5980" Y="5316" Width="23" Height="23" />
+            <Element X="8224" Y="5242" Width="23" Height="23" />
+            <Element X="4616" Y="5398" Width="23" Height="23" />
+          </Counter>
+          <Counter Name="SERV DP2" GroupID="224" Shape="1" DefaultSize="24" Text="1" Color="-16744448" PenWidth="2" PenType="Generic" FillColor="-16744448" ShowMeasure="True" Visible="True">
+            <Element X="2363" Y="1572" Width="40" Height="24" />
+            <Element X="4905" Y="1190" Width="37" Height="24" />
+            <Element X="5971" Y="1612" Width="40" Height="24" />
+            <Element X="2364" Y="5321" Width="44" Height="24" />
+            <Element X="4908" Y="4941" Width="34" Height="24" />
+            <Element X="5970" Y="5363" Width="42" Height="24" />
+          </Counter>
+          <Counter Name="SERV DECT" GroupID="226" Shape="0" DefaultSize="24" Text="1" Color="-256" PenWidth="2" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True">
+            <Element X="7922" Y="1599" Width="24" Height="24" />
+            <Element X="7011" Y="1601" Width="24" Height="24" />
+            <Element X="6141" Y="1594" Width="24" Height="24" />
+            <Element X="5391" Y="1595" Width="24" Height="24" />
+            <Element X="5155" Y="1312" Width="24" Height="24" />
+            <Element X="4893" Y="1579" Width="24" Height="24" />
+            <Element X="4755" Y="1300" Width="24" Height="24" />
+            <Element X="4759" Y="1125" Width="24" Height="24" />
+            <Element X="4442" Y="1594" Width="24" Height="24" />
+            <Element X="3693" Y="1595" Width="24" Height="24" />
+            <Element X="2824" Y="1599" Width="24" Height="24" />
+            <Element X="1912" Y="1600" Width="24" Height="24" />
+            <Element X="1615" Y="5082" Width="24" Height="24" />
+            <Element X="1915" Y="5349" Width="24" Height="24" />
+            <Element X="2823" Y="5347" Width="24" Height="24" />
+            <Element X="3697" Y="5344" Width="24" Height="24" />
+            <Element X="4444" Y="5347" Width="24" Height="24" />
+            <Element X="4895" Y="5333" Width="24" Height="24" />
+            <Element X="4755" Y="5053" Width="24" Height="24" />
+            <Element X="5392" Y="5341" Width="24" Height="24" />
+            <Element X="4760" Y="4876" Width="24" Height="24" />
+            <Element X="6137" Y="5341" Width="24" Height="24" />
+            <Element X="7011" Y="5347" Width="24" Height="24" />
+            <Element X="8224" Y="5106" Width="24" Height="24" />
+            <Element X="7924" Y="5347" Width="24" Height="24" />
+          </Counter>
+          <Counter Name="SERV DEBIT" GroupID="227" Shape="1" DefaultSize="26" Text="1" Color="-16744320" PenWidth="2" PenType="Generic" FillColor="-16744320" ShowMeasure="True" Visible="True">
+            <Element X="1691" Y="1425" Width="26" Height="26" />
+            <Element X="5222" Y="1396" Width="26" Height="26" />
+            <Element X="8146" Y="1428" Width="26" Height="26" />
+            <Element X="8147" Y="5175" Width="26" Height="26" />
+            <Element X="5224" Y="5148" Width="26" Height="26" />
+            <Element X="1694" Y="5175" Width="26" Height="26" />
+          </Counter>
+          <Counter Name="SERV TH" GroupID="228" Shape="1" DefaultSize="23" Text="1" Color="-47872" PenWidth="2" PenType="Generic" FillColor="-47872" ShowMeasure="True" Visible="True">
+            <Element X="8221" Y="1401" Width="23" Height="23" />
+            <Element X="5172" Y="1402" Width="23" Height="23" />
+            <Element X="1622" Y="1423" Width="23" Height="23" />
+            <Element X="4708" Y="5254" Width="23" Height="23" />
+            <Element X="5166" Y="5151" Width="23" Height="23" />
+          </Counter>
+          <Counter Name="SERV MX2" GroupID="230" Shape="1" DefaultSize="18" Text="1" Color="-9404272" PenWidth="2" PenType="Generic" FillColor="-9404272" ShowMeasure="True" Visible="True">
+            <Element X="1636" Y="1404" Width="51" Height="18" />
+            <Element X="4681" Y="1493" Width="46" Height="18" />
+            <Element X="5173" Y="1379" Width="46" Height="18" />
+            <Element X="8205" Y="1429" Width="51" Height="18" />
+            <Element X="8205" Y="5178" Width="47" Height="18" />
+            <Element X="4647" Y="5250" Width="48" Height="18" />
+            <Element X="5171" Y="5130" Width="47" Height="18" />
+            <Element X="1636" Y="5154" Width="50" Height="18" />
+          </Counter>
+          <Counter Name="SW1" GroupID="231" Shape="0" DefaultSize="31" Text="1" Color="-65536" PenWidth="2" PenType="Generic" FillColor="-65536" ShowMeasure="True" Visible="True">
+            <Element X="8171" Y="1471" Width="31" Height="31" />
+            <Element X="1658" Y="1471" Width="31" Height="31" />
+            <Element X="1659" Y="5221" Width="31" Height="31" />
+            <Element X="8169" Y="5222" Width="31" Height="31" />
+            <Element X="4706" Y="5274" Width="31" Height="31" />
+          </Counter>
+          <Counter Name="SERV TH R" GroupID="232" Shape="0" DefaultSize="31" Text="1" Color="-12525360" PenWidth="2" PenType="Generic" FillColor="-12525360" ShowMeasure="True" Visible="True">
+            <Element X="4734" Y="1391" Width="31" Height="31" />
+            <Element X="4734" Y="5142" Width="31" Height="31" />
+          </Counter>
+          <Counter Name="SERV ISO" GroupID="233" Shape="1" DefaultSize="23" Text="1" Color="-8388864" PenWidth="2" PenType="Generic" FillColor="-8388864" ShowMeasure="True" Visible="True">
+            <Element X="4547" Y="1564" Width="48" Height="23" />
+            <Element X="4619" Y="1571" Width="23" Height="44" />
+            <Element X="5228" Y="1581" Width="23" Height="50" />
+            <Element X="5291" Y="1594" Width="50" Height="23" />
+            <Element X="4620" Y="5320" Width="23" Height="41" />
+            <Element X="5296" Y="5347" Width="43" Height="23" />
+            <Element X="5223" Y="5328" Width="23" Height="51" />
+            <Element X="4551" Y="5315" Width="43" Height="23" />
+          </Counter>
+          <Counter Name="SERV RM" GroupID="234" Shape="1" DefaultSize="24" Text="1" Color="-989556" PenWidth="2" PenType="Generic" FillColor="-989556" ShowMeasure="True" Visible="True">
+            <Element X="5264" Y="1595" Width="24" Height="24" />
+            <Element X="4618" Y="1623" Width="24" Height="24" />
+            <Element X="4565" Y="1595" Width="24" Height="24" />
+            <Element X="5227" Y="1631" Width="24" Height="24" />
+            <Element X="5228" Y="5381" Width="24" Height="32" />
+            <Element X="5262" Y="5345" Width="24" Height="24" />
+            <Element X="4613" Y="5371" Width="24" Height="24" />
+            <Element X="4561" Y="5344" Width="30" Height="24" />
+          </Counter>
+          <Counter Name="SERV MRA" GroupID="235" Shape="1" DefaultSize="20" Text="1" Color="-1146130" PenWidth="2" PenType="Generic" FillColor="-1146130" ShowMeasure="True" Visible="True">
+            <Element X="5290" Y="1621" Width="40" Height="20" />
+            <Element X="4529" Y="1619" Width="44" Height="20" />
+            <Element X="4679" Y="1517" Width="42" Height="20" />
+            <Element X="4532" Y="5368" Width="42" Height="20" />
+            <Element X="5291" Y="5368" Width="38" Height="20" />
+            <Element X="4650" Y="5276" Width="40" Height="20" />
+          </Counter>
+          <Counter Name="SERV C 1250W" GroupID="236" Shape="1" DefaultSize="18" Text="1" Color="-5247250" PenWidth="2" PenType="Generic" FillColor="-5247250" ShowMeasure="True" Visible="True">
+            <Element X="4655" Y="1694" Width="96" Height="18" />
+            <Element X="4765" Y="1695" Width="99" Height="18" />
+            <Element X="4872" Y="1694" Width="108" Height="18" />
+            <Element X="5004" Y="1693" Width="95" Height="18" />
+            <Element X="5111" Y="1694" Width="92" Height="18" />
+            <Element X="4659" Y="5444" Width="93" Height="18" />
+            <Element X="4770" Y="5446" Width="88" Height="18" />
+            <Element X="5005" Y="5445" Width="94" Height="18" />
+            <Element X="5111" Y="5446" Width="93" Height="18" />
+          </Counter>
+          <Counter Name="SERV C 750W" GroupID="237" Shape="1" DefaultSize="17" Text="1" Color="-24454" PenWidth="2" PenType="Generic" FillColor="-24454" ShowMeasure="True" Visible="True">
+            <Element X="5119" Y="1024" Width="64" Height="17" />
+            <Element X="4774" Y="1028" Width="61" Height="17" />
+            <Element X="8201" Y="1043" Width="67" Height="17" />
+            <Element X="1596" Y="1046" Width="59" Height="17" />
+            <Element X="4777" Y="4780" Width="61" Height="17" />
+            <Element X="5136" Y="4777" Width="64" Height="17" />
+          </Counter>
+          <Counter Name="SERV C 1750W" GroupID="238" Shape="1" DefaultSize="17" Text="1" Color="-2968436" PenWidth="2" PenType="Generic" FillColor="-2968436" ShowMeasure="True" Visible="True">
+            <Element X="4872" Y="1028" Width="121" Height="17" />
+            <Element X="4874" Y="4778" Width="119" Height="17" />
+            <Element X="4659" Y="5168" Width="17" Height="17" />
+          </Counter>
+          <Counter Name="SERV RELAIS" GroupID="239" Shape="1" DefaultSize="15" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+            <Element X="4828" Y="1044" Width="15" Height="15" />
+            <Element X="4836" Y="1682" Width="15" Height="15" />
+            <Element X="5076" Y="1681" Width="15" Height="15" />
+            <Element X="4826" Y="4795" Width="15" Height="15" />
+            <Element X="5076" Y="5424" Width="15" Height="15" />
+            <Element X="4835" Y="5421" Width="15" Height="15" />
+          </Counter>
+          <Counter Name="SERV DIRECT" GroupID="240" Shape="1" DefaultSize="24" Text="1" Color="-38476" PenWidth="2" PenType="Generic" FillColor="-38476" ShowMeasure="True" Visible="True">
+            <Element X="5262" Y="1618" Width="24" Height="24" />
+            <Element X="4575" Y="1618" Width="24" Height="24" />
+            <Element X="4687" Y="1457" Width="24" Height="24" />
+            <Element X="4575" Y="5369" Width="24" Height="24" />
+            <Element X="4688" Y="5226" Width="24" Height="24" />
+            <Element X="5263" Y="5370" Width="24" Height="24" />
+          </Counter>
+          <Counter Name="SERV DECT GAINE" GroupID="241" Shape="1" DefaultSize="35" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+            <Element X="4701" Y="1422" Width="35" Height="35" />
+            <Element X="4701" Y="5189" Width="35" Height="35" />
+          </Counter>
+          <Counter Name="SERV VE-12" GroupID="243" Shape="0" DefaultSize="42" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True">
+            <Element X="4624" Y="5207" Width="42" Height="42" />
+          </Counter>
+          <Counter Name="SERV TYPE K" GroupID="244" Shape="0" DefaultSize="24" Text="1" Color="-12156236" PenWidth="2" PenType="Generic" FillColor="-12156236" ShowMeasure="True" Visible="True">
+            <Element X="5218" Y="5531" Width="24" Height="24" />
+            <Element X="4613" Y="5526" Width="24" Height="24" />
+            <Element X="4618" Y="5703" Width="24" Height="24" />
+            <Element X="4617" Y="5896" Width="24" Height="24" />
+          </Counter>
+          <Rectangle Name="Marqueur 1" X="1522" Y="1566" Width="3" Height="36" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 2" X="8337" Y="1572" Width="15" Height="45" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 3" X="8331" Y="5312" Width="17" Height="64" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 4" X="1517" Y="5315" Width="7" Height="69" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 7" X="4098" Y="1451" Width="10" Height="34" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 8" X="2660" Y="1443" Width="7" Height="29" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 9" X="7729" Y="1432" Width="10" Height="39" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 10" X="6293" Y="1451" Width="9" Height="30" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 11" X="7725" Y="5191" Width="13" Height="38" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 12" X="6294" Y="5208" Width="9" Height="28" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 13" X="4090" Y="5204" Width="13" Height="28" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 14" X="2663" Y="5192" Width="4" Height="31" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 15" X="5694" Y="5153" Width="6" Height="44" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 16" X="7182" Y="5193" Width="18" Height="30" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 17" X="3492" Y="5155" Width="14" Height="48" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 18" X="2098" Y="5196" Width="10" Height="27" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 19" X="8452" Y="5503" Width="24" Height="6" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 20" X="1520" Y="5507" Width="41" Height="13" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 22" X="2230" Y="5425" Width="9" Height="26" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 21" X="2033" Y="5419" Width="13" Height="35" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 23" X="2923" Y="5440" Width="12" Height="25" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 24" X="3401" Y="5427" Width="10" Height="26" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 25" X="3597" Y="5423" Width="10" Height="33" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 26" X="6251" Y="5427" Width="9" Height="28" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 27" X="6447" Y="5426" Width="12" Height="27" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 28" X="7620" Y="5430" Width="12" Height="28" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 29" X="7814" Y="5425" Width="17" Height="34" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 30" X="5341" Y="5683" Width="43" Height="10" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 31" X="4183" Y="5522" Width="5" Height="46" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Rectangle Name="Marqueur 32" X="6893" Y="5419" Width="39" Height="14" Color="-256" PenWidth="3" PenType="Generic" FillColor="-256" ShowMeasure="True" Visible="True" />
+          <Counter Name="A" GroupID="293" Shape="0" DefaultSize="150" Text="1" Color="-24454" PenWidth="2" PenType="Generic" FillColor="-24454" ShowMeasure="True" Visible="True">
+            <Element X="1213" Y="1313" Width="150" Height="150" />
+            <Element X="8426" Y="1327" Width="150" Height="150" />
+            <Element X="8426" Y="5075" Width="150" Height="150" />
+            <Element X="1187" Y="5064" Width="150" Height="150" />
+          </Counter>
+          <Counter Name="B" GroupID="294" Shape="0" DefaultSize="150" Text="1" Color="-2968436" PenWidth="2" PenType="Generic" FillColor="-2968436" ShowMeasure="True" Visible="True">
+            <Element X="2524" Y="4997" Width="150" Height="150" />
+            <Element X="4053" Y="4996" Width="150" Height="150" />
+            <Element X="7632" Y="4995" Width="150" Height="150" />
+            <Element X="6330" Y="4997" Width="150" Height="150" />
+            <Element X="4061" Y="1259" Width="150" Height="150" />
+            <Element X="2510" Y="1254" Width="150" Height="150" />
+            <Element X="7666" Y="1256" Width="150" Height="150" />
+            <Element X="6344" Y="1254" Width="150" Height="150" />
+          </Counter>
+          <Counter Name="C" GroupID="295" Shape="0" DefaultSize="150" Text="1" Color="-2302756" PenWidth="2" PenType="Generic" FillColor="-2302756" ShowMeasure="True" Visible="True">
+            <Element X="5726" Y="1262" Width="150" Height="150" />
+            <Element X="7244" Y="1255" Width="150" Height="150" />
+            <Element X="3430" Y="1259" Width="150" Height="150" />
+            <Element X="2053" Y="1255" Width="150" Height="150" />
+            <Element X="7214" Y="4996" Width="150" Height="150" />
+            <Element X="5728" Y="4996" Width="150" Height="150" />
+            <Element X="3410" Y="5010" Width="150" Height="150" />
+            <Element X="2024" Y="4996" Width="150" Height="150" />
+          </Counter>
+          <Counter Name="D" GroupID="296" Shape="0" DefaultSize="150" Text="1" Color="-47872" PenWidth="2" PenType="Generic" FillColor="-47872" ShowMeasure="True" Visible="True">
+            <Element X="8607" Y="1937" Width="150" Height="150" />
+            <Element X="1111" Y="1937" Width="150" Height="150" />
+            <Element X="1123" Y="5687" Width="150" Height="150" />
+            <Element X="8597" Y="5688" Width="150" Height="150" />
+          </Counter>
+          <Counter Name="E" GroupID="297" Shape="0" DefaultSize="150" Text="1" Color="-16776961" PenWidth="2" PenType="Generic" FillColor="-16776961" ShowMeasure="True" Visible="True">
+            <Element X="7945" Y="5539" Width="150" Height="150" />
+            <Element X="7375" Y="5435" Width="150" Height="150" />
+            <Element X="6622" Y="5539" Width="150" Height="150" />
+            <Element X="6001" Y="5541" Width="150" Height="150" />
+            <Element X="6012" Y="1790" Width="150" Height="150" />
+            <Element X="6629" Y="1792" Width="150" Height="150" />
+            <Element X="7395" Y="1685" Width="150" Height="150" />
+            <Element X="7943" Y="1792" Width="150" Height="150" />
+            <Element X="3783" Y="1778" Width="150" Height="150" />
+            <Element X="3094" Y="1782" Width="150" Height="150" />
+            <Element X="2706" Y="1778" Width="150" Height="150" />
+            <Element X="2352" Y="1782" Width="150" Height="150" />
+            <Element X="1790" Y="1782" Width="150" Height="150" />
+            <Element X="1794" Y="5531" Width="150" Height="150" />
+            <Element X="2363" Y="5529" Width="150" Height="150" />
+            <Element X="2719" Y="5539" Width="150" Height="150" />
+            <Element X="3087" Y="5534" Width="150" Height="150" />
+            <Element X="3780" Y="5539" Width="150" Height="150" />
+          </Counter>
+          <Counter Name="F" GroupID="298" Shape="0" DefaultSize="150" Text="1" Color="-16711936" PenWidth="2" PenType="Generic" FillColor="-16711936" ShowMeasure="True" Visible="True">
+            <Element X="4253" Y="5537" Width="150" Height="150" />
+            <Element X="5545" Y="5538" Width="150" Height="150" />
+            <Element X="5541" Y="1795" Width="150" Height="150" />
+            <Element X="4271" Y="1805" Width="150" Height="150" />
+          </Counter>
+          <Counter Name="G" GroupID="299" Shape="0" DefaultSize="150" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True">
+            <Element X="7035" Y="1677" Width="150" Height="150" />
+            <Element X="7029" Y="5433" Width="150" Height="150" />
+          </Counter>
+          <Line Name="FAS3/16 SERV" GroupID="337" Color="-10496" PenWidth="1" PenType="Generic" ShowMeasure="True" Visible="True">
+            <Element X1="1704" Y1="1417" X2="1704" Y2="1658" />
+            <Element X1="1712" Y1="1658" X2="4612" Y2="1658" />
+            <Element X1="8171" Y1="1353" X2="8224" Y2="1641" />
+            <Element X1="8224" Y1="1641" X2="4624" Y2="1641" />
+            <Element X1="8164" Y1="5118" X2="8164" Y2="5418" />
+            <Element X1="8173" Y1="5418" X2="1655" Y2="5418" />
+            <Element X1="1655" Y1="5318" X2="1682" Y2="5091" />
+            <Element X1="5240" Y1="5127" X2="5240" Y2="5407" />
+            <Element X1="5235" Y1="1376" X2="5235" Y2="1659" />
+          </Line>
+        </Layer>
+        <Layer Index="1" Name="Nouveau calque 1" Opacity="150" Visible="True" Active="False">
+        </Layer>
+        <Layer Index="2" Name="Nouveau calque 2" Opacity="225" Visible="True" Active="False">
+        </Layer>
+        <Layer Index="3" Name="Nouveau calque 3" Opacity="150" Visible="True" Active="True">
+        </Layer>
+      </Layers>
+    </Plan>
+  </Plans>
+  <Reports>
+    <Report Name="Default" Order="1" ScaleType="1" Precision="2">
+      <Property Name="ShowProjectInfo" Value="True" />
+      <Property Name="ShowComments" Value="True" />
+      <Property Name="ShowInvisibleObjects" Value="True" />
+      <Property Name="ApplyFilter" Value="True" />
+      <Property Name="EstimatingShowProjectInfo" Value="True" />
+      <Property Name="EstimatingShowComments" Value="True" />
+      <Property Name="EstimatingShowInvisibleObjects" Value="True" />
+      <Property Name="EstimatingApplyFilter" Value="True" />
+      <Property Name="QuoteShowProjectInfo" Value="True" />
+      <Property Name="QuoteShowComments" Value="True" />
+      <Property Name="QuoteShowInvisibleObjects" Value="True" />
+      <Property Name="QuoteApplyFilter" Value="True" />
+      <Property Name="OrderByObjectsFilter" Value="" />
+      <Property Name="OrderByPlansFilter" Value="" />
+      <Property Name="ReportSortBy" Value="0" />
+      <Property Name="QuoteReportSortBy" Value="0" />
+    </Report>
+  </Reports>
+</QuoterPlanSession>
