@@ -1,0 +1,6 @@
+﻿Type,Description,Quantité,Source
+LUMINAIRE,"Luminaire DEL étanche 4 pi, sans contrôle, V3W470L835-UNV-DIM-LFA-SSL (Signify) — circuit normal",14,1-B1-EL-50-RC-0-0
+LUMINAIRE,"Luminaire DEL étanche 4 pi, sans contrôle, V3W470L835-UNV-DIM-LFA-SSL (Signify) — circuit secours",17,1-B1-EL-50-RC-0-0
+LUMINAIRE,"Luminaire DEL étanche 4 pi, sans contrôle, V3W470L835-UNV-DIM-LFA-SSL (Signify) — circuit non indiqué au plan",1,1-B1-EL-50-RC-0-0
+FIXT ENL,"Dépose luminaire existant 'FGG1' (T5HO étanche 1x4), 1:1",32,1-B1-EL-50-RC-0-0
+GRILLAGE,"Grillage de protection, luminaire sous 2100 mm (note 1)",4,1-B1-EL-50-RC-0-0

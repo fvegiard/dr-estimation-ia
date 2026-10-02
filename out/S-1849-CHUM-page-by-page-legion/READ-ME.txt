@@ -32,32 +32,11 @@ RÉSERVES (reportées telles quelles du BOM — aucune résolution tacite)
 - Lobby ascenseurs P1 (12 un, type CC7) : non mentionnés au devis de remplacement ; conserver en place sauf avis contraire.
 - Lots : unité « Lot », à chiffrer, non additionnés aux unités.
 
-RELEVÉ ANNOTÉ PAR FEUILLE (produit le 2026-10-02 à partir des PDF vectoriels HH Angus)
-11 JPG « -releve.jpg » (6854 px, plan original + cercles couleur + légende intégrée), 1 par feuille de plan.
-Par feuille : « -releve-count.csv » (quantités par repère et classe de circuit) et « -releve-points.csv » (1 ligne par appareil, coordonnées PDF).
-Méthode : chaque repère entre apostrophes imprimé au plan ('FGG1', 'FS', 'X2'...) est jumelé à l'étiquette de circuit située sous lui.
-Cercle = repère + circuit (compté). Carré = repère sans circuit (non compté, à valider). Rien n'est déduit des symboles seuls.
+PLANS AVEC LISTE DE MATÉRIEL
+11 JPG « -releve.jpg » : plan original, 1 cercle par luminaire à remplacer (bleu = normal, rouge = secours), liste de matériel (BOM) imprimée sur la feuille.
+Par feuille : « -bom.csv ». Toutes les feuilles : « S-1849-CHUM-BOM-toutes-feuilles.csv ». Quantités = luminaires 'FGG1' comptés au plan.
 
-ÉCARTS PLAN / BOM CORRIGÉ — repères 'FGG1' (luminaires à remplacer) — À VALIDER AVANT PRIX FERME
-Feuille ; repères 'FGG1' au plan ; BOM corrigé ; écart
-1-B1-EL-50-01-2-0 ; 15 ; 15 ; +0
-1-B1-EL-50-RC-0-0 ; 32 ; 32 ; +0
-1-D-EL-50-P1-2-0 ; 64 ; 73 ; -9
-1-D-EL-50-P2-2-0 ; 68 ; 66 ; +2
-1-D-EL-50-P2-3-0 ; 37 ; 33 ; +4
-1-D-EL-50-P3-2-0 ; 67 ; 70 ; -3
-1-D-EL-50-P3-3-0 ; 37 ; 28 ; +9
-1-D-EL-50-P4-2-0 ; 69 ; 72 ; -3
-1-D-EL-50-P4-3-0 ; 37 ; 28 ; +9
-1-D-EL-50-P5-2-0 ; 66 ; 67 ; -1
-1-D-EL-50-P5-3-0 ; 27 ; 23 ; +4
-TOTAL ; 519 ; 507 ; +12
-P1 : le BOM (73) couvre tout le niveau; la feuille P1-3-0 est absente, le plan P1-2-0 n'en montre que 64.
-Feuilles 3-0 (SE) : plusieurs 'FGG1' sont entourés de nuages de révision au plan; leur portée (inclus ou exclus du remplacement) est à confirmer.
-Aucun écart n'est résolu tacitement : le BOM reste la quantité de soumission tant que le client ne tranche pas.
-
-ÉLÉMENT RÉSERVÉ — NON PRODUIT
-- Estimation chiffrée (.xlsx) : NON produite — le taux de pose par appareil reste à ancrer (voir CHIFFRAGE); aucun prix n'est inventé.
+CHIFFRAGE); aucun prix n'est inventé.
 
 CHIFFRAGE) ; aucun prix n'est inventé.
 - Feuille 1-D-EL-50-P1-3-0 : absente de la source ; aucun CSV n'est créé pour elle.
