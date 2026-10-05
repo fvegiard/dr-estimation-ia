@@ -30,6 +30,7 @@ ALLOWED = [
     "Bash(uv run releve/zoom.py *)",
     "Bash(uv run releve/extract_occurrences.py *)",
     "Bash(uv run releve/traits.py *)",
+    "Bash(uv run releve/controle_qualite.py *)",
     "Bash(head *)",
     "Bash(sort *)",
     "Bash(cut *)",

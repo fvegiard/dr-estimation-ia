@@ -120,7 +120,7 @@ def agent(workdir, log_path):
     else:
         cmd = ["claude", "-p", f"/releve-planexpert {workdir}", "--output-format", "json", "--permission-mode", "acceptEdits",
                "--permission-prompts", "none",
-               "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash(uv run releve/zoom.py *),Bash(uv run releve/extract_occurrences.py *),Bash(uv run releve/traits.py *),Bash(head *),Bash(sort *),Bash(cut *),Bash(cat *)",
+               "--allowedTools", "Read,Write,Edit,Glob,Grep,Bash(uv run releve/zoom.py *),Bash(uv run releve/extract_occurrences.py *),Bash(uv run releve/traits.py *),Bash(uv run releve/controle_qualite.py *),Bash(head *),Bash(sort *),Bash(cut *),Bash(cat *)",
                "--add-dir", workdir, "--max-turns", MAX_TURNS, "--model", MODEL,
                "--mcp-config", '{"mcpServers":{}}', "--strict-mcp-config"]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
@@ -222,6 +222,9 @@ def process(arg, reprendre=False):
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
                     raise RuntimeError(f"l'agent n'a pas produit {f}")
+            # contrôle qualité à l'aveugle (Q1-Q14) : non bloquant ici, mais journalisé et repris dans STATUT.md
+            t = time.time(); code, out = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
+            steps.append(("controle_qualite", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
         t = time.time(); code, _ = run(["uv", "run", "releve/build_qpl.py", workdir, name, pe_dir], log_path=log_path)
         steps.append(("build_qpl", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("build_qpl.py a échoué")

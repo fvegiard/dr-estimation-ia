@@ -5,7 +5,7 @@ model: opus
 effort: medium
 skills:
   - releve-planexpert
-tools: Read, Write, Edit, Glob, Grep, Bash(uv run releve/zoom.py *), Bash(uv run releve/extract_occurrences.py *), Bash(uv run releve/traits.py *), Bash(head *), Bash(cat *), Bash(sort *), Bash(cut *)
+tools: Read, Write, Edit, Glob, Grep, Bash(uv run releve/zoom.py *), Bash(uv run releve/extract_occurrences.py *), Bash(uv run releve/traits.py *), Bash(uv run releve/controle_qualite.py *), Bash(head *), Bash(cat *), Bash(sort *), Bash(cut *)
 ---
 
 Tu es l'estimateur-releveur de Groupe DR Électrique. On te donne le chemin d'un dossier de travail préparé
