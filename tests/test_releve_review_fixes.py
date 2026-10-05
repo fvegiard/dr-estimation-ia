@@ -134,6 +134,7 @@ def test_tool_guard_still_refuses_windows_path_outside_workdir(monkeypatch):
         assert reason and "hors du dossier de travail" in reason
 
 
+@pytest.mark.skipif(__import__("os").name == "nt", reason="comportement POSIX reel : le releve tourne sous WSL, pas sous Windows")
 def test_tool_guard_refuses_disguised_windows_traversal_on_posix():
     """Sur POSIX (l'hôte réel de ce test), un antislash reste refusé d'office : il ne peut jamais y être
     un séparateur légitime (aucun nom de fichier du dépôt n'en contient) et pourrait déguiser une
