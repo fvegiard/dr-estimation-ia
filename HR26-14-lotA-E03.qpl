@@ -1,0 +1,328 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="HR26-14-OMH-Haut-Richelieu">
+		<Description></Description>
+		<ContactName></ContactName>
+		<ContactInfo></ContactInfo>
+		<JobNumber></JobNumber>
+		<Comment></Comment>
+		<CreationDate>2026/9/15</CreationDate>
+		<LastModified>2026/9/15</LastModified>
+		<DisplayResultsForAllPlans>False</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+	</Workspace>
+	<Plans>
+		<Plan Name="DSI01_Rev0" FileName="DSI01_Rev0.png">
+			<Thumbnail FileName="d6a3e10f-4775-4175-a35a-0970a166080c"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI02_Rev0" FileName="DSI02_Rev0.png">
+			<Thumbnail FileName="65213261-5002-4fed-ab08-a1dbf9a38fd4"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI03_Rev0" FileName="DSI03_Rev0.png">
+			<Thumbnail FileName="cad9b12b-76c6-41ec-9d9f-27bca92441d8"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI04_Rev0" FileName="DSI04_Rev0.png">
+			<Thumbnail FileName="c01592f5-df78-4956-85f2-0d5ba8dbf531"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI05_Rev0" FileName="DSI05_Rev0.png">
+			<Thumbnail FileName="0a735285-a3e8-4996-a1ac-eb044caaf058"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI06_Rev0" FileName="DSI06_Rev0.png">
+			<Thumbnail FileName="209d26b5-1538-489f-a30c-ed68c3e97097"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI07_Rev0" FileName="DSI07_Rev0.png">
+			<Thumbnail FileName="0089004d-c48a-497d-9d7e-7a5698c46448"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI08_Rev0" FileName="DSI08_Rev0.png">
+			<Thumbnail FileName="2a5fd6f8-095b-4f86-b1da-a93d8c834012"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI09_Rev0" FileName="DSI09_Rev0.png">
+			<Thumbnail FileName="66161002-5424-4914-a812-54fc6089948a"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E01_Rev0" FileName="E01_Rev0.png">
+			<Thumbnail FileName="001f838a-362c-49c3-b565-883514798734"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E02_Rev0" FileName="E02_Rev0.png">
+			<Thumbnail FileName="83f650c5-b84c-4d53-958f-b92449af5b5b"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E03_Rev0" FileName="E03_Rev0.png">
+			<Thumbnail FileName="79037685-ab30-4d09-9140-8a525d03ab4b"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers><Layer Index="0" Name="Releve autonome" Opacity="150" Visible="True" Active="True"><Legend Name="Légende" X="3800" Y="2600" FontSize="38" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True" /><Counter Name="AVERTISSEUR DE FUMEE MURAL 120V" GroupID="1" Shape="0" DefaultSize="26" Text="1" Color="-13264487" PenWidth="2" PenType="Generic" FillColor="-13264487" ShowMeasure="True" Visible="True"><Element X="1142" Y="1823" Width="26" Height="26"/><Element X="1091" Y="1017" Width="26" Height="26"/><Element X="2933" Y="1823" Width="26" Height="26"/><Element X="2882" Y="1017" Width="26" Height="26"/></Counter><Counter Name="BOITE DE JONCTION POUR RACCORD (FUTURE) D'UN LAVE-VAISSELLE" GroupID="2" Shape="1" DefaultSize="26" Text="1" Color="-8861576" PenWidth="2" PenType="Generic" FillColor="-8861576" ShowMeasure="True" Visible="True"><Element X="883" Y="1539" Width="26" Height="26"/><Element X="2674" Y="1539" Width="26" Height="26"/></Counter><Counter Name="EVACUATEUR DE TOILETTE. VOIR VENTILATION." GroupID="3" Shape="1" DefaultSize="26" Text="1" Color="-6895366" PenWidth="2" PenType="Generic" FillColor="-6895366" ShowMeasure="True" Visible="True"><Element X="1042" Y="1253" Width="26" Height="26"/><Element X="2834" Y="1253" Width="26" Height="26"/></Counter><Counter Name="INTERCOME (CONTROLE DE PORTE)" GroupID="4" Shape="3" DefaultSize="28" Text="1" Color="-6736487" PenWidth="2" PenType="Generic" FillColor="-6736487" ShowMeasure="True" Visible="True"><Element X="666" Y="1074" Width="28" Height="28"/><Element X="2458" Y="1074" Width="28" Height="28"/></Counter><Counter Name="LUMINAIRE AU MUR" GroupID="5" Shape="0" DefaultSize="26" Text="1" Color="-14127576" PenWidth="2" PenType="Generic" FillColor="-14127576" ShowMeasure="True" Visible="True"><Element X="1623" Y="976" Width="26" Height="26"/><Element X="660" Y="1422" Width="26" Height="26"/><Element X="997" Y="1107" Width="26" Height="26"/><Element X="1502" Y="1435" Width="26" Height="26"/><Element X="3414" Y="976" Width="26" Height="26"/><Element X="2451" Y="1422" Width="26" Height="26"/><Element X="2788" Y="1107" Width="26" Height="26"/><Element X="3293" Y="1435" Width="26" Height="26"/></Counter><Counter Name="LUMINAIRE AU PLAFOND" GroupID="6" Shape="0" DefaultSize="26" Text="1" Color="-9659458" PenWidth="2" PenType="Generic" FillColor="-9659458" ShowMeasure="True" Visible="True"><Element X="1108" Y="684" Width="26" Height="26"/><Element X="1162" Y="684" Width="26" Height="26"/><Element X="1216" Y="684" Width="26" Height="26"/><Element X="1623" Y="1012" Width="26" Height="26"/><Element X="1164" Y="1242" Width="26" Height="26"/><Element X="696" Y="1422" Width="26" Height="26"/><Element X="997" Y="1071" Width="26" Height="26"/><Element X="1502" Y="1471" Width="26" Height="26"/><Element X="2900" Y="684" Width="26" Height="26"/><Element X="2954" Y="684" Width="26" Height="26"/><Element X="3007" Y="684" Width="26" Height="26"/><Element X="3414" Y="1012" Width="26" Height="26"/><Element X="2955" Y="1242" Width="26" Height="26"/><Element X="2488" Y="1422" Width="26" Height="26"/><Element X="2788" Y="1071" Width="26" Height="26"/><Element X="3294" Y="1471" Width="26" Height="26"/></Counter><Counter Name="NON IDENTIFIE" GroupID="7" Shape="2" DefaultSize="26" Text="1" Color="-65281" PenWidth="2" PenType="Generic" FillColor="-65281" ShowMeasure="True" Visible="True"><Element X="1169" Y="993" Width="26" Height="26"/><Element X="1287" Y="1455" Width="26" Height="26"/><Element X="865" Y="1455" Width="26" Height="26"/><Element X="1009" Y="1753" Width="26" Height="26"/><Element X="745" Y="1485" Width="26" Height="26"/><Element X="1100" Y="1455" Width="26" Height="26"/><Element X="2960" Y="993" Width="26" Height="26"/><Element X="3078" Y="1454" Width="26" Height="26"/><Element X="2656" Y="1454" Width="26" Height="26"/><Element X="2800" Y="1753" Width="26" Height="26"/><Element X="2537" Y="1485" Width="26" Height="26"/><Element X="2891" Y="1454" Width="26" Height="26"/><Element X="997" Y="1440" Width="26" Height="26"/><Element X="2788" Y="1440" Width="26" Height="26"/></Counter><Counter Name="PANNEAU DE LOGEMENT (hors legende - R-001)" GroupID="8" Shape="1" DefaultSize="30" Text="1" Color="-15461356" PenWidth="2" PenType="Generic" FillColor="-15461356" ShowMeasure="True" Visible="True"><Element X="946" Y="1127" Width="30" Height="30"/><Element X="2737" Y="1127" Width="30" Height="30"/></Counter><Counter Name="PLINTHE DE CHAUFFAGE (hors legende - R-001) [C10,12 2800W + C13,15 3300W = cedule type A]" GroupID="9" Shape="1" DefaultSize="24" Text="1" Color="-1821387" PenWidth="2" PenType="Generic" FillColor="-1821387" ShowMeasure="True" Visible="True"><Element X="1039" Y="379" Width="24" Height="24"/><Element X="1837" Y="690" Width="24" Height="24"/><Element X="1837" Y="1149" Width="24" Height="24"/><Element X="1751" Y="1669" Width="24" Height="24"/><Element X="1332" Y="2297" Width="24" Height="24"/><Element X="1128" Y="1110" Width="24" Height="24"/><Element X="1314" Y="1203" Width="24" Height="24"/><Element X="2805" Y="379" Width="24" Height="24"/><Element X="3629" Y="664" Width="24" Height="24"/><Element X="3629" Y="1123" Width="24" Height="24"/><Element X="3543" Y="1643" Width="24" Height="24"/><Element X="3071" Y="2297" Width="24" Height="24"/><Element X="2919" Y="1110" Width="24" Height="24"/><Element X="3106" Y="1203" Width="24" Height="24"/></Counter><Counter Name="PRISE DE COURANT AVEC DISJONCTEUR DIFFERENTIEL DE FUITE A LA TERRE" GroupID="10" Shape="0" DefaultSize="26" Text="1" Color="-2171339" PenWidth="2" PenType="Generic" FillColor="-2171339" ShowMeasure="True" Visible="True"><Element X="1291" Y="1313" Width="26" Height="26"/><Element X="3083" Y="1313" Width="26" Height="26"/></Counter><Counter Name="PRISE DE COURANT DOUBLE 15A-125V" GroupID="11" Shape="0" DefaultSize="26" Text="1" Color="-6132924" PenWidth="2" PenType="Generic" FillColor="-6132924" ShowMeasure="True" Visible="True"><Element X="680" Y="640" Width="26" Height="26"/><Element X="1199" Y="640" Width="26" Height="26"/><Element X="807" Y="402" Width="26" Height="26"/><Element X="1342" Y="402" Width="26" Height="26"/><Element X="1714" Y="402" Width="26" Height="26"/><Element X="1514" Y="995" Width="26" Height="26"/><Element X="1714" Y="1356" Width="26" Height="26"/><Element X="1365" Y="1321" Width="26" Height="26"/><Element X="897" Y="1196" Width="26" Height="26"/><Element X="1158" Y="1753" Width="26" Height="26"/><Element X="1577" Y="1455" Width="26" Height="26"/><Element X="1577" Y="1823" Width="26" Height="26"/><Element X="1024" Y="2273" Width="26" Height="26"/><Element X="680" Y="2184" Width="26" Height="26"/><Element X="1089" Y="1827" Width="26" Height="26"/><Element X="924" Y="1008" Width="26" Height="26"/><Element X="1124" Y="640" Width="26" Height="26"/><Element X="2471" Y="640" Width="26" Height="26"/><Element X="2991" Y="640" Width="26" Height="26"/><Element X="2599" Y="402" Width="26" Height="26"/><Element X="3133" Y="402" Width="26" Height="26"/><Element X="3505" Y="402" Width="26" Height="26"/><Element X="3305" Y="995" Width="26" Height="26"/><Element X="3505" Y="1356" Width="26" Height="26"/><Element X="3157" Y="1321" Width="26" Height="26"/><Element X="2688" Y="1196" Width="26" Height="26"/><Element X="2950" Y="1753" Width="26" Height="26"/><Element X="3368" Y="1454" Width="26" Height="26"/><Element X="3368" Y="1823" Width="26" Height="26"/><Element X="2816" Y="2273" Width="26" Height="26"/><Element X="2471" Y="2183" Width="26" Height="26"/><Element X="2881" Y="1827" Width="26" Height="26"/><Element X="2716" Y="1008" Width="26" Height="26"/><Element X="2916" Y="640" Width="26" Height="26"/></Counter><Counter Name="PRISE DE COURANT POUR CUISINIERE 50A-120/240V" GroupID="12" Shape="0" DefaultSize="28" Text="1" Color="-6736487" PenWidth="2" PenType="Generic" FillColor="-6736487" ShowMeasure="True" Visible="True"><Element X="1196" Y="1453" Width="28" Height="28"/><Element X="2987" Y="1452" Width="28" Height="28"/></Counter><Counter Name="PRISE DE COURANT SIMPLE 30A-120/240V" GroupID="13" Shape="0" DefaultSize="28" Text="1" Color="-13264487" PenWidth="2" PenType="Generic" FillColor="-13264487" ShowMeasure="True" Visible="True"><Element X="898" Y="1323" Width="28" Height="28"/><Element X="2689" Y="1323" Width="28" Height="28"/></Counter><Counter Name="RACCORD DIRECT D'UN APPAREIL SPECIAL" GroupID="14" Shape="0" DefaultSize="26" Text="1" Color="-13290187" PenWidth="2" PenType="Generic" FillColor="-13290187" ShowMeasure="True" Visible="True"><Element X="1152" Y="1443" Width="26" Height="26"/><Element X="2943" Y="1443" Width="26" Height="26"/></Counter><Counter Name="SORTIE TELEPHONIQUE" GroupID="15" Shape="3" DefaultSize="26" Text="1" Color="-13290082" PenWidth="2" PenType="Generic" FillColor="-13290082" ShowMeasure="True" Visible="True"><Element X="1005" Y="1823" Width="26" Height="26"/><Element X="1018" Y="1850" Width="26" Height="26"/><Element X="962" Y="1809" Width="26" Height="26"/><Element X="2797" Y="1822" Width="26" Height="26"/><Element X="2809" Y="1849" Width="26" Height="26"/><Element X="2754" Y="1809" Width="26" Height="26"/></Counter><Counter Name="THERMOSTAT (hors legende - R-001)" GroupID="16" Shape="0" DefaultSize="26" Text="1" Color="-2240715" PenWidth="2" PenType="Generic" FillColor="-2240715" ShowMeasure="True" Visible="True"><Element X="1137" Y="797" Width="26" Height="26"/><Element X="1420" Y="827" Width="26" Height="26"/><Element X="1354" Y="1145" Width="26" Height="26"/><Element X="822" Y="1101" Width="26" Height="26"/><Element X="668" Y="1860" Width="26" Height="26"/><Element X="2928" Y="797" Width="26" Height="26"/><Element X="3211" Y="827" Width="26" Height="26"/><Element X="3145" Y="1145" Width="26" Height="26"/><Element X="2613" Y="1101" Width="26" Height="26"/><Element X="2459" Y="1860" Width="26" Height="26"/></Counter></Layer></Layers>
+		</Plan>
+		<Plan Name="E04_Rev0" FileName="E04_Rev0.png">
+			<Thumbnail FileName="d46e541e-51ac-4ecf-b190-2220fd4a97ad"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E05_Rev0" FileName="E05_Rev0.png">
+			<Thumbnail FileName="4282bed9-dc28-4122-b0d0-4342aa8dbdb6"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E06_Rev0" FileName="E06_Rev0.png">
+			<Thumbnail FileName="0fba9c4a-06c7-40c3-9fce-6d05bdc31d8f"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E07_Rev0" FileName="E07_Rev0.png">
+			<Thumbnail FileName="03577eda-52f5-498c-bbd5-c93e34319a6e"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E08_Rev0" FileName="E08_Rev0.png">
+			<Thumbnail FileName="485c90e3-fd74-4cdf-a0d9-fd98a1a5da23"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E09_Rev0" FileName="E09_Rev0.png">
+			<Thumbnail FileName="6810c9e4-058b-4aa6-98bf-fc989f012a9d"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E10_Rev0" FileName="E10_Rev0.png">
+			<Thumbnail FileName="ff4b58de-d2f3-4eea-b189-29fc6cf958a2"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E11_Rev0" FileName="E11_Rev0.png">
+			<Thumbnail FileName="552460df-26ff-4f76-af8c-188755717ff0"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E12_Rev0" FileName="E12_Rev0.png">
+			<Thumbnail FileName="6bb0c3d5-574d-4f93-b1f7-336c6c4a9e6d"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E13_Rev0" FileName="E13_Rev0.png">
+			<Thumbnail FileName="6bf5817c-6bee-403d-9d11-72f3b9f127a4"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E14_Rev0" FileName="E14_Rev0.png">
+			<Thumbnail FileName="6c11c7cc-0e8c-4638-8627-1f7a39cdac2d"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E15_Rev0" FileName="E15_Rev0.png">
+			<Thumbnail FileName="bb8e48f9-6763-441a-ac79-619e0f463b15"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU01_Rev0" FileName="EU01_Rev0.png">
+			<Thumbnail FileName="f101f5dc-03a3-4569-89ac-aedf61aa8518"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU02_Rev0" FileName="EU02_Rev0.png">
+			<Thumbnail FileName="39652f99-9123-4d71-b7be-c33590e35f00"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU03_Rev0" FileName="EU03_Rev0.png">
+			<Thumbnail FileName="c26eeddf-4c63-4912-8bd8-2beff78e3331"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU04_Rev0" FileName="EU04_Rev0.png">
+			<Thumbnail FileName="66c0c0ca-1d19-4ddf-8661-e7ed43cd8ef8"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="00_Rev0" FileName="00_Rev0.png">
+			<Thumbnail FileName="06a54228-41fc-4171-a703-41a7b0c45714"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="0" Precision="2">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>

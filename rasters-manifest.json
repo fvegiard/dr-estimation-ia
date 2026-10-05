@@ -1,0 +1,456 @@
+{
+ "source": "Addenda/Addenda-01/Plan_ME_Pour soumission.pdf",
+ "source_sha256": "3a591c05c1e0b7fa5e31eae096307b11176ae52f0cfa726b40aadf37cbe74745",
+ "dpi": 172,
+ "ratio_px_par_pt": 2.388975,
+ "feuilles": [
+  {
+   "feuille": "E01",
+   "page_pdf": 33,
+   "fichier": "E01_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1581760,
+   "sha256": "b5f0ea37aedcf4dbbf3877e0bee387ddbb95cab91e1616b44c97a5f263b1a1fb"
+  },
+  {
+   "feuille": "E02",
+   "page_pdf": 34,
+   "fichier": "E02_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1693016,
+   "sha256": "e0071ac5f5216167e855b34fed6d6281e988310ce258a90e7462b9ca384fbccc"
+  },
+  {
+   "feuille": "E03",
+   "page_pdf": 35,
+   "fichier": "E03_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 2013112,
+   "sha256": "752b86b5924e41f990d12c21dcde1ee2850912f2e157befe60ad73a0152b61a7"
+  },
+  {
+   "feuille": "E04",
+   "page_pdf": 36,
+   "fichier": "E04_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1890677,
+   "sha256": "5fa055e3ee7ddca60a4db1e0f03d918dfc964fea59cf0a4ac606c7b60a2c9710"
+  },
+  {
+   "feuille": "E05",
+   "page_pdf": 37,
+   "fichier": "E05_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1953131,
+   "sha256": "1f3134947b2169bad100ffa024a4a799e57d183fe4d86c72db75f7acb7d66807"
+  },
+  {
+   "feuille": "E06",
+   "page_pdf": 38,
+   "fichier": "E06_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1575985,
+   "sha256": "466527751bfc05afed7b0af1163672446a345ceb5afdfbb75bfc6416dee3b09a"
+  },
+  {
+   "feuille": "E07",
+   "page_pdf": 39,
+   "fichier": "E07_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1986711,
+   "sha256": "451e128d970a3ce48118e562466575dd44d7e1866543858ae55696b82da63c7e"
+  },
+  {
+   "feuille": "E08",
+   "page_pdf": 40,
+   "fichier": "E08_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1983997,
+   "sha256": "2d28b497c6521b288409f46eefc78f453eebb2a908a63b211dd8bf9ae31c1e2a"
+  },
+  {
+   "feuille": "E09",
+   "page_pdf": 41,
+   "fichier": "E09_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1545132,
+   "sha256": "4fc130f9c60204bcba5613ec540f9b9fc53e87779478e07115b126ce4bb1e035"
+  },
+  {
+   "feuille": "E10",
+   "page_pdf": 42,
+   "fichier": "E10_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1829894,
+   "sha256": "834b3bd3beb44739a288fbe6c41d8af25a4b5232a6bc5e352e7bfd48df880045"
+  },
+  {
+   "feuille": "E11",
+   "page_pdf": 43,
+   "fichier": "E11_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 2161220,
+   "sha256": "de9bd86f2fa6963de7a634c03753467c3c2eea26a82a132e8a2740e1f91b5e64"
+  },
+  {
+   "feuille": "E12",
+   "page_pdf": 44,
+   "fichier": "E12_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1523720,
+   "sha256": "eb0ba8920666af384b67bf965bb924a9d84d79f880cac4ce5c74c334735f1911"
+  },
+  {
+   "feuille": "E13",
+   "page_pdf": 45,
+   "fichier": "E13_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1823026,
+   "sha256": "51c82ed31e267fc6924b06d4ced1294e78b0584306c590c5f8e022df46dcef69"
+  },
+  {
+   "feuille": "E14",
+   "page_pdf": 46,
+   "fichier": "E14_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 2161554,
+   "sha256": "480d75ab710b2cc5ccdf33105460e1363d4cec0a7a7f9ce0587472aca5a5ff59"
+  },
+  {
+   "feuille": "E15",
+   "page_pdf": 47,
+   "fichier": "E15_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 3430860,
+   "sha256": "215941f4babca89e49e679f573c6843716b122a61f09618d37e23b552ccee1e6"
+  },
+  {
+   "feuille": "EU01",
+   "page_pdf": 48,
+   "fichier": "EU01_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1637337,
+   "sha256": "71ac17ec220ae0484a9c5eacbf0a945837b18ad8673b4a24dc6f192ae96a949c"
+  },
+  {
+   "feuille": "EU02",
+   "page_pdf": 49,
+   "fichier": "EU02_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1692046,
+   "sha256": "81c86f8215d15b83653942df9775717993b7039f6cfe780a22bf7f196861ea09"
+  },
+  {
+   "feuille": "EU03",
+   "page_pdf": 50,
+   "fichier": "EU03_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1624846,
+   "sha256": "80ba737b9200246d8c5a34632fb9e266a63a7da43e680424afddd6db015dd2d8"
+  },
+  {
+   "feuille": "EU04",
+   "page_pdf": 51,
+   "fichier": "EU04_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1594512,
+   "sha256": "be3755d2b708bcbf38a5e3f1cfc70b73d509d7306037af0f176ab66b1ebb2f12"
+  },
+  {
+   "feuille": "DSI01",
+   "page_pdf": 52,
+   "fichier": "DSI01_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1574119,
+   "sha256": "555b445c959584ba23e71a4c52798895c60338bb18a6661fe469c6811a0f1579"
+  },
+  {
+   "feuille": "DSI02",
+   "page_pdf": 53,
+   "fichier": "DSI02_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1032610,
+   "sha256": "b596c1aa88067ec1bd27b333b080352d41ebd7dca97d632fcb382eb6e4db0ace"
+  },
+  {
+   "feuille": "DSI03",
+   "page_pdf": 54,
+   "fichier": "DSI03_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1576154,
+   "sha256": "df6f90517c457987198f0b4f0db10ae4a27b3e7acdabb1a7a2ed7561f4eb6ba0"
+  },
+  {
+   "feuille": "DSI04",
+   "page_pdf": 55,
+   "fichier": "DSI04_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1019800,
+   "sha256": "7e16c434bc06029ed7bdb4a077f7e1dc45ac7a54e156dcce9a81467a3507e8ee"
+  },
+  {
+   "feuille": "DSI05",
+   "page_pdf": 56,
+   "fichier": "DSI05_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1548563,
+   "sha256": "5c98a4ee846128ef733c296f9a46bdebf2c6ef6759f8ec60575e4d4c338f8150"
+  },
+  {
+   "feuille": "DSI06",
+   "page_pdf": 57,
+   "fichier": "DSI06_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 997698,
+   "sha256": "950973b35c0d2b6f396ec15c0c4cd1052647bc9924a5e8ac8bc760ef37402699"
+  },
+  {
+   "feuille": "DSI07",
+   "page_pdf": 58,
+   "fichier": "DSI07_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 1516088,
+   "sha256": "29bc4c5b366865fa7a430e1169a9621f5097dfd655571a323b2511fa2c79545d"
+  },
+  {
+   "feuille": "DSI08",
+   "page_pdf": 59,
+   "fichier": "DSI08_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 992549,
+   "sha256": "e94e46f416f9c2355a4dd4befb5199436209225be6bdd064be8c749c9fa27c27"
+  },
+  {
+   "feuille": "DSI09",
+   "page_pdf": 60,
+   "fichier": "DSI09_Rev0.png",
+   "px": [
+    6197,
+    4131
+   ],
+   "pt": [
+    2594.0,
+    1729.0
+   ],
+   "dpi": 172,
+   "octets": 2315916,
+   "sha256": "56a543877810dc6a66b9ec61cec21fdd3e8c7414b349cd758492e4dd053825a3"
+  }
+ ]
+}

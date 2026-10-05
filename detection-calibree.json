@@ -1,0 +1,14 @@
+{
+ "cell": 2.5,
+ "pad": 0.6,
+ "map": {
+  "1|14x14|0": "AVERTISSEUR DE FUMEE 120V",
+  "3|18x18|0": "EVACUATEUR DE TOILETTE. VOIR VENTILATION.",
+  "1|15x15|0": "HOTTE (hors legende - voir R-001)",
+  "2|20x20|0": "LUMINAIRE AU PLAFOND",
+  "3|20x13|0": "PANNEAU DE LOGEMENT (hors legende - voir R-001)",
+  "1|16x16|0": "PRISE DE COURANT DOUBLE 15A-125V",
+  "2|16x20|0": "THERMOSTAT (hors legende - voir R-001)",
+  "2|22x16|0": "THERMOSTAT (hors legende - voir R-001)"
+ }
+}

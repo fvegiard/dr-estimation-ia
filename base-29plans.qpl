@@ -1,0 +1,329 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="HR26-14-OMH-Haut-Richelieu">
+		<Description></Description>
+		<ContactName></ContactName>
+		<ContactInfo></ContactInfo>
+		<JobNumber></JobNumber>
+		<Comment></Comment>
+		<CreationDate>2026/9/15</CreationDate>
+		<LastModified>2026/9/15</LastModified>
+		<DisplayResultsForAllPlans>False</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+	</Workspace>
+	<Plans>
+		<Plan Name="DSI01_Rev0" FileName="DSI01_Rev0.png">
+			<Thumbnail FileName="d6a3e10f-4775-4175-a35a-0970a166080c"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI02_Rev0" FileName="DSI02_Rev0.png">
+			<Thumbnail FileName="65213261-5002-4fed-ab08-a1dbf9a38fd4"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI03_Rev0" FileName="DSI03_Rev0.png">
+			<Thumbnail FileName="cad9b12b-76c6-41ec-9d9f-27bca92441d8"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI04_Rev0" FileName="DSI04_Rev0.png">
+			<Thumbnail FileName="c01592f5-df78-4956-85f2-0d5ba8dbf531"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI05_Rev0" FileName="DSI05_Rev0.png">
+			<Thumbnail FileName="0a735285-a3e8-4996-a1ac-eb044caaf058"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI06_Rev0" FileName="DSI06_Rev0.png">
+			<Thumbnail FileName="209d26b5-1538-489f-a30c-ed68c3e97097"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI07_Rev0" FileName="DSI07_Rev0.png">
+			<Thumbnail FileName="0089004d-c48a-497d-9d7e-7a5698c46448"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI08_Rev0" FileName="DSI08_Rev0.png">
+			<Thumbnail FileName="2a5fd6f8-095b-4f86-b1da-a93d8c834012"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="DSI09_Rev0" FileName="DSI09_Rev0.png">
+			<Thumbnail FileName="66161002-5424-4914-a812-54fc6089948a"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E01_Rev0" FileName="E01_Rev0.png">
+			<Thumbnail FileName="001f838a-362c-49c3-b565-883514798734"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E02_Rev0" FileName="E02_Rev0.png">
+			<Thumbnail FileName="83f650c5-b84c-4d53-958f-b92449af5b5b"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E03_Rev0" FileName="E03_Rev0.png">
+			<Thumbnail FileName="79037685-ab30-4d09-9140-8a525d03ab4b"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E04_Rev0" FileName="E04_Rev0.png">
+			<Thumbnail FileName="d46e541e-51ac-4ecf-b190-2220fd4a97ad"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E05_Rev0" FileName="E05_Rev0.png">
+			<Thumbnail FileName="4282bed9-dc28-4122-b0d0-4342aa8dbdb6"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E06_Rev0" FileName="E06_Rev0.png">
+			<Thumbnail FileName="0fba9c4a-06c7-40c3-9fce-6d05bdc31d8f"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E07_Rev0" FileName="E07_Rev0.png">
+			<Thumbnail FileName="03577eda-52f5-498c-bbd5-c93e34319a6e"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E08_Rev0" FileName="E08_Rev0.png">
+			<Thumbnail FileName="485c90e3-fd74-4cdf-a0d9-fd98a1a5da23"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E09_Rev0" FileName="E09_Rev0.png">
+			<Thumbnail FileName="6810c9e4-058b-4aa6-98bf-fc989f012a9d"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E10_Rev0" FileName="E10_Rev0.png">
+			<Thumbnail FileName="ff4b58de-d2f3-4eea-b189-29fc6cf958a2"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E11_Rev0" FileName="E11_Rev0.png">
+			<Thumbnail FileName="552460df-26ff-4f76-af8c-188755717ff0"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E12_Rev0" FileName="E12_Rev0.png">
+			<Thumbnail FileName="6bb0c3d5-574d-4f93-b1f7-336c6c4a9e6d"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E13_Rev0" FileName="E13_Rev0.png">
+			<Thumbnail FileName="6bf5817c-6bee-403d-9d11-72f3b9f127a4"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E14_Rev0" FileName="E14_Rev0.png">
+			<Thumbnail FileName="6c11c7cc-0e8c-4638-8627-1f7a39cdac2d"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="E15_Rev0" FileName="E15_Rev0.png">
+			<Thumbnail FileName="bb8e48f9-6763-441a-ac79-619e0f463b15"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU01_Rev0" FileName="EU01_Rev0.png">
+			<Thumbnail FileName="f101f5dc-03a3-4569-89ac-aedf61aa8518"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU02_Rev0" FileName="EU02_Rev0.png">
+			<Thumbnail FileName="39652f99-9123-4d71-b7be-c33590e35f00"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU03_Rev0" FileName="EU03_Rev0.png">
+			<Thumbnail FileName="c26eeddf-4c63-4912-8bd8-2beff78e3331"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="EU04_Rev0" FileName="EU04_Rev0.png">
+			<Thumbnail FileName="66c0c0ca-1d19-4ddf-8661-e7ed43cd8ef8"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+		<Plan Name="00_Rev0" FileName="00_Rev0.png">
+			<Thumbnail FileName="06a54228-41fc-4171-a703-41a7b0c45714"/>
+			<Scale Value="0" Type="1" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="-1" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment></Comment>
+			<Layers>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="0" Precision="2">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>
