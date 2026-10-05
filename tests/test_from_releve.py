@@ -199,3 +199,22 @@ def test_glyphe_symbole_jamais_recale_sur_une_bulle_de_note():
     assert stats.get("glyphe_symbole") == 1 and not stats.get("texte_ancre")
     assert abs(items[0]["x"] - cx) < 0.01 and abs(items[0]["y"] - cy) < 0.01
     assert not items[0].get("flags")
+
+
+def test_plinthe_collee_au_mur_prend_son_rectangle_pas_la_fenetre():
+    """Gold palette B : PL = rectangle aux dimensions du symbole. Plinthe dessinée contre le mur (son bord
+    haut est le trait du mur, pas une forme fermée isolée) et fenêtre fermée à 2 pt : la plinthe gagne."""
+    from src.estimer.render.ancrage import SymbolIndex
+    from src.estimer.render.from_releve import plan_rects
+    doc = pymupdf.open()
+    page = doc.new_page(width=W, height=H)
+    page.draw_rect(pymupdf.Rect(100, 100, 200, 110))           # fenêtre (forme fermée)
+    page.draw_line((90, 112), (230, 112))                       # mur
+    page.draw_line((100, 119), (200, 119))                      # plinthe : bas et extrémités
+    page.draw_line((100, 112), (100, 119))
+    page.draw_line((200, 112), (200, 119))
+    items = [{"feuille": "P1", "label": "PLINTHE 1000W", "x": 150.0, "y": 116.0}]
+    nom = {"PLINTHE 1000W": {"code": "PL10"}}
+    assert plan_rects(SymbolIndex(page), items, nom) == 1
+    box = [items[0][k] for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
+    assert all(abs(a - b) < 0.2 for a, b in zip(box, (100, 112, 200, 119)))

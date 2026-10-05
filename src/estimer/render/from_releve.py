@@ -39,7 +39,7 @@ import pymupdf
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "releve"))
 from commun import load_feuilles, load_nomenclature, read_csv  # noqa: E402  (releve/ helpers are the single source of truth)
-from .ancrage import SYM_MAX, SymbolIndex, _rect_dist, anchor, word_boxes  # noqa: E402
+from .ancrage import LINEAR_MAX, LINEAR_W, SYM_MAX, SymbolIndex, _rect_dist, anchor, word_boxes  # noqa: E402
 from . import style as S  # noqa: E402
 
 DEFAULT_MODEL = "MODELE NON PRECISE"
@@ -171,25 +171,32 @@ def anchor_sheet(page: pymupdf.Page, items: list[dict], idx: SymbolIndex | None 
     return dict(stats)
 
 
-PLAN_RECT_REACH = 8.0      # a "plan" family mark takes the linear closed symbol within 8 pt of it
+PLAN_RECT_REACH = 8.0      # search area around a "plan" family mark
+PLAN_RECT_TOUCH = 1.0      # a closed linear shape is taken only if the mark is in it or touches it
 
 
 def _famille_b(nom_row: dict, label: str):
     return S.palette_b(letter_code(nom_row, label))
 
 
+def _linear(r: pymupdf.Rect) -> bool:
+    big, small = max(r.width, r.height), min(r.width, r.height)
+    return SYM_MAX < big <= LINEAR_MAX and 1.5 <= small <= LINEAR_W and big >= 3 * small
+
+
 def plan_rects(idx: SymbolIndex, items: list[dict], nom: dict) -> int:
     """Gold palette B (spec §2.2) : plinthes PL et linéaires LC = rectangle aux dimensions graphiques du plan.
 
-    Pour chaque marque d'une famille de forme "plan" sans boîte, la boîte est celle du symbole linéaire
-    fermé (long >= 3 x large, plus de SYM_MAX pt) le plus proche dans PLAN_RECT_REACH pt ; sans symbole
-    trouvé, la marque garde sa forme par défaut. Renvoie le nombre de boîtes posées."""
+    Pour chaque marque d'une famille de forme "plan" sans boîte, la boîte est le rectangle linéaire
+    (long >= 3 x large, de SYM_MAX à LINEAR_MAX pt) qui contient la marque ; sans rectangle trouvé, la
+    marque garde sa forme par défaut (carré). Renvoie le nombre de boîtes posées."""
     n = 0
     for o in items:
         pb = _famille_b(nom[o["label"]], o["label"])
         if not pb or pb[1] != "plan" or all(_float(o.get(k)) is not None for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")):
             continue
         p = pymupdf.Rect(o["x"], o["y"], o["x"], o["y"])
+        # 1) symbole linéaire fermé qui contient (ou touche) la marque : sa boîte exacte (gold : 7,08 pt)
         area = p + (-PLAN_RECT_REACH, -PLAN_RECT_REACH, PLAN_RECT_REACH, PLAN_RECT_REACH)
         best = None
         for r, _ in idx.shapes_near(area):
@@ -197,10 +204,19 @@ def plan_rects(idx: SymbolIndex, items: list[dict], nom: dict) -> int:
             if big <= SYM_MAX or big < 3 * small:
                 continue
             d = _rect_dist(r, p)
-            if d <= PLAN_RECT_REACH and (best is None or (d, -small) < best[0]):
+            if d <= PLAN_RECT_TOUCH and (best is None or (d, -small) < best[0]):
                 best = ((d, -small), r)
-        if best:
-            r = best[1]
+        r = best[1] if best else None
+        # 2) sinon, les 4 bords les plus proches autour de la marque, sur un même contour puis sur des contours
+        #    distincts (plinthe collée au mur : son bord est le trait du mur). Jamais la forme fermée voisine :
+        #    la fenêtre à 6 pt prenait la place de la plinthe.
+        if r is None:
+            pt = pymupdf.Point(o["x"], o["y"])
+            enc = idx.enclosure(pt, reach=LINEAR_MAX / 2)
+            if enc is None or not _linear(enc):
+                enc = idx.enclosure(pt, reach=LINEAR_MAX / 2, same_shape=False)
+            r = enc if enc is not None and _linear(enc) else None
+        if r is not None:
             o["x0_pt"], o["y0_pt"], o["x1_pt"], o["y1_pt"] = r.x0, r.y0, r.x1, r.y1
             n += 1
     return n
