@@ -3,9 +3,10 @@
 # dependencies = ["pymupdf>=1.24", "numpy>=1.24", "scipy>=1.11"]
 # ///
 """Étape 4a (déterministe) : PDF « Plans annotés » au format cible HR26-14 (pastille pastel PAR-DESSUS le plan
-vectoriel intact, calques OCG par famille, encadré « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes) —
-voir docs/FORMAT-EXEMPLE.md. Remplace l'ancien rendu raster/JPEG (Pillow sur rasters/<F>.png) : la page source
-reste 100% vectorielle, l'overlay est du contenu PDF natif (pymupdf.Shape), rien n'est rasterisé.
+vectoriel intact, calques OCG par famille, encadré « RELEVE <feuille> - MATERIEL », bordereau au format de la
+feuille : matériel, agrégé ou travaux) — spec unique : docs/FORMAT-EXEMPLE.md. Remplace l'ancien rendu
+raster/JPEG (Pillow sur rasters/<F>.png) : la page source reste 100% vectorielle, l'overlay est du contenu
+PDF natif (pymupdf.Shape), rien n'est rasterisé.
 
 Usage : uv run releve/render_vectoriel.py WORKDIR NOM_PROJET SORTIE_DIR
 Produit SORTIE_DIR/<NOM_PROJET>-Plans-annotes.pdf (+ SORTIE_DIR/vecteur/{estimate.json,bordereau.csv,

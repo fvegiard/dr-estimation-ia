@@ -19,16 +19,22 @@ aux en-têtes (voir `VERIFICATION.md`).
 
 ## 2. Anatomie d'une feuille relevée
 
-Chaque feuille produit **deux pages** :
+Chaque feuille produit **1 page plan suivie de 1 à 6 pages de bordereau** (DSI01 : p.1 puis p.2-7 ;
+E08 : p.62 puis p.63). Mise en page détaillée et chiffrée : `docs/FORMAT-EXEMPLE.md` (spec unique).
 
 1. **Page « plan » (ou diagramme)** — le plan d'origine avec les **marques par appareil** posées
    dessus (ancrage PDF exact de chaque symbole), plus un encadré **`RELEVE <feuille> - MATERIEL`** :
-   - en-tête compteur : `N reperes / M familles / RES R`
-     (`reperes` = symboles retenus ; `familles` = types distincts ; `RES` = nombre en réserve)
+   - en-tête compteur standard : `N reperes / M familles / RES R`
+     (`reperes` = symboles retenus ; `familles` = types distincts ; `RES` = nombre en réserve) ;
+     **variante v6 sans RES sur E03/E04/E05/E08** : `N reperes / M familles / calques activables`, puis
+     `X non identifies - Y identifications a revalider (*)` et, s'il y en a, `K divergences plan/cedule A RESOUDRE`
    - une **légende partielle** : un pastille de couleur par famille, son libellé, et `qté / Rxx`
+     (quantité seule, sans `/ Rxx`, dans la variante v6)
    - la mention : *« RES = reserve source, modele, position, portee ou reconciliation ; \* = identification a revalider »*
+     (encadré standard ; la variante v6 la remplace par ses notes de bas d'encadré)
 2. **Page(s) « bordereau »** — le tableau détaillé (3 formats, §4), suivi du bloc
-   **`RESERVES ET COMPLEMENTS`** (§6).
+   **`RESERVES ET COMPLEMENTS`** (§6) sur les feuilles matériel, du bloc `Notes de reserve source` sur
+   E01, E06, E09, E11, E12, E14 et EU01-04 (aucun bloc de fin sur E03/E04/E05/E08).
 
 ## 3. Règles d'or (non négociables)
 

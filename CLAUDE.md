@@ -12,12 +12,22 @@ Relevé de quantités électrique automatique (Groupe DR Électrique) : plans PD
 - Toute modification de `releve/` ou de `.claude/skills/releve-planexpert/` doit passer le jeu de référence sans régression
   (`python -m src.validation.jeu_reference`) — c'est le test qui dit si l'agent s'améliore.
 
+## Format du PDF de relevé : une seule spec
+- La seule description du format (pastilles, palettes, étiquettes, encadré, bordereaux) est `docs/FORMAT-EXEMPLE.md`,
+  mesurée sur le gold EXEMPLE.pdf (HR26-14, sha256 0861bc3a…). Quand une doc et le gold divergent, le gold gagne
+  (décision de Francis, 2026-10-05) : on corrige la spec, jamais le gold.
+- Ailleurs (CLAUDE.md, compétences, agents, docstrings, README), renvoyer à cette spec au lieu de recopier des chiffres.
+  `tests/test_spec_format_unique.py` échoue si une affirmation concurrente réapparaît dans un `.md`.
+
 ## Autonomie et auto-supervision (obligatoire — Francis ne coache pas)
 Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu fais toi-même la supervision visuelle.
-1. Après chaque rendu, OUVRE l'image (Read du PNG), zoome repère par repère et juge : pastille visible (cercle pastel
-   r≈4,2 pt + contour 0,7 pt couleur famille, dessinée PAR-DESSUS le plan) ? sur le BON symbole (type = famille) ?
+1. Après chaque rendu, OUVRE l'image (Read du PNG), zoome repère par repère et juge : pastille visible (pastel,
+   contour 0,7 pt couleur famille, dessinée PAR-DESSUS le plan ; forme, rayon et palette selon le format de la
+   feuille, voir `docs/FORMAT-EXEMPLE.md`) ? sur le BON symbole (type = famille) ?
    1 symbole = 1 repère ? étiquette lisible ? réserve * si doute ? Jamais sur un texte, un arc ou une ligne longue.
-2. Compare à l'exemplaire (même pastille, encadré « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes) — sauf pendant
+2. Compare à la feuille équivalente de l'exemplaire, dans son format (pastilles, encadré, bordereau matériel 8 col. /
+   agrégé 6 col. / travaux 8 col. — spec unique : `docs/FORMAT-EXEMPLE.md` ; E08 et E09 sont des feuilles agrégées
+   6 colonnes) — sauf pendant
    l'essai à l'aveugle HR26-14 où tu ne compares qu'à la fin (étape 4). Cible visuelle approuvée par Francis,
    ancrée et vérifiable : `apprentissage/hr26-14-exemplaire/SOURCE.txt` (E08 = p.62, E09 = p.64 de EXEMPLE.pdf,
    sha256 0861bc3a…) et `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` (format, vocabulaire, règles).
@@ -38,7 +48,8 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
 ## Carte du dépôt
 - `releve/` — la chaîne qui marche : `prepare.py` (rasters, tuiles, mots) → agent (compétence `releve-planexpert`) →
   `extract_occurrences.py` → `build_qpl.py` → `render_vectoriel.py` (PDF « Plans annotés » vectoriel — pastilles OCG
-  par-dessus le plan d'origine, encadré RELEVE-MATERIEL, bordereau 8 colonnes ; `src/estimer/render/`) →
+  par-dessus le plan d'origine, encadré RELEVE-MATERIEL, bordereau au format de la feuille — 3 formats, voir
+  `docs/FORMAT-EXEMPLE.md` ; `src/estimer/render/`) →
   `render_pdf.py` (rapport de métré + dossier complet) ; `run.py` orchestre, `run.py --reprendre <S>` refait qpl + PDF.
 - `src/validation/compare_qpl.py` — comparaison marque par marque humain/IA ; `jeu_reference.py` — la rejoue sur tous les dossiers.
 - `dossiers/<S>/` — un dossier de soumission : `releve.xlsx`, `ecart.md`, `planexpert/<S>.qpl`, `export-natif/` (sorties du vrai

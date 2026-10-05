@@ -342,7 +342,8 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
     shape.commit(overlay=True)
 
     counter = f"{len(sheet.items)} reperes / {len(fams)} familles / RES {sheet.n_reserves}"
-    # un seul encadre pour les trois formats (l'encadre v6 de E03/E04/E05/E08 de l'EXEMPLE est harmonise)
+    # un seul encadre pour les trois formats ; le gold dessine un encadre v6 sans RES sur E03/E04/E05/E08 :
+    # ecart restant, chiffre dans docs/FORMAT-EXEMPLE.md §6 (E1) -- le gold gagne, a resorber
     head = Header(f"RELEVE {sheet.name} - MATERIEL", counter, S.HINT_TEXT.format(page=bordereau_page))
     footer = S.TRAVAUX_FOOTER_TEXT.format(page=bordereau_page) if sheet.format == "travaux" else S.FOOTER_TEXT
     box = place_box(page, fams, taken + labels, head, hint=_hint_points(sheet, to_pt), rows=sheet.legend_rows)
