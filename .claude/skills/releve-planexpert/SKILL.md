@@ -183,7 +183,12 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
        `E00 legende L03 ; E20 section 5 PRISES (devis/E20-articles.csv art. 5.2)`.
      - `discipline` : `incendie` | `electricite` | `urgence` — détermine le préfixe I/M du repère sur les feuilles au
        format `materiel` ; vide = déduit de `famille` (alarme/securite_incendie → incendie, secours → urgence, sinon
-       electricite).
+       electricite). **`incendie` = appareils du réseau d'alarme incendie** (détecteurs, modules, klaxons, postes
+       manuels reliés au panneau, feuilles DSI). Un avertisseur de fumée **autonome 120 V** branché sur un circuit de
+       logement et dessiné sur un plan d'électricité est `electricite` — écris-le explicitement, car une colonne vide
+       avec la famille `alarme` serait déduite `incendie` :
+       une seule ligne `incendie` suffit à faire passer toute la feuille au format `materiel` (déduction automatique),
+       ce qui remplace les codes de légende par des numéros I01/M01 dans l'encadré et le bordereau.
    Ces mêmes champs (`designation,portee,modele,prescription,parent,qte,reserve`) peuvent aussi être ajoutés par
    occurrence dans `occurrences-texte.csv`/`occurrences-visuel.csv` (§4) quand la valeur varie d'un repère à l'autre
    dans une même famille (ex. deux plinthes de puissance différente, R1 de `STANDARD-RELEVE.md` §9) — la colonne de
