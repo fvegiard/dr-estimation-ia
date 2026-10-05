@@ -1,0 +1,1360 @@
+{
+  "page": 7,
+  "title": "DISTRIBUTION — SALLE PRINCIPALE 2/3",
+  "type": "equipment",
+  "scope": "SCHÉMA — NE PAS ADDITIONNER AUX PLANS",
+  "records": [
+    {
+      "family": "Panneau logement",
+      "label": "PL-417 120/240 V",
+      "x": 199,
+      "y": 130,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0001"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-418 120/240 V",
+      "x": 311,
+      "y": 130,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0002"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-419 120/240 V",
+      "x": 411,
+      "y": 130,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0003"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-420 120/240 V",
+      "x": 510,
+      "y": 130,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0004"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-421 120/240 V",
+      "x": 609,
+      "y": 130,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0005"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-422 120/240 V",
+      "x": 708,
+      "y": 130,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0006"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-423 120/240 V",
+      "x": 807,
+      "y": 130,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0007"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-424 120/240 V",
+      "x": 906,
+      "y": 130,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0008"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-425 120/240 V",
+      "x": 1006,
+      "y": 130,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0009"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-317 120/240 V",
+      "x": 199,
+      "y": 265,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0010"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-318 120/240 V",
+      "x": 311,
+      "y": 265,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0011"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-319 120/240 V",
+      "x": 411,
+      "y": 265,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0012"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-320 120/240 V",
+      "x": 510,
+      "y": 265,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0013"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-321 120/240 V",
+      "x": 609,
+      "y": 265,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0014"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-322 120/240 V",
+      "x": 708,
+      "y": 265,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0015"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-323 120/240 V",
+      "x": 807,
+      "y": 265,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0016"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-324 120/240 V",
+      "x": 906,
+      "y": 265,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0017"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-325 120/240 V",
+      "x": 1006,
+      "y": 265,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0018"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-217 120/240 V",
+      "x": 199,
+      "y": 400,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0019"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-218 120/240 V",
+      "x": 311,
+      "y": 400,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0020"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-219 120/240 V",
+      "x": 411,
+      "y": 400,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0021"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-220 120/240 V",
+      "x": 510,
+      "y": 400,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0022"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-221 120/240 V",
+      "x": 609,
+      "y": 400,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0023"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-222 120/240 V",
+      "x": 708,
+      "y": 400,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0024"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-223 120/240 V",
+      "x": 807,
+      "y": 400,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0025"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-224 120/240 V",
+      "x": 906,
+      "y": 400,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0026"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-225 120/240 V",
+      "x": 1006,
+      "y": 400,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0027"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-118 120/240 V",
+      "x": 199,
+      "y": 537,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0028"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-119 120/240 V",
+      "x": 299,
+      "y": 537,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0029"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-120 120/240 V",
+      "x": 399,
+      "y": 537,
+      "parent": "CM-01",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0030"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-121 120/240 V",
+      "x": 510,
+      "y": 537,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0031"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-122 120/240 V",
+      "x": 609,
+      "y": 537,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0032"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-123 120/240 V",
+      "x": 708,
+      "y": 537,
+      "parent": "CM-02",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0033"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-124 120/240 V",
+      "x": 807,
+      "y": 537,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0034"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-125 120/240 V",
+      "x": 906,
+      "y": 537,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0035"
+    },
+    {
+      "family": "Panneau logement",
+      "label": "PL-126 120/240 V",
+      "x": 1006,
+      "y": 537,
+      "parent": "CM-03",
+      "reserve": "* Repères PL du haut non concordants avec les unités inscrites aux centres de mesurage. Réconciliation requise; aucun doublon ajouté.",
+      "id": "E103-0036"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #221",
+      "x": 432,
+      "y": 857.0,
+      "parent": "CM-01",
+      "id": "E103-0037"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #221",
+      "x": 453,
+      "y": 852.0,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0038"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #222",
+      "x": 432,
+      "y": 886.4,
+      "parent": "CM-01",
+      "id": "E103-0039"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #222",
+      "x": 453,
+      "y": 881.4,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0040"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #223",
+      "x": 432,
+      "y": 915.8,
+      "parent": "CM-01",
+      "id": "E103-0041"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #223",
+      "x": 453,
+      "y": 910.8,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0042"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #224",
+      "x": 432,
+      "y": 945.2,
+      "parent": "CM-01",
+      "id": "E103-0043"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #224",
+      "x": 453,
+      "y": 940.2,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0044"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #225",
+      "x": 432,
+      "y": 974.6,
+      "parent": "CM-01",
+      "id": "E103-0045"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #225",
+      "x": 453,
+      "y": 969.6,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0046"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #226",
+      "x": 432,
+      "y": 1004.0,
+      "parent": "CM-01",
+      "id": "E103-0047"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #226",
+      "x": 453,
+      "y": 999.0,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0048"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #227",
+      "x": 479,
+      "y": 857.0,
+      "parent": "CM-01",
+      "id": "E103-0049"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #227",
+      "x": 499,
+      "y": 852.0,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0050"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #228",
+      "x": 479,
+      "y": 886.4,
+      "parent": "CM-01",
+      "id": "E103-0051"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #228",
+      "x": 499,
+      "y": 881.4,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0052"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #229",
+      "x": 479,
+      "y": 915.8,
+      "parent": "CM-01",
+      "id": "E103-0053"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #229",
+      "x": 499,
+      "y": 910.8,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0054"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #230",
+      "x": 479,
+      "y": 945.2,
+      "parent": "CM-01",
+      "id": "E103-0055"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #230",
+      "x": 499,
+      "y": 940.2,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0056"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #231",
+      "x": 479,
+      "y": 974.6,
+      "parent": "CM-01",
+      "id": "E103-0057"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #231",
+      "x": 499,
+      "y": 969.6,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0058"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #232",
+      "x": 479,
+      "y": 1004.0,
+      "parent": "CM-01",
+      "id": "E103-0059"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #232",
+      "x": 499,
+      "y": 999.0,
+      "parent": "CM-01",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0060"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #201",
+      "x": 894,
+      "y": 857.0,
+      "parent": "CM-02",
+      "id": "E103-0061"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #201",
+      "x": 914,
+      "y": 852.0,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0062"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #202",
+      "x": 894,
+      "y": 886.4,
+      "parent": "CM-02",
+      "id": "E103-0063"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #202",
+      "x": 914,
+      "y": 881.4,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0064"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #203",
+      "x": 894,
+      "y": 915.8,
+      "parent": "CM-02",
+      "id": "E103-0065"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #203",
+      "x": 914,
+      "y": 910.8,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0066"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #204",
+      "x": 894,
+      "y": 945.2,
+      "parent": "CM-02",
+      "id": "E103-0067"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #204",
+      "x": 914,
+      "y": 940.2,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0068"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #205",
+      "x": 894,
+      "y": 974.6,
+      "parent": "CM-02",
+      "id": "E103-0069"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #205",
+      "x": 914,
+      "y": 969.6,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0070"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #206",
+      "x": 894,
+      "y": 1004.0,
+      "parent": "CM-02",
+      "id": "E103-0071"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #206",
+      "x": 914,
+      "y": 999.0,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0072"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #207",
+      "x": 942,
+      "y": 857.0,
+      "parent": "CM-02",
+      "id": "E103-0073"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #207",
+      "x": 962,
+      "y": 852.0,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0074"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #208",
+      "x": 942,
+      "y": 886.4,
+      "parent": "CM-02",
+      "id": "E103-0075"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #208",
+      "x": 962,
+      "y": 881.4,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0076"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #209",
+      "x": 942,
+      "y": 915.8,
+      "parent": "CM-02",
+      "id": "E103-0077"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #209",
+      "x": 962,
+      "y": 910.8,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0078"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #210",
+      "x": 942,
+      "y": 945.2,
+      "parent": "CM-02",
+      "id": "E103-0079"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #210",
+      "x": 962,
+      "y": 940.2,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0080"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #211",
+      "x": 942,
+      "y": 974.6,
+      "parent": "CM-02",
+      "id": "E103-0081"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #211",
+      "x": 962,
+      "y": 969.6,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0082"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #212",
+      "x": 942,
+      "y": 1004.0,
+      "parent": "CM-02",
+      "id": "E103-0083"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #212",
+      "x": 962,
+      "y": 999.0,
+      "parent": "CM-02",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0084"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #326",
+      "x": 1361,
+      "y": 857.0,
+      "parent": "CM-03",
+      "id": "E103-0085"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #326",
+      "x": 1381,
+      "y": 852.0,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0086"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #325",
+      "x": 1361,
+      "y": 886.4,
+      "parent": "CM-03",
+      "id": "E103-0087"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #325",
+      "x": 1381,
+      "y": 881.4,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0088"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #324",
+      "x": 1361,
+      "y": 915.8,
+      "parent": "CM-03",
+      "id": "E103-0089"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #324",
+      "x": 1381,
+      "y": 910.8,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0090"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #323",
+      "x": 1361,
+      "y": 945.2,
+      "parent": "CM-03",
+      "id": "E103-0091"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #323",
+      "x": 1381,
+      "y": 940.2,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0092"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #322",
+      "x": 1361,
+      "y": 974.6,
+      "parent": "CM-03",
+      "id": "E103-0093"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #322",
+      "x": 1381,
+      "y": 969.6,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0094"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #321",
+      "x": 1361,
+      "y": 1004.0,
+      "parent": "CM-03",
+      "id": "E103-0095"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #321",
+      "x": 1381,
+      "y": 999.0,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0096"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #332",
+      "x": 1408,
+      "y": 857.0,
+      "parent": "CM-03",
+      "id": "E103-0097"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #332",
+      "x": 1428,
+      "y": 852.0,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0098"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #331",
+      "x": 1408,
+      "y": 886.4,
+      "parent": "CM-03",
+      "id": "E103-0099"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #331",
+      "x": 1428,
+      "y": 881.4,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0100"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #330",
+      "x": 1408,
+      "y": 915.8,
+      "parent": "CM-03",
+      "id": "E103-0101"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #330",
+      "x": 1428,
+      "y": 910.8,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0102"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #329",
+      "x": 1408,
+      "y": 945.2,
+      "parent": "CM-03",
+      "id": "E103-0103"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #329",
+      "x": 1428,
+      "y": 940.2,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0104"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #328",
+      "x": 1408,
+      "y": 974.6,
+      "parent": "CM-03",
+      "id": "E103-0105"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #328",
+      "x": 1428,
+      "y": 969.6,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0106"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Unité #327",
+      "x": 1408,
+      "y": 1004.0,
+      "parent": "CM-03",
+      "id": "E103-0107"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Unité #327",
+      "x": 1428,
+      "y": 999.0,
+      "parent": "CM-03",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; ne pas déduire le calibre multipolaire.",
+      "id": "E103-0108"
+    },
+    {
+      "family": "Transformateur",
+      "label": "TX-1 150 kVA, 600-120/240 V, 1PH-3F",
+      "x": 291,
+      "y": 1052,
+      "id": "E103-0109"
+    },
+    {
+      "family": "Transformateur",
+      "label": "TX-2 150 kVA, 600-120/240 V, 1PH-3F",
+      "x": 753,
+      "y": 1052,
+      "id": "E103-0110"
+    },
+    {
+      "family": "Transformateur",
+      "label": "TX-3 150 kVA, 600-120/240 V, 1PH-3F",
+      "x": 1218,
+      "y": 1052,
+      "id": "E103-0111"
+    },
+    {
+      "family": "Centre mesurage",
+      "label": "CM-01 120/240 V 800 A",
+      "x": 385,
+      "y": 1060,
+      "model": "SCHNEIDER",
+      "scope": "ENSEMBLE PARENT — COMPOSANTS DÉTAILLÉS SÉPARÉMENT",
+      "id": "E103-0112"
+    },
+    {
+      "family": "Centre mesurage",
+      "label": "CM-02 120/240 V 800 A",
+      "x": 850,
+      "y": 1060,
+      "model": "SCHNEIDER",
+      "scope": "ENSEMBLE PARENT — COMPOSANTS DÉTAILLÉS SÉPARÉMENT",
+      "id": "E103-0113"
+    },
+    {
+      "family": "Centre mesurage",
+      "label": "CM-03 120/240 V 800 A",
+      "x": 1315,
+      "y": 1060,
+      "model": "SCHNEIDER",
+      "scope": "ENSEMBLE PARENT — COMPOSANTS DÉTAILLÉS SÉPARÉMENT",
+      "id": "E103-0114"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 1, rangée 1",
+      "x": 1361,
+      "y": 357.0,
+      "parent": "CM-07",
+      "id": "E103-0115"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 1, rangée 1",
+      "x": 1382,
+      "y": 352.0,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0116"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 1, rangée 2",
+      "x": 1361,
+      "y": 386.7,
+      "parent": "CM-07",
+      "id": "E103-0117"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 1, rangée 2",
+      "x": 1382,
+      "y": 381.7,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0118"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 1, rangée 3",
+      "x": 1361,
+      "y": 416.4,
+      "parent": "CM-07",
+      "id": "E103-0119"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 1, rangée 3",
+      "x": 1382,
+      "y": 411.4,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0120"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 1, rangée 4",
+      "x": 1361,
+      "y": 446.1,
+      "parent": "CM-07",
+      "id": "E103-0121"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 1, rangée 4",
+      "x": 1382,
+      "y": 441.1,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0122"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 1, rangée 5",
+      "x": 1361,
+      "y": 475.8,
+      "parent": "CM-07",
+      "id": "E103-0123"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 1, rangée 5",
+      "x": 1382,
+      "y": 470.8,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0124"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 1, rangée 6",
+      "x": 1361,
+      "y": 505.5,
+      "parent": "CM-07",
+      "id": "E103-0125"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 1, rangée 6",
+      "x": 1382,
+      "y": 500.5,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0126"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 2, rangée 1",
+      "x": 1408,
+      "y": 357.0,
+      "parent": "CM-07",
+      "id": "E103-0127"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 2, rangée 1",
+      "x": 1429,
+      "y": 352.0,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0128"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 2, rangée 2",
+      "x": 1408,
+      "y": 386.7,
+      "parent": "CM-07",
+      "id": "E103-0129"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 2, rangée 2",
+      "x": 1429,
+      "y": 381.7,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0130"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 2, rangée 3",
+      "x": 1408,
+      "y": 416.4,
+      "parent": "CM-07",
+      "id": "E103-0131"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 2, rangée 3",
+      "x": 1429,
+      "y": 411.4,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0132"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 2, rangée 4",
+      "x": 1408,
+      "y": 446.1,
+      "parent": "CM-07",
+      "id": "E103-0133"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 2, rangée 4",
+      "x": 1429,
+      "y": 441.1,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0134"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 2, rangée 5",
+      "x": 1408,
+      "y": 475.8,
+      "parent": "CM-07",
+      "id": "E103-0135"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 2, rangée 5",
+      "x": 1429,
+      "y": 470.8,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0136"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 2, rangée 6",
+      "x": 1408,
+      "y": 505.5,
+      "parent": "CM-07",
+      "id": "E103-0137"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 2, rangée 6",
+      "x": 1429,
+      "y": 500.5,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0138"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 3, rangée 1",
+      "x": 1455,
+      "y": 357.0,
+      "parent": "CM-07",
+      "id": "E103-0139"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 3, rangée 1",
+      "x": 1476,
+      "y": 352.0,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0140"
+    },
+    {
+      "family": "Compteur HQ",
+      "label": "Commerce colonne 3, rangée 2",
+      "x": 1455,
+      "y": 386.7,
+      "parent": "CM-07",
+      "id": "E103-0141"
+    },
+    {
+      "family": "Disjoncteur 100 A",
+      "label": "Commerce colonne 3, rangée 2",
+      "x": 1476,
+      "y": 381.7,
+      "parent": "CM-07",
+      "ampere": 100,
+      "poles": "",
+      "reserve": "* Nombre de pôles non écrit au symbole; aucun choix arbitraire.",
+      "id": "E103-0142"
+    },
+    {
+      "family": "Centre mesurage",
+      "label": "CM-07 347/600 V 600 A",
+      "x": 1313,
+      "y": 559,
+      "model": "SCHNEIDER",
+      "scope": "ENSEMBLE PARENT — COMPOSANTS DÉTAILLÉS SÉPARÉMENT",
+      "id": "E103-0143"
+    },
+    {
+      "family": "Panneau temporaire",
+      "label": "Aile gauche PP-COM 347/600 V, 42 circuits, 225 A",
+      "x": 1286,
+      "y": 262,
+      "scope": "TEMPORAIRE",
+      "id": "E103-0144"
+    },
+    {
+      "family": "Panneau temporaire",
+      "label": "Aile droite PP-COM 347/600 V, 42 circuits, 225 A",
+      "x": 1549,
+      "y": 262,
+      "scope": "TEMPORAIRE",
+      "id": "E103-0145"
+    }
+  ],
+  "notes": [
+    "36 panneaux PL représentés; 36 compteurs logements et 14 compteurs commerces. 50 disjoncteurs 100 A, nombre de pôles non précisé (*).",
+    "Contradiction : les repères PL et les unités des CM-01 à CM-03 ne concordent pas. Aucun appariement ni multiplicateur inventé.",
+    "Centres = ensembles parents; compteurs et disjoncteurs = composants. DCC-9-BOX6 cité « Typ » : quantité non déterminée, non comptée."
+  ]
+}

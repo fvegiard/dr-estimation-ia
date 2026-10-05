@@ -1,0 +1,22 @@
+{
+  "page": 22,
+  "title": "ÉLÉVATIONS AVANT ET ARRIÈRE",
+  "type": "equipment",
+  "scope": "RELEVÉ DES APPELS ÉLECTRIQUES UNIQUEMENT",
+  "records": [
+    {
+      "family": "Contrôle de portée",
+      "label": "Aucun symbole électrique ni appel de note électrique identifié sur cette page après inspection des quatre zones de façade.",
+      "quantity": "",
+      "mark": false,
+      "scope": "FOND ARCHITECTURAL — AUCUN APPAREIL DÉDUIT",
+      "id": "E400-page22-0001"
+    }
+  ],
+  "notes": [
+    "Aucun symbole électrique ni appel de note électrique identifié sur cette page après inspection des quatre zones de façade.",
+    "Les cercles F2, F16, P20, P24 et similaires sont des repères de fenêtres/portes du fond architectural; ils ne sont pas des luminaires.",
+    "Zéro pastille ne signifie pas absence d’éclairage extérieur au projet. Les plans et logements types portent les autres prescriptions.",
+    "Aucune quantité d’appareil déduite des fenêtres, portes, enseignes ou garde-corps. Plan original intégralement conservé."
+  ]
+}

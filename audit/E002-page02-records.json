@@ -1,0 +1,80 @@
+{
+  "page": 2,
+  "title": "CONDITIONS TECHNIQUES",
+  "type": "details",
+  "scope": "DEVIS — ZÉRO QUANTITÉ AJOUTÉE",
+  "records": [
+    {
+      "family": "Prescription",
+      "label": "LIBRE / ESPACE",
+      "model": "LIBRE = circuit non raccordé ou futur avec disjoncteur. ESPACE = circuit non raccordé sans disjoncteur. Sans indication = ESPACE.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E002-page02",
+      "reserve": "Six ESPACE avec calibre sur E105 page 9 : présence de disjoncteur réservée.",
+      "id": "E002-page02-0001"
+    },
+    {
+      "family": "Prescription",
+      "label": "Pouvoir de coupure",
+      "model": "Minimum 10 kA à 250 V; 22 kA à 600 V; armoire de commutation 35 kA, ou selon indications.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E002-page02",
+      "reserve": "Comparer aux 14 kA des cédules et valeurs E102; aucune valeur choisie.",
+      "id": "E002-page02-0002"
+    },
+    {
+      "family": "Prescription",
+      "label": "Verrouillage",
+      "model": "Disjoncteurs éclairage secours, sorties, extérieur, éclairage 24 h indépendant et panneau incendie à verrouiller.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E002-page02",
+      "reserve": "",
+      "id": "E002-page02-0003"
+    },
+    {
+      "family": "Prescription",
+      "label": "Fabricants panneaux",
+      "model": "Cutler-Hammer, Schneider Electric, Siemens; un seul fabricant.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E002-page02",
+      "reserve": "Aucun fabricant unique choisi dans le relevé.",
+      "id": "E002-page02-0004"
+    },
+    {
+      "family": "Prescription",
+      "label": "Incendie",
+      "model": "Description du système cite MIRCOM FX-2003; capacité minimale 198 points; caractéristiques et essais selon devis.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E002-page02",
+      "reserve": "E100/E105 page10 indiquent FX-2000 : référence à confirmer.",
+      "id": "E002-page02-0005"
+    },
+    {
+      "family": "Prescription",
+      "label": "Travaux généraux",
+      "model": "Mise à la terre, conduits, conducteurs, boîtes, supports, éclairage et raccordements selon notes; aucune longueur déduite.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E002-page02",
+      "reserve": "",
+      "id": "E002-page02-0006"
+    }
+  ],
+  "notes": [
+    "Feuille textuelle : aucune pastille matériel. Les prescriptions sont au CSV; aucune quantité physique ajoutée.",
+    "LIBRE inclut le disjoncteur; ESPACE et absence d’indication l’excluent. ESPACE avec calibre en cédule demeure une contradiction.",
+    "Icc : 10 kA / 250 V, 22 kA / 600 V et commutation 35 kA dans le devis; ne pas remplacer arbitrairement les valeurs des cédules.",
+    "Panneau incendie FX-2003 dans le devis contre FX-2000 aux légendes : réserve de modèle."
+  ]
+}

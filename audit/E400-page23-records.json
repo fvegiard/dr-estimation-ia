@@ -1,0 +1,38 @@
+{
+  "page": 23,
+  "title": "ÉLÉVATIONS GAUCHE ET DROITE",
+  "type": "equipment",
+  "scope": "RELEVÉ DES APPELS ÉLECTRIQUES UNIQUEMENT",
+  "records": [
+    {
+      "family": "Luminaire sécurité",
+      "label": "Note A — alimentation PSU1-A",
+      "x": 507,
+      "y": 331,
+      "quantity": 1,
+      "parent": "Gauche",
+      "scope": "ÉLÉVATION — RÉCONCILIER AVEC PLANS",
+      "reserve": "Emplacement exact et modèle à coordonner avec architecture; puissance non indiquée.",
+      "radius": 4.2,
+      "id": "E400-page23-0001"
+    },
+    {
+      "family": "Luminaire sécurité",
+      "label": "Note A — alimentation PSU1-A",
+      "x": 416,
+      "y": 684,
+      "quantity": 1,
+      "parent": "Droite",
+      "scope": "ÉLÉVATION — RÉCONCILIER AVEC PLANS",
+      "reserve": "Emplacement exact et modèle à coordonner avec architecture; puissance non indiquée.",
+      "radius": 4.2,
+      "id": "E400-page23-0002"
+    }
+  ],
+  "notes": [
+    "Deux symboles noirs, chacun avec note A : fournir, installer et raccorder un luminaire de sécurité au panneau PSU1-A.",
+    "Modèle, puissance et emplacement exact à coordonner avec architecture. Aucune référence choisie arbitrairement.",
+    "Ne pas additionner aux plans de niveau sans identifier les mêmes appareils. Fond architectural et repères fenêtres/portes exclus.",
+    "Index E001 nomme cette page E401; le cartouche porte E400. Suffixe page23 conservé pour éviter une fusion avec la page22."
+  ]
+}

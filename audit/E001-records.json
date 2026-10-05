@@ -1,0 +1,68 @@
+{
+  "page": 1,
+  "title": "CONDITIONS GÉNÉRALES",
+  "type": "details",
+  "scope": "DEVIS — ZÉRO QUANTITÉ AJOUTÉE",
+  "records": [
+    {
+      "family": "Prescription",
+      "label": "Index des dessins",
+      "model": "23 feuilles électriques; aucune M-, A- ou S- dans la liste.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E001",
+      "reserve": "",
+      "id": "E001-0001"
+    },
+    {
+      "family": "Prescription",
+      "label": "Numérotation",
+      "model": "Index : E003 page 3, E106 page 10 et E401 page 23; cartouches respectifs E002, E105 et E400.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E001",
+      "reserve": "Conserver les suffixes page, ne pas fusionner les feuilles.",
+      "id": "E001-0002"
+    },
+    {
+      "family": "Prescription",
+      "label": "Coordination",
+      "model": "Travaux à coordonner avec autres disciplines et fournisseurs de services. Percements et réfections selon portée du devis.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E001",
+      "reserve": "",
+      "id": "E001-0003"
+    },
+    {
+      "family": "Prescription",
+      "label": "Mise en marche",
+      "model": "Essais électriques, réglages, rapports, formation et documents de fin de chantier sont prescrits; aucun dénombrement par appareil déduit.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E001",
+      "reserve": "",
+      "id": "E001-0004"
+    },
+    {
+      "family": "Prescription",
+      "label": "Discordances",
+      "model": "Signaler erreurs et omissions à ingénieur; aucun arbitrage des contradictions dans le présent relevé.",
+      "quantity": "",
+      "mark": false,
+      "scope": "DEVIS — SANS QUANTITÉ AJOUTÉE",
+      "parent": "E001",
+      "reserve": "",
+      "id": "E001-0005"
+    }
+  ],
+  "notes": [
+    "Feuille textuelle : zéro symbole matériel à pastiller. CSV de prescriptions; aucune quantité de chantier ajoutée.",
+    "Liste E001 : 23 pages électriques. Index E003/E106/E401 différent des cartouches E002/E105/E400 pages 3/10/23.",
+    "Percements, parasismique, mise en marche, essais, formation et documents de fin de chantier : obligations, pas quantités inventées."
+  ]
+}
