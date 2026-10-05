@@ -1,0 +1,19 @@
+{
+  "workbook": "S-1294-reprise-par-panneau.xlsx",
+  "sha256": "29f1248be2e82c52dcc5013c53cf84e6d57f6aa36961936a8a7acbd16fde2729",
+  "worksheets": 29,
+  "reprise_rows": 1812,
+  "baseline_schedule_rows": 197,
+  "baseline_diagram_rows": 86,
+  "baseline_sheets_preserved_cell_for_cell": [
+    "Lire avant usage",
+    "Départs et principaux",
+    "Synthèse par panneau",
+    "Caractéristiques",
+    "CM schémas non additionner"
+  ],
+  "scan_files": 12,
+  "scan_unique_sha256": 11,
+  "sources": 34,
+  "checks": "Classeur relu depuis le fichier enregistré; 1812 lignes comparées aux CSV; onglets existants et départs par panneau identiques; archive XLSX intègre. Aucun contrôle métier automatique revendiqué."
+}

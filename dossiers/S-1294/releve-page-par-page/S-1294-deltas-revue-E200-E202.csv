@@ -1,0 +1,94 @@
+﻿Feuille,ID conservé,Action,Champ,Avant,Après,Motif source
+E200,E200-0347,RETOUCHE ANCRAGE,radius,3.2,2.5,Retouche rapport : recentrage du Q existant.
+E200,E200-0347,RETOUCHE ANCRAGE,y,907,903.9,Retouche rapport : recentrage du Q existant.
+E200,E200-0347,RETOUCHE ANCRAGE,x,823,822.5,Retouche rapport : recentrage du Q existant.
+E200,E200-0391,RETOUCHE ANCRAGE,radius,3.2,2.5,D5 : groupe interrupteurs à gauche de E; multiplicité réservée.
+E200,E200-0391,RETOUCHE ANCRAGE,y,915.1,914.2,D5 : groupe interrupteurs à gauche de E; multiplicité réservée.
+E200,E200-0391,RETOUCHE ANCRAGE,x,1509.2,1503.7,D5 : groupe interrupteurs à gauche de E; multiplicité réservée.
+E200,E200-0392,RETOUCHE ANCRAGE,radius,3.2,2.5,D6 : groupe interrupteurs second vestibule; multiplicité réservée.
+E200,E200-0392,RETOUCHE ANCRAGE,y,915.1,914.2,D6 : groupe interrupteurs second vestibule; multiplicité réservée.
+E200,E200-0392,RETOUCHE ANCRAGE,x,1539.9,1544.0,D6 : groupe interrupteurs second vestibule; multiplicité réservée.
+E200,E200-0408,RETOUCHE ANCRAGE,radius,3.2,2.5,D4 : T rond à gauche du luminaire C.
+E200,E200-0408,RETOUCHE ANCRAGE,y,930.7,934.7,D4 : T rond à gauche du luminaire C.
+E200,E200-0408,RETOUCHE ANCRAGE,x,1513.2,1498.5,D4 : T rond à gauche du luminaire C.
+E200,E200-0410,RETOUCHE ANCRAGE,radius,3.2,2.5,"D3 : T rond, distinct du MRA-0505 et du T carré-0411."
+E200,E200-0410,RETOUCHE ANCRAGE,y,259.1,254.1,"D3 : T rond, distinct du MRA-0505 et du T carré-0411."
+E200,E200-0410,RETOUCHE ANCRAGE,x,839.9,844.3,"D3 : T rond, distinct du MRA-0505 et du T carré-0411."
+E200,E200-0448,RETOUCHE ANCRAGE,radius,3.2,1.6,"Retouche rapport : deux prises distinctes, centrées; rayons réduits."
+E200,E200-0448,RETOUCHE ANCRAGE,y,848.8,851.2,"Retouche rapport : deux prises distinctes, centrées; rayons réduits."
+E200,E200-0448,RETOUCHE ANCRAGE,x,1566,1567.4,"Retouche rapport : deux prises distinctes, centrées; rayons réduits."
+E200,E200-0449,RETOUCHE ANCRAGE,radius,3.2,1.6,"Retouche rapport : deux prises distinctes, centrées; rayons réduits."
+E200,E200-0449,RETOUCHE ANCRAGE,y,848.8,851.2,"Retouche rapport : deux prises distinctes, centrées; rayons réduits."
+E200,E200-0449,RETOUCHE ANCRAGE,x,1569.7,1571.7,"Retouche rapport : deux prises distinctes, centrées; rayons réduits."
+E200,E200-0457,RETOUCHE ANCRAGE,radius,3.2,2.2,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0457,RETOUCHE ANCRAGE,y,994.5,997.4,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0457,RETOUCHE ANCRAGE,x,477,476.6,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0461,RETOUCHE ANCRAGE,radius,3.2,2.2,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0461,RETOUCHE ANCRAGE,y,994,997.1,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0461,RETOUCHE ANCRAGE,x,975,973.3,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0462,RETOUCHE ANCRAGE,radius,3.2,2.2,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0462,RETOUCHE ANCRAGE,y,994,997.1,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0462,RETOUCHE ANCRAGE,x,1275,1276.4,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0463,RETOUCHE ANCRAGE,radius,3.2,2.2,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0463,RETOUCHE ANCRAGE,y,933,934.8,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0463,RETOUCHE ANCRAGE,x,1395,1397.6,Retouche rapport : recentrage de la prise extérieure existante.
+E200,E200-0516,RETOUCHE ANCRAGE,radius,2.5,1.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0516,RETOUCHE ANCRAGE,y,848.5,849.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0516,RETOUCHE ANCRAGE,x,1505,1504.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0517,RETOUCHE ANCRAGE,radius,2.5,1.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0517,RETOUCHE ANCRAGE,y,852.5,853.5,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0517,RETOUCHE ANCRAGE,x,1505,1504.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0518,RETOUCHE ANCRAGE,radius,2.5,1.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0518,RETOUCHE ANCRAGE,y,856.5,857.4,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0518,RETOUCHE ANCRAGE,x,1505,1504.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0519,RETOUCHE ANCRAGE,radius,2.5,1.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0519,RETOUCHE ANCRAGE,y,860.5,861.3,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0519,RETOUCHE ANCRAGE,x,1505,1504.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0520,RETOUCHE ANCRAGE,radius,2.5,1.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0520,RETOUCHE ANCRAGE,y,864.5,865.1,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0520,RETOUCHE ANCRAGE,x,1505,1504.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0521,RETOUCHE ANCRAGE,radius,2.5,1.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0521,RETOUCHE ANCRAGE,y,868.5,869.0,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0521,RETOUCHE ANCRAGE,x,1505,1504.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0522,RETOUCHE ANCRAGE,radius,2.5,1.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0522,RETOUCHE ANCRAGE,y,873.5,874.0,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0522,RETOUCHE ANCRAGE,x,1505,1504.6,"Retouche rapport : module Mx2 distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0618,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0618,RETOUCHE ANCRAGE,y,895,896.6,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0618,RETOUCHE ANCRAGE,x,769,768.6,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0619,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0619,RETOUCHE ANCRAGE,y,895,896.6,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0619,RETOUCHE ANCRAGE,x,773,772.8,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0620,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0620,RETOUCHE ANCRAGE,y,895,896.6,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0620,RETOUCHE ANCRAGE,x,778,777.0,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0621,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0621,RETOUCHE ANCRAGE,y,906,905.8,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0621,RETOUCHE ANCRAGE,x,769,768.6,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0622,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0622,RETOUCHE ANCRAGE,y,906,905.8,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0622,RETOUCHE ANCRAGE,x,773,772.8,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0623,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0623,RETOUCHE ANCRAGE,y,906,905.8,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0623,RETOUCHE ANCRAGE,x,778,777.0,"Retouche rapport : BA ouest distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0624,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0624,RETOUCHE ANCRAGE,y,974,975.8,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0624,RETOUCHE ANCRAGE,x,1558,1559.8,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0625,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0625,RETOUCHE ANCRAGE,y,974,975.8,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0625,RETOUCHE ANCRAGE,x,1562,1564.1,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0626,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0626,RETOUCHE ANCRAGE,y,974,975.8,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0626,RETOUCHE ANCRAGE,x,1566,1568.4,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0627,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0627,RETOUCHE ANCRAGE,y,984,985.2,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0627,RETOUCHE ANCRAGE,x,1558,1559.8,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0628,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0628,RETOUCHE ANCRAGE,y,984,985.2,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0628,RETOUCHE ANCRAGE,x,1562,1564.1,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0629,RETOUCHE ANCRAGE,radius,2.2,1.5,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0629,RETOUCHE ANCRAGE,y,984,985.2,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E200,E200-0629,RETOUCHE ANCRAGE,x,1566,1568.4,"Retouche rapport : BA est distinct, rayon réduit pour séparer les pastilles."
+E202,E202-0177,RETOUCHE ANCRAGE,y,954.0,953.0,D1 : H réel à gauche du OS3; OS3-0216 inchangé.
+E202,E202-0177,RETOUCHE ANCRAGE,x,1462.67,1451.3,D1 : H réel à gauche du OS3; OS3-0216 inchangé.
+E202,E202-0269,SUPPRESSION INSTANCE,quantity,1,0,"D2 : aucun symbole prise à cet emplacement; T déjà 0285, prise réelle voisine déjà 0270. Pas de remplacement arbitraire."
