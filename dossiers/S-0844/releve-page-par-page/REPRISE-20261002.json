@@ -201,6 +201,55 @@
       "reviewed_utc": "2026-10-02T09:10:31.183884+00:00",
       "independent_qpl_comparison": "non effectuée",
       "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
+    },
+    {
+      "sheet": "EX-M-DT04",
+      "source": "sources/169 - Electricite_plan (1) - 26.png",
+      "source_sha256": "fc7ef9858acc8b57d1ea59e475fcd1a2d1e07163e166067839fd8771d32cf107",
+      "markers": 41,
+      "families": {
+        "Support de chemin": 6,
+        "Sortie télécom — détail": 3,
+        "Traversée coupe-feu": 2,
+        "Chemin panier — prescription": 7,
+        "MALT / râtelier — prescription": 7,
+        "Sortie murale — détail": 4,
+        "Monument — détail": 3,
+        "Sortie mobilier — détail": 3,
+        "Boîtier téléviseur — détail": 6
+      },
+      "image_sha256": "0cc5c00e459df48a71e2ae509ffba46902c9adc3f6975cbded725033e3db775d",
+      "visual_review": "Trois zones source et rendues, dix détails et légende inspectés. 41 repères de prescriptions relus; six positions corrigées puis revues. Quantités physiques non extrapolées; aucune comparaison QPL.",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T09:22:54.979258+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
+    },
+    {
+      "sheet": "EX-M-DT05",
+      "source": "sources/169 - Electricite_plan (1) - 27.png",
+      "source_sha256": "5985127ee80de5fcb78dfe4f5e3d2203f6f0a2714e203aa81684111b87b18db6",
+      "markers": 88,
+      "families": {
+        "Caméra — détail type": 5,
+        "Accès — détail type": 35,
+        "Caniveau de sol — détail": 3,
+        "Contrôle — montage type": 5,
+        "PCP — renvoi diagramme": 3,
+        "Détecteur requête sortie — groupe type": 8,
+        "Contact magnétique — groupe type": 8,
+        "Lecteur carte — groupe type": 8,
+        "Gâche électrique — groupe type": 8,
+        "Transfert courant — groupe type": 2,
+        "Déverrouillage distant — groupe type": 1,
+        "MRA — groupe type": 2
+      },
+      "image_sha256": "1696f94637ccd3e5d2c219fec7f9d2d712457c93abc19affbe89de455a1a590a",
+      "visual_review": "Cinq zones source et rendues plus légende inspectées. 88 repères, dont 37 cellules non vides du tableau contrôlées une à une. Contacts et transfert de porte double recentrés après agrandissement; commande additionnelle ajoutée et revue. Valeurs par groupe type, non total projet; QPL non ouvert.",
+      "qpl_opened": false,
+      "reviewed_utc": "2026-10-02T09:22:55.034015+00:00",
+      "independent_qpl_comparison": "non effectuée",
+      "acceptance": "provisoire — relevé aveugle gelé avant comparaison"
     }
   ],
   "original_ten_preserved": true,
