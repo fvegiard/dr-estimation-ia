@@ -228,6 +228,7 @@ méthode qu'au §0. Le gold gagne : chaque ligne ci-dessous est un écart à ré
 | E5 | Calques `RELEVE` moins nombreux que dans le gold (le gold a un calque par famille et par feuille + un calque légende par feuille) | 26 feuilles | 89 calques `RELEVE` (132 au total) au lieu de 370 (1670 avec les calques CAD) | ouvert |
 | E6 | Signets : `<feuille> - plan` + `Bordereau materiel <feuille>` au lieu de `HR26-14-<feuille>-annote-v<n>` et des signets d'origine | 26 feuilles | 52 signets au lieu de 136 | ouvert |
 | E7 | Hors gold (dossier réel par `from_releve`) : palette B appliquée à **toutes** les feuilles agrégées (couleur du relevé) alors que le gold met E01/E06/E09/E12 en palette A ; cercle par défaut r 4,1859 sur toutes les feuilles quand le symbole n'est pas ancré, alors que le gold utilise 5,0231 et plus sur les feuilles E/EU | dossiers réels | non mesurable sur le gold (le gold n'a pas de règle écrite pour choisir la palette) | ouvert |
+| E8 | Anneau blanc de 1 pt (`style.HALO_W`, `plan.draw_halo`) dessiné autour de chaque pastille ; le gold n'en a pas — visible quand la pastille chevauche un trait du plan (contrôle visuel E09 p.64) | 26 feuilles | 2177 pastilles | ouvert (ajout du moteur pour les symboles foncés, S-1715 E201 ; à trancher par Francis) |
 
 Rayons : les cercles DSI du moteur sont à 4,1859 pt comme le gold (écart de centre ≤ 0,001 pt, arrondi à la
 2e décimale seulement : 4,18 / 4,19).
