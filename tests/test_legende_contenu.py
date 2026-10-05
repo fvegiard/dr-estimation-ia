@@ -170,6 +170,31 @@ def test_q14_code_invente(tmp_path):
     assert any(e.startswith("Q14") and "'PD'" in e and "'PC'" in e for e in errs)
 
 
+def _plan_cercles(tmp_path):
+    """Feuille P1 : trois cercles Ø16 trait 1 (même symbole) et un cercle Ø10 trait 0,5 (autre chose)."""
+    (tmp_path / "feuilles").mkdir(exist_ok=True)
+    doc = pymupdf.open()
+    pg = doc.new_page(width=100, height=100)
+    for cx, cy, r, w in ((20.5, 20.5, 8, 1), (50.5, 20.5, 8, 1), (80.5, 70.5, 8, 1), (50.5, 70.5, 5, 0.5)):
+        pg.draw_circle((cx, cy), r, width=w)
+    doc.save(tmp_path / "feuilles" / "P1.pdf")
+
+
+def test_q15_symbole_identique_non_releve(tmp_path):
+    nomen = ("label,famille,forme,rgb,jeton_regex,description,source,code,materiel,modele,discipline,legende\n"
+             "PC,prise,cercle,,,,leg,PC,PRISE DE COURANT DOUBLE 15A-125V,HUBBELL C,electricite,L02\n")
+    occ = "feuille,label,x_pt,y_pt,source,note\nP1,PC,20.5,20.5,visuel,\nP1,PC,50.5,20.5,visuel,\n"
+    leg = LEG.replace("CT,compte,2,P1", "CT,absent,0,P1 vu").replace(
+        "PC,compte,1,P1", "PC,compte,2,P1")
+    w = dossier(tmp_path, nomen=nomen, occ=occ, leg=leg, devis=False)
+    _plan_cercles(tmp_path)
+    errs = cq.controler(w)["erreurs"]
+    q15 = [e for e in errs if e.startswith("Q15")]
+    assert len(q15) == 1 and "(80.5, 70.5)" in q15[0], errs           # le cercle Ø10 (autre signature) n'est pas signalé
+    (tmp_path / "reserves.md").write_text("R-001 PL\nR-002 Q15 (80, 71) : bulle de détail, pas un appareil\n", encoding="utf-8")
+    assert not [e for e in cq.controler(w)["erreurs"] if e.startswith("Q15")]
+
+
 # --- garde d'outils : contrôle à l'aveugle seulement --------------------------------------------------------------
 def test_tool_guard_controle_qualite(tmp_path):
     root = str(tmp_path)

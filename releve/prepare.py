@@ -44,6 +44,7 @@ WORK_FILES = (
     "nomenclature.csv",
     "legende.csv",
     "qualite.json",
+    "REPRISE.md",
     "reserves.md",
     "rapport-releve.md",
     "comparaison-estimateur.md",

@@ -40,8 +40,12 @@ Si un outil est refusé, écris-le dans `reserves.md` ET termine ton résumé pa
   d'appareils des plans vectoriels (DS0, DS1, Do, Di, K, B, TEL, etc.) sont là avec leurs coordonnées.
 - `uv run releve/zoom.py <workdir> <F> x0 y0 x1 y1` : zoom d'une zone avec règles + marques déjà relevées (pour vérifier).
 - `uv run releve/extract_occurrences.py <workdir>` : applique `nomenclature.csv` aux mots → `occurrences-texte.csv`.
-- `uv run releve/controle_qualite.py <workdir>` : contrôle bloquant de tes sorties (Q1-Q14, dont légende complète,
-  une famille par symbole, modèle du devis, code du vocabulaire). À lancer avant de terminer (§7).
+- `uv run releve/controle_qualite.py <workdir>` : contrôle bloquant de tes sorties (Q1-Q15, dont légende complète,
+  une famille par symbole, modèle du devis, code du vocabulaire, symboles identiques non relevés). À lancer avant de
+  terminer (§8).
+- `REPRISE.md` (s'il existe dans le dossier de travail) : c'est une **reprise** d'un relevé déjà fait. Lis-le en premier,
+  garde tes fichiers existants, applique seulement les points listés (et les règles de la compétence qu'il cite), puis
+  termine par le contrôle final §8 et la mise à jour de `legende.csv`, `reserves.md` et `rapport-releve.md`.
 - `devis/<F>-articles.csv` (si un devis à couche texte est fourni) : chaque article du devis avec `partie`, `section`,
   `titre`, `texte` et `modele` (ligne « MARQUE SPÉCIFIÉE » sans les mots « MARQUE SPÉCIFIÉE », « MODÈLE », « SÉRIE »).
 - Colonne `role` de `feuilles.csv` : `legende` (feuille au cartouche « LÉGENDE(S) », souvent la page titre `00` du lot),
@@ -132,10 +136,14 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
      `designation` de chaque occurrence (ex. `750 W C4,6`, `1/2 SUR INTERRUPTEUR C9`). Seules exceptions (contrôle
      `Q12`) : le même symbole de comptoir avec ou sans mention DDFT/GFI au plan (`CT` / `CG` : appareils différents au
      devis) et une lettre de type de luminaire différente (`LA`, `LF`… : appareils différents).
-   - **Prises (R4)** : c'est le SYMBOLE et la légende qui tranchent, jamais la pièce seule. Symbole de comptoir sans mention
-     → `CT` ; symbole de comptoir + « gfi »/« DDFT » → `CG` ; symbole DDFT de la légende (ou prise ordinaire marquée gfi
-     hors comptoir, ex. lavabo) → `GF` ; prise double ordinaire → `PC` (une moitié commandée = `designation`, pas une
-     famille). Les prises cachées sous une hachure d'armoire se lisent avec `traits.py`.
+   - **Prises (R4)** : c'est le SYMBOLE et la légende qui tranchent. Symbole de comptoir sans mention → `CT` ; symbole de
+     comptoir + « gfi »/« DDFT » au-dessus d'un comptoir de CUISINE → `CG` ; symbole DDFT de la légende → `GF` ; prise
+     double ordinaire → `PC` (une moitié commandée = `designation`, pas une famille). Seule exception de pièce : une prise
+     marquée gfi/DDFT dans une **salle de bain** (près d'un lavabo ou d'une baignoire) est une prise DDFT `GF`, même
+     dessinée avec le symbole de comptoir — le « comptoir » d'une légende électrique est le comptoir de cuisine (exigence
+     propre aux prises de comptoir de cuisine), la prise de salle de bain relève de l'exigence DDFT ; note la règle dans
+     `note`. Les prises
+     cachées sous une hachure d'armoire se lisent avec `traits.py` (et le contrôle `Q15` les signale).
    - `famille` ∈ luminaire, commande, secours, prise, alarme, telecom, distribution, mecanique, chauffage, autre.
    - `forme` : cercle | carre | losange | triangle | triangle_inverse | trapeze | trapeze_inverse (vide = défaut de la famille).
      Convention Dupuis/Plan Expert : luminaires DS0 cercle, DS1 carré, commandes cercle, alarme cercle, télécom triangle,
@@ -280,8 +288,10 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    deux fichiers d'occurrences existe dans `nomenclature.csv` (`cut -d, -f2 … | sort -u`).
 8. **Contrôle final obligatoire** : `uv run releve/controle_qualite.py <workdir>`. Corrige CHAQUE erreur listée
    (`qualite.json`) — en particulier Q8 (famille jamais relevée), Q11 (ligne de légende ni comptée ni prouvée absente),
-   Q12 (symbole éclaté en plusieurs familles), Q13 (modèle vide malgré le devis), Q14 (code hors vocabulaire) — puis
-   relance le contrôle jusqu'à `conforme=True`. Une erreur que tu juges fausse se justifie dans `reserves.md` (règle,
+   Q12 (symbole éclaté en plusieurs familles), Q13 (modèle vide malgré le devis), Q14 (code hors vocabulaire), Q15
+   (cercle vectoriel identique à un symbole relevé, sans occurrence : zoome dessus, relève-le avec la bonne famille, ou
+   écris dans `reserves.md` la ligne « Q15 (x, y) : <pourquoi ce n'est pas un appareil> ») — puis relance le contrôle
+   jusqu'à `conforme=True`. Une erreur que tu juges fausse se justifie dans `reserves.md` (règle,
    preuve au zoom), jamais en effaçant la ligne fautive. Mets à jour `qte` et `statut` de `legende.csv` avec les comptes
    finaux.
 

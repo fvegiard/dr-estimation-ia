@@ -1,5 +1,6 @@
 # /// script
 # requires-python = ">=3.12"
+# dependencies = ["pymupdf>=1.24"]
 # ///
 """Contrôle qualité BLOQUANT d'un relevé (sorties de l'agent) avant de le déclarer conforme.
 
@@ -26,7 +27,11 @@ Un succès technique de l'agent (fichiers écrits) ne prouve pas un relevé exac
       diffèrent que par la puissance (la puissance va dans `designation` de l'occurrence) ;
   Q13 devis fourni (`devis/*-articles.csv`) : chaque famille a un `modele` (référence du devis, `EXISTANT`, ou
       `MODELE NON INDIQUE DANS LA SOURCE ELECTRIQUE` quand le devis a été lu sans y trouver l'appareil) ;
-  Q14 code de famille conforme au vocabulaire de la légende (`releve/legende.py::code_attendu`) quand il s'applique.
+  Q14 code de famille conforme au vocabulaire de la légende (`releve/legende.py::code_attendu`) quand il s'applique ;
+  Q15 omission probable : un cercle vectoriel du plan qui a exactement la signature (diamètre, épaisseur de trait)
+      d'un symbole déjà relevé, sans occurrence à moins de 8 pt et sans justification « Q15 (x, y) » dans reserves.md.
+      Contrôle à l'aveugle (ni gold ni référence) : il compare le plan à lui-même. Constaté sur E08 (2026-10-05) :
+      une prise bien visible et une prise cachée sous une hachure d'armoire oubliées dans chaque logement.
 
 Q11-Q14 : correctif E08 du 2026-10-05 (codes inventés PU/VE/PA…, plinthes éclatées par puissance, prises de comptoir
 fondues dans les prises DDFT, luminaire type C oublié, bordereau « MODELE NON PRECISE » malgré le devis E15).
@@ -242,6 +247,79 @@ def controler_legende(work, nomen, comptes, classement, mal):
     return err
 
 
+RAYON_APPARIEMENT = 3.0   # pt : une occurrence posée au centre vectoriel d'un cercle « porte » sa signature
+RAYON_OMISSION = 8.0      # pt : au-delà, le cercle n'est couvert par aucune occurrence
+
+
+def cercles_vectoriels(pdf_path):
+    """Cercles du dessin vectoriel (chemins faits seulement de courbes, boîte carrée de 6 à 40 pt) :
+    [(cx, cy, diamètre arrondi 0,1, épaisseur arrondie 0,01)], dans le repère affiché (page tournée)."""
+    try:
+        import pymupdf
+    except ImportError:            # environnement sans pymupdf : contrôle non disponible, jamais bloquant
+        return None
+    doc = pymupdf.open(pdf_path)
+    try:
+        page = doc[0]
+        M = page.rotation_matrix
+        out = []
+        for d in page.get_drawings():
+            it = d.get("items") or []
+            if len(it) < 4 or any(i[0] != "c" for i in it):
+                continue
+            r = d["rect"] * M
+            w, h = r.width, r.height
+            if not (6 <= w <= 40) or abs(w - h) > 0.08 * max(w, h):
+                continue
+            out.append(((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, round(w, 1), round(d.get("width") or 0, 2)))
+        return out
+    finally:
+        doc.close()
+
+
+def justifie_q15(reserves, x, y, tol=3.0):
+    """Vrai si une ligne de reserves.md mentionne « Q15 » et un couple de coordonnées à moins de `tol` pt."""
+    for ligne in reserves.splitlines():
+        if "Q15" not in ligne:
+            continue
+        for a, b in re.findall(r"(\d+(?:[.,]\d+)?)\s*[,;]\s*(\d+(?:[.,]\d+)?)", ligne):
+            if abs(float(a.replace(",", ".")) - x) <= tol and abs(float(b.replace(",", ".")) - y) <= tol:
+                return True
+    return False
+
+
+def controler_omissions(work, plans, occ, reserves):
+    """Q15 (voir docstring du module)."""
+    err = []
+    for f in plans:
+        pdf = os.path.join(work, "feuilles", f"{f}.pdf")
+        if not os.path.isfile(pdf):
+            continue
+        cercles = cercles_vectoriels(pdf)
+        if not cercles:
+            continue
+        pts = [(c[0], c[1], o.get("label")) for o in occ if o.get("feuille") == f for c in [coordonnees(o)] if c]
+        signatures = collections.defaultdict(collections.Counter)
+        for x, y, d, lw in cercles:
+            for ox, oy, lab in pts:
+                if abs(ox - x) <= RAYON_APPARIEMENT and abs(oy - y) <= RAYON_APPARIEMENT:
+                    signatures[(d, lw)][lab] += 1
+        vus = set()
+        for x, y, d, lw in cercles:
+            if (d, lw) not in signatures or (round(x), round(y)) in vus:
+                continue
+            vus.add((round(x), round(y)))
+            if any((ox - x) ** 2 + (oy - y) ** 2 <= RAYON_OMISSION ** 2 for ox, oy, _ in pts):
+                continue
+            if justifie_q15(reserves, x, y):
+                continue
+            lab = signatures[(d, lw)].most_common(1)[0][0]
+            err.append(f"Q15 {f} ({x:.1f}, {y:.1f}) : cercle vectoriel Ø{d} pt, trait {lw} pt — même signature que "
+                       f"{lab!r} déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne "
+                       f"« Q15 ({x:.0f}, {y:.0f}) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)")
+    return err
+
+
 def controler(work, reference=None, feuille_ref=None, feuille=None):
     err, avert, mal = [], [], []
     classement = lire_csv(os.path.join(work, "feuilles-classement.csv"), mal)
@@ -356,6 +434,8 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
                          f"mesurés : 0,9 %) — lectures arrondies, positions à revalider")
     # Q11-Q14 : familles tirées de la légende, une famille par symbole, modèle tiré du devis, code du vocabulaire
     err += controler_legende(work, nomen, comptes, classement, mal)
+    # Q15 : symboles identiques à un symbole relevé mais sans occurrence (omissions probables)
+    err += controler_omissions(work, plans, occ, reserves)
     res = {"conforme": not err, "erreurs": err, "avertissements": avert, "occurrences": len(occ), "reperes_lus": n_reperes,
            "comparaison_reference": comparaison, "grilles_suspectes": grilles}
     json.dump(res, open(os.path.join(work, "qualite.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
