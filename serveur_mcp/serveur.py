@@ -336,6 +336,16 @@ def extraire_occurrences(dossier: str) -> dict:
 
 
 # ---------------------------------------------------------------- contrôle du relevé
+def _controle_legende(travail: Path, nomen: list[dict], occ: list[dict], classes: dict) -> list[str]:
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("controle_qualite", Path(__file__).resolve().parents[1] / "releve" / "controle_qualite.py")
+    cq = importlib.util.module_from_spec(spec); spec.loader.exec_module(cq)
+    plans = {f for f, t in classes.items() if t == "plan"}
+    comptes = Counter(o.get("label") for o in occ if o.get("feuille") in plans)
+    classement = [{"feuille": f, "type": t} for f, t in classes.items()]
+    return cq.controler_legende(str(travail), nomen, comptes, classement, [])
+
+
 def controler(travail: Path) -> dict:
     """Contrôles déterministes avant livraison : rien ne sort d'un relevé incohérent."""
     erreurs, alertes = [], []
@@ -416,6 +426,9 @@ def controler(travail: Path) -> dict:
     familles = {r.get("label"): r.get("famille", "") for r in nomen}
     for o in occ:
         comptes[o.get("feuille", "?")][familles.get(o.get("label"), "?")] += 1
+    # Q11-Q14 de releve/controle_qualite.py (légende, une famille par symbole, modèle du devis, code du vocabulaire) :
+    # la méthode exposée renvoie « controle_qualite » vers verifier_releve, qui doit donc les appliquer aussi.
+    erreurs += _controle_legende(travail, nomen, occ, classes)
     return {"pret": not erreurs, "erreurs": erreurs, "alertes": alertes, "occurrences": len(occ),
             "reserves": n_res, "par_feuille": {f: dict(c) for f, c in sorted(comptes.items())},
             "feuilles_plan": sorted(f for f, t in classes.items() if t == "plan")}
@@ -522,6 +535,7 @@ def _methode() -> str:
         r"uv run releve/extract_occurrences\.py[^\n`]*": "extraire_occurrences",
         r"uv run releve/zoom\.py[^\n`]*": "zoomer",
         r"uv run releve/traits\.py[^\n`]*": "nature_traits",
+        r"uv run releve/controle_qualite\.py[^\n`]*": "verifier_releve",
         r"uv run releve/build_qpl\.py[^\n`]*": "produire_livrables",
         r"uv run releve/render_pdf\.py[^\n`]*": "produire_livrables",
     }

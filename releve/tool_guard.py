@@ -136,6 +136,11 @@ def _validate_bash(root: str, tool_input: dict, cwd: str) -> str | None:
         if len(argv) != 4:
             return "extract_occurrences.py n'accepte qu'un seul argument : le workdir"
         return None if _resolve_arg_path(argv[3], cwd) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
+    if tuple(argv[:3]) == ("uv", "run", "releve/controle_qualite.py"):
+        # contrôle à l'aveugle seulement : le workdir et rien d'autre (jamais --reference, qui lirait un gold)
+        if len(argv) != 4:
+            return "controle_qualite.py n'accepte qu'un seul argument : le workdir"
+        return None if _resolve_arg_path(argv[3], cwd) == root else f"Argument Bash hors du dossier de travail : {argv[3]}"
     if tuple(argv[:3]) == ("uv", "run", "releve/traits.py"):
         if len(argv) not in (7, 8):
             return "traits.py attend WORKDIR FEUILLE x y [rayon]"
