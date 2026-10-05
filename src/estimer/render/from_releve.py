@@ -54,6 +54,12 @@ ANCHOR_TEXT_R = 14.0       # a text tag is attached to the closest vector symbol
 REVALIDER = "revalider"
 
 
+def _glyphe_symbole(token: str) -> bool:
+    """Jeton fait seulement de signes (« $ », « # ») : glyphe de symbole dessiné par une police CAO."""
+    t = (token or "").strip()
+    return bool(t) and not any(ch.isalnum() for ch in t)
+
+
 def _touch(a: pymupdf.Rect, b: pymupdf.Rect, gap: float = 1.0) -> bool:
     dx = max(b.x0 - a.x1, a.x0 - b.x1, 0.0)
     dy = max(b.y0 - a.y1, a.y0 - b.y1, 0.0)
@@ -78,7 +84,9 @@ def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
     Pass 1 finds a symbol per text mark. Pass 2 settles claims: a symbol wanted by marks of different
     families goes to the mark whose tag is closest; the others keep their text position with '*'.
     Text marks with no symbol within ANCHOR_TEXT_R, or ambiguous between glued symbols, get '*' and a
-    reserve. Visual marks (placed on the symbol by the relevé) are not moved. Returns counts."""
+    reserve. Visual marks (placed on the symbol by the relevé) are not moved, nor are glyph marks (a token
+    with no letter or digit, e.g. `$` = switch S: the glyph IS the symbol, it is centred on its own box).
+    Returns counts."""
     idx = SymbolIndex(page)
     words = word_boxes(page)
     stats = defaultdict(int)
@@ -95,6 +103,13 @@ def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
         if tok:
             near = [w for w in near if w[1].strip() == tok] or near
         tag, color = (near[0][0], near[0][2]) if near else (pymupdf.Rect(x - 1.5, y - 1.5, x + 1.5, y + 1.5), None)
+        if near and _glyphe_symbole(tok or near[0][1]):
+            # le jeton est un glyphe de police sans lettre ni chiffre (« $ » = interrupteur S du plan) : c'est le
+            # symbole lui-même, pas une étiquette posée à côté. Le recaler sur le cercle voisin le plus proche
+            # envoyait 10 CU sur 20 sur les bulles de note 6/8 (essai E08 du 2026-10-05) : on garde le glyphe.
+            o["x"], o["y"] = (tag.x0 + tag.x1) / 2, (tag.y0 + tag.y1) / 2
+            stats["glyphe_symbole"] += 1
+            continue
         a = anchor(idx, tag, ANCHOR_TEXT_R, color, words)
         if a is None:
             _to_text(o, "ancrage symbole non trouve: marque au texte (*)", stats, "texte_sans_symbole")

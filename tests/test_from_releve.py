@@ -182,3 +182,20 @@ def test_ascii_upper_reste_plie():
     de l'estimateur, lui-même sans accents. Les plier des deux côtés garde le rapprochement."""
     from src.estimer.render.from_releve import ascii_upper
     assert ascii_upper("Réserve × 2") == "RESERVE X 2"
+
+
+def test_glyphe_symbole_jamais_recale_sur_une_bulle_de_note():
+    """Essai E08 (2026-10-05) : le glyphe « $ » (interrupteur S) EST le symbole ; l'ancrage le recalait sur
+    la bulle de note voisine (cercle de 16 pt à 15-22 pt). La marque doit rester sur le glyphe."""
+    from src.estimer.render.from_releve import anchor_sheet
+    doc = pymupdf.open()
+    page = doc.new_page(width=W, height=H)
+    page.insert_text((200, 200), "$", fontsize=14)
+    page.draw_circle((200 + 4, 200 - 22), 8)          # bulle de note numérotée (cercle fermé de 16 pt)
+    glyph = [w for w in page.get_text("words") if w[4] == "$"][0]
+    cx, cy = (glyph[0] + glyph[2]) / 2, (glyph[1] + glyph[3]) / 2
+    items = [{"feuille": "P1", "label": "INT", "x": cx, "y": cy, "source": "texte", "note": "mot '$'"}]
+    stats = anchor_sheet(page, items)
+    assert stats.get("glyphe_symbole") == 1 and not stats.get("texte_ancre")
+    assert abs(items[0]["x"] - cx) < 0.01 and abs(items[0]["y"] - cy) < 0.01
+    assert not items[0].get("flags")
