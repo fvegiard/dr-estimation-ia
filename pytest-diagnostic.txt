@@ -1,0 +1,50 @@
+........................................................................ [ 44%]
+........................................................................ [ 88%]
+............Timeout (0:00:45)!
+Thread 0x0000777527fff6c0 (most recent call first):
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/threading.py", line 355 in wait
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/queue.py", line 171 in get
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1089 in run
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x00007775aeaf1740 (most recent call first):
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/selectors.py", line 468 in select
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 1961 in _run_once
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 645 in run_forever
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 678 in run_until_complete
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118 in run
+  File "/home/fvegi/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195 in run
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/pr-repo/tests/test_serveur_mcp.py", line 91 in test_chaine_complete
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/python.py", line 167 in pytest_pyfunc_call
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/python.py", line 1707 in runtest
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 184 in pytest_runtest_call
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 250 in <lambda>
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 361 in from_call
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 249 in call_and_report
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 139 in runtestprotocol
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 118 in pytest_runtest_protocol
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/main.py", line 408 in pytest_runtestloop
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/main.py", line 384 in _main
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/main.py", line 330 in wrap_session
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/main.py", line 377 in pytest_cmdline_main
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py", line 229 in _main
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py", line 253 in _console_main
+  File "/mnt/d/claude/dr-estimation/S-0844-page-by-page-20261001/.venv/lib/python3.12/site-packages/pytest/__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main

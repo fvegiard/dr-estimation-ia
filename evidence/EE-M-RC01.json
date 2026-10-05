@@ -1,0 +1,1558 @@
+{
+  "sheet": "EE-M-RC01",
+  "source": "sources/20240424_Plans Elec pour Changement 11 - 2 (2).png",
+  "markers": [
+    {
+      "family": "Luminaire L05f",
+      "x": 285.18641810918774,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 316.17842876165116,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 347.1704394141145,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 377.6964047936085,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 408.45539280958724,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 439.2143808255659,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 469.9733688415446,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 500.4993342210386,
+      "y": 257.9481132075472,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 285.18641810918774,
+      "y": 281.2382075471698,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 285.18641810918774,
+      "y": 304.52830188679246,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 500.4993342210386,
+      "y": 290.32134433962267,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 500.4993342210386,
+      "y": 312.9127358490566,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 500.4993342210386,
+      "y": 338.2989386792453,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 500.4993342210386,
+      "y": 361.1232311320755,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 439.2143808255659,
+      "y": 361.1232311320755,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 469.9733688415446,
+      "y": 361.1232311320755,
+      "description": "Luminaire L05f",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 545.7057256990679,
+      "y": 257.2494103773585,
+      "description": "Luminaire L05f",
+      "parent": "Rangement 1.04",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 545.7057256990679,
+      "y": 295.9109669811321,
+      "description": "Luminaire L05f",
+      "parent": "Rangement 1.04",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 545.7057256990679,
+      "y": 329.9145047169811,
+      "description": "Luminaire L05f",
+      "parent": "Rangement 1.04",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 545.7057256990679,
+      "y": 368.34316037735846,
+      "description": "Luminaire L05f",
+      "parent": "Rangement 1.04",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 290.5459387483356,
+      "y": 469.88797169811323,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 290.5459387483356,
+      "y": 505.28891509433964,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 290.5459387483356,
+      "y": 529.277712264151,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 290.5459387483356,
+      "y": 564.6786556603773,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 323.63515312916115,
+      "y": 469.88797169811323,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 323.63515312916115,
+      "y": 505.28891509433964,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 323.63515312916115,
+      "y": 529.277712264151,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 323.63515312916115,
+      "y": 564.6786556603773,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 356.491344873502,
+      "y": 469.88797169811323,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 356.491344873502,
+      "y": 505.28891509433964,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 356.491344873502,
+      "y": 529.277712264151,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 356.491344873502,
+      "y": 564.6786556603773,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 389.58055925432757,
+      "y": 469.88797169811323,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 389.58055925432757,
+      "y": 505.28891509433964,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 389.58055925432757,
+      "y": 529.277712264151,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 389.58055925432757,
+      "y": 564.6786556603773,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 417.3102529960053,
+      "y": 469.88797169811323,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 417.3102529960053,
+      "y": 505.28891509433964,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 417.3102529960053,
+      "y": 529.277712264151,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 417.3102529960053,
+      "y": 564.6786556603773,
+      "description": "Luminaire L05f",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 459.48735019973367,
+      "y": 452.1875,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 459.48735019973367,
+      "y": 482.9304245283019,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 459.48735019973367,
+      "y": 514.1391509433962,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 459.48735019973367,
+      "y": 546.7452830188679,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 459.48735019973367,
+      "y": 578.1869103773586,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 504.2276964047936,
+      "y": 452.1875,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 504.2276964047936,
+      "y": 482.9304245283019,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 504.2276964047936,
+      "y": 514.1391509433962,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 504.2276964047936,
+      "y": 546.7452830188679,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 504.2276964047936,
+      "y": 578.1869103773586,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 549.2010652463382,
+      "y": 452.1875,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 549.2010652463382,
+      "y": 482.9304245283019,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 549.2010652463382,
+      "y": 514.1391509433962,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 549.2010652463382,
+      "y": 546.7452830188679,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05f",
+      "x": 549.2010652463382,
+      "y": 578.1869103773586,
+      "description": "Luminaire L05f",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05i",
+      "x": 318.9747003994674,
+      "y": 290.5542452830189,
+      "description": "Luminaire L05i",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05i",
+      "x": 370.9387483355526,
+      "y": 296.60966981132077,
+      "description": "Luminaire L05i",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05i",
+      "x": 354.8601864181092,
+      "y": 315.00884433962267,
+      "description": "Luminaire L05i",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05i",
+      "x": 307.09054593874833,
+      "y": 355.53360849056605,
+      "description": "Luminaire L05i",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05i",
+      "x": 372.5699067909454,
+      "y": 360.42452830188677,
+      "description": "Luminaire L05i",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05h",
+      "x": 308.9547270306258,
+      "y": 311.51533018867923,
+      "description": "Luminaire L05h",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05h",
+      "x": 335.98535286284954,
+      "y": 304.52830188679246,
+      "description": "Luminaire L05h",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05h",
+      "x": 336.9174434087883,
+      "y": 360.8903301886793,
+      "description": "Luminaire L05h",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05h",
+      "x": 390.74567243675097,
+      "y": 343.8885613207547,
+      "description": "Luminaire L05h",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05k",
+      "x": 325.965379494008,
+      "y": 340.62794811320754,
+      "description": "Luminaire L05k",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05k",
+      "x": 393.7749667110519,
+      "y": 298.23997641509436,
+      "description": "Luminaire L05k",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L05k",
+      "x": 354.3941411451398,
+      "y": 346.91627358490564,
+      "description": "Luminaire L05k",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L04e",
+      "x": 451.33155792276966,
+      "y": 290.32134433962267,
+      "description": "Luminaire L04e",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L04e",
+      "x": 451.33155792276966,
+      "y": 338.2989386792453,
+      "description": "Luminaire L04e",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 308.2556591211718,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 329.2276964047936,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 350.43275632490014,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 371.63781624500666,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 392.8428761651132,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 412.1837549933422,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 431.05858854860185,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 450.6324900133156,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 473.4687083888149,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 492.34354194407456,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 511.21837549933423,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 530.7922769640479,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 549.434087882823,
+      "y": 400.48349056603774,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 287.982689747004,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 308.0226364846871,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 329.4607190412783,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 350.43275632490014,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 371.63781624500666,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 393.0758988015979,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 412.64980026631156,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 431.29161118508654,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 450.6324900133156,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 473.70173102529964,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 492.57656458055925,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 511.4513981358189,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 531.2583222370173,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L08d",
+      "x": 549.2010652463382,
+      "y": 422.14327830188677,
+      "description": "Luminaire L08d",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03a",
+      "x": 290.5459387483356,
+      "y": 443.5701650943396,
+      "description": "Luminaire L03a",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03a",
+      "x": 323.63515312916115,
+      "y": 443.5701650943396,
+      "description": "Luminaire L03a",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03a",
+      "x": 356.491344873502,
+      "y": 443.5701650943396,
+      "description": "Luminaire L03a",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03a",
+      "x": 389.58055925432757,
+      "y": 443.5701650943396,
+      "description": "Luminaire L03a",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03a",
+      "x": 417.3102529960053,
+      "y": 443.5701650943396,
+      "description": "Luminaire L03a",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05m",
+      "x": 519.3741677762982,
+      "y": 467.558962264151,
+      "description": "Panneau acoustique L05m",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05m",
+      "x": 492.34354194407456,
+      "y": 484.7936320754717,
+      "description": "Panneau acoustique L05m",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05m",
+      "x": 500.96537949400795,
+      "y": 527.8803066037735,
+      "description": "Panneau acoustique L05m",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05m",
+      "x": 524.5006657789613,
+      "y": 544.882075471698,
+      "description": "Panneau acoustique L05m",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05n",
+      "x": 482.7896138482024,
+      "y": 459.17452830188677,
+      "description": "Panneau acoustique L05n",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05n",
+      "x": 477.4300932090546,
+      "y": 517.1668632075472,
+      "description": "Panneau acoustique L05n",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05n",
+      "x": 531.2583222370173,
+      "y": 512.7417452830189,
+      "description": "Panneau acoustique L05n",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05o",
+      "x": 513.7816245006658,
+      "y": 492.7122641509434,
+      "description": "Panneau acoustique L05o",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau acoustique L05o",
+      "x": 487.2170439414115,
+      "y": 554.8968160377358,
+      "description": "Panneau acoustique L05o",
+      "parent": "Vestiaires 1.01",
+      "scope": "ACCESSOIRE ACOUSTIQUE — distinct des luminaires",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Détecteur de présence",
+      "x": 545.7057256990679,
+      "y": 276.3472877358491,
+      "description": "Détecteur de présence",
+      "parent": "Rangement 1.04",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Détecteur de présence",
+      "x": 545.7057256990679,
+      "y": 349.2452830188679,
+      "description": "Détecteur de présence",
+      "parent": "Rangement 1.04",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Détecteur de présence",
+      "x": 459.48735019973367,
+      "y": 468.9563679245283,
+      "description": "Détecteur de présence",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Détecteur de présence",
+      "x": 549.2010652463382,
+      "y": 468.9563679245283,
+      "description": "Détecteur de présence",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Détecteur de présence",
+      "x": 459.48735019973367,
+      "y": 531.3738207547169,
+      "description": "Détecteur de présence",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Détecteur de présence",
+      "x": 549.2010652463382,
+      "y": 531.3738207547169,
+      "description": "Détecteur de présence",
+      "parent": "Vestiaires 1.01",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Clavier numérique CL",
+      "x": 425.93209054593876,
+      "y": 378.3579009433962,
+      "description": "Clavier numérique CL",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Clavier numérique CL",
+      "x": 432.6897470039947,
+      "y": 463.5996462264151,
+      "description": "Clavier numérique CL",
+      "parent": "Multifonctions 1.02",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Commande graduée M",
+      "x": 562.4833555259654,
+      "y": 392.0990566037736,
+      "description": "Commande graduée M",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "* Symbole gradateur avec suffixe M; fonction exacte à confirmer.",
+      "radius": 2.5
+    },
+    {
+      "family": "Point de raccordement",
+      "x": 519.8402130492676,
+      "y": 311.9811320754717,
+      "description": "Point de raccordement 1mm; renvoi hexagonal 1, charge non désignée.",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "* Charge du raccordement 1mm non désignée sur cette feuille.",
+      "radius": 2.5
+    },
+    {
+      "family": "Phare double Y2",
+      "x": 413.11584553928094,
+      "y": 366.47995283018867,
+      "description": "Y2 alimenté par UB1",
+      "parent": "Cafétéria 1.03",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Phare double Y2",
+      "x": 524.5006657789613,
+      "y": 427.96580188679246,
+      "description": "Y2 alimenté par UB1",
+      "parent": "Corridor",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Issue existante ER",
+      "x": 293.8082556591212,
+      "y": 352.04009433962267,
+      "description": "Issue existante ER",
+      "parent": "Cafétéria / corridor",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Issue existante ER",
+      "x": 561.3182423435419,
+      "y": 409.33372641509436,
+      "description": "Issue existante ER",
+      "parent": "Cafétéria / corridor",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX3",
+      "x": 282.1571238348868,
+      "y": 332.0106132075472,
+      "description": "EX3-18(S1), trois symboles muraux conservés distincts",
+      "parent": "Cafétéria 1.03",
+      "scope": "EXISTANT",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX3",
+      "x": 282.1571238348868,
+      "y": 359.02712264150944,
+      "description": "EX3-18(S1), trois symboles muraux conservés distincts",
+      "parent": "Cafétéria 1.03",
+      "scope": "EXISTANT",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX3",
+      "x": 282.1571238348868,
+      "y": 385.8107311320755,
+      "description": "EX3-18(S1), trois symboles muraux conservés distincts",
+      "parent": "Cafétéria 1.03",
+      "scope": "EXISTANT",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Groupe ruban DEL L06f",
+      "x": 529.3941411451399,
+      "y": 451.72169811320754,
+      "description": "L06f : 3x selon la flèche du plan; longueurs non indiquées.",
+      "parent": "Vestiaires 1.01",
+      "scope": "NOTE — groupe de segments",
+      "reserve": "* Longueur des segments non indiquée; ne pas assimiler une flèche à un mètre.",
+      "radius": 2.5
+    },
+    {
+      "family": "Groupe ruban DEL L06f",
+      "x": 463.91478029294274,
+      "y": 564.2128537735849,
+      "description": "L06f : 4x selon la flèche du plan; longueurs non indiquées.",
+      "parent": "Vestiaires 1.01",
+      "scope": "NOTE — groupe de segments",
+      "reserve": "* Longueur des segments non indiquée; ne pas assimiler une flèche à un mètre.",
+      "radius": 2.5
+    },
+    {
+      "family": "Groupe ruban DEL L06f",
+      "x": 546.1717709720373,
+      "y": 564.2128537735849,
+      "description": "L06f : 4x selon la flèche du plan; longueurs non indiquées.",
+      "parent": "Vestiaires 1.01",
+      "scope": "NOTE — groupe de segments",
+      "reserve": "* Longueur des segments non indiquée; ne pas assimiler une flèche à un mètre.",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03d",
+      "x": 825.1127049180328,
+      "y": 433.75722092115535,
+      "description": "Luminaire L03d",
+      "parent": "WC 1.37 / 1.38 / accès",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03d",
+      "x": 851.8545081967213,
+      "y": 433.91100702576114,
+      "description": "Luminaire L03d",
+      "parent": "WC 1.37 / 1.38 / accès",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire L03d",
+      "x": 893.3504098360656,
+      "y": 433.91100702576114,
+      "description": "Luminaire L03d",
+      "parent": "WC 1.37 / 1.38 / accès",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Phare simple Y1",
+      "x": 808.6680327868852,
+      "y": 442.36924277907883,
+      "description": "Y1 alimenté par UB1",
+      "parent": "WC 1.37 / 1.38",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Phare simple Y1",
+      "x": 909.641393442623,
+      "y": 442.36924277907883,
+      "description": "Y1 alimenté par UB1",
+      "parent": "WC 1.37 / 1.38",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Unité accumulateurs UB1",
+      "x": 891.3524590163935,
+      "y": 451.903981264637,
+      "description": "UB1 — 72 W inscrits au plan",
+      "parent": "Mécanique 1.36",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Interrupteur avec présence",
+      "x": 841.4036885245902,
+      "y": 441.75409836065575,
+      "description": "Interrupteur avec présence",
+      "parent": "WC 1.37 / 1.38",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Interrupteur avec présence",
+      "x": 877.5204918032787,
+      "y": 441.75409836065575,
+      "description": "Interrupteur avec présence",
+      "parent": "WC 1.37 / 1.38",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX1",
+      "x": 884.436475409836,
+      "y": 485.58313817330213,
+      "description": "Luminaire existant EX1",
+      "parent": "Mécanique 1.36",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX1",
+      "x": 884.436475409836,
+      "y": 556.3247462919594,
+      "description": "Luminaire existant EX1",
+      "parent": "Mécanique 1.36",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire urgence existant EX1",
+      "x": 884.436475409836,
+      "y": 520.800156128025,
+      "description": "EX1-5(UE1) 24H ER",
+      "parent": "Mécanique 1.36",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX7",
+      "x": 937.3053278688525,
+      "y": 488.8126463700234,
+      "description": "Luminaire existant EX7",
+      "parent": "MDF 1.34",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX7",
+      "x": 983.2581967213115,
+      "y": 488.8126463700234,
+      "description": "Luminaire existant EX7",
+      "parent": "MDF 1.34",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX7",
+      "x": 937.3053278688525,
+      "y": 548.1740827478533,
+      "description": "Luminaire existant EX7",
+      "parent": "MDF 1.34",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Luminaire existant EX7",
+      "x": 983.2581967213115,
+      "y": 548.1740827478533,
+      "description": "Luminaire existant EX7",
+      "parent": "MDF 1.34",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Interrupteur minuterie",
+      "x": 824.9590163934427,
+      "y": 476.5097580015613,
+      "description": "Interrupteur minuterie",
+      "parent": "Mécanique 1.36",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Interrupteur unipolaire",
+      "x": 1004.9282786885246,
+      "y": 533.7181889149102,
+      "description": "Interrupteur unipolaire",
+      "parent": "MDF 1.34",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Panneau PG-1",
+      "x": 897.5,
+      "y": 510.1889149102264,
+      "description": "Panneau de contrôle éclairage PG-1; un appareil, rectangle de désignation exclu",
+      "parent": "Mécanique 1.36",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "radius": 2.5
+    },
+    {
+      "family": "Interface IC",
+      "x": 831.2602459016393,
+      "y": 522.1842310694769,
+      "description": "Interface IC",
+      "parent": "Mécanique 1.36",
+      "scope": "INSTALLER",
+      "reserve": "* Désignation IC au plan; spécification détaillée non établie.",
+      "radius": 2.5
+    }
+  ],
+  "csv_type": "equipment",
+  "legend_columns": 2,
+  "scope": "RDC R05 — symboles et notes séparés",
+  "legend_box": [
+    245,
+    780,
+    1300,
+    615
+  ],
+  "notes": [
+    "* Ordre des révisions contradictoire : R06 du 12 janvier / R05 du 24 avril 2024. R05 utilisée ici.",
+    "L05m/n/o : 9 panneaux acoustiques, pas des luminaires (cédule EX-M-LG02).",
+    "L06f : 3 flèches, mentions 3x + 4x + 4x = 11 segments; longueurs inconnues, pas de métré.",
+    "EX1/EX7 et issues ER séparés : existants à relocaliser. EX3 existants distingués.",
+    "* Commande M, charge du point 1mm et interface IC : spécifications à confirmer.",
+    "Les traits de liaison et extrémités noires des commandes ne sont pas des détecteurs.",
+    "Ne pas additionner les mêmes appareils aux vues agrandies EX-M-DT01."
+  ],
+  "review_zones": {
+    "cafeteria": [
+      265,
+      235,
+      550,
+      386
+    ],
+    "corridor": [
+      270,
+      380,
+      565,
+      435
+    ],
+    "multifonctions": [
+      275,
+      436,
+      445,
+      585
+    ],
+    "vestiaires": [
+      450,
+      436,
+      560,
+      585
+    ],
+    "noyau": [
+      785,
+      403,
+      1010,
+      600
+    ],
+    "mur-ouest": [
+      222,
+      295,
+      320,
+      458
+    ],
+    "rangement": [
+      523,
+      238,
+      568,
+      386
+    ]
+  }
+}

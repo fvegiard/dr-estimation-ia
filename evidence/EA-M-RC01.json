@@ -1,0 +1,219 @@
+{
+  "sheet": "EA-M-RC01",
+  "source": "sources/20240424_Plans Elec pour Changement 11 - 5.png",
+  "markers": [
+    {
+      "family": "Klaxon",
+      "x": 390.59895833333337,
+      "y": 242.6894639556377,
+      "description": "Klaxons cafétéria, vestiaires (2), multifonctions",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Klaxon",
+      "x": 504.0364583333333,
+      "y": 426.62661737523104,
+      "description": "Klaxons cafétéria, vestiaires (2), multifonctions",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Klaxon",
+      "x": 353.64583333333337,
+      "y": 582.4861367837339,
+      "description": "Klaxons cafétéria, vestiaires (2), multifonctions",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Klaxon",
+      "x": 505.7552083333333,
+      "y": 582.4861367837339,
+      "description": "Klaxons cafétéria, vestiaires (2), multifonctions",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Klaxon LO",
+      "x": 536.40625,
+      "y": 319.1866913123845,
+      "description": "Rangement 1.04 — faible niveau sonore LO",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Déclencheur manuel ER",
+      "x": 291.484375,
+      "y": 330.0739371534196,
+      "description": "Note A : déplacer et recâbler à l’intérieur du mur de gypse",
+      "scope": "EXISTANT À RELOCALISER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Klaxon",
+      "x": 855.6881009615385,
+      "y": 443.8119143239625,
+      "description": "Au dégagement des WC 1.37/1.38",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Klaxon avec avertisseur visuel",
+      "x": 920.0420673076924,
+      "y": 505.18406961178044,
+      "description": "MDF 1.34 — 30 cd",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Module relais adressable MRA",
+      "x": 951.0503685503686,
+      "y": 451.61538461538464,
+      "description": "Contrôle porte ESC.2, note hexagonale 1",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Groupe interfaces MIA",
+      "x": 971.9348894348894,
+      "y": 451.61538461538464,
+      "description": "Mention 3x pour système préaction : trois interfaces; un symbole de groupe",
+      "scope": "INSTALLER",
+      "reserve": "",
+      "quantity": 3,
+      "radius": 3.1
+    },
+    {
+      "family": "Panneau annonciateur TAI",
+      "x": 700.1538461538462,
+      "y": 279.15621079046423,
+      "description": "TAI représenté dans la zone hachurée",
+      "scope": "EXISTANT — RENVOI",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Déclencheur manuel existant",
+      "x": 700.1538461538462,
+      "y": 333.4127979924718,
+      "description": "Déclencheur à proximité TAI",
+      "scope": "EXISTANT — RENVOI",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Klaxon existant",
+      "x": 713.0769230769231,
+      "y": 416.7189460476788,
+      "description": "Klaxon zone ESC.1",
+      "scope": "EXISTANT — RENVOI",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Déclencheur manuel existant",
+      "x": 1263.3333333333333,
+      "y": 424.4547193877551,
+      "description": "Déclencheurs aux issues et ESC.2",
+      "scope": "EXISTANT — RENVOI",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Déclencheur manuel existant",
+      "x": 1232.1052631578948,
+      "y": 582.6498724489795,
+      "description": "Déclencheurs aux issues et ESC.2",
+      "scope": "EXISTANT — RENVOI",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Déclencheur manuel existant",
+      "x": 1411.7543859649122,
+      "y": 582.6498724489795,
+      "description": "Déclencheurs aux issues et ESC.2",
+      "scope": "EXISTANT — RENVOI",
+      "reserve": "",
+      "quantity": 1,
+      "radius": 3.1
+    },
+    {
+      "family": "Détecteur incendie existant",
+      "x": 1352.6315789473683,
+      "y": 399.9011479591837,
+      "description": "Détecteur près ESC.2, aucune lettre de type lisible",
+      "scope": "EXISTANT — RENVOI",
+      "reserve": "* Sous-type du détecteur non inscrit à côté du symbole : ne pas choisir fumée/chaleur.",
+      "quantity": 1,
+      "radius": 3.1
+    }
+  ],
+  "csv_type": "symbols",
+  "scope": "RDC R3 — neuf et existant distingués",
+  "legend_box": [
+    250,
+    800,
+    1250,
+    470
+  ],
+  "notes": [
+    "MIA : une pastille sur le symbole 3x; quantité CSV = 3 modules pour préaction.",
+    "Déclencheur cafétéria ER : déplacement et recâblage selon note A; pas un achat neuf.",
+    "MRA : contrôle de porte ESC.2; coordination avec contrôle d’accès, pas de doublon au détail.",
+    "Les appareils des zones hachurées sont conservés séparément comme représentations existantes.",
+    "* Type du détecteur près ESC.2 non précisé; aucun modèle ni sous-type inventé.",
+    "Aucun ajout de quantité depuis le diagramme existant EX-E-DG01.",
+    "Marques/modèles et longueurs de câbles/conduits non déterminés."
+  ],
+  "review_zones": {
+    "west": [
+      265,
+      230,
+      575,
+      590
+    ],
+    "core": [
+      780,
+      403,
+      1020,
+      555
+    ],
+    "middle": [
+      640,
+      200,
+      760,
+      445
+    ],
+    "east": [
+      1210,
+      365,
+      1490,
+      640
+    ]
+  }
+}

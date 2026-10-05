@@ -1,0 +1,81 @@
+{
+  "sheet": "ES-M-0T01",
+  "source": "sources/169 - Electricite_plan (1) - 14.png",
+  "markers": [
+    {
+      "family": "Raccordement mécanique",
+      "x": 525.8,
+      "y": 374.8,
+      "description": "CS2-001-006 — circuits 75,77 (C3-2)",
+      "scope": "RACCORDER — appareil mécanique distinct du sectionneur",
+      "reserve": "",
+      "parent": "CS2-001-006",
+      "radius": 4.2
+    },
+    {
+      "family": "Interrupteur de sûreté ≤ 240 V",
+      "x": 525.8,
+      "y": 364.1,
+      "description": "Interrupteur EI de CS2-001-006",
+      "scope": "INSTALLER",
+      "reserve": "* Calibre de l’interrupteur non indiqué au plan; ne pas déduire du disjoncteur 25 A.",
+      "parent": "CS2-001-006",
+      "radius": 4.2
+    },
+    {
+      "family": "Raccordement mécanique",
+      "x": 525.8,
+      "y": 399.7,
+      "description": "CS3-001-006 — circuits 75,77 (C4-2)",
+      "scope": "RACCORDER — appareil mécanique distinct du sectionneur",
+      "reserve": "",
+      "parent": "CS3-001-006",
+      "radius": 4.2
+    },
+    {
+      "family": "Interrupteur de sûreté ≤ 240 V",
+      "x": 525.8,
+      "y": 389.4,
+      "description": "Interrupteur EI de CS3-001-006",
+      "scope": "INSTALLER",
+      "reserve": "* Calibre de l’interrupteur non indiqué au plan; ne pas déduire du disjoncteur 25 A.",
+      "parent": "CS3-001-006",
+      "radius": 4.2
+    }
+  ],
+  "csv_type": "equipment",
+  "scope": "Plan toiture — 31 octobre 2023, révision 0",
+  "legend_box": [
+    260,
+    800,
+    1370,
+    240
+  ],
+  "notes": [
+    "Deux appareils mécaniques et leurs deux interrupteurs EI représentés au toit.",
+    "CS2-001-006 : C3-2 / 75,77. CS3-001-006 : C4-2 / 75,77.",
+    "* Aucun calibre de sectionneur choisi. Les disjoncteurs sont déjà comptés à EX-M-PE01.",
+    "Appareils mécaniques : points de raccordement, aucune fourniture mécanique déduite.",
+    "Câbles, conduits et longueurs non métrés. Modèles non précisés."
+  ],
+  "review_zones": {
+    "appareils": [
+      450,
+      335,
+      555,
+      440
+    ],
+    "toiture-ouest": [
+      210,
+      225,
+      1000,
+      650
+    ],
+    "toiture-est": [
+      1000,
+      225,
+      1620,
+      650
+    ]
+  }
+}

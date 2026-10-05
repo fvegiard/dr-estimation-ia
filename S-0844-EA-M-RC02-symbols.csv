@@ -1,0 +1,26 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X source px,Y source px
+EA-M-RC02-001,Sortie caméra plafond,Infrastructure; installation et patch cord de caméra par le client,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Cafétéria / vestiaires,2591.4,2139.3
+EA-M-RC02-002,Sortie caméra plafond,Infrastructure; installation et patch cord de caméra par le client,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Cafétéria / vestiaires,3444.0,2766.9
+EA-M-RC02-003,Sortie contact magnétique,Sortie contact magnétique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Porte extérieure cafétéria,1859.8,2288.7
+EA-M-RC02-004,Sortie contact magnétique,Sortie contact magnétique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 01 — corridor,3689.4,2598.9
+EA-M-RC02-005,Sortie contact magnétique,Sortie contact magnétique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 01 — corridor,3689.4,2759.2
+EA-M-RC02-006,Sortie gâche électrique,Sortie gâche électrique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 01 — corridor,3690.4,2662.0
+EA-M-RC02-007,Sortie requête de sortie,Sortie requête de sortie,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 01 — corridor,3646.5,2678.0
+EA-M-RC02-008,Sortie lecteur de cartes,Sortie lecteur de cartes,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 01 — corridor,3818.4,2803.3
+EA-M-RC02-009,Sortie contact magnétique,Sortie contact magnétique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 01 — accès central,4578.7,2532.8
+EA-M-RC02-010,Sortie contact magnétique,Sortie contact magnétique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 01 — accès central,4578.7,2693.3
+EA-M-RC02-011,Sortie gâche électrique,Sortie gâche électrique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 01 — accès central,4578.7,2595.0
+EA-M-RC02-012,Sortie requête de sortie,Sortie requête de sortie,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 01 — accès central,4619.2,2613.8
+EA-M-RC02-013,Sortie lecteur de cartes,Sortie lecteur de cartes,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 01 — accès central,4554.1,2469.1
+EA-M-RC02-014,Sortie contact magnétique,Sortie contact magnétique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 09 — MDF 1.34,6551.0,3329.1
+EA-M-RC02-015,Sortie gâche électrique,Sortie gâche électrique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 09 — MDF 1.34,6551.0,3403.1
+EA-M-RC02-016,Sortie requête de sortie,Sortie requête de sortie,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 09 — MDF 1.34,6525.1,3365.1
+EA-M-RC02-017,Sortie lecteur de cartes,Sortie lecteur de cartes,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,Groupe 09 — MDF 1.34,6575.9,3455.0
+EA-M-RC02-018,Sortie contact magnétique,Sortie contact magnétique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 13 — ESC.2,8089.8,2732.1
+EA-M-RC02-019,Sortie gâche électrique,Sortie gâche électrique,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 13 — ESC.2,8154.6,2732.1
+EA-M-RC02-020,Sortie requête de sortie,Sortie requête de sortie,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 13 — ESC.2,8122.9,2769.2
+EA-M-RC02-021,Sortie lecteur de cartes,Sortie lecteur de cartes,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Groupe 13 — ESC.2,8075.2,2579.9
+EA-M-RC02-022,Sortie caméra plafond,Infrastructure CAM au plafond; recoupement ES-M-RC01,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,Zone centrale,5077.7,2454.6
+EA-M-RC02-023,Sortie caméra plafond,Infrastructure CAM au plafond; recoupement ES-M-RC01,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.,ESC.2,7979.9,2965.1
+EA-M-RC02-024,Sortie caméra murale,Infrastructure caméra murale; recoupement plan agrandi MDF,1,INFRASTRUCTURE,MODÈLE NON PRÉCISÉ,,MDF 1.34,5997.7,3344.3
+EA-M-RC02-025,Panneau de sécurité,1200 mm × 250 mm inscrits; composants détaillés à EX-M-DT05,1,RENVOI_DÉTAIL — enveloppe représentée,MODÈLE NON PRÉCISÉ,,MDF 1.34,5963.0,3539.6

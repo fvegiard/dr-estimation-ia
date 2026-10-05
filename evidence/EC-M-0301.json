@@ -1,0 +1,383 @@
+{
+  "sheet": "EC-M-0301",
+  "source": "sources/169 - Electricite_plan (1) - 16.png",
+  "markers": [
+    {
+      "family": "Portion chemin 152 × 100 mm",
+      "x": 661.25,
+      "y": 415.625,
+      "description": "Niveau 03 ouest : indication environ 100 câbles",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Portion chemin 152 × 100 mm",
+      "x": 1110.22216796875,
+      "y": 392.11240310077517,
+      "description": "Niveau 03 est nord : indication environ 100 câbles",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Portion chemin 152 × 100 mm",
+      "x": 1358.4033203125,
+      "y": 424.3992248062016,
+      "description": "Niveau 03 est : indication environ 40 câbles",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Portion chemin 152 × 100 mm",
+      "x": 1111.2109375,
+      "y": 478.43023255813955,
+      "description": "Niveau 03 branche sud : indication environ 20 câbles",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Portion chemin 152 × 100 mm",
+      "x": 661.25,
+      "y": 995.9375,
+      "description": "Niveau 04 ouest : indication environ 100 câbles",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Portion chemin 152 × 100 mm",
+      "x": 1081.5478515625,
+      "y": 995.7721280602636,
+      "description": "Niveau 04 est : indication environ 100 câbles",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Portion chemin IDF",
+      "x": 947.2551724137932,
+      "y": 503.4502923976608,
+      "description": "Raccordement chemin dans IDF, niveau 03",
+      "reserve": "* Section de la portion IDF non inscrite localement; ne pas inventer sa longueur.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Groupe conduits 76 mm",
+      "x": 853.1586206896552,
+      "y": 438.3333333333333,
+      "description": "Niveau 03 côté ouest, 2 x conduits 76 mm",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Groupe conduits 76 mm",
+      "x": 994.1793103448276,
+      "y": 438.3333333333333,
+      "description": "Niveau 03 côté est, 2 x conduits 76 mm",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Groupe conduits 63 mm interétages",
+      "x": 959.1724137931035,
+      "y": 507.9239766081871,
+      "description": "Niveau 03 : 2 conduits, EH",
+      "reserve": "",
+      "scope": "RENVOI — même liaison niveaux 03/04, ne pas additionner",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Groupe manchons 63 mm",
+      "x": 971.3379310344827,
+      "y": 515.1315789473684,
+      "description": "Mention 2 x manchons, EH",
+      "reserve": "",
+      "scope": "RENVOI — traversée niveaux 03/04, ne pas additionner",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Portion chemin IDF",
+      "x": 947.2551724137932,
+      "y": 1084.1832386363637,
+      "description": "Raccordement chemin dans IDF, niveau 04",
+      "reserve": "* Section de la portion IDF non inscrite localement; ne pas inventer sa longueur.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Groupe conduits 76 mm",
+      "x": 853.1586206896552,
+      "y": 1016.0724431818181,
+      "description": "Niveau 04 côté ouest, 2 x conduits 76 mm",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Groupe conduits 76 mm",
+      "x": 987.4758620689655,
+      "y": 1012.34375,
+      "description": "Niveau 04 côté est, 2 x conduits 76 mm",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Groupe conduits 63 mm interétages",
+      "x": 959.1724137931035,
+      "y": 1088.409090909091,
+      "description": "Niveau 04 : 2 conduits, EB",
+      "reserve": "",
+      "scope": "RENVOI — même liaison niveaux 03/04, ne pas additionner",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Groupe manchons 63 mm",
+      "x": 971.3379310344827,
+      "y": 1096.1150568181818,
+      "description": "Mention 2 x manchons, EB",
+      "reserve": "",
+      "scope": "RENVOI — traversée niveaux 03/04, ne pas additionner",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Groupe conduits 63 mm vers RDC",
+      "x": 914.7310344827586,
+      "y": 499.72222222222223,
+      "description": "2 x conduits 63 mm vers mécanique/RDC",
+      "reserve": "",
+      "scope": "RENVOI_EC-M-RC01 / EX-M-DG02",
+      "radius": 3.1,
+      "quantity": 2
+    },
+    {
+      "family": "Parcours conduit 41 mm",
+      "x": 340.625,
+      "y": 978.4375,
+      "description": "Data bureaux 4.17; note C, passage plafond niveau 03",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 41 mm",
+      "x": 400.9375,
+      "y": 978.4375,
+      "description": "Data bureaux 4.17; note C, passage plafond niveau 03",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 41 mm",
+      "x": 483.4375,
+      "y": 965.625,
+      "description": "Data bureaux 4.17; note C, passage plafond niveau 03",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 41 mm",
+      "x": 340.0,
+      "y": 1039.375,
+      "description": "Data bureaux 4.12; note C, passage plafond niveau 03",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 41 mm",
+      "x": 400.3125,
+      "y": 1039.375,
+      "description": "Data bureaux 4.12; note C, passage plafond niveau 03",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 41 mm",
+      "x": 461.25,
+      "y": 1039.375,
+      "description": "Data bureaux 4.12; note C, passage plafond niveau 03",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 42 mm (source)",
+      "x": 1338.95751953125,
+      "y": 856.0357815442561,
+      "description": "Data bureaux 4.29; inscription 42 mm conservée",
+      "reserve": "* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 42 mm (source)",
+      "x": 1421.025390625,
+      "y": 980.9416195856874,
+      "description": "Data bureaux 4.29; inscription 42 mm conservée",
+      "reserve": "* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 42 mm (source)",
+      "x": 1491.88720703125,
+      "y": 980.2824858757062,
+      "description": "Data bureaux 4.29; inscription 42 mm conservée",
+      "reserve": "* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 42 mm (source)",
+      "x": 1395.64697265625,
+      "y": 1050.15065913371,
+      "description": "Data bureaux 4.34; inscription 42 mm conservée",
+      "reserve": "* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 42 mm (source)",
+      "x": 1506.38916015625,
+      "y": 1050.8097928436912,
+      "description": "Data bureaux 4.34; inscription 42 mm conservée",
+      "reserve": "* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 42 mm (source)",
+      "x": 1308.96484375,
+      "y": 1140.45197740113,
+      "description": "Data bureaux 4.34; inscription 42 mm conservée",
+      "reserve": "* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 21 mm",
+      "x": 1080.2294921875,
+      "y": 898.879472693032,
+      "description": "Salle 4.26; notes A/B : sous dalle puis remontée niveau 04",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 21 mm",
+      "x": 1107.9150390625,
+      "y": 1064.322033898305,
+      "description": "Salle 4.44; notes A/B : sous dalle puis remontée niveau 04",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    },
+    {
+      "family": "Parcours conduit 21 mm",
+      "x": 1083.19580078125,
+      "y": 1103.210922787194,
+      "description": "Salle 4.41; notes A/B : sous dalle puis remontée niveau 04",
+      "reserve": "",
+      "scope": "PARCOURS / PORTION — pas un métré",
+      "radius": 3.1,
+      "quantity": 1
+    }
+  ],
+  "csv_type": "details",
+  "scope": "Parcours / réseau — métré non réalisé",
+  "legend_box": [
+    50,
+    1440,
+    1900,
+    340
+  ],
+  "legend_columns": 2,
+  "notes": [
+    "Les pastilles de chemins désignent 8 portions repérées; elles ne sont pas des pièces commerciales.",
+    "Sections inscrites 152 × 100 mm; environ 100/40/20 câbles = capacité/occupation, pas un achat de câbles.",
+    "Groupes 2x : quantité CSV = 2, une pastille sur le symbole/renvoi commun.",
+    "Liaisons 63 mm EH niveau 03 / EB niveau 04 et manchons : mêmes traversées, non additionnables.",
+    "6 parcours 41 mm à l’ouest et 6 libellés 42 mm à l’est du niveau 04; conserver cette contradiction.",
+    "3 parcours 21 mm aux salles 4.26 / 4.44 / 4.41, descente sous dalle et remontée (A/B).",
+    "Note C : data des postes ouverts, passage plafond niveau 03; implantation à coordonner au mobilier.",
+    "Aucune longueur de conduit/chemin ni quantité de supports, coudes ou accessoires déduite."
+  ],
+  "review_zones": {
+    "upperleft": [
+      260,
+      260,
+      900,
+      600
+    ],
+    "upperright": [
+      895,
+      260,
+      1570,
+      600
+    ],
+    "lowerleft": [
+      260,
+      830,
+      900,
+      1180
+    ],
+    "lowerright": [
+      895,
+      830,
+      1570,
+      1180
+    ],
+    "riser3": [
+      840,
+      410,
+      1020,
+      580
+    ],
+    "riser4": [
+      840,
+      985,
+      1020,
+      1160
+    ]
+  }
+}

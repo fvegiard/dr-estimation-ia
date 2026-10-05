@@ -1,0 +1,105 @@
+{
+  "sheet": "EX-M-DT02",
+  "source": "sources/169 - Electricite_plan (1) - 24.png",
+  "markers": [
+    {
+      "family": "Barre de mise à la terre",
+      "x": 576.2,
+      "y": 466.0,
+      "description": "Salle électrique — Niveau 4",
+      "scope": "RENVOI_PLANS_DE_NIVEAU",
+      "reserve": "",
+      "parent": "",
+      "radius": 4.2
+    },
+    {
+      "family": "Barre de mise à la terre",
+      "x": 769.2,
+      "y": 466.0,
+      "description": "Salle MDF — Niveau 4",
+      "scope": "RENVOI_PLANS_DE_NIVEAU",
+      "reserve": "",
+      "parent": "",
+      "radius": 4.2
+    },
+    {
+      "family": "Barre de mise à la terre",
+      "x": 576.2,
+      "y": 587.3,
+      "description": "Salle électrique — Niveau 3",
+      "scope": "RENVOI_PLANS_DE_NIVEAU",
+      "reserve": "",
+      "parent": "",
+      "radius": 4.2
+    },
+    {
+      "family": "Barre de mise à la terre",
+      "x": 769.2,
+      "y": 587.3,
+      "description": "Salle MDF — Niveau 3",
+      "scope": "RENVOI_PLANS_DE_NIVEAU",
+      "reserve": "",
+      "parent": "",
+      "radius": 4.2
+    },
+    {
+      "family": "Barre de mise à la terre",
+      "x": 576.2,
+      "y": 831.0,
+      "description": "Salle électrique — RDC",
+      "scope": "RENVOI_PLANS_DE_NIVEAU",
+      "reserve": "",
+      "parent": "",
+      "radius": 4.2
+    },
+    {
+      "family": "Barre de mise à la terre",
+      "x": 769.2,
+      "y": 831.0,
+      "description": "Salle MDF — RDC",
+      "scope": "RENVOI_PLANS_DE_NIVEAU",
+      "reserve": "",
+      "parent": "",
+      "radius": 4.2
+    },
+    {
+      "family": "Barre de mise à la terre existante",
+      "x": 495.4,
+      "y": 962.7,
+      "description": "Salle électrique principale — sous-sol",
+      "scope": "CONSERVER / RENVOI",
+      "reserve": "",
+      "parent": "",
+      "radius": 4.2
+    }
+  ],
+  "csv_type": "details",
+  "scope": "Diagramme de mise à la terre — pas un achat global",
+  "legend_box": [
+    1220,
+    660,
+    535,
+    300
+  ],
+  "notes": [
+    "Six barres aux niveaux 4, 3 et RDC; une barre existante au sous-sol.",
+    "Quantités de symboles au diagramme seulement : recouper avec les vues agrandies.",
+    "Libellés source : 1#6V, C.21 mm et 1#1/0V, C.21 mm conservés sans choix de calibre.",
+    "Longueurs des conducteurs et conduits non déterminées; aucun métré au diagramme.",
+    "Modèles et dimensions des barres non précisés."
+  ],
+  "review_zones": {
+    "barres-haut": [
+      470,
+      420,
+      870,
+      650
+    ],
+    "barres-bas": [
+      340,
+      760,
+      920,
+      1030
+    ]
+  }
+}

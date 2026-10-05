@@ -1,0 +1,306 @@
+{
+  "sheet": "EA-M-RC02",
+  "source": "sources/20240424_Plans Elec pour Changement 11 - 6.png",
+  "markers": [
+    {
+      "family": "Sortie caméra plafond",
+      "x": 398.33976833976834,
+      "y": 328.84375,
+      "description": "Infrastructure; installation et patch cord de caméra par le client",
+      "parent": "Cafétéria / vestiaires",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie caméra plafond",
+      "x": 529.3951093951093,
+      "y": 425.3125,
+      "description": "Infrastructure; installation et patch cord de caméra par le client",
+      "parent": "Cafétéria / vestiaires",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie contact magnétique",
+      "x": 285.8815958815959,
+      "y": 351.8125,
+      "description": "Sortie contact magnétique",
+      "parent": "Porte extérieure cafétéria",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie contact magnétique",
+      "x": 567.1276595744681,
+      "y": 399.4880694143167,
+      "description": "Sortie contact magnétique",
+      "parent": "Groupe 01 — corridor",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie contact magnétique",
+      "x": 567.1276595744681,
+      "y": 424.13015184381777,
+      "description": "Sortie contact magnétique",
+      "parent": "Groupe 01 — corridor",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie gâche électrique",
+      "x": 567.2813238770685,
+      "y": 409.1908893709327,
+      "description": "Sortie gâche électrique",
+      "parent": "Groupe 01 — corridor",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie requête de sortie",
+      "x": 560.5200945626477,
+      "y": 411.65509761388284,
+      "description": "Sortie requête de sortie",
+      "parent": "Groupe 01 — corridor",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie lecteur de cartes",
+      "x": 586.950354609929,
+      "y": 430.9067245119306,
+      "description": "Sortie lecteur de cartes",
+      "parent": "Groupe 01 — corridor",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie contact magnétique",
+      "x": 703.8161057692307,
+      "y": 389.32614555256066,
+      "description": "Sortie contact magnétique",
+      "parent": "Groupe 01 — accès central",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie contact magnétique",
+      "x": 703.8161057692307,
+      "y": 414.00943396226415,
+      "description": "Sortie contact magnétique",
+      "parent": "Groupe 01 — accès central",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie gâche électrique",
+      "x": 703.8161057692307,
+      "y": 398.88814016172506,
+      "description": "Sortie gâche électrique",
+      "parent": "Groupe 01 — accès central",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie requête de sortie",
+      "x": 710.0420673076923,
+      "y": 401.7789757412399,
+      "description": "Sortie requête de sortie",
+      "parent": "Groupe 01 — accès central",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie lecteur de cartes",
+      "x": 700.0360576923077,
+      "y": 379.54177897574124,
+      "description": "Sortie lecteur de cartes",
+      "parent": "Groupe 01 — accès central",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie contact magnétique",
+      "x": 1006.9938650306749,
+      "y": 511.734375,
+      "description": "Sortie contact magnétique",
+      "parent": "Groupe 09 — MDF 1.34",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie gâche électrique",
+      "x": 1006.9938650306749,
+      "y": 523.1041666666666,
+      "description": "Sortie gâche électrique",
+      "parent": "Groupe 09 — MDF 1.34",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie requête de sortie",
+      "x": 1003.0061349693251,
+      "y": 517.265625,
+      "description": "Sortie requête de sortie",
+      "parent": "Groupe 09 — MDF 1.34",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie lecteur de cartes",
+      "x": 1010.8282208588957,
+      "y": 531.09375,
+      "description": "Sortie lecteur de cartes",
+      "parent": "Groupe 09 — MDF 1.34",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie contact magnétique",
+      "x": 1243.5258525852585,
+      "y": 419.97093023255815,
+      "description": "Sortie contact magnétique",
+      "parent": "Groupe 13 — ESC.2",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie gâche électrique",
+      "x": 1253.4983498349834,
+      "y": 419.97093023255815,
+      "description": "Sortie gâche électrique",
+      "parent": "Groupe 13 — ESC.2",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie requête de sortie",
+      "x": 1248.6138613861385,
+      "y": 425.6686046511628,
+      "description": "Sortie requête de sortie",
+      "parent": "Groupe 13 — ESC.2",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie lecteur de cartes",
+      "x": 1241.2871287128712,
+      "y": 396.56976744186045,
+      "description": "Sortie lecteur de cartes",
+      "parent": "Groupe 13 — ESC.2",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie caméra plafond",
+      "x": 780.5288461538462,
+      "y": 377.31805929919136,
+      "description": "Infrastructure CAM au plafond; recoupement ES-M-RC01",
+      "parent": "Zone centrale",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie caméra plafond",
+      "x": 1226.6336633663366,
+      "y": 455.7848837209302,
+      "description": "Infrastructure CAM au plafond; recoupement ES-M-RC01",
+      "parent": "ESC.2",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "* Symbole spécifique dessiné en zone hachurée HORS CONTRAT : portée à confirmer.",
+      "radius": 2.6
+    },
+    {
+      "family": "Sortie caméra murale",
+      "x": 921.9471153846154,
+      "y": 514.0768194070081,
+      "description": "Infrastructure caméra murale; recoupement plan agrandi MDF",
+      "parent": "MDF 1.34",
+      "scope": "INFRASTRUCTURE",
+      "reserve": "",
+      "radius": 2.6
+    },
+    {
+      "family": "Panneau de sécurité",
+      "x": 916.6105769230769,
+      "y": 544.0970350404313,
+      "description": "1200 mm × 250 mm inscrits; composants détaillés à EX-M-DT05",
+      "parent": "MDF 1.34",
+      "scope": "RENVOI_DÉTAIL — enveloppe représentée",
+      "reserve": "",
+      "radius": 2.6
+    }
+  ],
+  "csv_type": "symbols",
+  "scope": "RDC R2 — infrastructures sécurité",
+  "legend_box": [
+    250,
+    810,
+    1310,
+    400
+  ],
+  "notes": [
+    "5 sorties caméra : 4 au plafond, 1 murale; appareils/patch cords installés par le client.",
+    "4 groupes de porte représentés : deux groupes 01, un groupe 09 et un groupe 13.",
+    "1 contact isolé à la porte extérieure de la cafétéria, en plus des contacts des groupes.",
+    "* Groupes central 01 et ESC.2 / caméras centrales : symboles en zone HORS CONTRAT; portée à confirmer.",
+    "Les sorties CAM du plan ES-M-RC01 sont les mêmes infrastructures : ne pas additionner.",
+    "Panneau de sécurité 1200 × 250 mm : une enveloppe; composants au détail, sans doublon.",
+    "Les groupes décrivent des sorties, pas une fourniture arbitraire de quincaillerie.",
+    "Longueurs de câbles et conduits non métrées; aucun modèle choisi."
+  ],
+  "review_zones": {
+    "west": [
+      265,
+      295,
+      590,
+      440
+    ],
+    "doorwest": [
+      545,
+      375,
+      610,
+      446
+    ],
+    "central": [
+      690,
+      345,
+      800,
+      425
+    ],
+    "mdf": [
+      905,
+      482,
+      1030,
+      560
+    ],
+    "east": [
+      1200,
+      370,
+      1275,
+      475
+    ]
+  }
+}

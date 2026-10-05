@@ -1,0 +1,10 @@
+{
+  "feuille": "EX-M-DG02",
+  "pastilles": 2,
+  "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+  "score": "2/2",
+  "erreurs_restantes": [],
+  "legende_lisible": true,
+  "source_conservee": true,
+  "sha256_jpeg": "12b2403ea035ed80d18ad3d7fb8885fcf54e72db2baceda84d2002f71fa1df0e"
+}

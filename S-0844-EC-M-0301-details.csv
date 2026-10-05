@@ -1,0 +1,33 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X source px,Y source px
+EC-M-0301-001,Portion chemin 152 × 100 mm,Niveau 03 ouest : indication environ 100 câbles,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,2661.5,1672.9
+EC-M-0301-002,Portion chemin 152 × 100 mm,Niveau 03 est nord : indication environ 100 câbles,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,4468.6,1578.3
+EC-M-0301-003,Portion chemin 152 × 100 mm,Niveau 03 est : indication environ 40 câbles,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,5467.6,1708.2
+EC-M-0301-004,Portion chemin 152 × 100 mm,Niveau 03 branche sud : indication environ 20 câbles,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,4472.6,1925.7
+EC-M-0301-005,Portion chemin 152 × 100 mm,Niveau 04 ouest : indication environ 100 câbles,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,2661.5,4008.6
+EC-M-0301-006,Portion chemin 152 × 100 mm,Niveau 04 est : indication environ 100 câbles,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,4353.2,4008.0
+EC-M-0301-007,Portion chemin IDF,"Raccordement chemin dans IDF, niveau 03",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,* Section de la portion IDF non inscrite localement; ne pas inventer sa longueur.,,3812.7,2026.4
+EC-M-0301-008,Groupe conduits 76 mm,"Niveau 03 côté ouest, 2 x conduits 76 mm",2,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,3434.0,1764.3
+EC-M-0301-009,Groupe conduits 76 mm,"Niveau 03 côté est, 2 x conduits 76 mm",2,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,4001.6,1764.3
+EC-M-0301-010,Groupe conduits 63 mm interétages,"Niveau 03 : 2 conduits, EH",2,"RENVOI — même liaison niveaux 03/04, ne pas additionner",MODÈLE NON PRÉCISÉ,,,3860.7,2044.4
+EC-M-0301-011,Groupe manchons 63 mm,"Mention 2 x manchons, EH",2,"RENVOI — traversée niveaux 03/04, ne pas additionner",MODÈLE NON PRÉCISÉ,,,3909.6,2073.4
+EC-M-0301-012,Portion chemin IDF,"Raccordement chemin dans IDF, niveau 04",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,* Section de la portion IDF non inscrite localement; ne pas inventer sa longueur.,,3812.7,4363.8
+EC-M-0301-013,Groupe conduits 76 mm,"Niveau 04 côté ouest, 2 x conduits 76 mm",2,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,3434.0,4089.7
+EC-M-0301-014,Groupe conduits 76 mm,"Niveau 04 côté est, 2 x conduits 76 mm",2,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,3974.6,4074.7
+EC-M-0301-015,Groupe conduits 63 mm interétages,"Niveau 04 : 2 conduits, EB",2,"RENVOI — même liaison niveaux 03/04, ne pas additionner",MODÈLE NON PRÉCISÉ,,,3860.7,4380.8
+EC-M-0301-016,Groupe manchons 63 mm,"Mention 2 x manchons, EB",2,"RENVOI — traversée niveaux 03/04, ne pas additionner",MODÈLE NON PRÉCISÉ,,,3909.6,4411.9
+EC-M-0301-017,Groupe conduits 63 mm vers RDC,2 x conduits 63 mm vers mécanique/RDC,2,RENVOI_EC-M-RC01 / EX-M-DG02,MODÈLE NON PRÉCISÉ,,,3681.8,2011.4
+EC-M-0301-018,Parcours conduit 41 mm,"Data bureaux 4.17; note C, passage plafond niveau 03",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,1371.0,3938.2
+EC-M-0301-019,Parcours conduit 41 mm,"Data bureaux 4.17; note C, passage plafond niveau 03",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,1613.8,3938.2
+EC-M-0301-020,Parcours conduit 41 mm,"Data bureaux 4.17; note C, passage plafond niveau 03",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,1945.8,3886.6
+EC-M-0301-021,Parcours conduit 41 mm,"Data bureaux 4.12; note C, passage plafond niveau 03",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,1368.5,4183.5
+EC-M-0301-022,Parcours conduit 41 mm,"Data bureaux 4.12; note C, passage plafond niveau 03",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,1611.3,4183.5
+EC-M-0301-023,Parcours conduit 41 mm,"Data bureaux 4.12; note C, passage plafond niveau 03",1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,1856.5,4183.5
+EC-M-0301-024,Parcours conduit 42 mm (source),Data bureaux 4.29; inscription 42 mm conservée,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,"* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",,5389.3,3445.5
+EC-M-0301-025,Parcours conduit 42 mm (source),Data bureaux 4.29; inscription 42 mm conservée,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,"* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",,5719.6,3948.3
+EC-M-0301-026,Parcours conduit 42 mm (source),Data bureaux 4.29; inscription 42 mm conservée,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,"* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",,6004.8,3945.6
+EC-M-0301-027,Parcours conduit 42 mm (source),Data bureaux 4.34; inscription 42 mm conservée,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,"* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",,5617.5,4226.9
+EC-M-0301-028,Parcours conduit 42 mm (source),Data bureaux 4.34; inscription 42 mm conservée,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,"* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",,6063.2,4229.5
+EC-M-0301-029,Parcours conduit 42 mm (source),Data bureaux 4.34; inscription 42 mm conservée,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,"* 42 mm inscrit ici, contre 41 mm dans la zone ouest : diamètre à confirmer.",,5268.6,4590.3
+EC-M-0301-030,Parcours conduit 21 mm,Salle 4.26; notes A/B : sous dalle puis remontée niveau 04,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,4347.9,3618.0
+EC-M-0301-031,Parcours conduit 21 mm,Salle 4.44; notes A/B : sous dalle puis remontée niveau 04,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,4459.4,4283.9
+EC-M-0301-032,Parcours conduit 21 mm,Salle 4.41; notes A/B : sous dalle puis remontée niveau 04,1,PARCOURS / PORTION — pas un métré,MODÈLE NON PRÉCISÉ,,,4359.9,4440.4

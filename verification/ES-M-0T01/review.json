@@ -1,0 +1,10 @@
+{
+  "feuille": "ES-M-0T01",
+  "pastilles": 4,
+  "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+  "score": "4/4",
+  "erreurs_restantes": [],
+  "legende_lisible": true,
+  "source_conservee": true,
+  "sha256_jpeg": "e82c29438f3f681d4f7976b4785c2ff0b88e3c27f69c0372dff6228c83215e68"
+}

@@ -11,6 +11,10 @@ COLORS=['#2C78BD','#489C60','#AA59AD','#18A6A2','#B77C38','#D14465','#7C77C4','#
 def render(data):
     sheet=data['sheet']; source=ROOT/data['source']
     im=Image.open(source).convert('RGB'); scale=im.width/2000
+    required_height=round((data['legend_box'][1]+data['legend_box'][3]+12)*scale)
+    if required_height>im.height:
+        expanded=Image.new('RGB',(im.width,required_height),'white')
+        expanded.paste(im,(0,0));im=expanded
     # Work in an image with a transparent drawing layer to retain source linework.
     layer=Image.new('RGBA',im.size);draw=ImageDraw.Draw(layer)
     counts=Counter(m['family'] for m in data['markers'])
@@ -27,9 +31,14 @@ def render(data):
     reserves=sum(bool(m.get('reserve')) for m in data['markers'])
     text(x+15,y+39,f'{len(data["markers"])} repères / {len(counts)} familles / RES {reserves} — '+data['scope'],11)
     cursor=y+65
-    for family,count in counts.items():
-        c=colors[family];draw.ellipse(tuple(round(v*scale) for v in (x+16,cursor+2,x+24,cursor+10)),fill=c+'35',outline=c,width=2)
-        text(x+34,cursor,f'{family} : {count}',11);cursor+=20
+    columns=data.get('legend_columns',1)
+    rows=(len(counts)+columns-1)//columns
+    for index,(family,count) in enumerate(counts.items()):
+        cx=x+(index//rows)*w/columns
+        cy=cursor+(index%rows)*20
+        c=colors[family];draw.ellipse(tuple(round(v*scale) for v in (cx+16,cy+2,cx+24,cy+10)),fill=c+'35',outline=c,width=2)
+        text(cx+34,cy,f'{family} : {count}',11)
+    cursor+=rows*20
     for note in data['notes']:text(x+15,cursor,note,10);cursor+=18
     assert cursor<y+h-4,(sheet,cursor,y+h)
     final=Image.alpha_composite(im.convert('RGBA'),layer).convert('RGB')
@@ -43,7 +52,7 @@ def render(data):
     with (ROOT/f'S-0844-{sheet}-{data["csv_type"]}.csv').open('w',encoding='utf-8-sig',newline='') as f:
         writer=csv.writer(f);writer.writerow(fields)
         for i,m in enumerate(data['markers'],1):
-            writer.writerow([f'{sheet}-{i:03d}',m['family'],m.get('description',m['family']),1,m.get('scope',data['scope']),m.get('model','MODÈLE NON PRÉCISÉ'),m.get('reserve',''),m.get('parent',''),round(m['x']*scale,1),round(m['y']*scale,1)])
+            writer.writerow([f'{sheet}-{i:03d}',m['family'],m.get('description',m['family']),m.get('quantity',1),m.get('scope',data['scope']),m.get('model','MODÈLE NON PRÉCISÉ'),m.get('reserve',''),m.get('parent',''),round(m['x']*scale,1),round(m['y']*scale,1)])
     print(sheet,len(data['markers']),dict(counts),flush=True)
     return destination
 

@@ -1,0 +1,5 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X source px,Y source px
+ES-M-0T01-001,Raccordement mécanique,"CS2-001-006 — circuits 75,77 (C3-2)",1,RACCORDER — appareil mécanique distinct du sectionneur,MODÈLE NON PRÉCISÉ,,CS2-001-006,2116.3,1508.6
+ES-M-0T01-002,Interrupteur de sûreté ≤ 240 V,Interrupteur EI de CS2-001-006,1,INSTALLER,MODÈLE NON PRÉCISÉ,* Calibre de l’interrupteur non indiqué au plan; ne pas déduire du disjoncteur 25 A.,CS2-001-006,2116.3,1465.5
+ES-M-0T01-003,Raccordement mécanique,"CS3-001-006 — circuits 75,77 (C4-2)",1,RACCORDER — appareil mécanique distinct du sectionneur,MODÈLE NON PRÉCISÉ,,CS3-001-006,2116.3,1608.8
+ES-M-0T01-004,Interrupteur de sûreté ≤ 240 V,Interrupteur EI de CS3-001-006,1,INSTALLER,MODÈLE NON PRÉCISÉ,* Calibre de l’interrupteur non indiqué au plan; ne pas déduire du disjoncteur 25 A.,CS3-001-006,2116.3,1567.3

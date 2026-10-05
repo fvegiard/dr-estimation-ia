@@ -1,0 +1,10 @@
+{
+  "feuille": "EA-M-RC02",
+  "pastilles": 25,
+  "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+  "score": "25/25",
+  "erreurs_restantes": [],
+  "legende_lisible": true,
+  "source_conservee": true,
+  "sha256_jpeg": "9f085bc8d7630738741c9db8d2df0af7a465195444ba7fd97fed49ddb1432efd"
+}
