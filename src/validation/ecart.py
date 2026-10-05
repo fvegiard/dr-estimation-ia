@@ -1,6 +1,6 @@
 """
 Comparateur déterministe référence vs décompte IA — NOUVEAU module
-(voir SPEC.md). Produit `ecart.md` : tableau ligne par ligne, écart total
+(voir docs/consolidation.md). Produit `ecart.md` : tableau ligne par ligne, écart total
 ≤ 5 %, écart par poste majeur ≤ 10 %, section « Items manquants » jamais
 silencieuse, verdict PASS/FAIL **calculé**. Ce n'est PAS un texte
 narratif : chaque chiffre est dérivé des deux fichiers d'entrée, et le

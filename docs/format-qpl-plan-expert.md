@@ -1,4 +1,7 @@
-# Dupuis gold QPL — target format (measured 2026-09-27)
+# Format `.qpl` Plan Expert — projets de référence de M. Dupuis (mesuré 2026-09-27)
+
+> Ancien nom : `dupuis-target-format.md` (renommé le 2026-10-05). Décrit le fichier XML `.qpl` de Plan Expert,
+> **pas** le PDF de relevé annoté : celui-ci est décrit uniquement dans `docs/FORMAT-EXEMPLE.md`.
 
 Source: data/dossiers/S-{1714,1715,1769,1811,1844}/reference/*Dupuis*.qpl (S-1857 has NO Dupuis reference file).
 Reproduce: `cd data/dossiers && python3 <repo>/tools/dupuis_profile.py`.

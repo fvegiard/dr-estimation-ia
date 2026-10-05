@@ -1,3 +1,7 @@
+> **Portée de ce document** : gabarits Excel de DR Électrique (take-off, décompte, soumission). Il ne décrit
+> **pas** le PDF de relevé annoté (pastilles, encadré `RELEVE - MATERIEL`, bordereaux) : la seule spec de ce PDF est
+> `docs/FORMAT-EXEMPLE.md`.
+
 # Format du livrable attendu — gabarits DR Électrique (lecture directe, EP2026-074)
 
 > Porté tel quel depuis `dr-releves-2026/_socle/FORMAT-LIVRABLE.md`
