@@ -2,7 +2,7 @@
 name: releve-planexpert
 description: Relevé de quantités électrique automatique à partir d'un dossier de soumission préparé (plans PDF, addendas, relevé de l'estimateur). Produit nomenclature, occurrences positionnées, réserves et comparaison, que les scripts releve/ transforment en projet Plan Expert (.qpl) et en PDF « Plans annotés + rapport de métré ». Invoqué par releve/run.py ; ne pas lancer à la main sans dossier préparé.
 disable-model-invocation: true
-allowed-tools: Read Write Edit Glob Grep Bash(uv run releve/zoom.py *) Bash(uv run releve/extract_occurrences.py *) Bash(uv run releve/traits.py *) Bash(head *) Bash(sort *) Bash(cut *) Bash(cat *)
+allowed-tools: Read Write Edit Glob Grep Bash(uv run releve/zoom.py *) Bash(uv run releve/extract_occurrences.py *) Bash(uv run releve/traits.py *) Bash(uv run releve/controle_qualite.py *) Bash(head *) Bash(sort *) Bash(cut *) Bash(cat *)
 ---
 
 # Relevé de quantités électrique — dossier de travail : $ARGUMENTS
@@ -40,6 +40,12 @@ Si un outil est refusé, écris-le dans `reserves.md` ET termine ton résumé pa
   d'appareils des plans vectoriels (DS0, DS1, Do, Di, K, B, TEL, etc.) sont là avec leurs coordonnées.
 - `uv run releve/zoom.py <workdir> <F> x0 y0 x1 y1` : zoom d'une zone avec règles + marques déjà relevées (pour vérifier).
 - `uv run releve/extract_occurrences.py <workdir>` : applique `nomenclature.csv` aux mots → `occurrences-texte.csv`.
+- `uv run releve/controle_qualite.py <workdir>` : contrôle bloquant de tes sorties (Q1-Q14, dont légende complète,
+  une famille par symbole, modèle du devis, code du vocabulaire). À lancer avant de terminer (§7).
+- `devis/<F>-articles.csv` (si un devis à couche texte est fourni) : chaque article du devis avec `partie`, `section`,
+  `titre`, `texte` et `modele` (ligne « MARQUE SPÉCIFIÉE » sans les mots « MARQUE SPÉCIFIÉE », « MODÈLE », « SÉRIE »).
+- Colonne `role` de `feuilles.csv` : `legende` (feuille au cartouche « LÉGENDE(S) », souvent la page titre `00` du lot),
+  `devis`, ou `plan`.
 - `estimateur/pNN.png`, `estimateur/legendes/pNN-legende.png` : si un export Plan Expert de l'estimateur (M. Dupuis) est fourni,
   ses légendes par feuille (symbole, nom, quantité) sont découpées pour comparaison.
 
@@ -74,8 +80,62 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    `<fichier>-pNN`) : lis le VRAI numéro et le titre dans le cartouche de l'aperçu et écris-les dans la colonne `note`
    (`cartouche=E401 · REZ-DE-CHAUSSÉE ÉCLAIRAGE`). AUCUNE page ne doit rester non classée. Distingue aussi le neuf de l'existant
    (trait gris/fin, mention « EXISTANT », « EX. », « À DÉMOLIR ») : ne relève que le neuf, ou un label « existant » séparé.
+1b. **Légende d'abord → `legende.csv`** (correctif du 2026-10-05 : sans légende lue, un agent invente ses codes, fond
+   des appareils voisins dans une même famille et oublie des symboles). Avant d'écrire une seule famille :
+   - Trouve la légende qui s'applique à chaque feuille `plan` : d'abord l'encadré « LÉGENDE » de la feuille elle-même,
+     sinon la **légende générale du lot** (feuille au `role=legende` de `feuilles.csv`, souvent la page titre `00`
+     « PAGE TITRE, LÉGENDES ET LISTE DES DESSINS »). Les descriptions y sont souvent vectorisées (pas dans
+     `texte/*-mots.csv`) : lis-les au zoom (`zoom.py`, colonne par colonne, assez gros pour lire chaque mot).
+   - Transcris **chaque ligne** des sections de légende utiles au plan (ÉLECTRICITÉ, et DÉTECTION ET SIGNALISATION
+     INCENDIE pour les avertisseurs posés sur un plan d'électricité) dans `legende.csv` :
+     `feuille,section,no,symbole,description,code,statut,qte,preuve`
+     - `no` : numéro de ligne stable (`L01`, `L02`…) ; `symbole` : le dessin en quelques mots (« cercle + 2 traits »,
+       « carré plein ») ; `description` : le texte de la légende recopié **tel quel** ; `code` : le code du
+       vocabulaire ci-dessous ;
+     - `statut` ∈ `compte` (au moins une occurrence relevée), `absent` (cherché sur tout le plan, pas trouvé),
+       `hors_portee` (ex. phare d'urgence sur une feuille de logements) ; `qte` = quantité relevée (0 si absent) ;
+       `preuve` = où tu as cherché ou relevé (feuille, zone, zoom).
+   - **Aucun symbole de légende présent sur le plan n'est oublié** : parcours la légende ligne par ligne et cherche
+     chaque symbole sur toutes les tuiles. Les identifications de luminaires (« Aa » : lettre de type + contrôle) se
+     relèvent par type : **cherche sur le plan chaque lettre de type** listée au devis ou à la cédule des luminaires,
+     y compris les appareils linéaires ou encastrés dessinés autrement qu'en cercle (rectangle étroit + lettre) ; un
+     type du devis introuvable au plan va en réserve avec les zones vérifiées.
+   - Un symbole vu au plan mais absent de la légende reçoit sa famille avec `legende=HORS LEGENDE` dans
+     `nomenclature.csv`, `materiel` suffixé `(hors legende - R-0xx)` et une réserve.
+   **Vocabulaire des codes** (vient de la description de légende, jamais inventé ; contrôle `Q14` via
+   `releve/legende.py::code_attendu`) :
+   | Description de légende (motif) | Code |
+   |---|---|
+   | prise de courant au-dessus d'un comptoir, avec mention DDFT/GFI au plan | `CG` |
+   | prise de courant au-dessus d'un comptoir | `CT` |
+   | prise de courant avec disjoncteur différentiel de fuite à la terre (DDFT/GFI) | `GF` |
+   | prise de courant pour cuisinière | `CP` |
+   | prise de courant simple 30 A (sécheuse) | `SE` |
+   | prise de courant double 15 A | `PC` |
+   | raccord direct d'un appareil (hotte…) | `RA` |
+   | boîte de jonction | `BJ` |
+   | évacuateur (de toilette) | `EV` |
+   | commutateur unipolaire | `CU` |
+   | sortie téléphonique | `TE` |
+   | sortie câblodistribution (TV) | `TV` |
+   | intercom (contrôle de porte) | `IC` |
+   | avertisseur de fumée (mural 120 V) | `AF` |
+   | luminaire / appareil d'éclairage TYPE X | `LX` (`LA`, `LB`, `LC`…) |
+   | thermostat | `TH` |
+   | plinthe de chauffage | `PL` |
+   | panneau de logement | `PN` |
+   Hors de ce tableau : un code court de 2 lettres tiré de la description, justifié dans `source`.
 2. **Lire la légende / nomenclature du projet** (feuilles `legende`, tableaux de luminaires) et écrire `nomenclature.csv` :
-   `label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription,discipline`.
+   `label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription,discipline,legende`.
+   - **Une famille = une ligne de `legende.csv`** (colonne `legende` = son `no`, ou `HORS LEGENDE`). Jamais deux familles
+     pour un même symbole qui ne diffèrent que par la puissance, le circuit ou la pièce : la variante va dans la colonne
+     `designation` de chaque occurrence (ex. `750 W C4,6`, `1/2 SUR INTERRUPTEUR C9`). Seules exceptions (contrôle
+     `Q12`) : le même symbole de comptoir avec ou sans mention DDFT/GFI au plan (`CT` / `CG` : appareils différents au
+     devis) et une lettre de type de luminaire différente (`LA`, `LF`… : appareils différents).
+   - **Prises (R4)** : c'est le SYMBOLE et la légende qui tranchent, jamais la pièce seule. Symbole de comptoir sans mention
+     → `CT` ; symbole de comptoir + « gfi »/« DDFT » → `CG` ; symbole DDFT de la légende (ou prise ordinaire marquée gfi
+     hors comptoir, ex. lavabo) → `GF` ; prise double ordinaire → `PC` (une moitié commandée = `designation`, pas une
+     famille). Les prises cachées sous une hachure d'armoire se lisent avec `traits.py`.
    - `famille` ∈ luminaire, commande, secours, prise, alarme, telecom, distribution, mecanique, chauffage, autre.
    - `forme` : cercle | carre | losange | triangle | triangle_inverse | trapeze | trapeze_inverse (vide = défaut de la famille).
      Convention Dupuis/Plan Expert : luminaires DS0 cercle, DS1 carré, commandes cercle, alarme cercle, télécom triangle,
@@ -88,26 +148,38 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
      `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` §4, §5, §6 ; toutes optionnelles
      mais **à remplir chaque fois que l'information est lisible sur le plan/la légende/la cédule** — un bordereau qui reste
      aux valeurs par défaut sur tout un dossier est un signe que ces colonnes n'ont pas été lues, pas qu'elles étaient absentes) :
-     - `code` : identifiant court 2-3 lettres de la famille, cohérent avec le vocabulaire `STANDARD-RELEVE.md` §6 quand
-       l'appareil y correspond (ex. `PC` prise double, `CU` commutateur, `AF` avert. fumée mural, `TH` thermostat, `PL`
-       plinthe, `LA`-`LG` luminaires par type) ; sinon un code court dérivé de l'étiquette du plan.
-     - `materiel` : nom de famille tel qu'il doit apparaître dans l'encadré « RELEVE - MATERIEL » et le bordereau (ex.
-       `PRISE DE COURANT DOUBLE`, `COMMUTATEUR UNIPOLAIRE`) — reprend `description` si les deux coïncident.
+     - `code` : le code de la ligne de `legende.csv` (vocabulaire du §1b) — jamais un code inventé (`Q14` refuse un code
+       qui contredit le vocabulaire pour la description donnée).
+     - `materiel` : la **description de la ligne de légende recopiée telle quelle** (majuscules sans accents), complétée
+       seulement de la variante qui fait la famille, après un tiret (ex. légende « APPAREIL D'ÉCLAIRAGE ENCASTRÉ » +
+       lettre D2 au plan → `APPAREIL D'ECLAIRAGE ENCASTRE TYPE D2` ; légende « PRISE DOUBLE 20A » + mention GFI →
+       `PRISE DOUBLE 20A - DDFT`) ; hors légende : la désignation du plan/devis + `(hors legende - R-0xx)`. Jamais une
+       reformulation de la légende avec tes propres mots.
      - `portee` : vocabulaire `STANDARD-RELEVE.md` §5 — `INSTALLER`, `ENLEVER`, `REMPLACER`, `CONVERTIR`, `CONSERVER`,
        `TEMPORAIRE`, `A PRECISER` (réserve de portée), ou un `RENVOI_*` si l'appareil est compté ailleurs (ne pas laisser
        vide quand la portée est lisible : note de plan, légende « existant à remplacer », etc.).
-     - `modele` : référence exacte du devis/légende, conservée littéralement (jamais reformulée) ; sinon `EXISTANT` ou
-       laisser vide (le rendu met `MODELE NON PRECISE` par défaut — ne jamais écrire cette valeur soi-même, c'est le
-       renderer qui la pose si la colonne est vide).
-     - `prescription` : texte de légende/devis recopié tel quel (ex. « 57C/135F fixe suivant legende ») ; laisser vide
-       si rien n'est écrit plutôt que d'inventer une formulation.
+     - `modele` : **quand un devis est fourni (`devis/*-articles.csv`), cherche l'article de chaque famille** (section
+       « PRISES ÉLECTRIQUES », « INTERRUPTEUR », « PLINTHE », « THERMOSTATS », « APPAREILS D'ÉCLAIRAGE » + `TYPE X`…) et
+       recopie la colonne `modele` de l'article littéralement (ex. fictif : `HUBBELL HBL5262`) — choisis l'article par sa
+       description (ampérage, GFCI ou non, conducteur cuivre / aluminium, type de luminaire) ; quand le devis admet deux
+       variantes selon une condition, écris les deux modèles séparés par `;` avec leur condition. Article sans « MARQUE
+       SPÉCIFIÉE » : la désignation technique courte de l'article (type d'appareil, dimension, puissance, tension).
+       Existant conservé : `EXISTANT CONSERVE - MODELE NON INDIQUE`.
+       Devis lu sans article pour cet appareil : `MODELE NON INDIQUE DANS LA SOURCE ELECTRIQUE`. Ne jamais écrire
+       `MODELE NON PRECISE` (valeur par défaut du rendu = devis pas lu ; `Q13` bloque une colonne vide quand un devis existe).
+     - `prescription` : extrait littéral court de l'article du devis (caractéristiques qui distinguent l'appareil :
+       ampérage, NEMA, GFCI, inviolable, couleur ; ≤ 160 caractères, préfixé `Devis:`), sinon le texte de légende/note
+       recopié tel quel ; vide plutôt qu'inventé.
+     - `source` : où la famille et son modèle ont été lus — ligne de légende ET article du devis, ex. fictif :
+       `E00 legende L03 ; E20 section 5 PRISES (devis/E20-articles.csv art. 5.2)`.
      - `discipline` : `incendie` | `electricite` | `urgence` — détermine le préfixe I/M du repère sur les feuilles au
        format `materiel` ; vide = déduit de `famille` (alarme/securite_incendie → incendie, secours → urgence, sinon
        electricite).
    Ces mêmes champs (`designation,portee,modele,prescription,parent,qte,reserve`) peuvent aussi être ajoutés par
    occurrence dans `occurrences-texte.csv`/`occurrences-visuel.csv` (§4) quand la valeur varie d'un repère à l'autre
    dans une même famille (ex. deux plinthes de puissance différente, R1 de `STANDARD-RELEVE.md` §9) — la colonne de
-   l'occurrence prime alors sur celle de `nomenclature.csv`.
+   l'occurrence prime alors sur celle de `nomenclature.csv`. **`designation` porte la 2e ligne de l'étiquette** : puissance
+   et circuit lus au plan (`750 W C4,6`), circuit seul (`C5`), variante (`1/2 SUR INTERRUPTEUR C9`).
 3. **Occurrences par étiquettes** : `uv run releve/extract_occurrences.py <workdir>`. Puis contrôle des faux positifs
    feuille par feuille avec les tuiles/zooms : bulles d'axes (`B`, `K`… dans un cercle de grille), numéros de circuits,
    texte de notes. Édite `occurrences-texte.csv` (supprime les lignes fausses, ou ajoute une colonne `exclure=1`).
@@ -191,13 +263,13 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
      mais crée le compteur avec une réserve « quantité par règle à fixer » dès qu'une note ou la légende les mentionne (S-1715 :
      45 J-hook chez l'estimateur, 1 chez l'IA).
 5e. **Règles apprises de M. Dupuis** (S-1769 E401, S-1844 E200 ; rédigées par le superviseur, appliquées telles quelles) :
-   - **R1** Une famille = un type ET une caractéristique. Même symbole, puissance/calibre différent = familles séparées (ex. plinthe 1500 W ≠ plinthe 900 W ; lire le kW dans l'hexagone/étiquette de CHAQUE appareil). Erreur S-1769 : 11 plinthes en 1 famille au lieu de 7 × 1500 W + 2 × 900 W.
+   - **R1** (révisée le 2026-10-05) Une famille = une ligne de légende (§1b, §2) ; la caractéristique de CHAQUE appareil (puissance, calibre, circuit — lire le kW dans l'hexagone/étiquette) va dans la colonne `designation` de son occurrence, jamais dans une famille de plus. La distinction de M. Dupuis reste visible repère par repère (S-1769 : 7 × 1500 W + 2 × 900 W = 9 occurrences d'une seule famille PL, avec 1500 W ou 900 W en `designation`), et le bordereau garde une ligne par symbole de légende (`Q12`).
    - **R2** Ne jamais fusionner un appareil de contrôle/protection avec l'appareil qu'il sert : sectionneur 30A/SF, WP, etc. = sa propre famille (Dupuis : « 30A NF WP »).
    - **R3** Thermostats : séparer thermostat de plinthe et thermostat de plancher chauffant (sonde/note plancher chauffant à côté = famille « thermostat plancher chauffant »).
-   - **R4** Prises : séparer régulière, 15/20A, GFI/DDFT (lire « GFI », « DDFT », demi-plein selon la légende). Une prise GFI n'est jamais comptée comme prise ordinaire.
+   - **R4** Prises : une famille par symbole de légende (régulière 15 A, 15/20 A, 20 A, comptoir, DDFT, cuisinière, sécheuse…) ; le même symbole de comptoir avec mention « GFI »/« DDFT » est une famille à part (`CG`, voir §2). Une prise GFI n'est jamais comptée comme prise ordinaire, et une prise de comptoir n'est jamais comptée comme prise DDFT ordinaire.
    - **R5** Un symbole dont l'identification dépend de la légende (lettre dans un cercle, cercle mi-noir) : vérifier la légende AVANT de nommer ; si le même symbole existe comme luminaire ET comme détecteur, trancher par la légende, sinon réserve *. (Erreur S-1769 : « luminaire type F » compté 7 fois, Dupuis a 5 détecteurs de fumée + 1 F + 1 F1.)
    - **R6** Les notes « RELO / relocaliser / déplacer » sont des appareils à compter (famille « RELO <appareil> »), même si l'appareil est existant.
-   - **R7** Nommer les familles comme la légende du plan (FIXTURE TYPE A, A1, B…) — le code 2 lettres reste pour l'étiquette.
+   - **R7** Nommer les familles comme la légende du plan (FIXTURE TYPE A, A1, B…) — colonne `materiel` = texte de la légende ; le code 2 lettres (vocabulaire §1b) reste pour l'étiquette.
    - **R8** Choix de la feuille d'essai : c'est le SUPERVISEUR qui choisit une feuille que la référence a réellement relevée (tu ne regardes pas la référence). S-1844 E200 était invalide : Dupuis n'a aucune marque sur E200 (il a relevé les prises sur le plan d'architecte).
    - **Porte de prévention** : pour chaque feuille, AVANT de placer les marques et AVANT tout commit, publier (a) capture zoom de la légende, (b) la liste des familles avec le symbole/étiquette qui les distingue et la règle R1-R7 appliquée, (c) 3 zooms des symboles ambigus, puis attendre « VALIDÉ » du superviseur.
 6. **Comparaison avec l'estimateur** (si `estimateur/` existe) → `comparaison-estimateur.md` : pour chaque feuille, tableau
@@ -206,9 +278,15 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
 7. **`reserves.md`** : liste numérotée R-001… (feuille, objet, question), et **`rapport-releve.md`** : méthode suivie, feuilles
    traitées, totaux par feuille, ce qui n'a pas pu être relevé, temps/limites. Termine en vérifiant que chaque `label` des
    deux fichiers d'occurrences existe dans `nomenclature.csv` (`cut -d, -f2 … | sort -u`).
+8. **Contrôle final obligatoire** : `uv run releve/controle_qualite.py <workdir>`. Corrige CHAQUE erreur listée
+   (`qualite.json`) — en particulier Q8 (famille jamais relevée), Q11 (ligne de légende ni comptée ni prouvée absente),
+   Q12 (symbole éclaté en plusieurs familles), Q13 (modèle vide malgré le devis), Q14 (code hors vocabulaire) — puis
+   relance le contrôle jusqu'à `conforme=True`. Une erreur que tu juges fausse se justifie dans `reserves.md` (règle,
+   preuve au zoom), jamais en effaçant la ligne fautive. Mets à jour `qte` et `statut` de `legende.csv` avec les comptes
+   finaux.
 
 ## Sorties attendues (toutes dans `$ARGUMENTS/`)
-`feuilles-classement.csv`, `nomenclature.csv`, `occurrences-texte.csv`, `occurrences-visuel.csv`, `reserves.md`,
+`feuilles-classement.csv`, `legende.csv`, `nomenclature.csv`, `occurrences-texte.csv`, `occurrences-visuel.csv`, `reserves.md`,
 `rapport-releve.md`, et `comparaison-estimateur.md` si un export d'estimateur était fourni.
 Quand tout est écrit, réponds par un résumé de 10 lignes maximum : feuilles traitées, total de marques, nombre de réserves,
 ce qui manque.
