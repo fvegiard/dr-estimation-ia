@@ -1,0 +1,164 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="S-1897">
+		<Description/>
+		<ContactName/>
+		<ContactInfo/>
+		<JobNumber/>
+		<Comment/>
+		<CreationDate>2026/10/5</CreationDate>
+		<LastModified>2026/10/5</LastModified>
+		<DisplayResultsForAllPlans>True</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+		<ActivePlan Name="A801"/>
+		<RecentPlans>
+			<Plan Name="A801"/>
+		</RecentPlans>
+	</Workspace>
+	<Plans>
+		<Plan Name="A801" FileName="30303036EF-p01.png">
+			<Thumbnail FileName="4f68f4f9-e208-4c06-94fb-d5433a88164d"/>
+			<Scale Value="48" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1275" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="APPLIQUE MURALE" GroupID="1" Shape="0" DefaultSize="26" Text="1" Color="-13824" PenWidth="2" PenType="Generic" FillColor="-13824" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1543" Y="1319" Width="26" Height="26"/>&#13;
+						<Element X="1008" Y="2078" Width="26" Height="26"/>&#13;
+						<Element X="3636" Y="1327" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="DETECTEUR FUMEE" GroupID="2" Shape="3" DefaultSize="26" Text="1" Color="-13264487" PenWidth="2" PenType="Generic" FillColor="-13264487" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1845" Y="1484" Width="26" Height="26"/>&#13;
+						<Element X="3190" Y="1773" Width="26" Height="26"/>&#13;
+						<Element X="3348" Y="1773" Width="26" Height="26"/>&#13;
+						<Element X="3182" Y="2008" Width="26" Height="26"/>&#13;
+						<Element X="3800" Y="1938" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="ENCASTRE" GroupID="3" Shape="0" DefaultSize="26" Text="1" Color="-1133003" PenWidth="2" PenType="Generic" FillColor="-1133003" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1201" Y="1502" Width="26" Height="26"/>&#13;
+						<Element X="1313" Y="1585" Width="26" Height="26"/>&#13;
+						<Element X="1201" Y="1740" Width="26" Height="26"/>&#13;
+						<Element X="1313" Y="1740" Width="26" Height="26"/>&#13;
+						<Element X="1845" Y="1611" Width="26" Height="26"/>&#13;
+						<Element X="2032" Y="1562" Width="26" Height="26"/>&#13;
+						<Element X="2032" Y="1671" Width="26" Height="26"/>&#13;
+						<Element X="3366" Y="1909" Width="26" Height="26"/>&#13;
+						<Element X="3614" Y="1909" Width="26" Height="26"/>&#13;
+						<Element X="3686" Y="2124" Width="26" Height="26"/>&#13;
+						<Element X="3719" Y="2247" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="INT" GroupID="4" Shape="0" DefaultSize="26" Text="1" Color="-13290019" PenWidth="2" PenType="Generic" FillColor="-13290019" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1310" Y="1855" Width="26" Height="26"/>&#13;
+						<Element X="1330" Y="1855" Width="26" Height="26"/>&#13;
+						<Element X="1351" Y="1855" Width="26" Height="26"/>&#13;
+						<Element X="1586" Y="1405" Width="26" Height="26"/>&#13;
+						<Element X="1123" Y="2088" Width="26" Height="26"/>&#13;
+						<Element X="1849" Y="1575" Width="26" Height="26"/>&#13;
+						<Element X="3107" Y="1800" Width="26" Height="26"/>&#13;
+						<Element X="3351" Y="1423" Width="26" Height="26"/>&#13;
+						<Element X="3545" Y="1800" Width="26" Height="26"/>&#13;
+						<Element X="3114" Y="2006" Width="26" Height="26"/>&#13;
+						<Element X="3783" Y="2017" Width="26" Height="26"/>&#13;
+						<Element X="3804" Y="2017" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="INT 3 VOIES" GroupID="5" Shape="0" DefaultSize="26" Text="1" Color="-11334145" PenWidth="2" PenType="Generic" FillColor="-11334145" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3675" Y="1869" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE SUSPENDU" GroupID="6" Shape="0" DefaultSize="26" Text="1" Color="-29071" PenWidth="2" PenType="Generic" FillColor="-29071" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1536" Y="1660" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PLAFONNIER DETECTEUR MOUVEMENT" GroupID="7" Shape="0" DefaultSize="26" Text="1" Color="-4402153" PenWidth="2" PenType="Generic" FillColor="-4402153" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3768" Y="1476" Width="26" Height="26"/>&#13;
+						<Element X="2949" Y="1876" Width="26" Height="26"/>&#13;
+						<Element X="3308" Y="2195" Width="26" Height="26"/>&#13;
+						<Element X="3397" Y="2023" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PLINTHE" GroupID="8" Shape="1" DefaultSize="26" Text="1" Color="-127631" PenWidth="2" PenType="Generic" FillColor="-127631" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1342" Y="1391" Width="26" Height="26"/>&#13;
+						<Element X="1716" Y="1391" Width="26" Height="26"/>&#13;
+						<Element X="1823" Y="1794" Width="26" Height="26"/>&#13;
+						<Element X="1227" Y="2311" Width="26" Height="26"/>&#13;
+						<Element X="1428" Y="2311" Width="26" Height="26"/>&#13;
+						<Element X="1766" Y="2311" Width="26" Height="26"/>&#13;
+						<Element X="3078" Y="1413" Width="26" Height="26"/>&#13;
+						<Element X="3475" Y="1413" Width="26" Height="26"/>&#13;
+						<Element X="3041" Y="2318" Width="26" Height="26"/>&#13;
+						<Element X="3852" Y="2089" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE" GroupID="9" Shape="0" DefaultSize="26" Text="1" Color="-2182091" PenWidth="2" PenType="Generic" FillColor="-2182091" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1903" Y="2114" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE COMPTOIR" GroupID="10" Shape="0" DefaultSize="26" Text="1" Color="-226191" PenWidth="2" PenType="Generic" FillColor="-226191" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1083" Y="1419" Width="26" Height="26"/>&#13;
+						<Element X="1080" Y="1589" Width="26" Height="26"/>&#13;
+						<Element X="1325" Y="1779" Width="26" Height="26"/>&#13;
+						<Element X="1905" Y="1565" Width="26" Height="26"/>&#13;
+						<Element X="3642" Y="2308" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE CONTROLEE INTERRUPTEUR" GroupID="11" Shape="0" DefaultSize="26" Text="1" Color="-5451241" PenWidth="2" PenType="Generic" FillColor="-5451241" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1813" Y="1847" Width="26" Height="26"/>&#13;
+						<Element X="2848" Y="1442" Width="26" Height="26"/>&#13;
+						<Element X="2848" Y="1740" Width="26" Height="26"/>&#13;
+						<Element X="3284" Y="1462" Width="26" Height="26"/>&#13;
+						<Element X="3284" Y="1754" Width="26" Height="26"/>&#13;
+						<Element X="2848" Y="2034" Width="26" Height="26"/>&#13;
+						<Element X="2848" Y="2300" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="RACCORD DIRECT VRC" GroupID="12" Shape="1" DefaultSize="26" Text="1" Color="-4190863" PenWidth="2" PenType="Generic" FillColor="-4190863" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3067" Y="1881" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="THERMOSTAT" GroupID="13" Shape="1" DefaultSize="26" Text="1" Color="-2083531" PenWidth="2" PenType="Generic" FillColor="-2083531" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3078" Y="1800" Width="26" Height="26"/>&#13;
+						<Element X="3517" Y="1800" Width="26" Height="26"/>&#13;
+						<Element X="3078" Y="2013" Width="26" Height="26"/>&#13;
+						<Element X="3833" Y="2013" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="VENTILATEUR" GroupID="14" Shape="1" DefaultSize="26" Text="1" Color="-6146763" PenWidth="2" PenType="Generic" FillColor="-6146763" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3560" Y="2142" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+		<Price Key="1;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="2;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="3;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="4;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="5;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="6;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="7;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="8;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="9;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="10;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="11;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="12;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="13;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="14;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="1" Precision="0">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>

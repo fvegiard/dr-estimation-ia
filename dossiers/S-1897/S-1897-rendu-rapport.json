@@ -1,0 +1,36 @@
+{
+ "pages": 5,
+ "sheets": [
+  {
+   "sheet": "A801",
+   "format": "materiel",
+   "plan_page": 1,
+   "bordereau_pages": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "reperes": 66,
+   "familles": 14,
+   "res": 66,
+   "box": [
+    150.0,
+    150.0,
+    2170.0,
+    314.0
+   ],
+   "box_layout": [
+    4,
+    505.0,
+    27.0
+   ],
+   "box_in_free_space": true
+  }
+ ],
+ "reperes": 66,
+ "conformite": {
+  "encadre_hors_espace_libre": [],
+  "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+ }
+}

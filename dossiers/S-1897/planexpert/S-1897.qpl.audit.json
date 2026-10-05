@@ -1,0 +1,27 @@
+{
+ "qpl": "OUTBOX/S-1897/S-1897-planexpert\\S-1897.qpl",
+ "sha256": "bc6adb1b038e54d6f62a5b3b43aeaca9d10c48ea6796ed26efab980a72ed741f",
+ "octets": 10401,
+ "plans": 1,
+ "compteurs": 14,
+ "marques": 66,
+ "libelles": 14,
+ "par_feuille": {
+  "30303036EF-p01": {
+   "APPLIQUE MURALE": 3,
+   "DETECTEUR FUMEE": 5,
+   "ENCASTRE": 11,
+   "INT": 12,
+   "INT 3 VOIES": 1,
+   "LUMINAIRE SUSPENDU": 1,
+   "PLAFONNIER DETECTEUR MOUVEMENT": 4,
+   "PLINTHE": 10,
+   "PRISE": 1,
+   "PRISE COMPTOIR": 5,
+   "PRISE CONTROLEE INTERRUPTEUR": 7,
+   "RACCORD DIRECT VRC": 1,
+   "THERMOSTAT": 4,
+   "VENTILATEUR": 1
+  }
+ }
+}

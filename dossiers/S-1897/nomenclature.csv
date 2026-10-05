@@ -1,0 +1,15 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription,discipline
+ENCASTRE,luminaire,cercle,,,Encastre slim (legende d'eclairage),A-801 legende d'eclairage ligne 1,LE,ENCASTRE SLIM,INSTALLER,MODELE: XX CODE: XX,FINI: BLANC,electricite
+LUMINAIRE SUSPENDU,luminaire,cercle,,,Luminaire suspendu (legende d'eclairage),A-801 legende d'eclairage ligne 2,LS,LUMINAIRE SUSPENDU,INSTALLER,,,electricite
+PLAFONNIER DETECTEUR MOUVEMENT,luminaire,cercle,,,Plafonnier detecteur de mouvement DM (legende d'eclairage),A-801 legende d'eclairage ligne 3,LD,PLAFONNIER DETECTEUR DE MOUVEMENT,INSTALLER,,FINIS: BLANC,electricite
+APPLIQUE MURALE,luminaire,cercle,,,Applique murale - salle d'attente (legende d'eclairage),A-801 legende d'eclairage ligne 4,LM,APPLIQUE MURALE - SALLE D'ATTENTE,INSTALLER,UNION LIGHTING JASPER WALL SCONCE CODE: 4192584,FINI: EBONY DIM: 4 X 24,electricite
+PRISE,prise,cercle,,,Prise electrique hauteur standard,A-801 legende electrique ligne 1,PC,PRISE ELECTRIQUE HAUTEUR STANDARD,INSTALLER,,,electricite
+PRISE COMPTOIR,prise,cercle,,,Prise electrique hauteur comptoir PC,A-801 legende electrique ligne 2,CT,PRISE ELECTRIQUE HAUTEUR COMPTOIR,INSTALLER,,,electricite
+PRISE CONTROLEE INTERRUPTEUR,prise,cercle,,,Prise electrique controle par interrupteur C,A-801 legende electrique ligne 4,CI,PRISE ELECTRIQUE CONTROLE PAR INTERRUPTEUR,INSTALLER,,,electricite
+THERMOSTAT,chauffage,carre,,,Thermostat T,A-801 legende electrique ligne 5,TH,THERMOSTAT,INSTALLER,,,electricite
+INT,commande,cercle,,,Interrupteur hauteur standard,A-801 legende electrique ligne 6,CU,INTERRUPTEUR HAUTEUR STANDARD,INSTALLER,,,electricite
+INT 3 VOIES,commande,cercle,,,Interrupteur 3 voies hauteur standard,A-801 legende electrique ligne 7,C3,INTERRUPTEUR 3 VOIES HAUTEUR STANDARD,INSTALLER,,,electricite
+VENTILATEUR,mecanique,carre,,,Ventilateur VENT. (raccordement),A-801 legende electrique ligne 8,EV,VENTILATEUR,INSTALLER,,MODELE A VALIDER AVEC ELECTRICIEN; POSITIONNEMENT A VALIDER SUITE A LA COORDINATION MECANIQUE,electricite
+PLINTHE,chauffage,carre,,,Plinthe electrique,A-801 legende electrique ligne 10,PL,PLINTHE ELECTRIQUE,INSTALLER,,WATT A VALIDER PAR ELECTRICIEN SELON LES NORMES EN VIGUEURES,electricite
+DETECTEUR FUMEE,alarme,triangle,,,Detecteur de fumee D.F.E. (hors legende - R-001),A-801 symbole triangle D.F.E. au plan; absent des legendes,AF,DETECTEUR DE FUMEE D.F.E. (hors legende - R-001),A PRECISER,,,electricite
+RACCORD DIRECT VRC,mecanique,carre,,,Raccord direct VRC (hors legende - R-001),A-801 symbole VRC sous-sol; absent des legendes,RA,RACCORD DIRECT VRC (hors legende - R-001),A PRECISER,,,electricite
