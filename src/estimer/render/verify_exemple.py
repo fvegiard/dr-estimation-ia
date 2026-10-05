@@ -4,9 +4,9 @@ python -m src.estimer.render.verify_exemple RENDU.pdf RENDU.report.json EXEMPLE.
 
 Checks (exit 1 if any fails):
   markers    every gold marker centre (read from the EXEMPLE overlay) has a drawn marker within 0.05 pt
-  header     reperes / familles identical to the EXEMPLE box; RES identical where the EXEMPLE box shows it
-             (encadre v6 E03/E04/E05/E08 without RES: RES = reperes, convention of the other sheets)
-  legend     family code -> quantity identical; "/ Rn" identical where the EXEMPLE legend shows it
+  header     reperes / familles identical to the EXEMPLE box; RES identical, and absent where the EXEMPLE box
+             has none (encadre v6 E03/E04/E05/E08)
+  legend     family code -> quantity identical; "/ Rn" identical (absent in the v6 legend)
   bordereau  same pages count per sheet; same rows; every cell equal to the EXEMPLE cell AFTER the logged
              corrections (corrections_exemple), same notes, same subtitles, no truncation ("...") left
   pages      total pages identical to the EXEMPLE
@@ -118,15 +118,14 @@ def verify(rendu: Path, report: Path, exemple: Path, gold_dir: Path) -> dict:
                     for p in ex_b for sp in _spans(ex[p]))
         # encadre
         h_out, h_ex = FX.read_header(out[pno]), FX.read_header(ex[ex_page[name]])
+        # encadré v6 du gold (E03/E04/E05/E08) : pas de RES, le rendu ne doit pas en afficher non plus
         header_ok = bool(h_out) and bool(h_ex) and h_out["reperes"] == h_ex["reperes"] \
-            and h_out["familles"] == h_ex["familles"] \
-            and h_out["res"] == (h_ex["res"] if h_ex["res"] is not None else h_ex["reperes"])
+            and h_out["familles"] == h_ex["familles"] and h_out["res"] == h_ex["res"]
         l_out, l_ex = FX.read_legend(out[pno]), FX.read_legend(ex[ex_page[name]])
         legend_diff = {}
         for k in set(l_out) | set(l_ex):
             o, e = l_out.get(k), l_ex.get(k)
-            if o is None or e is None or o[0] != e[0] or (e[1] is not None and o[1] != e[1]) \
-                    or (e[1] is None and o[1] != o[0]):
+            if o is None or e is None or o[0] != e[0] or o[1] != e[1]:
                 legend_diff[k] = [o, e]
         # bordereau cellule par cellule
         t_ex = T.read_table([ex[p] for p in ex_b], fmt)

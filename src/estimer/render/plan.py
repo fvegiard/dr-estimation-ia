@@ -214,25 +214,6 @@ def marker_rect(cx: float, cy: float, bbox, radius: float | None = None) -> pymu
     return pymupdf.Rect(cx - r, cy - r, cx + r, cy + r)
 
 
-def draw_halo(shape: pymupdf.Shape, kind: str, rect: pymupdf.Rect, oc: int) -> None:
-    """White ring just outside the marker: invisible on white paper (EXEMPLE look unchanged), but it
-    separates the pastel marker from a dark or grey symbol drawn under it (S-1715 E201 detectors D)."""
-    g = S.HALO_W / 2 + S.MARK_LINE_W / 2
-    r = pymupdf.Rect(rect.x0 - g, rect.y0 - g, rect.x1 + g, rect.y1 + g)
-    if kind in ("rect", "square"):
-        shape.draw_rect(r)
-    elif kind == "diamond":
-        c = (r.tl + r.br) / 2
-        shape.draw_polyline([pymupdf.Point(c.x, r.y0), pymupdf.Point(r.x1, c.y),
-                             pymupdf.Point(c.x, r.y1), pymupdf.Point(r.x0, c.y)])
-    elif kind == "triangle":
-        shape.draw_polyline([pymupdf.Point((r.x0 + r.x1) / 2, r.y0), pymupdf.Point(r.x1, r.y1),
-                             pymupdf.Point(r.x0, r.y1)])
-    else:
-        shape.draw_circle((r.tl + r.br) / 2, min(r.width, r.height) / 2)
-    shape.finish(width=S.HALO_W, color=(1, 1, 1), fill=None, closePath=True, oc=oc)
-
-
 def draw_mark(shape: pymupdf.Shape, kind: str, rect: pymupdf.Rect, color, oc: int) -> None:
     if kind in ("rect", "square"):
         shape.draw_rect(rect)
@@ -300,7 +281,7 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
             bb = (a[0], a[1], b[0], b[1])
         mr = marker_rect(cx, cy, bb, it.radius)
         marks.append((it, mr))
-        draw_halo(shape, it.shape, mr, layers[it.code])
+        # pas d'anneau blanc autour de la pastille : le gold n'en a sur aucune des 2177 (écart E8 résorbé)
         draw_mark(shape, it.shape, mr, colors[it.code], layers[it.code])
 
     taken = [mr for _, mr in marks]
@@ -310,8 +291,10 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
     for it, mr in marks:
         text = it.repere + ("*" if S.REVALIDER in it.flags else "")
         texts = [text] + [t for t in it.label_lines if t]       # E sheets: circuit / puissance under the repere
-        w = max(text_width(t, S.LABEL_SIZE) for t in texts) + 2 * S.LABEL_PAD
-        h = S.LABEL_BOX_H + S.LABEL_LINE_H * (len(texts) - 1)
+        size = it.label_size or S.LABEL_SIZE                    # plinthes PL des feuilles en palette B : 5,2 pt
+        k_sz = size / S.LABEL_SIZE
+        w = max(text_width(t, size) for t in texts) + 2 * S.LABEL_PAD
+        h = (S.LABEL_BOX_H + S.LABEL_LINE_H * (len(texts) - 1)) * k_sz
         own = [o for o in taken if o is not mr]
         choice = None
         if it.label_bbox is not None:            # position imposee (EXEMPLE) : etiquette et attache recopiees
@@ -337,13 +320,16 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
         shape.draw_rect(lr)
         shape.finish(width=0, color=None, fill=(1, 1, 1), fill_opacity=S.LABEL_BOX_OPACITY, oc=oc)
         for k, t in enumerate(texts):
-            shape.insert_text(pymupdf.Point(lr.x0 + S.LABEL_PAD, lr.y0 + 5.16 + k * S.LABEL_LINE_STEP), t,
-                              fontname=S.LABEL_FONT, fontsize=S.LABEL_SIZE, color=S.LABEL_COLOR, oc=oc)
+            shape.insert_text(pymupdf.Point(lr.x0 + S.LABEL_PAD, lr.y0 + (5.16 + k * S.LABEL_LINE_STEP) * k_sz), t,
+                              fontname=S.LABEL_FONT, fontsize=size, color=S.LABEL_COLOR, oc=oc)
     shape.commit(overlay=True)
 
+    if encadre_v6(sheet):                    # gold E03/E04/E05/E08 : encadré v6 sans RES (spec §3.3)
+        head = Header(f"RELEVE {sheet.name} - MATERIEL", "", "")
+        box = place_box_v6(page, sheet, fams, taken + labels, head, _hint_points(sheet, to_pt), bordereau_page)
+        draw_box_v6(page, sheet, fams, box, head, colors, layers, legend_oc, bordereau_page)
+        return box
     counter = f"{len(sheet.items)} reperes / {len(fams)} familles / RES {sheet.n_reserves}"
-    # un seul encadre pour les trois formats ; le gold dessine un encadre v6 sans RES sur E03/E04/E05/E08 :
-    # ecart restant, chiffre dans docs/FORMAT-EXEMPLE.md §6 (E1) -- le gold gagne, a resorber
     head = Header(f"RELEVE {sheet.name} - MATERIEL", counter, S.HINT_TEXT.format(page=bordereau_page))
     footer = S.TRAVAUX_FOOTER_TEXT.format(page=bordereau_page) if sheet.format == "travaux" else S.FOOTER_TEXT
     box = place_box(page, fams, taken + labels, head, hint=_hint_points(sheet, to_pt), rows=sheet.legend_rows)
@@ -351,61 +337,120 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
     return box
 
 
-# ---------------------------------------------------------------- agrege legend (EXEMPLE E03, page 50)
-def agg_rows(f: Family) -> list[str]:
-    return [f.materiel.upper()] + ([f.modele] if f.modele else [])
+# ---------------------------------------------------------------- encadré v6 sans RES (spec §3.3, gold E03-E05, E08)
+def encadre_v6(sheet: Sheet) -> bool:
+    """Variante v6 de l'encadré, règle mesurée sur les 26 feuilles du gold : feuille agrégée, palette B (une
+    couleur hors du cycle de la palette A) et RES non partiel. Donne v6 sur E03/E04/E05/E08 ; E11/E14
+    (palette B, RES 64 sur 172) restent en encadré standard, E01/E06/E09/E12 (palette A) aussi.
+    Le bordereau de ces feuilles n'a ni ligne RESERVES ni bloc de notes (gold p.51, 53, 55, 63)."""
+    fams = sheet.families()
+    if sheet.format != "agrege" or not fams or S.is_palette_a([f.color or S.family_color(f.index) for f in fams]):
+        return False
+    return sheet.n_reserves in (0, len(sheet.items))
 
 
-def agg_height(nrows: int, pitch: float) -> float:
-    return S.AGG_FIRST_ROW + (nrows - 1) * pitch + S.AGG_ROWS_TO_FOOTER + len(S.AGG_FOOTER) * S.AGG_FOOTER_STEP \
-        + S.AGG_FOOTER_BOTTOM
-
-
-def agg_layouts(fams: list[Family]):
-    """(ncols, col_w, pitch, width, height): E03 is 1 column 470 pt wide, 36.57 pt rows; fall back to
-    tighter rows then more columns when the sheet has no empty area that tall."""
-    n = max(1, len(fams))
-    out = []
-    for pitch in S.AGG_PITCHES:
-        for ncols in range(1, 4):
-            nrows = -(-n // ncols)
-            w = 2 * S.AGG_PAD_X + ncols * S.AGG_COL_W
-            out.append((ncols, S.AGG_COL_W, pitch, w, agg_height(nrows, pitch)))
+def v6_header_lines(sheet: Sheet, fams: list[Family]) -> list[tuple[float, str, float, tuple]]:
+    """(baseline, texte, corps, couleur) sous le titre. Lignes rouges seulement si l'entrée donne le compte."""
+    n_ni = sum(1 for it in sheet.items if it.code == "NI")
+    n_rv = sum(1 for it in sheet.items if S.REVALIDER in it.flags)
+    black = (0, 0, 0)
+    out = [(S.V6_COUNTER_Y, f"{len(sheet.items)} reperes / {len(fams)} familles / calques activables",
+            S.V6_COUNTER_SIZE, black),
+           (S.V6_IDENT_Y, f"{n_ni} non identifies - {n_rv} identifications a revalider (*)", S.V6_IDENT_SIZE, black)]
+    y = S.V6_RED_Y
+    if sheet.divergences:
+        out.append((y, f"{sheet.divergences} divergences plan/cedule A RESOUDRE", S.V6_RED_SIZE, S.V6_RED))
+        y += S.V6_RED_STEP
+    if sheet.calibres:
+        out.append((y, f"{sheet.calibres} calibres distincts dans les sources - voir bordereau", 8.0, S.V6_RED))
     return out
 
 
-def draw_box_agrege(page: pymupdf.Page, fams: list[Family], box: PlacedBox, head: Header, colors,
-                    layers: dict[str, int], legend_oc: int, bordereau_page: int) -> None:
+def v6_footer(sheet: Sheet, fams: list[Family], width: float, bordereau_page: int) -> list[str]:
+    logements = " de logements types" if "LOGEMENTS TYPES" in (sheet.note or "").upper() else ""
+    lines = []
+    for t in S.V6_FOOTER:
+        if t.startswith("R-001") and not any("[R-" in f.materiel for f in fams):
+            continue                               # pas de désignation au registre des réserves : note sans objet
+        lines += wrap_text(t.format(page=bordereau_page, type=logements), S.V6_FOOT_SIZE, width - 2 * S.V6_PAD_X)
+    return lines
+
+
+def v6_label(f: Family, width: float) -> list[str]:
+    lw = width - S.V6_QTY_FROM_RIGHT - S.V6_LABEL_X - 6
+    lines = wrap_text(f.materiel.upper(), S.V6_LABEL_SIZE, lw)
+    if f.modele and len(lines) < 3 and text_width(f.modele, S.V6_LABEL_SIZE) <= lw:
+        lines.append(f.modele)                     # E03 : ligne modele sous le nom (LEVITON T5820-W)
+    if len(lines) > 3:
+        lines = lines[:2] + [_fit(" ".join(lines[2:]), S.V6_LABEL_SIZE, lw)]
+    return lines
+
+
+def v6_height(nrows: int, pitch: float, n_footer: int) -> float:
+    return (S.V6_FIRST_ROW + 2.5 + (nrows - 1) * pitch + S.V6_FOOT_GAP + (n_footer - 1) * S.V6_FOOT_STEP
+            + S.V6_FOOT_BOTTOM)
+
+
+def place_box_v6(page: pymupdf.Page, sheet: Sheet, fams: list[Family], avoid: list[pymupdf.Rect],
+                 head: Header, hint: pymupdf.Rect | None, bordereau_page: int) -> PlacedBox:
+    """Cadre vertical d'une colonne (E08 : 235 x 880) dans l'espace libre ; plus large ou en 2 colonnes
+    seulement si rien ne tient. Position imposée (`hint`, gold) : ce rectangle, 1re ligne et pas imposés."""
+    if hint is not None:
+        rows = sheet.legend_rows
+        ncols = int(rows[2]) if rows and len(rows) > 2 and rows[2] else 1
+        first = rows[0] if rows else S.V6_FIRST_ROW
+        nrows = -(-max(1, len(fams)) // ncols)
+        pitch = rows[1] if rows and rows[1] else S.V6_PITCHES[0]
+        return PlacedBox(pymupdf.Rect(hint), ncols, (hint.width - 2 * S.V6_PAD_X) / ncols, pitch, True,
+                         first)
+    layouts = []
+    for ncols in (1, 2):
+        for pitch in S.V6_PITCHES:
+            for w in S.V6_WIDTHS:
+                width = w * ncols
+                nrows = -(-max(1, len(fams)) // ncols)
+                nf = len(v6_footer(sheet, fams, width, bordereau_page))
+                layouts.append((ncols, w - 2 * S.V6_PAD_X, pitch, width, v6_height(nrows, pitch, nf)))
+    box = place_box(page, fams, avoid, head, layouts=layouts)
+    box.first_row = S.V6_FIRST_ROW
+    return box
+
+
+def draw_box_v6(page: pymupdf.Page, sheet: Sheet, fams: list[Family], box: PlacedBox, head: Header, colors,
+                layers: dict[str, int], legend_oc: int, bordereau_page: int) -> None:
     r = box.rect
     shape = page.new_shape()
     shape.draw_rect(r)
     shape.finish(width=S.BOX_BORDER_W, color=S.BOX_BORDER, fill=(1, 1, 1), oc=legend_oc)
-    x = r.x0 + S.AGG_PAD_X
-    shape.insert_text((x, r.y0 + 20), head.title, fontname="hebo", fontsize=14, color=(0, 0, 0), oc=legend_oc)
-    shape.insert_text((x, r.y0 + 38), head.counter, fontsize=9, color=(0, 0, 0), oc=legend_oc)
-    shape.insert_text((x, r.y0 + 53), _fit(head.hint, 8.5, r.width - 2 * S.AGG_PAD_X), fontsize=8.5,
+    x = r.x0 + S.V6_PAD_X
+    shape.insert_text((x, r.y0 + S.V6_TITLE_Y), head.title, fontname="hebo", fontsize=S.V6_TITLE_SIZE,
                       color=(0, 0, 0), oc=legend_oc)
-    if getattr(head, "res", ""):
-        shape.insert_text((x, r.y0 + 66), _fit(head.res, 8.0, r.width - 2 * S.AGG_PAD_X), fontsize=8.0,
-                          color=S.WARN_COLOR, oc=legend_oc)
+    for dy, text, size, color in v6_header_lines(sheet, fams):
+        shape.insert_text((x, r.y0 + dy), _fit(text, size, r.width - 2 * S.V6_PAD_X), fontsize=size, color=color,
+                          oc=legend_oc)
+    col_w = r.width / box.ncols
     nrows = -(-len(fams) // box.ncols)
+    first = box.first_row if box.first_row is not None else S.V6_FIRST_ROW
     for i, f in enumerate(fams):
         col, row = divmod(i, nrows)
-        cx0 = x + col * box.col_w
-        base = r.y0 + S.AGG_FIRST_ROW + row * box.pitch
+        x0 = r.x0 + col * col_w
+        cy = r.y0 + first + row * box.pitch
+        base = cy + 2.5
         oc = layers[f.code]
-        draw_mark(shape, f.shape, pymupdf.Rect(cx0, base - 9, cx0 + 13, base + 4), colors[f.code], oc)
-        shape.insert_text((cx0 + 21, base), f.code, fontname="hebo", fontsize=10, color=(0, 0, 0), oc=oc)
-        tw = box.col_w - 50 - 50
-        for k, t in enumerate(agg_rows(f)[:2] if box.pitch >= 27 else agg_rows(f)[:1]):
-            shape.insert_text((cx0 + 50, base - 2.65 + k * 10.47), _fit(t, 8.7, tw), fontsize=8.7,
-                              color=(0, 0, 0), oc=oc)
-        qty = fmt_qty(f.qty) + (f" / R{f.reserves}" if f.reserves else "")
-        shape.insert_text((cx0 + S.AGG_QTY_X, base), qty, fontsize=10, color=(0, 0, 0), oc=oc)
-    y = r.y1 - S.AGG_FOOTER_BOTTOM - (len(S.AGG_FOOTER) - 1) * S.AGG_FOOTER_STEP
-    for k, t in enumerate(S.AGG_FOOTER):
-        shape.insert_text((x, y + k * S.AGG_FOOTER_STEP), _fit(t.format(page=bordereau_page), 8.0,
-                          r.width - 2 * S.AGG_PAD_X), fontsize=8.0, color=(0, 0, 0), oc=legend_oc)
+        g = S.V6_GLYPH
+        draw_mark(shape, f.shape, pymupdf.Rect(x0 + S.V6_PAD_X, cy - g / 2, x0 + S.V6_PAD_X + g, cy + g / 2),
+                  colors[f.code], oc)
+        shape.insert_text((x0 + S.V6_CODE_X, base), f.code, fontname="hebo", fontsize=S.V6_CODE_SIZE,
+                          color=(0, 0, 0), oc=oc)
+        for k, t in enumerate(v6_label(f, col_w)):
+            shape.insert_text((x0 + S.V6_LABEL_X, base - S.V6_LABEL_UP + k * S.V6_LABEL_STEP), t,
+                              fontsize=S.V6_LABEL_SIZE, color=(0, 0, 0), oc=oc)
+        shape.insert_text((x0 + col_w - S.V6_QTY_FROM_RIGHT, base), fmt_qty(f.qty), fontsize=S.V6_QTY_SIZE,
+                          color=(0, 0, 0), oc=oc)
+    foot = v6_footer(sheet, fams, r.width, bordereau_page)
+    y = r.y1 - S.V6_FOOT_BOTTOM - (len(foot) - 1) * S.V6_FOOT_STEP
+    for k, t in enumerate(foot):
+        shape.insert_text((x, y + k * S.V6_FOOT_STEP), t, fontsize=S.V6_FOOT_SIZE, color=(0, 0, 0), oc=legend_oc)
     shape.commit(overlay=True)
 
 

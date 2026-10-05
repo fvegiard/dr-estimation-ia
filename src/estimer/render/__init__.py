@@ -11,7 +11,7 @@ import pymupdf
 
 from .bordereau import add_bordereau, add_bordereau_agrege
 from .data import Sheet, load_input
-from .plan import annotate_page
+from .plan import annotate_page, encadre_v6
 from . import style as S
 
 
@@ -64,7 +64,8 @@ def render(sheets: list[Sheet], plans_pdf: Path, out_pdf: Path, log=print) -> di
         report.append({"sheet": sh.name, "format": sh.format, "plan_page": pos + 1, "bordereau_pages": [p + 1 for p in bpages],
                        "reperes": len(sh.items), "familles": len(fams), "res": sh.n_reserves,
                        "box": [round(v, 1) for v in box.rect], "box_layout": [box.ncols, box.col_w, box.pitch],
-                       "box_in_free_space": box.fits})
+                       "box_in_free_space": box.fits, "bordereau_troncatures": sh.troncatures,
+                       "encadre": "v6" if encadre_v6(sh) else "standard"})
         log(f"{sh.name}: {len(sh.items)} reperes / {len(fams)} familles / RES {sh.n_reserves} "
             f"-> page {pos + 1} + bordereau {len(bpages)} p." + ("" if box.fits else " (box overlaps drawing)"))
         pos = bpages[-1] + 1

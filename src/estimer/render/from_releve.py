@@ -39,7 +39,8 @@ import pymupdf
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "releve"))
 from commun import load_feuilles, load_nomenclature, read_csv  # noqa: E402  (releve/ helpers are the single source of truth)
-from .ancrage import SymbolIndex, anchor, word_boxes  # noqa: E402
+from .ancrage import SYM_MAX, SymbolIndex, _rect_dist, anchor, word_boxes  # noqa: E402
+from . import style as S  # noqa: E402
 
 DEFAULT_MODEL = "MODELE NON PRECISE"
 DEFAULT_PORTEE = "A PRECISER"
@@ -67,7 +68,17 @@ def _touch(a: pymupdf.Rect, b: pymupdf.Rect, gap: float = 1.0) -> bool:
 
 
 def _add_note(o: dict, text: str) -> None:
-    o["note"] = (_cell(o, "note") + "; " if _cell(o, "note") else "") + text
+    """Motif de réserve posé par le rendu (ancrage) ; la note du relevé (lieu, jeton) reste intacte."""
+    o.setdefault("motifs", []).append(text)
+
+
+def reserve_motif(o: dict) -> str:
+    """Motif affiché au bordereau : motifs d'ancrage, plus la note du relevé quand la marque est en réserve.
+    Les notes de lieu des marques sans réserve (« log. A chambre, note 4 ») ne sont pas des motifs."""
+    parts = list(o.get("motifs", []))
+    if _cell(o, "reserve") and _cell(o, "note") and not _jeton(o):
+        parts.insert(0, _cell(o, "note"))
+    return "; ".join(parts)
 
 
 def _to_text(o: dict, why: str, stats: dict, key: str) -> None:
@@ -78,7 +89,7 @@ def _to_text(o: dict, why: str, stats: dict, key: str) -> None:
     stats[key] += 1
 
 
-def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
+def anchor_sheet(page: pymupdf.Page, items: list[dict], idx: SymbolIndex | None = None) -> dict:
     """Move every text mark onto the symbol its tag designates (EXEMPLE: marker around the SYMBOL).
 
     Pass 1 finds a symbol per text mark. Pass 2 settles claims: a symbol wanted by marks of different
@@ -87,7 +98,7 @@ def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
     reserve. Visual marks (placed on the symbol by the relevé) are not moved, nor are glyph marks (a token
     with no letter or digit, e.g. `$` = switch S: the glyph IS the symbol, it is centred on its own box).
     Returns counts."""
-    idx = SymbolIndex(page)
+    idx = idx or SymbolIndex(page)
     words = word_boxes(page)
     stats = defaultdict(int)
     found = []
@@ -158,6 +169,58 @@ def anchor_sheet(page: pymupdf.Page, items: list[dict]) -> dict:
                 o["rayon"] = max(w, h) / 2 + 1.0   # marker circle drawn AROUND the symbol
             stats["texte_ancre"] += 1
     return dict(stats)
+
+
+PLAN_RECT_REACH = 8.0      # a "plan" family mark takes the linear closed symbol within 8 pt of it
+
+
+def _famille_b(nom_row: dict, label: str):
+    return S.palette_b(letter_code(nom_row, label))
+
+
+def plan_rects(idx: SymbolIndex, items: list[dict], nom: dict) -> int:
+    """Gold palette B (spec §2.2) : plinthes PL et linéaires LC = rectangle aux dimensions graphiques du plan.
+
+    Pour chaque marque d'une famille de forme "plan" sans boîte, la boîte est celle du symbole linéaire
+    fermé (long >= 3 x large, plus de SYM_MAX pt) le plus proche dans PLAN_RECT_REACH pt ; sans symbole
+    trouvé, la marque garde sa forme par défaut. Renvoie le nombre de boîtes posées."""
+    n = 0
+    for o in items:
+        pb = _famille_b(nom[o["label"]], o["label"])
+        if not pb or pb[1] != "plan" or all(_float(o.get(k)) is not None for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")):
+            continue
+        p = pymupdf.Rect(o["x"], o["y"], o["x"], o["y"])
+        area = p + (-PLAN_RECT_REACH, -PLAN_RECT_REACH, PLAN_RECT_REACH, PLAN_RECT_REACH)
+        best = None
+        for r, _ in idx.shapes_near(area):
+            big, small = max(r.width, r.height), min(r.width, r.height)
+            if big <= SYM_MAX or big < 3 * small:
+                continue
+            d = _rect_dist(r, p)
+            if d <= PLAN_RECT_REACH and (best is None or (d, -small) < best[0]):
+                best = ((d, -small), r)
+        if best:
+            r = best[1]
+            o["x0_pt"], o["y0_pt"], o["x1_pt"], o["y1_pt"] = r.x0, r.y0, r.x1, r.y1
+            n += 1
+    return n
+
+
+TYPE_RE = re.compile(r"\btype\s+([A-Z])\b", re.I)
+WATT_RE = re.compile(r"\b(\d+)\s*W\b")
+CIRCUIT_RE = re.compile(r"\bC(\d+(?:,\d+)*)\b")
+
+
+def detail_lines(designation: str) -> list[str]:
+    """2e (et 3e) ligne d'étiquette des feuilles agrégées (gold p.62 : `LA-01` / `TYPE A` / `C7`,
+    `PL-01` / `1250 W C13,15`, `AF-01` / `C2`) lues dans la désignation du relevé. Rien sans circuit lu."""
+    c = CIRCUIT_RE.search(designation or "")
+    if not c:
+        return []
+    t, w = TYPE_RE.search(designation), WATT_RE.search(designation)
+    out = [f"TYPE {t.group(1).upper()}"] if t else []
+    out.append(" ".join(([f"{w.group(1)} W"] if w else []) + [f"C{c.group(1)}"]))
+    return out
 
 
 # symbols with no ASCII decomposition: spelled out instead of silently dropped by the ASCII fold
@@ -340,9 +403,12 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
             pg.set_mediabox(pymupdf.Rect(0, 0, W, H))
             pg.set_cropbox(pymupdf.Rect(0, 0, W, H))
         items = by_sheet[fid]
-        anc = anchor_sheet(src[0], items) if ancrage else {}
-        src.close()
         fmt = sheet_format(info, items)
+        idx = SymbolIndex(src[0]) if (ancrage or fmt == "agrege") and items else None
+        anc = anchor_sheet(src[0], items, idx) if ancrage else {}
+        if fmt == "agrege" and idx is not None:
+            anc["rectangle_plan"] = plan_rects(idx, items, nom)
+        src.close()
         sheets_json.append({"sheet": name, "page": page_no, "width_px": W, "height_px": H})
         meta.append({"sheet": name, "feuille": fid, "page": page_no, "format": fmt,
                      "type": info.get("type", ""), "note": info.get("note_classement", ""), "ancrage": anc})
@@ -387,11 +453,25 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
                   "flags": o.get("flags", [])}
             if o.get("rayon"):
                 el["radius"] = round(o["rayon"], 2)
-            if fmt == "agrege":           # EXEMPLE E03: relevé palette colours and shapes per family
+            if fmt == "agrege":
+                # gold palette B (spec §2.2-2.3) : couleur, forme et taille fixes par code de famille, quelle que
+                # soit la taille du symbole ; code absent de la table -> couleur du relevé, cercle de 10,88 pt
+                pb = S.palette_b(code)
                 pal = palette.get(o["label"], {})
-                if pal.get("rgb"):
-                    el["color"] = list(pal["rgb"])
-                el["shape"] = {0: "circle", 1: "square", 2: "diamond"}.get(pal.get("forme"), "circle")
+                if pb:
+                    el["color"] = list(pb[0])
+                    el["shape"] = "square" if pb[1] == "plan" else pb[1]
+                    el["radius"] = pb[2] / 2
+                else:
+                    if pal.get("rgb"):
+                        el["color"] = list(pal["rgb"])
+                    el["shape"] = {0: "circle", 1: "square", 2: "diamond"}.get(pal.get("forme"), "circle")
+                    el["radius"] = S.PALETTE_B_SIZE / 2
+                size = S.LABEL_SIZE_B.get(re.match(r"[A-Z]*", code).group(0))
+                if size:
+                    el["label_size"] = size
+                if not reserve:            # W et circuits affichés seulement s'ils sont vérifiés (pas en réserve)
+                    el["label_lines"] = detail_lines(_cell(o, "designation"))
             bb =[_float(o.get(k)) for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
             if all(v is not None for v in bb):
                 el["bbox"] = bb
@@ -400,7 +480,7 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
             bord_rows.append({"feuille": name, "repere": repere, "source": o["source_id"], "materiel": mat,
                               "designation": designation, "qte": f"{qte:g}", "portee": portee, "modele": modele,
                               "prescription": prescription, "parent": parent, "reserve": reserve,
-                              "ref": ascii_text(_cell(n, "source")), "code": code, "format": fmt, "note": ascii_text(_cell(o, "note"))})
+                              "ref": ascii_text(_cell(n, "source")), "code": code, "format": fmt, "note": ascii_text(reserve_motif(o))})
 
     plans.save(str(out / "plans.pdf"), garbage=3, deflate=True)
     est = {"source": "releve", "workdir": str(work), "sheets": sheets_json,

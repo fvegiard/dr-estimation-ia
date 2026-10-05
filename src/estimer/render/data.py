@@ -65,6 +65,7 @@ class Item:
     label_bbox: tuple[float, float, float, float] | None = None   # imposed label box (same units as x, y)
     leader_end: tuple[float, float] | None = None
     legend_model: str = ""         # model line shown under the family name in the legend
+    label_size: float | None = None   # label font size when not the default 4.8 pt (PL in palette B: 5.2 pt)
 
     @property
     def reserve(self) -> bool:
@@ -107,6 +108,11 @@ class Sheet:
     box_hint: tuple[float, float, float, float] | None = None   # imposed RELEVE box (PDF points)
     legend_shapes: dict[str, str] = field(default_factory=dict)   # imposed legend glyph per family code
     legend_rows: tuple[float, float] | None = None   # imposed (first row offset, pitch) in the box, PDF points
+    # encadré v6 (spec §3.3) : lignes rouges seulement quand l'entrée donne le compte (jamais inventé)
+    divergences: int | None = None   # "N divergences plan/cedule A RESOUDRE"
+    calibres: int | None = None      # "N calibres distincts dans les sources - voir bordereau"
+    note: str = ""                   # note de classement de la feuille (cartouche lu par le relevé)
+    troncatures: int = 0             # cellules de bordereau coupées pour tenir sur 1 page (posé au rendu)
 
     def families(self) -> list[Family]:
         by: dict[str, list[Item]] = defaultdict(list)
@@ -197,15 +203,17 @@ def load_input(in_dir: Path) -> list[Sheet]:
     rpath = in_dir / "reserves.md"
     reserves = read_reserves_md(rpath) if rpath.is_file() else {}
     fpath = in_dir / "feuilles.json"
-    formats = {m["sheet"]: m.get("format", "materiel") for m in json.loads(fpath.read_text(encoding="utf-8"))} \
-        if fpath.is_file() else {}
+    fmeta = json.loads(fpath.read_text(encoding="utf-8")) if fpath.is_file() else []
+    formats = {m["sheet"]: m.get("format", "materiel") for m in fmeta}
+    notes = {m["sheet"]: m.get("note") or "" for m in fmeta}
 
     sheets: dict[str, Sheet] = {}
     for s in est.get("sheets", []):
         sheets[s["sheet"]] = Sheet(s["sheet"], int(s["page"]), s.get("width_px"), s.get("height_px"),
                                    box_hint=tuple(s["box_hint"]) if s.get("box_hint") else None,
                                    legend_shapes=dict(s.get("legend_shapes") or {}),
-                                   legend_rows=tuple(s["legend_rows"]) if s.get("legend_rows") else None)
+                                   legend_rows=tuple(s["legend_rows"]) if s.get("legend_rows") else None,
+                                   divergences=s.get("divergences"), calibres=s.get("calibres"))
 
     # family codes for plain estimator output: one code per estimator family, stable across sheets
     fam_codes: dict[str, str] = {}
@@ -254,6 +262,7 @@ def load_input(in_dir: Path) -> list[Sheet]:
                 label_bbox=tuple(el["label_bbox"]) if el.get("label_bbox") else None,
                 leader_end=tuple(el["leader_end"]) if el.get("leader_end") else None,
                 legend_model=str(el.get("modele_legende") or ""),
+                label_size=float(el["label_size"]) if el.get("label_size") else None,
             )
             sh.items.append(it)
     for name, lines in reserves.items():
@@ -269,6 +278,7 @@ def load_input(in_dir: Path) -> list[Sheet]:
         fmt = formats.get(name) or next((bord[(name, it.repere)].get("format") for it in sh.items
                                          if bord.get((name, it.repere), {}).get("format")), None)
         sh.format = fmt if fmt in ("materiel", "agrege", "travaux") else "materiel"
+        sh.note = notes.get(name, "")
     # releve/'s bridge (from_releve.py, est["source"] == "releve") declares every classified plan sheet
     # up front, even ones with zero occurrences so far: keep those instead of letting them silently
     # vanish from the output. Generic estimator input (no such marker: the CV detector's own export.py,

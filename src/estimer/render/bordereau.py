@@ -2,11 +2,13 @@
 "RESERVES ET COMPLEMENTS" block after the last row (EXEMPLE.pdf pages 2-7, 30-32)."""
 from __future__ import annotations
 
+import re
+
 import pymupdf
 
 from . import style as S
 from .data import Item, Sheet, fmt_qty
-from .plan import text_width
+from .plan import encadre_v6, text_width
 
 
 def rows_per_page(page_h: float) -> int:
@@ -145,12 +147,12 @@ def _distinct(values) -> list[str]:
     return list(dict.fromkeys(v.strip() for v in values if v and v.strip()))
 
 
-def _source_cell(its: list[Item]) -> str:
+def _source_cell(its: list[Item], v6: bool = False) -> str:
     refs = _distinct(it.ref for it in its)
     n_res = sum(1 for it in its if it.reserve)
     k_mod = sum(1 for it in its if not it.modele or it.modele == "MODELE NON PRECISE")
     parts = ["; ".join(refs) or "Preuve du releve (voir occurrences)"]
-    if n_res:
+    if n_res and not v6:                     # feuilles à encadré v6 : pas de compteur RES (gold p.63)
         parts.append(f"RESERVES: {n_res} reperes" + (f" - modele a confirmer x{k_mod}" if k_mod else ""))
     motifs = _distinct(it.note for it in its)
     if motifs:
@@ -158,8 +160,14 @@ def _source_cell(its: list[Item]) -> str:
     return "\n".join(parts)
 
 
+CIRCUIT_RE = re.compile(r"\s*\bC\d+(?:,\d+)*\b")
+
+
 def _modele_cell(its: list[Item], code: str, materiel: str) -> str:
-    desig = [d for d in _distinct(it.designation for it in its) if d not in (code, materiel)]
+    # une ligne par famille : le circuit est propre à chaque repère (2e ligne de son étiquette sur le plan,
+    # gold p.62) ; le recopier ici multipliait les désignations (« PRISE C5; PRISE C7; ... »)
+    desig = [d for d in _distinct(re.sub(r"\(\s+", "(", CIRCUIT_RE.sub("", it.designation)) for it in its)
+             if d not in (code, materiel)]
     mods = _distinct(it.modele for it in its) or ["MODELE NON PRECISE"]
     return "\n".join(["; ".join(desig)] if desig else [] + []) + ("\n" if desig else "") + "; ".join(mods)
 
@@ -173,13 +181,14 @@ def aggregate_rows(sheet: Sheet) -> list[dict]:
     for it in sheet.sorted_items():
         key = (it.code, it.portee or "A PRECISER")
         by.setdefault(key, []).append(it)
+    v6 = encadre_v6(sheet)
     rows = []
     for key, its in by.items():
         code = key[0]
         mat = next((it.materiel for it in its if it.materiel), code)
         presc = "; ".join(_distinct(it.prescription for it in its)) or "Aucune prescription ajoutee au releve."
         row = {"id": code, "famille": mat, "modele": _modele_cell(its, code, mat), "prescription": presc,
-               "source": _source_cell(its), "items": its}
+               "source": _source_cell(its, v6), "items": its}
         qte = sum(it.qte for it in its)
         if sheet.format == "agrege":
             row["qte"] = fmt_qty(qte)
@@ -203,6 +212,13 @@ def _cell_wrap(text: str, size: float, width: float) -> list[str]:
     for para in str(text).split("\n"):
         out += wrap(para, size, width) if para.strip() else []
     return out
+
+
+def _cap(lines: list[str], n: int, size: float, width: float) -> list[str]:
+    last = " ".join(lines[n - 1:])
+    while last and text_width(last + "...", size) > width:
+        last = last[:-1]
+    return lines[:n - 1] + [last.rstrip() + "..."]
 
 
 def _num(v) -> float:
@@ -253,17 +269,35 @@ def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, heig
 
     page = new_page()
     y = head_bottom
-    table = [[(x0, _cell_wrap(row.get(key, ""), spec["row_size"], x1 - x0 - 10))
-              for (key, _, _), x0, x1 in zip(spec["cols"], starts, ends)] for row in rows]
-    need = [spec["row_baseline"] + (max((len(c) for _, c in cells), default=1) - 1) * spec["line_step"] + 8.0
-            for cells in table]
-    # EXEMPLE E04/E05 : 23 lignes resserrees a 63,75 pt pour tenir sur une page ; sinon 66 pt et pages suivantes
+    widths = [x1 - x0 - 10 for x0, x1 in zip(starts, ends)]
+    table = [[(x0, _cell_wrap(row.get(key, ""), spec["row_size"], w))
+              for (key, _, _), x0, w in zip(spec["cols"], starts, widths)] for row in rows]
+
+    def needs():
+        return [spec["row_baseline"] + (max((len(c) for _, c in cells), default=1) - 1) * spec["line_step"] + 8.0
+                for cells in table]
+    need = needs()
+    # EXEMPLE E04/E05 : 23 lignes resserrees a 63,75 pt pour tenir sur une page ; sinon 66 pt
     room = bottom - head_bottom
     base = spec["row_h"]
+    sheet.troncatures = 0
     if rows and sum(max(base, n) for n in need) > room:
         squeezed = room / len(rows)
         if sum(max(squeezed, n) for n in need) <= room:
             base = squeezed
+        else:
+            # gold : 1 page par feuille agrégée ou travaux (spec §4.2-4.3). Les cellules plus longues que la
+            # ligne resserrée sont coupées (« ... ») ; le texte complet reste dans vecteur/bordereau.csv et le
+            # nombre de cellules coupées est rapporté (rendu-rapport.json, bordereau_troncatures).
+            max_lines = int((squeezed - 8.0 - spec["row_baseline"]) // spec["line_step"]) + 1
+            if max_lines >= 2:
+                for cells in table:
+                    for k, (x0, lines) in enumerate(cells):
+                        if len(lines) > max_lines:
+                            cells[k] = (x0, _cap(lines, max_lines, spec["row_size"], widths[k]))
+                            sheet.troncatures += 1
+                need = needs()
+                base = squeezed
     for cells, n in zip(table, need):
         h = max(base, n)
         if y + h > bottom + 0.5 and y > head_bottom:
@@ -276,7 +310,7 @@ def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, heig
         y += h
         page.draw_line((m, y), (width - m, y), color=S.B_SEP_COLOR, width=0.5)
     notes = []
-    for line in sheet.reserves_text:
+    for line in ([] if encadre_v6(sheet) else sheet.reserves_text):   # v6 : pas de bloc de notes (gold p.63)
         notes += wrap(line, 10.0, table_w)
     if notes:
         if y + 38.75 + S.B_RES_STEP > height - 20:
