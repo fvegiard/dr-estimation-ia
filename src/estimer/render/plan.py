@@ -225,6 +225,9 @@ def draw_halo(shape: pymupdf.Shape, kind: str, rect: pymupdf.Rect, oc: int) -> N
         c = (r.tl + r.br) / 2
         shape.draw_polyline([pymupdf.Point(c.x, r.y0), pymupdf.Point(r.x1, c.y),
                              pymupdf.Point(c.x, r.y1), pymupdf.Point(r.x0, c.y)])
+    elif kind == "triangle":
+        shape.draw_polyline([pymupdf.Point((r.x0 + r.x1) / 2, r.y0), pymupdf.Point(r.x1, r.y1),
+                             pymupdf.Point(r.x0, r.y1)])
     else:
         shape.draw_circle((r.tl + r.br) / 2, min(r.width, r.height) / 2)
     shape.finish(width=S.HALO_W, color=(1, 1, 1), fill=None, closePath=True, oc=oc)
