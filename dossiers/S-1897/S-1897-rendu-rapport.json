@@ -1,15 +1,12 @@
 {
- "pages": 5,
+ "pages": 2,
  "sheets": [
   {
    "sheet": "A801",
-   "format": "materiel",
+   "format": "agrege",
    "plan_page": 1,
    "bordereau_pages": [
-    2,
-    3,
-    4,
-    5
+    2
    ],
    "reperes": 66,
    "familles": 14,
