@@ -193,6 +193,10 @@ def test_q15_symbole_identique_non_releve(tmp_path):
     assert len(q15) == 1 and "(80.5, 70.5)" in q15[0], errs           # le cercle Ø10 (autre signature) n'est pas signalé
     (tmp_path / "reserves.md").write_text("R-001 PL\nR-002 Q15 (80, 71) : bulle de détail, pas un appareil\n", encoding="utf-8")
     assert not [e for e in cq.controler(w)["erreurs"] if e.startswith("Q15")]
+    (tmp_path / "reserves.md").write_text("R-001 PL\nR-002 Q15 (80,5 / 70,5) : bulle de détail\n", encoding="utf-8")
+    assert not [e for e in cq.controler(w)["erreurs"] if e.startswith("Q15")]       # notation française acceptée
+    (tmp_path / "reserves.md").write_text("R-001 PL\nR-002 (80, 71) sans le mot-clé\n", encoding="utf-8")
+    assert [e for e in cq.controler(w)["erreurs"] if e.startswith("Q15")]           # sans « Q15 », pas de justification
 
 
 # --- garde d'outils : contrôle à l'aveugle seulement --------------------------------------------------------------

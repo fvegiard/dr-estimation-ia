@@ -282,7 +282,10 @@ def justifie_q15(reserves, x, y, tol=3.0):
     for ligne in reserves.splitlines():
         if "Q15" not in ligne:
             continue
-        for a, b in re.findall(r"(\d+(?:[.,]\d+)?)\s*[,;]\s*(\d+(?:[.,]\d+)?)", ligne):
+        # « (643, 431) », « 643.5 ; 430.9 » ou, à la française, « 643,5 / 430,9 »
+        couples = re.findall(r"(\d+(?:[.,]\d+)?)\s*/\s*(\d+(?:[.,]\d+)?)", ligne) + \
+            re.findall(r"(\d+(?:\.\d+)?)\s*[,;]\s*(\d+(?:\.\d+)?)", ligne)
+        for a, b in couples:
             if abs(float(a.replace(",", ".")) - x) <= tol and abs(float(b.replace(",", ".")) - y) <= tol:
                 return True
     return False

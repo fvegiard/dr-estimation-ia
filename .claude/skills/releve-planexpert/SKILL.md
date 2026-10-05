@@ -74,12 +74,13 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    `echelle` = dénominateur métrique lu dans le cartouche (ex. `100` pour 1:100), vide si non lu. Ouvre chaque aperçu.
    `bordereau` (optionnel — voir `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` §4) choisit le format du bordereau
    produit ; vide = déduit automatiquement (`materiel` si `type=schema` ou discipline incendie, `travaux` si toute la
-   feuille est en secours/urgence, sinon `agrege`). **Renseigne `bordereau=materiel` explicitement dès que la feuille
-   mélange des portées différentes** (`INSTALLER` et `CONSERVER`/`REMPLACER` du même appareil, ex. une feuille de
-   rénovation avec du neuf ET de l'existant conservé) : `agrege` n'affiche pas la colonne portée et n'est correct que
-   pour une feuille entièrement homogène (typiquement : que de l'existant conservé, comme les feuilles E01/E06/E09
-   de l'exemplaire). En cas de doute entre `materiel` (une ligne par repère, portée visible) et `agrege` (une ligne
-   par famille, plus compact), préfère `materiel` — il ne perd jamais d'information.
+   feuille est en secours/urgence, sinon `agrege`). **Laisse `bordereau` vide** : cette déduction est celle de
+   l'exemplaire approuvé (spec unique `docs/FORMAT-EXEMPLE.md` §1 — plans d'étage et de logements en agrégé, y compris
+   quand ils mélangent `INSTALLER`, `REMPLACER` et `CONSERVER` ; unifilaires, cédules et incendie en matériel). Une
+   portée mixte ne justifie pas `materiel` : la portée de chaque famille reste dans `nomenclature.csv` et au rapport.
+   Ne renseigne `bordereau` que si la feuille est d'un type que la déduction classe mal, et dis pourquoi dans `note`.
+   (Révisé le 2026-10-05 : l'ancienne consigne « portée mixte → materiel » contredisait l'exemplaire et remplaçait les
+   codes de famille de la légende par des numéros M01, M02… dans l'encadré et le bordereau.)
    Le nom de feuille donné par `prepare.py` est provisoire (lu par regex, parfois pris dans une bulle de détail ou absent :
    `<fichier>-pNN`) : lis le VRAI numéro et le titre dans le cartouche de l'aperçu et écris-les dans la colonne `note`
    (`cartouche=E401 · REZ-DE-CHAUSSÉE ÉCLAIRAGE`). AUCUNE page ne doit rester non classée. Distingue aussi le neuf de l'existant
