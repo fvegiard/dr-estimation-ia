@@ -1,0 +1,90 @@
+{
+  "checkpoint_archive_sha256": "a02dcffb26f8693795f030d12165d5ba43e8aebaceae5c43464c86f1e11ab901",
+  "checkpoint_unchanged_after_library_upload": true,
+  "frozen_files_verified": 59,
+  "files": [
+    {
+      "source_frozen": "paquet/S-0922-E-3-releve.jpg",
+      "local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E-3-pilote-graphique-v1.jpg",
+      "file_name": "S-0922-E-3-pilote-graphique-v1.jpg",
+      "library_file_id": "libfile_341b7d1873bc8191bd623d6daaa3c4a8",
+      "file_id": "file_00000000887881fb999d22ce8f60fb4d",
+      "version": 0,
+      "size_bytes": 14125894,
+      "sha256": "255d88e8c92700d82750e2764ebb93bfb01144d731c396ac1e86bad2036501b4",
+      "status": "succeeded",
+      "library_path": "/S-0922-E-3-pilote-graphique-v1.jpg",
+      "local_xattrs_applied": false
+    },
+    {
+      "source_frozen": "preuves/03-pages-entieres-reference-v3-pilote.jpg",
+      "local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-comparatif-pages-v1.jpg",
+      "file_name": "S-0922-E3-comparatif-pages-v1.jpg",
+      "library_file_id": "libfile_ae9f1fa77724819182cd78db3b6a56ca",
+      "file_id": "file_00000000481c81f5bb35d6db98464e8b",
+      "version": 0,
+      "size_bytes": 597549,
+      "sha256": "d2f983212c0fa7413d248c7cf3e0f4628f3c82eeae9c5dce507e1b94bf5a1009",
+      "status": "succeeded",
+      "library_path": "/S-0922-E3-comparatif-pages-v1.jpg",
+      "local_xattrs_applied": false
+    },
+    {
+      "source_frozen": "preuves/04-legendes-meme-largeur-feuille.png",
+      "local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-comparatif-legendes-6854-v1.png",
+      "file_name": "S-0922-E3-comparatif-legendes-6854-v1.png",
+      "library_file_id": "libfile_97586d43eac88191a34550551d278f01",
+      "file_id": "file_00000000cbc4822f83601699c3edbf9a",
+      "version": 0,
+      "size_bytes": 1554770,
+      "sha256": "15b61ffbd0df908c5bf6028a62788077b239877517092f0c71823db839a8d0f7",
+      "status": "succeeded",
+      "library_path": "/S-0922-E3-comparatif-legendes-6854-v1.png",
+      "local_xattrs_applied": false
+    },
+    {
+      "source_frozen": "preuves/05-reperes-meme-largeur-feuille.jpg",
+      "local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-comparatif-reperes-6854-v1.jpg",
+      "file_name": "S-0922-E3-comparatif-reperes-6854-v1.jpg",
+      "library_file_id": "libfile_86fde81d7ea88191b1b291fd4300fbee",
+      "file_id": "file_00000000913881f9ab6a48a634b06204",
+      "version": 0,
+      "size_bytes": 1021591,
+      "sha256": "bfd8db1bdceff56160aeb32f838608737286de29e213849c73f642b3a9ef1e73",
+      "status": "succeeded",
+      "library_path": "/S-0922-E3-comparatif-reperes-6854-v1.jpg",
+      "local_xattrs_applied": false
+    },
+    {
+      "source_frozen": "preuves/06-quatorze-lineaires-source-v3-pilote.jpg",
+      "local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-controles-14-lineaires-v1.jpg",
+      "file_name": "S-0922-E3-controles-14-lineaires-v1.jpg",
+      "library_file_id": "libfile_355d13b4a6f88191931e96cc4f068371",
+      "file_id": "file_000000006cd8820db81d6bf2abb35358",
+      "version": 0,
+      "size_bytes": 587840,
+      "sha256": "7007002e71bec43737702e38093a0c720277e1cbfd1fa49bfe1df5e6d1fa85f6",
+      "status": "succeeded",
+      "library_path": "/S-0922-E3-controles-14-lineaires-v1.jpg",
+      "local_xattrs_applied": false
+    },
+    {
+      "source_frozen": "preuves/07-onze-familles-source-v3-pilote.jpg",
+      "local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-controles-11-familles-v1.jpg",
+      "file_name": "S-0922-E3-controles-11-familles-v1.jpg",
+      "library_file_id": "libfile_7b5392628f908191a7320236dc336b1b",
+      "file_id": "file_0000000036f0820cb9dfccf6a77f76b4",
+      "version": 0,
+      "size_bytes": 685795,
+      "sha256": "f5203157bd22de68fe68a50f0a7fc9cb0df75ad72df70b798e8b41906cced18c",
+      "status": "succeeded",
+      "library_path": "/S-0922-E3-controles-11-familles-v1.jpg",
+      "local_xattrs_applied": false
+    }
+  ],
+  "public_sharing": false,
+  "metadata_note": "Les créations Library ont réussi. Le helper officiel apply-xattrs a été invoqué pour chaque fichier; os.setxattr est absent de Python Windows. Identités, versions et métadonnées retournées conservées dans remise-library/identites-library.json.",
+  "qpl_global": "BLOCKED",
+  "graphic_acceptance": "En attente de revue indépendante du pilote E-3",
+  "generalization": false
+}

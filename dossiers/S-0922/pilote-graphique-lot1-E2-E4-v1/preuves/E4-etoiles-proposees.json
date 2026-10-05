@@ -1,0 +1,775 @@
+{
+  "font_ink_bbox": [
+    1,
+    10,
+    18,
+    25
+  ],
+  "offsets": {
+    "E-4-069": [
+      6,
+      -6
+    ],
+    "E-4-072": [
+      -7,
+      -6
+    ],
+    "E-4-073": [
+      4,
+      -12
+    ],
+    "E-4-074": [
+      4,
+      -8
+    ],
+    "E-4-075": [
+      4,
+      -7
+    ],
+    "E-4-076": [
+      8,
+      -7
+    ],
+    "E-4-077": [
+      8,
+      -7
+    ],
+    "E-4-081": [
+      6,
+      -6
+    ],
+    "E-4-082": [
+      6,
+      -6
+    ],
+    "E-4-083": [
+      6,
+      -6
+    ],
+    "E-4-084": [
+      5,
+      -6
+    ],
+    "E-4-085": [
+      5,
+      -6
+    ],
+    "E-4-088": [
+      4,
+      -8
+    ],
+    "E-4-091": [
+      5,
+      -6
+    ],
+    "E-4-092": [
+      5,
+      -6
+    ],
+    "E-4-097": [
+      4,
+      -12
+    ],
+    "E-4-098": [
+      5,
+      -6
+    ],
+    "E-4-099": [
+      4,
+      -8
+    ],
+    "E-4-103": [
+      4,
+      -9
+    ],
+    "E-4-104": [
+      3,
+      -8
+    ],
+    "E-4-089": [
+      4.428543,
+      -6.449497
+    ]
+  },
+  "reserves": [
+    {
+      "id": "E-4-069",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        6,
+        -6
+      ],
+      "old_source_pixels_below_250": 57,
+      "new_ink_box_with_2px_margin": [
+        6616,
+        6074,
+        6637,
+        6093
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-072",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        -7,
+        -6
+      ],
+      "old_source_pixels_below_250": 134,
+      "new_ink_box_with_2px_margin": [
+        5642,
+        5643,
+        5663,
+        5662
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-073",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -12
+      ],
+      "old_source_pixels_below_250": 104,
+      "new_ink_box_with_2px_margin": [
+        5850,
+        6044,
+        5871,
+        6063
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-074",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -8
+      ],
+      "old_source_pixels_below_250": 78,
+      "new_ink_box_with_2px_margin": [
+        5702,
+        7790,
+        5723,
+        7809
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-075",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -7
+      ],
+      "old_source_pixels_below_250": 21,
+      "new_ink_box_with_2px_margin": [
+        6093,
+        8017,
+        6114,
+        8036
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-076",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        8,
+        -7
+      ],
+      "old_source_pixels_below_250": 161,
+      "new_ink_box_with_2px_margin": [
+        5827,
+        5651,
+        5848,
+        5670
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-077",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        8,
+        -7
+      ],
+      "old_source_pixels_below_250": 161,
+      "new_ink_box_with_2px_margin": [
+        5827,
+        7801,
+        5848,
+        7820
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-080",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        6426,
+        6234,
+        6447,
+        6253
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-081",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        6,
+        -6
+      ],
+      "old_source_pixels_below_250": 114,
+      "new_ink_box_with_2px_margin": [
+        6612,
+        5979,
+        6633,
+        5998
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-082",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        6,
+        -6
+      ],
+      "old_source_pixels_below_250": 152,
+      "new_ink_box_with_2px_margin": [
+        6610,
+        6472,
+        6631,
+        6491
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-083",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        6,
+        -6
+      ],
+      "old_source_pixels_below_250": 165,
+      "new_ink_box_with_2px_margin": [
+        6610,
+        6585,
+        6631,
+        6604
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-084",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        5,
+        -6
+      ],
+      "old_source_pixels_below_250": 57,
+      "new_ink_box_with_2px_margin": [
+        6610,
+        6693,
+        6631,
+        6712
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-085",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        5,
+        -6
+      ],
+      "old_source_pixels_below_250": 57,
+      "new_ink_box_with_2px_margin": [
+        6610,
+        6780,
+        6631,
+        6799
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-088",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -8
+      ],
+      "old_source_pixels_below_250": 125,
+      "new_ink_box_with_2px_margin": [
+        2949,
+        8885,
+        2970,
+        8904
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-091",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        5,
+        -6
+      ],
+      "old_source_pixels_below_250": 28,
+      "new_ink_box_with_2px_margin": [
+        3183,
+        8858,
+        3204,
+        8877
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-092",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        5,
+        -6
+      ],
+      "old_source_pixels_below_250": 22,
+      "new_ink_box_with_2px_margin": [
+        3714,
+        8858,
+        3735,
+        8877
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-093",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        1493,
+        5186,
+        1514,
+        5205
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-094",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        2895,
+        5261,
+        2916,
+        5280
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-095",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        3648,
+        5261,
+        3669,
+        5280
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-096",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        4962,
+        5183,
+        4983,
+        5202
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-097",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -12
+      ],
+      "old_source_pixels_below_250": 185,
+      "new_ink_box_with_2px_margin": [
+        6240,
+        4882,
+        6261,
+        4901
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-098",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        5,
+        -6
+      ],
+      "old_source_pixels_below_250": 57,
+      "new_ink_box_with_2px_margin": [
+        6614,
+        5403,
+        6635,
+        5422
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-099",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -8
+      ],
+      "old_source_pixels_below_250": 63,
+      "new_ink_box_with_2px_margin": [
+        5677,
+        5543,
+        5698,
+        5562
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-100",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        3239,
+        7556,
+        3260,
+        7575
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-101",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        3239,
+        7801,
+        3260,
+        7820
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-102",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        1404,
+        8842,
+        1425,
+        8861
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-103",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -9
+      ],
+      "old_source_pixels_below_250": 148,
+      "new_ink_box_with_2px_margin": [
+        5988,
+        8022,
+        6009,
+        8041
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-104",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        3,
+        -8
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        4992,
+        8828,
+        5013,
+        8847
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-105",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        5071,
+        8842,
+        5092,
+        8861
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-106",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        3272,
+        5815,
+        3293,
+        5834
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-107",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        3239,
+        7680,
+        3260,
+        7699
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-108",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        6278,
+        5574,
+        6299,
+        5593
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-109",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4,
+        -6
+      ],
+      "old_source_pixels_below_250": 0,
+      "new_ink_box_with_2px_margin": [
+        3446,
+        8928,
+        3467,
+        8947
+      ],
+      "new_source_min_luminance": 255,
+      "nearest_marker_is_own": true
+    },
+    {
+      "id": "E-4-089",
+      "old_offset": [
+        4,
+        -6
+      ],
+      "new_offset": [
+        4.428543,
+        -6.449497
+      ],
+      "new_ink_box_px": [
+        1922,
+        4481,
+        1939,
+        4496
+      ],
+      "new_source_min_under_actual_ink": 255,
+      "method": "Placement entre hachures : pixels réellement encrés du glyphe, pas toute sa boîte englobante. Source entière non effacée."
+    }
+  ]
+}

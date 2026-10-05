@@ -1,0 +1,290 @@
+{
+  "sheet": "E-4",
+  "pilot": true,
+  "source_size": [
+    12623,
+    9467
+  ],
+  "legend_box": [
+    540,
+    25,
+    910,
+    275
+  ],
+  "rows": [
+    {
+      "family": "PC",
+      "quantity": 31,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Prise double murale"
+    },
+    {
+      "family": "PQ",
+      "quantity": 10,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Prise quadruple au plancher"
+    },
+    {
+      "family": "PQC",
+      "quantity": 3,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Prise quadruple au plafond"
+    },
+    {
+      "family": "PCC",
+      "quantity": 1,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Prise double au plafond"
+    },
+    {
+      "family": "DATA",
+      "quantity": 14,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Sortie DATA, implantation dessinée"
+    },
+    {
+      "family": "CDV",
+      "quantity": 2,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Sortie combinée DATA/voix au plancher"
+    },
+    {
+      "family": "DM",
+      "quantity": 2,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Déclencheur manuel incendie"
+    },
+    {
+      "family": "AV",
+      "quantity": 4,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Avertisseur incendie"
+    },
+    {
+      "family": "DG",
+      "quantity": 1,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Détecteur de fumée en gaine"
+    },
+    {
+      "family": "RA",
+      "quantity": 1,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Relais incendie"
+    },
+    {
+      "family": "HC",
+      "quantity": 1,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Aérotherme plafond C75, 7 500 W"
+    },
+    {
+      "family": "HE",
+      "quantity": 1,
+      "column": 0,
+      "quantity_right": 1344.0,
+      "label": "Aérotherme mural E40, 4 000 W"
+    },
+    {
+      "family": "DH",
+      "quantity": 4,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Serpentin électrique en gaine"
+    },
+    {
+      "family": "TB",
+      "quantity": 2,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Boîte terminale"
+    },
+    {
+      "family": "PN",
+      "quantity": 2,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Panneau existant P1 / P2"
+    },
+    {
+      "family": "TR",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Transformateur existant à suspendre"
+    },
+    {
+      "family": "SEC",
+      "quantity": 5,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Sectionneur existant au plan"
+    },
+    {
+      "family": "BJ",
+      "quantity": 3,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Boîte de jonction"
+    },
+    {
+      "family": "AC",
+      "quantity": 2,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Unité de toiture existante"
+    },
+    {
+      "family": "SENS",
+      "quantity": 2,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Portique dessiné, système Sensormatic"
+    },
+    {
+      "family": "C*",
+      "quantity": 13,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Repère cerclé C non défini"
+    },
+    {
+      "family": "W*",
+      "quantity": 3,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Repère cerclé W non défini"
+    },
+    {
+      "family": "TC*",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1594.0,
+      "label": "Repère cerclé TC non défini"
+    }
+  ],
+  "notes": [
+    "Quantités des symboles dessinés, avec distinction existant / neuf / portée à préciser dans le CSV.",
+    "Prises : 31 doubles murales, 10 quadruples plancher, 3 quadruples plafond, 1 double plafond. Une quadruple = un symbole.",
+    "DATA : 14 sorties et 2 combinées au plancher. Modèles et terminaison à confirmer; aucune longueur de câble.",
+    "P1, P2 et transformateur renvoient au schéma E-2. Ne pas additionner les représentations.",
+    "Écart : 5 sectionneurs existants dessinés ici contre 4 au schéma E-2; correspondance et calibres à confirmer.",
+    "17 repères C/W/TC cerclés non définis dans la légende électrique : réservés, aucune fonction inventée.",
+    "Note 1 : relais incendie vers shunt-trip sonore. Circuit/calibre non identifié à la cédule.",
+    "AC-01 : existant non utilisé; AC-02 : existant. Les conduits et supports ne sont pas métrés.",
+    "RES / * : source, modèle, position, portée ou réconciliation à confirmer. Aucun calibre choisi arbitrairement."
+  ],
+  "note_lines": [
+    "Quantités des symboles dessinés, avec distinction existant / neuf / portée à préciser dans le CSV.",
+    "Prises : 31 doubles murales, 10 quadruples plancher, 3 quadruples plafond, 1 double plafond. Une quadruple = un symbole.",
+    "DATA : 14 sorties et 2 combinées au plancher. Modèles et terminaison à confirmer; aucune longueur de câble.",
+    "P1, P2 et transformateur renvoient au schéma E-2. Ne pas additionner les représentations.",
+    "Écart : 5 sectionneurs existants dessinés ici contre 4 au schéma E-2; correspondance et calibres à confirmer.",
+    "17 repères C/W/TC cerclés non définis dans la légende électrique : réservés, aucune fonction inventée.",
+    "Note 1 : relais incendie vers shunt-trip sonore. Circuit/calibre non identifié à la cédule.",
+    "AC-01 : existant non utilisé; AC-02 : existant. Les conduits et supports ne sont pas métrés.",
+    "RES / * : source, modèle, position, portée ou réconciliation à confirmer. Aucun calibre choisi arbitrairement."
+  ],
+  "linear_boxes": {},
+  "schematic_boxes": {},
+  "star_offsets": {
+    "E-4-069": [
+      6,
+      -6
+    ],
+    "E-4-072": [
+      -7,
+      -6
+    ],
+    "E-4-073": [
+      4,
+      -12
+    ],
+    "E-4-074": [
+      4,
+      -8
+    ],
+    "E-4-075": [
+      4,
+      -7
+    ],
+    "E-4-076": [
+      8,
+      -7
+    ],
+    "E-4-077": [
+      8,
+      -7
+    ],
+    "E-4-081": [
+      6,
+      -6
+    ],
+    "E-4-082": [
+      6,
+      -6
+    ],
+    "E-4-083": [
+      6,
+      -6
+    ],
+    "E-4-084": [
+      5,
+      -6
+    ],
+    "E-4-085": [
+      5,
+      -6
+    ],
+    "E-4-088": [
+      4,
+      -8
+    ],
+    "E-4-091": [
+      5,
+      -6
+    ],
+    "E-4-092": [
+      5,
+      -6
+    ],
+    "E-4-097": [
+      4,
+      -12
+    ],
+    "E-4-098": [
+      5,
+      -6
+    ],
+    "E-4-099": [
+      4,
+      -8
+    ],
+    "E-4-103": [
+      4,
+      -9
+    ],
+    "E-4-104": [
+      3,
+      -8
+    ],
+    "E-4-089": [
+      4.428543,
+      -6.449497
+    ]
+  },
+  "marker_centres_unchanged": true,
+  "qpl_global": "BLOCKED",
+  "construction_validation": false
+}

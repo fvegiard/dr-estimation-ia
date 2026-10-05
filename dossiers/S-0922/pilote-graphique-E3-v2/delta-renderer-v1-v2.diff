@@ -1,0 +1,14 @@
+--- a/methode/render_sheet.py
++++ b/methode/render_sheet.py
+@@ -48,7 +48,10 @@
+                            fill=color+'40',outline=color,width=max(2,round(.55*scale)))
+         else:
+             draw.ellipse(tuple(round(v*scale) for v in (x-r,y-r,x+r,y+r)),fill=color+'40',outline=color,width=max(2,round(.55*scale)))
+-        if m.get('reserve'):text(x+4,y-6,'*',7,color)
++        if m.get('reserve'):
++            # E-3-188 : étoile dans le blanc au-dessus du symbole, hors du libellé 3(P1).
++            dx,dy=(-1,-13) if pilot and m['id']=='E-3-188' else (4,-6)
++            text(x+dx,y+dy,'*',7,color)
+     if pilot:
+         x,y,w,h=PILOT_LEGEND_BOX
+         draw.rectangle(tuple(round(v*scale) for v in (x,y,x+w,y+h)),fill='white',outline='#999999',width=round(.5*scale))

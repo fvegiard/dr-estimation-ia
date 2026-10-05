@@ -1,0 +1,327 @@
+{
+  "status": "Pilote graphique E-3 figé pour revue indépendante; non généralisé",
+  "archive": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\S-0922-pilote-graphique-E3-v1.zip",
+  "bytes": 59748142,
+  "sha256": "a02dcffb26f8693795f030d12165d5ba43e8aebaceae5c43464c86f1e11ab901",
+  "archive_entries": 59,
+  "jpeg_pilote": {
+    "file": "paquet/S-0922-E-3-releve.jpg",
+    "bytes": 14125894,
+    "sha256": "255d88e8c92700d82750e2764ebb93bfb01144d731c396ac1e86bad2036501b4",
+    "dimensions": [
+      12623,
+      9467
+    ]
+  },
+  "tests": {
+    "passed": 56,
+    "seconds": 84.87,
+    "after_final_render": true
+  },
+  "historical_business_files_unchanged": 16,
+  "pilot_business_files_unchanged": 15,
+  "pilot_business_changed": [
+    "S-0922-E-3-releve.jpg"
+  ],
+  "frozen_files": [
+    {
+      "file": "baseline-v3.json",
+      "bytes": 1935,
+      "sha256": "bcb27e4523c92028977e2aec012f0898794d6762f9a13248af2f16a0942f005c"
+    },
+    {
+      "file": "paquet/CHECKPOINT.json",
+      "bytes": 2963,
+      "sha256": "34d3baf64123d6c332e76937295344e44fb2692876db8ca3f7d209e05ec1655c"
+    },
+    {
+      "file": "paquet/manifest.json",
+      "bytes": 4002,
+      "sha256": "0ef816b2e78e95ef32578c8e360a8807543e77fe42e06b4a5f4d4bde83bf1d4a"
+    },
+    {
+      "file": "paquet/methode/build_led.py",
+      "bytes": 4758,
+      "sha256": "21806f20292135622b87a67ce6aa122d9cdf2ff0b092534113accc028d78631b"
+    },
+    {
+      "file": "paquet/methode/build_lighting.py",
+      "bytes": 4300,
+      "sha256": "fb6413ffefb139cedf93943afab08b205209bbdda59fe94ae4028be655bf199c"
+    },
+    {
+      "file": "paquet/methode/build_panels.py",
+      "bytes": 9102,
+      "sha256": "829fed34dafa188cd9014ec8e57637261e698189ab1a97566879376398a07779"
+    },
+    {
+      "file": "paquet/methode/build_services.py",
+      "bytes": 7133,
+      "sha256": "60cbd40a61624deee9cde6548fc7a8b7263e05549b4f5e7d037515390b139228"
+    },
+    {
+      "file": "paquet/methode/download_plans.py",
+      "bytes": 2526,
+      "sha256": "f7482a41f684f1d7179dc3b4251d0495ac9bd7727dfe759ef8976ac35dd5bd95"
+    },
+    {
+      "file": "paquet/methode/package_delivery.py",
+      "bytes": 11078,
+      "sha256": "d35bbd953c52b58ef833b5efcfe24a9c91820b8f14467094b7e904ca3f6a33db"
+    },
+    {
+      "file": "paquet/methode/prepare_images.py",
+      "bytes": 1073,
+      "sha256": "aa6c3e60a9a96f6651c5f226171660f2a9759741da78a7f330cdae445dbedd9a"
+    },
+    {
+      "file": "paquet/methode/render_sheet.py",
+      "bytes": 8489,
+      "sha256": "b241226222d7c72b28e890d20d0fc37699bcdeb2085e32c8b0fc36391379fe71"
+    },
+    {
+      "file": "paquet/methode/sheet_data.py",
+      "bytes": 98256,
+      "sha256": "6a0f9879182a854cf65ffb156f2160a2a8cfde574a852a901b201769edb607ee"
+    },
+    {
+      "file": "paquet/methode/verify_delivery.py",
+      "bytes": 8240,
+      "sha256": "7de309da94e6a7c370972af7e2a8fd8b0eb392359cb3d264df5fc06906951e55"
+    },
+    {
+      "file": "paquet/READ-ME.txt",
+      "bytes": 7467,
+      "sha256": "b66bc583c0f55ef75041b0748a1fddb6445ee941783b3b00465e75aa5a92f6b0"
+    },
+    {
+      "file": "paquet/S-0922-breakers-by-panel.xlsx",
+      "bytes": 18089,
+      "sha256": "263e85ab38326c0b0b9a9cbc90f741015da7e1f36ee1d09ba767b32edb7c37b5"
+    },
+    {
+      "file": "paquet/S-0922-breakers-detailed.csv",
+      "bytes": 12143,
+      "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
+    },
+    {
+      "file": "paquet/S-0922-E-1-details.csv",
+      "bytes": 1089,
+      "sha256": "c4493a1489933e6f4e287dda0a9f3711b4782c85dfb1fd515d1b8c13bacdfb20"
+    },
+    {
+      "file": "paquet/S-0922-E-1-releve.jpg",
+      "bytes": 22945136,
+      "sha256": "10c7ac4319bf781ec455cc7ce348a8b5288a227f1191eb5ab9704c158ceeb1cb"
+    },
+    {
+      "file": "paquet/S-0922-E-2-breakers.csv",
+      "bytes": 12143,
+      "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
+    },
+    {
+      "file": "paquet/S-0922-E-2-details.csv",
+      "bytes": 441,
+      "sha256": "93a6c4756cf31a3ae45d8f7829dcb1ceaae44207fb7e6dcbde030fa7387f12eb"
+    },
+    {
+      "file": "paquet/S-0922-E-2-equipment.csv",
+      "bytes": 2420,
+      "sha256": "720795796af4abc3bc808f5f1a2bb54cfe320de11c33baf0099eaf39d3f5003c"
+    },
+    {
+      "file": "paquet/S-0922-E-2-releve.jpg",
+      "bytes": 12100648,
+      "sha256": "68d094f3c58b46a7772bb6849cc153b9aeb8d14e8bfd5fe796b5bd56c051595e"
+    },
+    {
+      "file": "paquet/S-0922-E-3-equipment.csv",
+      "bytes": 26168,
+      "sha256": "58c87f8f055a71f143e45cdb0f2747e96741e9989922a8210f37fbd78edc8416"
+    },
+    {
+      "file": "paquet/S-0922-E-3-releve.jpg",
+      "bytes": 14125894,
+      "sha256": "255d88e8c92700d82750e2764ebb93bfb01144d731c396ac1e86bad2036501b4"
+    },
+    {
+      "file": "paquet/S-0922-E-4-equipment.csv",
+      "bytes": 15355,
+      "sha256": "de3cb0be33265a037a7446bdd0e59451000f5902d00e4fd44716487e97bbdf35"
+    },
+    {
+      "file": "paquet/S-0922-E-4-releve.jpg",
+      "bytes": 14521663,
+      "sha256": "a9109178a547c0de80f5320f3ea3ddd3f4fa8d94230087921bb1e429dc9eadb1"
+    },
+    {
+      "file": "paquet/S-0922-E-5-equipment.csv",
+      "bytes": 22880,
+      "sha256": "9fbfd4326050074b2c61b99465af6661833a8f3394f22d8d6d41de5cd17faf0f"
+    },
+    {
+      "file": "paquet/S-0922-E-5-releve.jpg",
+      "bytes": 6514585,
+      "sha256": "8e9c022e85d299264177a018dbd3b17cbda72c4fbc6f7e5c132149f7ec355f66"
+    },
+    {
+      "file": "preuves/00-lineaires-G-source-v3.jpg",
+      "bytes": 347327,
+      "sha256": "57c8c82ca0b4917a2651e0e7bcdfa260500a80aa4670ed7f9e19d281c40d56dc"
+    },
+    {
+      "file": "preuves/01-lineaires-limites-source.jpg",
+      "bytes": 88012,
+      "sha256": "6c11b5021a0c5f79ff9c716fe3211a5e0115b0faba2654eeeac45167ca3a022b"
+    },
+    {
+      "file": "preuves/02-emplacement-legende-source.jpg",
+      "bytes": 15995,
+      "sha256": "ddcb60dac142414145d96962ff4786f6738d1d3c74e4092fdb9dbaf6e1315d6e"
+    },
+    {
+      "file": "preuves/03-pages-entieres-reference-v3-pilote.jpg",
+      "bytes": 597549,
+      "sha256": "d2f983212c0fa7413d248c7cf3e0f4628f3c82eeae9c5dce507e1b94bf5a1009"
+    },
+    {
+      "file": "preuves/04-legendes-meme-largeur-feuille.png",
+      "bytes": 1554770,
+      "sha256": "15b61ffbd0df908c5bf6028a62788077b239877517092f0c71823db839a8d0f7"
+    },
+    {
+      "file": "preuves/05-reperes-meme-largeur-feuille.jpg",
+      "bytes": 1021591,
+      "sha256": "bfd8db1bdceff56160aeb32f838608737286de29e213849c73f642b3a9ef1e73"
+    },
+    {
+      "file": "preuves/06-quatorze-lineaires-source-v3-pilote.jpg",
+      "bytes": 587840,
+      "sha256": "7007002e71bec43737702e38093a0c720277e1cbfd1fa49bfe1df5e6d1fa85f6"
+    },
+    {
+      "file": "preuves/07-onze-familles-source-v3-pilote.jpg",
+      "bytes": 685795,
+      "sha256": "f5203157bd22de68fe68a50f0a7fc9cb0df75ad72df70b798e8b41906cced18c"
+    },
+    {
+      "file": "preuves/comparatifs-mesures.json",
+      "bytes": 991,
+      "sha256": "8a0ee986682e184a96db80dd76188fde0b036f348dd347ef1169e6fa835b06a4"
+    },
+    {
+      "file": "preuves/geometries-G-source.json",
+      "bytes": 4406,
+      "sha256": "aaa90178278b68ef91e5b5d63df0278a20b36b816ef3eb8b98e95b111d9eab25"
+    },
+    {
+      "file": "render-pilote-vs-v3.diff",
+      "bytes": 8535,
+      "sha256": "f98a52679ddff8efd8bf5b75c08ce6c85bf0153158bff1054cee30fa598ead03"
+    },
+    {
+      "file": "REVUE-PILOTE-E3.html",
+      "bytes": 3491,
+      "sha256": "d364d2d794a32fb84903b8b8970b719110db07ebf8b710d277a06a1dfe9dfe15"
+    },
+    {
+      "file": "REVUE-PILOTE-E3.md",
+      "bytes": 7915,
+      "sha256": "d3b1f91b3924df32a6146189e57807098440e1efd81ba630e9e0df07f872913a"
+    },
+    {
+      "file": "tests/test_graphic_pilot.py",
+      "bytes": 4616,
+      "sha256": "182c3fa81d6186f03b182de6304d45e659b555b82db168caa6f110ddc9ed287b"
+    },
+    {
+      "file": "tests/test_s0922_delivery.py",
+      "bytes": 15135,
+      "sha256": "9e6861c808af88af015584126cba8eb3e3b1c69023f7ee0ea239f80d0e92125c"
+    },
+    {
+      "file": "tests-pilote.txt",
+      "bytes": 112,
+      "sha256": "eb7e51d894a091cd7ef4616ea3b836f4df6802df02340cc2a7ec6e2080500033"
+    },
+    {
+      "file": "travail/inspection/E-3/final-legend.jpg",
+      "bytes": 177134,
+      "sha256": "9719f6a2cfb063c47212b93c4501f86969096ce77dbca1b10deaf9a18d3e30e4"
+    },
+    {
+      "file": "travail/inspection/E-3/final-overview.jpg",
+      "bytes": 533945,
+      "sha256": "47f50b59f6cb5eee4b63f5ed4ffdbc0e0ad10c501e3b0c5940ce50251f3faa52"
+    },
+    {
+      "file": "travail/inspection/E-3/layout-report.json",
+      "bytes": 4023,
+      "sha256": "34209ce844ba28f064c8bc1f0e149d0fdda2448b4ec68a0ed961fc17f6a42ba2"
+    },
+    {
+      "file": "travail/methode/build_led.py",
+      "bytes": 4758,
+      "sha256": "21806f20292135622b87a67ce6aa122d9cdf2ff0b092534113accc028d78631b"
+    },
+    {
+      "file": "travail/methode/build_lighting.py",
+      "bytes": 4300,
+      "sha256": "fb6413ffefb139cedf93943afab08b205209bbdda59fe94ae4028be655bf199c"
+    },
+    {
+      "file": "travail/methode/build_panels.py",
+      "bytes": 9102,
+      "sha256": "829fed34dafa188cd9014ec8e57637261e698189ab1a97566879376398a07779"
+    },
+    {
+      "file": "travail/methode/build_services.py",
+      "bytes": 7133,
+      "sha256": "60cbd40a61624deee9cde6548fc7a8b7263e05549b4f5e7d037515390b139228"
+    },
+    {
+      "file": "travail/methode/download_plans.py",
+      "bytes": 2526,
+      "sha256": "f7482a41f684f1d7179dc3b4251d0495ac9bd7727dfe759ef8976ac35dd5bd95"
+    },
+    {
+      "file": "travail/methode/package_delivery.py",
+      "bytes": 11078,
+      "sha256": "d35bbd953c52b58ef833b5efcfe24a9c91820b8f14467094b7e904ca3f6a33db"
+    },
+    {
+      "file": "travail/methode/prepare_images.py",
+      "bytes": 1073,
+      "sha256": "aa6c3e60a9a96f6651c5f226171660f2a9759741da78a7f330cdae445dbedd9a"
+    },
+    {
+      "file": "travail/methode/render_sheet.py",
+      "bytes": 8489,
+      "sha256": "b241226222d7c72b28e890d20d0fc37699bcdeb2085e32c8b0fc36391379fe71"
+    },
+    {
+      "file": "travail/methode/sheet_data.py",
+      "bytes": 98256,
+      "sha256": "6a0f9879182a854cf65ffb156f2160a2a8cfde574a852a901b201769edb607ee"
+    },
+    {
+      "file": "travail/methode/verify_delivery.py",
+      "bytes": 8240,
+      "sha256": "7de309da94e6a7c370972af7e2a8fd8b0eb392359cb3d264df5fc06906951e55"
+    },
+    {
+      "file": "travail/sources/23-357-E-CO-CH-E1 (1) - 3.png",
+      "bytes": 8419673,
+      "sha256": "49ae234ce4892aaa591cb5aff1f614fdad615edb01d53258b4b3cdc2579c5266"
+    },
+    {
+      "file": "verification-paquet.txt",
+      "bytes": 571,
+      "sha256": "a4201469eccee3152b22ae3e624b05e151c9a6483425363de103ae6596b59c98"
+    }
+  ],
+  "qpl_global": "BLOCKED",
+  "construction_validation": false,
+  "published": false,
+  "v3_zip_sha256": "d550525df598584f01c89e78e3523ce0ec4aa96d88b12f70341ebdd5f78693c9"
+}

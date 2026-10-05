@@ -1,0 +1,178 @@
+{
+  "files": [
+    {
+      "original_local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E-3-pilote-graphique-v1.jpg",
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/S-0922-E-3-pilote-graphique-v1.jpg",
+      "file_id": "file_00000000887881fb999d22ce8f60fb4d",
+      "library_file_id": "libfile_341b7d1873bc8191bd623d6daaa3c4a8",
+      "file_name": "S-0922-E-3-pilote-graphique-v1.jpg",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ee581ed9e8d08191a21ea74e614b1b68",
+      "mime_type": "image/jpeg",
+      "library_artifact_type": "image",
+      "file_size_bytes": 14125894,
+      "local_xattrs_applied": false,
+      "metadata_helper_result": {
+        "chunk_id": "e8f1e6",
+        "wall_time_seconds": 0.256931541,
+        "exit_code": 1,
+        "original_token_count": 309,
+        "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 303, in <module>\r\n    raise SystemExit(main(sys.argv[1:]))\r\n                     ~~~~^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 288, in main\r\n    materializer.apply_xattrs(\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n        include_library_file_id_xattr(\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n        args.path,\r\n        ^^^^^^^^^^\r\n    )\r\n    ^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 246, in apply_xattrs\r\n    xattr.apply(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 64, in apply\r\n    os.setxattr(path, self.name, encoded_value)\r\n    ^^^^^^^^^^^\r\nAttributeError: module 'os' has no attribute 'setxattr'\r\n"
+      }
+    },
+    {
+      "original_local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-comparatif-pages-v1.jpg",
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/S-0922-E3-comparatif-pages-v1.jpg",
+      "file_id": "file_00000000481c81f5bb35d6db98464e8b",
+      "library_file_id": "libfile_ae9f1fa77724819182cd78db3b6a56ca",
+      "file_name": "S-0922-E3-comparatif-pages-v1.jpg",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ee581ed9e8d08191a21ea74e614b1b68",
+      "mime_type": "image/jpeg",
+      "library_artifact_type": "image",
+      "file_size_bytes": 597549,
+      "local_xattrs_applied": false,
+      "metadata_helper_result": {
+        "chunk_id": "0cf59b",
+        "wall_time_seconds": 0.248255656,
+        "exit_code": 1,
+        "original_token_count": 309,
+        "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 303, in <module>\r\n    raise SystemExit(main(sys.argv[1:]))\r\n                     ~~~~^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 288, in main\r\n    materializer.apply_xattrs(\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n        include_library_file_id_xattr(\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n        args.path,\r\n        ^^^^^^^^^^\r\n    )\r\n    ^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 246, in apply_xattrs\r\n    xattr.apply(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 64, in apply\r\n    os.setxattr(path, self.name, encoded_value)\r\n    ^^^^^^^^^^^\r\nAttributeError: module 'os' has no attribute 'setxattr'\r\n"
+      }
+    },
+    {
+      "original_local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-comparatif-legendes-6854-v1.png",
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/S-0922-E3-comparatif-legendes-6854-v1.png",
+      "file_id": "file_00000000cbc4822f83601699c3edbf9a",
+      "library_file_id": "libfile_97586d43eac88191a34550551d278f01",
+      "file_name": "S-0922-E3-comparatif-legendes-6854-v1.png",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ee581ed9e8d08191a21ea74e614b1b68",
+      "mime_type": "image/png",
+      "library_artifact_type": "image",
+      "file_size_bytes": 1554770,
+      "local_xattrs_applied": false,
+      "metadata_helper_result": {
+        "chunk_id": "fbcca7",
+        "wall_time_seconds": 0.244665691,
+        "exit_code": 1,
+        "original_token_count": 309,
+        "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 303, in <module>\r\n    raise SystemExit(main(sys.argv[1:]))\r\n                     ~~~~^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 288, in main\r\n    materializer.apply_xattrs(\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n        include_library_file_id_xattr(\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n        args.path,\r\n        ^^^^^^^^^^\r\n    )\r\n    ^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 246, in apply_xattrs\r\n    xattr.apply(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 64, in apply\r\n    os.setxattr(path, self.name, encoded_value)\r\n    ^^^^^^^^^^^\r\nAttributeError: module 'os' has no attribute 'setxattr'\r\n"
+      }
+    },
+    {
+      "original_local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-comparatif-reperes-6854-v1.jpg",
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/S-0922-E3-comparatif-reperes-6854-v1.jpg",
+      "file_id": "file_00000000913881f9ab6a48a634b06204",
+      "library_file_id": "libfile_86fde81d7ea88191b1b291fd4300fbee",
+      "file_name": "S-0922-E3-comparatif-reperes-6854-v1.jpg",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ee581ed9e8d08191a21ea74e614b1b68",
+      "mime_type": "image/jpeg",
+      "library_artifact_type": "image",
+      "file_size_bytes": 1021591,
+      "local_xattrs_applied": false,
+      "metadata_helper_result": {
+        "chunk_id": "b7424a",
+        "wall_time_seconds": 0.234640023,
+        "exit_code": 1,
+        "original_token_count": 309,
+        "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 303, in <module>\r\n    raise SystemExit(main(sys.argv[1:]))\r\n                     ~~~~^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 288, in main\r\n    materializer.apply_xattrs(\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n        include_library_file_id_xattr(\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n        args.path,\r\n        ^^^^^^^^^^\r\n    )\r\n    ^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 246, in apply_xattrs\r\n    xattr.apply(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 64, in apply\r\n    os.setxattr(path, self.name, encoded_value)\r\n    ^^^^^^^^^^^\r\nAttributeError: module 'os' has no attribute 'setxattr'\r\n"
+      }
+    },
+    {
+      "original_local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-controles-14-lineaires-v1.jpg",
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/S-0922-E3-controles-14-lineaires-v1.jpg",
+      "file_id": "file_000000006cd8820db81d6bf2abb35358",
+      "library_file_id": "libfile_355d13b4a6f88191931e96cc4f068371",
+      "file_name": "S-0922-E3-controles-14-lineaires-v1.jpg",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ee581ed9e8d08191a21ea74e614b1b68",
+      "mime_type": "image/jpeg",
+      "library_artifact_type": "image",
+      "file_size_bytes": 587840,
+      "local_xattrs_applied": false,
+      "metadata_helper_result": {
+        "chunk_id": "5826a0",
+        "wall_time_seconds": 0.231507789,
+        "exit_code": 1,
+        "original_token_count": 309,
+        "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 303, in <module>\r\n    raise SystemExit(main(sys.argv[1:]))\r\n                     ~~~~^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 288, in main\r\n    materializer.apply_xattrs(\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n        include_library_file_id_xattr(\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n        args.path,\r\n        ^^^^^^^^^^\r\n    )\r\n    ^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 246, in apply_xattrs\r\n    xattr.apply(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 64, in apply\r\n    os.setxattr(path, self.name, encoded_value)\r\n    ^^^^^^^^^^^\r\nAttributeError: module 'os' has no attribute 'setxattr'\r\n"
+      }
+    },
+    {
+      "original_local_path": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\S-0922-E3-controles-11-familles-v1.jpg",
+      "operation": "create_library_file",
+      "status": "succeeded",
+      "path": "/S-0922-E3-controles-11-familles-v1.jpg",
+      "file_id": "file_0000000036f0820cb9dfccf6a77f76b4",
+      "library_file_id": "libfile_7b5392628f908191a7320236dc336b1b",
+      "file_name": "S-0922-E3-controles-11-familles-v1.jpg",
+      "current_version_number": 0,
+      "restored_from_version_number": null,
+      "xattrs": [
+        {
+          "name": "user.library-file-version",
+          "value": "0"
+        }
+      ],
+      "directory_id": "libdir_ee581ed9e8d08191a21ea74e614b1b68",
+      "mime_type": "image/jpeg",
+      "library_artifact_type": "image",
+      "file_size_bytes": 685795,
+      "local_xattrs_applied": false,
+      "metadata_helper_result": {
+        "chunk_id": "d4a2e4",
+        "wall_time_seconds": 0.23201218,
+        "exit_code": 1,
+        "original_token_count": 309,
+        "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 303, in <module>\r\n    raise SystemExit(main(sys.argv[1:]))\r\n                     ~~~~^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 288, in main\r\n    materializer.apply_xattrs(\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^\r\n        include_library_file_id_xattr(\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n        args.path,\r\n        ^^^^^^^^^^\r\n    )\r\n    ^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 246, in apply_xattrs\r\n    xattr.apply(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v1\\remise-library\\helpers\\library_file_transfer.py\", line 64, in apply\r\n    os.setxattr(path, self.name, encoded_value)\r\n    ^^^^^^^^^^^\r\nAttributeError: module 'os' has no attribute 'setxattr'\r\n"
+      }
+    }
+  ]
+}

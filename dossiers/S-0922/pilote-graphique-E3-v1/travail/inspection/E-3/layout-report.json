@@ -1,0 +1,190 @@
+{
+  "sheet": "E-3",
+  "pilot": true,
+  "source_size": [
+    12623,
+    9467
+  ],
+  "legend_box": [
+    540,
+    25,
+    910,
+    275
+  ],
+  "rows": [
+    {
+      "family": "A",
+      "quantity": 26,
+      "column": 0,
+      "quantity_right": 979.0,
+      "label": "Cylindre 4 po Lithonia LDN4CYL"
+    },
+    {
+      "family": "B",
+      "quantity": 130,
+      "column": 0,
+      "quantity_right": 979.0,
+      "label": "Projecteur Juno R612L, 37 W"
+    },
+    {
+      "family": "C",
+      "quantity": 15,
+      "column": 0,
+      "quantity_right": 979.0,
+      "label": "Encastré orientable Gotham Incito 6 po"
+    },
+    {
+      "family": "G",
+      "quantity": 14,
+      "column": 0,
+      "quantity_right": 979.0,
+      "label": "Linéaire Signify Fluxstream"
+    },
+    {
+      "family": "IS",
+      "quantity": 6,
+      "column": 0,
+      "quantity_right": 979.0,
+      "label": "Indicateur de sortie"
+    },
+    {
+      "family": "PD",
+      "quantity": 8,
+      "column": 0,
+      "quantity_right": 979.0,
+      "label": "Paire de phares d’urgence"
+    },
+    {
+      "family": "BAT",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1434.0,
+      "label": "Batterie avec deux phares"
+    },
+    {
+      "family": "EU",
+      "quantity": 4,
+      "column": 1,
+      "quantity_right": 1434.0,
+      "label": "Phare d’urgence encastré"
+    },
+    {
+      "family": "I",
+      "quantity": 3,
+      "column": 1,
+      "quantity_right": 1434.0,
+      "label": "Interrupteur unipolaire"
+    },
+    {
+      "family": "MS",
+      "quantity": 2,
+      "column": 1,
+      "quantity_right": 1434.0,
+      "label": "Interrupteur maître (renvoi E-2)"
+    },
+    {
+      "family": "AL",
+      "quantity": 14,
+      "column": 1,
+      "quantity_right": 1434.0,
+      "label": "Raccordement de rail"
+    }
+  ],
+  "notes": [
+    "185 luminaires codés : A 26 + B 130 + C 15 + G 14. Chaque symbole a été relevé, sans extrapolation.",
+    "Urgence : 6 sorties, 8 paires de phares, 1 batterie à deux phares, 4 phares encastrés. La batterie compte pour un ensemble.",
+    "Les raccordements de rails sont distincts des luminaires; aucune longueur de rail ni de câbles n’est déduite.",
+    "MS-1 et MS-2 renvoient aux commandes du schéma E-2 : ne pas les additionner.",
+    "Éclairage mobilier / bandes DEL : voir E-5, version antérieure en réserve. Aucun luminaire de présentation architecturale ajouté.",
+    "RES / * : configuration des sorties à confirmer. Familles et modèles suivant cédules E-2 / E-3."
+  ],
+  "linear_boxes": {
+    "E-3-172": [
+      919.037,
+      379.735,
+      922.887,
+      438.058
+    ],
+    "E-3-173": [
+      919.037,
+      478.698,
+      922.887,
+      537.02
+    ],
+    "E-3-174": [
+      919.037,
+      587.499,
+      922.887,
+      645.679
+    ],
+    "E-3-175": [
+      919.037,
+      686.461,
+      922.887,
+      744.783
+    ],
+    "E-3-176": [
+      849.449,
+      817.223,
+      907.772,
+      821.073
+    ],
+    "E-3-177": [
+      793.124,
+      881.961,
+      796.831,
+      940.141
+    ],
+    "E-3-178": [
+      849.877,
+      881.961,
+      853.727,
+      940.141
+    ],
+    "E-3-179": [
+      906.773,
+      881.961,
+      910.481,
+      940.141
+    ],
+    "E-3-180": [
+      793.124,
+      976.646,
+      796.831,
+      1034.968
+    ],
+    "E-3-181": [
+      849.877,
+      976.646,
+      853.727,
+      1034.968
+    ],
+    "E-3-182": [
+      906.773,
+      976.646,
+      910.481,
+      1034.968
+    ],
+    "E-3-183": [
+      793.124,
+      1071.473,
+      796.831,
+      1129.652
+    ],
+    "E-3-184": [
+      849.877,
+      1071.473,
+      853.727,
+      1129.652
+    ],
+    "E-3-185": [
+      906.773,
+      1071.473,
+      910.481,
+      1129.652
+    ]
+  },
+  "marker_centres_unchanged": true,
+  "qpl_global": "BLOCKED",
+  "construction_validation": false
+}

@@ -1,0 +1,233 @@
+{
+  "sheet": "E-2",
+  "pilot": true,
+  "source_size": [
+    12623,
+    9467
+  ],
+  "legend_box": [
+    540,
+    25,
+    910,
+    275
+  ],
+  "rows": [
+    {
+      "family": "PN",
+      "quantity": 2,
+      "column": 0,
+      "quantity_right": 1336.5,
+      "label": "Panneau existant (renvoi E-4)"
+    },
+    {
+      "family": "SEC",
+      "quantity": 4,
+      "column": 0,
+      "quantity_right": 1336.5,
+      "label": "Sectionneur au schéma"
+    },
+    {
+      "family": "TR",
+      "quantity": 1,
+      "column": 0,
+      "quantity_right": 1336.5,
+      "label": "Transformateur existant à suspendre"
+    },
+    {
+      "family": "CT",
+      "quantity": 2,
+      "column": 0,
+      "quantity_right": 1336.5,
+      "label": "Contacteur éclairage"
+    },
+    {
+      "family": "TC",
+      "quantity": 1,
+      "column": 0,
+      "quantity_right": 1336.5,
+      "label": "Minuterie"
+    },
+    {
+      "family": "MS",
+      "quantity": 2,
+      "column": 0,
+      "quantity_right": 1336.5,
+      "label": "Interrupteur maître"
+    },
+    {
+      "family": "COM",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1589.0,
+      "label": "Compteur existant"
+    },
+    {
+      "family": "BJ",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1589.0,
+      "label": "Boîte au schéma"
+    },
+    {
+      "family": "REP",
+      "quantity": 2,
+      "column": 1,
+      "quantity_right": 1589.0,
+      "label": "Répartiteur existant"
+    },
+    {
+      "family": "DEM",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1589.0,
+      "label": "Démarreur au détail de principe"
+    },
+    {
+      "family": "RA",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1589.0,
+      "label": "Relais au détail de principe"
+    },
+    {
+      "family": "DG",
+      "quantity": 1,
+      "column": 1,
+      "quantity_right": 1589.0,
+      "label": "Détecteur de gaine au détail"
+    }
+  ],
+  "notes": [
+    "CÉDULES : P1 = 49; P2 = 42 disjoncteurs. 91 appareils, dont 8 marqués neufs dans la source.",
+    "Détail par circuit dans les CSV et le classeur. SPACE sans calibre exclu; SPARE avec calibre inclus.",
+    "P2-6 et P2-10 : calibres masqués. P2-14 : 20* lu, à confirmer. Aucun calibre substitué.",
+    "Pastilles : symboles du schéma uniquement. Les cédules ne sont pas des symboles d’appareils posés.",
+    "Ne pas additionner les panneaux et le transformateur au plan E-4. Détail incendie : 3 symboles de principe, pas des appareils supplémentaires. Câblage non métré.",
+    "Réserve : répartiteur secondaire noté 600 V au schéma après transformateur 120/208 V; à clarifier.",
+    "RES / * : réserve du relevé; distinct du * = disjoncteur neuf dans la source."
+  ],
+  "note_lines": [
+    "CÉDULES : P1 = 49; P2 = 42 disjoncteurs. 91 appareils, dont 8 marqués neufs dans la source.",
+    "Détail par circuit dans les CSV et le classeur. SPACE sans calibre exclu; SPARE avec calibre inclus.",
+    "P2-6 et P2-10 : calibres masqués. P2-14 : 20* lu, à confirmer. Aucun calibre substitué.",
+    "Pastilles : symboles du schéma uniquement. Les cédules ne sont pas des symboles d’appareils posés.",
+    "Ne pas additionner les panneaux et le transformateur au plan E-4. Détail incendie : 3 symboles de principe, pas des appareils",
+    "supplémentaires. Câblage non métré.",
+    "Réserve : répartiteur secondaire noté 600 V au schéma après transformateur 120/208 V; à clarifier.",
+    "RES / * : réserve du relevé; distinct du * = disjoncteur neuf dans la source."
+  ],
+  "linear_boxes": {},
+  "schematic_boxes": {
+    "E-2-002": [
+      1151.041749,
+      1261.839499,
+      1158.884576,
+      1269.397132
+    ],
+    "E-2-003": [
+      1176.709182,
+      1241.162957,
+      1194.105997,
+      1266.402598
+    ],
+    "E-2-004": [
+      1203.659986,
+      1241.162957,
+      1221.056801,
+      1266.402598
+    ],
+    "E-2-005": [
+      1230.61079,
+      1241.162957,
+      1248.150202,
+      1266.545195
+    ],
+    "E-2-006": [
+      1253.141092,
+      1241.162957,
+      1270.537907,
+      1266.402598
+    ],
+    "E-2-007": [
+      1318.878238,
+      1218.775252,
+      1364.93702,
+      1241.733344
+    ],
+    "E-2-008": [
+      1310.17983,
+      1265.547017,
+      1334.563891,
+      1297.631308
+    ],
+    "E-2-009": [
+      1348.253189,
+      1265.547017,
+      1372.779846,
+      1297.631308
+    ],
+    "E-2-010": [
+      1295.634952,
+      1269.682326,
+      1305.046344,
+      1278.951121
+    ],
+    "E-2-011": [
+      1295.634952,
+      1285.225382,
+      1305.046344,
+      1294.494177
+    ],
+    "E-2-012": [
+      1317.737463,
+      1300.911035,
+      1327.148855,
+      1310.17983
+    ],
+    "E-2-015": [
+      1176.566585,
+      1273.960231,
+      1283.656817,
+      1281.945655
+    ],
+    "E-2-016": [
+      1298.772083,
+      1249.718767,
+      1385.043175,
+      1257.704191
+    ],
+    "E-2-017": [
+      347.223323,
+      1016.287729,
+      355.351343,
+      1024.558346
+    ],
+    "E-2-018": [
+      347.223323,
+      1044.094114,
+      355.351343,
+      1052.364731
+    ]
+  },
+  "star_offsets": {
+    "E-2-007": [
+      13,
+      0
+    ],
+    "E-2-016": [
+      33,
+      -4
+    ],
+    "E-2-017": [
+      6,
+      -2
+    ],
+    "E-2-019": [
+      0,
+      -12
+    ]
+  },
+  "marker_centres_unchanged": true,
+  "qpl_global": "BLOCKED",
+  "construction_validation": false
+}

@@ -1,6 +1,7 @@
 """Render verified, manually anchored takeoff data onto the original raster."""
 import csv
 import json
+import os
 import sys
 import textwrap
 from collections import Counter
@@ -12,13 +13,13 @@ Image.MAX_IMAGE_PIXELS = None
 ROOT = Path(__file__).resolve().parent
 if ROOT.name == 'methode':
     ROOT = ROOT.parent
-FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+FONT = os.environ.get('S0922_FONT', 'arial.ttf' if sys.platform == 'win32' else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
 COLORS = ['#2C78BD','#AA59AD','#489C60','#D14465','#18A6A2','#AB864B','#7C77C4','#45909F','#B36344','#597232','#AD4789','#4A71A8']
 
 def render(sheet):
     data_path = ROOT/'data'/f'{sheet}.json'
     if data_path.exists():
-        data = json.loads(data_path.read_text())
+        data = json.loads(data_path.read_text(encoding='utf-8'))
     else:
         from sheet_data import SHEETS
         data = SHEETS[sheet]
@@ -60,7 +61,7 @@ def render(sheet):
     result=Image.alpha_composite(im.convert('RGBA'),overlay).convert('RGB')
     dest=ROOT/f'S-0922-{sheet}-releve.jpg';result.save(dest,quality=96,subsampling=0)
     result = Image.open(dest).convert('RGB')
-    folder=ROOT/'inspection'/sheet;folder.mkdir(exist_ok=True)
+    folder=ROOT/'inspection'/sheet;folder.mkdir(parents=True,exist_ok=True)
     result.crop(tuple(round(v*scale) for v in (x,y,x+w,y+h))).resize((round(w*2),round(h*2))).save(folder/'final-legend.jpg',quality=96)
     overview=result.copy();overview.thumbnail((1800,1500));overview.save(folder/'final-overview.jpg',quality=96)
     for name,box in data.get('verify_zones',{}).items():

@@ -1,0 +1,49 @@
+{
+  "id": "E-3-188",
+  "frozen_working_coordinate": [
+    804.4,
+    826.2
+  ],
+  "old_star_offset": [
+    4,
+    -6
+  ],
+  "new_star_offset": [
+    -1,
+    -13
+  ],
+  "old_star_bbox_px": [
+    5669,
+    5762,
+    5688,
+    5797
+  ],
+  "new_star_bbox_px": [
+    5634,
+    5713,
+    5653,
+    5748
+  ],
+  "new_star_source_pixels_below_200": 0,
+  "jpeg_difference_bbox_px": [
+    5632,
+    5712,
+    5688,
+    5784
+  ],
+  "local_comparison_mask_px": [
+    5618,
+    5697,
+    5704,
+    5813
+  ],
+  "pixels_different_outside_local_mask": 0,
+  "source_local_crop_px": [
+    5484,
+    5610,
+    5835,
+    5926
+  ],
+  "same_dimensions": true,
+  "qpl_global": "BLOCKED"
+}

@@ -1,0 +1,552 @@
+{
+  "E-2": [
+    {
+      "id": "E-2-007",
+      "offset": [
+        13,
+        0
+      ],
+      "ink_box_px": [
+        9501,
+        8622,
+        9518,
+        8637
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-2-016",
+      "offset": [
+        33,
+        -4
+      ],
+      "ink_box_px": [
+        9644,
+        8776,
+        9661,
+        8791
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-2-017",
+      "offset": [
+        6,
+        -2
+      ],
+      "ink_box_px": [
+        2505,
+        7153,
+        2522,
+        7168
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-2-018",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        2491,
+        7319,
+        2508,
+        7334
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-2-019",
+      "offset": [
+        0,
+        -12
+      ],
+      "ink_box_px": [
+        3187,
+        7240,
+        3204,
+        7255
+      ],
+      "source_min_under_ink": 255
+    }
+  ],
+  "E-4": [
+    {
+      "id": "E-4-069",
+      "offset": [
+        6,
+        -6
+      ],
+      "ink_box_px": [
+        6618,
+        6076,
+        6635,
+        6091
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-072",
+      "offset": [
+        -7,
+        -6
+      ],
+      "ink_box_px": [
+        5644,
+        5645,
+        5661,
+        5660
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-073",
+      "offset": [
+        4,
+        -12
+      ],
+      "ink_box_px": [
+        5852,
+        6046,
+        5869,
+        6061
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-074",
+      "offset": [
+        4,
+        -8
+      ],
+      "ink_box_px": [
+        5704,
+        7792,
+        5721,
+        7807
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-075",
+      "offset": [
+        4,
+        -7
+      ],
+      "ink_box_px": [
+        6095,
+        8019,
+        6112,
+        8034
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-076",
+      "offset": [
+        8,
+        -7
+      ],
+      "ink_box_px": [
+        5829,
+        5653,
+        5846,
+        5668
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-077",
+      "offset": [
+        8,
+        -7
+      ],
+      "ink_box_px": [
+        5829,
+        7803,
+        5846,
+        7818
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-080",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        6428,
+        6236,
+        6445,
+        6251
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-081",
+      "offset": [
+        6,
+        -6
+      ],
+      "ink_box_px": [
+        6614,
+        5981,
+        6631,
+        5996
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-082",
+      "offset": [
+        6,
+        -6
+      ],
+      "ink_box_px": [
+        6612,
+        6474,
+        6629,
+        6489
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-083",
+      "offset": [
+        6,
+        -6
+      ],
+      "ink_box_px": [
+        6612,
+        6587,
+        6629,
+        6602
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-084",
+      "offset": [
+        5,
+        -6
+      ],
+      "ink_box_px": [
+        6612,
+        6695,
+        6629,
+        6710
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-085",
+      "offset": [
+        5,
+        -6
+      ],
+      "ink_box_px": [
+        6612,
+        6782,
+        6629,
+        6797
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-088",
+      "offset": [
+        4,
+        -8
+      ],
+      "ink_box_px": [
+        2951,
+        8887,
+        2968,
+        8902
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-089",
+      "offset": [
+        4.428543,
+        -6.449497
+      ],
+      "ink_box_px": [
+        1922,
+        4481,
+        1939,
+        4496
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-091",
+      "offset": [
+        5,
+        -6
+      ],
+      "ink_box_px": [
+        3185,
+        8860,
+        3202,
+        8875
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-092",
+      "offset": [
+        5,
+        -6
+      ],
+      "ink_box_px": [
+        3716,
+        8860,
+        3733,
+        8875
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-093",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        1495,
+        5188,
+        1512,
+        5203
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-094",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        2897,
+        5263,
+        2914,
+        5278
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-095",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        3650,
+        5263,
+        3667,
+        5278
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-096",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        4964,
+        5185,
+        4981,
+        5200
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-097",
+      "offset": [
+        4,
+        -12
+      ],
+      "ink_box_px": [
+        6242,
+        4884,
+        6259,
+        4899
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-098",
+      "offset": [
+        5,
+        -6
+      ],
+      "ink_box_px": [
+        6616,
+        5405,
+        6633,
+        5420
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-099",
+      "offset": [
+        4,
+        -8
+      ],
+      "ink_box_px": [
+        5679,
+        5545,
+        5696,
+        5560
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-100",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        3241,
+        7558,
+        3258,
+        7573
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-101",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        3241,
+        7803,
+        3258,
+        7818
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-102",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        1406,
+        8844,
+        1423,
+        8859
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-103",
+      "offset": [
+        4,
+        -9
+      ],
+      "ink_box_px": [
+        5990,
+        8024,
+        6007,
+        8039
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-104",
+      "offset": [
+        3,
+        -8
+      ],
+      "ink_box_px": [
+        4994,
+        8830,
+        5011,
+        8845
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-105",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        5073,
+        8844,
+        5090,
+        8859
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-106",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        3274,
+        5817,
+        3291,
+        5832
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-107",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        3241,
+        7682,
+        3258,
+        7697
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-108",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        6280,
+        5576,
+        6297,
+        5591
+      ],
+      "source_min_under_ink": 255
+    },
+    {
+      "id": "E-4-109",
+      "offset": [
+        4,
+        -6
+      ],
+      "ink_box_px": [
+        3448,
+        8930,
+        3465,
+        8945
+      ],
+      "source_min_under_ink": 255
+    }
+  ]
+}

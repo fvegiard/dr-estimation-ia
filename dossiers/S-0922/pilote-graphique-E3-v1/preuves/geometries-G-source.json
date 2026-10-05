@@ -1,0 +1,275 @@
+{
+  "E-3-172": {
+    "source_bbox": [
+      6448,
+      2666,
+      6469,
+      3069
+    ],
+    "outline_working": [
+      919.037,
+      379.735,
+      922.887,
+      438.058
+    ],
+    "anchor_unchanged": [
+      921.0,
+      409.0
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-173": {
+    "source_bbox": [
+      6448,
+      3360,
+      6469,
+      3763
+    ],
+    "outline_working": [
+      919.037,
+      478.698,
+      922.887,
+      537.02
+    ],
+    "anchor_unchanged": [
+      921.0,
+      507.8
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-174": {
+    "source_bbox": [
+      6448,
+      4123,
+      6469,
+      4525
+    ],
+    "outline_working": [
+      919.037,
+      587.499,
+      922.887,
+      645.679
+    ],
+    "anchor_unchanged": [
+      921.0,
+      616.6
+    ],
+    "orientation": "vertical",
+    "connected_component_bbox_before_review": [
+      6448,
+      4123,
+      6469,
+      4525
+    ],
+    "review_note": "La composante touche le nuage de révision. Bord droit du luminaire limité à x=6469 px, confirmé sur la source, comme les trois G du même alignement."
+  },
+  "E-3-175": {
+    "source_bbox": [
+      6448,
+      4817,
+      6469,
+      5220
+    ],
+    "outline_working": [
+      919.037,
+      686.461,
+      922.887,
+      744.783
+    ],
+    "anchor_unchanged": [
+      921.0,
+      715.5
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-176": {
+    "source_bbox": [
+      5960,
+      5734,
+      6363,
+      5755
+    ],
+    "outline_working": [
+      849.449,
+      817.223,
+      907.772,
+      821.073
+    ],
+    "anchor_unchanged": [
+      878,
+      819.1
+    ],
+    "orientation": "horizontal"
+  },
+  "E-3-177": {
+    "source_bbox": [
+      5565,
+      6188,
+      5585,
+      6590
+    ],
+    "outline_working": [
+      793.124,
+      881.961,
+      796.831,
+      940.141
+    ],
+    "anchor_unchanged": [
+      794.9,
+      911.1
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-178": {
+    "source_bbox": [
+      5963,
+      6188,
+      5984,
+      6590
+    ],
+    "outline_working": [
+      849.877,
+      881.961,
+      853.727,
+      940.141
+    ],
+    "anchor_unchanged": [
+      851.7,
+      911.1
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-179": {
+    "source_bbox": [
+      6362,
+      6188,
+      6382,
+      6590
+    ],
+    "outline_working": [
+      906.773,
+      881.961,
+      910.481,
+      940.141
+    ],
+    "anchor_unchanged": [
+      908.5,
+      911.1
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-180": {
+    "source_bbox": [
+      5565,
+      6852,
+      5585,
+      7255
+    ],
+    "outline_working": [
+      793.124,
+      976.646,
+      796.831,
+      1034.968
+    ],
+    "anchor_unchanged": [
+      794.9,
+      1006.5
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-181": {
+    "source_bbox": [
+      5963,
+      6852,
+      5984,
+      7255
+    ],
+    "outline_working": [
+      849.877,
+      976.646,
+      853.727,
+      1034.968
+    ],
+    "anchor_unchanged": [
+      851.7,
+      1006.5
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-182": {
+    "source_bbox": [
+      6362,
+      6852,
+      6382,
+      7255
+    ],
+    "outline_working": [
+      906.773,
+      976.646,
+      910.481,
+      1034.968
+    ],
+    "anchor_unchanged": [
+      908.5,
+      1006.5
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-183": {
+    "source_bbox": [
+      5565,
+      7517,
+      5585,
+      7919
+    ],
+    "outline_working": [
+      793.124,
+      1071.473,
+      796.831,
+      1129.652
+    ],
+    "anchor_unchanged": [
+      794.9,
+      1100.6
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-184": {
+    "source_bbox": [
+      5963,
+      7517,
+      5984,
+      7919
+    ],
+    "outline_working": [
+      849.877,
+      1071.473,
+      853.727,
+      1129.652
+    ],
+    "anchor_unchanged": [
+      851.7,
+      1100.6
+    ],
+    "orientation": "vertical"
+  },
+  "E-3-185": {
+    "source_bbox": [
+      6362,
+      7517,
+      6382,
+      7919
+    ],
+    "outline_working": [
+      906.773,
+      1071.473,
+      910.481,
+      1129.652
+    ],
+    "anchor_unchanged": [
+      908.5,
+      1100.6
+    ],
+    "orientation": "vertical"
+  }
+}

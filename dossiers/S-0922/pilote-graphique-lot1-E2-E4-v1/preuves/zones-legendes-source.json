@@ -1,0 +1,52 @@
+{
+  "E-2": {
+    "legend_box": [
+      1100,
+      300,
+      505,
+      330
+    ],
+    "source_box_px": [
+      7714,
+      2104,
+      11256,
+      4418
+    ],
+    "nonwhite_source_pixels": 0,
+    "source_sha256": "7aa0fe363dc4ece358113518b8af4da9af7664a95fc52334cd0262c95da91862",
+    "reference": "Granby-E301-page08-releve.jpg",
+    "reference_sha256": "f79485afab37ee5b2aace540a6d0fd316f645f352ac8f945bb52b754c81ea084",
+    "reference_legend_box_px": [
+      270,
+      125,
+      5075,
+      680
+    ],
+    "comparison_normalized_page_width": 6854
+  },
+  "E-4": {
+    "legend_box": [
+      1110,
+      415,
+      500,
+      425
+    ],
+    "source_box_px": [
+      7784,
+      2910,
+      11291,
+      5891
+    ],
+    "nonwhite_source_pixels": 0,
+    "source_sha256": "e9ae8b73ad6c3cc76f3203e5449589e619bc0ae8639e4dda4c8a89b509f381a8",
+    "reference": "Granby-E501-releve.jpg",
+    "reference_sha256": "eab8ba5e42257abff176b2c6f95f43ddc639864f8963489572b8803651c2c053",
+    "reference_legend_box_px": [
+      665,
+      3540,
+      5690,
+      4300
+    ],
+    "comparison_normalized_page_width": 6854
+  }
+}

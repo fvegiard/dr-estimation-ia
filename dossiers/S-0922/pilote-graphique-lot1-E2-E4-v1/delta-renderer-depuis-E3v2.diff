@@ -1,0 +1,105 @@
+--- E3-v2/methode/render_sheet.py
++++ lot1/methode/render_sheet.py
+@@ -19,11 +19,17 @@
+ # Pilote E-3 : cadres mesurés sur les contours source, pas de métré déduit.
+ PILOT_LINEAR_BOXES = {'E-3-172': [919.037, 379.735, 922.887, 438.058], 'E-3-173': [919.037, 478.698, 922.887, 537.02], 'E-3-174': [919.037, 587.499, 922.887, 645.679], 'E-3-175': [919.037, 686.461, 922.887, 744.783], 'E-3-176': [849.449, 817.223, 907.772, 821.073], 'E-3-177': [793.124, 881.961, 796.831, 940.141], 'E-3-178': [849.877, 881.961, 853.727, 940.141], 'E-3-179': [906.773, 881.961, 910.481, 940.141], 'E-3-180': [793.124, 976.646, 796.831, 1034.968], 'E-3-181': [849.877, 976.646, 853.727, 1034.968], 'E-3-182': [906.773, 976.646, 910.481, 1034.968], 'E-3-183': [793.124, 1071.473, 796.831, 1129.652], 'E-3-184': [849.877, 1071.473, 853.727, 1129.652], 'E-3-185': [906.773, 1071.473, 910.481, 1129.652]}
+ PILOT_LEGEND_BOX = (540,25,910,275)
++# Emplacements propres à chaque feuille, vérifiés dans le raster source.
++PILOT_LEGEND_BOXES = {'E-2': (1100,300,505,330), 'E-3': PILOT_LEGEND_BOX,
++                      'E-4': (1110,415,500,425)}
++PILOT_SCHEMATIC_BOXES = {'E-2-002': [1151.041749, 1261.839499, 1158.884576, 1269.397132], 'E-2-003': [1176.709182, 1241.162957, 1194.105997, 1266.402598], 'E-2-004': [1203.659986, 1241.162957, 1221.056801, 1266.402598], 'E-2-005': [1230.61079, 1241.162957, 1248.150202, 1266.545195], 'E-2-006': [1253.141092, 1241.162957, 1270.537907, 1266.402598], 'E-2-007': [1318.878238, 1218.775252, 1364.93702, 1241.733344], 'E-2-008': [1310.17983, 1265.547017, 1334.563891, 1297.631308], 'E-2-009': [1348.253189, 1265.547017, 1372.779846, 1297.631308], 'E-2-010': [1295.634952, 1269.682326, 1305.046344, 1278.951121], 'E-2-011': [1295.634952, 1285.225382, 1305.046344, 1294.494177], 'E-2-012': [1317.737463, 1300.911035, 1327.148855, 1310.17983], 'E-2-015': [1176.566585, 1273.960231, 1283.656817, 1281.945655], 'E-2-016': [1298.772083, 1249.718767, 1385.043175, 1257.704191], 'E-2-017': [347.223323, 1016.287729, 355.351343, 1024.558346], 'E-2-018': [347.223323, 1044.094114, 355.351343, 1052.364731]}
++PILOT_STAR_OFFSETS = {'E-3-188': [-1, -13], 'E-2-007': [13, 0], 'E-2-016': [33, -4], 'E-2-017': [6, -2], 'E-2-019': [0, -12], 'E-4-069': [6, -6], 'E-4-072': [-7, -6], 'E-4-073': [4, -12], 'E-4-074': [4, -8], 'E-4-075': [4, -7], 'E-4-076': [8, -7], 'E-4-077': [8, -7], 'E-4-081': [6, -6], 'E-4-082': [6, -6], 'E-4-083': [6, -6], 'E-4-084': [5, -6], 'E-4-085': [5, -6], 'E-4-088': [4, -8], 'E-4-091': [5, -6], 'E-4-092': [5, -6], 'E-4-097': [4, -12], 'E-4-098': [5, -6], 'E-4-099': [4, -8], 'E-4-103': [4, -9], 'E-4-104': [3, -8], 'E-4-089': [4.428543, -6.449497]}
++PILOT_TITLES = {'E-2': 'DISTRIBUTION', 'E-3': 'ÉCLAIRAGE', 'E-4': 'SERVICES ET INCENDIE'}
+ 
+ 
+ def render(sheet, pilot=False):
+-    if pilot and sheet != "E-3":
+-        raise ValueError("Le pilote graphique est limité à E-3.")
++    if pilot and sheet not in PILOT_LEGEND_BOXES:
++        raise ValueError("Le lot graphique est limité à E-2, E-3 et E-4.")
+     data_path = ROOT/'data'/f'{sheet}.json'
+     if data_path.exists():
+         data = json.loads(data_path.read_text(encoding='utf-8'))
+@@ -46,21 +52,28 @@
+         if pilot and m['id'] in PILOT_LINEAR_BOXES:
+             draw.rectangle(tuple(round(v*scale) for v in PILOT_LINEAR_BOXES[m['id']]),
+                            fill=color+'40',outline=color,width=max(2,round(.55*scale)))
++        elif pilot and m['id'] in PILOT_SCHEMATIC_BOXES:
++            draw.rectangle(tuple(round(v*scale) for v in PILOT_SCHEMATIC_BOXES[m['id']]),
++                           outline=color,width=max(2,round(.55*scale)))
+         else:
+             draw.ellipse(tuple(round(v*scale) for v in (x-r,y-r,x+r,y+r)),fill=color+'40',outline=color,width=max(2,round(.55*scale)))
+         if m.get('reserve'):
+-            # E-3-188 : étoile dans le blanc au-dessus du symbole, hors du libellé 3(P1).
+-            dx,dy=(-1,-13) if pilot and m['id']=='E-3-188' else (4,-6)
++            # Décalages d'affichage seulement : coordonnées métier inchangées.
++            dx,dy=PILOT_STAR_OFFSETS.get(m['id'],(4,-6)) if pilot else (4,-6)
+             text(x+dx,y+dy,'*',7,color)
+     if pilot:
+-        x,y,w,h=PILOT_LEGEND_BOX
++        x,y,w,h=PILOT_LEGEND_BOXES[sheet]
+         draw.rectangle(tuple(round(v*scale) for v in (x,y,x+w,y+h)),fill='white',outline='#999999',width=round(.5*scale))
+-        text(x+12,y+10,f'RELEVÉ {sheet} — ÉCLAIRAGE',13)
++        text(x+12,y+10,f'RELEVÉ {sheet} — {PILOT_TITLES[sheet]}',13)
+         text(x+12,y+31,data['title'],9)
+         counts=Counter(m['family'] for m in markers)
+         reserves=sum(bool(m.get('reserve')) for m in markers)
+-        total_lighting=sum(counts[k] for k in ['A','B','C','G'])
+-        text(x+12,y+47,f'{total_lighting} luminaires codés / {len(markers)} repères / {len(counts)} familles / RES {reserves}',8.5)
++        if sheet == 'E-3':
++            total_lighting=sum(counts[k] for k in ['A','B','C','G'])
++            summary=f'{total_lighting} luminaires codés / {len(markers)} repères / {len(counts)} familles / RES {reserves}'
++        else:
++            summary=f'{len(markers)} repères / {len(counts)} familles / RES {reserves}'
++        text(x+12,y+47,summary,8.5)
+         rows=[(key,description,counts[key]) for key,description in families.items() if counts[key]]
+         split=(len(rows)+1)//2
+         row_report=[]
+@@ -70,6 +83,8 @@
+             color=colors[key]
+             if key=='G':
+                 draw.rectangle(tuple(round(v*scale) for v in (xx,yy+3,xx+12,yy+6)),fill=color+'40',outline=color,width=max(2,round(.55*scale)))
++            elif sheet == 'E-2' and key not in {'COM','MS','DG'}:
++                draw.rectangle(tuple(round(v*scale) for v in (xx+2,yy+2,xx+12,yy+8)),outline=color,width=max(2,round(.55*scale)))
+             else:
+                 draw.ellipse(tuple(round(v*scale) for v in (xx+3,yy+2,xx+9,yy+8)),fill=color+'50',outline=color,width=max(2,round(.55*scale)))
+             label=f'{key}  {description}'
+@@ -83,17 +98,33 @@
+             text(quantity_right-quantity_width,yy,str(count),8.5)
+             row_report.append(dict(family=key,quantity=count,column=column,quantity_right=quantity_right,label=description))
+         yy=y+69+split*15+10
++        note_lines=[]
+         for note in data['notes']:
+-            text(x+12,yy,note,8)
+             font=ImageFont.truetype(FONT,round(8*scale))
+-            if draw.textlength(note,font=font)/scale>w-24:
+-                raise ValueError(('Note trop large pour la légende pilote',note))
+-            yy+=14
++            lines=[note]
++            if sheet != 'E-3':
++                lines=[]; line=''
++                for word in note.split():
++                    candidate=(line+' '+word).strip()
++                    if line and draw.textlength(candidate,font=font)/scale>w-24:
++                        lines.append(line); line=word
++                    else:
++                        line=candidate
++                lines.append(line)
++            for line in lines:
++                if draw.textlength(line,font=font)/scale>w-24:
++                    raise ValueError(('Note trop large pour la légende pilote',line))
++                text(x+12,yy,line,8)
++                note_lines.append(line)
++                yy+=14
+         text(x+12,yy+2,'PILOTE GRAPHIQUE — QPL GLOBAL BLOQUÉ / AUCUNE VALIDATION DE CHANTIER',7)
+         if yy+13>y+h:
+             raise ValueError(('Légende pilote hors cadre',yy,y+h))
+         layout_report=dict(sheet=sheet,pilot=True,source_size=im.size,legend_box=PILOT_LEGEND_BOX,
+-                           rows=row_report,notes=data['notes'],linear_boxes=PILOT_LINEAR_BOXES,
++                           rows=row_report,notes=data['notes'],note_lines=note_lines,
++                           linear_boxes=PILOT_LINEAR_BOXES if sheet == 'E-3' else {},
++                           schematic_boxes=PILOT_SCHEMATIC_BOXES if sheet == 'E-2' else {},
++                           star_offsets={k:v for k,v in PILOT_STAR_OFFSETS.items() if k.startswith(sheet+'-')},
+                            marker_centres_unchanged=True,qpl_global='BLOCKED',construction_validation=False)
+     else:
+         x,y,w,h=data['legend_box']

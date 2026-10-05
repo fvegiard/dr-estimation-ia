@@ -1,0 +1,341 @@
+{
+  "status": "Delta local E-3-188 figé pour revue indépendante; non généralisé",
+  "archive": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-2\\S-0922-review\\dossiers\\S-0922\\pilote-graphique-E3-v2\\S-0922-pilote-graphique-E3-v2.zip",
+  "bytes": 57040109,
+  "sha256": "217bab956699ccd586752bd736aa8d45c1f0c7aef8d0cee0c1c1110de806c066",
+  "archive_entries": 61,
+  "jpeg_pilote": {
+    "file": "paquet/S-0922-E-3-releve.jpg",
+    "bytes": 14124562,
+    "sha256": "5b8987009d40a2490b6188330f1f0eb7a41f53731eafcdd7b0319f31e8c1f2d8",
+    "dimensions": [
+      12623,
+      9467
+    ]
+  },
+  "tests": {
+    "passed": 59,
+    "seconds": 79.3,
+    "after_final_render": true
+  },
+  "packet_files": 27,
+  "manifest_entries": 26,
+  "packet_changed_vs_v1": [
+    "S-0922-E-3-releve.jpg",
+    "methode/render_sheet.py",
+    "manifest.json"
+  ],
+  "v1_frozen_files_unchanged": 59,
+  "v1_archive_sha256": "a02dcffb26f8693795f030d12165d5ba43e8aebaceae5c43464c86f1e11ab901",
+  "historical_business_files_unchanged": 16,
+  "pilot_business_files_unchanged": 15,
+  "qpl_global": "BLOCKED",
+  "construction_validation": false,
+  "frozen_files": [
+    {
+      "file": "baseline-v3.json",
+      "bytes": 1935,
+      "sha256": "bcb27e4523c92028977e2aec012f0898794d6762f9a13248af2f16a0942f005c"
+    },
+    {
+      "file": "delta-renderer-v1-v2.diff",
+      "bytes": 796,
+      "sha256": "72e51e848b1e969a90b000f7c06a8ba6c4bdef37cec0d679b4e413172c7a5eb9"
+    },
+    {
+      "file": "paquet/CHECKPOINT.json",
+      "bytes": 2963,
+      "sha256": "34d3baf64123d6c332e76937295344e44fb2692876db8ca3f7d209e05ec1655c"
+    },
+    {
+      "file": "paquet/manifest.json",
+      "bytes": 4002,
+      "sha256": "63f53344254b7d75d8631b3aeee4ad24da1e482ff5459712d8cd72734a0becef"
+    },
+    {
+      "file": "paquet/methode/build_led.py",
+      "bytes": 4758,
+      "sha256": "21806f20292135622b87a67ce6aa122d9cdf2ff0b092534113accc028d78631b"
+    },
+    {
+      "file": "paquet/methode/build_lighting.py",
+      "bytes": 4300,
+      "sha256": "fb6413ffefb139cedf93943afab08b205209bbdda59fe94ae4028be655bf199c"
+    },
+    {
+      "file": "paquet/methode/build_panels.py",
+      "bytes": 9102,
+      "sha256": "829fed34dafa188cd9014ec8e57637261e698189ab1a97566879376398a07779"
+    },
+    {
+      "file": "paquet/methode/build_services.py",
+      "bytes": 7133,
+      "sha256": "60cbd40a61624deee9cde6548fc7a8b7263e05549b4f5e7d037515390b139228"
+    },
+    {
+      "file": "paquet/methode/download_plans.py",
+      "bytes": 2526,
+      "sha256": "f7482a41f684f1d7179dc3b4251d0495ac9bd7727dfe759ef8976ac35dd5bd95"
+    },
+    {
+      "file": "paquet/methode/package_delivery.py",
+      "bytes": 11078,
+      "sha256": "d35bbd953c52b58ef833b5efcfe24a9c91820b8f14467094b7e904ca3f6a33db"
+    },
+    {
+      "file": "paquet/methode/prepare_images.py",
+      "bytes": 1073,
+      "sha256": "aa6c3e60a9a96f6651c5f226171660f2a9759741da78a7f330cdae445dbedd9a"
+    },
+    {
+      "file": "paquet/methode/render_sheet.py",
+      "bytes": 8667,
+      "sha256": "0e7e79bd820270dded3142b3655b3b621974ae670ef6cae6637836876b52537c"
+    },
+    {
+      "file": "paquet/methode/sheet_data.py",
+      "bytes": 98256,
+      "sha256": "6a0f9879182a854cf65ffb156f2160a2a8cfde574a852a901b201769edb607ee"
+    },
+    {
+      "file": "paquet/methode/verify_delivery.py",
+      "bytes": 8240,
+      "sha256": "7de309da94e6a7c370972af7e2a8fd8b0eb392359cb3d264df5fc06906951e55"
+    },
+    {
+      "file": "paquet/READ-ME.txt",
+      "bytes": 7467,
+      "sha256": "b66bc583c0f55ef75041b0748a1fddb6445ee941783b3b00465e75aa5a92f6b0"
+    },
+    {
+      "file": "paquet/S-0922-breakers-by-panel.xlsx",
+      "bytes": 18089,
+      "sha256": "263e85ab38326c0b0b9a9cbc90f741015da7e1f36ee1d09ba767b32edb7c37b5"
+    },
+    {
+      "file": "paquet/S-0922-breakers-detailed.csv",
+      "bytes": 12143,
+      "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
+    },
+    {
+      "file": "paquet/S-0922-E-1-details.csv",
+      "bytes": 1089,
+      "sha256": "c4493a1489933e6f4e287dda0a9f3711b4782c85dfb1fd515d1b8c13bacdfb20"
+    },
+    {
+      "file": "paquet/S-0922-E-1-releve.jpg",
+      "bytes": 22945136,
+      "sha256": "10c7ac4319bf781ec455cc7ce348a8b5288a227f1191eb5ab9704c158ceeb1cb"
+    },
+    {
+      "file": "paquet/S-0922-E-2-breakers.csv",
+      "bytes": 12143,
+      "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
+    },
+    {
+      "file": "paquet/S-0922-E-2-details.csv",
+      "bytes": 441,
+      "sha256": "93a6c4756cf31a3ae45d8f7829dcb1ceaae44207fb7e6dcbde030fa7387f12eb"
+    },
+    {
+      "file": "paquet/S-0922-E-2-equipment.csv",
+      "bytes": 2420,
+      "sha256": "720795796af4abc3bc808f5f1a2bb54cfe320de11c33baf0099eaf39d3f5003c"
+    },
+    {
+      "file": "paquet/S-0922-E-2-releve.jpg",
+      "bytes": 12100648,
+      "sha256": "68d094f3c58b46a7772bb6849cc153b9aeb8d14e8bfd5fe796b5bd56c051595e"
+    },
+    {
+      "file": "paquet/S-0922-E-3-equipment.csv",
+      "bytes": 26168,
+      "sha256": "58c87f8f055a71f143e45cdb0f2747e96741e9989922a8210f37fbd78edc8416"
+    },
+    {
+      "file": "paquet/S-0922-E-3-releve.jpg",
+      "bytes": 14124562,
+      "sha256": "5b8987009d40a2490b6188330f1f0eb7a41f53731eafcdd7b0319f31e8c1f2d8"
+    },
+    {
+      "file": "paquet/S-0922-E-4-equipment.csv",
+      "bytes": 15355,
+      "sha256": "de3cb0be33265a037a7446bdd0e59451000f5902d00e4fd44716487e97bbdf35"
+    },
+    {
+      "file": "paquet/S-0922-E-4-releve.jpg",
+      "bytes": 14521663,
+      "sha256": "a9109178a547c0de80f5320f3ea3ddd3f4fa8d94230087921bb1e429dc9eadb1"
+    },
+    {
+      "file": "paquet/S-0922-E-5-equipment.csv",
+      "bytes": 22880,
+      "sha256": "9fbfd4326050074b2c61b99465af6661833a8f3394f22d8d6d41de5cd17faf0f"
+    },
+    {
+      "file": "paquet/S-0922-E-5-releve.jpg",
+      "bytes": 6514585,
+      "sha256": "8e9c022e85d299264177a018dbd3b17cbda72c4fbc6f7e5c132149f7ec355f66"
+    },
+    {
+      "file": "preuves/conservation-v1-v2.json",
+      "bytes": 1547,
+      "sha256": "5f24a001bc439c7c1abc4fea8d2b9d6aeb3bc66743622ae35774ea321b73c09d"
+    },
+    {
+      "file": "preuves/delta-pixels-E3-188.json",
+      "bytes": 714,
+      "sha256": "426d4ed12044b5ae9591af3c1a2fe61116cbc6d0cd547f0ddad715380c1268fc"
+    },
+    {
+      "file": "preuves/E3-188-source-v1-v2.jpg",
+      "bytes": 246854,
+      "sha256": "a610841d02f22f9e187a9c031e04a6c2b3189dcc52237915aabe23c3ee7407d4"
+    },
+    {
+      "file": "rendu-v2.txt",
+      "bytes": 120,
+      "sha256": "e1a51b81710ed8ce13899d5a277a1b5f136c24df38a1d25a0a1661440366654b"
+    },
+    {
+      "file": "REVUE-DELTA-PILOTE-E3-v2.md",
+      "bytes": 5787,
+      "sha256": "9747625831dfa501df69911a81278a82ec43d9613f916f42a0ef432bc9348fa3"
+    },
+    {
+      "file": "tests/test_graphic_pilot.py",
+      "bytes": 4616,
+      "sha256": "182c3fa81d6186f03b182de6304d45e659b555b82db168caa6f110ddc9ed287b"
+    },
+    {
+      "file": "tests/test_reserve_188_delta.py",
+      "bytes": 2378,
+      "sha256": "63fd88cd657d17248139ebe9dce7d182e349fa5b1c10d28070289b0ff4f380c7"
+    },
+    {
+      "file": "tests/test_s0922_delivery.py",
+      "bytes": 15135,
+      "sha256": "9e6861c808af88af015584126cba8eb3e3b1c69023f7ee0ea239f80d0e92125c"
+    },
+    {
+      "file": "tests-apres-rendu-v2.txt",
+      "bytes": 112,
+      "sha256": "6ab926e4b7be1e0b41481f1bdaedee17ddbd91cd1071bea0fcdb6dc326b4860a"
+    },
+    {
+      "file": "tests-premier-passage-v2.txt",
+      "bytes": 2313,
+      "sha256": "efee2534bee27f8827b07b2334a6a7e1c19ad53a04dc23465c6bd80b141ce6e0"
+    },
+    {
+      "file": "travail/inspection/E-3/final-center.jpg",
+      "bytes": 344822,
+      "sha256": "45fe6f4c7b794006ad56358ccabf44ae6f4dcb5e0c59f43e164c8e2c66252e29"
+    },
+    {
+      "file": "travail/inspection/E-3/final-corridor.jpg",
+      "bytes": 39305,
+      "sha256": "43a74de8da5f8371fc43d3a361c07bbe49fb59983ca72ec4d422627d583805d0"
+    },
+    {
+      "file": "travail/inspection/E-3/final-legend.jpg",
+      "bytes": 177134,
+      "sha256": "9719f6a2cfb063c47212b93c4501f86969096ce77dbca1b10deaf9a18d3e30e4"
+    },
+    {
+      "file": "travail/inspection/E-3/final-ne.jpg",
+      "bytes": 263768,
+      "sha256": "a2bf390027633e58066e58d66e521a0c7c7cd06ba2e801b4686484e11c15e202"
+    },
+    {
+      "file": "travail/inspection/E-3/final-nw.jpg",
+      "bytes": 315764,
+      "sha256": "e91f9896d4cec482e5a9131cf8623f66b0bcf1be082a786d59c6c2a2e17a25fa"
+    },
+    {
+      "file": "travail/inspection/E-3/final-overview.jpg",
+      "bytes": 533853,
+      "sha256": "cb1471419f80b630fee007f0a092dd18523383bf6683cd6fc02d5b3910e64223"
+    },
+    {
+      "file": "travail/inspection/E-3/final-se.jpg",
+      "bytes": 236430,
+      "sha256": "2d3e46388a1a69c215f72bb66cd3b94d3475fd1c7f3cf19cddbded36d75813c3"
+    },
+    {
+      "file": "travail/inspection/E-3/final-sw.jpg",
+      "bytes": 301636,
+      "sha256": "a1971428959a55b9319086fb9acd9c6418b6b286121835c6f504723fe46b1a93"
+    },
+    {
+      "file": "travail/inspection/E-3/layout-report.json",
+      "bytes": 4023,
+      "sha256": "34209ce844ba28f064c8bc1f0e149d0fdda2448b4ec68a0ed961fc17f6a42ba2"
+    },
+    {
+      "file": "travail/methode/build_led.py",
+      "bytes": 4758,
+      "sha256": "21806f20292135622b87a67ce6aa122d9cdf2ff0b092534113accc028d78631b"
+    },
+    {
+      "file": "travail/methode/build_lighting.py",
+      "bytes": 4300,
+      "sha256": "fb6413ffefb139cedf93943afab08b205209bbdda59fe94ae4028be655bf199c"
+    },
+    {
+      "file": "travail/methode/build_panels.py",
+      "bytes": 9102,
+      "sha256": "829fed34dafa188cd9014ec8e57637261e698189ab1a97566879376398a07779"
+    },
+    {
+      "file": "travail/methode/build_services.py",
+      "bytes": 7133,
+      "sha256": "60cbd40a61624deee9cde6548fc7a8b7263e05549b4f5e7d037515390b139228"
+    },
+    {
+      "file": "travail/methode/download_plans.py",
+      "bytes": 2526,
+      "sha256": "f7482a41f684f1d7179dc3b4251d0495ac9bd7727dfe759ef8976ac35dd5bd95"
+    },
+    {
+      "file": "travail/methode/package_delivery.py",
+      "bytes": 11078,
+      "sha256": "d35bbd953c52b58ef833b5efcfe24a9c91820b8f14467094b7e904ca3f6a33db"
+    },
+    {
+      "file": "travail/methode/prepare_images.py",
+      "bytes": 1073,
+      "sha256": "aa6c3e60a9a96f6651c5f226171660f2a9759741da78a7f330cdae445dbedd9a"
+    },
+    {
+      "file": "travail/methode/render_sheet.py",
+      "bytes": 8667,
+      "sha256": "0e7e79bd820270dded3142b3655b3b621974ae670ef6cae6637836876b52537c"
+    },
+    {
+      "file": "travail/methode/sheet_data.py",
+      "bytes": 98256,
+      "sha256": "6a0f9879182a854cf65ffb156f2160a2a8cfde574a852a901b201769edb607ee"
+    },
+    {
+      "file": "travail/methode/verify_delivery.py",
+      "bytes": 8240,
+      "sha256": "7de309da94e6a7c370972af7e2a8fd8b0eb392359cb3d264df5fc06906951e55"
+    },
+    {
+      "file": "travail/S-0922-E-3-equipment.csv",
+      "bytes": 26168,
+      "sha256": "58c87f8f055a71f143e45cdb0f2747e96741e9989922a8210f37fbd78edc8416"
+    },
+    {
+      "file": "travail/sources/23-357-E-CO-CH-E1 (1) - 3.png",
+      "bytes": 8419673,
+      "sha256": "49ae234ce4892aaa591cb5aff1f614fdad615edb01d53258b4b3cdc2579c5266"
+    },
+    {
+      "file": "verification-paquet-v2.txt",
+      "bytes": 571,
+      "sha256": "a4201469eccee3152b22ae3e624b05e151c9a6483425363de103ae6596b59c98"
+    }
+  ]
+}

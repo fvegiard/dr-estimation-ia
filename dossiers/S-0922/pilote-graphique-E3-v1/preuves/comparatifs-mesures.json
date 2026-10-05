@@ -1,0 +1,48 @@
+{
+  "reference_archive_sha256": "6d184e7a56745be523ecb0ebb1fca33f619c8debc3b03c3a76ac9fd0810e8939",
+  "reference_page_sha256": "d14ee302ecb17549f41e2190f0ac924db7dd1e99e39639bdb581e74116a38e39",
+  "reference_page_entry": "Granby-E401-releve.jpg",
+  "comparison_sheet_width_px": 6854,
+  "overview_sheet_width_px": 1000,
+  "legend_crops_at_normalized_sheet_width": [
+    [
+      2947,
+      3537,
+      6066,
+      4895
+    ],
+    [
+      4303,
+      1599,
+      6073,
+      3922
+    ],
+    [
+      2056,
+      95,
+      5521,
+      1142
+    ]
+  ],
+  "marker_windows_at_normalized_sheet_width": [
+    [
+      650,
+      1700,
+      2150,
+      2700
+    ],
+    [
+      950,
+      2550,
+      2450,
+      3550
+    ],
+    [
+      950,
+      2550,
+      2450,
+      3550
+    ]
+  ],
+  "note": "Même largeur de feuille ne signifie pas même échelle architecturale. Aucun recadrage des JPEG livrés; seuls les comparatifs utilisent des fenêtres."
+}

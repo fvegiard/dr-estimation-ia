@@ -1,0 +1,36 @@
+{
+  "packet_file_count": 27,
+  "packet_changed_vs_v1": [
+    {
+      "file": "S-0922-E-3-releve.jpg",
+      "sha256_v1": "255d88e8c92700d82750e2764ebb93bfb01144d731c396ac1e86bad2036501b4",
+      "sha256_v2": "5b8987009d40a2490b6188330f1f0eb7a41f53731eafcdd7b0319f31e8c1f2d8"
+    },
+    {
+      "file": "manifest.json",
+      "sha256_v1": "0ef816b2e78e95ef32578c8e360a8807543e77fe42e06b4a5f4d4bde83bf1d4a",
+      "sha256_v2": "63f53344254b7d75d8631b3aeee4ad24da1e482ff5459712d8cd72734a0becef"
+    },
+    {
+      "file": "methode/render_sheet.py",
+      "sha256_v1": "b241226222d7c72b28e890d20d0fc37699bcdeb2085e32c8b0fc36391379fe71",
+      "sha256_v2": "0e7e79bd820270dded3142b3655b3b621974ae670ef6cae6637836876b52537c"
+    }
+  ],
+  "packet_unchanged_vs_v1": 24,
+  "v1_frozen_files_checked": 59,
+  "v1_archive_unchanged": true,
+  "v1_archive_sha256": "a02dcffb26f8693795f030d12165d5ba43e8aebaceae5c43464c86f1e11ab901",
+  "references": [
+    {
+      "file": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-6\\independent-pilot-E3-v1\\REVUE-INDEPENDANTE-PILOTE-E3.md",
+      "sha256": "c54143aa21d5466ac95e9ddfcf93eee1ec70cb85d1688148f4ecf8d1dec3210d"
+    },
+    {
+      "file": "C:\\Users\\fvegi\\Documents\\codex\\2026-10-02\\task-6\\independent-pilot-E3-v1\\visual\\E3-188-circuit-reserve.jpg",
+      "sha256": "cbbd501c2ff4b0f44f273feb20dc2e4b00cac143bdd5786840dcc1f31f6256c3"
+    }
+  ],
+  "jpeg_v2_sha256": "5b8987009d40a2490b6188330f1f0eb7a41f53731eafcdd7b0319f31e8c1f2d8",
+  "qpl_global": "BLOCKED"
+}

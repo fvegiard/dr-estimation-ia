@@ -1,0 +1,7 @@
+# Les empreintes publiées doivent rester identiques après checkout Windows/Linux.
+*.py text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.csv -text whitespace=cr-at-eol
+*.jpg -text
+*.xlsx -text

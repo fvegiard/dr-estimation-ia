@@ -1,0 +1,27 @@
+{
+  "files": {
+    "CHECKPOINT.json": "34d3baf64123d6c332e76937295344e44fb2692876db8ca3f7d209e05ec1655c",
+    "S-0922-breakers-by-panel.xlsx": "263e85ab38326c0b0b9a9cbc90f741015da7e1f36ee1d09ba767b32edb7c37b5",
+    "S-0922-breakers-detailed.csv": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854",
+    "S-0922-E-1-details.csv": "c4493a1489933e6f4e287dda0a9f3711b4782c85dfb1fd515d1b8c13bacdfb20",
+    "S-0922-E-1-releve.jpg": "10c7ac4319bf781ec455cc7ce348a8b5288a227f1191eb5ab9704c158ceeb1cb",
+    "S-0922-E-2-breakers.csv": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854",
+    "S-0922-E-2-details.csv": "93a6c4756cf31a3ae45d8f7829dcb1ceaae44207fb7e6dcbde030fa7387f12eb",
+    "S-0922-E-2-equipment.csv": "720795796af4abc3bc808f5f1a2bb54cfe320de11c33baf0099eaf39d3f5003c",
+    "S-0922-E-2-releve.jpg": "68d094f3c58b46a7772bb6849cc153b9aeb8d14e8bfd5fe796b5bd56c051595e",
+    "S-0922-E-3-equipment.csv": "58c87f8f055a71f143e45cdb0f2747e96741e9989922a8210f37fbd78edc8416",
+    "S-0922-E-3-releve.jpg": "94d6048e641f3742505a1ece6c84628195e3e72612268cfb90a40b213b39d059",
+    "S-0922-E-4-equipment.csv": "de3cb0be33265a037a7446bdd0e59451000f5902d00e4fd44716487e97bbdf35",
+    "S-0922-E-4-releve.jpg": "a9109178a547c0de80f5320f3ea3ddd3f4fa8d94230087921bb1e429dc9eadb1",
+    "S-0922-E-5-equipment.csv": "9fbfd4326050074b2c61b99465af6661833a8f3394f22d8d6d41de5cd17faf0f",
+    "S-0922-E-5-releve.jpg": "8e9c022e85d299264177a018dbd3b17cbda72c4fbc6f7e5c132149f7ec355f66",
+    "methode/sheet_data.py": "6a0f9879182a854cf65ffb156f2160a2a8cfde574a852a901b201769edb607ee"
+  },
+  "source_sha256": "49ae234ce4892aaa591cb5aff1f614fdad615edb01d53258b4b3cdc2579c5266",
+  "source_size": [
+    12623,
+    9467
+  ],
+  "reference_zip": "C:\\Users\\fvegi\\Downloads\\Granby-page-by-page-20260930-151234.zip",
+  "audit_html_sha256": "ff2584e96c2720f9d25c0498adb458426ed4dc30edfa706d649ec67303fcc488"
+}

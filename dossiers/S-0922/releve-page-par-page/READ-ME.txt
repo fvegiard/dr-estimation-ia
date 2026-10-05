@@ -1,7 +1,9 @@
-S-0922 — NIKE QUARTIER DIX30, UNITÉ S9D, BROSSARD
-Relevé page par page terminé avec réserves; vérification à l’aveugle
+S-0922 — RELEVÉ AVEC RÉSERVES
+NIKE QUARTIER DIX30, UNITÉ S9D, BROSSARD
+Relevé page par page terminé avec réserves; comparaison globale à l’estimateur non validée
 
-Identification depuis les plans PNG seulement; aucun QPL ouvert ni téléchargé.
+Identification initiale depuis les plans PNG; aucun QPL ouvert ni téléchargé par le producteur.
+V2 après revue indépendante : courbe F nord-ouest confirmée directement sur le plan E-5 et ajoutée en réserve.
 Référence de présentation : Granby du 30 septembre 2026. Plans originaux conservés et légendes intégrées.
 Les révisions antérieures ne sont pas additionnées. Pas de prix, de métré de câbles, conduits ou rails.
 Les symboles au schéma et les renvois ne constituent pas des appareils supplémentaires.
@@ -13,7 +15,7 @@ E-1 : 0 pastilles. 3/3 : plan conservé, légende lisible, aucune quantité inve
 E-2 : 19 pastilles. 19/19 ancrages revus sur JPEG; cédules 91/91 lignes rapprochées; 3 lignes en réserve de lecture.
 E-3 : 223 pastilles. 223/223 ancrages vérifiés sur six zones du JPEG; 6 repères en réserve de configuration des sorties.
 E-4 : 109 pastilles. 109/109 ancrages vérifiés; 1 DATA ajouté et 4 positions corrigées avant validation; 34 repères en réserve.
-E-5 : 71 pastilles. 71/71 ancrages vérifiés sur neuf zones du JPEG; 71 repères en réserve de version et segmentation.
+E-5 : 72 pastilles. V2 : 71 identifiants et ancrages conservés; courbe F nord-ouest ajoutée sous E-5-072 entre deux jonctions visibles sur la source. 72 repères en réserve de version et segmentation.
 
 RÉVISIONS ET RÉSERVES
 E-1 / E-2 / E-3 : construction et changement E-1 du 22 avril 2024.
@@ -31,11 +33,12 @@ E-4 : 17 repères C/W/TC cerclés sans définition dans la légende disponible; 
 E-4 / E-2 : 5 sectionneurs existants au plan contre 4 au schéma; calibres et correspondance non établis.
 E-4 : relais vers déclenchement shunt-trip sonore prescrit; circuit et calibre non précisés.
 E-4 : 4 serpentins et 2 boîtes terminales représentés; caractéristiques à coordonner avec mécanique.
-E-5 : 71 repères en réserve, dont 45 tronçons D. Aucun nombre de modules ou de longueurs déduit.
+E-5 : 72 repères en réserve, dont 45 tronçons D. Aucun nombre de modules ou de longueurs déduit.
+E-5 : 5 sections F pour 4 alimentations dessinées; courbe nord-ouest entre deux jonctions ajoutée sous E-5-072, après vérification du plan source.
 E-5 : 2 sections N sans définition à la cédule; circuit 14 nommé TYPE N à E-2 mais inscrit aux sections J à E-5.
 E-5 : limites de segmentation aux jonctions courbe/droite D et aux sections F à confirmer avant achat.
 Les images de présentation architecturale ne donnent aucune quantité de luminaires.
-Comparaison à l’estimateur volontairement absente : relevé à l’aveugle, aucune certification de supériorité.
+Comparaison métier globale à l’estimateur : BLOCKED dans la revue indépendante; aucune certification de supériorité ni de quantités de chantier.
 
 DOCUMENTS NON RELEVÉS
 M-1 : 23-357-M-PE-2 - 1.png, légende et devis mécanique, non relevé.
@@ -50,7 +53,18 @@ Révisions électriques PE-2 E-1 à E-4 et E-4 du 22 avril conservées seulement
 SOURCES ET MÉTHODE
 Accès anonyme SharePoint Mes projets / S-0922 (31-Janvier-2024), module MesProjets du dépôt.
 Déduplication par SHA-256; une copie conservée par empreinte. Sources exclues de la PR.
-Scripts en anglais dans methode/. Les coordonnées des CSV sont en pixels des sources originales.
+Scripts dans methode/. Les coordonnées des CSV sont en pixels des sources originales.
 Les zooms de vérification restent dans le dossier de travail local et ne sont pas publiés.
 manifest.json : empreintes et tailles des fichiers publiés (hors manifest lui-même).
 CHECKPOINT.json : état par feuille et scores de vérification visuelle.
+
+REPRODUIRE LOCALEMENT
+Depuis le dépôt : python dossiers/S-0922/releve-page-par-page/methode/download_plans.py
+Les sources sont restaurées sous releve-page-par-page/sources/. Le module src/apprentissage/sharepoint.py du dépôt est requis.
+Pour chaque feuille : python methode/render_sheet.py E-1 (puis E-2 à E-5). Les données revues de sheet_data.py sont incluses.
+Réassemblage : python methode/package_delivery.py 5 CHEMIN_DESTINATION. Choisir un dossier de livraison distinct.
+Contrôle : python methode/verify_delivery.py CHEMIN_DESTINATION. Le package exécute aussi ce contrôle avant de déclarer son succès.
+Inventaire strict : chaque fichier présent doit être attendu et indexé, sauf manifest.json lui-même.
+Checkout publié : ajouter --checkout tolère uniquement .gitattributes, PR-BODY.md et les caches CPython des scripts attendus sous methode/__pycache__/.
+Rendu Windows : Arial par défaut; S0922_FONT permet de fournir DejaVuSans.ttf pour retrouver la police Linux.
+Ces commandes ne publient rien. La revue du parent reste requise avant toute publication.

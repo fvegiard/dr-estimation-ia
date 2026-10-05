@@ -1,0 +1,8 @@
+Inventaire physique : 27 fichiers de livraison; 0 métadonnées de checkout tolérées.
+E-1: 0 pastilles; 0 réserves; JPEG 12623x9467; CSV concordant
+E-2: 19 pastilles; 5 réserves; JPEG 12623x9467; CSV concordant
+E-3: 223 pastilles; 6 réserves; JPEG 12623x9467; CSV concordant
+E-4: 109 pastilles; 34 réserves; JPEG 12623x9467; CSV concordant
+E-5: 72 pastilles; 72 réserves; JPEG 8255x6191; CSV concordant
+Disjoncteurs : 91 lignes revues; deux CSV et cinq onglets du classeur concordants; réserves conservées.
+Manifest : 26/26 tailles et SHA-256 conformes.

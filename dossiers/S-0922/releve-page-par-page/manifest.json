@@ -1,13 +1,73 @@
 [
   {
     "file": "CHECKPOINT.json",
-    "bytes": 2859,
-    "sha256": "7fbc9e08e8661d97858a28cf4b0737a88edf274dcd7064de3900f73cee539dd3"
+    "bytes": 2963,
+    "sha256": "34d3baf64123d6c332e76937295344e44fb2692876db8ca3f7d209e05ec1655c"
+  },
+  {
+    "file": "methode/build_led.py",
+    "bytes": 4758,
+    "sha256": "21806f20292135622b87a67ce6aa122d9cdf2ff0b092534113accc028d78631b"
+  },
+  {
+    "file": "methode/build_lighting.py",
+    "bytes": 4300,
+    "sha256": "fb6413ffefb139cedf93943afab08b205209bbdda59fe94ae4028be655bf199c"
+  },
+  {
+    "file": "methode/build_panels.py",
+    "bytes": 9102,
+    "sha256": "829fed34dafa188cd9014ec8e57637261e698189ab1a97566879376398a07779"
+  },
+  {
+    "file": "methode/build_services.py",
+    "bytes": 7133,
+    "sha256": "60cbd40a61624deee9cde6548fc7a8b7263e05549b4f5e7d037515390b139228"
+  },
+  {
+    "file": "methode/download_plans.py",
+    "bytes": 2526,
+    "sha256": "f7482a41f684f1d7179dc3b4251d0495ac9bd7727dfe759ef8976ac35dd5bd95"
+  },
+  {
+    "file": "methode/package_delivery.py",
+    "bytes": 11078,
+    "sha256": "d35bbd953c52b58ef833b5efcfe24a9c91820b8f14467094b7e904ca3f6a33db"
+  },
+  {
+    "file": "methode/prepare_images.py",
+    "bytes": 1073,
+    "sha256": "aa6c3e60a9a96f6651c5f226171660f2a9759741da78a7f330cdae445dbedd9a"
+  },
+  {
+    "file": "methode/render_sheet.py",
+    "bytes": 4301,
+    "sha256": "23e7cb40868944bbdab30fad241b973af9bb940d92ee9aaaba350f4be103149b"
+  },
+  {
+    "file": "methode/sheet_data.py",
+    "bytes": 98256,
+    "sha256": "6a0f9879182a854cf65ffb156f2160a2a8cfde574a852a901b201769edb607ee"
+  },
+  {
+    "file": "methode/verify_delivery.py",
+    "bytes": 8240,
+    "sha256": "7de309da94e6a7c370972af7e2a8fd8b0eb392359cb3d264df5fc06906951e55"
   },
   {
     "file": "READ-ME.txt",
-    "bytes": 4777,
-    "sha256": "fb78b1aa6ed15e6c7f052b46d3350ef959a7ed53be974f9e0cfbc80cdef21146"
+    "bytes": 6295,
+    "sha256": "0b9d039d2cf3fb7ecf493304d377e8b8456604ce87177c438607819c1a8794dd"
+  },
+  {
+    "file": "S-0922-breakers-by-panel.xlsx",
+    "bytes": 18089,
+    "sha256": "263e85ab38326c0b0b9a9cbc90f741015da7e1f36ee1d09ba767b32edb7c37b5"
+  },
+  {
+    "file": "S-0922-breakers-detailed.csv",
+    "bytes": 12143,
+    "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
   },
   {
     "file": "S-0922-E-1-details.csv",
@@ -61,72 +121,12 @@
   },
   {
     "file": "S-0922-E-5-equipment.csv",
-    "bytes": 22449,
-    "sha256": "d87b0a8e0589d59ebf22dce81b3dfe254c7953a1dd93a5c516214cef7b917fd7"
+    "bytes": 22880,
+    "sha256": "9fbfd4326050074b2c61b99465af6661833a8f3394f22d8d6d41de5cd17faf0f"
   },
   {
     "file": "S-0922-E-5-releve.jpg",
-    "bytes": 6565768,
-    "sha256": "144dda8ca8e9ae1aeff686cd74ad11b7c2a0e52b42a28576705bd870e94a3f91"
-  },
-  {
-    "file": "S-0922-breakers-by-panel.xlsx",
-    "bytes": 18089,
-    "sha256": "263e85ab38326c0b0b9a9cbc90f741015da7e1f36ee1d09ba767b32edb7c37b5"
-  },
-  {
-    "file": "S-0922-breakers-detailed.csv",
-    "bytes": 12143,
-    "sha256": "5edcfc0abf3c8f02eb383ac444cba166e2dee3896f43f5a4b96453af729b0854"
-  },
-  {
-    "file": "methode/build_led.py",
-    "bytes": 4246,
-    "sha256": "076ffd3b0169b40e86842a6e6319c65272e5ac98ff5d3f807475305975f1e446"
-  },
-  {
-    "file": "methode/build_lighting.py",
-    "bytes": 4142,
-    "sha256": "06ccf4a68cc4010bcde7d60ce038fc285f8905669e1df866511505414b166213"
-  },
-  {
-    "file": "methode/build_panels.py",
-    "bytes": 8932,
-    "sha256": "c61f7bc9026edf8e4b51cddb77513958842618bfb4c431fd639ebe93ca77fb57"
-  },
-  {
-    "file": "methode/build_services.py",
-    "bytes": 6975,
-    "sha256": "3538536f9b822910378940f7410db18045a5d8c96563580c24482b1376e52eb3"
-  },
-  {
-    "file": "methode/download_plans.py",
-    "bytes": 2174,
-    "sha256": "66231f73caf0f6198b9c0e89e22fd4e29ff03d7a1e5dd96c7312bc6eadaf540b"
-  },
-  {
-    "file": "methode/package_delivery.py",
-    "bytes": 8121,
-    "sha256": "b5e8403c949c70e6dbb3b9c173db36ca34c853c5c1871752bdc2b695eabbc165"
-  },
-  {
-    "file": "methode/prepare_images.py",
-    "bytes": 972,
-    "sha256": "a7ffad1c5fda8b19abe7a1b1241ddd647b50e55a1ae35b8fedda4fdd3d97b9a6"
-  },
-  {
-    "file": "methode/render_sheet.py",
-    "bytes": 4188,
-    "sha256": "643361bebc374962a64e2e945ca7aba89767c64518d825197b43564816105d85"
-  },
-  {
-    "file": "methode/sheet_data.py",
-    "bytes": 97697,
-    "sha256": "4c13cc3a8bad83980d7ab6edf4ef64bece896a8d7891c2f943cd1d6661978809"
-  },
-  {
-    "file": "methode/verify_delivery.py",
-    "bytes": 2157,
-    "sha256": "33608a7792155013a300a9716010b11fbfbb641d9320e2ee5baa3dcba5da7695"
+    "bytes": 6514585,
+    "sha256": "8e9c022e85d299264177a018dbd3b17cbda72c4fbc6f7e5c132149f7ec355f66"
   }
 ]

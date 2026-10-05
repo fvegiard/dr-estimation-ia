@@ -1,0 +1,27 @@
+..........F................................................              [100%]
+================================== FAILURES ===================================
+__________ test_star_moves_from_circuit_text_to_white_source_region ___________
+
+    def test_star_moves_from_circuit_text_to_white_source_region():
+        proof = json.loads((ROOT / 'preuves/delta-pixels-E3-188.json').read_text(encoding='utf-8'))
+        with Image.open(ROOT / 'travail/sources/23-357-E-CO-CH-E1 (1) - 3.png') as source, \
+             Image.open(ROOT / 'paquet/S-0922-E-3-releve.jpg') as output:
+            assert sum(source.crop(proof['new_star_bbox_px']).convert('L').histogram()[:200]) == 0
+            def colored_count(box):
+                return sum(g - r > 40 and b - r > 40 for r, g, b in output.crop(box).convert('RGB').getdata())
+            assert colored_count(proof['new_star_bbox_px']) > 0
+>           assert colored_count(proof['old_star_bbox_px']) == 0
+E           assert 49 == 0
+E            +  where 49 = <function test_star_moves_from_circuit_text_to_white_source_region.<locals>.colored_count at 0x000002A4B8A1F740>([5669, 5762, 5688, 5797])
+
+dossiers\S-0922\pilote-graphique-E3-v2\tests\test_reserve_188_delta.py:39: AssertionError
+============================== warnings summary ===============================
+dossiers/S-0922/pilote-graphique-E3-v2/tests/test_reserve_188_delta.py::test_star_moves_from_circuit_text_to_white_source_region
+dossiers/S-0922/pilote-graphique-E3-v2/tests/test_reserve_188_delta.py::test_star_moves_from_circuit_text_to_white_source_region
+  C:\Users\fvegi\Documents\codex\2026-10-02\task-2\S-0922-review\dossiers\S-0922\pilote-graphique-E3-v2\tests\test_reserve_188_delta.py:37: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+    return sum(g - r > 40 and b - r > 40 for r, g, b in output.crop(box).convert('RGB').getdata())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED dossiers/S-0922/pilote-graphique-E3-v2/tests/test_reserve_188_delta.py::test_star_moves_from_circuit_text_to_white_source_region
+1 failed, 58 passed, 2 warnings in 80.96s (0:01:20)

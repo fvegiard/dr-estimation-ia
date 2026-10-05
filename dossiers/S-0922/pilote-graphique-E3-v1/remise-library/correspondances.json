@@ -1,0 +1,26 @@
+[
+  {
+    "source": "paquet/S-0922-E-3-releve.jpg",
+    "library_local_copy": "S-0922-E-3-pilote-graphique-v1.jpg"
+  },
+  {
+    "source": "preuves/03-pages-entieres-reference-v3-pilote.jpg",
+    "library_local_copy": "S-0922-E3-comparatif-pages-v1.jpg"
+  },
+  {
+    "source": "preuves/04-legendes-meme-largeur-feuille.png",
+    "library_local_copy": "S-0922-E3-comparatif-legendes-6854-v1.png"
+  },
+  {
+    "source": "preuves/05-reperes-meme-largeur-feuille.jpg",
+    "library_local_copy": "S-0922-E3-comparatif-reperes-6854-v1.jpg"
+  },
+  {
+    "source": "preuves/06-quatorze-lineaires-source-v3-pilote.jpg",
+    "library_local_copy": "S-0922-E3-controles-14-lineaires-v1.jpg"
+  },
+  {
+    "source": "preuves/07-onze-familles-source-v3-pilote.jpg",
+    "library_local_copy": "S-0922-E3-controles-11-familles-v1.jpg"
+  }
+]
