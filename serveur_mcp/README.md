@@ -3,8 +3,9 @@
 Le relevé de quantités électrique du Groupe DR Électrique, branché sur **n'importe quel LLM** compatible MCP
 (Claude, GPT, Gemini, modèle local…), en local ou dans le nuage. Plus besoin de Claude Desktop, de Plan Expert ni de
 machine virtuelle Hyper-V : on dépose un PDF de plans brut, on obtient le PDF annoté **au format de l'exemplaire
-HR26-14** (pastilles sur chaque symbole + repère `I01-07`, encadré « RELEVE <feuille> - MATERIEL », pages
-« BORDEREAU MATERIEL » 8 colonnes, réserves) et le projet Plan Expert `.qpl`.
+HR26-14** (pastilles sur chaque symbole + repère `I01-07`, encadré « RELEVE <feuille> - MATERIEL », pages de
+bordereau au format de chaque feuille — matériel, agrégé ou travaux, spec unique `docs/FORMAT-EXEMPLE.md` —,
+réserves) et le projet Plan Expert `.qpl`.
 
 Partage des rôles :
 - **le LLM** fait le jugement visuel (légende, symboles, doute → réserve) en suivant la méthode

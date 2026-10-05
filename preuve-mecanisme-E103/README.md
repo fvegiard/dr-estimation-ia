@@ -28,7 +28,8 @@ par Francis (`apprentissage/hr26-14-exemplaire/SOURCE.txt`, E08/E09) à partir d
 5. `python3 releve/render_pdf.py` → `PREUVE01-Rapport-de-metre.pdf/.md`, `PREUVE01-Dossier-complet.pdf`.
 6. Ouvert et vérifié moi-même (`apercu-plan-page1.png`, `apercu-zoom-6-reperes.png`) : les 6 pastilles
    (M01-01 à M06-01) sont sur les 6 bons symboles carrés, l'encadré « RELEVE E103 - MATERIEL » est lisible,
-   le bordereau 8 colonnes est généré.
+   le bordereau de cette feuille, au format matériel (une ligne par repère, voir `docs/FORMAT-EXEMPLE.md` §4.1),
+   est généré.
 
 ## Routage réel utilisé pour cette preuve (pas celui de `run.py --watch`)
 
