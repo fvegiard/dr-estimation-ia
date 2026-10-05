@@ -102,6 +102,11 @@ sommets (milieu, haut), (droite, bas), (gauche, bas) de sa boîte.
   (228, 53, 53).
 - La palette ne suit pas le format : E01/E06/E09/E12 sont agrégées en palette A, E03/E04/E05/E08/E11/E14 agrégées
   en palette B.
+- En palette B, **même code de famille = même couleur, même forme et même taille sur les 6 feuilles** (mesuré
+  p.50, 52, 54, 62, 70, 78) : ex. CU rose (0,867 0,529 0,741) cercle 9,21 pt ; PC brun (0,635 0,42 0,267) cercle
+  10,88 ; CG/CT jaune cercle 10,05, GF jaune 10,88 ; CP/SE cercle 11,72 ; IC losange 11,72, TE losange 10,88, TV
+  losange 10,05 ; BJ/EV carré 10,88 ; PN carré 12,56 ; PL et LC rectangles aux dimensions du symbole. Table
+  complète (25 codes, 20 couleurs) : `src/estimer/render/style.py::PALETTE_B`.
 
 ### 2.4 Étiquettes par format
 - Matériel : `<code famille>-<séquence>` sur 1 ligne (`I01-01`, `M01-01`), code famille = préfixe `I` (incendie) ou
@@ -145,6 +150,9 @@ Ex. E01 p.44 et E09 p.64 : 780 x 320 pt (2 colonnes) ; E02 p.46 : 390 x 705 (1 c
 
 ### 3.3 Variante v6 sans RES (E03, E04, E05, E08 — dont la cible approuvée E08)
 Cadres : E03 p.50 470 x 930 pt ; E04 p.52 et E05 p.54 295 x 990 pt ; E08 p.62 235 x 880 pt.
+Règle de choix, vérifiée sur les 26 feuilles : **feuille agrégée + palette B + RES non partiel** (aucun repère ou
+tous en réserve) → v6. Elle donne exactement E03/E04/E05/E08 ; E11/E14 (palette B mais RES 64 sur 172) et
+E01/E06/E09/E12 (palette A) restent en encadré standard (`src/estimer/render/plan.py::encadre_v6`).
 - +5,0 `RELEVE E08 - MATERIEL` Helvetica-Bold **14**.
 - +28,3 `128 reperes / 22 familles / calques activables` Helvetica **9** — **aucun compteur RES**.
 - +43,9 `0 non identifies - 2 identifications a revalider (*)` Helvetica 8,5 (E03/E04/E05 : `0 ... - 0 ...`).
@@ -182,8 +190,9 @@ un format unique pour tout le dossier.
   `Les modeles non renseignes restent a preciser. Les circuits divergents exigent une clarification.` (p.63).
 - Bande d'en-tête de **30 pt** ; en-têtes Helvetica-Bold 12 : `ID` x 71 · `Qte` 157,24 · `Famille` 231,16 ·
   `Modele / type` 674,68 · `Prescription du devis` 1167,48 · `Source / reserve` 2066,84 (p.45, p.63, p.65).
-- Corps Helvetica **11** ; séparateurs **0,5 pt** ; une ligne par famille (E08 p.63 : 22 lignes pour 22 familles) ;
-  1 page par feuille.
+- Corps Helvetica **11** ; séparateurs **0,5 pt** ; lignes de **66 pt** (p.63 : 22 lignes de 66 pt, de y 178 à
+  1630) ; une ligne par famille (E08 p.63 : 22 lignes pour 22 familles) ; 1 page par feuille (E04/E05 : 23 lignes
+  resserrées à 63,75 pt).
 - Bloc de fin `Notes de reserve source` Helvetica-Bold 12 sur E01, E06, E09, E11, E12, E14 (p.45, 57, 65, 71, 73,
   79) ; **absent sur E03, E04, E05, E08** (p.51, 53, 55, 63).
 
@@ -221,14 +230,16 @@ méthode qu'au §0. Le gold gagne : chaque ligne ci-dessous est un écart à ré
 
 | # | Écart | Feuilles | Chiffres | État |
 |---|---|---|---|---|
-| E1 | **Encadré v6 remplacé par l'encadré standard** : titre 12 au lieu de 14 ; compteur `N reperes / F familles / RES N` au lieu de `... / calques activables` ; lignes `non identifies / identifications a revalider`, `divergences plan/cedule A RESOUDRE` et `calibres distincts` absentes ; glyphes de légende 10 pt au lieu de 13 ; code 8,2 / libellé 6,6 / quantité 7,1 pt au lieu de 10 / 8,7 / 10 ; ligne RES et pied standard au lieu des 6 notes v6 | E03, E04, E05, E08 (dont la cible E08) | 4 encadrés sur 26 ; RES affiché 126 / 112 / 116 / 128 là où le gold n'en a pas ; divergences non affichées 10 / 6 / 5 (E04 / E05 / E08) ; 57 glyphes de légende r 5,0 au lieu de r 6,5 (13 + 15 + 15 + 14). Mêmes cadres (470 x 930, 295 x 990, 295 x 990, 235 x 880) et mêmes pastilles sur le plan | **ouvert** — reproduire v6 demande des données que l'entrée du moteur n'a pas (`non identifies`, `divergences plan/cedule`, `calibres distincts` n'existent ni dans `estimate.json` ni dans le relevé de `releve/`) : décision de schéma hors de la portée de la PR de réalignement |
-| E2 | Pastilles triangulaires dessinées en losanges | E01, E06, E09, E12, EU01-04 | 88 pastilles sur 8 feuilles avant correction | **corrigé** (`from_exemple._shape_bbox` reconnaît 3 sommets ; `plan.draw_halo` gère le triangle) : 0 écart de forme après |
+| E1 | Encadré v6 remplacé par l'encadré standard (titre 12, compteur avec RES, glyphes 10 pt, ligne RES et pied standard) | E03, E04, E05, E08 (dont la cible E08) | 4 encadrés sur 26 avant correction | **corrigé** (`plan.encadre_v6` + `draw_box_v6`, règle du §3.3) : preuve gold 87/87, `verify_exemple` exige maintenant l'absence de RES sur ces 4 encadrés (`[128/22/RES None]`). Reste : les lignes rouges `divergences plan/cedule` et `calibres distincts` ne s'affichent que si l'entrée donne le compte (`estimate.json` `sheets[].divergences / calibres`) ; `from_exemple` les lit dans le gold, le relevé de `releve/` ne les produit pas encore → ligne omise sur un dossier réel (essai E08 : 5 au gold, 0 ligne au rendu) |
+| E2 | Pastilles triangulaires dessinées en losanges | E01, E06, E09, E12, EU01-04 | 88 pastilles sur 8 feuilles avant correction | **corrigé** (`from_exemple._shape_bbox` reconnaît 3 sommets ; `plan.draw_mark` gère le triangle) : 0 écart de forme après |
 | E3 | Renvoi de page de l'encadré : le moteur écrit le numéro absolu (`page 51`), le gold `page 2` partout (la 2e page de la feuille) | 25 feuilles (DSI01 coïncide : son bordereau est la page 2) | 25 encadrés sur 26 | ouvert (choix hérité du moteur, à trancher par Francis) |
 | E4 | Texte des cellules corrigé au lieu d'être recopié (`corrections_exemple.py` : espaces manquants, troncatures, `Non renseigne`, sources fictives) | 26 feuilles | 309 cellules sur 8196 diffèrent du gold brut (7887 identiques) ; `spans exacts 9039 (diff 785)` | ouvert (choix hérité, à trancher par Francis) |
 | E5 | Calques `RELEVE` moins nombreux que dans le gold (le gold a un calque par famille et par feuille + un calque légende par feuille) | 26 feuilles | 89 calques `RELEVE` (132 au total) au lieu de 370 (1670 avec les calques CAD) | ouvert |
 | E6 | Signets : `<feuille> - plan` + `Bordereau materiel <feuille>` au lieu de `HR26-14-<feuille>-annote-v<n>` et des signets d'origine | 26 feuilles | 52 signets au lieu de 136 | ouvert |
-| E7 | Hors gold (dossier réel par `from_releve`) : palette B appliquée à **toutes** les feuilles agrégées (couleur du relevé) alors que le gold met E01/E06/E09/E12 en palette A ; cercle par défaut r 4,1859 sur toutes les feuilles quand le symbole n'est pas ancré, alors que le gold utilise 5,0231 et plus sur les feuilles E/EU | dossiers réels | non mesurable sur le gold (le gold n'a pas de règle écrite pour choisir la palette) | ouvert |
-| E8 | Anneau blanc de 1 pt (`style.HALO_W`, `plan.draw_halo`) dessiné autour de chaque pastille ; le gold n'en a pas — visible quand la pastille chevauche un trait du plan (contrôle visuel E09 p.64) | 26 feuilles | 2177 pastilles | ouvert (ajout du moteur pour les symboles foncés, S-1715 E201 ; à trancher par Francis) |
+| E7 | Hors gold (dossier réel par `from_releve`) : palette B appliquée à **toutes** les feuilles agrégées alors que le gold met E01/E06/E09/E12 en palette A | dossiers réels | non mesurable sur le gold (le gold n'a pas de règle écrite pour choisir la palette) | **en partie corrigé** : les feuilles agrégées prennent la palette B du gold par code (couleur, forme, taille, §2.3 ; plinthes et linéaires en rectangles du symbole) au lieu de la couleur du relevé et du cercle r 4,1859 ; un code absent de la table garde la couleur du relevé en cercle de 10,88 pt. Le choix A/B par feuille reste ouvert |
+| E8 | Anneau blanc de 1 pt autour de chaque pastille ; le gold n'en a pas | 26 feuilles | 2177 pastilles avant correction | **corrigé** (anneau retiré : `plan.draw_halo` et `style.HALO_W` supprimés ; décision de Francis « applique le bon correctif », 2026-10-05) |
+| E9 | Hors gold : `from_releve.anchor_sheet` recalait le glyphe `$` (interrupteur S, qui EST le symbole) sur le cercle fermé le plus proche | dossiers réels | essai E08 : 10 CU sur 20 sur les bulles de note 6/8 (15 à 22 pt) | **corrigé** : un jeton sans lettre ni chiffre garde le centre de son glyphe (0 marque déplacée) |
+| E10 | Hors gold : un bordereau agrégé plus long que la page (plus de familles ou de texte que le gold) : le gold n'a qu'1 page par feuille | dossiers réels | essai E08 : 25 familles (22 au gold), 3 pages avant | **corrigé, avec un choix** : lignes resserrées comme E04/E05, puis cellules coupées (« ... ») au nombre de lignes qui tient ; le compte est dans `rendu-rapport.json` (`bordereau_troncatures`, 1 sur l'essai E08) et le texte complet reste dans `vecteur/bordereau.csv`. Sur les feuilles v6, ni ligne `RESERVES:` ni bloc `Notes de reserve source` (gold p.51, 53, 55, 63) ; les motifs listés sont ceux des repères en réserve, sans les notes de lieu des autres repères |
 
 Rayons : les cercles DSI du moteur sont à 4,1859 pt comme le gold (écart de centre ≤ 0,001 pt, arrondi à la
 2e décimale seulement : 4,18 / 4,19).
