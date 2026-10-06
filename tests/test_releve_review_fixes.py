@@ -134,13 +134,12 @@ def test_tool_guard_still_refuses_windows_path_outside_workdir(monkeypatch):
         assert reason and "hors du dossier de travail" in reason
 
 
+@pytest.mark.skipif(os.name == "nt", reason="vérifie le comportement POSIX réel ; sans objet sous Windows")
 def test_tool_guard_refuses_disguised_windows_traversal_on_posix():
     """Sur POSIX (l'hôte réel de ce test), un antislash reste refusé d'office : il ne peut jamais y être
     un séparateur légitime (aucun nom de fichier du dépôt n'en contient) et pourrait déguiser une
     tentative d'évasion écrite en syntaxe Windows — non couvert par la simulation `_simuler_windows`
     ci-dessus, qui ne s'applique que quand `os.name == "nt"`."""
-    import os
-    assert os.name != "nt", "ce test vérifie le comportement POSIX réel, pas simulé"
     reason = tool_guard.validate("Bash", {"command": r"cat ..\secret.txt"}, "/tmp/travail", "/tmp/travail")
     assert reason and "hors du dossier de travail" in reason
 
