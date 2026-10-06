@@ -24,7 +24,8 @@ import sys
 
 import numpy as np
 import pymupdf
-from scipy.spatial import cKDTree
+from scipy.optimize import linear_sum_assignment
+from scipy.spatial.distance import cdist
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -56,21 +57,24 @@ def noter_feuille(gold: list[tuple[str, float, float]], ia: list[tuple[str, floa
                               if legende_gold.get(k) is None or legende_ia.get(k) is None
                               or float(legende_gold[k]) != float(legende_ia[k])}}
     if not gold or not ia:
-        res.update(rappel=0.0, precision=0.0, rappel_meme_famille=0.0)
+        res.update(apparies=0, meme_famille=0, rappel=0.0, precision=0.0, rappel_meme_famille=0.0)
         return res
-    G = np.array([[x, y] for _, x, y in gold]); A = np.array([[x, y] for _, x, y in ia])
-    dg, _ = cKDTree(A).query(G); da, _ = cKDTree(G).query(A)
+    apparies = apparier([(x, y) for _, x, y in gold], [(x, y) for _, x, y in ia], tol)
     meme = 0
-    par_code: dict[str, list[list[float]]] = {}
-    for c, x, y in ia:
-        par_code.setdefault(c, []).append([x, y])
-    arbres = {c: cKDTree(np.array(v)) for c, v in par_code.items()}
-    for c, x, y in gold:
-        if c in arbres and arbres[c].query([x, y])[0] <= tol:
-            meme += 1
-    res.update(rappel=round(100 * float((dg <= tol).mean()), 1), precision=round(100 * float((da <= tol).mean()), 1),
+    for code in {c for c, _, _ in gold}:
+        g = [(x, y) for c, x, y in gold if c == code]
+        a = [(x, y) for c, x, y in ia if c == code]
+        meme += apparier(g, a, tol) if a else 0
+    res.update(apparies=apparies, meme_famille=meme,
+               rappel=round(100 * apparies / len(gold), 1), precision=round(100 * apparies / len(ia), 1),
                rappel_meme_famille=round(100 * meme / len(gold), 1))
     return res
+
+
+def apparier(gold: list[tuple[float, float]], ia: list[tuple[float, float]], tol: float) -> int:
+    d = cdist(np.array(gold), np.array(ia))
+    lignes, colonnes = linear_sum_assignment(np.where(d <= tol, d, 1e9))
+    return int((d[lignes, colonnes] <= tol).sum())
 
 
 def legende(page: pymupdf.Page) -> dict[str, float]:
@@ -115,8 +119,8 @@ def main(argv: list[str] | None = None) -> int:
     for r in lignes:
         print(f"| {r['feuille']} | {r['page_gold'] or '-'} | {r['releve']} | {r['reperes_gold']} / {r['reperes_ia']} | "
               f"{r['familles_exactes']}/{r['familles_gold']} | {r['rappel']} % | {r['precision']} % | {r['rappel_meme_famille']} % |")
-    tg = sum(r["reperes_gold"] for r in lignes); tm = sum(r["rappel_meme_famille"] * r["reperes_gold"] / 100 for r in lignes)
-    print(f"\nTotal : {tg} repères au gold ; même famille au bon endroit : {tm:.0f} ({100 * tm / max(1, tg):.1f} %).")
+    tg = sum(r["reperes_gold"] for r in lignes); tm = sum(r.get("meme_famille", 0) for r in lignes)
+    print(f"\nTotal : {tg} repères au gold ; même famille au bon endroit : {tm} ({100 * tm / max(1, tg):.1f} %).")
     if a.json:
         json.dump(lignes, open(a.json, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     return 0
