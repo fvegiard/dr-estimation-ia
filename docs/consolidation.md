@@ -1,6 +1,6 @@
 # Consolidation — origine → destination
 
-Table de portage exigée par `SPEC.md`. Chaque fichier du dépôt indique sa
+Table de portage exigée par l'ancienne `SPEC.md` (spec de consolidation initiale, retirée le 2026-10-05 car périmée). Chaque fichier du dépôt indique sa
 source ; rien n'a été inventé. Dépôts sources : `dr-releves-2026`,
 `planexpert-core`, `planexpert-s1857-saint-michel` (fvegiard, privés).
 
@@ -20,12 +20,12 @@ source ; rien n'a été inventé. Dépôts sources : `dr-releves-2026`,
 | `dr-releves-2026/outils/vectoriel/symboles_vectoriels.py` | `src/releve/vectoriel.py` | en-tête d'usage ajusté |
 | `dr-releves-2026/_socle/PIPELINE.md` | `docs/pipeline-qpl.md` | identique (+ note de portage) |
 | `dr-releves-2026/_socle/FORMAT-LIVRABLE.md` | `docs/format-livrable.md` | identique (+ note de portage) |
-| `planexpert-core/releve/prepare.py` | `src/pipeline/prepare.py` | imports relatifs ; motif `dupuis` retiré du classement (`estimateur` suffit) |
-| `planexpert-core/releve/extract_occurrences.py` | `src/pipeline/extract_occurrences.py` | imports relatifs |
-| `planexpert-core/releve/zoom.py` | `src/pipeline/zoom.py` | imports relatifs |
-| `planexpert-core/releve/commun.py` | `src/pipeline/commun.py` | commentaire palette pointe vers `src/qpl/charte.py` |
-| `planexpert-core/releve/build_qpl.py` | `src/pipeline/build_qpl.py` | imports relatifs ; renvoie vers `src.releve qpl` pour les projets riches |
-| `planexpert-core/releve/render_pdf.py` | `src/pipeline/render_pdf.py` | imports relatifs ; `markdown` importé paresseusement (dépendance optionnelle) |
+| `planexpert-core/releve/prepare.py` | `src/pipeline/prepare.py` — **retiré le 2026-10-05** (doublon non appelé de `releve/`) | imports relatifs ; motif `dupuis` retiré du classement (`estimateur` suffit) |
+| `planexpert-core/releve/extract_occurrences.py` | `src/pipeline/extract_occurrences.py` — **retiré le 2026-10-05** (doublon non appelé de `releve/`) | imports relatifs |
+| `planexpert-core/releve/zoom.py` | `src/pipeline/zoom.py` — **retiré le 2026-10-05** (doublon non appelé de `releve/`) | imports relatifs |
+| `planexpert-core/releve/commun.py` | `src/pipeline/commun.py` — **retiré le 2026-10-05** (doublon non appelé de `releve/`) | commentaire palette pointe vers `src/qpl/charte.py` |
+| `planexpert-core/releve/build_qpl.py` | `src/pipeline/build_qpl.py` — **retiré le 2026-10-05** (doublon non appelé de `releve/`) | imports relatifs ; renvoie vers `src.releve qpl` pour les projets riches |
+| `planexpert-core/releve/render_pdf.py` | `src/pipeline/render_pdf.py` — **retiré le 2026-10-05** (doublon non appelé de `releve/`) | imports relatifs ; `markdown` importé paresseusement (dépendance optionnelle) |
 | `planexpert-core/infra/mxlinux/*` | `infra/mxlinux/*` | identique, **sauf** `oem/authorized_keys` (clés publiques SSH : exclues, voir plus bas) |
 | `planexpert-s1857-saint-michel/tools/import/planexpert_counter_import.py` | `src/qpl/import_counters.py` | CLI `typer` → `argparse` (une dépendance en moins) ; logique et garde-fous inchangés |
 | `planexpert-s1857-saint-michel/verification/rules_dupuis.py` | `src/qpl/charte.py` | règles **identiques** ; ajout de `POSTES_MAJEURS`, `normaliser()` et `famille_pour_libelle()` (familles déduites des sections du fichier) |

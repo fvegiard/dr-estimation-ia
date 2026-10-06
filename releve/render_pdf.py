@@ -4,7 +4,8 @@
 # ///
 """Étape 4b (déterministe) : « Rapport de métré (par plans) » + dossier complet, à partir du PDF « Plans
 annotés » déjà produit par releve/render_vectoriel.py (étape 4a — pastilles vectorielles par-dessus le plan
-d'origine, calques OCG, encadré « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes).
+d'origine, calques OCG, encadré « RELEVE <feuille> - MATERIEL », bordereau au format de la feuille — voir
+docs/FORMAT-EXEMPLE.md).
 
 Usage : uv run releve/render_pdf.py WORKDIR NOM_PROJET SORTIE_DIR
 Entrée : SORTIE_DIR/<NOM>-Plans-annotes.pdf (produit par render_vectoriel.py, doit déjà exister).

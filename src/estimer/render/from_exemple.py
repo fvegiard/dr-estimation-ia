@@ -95,7 +95,10 @@ def _shape_bbox(s: str, page_h: float):
         return None, None
     xs = [p[0] for p in pts]
     ys = [p[1] for p in pts]
-    kind = "circle" if "c" in ops else "diamond"
+    # EXEMPLE : triangle pointe en haut (3 sommets) sur E01/E06/E09/E12/EU01-04, losange (4 sommets) sur
+    # E03/E04/E05/E08/E11/E14 et EU02-04 (docs/FORMAT-EXEMPLE.md, pastilles par format)
+    sommets = {(round(px, 2), round(py, 2)) for px, py in pts}
+    kind = "circle" if "c" in ops else ("triangle" if len(sommets) == 3 else "diamond")
     return kind, (min(xs), page_h - max(ys), max(xs), page_h - min(ys))
 
 

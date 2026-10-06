@@ -1,5 +1,5 @@
 """
-Export `releve.xlsx` au gabarit DR — NOUVEAU module (voir SPEC.md).
+Export `releve.xlsx` au gabarit DR — NOUVEAU module (voir docs/consolidation.md).
 
 Génère un classeur Excel (openpyxl) depuis les occurrences relevées :
   python -m src.releve.xlsx_export --occurrences occurrences.csv --sortie releve.xlsx

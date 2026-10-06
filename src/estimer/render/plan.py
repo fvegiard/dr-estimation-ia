@@ -225,6 +225,9 @@ def draw_halo(shape: pymupdf.Shape, kind: str, rect: pymupdf.Rect, oc: int) -> N
         c = (r.tl + r.br) / 2
         shape.draw_polyline([pymupdf.Point(c.x, r.y0), pymupdf.Point(r.x1, c.y),
                              pymupdf.Point(c.x, r.y1), pymupdf.Point(r.x0, c.y)])
+    elif kind == "triangle":
+        shape.draw_polyline([pymupdf.Point((r.x0 + r.x1) / 2, r.y0), pymupdf.Point(r.x1, r.y1),
+                             pymupdf.Point(r.x0, r.y1)])
     else:
         shape.draw_circle((r.tl + r.br) / 2, min(r.width, r.height) / 2)
     shape.finish(width=S.HALO_W, color=(1, 1, 1), fill=None, closePath=True, oc=oc)
@@ -339,7 +342,8 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
     shape.commit(overlay=True)
 
     counter = f"{len(sheet.items)} reperes / {len(fams)} familles / RES {sheet.n_reserves}"
-    # un seul encadre pour les trois formats (l'encadre v6 de E03/E04/E05/E08 de l'EXEMPLE est harmonise)
+    # un seul encadre pour les trois formats ; le gold dessine un encadre v6 sans RES sur E03/E04/E05/E08 :
+    # ecart restant, chiffre dans docs/FORMAT-EXEMPLE.md §6 (E1) -- le gold gagne, a resorber
     head = Header(f"RELEVE {sheet.name} - MATERIEL", counter, S.HINT_TEXT.format(page=bordereau_page))
     footer = S.TRAVAUX_FOOTER_TEXT.format(page=bordereau_page) if sheet.format == "travaux" else S.FOOTER_TEXT
     box = place_box(page, fams, taken + labels, head, hint=_hint_points(sheet, to_pt), rows=sheet.legend_rows)

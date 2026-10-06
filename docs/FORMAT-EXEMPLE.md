@@ -1,119 +1,234 @@
-# FORMAT-EXEMPLE — target look of the relevé PDF (EXEMPLE.pdf, HR26-14)
+# FORMAT-EXEMPLE — spec unique du PDF de relevé (gold EXEMPLE.pdf, HR26-14)
 
-Sources (all in this repo, read directly — no estimate from photos):
-- `origin/data-hr26-14-plans:hr26-14/exemple-sortie-cible.pdf` = EXEMPLE.pdf (87 pages, 2594 x 1729 pt, PyMuPDF overlay).
-- `origin/hr26-14-entrainement:apprentissage/hr26-14-exemplaire/` = `STANDARD-RELEVE.md`, `bordereau-materiel.csv`
-  (886 rows, DSI01-08 + E02/E07/E10/E13), `feuilles.csv`, `reserves.md`.
+**C'est la seule description du format du PDF « Plans annotés »** (pastilles, palettes, étiquettes, encadré
+`RELEVE <feuille> - MATERIEL`, bordereaux). Toute autre doc du dépôt y renvoie au lieu de recopier des chiffres
+(`tests/test_spec_format_unique.py` le vérifie). Règle de Francis (2026-10-05) : **quand une doc et le gold
+divergent, le gold gagne** — on corrige cette spec, jamais le gold. Ce que le moteur ne reproduit pas encore est
+listé et chiffré au §6.
 
-The first version of this spec (commit aed7dfc) was written from 3 photos only and stated that these files did not
-exist; they do. Values below are read from the EXEMPLE content streams and replace the photo estimates.
+## 0. Source et méthode de mesure
+- Gold : `EXEMPLE.pdf` = `exemple-sortie-cible.pdf` (branche `data-hr26-14-plans`, `hr26-14/` ; copie sur le
+  Drive `AI/Soumission 2026/_STANDARD_RELEVE/EXEMPLE.pdf`), sha256
+  `0861bc3a0e9697f7f2764fba85f0cc35bc8c5b8a3d06ce3ff2b11b32432eb84b`, 87 pages de 2594 x 1729 pt. Non versionné
+  sur `main` ; extrait approuvé E08/E09 : `apprentissage/hr26-14-exemplaire/cible-visuelle/` (ancre : `SOURCE.txt`).
+- Cible visuelle approuvée par Francis : **E08 = p.62 (bordereau p.63) et E09 = p.64 (bordereau p.65)**. Les deux
+  bordereaux sont au format **agrégé 6 colonnes** (§4.2).
+- Mesures du 2026-10-05, PyMuPDF 1.28.2, sur le gold lui-même : pastilles = tracés de `page.get_drawings()` dont
+  `fill_opacity` = 0,28 ; textes = `page.get_text("dict")` (police, corps, position du haut de ligne) ; encadré =
+  rectangle blanc à bord 0,7 pt contenant `RELEVE `. « p.N » = numéro de page du gold (base 1).
+- Le gold est en ASCII sans accents (`reperes`, `Quantites`) : le moteur reproduit ce texte tel quel.
 
-Implementation: `src/estimer/render/` — constants in `style.py`.
+## 1. Structure du document
+Chaque feuille = **1 page plan suivie de 1 à 6 pages de bordereau** (même format de page) : 26 pages plan +
+61 pages de bordereau = 87 pages. Signets du gold : un signet de niveau 1 `HR26-14-<feuille>-annote-v<n>` par
+feuille, sur la page plan (ex. `HR26-14-E03-annote-v6` p.50, `HR26-14-E08-annote-v1` p.62), plus les signets
+d'origine des plans (136 entrées au total).
 
-## Document order
-Per sheet: the annotated plan page, then its `BORDEREAU MATERIEL - <sheet>` pages (same page size, landscape).
-PDF bookmarks: `<sheet> - plan`, `Bordereau materiel <sheet>`.
+| Feuille | Format bordereau | Page plan | Pages bordereau | Repères / familles / RES | Palette | Encadré |
+|---|---|--:|---|---|---|---|
+| DSI01 | matériel 8 col. | 1 | 2-7 (6) | 122 / 8 / 122 | A | standard 1 ligne |
+| DSI02 | matériel 8 col. | 8 | 9-11 (3) | 62 / 9 / 62 | A | standard 1 ligne |
+| DSI03 | matériel 8 col. | 12 | 13-17 (5) | 94 / 8 / 94 | A | standard empilé |
+| DSI04 | matériel 8 col. | 18 | 19-21 (3) | 56 / 9 / 56 | A | standard 1 ligne |
+| DSI05 | matériel 8 col. | 22 | 23-28 (6) | 122 / 8 / 122 | A | standard 1 ligne |
+| DSI06 | matériel 8 col. | 29 | 30-32 (3) | 49 / 9 / 49 | A | standard 1 ligne |
+| DSI07 | matériel 8 col. | 33 | 34-39 (6) | 121 / 8 / 121 | A | standard 1 ligne |
+| DSI08 | matériel 8 col. | 40 | 41-43 (3) | 49 / 9 / 49 | A | standard 1 ligne |
+| E01 | agrégé 6 col. | 44 | 45 (1) | 80 / 4 / 80 | A | standard empilé |
+| E02 | matériel 8 col. | 46 | 47-49 (3) | 52 / 27 / 52 | A | standard empilé |
+| E03 | agrégé 6 col. | 50 | 51 (1) | 126 / 21 / — | B | **v6 sans RES** |
+| E04 | agrégé 6 col. | 52 | 53 (1) | 112 / 23 / — | B | **v6 sans RES** |
+| E05 | agrégé 6 col. | 54 | 55 (1) | 116 / 23 / — | B | **v6 sans RES** |
+| E06 | agrégé 6 col. | 56 | 57 (1) | 51 / 5 / 51 | A | standard 1 ligne |
+| E07 | matériel 8 col. | 58 | 59-61 (3) | 53 / 26 / 53 | A | standard empilé |
+| E08 | agrégé 6 col. | 62 | 63 (1) | 128 / 22 / — | B | **v6 sans RES** |
+| E09 | agrégé 6 col. | 64 | 65 (1) | 103 / 6 / 103 | A | standard empilé |
+| E10 | matériel 8 col. | 66 | 67-69 (3) | 53 / 26 / 53 | A | standard 1 ligne |
+| E11 | agrégé 6 col. | 70 | 71 (1) | 172 / 20 / 64 | B | standard 1 ligne |
+| E12 | agrégé 6 col. | 72 | 73 (1) | 110 / 6 / 110 | A | standard empilé |
+| E13 | matériel 8 col. | 74 | 75-77 (3) | 53 / 26 / 53 | A | standard 1 ligne |
+| E14 | agrégé 6 col. | 78 | 79 (1) | 172 / 20 / 64 | B | standard 1 ligne |
+| EU01 | travaux / achats 8 col. | 80 | 81 (1) | 31 / 4 / 31 | A | standard 1 ligne |
+| EU02 | travaux / achats 8 col. | 82 | 83 (1) | 28 / 5 / 4 | A | standard empilé |
+| EU03 | travaux / achats 8 col. | 84 | 85 (1) | 32 / 6 / 32 | A | standard 1 ligne |
+| EU04 | travaux / achats 8 col. | 86 | 87 (1) | 30 / 6 / 30 | A | standard 1 ligne |
 
-## Annotated plan page
-- The original vector page is kept as is (drawing, title block, stamp, seal widget, its own layers); the overlay is
-  added as vector content in optional-content layers: one per family `RELEVE <code> - <materiel>` plus
-  `RELEVE - Legende et avertissements` ("Calques activables").
-- **Marker** per repère, at the symbol anchor: circle r = 4.186 pt around the symbol (or the symbol bbox as a
-  rectangle for panels/boxes, diamond for some E families); stroke 0.7 pt; fill = stroke colour at 28 % opacity,
-  stroke at 90 % (-> pastel look).
-- **Colour cycle** per family (in family order on the sheet): orange (1, .690, 0), blue (0, .447, .808),
-  green (0, .651, .318), purple (.557, .267, .678), slate (.173, .243, .314), red (.906, .298, .235), then repeat.
-- **Repère label** (`I01-03`): Helvetica 4.8 pt, colour .1 grey, in a white box (88 % opacity, 8 pt high, text
-  width + 2 pt) joined to the marker centre by a 0.35 pt leader of the family colour. Default position right of
-  the marker, 2 pt past its edge; the renderer moves it left / above / below / further out to avoid other labels,
-  markers and inked plan text (tags like `[K2.2]` stay readable).
-- **`RELEVE <sheet> - MATERIEL` box**: white, 0.7 pt border (.25 .30 .35), placed in empty drawing space, never
-  on or right of the title-block frame.
-  - Wide box (DSI01: 4 columns x 505 pt, x0+10 pad): one header line at +16 pt — title Helvetica-Bold 12,
-    `N reperes / F familles / RES n` Helvetica 8.2, `Calques activables; modeles, prescriptions et reserves
-    completes page <p>` Helvetica 8.2 — then at +29 the dark-red (.55 .1 .1) 7.2 pt line
-    `RES = reserve source, modele, position, portee ou reconciliation; * = identification a revalider`.
-  - Narrow box (E02: 1 x 390 pt; E07: 1 x 250 pt): same lines stacked and wrapped.
-  - Family rows from +49 pt, 27 pt pitch (22.33 on E02, ~14 on E07), filled column by column: 10 pt swatch
-    (same style as the markers), code Helvetica-Bold 8.2 at +15, label Helvetica 6.6 at +50 (upper case,
-    wrapped to 2 lines in narrow columns), quantity Helvetica 7.1 at column width - 74 (`36 / R36`, count alone
-    when no reserve).
-  - Footer 7 pt at bottom - 4.5: `Quantites source et renvois; voir bordereau detaille.`
-  - Legend quantity = number of repères of the family (not the Qte multipliers: E02 M07 = 8 repères, Qte sum 23).
-  - RES: every repère row is in reserve unless the input clears it (12/12 EXEMPLE sheets: RES = reperes).
-- All EXEMPLE text is unaccented ASCII (`reperes`, `Quantites representees`); the renderer reproduces it verbatim.
+Total : 2177 repères. Résumé : **matériel** = DSI01-08, E02, E07, E10, E13 (12 feuilles) ; **agrégé** = E01,
+E03-E06, E08, E09, E11, E12, E14 (10 feuilles) ; **travaux / achats** = EU01-04 (4 feuilles). Le nom des feuilles
+incendie est `DSI01`..`DSI08` (jamais `DS01`). RES = repères partout sauf E11/E14 (64) et EU02 (4) ; pas de
+compteur RES sur E03/E04/E05/E08 (encadré v6, §3.3).
 
-## Bordereau page
-- Title Helvetica-Bold 26 at baseline 60 (x = 55); Helvetica 12 at 86:
-  `Quantites representees avec multiplicateurs; portees et composants de chaque ensemble conserves.`;
-  Helvetica 11 at 106: `Les renvois et composants de panneaux ne constituent pas des ensembles supplementaires a additionner.`
-- Header band y 135-162, fill (.90 .94 .97), labels Helvetica-Bold 10 at +18.
-- Columns (text x on a 2484 pt table starting at 55 + 4): Repere / source 0 · Materiel 173.88 · Designation 546.48 ·
-  Qte 695.52 · Portee 782.46 · Modele 1006.02 · Prescription / reserve 1378.62 · Parent 2334.96 (scaled to page width).
-- Rows 65 pt, Helvetica 9, first line at +13.675, repère column second line (source id) at +10.6425;
-  0.4 pt separator (.75 .79 .82) under each row, no vertical lines. 21 rows per page, header repeated.
-- Rows sorted by repère (I01-01, I01-02, ... I02-01).
-- `RESERVES ET COMPLEMENTS` block (Helvetica 10, not bold) 25.75 pt under the last separator, lines every 12.3625 pt,
-  text from `reserves.md`.
+## 2. Page plan — pastilles, palettes, étiquettes, calques
+### 2.1 Commun à toutes les feuilles
+- La page vectorielle d'origine est conservée telle quelle (dessin, cartouche, sceau, calques CAD). La surcouche est
+  vectorielle, dans des calques optionnels (OCG) : un calque `RELEVE <code> - <materiel>` **par famille et par
+  feuille** plus `RELEVE - Legende et avertissements` par feuille, soit 344 + 26 = **370 calques `RELEVE`** sur les
+  1670 calques du gold.
+- **Style de pastille** (100 % des tracés à remplissage 0,28 des 26 pages plan) : remplissage = couleur du trait à
+  **28 %** d'opacité, trait **0,7 pt** à **90 %** (aspect pastel).
+- **Étiquette de repère** : Helvetica **4,8 pt**, gris 0,1, dans une boîte blanche à **88 %** d'opacité reliée au
+  centre de la pastille par un **trait d'attache de 0,35 pt** de la couleur de la famille. Hauteur de boîte : 8 pt
+  pour 1 ligne, 14 pt pour 2 lignes (15 et 20 pt sur certaines étiquettes des feuilles en palette B).
+- Les pastilles de légende de l'encadré (10 pt de diamètre ou de côté ; 13 pt dans l'encadré v6) sont dessinées avec
+  le même style : elles ne sont pas des repères.
 
-## Renderer
-```
-python -m src.estimer.render <estimer-output-dir> <plans.pdf> <out.pdf> [--report report.json]
-```
-Input dir: `estimate.json` (estimer format; elements may carry `repere`, `source`, `bbox`, `shape`, `reserve`),
-optional `bordereau.csv` (gold `bordereau-materiel.csv` schema, joined on feuille + repere, optional `reserve`
-column) and `reserves.md`. Without bordereau.csv, codes F01.. per estimator family, `MODELE NON PRECISE`,
-portee `A PRECISER`. Positions are raster px of `width_px`/`height_px`, mapped onto the PDF page.
+### 2.2 Formes et rayons des pastilles par format
+Le rayon **4,1859 pt n'est la règle que pour les feuilles incendie DSI** ; il n'y a pas de rayon unique.
 
-Gold proof on HR26-14:
-```
-python -m src.estimer.render.from_exemple EXEMPLE.pdf bordereau-materiel.csv feuilles.csv OUT --reserves reserves.md
-python -m src.estimer.render OUT OUT/plans.pdf HR26-14-rendu.pdf --report HR26-14-rendu.report.json
-python -m src.estimer.render.verify_exemple HR26-14-rendu.pdf HR26-14-rendu.report.json EXEMPLE.pdf OUT
-```
-`from_exemple` lit, pour les 26 feuilles de `feuilles.csv`, chaque marqueur de l'EXEMPLE (centre, bbox, forme,
-couleur, lignes de detail de l'etiquette, `*` -> drapeau revalider), les lignes du bordereau (materiel : CSV or ;
-agrege / travaux : lues cellule par cellule dans l'EXEMPLE par `tableau.read_table`, verifie 8196/8196 cellules
-egales aux CSV or) et les notes, puis applique les corrections journalisees (`corrections_exemple.py`,
-ecrites dans `OUT/corrections.json`). `plans.pdf` = les 26 pages plan sans la surcouche RELEVE.
+| Groupe de feuilles | Formes des pastilles (repères seulement) | Rayon / taille | Étiquette | Preuve |
+|---|---|---|---|---|
+| Matériel incendie DSI01-08 | cercles seulement | r = **4,1859 pt** | 1 ligne `I01-01` | p.1 : 122 cercles r 4,1859 (+ 8 cercles r 5,0 = légende) |
+| Matériel électricité E02, E07, E10, E13 | **rectangles** = boîte du symbole (panneaux, boîtiers) | variable (p.46 : de 4,5 x 16,8 à 917 x 58 pt) | 1 ligne `M01-01` | p.46 : 52 rectangles (+ 27 carrés 10 pt = légende) |
+| Agrégé palette A : E01, E06, E09, E12 | cercles, **triangles pointe en haut**, rectangles (plinthes, panneaux) | cercles r = **5,0231 pt** ; triangles 10,05 pt ; rectangles 2,25 à 69 pt | 2 lignes `CH-01` / `1250 W S25,27` | p.64 (E09) : 53 cercles + 14 triangles + 36 rectangles = 103 |
+| Agrégé palette B : E03, E04, E05, E08, E11, E14 | cercles, **losanges**, rectangles aux dimensions graphiques du plan (plinthes PL) | cercles r = **4,6045 / 5,0231 / 5,4417 / 5,8603 pt** selon la famille ; losanges 10,05 à 11,72 pt ; rectangles ex. 7,08 x 109 pt | 2 lignes `AF-01` / `C2` ; `PL-01` / `1000 W C13,15` en **Helvetica 5,2 pt** | p.62 (E08) : 100 cercles (68 x 5,4417, 20 x 4,6045, 8 x 5,0231, 4 x 5,8603) + 6 losanges + 22 rectangles = 128 |
+| Travaux EU01-04 | cercles, triangles pointe en haut, losanges (EU02-04), carrés | cercles r = 5,0231 pt ; triangles 10,46 pt ; carrés 10,88 / 11,72 pt | 1 ligne `IS-01` | p.80 (EU01) : 18 cercles + 10 triangles + 3 carrés = 31 |
 
-## Preuve (2026-09-27, 26 feuilles, 87 pages)
-- Pages : 87/87 ; nombre de pages de bordereau identique pour chaque feuille (E04/E05 : 23 lignes resserrees a
-  63,75 pt comme l'EXEMPLE).
-- Reperes : 2177/2177 marqueurs a moins de 0,001 pt de l'EXEMPLE (max 0,001 pt).
-- Encadres : 26/26 reperes / familles identiques ; RES identique la ou l'EXEMPLE l'affiche (E11/E14 RES 64,
-  EU02 RES 4) ; legendes : quantite et `/ Rn` identiques pour chaque famille.
-- Bordereaux : 8196/8196 cellules egales a la cellule de l'EXEMPLE apres corrections (7887 identiques meme sans
-  correction), memes lignes, memes notes, memes sous-titres, 0 troncature `...`.
+Autres décomptes vérifiés (repères = cercles + polygones + rectangles hors légende) : E01 p.44 = 38 + 13 triangles
++ 29 = 80 ; E03 p.50 = 98 + 6 losanges + 22 = 126 ; E11 p.70 = 128 + 12 losanges + 32 = 172. Triangle du gold :
+sommets (milieu, haut), (droite, bas), (gauche, bas) de sa boîte.
 
-## Erreurs de l'EXEMPLE corrigees (au lieu d'etre reproduites)
-| Regle | Nb | Exemple |
-|---|--:|---|
-| ESPACE-MOT-CHIFFRE | 256 | `note7` -> `note 7`, `interconnexion3` -> `interconnexion 3` |
-| ESPACE-MOT-SIGLE | 19 | `lotA` -> `lot A`, `panneauPS` -> `panneau PS` |
-| ESPACE-NORME | 20 | `NEMA5-20R` -> `NEMA 5-20R`, `DEL5.5` -> `DEL 5.5` |
-| ESPACE-VIRGULE | 11 | `chauffages,24` -> `chauffages, 24` (`7,8,9` intact) |
-| ESPACE-UNITES | 3 | `120V15A` -> `120V 15A` |
-| PHRASE-DOUBLEE | 8 | phrases repetees mot pour mot dans les sources EU |
-| TRONCATURE | 16 | `a confirme...` -> `a confirmer.` ; sinon coupe a la derniere proposition + `(suite: notes de reserve source)` |
-| MODELE-VIDE | 11 | `Non renseigne` -> `MODELE NON INDIQUE` |
-| SOURCE-FICTIVE | 35 | `Preuve du releve (voir audit)` -> `Plan E03: reperes AF-01 a AF-04 (symboles de la legende du plan)` |
-| Sous-titre travaux | 4 | `travaux;9 appareils` -> `travaux; 9 appareils` |
-| Encadre v6 | 4 | E03/E04/E05/E08 : encadre standard (compteur RES, `/ Rn`), `[R-001]` -> `(hors legende - R-001)` |
+### 2.3 Les deux palettes
+- **Palette A — cycle de 6 couleurs** dans l'ordre des familles de la feuille (I01, I02, … puis on recommence) :
+  orange (1, 0,6902, 0), bleu (0, 0,4471, 0,8078), vert (0, 0,651, 0,3176), violet (0,5569, 0,2667, 0,6784),
+  ardoise (0,1725, 0,2431, 0,3137), rouge (0,9059, 0,298, 0,2353). Feuilles : DSI01-08, E01, E02, E06, E07, E09,
+  E10, E12, E13, EU01-04 (20 feuilles). Preuve p.1 : orange 39 = I01 36 + I07 1 + 2 pastilles de légende ;
+  bleu 32 = I02 29 + I08 1 + 2.
+- **Palette B — une couleur par famille, palette du relevé** : E03, E04, E05, E08, E11, E14 (6 feuilles). 20 couleurs distinctes mesurées sur ces 6 pages : (0,078 0,078 0,078), (0,133 0,545 0,133),
+  (0,145 0,388 0,922), (0,208 0,208 0,208), (0,208 0,208 0,62), (0,208 0,6 0,6), (0,322 0,702 0,886),
+  (0,471 0,784 0,471), (0,478 0,38 0,576), (0,545 0,361 0,965), (0,588 0,784 0,98), (0,6 0,208 0,6),
+  (0,635 0,42 0,267), (0,706 0,325 0,035), (0,753 0,204 0,804), (0,859 0,153 0,467), (0,867 0,529 0,741),
+  (0,867 0,812 0,208), (0,871 0,871 0,208), (0,894 0,208 0,208). Trois d'entre elles sont exactement des couleurs de
+  base de `releve/commun.py::PALETTE_FAMILLE` : alarme (53, 153, 153), télécom (53, 53, 158), distribution
+  (228, 53, 53).
+- La palette ne suit pas le format : E01/E06/E09/E12 sont agrégées en palette A, E03/E04/E05/E08/E11/E14 agrégées
+  en palette B.
 
-## Ecarts restants
-- Texte ASCII sans accents, comme l'EXEMPLE.
-- Texte coupe par l'EXEMPLE et non retrouvable : renvoi explicite aux notes de reserve (pas d'invention).
-- E03/E04/E05/E08 : l'EXEMPLE n'affiche pas de RES ; convention appliquee RES = tous les reperes.
-- Familles partiellement en reserve (E11/E14 PC `32 / R4`, EU02) : le compte est exact, mais l'EXEMPLE ne dit
-  pas quels reperes ; les n premiers par numero sont marques.
-- Position des etiquettes, des traits d'attache et de l'encadre : recopiees de l'EXEMPLE (preuve visuelle E01/E03/E11).
-  Hors EXEMPLE (dossier reel), le moteur place lui-meme etiquettes et encadre.
-- Texte des encadres (phrase d'aide, pied, renvoi de page) : style du moteur ; le renvoi de page est le vrai numero
-  (E11 : page 71 au lieu du "page 2" errone de l'EXEMPLE).
-- Legende : forme des glyphes (carre, triangle, losange, rond), colonnes, 1re ligne et interligne recopies de l'EXEMPLE ;
-  lignes modele (LEVITON T5820-W, CANARM OMNI...) affichees sous le nom sur E03/E04/E05/E08.
-- Encadre v6 (E03/E04/E05/E08) : corps de texte standard 5,2/8,2 pt au lieu des 10 pt de l'EXEMPLE (harmonisation).
-- Controle a l'oeil du sous-agent verificateur : plans E01/E03/E11 16/18 puis legendes E01/E03/E11/EU02 24/24
-  (constat "R-901" rejete : l'EXEMPLE porte bien R-001).
-- `feuilles.csv` or : lot de E14 vide (non rendu).
+### 2.4 Étiquettes par format
+- Matériel : `<code famille>-<séquence>` sur 1 ligne (`I01-01`, `M01-01`), code famille = préfixe `I` (incendie) ou
+  `M` (électricité) + numéro.
+- Agrégé : code lettres de la famille + séquence (`CH-01`, `AF-01`, `PL-01`) et une 2e ligne de détail quand elle
+  existe sur le plan : puissance et circuit (`2000 W S15,17` p.64), circuit seul (`C2` p.62), plinthes en 5,2 pt
+  (`1250 W C13,15` p.62).
+- Travaux : code lettres + séquence sur 1 ligne (`BD-01`, `IS-01`, `AC-01`).
+- `*` après le repère = identification à revalider (ex. `CT-01*` p.62).
+
+## 3. Encadré `RELEVE <feuille> - MATERIEL`
+Cadre blanc, bord 0,7 pt (0,25 0,30 0,35), posé dans un espace vide du dessin, jamais sur le cartouche.
+Positions ci-dessous = haut de ligne mesuré depuis le haut du cadre. Il existe **deux variantes** : standard (avec
+compteur RES) et v6 (sans RES).
+
+La taille du cadre varie d'une feuille à l'autre (de 235 x 880 à 2020 x 110 pt) : elle suit l'espace libre du
+plan, pas le format du bordereau.
+
+### 3.1 Standard « 1 ligne » (15 feuilles : DSI01, DSI02, DSI04-08, E06, E10, E11, E13, E14, EU01, EU03, EU04)
+Ex. DSI01 p.1 : cadre 2020 x 110 pt ; E11 p.70 : 1700 x 200 ; E10 p.66 : 870 x 255 ; EU01 p.80 : 800 x 180.
+- +3,2 : `RELEVE DSI01 - MATERIEL` Helvetica-Bold 12 ; sur la même ligne (+7,2) `122 reperes / 8 familles / RES 122`
+  Helvetica 8,2 à x+195 et `Calques activables; modeles, prescriptions et reserves completes page 2` 8,2 à x+530.
+- +21,3 : ligne rouge foncé (0,55 0,10 0,10) Helvetica 7,2 `RES = reserve source, modele, position, portee ou
+  reconciliation; * = identification a revalider`.
+- Familles en colonnes (505 pt sur DSI01, 425 pt sur E11 ; pas de 27 pt sur DSI01, 28,8 pt sur E11) : pastille
+  10 pt, code Helvetica-Bold 8,2 à +15, libellé Helvetica 6,6 en majuscules à +50, quantité Helvetica 7,1
+  `36 / R36` (ou le compte seul sans réserve, ex. E11 `CT 12`).
+- Pied Helvetica 7,0, propre à la feuille : DSI `Quantites source et renvois; voir bordereau detaille.` ;
+  E10/E13 `Reperes source; quantites et reserves au bordereau.` ; EU01/EU04 `Emplacements de travaux sur calques;
+  achats, prescriptions et reserves detaillees page 2.` ; EU03 `Bordereau complet et reserves page 2.`
+
+### 3.2 Standard « empilé » (7 feuilles : DSI03, E01, E02, E07, E09, E12, EU02)
+Ex. E01 p.44 et E09 p.64 : 780 x 320 pt (2 colonnes) ; E02 p.46 : 390 x 705 (1 colonne) ; DSI03 p.12 : 360 x 900.
+- +3,2 titre Helvetica-Bold 12 ; +21,0 `103 reperes / 6 familles / RES 103` Helvetica 8,2 ; +31,1
+  `Calques activables; prescriptions completes page 2.` 8,2 ; +41,3 en noir 8,2 `RES = reserve source, modele,
+  position ou portee; * = identification a revalider` (formulation courte).
+- Familles à partir de +87 pt, même style qu'en §3.1 ; pas de 22,4 pt sur E02, 22,3 sur E07, 72,7 sur E09/E12.
+- Pied 7,0 propre à la feuille : E01 `Materiel existant; quantites physiques reservees pour les deux glyphes
+  superposes.`, E02/E07 `Quantites et reserves au bordereau.`, E09/E12 `Reperes source; quantites et reserves au
+  bordereau.`, EU02 `Bordereau complet et reserves page 2.`
+
+### 3.3 Variante v6 sans RES (E03, E04, E05, E08 — dont la cible approuvée E08)
+Cadres : E03 p.50 470 x 930 pt ; E04 p.52 et E05 p.54 295 x 990 pt ; E08 p.62 235 x 880 pt.
+- +5,0 `RELEVE E08 - MATERIEL` Helvetica-Bold **14**.
+- +28,3 `128 reperes / 22 familles / calques activables` Helvetica **9** — **aucun compteur RES**.
+- +43,9 `0 non identifies - 2 identifications a revalider (*)` Helvetica 8,5 (E03/E04/E05 : `0 ... - 0 ...`).
+- +56,9 en rouge (0,70 0,10 0,10) Helvetica 8,5 : `5 divergences plan/cedule A RESOUDRE` (E04 : 10, E05 : 6, E08 : 5 ;
+  absente sur E03) ; E04/E05 ajoutent en rouge 8,0 `2 calibres distincts dans les sources - voir bordereau`.
+- Familles en 1 colonne : glyphe de légende **13 pt** (cercle r 6,5, carré ou losange 13 pt), code Helvetica-Bold
+  **10** à x+33, libellé Helvetica **8,7** à x+62 (renvoyé à la ligne ; E03 ajoute une ligne modèle, ex.
+  `LEVITON T5820-W`), quantité Helvetica **10** sans `/ Rn` ; pas de 36,6 (E03), 34,9 (E04/E05), 32,05 pt (E08).
+  Les désignations hors légende portent `[R-001]` (ex. `PLINTHE DE CHAUFFAGE [R-001]`).
+- Notes de bas Helvetica 8,0 (6 lignes) : `PL : rectangles aux dimensions graphiques du plan.` / `W et circuits
+  affiches uniquement si verifies.` / `* : identification heritee a revalider ; NI : materiel non identifie.` /
+  `Les quantites concernent cette feuille de logements types.` / `R-001 : designation conservee au registre des
+  reserves.` / `Modeles, prescriptions et sources : bordereau page 2.`
+
+## 4. Pages de bordereau — 3 formats
+Positions x = début du texte d'en-tête de colonne ; y = haut de ligne. Bande d'en-tête remplie (0,90 0,94 0,97) ;
+séparateurs horizontaux (0,75 0,79 0,82), aucune ligne verticale. Le format est celui de la feuille (§1), jamais
+un format unique pour tout le dossier.
+
+### 4.1 Matériel — 8 colonnes, une ligne par repère (DSI01-08, E02, E07, E10, E13)
+- Titre `BORDEREAU MATERIEL - DSI01` Helvetica-Bold 26 (haut y 32,2) ; sous-titres Helvetica 12
+  `Quantites representees avec multiplicateurs; portees et composants de chaque ensemble conserves.` et Helvetica 11
+  `Les renvois et composants de panneaux ne constituent pas des ensembles supplementaires a additionner.` (p.2).
+- Bande d'en-tête de 27 pt ; en-têtes Helvetica-Bold 10 : `Repere / source` x 59 · `Materiel` 232,88 ·
+  `Designation` 605,48 · `Qte` 754,52 · `Portee` 841,46 · `Modele` 1065,02 · `Prescription / reserve` 1437,62 ·
+  `Parent` 2393,96 (p.2, identiques sur les 12 feuilles).
+- Corps Helvetica 9 ; lignes de 65 pt, séparateur 0,4 pt ; **21 lignes par page pleine** (p.2 : 21 séparateurs) ;
+  nombre de lignes = nombre de repères (DSI01 : 122 lignes sur 6 pages).
+- Fin de la dernière page : bloc `RESERVES ET COMPLEMENTS` Helvetica 10 non gras (p.7, 11, 17, 21, 28, 32, 39, 43, 49,
+  61, 69, 77).
+
+### 4.2 Agrégé — 6 colonnes, une ligne par famille (E01, E03-E06, E08, E09, E11, E12, E14)
+- Titre `BORDEREAU MATERIEL - E08` Helvetica-Bold **28** (haut y 40,0) ; sous-titres Helvetica 13
+  `128 reperes sur cette feuille - prescriptions recopiees du devis et du releve verifie.` et Helvetica 12
+  `Les modeles non renseignes restent a preciser. Les circuits divergents exigent une clarification.` (p.63).
+- Bande d'en-tête de **30 pt** ; en-têtes Helvetica-Bold 12 : `ID` x 71 · `Qte` 157,24 · `Famille` 231,16 ·
+  `Modele / type` 674,68 · `Prescription du devis` 1167,48 · `Source / reserve` 2066,84 (p.45, p.63, p.65).
+- Corps Helvetica **11** ; séparateurs **0,5 pt** ; une ligne par famille (E08 p.63 : 22 lignes pour 22 familles) ;
+  1 page par feuille.
+- Bloc de fin `Notes de reserve source` Helvetica-Bold 12 sur E01, E06, E09, E11, E12, E14 (p.45, 57, 65, 71, 73,
+  79) ; **absent sur E03, E04, E05, E08** (p.51, 53, 55, 63).
+
+### 4.3 Travaux / achats — 8 colonnes (EU01-04)
+- Titre `BORDEREAU TRAVAUX / ACHATS - EU01` Helvetica-Bold 28 ; un seul sous-titre Helvetica 13
+  `31 emplacements de travaux;29 appareils a fournir (configurations a confirmer)` (p.81).
+- Bande d'en-tête de 30 pt ; en-têtes Helvetica-Bold 12 : `ID` x 71 · `Famille` 169,56 · `Portee` 539,16 ·
+  `Lieux` 773,24 · `A fournir` 945,72 · `Modele` 1130,52 · `Prescription` 1450,84 · `Source / relation` 2017,56.
+- Corps Helvetica **9,2** ; séparateurs 0,5 pt ; 1 page par feuille ; bloc de fin `Notes de reserve source`
+  Helvetica-Bold 12 (p.81, 83, 85, 87).
+
+## 5. Moteur qui produit ce format
+- Parcours canonique : `uv run releve/run.py <NOM>` → `releve/render_vectoriel.py` (étape 4a) →
+  `src/estimer/render/` (`from_releve.build` puis `render`) ; `releve/render_pdf.py` (étape 4b) ajoute le rapport de
+  métré et le dossier complet sans redessiner de pastille. Constantes : `src/estimer/render/style.py`.
+- Choix du format par feuille : `from_releve.sheet_format` (colonne `bordereau` de `feuilles-classement.csv`, sinon
+  incendie ou schéma → matériel, toute la feuille en urgence → travaux, autre plan → agrégé) ; tableaux :
+  `bordereau.add_bordereau` (matériel) et `bordereau.add_bordereau_agrege` (specs agrégé et travaux).
+- Rendu direct : `python -m src.estimer.render <dossier-estimer> <plans.pdf> <sortie.pdf> [--report rapport.json]`.
+- Preuve sur le gold (le EXEMPLE.pdf complet est requis : indisponible en bac à sable cloud) :
+  ```
+  python -m src.estimer.render.from_exemple EXEMPLE.pdf apprentissage/hr26-14-exemplaire/bordereau-materiel.csv \
+      apprentissage/hr26-14-exemplaire/feuilles.csv OUT --reserves apprentissage/hr26-14-exemplaire/reserves.md
+  python -m src.estimer.render OUT OUT/plans.pdf HR26-14-rendu.pdf --report HR26-14-rendu.report.json
+  python -m src.estimer.render.verify_exemple HR26-14-rendu.pdf HR26-14-rendu.report.json EXEMPLE.pdf OUT
+  ```
+  Résultat du 2026-10-05 : `TOTAL pages 87/87, reperes 2177, cellules 8196/8196 (identiques brutes 7887),
+  troncatures 0, spans exacts 9039 (diff 785, info) -> OK` ; marqueurs à 0,001 pt au plus. `verify_exemple` compare
+  centres de pastilles, compteurs, légendes et cellules : il **ne compare pas** la forme des pastilles ni la mise en
+  page de l'encadré (d'où le §6).
+
+## 6. Écarts restants entre le moteur et le gold (mesurés le 2026-10-05)
+Rendu comparé : sortie de la preuve §5 (`HR26-14-rendu.pdf`, 87 pages) contre le gold, page par page, avec la même
+méthode qu'au §0. Le gold gagne : chaque ligne ci-dessous est un écart à résorber, pas une règle.
+
+| # | Écart | Feuilles | Chiffres | État |
+|---|---|---|---|---|
+| E1 | **Encadré v6 remplacé par l'encadré standard** : titre 12 au lieu de 14 ; compteur `N reperes / F familles / RES N` au lieu de `... / calques activables` ; lignes `non identifies / identifications a revalider`, `divergences plan/cedule A RESOUDRE` et `calibres distincts` absentes ; glyphes de légende 10 pt au lieu de 13 ; code 8,2 / libellé 6,6 / quantité 7,1 pt au lieu de 10 / 8,7 / 10 ; ligne RES et pied standard au lieu des 6 notes v6 | E03, E04, E05, E08 (dont la cible E08) | 4 encadrés sur 26 ; RES affiché 126 / 112 / 116 / 128 là où le gold n'en a pas ; divergences non affichées 10 / 6 / 5 (E04 / E05 / E08) ; 57 glyphes de légende r 5,0 au lieu de r 6,5 (13 + 15 + 15 + 14). Mêmes cadres (470 x 930, 295 x 990, 295 x 990, 235 x 880) et mêmes pastilles sur le plan | **ouvert** — reproduire v6 demande des données que l'entrée du moteur n'a pas (`non identifies`, `divergences plan/cedule`, `calibres distincts` n'existent ni dans `estimate.json` ni dans le relevé de `releve/`) : décision de schéma hors de la portée de la PR de réalignement |
+| E2 | Pastilles triangulaires dessinées en losanges | E01, E06, E09, E12, EU01-04 | 88 pastilles sur 8 feuilles avant correction | **corrigé** (`from_exemple._shape_bbox` reconnaît 3 sommets ; `plan.draw_halo` gère le triangle) : 0 écart de forme après |
+| E3 | Renvoi de page de l'encadré : le moteur écrit le numéro absolu (`page 51`), le gold `page 2` partout (la 2e page de la feuille) | 25 feuilles (DSI01 coïncide : son bordereau est la page 2) | 25 encadrés sur 26 | ouvert (choix hérité du moteur, à trancher par Francis) |
+| E4 | Texte des cellules corrigé au lieu d'être recopié (`corrections_exemple.py` : espaces manquants, troncatures, `Non renseigne`, sources fictives) | 26 feuilles | 309 cellules sur 8196 diffèrent du gold brut (7887 identiques) ; `spans exacts 9039 (diff 785)` | ouvert (choix hérité, à trancher par Francis) |
+| E5 | Calques `RELEVE` moins nombreux que dans le gold (le gold a un calque par famille et par feuille + un calque légende par feuille) | 26 feuilles | 89 calques `RELEVE` (132 au total) au lieu de 370 (1670 avec les calques CAD) | ouvert |
+| E6 | Signets : `<feuille> - plan` + `Bordereau materiel <feuille>` au lieu de `HR26-14-<feuille>-annote-v<n>` et des signets d'origine | 26 feuilles | 52 signets au lieu de 136 | ouvert |
+| E7 | Hors gold (dossier réel par `from_releve`) : palette B appliquée à **toutes** les feuilles agrégées (couleur du relevé) alors que le gold met E01/E06/E09/E12 en palette A ; cercle par défaut r 4,1859 sur toutes les feuilles quand le symbole n'est pas ancré, alors que le gold utilise 5,0231 et plus sur les feuilles E/EU | dossiers réels | non mesurable sur le gold (le gold n'a pas de règle écrite pour choisir la palette) | ouvert |
+| E8 | Anneau blanc de 1 pt (`style.HALO_W`, `plan.draw_halo`) dessiné autour de chaque pastille ; le gold n'en a pas — visible quand la pastille chevauche un trait du plan (contrôle visuel E09 p.64) | 26 feuilles | 2177 pastilles | ouvert (ajout du moteur pour les symboles foncés, S-1715 E201 ; à trancher par Francis) |
+
+Rayons : les cercles DSI du moteur sont à 4,1859 pt comme le gold (écart de centre ≤ 0,001 pt, arrondi à la
+2e décimale seulement : 4,18 / 4,19).

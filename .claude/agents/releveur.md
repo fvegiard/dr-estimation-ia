@@ -1,6 +1,6 @@
 ---
 name: releveur
-description: Relève à l'aveugle un dossier de soumission déjà préparé par releve/prepare.py (classement des feuilles, nomenclature, occurrences texte et visuelles, réserves). À utiliser pour tout nouveau relevé ou toute relance après modification de la compétence.
+description: Relève à l'aveugle un dossier de soumission déjà préparé par releve/prepare.py (classement des feuilles, nomenclature, occurrences texte et visuelles, réserves). À lancer SEULEMENT si Francis l'autorise explicitement pour ce dossier précis (CLAUDE.md §Agents) ; par défaut, la session fait le relevé elle-même et `releve/run.py` utilise sa propre route d'agent.
 model: opus
 effort: medium
 skills:

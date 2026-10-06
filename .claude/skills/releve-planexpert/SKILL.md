@@ -10,8 +10,9 @@ allowed-tools: Read Write Edit Glob Grep Bash(uv run releve/zoom.py *) Bash(uv r
 Tu es l'estimateur-releveur de Groupe DR Électrique. Le dossier de travail `$ARGUMENTS` a été préparé par
 `releve/prepare.py` (lis d'abord `$ARGUMENTS/MANIFESTE.md`). Ton travail s'arrête aux fichiers CSV/MD ci-dessous ;
 les scripts déterministes (`build_qpl.py`, `render_vectoriel.py`, `render_pdf.py`) fabriquent ensuite le .qpl et les
-PDF (pastilles pastel, encadré « RELEVE - MATERIEL », bordereau 8 colonnes — format cible approuvé, voir
-`apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` et `SOURCE.txt`). Tu ne les lances pas, mais les colonnes que
+PDF (pastilles pastel, encadré « RELEVE - MATERIEL », bordereau au format de chaque feuille : matériel, agrégé ou
+travaux — spec unique `docs/FORMAT-EXEMPLE.md`, cible approuvée E08/E09 ancrée dans
+`apprentissage/hr26-14-exemplaire/SOURCE.txt`). Tu ne les lances pas, mais les colonnes que
 tu écris ci-dessous (§2, §4) sont ce qui détermine si ce bordereau est complet ou réduit aux valeurs par défaut.
 
 ## Règles absolues (données par Francis)
@@ -82,8 +83,9 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - `jeton_regex` : expression régulière (fullmatch, sensible à la casse) qui reconnaît l'étiquette texte de l'appareil sur
      le plan (ex. `DS0`, `Do`, `Di`, `K`, `B`, `PH1`). Vide pour les appareils sans étiquette (prises, enseignes…), qui se relèvent visuellement.
    - `source` : feuille et zone où la définition a été lue (ex. `E103 légende, colonne 2`).
-   - **Colonnes du rendu final** (lues par `releve/render_vectoriel.py` pour produire le bordereau 8 colonnes au format
-     de l'exemplaire HR26-14 — voir `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` §4, §5, §6 ; toutes optionnelles
+   - **Colonnes du rendu final** (lues par `releve/render_vectoriel.py` pour produire le bordereau de chaque feuille
+     dans son format — matériel, agrégé ou travaux, voir `docs/FORMAT-EXEMPLE.md` §4 et
+     `apprentissage/hr26-14-exemplaire/STANDARD-RELEVE.md` §4, §5, §6 ; toutes optionnelles
      mais **à remplir chaque fois que l'information est lisible sur le plan/la légende/la cédule** — un bordereau qui reste
      aux valeurs par défaut sur tout un dossier est un signe que ces colonnes n'ont pas été lues, pas qu'elles étaient absentes) :
      - `code` : identifiant court 2-3 lettres de la famille, cohérent avec le vocabulaire `STANDARD-RELEVE.md` §6 quand
@@ -142,7 +144,8 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    **toutes** les tuiles de chaque feuille `plan` et relève les symboles sans étiquette (prises duplex, DDFT, enseignes de sortie,
    phares, postes manuels, klaxons non étiquetés, sectionneurs, raccordements d'équipements…). Coordonnées lues sur les règles,
    **au centre du symbole, sans arrondir** : interpole entre deux graduations au lieu de prendre la graduation la plus proche.
-   Une pastille fait ≈ 4,2 pt de rayon — arrondir à 5 pt la déplace de plus que sa propre taille et la fait rater le symbole.
+   Une pastille ne fait que 4 à 6 pt de rayon (rayons par format : `docs/FORMAT-EXEMPLE.md` §2.2) — arrondir à 5 pt la
+   déplace d'autant que sa propre taille et la fait rater le symbole.
    Repère mesuré : sur les 319 marques relevées à la main dans le dépôt, 3,1 % seulement tombent sur un multiple de 5 pt dans
    les deux axes. Si presque toutes tes coordonnées sont rondes, tu ne lis pas le plan — tu poses une grille mentale, et le
    contrôle Q10 le bloque (gemma-4-31b : 53/53 sur 10 pt ; kimi-k3 : 104/104 sur 5 pt, familles correctes mais positions fausses).

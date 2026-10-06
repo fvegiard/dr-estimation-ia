@@ -6,7 +6,7 @@ Input directory layout (the `python -m src.estimer` output, optionally enriched)
                   raster size the positions are expressed in (width_px / height_px). `counters[].elements[]`
                   gives one detected symbol each: sheet, page, x, y (raster px, top-left origin).
                   Optional per-element keys understood here: repere, source, bbox [x0, y0, x1, y1]
-                  (same units as x/y), shape (circle | rect | diamond), code, flags.
+                  (same units as x/y), shape (circle | rect | diamond | triangle), code, flags.
   bordereau.csv   optional. One row per repere, columns
                   feuille,repere,source,materiel,designation,qte,portee,modele,prescription,parent[,reserve]
                   (the HR26-14 gold `bordereau-materiel.csv` schema). Joined on (feuille, repere); gives the

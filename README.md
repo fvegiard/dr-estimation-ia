@@ -33,18 +33,22 @@ Tant que ces chiffres ne sont pas atteints et prouvés dans `dossiers/`, le proj
 4. **Saisie Plan Expert** — VM Windows sur `mxlinux`, pilotée par Claude Code (mxlinux) + Windows-MCP
 5. **Chemins de câblage** — `dossiers/<no>/cablage.pdf` : tracé sur les plans
 
-## Outillage livré (voir `SPEC.md` et `docs/consolidation.md`)
+## Outillage livré (voir `docs/consolidation.md`)
 
+- **PDF « Plans annotés » (le seul moteur de rendu branché)** : `uv run releve/run.py <NOM>` →
+  `releve/render_vectoriel.py` → `src/estimer/render/` (pastilles vectorielles OCG, encadré, bordereau au format de
+  chaque feuille), puis `releve/render_pdf.py` (rapport de métré + dossier complet). Format visé : la spec unique
+  `docs/FORMAT-EXEMPLE.md`, mesurée sur le gold HR26-14.
 - `src/releve/` — chaîne `python -m src.releve` : `inventaire`, `index`, `raster`, `qpl`, `verifier`,
-  `xlsx` (export `releve.xlsx` au gabarit DR)
-- `src/pipeline/` — préparation d'un dossier de soumission (feuilles, tuiles, occurrences, `.qpl`, PDF)
+  `xlsx` (export `releve.xlsx` au gabarit DR) — pas de PDF
 - `src/validation/ecart.py` — comparateur déterministe référence vs décompte IA → `ecart.md`
   (verdict PASS/FAIL **calculé** ; le verdict FINAL reste à Francis)
 - `src/cablage/` — métré des artères (`compute_arteres`) et injection de lignes dans le `.qpl`
   (`inject_lines`, assertion d'unicité des GroupID corrigée)
 - `src/qpl/` — import de compteurs dans un `.qpl` existant (`import_counters`) + charte graphique (`charte`)
-- `docs/` — format QPL et pipeline complet (`pipeline-qpl.md`), gabarits de livrables
-  (`format-livrable.md`), table de consolidation (`consolidation.md`)
+- `docs/` — spec du PDF de relevé (`FORMAT-EXEMPLE.md`), format QPL et pipeline complet (`pipeline-qpl.md`),
+  format `.qpl` de Plan Expert (`format-qpl-plan-expert.md`), gabarits Excel des livrables (`format-livrable.md`),
+  table de consolidation (`consolidation.md`)
 - `infra/` — VM Plan Expert sur mxlinux (`infra/mxlinux/`) et traitement en série (`infra/pe-batch.ps1`)
 - `tests/` — pytest, fixtures **synthétiques uniquement** (aucune donnée client)
 

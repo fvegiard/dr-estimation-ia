@@ -8,6 +8,12 @@ them at a fixed size whatever the plan scale), table geometry is expressed relat
 from __future__ import annotations
 
 # Family colour cycle (stroke = fill colour; fill drawn at 28 % opacity -> pastel look).
+# Palette A du gold (docs/FORMAT-EXEMPLE.md §2.3) : DSI01-08, E01, E02, E06, E07, E09, E10, E12, E13, EU01-04.
+# Le gold a une 2e palette (palette B, une couleur par famille, 20 couleurs mesurées : brun (.635 .42 .267),
+# rose (.867 .529 .741), jaune (.871 .871 .208), rouge (.894 .208 .208)...) sur E03, E04, E05, E08, E11, E14.
+# Elle n'est pas une constante ici : from_exemple recopie la couleur de chaque marqueur du gold, et
+# from_releve.build donne aux feuilles agrégées la couleur du relevé (releve/commun.py::load_nomenclature,
+# PALETTE_FAMILLE + VARIANTES), via Item.color. Écart restant documenté au §6 de la spec (E7).
 PALETTE = (
     (1.0, 0.6901961, 0.0),                     # orange   (I01, I07, ...)
     (0.0, 0.44705884, 0.80784317),             # blue     (I02, I08)
@@ -21,6 +27,7 @@ STROKE_OPACITY = 0.9
 MARK_LINE_W = 0.7
 HALO_W = 1.0                                  # white ring outside each plan marker
 MARK_RADIUS = 4.1859                          # default circle radius when no symbol bbox is known
+                                              # (rayon gold des DSI seulement ; E/EU : 4,6045 a 5,8603, spec §2.2)
 MARK_RADIUS_MAX = 8.0                         # cap of the circle drawn around an anchored (larger) symbol
 
 # Repère label next to each marker
