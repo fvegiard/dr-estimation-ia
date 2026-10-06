@@ -82,14 +82,36 @@ def resolve_inbox(arg):
         return arg, local
     sys.exit(f"dossier introuvable : {arg} (ni chemin, ni {local}, ni Drive INBOX)")
 
+def processus_vivant(pid):
+    """Vrai si le processus `pid` tourne encore. Sous Windows, `os.kill(pid, 0)` n'est pas un test : il appelle
+    TerminateProcess (ou lève WinError 87) ; on interroge donc le noyau (OpenProcess + GetExitCodeProcess)."""
+    if os.name == "nt":
+        import ctypes
+        k32 = ctypes.windll.kernel32
+        h = k32.OpenProcess(0x1000, False, pid)        # PROCESS_QUERY_LIMITED_INFORMATION
+        if not h:
+            return False
+        try:
+            code = ctypes.c_ulong()
+            return bool(k32.GetExitCodeProcess(h, ctypes.byref(code))) and code.value == 259   # STILL_ACTIVE
+        finally:
+            k32.CloseHandle(h)
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
 def acquire_lock():
     if os.path.exists(LOCK):
         try:
             pid = int(open(LOCK).read().strip())
-            os.kill(pid, 0)
+        except ValueError:
+            pid = None
+        if pid and processus_vivant(pid):
             sys.exit(f"un relevé est déjà en cours (pid {pid}, verrou {LOCK})")
-        except (ValueError, ProcessLookupError, PermissionError):
-            pass
     open(LOCK, "w").write(str(os.getpid()))
 
 def release_lock():

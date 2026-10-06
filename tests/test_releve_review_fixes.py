@@ -427,3 +427,33 @@ def test_static_policy_files_updated():
     assert "doc = pymupdf.open(src)" in traits_py
     assert "finally:" in traits_py and "doc.close()" in traits_py
     assert "pymupdf.open(src)[" not in traits_py
+
+
+
+def test_verrou_perime_remplace_sans_planter(tmp_path, monkeypatch):
+    """Un verrou laissé par un relevé terminé est remplacé ; sous Windows, os.kill(pid, 0) levait WinError 87."""
+    import subprocess
+    import sys
+    mort = subprocess.Popen([sys.executable, "-c", "pass"]); mort.wait()
+    assert releve_run.processus_vivant(os.getpid())
+    assert not releve_run.processus_vivant(mort.pid)
+    verrou = tmp_path / ".verrou"
+    verrou.write_text(str(mort.pid))
+    monkeypatch.setattr(releve_run, "LOCK", str(verrou))
+    releve_run.acquire_lock()
+    assert verrou.read_text() == str(os.getpid())
+
+
+def test_verrou_actif_bloque_un_second_releve(tmp_path, monkeypatch):
+    import subprocess
+    import sys
+    vivant = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(30)"])
+    try:
+        verrou = tmp_path / ".verrou"
+        verrou.write_text(str(vivant.pid))
+        monkeypatch.setattr(releve_run, "LOCK", str(verrou))
+        with pytest.raises(SystemExit, match="déjà en cours"):
+            releve_run.acquire_lock()
+        assert vivant.poll() is None                                     # le test ne tue jamais l'autre relevé
+    finally:
+        vivant.kill(); vivant.wait()
