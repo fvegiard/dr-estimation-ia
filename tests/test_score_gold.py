@@ -25,3 +25,13 @@ def test_noter_feuille_famille_exacte_et_bon_code_au_bon_endroit():
 def test_noter_feuille_non_relevee_vaut_zero():
     r = SG.noter_feuille([("PC", 1.0, 1.0)], [], {"PC": 1}, {})
     assert r["rappel"] == 0.0 and r["reperes_ia"] == 0 and r["familles_exactes"] == 0
+
+
+def test_noter_feuille_un_repere_ia_ne_couvre_qu_un_seul_repere_gold():
+    # given : deux appareils proches au gold, un seul repère IA entre les deux
+    gold = [("PC", 100.0, 100.0), ("PC", 104.0, 100.0)]
+    ia = [("PC", 102.0, 100.0)]
+    # when
+    r = SG.noter_feuille(gold, ia, {"PC": 2}, {"PC": 1})
+    # then : l'oubli est compté ; l'appariement est un-à-un
+    assert r["apparies"] == 1 and r["rappel"] == 50.0 and r["precision"] == 100.0 and r["meme_famille"] == 1
