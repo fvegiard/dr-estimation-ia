@@ -45,6 +45,9 @@ async def run(workdir, out_json, model, max_turns, budget):
         tools=TOOLS, allowed_tools=ALLOWED, permission_mode="acceptEdits",
         model=model, max_turns=max_turns, max_budget_usd=(budget or None),
         mcp_servers={}, strict_mcp_config=True, stderr=lambda s: j("stderr: " + s.rstrip()),
+        # Un message du CLI qui transporte plusieurs images de plan dépasse le tampon par défaut du SDK (1 Mo) :
+        # CLIJSONDecodeError sous Windows le 2026-10-06. Option officielle `max_buffer_size` (types.py du SDK).
+        max_buffer_size=32 * 1024 * 1024,
     )
     res, text = None, []
     j(f"début  modèle={model} max_turns={max_turns} workdir={workdir}")
