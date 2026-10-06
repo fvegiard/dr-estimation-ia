@@ -170,6 +170,21 @@ def test_q14_code_invente(tmp_path):
     assert any(e.startswith("Q14") and "'PD'" in e and "'PC'" in e for e in errs)
 
 
+def test_q14_code_existant_admis_pour_un_existant(tmp_path):
+    """R11 : un existant (port\u00e9e REMPLACER/CONSERVER) peut porter CH / I / PC / T / M01\u2026 (gold HR26-14 E09 p.64)."""
+    nomen = NOM_OK.replace("label,famille,forme,rgb,jeton_regex,description,source,code,materiel,modele,discipline,legende",
+                           "label,famille,forme,rgb,jeton_regex,description,source,code,materiel,modele,discipline,legende,portee")
+    nomen = nomen.replace("PL,chauffage,,,,,plan,PL,PLINTHE DE CHAUFFAGE (hors legende - R-001)",
+                          "PL,chauffage,,,,,plan,CH,PLINTHE DE CHAUFFAGE EXISTANTE (hors legende - R-001)")
+    nomen = nomen.replace("electricite,HORS LEGENDE\n", "electricite,HORS LEGENDE,REMPLACER\n")
+    (tmp_path / "a").mkdir(); (tmp_path / "b").mkdir(); (tmp_path / "c").mkdir()
+    assert "Q14" not in regles(cq.controler(dossier(tmp_path / "a", nomen=nomen)))
+    neuf = nomen.replace(",HORS LEGENDE,REMPLACER\n", ",HORS LEGENDE,INSTALLER\n")
+    assert "Q14" in regles(cq.controler(dossier(tmp_path / "b", nomen=neuf)))          # un neuf garde le code PL
+    faux = nomen.replace("plan,CH,PLINTHE", "plan,I,PLINTHE")
+    assert "Q14" in regles(cq.controler(dossier(tmp_path / "c", nomen=faux)))          # I n'est pas un chauffage
+
+
 def _plan_cercles(tmp_path):
     """Feuille P1 : trois cercles Ø16 trait 1 (même symbole) et un cercle Ø10 trait 0,5 (autre chose)."""
     (tmp_path / "feuilles").mkdir(exist_ok=True)

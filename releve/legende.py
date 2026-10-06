@@ -51,6 +51,25 @@ def normaliser(texte: str) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
+# Vocabulaire des appareils EXISTANTS des feuilles agrégées de vues en plan (STANDARD-RELEVE.md §6 ; gold HR26-14
+# E09 p.64 : CH 36, I 14, PC 20, T 28, M03 2, M05 3). Admis en plus du code de la légende quand la famille est un
+# existant (portée REMPLACER ou CONSERVER) ; tout autre existant prend un numéro de la série M (M01, M02…).
+VOCABULAIRE_EXISTANT: tuple[tuple[str, str], ...] = (
+    ("CH", r"CHAUFF|PLINTHE|CONVECTEUR"),
+    ("I", r"COMMUTATEUR"),
+    ("PC", r"PRISE.*DOUBLE"),
+    ("T", r"THERMOSTAT"),
+)
+
+
+def code_existant_admis(code: str, description: str) -> bool:
+    """Vrai si `code` est un code d'appareil existant valable pour cette description (CH, I, PC, T, ou série M)."""
+    if re.fullmatch(r"M\d{2}", code):
+        return True
+    t = normaliser(description)
+    return any(code == c and re.search(motif, t) for c, motif in VOCABULAIRE_EXISTANT)
+
+
 def code_attendu(description: str) -> str:
     """Code de famille du vocabulaire pour une description de légende, ou "" si aucun ne s'applique."""
     t = normaliser(description)
