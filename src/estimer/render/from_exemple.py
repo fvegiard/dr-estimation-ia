@@ -127,6 +127,8 @@ def read_markers(doc: pymupdf.Document, pno: int) -> list[dict]:
         color = [round(float(v), 6) for v in m.groups()] if m else None
         mk = {"repere": texts[0], "extra": texts[1:], "shape": shape, "color": color,
               "x": round(cx, 3), "y": round(cy, 3), "bbox": [round(v, 3) for v in bbox]}
+        if b"/helv 5.2 Tf" in s:
+            mk["label_size"] = 5.2                       # étiquettes PL des feuilles en palette B
         box = re.search(rf"({NUM})\s+({NUM})\s+({NUM})\s+({NUM})\s+re", ov[i - 1].decode("latin-1"))
         if box:
             x, y, w, h = map(float, box.groups())
@@ -194,6 +196,8 @@ def prune_ocgs(doc: pymupdf.Document) -> int:
 
 # ---------------------------------------------------------------- toutes les feuilles (26 sur HR26-14)
 HEADER_RE = re.compile(r"(\d+) reperes / (\d+) familles(?: / RES (\d+))?")
+DIVERGENCES_RE = re.compile(r"(\d+) divergences plan/cedule A RESOUDRE")
+CALIBRES_RE = re.compile(r"(\d+) calibres distincts dans les sources")
 CODE_RE = re.compile(r"[A-Z]+\d*")
 QTY_RE = re.compile(r"^(\d+(?:\.\d+)?)(?: / R(\d+))?$")
 MAT_TEXT = ("materiel", "designation", "portee", "modele", "prescription")
@@ -348,7 +352,7 @@ def build(exemple: Path, bordereau_csv: Path | None, feuilles_csv: Path, out_dir
                       "shape": m["shape"], "repere": rep, "source": row["source"] if row else "", "code": code,
                       "flags": ["revalider"] if m["repere"].endswith("*") else [], "color": m["color"],
                       "label_lines": m["extra"]}
-                for key in ("label_bbox", "leader_end"):
+                for key in ("label_bbox", "leader_end", "label_size"):
                     if key in m:
                         el[key] = m[key]
                 if head and head.get("res") is None and code in modele_legende:
@@ -370,7 +374,13 @@ def build(exemple: Path, bordereau_csv: Path | None, feuilles_csv: Path, out_dir
         shp, rows_geo = read_legend_glyphs(page, sheets[-1]["box_hint"])
         sheets[-1]["legend_shapes"] = shp
         sheets[-1]["legend_rows"] = rows_geo
-        meta.append({"sheet": name, "format": fmt, "exemple_page": pno + 1})
+        text = page.get_text()
+        for key, rx in (("divergences", DIVERGENCES_RE), ("calibres", CALIBRES_RE)):   # lignes rouges v6
+            m = rx.search(text)
+            if m:
+                sheets[-1][key] = int(m.group(1))
+        meta.append({"sheet": name, "format": fmt, "exemple_page": pno + 1,
+                     "note": "LOGEMENTS TYPES" if "feuille de logements types" in text else ""})
         strip_overlay(src, pno)
 
     src.select([int(f["page"]) - 1 for f in feuilles])

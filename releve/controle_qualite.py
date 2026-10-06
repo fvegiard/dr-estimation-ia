@@ -1,3 +1,7 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = ["pymupdf>=1.24"]
+# ///
 """Contrôle qualité BLOQUANT d'un relevé (sorties de l'agent) avant de le déclarer conforme.
 
 Usage : python releve/controle_qualite.py WORKDIR [--reference familles-par-feuille.csv --feuille-ref DSI01 --feuille F]
@@ -14,7 +18,23 @@ Un succès technique de l'agent (fichiers écrits) ne prouve pas un relevé exac
   Q7 coordonnées hors de la feuille ;
   Q8 appareil de la nomenclature jamais relevé sur les plans et absent de reserves.md ;
   Q9 (si une référence est fournie) écart par famille > 5 % de la référence ;
-  Q10 coordonnées fabriquées sur une grille mentale au lieu d'être lues sur le plan.
+  Q10 coordonnées fabriquées sur une grille mentale au lieu d'être lues sur le plan ;
+  Q11 légende complète : chaque ligne de `legende.csv` est soit comptée (une famille de la nomenclature la cite et a
+      des occurrences), soit marquée absente / hors portée avec une preuve ; chaque famille cite sa ligne de légende
+      (ou `HORS LEGENDE`) ; une feuille de légende fournie sans `legende.csv` est une erreur ;
+  Q12 une famille par symbole de légende : deux familles sur la même ligne de légende seulement si leurs codes du
+      vocabulaire diffèrent (comptoir / comptoir DDFT, luminaire type A / type F) ; jamais deux familles qui ne
+      diffèrent que par la puissance (la puissance va dans `designation` de l'occurrence) ;
+  Q13 devis fourni (`devis/*-articles.csv`) : chaque famille a un `modele` (référence du devis, `EXISTANT`, ou
+      `MODELE NON INDIQUE DANS LA SOURCE ELECTRIQUE` quand le devis a été lu sans y trouver l'appareil) ;
+  Q14 code de famille conforme au vocabulaire de la légende (`releve/legende.py::code_attendu`) quand il s'applique ;
+  Q15 omission probable : un cercle vectoriel du plan qui a exactement la signature (diamètre, épaisseur de trait)
+      d'un symbole déjà relevé, sans occurrence à moins de 8 pt et sans justification « Q15 (x, y) » dans reserves.md.
+      Contrôle à l'aveugle (ni gold ni référence) : il compare le plan à lui-même. Constaté sur E08 (2026-10-05) :
+      une prise bien visible et une prise cachée sous une hachure d'armoire oubliées dans chaque logement.
+
+Q11-Q14 : correctif E08 du 2026-10-05 (codes inventés PU/VE/PA…, plinthes éclatées par puissance, prises de comptoir
+fondues dans les prises DDFT, luminaire type C oublié, bordereau « MODELE NON PRECISE » malgré le devis E15).
 
 Q10 : un symbole réel tombe sur une coordonnée quelconque. Si presque toutes les marques sont des
 multiples ronds (10 pt, 25 pt…), le modèle a inventé des positions au lieu de les lire — run2 Gemma
@@ -26,10 +46,14 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
+import glob
 import json
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import legende as LG  # noqa: E402
 
 REPERE = re.compile(r"\[?\b([A-Z]{1,4}\d?)(\d+)\.(\d+)\]?")
 TOLERANCE_REF = 0.05
@@ -135,6 +159,168 @@ def piste_confusion(lab, comptes, fiche):
     communs, n, autre, meme_type = max(meilleurs)
     motif = (f"{communs} mot(s) en commun" if communs else "même famille et même forme")
     return f" — confusion probable avec {autre!r} ({n} marques, {motif})"
+
+
+STATUTS_LEGENDE = {"compte", "absent", "hors_portee"}
+HORS_LEGENDE = re.compile(r"^HORS[ _-]?LEGENDE", re.I)
+
+
+def controler_legende(work, nomen, comptes, classement, mal):
+    """Q11-Q14 (voir docstring du module). `comptes` = occurrences par libellé sur les feuilles plan."""
+    err = []
+    leg_path = os.path.join(work, "legende.csv")
+    legende_rows = lire_csv(leg_path, mal)
+    roles = {r.get("feuille"): (r.get("role") or "") for r in lire_csv(os.path.join(work, "feuilles.csv"))}
+    feuilles_legende = sorted({f for f, r in roles.items() if r == "legende"}
+                              | {r.get("feuille") for r in classement if r.get("type") == "legende"})
+    if feuilles_legende and not legende_rows:
+        err.append(f"Q11 feuille(s) de légende {', '.join(feuilles_legende)} fournie(s) mais legende.csv absent ou vide : "
+                   "transcrire chaque ligne de légende (§1b) avant de nommer les familles")
+    if legende_rows:
+        nos = {}
+        for r in legende_rows:
+            no = (r.get("no") or "").strip()
+            if not no:
+                err.append(f"Q11 ligne de legende.csv sans numéro : {r.get('description', '')[:60]!r}")
+                continue
+            nos[no] = r
+        par_ligne = collections.defaultdict(list)
+        for n in nomen:
+            ref = (n.get("legende") or "").strip()
+            if not ref:
+                err.append(f"Q11 famille {n.get('label')!r} sans colonne `legende` : citer le numéro de ligne de "
+                           "legende.csv, ou HORS LEGENDE avec une réserve")
+            elif HORS_LEGENDE.match(ref):
+                continue
+            elif ref not in nos:
+                err.append(f"Q11 famille {n.get('label')!r} cite la ligne de légende {ref!r} absente de legende.csv")
+            else:
+                par_ligne[ref].append(n)
+        for no, r in nos.items():
+            statut = (r.get("statut") or "").strip().lower()
+            desc = (r.get("description") or "")[:70]
+            if statut not in STATUTS_LEGENDE:
+                err.append(f"Q11 ligne de légende {no} ({desc!r}) : statut {statut!r} — attendu compte, absent ou hors_portee")
+            elif statut == "compte":
+                fams = par_ligne.get(no, [])
+                if not fams:
+                    err.append(f"Q11 ligne de légende {no} ({desc!r}) marquée comptée mais aucune famille ne la cite")
+                elif not any(comptes.get(n.get("label")) for n in fams):
+                    err.append(f"Q11 ligne de légende {no} ({desc!r}) marquée comptée mais aucune occurrence relevée")
+            elif not (r.get("preuve") or "").strip():
+                err.append(f"Q11 ligne de légende {no} ({desc!r}) marquée {statut} sans preuve (zone du plan vérifiée)")
+            if statut in ("absent", "hors_portee") and par_ligne.get(no) and any(comptes.get(n.get("label")) for n in par_ligne[no]):
+                err.append(f"Q11 ligne de légende {no} ({desc!r}) marquée {statut} alors que des occurrences la citent")
+        # Q12 : une famille par symbole de légende
+        for no, fams in par_ligne.items():
+            if len(fams) < 2:
+                continue
+            codes = [LG.code_attendu(n.get("materiel") or n.get("description") or n.get("label") or "") for n in fams]
+            if "" in codes or len(set(codes)) < len(codes):
+                err.append(f"Q12 ligne de légende {no} éclatée en {len(fams)} familles "
+                           f"({', '.join(repr(n.get('label')) for n in fams)}) : une seule famille par symbole ; la "
+                           "variante (puissance, circuit) va dans la colonne `designation` de chaque occurrence")
+    labels = [n for n in nomen if n.get("label")]
+    for i, a in enumerate(labels):
+        for b in labels[i + 1:]:
+            for champ in ("label", "materiel"):
+                if LG.variante_puissance(a.get(champ) or "", b.get(champ) or ""):
+                    err.append(f"Q12 {a.get('label')!r} et {b.get('label')!r} ne diffèrent que par la puissance : une "
+                               "seule famille, la puissance va dans `designation` de chaque occurrence")
+                    break
+    # Q13 : modèle tiré du devis quand un devis est fourni
+    articles = [r for p in sorted(glob.glob(os.path.join(work, "devis", "*-articles.csv"))) for r in lire_csv(p)]
+    if any((r.get("modele") or "").strip() for r in articles):
+        for n in nomen:
+            if n.get("label") and not (n.get("modele") or "").strip():
+                err.append(f"Q13 famille {n.get('label')!r} sans `modele` alors qu'un devis est fourni : référence du devis "
+                           "(section dans `source`), EXISTANT, ou MODELE NON INDIQUE DANS LA SOURCE ELECTRIQUE")
+    # Q14 : code conforme au vocabulaire de la légende
+    for n in nomen:
+        if (n.get("discipline") or "").lower() == "incendie" or not n.get("label"):
+            continue
+        attendu = LG.code_attendu(n.get("materiel") or n.get("description") or "")
+        code = re.sub(r"[^A-Z0-9]", "", (n.get("code") or "").upper())
+        if attendu and code and code != attendu:
+            err.append(f"Q14 famille {n.get('label')!r} : code {code!r} alors que la description "
+                       f"{(n.get('materiel') or n.get('description'))[:60]!r} donne {attendu!r} (vocabulaire de la légende)")
+    return err
+
+
+RAYON_APPARIEMENT = 3.0   # pt : une occurrence posée au centre vectoriel d'un cercle « porte » sa signature
+RAYON_OMISSION = 8.0      # pt : au-delà, le cercle n'est couvert par aucune occurrence
+
+
+def cercles_vectoriels(pdf_path):
+    """Cercles du dessin vectoriel (chemins faits seulement de courbes, boîte carrée de 6 à 40 pt) :
+    [(cx, cy, diamètre arrondi 0,1, épaisseur arrondie 0,01)], dans le repère affiché (page tournée)."""
+    try:
+        import pymupdf
+    except ImportError:            # environnement sans pymupdf : contrôle non disponible, jamais bloquant
+        return None
+    doc = pymupdf.open(pdf_path)
+    try:
+        page = doc[0]
+        M = page.rotation_matrix
+        out = []
+        for d in page.get_drawings():
+            it = d.get("items") or []
+            if len(it) < 4 or any(i[0] != "c" for i in it):
+                continue
+            r = d["rect"] * M
+            w, h = r.width, r.height
+            if not (6 <= w <= 40) or abs(w - h) > 0.08 * max(w, h):
+                continue
+            out.append(((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2, round(w, 1), round(d.get("width") or 0, 2)))
+        return out
+    finally:
+        doc.close()
+
+
+def justifie_q15(reserves, x, y, tol=3.0):
+    """Vrai si une ligne de reserves.md mentionne « Q15 » et un couple de coordonnées à moins de `tol` pt."""
+    for ligne in reserves.splitlines():
+        if "Q15" not in ligne:
+            continue
+        # « (643, 431) », « 643.5 ; 430.9 » ou, à la française, « 643,5 / 430,9 »
+        couples = re.findall(r"(\d+(?:[.,]\d+)?)\s*/\s*(\d+(?:[.,]\d+)?)", ligne) + \
+            re.findall(r"(\d+(?:\.\d+)?)\s*[,;]\s*(\d+(?:\.\d+)?)", ligne)
+        for a, b in couples:
+            if abs(float(a.replace(",", ".")) - x) <= tol and abs(float(b.replace(",", ".")) - y) <= tol:
+                return True
+    return False
+
+
+def controler_omissions(work, plans, occ, reserves):
+    """Q15 (voir docstring du module)."""
+    err = []
+    for f in plans:
+        pdf = os.path.join(work, "feuilles", f"{f}.pdf")
+        if not os.path.isfile(pdf):
+            continue
+        cercles = cercles_vectoriels(pdf)
+        if not cercles:
+            continue
+        pts = [(c[0], c[1], o.get("label")) for o in occ if o.get("feuille") == f for c in [coordonnees(o)] if c]
+        signatures = collections.defaultdict(collections.Counter)
+        for x, y, d, lw in cercles:
+            for ox, oy, lab in pts:
+                if abs(ox - x) <= RAYON_APPARIEMENT and abs(oy - y) <= RAYON_APPARIEMENT:
+                    signatures[(d, lw)][lab] += 1
+        vus = set()
+        for x, y, d, lw in cercles:
+            if (d, lw) not in signatures or (round(x), round(y)) in vus:
+                continue
+            vus.add((round(x), round(y)))
+            if any((ox - x) ** 2 + (oy - y) ** 2 <= RAYON_OMISSION ** 2 for ox, oy, _ in pts):
+                continue
+            if justifie_q15(reserves, x, y):
+                continue
+            lab = signatures[(d, lw)].most_common(1)[0][0]
+            err.append(f"Q15 {f} ({x:.1f}, {y:.1f}) : cercle vectoriel Ø{d} pt, trait {lw} pt — même signature que "
+                       f"{lab!r} déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne "
+                       f"« Q15 ({x:.0f}, {y:.0f}) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)")
+    return err
 
 
 def controler(work, reference=None, feuille_ref=None, feuille=None):
@@ -249,6 +435,10 @@ def controler(work, reference=None, feuille_ref=None, feuille=None):
         elif len(pts) >= MIN_GRILLE and (part := part_arrondie(pts)) >= SEUIL_GRILLE_AVERT:
             avert.append(f"Q10 {f} : {part:.0%} des marques sur un multiple de 10 pt (relevés humains "
                          f"mesurés : 0,9 %) — lectures arrondies, positions à revalider")
+    # Q11-Q14 : familles tirées de la légende, une famille par symbole, modèle tiré du devis, code du vocabulaire
+    err += controler_legende(work, nomen, comptes, classement, mal)
+    # Q15 : symboles identiques à un symbole relevé mais sans occurrence (omissions probables)
+    err += controler_omissions(work, plans, occ, reserves)
     res = {"conforme": not err, "erreurs": err, "avertissements": avert, "occurrences": len(occ), "reperes_lus": n_reperes,
            "comparaison_reference": comparaison, "grilles_suspectes": grilles}
     json.dump(res, open(os.path.join(work, "qualite.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)

@@ -182,3 +182,39 @@ def test_ascii_upper_reste_plie():
     de l'estimateur, lui-même sans accents. Les plier des deux côtés garde le rapprochement."""
     from src.estimer.render.from_releve import ascii_upper
     assert ascii_upper("Réserve × 2") == "RESERVE X 2"
+
+
+def test_glyphe_symbole_jamais_recale_sur_une_bulle_de_note():
+    """Essai E08 (2026-10-05) : le glyphe « $ » (interrupteur S) EST le symbole ; l'ancrage le recalait sur
+    la bulle de note voisine (cercle de 16 pt à 15-22 pt). La marque doit rester sur le glyphe."""
+    from src.estimer.render.from_releve import anchor_sheet
+    doc = pymupdf.open()
+    page = doc.new_page(width=W, height=H)
+    page.insert_text((200, 200), "$", fontsize=14)
+    page.draw_circle((200 + 4, 200 - 22), 8)          # bulle de note numérotée (cercle fermé de 16 pt)
+    glyph = [w for w in page.get_text("words") if w[4] == "$"][0]
+    cx, cy = (glyph[0] + glyph[2]) / 2, (glyph[1] + glyph[3]) / 2
+    items = [{"feuille": "P1", "label": "INT", "x": cx, "y": cy, "source": "texte", "note": "mot '$'"}]
+    stats = anchor_sheet(page, items)
+    assert stats.get("glyphe_symbole") == 1 and not stats.get("texte_ancre")
+    assert abs(items[0]["x"] - cx) < 0.01 and abs(items[0]["y"] - cy) < 0.01
+    assert not items[0].get("flags")
+
+
+def test_plinthe_collee_au_mur_prend_son_rectangle_pas_la_fenetre():
+    """Gold palette B : PL = rectangle aux dimensions du symbole. Plinthe dessinée contre le mur (son bord
+    haut est le trait du mur, pas une forme fermée isolée) et fenêtre fermée à 2 pt : la plinthe gagne."""
+    from src.estimer.render.ancrage import SymbolIndex
+    from src.estimer.render.from_releve import plan_rects
+    doc = pymupdf.open()
+    page = doc.new_page(width=W, height=H)
+    page.draw_rect(pymupdf.Rect(100, 100, 200, 110))           # fenêtre (forme fermée)
+    page.draw_line((90, 112), (230, 112))                       # mur
+    page.draw_line((100, 119), (200, 119))                      # plinthe : bas et extrémités
+    page.draw_line((100, 112), (100, 119))
+    page.draw_line((200, 112), (200, 119))
+    items = [{"feuille": "P1", "label": "PLINTHE 1000W", "x": 150.0, "y": 116.0}]
+    nom = {"PLINTHE 1000W": {"code": "PL10"}}
+    assert plan_rects(SymbolIndex(page), items, nom) == 1
+    box = [items[0][k] for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
+    assert all(abs(a - b) < 0.2 for a, b in zip(box, (100, 112, 200, 119)))

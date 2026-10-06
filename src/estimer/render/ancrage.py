@@ -210,9 +210,10 @@ class SymbolIndex:
                     seen.add(k)
                     yield self.shapes[k]
 
-    def enclosure(self, p: pymupdf.Point, reach: float = ENCLOSE_REACH):
+    def enclosure(self, p: pymupdf.Point, reach: float = ENCLOSE_REACH, same_shape: bool = True):
         """Box drawn around point p: nearest non-grey stroke crossing each of the 4 rays (left, right, up,
-        down) within `reach` pt. Returns that box, or None when one side is open."""
+        down) within `reach` pt. Returns that box, or None when one side is open. `same_shape=False` accepts
+        4 sides from different outlines (a baseboard drawn against a wall shares its edge with the wall)."""
         area = pymupdf.Rect(p.x - reach, p.y - reach, p.x + reach, p.y + reach)
         hit = {"l": None, "r": None, "u": None, "d": None}      # side -> (coordinate, closed shape id)
         for k in self.near(area):
@@ -232,7 +233,7 @@ class SymbolIndex:
         if any(v is None for v in hit.values()):
             return None
         ids = {v[1] for v in hit.values()}
-        if len(ids) != 1 or -1 in ids:
+        if same_shape and (len(ids) != 1 or -1 in ids):
             return None                   # the 4 sides are not one closed outline (open area between strokes)
         return pymupdf.Rect(hit["l"][0], hit["u"][0], hit["r"][0], hit["d"][0])
 

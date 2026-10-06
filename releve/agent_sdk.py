@@ -30,6 +30,7 @@ ALLOWED = [
     "Bash(uv run releve/zoom.py *)",
     "Bash(uv run releve/extract_occurrences.py *)",
     "Bash(uv run releve/traits.py *)",
+    "Bash(uv run releve/controle_qualite.py *)",
     "Bash(head *)",
     "Bash(sort *)",
     "Bash(cut *)",
@@ -45,9 +46,10 @@ async def run(workdir, out_json, model, max_turns, budget):
         tools=TOOLS, allowed_tools=ALLOWED, permission_mode="acceptEdits",
         model=model, max_turns=max_turns, max_budget_usd=(budget or None),
         mcp_servers={}, strict_mcp_config=True, stderr=lambda s: j("stderr: " + s.rstrip()),
-        # Un message du CLI qui transporte plusieurs images de plan dépasse le tampon par défaut du SDK (1 Mo) :
-        # CLIJSONDecodeError sous Windows le 2026-10-06. Option officielle `max_buffer_size` (types.py du SDK).
-        max_buffer_size=32 * 1024 * 1024,
+        # Un résultat d'outil Read d'image (aperçu 1600 px, tuile) dépasse le tampon par défaut de 1 Mo du SDK
+        # (subprocess_cli.py _DEFAULT_MAX_BUFFER_SIZE) → CLIJSONDecodeError dès la 1re image (essai E08 2026-10-05).
+        # Option officielle `max_buffer_size` (docs/code.claude.com_docs_en_agent-sdk_python.md L.777, L.830).
+        max_buffer_size=64 * 1024 * 1024,
     )
     res, text = None, []
     j(f"début  modèle={model} max_turns={max_turns} workdir={workdir}")

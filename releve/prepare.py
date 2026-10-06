@@ -17,7 +17,8 @@ Sortie  : WORKDIR/
   texte/<F>-mots.csv      tous les mots vectoriels avec leur boîte (points PDF, origine haut-gauche)
   texte/<F>-jetons.csv    fréquence des jetons (pour repérer les étiquettes d'appareils)
   estimateur/             si un export Plan Expert de l'estimateur est fourni : aperçus + légendes découpées
-  MANIFESTE.md            résumé lisible pour l'agent
+  devis/<F>-articles.csv  feuille de devis (couche texte) découpée en articles : section, titre, texte, marque/modèle
+  MANIFESTE.md            résumé lisible pour l'agent (avec le rôle de chaque feuille : plan, legende, devis)
 
 Aucune valeur n'est inventée : tout vient des PDF. Les rasters et les mots sont la base du relevé.
 """
@@ -25,11 +26,14 @@ from __future__ import annotations
 import csv, hashlib, json, os, re, sys, collections, shutil
 import pymupdf
 from PIL import Image, ImageDraw, ImageFont
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import legende
 
 RASTER_W = 5694          # largeur raster Plan Expert (px) pour une feuille 2383,92 pt
 TILE_ROWS, TILE_COLS = 3, 4
 SHEET_RE = re.compile(r"\b([A-Z]{1,2}-?\d{3}[A-Z]?)\b")   # E401, E-401, A101, ME-101…
-WORK_SUBDIRS = ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "zooms")
+WORK_SUBDIRS = ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "zooms", "devis")
+DEVIS_COLS = ["feuille", "partie", "section", "titre", "article", "marque", "modele", "texte", "x_pt", "y_pt"]
 WORK_FILES = (
     "inventaire.json",
     "feuilles.csv",
@@ -38,6 +42,9 @@ WORK_FILES = (
     "occurrences-visuel.csv",
     "feuilles-classement.csv",
     "nomenclature.csv",
+    "legende.csv",
+    "qualite.json",
+    "REPRISE.md",
     "reserves.md",
     "rapport-releve.md",
     "comparaison-estimateur.md",
@@ -125,7 +132,7 @@ def reset_workdir(work: str):
 
 def main(inbox: str, work: str):
     reset_workdir(work)
-    for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur"):
+    for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "devis"):
         os.makedirs(os.path.join(work, d), exist_ok=True)
     inv, feuilles, notes = [], [], []
     files = sorted(os.path.join(dp, f) for dp, _, fs in os.walk(inbox) for f in fs)
@@ -170,7 +177,7 @@ def main(inbox: str, work: str):
     with open(os.path.join(work, "inventaire.json"), "w", encoding="utf-8") as fh:
         json.dump({"inbox": os.path.abspath(inbox), "fichiers": inv, "notes": notes}, fh, indent=1, ensure_ascii=False)
     with open(os.path.join(work, "feuilles.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=["feuille", "fichier", "page", "largeur_pt", "hauteur_pt", "raster_px", "classement_fichier", "nb_mots", "jetons_frequents", "titre"])
+        w = csv.DictWriter(fh, fieldnames=["feuille", "fichier", "page", "largeur_pt", "hauteur_pt", "raster_px", "classement_fichier", "nb_mots", "jetons_frequents", "titre", "role", "articles_devis"])
         w.writeheader(); w.writerows(feuilles)
     write_manifest(work, inv, feuilles, notes)
     print(f"{len(inv)} fichiers, {len(feuilles)} feuilles préparées dans {work}")
@@ -223,8 +230,25 @@ def prepare_sheet(doc, i, fid, rel, kind, work):
     tb = page.get_text("words", clip=pymupdf.Rect(r.width * 0.70, r.height * 0.80, r.width, r.height) * page.derotation_matrix)
     if tb:
         title = " ".join(w[4] for w in sorted(tb, key=lambda w: (round(w[1] / 8), w[0])))[:160]
+    # Rôle de la feuille (correctif E08 2026-10-05) : une légende générale du lot ou un devis ne sont pas des plans à
+    # compter, mais la SOURCE des familles (codes, descriptions) et des modèles/prescriptions du bordereau.
+    texte_page = page.get_text()
+    role, n_art = "plan", 0
+    if legende.est_devis(title, len(words)):
+        role = "devis"
+    elif legende.est_legende(title):
+        role = "legende"
+    # articles « MARQUE SPÉCIFIÉE » : feuille de devis, mais aussi notes de devis écrites sur un plan (EU01-04)
+    arts = legende.articles_devis(page) if (role == "devis" or legende.MARQUE_RE.search(texte_page)) else []
+    if arts:
+        n_art = len(arts)
+        with open(os.path.join(work, "devis", f"{fid}-articles.csv"), "w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=DEVIS_COLS); w.writeheader()
+            for a in arts:
+                w.writerow({"feuille": fid, **{k: a[k] for k in DEVIS_COLS if k != "feuille"}})
     return {"feuille": fid, "fichier": rel, "page": i + 1, "largeur_pt": f"{W:.2f}", "hauteur_pt": f"{H:.2f}",
-            "raster_px": f"{rw}x{rh}", "classement_fichier": kind, "nb_mots": len(words), "jetons_frequents": freq, "titre": title}
+            "raster_px": f"{rw}x{rh}", "classement_fichier": kind, "nb_mots": len(words), "jetons_frequents": freq, "titre": title,
+            "role": role, "articles_devis": n_art}
 
 def prepare_estimateur(doc, work, rel):
     """Export Plan Expert de l'estimateur (rasterisé) : aperçu de chaque page + découpe de la légende (bloc à droite)."""
@@ -246,9 +270,21 @@ def write_manifest(work, inv, feuilles, notes):
     L = ["# MANIFESTE du dossier préparé", "", "## Fichiers d'entrée", "", "| fichier | classement | pages | octets | sha256 |", "|---|---|--:|--:|---|"]
     for e in inv:
         L.append(f"| {e['fichier']} | {e['classement']} | {e.get('pages', '')} | {e['octets']} | {e['sha256'][:16]}… |")
-    L += ["", "## Feuilles de plans (une page = une feuille)", "", "| feuille | fichier | page | pt | mots | titre (cartouche) |", "|---|---|--:|---|--:|---|"]
+    L += ["", "## Feuilles de plans (une page = une feuille)", "", "| feuille | fichier | page | pt | mots | rôle | titre (cartouche) |", "|---|---|--:|---|--:|---|---|"]
     for f in feuilles:
-        L.append(f"| {f['feuille']} | {f['fichier']} | {f['page']} | {f['largeur_pt']}×{f['hauteur_pt']} | {f['nb_mots']} | {f['titre'][:90]} |")
+        L.append(f"| {f['feuille']} | {f['fichier']} | {f['page']} | {f['largeur_pt']}×{f['hauteur_pt']} | {f['nb_mots']} | {f.get('role', 'plan')} | {f['titre'][:90]} |")
+    leg = [f["feuille"] for f in feuilles if f.get("role") == "legende"]
+    dev = [f for f in feuilles if f.get("articles_devis")]
+    L += ["", "## Légendes et devis (sources des familles et du bordereau)", ""]
+    if leg:
+        L.append(f"- Légende générale du lot : {', '.join(leg)} — à lire AVANT de nommer une famille (compétence §1b : "
+                 "`legende.csv`, codes et descriptions de famille tirés de la légende).")
+    else:
+        L.append("- Aucune feuille au cartouche « LÉGENDE » : chercher la légende sur chaque plan (encadré « LÉGENDE ») ; "
+                 "sans légende nulle part, réserve obligatoire (familles nommées d'après le plan seulement).")
+    for f in dev:
+        L.append(f"- Articles de devis : `devis/{f['feuille']}-articles.csv` ({f['articles_devis']} articles, section + "
+                 "« MARQUE SPÉCIFIÉE ») — source des colonnes `modele` et `prescription` de `nomenclature.csv`.")
     if notes:
         L += ["", "## Notes de préparation", ""] + [f"- {n}" for n in notes]
     L += ["", "Jetons fréquents par feuille : `texte/<feuille>-jetons.csv` ; mots avec coordonnées : `texte/<feuille>-mots.csv` ;",

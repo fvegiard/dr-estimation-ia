@@ -368,3 +368,90 @@ def test_legend_counts_reperes_not_multipliers(tmp_path):
     render(load_input(tmp_path / "in"), plans, tmp_path / "o.pdf", log=lambda *a: None)
     doc = pymupdf.open(tmp_path / "o.pdf")
     assert "8 / R8" in doc[0].get_text() and "12 / R12" not in doc[0].get_text()
+
+
+# ---------------------------------------------------------------- correctifs E08 (2026-10-05, gold p.62 / p.63)
+def test_palette_b_par_code():
+    """Palette B du gold : même code = même couleur, forme et taille sur les 6 feuilles (spec §2.2-2.3)."""
+    assert S.palette_b("CU") == ((0.866667, 0.529412, 0.741177), "circle", 9.21)
+    assert S.palette_b("PL3")[1] == "plan"                     # lettres seules : PL3 -> PL
+    assert S.palette_b("PA") == S.PALETTE_B["PN"]              # équivalence de code du relevé
+    assert S.palette_b("IC")[1] == "diamond" and S.palette_b("TV")[2] == 10.05
+    assert S.palette_b("ZZ") is None
+    assert len({v[0] for v in S.PALETTE_B.values()}) == 20     # 20 couleurs distinctes mesurées
+
+
+def test_aucun_anneau_blanc_autour_des_pastilles(rendered):
+    """Écart E8 résorbé : le gold n'a d'anneau blanc autour d'aucune pastille."""
+    _, out, _ = rendered
+    page = pymupdf.open(out)[0]
+    rings = [d for d in page.get_drawings() if d.get("color") == (1.0, 1.0, 1.0) and d.get("fill") is None]
+    assert rings == []
+
+
+def _agg_sheet(n_fam: int, color, reserve=None, long_text: str = "") -> Sheet:
+    items = []
+    for k in range(n_fam):
+        code = "F" + chr(65 + k // 26) + chr(65 + k % 26)
+        items.append(Item("E08", 1, 200 + 40 * k, 300, code, f"{code}-01", materiel=f"FAMILLE {code}",
+                          prescription=long_text, color=color, reserve_override=reserve, radius=5.44))
+    return Sheet("E08", 1, W, H, items=items, format="agrege",
+                 reserves_text=["R-001 - reserve de test"])
+
+
+def test_regle_encadre_v6():
+    """v6 = feuille agrégée, palette B, RES non partiel (gold : E03/E04/E05/E08 ; pas E11/E14 ni palette A)."""
+    from src.estimer.render.plan import encadre_v6
+    b = S.PALETTE_B["PC"][0]
+    assert encadre_v6(_agg_sheet(3, b))                           # tous les repères en réserve (défaut)
+    assert encadre_v6(_agg_sheet(3, b, reserve=False))            # aucun
+    partiel = _agg_sheet(3, b)
+    partiel.items[0].reserve_override = False
+    assert not encadre_v6(partiel)                                # E11/E14 : RES 64 sur 172
+    assert not encadre_v6(_agg_sheet(3, S.PALETTE[0]))            # palette A : E01/E06/E09/E12
+    mat = _agg_sheet(3, b)
+    mat.format = "materiel"
+    assert not encadre_v6(mat)
+
+
+def test_encadre_v6_et_bordereau_une_page(tmp_path):
+    """Encadré v6 (titre 14, compteur sans RES, ligne non identifies / a revalider, glyphes 13 pt) et
+    bordereau agrégé sur 1 page même trop long (cellules coupées, comptées), sans bloc de notes."""
+    plans = tmp_path / "plans.pdf"
+    draw_plan(plans)
+    sh = _agg_sheet(25, S.PALETTE_B["PC"][0], long_text="prescription tres longue du devis " * 40)
+    sh.items[1].flags = [S.REVALIDER]
+    out = tmp_path / "out.pdf"
+    rep = render([sh], plans, out, log=lambda *a: None)
+    s = rep["sheets"][0]
+    assert s["encadre"] == "v6" and s["bordereau_pages"] == [2]
+    assert s["bordereau_troncatures"] == 25
+    doc = pymupdf.open(out)
+    text = doc[0].get_text()
+    assert "25 reperes / 25 familles / calques activables" in text and "RES " not in text
+    assert "0 non identifies - 1 identifications a revalider (*)" in text
+    assert "divergences" not in text                              # aucune donnée d'entrée : ligne omise
+    spans = [sp for b in doc[0].get_text("dict")["blocks"] for l in b.get("lines", []) for sp in l["spans"]]
+    assert any(sp["text"] == "RELEVE E08 - MATERIEL" and abs(sp["size"] - 14) < 0.01 for sp in spans)
+    box = pymupdf.Rect(s["box"])
+    glyphs = [d for d in doc[0].get_drawings() if d["rect"] in box and d.get("fill_opacity")]
+    assert len(glyphs) == 25 and all(abs(d["rect"].width - 13) < 0.05 for d in glyphs)
+    assert "Notes de reserve source" not in doc[1].get_text()
+
+
+def test_etiquette_detail_et_taille_pl(tmp_path):
+    """Étiquettes sur 2 lignes (ID + circuit/puissance) ; plinthes PL en 5,2 pt (gold p.62)."""
+    from src.estimer.render.from_releve import detail_lines
+    assert detail_lines("Appareil type A C7") == ["TYPE A", "C7"]
+    assert detail_lines("Plinthe 1250W C13,15") == ["1250 W C13,15"]
+    assert detail_lines("Prise de secheuse C6,8") == ["C6,8"]
+    assert detail_lines("Panneau logement type A") == []          # pas de circuit lu : rien
+    plans = tmp_path / "plans.pdf"
+    draw_plan(plans)
+    it = Item("E08", 1, 600, 700, "PL", "PL-01", materiel="PLINTHE", label_lines=["300 W C13,15"],
+              label_size=5.2, color=S.PALETTE_B["PL"][0], bbox=(560, 696, 640, 703), shape="rect")
+    out = tmp_path / "out.pdf"
+    render([Sheet("E08", 1, W, H, items=[it], format="agrege")], plans, out, log=lambda *a: None)
+    spans = [sp for b in pymupdf.open(out)[0].get_text("dict")["blocks"] for l in b.get("lines", [])
+             for sp in l["spans"] if sp["text"] in ("PL-01", "300 W C13,15")]
+    assert len(spans) == 2 and all(abs(sp["size"] - 5.2) < 0.01 for sp in spans)
