@@ -1,0 +1,18 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X pixels source,Y pixels source,Pastille
+E101-0001,Boîte,Protection des câbles en installations dissimulées,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,1451.12,2041.69,1
+E101-0002,Boîte,Protection des câbles en installations dissimulées,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,1962.94,1760.46,1
+E101-0003,Transformateur,Fixation au plancher,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,4398.34,1265.51,1
+E101-0004,Bloc alimentation,Power pack,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,1085.52,3700.91,1
+E101-0005,Interrupteur,Interrupteur local OFF,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,1991.07,3644.66,1
+E101-0006,Détecteur présence,"24 VDC, quantité dessinée; ellipses non extrapolées",1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,2081.06,4195.86,1
+E101-0007,Détecteur présence,"24 VDC, quantité dessinée; ellipses non extrapolées",1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,2081.06,4651.44,1
+E101-0008,Détecteur présence,"24 VDC, quantité dessinée; ellipses non extrapolées",1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,2081.06,5107.03,1
+E101-0009,Disjoncteur contrôle,Calibre non indiqué,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,"* Calibre absent; diagramme de principe, aucune quantité globale.",,2885.36,3380.31,1
+E101-0010,Minuterie,M,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,3014.72,3509.67,1
+E101-0011,Cellule photoélectrique,PE,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,3189.08,3633.41,1
+E101-0012,Sélecteur,3 positions AUTO / OFF / MANUEL,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,3504.05,3903.39,1
+E101-0013,Contacteur,CR; contacts rattachés non recomptés,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,3976.51,3959.63,1
+E101-0014,Électrode terre,Avec boîte de vérification; trois représentées au détail,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,5663.85,3374.69,1
+E101-0015,Électrode terre,Avec boîte de vérification; trois représentées au détail,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,5753.84,3684.03,1
+E101-0016,Électrode terre,Avec boîte de vérification; trois représentées au détail,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,6141.93,3487.18,1
+E101-0017,Barre terre,Cuivre 6 x 50 x 305 mm; vue en plan = renvoi,1,DÉTAIL TYPE — NE PAS ADDITIONNER AUX PLANS,MODELE NON PRECISE,,,6665.01,5500.74,1

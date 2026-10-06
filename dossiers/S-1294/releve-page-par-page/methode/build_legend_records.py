@@ -1,0 +1,27 @@
+"""Transcribe legend symbols as references, never installed quantities."""
+import json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+r=[]
+def add(family,label,x,y,model='',reserve=''):
+ r.append(dict(family=family,label=label,x=x,y=y,quantity=1,scope='SYMBOLE DE LÉGENDE — NON INSTALLÉ',parent='E100',model=model,reserve=reserve,radius=2.8))
+labels=['Double15A','Double15A DDFT','Double15A comptoir','Double15A comptoir DDFT','Quadruple15A','Double15A moitié commandée','Double15A extérieure DDFT','Double20A','Double20A DDFT','Double20A comptoir','Double20A comptoir DDFT','Double20A extérieure DDFT','Sécheuse30A','Cuisinière50A']
+for label,y in zip(labels,[102,125,148,171,195,218,242,266,289,312,335,358,381,405]):add('Référence prise',label,99,y,'125 V;5-15R' if '15A' in label else ('125 V;5-20R' if '20A' in label else ('125/250 V;14-30R' if '30A' in label else '125/250 V;14-50R')))
+labels=['Téléphone mur','Téléphone comptoir','Informatique mur','Téléphone/informatique mur','Câblodistribution mur','Intercom maître PIC','Intercom secondaire IC','Carillon12V','Bouton sonnette12V','Bouton porte automatique','Boîtier média']
+for label,y in zip(labels,[494,517,541,564,587,611,634,658,681,705,728]):add('Référence télécom',label,98,y,'CAT5E' if label in labels[:4] else ('RG58/U' if label=='Câblodistribution mur' else ('BROAN BK125LWH ou équivalent;transformateur120/12 V' if label=='Carillon12V' else '')),'E107 demande RG6/U; divergence de câble.' if label=='Câblodistribution mur' else '')
+for label,x,y,model in [('Sortie mur',98,804,'STANPRO RMXL-UDC / TURO TL-RMES;120/24 V'),('Sortie plafond',98,828,'STANPRO RMXL-UDC / TURO TL-RMES;120/24 V'),('Phare simple variante1',82,854,'STANPRO N1-24-6WLA WH / TURO TL;24 V'),('Phare simple variante2',117,854,'STANPRO N1-24-6WLA WH / TURO TL;24 V'),('Phare double variante1',80,875,'STANPRO N2-24-6WLA WH / TURO TL;24 V'),('Phare double variante2',111,875,'STANPRO N2-24-6WLA WH / TURO TL;24 V'),('Phare double variante3',123,875,'STANPRO N2-24-6WLA WH / TURO TL;24 V'),('Batterie',98,898,'STANPRO SLC;120/24 V;320 W'),('Batterie1phare',98,922,'STANPRO SLC;120/24 V;320 W'),('Batterie2phares',98,946,'STANPRO RMSLC / TURO TL;120/24 V'),('Batterie2phares et sortie',98,971,'STANPRO RMSLC;120/24 V;144 W')]:add('Référence urgence',label,x,y,model,'Symbole320 W contre remarque144 W.' if label=='Batterie2phares' else '')
+for label,x,y in [('Panneau variante1',80,1052),('Panneau variante2',117,1052),('Transformateur',95,1076),('Embase',98,1099),('Sectionneur sans fusibles30A',95,1122),('Boîte jonction',99,1146),('Borne recharge',99,1168),('Démarreur manuel120V',99,1192),('Démarreur manuel208V',99,1215),('Démarreur combiné600V',99,1238)]:add('Référence distribution',label,x,y)
+fire=[('PAI','MIRCOM FX-2000'),('ANN','MIRCOM RAX-LCD'),('Fumée photoélectrique','MIRCOM MIX-2251APA'),('Fumée120V','KIDDE P12040CA'),('Thermique fixe','MIRCOM MIX-5351APA'),('Fumée/CO120V','BRK SC7010B'),('Thermo-vélocimétrique','MIRCOM MIX-5251RAPA'),('Station manuelle','MIRCOM MS-401AP'),('Fumée gaine','MIRCOM DNR'),('Module relais','MIRCOM MIX-M500RAPA'),('Résistance','MIRCOM MP-300'),('Klaxon','MIRCOM FH-400-RR'),('Klaxon stroboscope','MIRCOM FHS-400-RR'),('Module simple','MIRCOM MIX-M500APA'),('Module double','MIRCOM MIX-500DM'),('Module10entrées','MIRCOM IM-10A'),('Débit','Fourniture mécanique'),('Bloc alimentation','MIRCOM INX-10A')]
+for (label,model),y in zip(fire,[102,125,149,172,195,219,242,265,289,312,335,359,382,406,429,452,479,499]):add('Référence incendie',label,734,y,model,'E105 page10 cite BRK3120B pour fumée120V; aucun arbitrage.' if label=='Fumée120V' else ('Devis E002 cite FX2003.' if label=='PAI' else ''))
+hvac=['Thermostat ligne électronique','Thermostat action inverse','Minuterie','Thermostat basse tension','Thermostat câble chauffant','Relais24V','Plinthe logement','Plinthe porte patio','Plinthe espaces communs','Convecteur décoratif','Mini aéroconvecteur plafond','Aéroconvecteur mural','Chauffe-eau','Serpentin électrique','Aérotherme','Boîte volume variable','Échangeur air','Moteur1PH','Moteur3PH','Contrôleur climatisation','Condenseur','Évaporateur']
+for label,y in zip(hvac,[578,602,625,649,672,696,720,743,773,790,813,837,859,882,905,929,952,976,999,1023,1050,1070]):add('Référence CVAC',label,734,y)
+for label,y in [('2 fils12 cuivre;conduit21mm',1149),('3 fils12 cuivre;conduit21mm',1173)]:add('Référence filerie',label,734,y)
+data=dict(page=4,title='LÉGENDES — RÉFÉRENCES UNIQUEMENT',type='symbols',scope='ZÉRO QUANTITÉ INSTALLÉE DÉDUITE',records=r,notes=[
+'Pastilles sur les symboles de légende, variantes comprises. Ce sont des références; ne jamais les additionner aux plans.',
+'Familles : prises, télécom, urgence, distribution, incendie, CVAC et filerie. Abréviations textuelles non pastillées.',
+'Contradictions : fumée120V KIDDE P12040CA ici contre BRK3120B sur page10; PAI FX2000 ici contre FX2003 au devis.',
+'Batterie2phares : 320 W près du symbole contre 144 W dans remarque. Câblodistribution : RG58/U ici contre RG6/U sur E107.',
+'Calibres de prises reproduits de la légende; aucun calibre de protection associé choisi. Aucune longueur de câble déduite.',
+'Notes logements : cuisinières maximum12 kW; modèles mentionnés peuvent être équivalents approuvés. Aucun fabricant imposé par ce relevé.' ])
+(ROOT/'audit/E100-records.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
+print(len(r))
