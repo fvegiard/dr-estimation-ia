@@ -28,6 +28,7 @@ Un succès technique de l'agent (fichiers écrits) ne prouve pas un relevé exac
   Q13 devis fourni (`devis/*-articles.csv`) : chaque famille a un `modele` (référence du devis, `EXISTANT`, ou
       `MODELE NON INDIQUE DANS LA SOURCE ELECTRIQUE` quand le devis a été lu sans y trouver l'appareil) ;
   Q14 code de famille conforme au vocabulaire de la légende (`releve/legende.py::code_attendu`) quand il s'applique ;
+      un existant (portée REMPLACER / CONSERVER) peut aussi porter le code existant CH / I / PC / T / M01… (règle R11) ;
   Q15 omission probable : un cercle vectoriel du plan qui a exactement la signature (diamètre, épaisseur de trait)
       d'un symbole déjà relevé, sans occurrence à moins de 8 pt et sans justification « Q15 (x, y) » dans reserves.md.
       Contrôle à l'aveugle (ni gold ni référence) : il compare le plan à lui-même. Constaté sur E08 (2026-10-05) :
@@ -241,7 +242,8 @@ def controler_legende(work, nomen, comptes, classement, mal):
             continue
         attendu = LG.code_attendu(n.get("materiel") or n.get("description") or "")
         code = re.sub(r"[^A-Z0-9]", "", (n.get("code") or "").upper())
-        if attendu and code and code != attendu:
+        existant = (n.get("portee") or "").upper() in ("REMPLACER", "CONSERVER")
+        if attendu and code and code != attendu and not (existant and LG.code_existant_admis(code, n.get("materiel") or n.get("description") or "")):
             err.append(f"Q14 famille {n.get('label')!r} : code {code!r} alors que la description "
                        f"{(n.get('materiel') or n.get('description'))[:60]!r} donne {attendu!r} (vocabulaire de la légende)")
     return err
