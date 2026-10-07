@@ -1,0 +1,8 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X source px,Y source px
+EC-M-RC01-001,Parcours conduit 25 mm,"Parcours nord, libellé 1 x CONDUIT 25 mm",1,PARCOURS — pas une longueur,MODÈLE NON PRÉCISÉ,,,3030.8,1533.5
+EC-M-RC01-002,Parcours conduit 63 mm,"Parcours ouest, libellé 1 x CONDUIT 63 mm",1,PARCOURS — pas une longueur,MODÈLE NON PRÉCISÉ,,,3030.8,1660.7
+EC-M-RC01-003,Parcours conduit 25 mm,"Parcours est, libellé 1 x CONDUIT 25 mm",1,PARCOURS — pas une longueur,MODÈLE NON PRÉCISÉ,,,4347.0,1763.0
+EC-M-RC01-004,Parcours conduit 63 mm EH,"Premier des deux conduits 63 mm EH, représenté séparément",1,RENVOI_EX-M-DG02,MODÈLE NON PRÉCISÉ,,,3521.9,2336.0
+EC-M-RC01-005,Parcours conduit 63 mm EH,"Second des deux conduits 63 mm EH, représenté séparément",1,RENVOI_EX-M-DG02,MODÈLE NON PRÉCISÉ,,,3582.3,2342.5
+EC-M-RC01-006,Parcours conduit — note B,Conduit avec corde vers conduit existant intercepté DEMARC / niveau 03,1,PARCOURS — pas une longueur,MODÈLE NON PRÉCISÉ,* Diamètre non désigné par la note B; ne pas déduire 63 mm.,,3640.6,2329.7
+EC-M-RC01-007,Réseau chemin de câbles,"Un réseau continu en H dans MDF 1.34, bas à 3300 mm selon note A",1,RÉSEAU CONTINU — RENVOI_EX-M-DT03,MODÈLE NON PRÉCISÉ,* Largeur/hauteur du chemin et longueurs non établies.,,3845.9,2052.8

@@ -1,0 +1,142 @@
+{
+  "projet": "S-0844",
+  "etat": "Relevé en cours — livraison partielle vérifiée",
+  "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",
+  "feuilles_terminees": [
+    {
+      "feuille": "EX-M-PE01",
+      "pastilles": 235,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "235/235",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "dc10df96f4ff2447b13fa58d95135bb222a153b4d0cf7499f5fbe56f3c6dd99e",
+      "reserves_repere": 1
+    },
+    {
+      "feuille": "EX-E-PE01",
+      "pastilles": 103,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "103/103",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "c26bb202bdd24d9318c2c131039441895a52d13f2601ac45e5840529ed34d024",
+      "reserves_repere": 0
+    },
+    {
+      "feuille": "ES-M-0T01",
+      "pastilles": 4,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "4/4",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "e82c29438f3f681d4f7976b4785c2ff0b88e3c27f69c0372dff6228c83215e68",
+      "reserves_repere": 2
+    },
+    {
+      "feuille": "EX-M-DG02",
+      "pastilles": 2,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "2/2",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "12b2403ea035ed80d18ad3d7fb8885fcf54e72db2baceda84d2002f71fa1df0e",
+      "reserves_repere": 0
+    },
+    {
+      "feuille": "EX-M-DT02",
+      "pastilles": 7,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "7/7",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "ddf84f15e2b608e553d2d042954eeaf3754012833d941684fb4731f1d27b499c",
+      "reserves_repere": 0
+    },
+    {
+      "feuille": "EE-M-RC01",
+      "pastilles": 149,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "149/149",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "c99d585bba37e565edcae2e865d599d9b4ccdb28f77ae10e1c1ab423bf2cf346",
+      "reserves_repere": 6
+    },
+    {
+      "feuille": "ES-M-RC01",
+      "pastilles": 110,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "110/110",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "020b571b68ceb06454889e2826cf37ec96681b4c11f0553315fd3be93784e4b4",
+      "reserves_repere": 25
+    },
+    {
+      "feuille": "EA-M-RC01",
+      "pastilles": 17,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "17/17",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "b0fc359dc8ba9d4567c90dda67a95ff0eb3692a54a01c63bc1aa59c5486cce9a",
+      "reserves_repere": 1
+    },
+    {
+      "feuille": "EA-M-RC02",
+      "pastilles": 25,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "25/25",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "9f085bc8d7630738741c9db8d2df0af7a465195444ba7fd97fed49ddb1432efd",
+      "reserves_repere": 11
+    },
+    {
+      "feuille": "EC-M-RC01",
+      "pastilles": 7,
+      "controle": "Vérification visuelle directe du JPEG et de toutes les zones enregistrées",
+      "score": "7/7",
+      "erreurs_restantes": [],
+      "legende_lisible": true,
+      "source_conservee": true,
+      "sha256_jpeg": "9b923ec9a9ba4c8fca82c829717c23bc71c32fef17976dc94ff8109bf4a10498",
+      "reserves_repere": 2
+    }
+  ],
+  "feuilles_restantes": [
+    "ES-D-SS01",
+    "ES-D-0301",
+    "EC-M-0301",
+    "EA-M-0301",
+    "EA-M-0302",
+    "EX-E-DG01",
+    "EX-M-DT01",
+    "EX-M-DT04",
+    "EX-M-DT05",
+    "EX-E-DE01",
+    "EM-D-SS01",
+    "EM-D-0301",
+    "EX-M-LG01",
+    "EX-M-DT03",
+    "EX-M-LG02",
+    "EE-M-0301",
+    "EX-M-DE01",
+    "ES-M-0301"
+  ],
+  "qpl_estimateur_ouvert": false,
+  "qpl_estimateur_telecharge_depuis_sharepoint": false,
+  "verification_estimateur": "Non effectuée : relevé à l’aveugle demandé",
+  "sources_distinctes": 63,
+  "doublons_sha256": 12
+}
