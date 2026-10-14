@@ -52,6 +52,11 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
   `docs/FORMAT-EXEMPLE.md` ; `src/estimer/render/`) →
   `render_pdf.py` (rapport de métré + dossier complet) ; `run.py` orchestre, `run.py --reprendre <S>` refait qpl + PDF.
 - `src/validation/compare_qpl.py` — comparaison marque par marque humain/IA ; `jeu_reference.py` — la rejoue sur tous les dossiers.
+- `src/validation/boucle_acceptation.py` — orchestrateur du critère d'acceptation (étapes 1 à 8 : aveugle → gel →
+  comparaison → classement → justifications → ACCEPTATION.md), avec ses modules : `aveugle.py` (scan du workdir du
+  relevé IA, aucune référence estimateur), `gel.py` (gel sha256 des artefacts, revérifié à chaque relance),
+  `classer_ecarts.py` (chaque désaccord classé, jamais un compte global seul), `justifier.py` (dossier de
+  justifications à trancher sur le plan) — détails, verdicts et artefacts : `docs/boucle-acceptation.md`.
 - `dossiers/<S>/` — un dossier de soumission : `releve.xlsx`, `ecart.md`, `planexpert/<S>.qpl`, `export-natif/` (sorties du vrai
   Plan Expert), `reference/` (projet de l'estimateur + dimensions + feuilles), `comparaison-dupuis-qpl/`.
 - `dossiers/_jeu-reference/` — résultats et ligne de base du jeu de référence.
@@ -60,15 +65,20 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
 ## Contrôles de conformité (du plus léger au plus profond)
 1. `python -m pytest tests -q` et `python -m src.validation.jeu_reference` — déterministes, tournent partout (y compris en bac
    à sable cloud), gate officiel de non-régression (quantité/position, jamais le rendu visuel).
-2. `releve/render_vectoriel.py` écrit `<SORTIE>/<NOM>-rendu-rapport.json` à chaque rendu (repères/familles/RES par feuille,
+2. **Boucle d'acceptation** (`python -m src.validation.boucle_acceptation <S> --workdir W --dossier D`) — contrôle
+   déterministe qui orchestre les étapes 1-2 du critère d'acceptation (`aveugle`, `gel` : relevé IA contrôlé à l'aveugle
+   puis gelé sha256, gel revérifié à chaque relance) et, quand la référence de l'estimateur est en place, enchaîne
+   comparaison, classement et justifications jusqu'au verdict d'`ACCEPTATION.md` — tournant partout (y compris en bac
+   à sable cloud), page dédiée : `docs/boucle-acceptation.md`.
+3. `releve/render_vectoriel.py` écrit `<SORTIE>/<NOM>-rendu-rapport.json` à chaque rendu (repères/familles/RES par feuille,
    encadré hors espace libre ou non) — à relire avant de livrer, pas seulement le journal texte de l'agent.
-3. Auto-supervision visuelle (§Autonomie ci-dessus), directement par toi-même par défaut. Le sous-agent
+4. Auto-supervision visuelle (§Autonomie ci-dessus), directement par toi-même par défaut. Le sous-agent
    `verificateur` n'intervient que si Francis l'autorise explicitement (§Agents) — jamais par défaut.
-4. `python -m src.estimer.render.verify_exemple RENDU.pdf RENDU.report.json EXEMPLE.pdf GOLD_INPUT_DIR` — comparaison
+5. `python -m src.estimer.render.verify_exemple RENDU.pdf RENDU.report.json EXEMPLE.pdf GOLD_INPUT_DIR` — comparaison
    octet-près au gold HR26-14 (marqueurs à 0,05 pt, bordereau cellule par cellule). Exige le EXEMPLE.pdf complet
    (87 p., non versionné, sur le Drive/PC de Francis) : **indisponible en bac à sable cloud**, à lancer sur un poste
    qui a le fichier.
-5. `infra/pe-batch.ps1` — ouvre le `.qpl` dans le vrai Plan Expert (VM mxlinux, PowerShell + SSH + pilotage VNC) et
+6. `infra/pe-batch.ps1` — ouvre le `.qpl` dans le vrai Plan Expert (VM mxlinux, PowerShell + SSH + pilotage VNC) et
    exporte son propre rapport/PDF natifs : la vérification la plus forte (le logiciel du client accepte le fichier),
    mais **Windows + VM uniquement**, aucun équivalent possible en bac à sable cloud.
 
@@ -95,6 +105,11 @@ mesurée, avec une procédure fixe, jamais une affirmation de supériorité gara
    preuve n'est pas une preuve d'absence de régression.
 9. Le format visuel approuvé (§Autonomie point 2, E08/E09) reste inchangé par ce critère : l'acceptation
    porte sur les quantités/positions, jamais sur une dégradation du rendu pour gagner du temps.
+
+Les étapes 1 à 4 de ce critère sont prouvées par des artefacts sur disque, jamais par le récit d'un agent
+(`controle-aveugle.json`, `gel.json`, `comparaison-dupuis-qpl/ecarts-classes.csv`), le dossier de justifications
+couvrant les étapes 5 à 7 et `ACCEPTATION.md` portant le verdict — tous écrits par la boucle d'acceptation
+(`docs/boucle-acceptation.md`, testé bout en bout par `tests/test_boucle_acceptation_e2e.py`).
 
 Sources cloud disponibles pour l'identification (accès vérifié, procédure détaillée, rôle exact des
 dossiers et limites : `docs/sources-cloud-plans-originaux.md`) :

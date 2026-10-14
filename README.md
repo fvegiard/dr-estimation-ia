@@ -58,6 +58,24 @@ python -m compileall src        # propre
 python -m pytest tests -q       # vert
 ```
 
+## Boucle d'acceptation
+
+Le critère d'acceptation de `CLAUDE.md` (jamais en dessous de l'estimateur) est une porte
+mesurée, pas une affirmation : chaque relevé IA passe par une chaîne déterministe —
+contrôle à l'aveugle (étape 1) → gel sha256 (étape 2) → comparaison marque par marque
+(étape 3) → classement de chaque désaccord (étape 4) → justifications à trancher sur le
+plan (étapes 5-7) → `ACCEPTATION.md` (verdict ; décision finale = Francis). Sans
+référence estimateur disponible, le verdict est « VÉRIFICATION INCOMPLÈTE », jamais un
+« pas pire que l'estimateur » tacite.
+
+```bash
+python -m src.validation.boucle_acceptation <S> --workdir OUTBOX/<S>/travail --dossier dossiers/<S>
+```
+
+Détail des artefacts, verdicts et contrats : `docs/boucle-acceptation.md` ; le verdict
+d'acceptation est aussi lu (informatif, jamais pass/fail) par
+`python -m src.validation.jeu_reference`.
+
 ## État réel au 22 septembre 2026, 5 h (heure de l'Est)
 
 **11 dossiers refaits à l'aveugle** par la chaîne automatique (`releve/`, branche `releve-auto-v2` de
