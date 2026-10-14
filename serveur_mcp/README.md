@@ -36,6 +36,8 @@ Configuration type d'un client MCP (Claude Desktop, VS Code / Copilot, Cursor, L
 }
 ```
 
+Images : `voir_image` et `zoomer` renvoient du JPEG (plus léger que PNG pour les plans).
+
 ## Nuage (Streamable HTTP)
 
 ```bash
@@ -55,6 +57,11 @@ passent). Mettre un proxy TLS devant (Caddy, nginx, Azure Container Apps…).
    `ecrire_fichier` pour `feuilles-classement.csv`, `nomenclature.csv`, `occurrences-visuel.csv`, `reserves.md`.
 3. `extraire_occurrences` (étiquettes texte) → `verifier_releve` jusqu'à `"pret": true`
    (labels hors nomenclature, feuilles non classées, points hors page, doublons < 4 pt : bloquants).
+3b. **Unités types** (logements, chambres, salles « TYPE ») : écrire `multiplicateurs.csv`
+   (`feuille,facteur,x0_pt,y0_pt,x1_pt,y1_pt,source` — zone vide = toute la feuille, la plus petite zone gagne,
+   `source` obligatoire). `verifier_releve` bloque une feuille dont le cartouche dit TYPE/TYPIQUE sans multiplicateur.
+   `quantites` → `sortie/quantites.csv` : repères représentés × facteur = quantités à soumissionner.
+   Exemple réel : `dossiers/S-1695/multiplicateurs.csv` (77 chambres, luminaires −82,8 % → −5,3 % vs l'estimateur).
 4. `produire_livrables` → `sortie/<S>-RELEVE.pdf`, `<S>.qpl`, rapport de métré ; se contrôler soi-même avec
    `voir_image("sortie/<S>-RELEVE.pdf#1")`.
 5. `comparer_estimateur` si le projet de l'estimateur est déposé dans `reference/`
