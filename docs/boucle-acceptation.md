@@ -80,11 +80,34 @@ comparaison. Modifier ou supprimer n'importe quel artefact gélé après le gel 
 boucle à la relance (verdict `INVALIDE`, motif « gel violé ») et la comparaison n'est
 pas relancée.
 
-Six classes de désaccords (étape 4), une ligne du CSV par désaccord : `omission`,
-`en_trop`, `doublon`, `mauvaise_famille`, `mauvaise_portee`,
+Six classes de désaccords (étape 4), une ligne du CSV par désaccord : `omission`, `en_trop`, `doublon`, `mauvaise_famille`, `mauvaise_portee`,
 `mauvais_rattachement_feuille`. Chaque verdict de justification exige une **preuve non
 vide** sur la source originale (« estimateur correct » compris) : `IA correcte`,
 `estimateur correct` ou `ambigu → réserve`.
+
+## Limites connues du contrôle à l'aveugle
+
+Le contrôle d'aveugle (étape 1) voit un export de l'estimateur fourni à tort dans
+l'INBOX par la voie principale du pipeline : `prepare.py` le classe « estimateur » et
+consigne ce classement dans `inventaire.json` (scanné, contenu → « contenu-estimateur »)
+— le workdir est alors reconnu non aveugle, verdict `INVALIDE`. Si en plus le nom du
+PDF d'entrée porte « dupuis »/« estimateur »/« releve »/« plan expert »,
+`estimateur/pages.csv` est détecté lui aussi (« contenu-dupuis »…).
+
+Limite résiduelle, à fermer dans une bead dédiée : du matériau de l'estimateur placé
+sous un sous-dossier `estimateur/` du workdir **sans** passer par `prepare.py` (copié
+après préparation, ou toute autre voie hors pipeline) n'est pas détecté quand noms et
+contenus sont neutres — `estimateur/pNN.png` et `estimateur/legendes/*.png` sont des
+PNG binaires (balayage de contenu sauté), « pNN.png » ne contient aucun mot du
+contrôle, et `estimateur/pages.csv` n'est détecté que par sa seule signature de contenu.
+La correction suit la même logique que la règle du dossier `reference/` : tout fichier
+sous `estimateur/` est du matériau de l'estimateur (`prepare.py` n'y écrit jamais
+rien d'autre) et devrait être détecté, ce qui exigera d'ajuster en sus le fixture
+`tests/test_aveugle.py::_creer_travail_ia_propre` (qui place aujourd'hui
+`estimateur/pages.csv` dans un travail « propre », contrepied de ce que
+`prepare.py` écrit réellement dans ce sous-dossier). En attendant, le contrôle
+d'aveugle constate l'état du dossier : ne jamais le citer seul comme preuve de
+discipline.
 
 ## Exemple minimal
 
