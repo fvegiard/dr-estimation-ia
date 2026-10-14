@@ -11,6 +11,12 @@ et que `dossiers/<S>/planexpert/<S>.qpl` (relevé IA) existe.
 
 Sorties : `dossiers/_jeu-reference/resultats.json` et `resultats.md`. Aucun chiffre saisi à la main.
 Régression = rappel ou précision d'un dossier qui baisse de plus de TOLERANCE points par rapport à `ligne-de-base.json`.
+
+Section informative (jamais pass/fail) : le verdict de la boucle d'acceptation
+(`dossiers/<S>/ACCEPTATION.md`, écrit par `src.validation.boucle_acceptation` —
+relevé des étapes 1 à 8 du critère d'acceptation de CLAUDE.md) est lu et affiché
+par dossier, sans être comparé à une ligne de base : l'acceptation est une
+réunion humaine (Francis), pas un test.
 """
 from __future__ import annotations
 
@@ -23,12 +29,19 @@ from collections import Counter
 
 from src.qpl.categorie import categoriser
 from src.qpl.normalisation import canonique
+from src.validation import boucle_acceptation
 from src.validation import compare_qpl as cq
 
 RACINE = Path(__file__).resolve().parents[2]
 DOSSIERS = RACINE / "dossiers"
 SORTIE = DOSSIERS / "_jeu-reference"
 TOLERANCE = 1.0  # points de pourcentage
+
+
+def verdict_acceptation(s: str) -> str | None:
+    """Verdict du `ACCEPTATION.md` d'un dossier (boucle d'acceptation), s'il
+    existe — lecture seule, informatif, jamais un critère de pass/fail."""
+    return boucle_acceptation.verdict_acceptation(DOSSIERS / s)
 
 
 def dossiers_du_jeu() -> list[str]:
@@ -183,6 +196,17 @@ def main(argv: list[str] | None = None) -> int:
             lignes.append(f"| {ch} | {cia} | {n} |")
     else:
         lignes.append("| — | — | 0 |")
+    lignes += ["", "## Boucle d'acceptation (informatif — jamais pass/fail)", "",
+               "Verdict du `ACCEPTATION.md` de chaque dossier, écrit par la boucle d'acceptation "
+               "(`src.validation.boucle_acceptation`, étapes 1 à 8 du critère d'acceptation) : "
+               f"{boucle_acceptation.VERDICT_INVALIDE}, {boucle_acceptation.VERDICT_INCOMPLET}, "
+               f"{boucle_acceptation.VERDICT_JUSTIF} ou {boucle_acceptation.VERDICT_PRET}. "
+               "« — » = boucle pas encore exécutée pour ce dossier. Lecture seule : ce verdict "
+               "n'influence jamais le pass/fail du jeu de référence.", "",
+               "| S- | verdict d'ACCEPTATION.md |", "|---|---|"]
+    for s in jeu:
+        v = verdict_acceptation(s)
+        lignes.append(f"| {s} | {v if v else '— (ACCEPTATION.md absent)'} |")
     lignes.append("")
     (SORTIE / "resultats.md").write_text("\n".join(lignes), encoding="utf-8")
     print("\n".join(lignes))
