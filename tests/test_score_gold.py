@@ -35,3 +35,18 @@ def test_noter_feuille_un_repere_ia_ne_couvre_qu_un_seul_repere_gold():
     r = SG.noter_feuille(gold, ia, {"PC": 2}, {"PC": 1})
     # then : l'oubli est compté ; l'appariement est un-à-un
     assert r["apparies"] == 1 and r["rappel"] == 50.0 and r["precision"] == 100.0 and r["meme_famille"] == 1
+
+
+def test_centre_rendu_bbox_rect_et_point_brut_cercle():
+    # given : une plinthe linéaire rendue à sa boîte (plan_rects) dont le point brut est une extrémité,
+    #         et un cercle sans boîte rendu juste sur son point brut
+    plinthe = {"x": 130.0, "y": 200.0, "bbox": [80.0, 198.0, 190.0, 199.0]}  # centre (135, 198.5)
+    cercle = {"x": 300.0, "y": 210.0}
+    # when
+    assert SG.centre_rendu(plinthe) == (135.0, 198.5)
+    assert SG.centre_rendu(cercle) == (300.0, 210.0)
+    # then : au centre de boîte, la pastille est trouvée ; au point brut d'extrémité (> 8 pt), elle serait manquée
+    rr = SG.noter_feuille([("PL", 135.0, 198.5)], [("PL", 135.0, 198.5)], {"PL": 1}, {"PL": 1})
+    assert rr["rappel"] == 100.0 and rr["meme_famille"] == 1
+    ra = SG.noter_feuille([("PL", 135.0, 198.5)], [("PL", 190.0, 200.0)], {"PL": 1}, {"PL": 1})
+    assert ra["apparies"] == 0

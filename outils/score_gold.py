@@ -81,6 +81,15 @@ def legende(page: pymupdf.Page) -> dict[str, float]:
     return {k: float(v[0] if isinstance(v, list) else v) for k, v in FX.read_legend(page).items()}
 
 
+def centre_rendu(e: dict) -> tuple[float, float]:
+    """Position visible du repère rendu : centre de la boîte du symbole (`bbox` : une pastille rect
+    est dessinée sur la boîte entière, `marker_rect` — remarque revue Codex P2), sinon le point brut."""
+    b = e.get("bbox")
+    if b:
+        return (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
+    return e["x"], e["y"]
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="python -m outils.score_gold")
     ap.add_argument("outbox")
@@ -109,7 +118,7 @@ def main(argv: list[str] | None = None) -> int:
             s_est = next((s for s in est["sheets"] if s["sheet"] == f), None)
             if s_est:
                 k = page.rect.width / s_est["width_px"]
-                ia = [(famille(e.get("code") or e.get("repere")), e["x"] * k, e["y"] * k)
+                ia = [(famille(e.get("code") or e.get("repere")), centre_rendu(e)[0] * k, centre_rendu(e)[1] * k)
                       for c in est["counters"] for e in c["elements"] if e.get("sheet") == f]
         r = noter_feuille(gold, ia, lg, li, a.tol)
         r.update(feuille=f, page_gold=gp, releve="oui" if f in feuilles_ia else "non")
