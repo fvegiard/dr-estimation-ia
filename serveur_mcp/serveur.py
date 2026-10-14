@@ -8,6 +8,7 @@ N'importe quel LLM compatible MCP (Claude, GPT, Gemini, modèle local…) se bra
   ecrire_fichier                      → classement, nomenclature, occurrences, réserves (méthode : ressource
                                         estimateur://methode, gabarit : prompt releve_planexpert)
   extraire_occurrences / verifier_releve
+  quantites                           → repères × multiplicateurs.csv (unités types) = quantités à soumissionner
   produire_livrables                  → <S>-RELEVE.pdf au format de l'exemplaire HR26-14 (pastilles, encadré
                                         « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes, réserves) + projet
                                         Plan Expert .qpl + rapport de métré
@@ -49,7 +50,7 @@ NOM_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 FEUILLE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 ECRITURE_PERMISE = {
     "feuilles-classement.csv", "nomenclature.csv", "occurrences-texte.csv", "occurrences-visuel.csv",
-    "reserves.md", "rapport-releve.md", "comparaison-estimateur.md",
+    "reserves.md", "rapport-releve.md", "comparaison-estimateur.md", "multiplicateurs.csv",
 }
 TAILLE_MAX_DEPOT = 200 * 1024 * 1024
 TAILLE_MAX_LIVRABLE = 25 * 1024 * 1024
@@ -59,7 +60,9 @@ INSTRUCTIONS = """Tu es l'expert estimateur électrique du Groupe DR Électrique
 dossier de plans PDF brut et tu livres le PDF annoté au format de l'exemplaire HR26-14.
 Déroulement : deposer_fichier (ou preparer_dossier avec chemin_source) → preparer_dossier → lire la ressource
 estimateur://methode et l'appliquer (voir_image des aperçus/tuiles, zoomer, ecrire_fichier) → extraire_occurrences →
-verifier_releve jusqu'à « pret »: true → produire_livrables → voir_image du rendu pour te contrôler toi-même →
+multiplicateurs.csv si une feuille montre des unités types (logements, chambres, salles « TYPE ») : facteur = nombre
+d'unités réelles, avec sa source (cartouche, liste des logements, note) → verifier_releve jusqu'à « pret »: true →
+quantites (repères × multiplicateur = quantités à soumissionner) → produire_livrables → voir_image du rendu pour te contrôler toi-même →
 comparer_estimateur si une référence existe. Avant de nommer un article de nomenclature : chercher_libelle (nom
 employé par les estimateurs) puis exemples_humains (comment ils l'ont repéré sur leurs plans). Rien n'est inventé :
 chaque quantité vient d'un symbole vu, d'une étiquette, d'une cédule ou d'une note ; le doute va dans reserves.md."""
@@ -202,9 +205,16 @@ def ecrire_fichier(dossier: str, nom: str, contenu: str) -> dict:
     return {"ecrit": f"travail/{nom}", "lignes": lignes}
 
 
+def _jpeg(im, qualite: int = 85) -> Image:
+    """Image PIL -> JPEG (plus léger que PNG pour les plans ; préférence de Francis)."""
+    buf = io.BytesIO()
+    im.convert("RGB").save(buf, "JPEG", quality=qualite, optimize=True)
+    return Image(data=buf.getvalue(), format="jpeg")
+
+
 @mcp.tool()
 def voir_image(dossier: str, chemin: str, largeur_max: int = 1600) -> Image:
-    """Renvoie une image du dossier (aperçu, tuile, zoom, rendu) réduite à largeur_max pixels.
+    """Renvoie une image JPEG du dossier (aperçu, tuile, zoom, rendu) réduite à largeur_max pixels.
     Pour voir une page d'un PDF de sortie : chemin « sortie/<fichier>.pdf#<page> » (page 1 = première)."""
     from PIL import Image as PILImage
 
@@ -219,13 +229,12 @@ def voir_image(dossier: str, chemin: str, largeur_max: int = 1600) -> Image:
         with pymupdf.open(p) as doc:
             pg = doc[int(page or 1) - 1]
             zoom = min(4.0, max(0.2, largeur_max / pg.rect.width))
-            return Image(data=pg.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom)).tobytes("png"), format="png")
+            pix = pg.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom))
+            return _jpeg(PILImage.frombytes("RGB", (pix.width, pix.height), pix.samples))
     im = PILImage.open(p)
     if im.width > largeur_max:
         im = im.resize((largeur_max, round(im.height * largeur_max / im.width)))
-    buf = io.BytesIO()
-    im.convert("RGB").save(buf, "PNG", optimize=True)
-    return Image(data=buf.getvalue(), format="png")
+    return _jpeg(im)
 
 
 # ---------------------------------------------------------------- outils : savoir des estimateurs (projets Plan Expert)
@@ -313,7 +322,8 @@ def zoomer(dossier: str, feuille: str, x0: float, y0: float, x1: float, y1: floa
     zooms = sorted((d / "travail" / "zooms").glob(f"{feuille}_*.png"), key=lambda p: p.stat().st_mtime)
     if not zooms:
         raise ToolError("zoom.py n'a produit aucune image")
-    return Image(data=zooms[-1].read_bytes(), format="png")
+    from PIL import Image as PILImage
+    return _jpeg(PILImage.open(zooms[-1]))
 
 
 @mcp.tool()
@@ -333,6 +343,115 @@ def extraire_occurrences(dossier: str) -> dict:
     occ = lire_csv(d / "travail" / "occurrences-texte.csv")
     return {"occurrences": len(occ), "par_label": dict(Counter(o["label"] for o in occ).most_common()),
             "journal": log[-1500:]}
+
+
+# ---------------------------------------------------------------- multiplicateurs (unités / logements / chambres types)
+TYPIQUE_RE = re.compile(r"\bTYP(E|ES|IQUE|IQUES|ICAL)\b", re.I)
+
+
+def lire_multiplicateurs(travail: Path) -> list[dict]:
+    """multiplicateurs.csv : feuille,facteur,x0_pt,y0_pt,x1_pt,y1_pt,source.
+    Zone vide = toute la feuille. Une occurrence prend le facteur de la zone la plus petite qui la contient."""
+    regles = []
+    for i, r in enumerate(lire_csv(travail / "multiplicateurs.csv"), start=2):
+        try:
+            fac = float(r.get("facteur") or "")
+        except ValueError:
+            raise ToolError(f"multiplicateurs.csv:{i} facteur illisible : {r.get('facteur')!r}")
+        z = [r.get(k, "").strip() for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
+        zone = tuple(float(v) for v in z) if all(z) else None
+        regles.append({"feuille": r.get("feuille", ""), "facteur": fac, "zone": zone,
+                       "source": r.get("source", "").strip(), "_ligne": i})
+    return regles
+
+
+def facteur_de(regles: list[dict], feuille: str, x: float, y: float) -> float:
+    """Zone explicite la plus petite qui contient le point, sinon règle « toute la feuille », sinon 1."""
+    feuille_entiere, meilleur, aire = None, None, float("inf")
+    for r in regles:
+        if r["feuille"] != feuille:
+            continue
+        if r["zone"] is None:
+            feuille_entiere = r["facteur"]
+            continue
+        x0, y0, x1, y1 = r["zone"]
+        if min(x0, x1) <= x <= max(x0, x1) and min(y0, y1) <= y <= max(y0, y1):
+            a = abs(x1 - x0) * abs(y1 - y0)
+            if a < aire:
+                meilleur, aire = r["facteur"], a
+    if meilleur is not None:
+        return meilleur
+    return feuille_entiere if feuille_entiere is not None else 1.0
+
+
+def controle_multiplicateurs(travail: Path, classement: list[dict]) -> tuple[list[str], list[str]]:
+    """Bloquant : une feuille « plan » dont le cartouche/la note dit TYPE/TYPIQUE sans ligne dans
+    multiplicateurs.csv (cause de S-1695 : chambres types non multipliées, -64 % luminaires).
+    Facteur 1 accepté s'il est justifié (source)."""
+    erreurs, alertes = [], []
+    try:
+        regles = lire_multiplicateurs(travail)
+    except ToolError as e:
+        return [str(e)], []
+    avec = {r["feuille"] for r in regles}
+    for r in regles:
+        if not r["source"]:
+            erreurs.append(f"multiplicateurs.csv:{r['_ligne']} sans source (dire d'où vient le facteur : "
+                           "nombre de logements, liste des chambres, note de plan…)")
+        if r["facteur"] <= 0:
+            erreurs.append(f"multiplicateurs.csv:{r['_ligne']} facteur <= 0")
+    for c in classement:
+        if c.get("type") == "plan" and TYPIQUE_RE.search(c.get("note", "")) and c["feuille"] not in avec:
+            erreurs.append(f"feuille {c['feuille']} : unités types (« {c.get('note', '')[:80]} ») sans "
+                           "multiplicateur — ajouter une ligne dans multiplicateurs.csv (facteur 1 si justifié)")
+    return erreurs, alertes
+
+
+@mcp.tool()
+def quantites(dossier: str) -> dict:
+    """Quantités à soumissionner : repères représentés × multiplicateur (unités/logements/chambres types).
+    Écrit sortie/quantites.csv (label, code, famille, represente, total) et renvoie le détail par feuille."""
+    d = dossier_de(dossier)
+    t = d / "travail"
+    regles = lire_multiplicateurs(t)
+    nomen = {r.get("label"): r for r in lire_csv(t / "nomenclature.csv")}
+    plans = {r["feuille"] for r in lire_csv(t / "feuilles-classement.csv") if r.get("type") == "plan"}
+    rep, tot = Counter(), defaultdict(float)
+    detail = defaultdict(lambda: defaultdict(lambda: [0, 0.0]))
+    vus = set()
+    for nom in ("occurrences-texte.csv", "occurrences-visuel.csv"):
+        for o in lire_csv(t / nom):
+            if o.get("exclure") == "1" or o.get("feuille") not in plans:
+                continue
+            try:
+                x, y = float(o["x_pt"]), float(o["y_pt"])
+            except (KeyError, ValueError):
+                continue
+            cle = (o["feuille"], o["label"], round(x), round(y))
+            if cle in vus:
+                continue
+            vus.add(cle)
+            f = facteur_de(regles, o["feuille"], x, y)
+            rep[o["label"]] += 1
+            tot[o["label"]] += f
+            detail[o["feuille"]][o["label"]][0] += 1
+            detail[o["feuille"]][o["label"]][1] += f
+    lignes = []
+    for lab in sorted(rep, key=lambda l: (nomen.get(l, {}).get("famille", ""), l)):
+        n = nomen.get(lab, {})
+        total = tot[lab]
+        lignes.append({"label": lab, "code": n.get("code", ""), "famille": n.get("famille", ""),
+                       "represente": rep[lab], "total": int(total) if total == int(total) else round(total, 2)})
+    sortie = d / "sortie"
+    sortie.mkdir(exist_ok=True)
+    with (sortie / "quantites.csv").open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["label", "code", "famille", "represente", "total"])
+        w.writeheader()
+        w.writerows(lignes)
+    return {"ecrit": "sortie/quantites.csv", "represente": sum(rep.values()),
+            "total": round(sum(tot.values()), 2), "lignes": lignes,
+            "multiplicateurs": [{k: v for k, v in r.items() if k != "_ligne"} for r in regles],
+            "par_feuille": {f: {l: {"represente": a, "total": b} for l, (a, b) in v.items()} for f, v in detail.items()}}
 
 
 # ---------------------------------------------------------------- contrôle du relevé
@@ -429,6 +548,9 @@ def controler(travail: Path) -> dict:
     # Q11-Q14 de releve/controle_qualite.py (légende, une famille par symbole, modèle du devis, code du vocabulaire) :
     # la méthode exposée renvoie « controle_qualite » vers verifier_releve, qui doit donc les appliquer aussi.
     erreurs += _controle_legende(travail, nomen, occ, classes)
+    e_mult, a_mult = controle_multiplicateurs(travail, lire_csv(travail / "feuilles-classement.csv"))
+    erreurs += e_mult
+    alertes += a_mult
     return {"pret": not erreurs, "erreurs": erreurs, "alertes": alertes, "occurrences": len(occ),
             "reserves": n_res, "par_feuille": {f: dict(c) for f, c in sorted(comptes.items())},
             "feuilles_plan": sorted(f for f, t in classes.items() if t == "plan")}
