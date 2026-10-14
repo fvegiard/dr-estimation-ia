@@ -13,7 +13,10 @@ Dossiers (hors du dépôt, données de Francis) :
     G:\\My Drive\\AI\\Releves-auto\\INBOX|OUTBOX  miroir Google Drive (utilisé si G: est monté dans WSL)
 
 Étapes : prepare.py (déterministe) → agent Claude Code en mode headless (`claude -p "/releve-planexpert …"`,
-doc : docs/code.claude.com_docs_en_headless.md) → build_qpl.py → render_vectoriel.py → render_pdf.py → STATUT.md.
+doc : docs/code.claude.com_docs_en_headless.md) → build_qpl.py → render_vectoriel.py → render_pdf.py →
+boucle_acceptation (si `dossiers/<nom>/` est assemblé dans le dépôt : aveugle → gel → comparaison →
+classement → justifications → ACCEPTATION.md ; jamais bloquante — VÉRIFICATION INCOMPLÈTE si la
+référence de l'estimateur est absente) → STATUT.md.
 Un seul relevé à la fois (verrou). Journal : D:\\claude\\releve-auto\\journal.log
 """
 from __future__ import annotations
@@ -160,9 +163,17 @@ def agent(workdir, log_path):
         f"entrée {usage.get('input_tokens')} + cache {usage.get('cache_read_input_tokens')} / sortie {usage.get('output_tokens')} ; subtype {res.get('subtype')}")
     return code, res, dur
 
-def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None):
+def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None, *, acceptation=None):
     a_verifier = a_verifier or []
     etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    if ok and acceptation:     # boucle d'acceptation exécutée : l'état intègre son verdict
+        if "INVALIDE" in acceptation:
+            etat = "TERMINÉ — ACCEPTATION INVALIDE"
+        elif not acceptation.startswith("PRÊT POUR DÉCISION FRANCIS") \
+                and not acceptation.startswith("non exécutée"):
+            # VÉRIFICATION INCOMPLÈTE (référence absente) ou JUSTIFICATIONS
+            # REQUISES (désaccords non tranchés) : le relevé reste à vérifier
+            etat = "TERMINÉ — À VÉRIFIER"
     L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{etat}**"]
     if err: L += ["", f"Erreur : `{err}`"]
     if a_verifier:
@@ -195,6 +206,11 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
     else:
         L += ["**Export natif Plan Expert : non** (étape non exécutée)", ""]
     L += ["## Étapes", "", "| étape | durée | résultat |", "|---|--:|---|"] + [f"| {s} | {d / 60:.1f} min | {r} |" for s, d, r in steps]
+    if acceptation:
+        L += ["", f"**Boucle d'acceptation : {acceptation}** — verdict détaillé dans "
+              f"`dossiers/{name}/ACCEPTATION.md` (aveugle → gel → comparaison → classement → "
+              "justifications ; un INVALIDE est cohérent avec le critère d'acceptation, il est "
+              "consigné, jamais réduit au silence)."]
     usage = (res or {}).get("usage", {}) or {}
     L += ["", f"## Agent de relevé — {(res or {}).get('lanceur') or 'claude -p (headless)'}", "", f"- modèle : `{MODEL}` · tours : {(res or {}).get('num_turns')} · sous-type : {(res or {}).get('subtype')}",
           f"- coût estimé (client, `total_cost_usd`) : {(res or {}).get('total_cost_usd')} $ US",
@@ -226,7 +242,7 @@ def process(arg, reprendre=False):
     os.makedirs(outdir, exist_ok=True)
     marker = os.path.join(outdir, ".en-cours"); open(marker, "w").write(str(os.getpid()))
     log_path = os.path.join(outdir, "journal-etapes.log")
-    steps, res, ok, err, a_verifier = [], None, False, None, []
+    steps, res, ok, err, a_verifier, acceptation = [], None, False, None, [], None
     T = time.time()
     try:
         if not reprendre:
@@ -260,6 +276,27 @@ def process(arg, reprendre=False):
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
         ok = True
+        # Boucle d'acceptation (critère d'acceptation, étapes 1 à 8) : lancée
+        # seulement si le dossier de la soumission est déjà assemblé dans le
+        # dépôt (dossiers/<name> existe — il contient au moins l'emplacement
+        # reference/ de l'estimateur). JAMAIS bloquante : VÉRIFICATION INCOMPLÈTE si la référence
+        # est absente ; INVALIDE (« gel violé », relevé non aveugle) est
+        # consigné dans STATUT.md et ACCEPTATION.md, jamais réduit au silence.
+        dossier_dir = os.path.join(REPO, "dossiers", name)
+        if os.path.isdir(dossier_dir):
+            t = time.time()
+            code_b, out_b = run(["uv", "run", "python", "-m", "src.validation.boucle_acceptation",
+                                 name, "--workdir", workdir, "--dossier", dossier_dir],
+                                log_path=log_path)
+            verdict = ""
+            for ligne in (out_b or "").splitlines():
+                if ligne.startswith("VERDICT : "):
+                    verdict = ligne[len("VERDICT : "):].strip()
+            if not verdict:
+                verdict = f"non déterminé (code {code_b})"
+            acceptation = verdict
+            steps.append(("boucle_acceptation", time.time() - t, f"code {code_b} — {verdict}"))
+            log(f"boucle_acceptation {name} : code {code_b}, verdict {verdict}")
         if os.environ.get("RELEVE_NATIF", "1") == "1":     # export natif Plan Expert par la VM (MCP planexpert-vm) ; jamais bloquant
             if os.path.exists(PLANEXPERT_VM_CLI):
                 t = time.time(); code, out = run(["uv", "run", PLANEXPERT_VM_CLI, "--cli", "natif", pe_dir, outdir], log_path=log_path)
@@ -278,7 +315,10 @@ def process(arg, reprendre=False):
     if reprendre and os.path.exists(os.path.join(workdir, "agent-resultat.json")):
         res = json.load(open(os.path.join(workdir, "agent-resultat.json"), encoding="utf-8"))
     steps.append(("total", time.time() - T, ""))
-    statut(name, inbox, outdir, workdir, steps, res, ok, err, a_verifier)
+    # Appel identique à l'ancien comportement tant que la boucle d'acceptation
+    # n'a pas tourné (dossiers/<name> absent) ; sinon le verdict voyage.
+    kwargs = {"acceptation": acceptation} if acceptation else {}
+    statut(name, inbox, outdir, workdir, steps, res, ok, err, a_verifier, **kwargs)
     try: os.remove(marker)
     except FileNotFoundError: pass
     if drive_mounted():

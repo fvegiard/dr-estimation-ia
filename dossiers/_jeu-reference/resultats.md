@@ -43,3 +43,15 @@ Among matched couples (position-based, unchanged), share whose category (disposi
 | chauffage | dispositif | 409 |
 | dispositif | luminaire | 239 |
 | telecom_donnees | luminaire | 199 |
+
+## Boucle d'acceptation (informatif — jamais pass/fail)
+
+Verdict du `ACCEPTATION.md` de chaque dossier, écrit par la boucle d'acceptation (`src.validation.boucle_acceptation`, étapes 1 à 8 du critère d'acceptation) : INVALIDE, VÉRIFICATION INCOMPLÈTE, JUSTIFICATIONS REQUISES ou PRÊT POUR DÉCISION FRANCIS. « — » = boucle pas encore exécutée pour ce dossier. Lecture seule : ce verdict n'influence jamais le pass/fail du jeu de référence.
+
+| S- | verdict d'ACCEPTATION.md |
+|---|---|
+| S-1714 | — (ACCEPTATION.md absent) |
+| S-1715 | — (ACCEPTATION.md absent) |
+| S-1769 | — (ACCEPTATION.md absent) |
+| S-1811 | — (ACCEPTATION.md absent) |
+| S-1844 | — (ACCEPTATION.md absent) |
