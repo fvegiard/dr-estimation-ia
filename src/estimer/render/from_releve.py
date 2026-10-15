@@ -527,6 +527,9 @@ def build(work: Path, out: Path, ancrage: bool = True, projet: str = "") -> dict
             if all(v is not None for v in bb):
                 el["bbox"] = bb
                 el["shape"] = "rect"
+                ang = _float(o.get("angle_deg"))        # boîte tournée (symbole en biais), 0 par défaut
+                if ang:
+                    el["angle"] = ang
             counters[o["label"]].append(el)
             bord_rows.append({"feuille": name, "repere": repere, "source": o["source_id"], "materiel": mat,
                               "designation": designation, "qte": f"{qte:g}", "portee": portee, "modele": modele,

@@ -56,6 +56,7 @@ class Item:
     prescription: str = ""
     parent: str = ""
     bbox: tuple[float, float, float, float] | None = None
+    angle: float = 0.0             # rotation (degrés, sens horaire PDF) d'une boîte `rect` : 0 = axée (gold)
     shape: str = "circle"
     flags: list[str] = field(default_factory=list)
     reserve_override: bool | None = None
@@ -264,6 +265,7 @@ def load_input(in_dir: Path) -> list[Sheet]:
                 prescription=(row.get("prescription") if row else el.get("prescription", DEFAULT_PRESCRIPTION)) or "",
                 parent=(row.get("parent") or el.get("parent") or "").strip(),
                 bbox=tuple(bbox) if bbox else None,
+                angle=float(el.get("angle") or 0.0),
                 shape=el.get("shape", "circle"),
                 flags=list(el.get("flags", [])),
                 reserve_override=_parse_bool(row.get("reserve")) if row else _parse_bool(el.get("reserve")),

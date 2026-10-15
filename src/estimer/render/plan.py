@@ -230,8 +230,16 @@ def marker_rect(cx: float, cy: float, bbox, radius: float | None = None) -> pymu
     return pymupdf.Rect(cx - r, cy - r, cx + r, cy + r)
 
 
-def draw_mark(shape: pymupdf.Shape, kind: str, rect: pymupdf.Rect, color, oc: int) -> None:
-    if kind in ("rect", "square"):
+def draw_mark(shape: pymupdf.Shape, kind: str, rect: pymupdf.Rect, color, oc: int, angle: float = 0.0) -> None:
+    """`angle` (degrés) : boîte `rect` tournée autour de son centre, pour un symbole dessiné en biais
+    (feuille à 37° de E-201 Georgette-Lepage) ; 0 = rectangle axé, comme le gold."""
+    if kind in ("rect", "square") and angle:
+        import math
+        c = (rect.tl + rect.br) / 2; a = math.radians(angle); ca, sa = math.cos(a), math.sin(a)
+        hw, hh = rect.width / 2, rect.height / 2
+        shape.draw_polyline([pymupdf.Point(c.x + dx * ca - dy * sa, c.y + dx * sa + dy * ca)
+                             for dx, dy in ((-hw, -hh), (hw, -hh), (hw, hh), (-hw, hh))])
+    elif kind in ("rect", "square"):
         shape.draw_rect(rect)
     elif kind == "diamond":
         c = (rect.tl + rect.br) / 2
@@ -298,7 +306,7 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
         mr = marker_rect(cx, cy, bb, it.radius)
         marks.append((it, mr))
         # pas d'anneau blanc autour de la pastille : le gold n'en a sur aucune des 2177 (écart E8 résorbé)
-        draw_mark(shape, it.shape, mr, colors[it.code], layers[it.code])
+        draw_mark(shape, it.shape, mr, colors[it.code], layers[it.code], it.angle)
 
     taken = [mr for _, mr in marks]
     # plan text (tags such as [K2.2], often vector strokes) is kept readable: labels avoid inked areas
