@@ -132,7 +132,8 @@ def agent(workdir, log_path):
     res_path = os.path.join(workdir, "agent-resultat.json")
     t0 = time.time()
     agent_env = {"RELEVE_TOOL_GUARD_ROOT": workdir}
-    if os.environ.get("RELEVE_AGENT", "sdk") == "nvidia":
+    if os.environ.get("RELEVE_AGENT", "sdk") in ("nvidia", "gemini"):
+        os.environ.setdefault("RELEVE_FOURNISSEUR", os.environ["RELEVE_AGENT"])
         # Clé NVIDIA_API_KEY héritée du processus ; sous WSL : WSLENV=NVIDIA_API_KEY/u au lancement (jamais journalisée).
         cmd = [sys.executable, "releve/agent_nvidia.py", workdir, res_path, "--max-turns", MAX_TURNS]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
