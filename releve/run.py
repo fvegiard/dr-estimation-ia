@@ -331,6 +331,16 @@ def process(arg, reprendre=False):
         if os.path.exists(annote) and os.path.exists(estimate):
             t = time.time(); code, out = run(["uv", "run", "releve/planche_controle.py", annote, estimate, os.path.join(outdir, "controle")], log_path=log_path)
             steps.append(("planche_controle", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
+            # Livrables PNG (règle de Francis : plan annoté + calque transparent, pas de PDF à relire) : une paire par feuille plan
+            try:
+                pages = [(sh.get("sheet") or sh.get("name"), sh.get("page") or 1) for sh in json.load(open(estimate, encoding="utf-8")).get("sheets", [])]
+            except Exception:  # noqa
+                pages = []
+            t = time.time(); n_png = 0
+            for nom_f, pg in pages:
+                code, _ = run(["uv", "run", "releve/calque_png.py", annote, os.path.join(outdir, "png"), "--page", str(pg), "--nom", str(nom_f)], log_path=log_path)
+                n_png += (code == 0)
+            steps.append(("calque_png", time.time() - t, f"{n_png} feuille(s) → png/"))
         ok = True
         # Boucle d'acceptation (critère d'acceptation, étapes 1 à 8) : lancée
         # seulement si le dossier de la soumission est déjà assemblé dans le

@@ -58,11 +58,12 @@ def main():
         par_feuille.setdefault(it.get("sheet", ""), []).append(it)
     sheets_pages = {}
     for sh in json.load(open(a.estimate, encoding="utf-8")).get("sheets", []):
-        sheets_pages[sh.get("name") or sh.get("sheet")] = sh.get("plan_page", 1)
+        sheets_pages[sh.get("sheet") or sh.get("name")] = sh.get("page") or sh.get("plan_page") or 1
     n_planches = 0
     for feuille, lst in par_feuille.items():
-        page = doc[(sheets_pages.get(feuille, 1) or 1) - 1]
-        page_av = avant[(sheets_pages.get(feuille, 1) or 1) - 1] if avant else None
+        pg = int(lst[0].get("page") or sheets_pages.get(feuille, 1) or 1)   # page de la feuille dans « Plans annotés »
+        page = doc[pg - 1]
+        page_av = avant[pg - 1] if avant else None
         lst.sort(key=lambda o: o["repere"])
         cols, rows_, par = 6, 5, 30
         if avant:

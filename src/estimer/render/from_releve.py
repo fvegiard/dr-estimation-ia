@@ -55,7 +55,9 @@ FORMATS = ("materiel", "agrege", "travaux")
 INCENDIE = {"alarme", "securite_incendie", "incendie"}
 URGENCE = {"secours", "urgence"}
 # releve shape (Plan Expert enum or name) -> renderer marker; boxes with a bbox are drawn as rectangles
-SHAPES = {"2": "diamond", "losange": "diamond"}
+SHAPES = {"2": "diamond", "losange": "diamond", "1": "square", "carre": "square", "carré": "square"}
+# `carre` sans boîte = carré axé de rayon `rayon_pt` (jamais un cercle : TEST-E201, 11 boîtiers F/C/ANN rendus en
+# cercle parce que seul `losange` était traduit) ; avec boîte x0..y1 = rectangle, tourné si `angle_deg`.
 READING_BAND_PT = 40.0     # reading order of sources: top-to-bottom bands of 40 pt, then left-to-right
 ANCHOR_TEXT_R = 14.0       # a text tag is attached to the closest vector symbol within 14 pt of the tag box
 REVALIDER = "revalider"
@@ -530,9 +532,9 @@ def build(work: Path, out: Path, ancrage: bool = True, projet: str = "") -> dict
             if all(v is not None for v in bb):
                 el["bbox"] = bb
                 el["shape"] = "rect"
-                ang = _float(o.get("angle_deg"))        # boîte tournée (symbole en biais), 0 par défaut
-                if ang:
-                    el["angle"] = ang
+            ang = _float(o.get("angle_deg"))            # boîte ou carré tourné (symbole en biais), 0 par défaut
+            if ang and el["shape"] in ("rect", "square"):
+                el["angle"] = ang
             counters[o["label"]].append(el)
             bord_rows.append({"feuille": name, "repere": repere, "source": o["source_id"], "materiel": mat,
                               "designation": designation, "qte": f"{qte:g}", "portee": portee, "modele": modele,

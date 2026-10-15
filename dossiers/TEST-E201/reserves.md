@@ -49,6 +49,8 @@ renvoient à ce système.
 Deux rails courbes (P-2 39 : 5 têtes, ~125 pt ≈ 4,4 m à 1:100 ; P-2 41 : 3 têtes, ~55 pt ≈ 1,9 m), tous deux
 E.A.E. Longueur estimée depuis l'échelle 1:100 du cartouche (1 pt = 0,0353 m) : **à métrer** avant chiffrage.
 Boîte de jonction (carré X) en tête de chaque rail relevée séparément (S01).
+Pastilles M06-01/M06-02 posées **sur le rail lui-même** (2026-10-15, contrôle Haiku : M06-01 était à 12 pt du rail) ;
+le rendu ne trace pas encore le rail sur sa longueur — élément linéaire marqué par un point, à améliorer.
 
 ## R-009 — Accumulateur (476 ; 610) sans étiquette
 Rectangle « + − » avec un petit cercle accolé, à l'entrée du bureau 110.5. Relevé sous U04 « ACCUMULATEUR »,
@@ -74,3 +76,12 @@ cercles sans étiquette, architecture probable). Rapport : `RAPPORT-VERIFICATEUR
 - Aucune référence d'estimateur : critère d'acceptation à l'étape 1 (identification à l'aveugle),
   **vérification incomplète**.
 - Modèle exécutant ce relevé : Claude Fable 5.1 (session interactive, route « session = agent » de CLAUDE.md).
+
+## R-013 — Contrôle visuel Haiku du 2026-10-15 (calque / overlay), tri des 17 signalements
+Sous-agent Haiku autorisé par Francis, 121 vignettes ×8 : 104 OK, 17 signalés. Tri au zoom sur le raster brut :
+- **Fondés (14)** : 11 boîtiers rendus en cercle (F ×3, C ×4, ANN, ⊠ M07-01, accumulateur, M14-01) — cause :
+  `forme=carre` sans boîte tombait sur le cercle (`SHAPES` de `from_releve.py`) ; corrigé + ancrage par gabarit tourné ;
+  M08-04 posé sur le S voisin (582,816 d'origine était juste) ; M12-03 à 2,5 pt au-dessus de son S ; M06-01 à côté du rail.
+- **Faux positifs (3)** : M05-01/02 ont bien un cercle fin dessous (famille EC, R-005 inchangée) ; I02-01/02 sont des
+  « cercle avec carré » = A09 HP encastré plafond, pastille ronde correcte.
+Planches après correction : `controle/E201-planche-01..05.png`.
