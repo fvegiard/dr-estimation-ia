@@ -50,6 +50,8 @@ WORK_FILES = (
     "comparaison-estimateur.md",
     "agent-resultat.json",
     "agent-journal.log",
+    "ancrage-raster.json",
+    "comparaison-legende.json",      # rapports des contrôles raster : jamais repris d'une entrée précédente
 )
 
 def sha256(path: str) -> str:

@@ -29,10 +29,11 @@ def flux_releve(doc: pymupdf.Document, page: pymupdf.Page) -> tuple[list[int], l
     « RELEVE … » de la page."""
     noms = {x: v.get("name", "") for x, v in doc.get_ocgs().items()}
     props = {}
-    ok, props_raw = doc.xref_get_key(page.xref, "Resources/Properties")
-    if ok == "dict":
-        for m in re.finditer(r"/(\w+)\s+(\d+)\s+0\s+R", props_raw):
-            props[m.group(1)] = int(m.group(2))
+    kind, val = doc.xref_get_key(page.xref, "Resources/Properties")
+    # dictionnaire direct OU référence indirecte (fréquent sur les PDF CAO à calques) — comme verify_exemple.page_ocgs()
+    props_raw = doc.xref_object(int(val.split()[0])) if kind == "xref" else (val if kind == "dict" else "")
+    for m in re.finditer(r"/(\w+)\s+(\d+)\s+0\s+R", props_raw):
+        props[m.group(1)] = int(m.group(2))
     releve = {n for n, x in props.items() if noms.get(x, "").startswith(PREFIXE_CALQUE)}
     garder, retirer = [], []
     for x in page.get_contents():

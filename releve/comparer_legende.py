@@ -14,7 +14,8 @@ Entrées : `legende.csv` avec, pour les lignes à comparer, les colonnes `feuill
 `legende` = numéro de ligne) ; `occurrences-visuel.csv` ; rasters de `prepare.py`.
 Sortie : `comparaison-legende.json` + liste des occurrences dont un autre glyphe corrèle mieux (écart ≥ 0,08).
 
-Usage : uv run releve/comparer_legende.py WORKDIR
+Usage : uv run releve/comparer_legende.py WORKDIR [--feuilles F1 F2 …]   (feuilles raster seulement : les occurrences
+des feuilles vectorielles n'ont ni taille mesurée ni ancrage raster — elles ne sont pas comparées)
 """
 from __future__ import annotations
 import csv, json, math, os, sys
@@ -37,7 +38,11 @@ def crop(img, s, x, y, half):
 
 
 def main():
-    work = os.path.abspath(sys.argv[1])
+    import argparse
+    ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("--feuilles", nargs="+", default=None)
+    a = ap.parse_args()
+    work = os.path.abspath(a.workdir)
+    feuilles = set(a.feuilles or [])
     leg = [r for r in csv.DictReader(open(os.path.join(work, "legende.csv"), encoding="utf-8"))
            if (r.get("x_pt") or "").strip() and (r.get("y_pt") or "").strip()]
     sortie = os.path.join(work, "comparaison-legende.json")
@@ -48,7 +53,8 @@ def main():
         print("comparaison légende : aucune ligne de legende.csv n'a de coordonnées (feuille_legende,x_pt,y_pt,taille_pt) — rien à comparer")
         return
     nom = {r["label"]: r for r in csv.DictReader(open(os.path.join(work, "nomenclature.csv"), encoding="utf-8"))}
-    occ = list(csv.DictReader(open(os.path.join(work, "occurrences-visuel.csv"), encoding="utf-8")))
+    occ = [o for o in csv.DictReader(open(os.path.join(work, "occurrences-visuel.csv"), encoding="utf-8"))
+           if not feuilles or o.get("feuille") in feuilles]
     cache = {}
     glyphes = {}
     for r in leg:

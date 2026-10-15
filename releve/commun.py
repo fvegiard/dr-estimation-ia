@@ -55,7 +55,8 @@ def load_nomenclature(work):
             k = used.get(fam, 0); used[fam] = k + 1
             d = VARIANTES[k % len(VARIANTES)]
             rgb = tuple(max(0, min(255, base_rgb[i] + d[i])) for i in range(3))
-        out[label] = {"famille": fam, "forme": shape, "rgb": rgb, "taille": 26, "description": r.get("description") or "", "source": r.get("source") or ""}
+        out[label] = {"famille": fam, "forme": shape, "rgb": rgb, "taille": 26, "description": r.get("description") or "", "source": r.get("source") or "",
+                      "legende": (r.get("legende") or "").strip()}     # no de ligne de légende (ancrage_raster : glyphe ou cercle, taille)
     return out
 
 def load_occurrences(work):

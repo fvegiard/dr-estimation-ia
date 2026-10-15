@@ -274,7 +274,11 @@ def raster_ouverts(workdir):
         n += len(a.get("non_ancres", [])) + len((a.get("alignement") or {}).get("hors_seuil", []))
     p = os.path.join(workdir, "comparaison-legende.json")
     if os.path.exists(p):
-        n += len(json.load(open(p, encoding="utf-8")).get("suspectes", []))
+        c = json.load(open(p, encoding="utf-8"))
+        # comparaison incomplète = contrôle de famille non fait : à vérifier aussi (non exécutée, numéros de légende
+        # ambigus, occurrences sans taille, glyphe attendu non reconnu)
+        n += len(c.get("suspectes", [])) + int(bool(c.get("non_executee"))) + int(c.get("ambigues") or 0) + int(c.get("sans_taille") or 0)
+        n += sum(int(v.get("non_reconnues") or 0) for v in (c.get("par_famille") or {}).values())
     return n
 
 def controles_raster(workdir, outdir):
@@ -351,13 +355,17 @@ def process(arg, reprendre=False):
             #    au mauvais glyphe (A03 avertisseur vs A04 détecteur de fumée) est signalée AVANT le rendu.
             # Jamais bloquants : les symboles non retrouvés et les familles suspectes vont dans STATUT.md, à vérifier au zoom.
             raster = feuilles_raster(workdir)
+            if not raster:                                   # entrée redevenue vectorielle : aucun constat raster périmé
+                for f_ in ("ancrage-raster.json", "comparaison-legende.json"):
+                    try: os.remove(os.path.join(workdir, f_))
+                    except FileNotFoundError: pass
             if raster:
                 # seulement les feuilles raster : dans un dossier mixte, les occurrences des feuilles vectorielles restent
                 # à l'ancrage vectoriel de render_vectoriel.py (revues Codex/Copilot PR #25)
                 t = time.time(); code, out = run(["uv", "run", "releve/ancrage_raster.py", workdir, "--feuilles", *raster], log_path=log_path)
                 steps.append(("ancrage_raster", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
                 if code: raise RuntimeError("ancrage_raster.py a échoué (exécution) — symboles non retrouvés et hors seuil ne sont pas des échecs, un plantage oui")
-                t = time.time(); code, out = run(["uv", "run", "releve/comparer_legende.py", workdir], log_path=log_path)
+                t = time.time(); code, out = run(["uv", "run", "releve/comparer_legende.py", workdir, "--feuilles", *raster], log_path=log_path)
                 steps.append(("comparer_legende", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
                 if code: raise RuntimeError("comparer_legende.py a échoué (exécution)")
             # contrôle qualité à l'aveugle (Q1-Q14) : non bloquant ici, mais journalisé et repris dans STATUT.md
