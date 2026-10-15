@@ -79,13 +79,23 @@ def palette(brand):
     - bande : texte blanc ou encre, celui qui a le meilleur contraste réel sur la primaire ;
     - titres/prix sur blanc : la primaire si elle atteint 4,5:1 (WCAG AA), sinon assombrie jusqu'à l'atteindre."""
     p = brand["primary"]
-    on_brand = colors.white if contrast(p, "#FFFFFF") >= contrast(p, INK_HEX) else INK
-    text_hex = p
-    t = 0.0
-    while contrast(text_hex, "#FFFFFF") < 4.5 and t < 1.0:
-        t += .05
-        text_hex = mix(p, "#000000", t)
-    return {"brand": colors.HexColor(p), "dark": colors.HexColor(mix(p, "#000000", .25)),
+
+    def ajuster(src, fg, vers):
+        """Assombrit (vers noir) ou éclaircit (vers blanc) `src` par pas de 5 % jusqu'à 4,5:1 avec `fg`."""
+        h, t = src, 0.0
+        while contrast(h, fg) < 4.5 and t < 1.0:
+            t += .05
+            h = mix(src, vers, t)
+        return h
+
+    # Bande : blanc ou encre selon le meilleur contraste, puis la bande elle-même est ajustée jusqu'à 4,5:1 (AA)
+    # — p. ex. SIP #D84820 passe à #C2411D sous texte blanc ; DR et BR sont déjà conformes et restent intacts.
+    if contrast(p, "#FFFFFF") >= contrast(p, INK_HEX):
+        on_brand, band_hex = colors.white, ajuster(p, "#FFFFFF", "#000000")
+    else:
+        on_brand, band_hex = INK, ajuster(p, INK_HEX, "#FFFFFF")
+    text_hex = ajuster(p, "#FFFFFF", "#000000")  # titres/prix sur fond blanc
+    return {"brand": colors.HexColor(p), "band": colors.HexColor(band_hex), "dark": colors.HexColor(mix(p, "#000000", .25)),
             "tint": colors.HexColor(mix(p, "#FFFFFF", .90)), "secondary": colors.HexColor(brand.get("secondary", p)),
             "on_brand": on_brand, "text": colors.HexColor(text_hex), "text_hex": text_hex}
 
@@ -212,7 +222,7 @@ def make_doc(out, brand, P, kind, no=""):
 
 def band(text, P, S, width):
     t = Table([[Paragraph(text, S["band"])]], colWidths=[width])
-    t.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), P["brand"]), ("LEFTPADDING", (0, 0), (-1, -1), 8),
+    t.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), P["band"]), ("LEFTPADDING", (0, 0), (-1, -1), 8),
                            ("TOPPADDING", (0, 0), (-1, -1), 4), ("BOTTOMPADDING", (0, 0), (-1, -1), 4)]))
     return t
 
