@@ -272,19 +272,21 @@ def build_soumission(data, brand, out, brand_key=""):
     for i, (desc, price) in enumerate(data["items"], 1):
         rows.append([Paragraph(str(i), S["tdc"]), Paragraph(esc(desc), S["base"]), Paragraph(money(float(price)), S["tdr"])])
     rows.append([Paragraph("TOTAL (avant taxes)", S["tot"]), "", Paragraph(money(total), S["totr"])])
-    t = Table(rows, colWidths=[9 * mm, W - 9 * mm - 26 * mm, 26 * mm], repeatRows=1)
+    # splitInRow : une description plus haute qu'une page se coupe à l'intérieur de la ligne au lieu d'un LayoutError.
+    t = Table(rows, colWidths=[9 * mm, W - 9 * mm - 26 * mm, 26 * mm], repeatRows=1, splitInRow=1)
     t.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), GREY), ("LINEBELOW", (0, 0), (-1, 0), .6, RULE),
                            ("LINEBELOW", (0, 1), (-1, -2), .4, colors.HexColor("#E6E6E6")), ("VALIGN", (0, 0), (-1, -1), "TOP"),
                            ("SPAN", (0, -1), (1, -1)), ("BACKGROUND", (0, -1), (-1, -1), P["tint"]),
                            ("TOPPADDING", (0, 0), (-1, -1), 4), ("BOTTOMPADDING", (0, 0), (-1, -1), 4)]))
-    el += [band("TRAVAUX", P, S, W), t, Spacer(1, 6 * mm)]
+    # Bande + tableau ensemble : KeepTogether garde la bande avec le début du tableau (le tableau se coupe ensuite normalement).
+    el += [KeepTogether([band("TRAVAUX", P, S, W), t]), Spacer(1, 6 * mm)]
 
     # EXCLUSIONS
     if data.get("exclusions"):
         el += [KeepTogether([Paragraph("EXCLUSIONS / NOTES", S["h4"]), bullets(data["exclusions"], S)]), Spacer(1, 6 * mm)]
 
     # CONDITIONS (10) + volatilité
-    el += [band("CONDITIONS", P, S, W), Spacer(1, 2 * mm), numbered(CONDITIONS, S), Spacer(1, 5 * mm),
+    el += [KeepTogether([band("CONDITIONS", P, S, W), Spacer(1, 2 * mm), numbered(CONDITIONS, S)]), Spacer(1, 5 * mm),
            KeepTogether([Paragraph("VOLATILITÉ DES PRIX DES MATÉRIAUX", S["h4"]), Paragraph(esc(VOLATILITE), S["vol"])]), Spacer(1, 6 * mm)]
 
     # salutations + signature
