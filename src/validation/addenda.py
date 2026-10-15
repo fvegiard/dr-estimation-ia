@@ -98,4 +98,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    from src.validation.console import forcer_utf8
+
+    forcer_utf8()
     sys.exit(main())

@@ -1,5 +1,9 @@
 """Bordereau pages: "BORDEREAU MATERIEL - <sheet>" table, one row per repère, header repeated on every page,
-"RESERVES ET COMPLEMENTS" block after the last row (EXEMPLE.pdf pages 2-7, 30-32)."""
+"RESERVES ET COMPLEMENTS" block after the last row (EXEMPLE.pdf pages 2-7, 30-32).
+
+Calques (gold p.2, 63, 81 ; écart E5) : titre, sous-titres, bande et titres de colonnes, filets et notes dans
+le calque légende de la feuille (`legend_oc`) ; les cellules d'une ligne dans le calque de la famille de la
+ligne (`layers[code]`). Sans calques (0), le contenu est dessiné hors calque."""
 from __future__ import annotations
 
 import re
@@ -52,17 +56,17 @@ def cell_lines(key: str, it: Item, size: float, width: float) -> list[str]:
     return wrap(str(getattr(it, key) or ""), size, width)
 
 
-def _page_header(page: pymupdf.Page, sheet: Sheet, cols) -> None:
+def _page_header(page: pymupdf.Page, sheet: Sheet, cols, oc: int = 0) -> None:
     W = page.rect.width
     page.insert_text((S.B_MARGIN, S.B_TITLE_Y), f"BORDEREAU MATERIEL - {sheet.name}", fontname="hebo",
-                     fontsize=S.B_TITLE_SIZE, color=(0, 0, 0))
-    page.insert_text((S.B_MARGIN, S.B_SUB1_Y), S.B_SUB1, fontsize=S.B_SUB1_SIZE, color=(0, 0, 0))
-    page.insert_text((S.B_MARGIN, S.B_SUB2_Y), S.B_SUB2, fontsize=S.B_SUB2_SIZE, color=(0, 0, 0))
+                     fontsize=S.B_TITLE_SIZE, color=(0, 0, 0), oc=oc)
+    page.insert_text((S.B_MARGIN, S.B_SUB1_Y), S.B_SUB1, fontsize=S.B_SUB1_SIZE, color=(0, 0, 0), oc=oc)
+    page.insert_text((S.B_MARGIN, S.B_SUB2_Y), S.B_SUB2, fontsize=S.B_SUB2_SIZE, color=(0, 0, 0), oc=oc)
     page.draw_rect(pymupdf.Rect(S.B_MARGIN, S.B_HEAD_TOP, W - S.B_MARGIN, S.B_HEAD_TOP + S.B_HEAD_H),
-                   color=None, fill=S.B_HEAD_FILL, width=0)
+                   color=None, fill=S.B_HEAD_FILL, width=0, oc=oc)
     for _, head, x, _ in cols:
         page.insert_text((x, S.B_HEAD_TOP + S.B_HEAD_BASELINE), head, fontname="hebo", fontsize=S.B_HEAD_SIZE,
-                         color=(0, 0, 0))
+                         color=(0, 0, 0), oc=oc)
 
 
 def reserves_height(n_lines: int) -> float:
@@ -74,8 +78,11 @@ def row_height(n_lines: int) -> float:
     return max(S.B_ROW_H, S.B_ROW_BASELINE + (n_lines - 1) * S.B_LINE_STEP + 8.0)
 
 
-def add_bordereau(doc: pymupdf.Document, sheet: Sheet, width: float, height: float, at: int = -1) -> list[int]:
-    """Insert the bordereau pages of `sheet` at page index `at` (-1 = append); return their 0-based numbers."""
+def add_bordereau(doc: pymupdf.Document, sheet: Sheet, width: float, height: float, at: int = -1,
+                  layers: dict[str, int] | None = None, legend_oc: int = 0) -> list[int]:
+    """Insert the bordereau pages of `sheet` at page index `at` (-1 = append); return their 0-based numbers.
+    `layers` (family code -> OCG) and `legend_oc`: the sheet's RELEVE layers (gold p.2-7)."""
+    layers = layers or {}
     cols = column_x(width)
     items = sheet.sorted_items()
     res_lines = [S.B_RES_TITLE] + sheet.reserves_text if sheet.reserves_text else []
@@ -89,30 +96,32 @@ def add_bordereau(doc: pymupdf.Document, sheet: Sheet, width: float, height: flo
         return page
 
     page = new_page()
-    _page_header(page, sheet, cols)
+    _page_header(page, sheet, cols, legend_oc)
     y = S.B_HEAD_TOP + S.B_HEAD_H
     for it in items:
         cells = [(x, cell_lines(key, it, S.B_ROW_SIZE, w)) for key, _, x, w in cols]
         h = row_height(max(len(c) for _, c in cells))
         if y + h > bottom and y > S.B_HEAD_TOP + S.B_HEAD_H:
             page = new_page()
-            _page_header(page, sheet, cols)
+            _page_header(page, sheet, cols, legend_oc)
             y = S.B_HEAD_TOP + S.B_HEAD_H
+        oc = layers.get(it.code, legend_oc)
         for x, lines in cells:
             for k, line in enumerate(lines):
                 page.insert_text((x, y + S.B_ROW_BASELINE + k * S.B_LINE_STEP), line, fontsize=S.B_ROW_SIZE,
-                                 color=(0, 0, 0))
+                                 color=(0, 0, 0), oc=oc)
         y += h
-        page.draw_line((S.B_MARGIN, y), (width - S.B_MARGIN, y), color=S.B_SEP_COLOR, width=S.B_SEP_W)
+        page.draw_line((S.B_MARGIN, y), (width - S.B_MARGIN, y), color=S.B_SEP_COLOR, width=S.B_SEP_W,
+                       oc=legend_oc)
     if res_lines:
         if y + reserves_height(len(res_lines) - 1) > height - 20:
             page = new_page()
             page.insert_text((S.B_MARGIN, S.B_TITLE_Y), f"BORDEREAU MATERIEL - {sheet.name}", fontname="hebo",
-                             fontsize=S.B_TITLE_SIZE, color=(0, 0, 0))
+                             fontsize=S.B_TITLE_SIZE, color=(0, 0, 0), oc=legend_oc)
             y = S.B_HEAD_TOP - S.B_RES_GAP
         for k, line in enumerate(res_lines):
             page.insert_text((S.B_MARGIN, y + S.B_RES_GAP + k * S.B_RES_STEP), line, fontsize=S.B_RES_SIZE,
-                             color=(0, 0, 0))
+                             color=(0, 0, 0), oc=legend_oc)
     return pages
 
 
@@ -234,7 +243,8 @@ def family_rows(sheet: Sheet) -> list[dict]:
 
 
 def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, height: float,
-                         at: int = -1) -> list[int]:
+                         at: int = -1, layers: dict[str, int] | None = None, legend_oc: int = 0) -> list[int]:
+    layers = layers or {}
     spec = AGREGE if sheet.format == "agrege" else TRAVAUX
     m = spec["margin"]
     table_w = width - 2 * m
@@ -256,15 +266,15 @@ def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, heig
         pg = doc.new_page(pno=pno, width=width, height=height)
         pages.append(pg.number)
         pg.insert_text((m, spec["title_y"]), spec["title"].format(sheet=sheet.name), fontname="hebo",
-                       fontsize=spec["title_size"], color=(0, 0, 0))
+                       fontsize=spec["title_size"], color=(0, 0, 0), oc=legend_oc)
         if table:
             for size, yy, t in subs:
-                pg.insert_text((m, yy), t, fontsize=size, color=(0, 0, 0))
+                pg.insert_text((m, yy), t, fontsize=size, color=(0, 0, 0), oc=legend_oc)
             pg.draw_rect(pymupdf.Rect(m, spec["head_top"], width - m, head_bottom),
-                         color=None, fill=S.B_HEAD_FILL, width=0)
+                         color=None, fill=S.B_HEAD_FILL, width=0, oc=legend_oc)
             for (_, head, _), x0 in zip(spec["cols"], starts):
                 pg.insert_text((x0 + 6, spec["head_top"] + spec["head_baseline"]), head, fontname="hebo",
-                               fontsize=spec["head_size"], color=(0, 0, 0))
+                               fontsize=spec["head_size"], color=(0, 0, 0), oc=legend_oc)
         return pg
 
     page = new_page()
@@ -298,17 +308,18 @@ def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, heig
                             sheet.troncatures += 1
                 need = needs()
                 base = squeezed
-    for cells, n in zip(table, need):
+    for row, cells, n in zip(rows, table, need):
         h = max(base, n)
         if y + h > bottom + 0.5 and y > head_bottom:
             page = new_page()
             y = head_bottom
+        oc = layers.get(row.get("id", ""), legend_oc)          # une ligne par famille : calque de la famille
         for x0, lines in cells:
             for k, line in enumerate(lines):
                 page.insert_text((x0 + 5, y + spec["row_baseline"] + k * spec["line_step"]), line,
-                                 fontsize=spec["row_size"], color=(0, 0, 0))
+                                 fontsize=spec["row_size"], color=(0, 0, 0), oc=oc)
         y += h
-        page.draw_line((m, y), (width - m, y), color=S.B_SEP_COLOR, width=0.5)
+        page.draw_line((m, y), (width - m, y), color=S.B_SEP_COLOR, width=0.5, oc=legend_oc)
     notes = []
     for line in ([] if encadre_v6(sheet) else sheet.reserves_text):   # v6 : pas de bloc de notes (gold p.63)
         notes += wrap(line, 10.0, table_w)
@@ -316,12 +327,12 @@ def add_bordereau_agrege(doc: pymupdf.Document, sheet: Sheet, width: float, heig
         if y + 38.75 + S.B_RES_STEP > height - 20:
             page = new_page(table=False)
             y = spec["head_top"] - 38.75
-        page.insert_text((m, y + 18.0), NOTES_TITLE, fontname="hebo", fontsize=12.0, color=(0, 0, 0))
+        page.insert_text((m, y + 18.0), NOTES_TITLE, fontname="hebo", fontsize=12.0, color=(0, 0, 0), oc=legend_oc)
         yy = y + 38.75
         for line in notes:
             if yy > height - 20:
                 page = new_page(table=False)
                 yy = spec["head_top"]
-            page.insert_text((m, yy), line, fontsize=10.0, color=(0, 0, 0))
+            page.insert_text((m, yy), line, fontsize=10.0, color=(0, 0, 0), oc=legend_oc)
             yy += S.B_RES_STEP
     return pages

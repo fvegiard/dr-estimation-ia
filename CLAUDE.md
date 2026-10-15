@@ -21,7 +21,10 @@ Relevé de quantités électrique automatique (Groupe DR Électrique) : plans PD
 
 ## Autonomie et auto-supervision (obligatoire — Francis ne coache pas)
 Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu fais toi-même la supervision visuelle.
-1. Après chaque rendu, OUVRE l'image (Read du PNG), zoome repère par repère et juge : pastille visible (pastel,
+1. Après chaque rendu, OUVRE les planches de contrôle `OUTBOX/<S>/controle/*.png` (une vignette ×8 par pastille,
+   écrites par `run.py` via `releve/planche_controle.py`) — c'est à cette échelle qu'un décalage de 5 pt ou une
+   mauvaise famille se voit, jamais sur la feuille entière (TEST-E201, 2026-10-15 : 8 pastilles décalées et 4
+   familles fausses invisibles sur la vue d'ensemble, vues du premier coup en vignettes). Juge : pastille visible (pastel,
    contour 0,7 pt couleur famille, dessinée PAR-DESSUS le plan ; forme, rayon et palette selon le format de la
    feuille, voir `docs/FORMAT-EXEMPLE.md`) ? sur le BON symbole (type = famille) ?
    1 symbole = 1 repère ? étiquette lisible ? réserve * si doute ? Jamais sur un texte, un arc ou une ligne longue.
@@ -47,10 +50,14 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
 
 ## Carte du dépôt
 - `releve/` — la chaîne qui marche : `prepare.py` (rasters, tuiles, mots) → agent (compétence `releve-planexpert`) →
-  `extract_occurrences.py` → `build_qpl.py` → `render_vectoriel.py` (PDF « Plans annotés » vectoriel — pastilles OCG
+  `extract_occurrences.py` → [feuilles raster seulement : `ancrage_raster.py` (pastille recalée sur le cercle/rectangle
+  du symbole, rayon et angle mesurés) → `comparer_legende.py` (famille contrôlée par corrélation au glyphe de légende)] →
+  `build_qpl.py` → `render_vectoriel.py` (PDF « Plans annotés » vectoriel — pastilles OCG
   par-dessus le plan d'origine, encadré RELEVE-MATERIEL, bordereau au format de la feuille — 3 formats, voir
   `docs/FORMAT-EXEMPLE.md` ; `src/estimer/render/`) →
-  `render_pdf.py` (rapport de métré + dossier complet) ; `run.py` orchestre, `run.py --reprendre <S>` refait qpl + PDF.
+  `render_pdf.py` (rapport de métré + dossier complet) → `planche_controle.py` (vignettes ×8 de chaque pastille dans
+  `controle/`) ; `run.py` orchestre, `run.py --reprendre <S>` refait qpl + PDF + planches. Les contrôles raster
+  (symboles non retrouvés, familles suspectes) sont repris dans `STATUT.md`, jamais réduits au silence.
 - `src/validation/compare_qpl.py` — comparaison marque par marque humain/IA ; `jeu_reference.py` — la rejoue sur tous les dossiers.
 - `src/validation/boucle_acceptation.py` — orchestrateur du critère d'acceptation (étapes 1 à 8 : aveugle → gel →
   comparaison → classement → justifications → ACCEPTATION.md), avec ses modules : `aveugle.py` (scan du workdir du

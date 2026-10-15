@@ -5,7 +5,9 @@ python -m src.estimer.render.from_exemple EXEMPLE.pdf bordereau-materiel.csv feu
 EXEMPLE.pdf is the target relevé: original vector plan pages + a PyMuPDF overlay drawn in optional-content
 layers named "RELEVE ...". For every sheet of feuilles.csv (materiel, agrege, travaux) this tool writes:
   OUT_DIR/plans.pdf        the plan pages with the RELEVE overlay removed (= the original drawing, still vector)
-  OUT_DIR/estimate.json    one element per gold marker: centre, bbox, shape, colour, label detail lines, flags
+  OUT_DIR/estimate.json    one element per gold marker: centre, bbox, shape, colour, label detail lines, flags;
+                           per sheet: box, legend geometry, red v6 lines, footer (pied), bookmark (projet,
+                           version) and the original bookmarks of the plan filed under it (signets)
   OUT_DIR/bordereau.csv    materiel rows (gold CSV), corrected
   OUT_DIR/familles.csv     agrege / travaux rows read cell by cell from the EXEMPLE bordereau, corrected
   OUT_DIR/feuilles.json    sheet -> bordereau format
@@ -155,6 +157,40 @@ def read_box_rect(page: pymupdf.Page) -> list[float] | None:
     return [round(v, 3) for v in best] if best else None
 
 
+def read_signets(toc: list, name: str, plan_page: int) -> dict | None:
+    """Signet de la feuille dans le gold (niveau 1 `HR26-14-E03-annote-v6` sur sa page plan, spec §1) et les
+    signets d'origine de son plan rangés dessous : {projet, version, signets [[niveau - 1, titre, 1 | -1]]}
+    (1 = la page plan de la feuille, -1 = sans destination, comme au gold)."""
+    for i, t in enumerate(toc):
+        if t[0] != 1 or t[2] != plan_page:
+            continue
+        m = re.fullmatch(rf"(?:(?P<projet>.+)-)?{re.escape(name)}-annote-v(?P<version>\d+)", t[1])
+        if not m:
+            continue
+        sous = []
+        for u in toc[i + 1:]:
+            if u[0] == 1:
+                break
+            sous.append([u[0] - 1, u[1], 1 if u[2] == plan_page else -1])
+        return {"projet": m["projet"] or "", "version": int(m["version"]), "signets": sous}
+    return None
+
+
+FOOTER_SIZE = 7.0
+
+
+def read_pied(page: pymupdf.Page, box: list[float] | None) -> str | None:
+    """Pied de l'encadré standard du gold (Helvetica 7,0 pt au bas du cadre), propre à la feuille (spec §3.1-3.2 :
+    DSI « Quantites source et renvois; ... », E10/E13 « Reperes source; ... ») ; None sans pied (encadré v6)."""
+    if not box:
+        return None
+    r = pymupdf.Rect(box)
+    spans = [sp for b in page.get_text("dict", clip=r)["blocks"] for line in b.get("lines", []) for sp in line["spans"]
+             if abs(sp["size"] - FOOTER_SIZE) < 0.05 and sp["text"].strip() and pymupdf.Point(sp["origin"]) in r]
+    spans.sort(key=lambda sp: (round(sp["origin"][1], 1), sp["origin"][0]))
+    return " ".join(sp["text"].strip() for sp in spans) or None
+
+
 def strip_overlay(doc: pymupdf.Document, pno: int) -> None:
     """Remove the RELEVE overlay streams (and their layer properties) from page `pno`, in place."""
     page = doc[pno]
@@ -251,7 +287,8 @@ def _glyph_shape(d: dict) -> str:
 
 
 def read_legend_glyphs(page: pymupdf.Page, box: list[float] | None):
-    """Glyphes de légende de l'EXEMPLE : {code: forme} et (décalage de la 1re ligne, pas) dans l'encadré."""
+    """Glyphes de légende de l'EXEMPLE : {code: forme} et (décalage de la 1re ligne, pas des lignes, nombre de
+    colonnes, pas des colonnes ou 0 sur une colonne) dans l'encadré."""
     if not box:
         return {}, None
     br = pymupdf.Rect(box)
@@ -266,12 +303,21 @@ def read_legend_glyphs(page: pymupdf.Page, box: list[float] | None):
         if near:
             g = min(near, key=lambda d: ox - d["rect"].x1)
             shapes[sp["text"]] = _glyph_shape(g)
-            cys.append(round((g["rect"].y0 + g["rect"].y1) / 2, 2))
+            cys.append((g["rect"].y0 + g["rect"].y1) / 2)
             gxs.append(round(g["rect"].x0))
-    ys = sorted(set(cys))
-    steps = [b - a for a, b in zip(ys, ys[1:]) if b - a > 3]
-    ncols = len({x // 5 for x in gxs})
-    rows = (round(ys[0] - br.y0, 3), round(min(steps), 3) if steps else 0.0, ncols) if ys else None
+    ys: list[float] = []                         # y des lignes de glyphes (regroupés à 3 pt près)
+    for y in sorted(cys):
+        if not ys or y - ys[-1] > 3:
+            ys.append(y)
+    cols: list[float] = []                       # x des colonnes de glyphes (regroupés à 3 pt près)
+    for x in sorted(gxs):
+        if not cols or x - cols[-1] > 3:
+            cols.append(x)
+    ncols = len(cols)
+    col_pitch = float(round(min(b - a for a, b in zip(cols, cols[1:])))) if ncols > 1 else 0.0
+    # pas moyen des lignes (et non le plus petit écart arrondi) : pas d'erreur cumulée sur 26 lignes (E07)
+    pitch = round((ys[-1] - ys[0]) / (len(ys) - 1), 4) if len(ys) > 1 else 0.0
+    rows = (round(ys[0] - br.y0, 3), pitch, ncols, col_pitch) if ys else None
     return shapes, rows
 
 
@@ -306,6 +352,7 @@ def build(exemple: Path, bordereau_csv: Path | None, feuilles_csv: Path, out_dir
 
     src = pymupdf.open(exemple)
     bords = T.sheet_bordereaux(src)
+    toc_gold = src.get_toc(simple=False)
     journal: list = []
     sheets, counters, recon, meta = [], defaultdict(list), [], []
     out_mat, out_fam, reserves_out = [], [], {}
@@ -318,6 +365,9 @@ def build(exemple: Path, bordereau_csv: Path | None, feuilles_csv: Path, out_dir
         legend = read_legend(page)
         head = read_header(page)
         famname, gold, modele_legende = {}, {}, {}
+        # libellés de légende du gold (8,7 pt, encadré v6) : la ligne modèle n'y figure que sur E03
+        libelles = {sp["text"].strip() for b in page.get_text("dict")["blocks"] for line in b.get("lines", [])
+                    for sp in line["spans"] if abs(sp["size"] - 8.7) < 0.05}
         if fmt == "materiel":
             rows, res = corriger_materiel(name, [r for r in mat_rows if r["feuille"] == name],
                                           res_md.get(name, []), journal)
@@ -330,7 +380,7 @@ def build(exemple: Path, bordereau_csv: Path | None, feuilles_csv: Path, out_dir
             for r in rows:
                 famname.setdefault(r["id"], r["famille"])
                 mod = r.get("modele", "").split("\n")[-1].strip()
-                if mod and mod != C.MODELE_NON_INDIQUE:
+                if mod and mod != C.MODELE_NON_INDIQUE and mod in libelles:
                     modele_legende.setdefault(r["id"], mod)
                 out_fam.append(dict(r, feuille=name, format=fmt))
             n_rows = len(rows)
@@ -374,6 +424,12 @@ def build(exemple: Path, bordereau_csv: Path | None, feuilles_csv: Path, out_dir
         shp, rows_geo = read_legend_glyphs(page, sheets[-1]["box_hint"])
         sheets[-1]["legend_shapes"] = shp
         sheets[-1]["legend_rows"] = rows_geo
+        pied = read_pied(page, sheets[-1]["box_hint"])
+        if pied:
+            sheets[-1]["pied"] = pied
+        sig = read_signets(toc_gold, name, pno + 1)       # signet annote + signets d'origine du plan (spec §1)
+        if sig:
+            sheets[-1].update(sig)
         text = page.get_text()
         for key, rx in (("divergences", DIVERGENCES_RE), ("calibres", CALIBRES_RE)):   # lignes rouges v6
             m = rx.search(text)

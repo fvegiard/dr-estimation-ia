@@ -218,3 +218,48 @@ def test_plinthe_collee_au_mur_prend_son_rectangle_pas_la_fenetre():
     assert plan_rects(SymbolIndex(page), items, nom) == 1
     box = [items[0][k] for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
     assert all(abs(a - b) < 0.2 for a, b in zip(box, (100, 112, 200, 119)))
+
+
+def test_signets_projet_version_et_signets_d_origine(tmp_path):
+    """Écart E6 (spec §1) sur un dossier réel : signet `<soumission>-<feuille>-annote-v<n>` sur la page plan ;
+    v<n> = colonne `version` de feuilles-classement.csv si l'agent l'a écrite, sinon v1 ; dessous, les signets
+    du PDF source (inbox de inventaire.json) qui visent la page de la feuille, avec leurs parents."""
+    work = make_workdir(tmp_path)
+    inbox = tmp_path / "inbox"
+    inbox.mkdir()
+    src = pymupdf.open()
+    for _ in range(2):
+        src.new_page(width=W, height=H)
+    src.set_toc([[1, "JEU DE PLANS", 1], [2, "DSI01 RDC", 1], [2, "E01 RDC", 2]])
+    src.save(str(inbox / "plans.pdf"))
+    (work / "inventaire.json").write_text(json.dumps({"inbox": str(inbox), "fichiers": [], "notes": []}),
+                                          encoding="utf-8")
+    _write(work / "feuilles-classement.csv",
+           [{"feuille": "P1", "type": "plan", "echelle": "", "note": "cartouche=DSI01 · RDC incendie", "version": ""},
+            {"feuille": "P2", "type": "plan", "echelle": "", "note": "cartouche=E01 · RDC", "version": "3"}],
+           ["feuille", "type", "echelle", "note", "version"])
+    out = tmp_path / "out"
+    build(work, out, projet="S-TEST")
+    est = json.loads((out / "estimate.json").read_text(encoding="utf-8"))
+    assert est["projet"] == "S-TEST"
+    assert [(s["sheet"], s["version"], s["signets"]) for s in est["sheets"]] == [
+        ("DSI01", 1, [[1, "JEU DE PLANS", 1], [2, "DSI01 RDC", 1]]),
+        ("E01", 3, [[1, "JEU DE PLANS", -1], [2, "E01 RDC", 1]])]
+    pdf = tmp_path / "rendu.pdf"
+    rep = render(load_input(out), out / "plans.pdf", pdf)
+    p1, p2 = (s["plan_page"] for s in rep["sheets"])
+    assert pymupdf.open(pdf).get_toc() == [
+        [1, "S-TEST-DSI01-annote-v1", p1], [2, "JEU DE PLANS", p1], [3, "DSI01 RDC", p1],
+        [1, "S-TEST-E01-annote-v3", p2], [2, "JEU DE PLANS", -1], [3, "E01 RDC", p2]]
+
+
+def test_signets_sans_pdf_source_ni_projet(tmp_path):
+    """PDF source introuvable, pas de soumission donnée : `<feuille>-annote-v1` seul, sans erreur."""
+    work = make_workdir(tmp_path)
+    out = tmp_path / "out"
+    build(work, out)
+    est = json.loads((out / "estimate.json").read_text(encoding="utf-8"))
+    assert "projet" not in est and all("signets" not in s for s in est["sheets"])
+    pdf = tmp_path / "rendu.pdf"
+    render(load_input(out), out / "plans.pdf", pdf)
+    assert [t[1] for t in pymupdf.open(pdf).get_toc()] == ["DSI01-annote-v1", "E01-annote-v1"]

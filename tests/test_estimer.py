@@ -308,6 +308,29 @@ def test_sheet_table_resolves_interleaved_bordereau_pages(tmp_path):
     assert "plan-B" in opened[sheets["E200"].page].get_text()
 
 
+def test_sheet_table_signets_annote_du_gold(tmp_path):
+    """Depuis l'écart E6 (docs/FORMAT-EXEMPLE.md §1), render() écrit les signets du gold : niveau 1
+    `<soumission>-<feuille>-annote-v<n>` sur la page plan (la soumission peut contenir des tirets, ex.
+    `HR26-14`), signets d'origine du plan dessous, plus de `<feuille> - plan`. sheet_table() doit encore trouver
+    la page plan de chaque feuille."""
+    from src.estimer import gold as G
+
+    d = tmp_path / "HR26-14"
+    d.mkdir()
+    (d / "feuilles-classement.csv").write_text(
+        "feuille,type,echelle,note\nA,plan,,cartouche=E100\nB,plan,,cartouche=E200\n", encoding="utf-8")
+    doc = pymupdf.open()
+    for i, (name, tag) in enumerate((("E100", "plan-A"), ("E200", "plan-B"))):
+        doc.new_page(width=200 + i, height=100).insert_text((10, 50), tag, fontsize=10)
+        doc.new_page(width=300, height=150).insert_text((10, 50), f"bordereau-{name}", fontsize=10)
+    doc.set_toc([[1, "HR26-14-E100-annote-v1", 1], [2, "JEU DE PLANS", -1], [3, "E200 PLAN", -1],
+                 [1, "HR26-14-E200-annote-v6", 3], [2, "JEU DE PLANS", -1], [3, "E200 PLAN", 3]])
+    doc.save(d / "Plans-annotes.pdf")
+
+    sheets = {s.display: s for s in G.sheet_table(d)}
+    assert sheets["E100"].page == 0 and sheets["E200"].page == 2
+
+
 def test_sheet_table_falls_back_without_bookmarks(tmp_path):
     """Older raster Plans-annotes.pdf (releve/render_pdf.py, pre-vector) never wrote bookmarks: one page per
     sheet stays the rule, unchanged."""

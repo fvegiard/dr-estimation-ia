@@ -113,16 +113,28 @@ def _scale_ratio(txt: str) -> float | None:
     return v if v > 0 else None
 
 
-def _plan_pages_by_name(doc: "pymupdf.Document") -> dict[str, int]:
-    """Display name -> 0-based page index of its plan page, read from the bookmarks render() writes
-    (title `<name> - plan`). render_vectoriel.py's Plans-annotes.pdf interleaves each sheet's bordereau
-    page(s) right after its plan page, so page index no longer equals sheet index; older raster renders
-    (releve/render_pdf.py, pre-vector) never wrote bookmarks, so this returns {} for them and callers must
-    fall back to the old one-page-per-sheet position."""
+ANNOTE_RE = re.compile(r"^(?P<base>.+)-annote-v\d+$")
+
+
+def _plan_pages_by_name(doc: "pymupdf.Document", names=()) -> dict[str, int]:
+    """Display name -> 0-based page index of its plan page, read from the bookmarks render() writes: level 1
+    `<soumission>-<name>-annote-v<n>` (gold format, docs/FORMAT-EXEMPLE.md §1, since 2026-10-14 ; the
+    soumission may contain '-', so the title is matched against the known `names`, longest first) or
+    `<name> - plan` (vector renders before that). render_vectoriel.py's Plans-annotes.pdf interleaves each
+    sheet's bordereau page(s) right after its plan page, so page index no longer equals sheet index; older
+    raster renders (releve/render_pdf.py, pre-vector) never wrote bookmarks, so this returns {} for them and
+    callers must fall back to the old one-page-per-sheet position."""
     out = {}
-    for _level, title, page in doc.get_toc():
+    longest_first = sorted(names, key=len, reverse=True)
+    for level, title, page in doc.get_toc():
         if title.endswith(" - plan"):
             out[title[: -len(" - plan")]] = page - 1
+            continue
+        m = ANNOTE_RE.match(title)
+        if level == 1 and m and page >= 1:
+            name = next((n for n in longest_first if m["base"] == n or m["base"].endswith("-" + n)), None)
+            if name is not None:
+                out.setdefault(name, page - 1)
     return out
 
 
@@ -148,18 +160,19 @@ def sheet_table(dossier_dir: Path) -> list[SheetInfo]:
             except (KeyError, ValueError):
                 pass
     doc = pymupdf.open(dossier_dir / "Plans-annotes.pdf")
-    plan_pages = _plan_pages_by_name(doc)
+    seen: Counter = Counter()
+    displays = []
+    for f in names:
+        disp = _display_name(cls[f])
+        seen[disp] += 1
+        displays.append(disp if seen[disp] == 1 else f"{disp}_{seen[disp]}")
+    plan_pages = _plan_pages_by_name(doc, displays)
     if not plan_pages and doc.page_count != len(names):
         # No bookmarks (old raster render, one page per sheet, `render_pdf.py` rule) and the page count
         # doesn't even match that assumption: genuinely can't locate the sheets.
         raise ValueError(f"{s}: Plans-annotes.pdf has {doc.page_count} pages, sheet rule gives {len(names)}")
-    seen: Counter = Counter()
     out = []
-    for i, f in enumerate(names):
-        disp = _display_name(cls[f])
-        seen[disp] += 1
-        if seen[disp] > 1:
-            disp = f"{disp}_{seen[disp]}"
+    for i, (f, disp) in enumerate(zip(names, displays)):
         page_index = plan_pages[disp] if disp in plan_pages else i
         if not 0 <= page_index < doc.page_count:
             raise ValueError(f"{s}: sheet {disp!r} resolves to page {page_index}, Plans-annotes.pdf has {doc.page_count}")

@@ -23,9 +23,10 @@ from __future__ import annotations
 import os, sys, json, time, shutil, subprocess, datetime, hashlib
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = os.environ.get("RELEVE_BASE", "/mnt/d/claude/releve-auto")
+_WIN = os.name == "nt"   # poste Windows natif (hors WSL) : mêmes dossiers, chemins D:\ et G:\ au lieu de /mnt/d et /mnt/g
+BASE = os.environ.get("RELEVE_BASE", r"D:\claude\releve-auto" if _WIN else "/mnt/d/claude/releve-auto")
 INBOX, OUTBOX = os.path.join(BASE, "INBOX"), os.path.join(BASE, "OUTBOX")
-DRIVE = os.environ.get("RELEVE_DRIVE", "/mnt/g/My Drive/AI/Releves-auto")
+DRIVE = os.environ.get("RELEVE_DRIVE", r"G:\My Drive\AI\Releves-auto" if _WIN else "/mnt/g/My Drive/AI/Releves-auto")
 LOCK = os.path.join(BASE, ".verrou")
 LOG = os.path.join(BASE, "journal.log")
 MODEL = os.environ.get("RELEVE_MODEL", "opus")
@@ -48,10 +49,14 @@ def sha256(path):
     return h.hexdigest()
 
 def run(cmd, cwd=REPO, log_path=None, env=None):
-    """Exécute une commande, journalise, retourne (code, stdout)."""
+    """Exécute une commande, journalise, retourne (code, stdout).
+
+    Les étapes Python écrivent en UTF-8 (PYTHONIOENCODING) et leur sortie est décodée en UTF-8 : avec
+    l'encodage local (cp1252 sous Windows), « GEL VIOLÉ » arrivait illisible et une « → » faisait planter la
+    boucle d'acceptation, dont le verdict était alors perdu (« non déterminé »)."""
     log("$ " + " ".join(cmd))
-    p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, stdin=subprocess.DEVNULL,
-                       env={**os.environ, **(env or {})})
+    p = subprocess.run(cmd, cwd=cwd, capture_output=True, encoding="utf-8", errors="replace",
+                       stdin=subprocess.DEVNULL, env={**os.environ, "PYTHONIOENCODING": "utf-8", **(env or {})})
     if log_path:
         with open(log_path, "a", encoding="utf-8") as fh:
             fh.write(f"\n### {' '.join(cmd)}\n--- stdout\n{p.stdout}\n--- stderr\n{p.stderr}\n")
@@ -165,7 +170,8 @@ def agent(workdir, log_path):
 
 def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None, *, acceptation=None):
     a_verifier = a_verifier or []
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    n_raster = raster_ouverts(workdir) if ok else 0
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or n_raster) else "TERMINÉ")
     if ok and acceptation:     # boucle d'acceptation exécutée : l'état intègre son verdict
         if "INVALIDE" in acceptation:
             etat = "TERMINÉ — ACCEPTATION INVALIDE"
@@ -176,6 +182,9 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
             etat = "TERMINÉ — À VÉRIFIER"
     L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{etat}**"]
     if err: L += ["", f"Erreur : `{err}`"]
+    if n_raster:
+        L += ["", f"⚠️ **{n_raster} constat(s) des contrôles raster à trancher au zoom** (symboles non retrouvés, pastilles hors "
+              "seuil d'alignement, familles suspectes — détail §Contrôles raster) avant de considérer ce livrable terminé."]
     if a_verifier:
         L += ["", f"⚠️ **Encadré RELEVE-MATERIEL hors de l'espace libre du plan sur : {', '.join(a_verifier)}** "
               f"(voir `{name}-rendu-rapport.json`) — vérifier visuellement (Read du PDF, zoome) avant de "
@@ -205,6 +214,9 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
         L += [""]
     else:
         L += ["**Export natif Plan Expert : non** (étape non exécutée)", ""]
+    cr = controles_raster(workdir, outdir)
+    if cr:
+        L += ["## Contrôles raster (ancrage, légende, planches)", ""] + cr + [""]
     L += ["## Étapes", "", "| étape | durée | résultat |", "|---|--:|---|"] + [f"| {s} | {d / 60:.1f} min | {r} |" for s, d, r in steps]
     if acceptation:
         L += ["", f"**Boucle d'acceptation : {acceptation}** — verdict détaillé dans "
@@ -223,6 +235,82 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
         if os.path.exists(p):
             L += [f"## {extra}", "", open(p, encoding="utf-8").read(), ""]
     open(os.path.join(outdir, "STATUT.md"), "w", encoding="utf-8").write("\n".join(L))
+
+def planches_et_png(outdir, workdir, annote, estimate, rapport_path, steps, log_path):
+    """Planches de contrôle (vignettes ×8 avec mesures) + livrables PNG (annoté + calque) — un échec est FATAL :
+    sans planche, pas de contrôle visuel, donc jamais « TERMINÉ » (revues Codex/Copilot PR #25)."""
+    # Pages RÉELLES de chaque feuille dans « Plans annotés » (`plan_page` du rapport de rendu : les bordereaux insérés
+    # après chaque plan décalent tout dès la 2e feuille — les `page` d'estimate.json sont celles d'avant rendu).
+    pages = [(sh["sheet"], int(sh["plan_page"])) for sh in json.load(open(rapport_path, encoding="utf-8")).get("sheets", [])]
+    for sous in ("controle", "png"):                     # --reprendre : jamais une planche ou un PNG d'une feuille disparue
+        shutil.rmtree(os.path.join(outdir, sous), ignore_errors=True)
+    t = time.time(); code, out = run(["uv", "run", "releve/planche_controle.py", annote, estimate, os.path.join(outdir, "controle"),
+                                      "--mesures", os.path.join(workdir, "occurrences-visuel.csv"), "--rapport", rapport_path], log_path=log_path)
+    steps.append(("planche_controle", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
+    if code: raise RuntimeError("planche_controle.py a échoué (planches de contrôle visuel obligatoires avant « fait »)")
+    # Livrables PNG (règle de Francis : plan annoté + calque transparent, pas de PDF à relire) : une paire par feuille plan
+    t = time.time()
+    for nom_f, pg in pages:
+        code, _ = run(["uv", "run", "releve/calque_png.py", annote, os.path.join(outdir, "png"), "--page", str(pg), "--nom", str(nom_f)], log_path=log_path)
+        if code: raise RuntimeError(f"calque_png.py a échoué sur la feuille {nom_f} (page {pg})")
+    steps.append(("calque_png", time.time() - t, f"{len(pages)} feuille(s) → png/"))
+
+def feuilles_raster(workdir):
+    """Feuilles sans couche texte (scan, PNG) selon `feuilles.csv` de prepare.py : `nb_mots` = 0 ou classement `scan`."""
+    p = os.path.join(workdir, "feuilles.csv")
+    if not os.path.exists(p):
+        return []
+    import csv
+    return [r["feuille"] for r in csv.DictReader(open(p, encoding="utf-8"))
+            if (r.get("nb_mots") or "0").strip() in ("", "0") or (r.get("classement_fichier") or "") == "scan"]
+
+def raster_ouverts(workdir):
+    """Nombre de constats raster à trancher au zoom avant « fait » : symboles non retrouvés, pastilles hors seuil
+    d'alignement, familles suspectes (revue Codex PR #25 : ils doivent mettre le dossier À VÉRIFIER, jamais TERMINÉ)."""
+    n = 0
+    p = os.path.join(workdir, "ancrage-raster.json")
+    if os.path.exists(p):
+        a = json.load(open(p, encoding="utf-8"))
+        n += len(a.get("non_ancres", [])) + len((a.get("alignement") or {}).get("hors_seuil", []))
+    p = os.path.join(workdir, "comparaison-legende.json")
+    if os.path.exists(p):
+        c = json.load(open(p, encoding="utf-8"))
+        # comparaison incomplète = contrôle de famille non fait : à vérifier aussi (non exécutée, numéros de légende
+        # ambigus, occurrences sans taille, glyphe attendu non reconnu)
+        n += len(c.get("suspectes", [])) + int(bool(c.get("non_executee"))) + int(c.get("ambigues") or 0) + int(c.get("sans_taille") or 0)
+        n += sum(int(v.get("non_reconnues") or 0) for v in (c.get("par_famille") or {}).values())
+    return n
+
+def controles_raster(workdir, outdir):
+    """Lignes STATUT.md issues des correctifs raster : symboles non retrouvés, familles suspectes, planches de contrôle."""
+    L = []
+    p = os.path.join(workdir, "ancrage-raster.json")
+    if os.path.exists(p):
+        a = json.load(open(p, encoding="utf-8"))
+        al = a.get("alignement") or {}
+        if al:
+            L.append(f"- alignement empirique : {al.get('mesures')} pastilles mesurées, écart moyen contour → encre {al.get('ecart_moyen_pt')} pt, "
+                     f"{len(al.get('hors_seuil', []))} hors seuil (e > {al.get('seuil_ecart_pt')} pt ou couverture < {al.get('seuil_couverture')}) : "
+                     + ", ".join(f"{h['label']} ({h['x_pt']},{h['y_pt']}) e={h['ecart_pt']} c={h['couverture']}" for h in al.get("hors_seuil", [])[:12]))
+        L.append(f"- ancrage raster : {a.get('ancres', 0)} pastilles recalées sur leur symbole (déplacement max {a.get('deplacement_max_pt')} pt), "
+                 f"{len(a.get('non_ancres', []))} non retrouvées (gardées aux coordonnées de l'agent — à vérifier au zoom) : "
+                 + ", ".join(f"{n['label']} ({n['x_pt']},{n['y_pt']})" for n in a.get("non_ancres", [])[:12]))
+    p = os.path.join(workdir, "comparaison-legende.json")
+    if os.path.exists(p):
+        c = json.load(open(p, encoding="utf-8"))
+        if c.get("non_executee"):
+            L.append(f"- comparaison à la légende : non exécutée — {c.get('raison', '')}")
+            c = {}
+        else:
+            L.append(f"- comparaison à la légende : {c.get('occurrences', 0)} symboles comparés, {len(c.get('suspectes', []))} famille(s) suspecte(s)")
+        for s in c.get("suspectes", []):
+            L.append(f"  - ⚠️ {s['label']} ({s['x_pt']},{s['y_pt']}) ressemble plus à la ligne {s['meilleur']} « {s['description']} » "
+                     f"({s['score_meilleur']}) qu'à la sienne {s['attendu']} ({s['score_attendu']}) — trancher au zoom, corriger TOUTES les occurrences semblables")
+    ctrl = os.path.join(outdir, "controle")
+    if os.path.isdir(ctrl):
+        n = len([f for f in os.listdir(ctrl) if f.endswith(".png")])
+        L.append(f"- planches de contrôle : {n} PNG dans `controle/` (une vignette ×8 par pastille) — à OUVRIR et relire avant « fait »")
+    return L
 
 def prepare_a_jour(inbox, workdir):
     """Vrai si inventaire.json du dossier de travail décrit exactement les fichiers actuels de l'INBOX (mêmes sha256)."""
@@ -260,6 +348,26 @@ def process(arg, reprendre=False):
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
                     raise RuntimeError(f"l'agent n'a pas produit {f}")
+            # Feuilles RASTER (scan / PNG : 0 mot extrait) — correctifs du 2026-10-15 (TEST-E201, vérificateur indépendant) :
+            # 1) ancrage_raster.py recale chaque pastille sur le cercle (Hough) ou le rectangle minimal (minAreaRect) du
+            #    symbole et mesure son rayon → plus de pastille décalée ni 2× trop grosse ;
+            # 2) comparer_legende.py corrèle chaque symbole aux glyphes de sa section de légende → une famille attribuée
+            #    au mauvais glyphe (A03 avertisseur vs A04 détecteur de fumée) est signalée AVANT le rendu.
+            # Jamais bloquants : les symboles non retrouvés et les familles suspectes vont dans STATUT.md, à vérifier au zoom.
+            raster = feuilles_raster(workdir)
+            if not raster:                                   # entrée redevenue vectorielle : aucun constat raster périmé
+                for f_ in ("ancrage-raster.json", "comparaison-legende.json"):
+                    try: os.remove(os.path.join(workdir, f_))
+                    except FileNotFoundError: pass
+            if raster:
+                # seulement les feuilles raster : dans un dossier mixte, les occurrences des feuilles vectorielles restent
+                # à l'ancrage vectoriel de render_vectoriel.py (revues Codex/Copilot PR #25)
+                t = time.time(); code, out = run(["uv", "run", "releve/ancrage_raster.py", workdir, "--feuilles", *raster], log_path=log_path)
+                steps.append(("ancrage_raster", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
+                if code: raise RuntimeError("ancrage_raster.py a échoué (exécution) — symboles non retrouvés et hors seuil ne sont pas des échecs, un plantage oui")
+                t = time.time(); code, out = run(["uv", "run", "releve/comparer_legende.py", workdir, "--feuilles", *raster], log_path=log_path)
+                steps.append(("comparer_legende", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
+                if code: raise RuntimeError("comparer_legende.py a échoué (exécution)")
             # contrôle qualité à l'aveugle (Q1-Q14) : non bloquant ici, mais journalisé et repris dans STATUT.md
             t = time.time(); code, out = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
             steps.append(("controle_qualite", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
@@ -275,6 +383,13 @@ def process(arg, reprendre=False):
         t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
+        # Planche de contrôle : une vignette ×8 par pastille (CLAUDE.md §Autonomie point 1 — c'est à cette échelle
+        # qu'un décalage de 5 pt ou une mauvaise famille se voit ; jamais sur la vue d'ensemble). À relire avant « fait ».
+        annote = os.path.join(outdir, f"{name}-Plans-annotes.pdf"); estimate = os.path.join(outdir, "vecteur", "estimate.json")
+        if os.path.exists(annote) and os.path.exists(estimate) and os.path.exists(rapport_path):
+            planches_et_png(outdir, workdir, annote, estimate, rapport_path, steps, log_path)
+        else:
+            steps.append(("planche_controle", 0, "non exécutée : Plans-annotes.pdf, vecteur/estimate.json ou le rapport de rendu manque"))
         ok = True
         # Boucle d'acceptation (critère d'acceptation, étapes 1 à 8) : lancée
         # seulement si le dossier de la soumission est déjà assemblé dans le
@@ -328,10 +443,14 @@ def process(arg, reprendre=False):
                 p = os.path.join(outdir, f)
                 if os.path.isfile(p): shutil.copy2(p, dst)
             if os.path.isdir(pe_dir): shutil.copytree(pe_dir, os.path.join(dst, os.path.basename(pe_dir)), dirs_exist_ok=True)
+            for sous in ("png", "controle"):                 # livrables PNG et planches de contrôle (revue Codex PR #25)
+                shutil.rmtree(os.path.join(dst, sous), ignore_errors=True)        # miroir : pas de fichier périmé
+                if os.path.isdir(os.path.join(outdir, sous)):
+                    shutil.copytree(os.path.join(outdir, sous), os.path.join(dst, sous), dirs_exist_ok=True)
             log(f"copié sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or raster_ouverts(workdir)) else "TERMINÉ")
     log(f"{etat} {name} → {outdir}")
     return ok
 

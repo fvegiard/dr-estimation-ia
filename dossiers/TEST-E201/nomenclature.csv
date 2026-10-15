@@ -1,0 +1,20 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription,discipline,legende
+LED 2X2,luminaire,carre,,,Carre a diagonale. Variante mi-noire = alimente par PP-U1 (urgence) : en designation.,E-001 legende ; E-201 plan,L2,APPAREIL D'ECLAIRAGE 2'X2' LED EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L01
+ENCASTRE,luminaire,cercle,,,Cercle + croix. Variante pleine = PP-U1 (urgence) : en designation.,E-001 legende ; E-201 plan,EN,APPAREIL D'ECLAIRAGE ENCASTRE EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L05
+CERCLE SANS ETIQUETTE,luminaire,cercle,,,Cercle simple ~8 pt sans etiquette ni circuit (R-005).,E-001 legende ; E-201 plan,EC,APPAREIL D'ECLAIRAGE ENCASTRE EXISTANT - A CONFIRMER,A PRECISER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L04
+LED 1X4,luminaire,carre,,,Rectangle a diagonale ; variante mi-noire = PP-U1 (urgence) en designation.,E-001 legende ; E-201 plan,LX,APPAREIL D'ECLAIRAGE 'X4' EXISTANT,ENLEVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L12
+RAIL ECLAIRAGE,luminaire,carre,,,"Rail courbe avec tetes orientables ; 1 repere par rail, nb de tetes en designation (R-008).",E-001 legende ; E-201 plan,RL,APPAREIL D'ECLAIRAGE SUR RAIL EXISTANT,ENLEVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L16
+INT 3 VOIES,commande,cercle,,,$ avec 3 ; lettre de zone en designation.,E-001 legende ; E-201 plan,I3,INTERRUPTEUR A 3 VOIES EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L06
+INT SIMPLE,commande,cercle,,,$ seul.,E-001 legende ; E-201 plan,IS,INTERRUPTEUR SIMPLE EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L07
+DETECTEUR MOUVEMENT,commande,cercle,,,Ovale DM.,E-001 legende ; E-201 plan,DM,DETECTEUR DE MOUVEMENT EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,L14
+INT MAITRES,commande,carre,,,$ dans un carre + bulle 1 ; note specifique 1 : a relocaliser.,E-001 legende ; E-201 plan,IM,INTERRUPTEURS MAITRES (NOTE SPECIFIQUE 1) (hors legende - R-007),RELOCALISER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,HORS LEGENDE
+BOITIER C,autre,carre,,,"C dans carre, hors legende.",E-001 legende ; E-201 plan,BC,BOITIER C PRES DES PORTES (hors legende - R-006),CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,HORS LEGENDE
+ENSEIGNE SORTIE MUR,secours,cercle,,,Cercle X mi-noir sur tige.,E-001 legende ; E-201 plan,EM,ENSEIGNE DE SORTIE AU MUR DE TYPE PICTOGRAMME EXISTANTE,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,urgence,U01
+ENSEIGNE SORTIE PLAFOND,secours,cercle,,,"Cercle X mi-noir avec fleche, sans tige.",E-001 legende ; E-201 plan,EP,ENSEIGNE DE SORTIE AU PLAFOND DE TYPE PICTOGRAMME EXISTANTE,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,urgence,U02
+ACCUMULATEUR,secours,carre,,,Rectangle + - (R-009).,E-001 legende ; E-201 plan,AC,ACCUMULATEUR EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,urgence,U04
+STATION MANUELLE,alarme,carre,,,F dans carre.,E-001 legende ; E-201 plan,SM,STATION MANUELLE EXISTANTE,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,incendie,A01
+PIEZO STROBE,alarme,carre,,,F dans carre avec rayons.,E-001 legende ; E-201 plan,PZ,PIEZO COMBINE A UN STROBE EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,incendie,A06
+DETECTEUR FUMEE,alarme,cercle,,,"Cercle coupe en diagonale, moitie noire (A04). 5 au plan ; aucun avertisseur 3/4 noir (A03) — tranche au zoom x20 sur legende et plan (R-004).",E-001 legende ; E-201 plan,DF,DETECTEUR DE FUMEE EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,incendie,A04
+HP ENCASTRE PLAFOND,alarme,cercle,,,Cercle avec carre.,E-001 legende ; E-201 plan,HP,HAUT-PARLEUR ENCASTRE AU PLAFOND EXISTANT,CONSERVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,incendie,A09
+PANNEAU ANNONCIATEUR,alarme,carre,,,ANN dans carre ; E.A.R.,E-001 legende ; E-201 plan,ANN,PANNEAU ANNONCIATEUR EXISTANT,RELOCALISER,EXISTANT CONSERVE - MODELE NON INDIQUE,,incendie,A14
+BOITE JONCTION,distribution,carre,,,Carre X en tete de rail.,E-001 legende ; E-201 plan,BJ,BOITE DE JONCTION EXISTANTE,ENLEVER,EXISTANT CONSERVE - MODELE NON INDIQUE,,electricite,S01
