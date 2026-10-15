@@ -170,7 +170,8 @@ def agent(workdir, log_path):
 
 def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None, *, acceptation=None):
     a_verifier = a_verifier or []
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    n_raster = raster_ouverts(workdir) if ok else 0
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or n_raster) else "TERMINÉ")
     if ok and acceptation:     # boucle d'acceptation exécutée : l'état intègre son verdict
         if "INVALIDE" in acceptation:
             etat = "TERMINÉ — ACCEPTATION INVALIDE"
@@ -181,6 +182,9 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
             etat = "TERMINÉ — À VÉRIFIER"
     L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{etat}**"]
     if err: L += ["", f"Erreur : `{err}`"]
+    if n_raster:
+        L += ["", f"⚠️ **{n_raster} constat(s) des contrôles raster à trancher au zoom** (symboles non retrouvés, pastilles hors "
+              "seuil d'alignement, familles suspectes — détail §Contrôles raster) avant de considérer ce livrable terminé."]
     if a_verifier:
         L += ["", f"⚠️ **Encadré RELEVE-MATERIEL hors de l'espace libre du plan sur : {', '.join(a_verifier)}** "
               f"(voir `{name}-rendu-rapport.json`) — vérifier visuellement (Read du PDF, zoome) avant de "
@@ -238,6 +242,8 @@ def planches_et_png(outdir, workdir, annote, estimate, rapport_path, steps, log_
     # Pages RÉELLES de chaque feuille dans « Plans annotés » (`plan_page` du rapport de rendu : les bordereaux insérés
     # après chaque plan décalent tout dès la 2e feuille — les `page` d'estimate.json sont celles d'avant rendu).
     pages = [(sh["sheet"], int(sh["plan_page"])) for sh in json.load(open(rapport_path, encoding="utf-8")).get("sheets", [])]
+    for sous in ("controle", "png"):                     # --reprendre : jamais une planche ou un PNG d'une feuille disparue
+        shutil.rmtree(os.path.join(outdir, sous), ignore_errors=True)
     t = time.time(); code, out = run(["uv", "run", "releve/planche_controle.py", annote, estimate, os.path.join(outdir, "controle"),
                                       "--mesures", os.path.join(workdir, "occurrences-visuel.csv"), "--rapport", rapport_path], log_path=log_path)
     steps.append(("planche_controle", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
@@ -257,6 +263,19 @@ def feuilles_raster(workdir):
     import csv
     return [r["feuille"] for r in csv.DictReader(open(p, encoding="utf-8"))
             if (r.get("nb_mots") or "0").strip() in ("", "0") or (r.get("classement_fichier") or "") == "scan"]
+
+def raster_ouverts(workdir):
+    """Nombre de constats raster à trancher au zoom avant « fait » : symboles non retrouvés, pastilles hors seuil
+    d'alignement, familles suspectes (revue Codex PR #25 : ils doivent mettre le dossier À VÉRIFIER, jamais TERMINÉ)."""
+    n = 0
+    p = os.path.join(workdir, "ancrage-raster.json")
+    if os.path.exists(p):
+        a = json.load(open(p, encoding="utf-8"))
+        n += len(a.get("non_ancres", [])) + len((a.get("alignement") or {}).get("hors_seuil", []))
+    p = os.path.join(workdir, "comparaison-legende.json")
+    if os.path.exists(p):
+        n += len(json.load(open(p, encoding="utf-8")).get("suspectes", []))
+    return n
 
 def controles_raster(workdir, outdir):
     """Lignes STATUT.md issues des correctifs raster : symboles non retrouvés, familles suspectes, planches de contrôle."""
@@ -337,8 +356,10 @@ def process(arg, reprendre=False):
                 # à l'ancrage vectoriel de render_vectoriel.py (revues Codex/Copilot PR #25)
                 t = time.time(); code, out = run(["uv", "run", "releve/ancrage_raster.py", workdir, "--feuilles", *raster], log_path=log_path)
                 steps.append(("ancrage_raster", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
+                if code: raise RuntimeError("ancrage_raster.py a échoué (exécution) — symboles non retrouvés et hors seuil ne sont pas des échecs, un plantage oui")
                 t = time.time(); code, out = run(["uv", "run", "releve/comparer_legende.py", workdir], log_path=log_path)
                 steps.append(("comparer_legende", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
+                if code: raise RuntimeError("comparer_legende.py a échoué (exécution)")
             # contrôle qualité à l'aveugle (Q1-Q14) : non bloquant ici, mais journalisé et repris dans STATUT.md
             t = time.time(); code, out = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
             steps.append(("controle_qualite", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
@@ -415,12 +436,13 @@ def process(arg, reprendre=False):
                 if os.path.isfile(p): shutil.copy2(p, dst)
             if os.path.isdir(pe_dir): shutil.copytree(pe_dir, os.path.join(dst, os.path.basename(pe_dir)), dirs_exist_ok=True)
             for sous in ("png", "controle"):                 # livrables PNG et planches de contrôle (revue Codex PR #25)
+                shutil.rmtree(os.path.join(dst, sous), ignore_errors=True)        # miroir : pas de fichier périmé
                 if os.path.isdir(os.path.join(outdir, sous)):
                     shutil.copytree(os.path.join(outdir, sous), os.path.join(dst, sous), dirs_exist_ok=True)
             log(f"copié sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or raster_ouverts(workdir)) else "TERMINÉ")
     log(f"{etat} {name} → {outdir}")
     return ok
 

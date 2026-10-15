@@ -57,8 +57,11 @@ def main():
             cache[f] = raster(work, f)
         img, s = cache[f]
         half = float(r.get("taille_pt") or 8) / 2 + 1.0
-        glyphes[r["no"]] = (r.get("section", ""), r["description"], crop(img, s, float(r["x_pt"]), float(r["y_pt"]), half), half, s)
-    rapport = {"occurrences": 0, "suspectes": [], "par_famille": {}, "sans_taille": 0}
+        glyphes[(f, r["no"])] = (r.get("section", ""), r["description"], crop(img, s, float(r["x_pt"]), float(r["y_pt"]), half), half, s)
+    par_no = {}
+    for (f, no) in glyphes:
+        par_no.setdefault(no, []).append(f)
+    rapport = {"occurrences": 0, "suspectes": [], "par_famille": {}, "sans_taille": 0, "ambigues": 0}
     # Échelle par GÉOMÉTRIE, pas par corrélation (qui favorise toujours le gabarit le plus petit) : la taille du symbole
     # sur le plan vient de l'ancrage (`rayon_pt` → diamètre, ou boîte x0..y1) ; chaque glyphe de légende — l'attendu
     # comme ses concurrents — est redimensionné à CETTE taille, puis corrélé dans la fenêtre. Sans taille mesurée sur
@@ -79,8 +82,12 @@ def main():
     med = {k: float(np.median(v)) for k, v in med.items()}
     for o in occ:
         no = (nom.get(o["label"], {}).get("legende") or "").strip()
-        if no not in glyphes:
+        if no not in par_no:
             continue
+        if len(par_no[no]) > 1:                  # même numéro de ligne sur plusieurs feuilles de légende : on ne devine pas
+            rapport["ambigues"] += 1
+            continue
+        f_leg = par_no[no][0]
         t = taille_plan(o) or med.get(o["label"])
         if not t:
             rapport["sans_taille"] += 1
@@ -89,11 +96,11 @@ def main():
         if f not in cache:
             cache[f] = raster(work, f)
         img, s = cache[f]
-        section = glyphes[no][0]
+        section = glyphes[(f_leg, no)][0]
         fen = crop(img, s, float(o["x_pt"]), float(o["y_pt"]), t / 2 + 6)
         scores = {}
-        for n2, (sec2, _, g2, half2, s_leg) in glyphes.items():
-            if sec2 != section:
+        for (f2, n2), (sec2, _, g2, half2, s_leg) in glyphes.items():
+            if f2 != f_leg or sec2 != section:    # concurrents : même feuille de légende ET même section seulement
                 continue
             # glyphe (côté 2*half2 pt, en px de la LÉGENDE) → (t + 2) pt en px du PLAN : les deux feuilles peuvent avoir
             # des formats, donc des px/pt, différents (revue Copilot PR #25)
@@ -114,7 +121,7 @@ def main():
             fam["suspectes"] += 1
             rapport["suspectes"].append({"feuille": f, "label": o["label"], "x_pt": o["x_pt"], "y_pt": o["y_pt"],
                                          "attendu": no, "score_attendu": round(scores[no], 3),
-                                         "meilleur": meilleur, "description": glyphes[meilleur][1], "score_meilleur": round(scores[meilleur], 3)})
+                                         "meilleur": meilleur, "description": glyphes[(f_leg, meilleur)][1], "score_meilleur": round(scores[meilleur], 3)})
     for fam in rapport["par_famille"].values():
         fam["score_moyen"] = round(fam["score_moyen"] / max(1, fam["n"]), 3)
     json.dump(rapport, open(sortie, "w", encoding="utf-8"), indent=1, ensure_ascii=False)

@@ -42,5 +42,6 @@
    "non_reconnues": 2
   }
  },
- "sans_taille": 0
+ "sans_taille": 0,
+ "ambigues": 0
 }

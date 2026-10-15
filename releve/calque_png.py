@@ -60,7 +60,8 @@ def main():
         sys.exit(f"aucun flux de contenu « {PREFIXE_CALQUE} » sur la page {a.page} : pas un PDF de render_vectoriel.py ?")
     doc.xref_set_key(page.xref, "Contents", "[ " + " ".join(f"{x} 0 R" for x in garder) + " ]")
     page = doc.reload_page(page)
-    page.get_pixmap(matrix=pymupdf.Matrix(z, z), alpha=True).save(os.path.join(a.sortie, f"{nom}_calque.png"))
+    # annots=False : les annotations/widgets du plan source (tampons, signatures — conservés par render()) ne sont pas du relevé
+    page.get_pixmap(matrix=pymupdf.Matrix(z, z), alpha=True, annots=False).save(os.path.join(a.sortie, f"{nom}_calque.png"))
     print(f"{nom}_annote.png + {nom}_calque.png ({a.largeur} px de large ; calque = {len(garder)} flux RELEVE gardés, "
           f"{len(retirer)} flux de fond retirés) → {a.sortie}")
 
