@@ -31,8 +31,10 @@ python generate.py --all --data examples/soumission_EP2026-079.json
 
 ## Format JSON
 - `type`: `soumission` | `lettre`
-- soumission : `no, date, client[], projet[], items[[desc, prix]], exclusions[], signer[nom, courriel, titre]` — total et montant en lettres calculés.
-- lettre : `lieu_date, attention[], projet, objet, montant, documents[], inclusions[], exclusions[], signer[], validite`.
+- soumission : `no, date, client[], projet[], items[[desc, prix]], exclusions[], signer, salutation?` — total et montant en lettres calculés.
+- lettre : `lieu_date, attention[], projet, objet, montant, documents[], inclusions[], exclusions[], signer, validite, salutation?`.
+- `signer` : **dict par marque** `{"br": ["Nom", "courriel", "Titre"], "dr": [...]}` — la forme à utiliser avec `--all`. Une liste simple `["Nom", "courriel", "Titre"]` n'est valide que pour une génération mono-marque (`--brand`) ; avec `--all`, elle est remplacée par un placeholder sur toutes les marques (avertissement affiché). Marque sans entrée → « Nom du signataire / <compagnie> ».
+- `salutation` : défaut « Madame, Monsieur » (lettre : appel ; soumission : formule de politesse).
 
 Les 10 conditions standards + clause de volatilité des matériaux + encadré APPROBATION / BON DE COMMANDE sont intégrés.
 

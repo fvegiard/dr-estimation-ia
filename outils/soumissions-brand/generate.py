@@ -104,9 +104,10 @@ def money(v):
 
 
 def en_lettres(v):
-    d, c = divmod(cents(v), 100)
+    n = cents(v)
+    d, c = divmod(abs(n), 100)  # valeur absolue, le signe est remis devant le montant complet (cohérent avec money())
     w = num2words(d, lang="fr")
-    w = w[0].upper() + w[1:]
+    w = ("Moins " + w) if n < 0 else (w[0].upper() + w[1:])
     return f"{w} dollar{'s' if d != 1 else ''}" + (f" et {num2words(c, lang='fr')} cent{'s' if c != 1 else ''}" if c else "")
 
 
