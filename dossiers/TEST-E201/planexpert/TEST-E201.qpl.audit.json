@@ -1,0 +1,33 @@
+{
+ "qpl": "/home/claude/work/OUTBOX/TEST-E201/TEST-E201-planexpert/TEST-E201.qpl",
+ "sha256": "bc3bbecb8d8f3ba12d9acea19fa04d2e3c97a55a6fc12c2b7d292ce2425860ef",
+ "octets": 16308,
+ "plans": 2,
+ "compteurs": 20,
+ "marques": 121,
+ "libelles": 20,
+ "par_feuille": {
+  "E201plan-p01": {
+   "ACCUMULATEUR": 1,
+   "AVERTISSEUR FUMEE 120V CO": 4,
+   "BOITE JONCTION": 2,
+   "BOITIER C": 4,
+   "CERCLE SANS ETIQUETTE": 2,
+   "DETECTEUR FUMEE": 1,
+   "DETECTEUR MOUVEMENT": 3,
+   "ENCASTRE": 28,
+   "ENSEIGNE SORTIE MUR": 5,
+   "ENSEIGNE SORTIE PLAFOND": 2,
+   "HP ENCASTRE PLAFOND": 2,
+   "INT 3 VOIES": 5,
+   "INT MAITRES": 1,
+   "INT SIMPLE": 2,
+   "LED 1X4": 6,
+   "LED 2X2": 45,
+   "PANNEAU ANNONCIATEUR": 1,
+   "PIEZO STROBE": 2,
+   "RAIL ECLAIRAGE": 2,
+   "STATION MANUELLE": 3
+  }
+ }
+}
