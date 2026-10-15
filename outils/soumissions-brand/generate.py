@@ -70,8 +70,8 @@ def money(v):
 
 
 def en_lettres(v):
-    d = int(round(v))
-    c = int(round((v - d) * 100))
+    # Même quantification que money() : total en cents, puis dollars/cents — jamais d'arrondi du dollar seul.
+    d, c = divmod(int(round(float(v) * 100)), 100)
     w = num2words(d, lang="fr")
     w = w[0].upper() + w[1:]
     return f"{w} dollars" + (f" et {num2words(c, lang='fr')} cents" if c else "")

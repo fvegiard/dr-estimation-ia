@@ -15,7 +15,8 @@ from PIL import Image
 
 def dominant_colors(path, n=3):
     im = Image.open(path).convert("RGBA")
-    px = [p for p in im.getdata() if p[3] > 200 and max(p[:3]) < 240 and (max(p[:3]) - min(p[:3])) > 20]
+    # Pixels opaques et saturés (l'écart entre composantes exclut déjà blancs, gris et noirs) ; #FF0000 reste inclus.
+    px = [p for p in im.getdata() if p[3] > 200 and (max(p[:3]) - min(p[:3])) > 20]
     c = Counter((p[0] // 8 * 8, p[1] // 8 * 8, p[2] // 8 * 8) for p in px)
     out = []
     for (r, g, b), cnt in c.most_common(40):
@@ -48,7 +49,11 @@ if __name__ == "__main__":
     ap.add_argument("--dark", default="2B2B2B")
     a = ap.parse_args()
     cols = dominant_colors(a.logo)
-    print(json.dumps({"primary": cols[0][0], "secondary": (cols[1][0] if len(cols) > 1 else cols[0][0]), "all": cols}, indent=2))
+    if cols:
+        print(json.dumps({"primary": cols[0][0], "secondary": (cols[1][0] if len(cols) > 1 else cols[0][0]), "all": cols}, indent=2))
+    else:
+        # Logo monochrome (blanc, gris, noir) : aucune couleur de marque mesurable — on le dit, on n'en invente pas.
+        print(json.dumps({"primary": None, "secondary": None, "all": [], "note": "aucun pixel saturé : renseigner primary à la main dans brands.json"}, indent=2))
     if a.print_safe:
         print_safe(a.logo, a.print_safe, a.dark)
         print("print-safe ->", a.print_safe)
