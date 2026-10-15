@@ -1,0 +1,21 @@
+{
+  "type": "soumission",
+  "no": "EP2026-079",
+  "date": "18 septembre 2026",
+  "client": ["Groupe BR Construction", "1219 chemin Rouillard,", "Mont-Saint-Hilaire, QC, J3H 0K3", "Attn : Jean-François Dubois", "Jfdubois@groupebr.ca"],
+  "projet": ["Démantèlement électrique", "387A rue Saint-Paul, Montréal"],
+  "items": [
+    ["Identification au plan de tous les équipements électriques actuellement présents — avec numéro de circuit confirmé sur le plan et identification hors tension au plan.", 1780.00],
+    ["Identifier avec ruban (jaune ou rouge) les conduits et services critiques à ne pas toucher.", 750.00],
+    ["Mettre le système d'alarme incendie hors des murs à démolir : enlever les composantes d'alarme incendie des murs à démolir, les rebrancher au plafond à un endroit sécuritaire, remettre le système en test et vérifier les anomalies s'il y a lieu. (Aucun test avec la compagnie d'alarme inclus.)", 1250.00],
+    ["Démantèlement de l'éclairage au plafond actuel, en conservant les conduits réutilisables présents au plafond. Identification claire et efficace sur les boîtes et le filage laissés en place.", 2040.00],
+    ["Installation de prises temporaires et d'éclairage temporaire (plus facile à manipuler durant les travaux).", 1250.00],
+    ["Démantèlement des prises et services électriques dans les murs à démolir. Identification claire et efficace sur les boîtes et le filage laissés en place.", 3150.00]
+  ],
+  "exclusions": [
+    "Aucun travail sur le panneau électrique.",
+    "Aucune démolition des filages et conduits pour l'instant, en attente des ouvertures (si possible de réutiliser/conserver).",
+    "Frais de stationnement et équipement spécial (échafaudage) — non inclus."
+  ],
+  "signer": ["Gabriel Abourousse", "gabourousse@groupebr.ca", "Chargé de projets — BR Division Électrique"]
+}

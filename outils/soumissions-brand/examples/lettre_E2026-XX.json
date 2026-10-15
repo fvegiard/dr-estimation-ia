@@ -1,0 +1,23 @@
+{
+  "type": "lettre",
+  "lieu_date": "Mont-Saint-Hilaire, vendredi, le 10 avril 2026",
+  "attention": ["À l'attention de XXX", "XXX", "XX@XXX"],
+  "projet": "XXX",
+  "objet": "Proposition d'électricité –",
+  "montant": 875000.00,
+  "documents": [
+    "Plans de MEP Experts Conseils émis pour construction, plans E100, E102, E150, E300, E301, E302, E400, E401, E402, E403, E404, E600, E601, E602 en date du 16 mars 2026"
+  ],
+  "inclusions": [
+    "Fourniture des appareils d'éclairage bandes DEL type COB blanc 8mm (éclairage continu) ;",
+    "Fourniture des transformateurs de type classe 2 dimmable (respect du Code Électrique du Québec) ;",
+    "Fourniture des extrusions d'aluminium de type « flat bar » pour l'installation des bandes DEL ;",
+    "Installation et raccordements électriques ;"
+  ],
+  "exclusions": [
+    "Travaux relatifs au contrôle d'éclairage et la mise en service du contrôles / des scènes ;",
+    "Fourniture des extrusions d'aluminium de type « profilé U » (+ 3511$ si requis) ;"
+  ],
+  "signer": ["Nathan Chambolle-Tournon, ing.", "nchambolle@groupebr.ca"],
+  "validite": "Période de validité : 30 jours"
+}
