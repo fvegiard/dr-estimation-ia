@@ -12,6 +12,7 @@ Le type (soumission | lettre) est lu dans le JSON ("type"). La palette est déri
 import argparse
 import json
 import os
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 from num2words import num2words
@@ -64,30 +65,49 @@ def luminance(h):
     return .2126 * lin(r) + .7152 * lin(g) + .0722 * lin(b)
 
 
+def contrast(a, b):
+    la, lb = luminance(a), luminance(b)
+    hi, lo = max(la, lb), min(la, lb)
+    return (hi + .05) / (lo + .05)
+
+
+INK_HEX = "#1F1F1F"
+
+
 def palette(brand):
-    """Palette dérivée du logo. Une primaire claire (jaune, cyan…) garde le texte lisible :
-    la bande prend un texte foncé et les titres sur blanc utilisent la variante foncée."""
+    """Palette dérivée du logo, lisible quelle que soit la primaire :
+    - bande : texte blanc ou encre, celui qui a le meilleur contraste réel sur la primaire ;
+    - titres/prix sur blanc : la primaire si elle atteint 4,5:1 (WCAG AA), sinon assombrie jusqu'à l'atteindre."""
     p = brand["primary"]
-    dark = mix(p, "#000000", .25)
-    light = luminance(p) > .45
-    return {"brand": colors.HexColor(p), "dark": colors.HexColor(dark),
+    on_brand = colors.white if contrast(p, "#FFFFFF") >= contrast(p, INK_HEX) else INK
+    text_hex = p
+    t = 0.0
+    while contrast(text_hex, "#FFFFFF") < 4.5 and t < 1.0:
+        t += .05
+        text_hex = mix(p, "#000000", t)
+    return {"brand": colors.HexColor(p), "dark": colors.HexColor(mix(p, "#000000", .25)),
             "tint": colors.HexColor(mix(p, "#FFFFFF", .90)), "secondary": colors.HexColor(brand.get("secondary", p)),
-            "on_brand": INK if light else colors.white,
-            "text": colors.HexColor(mix(p, "#000000", .45)) if light else colors.HexColor(p),
-            "text_hex": mix(p, "#000000", .45) if light else p}
+            "on_brand": on_brand, "text": colors.HexColor(text_hex), "text_hex": text_hex}
+
+
+def cents(v):
+    """Quantification unique de tout montant : Decimal, 2 décimales, demi-cent arrondi vers le haut.
+    money() et en_lettres() partent toujours de cette valeur — jamais d'un float arrondi deux fois."""
+    return int(Decimal(str(v)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP) * 100)
 
 
 def money(v):
-    s = f"{v:,.2f}".replace(",", " ").replace(".", ",")
-    return f"{s} $"
+    c = cents(v)
+    d, r = divmod(abs(c), 100)
+    s = f"{d:,}".replace(",", " ")
+    return f"{'-' if c < 0 else ''}{s},{r:02d} $"
 
 
 def en_lettres(v):
-    # Même quantification que money() : total en cents, puis dollars/cents — jamais d'arrondi du dollar seul.
-    d, c = divmod(int(round(float(v) * 100)), 100)
+    d, c = divmod(cents(v), 100)
     w = num2words(d, lang="fr")
     w = w[0].upper() + w[1:]
-    return f"{w} dollars" + (f" et {num2words(c, lang='fr')} cents" if c else "")
+    return f"{w} dollar{'s' if d != 1 else ''}" + (f" et {num2words(c, lang='fr')} cent{'s' if c != 1 else ''}" if c else "")
 
 
 def esc(s):
@@ -212,7 +232,7 @@ def build_soumission(data, brand, out, brand_key=""):
     doc = make_doc(out, brand, P, "soumission", data["no"])
     doc.date_str = data["date"]
     W = doc.width
-    total = sum(float(i[1]) for i in data["items"])
+    total = sum(cents(i[1]) for i in data["items"]) / 100  # somme en cents, donc exacte
     el = []
 
     # CLIENT / DÉTAILS (bloc teinté, séparateur vertical)
@@ -324,7 +344,8 @@ if __name__ == "__main__":
     stem = Path(a.data).stem
     if a.all:
         if not isinstance(data.get("signer"), dict):
-            print("Avertissement : `signer` n'est pas un dict par marque — les PDF des autres marques auront un signataire placeholder.")
+            print("Avertissement : `signer` n'est pas un dict par marque — avec --all, chaque PDF reçoit un signataire placeholder.")
+            data = {**data, "signer": {}}
         for k in brands:
             print("->", generate(k, data, os.path.join(a.outdir, f"{stem}_{k}.pdf"), brands))
     else:
