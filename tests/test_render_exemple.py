@@ -162,8 +162,9 @@ def test_bordereau_pages(rendered):
     for k in range(len(pts)):
         assert f"DSI01-{k + 1:03d}" in allt
     assert "RESERVES ET COMPLEMENTS" in doc[2].get_text()
-    toc = doc.get_toc()
-    assert toc[0][1:] == ["DSI01 - plan", 1] and toc[1][1:] == ["Bordereau materiel DSI01", 2]
+    # gold (spec §1, écart E6) : un signet `<projet>-<feuille>-annote-v<n>` sur la page plan, plus les signets
+    # d'origine du plan (aucun ici) ; plus de signet « <feuille> - plan » / « Bordereau materiel <feuille> »
+    assert doc.get_toc() == [[1, "DSI01-annote-v1", 1]]
 
 
 def test_bordereau_header_fill_and_row_order(rendered):
@@ -264,7 +265,8 @@ def test_two_sheets_order(tmp_path):
     assert [s["plan_page"] for s in rep["sheets"]] == [1, 4]
     doc = pymupdf.open(tmp_path / "o.pdf")
     assert "E101" in doc[3].get_text() and "RELEVE DSI02 - MATERIEL" in doc[3].get_text()
-    assert "page 5" in doc[3].get_text()
+    # gold (écart E3) : « page 2 » = 2e page de la feuille (son bordereau), pas le numéro absolu (page 5)
+    assert "page 2" in doc[3].get_text() and "page 5" not in doc[3].get_text()
 
 
 def test_wrap_never_truncates_long_cells():

@@ -2,6 +2,7 @@
 content on the original PDF page, one optional-content layer (OCG) per family plus one for the legend."""
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 
 import numpy as np
@@ -81,32 +82,43 @@ def _window_sums(ii: np.ndarray, h: int, w: int) -> np.ndarray:
 class Header:
     title: str
     counter: str
-    hint: str
+    hint: str                # renvoi de l'encadré « 1 ligne »
+    hint_pile: str = ""      # renvoi court de l'encadré empilé (gold : « Calques activables; prescriptions ... »)
+
+
+def _une_ligne_x(h: Header) -> tuple[float, float]:
+    """Décalages (depuis la marge) du compteur et du renvoi sur la ligne du titre (gold : 185 et 520)."""
+    cx = max(185.0, text_width(h.title, S.TITLE_SIZE, S.TITLE_FONT) + 20)
+    return cx, cx + max(335.0, text_width(h.counter, S.COUNTER_SIZE) + 30)
+
+
+def une_ligne(h: Header, width: float) -> bool:
+    """Titre, compteur et renvoi sur une seule ligne quand le renvoi tient dans le cadre ; sinon empilés.
+
+    Règle vérifiée sur les 22 encadrés standard du gold (spec §3.1-3.2) : 1 ligne de 800 pt (EU01, renvoi
+    jusqu'à x+795) à 2020 pt (DSI01), empilé de 260 (E07) à 780 pt (E01, E09, E12)."""
+    return S.BOX_PAD_X + _une_ligne_x(h)[1] + text_width(h.hint, S.HINT_SIZE) <= width
 
 
 def _header_lines(h: Header, width: float) -> tuple[list[tuple[float, str, str, float, tuple]], float]:
     """(dy_baseline, text, font, size, color) of the header, and the dy of the first legend row centre.
 
-    Wide boxes put title/counter/hint on one line (EXEMPLE DSI01); narrow ones stack and wrap them (E02, E07)."""
+    Wide boxes put title/counter/hint on one line (gold DSI01, spec §3.1) ; narrow ones stack the counter, the
+    short hint and the short black RES line under the title (gold E01, E07, spec §3.2)."""
     inner = width - 2 * S.BOX_PAD_X
     black = (0, 0, 0)
-    if width >= 1000:
-        tw = text_width(h.title, S.TITLE_SIZE, S.TITLE_FONT)
-        cx = max(185.0, tw + 20)
-        hx = cx + max(335.0, text_width(h.counter, S.COUNTER_SIZE) + 30)
+    if une_ligne(h, width):
+        cx, hx = _une_ligne_x(h)
         return [(16.0, h.title, S.TITLE_FONT, S.TITLE_SIZE, black, 0.0),
                 (16.0, h.counter, "helv", S.COUNTER_SIZE, black, cx),
                 (16.0, h.hint, "helv", S.HINT_SIZE, black, hx),
                 (29.0, S.WARN_TEXT, "helv", S.WARN_SIZE, S.WARN_COLOR, 0.0)], 49.0
     lines = [(16.0, h.title, S.TITLE_FONT, S.TITLE_SIZE, black, 0.0),
-             (29.8, h.counter, "helv", S.COUNTER_SIZE, black, 0.0)]
-    y = 29.8
-    for t in wrap_text(h.hint, S.HINT_SIZE, inner):
-        y += 10.1
+             (S.PILE_COUNTER_Y, h.counter, "helv", S.COUNTER_SIZE, black, 0.0)]
+    y = S.PILE_COUNTER_Y
+    for t in wrap_text(h.hint_pile or h.hint, S.HINT_SIZE, inner) + wrap_text(S.WARN_TEXT_PILE, S.HINT_SIZE, inner):
+        y += S.PILE_STEP
         lines.append((y, t, "helv", S.HINT_SIZE, black, 0.0))
-    for t in wrap_text(S.WARN_TEXT, S.WARN_SIZE, inner):
-        y += 9.0
-        lines.append((y, t, "helv", S.WARN_SIZE, S.WARN_COLOR, 0.0))
     return lines, y + 22.0
 
 
@@ -122,8 +134,10 @@ def wrap_text(text: str, size: float, width: float, font: str = "helv") -> list[
     return lines + ([cur] if cur else [])
 
 
-def qty_offset(col_w: float) -> float:
-    return col_w - (74.0 if col_w >= 390 else 48.0)
+def qty_offset(col_w: float, ncols: int = 2) -> float:
+    """Quantité d'une ligne de légende à 74 pt avant la fin de sa cellule (gold : DSI01 505 -> 431, DSI02 500 ->
+    426, DSI05 220 -> 146) ; en 1 colonne la cellule est le cadre entier (E07 260 -> 186, E02 390 -> 316)."""
+    return col_w + (2 * S.BOX_PAD_X if ncols == 1 else 0.0) - 74.0
 
 
 def box_layouts(fams: list[Family], head: Header):
@@ -163,7 +177,9 @@ def place_box(page: pymupdf.Page, fams: list[Family], avoid: list[pymupdf.Rect],
             layouts = [lay for lay in layouts if lay[0] == rows[2]] or layouts
         fit = [lay for lay in layouts if lay[3] <= hint.width + 1 and lay[4] <= hint.height + 1] or layouts
         ncols, col_w, pitch, _, _ = min(fit, key=lambda lay: abs(lay[3] - hint.width) + abs(lay[4] - hint.height))
-        col_w = (hint.width - (2 * S.BOX_PAD_X if ncols == 1 else 0.0)) / ncols
+        # pas des colonnes imposé (gold DSI02 : 9 familles sur 3 colonnes au pas de 500 pt d'une grille de 4)
+        col_pitch = rows[3] if rows is not None and len(rows) > 3 and rows[3] else None
+        col_w = col_pitch or (hint.width - (2 * S.BOX_PAD_X if ncols == 1 else 0.0)) / ncols
         nrows = -(-max(1, len(fams)) // ncols)
         _, first_row = _header_lines(head, hint.width)
         if rows is not None:
@@ -330,8 +346,11 @@ def annotate_page(page: pymupdf.Page, sheet: Sheet, bordereau_page: int, layers:
         draw_box_v6(page, sheet, fams, box, head, colors, layers, legend_oc, bordereau_page)
         return box
     counter = f"{len(sheet.items)} reperes / {len(fams)} familles / RES {sheet.n_reserves}"
-    head = Header(f"RELEVE {sheet.name} - MATERIEL", counter, S.HINT_TEXT.format(page=bordereau_page))
-    footer = S.TRAVAUX_FOOTER_TEXT.format(page=bordereau_page) if sheet.format == "travaux" else S.FOOTER_TEXT
+    head = Header(f"RELEVE {sheet.name} - MATERIEL", counter, S.HINT_TEXT.format(page=bordereau_page),
+                  S.HINT_TEXT_PILE.format(page=bordereau_page))
+    # pied propre à la feuille quand l'entrée le donne (gold E10 « Reperes source; ... »), sinon celui du format
+    footer = sheet.pied or (S.TRAVAUX_FOOTER_TEXT.format(page=bordereau_page) if sheet.format == "travaux"
+                            else S.FOOTER_TEXT)
     box = place_box(page, fams, taken + labels, head, hint=_hint_points(sheet, to_pt), rows=sheet.legend_rows)
     draw_box(page, fams, box, head, colors, layers, legend_oc, footer)
     return box
@@ -366,19 +385,31 @@ def v6_header_lines(sheet: Sheet, fams: list[Family]) -> list[tuple[float, str, 
     return out
 
 
+RESERVE_RE = re.compile(r"\bR-\d{3}\b")
+HORS_LEGENDE_RE = re.compile(r"\s*\(hors legende - (R-\d{3})\)", re.IGNORECASE)
+
+
+def libelle_legende(materiel: str) -> str:
+    """Libellé de légende : « PLINTHE DE CHAUFFAGE (hors legende - R-001) » -> « PLINTHE DE CHAUFFAGE [R-001] »
+    (gold p.50, 52, 54, 62, 70, 78 ; le calque garde le nom complet)."""
+    return HORS_LEGENDE_RE.sub(r" [\1]", materiel).upper()
+
+
 def v6_footer(sheet: Sheet, fams: list[Family], width: float, bordereau_page: int) -> list[str]:
     logements = " de logements types" if "LOGEMENTS TYPES" in (sheet.note or "").upper() else ""
+    registre = sorted({m for f in fams for m in RESERVE_RE.findall(f.materiel)})
     lines = []
     for t in S.V6_FOOTER:
-        if t.startswith("R-001") and not any("[R-" in f.materiel for f in fams):
-            continue                               # pas de désignation au registre des réserves : note sans objet
-        lines += wrap_text(t.format(page=bordereau_page, type=logements), S.V6_FOOT_SIZE, width - 2 * S.V6_PAD_X)
+        if "{registre}" in t and not registre:
+            continue                               # aucune désignation au registre des réserves : note sans objet
+        lines += wrap_text(t.format(page=bordereau_page, type=logements, registre=", ".join(registre)),
+                           S.V6_FOOT_SIZE, width - 2 * S.V6_PAD_X)
     return lines
 
 
 def v6_label(f: Family, width: float) -> list[str]:
-    lw = width - S.V6_QTY_FROM_RIGHT - S.V6_LABEL_X - 6
-    lines = wrap_text(f.materiel.upper(), S.V6_LABEL_SIZE, lw)
+    lw = width - S.V6_QTY_FROM_RIGHT - S.V6_LABEL_X - S.V6_LABEL_GAP
+    lines = wrap_text(libelle_legende(f.materiel), S.V6_LABEL_SIZE, lw)
     if f.modele and len(lines) < 3 and text_width(f.modele, S.V6_LABEL_SIZE) <= lw:
         lines.append(f.modele)                     # E03 : ligne modele sous le nom (LEVITON T5820-W)
     if len(lines) > 3:
@@ -387,8 +418,8 @@ def v6_label(f: Family, width: float) -> list[str]:
 
 
 def v6_height(nrows: int, pitch: float, n_footer: int) -> float:
-    return (S.V6_FIRST_ROW + 2.5 + (nrows - 1) * pitch + S.V6_FOOT_GAP + (n_footer - 1) * S.V6_FOOT_STEP
-            + S.V6_FOOT_BOTTOM)
+    return (S.V6_FIRST_ROW + 2.5 + (nrows - 1) * pitch + S.V6_FOOT_GAP
+            + max(n_footer - 1, S.V6_FOOT_MIN_STEPS) * S.V6_FOOT_STEP + S.V6_FOOT_BOTTOM)
 
 
 def place_box_v6(page: pymupdf.Page, sheet: Sheet, fams: list[Family], avoid: list[pymupdf.Rect],
@@ -448,7 +479,8 @@ def draw_box_v6(page: pymupdf.Page, sheet: Sheet, fams: list[Family], box: Place
         shape.insert_text((x0 + col_w - S.V6_QTY_FROM_RIGHT, base), fmt_qty(f.qty), fontsize=S.V6_QTY_SIZE,
                           color=(0, 0, 0), oc=oc)
     foot = v6_footer(sheet, fams, r.width, bordereau_page)
-    y = r.y1 - S.V6_FOOT_BOTTOM - (len(foot) - 1) * S.V6_FOOT_STEP
+    # gold : 1re ligne du pied à 71,4 pt du bas du cadre (6 lignes E03-E05, 7 lignes E08) ; remonte au-delà
+    y = r.y1 - S.V6_FOOT_BOTTOM - max(len(foot) - 1, S.V6_FOOT_MIN_STEPS) * S.V6_FOOT_STEP
     for k, t in enumerate(foot):
         shape.insert_text((x, y + k * S.V6_FOOT_STEP), t, fontsize=S.V6_FOOT_SIZE, color=(0, 0, 0), oc=legend_oc)
     shape.commit(overlay=True)
@@ -475,20 +507,20 @@ def draw_box(page: pymupdf.Page, fams: list[Family], box: PlacedBox, head: Heade
         draw_mark(shape, f.shape, pymupdf.Rect(cx0, cy - half, cx0 + S.LEGEND_MARK, cy + half), colors[f.code], oc)
         shape.insert_text((cx0 + 15, cy + 3), f.code, fontname="hebo", fontsize=S.ROW_CODE_SIZE, color=(0, 0, 0),
                           oc=oc)
-        qx = cx0 + qty_offset(box.col_w)
+        qx = cx0 + qty_offset(box.col_w, box.ncols)
         label_x = cx0 + 50
         lw = qx - label_x - 6
-        label = wrap_text(f.materiel.upper(), S.ROW_LABEL_SIZE, lw)
+        label = wrap_text(libelle_legende(f.materiel), S.ROW_LABEL_SIZE, lw)
         if len(label) > 2 or box.pitch < 14 and len(label) > 1:
-            label = [_fit(f.materiel.upper(), S.ROW_LABEL_SIZE, lw)]
+            label = [_fit(libelle_legende(f.materiel), S.ROW_LABEL_SIZE, lw)]
         if f.modele and len(label) == 1 and box.pitch >= 14 and text_width(f.modele, S.ROW_LABEL_SIZE) <= lw:
             label.append(f.modele)             # E03-E08 : ligne modele sous le nom (LEVITON T5820-W)
-        y0 = cy - 0.905 - (len(label) - 1) * 3.6
+        y0 = cy - 0.905                     # gold DSI05, DSI07, E07 : 1re ligne sur la ligne du code, la suite dessous
         for k, t in enumerate(label):
-            shape.insert_text((label_x, y0 + k * 7.2), t, fontsize=S.ROW_LABEL_SIZE, color=(0, 0, 0), oc=oc)
+            shape.insert_text((label_x, y0 + k * S.ROW_LABEL_STEP), t, fontsize=S.ROW_LABEL_SIZE, color=(0, 0, 0), oc=oc)
         qty = fmt_qty(f.qty) + (f" / R{f.reserves}" if f.reserves else "")
         shape.insert_text((qx, cy + 3), qty, fontsize=S.ROW_QTY_SIZE, color=(0, 0, 0), oc=oc)
-    shape.insert_text((x, r.y1 - 4.5), _fit(footer, S.FOOTER_SIZE, r.width - 2 * S.BOX_PAD_X),
+    shape.insert_text((x, r.y1 - S.FOOTER_UP), _fit(footer, S.FOOTER_SIZE, r.width - 2 * S.BOX_PAD_X),
                       fontsize=S.FOOTER_SIZE, color=(0, 0, 0), oc=legend_oc)
     shape.commit(overlay=True)
 

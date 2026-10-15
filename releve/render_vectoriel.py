@@ -25,7 +25,7 @@ from src.estimer.render import load_input, render  # noqa: E402
 def main(work, name, out_dir):
     work, out_dir = Path(work), Path(out_dir)
     vec_dir = out_dir / "vecteur"
-    res = build(work, vec_dir)
+    res = build(work, vec_dir, projet=name)      # signets <NOM_PROJET>-<feuille>-annote-v<n> (spec §1)
     print(f"{vec_dir}: {res['sheets']} feuilles, {res['reperes']} reperes")
     sheets = load_input(vec_dir)
     if not sheets:

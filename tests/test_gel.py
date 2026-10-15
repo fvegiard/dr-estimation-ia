@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from conftest import ROOT
+from conftest import ROOT, env_sans_encodage
 from src.validation.gel import GelError, geler, verifier_gel
 
 
@@ -170,19 +170,19 @@ def test_cli_gele_et_verifie(tmp_path):
     w = _workdir(tmp_path)
     r_gel = subprocess.run(
         [sys.executable, "-m", "src.validation.gel", str(w), "--soumission", "S-CLI"],
-        cwd=ROOT, capture_output=True, text=True,
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage(),
     )
     assert r_gel.returncode == 0, r_gel.stderr
     assert json.loads((w / "gel.json").read_text(encoding="utf-8"))["soumission"] == "S-CLI"
     r_ok = subprocess.run(
         [sys.executable, "-m", "src.validation.gel", str(w), "--verifier"],
-        cwd=ROOT, capture_output=True, text=True,
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage(),
     )
     assert r_ok.returncode == 0, r_ok.stderr
     (w / "nomenclature.csv").write_text("label,famille\nX,viole\n", encoding="utf-8")
     r_viole = subprocess.run(
         [sys.executable, "-m", "src.validation.gel", str(w), "--verifier"],
-        cwd=ROOT, capture_output=True, text=True,
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage(),
     )
     assert r_viole.returncode == 1
     assert "GEL VIOLÉ" in r_viole.stderr
@@ -194,7 +194,7 @@ def test_cli_sans_artefact_code_2(tmp_path):
     w.mkdir()
     r = subprocess.run(
         [sys.executable, "-m", "src.validation.gel", str(w)],
-        cwd=ROOT, capture_output=True, text=True,
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage(),
     )
     assert r.returncode == 2
     assert "ERREUR" in r.stderr

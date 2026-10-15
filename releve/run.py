@@ -23,9 +23,10 @@ from __future__ import annotations
 import os, sys, json, time, shutil, subprocess, datetime, hashlib
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = os.environ.get("RELEVE_BASE", "/mnt/d/claude/releve-auto")
+_WIN = os.name == "nt"   # poste Windows natif (hors WSL) : mêmes dossiers, chemins D:\ et G:\ au lieu de /mnt/d et /mnt/g
+BASE = os.environ.get("RELEVE_BASE", r"D:\claude\releve-auto" if _WIN else "/mnt/d/claude/releve-auto")
 INBOX, OUTBOX = os.path.join(BASE, "INBOX"), os.path.join(BASE, "OUTBOX")
-DRIVE = os.environ.get("RELEVE_DRIVE", "/mnt/g/My Drive/AI/Releves-auto")
+DRIVE = os.environ.get("RELEVE_DRIVE", r"G:\My Drive\AI\Releves-auto" if _WIN else "/mnt/g/My Drive/AI/Releves-auto")
 LOCK = os.path.join(BASE, ".verrou")
 LOG = os.path.join(BASE, "journal.log")
 MODEL = os.environ.get("RELEVE_MODEL", "opus")
@@ -48,10 +49,14 @@ def sha256(path):
     return h.hexdigest()
 
 def run(cmd, cwd=REPO, log_path=None, env=None):
-    """Exécute une commande, journalise, retourne (code, stdout)."""
+    """Exécute une commande, journalise, retourne (code, stdout).
+
+    Les étapes Python écrivent en UTF-8 (PYTHONIOENCODING) et leur sortie est décodée en UTF-8 : avec
+    l'encodage local (cp1252 sous Windows), « GEL VIOLÉ » arrivait illisible et une « → » faisait planter la
+    boucle d'acceptation, dont le verdict était alors perdu (« non déterminé »)."""
     log("$ " + " ".join(cmd))
-    p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, stdin=subprocess.DEVNULL,
-                       env={**os.environ, **(env or {})})
+    p = subprocess.run(cmd, cwd=cwd, capture_output=True, encoding="utf-8", errors="replace",
+                       stdin=subprocess.DEVNULL, env={**os.environ, "PYTHONIOENCODING": "utf-8", **(env or {})})
     if log_path:
         with open(log_path, "a", encoding="utf-8") as fh:
             fh.write(f"\n### {' '.join(cmd)}\n--- stdout\n{p.stdout}\n--- stderr\n{p.stderr}\n")

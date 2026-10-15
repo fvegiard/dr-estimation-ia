@@ -13,6 +13,12 @@ WORKDIR is a relevé working directory prepared by `releve/prepare.py` and fille
   reserves.md      `## <sheet>` sections for the "RESERVES ET COMPLEMENTS" block
   feuilles.json    per sheet: display name, source sheet id, page, bordereau format
 
+Signets (spec §1, écart E6) : `projet` (nom de la soumission, `--projet` ; render_vectoriel.py passe NOM_PROJET)
+préfixe le signet `<projet>-<feuille>-annote-v<n>` de chaque feuille ; v<n> = colonne `version` de
+feuilles-classement.csv quand l'agent l'écrit (entier >= 1), sinon v1 (le relevé n'a pas d'autre numéro de
+version par feuille) ; sous ce signet, les signets du PDF source de la feuille (inventaire.json `inbox` +
+feuilles.csv `fichier`) qui visent sa page, avec leurs parents. PDF source introuvable : pas de signet d'origine.
+
 Nothing is invented: every row is one occurrence written by the relevé; descriptive fields come from the
 nomenclature/occurrence columns the relevé wrote, otherwise the neutral wording MODELE NON PRECISE / A PRECISER.
 
@@ -371,13 +377,38 @@ def letter_code(nom_row: dict, label: str) -> str:
     return re.sub(r"[^A-Z]", "", ascii_upper(label))[:3] or "X"
 
 
-def build(work: Path, out: Path, ancrage: bool = True) -> dict:
+def _version(v) -> int:
+    """v<n> du signet de la feuille : entier >= 1 écrit par l'agent, sinon 1."""
+    try:
+        return max(1, int(str(v).strip()))
+    except (TypeError, ValueError):
+        return 1
+
+
+def signets_source(work: Path, info: dict) -> list[list] | None:
+    """Signets d'origine de la page de la feuille dans son PDF source (inventaire.json `inbox` + feuilles.csv
+    `fichier` / `page`) ; None quand le PDF source n'est plus là."""
+    from . import signets_de_page
+    try:
+        inbox = json.loads((work / "inventaire.json").read_text(encoding="utf-8"))["inbox"]
+        path, page = Path(inbox) / info["fichier"], int(info["page"])
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    if not path.is_file():
+        return None
+    with pymupdf.open(str(path)) as doc:
+        return signets_de_page(doc.get_toc(simple=False), page)
+
+
+def build(work: Path, out: Path, ancrage: bool = True, projet: str = "") -> dict:
     work, out = Path(work), Path(out)
     out.mkdir(parents=True, exist_ok=True)
     feuilles = load_feuilles(str(work))
-    for r in read_csv(str(work / "feuilles-classement.csv")):   # optional `bordereau` column (not kept by commun)
-        if r.get("feuille") in feuilles and _cell(r, "bordereau"):
-            feuilles[r["feuille"]]["bordereau"] = _cell(r, "bordereau")
+    for r in read_csv(str(work / "feuilles-classement.csv")):   # optional `bordereau`, `version` columns
+        if r.get("feuille") in feuilles:
+            for key in ("bordereau", "version"):
+                if _cell(r, key):
+                    feuilles[r["feuille"]][key] = _cell(r, key)
     nom = read_nomenclature(work)
     palette = load_nomenclature(str(work))          # releve/ palette: rgb + Plan Expert shape per label
     occ = read_occurrences(work)
@@ -425,7 +456,11 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
         if fmt == "agrege" and idx is not None:
             anc["rectangle_plan"] = plan_rects(idx, items, nom)
         src.close()
-        sheets_json.append({"sheet": name, "page": page_no, "width_px": W, "height_px": H})
+        sheets_json.append({"sheet": name, "page": page_no, "width_px": W, "height_px": H,
+                            "version": _version(info.get("version"))})
+        signets = signets_source(work, info)
+        if signets is not None:
+            sheets_json[-1]["signets"] = signets
         meta.append({"sheet": name, "feuille": fid, "page": page_no, "format": fmt,
                      "type": info.get("type", ""), "note": info.get("note_classement", ""), "ancrage": anc})
 
@@ -501,6 +536,8 @@ def build(work: Path, out: Path, ancrage: bool = True) -> dict:
     plans.save(str(out / "plans.pdf"), garbage=3, deflate=True)
     est = {"source": "releve", "workdir": str(work), "sheets": sheets_json,
            "counters": [{"family": label, "name": label, "elements": els} for label, els in sorted(counters.items())]}
+    if projet:
+        est["projet"] = projet
     (out / "estimate.json").write_text(json.dumps(est, ensure_ascii=False, indent=1), encoding="utf-8")
     cols = ["feuille", "repere", "source", "materiel", "designation", "qte", "portee", "modele", "prescription",
             "parent", "reserve", "ref", "code", "format", "note"]
@@ -557,8 +594,9 @@ def main(argv=None) -> int:
     ap.add_argument("--render", type=Path, default=None, help="also render the EXEMPLE-format PDF here")
     ap.add_argument("--report", type=Path, default=None)
     ap.add_argument("--sans-ancrage", action="store_true", help="keep relevé positions (no symbol anchoring)")
+    ap.add_argument("--projet", default="", help="nom de la soumission : préfixe des signets <projet>-<feuille>-annote-v<n>")
     a = ap.parse_args(argv)
-    res = build(a.workdir, a.out_dir, ancrage=not a.sans_ancrage)
+    res = build(a.workdir, a.out_dir, ancrage=not a.sans_ancrage, projet=a.projet)
     print(f"{a.out_dir}: {res['sheets']} feuilles, {res['reperes']} reperes")
     if a.render:
         from . import load_input, render
