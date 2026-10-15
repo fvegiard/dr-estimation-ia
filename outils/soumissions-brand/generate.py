@@ -94,9 +94,12 @@ def palette(brand):
         on_brand, band_hex = colors.white, ajuster(p, "#FFFFFF", "#000000")
     else:
         on_brand, band_hex = INK, ajuster(p, INK_HEX, "#FFFFFF")
-    text_hex = ajuster(p, "#FFFFFF", "#000000")  # titres/prix sur fond blanc
+    tint_hex = mix(p, "#FFFFFF", .90)
+    # Titres/prix/TOTAL : le même texte sert sur blanc ET sur la teinte ; on l'ajuste contre la teinte (le fond le
+    # moins contrasté), ce qui garantit aussi 4,5:1 sur blanc.
+    text_hex = ajuster(p, tint_hex, "#000000")
     return {"brand": colors.HexColor(p), "band": colors.HexColor(band_hex), "dark": colors.HexColor(mix(p, "#000000", .25)),
-            "tint": colors.HexColor(mix(p, "#FFFFFF", .90)), "secondary": colors.HexColor(brand.get("secondary", p)),
+            "tint": colors.HexColor(tint_hex), "secondary": colors.HexColor(brand.get("secondary", p)),
             "on_brand": on_brand, "text": colors.HexColor(text_hex), "text_hex": text_hex}
 
 
@@ -286,9 +289,11 @@ def build_soumission(data, brand, out, brand_key=""):
 
     # salutations + signature
     sg = signer_for(data, brand_key, brand)
-    el += [Paragraph("Nous espérons le tout à votre entière satisfaction. N'hésitez pas à communiquer avec nous pour toute information additionnelle.", S["base"]),
-           Spacer(1, 2 * mm), Paragraph(f"Nous vous prions d'agréer, {esc(salutation(data))}, nos sincères salutations.", S["base"]), Spacer(1, 8 * mm),
-           KeepTogether([Paragraph(esc(sg[0]), S["sig"])] + [Paragraph(esc(x), S["base"]) for x in sg[1:]]), Spacer(1, 10 * mm)]
+    # Formule de politesse et signature restent sur la même page (jamais de signataire orphelin).
+    el += [KeepTogether([
+        Paragraph("Nous espérons le tout à votre entière satisfaction. N'hésitez pas à communiquer avec nous pour toute information additionnelle.", S["base"]),
+        Spacer(1, 2 * mm), Paragraph(f"Nous vous prions d'agréer, {esc(salutation(data))}, nos sincères salutations.", S["base"]), Spacer(1, 8 * mm),
+        Paragraph(esc(sg[0]), S["sig"])] + [Paragraph(esc(x), S["base"]) for x in sg[1:]]), Spacer(1, 10 * mm)]
 
     # APPROBATION / BON DE COMMANDE (encadré)
     ap = Table([[Paragraph("APPROBATION / BON DE COMMANDE", ParagraphStyle("apl", parent=S["lbl"], fontSize=9.5)), ""],
@@ -322,14 +327,15 @@ def build_lettre(data, brand, out, brand_key=""):
     for title, key in [("Soumission selon les documents suivants :", "documents"), ("Inclusions prévues dans la soumission :", "inclusions"), ("Exclusions :", "exclusions")]:
         if data.get(key):
             el += [Paragraph(title, S["h4"]), bullets(data[key], S), Spacer(1, 3 * mm)]
-    el += [Spacer(1, 2 * mm), Paragraph("En espérant le tout à votre entière satisfaction, nous vous prions d'agréer l'expression de nos meilleurs sentiments.", S["base"]),
-           Spacer(1, 12 * mm)]
     sg = signer_for(data, brand_key, brand)
     sig = Table([[[Paragraph(esc(sg[0]), S["sig"])] + [Paragraph(esc(x), S["base"]) for x in sg[1:]],
                   Paragraph(f"<i>{esc(data.get('validite', 'Période de validité : 30 jours'))}</i>", ParagraphStyle("v", parent=S["base"], alignment=TA_RIGHT))]],
                 colWidths=[W * .6, W * .4])
     sig.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "BOTTOM"), ("LEFTPADDING", (0, 0), (-1, -1), 0), ("RIGHTPADDING", (0, 0), (-1, -1), 0)]))
-    el += [sig]
+    # Formule finale et signature ensemble sur la même page.
+    el += [Spacer(1, 2 * mm), KeepTogether([
+        Paragraph("En espérant le tout à votre entière satisfaction, nous vous prions d'agréer l'expression de nos meilleurs sentiments.", S["base"]),
+        Spacer(1, 12 * mm), sig])]
     doc.build(el)
 
 
