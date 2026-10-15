@@ -11,6 +11,7 @@ Produit SORTIE/controle/<feuille>-planche-NN.png (grille 6 × 5, 30 vignettes de
 et, avec --avant ANCIEN.pdf, des paires avant/après pour montrer ce qui a changé.
 
 Usage : uv run releve/planche_controle.py PLANS_ANNOTES.pdf ESTIMATE_JSON SORTIE [--avant ANCIEN.pdf] [--taille 36]
+        [--mesures travail/occurrences-visuel.csv]   (écart contour→encre en pt et couverture, mesurés par ancrage_raster.py)
 (ESTIMATE_JSON = vecteur/estimate.json écrit par render_vectoriel.py : repère + x, y de chaque pastille.)
 """
 from __future__ import annotations
@@ -45,7 +46,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf"); ap.add_argument("estimate"); ap.add_argument("sortie")
     ap.add_argument("--avant", default=None); ap.add_argument("--taille", type=float, default=36.0); ap.add_argument("--zoom", type=float, default=8.0)
+    ap.add_argument("--mesures", default=None, help="occurrences-visuel.csv d'ancrage_raster.py : écart/couverture dans la légende de chaque vignette")
     a = ap.parse_args()
+    mesures = []
+    if a.mesures:
+        import csv
+        mesures = [r for r in csv.DictReader(open(a.mesures, encoding="utf-8")) if (r.get("ecart_pt") or "").strip()]
+
+    def mesure(x, y):
+        for r in mesures:
+            if abs(float(r["x_pt"]) - x) < 0.6 and abs(float(r["y_pt"]) - y) < 0.6:
+                return f"  e={r['ecart_pt']} c={r['couverture']} ({r.get('mesure', '')[:4]})"
+        return ""
     os.makedirs(a.sortie, exist_ok=True)
     doc = pymupdf.open(a.pdf); avant = pymupdf.open(a.avant) if a.avant else None
     try:
@@ -83,7 +95,7 @@ def main():
                     d.rectangle([cx + tw + 8, cy + 22, cx + tw + 8 + tw - 1, cy + 22 + tw - 1], outline=(0, 150, 0), width=2)
                 else:
                     img.paste(v, (cx, cy + 22))
-                d.text((cx + 4, cy + 2), f"{it['repere']}  ({it['x']:.0f}, {it['y']:.0f})", fill="black", font=font)
+                d.text((cx + 4, cy + 2), f"{it['repere']}  ({it['x']:.0f}, {it['y']:.0f}){mesure(it['x'], it['y'])}", fill="black", font=font)
             out = os.path.join(a.sortie, f"{feuille}-planche-{k // par + 1:02d}.png"); img.save(out); n_planches += 1
     print(f"{len(items)} vignettes sur {n_planches} planche(s) → {a.sortie}")
 

@@ -318,6 +318,10 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    correspond au glyphe. Un décalage de 5 pt est invisible sur la feuille entière et évident à ×8 — c'est à cette échelle que
    se fait la supervision visuelle (CLAUDE.md §Autonomie), jamais sur la vue d'ensemble. Corrige le CSV, relance
    `run.py --reprendre`, relis la planche ; « fait » seulement quand toutes les vignettes passent.
+   **L'œil ne suffit pas** (2026-10-15 : 9 vignettes jugées « bonnes » à l'œil étaient décalées) : la légende de chaque
+   vignette porte la mesure d'`ancrage_raster.py` — `e` = écart moyen contour → encre (pt), `c` = couverture du contour ;
+   aligné si e ≤ 0,5 et c ≥ 0,75 (glyphes S/$/DM : décalage ≤ 1 pt, ≥ 90 % de l'encre englobée). Toute vignette hors
+   seuil (liste `alignement.hors_seuil` de `ancrage-raster.json`, reprise dans STATUT.md) se tranche au raster brut.
 
 ## Sorties attendues (toutes dans `$ARGUMENTS/`)
 `feuilles-classement.csv`, `legende.csv`, `nomenclature.csv`, `occurrences-texte.csv`, `occurrences-visuel.csv`, `reserves.md`,

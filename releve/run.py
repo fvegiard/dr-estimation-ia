@@ -247,6 +247,11 @@ def controles_raster(workdir, outdir):
     p = os.path.join(workdir, "ancrage-raster.json")
     if os.path.exists(p):
         a = json.load(open(p, encoding="utf-8"))
+        al = a.get("alignement") or {}
+        if al:
+            L.append(f"- alignement empirique : {al.get('mesures')} pastilles mesurées, écart moyen contour → encre {al.get('ecart_moyen_pt')} pt, "
+                     f"{len(al.get('hors_seuil', []))} hors seuil (e > {al.get('seuil_ecart_pt')} pt ou couverture < {al.get('seuil_couverture')}) : "
+                     + ", ".join(f"{h['label']} ({h['x_pt']},{h['y_pt']}) e={h['ecart_pt']} c={h['couverture']}" for h in al.get("hors_seuil", [])[:12]))
         L.append(f"- ancrage raster : {a.get('ancres', 0)} pastilles recalées sur leur symbole (déplacement max {a.get('deplacement_max_pt')} pt), "
                  f"{len(a.get('non_ancres', []))} non retrouvées (gardées aux coordonnées de l'agent — à vérifier au zoom) : "
                  + ", ".join(f"{n['label']} ({n['x_pt']},{n['y_pt']})" for n in a.get("non_ancres", [])[:12]))
@@ -329,7 +334,8 @@ def process(arg, reprendre=False):
         # qu'un décalage de 5 pt ou une mauvaise famille se voit ; jamais sur la vue d'ensemble). À relire avant « fait ».
         annote = os.path.join(outdir, f"{name}-Plans-annotes.pdf"); estimate = os.path.join(outdir, "vecteur", "estimate.json")
         if os.path.exists(annote) and os.path.exists(estimate):
-            t = time.time(); code, out = run(["uv", "run", "releve/planche_controle.py", annote, estimate, os.path.join(outdir, "controle")], log_path=log_path)
+            t = time.time(); code, out = run(["uv", "run", "releve/planche_controle.py", annote, estimate, os.path.join(outdir, "controle"),
+                                              "--mesures", os.path.join(workdir, "occurrences-visuel.csv")], log_path=log_path)
             steps.append(("planche_controle", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
             # Livrables PNG (règle de Francis : plan annoté + calque transparent, pas de PDF à relire) : une paire par feuille plan
             try:

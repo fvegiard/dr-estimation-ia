@@ -85,3 +85,17 @@ Sous-agent Haiku autorisé par Francis, 121 vignettes ×8 : 104 OK, 17 signalés
 - **Faux positifs (3)** : M05-01/02 ont bien un cercle fin dessous (famille EC, R-005 inchangée) ; I02-01/02 sont des
   « cercle avec carré » = A09 HP encastré plafond, pastille ronde correcte.
 Planches après correction : `controle/E201-planche-01..05.png`.
+
+## R-014 — Alignement empirique du calque (2026-10-15, après les 9 captures de Francis)
+Juger « bon » à l'œil sur des vignettes JPEG n'est pas une mesure. `ancrage_raster.py` mesure maintenant chaque pastille :
+écart moyen contour → encre du symbole (pt) et couverture du contour (part à ≤ 0,6 pt d'un trait) ; glyphes (S, $, DM) :
+centrage de la tache d'encre du glyphe seul, murs retirés. Résultat E-201 : **119/119 mesurées, écart moyen 0,06 pt,
+1 limite** (2'×2' à 872,3 ; 255,6 : 0,47 pt / 74 %, sous un texte gris). Colonnes `ecart_pt`, `couverture`, `mesure`
+dans `occurrences-visuel.csv` ; valeurs dans la légende de chaque vignette de `controle/`.
+Corrections issues de la mesure : 4 interrupteurs que Hough avait éloignés du « $ » (ex. 513,510 → 516,508 : le point
+de l'agent était juste) ; ANN réduit/agrandi à tort (gabarit choisi par corrélation → choisi par mesure) ; ⊠ M07-02
+sauté de 14 pt sur le rail (garde-fou : le bord du rectangle doit être couvert d'encre) ; `ancrage_raster.py` rendu
+idempotent (`x_agent_pt`/`y_agent_pt` = point de départ, toujours celui de l'agent).
+Contre-vérification Haiku à l'aveugle sur le résultat final : 113/121 ; les 8 signalés vérifiés au raster brut :
+6 faux positifs (I02-01/02 = cercle avec carré A09 ; M03-11 vraiment à 0° ; M05-01/02 cercles gris pâles, e ≤ 0,11 ;
+M11-02 cercle X mi-noir, e 0,02), 2 rails M06 posés sur la ligne par conception (R-008).
