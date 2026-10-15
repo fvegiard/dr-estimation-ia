@@ -58,10 +58,23 @@ def mix(a, b, t):
     return "#%02X%02X%02X" % tuple(round(x + (y - x) * t) for x, y in zip(ra, rb))
 
 
+def luminance(h):
+    r, g, b = (c / 255 for c in hex2rgb(h))
+    lin = lambda c: c / 12.92 if c <= .03928 else ((c + .055) / 1.055) ** 2.4
+    return .2126 * lin(r) + .7152 * lin(g) + .0722 * lin(b)
+
+
 def palette(brand):
+    """Palette dérivée du logo. Une primaire claire (jaune, cyan…) garde le texte lisible :
+    la bande prend un texte foncé et les titres sur blanc utilisent la variante foncée."""
     p = brand["primary"]
-    return {"brand": colors.HexColor(p), "dark": colors.HexColor(mix(p, "#000000", .25)),
-            "tint": colors.HexColor(mix(p, "#FFFFFF", .90)), "secondary": colors.HexColor(brand.get("secondary", p))}
+    dark = mix(p, "#000000", .25)
+    light = luminance(p) > .45
+    return {"brand": colors.HexColor(p), "dark": colors.HexColor(dark),
+            "tint": colors.HexColor(mix(p, "#FFFFFF", .90)), "secondary": colors.HexColor(brand.get("secondary", p)),
+            "on_brand": INK if light else colors.white,
+            "text": colors.HexColor(mix(p, "#000000", .45)) if light else colors.HexColor(p),
+            "text_hex": mix(p, "#000000", .45) if light else p}
 
 
 def money(v):
@@ -81,6 +94,21 @@ def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def signer_for(data, brand_key, brand):
+    """`signer` peut être une liste (un seul signataire) ou un dict par marque {"br": [...], "dr": [...]}.
+    Sans entrée pour la marque demandée : placeholder neutre — jamais le personnel d'une autre compagnie."""
+    sg = data.get("signer")
+    if isinstance(sg, dict):
+        sg = sg.get(brand_key)
+    if not sg:
+        sg = ["Nom du signataire", "", f"{brand['short']}"]
+    return sg
+
+
+def salutation(data):
+    return data.get("salutation", "Madame, Monsieur")
+
+
 def load_brands():
     return {k: v for k, v in json.load(open(ROOT / "brands.json", encoding="utf-8")).items() if not k.startswith("_")}
 
@@ -91,24 +119,24 @@ def styles(P):
     return {
         "base": base,
         "small": ParagraphStyle("small", parent=base, fontSize=8, leading=10.5, textColor=INK2),
-        "lbl": ParagraphStyle("lbl", parent=base, fontName="Helvetica-Bold", fontSize=8, textColor=P["brand"], spaceAfter=2),
-        "h4": ParagraphStyle("h4", parent=base, fontName="Helvetica-Bold", fontSize=9.5, textColor=P["brand"], spaceAfter=3),
-        "band": ParagraphStyle("band", parent=base, fontName="Helvetica-Bold", fontSize=9.5, textColor=colors.white),
+        "lbl": ParagraphStyle("lbl", parent=base, fontName="Helvetica-Bold", fontSize=8, textColor=P["text"], spaceAfter=2),
+        "h4": ParagraphStyle("h4", parent=base, fontName="Helvetica-Bold", fontSize=9.5, textColor=P["text"], spaceAfter=3),
+        "band": ParagraphStyle("band", parent=base, fontName="Helvetica-Bold", fontSize=9.5, textColor=P["on_brand"]),
         "th": ParagraphStyle("th", parent=base, fontName="Helvetica-Bold", fontSize=8.5),
         "thr": ParagraphStyle("thr", parent=base, fontName="Helvetica-Bold", fontSize=8.5, alignment=TA_RIGHT),
         "tdr": ParagraphStyle("tdr", parent=base, alignment=TA_RIGHT),
         "tdc": ParagraphStyle("tdc", parent=base, alignment=TA_CENTER, textColor=INK2),
-        "tot": ParagraphStyle("tot", parent=base, fontName="Helvetica-Bold", textColor=P["brand"]),
-        "totr": ParagraphStyle("totr", parent=base, fontName="Helvetica-Bold", textColor=P["brand"], alignment=TA_RIGHT),
-        "pk": ParagraphStyle("pk", parent=base, fontName="Helvetica-Bold", fontSize=11, textColor=P["brand"], alignment=TA_CENTER),
-        "pv": ParagraphStyle("pv", parent=base, fontName="Helvetica-Bold", fontSize=20, leading=24, textColor=P["brand"], alignment=TA_CENTER),
+        "tot": ParagraphStyle("tot", parent=base, fontName="Helvetica-Bold", textColor=P["text"]),
+        "totr": ParagraphStyle("totr", parent=base, fontName="Helvetica-Bold", textColor=P["text"], alignment=TA_RIGHT),
+        "pk": ParagraphStyle("pk", parent=base, fontName="Helvetica-Bold", fontSize=11, textColor=P["text"], alignment=TA_CENTER),
+        "pv": ParagraphStyle("pv", parent=base, fontName="Helvetica-Bold", fontSize=20, leading=24, textColor=P["text"], alignment=TA_CENTER),
         "pw": ParagraphStyle("pw", parent=base, fontName="Helvetica-Oblique", alignment=TA_CENTER, textColor=INK2),
         "pn": ParagraphStyle("pn", parent=base, fontName="Helvetica-Oblique", fontSize=7.5, alignment=TA_CENTER, textColor=INK2),
         "vol": ParagraphStyle("vol", parent=base, fontName="Helvetica-Oblique", fontSize=8.8, textColor=INK2),
         "sig": ParagraphStyle("sig", parent=base, fontName="Helvetica-Bold"),
         "title": ParagraphStyle("title", parent=base, fontName="Helvetica-Bold", fontSize=14, leading=16, alignment=TA_RIGHT),
         "hr": ParagraphStyle("hr", parent=base, fontSize=8.5, leading=11, alignment=TA_RIGHT, textColor=INK2),
-        "amt": ParagraphStyle("amt", parent=base, fontName="Helvetica-Bold", fontSize=14, leading=18, textColor=P["brand"], alignment=TA_CENTER),
+        "amt": ParagraphStyle("amt", parent=base, fontName="Helvetica-Bold", fontSize=14, leading=18, textColor=P["text"], alignment=TA_CENTER),
         "amtw": ParagraphStyle("amtw", parent=base, fontName="Helvetica-BoldOblique", alignment=TA_CENTER, textColor=INK2),
         "obj": ParagraphStyle("obj", parent=base, fontName="Helvetica-Bold"),
     }
@@ -179,7 +207,7 @@ def bullets(items, S):
 
 
 # ---------- SOUMISSION ----------
-def build_soumission(data, brand, out):
+def build_soumission(data, brand, out, brand_key=""):
     P = palette(brand); S = styles(P)
     doc = make_doc(out, brand, P, "soumission", data["no"])
     doc.date_str = data["date"]
@@ -226,9 +254,9 @@ def build_soumission(data, brand, out):
            KeepTogether([Paragraph("VOLATILITÉ DES PRIX DES MATÉRIAUX", S["h4"]), Paragraph(esc(VOLATILITE), S["vol"])]), Spacer(1, 6 * mm)]
 
     # salutations + signature
-    sg = data["signer"]
+    sg = signer_for(data, brand_key, brand)
     el += [Paragraph("Nous espérons le tout à votre entière satisfaction. N'hésitez pas à communiquer avec nous pour toute information additionnelle.", S["base"]),
-           Spacer(1, 2 * mm), Paragraph("Nous vous prions d'agréer, Monsieur, nos sincères salutations.", S["base"]), Spacer(1, 8 * mm),
+           Spacer(1, 2 * mm), Paragraph(f"Nous vous prions d'agréer, {esc(salutation(data))}, nos sincères salutations.", S["base"]), Spacer(1, 8 * mm),
            KeepTogether([Paragraph(esc(sg[0]), S["sig"])] + [Paragraph(esc(x), S["base"]) for x in sg[1:]]), Spacer(1, 10 * mm)]
 
     # APPROBATION / BON DE COMMANDE (encadré)
@@ -244,15 +272,15 @@ def build_soumission(data, brand, out):
 
 
 # ---------- LETTRE ----------
-def build_lettre(data, brand, out):
+def build_lettre(data, brand, out, brand_key=""):
     P = palette(brand); S = styles(P)
     doc = make_doc(out, brand, P, "lettre")
     W = doc.width
     el = [Paragraph(esc(data["lieu_date"]), S["base"]), Spacer(1, 5 * mm)]
     el += [Paragraph(esc(l), S["base"]) for l in data["attention"]]
-    el += [Spacer(1, 5 * mm), Paragraph(f"<font color='{brand['primary']}'>PROJET :</font> {esc(data['projet'])}", S["obj"]),
-           Paragraph(f"<font color='{brand['primary']}'>OBJET :</font> {esc(data['objet'])}", S["obj"]), Spacer(1, 5 * mm),
-           Paragraph("Monsieur,", S["base"]), Spacer(1, 3 * mm),
+    el += [Spacer(1, 5 * mm), Paragraph(f"<font color='{P['text_hex']}'>PROJET :</font> {esc(data['projet'])}", S["obj"]),
+           Paragraph(f"<font color='{P['text_hex']}'>OBJET :</font> {esc(data['objet'])}", S["obj"]), Spacer(1, 5 * mm),
+           Paragraph(esc(salutation(data)) + ",", S["base"]), Spacer(1, 3 * mm),
            Paragraph("Pour le projet mentionné en rubrique, nous avons le plaisir de vous soumettre notre prix budgétaire pour la réalisation des travaux d'électricité, établi comme suit :", S["base"]),
            Spacer(1, 4 * mm)]
     m = float(data["montant"])
@@ -265,7 +293,7 @@ def build_lettre(data, brand, out):
             el += [Paragraph(title, S["h4"]), bullets(data[key], S), Spacer(1, 3 * mm)]
     el += [Spacer(1, 2 * mm), Paragraph("En espérant le tout à votre entière satisfaction, nous vous prions d'agréer l'expression de nos meilleurs sentiments.", S["base"]),
            Spacer(1, 12 * mm)]
-    sg = data["signer"]
+    sg = signer_for(data, brand_key, brand)
     sig = Table([[[Paragraph(esc(sg[0]), S["sig"])] + [Paragraph(esc(x), S["base"]) for x in sg[1:]],
                   Paragraph(f"<i>{esc(data.get('validite', 'Période de validité : 30 jours'))}</i>", ParagraphStyle("v", parent=S["base"], alignment=TA_RIGHT))]],
                 colWidths=[W * .6, W * .4])
@@ -279,7 +307,7 @@ def generate(brand_key, data, out, brands=None):
     if brand_key not in brands:
         raise SystemExit(f"Marque inconnue '{brand_key}'. Disponibles : {', '.join(brands)}")
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
-    (build_lettre if data.get("type") == "lettre" else build_soumission)(data, brands[brand_key], out)
+    (build_lettre if data.get("type") == "lettre" else build_soumission)(data, brands[brand_key], out, brand_key)
     return out
 
 
@@ -295,6 +323,8 @@ if __name__ == "__main__":
     brands = load_brands()
     stem = Path(a.data).stem
     if a.all:
+        if not isinstance(data.get("signer"), dict):
+            print("Avertissement : `signer` n'est pas un dict par marque — les PDF des autres marques auront un signataire placeholder.")
         for k in brands:
             print("->", generate(k, data, os.path.join(a.outdir, f"{stem}_{k}.pdf"), brands))
     else:
