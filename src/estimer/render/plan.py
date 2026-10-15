@@ -226,7 +226,7 @@ def marker_rect(cx: float, cy: float, bbox, radius: float | None = None) -> pymu
         return pymupdf.Rect(bbox)
     # EXEMPLE: circle r = 4.186 pt around the symbol; an anchored symbol larger than that gets a circle
     # around its whole outline (capped) so the pastel marker stays visible over the symbol's own fill
-    r = min(max(S.MARK_RADIUS, radius or 0.0), S.MARK_RADIUS_MAX)
+    r = min(max(S.MARK_RADIUS_MIN, radius) if radius else S.MARK_RADIUS, S.MARK_RADIUS_MAX)
     return pymupdf.Rect(cx - r, cy - r, cx + r, cy + r)
 
 

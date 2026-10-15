@@ -59,6 +59,7 @@ FILL_OPACITY = 0.28
 STROKE_OPACITY = 0.9
 MARK_LINE_W = 0.7
 MARK_RADIUS = 4.1859                          # default circle radius when no symbol bbox is known
+MARK_RADIUS_MIN = 2.6                         # plancher d'un rayon mesuré (petit symbole : avertisseur 4,6 pt) ; le défaut reste 4,1859
                                               # (rayon gold des DSI seulement ; E/EU : 4,6045 a 5,8603, spec §2.2)
 MARK_RADIUS_MAX = 8.0                         # cap of the circle drawn around an anchored (larger) symbol
 

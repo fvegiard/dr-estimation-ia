@@ -502,6 +502,9 @@ def build(work: Path, out: Path, ancrage: bool = True, projet: str = "") -> dict
             el = {"sheet": name, "page": page_no, "x": o["x"], "y": o["y"], "repere": repere, "code": code,
                   "source": o["source_id"], "shape": SHAPES.get(_cell(n, "forme").lower(), "circle"),
                   "flags": o.get("flags", [])}
+            ray = _float(o.get("rayon_pt"))         # rayon mesuré par le releveur (plan raster : pas d'ancrage vectoriel)
+            if ray:
+                o["rayon"] = ray
             if o.get("rayon"):
                 el["radius"] = round(o["rayon"], 2)
             if fmt == "agrege":
