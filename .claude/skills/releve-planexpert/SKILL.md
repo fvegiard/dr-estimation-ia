@@ -93,7 +93,11 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
      `texte/*-mots.csv`) : lis-les au zoom (`zoom.py`, colonne par colonne, assez gros pour lire chaque mot).
    - Transcris **chaque ligne** des sections de légende utiles au plan (ÉLECTRICITÉ, et DÉTECTION ET SIGNALISATION
      INCENDIE pour les avertisseurs posés sur un plan d'électricité) dans `legende.csv` :
-     `feuille,section,no,symbole,description,code,statut,qte,preuve`
+     `feuille,section,no,symbole,description,code,statut,qte,preuve,feuille_legende,x_pt,y_pt,taille_pt`
+     - `feuille_legende,x_pt,y_pt,taille_pt` : **feuille, centre et côté (pt) du glyphe dessiné** dans la légende, lus
+       sur les règles du zoom — obligatoires sur une feuille raster (scan/PNG) pour chaque ligne dont le symbole est
+       un cercle ou un carré « à variantes » (mi-noir, 3/4 noir, diagonale, lettre dedans). C'est ce qui permet à
+       `releve/comparer_legende.py` (lancé par `run.py`) de corréler chaque symbole du plan aux glyphes de sa section.
      - `no` : numéro de ligne stable (`L01`, `L02`…) ; `symbole` : le dessin en quelques mots (« cercle + 2 traits »,
        « carré plein ») ; `description` : le texte de la légende recopié **tel quel** ; `code` : le code du
        vocabulaire ci-dessous ;
@@ -282,6 +286,8 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    - **R3** Thermostats : séparer thermostat de plinthe et thermostat de plancher chauffant (sonde/note plancher chauffant à côté = famille « thermostat plancher chauffant »).
    - **R4** Prises : une famille par symbole de légende (régulière 15 A, 15/20 A, 20 A, comptoir, DDFT, cuisinière, sécheuse…) ; le même symbole de comptoir avec mention « GFI »/« DDFT » est une famille à part (`CG`, voir §2). Une prise GFI n'est jamais comptée comme prise ordinaire, et une prise de comptoir n'est jamais comptée comme prise DDFT ordinaire.
    - **R5** Un symbole dont l'identification dépend de la légende (lettre dans un cercle, cercle mi-noir) : vérifier la légende AVANT de nommer ; si le même symbole existe comme luminaire ET comme détecteur, trancher par la légende, sinon réserve *. (Erreur S-1769 : « luminaire type F » compté 7 fois, Dupuis a 5 détecteurs de fumée + 1 F + 1 F1.)
+   - **R5b** Deux glyphes voisins de la même section (cercle 3/4 noir A03 « avertisseur » vs cercle coupé en diagonale A04 « détecteur de fumée ») se distinguent par la **forme** (où passe le trait de séparation, orientation), **jamais par un pourcentage de pixels noirs** : à 4,6 pt de diamètre, un trait de mur ou une étiquette qui traverse le symbole fausse la proportion. Zoome à ×12 minimum sur le symbole ET sur les deux glyphes de la légende côte à côte, puis tranche ; sur une feuille raster, note les coordonnées des glyphes dans `legende.csv` (§1b) et lis `comparaison-legende.json` : chaque occurrence signalée « ressemble plus à » un autre glyphe se retranche au zoom, et la correction s'applique à **toutes** les occurrences semblables, pas seulement à celle signalée. (Erreur TEST-E201 : 4 « avertisseurs 120 V » qui étaient des détecteurs de fumée, tranchés sur un % noir pollué par les murs.)
+   - **R5c** Coordonnées sur feuille raster : le centroïde des pixels sombres d'un symbole mi-noir est **décalé vers la partie noire** — n'en fais jamais le centre. Donne le centre lu sur les règles ; `releve/ancrage_raster.py` (lancé par `run.py`) recale ensuite chaque pastille sur le cercle (Hough) ou le rectangle minimal englobant du symbole, et mesure son rayon (`rayon_pt`) ou sa boîte tournée (`x0_pt..y1_pt,angle_deg`). Les symboles qu'il ne retrouve pas sont listés dans `ancrage-raster.json` : relis-les au zoom ×12 et corrige `occurrences-visuel.csv` à la main (petits boîtiers soudés à un mur : F, C, ANN, ⊠).
    - **R6** Les notes « RELO / relocaliser / déplacer » sont des appareils à compter (famille « RELO <appareil> »), même si l'appareil est existant.
    - **R7** Nommer les familles comme la légende du plan (FIXTURE TYPE A, A1, B…) — colonne `materiel` = texte de la légende ; le code 2 lettres (vocabulaire §1b) reste pour l'étiquette.
    - **R8** Choix de la feuille d'essai : c'est le SUPERVISEUR qui choisit une feuille que la référence a réellement relevée (tu ne regardes pas la référence). S-1844 E200 était invalide : Dupuis n'a aucune marque sur E200 (il a relevé les prises sur le plan d'architecte).
@@ -305,6 +311,13 @@ connues sont fusionnées par `src/qpl/normalisation.py` (ex. `PRISE GFI` → `PR
    jusqu'à `conforme=True`. Une erreur que tu juges fausse se justifie dans `reserves.md` (règle,
    preuve au zoom), jamais en effaçant la ligne fautive. Mets à jour `qte` et `statut` de `legende.csv` avec les comptes
    finaux.
+9. **Planche de contrôle avant « fait »** (correctif du 2026-10-15) : après le rendu, `run.py` écrit `controle/<feuille>-planche-NN.png`
+   (`releve/planche_controle.py` : une vignette ×8 de 36 pt par pastille, repère en légende). OUVRE chaque planche (Read du PNG)
+   et juge vignette par vignette : la pastille est centrée sur le symbole (pas sur une étiquette, un trait de mur, une croix
+   voisine), sa forme et sa taille épousent le symbole (cercle sur cercle, rectangle tourné sur rectangle tourné), la famille
+   correspond au glyphe. Un décalage de 5 pt est invisible sur la feuille entière et évident à ×8 — c'est à cette échelle que
+   se fait la supervision visuelle (CLAUDE.md §Autonomie), jamais sur la vue d'ensemble. Corrige le CSV, relance
+   `run.py --reprendre`, relis la planche ; « fait » seulement quand toutes les vignettes passent.
 
 ## Sorties attendues (toutes dans `$ARGUMENTS/`)
 `feuilles-classement.csv`, `legende.csv`, `nomenclature.csv`, `occurrences-texte.csv`, `occurrences-visuel.csv`, `reserves.md`,

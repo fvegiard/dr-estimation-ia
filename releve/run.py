@@ -210,6 +210,9 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
         L += [""]
     else:
         L += ["**Export natif Plan Expert : non** (étape non exécutée)", ""]
+    cr = controles_raster(workdir, outdir)
+    if cr:
+        L += ["## Contrôles raster (ancrage, légende, planches)", ""] + cr + [""]
     L += ["## Étapes", "", "| étape | durée | résultat |", "|---|--:|---|"] + [f"| {s} | {d / 60:.1f} min | {r} |" for s, d, r in steps]
     if acceptation:
         L += ["", f"**Boucle d'acceptation : {acceptation}** — verdict détaillé dans "
@@ -228,6 +231,37 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
         if os.path.exists(p):
             L += [f"## {extra}", "", open(p, encoding="utf-8").read(), ""]
     open(os.path.join(outdir, "STATUT.md"), "w", encoding="utf-8").write("\n".join(L))
+
+def feuilles_raster(workdir):
+    """Feuilles sans couche texte (scan, PNG) selon `feuilles.csv` de prepare.py : `nb_mots` = 0 ou classement `scan`."""
+    p = os.path.join(workdir, "feuilles.csv")
+    if not os.path.exists(p):
+        return []
+    import csv
+    return [r["feuille"] for r in csv.DictReader(open(p, encoding="utf-8"))
+            if (r.get("nb_mots") or "0").strip() in ("", "0") or (r.get("classement_fichier") or "") == "scan"]
+
+def controles_raster(workdir, outdir):
+    """Lignes STATUT.md issues des correctifs raster : symboles non retrouvés, familles suspectes, planches de contrôle."""
+    L = []
+    p = os.path.join(workdir, "ancrage-raster.json")
+    if os.path.exists(p):
+        a = json.load(open(p, encoding="utf-8"))
+        L.append(f"- ancrage raster : {a.get('ancres', 0)} pastilles recalées sur leur symbole (déplacement max {a.get('deplacement_max_pt')} pt), "
+                 f"{len(a.get('non_ancres', []))} non retrouvées (gardées aux coordonnées de l'agent — à vérifier au zoom) : "
+                 + ", ".join(f"{n['label']} ({n['x_pt']},{n['y_pt']})" for n in a.get("non_ancres", [])[:12]))
+    p = os.path.join(workdir, "comparaison-legende.json")
+    if os.path.exists(p):
+        c = json.load(open(p, encoding="utf-8"))
+        L.append(f"- comparaison à la légende : {c.get('occurrences', 0)} symboles comparés, {len(c.get('suspectes', []))} famille(s) suspecte(s)")
+        for s in c.get("suspectes", []):
+            L.append(f"  - ⚠️ {s['label']} ({s['x_pt']},{s['y_pt']}) ressemble plus à la ligne {s['meilleur']} « {s['description']} » "
+                     f"({s['score_meilleur']}) qu'à la sienne {s['attendu']} ({s['score_attendu']}) — trancher au zoom, corriger TOUTES les occurrences semblables")
+    ctrl = os.path.join(outdir, "controle")
+    if os.path.isdir(ctrl):
+        n = len([f for f in os.listdir(ctrl) if f.endswith(".png")])
+        L.append(f"- planches de contrôle : {n} PNG dans `controle/` (une vignette ×8 par pastille) — à OUVRIR et relire avant « fait »")
+    return L
 
 def prepare_a_jour(inbox, workdir):
     """Vrai si inventaire.json du dossier de travail décrit exactement les fichiers actuels de l'INBOX (mêmes sha256)."""
@@ -265,6 +299,17 @@ def process(arg, reprendre=False):
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
                     raise RuntimeError(f"l'agent n'a pas produit {f}")
+            # Feuilles RASTER (scan / PNG : 0 mot extrait) — correctifs du 2026-10-15 (TEST-E201, vérificateur indépendant) :
+            # 1) ancrage_raster.py recale chaque pastille sur le cercle (Hough) ou le rectangle minimal (minAreaRect) du
+            #    symbole et mesure son rayon → plus de pastille décalée ni 2× trop grosse ;
+            # 2) comparer_legende.py corrèle chaque symbole aux glyphes de sa section de légende → une famille attribuée
+            #    au mauvais glyphe (A03 avertisseur vs A04 détecteur de fumée) est signalée AVANT le rendu.
+            # Jamais bloquants : les symboles non retrouvés et les familles suspectes vont dans STATUT.md, à vérifier au zoom.
+            if feuilles_raster(workdir):
+                t = time.time(); code, out = run(["uv", "run", "releve/ancrage_raster.py", workdir], log_path=log_path)
+                steps.append(("ancrage_raster", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
+                t = time.time(); code, out = run(["uv", "run", "releve/comparer_legende.py", workdir], log_path=log_path)
+                steps.append(("comparer_legende", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
             # contrôle qualité à l'aveugle (Q1-Q14) : non bloquant ici, mais journalisé et repris dans STATUT.md
             t = time.time(); code, out = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
             steps.append(("controle_qualite", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
@@ -280,6 +325,12 @@ def process(arg, reprendre=False):
         t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
+        # Planche de contrôle : une vignette ×8 par pastille (CLAUDE.md §Autonomie point 1 — c'est à cette échelle
+        # qu'un décalage de 5 pt ou une mauvaise famille se voit ; jamais sur la vue d'ensemble). À relire avant « fait ».
+        annote = os.path.join(outdir, f"{name}-Plans-annotes.pdf"); estimate = os.path.join(outdir, "vecteur", "estimate.json")
+        if os.path.exists(annote) and os.path.exists(estimate):
+            t = time.time(); code, out = run(["uv", "run", "releve/planche_controle.py", annote, estimate, os.path.join(outdir, "controle")], log_path=log_path)
+            steps.append(("planche_controle", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
         ok = True
         # Boucle d'acceptation (critère d'acceptation, étapes 1 à 8) : lancée
         # seulement si le dossier de la soumission est déjà assemblé dans le
