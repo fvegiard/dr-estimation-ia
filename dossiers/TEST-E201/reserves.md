@@ -99,3 +99,8 @@ idempotent (`x_agent_pt`/`y_agent_pt` = point de départ, toujours celui de l'ag
 Contre-vérification Haiku à l'aveugle sur le résultat final : 113/121 ; les 8 signalés vérifiés au raster brut :
 6 faux positifs (I02-01/02 = cercle avec carré A09 ; M03-11 vraiment à 0° ; M05-01/02 cercles gris pâles, e ≤ 0,11 ;
 M11-02 cercle X mi-noir, e 0,02), 2 rails M06 posés sur la ligne par conception (R-008).
+
+## R-015 — Revues Codex / Copilot de la PR #25 (2026-10-15)
+- `legende.csv` : A03 passé à `absent,0` et A04 à `compte,5` (le fichier commis gardait l'ancien classement ; `controle_qualite.py` conforme=True après correction).
+- `comparer_legende.py` signale la station manuelle (387,4 ; 849,3) « plus proche de A06 piezo que de A01 » : A06 = le glyphe A01 + rayons, les deux corrèlent ; vérifié au zoom ×8 (planche 1, I05-03) : carré « F » sans rayons → A01 confirmé, pas de changement.
+- `planexpert/` ne contient pas les rasters `E201plan-p01.png` / `E001legend-p01.png` : convention du dépôt (`.gitignore` : `dossiers/*/planexpert/*.png`, comme tous les dossiers S-*) ; le paquet complet est dans `OUTBOX/TEST-E201/TEST-E201-planexpert/` (et le miroir Drive). `Dossier-complet.pdf` (ignoré aussi) retiré de `SHA256SUMS.txt`.

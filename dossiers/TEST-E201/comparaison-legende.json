@@ -1,0 +1,46 @@
+{
+ "occurrences": 12,
+ "suspectes": [
+  {
+   "feuille": "E201plan-p01",
+   "label": "STATION MANUELLE",
+   "x_pt": "387.4",
+   "y_pt": "849.3",
+   "attendu": "A01",
+   "score_attendu": 0.475,
+   "meilleur": "A06",
+   "description": "PIEZO COMBINÉ À UN STROBE",
+   "score_meilleur": 0.591
+  }
+ ],
+ "par_famille": {
+  "DETECTEUR FUMEE": {
+   "n": 5,
+   "score_moyen": 0.82,
+   "suspectes": 0,
+   "taille_plan_pt": 5.2
+  },
+  "STATION MANUELLE": {
+   "n": 3,
+   "score_moyen": 0.421,
+   "suspectes": 1,
+   "taille_plan_pt": 5.4,
+   "non_reconnues": 2
+  },
+  "PIEZO STROBE": {
+   "n": 2,
+   "score_moyen": 0.295,
+   "suspectes": 0,
+   "taille_plan_pt": 9.4,
+   "non_reconnues": 2
+  },
+  "HP ENCASTRE PLAFOND": {
+   "n": 2,
+   "score_moyen": 0.285,
+   "suspectes": 0,
+   "taille_plan_pt": 7.4,
+   "non_reconnues": 2
+  }
+ },
+ "sans_taille": 0
+}

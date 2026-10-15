@@ -40,7 +40,11 @@ def main():
     work = os.path.abspath(sys.argv[1])
     leg = [r for r in csv.DictReader(open(os.path.join(work, "legende.csv"), encoding="utf-8"))
            if (r.get("x_pt") or "").strip() and (r.get("y_pt") or "").strip()]
+    sortie = os.path.join(work, "comparaison-legende.json")
     if not leg:
+        # rapport explicite (jamais un fichier périmé d'un passage précédent repris dans STATUT.md — revue Codex PR #25)
+        json.dump({"non_executee": True, "raison": "aucune ligne de legende.csv n'a de coordonnées (feuille_legende,x_pt,y_pt,taille_pt)",
+                   "occurrences": 0, "suspectes": [], "par_famille": {}, "sans_taille": 0}, open(sortie, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
         print("comparaison légende : aucune ligne de legende.csv n'a de coordonnées (feuille_legende,x_pt,y_pt,taille_pt) — rien à comparer")
         return
     nom = {r["label"]: r for r in csv.DictReader(open(os.path.join(work, "nomenclature.csv"), encoding="utf-8"))}
@@ -53,7 +57,7 @@ def main():
             cache[f] = raster(work, f)
         img, s = cache[f]
         half = float(r.get("taille_pt") or 8) / 2 + 1.0
-        glyphes[r["no"]] = (r.get("section", ""), r["description"], crop(img, s, float(r["x_pt"]), float(r["y_pt"]), half), half)
+        glyphes[r["no"]] = (r.get("section", ""), r["description"], crop(img, s, float(r["x_pt"]), float(r["y_pt"]), half), half, s)
     rapport = {"occurrences": 0, "suspectes": [], "par_famille": {}, "sans_taille": 0}
     # Échelle par GÉOMÉTRIE, pas par corrélation (qui favorise toujours le gabarit le plus petit) : la taille du symbole
     # sur le plan vient de l'ancrage (`rayon_pt` → diamètre, ou boîte x0..y1) ; chaque glyphe de légende — l'attendu
@@ -88,10 +92,12 @@ def main():
         section = glyphes[no][0]
         fen = crop(img, s, float(o["x_pt"]), float(o["y_pt"]), t / 2 + 6)
         scores = {}
-        for n2, (sec2, _, g2, half2) in glyphes.items():
+        for n2, (sec2, _, g2, half2, s_leg) in glyphes.items():
             if sec2 != section:
                 continue
-            e = (t + 2.0) / (2 * half2)           # glyphe (côté 2*half2 pt, marge comprise) → taille mesurée + trait
+            # glyphe (côté 2*half2 pt, en px de la LÉGENDE) → (t + 2) pt en px du PLAN : les deux feuilles peuvent avoir
+            # des formats, donc des px/pt, différents (revue Copilot PR #25)
+            e = (t + 2.0) * s / (2 * half2 * s_leg)
             gg = cv2.resize(g2, None, fx=e, fy=e, interpolation=cv2.INTER_AREA if e < 1 else cv2.INTER_CUBIC)
             if gg.shape[0] >= fen.shape[0] or gg.shape[1] >= fen.shape[1] or min(gg.shape) < 4:
                 continue
@@ -111,7 +117,7 @@ def main():
                                          "meilleur": meilleur, "description": glyphes[meilleur][1], "score_meilleur": round(scores[meilleur], 3)})
     for fam in rapport["par_famille"].values():
         fam["score_moyen"] = round(fam["score_moyen"] / max(1, fam["n"]), 3)
-    json.dump(rapport, open(os.path.join(work, "comparaison-legende.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    json.dump(rapport, open(sortie, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     nr = {k: v["non_reconnues"] for k, v in rapport["par_famille"].items() if v.get("non_reconnues")}
     print(f"comparaison légende : {rapport['occurrences']} occurrences comparées, {len(rapport['suspectes'])} suspecte(s), "
           f"glyphe non reconnu : {nr or 'aucun'} → comparaison-legende.json")

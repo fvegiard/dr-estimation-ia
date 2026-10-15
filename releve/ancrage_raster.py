@@ -16,7 +16,9 @@ Un symbole non retrouvé garde ses coordonnées d'origine et est listé dans `an
 Le rendu (`render_vectoriel.py` → `from_releve`) lit ces colonnes : `rayon_pt` (rayon de la pastille, plancher
 `style.MARK_RADIUS_MIN`), `x0_pt..y1_pt` + `angle_deg` (boîte tournée).
 
-Usage : uv run releve/ancrage_raster.py WORKDIR [--feuille F] [--max-deplacement 8]
+Usage : uv run releve/ancrage_raster.py WORKDIR [--feuilles F1 F2 …] [--max-deplacement 8]
+(`--feuilles` : seulement les feuilles raster — dans un dossier mixte, les occurrences des feuilles vectorielles ne
+sont pas touchées ; sans option, toutes les feuilles.)
 Idempotent : relancer ne bouge plus rien (le symbole est déjà sous la pastille).
 """
 from __future__ import annotations
@@ -357,13 +359,18 @@ def poser_boite(r, dist, s, res):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("workdir"); ap.add_argument("--feuille", default=None); ap.add_argument("--max-deplacement", type=float, default=8.0)
+    ap.add_argument("workdir"); ap.add_argument("--feuille", default=None, help="une seule feuille")
+    ap.add_argument("--feuilles", nargs="+", default=None, help="feuilles RASTER à traiter (run.py : `feuilles_raster()`) — les autres lignes sont laissées intactes")
+    ap.add_argument("--max-deplacement", type=float, default=8.0)
     a = ap.parse_args()
     work = os.path.abspath(a.workdir)
     nom = load_nomenclature(work)
     path = os.path.join(work, "occurrences-visuel.csv")
-    rows = list(csv.DictReader(open(path, encoding="utf-8")))
-    cols = list(rows[0].keys()) if rows else []
+    with open(path, encoding="utf-8") as fh:
+        lecteur = csv.DictReader(fh)
+        rows = list(lecteur)
+        cols = list(lecteur.fieldnames or [])        # schéma conservé même sans occurrence (revue Codex PR #25)
+    feuilles = set(a.feuilles or ([a.feuille] if a.feuille else []))
     for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt", "angle_deg", "rayon_pt", "x_agent_pt", "y_agent_pt", "ecart_pt", "couverture", "mesure"):
         if k not in cols:
             cols.append(k)
@@ -395,8 +402,8 @@ def main():
     dists, dists_gris = {}, {}
     for r in rows:
         f = r.get("feuille", "")
-        if a.feuille and f != a.feuille:
-            continue
+        if feuilles and f not in feuilles:
+            continue                                     # feuille vectorielle : ancrage.py (vectoriel) s'en charge, pas ici
         if f not in cache:
             cache[f] = _raster(work, f)
         img, s = cache[f]

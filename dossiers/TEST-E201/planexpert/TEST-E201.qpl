@@ -18,7 +18,7 @@
 	</Workspace>
 	<Plans>
 		<Plan Name="E201" FileName="E201plan-p01.png">
-			<Thumbnail FileName="8d32bb8f-b231-4d6a-be15-b3f3ef983cf9"/>
+			<Thumbnail FileName="290388fa-fbc9-49e6-a6ea-1bafce9701cb"/>
 			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
 			<Bookmarks>
 				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
@@ -190,7 +190,7 @@
 			</Layers>
 		</Plan>
 		<Plan Name="E001" FileName="E001legend-p01.png">
-			<Thumbnail FileName="15616724-b95e-4299-9eee-cb99c429c5e0"/>
+			<Thumbnail FileName="66ca380a-ed63-4d97-9991-0c543e03a125"/>
 			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
 			<Bookmarks>
 				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
