@@ -6,19 +6,18 @@ Généré le 2026-10-15 par le pipeline `releve/` (relevé automatique Claude + 
 
 | Feuille | Marques | Libellés |
 |---|--:|--:|
-| E201 | 121 | 20 |
-| **Total** | **121** | **20** |
+| E201 | 121 | 19 |
+| **Total** | **121** | **19** |
 
 ## Tous les plans
 
 | Libellé | Famille | Quantité |
 |---|---|--:|
 | ACCUMULATEUR | secours | 1 |
-| AVERTISSEUR FUMEE 120V CO | alarme | 4 |
 | BOITE JONCTION | distribution | 2 |
 | BOITIER C | autre | 4 |
 | CERCLE SANS ETIQUETTE | luminaire | 2 |
-| DETECTEUR FUMEE | alarme | 1 |
+| DETECTEUR FUMEE | alarme | 5 |
 | DETECTEUR MOUVEMENT | commande | 3 |
 | ENCASTRE | luminaire | 28 |
 | ENSEIGNE SORTIE MUR | secours | 5 |
@@ -39,11 +38,10 @@ Généré le 2026-10-15 par le pipeline `releve/` (relevé automatique Claude + 
 | Libellé | Ce plan | Tous les plans |
 |---|--:|--:|
 | ACCUMULATEUR | 1 | 1 |
-| AVERTISSEUR FUMEE 120V CO | 4 | 4 |
 | BOITE JONCTION | 2 | 2 |
 | BOITIER C | 4 | 4 |
 | CERCLE SANS ETIQUETTE | 2 | 2 |
-| DETECTEUR FUMEE | 1 | 1 |
+| DETECTEUR FUMEE | 5 | 5 |
 | DETECTEUR MOUVEMENT | 3 | 3 |
 | ENCASTRE | 28 | 28 |
 | ENSEIGNE SORTIE MUR | 5 | 5 |
@@ -64,11 +62,10 @@ Généré le 2026-10-15 par le pipeline `releve/` (relevé automatique Claude + 
 | Libellé | Famille | Description | Source |
 |---|---|---|---|
 | ACCUMULATEUR | secours | Rectangle + - (R-009). | E-001 legende ; E-201 plan |
-| AVERTISSEUR FUMEE 120V CO | alarme | Cercle 3/4 noir (R-004). | E-001 legende ; E-201 plan |
 | BOITE JONCTION | distribution | Carre X en tete de rail. | E-001 legende ; E-201 plan |
 | BOITIER C | autre | C dans carre, hors legende. | E-001 legende ; E-201 plan |
 | CERCLE SANS ETIQUETTE | luminaire | Cercle simple ~8 pt sans etiquette ni circuit (R-005). | E-001 legende ; E-201 plan |
-| DETECTEUR FUMEE | alarme | Cercle 1/2 noir (R-004). | E-001 legende ; E-201 plan |
+| DETECTEUR FUMEE | alarme | Cercle coupe en diagonale, moitie noire (A04). 5 au plan ; aucun avertisseur 3/4 noir (A03) — tranche au zoom x20 sur legende et plan (R-004). | E-001 legende ; E-201 plan |
 | DETECTEUR MOUVEMENT | commande | Ovale DM. | E-001 legende ; E-201 plan |
 | ENCASTRE | luminaire | Cercle + croix. Variante pleine = PP-U1 (urgence) : en designation. | E-001 legende ; E-201 plan |
 | ENSEIGNE SORTIE MUR | secours | Cercle X mi-noir sur tige. | E-001 legende ; E-201 plan |
@@ -103,7 +100,7 @@ Généré le 2026-10-15 par le pipeline `releve/` (relevé automatique Claude + 
    interpolées entre graduations, centre du symbole.
 5. Contrôle : `controle_qualite.py` → conforme.
 
-## 2. Totaux E-201 (121 repères, 20 familles)
+## 2. Totaux E-201 (121 repères, 19 familles)
 
 | Code | Famille | Conserver | Enlever | Relocaliser | À préciser | Total |
 |---|---|--:|--:|--:|--:|--:|
@@ -122,8 +119,7 @@ Généré le 2026-10-15 par le pipeline `releve/` (relevé automatique Claude + 
 | AC | Accumulateur (R-009) | 1 | | | | 1 |
 | SM | Station manuelle | 3 | | | | 3 |
 | PZ | Piezo combiné à un strobe | 2 | | | | 2 |
-| AF | Avertisseur de fumée 120 V CO (R-004) | 3 | | 1 | | 4 |
-| DF | Détecteur de fumée (R-004) | 1 | | | | 1 |
+| DF | Détecteur de fumée (R-004, 5 après vérification) | 4 | | 1 | | 5 |
 | HP | Haut-parleur encastré au plafond | 2 | | | | 2 |
 | ANN | Panneau annonciateur | | | 1 | | 1 |
 | BJ | Boîte de jonction (tête de rail) | | 2 | | | 2 |
@@ -141,7 +137,7 @@ Circuits lus en `designation` : PP-2 3/5/6, PP-U1 2/7, P-2 39/41 ; zones (h,i)/(
 ## 4. Ce qui n'a pas pu être relevé
 - Neuf : sur E-203 (non fournie). Luminaires des zones grises : hors portée (R-002).
 - Longueurs des rails : estimées depuis 1:100, à métrer (R-008).
-- Distinction avertisseur/détecteur de fumée : par proportion de noir, à confirmer (R-004).
+- Détecteurs de fumée : 5 × A04 confirmés au zoom ×20 après vérification indépendante (R-004, R-012).
 - Aucun devis, addenda ni référence d'estimateur : vérification incomplète au sens du critère d'acceptation.
 
 ## 5. Outils et modèle
@@ -177,11 +173,13 @@ au zoom : vides (pas de symbole). Les 28 encastrés (cercle + croix) : 28 appari
 pleins/vides par mesure de l'anneau (noir < 120 → PP-U1). Étiquettes (PP-2 3, PP-U1 2, (h,i)/(j,k)/(n)/(Mf)/(Ma),
 E.A.E) lues une à une sur 3 planches de 25 vignettes.
 
-## R-004 — Avertisseur 120 V CO (3/4 noir) vs détecteur de fumée (1/2 noir)
-Les 5 petits cercles (4,6 pt) ont été mesurés sur le raster : 86-92 % noir pour 4 d'entre eux → ligne A03
-« avertisseur de fumée à ionisation 120 V combiné CO » ; 63 % pour celui de l'ascenseur (1146 ; 513) → A04
-« détecteur de fumée ». La lecture repose sur la proportion de noir d'un symbole de 4,6 pt : **à confirmer** par
-l'estimateur sur le plan vectoriel. L'avertisseur (882 ; 704) porte E.A.R → RELOCALISER.
+## R-004 — Détecteurs de fumée : les 5 petits cercles sont la ligne A04, pas A03
+Première lecture : 4 « avertisseurs 120 V CO » (A03, 3/4 noir) + 1 « détecteur de fumée » (A04, 1/2 noir), d'après le
+pourcentage de noir mesuré sur le raster. **Corrigé** après vérification indépendante : au zoom ×20, les 5 symboles
+sont identiques — cercle coupé en diagonale, moitié noire — et la légende E-001 montre A03 = 3/4 noir (quart blanc en
+haut à gauche), A04 = coupé en diagonale. La mesure de noir était polluée par le trait de mur qui traverse 4 des 5
+symboles. Résultat : 5 × DÉTECTEUR DE FUMÉE (I01), dont 1 E.A.R (882 ; 704) ; aucun avertisseur 120 V sur E-201.
+Leçon : à 4,6 pt, une proportion de noir ne distingue pas deux lignes de légende ; comparer la forme au zoom.
 
 ## R-005 — Deux cercles simples sans étiquette (905 ; 656) et (1083 ; 575)
 Cercles noirs ~8 pt dans le corridor, sans PP ni circuit ni E.A.E. La légende L04 « appareil d'éclairage encastré »
@@ -213,6 +211,13 @@ L02 (rectangle sans description), L03 réglette 4', L08 gradateur, L09 mural, L1
 (hachuré, sans description), L15 347 V, L17 daylight, A02, A05, A07, A08, A10-A13, U03, U05-U10 : cherchées sur toute
 la zone blanche, aucune occurrence. Les sections SERVICES, DISTRIBUTION, CHAUFFAGE, FORCE MOTRICE de E-001 ne
 s'appliquent pas à une feuille d'éclairage/alarme (seule S01 boîte de jonction y figure).
+
+## R-012 — Vérification indépendante (12:30)
+Un second agent, sans accès aux CSV ni au journal, a compté la feuille à l'aveugle (16 vignettes + légende) puis audité le
+rendu : **0 écart de quantité** famille par famille (121/121, portées comprises), 0 omission, 0 faux positif ; 4 familles
+(R-004, corrigé), 3 décalages sûrs + 2 probables (I05-01, I05-02, M08-01, M10-01, M13-02 : corrigés par lecture au ×12/×14),
+4 doutes conservés (M01-01 accumulateur seul ou « 1 phare » ; M12-01 enseigne au bord de la zone grise ; M05-01/02
+cercles sans étiquette, architecture probable). Rapport : `RAPPORT-VERIFICATEUR.md`.
 
 ## R-011 — Limites du relevé
 - Entrée raster (PNG), pas le PDF vectoriel : `traits.py` inutilisable, coordonnées lues sur les règles des

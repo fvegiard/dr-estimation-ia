@@ -15,7 +15,7 @@
    interpolées entre graduations, centre du symbole.
 5. Contrôle : `controle_qualite.py` → conforme.
 
-## 2. Totaux E-201 (121 repères, 20 familles)
+## 2. Totaux E-201 (121 repères, 19 familles)
 
 | Code | Famille | Conserver | Enlever | Relocaliser | À préciser | Total |
 |---|---|--:|--:|--:|--:|--:|
@@ -34,8 +34,7 @@
 | AC | Accumulateur (R-009) | 1 | | | | 1 |
 | SM | Station manuelle | 3 | | | | 3 |
 | PZ | Piezo combiné à un strobe | 2 | | | | 2 |
-| AF | Avertisseur de fumée 120 V CO (R-004) | 3 | | 1 | | 4 |
-| DF | Détecteur de fumée (R-004) | 1 | | | | 1 |
+| DF | Détecteur de fumée (R-004, 5 après vérification) | 4 | | 1 | | 5 |
 | HP | Haut-parleur encastré au plafond | 2 | | | | 2 |
 | ANN | Panneau annonciateur | | | 1 | | 1 |
 | BJ | Boîte de jonction (tête de rail) | | 2 | | | 2 |
@@ -53,7 +52,7 @@ Circuits lus en `designation` : PP-2 3/5/6, PP-U1 2/7, P-2 39/41 ; zones (h,i)/(
 ## 4. Ce qui n'a pas pu être relevé
 - Neuf : sur E-203 (non fournie). Luminaires des zones grises : hors portée (R-002).
 - Longueurs des rails : estimées depuis 1:100, à métrer (R-008).
-- Distinction avertisseur/détecteur de fumée : par proportion de noir, à confirmer (R-004).
+- Détecteurs de fumée : 5 × A04 confirmés au zoom ×20 après vérification indépendante (R-004, R-012).
 - Aucun devis, addenda ni référence d'estimateur : vérification incomplète au sens du critère d'acceptation.
 
 ## 5. Outils et modèle

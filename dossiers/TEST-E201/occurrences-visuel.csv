@@ -79,23 +79,23 @@ E201plan-p01,ENSEIGNE SORTIE MUR,331.4,907.5,visuel,cercle X mi-noir avec tige m
 E201plan-p01,ENSEIGNE SORTIE MUR,566.7,813.7,visuel,E.A.E lu au zoom 470-640/730-860,PP-U1 7,ENLEVER,,,,,,5.0
 E201plan-p01,ENSEIGNE SORTIE PLAFOND,1203.5,378.3,visuel,"cercle X mi-noir sans tige, avec fleche",PP-U1 7 ; fleche vers la gauche,CONSERVER,,,,,,5.9
 E201plan-p01,ENSEIGNE SORTIE PLAFOND,825.4,886.1,visuel,"cercle X mi-noir sans tige, avec fleche",fleche vers le haut ; sans etiquette lisible,CONSERVER,,,,,,6.0
-E201plan-p01,AVERTISSEUR FUMEE 120V CO,1033.1,388.7,visuel,mesure raster : 86-92 % noir -> 3/4 (L03 legende) ; voir R-004,3/4 noir,CONSERVER,,,,,,2.6
-E201plan-p01,AVERTISSEUR FUMEE 120V CO,540.7,377.0,visuel,mesure raster : 86-92 % noir -> 3/4 (L03 legende) ; voir R-004,3/4 noir,CONSERVER,,,,,,3.0
-E201plan-p01,AVERTISSEUR FUMEE 120V CO,462.0,412.6,visuel,mesure raster : 86-92 % noir -> 3/4 (L03 legende) ; voir R-004,3/4 noir,CONSERVER,,,,,,2.9
-E201plan-p01,AVERTISSEUR FUMEE 120V CO,880.7,704.8,visuel,E.A.R lu au zoom 780-950/600-730 ; voir R-004,3/4 noir ; E.A.R,RELOCALISER,,,,,,3.0
-E201plan-p01,DETECTEUR FUMEE,1146.3,513.0,visuel,mesure raster 63 % noir -> 1/2 (L04 legende) ; voir R-004,1/2 noir,CONSERVER,,,,,,
+E201plan-p01,DETECTEUR FUMEE,1033.1,388.7,visuel,"symbole coupe en diagonale, moitie noire = A04 legende ; verifie au zoom x20 (verificateur independant + comparaison legende)",1/2 noir diagonal,CONSERVER,,,,,,2.6
+E201plan-p01,DETECTEUR FUMEE,540.7,377.0,visuel,"symbole coupe en diagonale, moitie noire = A04 legende ; verifie au zoom x20 (verificateur independant + comparaison legende)",1/2 noir diagonal,CONSERVER,,,,,,3.0
+E201plan-p01,DETECTEUR FUMEE,462.0,412.6,visuel,"symbole coupe en diagonale, moitie noire = A04 legende ; verifie au zoom x20 (verificateur independant + comparaison legende)",1/2 noir diagonal,CONSERVER,,,,,,2.9
+E201plan-p01,DETECTEUR FUMEE,880.7,704.8,visuel,"symbole coupe en diagonale, moitie noire = A04 legende ; verifie au zoom x20 (verificateur independant + comparaison legende)",1/2 noir diagonal ; E.A.R,RELOCALISER,,,,,,3.0
+E201plan-p01,DETECTEUR FUMEE,1146.3,513.0,visuel,mesure raster 63 % noir -> 1/2 (L04 legende) ; voir R-004,1/2 noir diagonal,CONSERVER,,,,,,
 E201plan-p01,INT 3 VOIES,995.5,388.5,visuel,symbole $ avec 3 ; zoom 960-1060/320-400 et 940-1110/300-430,(h),CONSERVER,,,,,,
-E201plan-p01,INT 3 VOIES,1005,384,visuel,symbole $ avec 3 ; zoom 960-1060/320-400 et 940-1110/300-430,(i),CONSERVER,,,,,,
-E201plan-p01,INT 3 VOIES,1013,420.5,visuel,symbole $ avec 3 ; zoom 960-1060/320-400 et 940-1110/300-430,(j),CONSERVER,,,,,,
-E201plan-p01,INT 3 VOIES,1018.5,414.5,visuel,symbole $ avec 3 ; zoom 960-1060/320-400 et 940-1110/300-430,(k),CONSERVER,,,,,,
+E201plan-p01,INT 3 VOIES,1000.7,387.4,visuel,symbole $ avec 3 ; zoom 960-1060/320-400 et 940-1110/300-430,(i),CONSERVER,,,,,,
+E201plan-p01,INT 3 VOIES,1011.6,417.4,visuel,symbole $ avec 3 ; zoom 960-1060/320-400 et 940-1110/300-430,(j),CONSERVER,,,,,,
+E201plan-p01,INT 3 VOIES,1016.9,415.9,visuel,symbole $ avec 3 ; zoom 960-1060/320-400 et 940-1110/300-430,(k),CONSERVER,,,,,,
 E201plan-p01,INT 3 VOIES,585,809,visuel,,3 (j) ; E.A.E,ENLEVER,,,,,,
 E201plan-p01,INT SIMPLE,513,510,visuel,symbole $ seul ; zoom 470-640/470-600,(n),CONSERVER,,,,,,
 E201plan-p01,INT SIMPLE,591,475,visuel,symbole $ seul ; zoom 470-640/470-600,(n),CONSERVER,,,,,,
 E201plan-p01,DETECTEUR MOUVEMENT,1076.2,317.6,visuel,ovale DM,,CONSERVER,,,,,,5.5
 E201plan-p01,DETECTEUR MOUVEMENT,518.9,851.4,visuel,ovale DM,,CONSERVER,,,,,,3.8
 E201plan-p01,DETECTEUR MOUVEMENT,591.8,805.3,visuel,,E.A.E,ENLEVER,,,,,,3.5
-E201plan-p01,STATION MANUELLE,1010,350,visuel,F dans carre,,CONSERVER,,,,,,
-E201plan-p01,STATION MANUELLE,1171,333,visuel,F dans carre,,CONSERVER,,,,,,
+E201plan-p01,STATION MANUELLE,999.7,350.2,visuel,F dans carre,,CONSERVER,,,,,,
+E201plan-p01,STATION MANUELLE,1170.8,340.3,visuel,F dans carre,,CONSERVER,,,,,,
 E201plan-p01,STATION MANUELLE,387.5,849,visuel,F dans carre,,CONSERVER,,,,,,
 E201plan-p01,PIEZO STROBE,1180.5,342,visuel,F dans carre avec rayons,,CONSERVER,,,,,,
 E201plan-p01,PIEZO STROBE,431.4,849.9,visuel,F dans carre avec rayons,,CONSERVER,428.5,847.6,434.4,852.2,0.0,
@@ -117,6 +117,6 @@ E201plan-p01,LED 1X4,910.3,741.0,visuel,"rectangle mi-noir, E.A.E",PP-U1 2 - mi-
 E201plan-p01,LED 1X4,831.2,818.6,visuel,"rectangle mi-noir, E.A.E",PP-U1 2 - mi-noir (urgence),ENLEVER,813.6,814.2,848.8,823.1,45.0,
 E201plan-p01,RAIL ECLAIRAGE,1150,685,visuel,"ligne courbe avec tetes ; quantite = segments, tetes en designation ; R-008",P-2 39 (Ma) ; 5 tetes ; ~125 pt de long,ENLEVER,,,,,,
 E201plan-p01,RAIL ECLAIRAGE,1030,815,visuel,"ligne courbe avec tetes ; quantite = segments, tetes en designation ; R-008",P-2 41 (Ma) ; 3 tetes ; ~55 pt de long,ENLEVER,,,,,,
-E201plan-p01,BOITE JONCTION,1154,623,visuel,"carre X en tete de rail, E.A.E",P-2 39 (Ma),ENLEVER,,,,,,
+E201plan-p01,BOITE JONCTION,1161.3,623.6,visuel,"carre X en tete de rail, E.A.E",P-2 39 (Ma),ENLEVER,,,,,,
 E201plan-p01,BOITE JONCTION,1038.5,790.0,visuel,"carre X en tete de rail, E.A.E",P-2 41 (Ma),ENLEVER,1035.6,787.3,1041.5,792.8,0.0,
-E201plan-p01,ACCUMULATEUR,476,610,visuel,zoom 260-560/540-760 ; R-009,+ - avec cercle ; sans etiquette,CONSERVER,,,,,,
+E201plan-p01,ACCUMULATEUR,468.7,606.0,visuel,zoom 260-560/540-760 ; R-009,+ - avec cercle ; sans etiquette,CONSERVER,,,,,,

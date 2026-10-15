@@ -21,11 +21,13 @@ au zoom : vides (pas de symbole). Les 28 encastrés (cercle + croix) : 28 appari
 pleins/vides par mesure de l'anneau (noir < 120 → PP-U1). Étiquettes (PP-2 3, PP-U1 2, (h,i)/(j,k)/(n)/(Mf)/(Ma),
 E.A.E) lues une à une sur 3 planches de 25 vignettes.
 
-## R-004 — Avertisseur 120 V CO (3/4 noir) vs détecteur de fumée (1/2 noir)
-Les 5 petits cercles (4,6 pt) ont été mesurés sur le raster : 86-92 % noir pour 4 d'entre eux → ligne A03
-« avertisseur de fumée à ionisation 120 V combiné CO » ; 63 % pour celui de l'ascenseur (1146 ; 513) → A04
-« détecteur de fumée ». La lecture repose sur la proportion de noir d'un symbole de 4,6 pt : **à confirmer** par
-l'estimateur sur le plan vectoriel. L'avertisseur (882 ; 704) porte E.A.R → RELOCALISER.
+## R-004 — Détecteurs de fumée : les 5 petits cercles sont la ligne A04, pas A03
+Première lecture : 4 « avertisseurs 120 V CO » (A03, 3/4 noir) + 1 « détecteur de fumée » (A04, 1/2 noir), d'après le
+pourcentage de noir mesuré sur le raster. **Corrigé** après vérification indépendante : au zoom ×20, les 5 symboles
+sont identiques — cercle coupé en diagonale, moitié noire — et la légende E-001 montre A03 = 3/4 noir (quart blanc en
+haut à gauche), A04 = coupé en diagonale. La mesure de noir était polluée par le trait de mur qui traverse 4 des 5
+symboles. Résultat : 5 × DÉTECTEUR DE FUMÉE (I01), dont 1 E.A.R (882 ; 704) ; aucun avertisseur 120 V sur E-201.
+Leçon : à 4,6 pt, une proportion de noir ne distingue pas deux lignes de légende ; comparer la forme au zoom.
 
 ## R-005 — Deux cercles simples sans étiquette (905 ; 656) et (1083 ; 575)
 Cercles noirs ~8 pt dans le corridor, sans PP ni circuit ni E.A.E. La légende L04 « appareil d'éclairage encastré »
@@ -57,6 +59,13 @@ L02 (rectangle sans description), L03 réglette 4', L08 gradateur, L09 mural, L1
 (hachuré, sans description), L15 347 V, L17 daylight, A02, A05, A07, A08, A10-A13, U03, U05-U10 : cherchées sur toute
 la zone blanche, aucune occurrence. Les sections SERVICES, DISTRIBUTION, CHAUFFAGE, FORCE MOTRICE de E-001 ne
 s'appliquent pas à une feuille d'éclairage/alarme (seule S01 boîte de jonction y figure).
+
+## R-012 — Vérification indépendante (12:30)
+Un second agent, sans accès aux CSV ni au journal, a compté la feuille à l'aveugle (16 vignettes + légende) puis audité le
+rendu : **0 écart de quantité** famille par famille (121/121, portées comprises), 0 omission, 0 faux positif ; 4 familles
+(R-004, corrigé), 3 décalages sûrs + 2 probables (I05-01, I05-02, M08-01, M10-01, M13-02 : corrigés par lecture au ×12/×14),
+4 doutes conservés (M01-01 accumulateur seul ou « 1 phare » ; M12-01 enseigne au bord de la zone grise ; M05-01/02
+cercles sans étiquette, architecture probable). Rapport : `RAPPORT-VERIFICATEUR.md`.
 
 ## R-011 — Limites du relevé
 - Entrée raster (PNG), pas le PDF vectoriel : `traits.py` inutilisable, coordonnées lues sur les règles des

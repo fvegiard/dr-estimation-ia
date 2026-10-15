@@ -18,8 +18,8 @@ E001legend-p01,ECLAIRAGE,L16,ligne avec tetes,APPAREIL D'ÉCLAIRAGE SUR RAIL,RL,
 E001legend-p01,ECLAIRAGE,L17,grand carre a diagonale + points,APPAREIL D'ÉCLAIRAGE TYPE DAYLIGHT W60L60,LD,absent,0,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
 E001legend-p01,ALARME INCENDIE,A01,F dans carre,STATION MANUELLE,SM,compte,3,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
 E001legend-p01,ALARME INCENDIE,A02,cercle barre,DÉTECTEUR THERMIQUE,DT,absent,0,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
-E001legend-p01,ALARME INCENDIE,A03,cercle 3/4 noir,"AVERTISSEUR DE FUMÉE À IONISATION 120V COMBINÉ ""CO"" ET PILE DE SECOURS",AF,compte,4,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
-E001legend-p01,ALARME INCENDIE,A04,cercle 1/2 noir,DÉTECTEUR DE FUMÉE,DF,compte,1,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
+E001legend-p01,ALARME INCENDIE,A03,cercle 3/4 noir,"AVERTISSEUR DE FUMÉE À IONISATION 120V COMBINÉ ""CO"" ET PILE DE SECOURS",AF,absent,0,"aucun cercle 3/4 noir sur la feuille : les 5 petits cercles sont coupes en diagonale (A04), verifie au zoom x20 (R-004)"
+E001legend-p01,ALARME INCENDIE,A04,cercle 1/2 noir,DÉTECTEUR DE FUMÉE,DF,compte,5,"5 cercles 1/2 noir diagonal : (541,377) (1033,389) (462,413) (882,704) (1146,513) ; zoom x20 vs legende"
 E001legend-p01,ALARME INCENDIE,A05,K dans carre,KLAXON,K,absent,0,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
 E001legend-p01,ALARME INCENDIE,A06,F dans carre avec rayons,PIEZO COMBINÉ À UN STROBE,PZ,compte,2,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
 E001legend-p01,ALARME INCENDIE,A07,C spirale,CLOCHE,CL,absent,0,feuille E-201 entiere balayee (grille de zooms 170x130 pt sur la zone blanche x 300-1270 / y 150-990)
