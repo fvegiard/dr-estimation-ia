@@ -27,8 +27,11 @@ utilise ce profil ; aucune clé API, aucune variable d'environnement. Pour un po
 `CLAUDE_CODE_OAUTH_TOKEN` (doc `authentication.md` L.248-259). Ne jamais mettre ce jeton dans Git.
 
 ### Variables utiles (`run.py`)
-`RELEVE_MODEL` (opus), `RELEVE_MAX_TURNS` (800), `RELEVE_BUDGET_USD` (0 = illimité), `RELEVE_AGENT` (`sdk` | `cli`), `RELEVE_NATIF` (1 | 0),
-`RELEVE_BASE`, `RELEVE_DRIVE`. Reprise sans relancer l'agent : `uv run releve/run.py --reprendre <nom>`.
+`RELEVE_MODEL` (opus), `RELEVE_MAX_TURNS` (800), `RELEVE_BUDGET_USD` (0 = illimité), `RELEVE_AGENT` (`sdk` | `nvidia` | `gemini` | `cli`),
+`RELEVE_NVIDIA_MODEL` (défaut `nvidia/nemotron-3.5-super-vl-120b-a12b` ; `moonshotai/kimi-k3` retiré par NVIDIA le 2026-10-15),
+`RELEVE_NATIF` (1 | 0), `RELEVE_BASE` (`D:\claude\releve-auto` sous Windows natif, `/mnt/d/claude/releve-auto` sous WSL), `RELEVE_DRIVE`.
+Clé `NVIDIA_API_KEY` (ou `GEMINI_API_KEY`) transmise dans l'environnement du processus au lancement seulement — jamais écrite dans le dépôt ni dans un fichier suivi.
+Reprise sans relancer l'agent : `uv run releve/run.py --reprendre <nom>`.
 
 ### VM Plan Expert
 mxlinux 100.96.185.59 (Tailscale) : conteneur Podman `planexpert` (Windows Server 2025, Plan Expert 3.0.17), visionneuse http://100.96.185.59:8006,

@@ -142,11 +142,12 @@ uv run releve/run.py <NOM>                       # dépose d'abord les PDF dans 
 ```
 Reste (débogage, développement) :
 ```bash
-pip install -r requirements.txt
-python -m pytest tests -q                       # tests unitaires
-python -m src.validation.jeu_reference          # jeu de référence (code 1 si régression)
+uv venv && uv pip install -r requirements.txt   # environnement local (.venv git-ignoré)
+.venv/Scripts/python -m pytest tests -q         # tests unitaires (ou uv run --with-requirements requirements.txt ...)
+.venv/Scripts/python -m src.validation.jeu_reference  # jeu de référence (code 1 si régression)
 uv run releve/prepare.py INBOX/<S> OUTBOX/<S>/travail
 uv run releve/run.py --reprendre <S>            # rejoue seulement qpl + render_vectoriel + render_pdf (sans agent)
+RELEVE_AGENT=nvidia uv run releve/run.py <S>    # route API NVIDIA (NVIDIA_API_KEY dans l'env du processus seulement)
 ```
 
 ## Agents (`.claude/agents/`)

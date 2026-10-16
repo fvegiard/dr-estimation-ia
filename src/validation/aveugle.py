@@ -21,6 +21,11 @@ Détections (règles dans l'ordre ; la première qui s'applique nomme le motif) 
                              jamais au travail du relevé aveugle — ce qui vaut
                              pour un .qpl vaut pour n'importe quel fichier du
                              même dossier (`feuilles-ia.csv`, PNG marqués…) ;
+  2b. `dossier-estimateur` — tout fichier placé sous un dossier `estimateur/` :
+                             `prepare.py` n'y écrit jamais autre chose qu'un
+                             export de l'estimateur (`pNN.png`, `legendes/*.png`,
+                             `pages.csv`), et les PNG binaires échapperaient
+                             autrement au scan de contenu ;
   3. `nom-<mot>`           — tout fichier dont le NOM contient dupuis |
                               estimateur | reference | humain, insensible aux
                               accents et à la casse (relevés humains : releve
@@ -135,6 +140,8 @@ def motif_par_chemin(relatif: Path) -> str | None:
         return "qpl-dupuis"
     if any(normaliser(part) == "reference" for part in relatif.parts[:-1]):
         return "dossier-reference"
+    if any(normaliser(part) == "estimateur" for part in relatif.parts[:-1]):
+        return "dossier-estimateur"
     for mot in MOTS_NOM:
         if mot in nom_norm:
             return f"nom-{mot}"

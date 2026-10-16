@@ -24,7 +24,7 @@ d'absence de régression).
 
 | Module | Rôle | Étapes du critère |
 |---|---|---|
-| `aveugle.py` | Scan récursif du workdir du relevé IA : `.qpl` « dupuis », dossier `reference/`, noms `dupuis/estimateur/reference/humain`, `releve.xlsx`, signatures de contenu. | 1 |
+| `aveugle.py` | Scan récursif du workdir du relevé IA : `.qpl` « dupuis », dossiers `reference/` et `estimateur/`, noms `dupuis/estimateur/reference/humain`, `releve.xlsx`, signatures de contenu. | 1 |
 | `gel.py` | Gel sha256 de chaque artefact du relevé IA (`nomenclature.csv`, `occurrences-*.csv`, `feuilles-classement.csv`, `reserves.md`, tout `.qpl`) dans `gel.json`, revérifié à chaque relance. | 2 |
 | `compare_qpl.py` | Comparaison déterministe marque par marque, page par page (préexistante, partagée avec le jeu de référence). | 3 |
 | `classer_ecarts.py` | Classe chaque désaccord du comparateur — jamais un compte global seul. | 4 |
@@ -87,27 +87,12 @@ vide** sur la source originale (« estimateur correct » compris) : `IA correcte
 
 ## Limites connues du contrôle à l'aveugle
 
-Le contrôle d'aveugle (étape 1) voit un export de l'estimateur fourni à tort dans
-l'INBOX par la voie principale du pipeline : `prepare.py` le classe « estimateur » et
-consigne ce classement dans `inventaire.json` (scanné, contenu → « contenu-estimateur »)
-— le workdir est alors reconnu non aveugle, verdict `INVALIDE`. Si en plus le nom du
-PDF d'entrée porte « dupuis »/« estimateur »/« releve »/« plan expert »,
-`estimateur/pages.csv` est détecté lui aussi (« contenu-dupuis »…).
-
-Limite résiduelle, à fermer dans une bead dédiée : du matériau de l'estimateur placé
-sous un sous-dossier `estimateur/` du workdir **sans** passer par `prepare.py` (copié
-après préparation, ou toute autre voie hors pipeline) n'est pas détecté quand noms et
-contenus sont neutres — `estimateur/pNN.png` et `estimateur/legendes/*.png` sont des
-PNG binaires (balayage de contenu sauté), « pNN.png » ne contient aucun mot du
-contrôle, et `estimateur/pages.csv` n'est détecté que par sa seule signature de contenu.
-La correction suit la même logique que la règle du dossier `reference/` : tout fichier
-sous `estimateur/` est du matériau de l'estimateur (`prepare.py` n'y écrit jamais
-rien d'autre) et devrait être détecté, ce qui exigera d'ajuster en sus le fixture
-`tests/test_aveugle.py::_creer_travail_ia_propre` (qui place aujourd'hui
-`estimateur/pages.csv` dans un travail « propre », contrepied de ce que
-`prepare.py` écrit réellement dans ce sous-dossier). En attendant, le contrôle
-d'aveugle constate l'état du dossier : ne jamais le citer seul comme preuve de
-discipline.
+Le contrôle d'aveugle (étape 1) détecte tout export de l'estimateur dans le workdir :
+par `inventaire.json` (« contenu-estimateur ») quand l'export passe par `prepare.py`,
+et par la règle `dossier-estimateur` pour tout fichier placé sous `estimateur/`
+(`estimateur/pNN.png`, `estimateur/legendes/*.png`, `estimateur/pages.csv`), y compris
+un PNG binaire au nom neutre déposé hors pipeline. Le contrôle d'aveugle constate
+l'état du dossier sur disque : ne jamais le citer seul comme preuve de discipline.
 
 ## Exemple minimal
 

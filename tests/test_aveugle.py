@@ -45,8 +45,8 @@ def _creer_travail_ia_propre(workdir: Path) -> None:
     _ecrire(workdir, "feuilles-classement.csv", "feuille,role\nE100,plan\n")
     _ecrire(workdir, "reserves.md", "# Reserves\n- famille indeterminee sur E100 (symbole sans legende)\n")
     _ecrire(workdir, "planexpert/S-TEST.qpl", '<?xml version="1.0"?><projet version="1"></projet>\n')
-    _ecrire(workdir, "estimateur/pages.csv", "page,largeur_pt,hauteur_pt,fichier\n1,2383,1683,\n")
-    _ecrire(workdir, "rasters/E100.png", b"\x89PNG\r\n\x1a\n".decode("latin-1"))
+    (workdir / "rasters").mkdir(parents=True, exist_ok=True)
+    (workdir / "rasters" / "E100.png").write_bytes(b"\x89PNG\x0d\x0a\x1a\x0a")
 
 
 def test_travail_ia_propre_est_aveugle_code_0(tmp_path):
@@ -104,6 +104,24 @@ def test_dossier_reference_bannis(tmp_path):
     refs = {(x["fichier"], x["motif"]) for x in _rapport_json(workdir)["references_detectees"]}
     assert ("reference/S-1294-Dupuis-PlanExpert.qpl", "qpl-dupuis") in refs
     assert ("reference/feuilles-ia.csv", "dossier-reference") in refs
+
+
+def test_dossier_estimateur_bannis(tmp_path):
+    # tout fichier sous estimateur/ est du matériau de l'estimateur (prepare.py
+    # n'y écrit jamais rien d'autre) : y compris un PNG binaire au nom neutre
+    # (p01.png) qui échapperait au scan de contenu et aux règles de nom.
+    workdir = tmp_path / "travail"
+    _creer_travail_ia_propre(workdir)
+    (workdir / "estimateur" / "legendes").mkdir(parents=True, exist_ok=True)
+    (workdir / "estimateur" / "p01.png").write_bytes(b"\x89PNG\x0d\x0a\x1a\x0a")
+    (workdir / "estimateur" / "legendes" / "p01-legende.png").write_bytes(b"\x89PNG\x0d\x0a\x1a\x0a")
+    _ecrire(workdir, "estimateur/pages.csv", "page,largeur_pt,hauteur_pt,fichier\n1,2383,1683,\n")
+    r = _cli(workdir)
+    assert r.returncode == 1
+    refs = {(x["fichier"], x["motif"]) for x in _rapport_json(workdir)["references_detectees"]}
+    assert ("estimateur/p01.png", "dossier-estimateur") in refs
+    assert ("estimateur/legendes/p01-legende.png", "dossier-estimateur") in refs
+    assert ("estimateur/pages.csv", "dossier-estimateur") in refs
 
 
 def test_signature_dans_contenu(tmp_path):
@@ -232,6 +250,7 @@ def test_motif_chemin_regles_en_direct(tmp_path):
     rapport = aveugle.RapportAveugle(date=date.today().isoformat(), fichiers_scannes=3)
     assert rapport.aveugle is True
     assert aveugle.motif_par_chemin(Path("reference/x.qpl")) == "dossier-reference"
+    assert aveugle.motif_par_chemin(Path("estimateur/p01.png")) == "dossier-estimateur"
     assert aveugle.motif_par_chemin(Path("S-1294-Dupuis-PlanExpert.qpl")) == "qpl-dupuis"
     assert aveugle.motif_par_chemin(Path("note-humain.txt")) == "nom-humain"
     assert aveugle.motif_par_chemin(Path("nomenclature.csv")) is None

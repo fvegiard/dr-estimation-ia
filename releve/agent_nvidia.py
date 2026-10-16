@@ -9,7 +9,8 @@ comme consigne et des outils limités au dossier de travail. Bibliothèque stand
 Clé : variable d'environnement NVIDIA_API_KEY (jamais journalisée ni écrite). Sous WSL, la transmettre au processus
 seulement (WSLENV=NVIDIA_API_KEY/u), sans configuration globale.
 
-Modèle par défaut : moonshotai/kimi-k3 — choisi le 2026-09-29 sur feuille complète (voir MODELE ci-dessous).
+Modèle par défaut : nvidia/nemotron-3.5-super-vl-120b-a12b — mis à jour le 2026-10-16 après la fin de vie
+de moonshotai/kimi-k3 sur build.nvidia.com (HTTP 410 Gone depuis le 2026-10-15T08:00:00Z).
 gemma-4-31b-it gagnait l'essai du 2026-09-26 sur un extrait RDC (12/12, 39-58 s), mais l'essai sur la
 feuille entière l'a écarté : 53 marques sur 122 et toutes ses coordonnées posées sur une grille de 10 pt.
 Un bon résultat sur une vignette ne prédit pas un relevé de feuille.
@@ -42,7 +43,7 @@ REFUS_QUALITE_MAX = 3       # refus de `terminer` pour qualité avant d'accepter
 # gemini : https://ai.google.dev/gemini-api/docs/openai (vérifié 2026-10-15) ; clé en Authorization: Bearer.
 FOURNISSEURS = {
     "nvidia": {"url": os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1"), "cle": "NVIDIA_API_KEY",
-               "modele": "moonshotai/kimi-k3"},
+               "modele": "nvidia/nemotron-3.5-super-vl-120b-a12b"},   # kimi-k3 retiré (HTTP 410 Gone le 2026-10-15)
     "gemini": {"url": os.environ.get("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai"), "cle": "GEMINI_API_KEY",
                "modele": "gemini-3.8-flash"},    # ai.google.dev/gemini-api/docs/models (2026-10-15) : flash agentique ; gemini-4-argon = raisonnement
 }
