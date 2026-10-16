@@ -13,7 +13,9 @@ Branche `releve-auto`. Tout vit dans le dépôt ; les données de Francis vivent
 | 2a | `extract_occurrences.py` | déterministe | nomenclature (regex) × mots → occurrences texte |
 | 2b | `zoom.py` | outil de l'agent | zone d'une feuille avec règles et marques déjà relevées |
 | 3 | `build_qpl.py` | déterministe | occurrences → `.qpl` Plan Expert (+ rasters à côté), audit JSON |
-| 4 | `render_pdf.py` | déterministe | `.qpl` logique → `Plans-annotes.pdf`, `Rapport-de-metre.pdf/.md`, `Dossier-complet.pdf` |
+| 4a | `render_vectoriel.py` | déterministe (`src/estimer/render/`) | occurrences → `Plans-annotes.pdf` vectoriel (pastilles OCG, encadré, bordereau), `vecteur/estimate.json`, `<nom>-rendu-rapport.json` |
+| 4b | `verif_visuelle.py` | jugement (modèle de vision sur l'API NVIDIA, `NVIDIA_API_KEY` ; chaîne `RELEVE_VISION_MODEL`, défaut `nvidia/nemotron-3.5-super-vl-120b-a12b,google/gemma-4-31b-it` — le second ne juge que si l'appel au premier échoue) | chaque pastille jugée « sur un symbole ? » ; hors symbole → déplacée sur un symbole vectoriel accepté par le modèle, sinon réserve `*` ; PDF re-rendu ; `<nom>-verification-visuelle.{json,md}` + extraits PNG ; sans clé : non exécutée, jamais bloquante (`RELEVE_VISION=0` pour sauter) |
+| 4c | `render_pdf.py` | déterministe | `Plans-annotes.pdf` → `Rapport-de-metre.pdf/.md`, `Dossier-complet.pdf` |
 | 5 | `../mcp/planexpert_vm/server.py --cli natif` | VM Plan Expert (MCP planexpert-vm) | `.qpl` → export natif (rapport PDF/XLS/XML + PDF des plans) dans `OUTBOX/<nom>/export-natif-planexpert/` ; `resultat.json` ; jamais bloquant |
 
 Agent (étape 2) : **Claude Agent SDK** officiel, `releve/agent_sdk.py` (PyPI `claude-agent-sdk` 0.2.154, `query()` + `ClaudeAgentOptions`,

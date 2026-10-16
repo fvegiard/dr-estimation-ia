@@ -21,6 +21,10 @@ Relevé de quantités électrique automatique (Groupe DR Électrique) : plans PD
 
 ## Autonomie et auto-supervision (obligatoire — Francis ne coache pas)
 Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu fais toi-même la supervision visuelle.
+0. Le parcours canonique passe d'abord par l'étape 4b (`releve/verif_visuelle.py`, modèle de vision NVIDIA) :
+   lis `OUTBOX/<S>/<S>-verification-visuelle.md` et commence ta révision par les pastilles qu'elle a corrigées ou
+   mises en réserve `*` (extraits dans `verification-visuelle/`). Son score n'est pas le tien : il oriente la
+   révision, il ne la remplace pas.
 1. Après chaque rendu, OUVRE l'image (Read du PNG), zoome repère par repère et juge : pastille visible (pastel,
    contour 0,7 pt couleur famille, dessinée PAR-DESSUS le plan ; forme, rayon et palette selon le format de la
    feuille, voir `docs/FORMAT-EXEMPLE.md`) ? sur le BON symbole (type = famille) ?
@@ -129,7 +133,9 @@ rôle vérifié — la vérification porte sur le fichier, pas sur son type de c
 ## Commandes
 Action unique pour un nouveau dossier (parcours canonique — tout le reste orchestré par `run.py` lui-même :
 `prepare.py` → son propre agent (§Agents, processus séparé — pas un sous-agent de session) → `build_qpl.py`
-→ `render_vectoriel.py` → `render_pdf.py` → `STATUT.md`) :
+→ `render_vectoriel.py` → `verif_visuelle.py` (étape 4b : modèle de vision sur l'API NVIDIA, `NVIDIA_API_KEY` ;
+corrige ou réserve `*` les pastilles hors symbole, puis re-rend le PDF — sans clé : « non exécutée », jamais
+bloquante) → `render_pdf.py` → `STATUT.md`) :
 ```bash
 uv run releve/run.py <NOM>                       # dépose d'abord les PDF dans INBOX/<NOM>/ — c'est tout
 ```
@@ -139,7 +145,8 @@ pip install -r requirements.txt
 python -m pytest tests -q                       # tests unitaires
 python -m src.validation.jeu_reference          # jeu de référence (code 1 si régression)
 uv run releve/prepare.py INBOX/<S> OUTBOX/<S>/travail
-uv run releve/run.py --reprendre <S>            # rejoue seulement qpl + render_vectoriel + render_pdf (sans agent)
+uv run releve/run.py --reprendre <S>            # rejoue seulement qpl + render_vectoriel + verif_visuelle + render_pdf (sans agent)
+uv run releve/verif_visuelle.py OUTBOX/<S> <S>  # étape 4b seule (NVIDIA_API_KEY) ; --dry-run = extraits sans appel API
 ```
 
 ## Agents (`.claude/agents/`)

@@ -39,6 +39,12 @@ Tant que ces chiffres ne sont pas atteints et prouvés dans `dossiers/`, le proj
   `releve/render_vectoriel.py` → `src/estimer/render/` (pastilles vectorielles OCG, encadré, bordereau au format de
   chaque feuille), puis `releve/render_pdf.py` (rapport de métré + dossier complet). Format visé : la spec unique
   `docs/FORMAT-EXEMPLE.md`, mesurée sur le gold HR26-14.
+- **Vérification visuelle corrective (étape 4b)** : `releve/verif_visuelle.py` — entre le rendu et la révision finale
+  par Claude, un modèle de vision sur l'API NVIDIA (`NVIDIA_API_KEY` ; chaîne par défaut
+  `nvidia/nemotron-3.5-super-vl-120b-a12b` puis `google/gemma-4-31b-it` en repli d'échec d'appel) juge chaque
+  pastille « sur un symbole ? » ; une pastille hors symbole est déplacée sur un symbole vectoriel du plan que le
+  modèle accepte (jamais sur une coordonnée inventée), sinon mise en réserve `*`. Rapport
+  `OUTBOX/<NOM>/<NOM>-verification-visuelle.md` + extraits PNG ; résumé dans `STATUT.md`. `RELEVE_VISION=0` pour sauter.
 - `src/releve/` — chaîne `python -m src.releve` : `inventaire`, `index`, `raster`, `qpl`, `verifier`,
   `xlsx` (export `releve.xlsx` au gabarit DR) — pas de PDF
 - `src/validation/ecart.py` — comparateur déterministe référence vs décompte IA → `ecart.md`
