@@ -163,9 +163,10 @@ def agent(workdir, log_path):
         f"entrée {usage.get('input_tokens')} + cache {usage.get('cache_read_input_tokens')} / sortie {usage.get('output_tokens')} ; subtype {res.get('subtype')}")
     return code, res, dur
 
-def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None, *, acceptation=None):
+def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None, *, acceptation=None, vision=None):
     a_verifier = a_verifier or []
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if a_verifier else "TERMINÉ")
+    vision = vision or {}
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or vision.get("reserves")) else "TERMINÉ")
     if ok and acceptation:     # boucle d'acceptation exécutée : l'état intègre son verdict
         if "INVALIDE" in acceptation:
             etat = "TERMINÉ — ACCEPTATION INVALIDE"
@@ -180,6 +181,18 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
         L += ["", f"⚠️ **Encadré RELEVE-MATERIEL hors de l'espace libre du plan sur : {', '.join(a_verifier)}** "
               f"(voir `{name}-rendu-rapport.json`) — vérifier visuellement (Read du PDF, zoome) avant de "
               "considérer ce livrable terminé ou de le diffuser au client, conformément à l'auto-supervision (CLAUDE.md)."]
+    if vision:
+        n = vision.get("marques", 0)
+        L += ["", f"**Vérification visuelle (étape 4b, modèle `{vision.get('modele')}` sur l'API NVIDIA) : "
+              f"{vision.get('ok', 0) + vision.get('corrigees', 0)}/{n} pastilles sur leur symbole** — "
+              f"{vision.get('corrigees', 0)} corrigée(s) (déplacées sur un symbole vectoriel du plan), "
+              f"{vision.get('reserves', 0)} en réserve `*`, {vision.get('non_jugees', 0)} non jugée(s) ; détail et "
+              f"extraits : `{name}-verification-visuelle.md`, `verification-visuelle/`."]
+        if vision.get("reserves"):
+            L += ["", f"⚠️ **Pastilles jugées hors symbole et non corrigées (réserve `*`) : "
+                  f"{', '.join(vision.get('reperes_reserves', []))}** — ouvrir leurs extraits "
+                  f"(`verification-visuelle/<feuille>-<repère>.png`) et trancher avant de livrer (révision finale "
+                  "Claude / Francis, CLAUDE.md §Autonomie)."]
     L += ["", "## Entrées", "", "| fichier | octets | sha256 |", "|---|--:|---|"]
     for dp, _, fs in os.walk(inbox):
         for f in sorted(fs):
@@ -242,7 +255,7 @@ def process(arg, reprendre=False):
     os.makedirs(outdir, exist_ok=True)
     marker = os.path.join(outdir, ".en-cours"); open(marker, "w").write(str(os.getpid()))
     log_path = os.path.join(outdir, "journal-etapes.log")
-    steps, res, ok, err, a_verifier, acceptation = [], None, False, None, [], None
+    steps, res, ok, err, a_verifier, acceptation, vision = [], None, False, None, [], None, None
     T = time.time()
     try:
         if not reprendre:
@@ -272,6 +285,23 @@ def process(arg, reprendre=False):
         rapport_path = os.path.join(outdir, f"{name}-rendu-rapport.json")
         if os.path.exists(rapport_path):
             a_verifier = json.load(open(rapport_path, encoding="utf-8")).get("conformite", {}).get("encadre_hors_espace_libre") or []
+        # Étape 4b — vérification visuelle corrective (modèle de vision sur l'API NVIDIA, releve/verif_visuelle.py) :
+        # chaque pastille est jugée « sur un symbole ? » ; hors symbole → déplacée sur un symbole vectoriel accepté,
+        # sinon réserve « * ». Re-rend le PDF « Plans annotés » s'il y a eu correction. Jamais bloquante ; sans
+        # NVIDIA_API_KEY : « non exécutée » (code 4) et STATUT.md le dit. RELEVE_VISION=0 pour sauter l'étape.
+        if os.environ.get("RELEVE_VISION", "1") == "1":
+            t = time.time(); code, out = run(["uv", "run", "releve/verif_visuelle.py", outdir, name], log_path=log_path)
+            steps.append(("verif_visuelle (NVIDIA)", time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
+            vision_path = os.path.join(outdir, f"{name}-verification-visuelle.json")
+            if code != 4 and os.path.exists(vision_path):
+                try:
+                    v = json.load(open(vision_path, encoding="utf-8"))
+                    vision = {k: v.get(k) for k in ("modele", "marques", "ok", "corrigees", "reserves", "non_jugees",
+                                                     "reperes_reserves", "reperes_corriges")}
+                except Exception as e:  # noqa
+                    log(f"verification visuelle : rapport illisible ({e})")
+        else:
+            steps.append(("verif_visuelle (NVIDIA)", 0, "sautée (RELEVE_VISION=0)"))
         t = time.time(); code, _ = run(["uv", "run", "releve/render_pdf.py", workdir, name, outdir], log_path=log_path)
         steps.append(("render_pdf", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("render_pdf.py a échoué")
@@ -318,6 +348,8 @@ def process(arg, reprendre=False):
     # Appel identique à l'ancien comportement tant que la boucle d'acceptation
     # n'a pas tourné (dossiers/<name> absent) ; sinon le verdict voyage.
     kwargs = {"acceptation": acceptation} if acceptation else {}
+    if vision:
+        kwargs["vision"] = vision
     statut(name, inbox, outdir, workdir, steps, res, ok, err, a_verifier, **kwargs)
     try: os.remove(marker)
     except FileNotFoundError: pass
