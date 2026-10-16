@@ -184,3 +184,28 @@ def test_reprise_journalisee_et_erreur_fatale(monkeypatch):
                             urllib.error.HTTPError(req.full_url, 401, "no", {}, io.BytesIO(b"bad key"))))
     with pytest.raises(RuntimeError, match="HTTP 401"):
         vv.appel({}, "cle")
+
+
+def test_chaine_de_modeles_repli_sur_echec_seulement(monkeypatch):
+    """m2 ne juge que si m1 a échoué (HTTP, sans JSON, tronqué) ; un verdict rendu par m1 n'est jamais contredit."""
+    vus = []
+
+    def appel(corps, cle, essais=5, j=None):
+        vus.append(corps["model"])
+        if corps["model"] == "m1-casse":
+            raise RuntimeError("HTTP 500 : Failed to generate completions")
+        if corps["model"] == "m1-tronque":
+            return {"choices": [{"finish_reason": "length", "message": {"content": "", "reasoning_content": "..."}}]}
+        return {"choices": [{"finish_reason": "stop", "message": {"content": '{"sur_symbole": true, "confiance": 0.9}'}}]}
+    monkeypatch.setattr(vv, "appel", appel)
+    v = vv.juger(b"png", "m1-casse,m2", "cle", 120.0)
+    assert v["modele"] == "m2" and v["sur_symbole"] is True and vus == ["m1-casse", "m2"]
+    vus.clear()
+    v = vv.juger(b"png", "m1-tronque,m2", "cle", 120.0)
+    assert v["modele"] == "m2" and vus == ["m1-tronque", "m2"]
+    vus.clear()
+    v = vv.juger(b"png", "m2,m1-casse", "cle", 120.0)
+    assert v["modele"] == "m2" and vus == ["m2"]                 # m1-casse jamais appelé : m2 a jugé
+    with pytest.raises(RuntimeError, match="aucun modèle"):
+        vv.juger(b"png", "m1-casse,m1-tronque", "cle", 120.0)
+    assert vv.MAX_TOKENS >= 6000 and vv.PARALLELE == 1

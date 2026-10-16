@@ -15,10 +15,12 @@ avec la réserve `*` (drapeau `revalider`) et sa note : c'est Claude (révision 
 Un verdict négatif isolé ne suffit pas : il est confirmé par un second jugement sur une fenêtre plus serrée
 (gemma-4-31b-it a donné 1 faux négatif sur 10 marques de TEST-E103 le 2026-10-16 ; 0 faux positif sur 3
 négatifs synthétiques — texte seul, vide, câble). nemotron-3-nano-omni acceptait 2 négatifs sur 3 : écarté.
-Preuves réelles (TEST-E103, 2026-10-16) : 24/24 pastilles jugées sur leur symbole ; une pastille déplacée
-volontairement sur son étiquette « Type P1 / P2 » est détectée aux deux jugements et ramenée sur le boîtier DP1
-(écart final 0 pt) ; une pastille posée sur le cadre d'étiquette « NPP16 » n'est rejetée que depuis que la consigne
-exclut explicitement les cadres d'étiquette (les boîtiers DP1/DP2 restent acceptés).
+Preuves réelles (TEST-E103, 2026-10-16) : 24/24 pastilles jugées sur leur symbole — gemma-4 seul en 2 min 47,
+chaîne nemotron-3.5-super-vl > gemma-4 en 6 min 44 (nemotron a rendu les 24 verdicts, une reprise après HTTP 500) ;
+une pastille déplacée volontairement sur son étiquette « Type P1 / P2 » est détectée aux deux jugements et ramenée
+sur le boîtier DP1 (écart final 0 pt) par les deux modèles ; une pastille posée sur le cadre d'étiquette « NPP16 »
+est rejetée par nemotron d'emblée, et par gemma-4 depuis que la consigne exclut explicitement les cadres
+d'étiquette (les boîtiers DP1/DP2 restent acceptés).
 
 Entrées (SORTIE_DIR = dossier OUTBOX/<NOM>) : <NOM>-Plans-annotes.pdf, <NOM>-rendu-rapport.json,
 vecteur/estimate.json, vecteur/plans.pdf. Sorties : <NOM>-verification-visuelle.json et .md (score, verdicts,
@@ -26,8 +28,9 @@ corrections, réserves), verification-visuelle/<feuille>-<repere>.png (les extra
 et — s'il y a eu une correction ou une réserve — vecteur/estimate.json mis à jour et le PDF re-rendu.
 
 Clé : variable d'environnement NVIDIA_API_KEY (jamais journalisée ni écrite ; absente → « non exécutée »,
-code 4). Modèle : RELEVE_VISION_MODEL (défaut google/gemma-4-31b-it). Codes : 0 toutes les marques OK ou
-corrigées ; 2 au moins une réserve `*` ; 4 non exécutée.
+code 4). Modèles : RELEVE_VISION_MODEL, chaîne « m1,m2 » (défaut nvidia/nemotron-3.5-super-vl-120b-a12b puis
+google/gemma-4-31b-it en repli d'échec d'appel — voir MODELE). Codes : 0 toutes les marques OK ou corrigées ;
+2 au moins une réserve `*` ; 4 non exécutée.
 
 Usage : uv run releve/verif_visuelle.py SORTIE_DIR NOM [--model M] [--fenetre 120] [--max-marques N]
                                         [--parallele 2] [--sans-correction] [--dry-run]
@@ -58,7 +61,16 @@ from src.estimer.render import load_input, render  # noqa: E402
 from src.estimer.render.ancrage import SymbolIndex, _is_grey  # noqa: E402
 
 URL = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1") + "/chat/completions"
-MODELE = "google/gemma-4-31b-it"
+# Chaîne de modèles (séparés par des virgules) : le premier qui répond juge ; le suivant ne sert qu'en repli
+# quand l'appel échoue (HTTP après reprises, réponse sans JSON, raisonnement tronqué). Comparatif du 2026-10-16
+# sur 9 extraits de TEST-E103 (4 négatifs dont le cadre d'étiquette « NPP16 », 5 boîtiers DP1/DP2) :
+#   nemotron-3.5-super-vl-120b  9/9 justes quand il répond (rejette le cadre d'étiquette sans aide de consigne),
+#                               mais HTTP 500 dès 2 requêtes simultanées → PARALLELE = 1 ; 7-80 s par extrait
+#   gemma-4-31b-it              8/9 (1 faux négatif, rattrapé par le second jugement) ; 2-136 s selon la charge
+#   ising-calibration-1.5-31b   7/9, accepte les étiquettes encadrées ou nues comme appareils → écarté
+#   nemotron-3-nano-omni-30b    accepte 2 négatifs sur 3 → écarté ; nemotron-3-ultra-550b : délai dépassé (9/9)
+MODELE = "nvidia/nemotron-3.5-super-vl-120b-a12b,google/gemma-4-31b-it"
+MAX_TOKENS = 6000                # nemotron raisonne avant de répondre (4-9 k caractères) : à 1500 la réponse est tronquée
 REVALIDER = "revalider"          # même drapeau que src/estimer/render/from_releve.py (étiquette « * »)
 FENETRE = 120.0                  # côté (pt) de l'extrait jugé, centré sur la marque
 FENETRE_CONFIRMATION = 80.0      # fenêtre plus serrée du second jugement d'un verdict négatif
@@ -66,7 +78,7 @@ ZOOM = 7.0                       # px par pt (120 pt → 840 px)
 RAYON_CANDIDATS = 50.0           # distance max (pt) d'un symbole candidat à la correction
 MAX_CANDIDATS = 3
 CONFIANCE_MIN = 0.6
-PARALLELE = 2                    # requêtes simultanées (NVIDIA plafonne à 16 par compte, 503 au-delà)
+PARALLELE = 1                    # requêtes simultanées : nemotron-3.5-super-vl répond HTTP 500 dès 2 en parallèle
 VERSION_PROMPT = "2026-10-16"
 
 PROMPT = (
@@ -120,24 +132,38 @@ def extraire_json(texte: str) -> dict:
 
 
 def juger(png_bytes: bytes, modele: str, cle: str, fenetre: float, j=None) -> dict:
-    """Verdict du modèle sur un extrait : dict normalisé (sur_symbole, pastille_visible, symbole_decrit,
-    symbole_proche, confiance, brut)."""
+    """Verdict sur un extrait : dict normalisé (sur_symbole, pastille_visible, symbole_decrit, symbole_proche,
+    confiance, modele, brut). `modele` est une chaîne « m1,m2,… » : m2 ne juge que si m1 a échoué (HTTP après
+    reprises, réseau, réponse sans JSON ou tronquée) — jamais pour contredire un verdict rendu."""
     b = base64.b64encode(png_bytes).decode()
-    corps = {"model": modele, "max_tokens": 400, "temperature": 0,
-             "messages": [{"role": "user", "content": [
-                 {"type": "text", "text": PROMPT.format(fenetre=fenetre)},
-                 {"type": "image_url", "image_url": {"url": "data:image/png;base64," + b}}]}]}
-    r = appel(corps, cle, j=j)
-    contenu = (r.get("choices") or [{}])[0].get("message", {}).get("content") or ""
-    d = extraire_json(contenu)
-    conf = d.get("confiance")
-    try:
-        conf = float(conf)
-    except (TypeError, ValueError):
-        conf = 0.0
-    return {"sur_symbole": bool(d.get("sur_symbole")), "pastille_visible": bool(d.get("pastille_visible", True)),
-            "symbole_decrit": str(d.get("symbole_decrit") or "")[:120],
-            "symbole_proche": str(d.get("symbole_proche") or "")[:160], "confiance": conf, "brut": contenu[:400]}
+    erreurs = []
+    for m in [x.strip() for x in modele.split(",") if x.strip()]:
+        corps = {"model": m, "max_tokens": MAX_TOKENS, "temperature": 0,
+                 "messages": [{"role": "user", "content": [
+                     {"type": "text", "text": PROMPT.format(fenetre=fenetre)},
+                     {"type": "image_url", "image_url": {"url": "data:image/png;base64," + b}}]}]}
+        try:
+            r = appel(corps, cle, j=j)
+            choix = (r.get("choices") or [{}])[0]
+            contenu = choix.get("message", {}).get("content") or ""
+            if not contenu and choix.get("finish_reason") == "length":
+                raise ValueError("réponse tronquée (raisonnement plus long que MAX_TOKENS)")
+            d = extraire_json(contenu)
+        except (RuntimeError, ValueError) as e:
+            erreurs.append(f"{m} : {e}")
+            if j:
+                j(f"  {m} n'a pas jugé ({str(e)[:100]}) ; modèle suivant")
+            continue
+        conf = d.get("confiance")
+        try:
+            conf = float(conf)
+        except (TypeError, ValueError):
+            conf = 0.0
+        return {"sur_symbole": bool(d.get("sur_symbole")), "pastille_visible": bool(d.get("pastille_visible", True)),
+                "symbole_decrit": str(d.get("symbole_decrit") or "")[:120],
+                "symbole_proche": str(d.get("symbole_proche") or "")[:160], "confiance": conf, "modele": m,
+                "brut": contenu[:400]}
+    raise RuntimeError("aucun modèle n'a jugé : " + " | ".join(erreurs))
 
 
 # ----------------------------------------------------------------------------------------------- extraits
@@ -369,7 +395,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("sortie_dir")
     ap.add_argument("nom")
-    ap.add_argument("--model", default=os.environ.get("RELEVE_VISION_MODEL", MODELE))
+    ap.add_argument("--model", default=os.environ.get("RELEVE_VISION_MODEL", MODELE),
+                    help="chaîne « m1,m2 » : m2 ne juge que si l'appel à m1 échoue")
     ap.add_argument("--fenetre", type=float, default=FENETRE)
     ap.add_argument("--max-marques", type=int, default=0)
     ap.add_argument("--parallele", type=int, default=int(os.environ.get("RELEVE_VISION_PARALLELE", PARALLELE)))
