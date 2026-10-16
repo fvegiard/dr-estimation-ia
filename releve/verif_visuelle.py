@@ -15,6 +15,10 @@ avec la réserve `*` (drapeau `revalider`) et sa note : c'est Claude (révision 
 Un verdict négatif isolé ne suffit pas : il est confirmé par un second jugement sur une fenêtre plus serrée
 (gemma-4-31b-it a donné 1 faux négatif sur 10 marques de TEST-E103 le 2026-10-16 ; 0 faux positif sur 3
 négatifs synthétiques — texte seul, vide, câble). nemotron-3-nano-omni acceptait 2 négatifs sur 3 : écarté.
+Preuves réelles (TEST-E103, 2026-10-16) : 24/24 pastilles jugées sur leur symbole ; une pastille déplacée
+volontairement sur son étiquette « Type P1 / P2 » est détectée aux deux jugements et ramenée sur le boîtier DP1
+(écart final 0 pt) ; une pastille posée sur le cadre d'étiquette « NPP16 » n'est rejetée que depuis que la consigne
+exclut explicitement les cadres d'étiquette (les boîtiers DP1/DP2 restent acceptés).
 
 Entrées (SORTIE_DIR = dossier OUTBOX/<NOM>) : <NOM>-Plans-annotes.pdf, <NOM>-rendu-rapport.json,
 vecteur/estimate.json, vecteur/plans.pdf. Sorties : <NOM>-verification-visuelle.json et .md (score, verdicts,
@@ -70,7 +74,10 @@ PROMPT = (
     "pastille colorée (cercle pastel, contour sombre) a été dessinée par-dessus le plan pour marquer un appareil. "
     "Un appareil est un petit symbole vectoriel fermé (carré, cercle, rectangle, triangle, boîtier avec des lettres "
     "à l'intérieur comme DP1/DP2). Un texte seul (étiquette, cote, nom), une ligne, un câble ou un espace vide ne "
-    "sont PAS un appareil. Réponds UNIQUEMENT par un JSON : {{\"pastille_visible\": bool, \"sur_symbole\": bool "
+    "sont PAS un appareil. Attention : un cadre rectangulaire qui ne sert qu'à encadrer une étiquette de texte (un "
+    "nom de type, un code de plusieurs caractères, une note) n'est pas un appareil non plus ; le symbole d'appareil "
+    "est le petit carré ou cercle compact posé sur le tracé, à côté duquel les étiquettes sont écrites. "
+    "Réponds UNIQUEMENT par un JSON : {{\"pastille_visible\": bool, \"sur_symbole\": bool "
     "(la pastille est centrée sur un symbole d'appareil), \"symbole_decrit\": str (ce qu'il y a sous la pastille, "
     "8 mots max), \"symbole_proche\": str (si sur_symbole est false : l'appareil le plus proche, sa direction depuis "
     "le centre (haut/bas/gauche/droite) et sa distance approximative en points ; sinon \"\"), \"confiance\": 0-1}}"
