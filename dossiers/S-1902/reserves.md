@@ -13,6 +13,7 @@ L'unité est l'ÉTIQUETTE (A1, C1, C1_1, C1_3, E) : une rangée linéaire « C1 
 
 - E203 : « E » à (1717, 967)
 - E203 : « E » à (1717, 967)
+- E204 : « E » à (1717, 967)
 
 ## R-005 — Pictogrammes (instances manuelles, `blocs-instances.csv`)
 Enseignes Z6 (3, tracé pointillé : confirmer neuf — E-008 en liste 3), détecteurs de fumée (3 existants pointillés + neufs pleins), encastrés sur circuit d'urgence PP-U1 (quart noir). Les pictogrammes ont des signatures uniques (courbes, remplissages), ils ne se regroupent pas automatiquement.

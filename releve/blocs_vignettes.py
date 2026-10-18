@@ -41,6 +41,19 @@ def main():
         if n >= a.min or (leg and n >= 1) or (lettre and n >= 1):
             rows.append((n, k, leg, lettre))
     rows.sort(key=lambda r: -r[0])
+    # identifiants STABLES : une signature déjà indexée garde son sig_id (blocs-familles.csv s'y réfère) ; les
+    # nouvelles reçoivent des numéros au-delà du plus grand existant (revue Codex PR #27)
+    anciens = {}
+    p_idx = os.path.join(work, "blocs-index.csv")
+    if os.path.exists(p_idx):
+        anciens = {r["signature"]: r["sig_id"] for r in csv.DictReader(open(p_idx, encoding="utf-8"))}
+    prochain = max([int(v[1:]) for v in anciens.values()] + [0]) + 1
+    ids = {}
+    for n, k, leg, lettre in rows:
+        if k in anciens:
+            ids[k] = anciens[k]
+        else:
+            ids[k] = f"S{prochain:03d}"; prochain += 1
     doc = pymupdf.open(a.pdf)
     try:
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 13)
@@ -54,7 +67,7 @@ def main():
         nrows = (len(sub) + cols - 1) // cols
         img = Image.new("RGB", (cols * (tw + 12), nrows * (th + 10)), "white"); d = ImageDraw.Draw(img)
         for i, (n, k, leg, lettre) in enumerate(sub):
-            sid = f"S{k0 + i + 1:03d}"
+            sid = ids[k]
             ex = inst[k]
             # instance « la plus centrale » de la feuille qui en a le plus
             par = defaultdict(int)

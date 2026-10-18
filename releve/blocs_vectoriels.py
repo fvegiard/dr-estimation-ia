@@ -129,6 +129,9 @@ def blocs_page(page, max_cote=MAX_COTE):
         cand.append((r, mes, pts, round(float(d.get("width") or 0), 2)))
     n = len(cand)
     parent = list(range(n))
+    # nombre de « grandes formes fermées » (≥ 10 pt) par composante : deux composantes qui en ont chacune une ne
+    # fusionnent jamais, même via un petit trait qui les touche toutes les deux (revue Codex PR #27)
+    gros = [1 if (c[1][3] and max(c[0].width, c[0].height) >= 10) else 0 for c in cand]
 
     def find(i):
         while parent[i] != i:
@@ -148,8 +151,8 @@ def blocs_page(page, max_cote=MAX_COTE):
                 x0, y0 = min(ri.x0, rj.x0), min(ri.y0, rj.y0); x1, y1 = max(ri.x1, rj.x1), max(ri.y1, rj.y1)
                 if max(x1 - x0, y1 - y0) <= max_cote:
                     pa, pb = find(i), find(j)
-                    if pa != pb:
-                        parent[pa] = pb
+                    if pa != pb and not (gros[pa] and gros[pb]):
+                        parent[pa] = pb; gros[pb] += gros[pa]
             j_ += 1
     groupes = defaultdict(list)
     for i in range(n):

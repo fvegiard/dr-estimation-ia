@@ -15,8 +15,8 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | E201 | 106 | 9 |
 | E202 | 57 | 3 |
 | E203 | 69 | 10 |
-| E204 | 63 | 4 |
-| **Total** | **636** | **30** |
+| E204 | 67 | 4 |
+| **Total** | **640** | **30** |
 
 ## Tous les plans
 
@@ -34,7 +34,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | INT SIMPLE | commande | 10 |
 | LECTEUR CARTE | intrusion | 5 |
 | LED 1X4 | eclairage | 33 |
-| LED 2X2 | eclairage | 90 |
+| LED 2X2 | eclairage | 94 |
 | LED 4PI | eclairage | 2 |
 | LUMINAIRE A1 | eclairage | 11 |
 | LUMINAIRE C1 | eclairage | 12 |
@@ -129,7 +129,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | ENCASTRE | 28 | 79 |
 | INT SIMPLE | 5 | 10 |
 | LED 1X4 | 11 | 33 |
-| LED 2X2 | 45 | 90 |
+| LED 2X2 | 45 | 94 |
 | STATION MANUELLE | 4 | 4 |
 
 ## E202
@@ -162,7 +162,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | ENCASTRE | 16 | 79 |
 | ENCASTRE URGENCE | 1 | 10 |
 | ENSEIGNE SORTIE Z6 | 1 | 3 |
-| LED 2X2 | 45 | 90 |
+| LED 2X2 | 49 | 94 |
 
 ## Nomenclature (libellé → source de la lecture)
 
@@ -177,16 +177,16 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | ENSEIGNE SORTIE Z6 | urgence | ENSEIGNE DE SORTIE DE TYPE PICTOGRAMME Z6 (Stanpro RMSOWH-UDC — tableau E-008) | E-001 légende ; instances manuelles |
 | GACHE | intrusion | GÂCHE ÉLECTRIQUE | E-001 légende ; bloc S290 |
 | HP ENCASTRE PLAFOND | alarme | HAUT-PARLEUR ENCASTRÉ AU PLAFOND | E-001 légende ; bloc S321 |
-| INT SIMPLE | commande | INTERRUPTEUR À 3 VOIES | E-001 légende ; bloc S098 |
+| INT SIMPLE | commande | INTERRUPTEUR SIMPLE | E-001 légende ; bloc S098 |
 | LECTEUR CARTE | intrusion | LECTEUR DE CARTE | E-001 légende ; bloc S219 |
 | LED 1X4 | eclairage | APPAREIL D&#x27;ÉCLAIRAGE &#x27;x4&#x27; | E-001 légende ; bloc S035 |
 | LED 2X2 | eclairage | APPAREIL D&#x27;ÉCLAIRAGE 2&#x27;x2&#x27; LED | E-001 légende ; bloc S024 |
 | LED 4PI | eclairage | APPAREIL D&#x27;ÉCLAIRAGE 4&#x27; LED | E-001 légende ; bloc S316 |
-| LUMINAIRE A1 | eclairage | APPAREIL D&#x27;ÉCLAIRAGE &#x27;x4&#x27; — type A1 | E-001 légende ; bloc S147 |
-| LUMINAIRE C1 | eclairage | APPAREIL D&#x27;ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l&#x27;étiquette) — type C1 | E-001 légende ; bloc S150 |
+| LUMINAIRE A1 | eclairage | Luminaire type A1 (tableau E-008) | E203 étiquettes |
+| LUMINAIRE C1 | eclairage | Luminaire type C1 (tableau E-008) | E203 étiquettes |
 | LUMINAIRE C1_1 | eclairage | Luminaire type C1_1 (tableau E-008) | E203 étiquettes |
-| LUMINAIRE C1_3 | eclairage | APPAREIL D&#x27;ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l&#x27;étiquette) — type C1_3 | E-001 légende ; bloc S044 |
-| LUMINAIRE E | eclairage | APPAREIL D&#x27;ÉCLAIRAGE ENCASTRÉ — type E | E-001 légende ; bloc S014 |
+| LUMINAIRE C1_3 | eclairage | Luminaire type C1_3 (tableau E-008) | E203 étiquettes |
+| LUMINAIRE E | eclairage | Luminaire type E (tableau E-008) | E203 étiquettes |
 | MONUMENT PLANCHER | services | MONUMENT PLANCHER SURFACE, TYPE HUBBELL S1PT / POKE THROUGH | E-001 légende ; bloc S128 |
 | MOTEUR MONOPHASE | mecanique | MOTEUR MONOPHASÉ, PUISSANCE SELON LES INDICATIONS | E-001 légende ; bloc S102 |
 | MOTEUR TRIPHASE | mecanique | MOTEUR TRIPHASÉ, PUISSANCE SELON LES INDICATIONS | E-001 légende ; bloc S104 |
@@ -203,7 +203,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 
 # Rapport de relevé — S-1902 Bibliothèque Georgette-Lepage (SP-GTER-26-0080, HF experts-conseils 26-29)
 
-Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). 636 occurrences, 30 familles.
+Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). 640 occurrences, 30 familles.
 
 | feuille | occurrences |
 |---|--:|
@@ -216,7 +216,7 @@ Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthod
 | E201 | 106 |
 | E202 | 57 |
 | E203 | 69 |
-| E204 | 63 |
+| E204 | 67 |
 
 | famille | total | portées |
 |---|--:|---|
@@ -232,7 +232,7 @@ Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthod
 | INT SIMPLE | 10 | INSTALLER 5, CONSERVER 4, ENLEVER 1 |
 | LECTEUR CARTE | 5 | CONSERVER 3, INSTALLER 2 |
 | LED 1X4 | 33 | CONSERVER 27, ENLEVER 6 |
-| LED 2X2 | 90 | CONSERVER 82, ENLEVER 8 |
+| LED 2X2 | 94 | CONSERVER 86, ENLEVER 8 |
 | LED 4PI | 2 | CONSERVER 2 |
 | LUMINAIRE A1 | 11 | INSTALLER 11 |
 | LUMINAIRE C1 | 12 | INSTALLER 12 |
@@ -272,6 +272,7 @@ L'unité est l'ÉTIQUETTE (A1, C1, C1_1, C1_3, E) : une rangée linéaire « C1 
 
 - E203 : « E » à (1717, 967)
 - E203 : « E » à (1717, 967)
+- E204 : « E » à (1717, 967)
 
 ## R-005 — Pictogrammes (instances manuelles, `blocs-instances.csv`)
 Enseignes Z6 (3, tracé pointillé : confirmer neuf — E-008 en liste 3), détecteurs de fumée (3 existants pointillés + neufs pleins), encastrés sur circuit d'urgence PP-U1 (quart noir). Les pictogrammes ont des signatures uniques (courbes, remplissages), ils ne se regroupent pas automatiquement.

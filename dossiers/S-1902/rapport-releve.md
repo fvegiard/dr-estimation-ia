@@ -1,6 +1,6 @@
 # Rapport de relevé — S-1902 Bibliothèque Georgette-Lepage (SP-GTER-26-0080, HF experts-conseils 26-29)
 
-Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). 636 occurrences, 30 familles.
+Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). 640 occurrences, 30 familles.
 
 | feuille | occurrences |
 |---|--:|
@@ -13,7 +13,7 @@ Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthod
 | E201 | 106 |
 | E202 | 57 |
 | E203 | 69 |
-| E204 | 63 |
+| E204 | 67 |
 
 | famille | total | portées |
 |---|--:|---|
@@ -29,7 +29,7 @@ Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthod
 | INT SIMPLE | 10 | INSTALLER 5, CONSERVER 4, ENLEVER 1 |
 | LECTEUR CARTE | 5 | CONSERVER 3, INSTALLER 2 |
 | LED 1X4 | 33 | CONSERVER 27, ENLEVER 6 |
-| LED 2X2 | 90 | CONSERVER 82, ENLEVER 8 |
+| LED 2X2 | 94 | CONSERVER 86, ENLEVER 8 |
 | LED 4PI | 2 | CONSERVER 2 |
 | LUMINAIRE A1 | 11 | INSTALLER 11 |
 | LUMINAIRE C1 | 12 | INSTALLER 12 |

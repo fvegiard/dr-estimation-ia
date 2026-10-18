@@ -1,10 +1,10 @@
 {
  "qpl": "/home/claude/work/OUTBOX/S-1902/S-1902-planexpert/S-1902.qpl",
- "sha256": "2eee45d72b85fbc6dabf33d8357cc5d75efcdc28e7732a660020d0ae6eaf5ab0",
- "octets": 71044,
+ "sha256": "74575ed684fef42909164f575197479bfcdb43fd4c8486e95f49926d30099cc1",
+ "octets": 71300,
  "plans": 21,
  "compteurs": 61,
- "marques": 636,
+ "marques": 640,
  "libelles": 30,
  "par_feuille": {
   "E101": {
@@ -86,7 +86,7 @@
    "ENCASTRE": 16,
    "ENCASTRE URGENCE": 1,
    "ENSEIGNE SORTIE Z6": 1,
-   "LED 2X2": 45
+   "LED 2X2": 49
   }
  }
 }

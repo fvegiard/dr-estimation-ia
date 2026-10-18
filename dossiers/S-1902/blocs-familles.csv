@@ -10,9 +10,9 @@ S158,PRISE DDFT,prise,cercle,PG,PRISE DOUBLE DDFT (moitié pleine),SV06,0,99,,va
 S159,PRISE DDFT,prise,cercle,PG,PRISE DOUBLE DDFT (moitié pleine),SV06,0,99,,
 S051,PRISE USB,prise,cercle,PU,PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton Decora USB,SV18,0,99,,
 S024,LED 2X2,eclairage,carre,L2,APPAREIL D'ÉCLAIRAGE 2'x2' LED,EC01,0,99,,
-S025,LED 2X2,eclairage,carre,L2,APPAREIL D'ÉCLAIRAGE 2'x2' LED,EC01,0,99,,
+S330,LED 2X2,eclairage,carre,L2,APPAREIL D'ÉCLAIRAGE 2'x2' LED,EC01,0,99,,
 S035,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,rectangle à diagonale (A1 sur E-203 : 2'x4' Cooper 24CGTS)
-S147,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
+S343,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
 S134,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
 S168,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
 S101,LUMINAIRE LINEAIRE,eclairage,carre,C1,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
