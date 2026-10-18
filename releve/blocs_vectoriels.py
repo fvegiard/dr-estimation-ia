@@ -12,7 +12,7 @@ Sorties (dans WORKDIR) :
 - `blocs/<feuille>.csv`   : un bloc par ligne — feuille, signature, x_pt, y_pt, w_pt, h_pt, angle_deg, n_parties, famille_legende
 - `blocs-signatures.json` : signature → {n_total, par_feuille, legende (description, section, feuille, x, y)}
 
-Usage : uv run releve/blocs_vectoriels.py WORKDIR PDF [--feuilles E101 E201] [--max-cote 45]
+Usage : uv run releve/blocs_vectoriels.py WORKDIR [PDF] [--feuilles E101 E201] [--max-cote 45]
 (les feuilles viennent de feuilles.csv ; la légende est la feuille de rôle `legende`.)
 
 Validation (2026-10-17, S-1902 E-201 contre les 121 repères du relevé vérifié TEST-E201) : voir `tests/test_blocs_vectoriels.py`.
@@ -24,6 +24,7 @@ import numpy as np
 import pymupdf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from commun import PagesFeuilles  # noqa: E402
 
 MAX_COTE = 45.0          # pt — plus grand qu'un symbole d'électricité (2'x2' = 23 pt, 'x4 = 12x30 pt)
 MIN_COTE = 1.2           # pt — en dessous : trame, pointillés, flèches de cotation
@@ -92,18 +93,18 @@ def _fusionnable(a, b):
     return True
 
 
-_SPANS = {}
+def _spans(page):
+    """(rect, couleur) de chaque span de texte de la page — calculé une fois par page, jamais mis en cache par numéro de
+    page (les feuilles lues dans travail/feuilles/<F>.pdf sont toutes « page 0 » de leur document)."""
+    return [(pymupdf.Rect(sp["bbox"]), sp["color"]) for b in page.get_text("dict")["blocks"] for l in b.get("lines", []) for sp in l["spans"]]
 
 
-def _texte_de_fond(w, page):
+def _texte_de_fond(w, spans):
     """Mot écrit en gris clair (« PENTE STR », trames d'architecture : couleur ≥ 0x80 sur chaque canal) : jamais une
     lettre de symbole (celles-ci sont noires ou gris foncé 0x404040). Revue PR #27 : un mot de fond qui chevauche un
     moteur ne doit pas entrer dans sa signature."""
-    if page.number not in _SPANS:
-        _SPANS[page.number] = [(pymupdf.Rect(sp["bbox"]), sp["color"]) for b in page.get_text("dict")["blocks"]
-                               for l in b.get("lines", []) for sp in l["spans"]]
     cx, cy = (w[0] + w[2]) / 2, (w[1] + w[3]) / 2
-    for r, c in _SPANS[page.number]:
+    for r, c in spans:
         if r.x0 - 0.5 <= cx <= r.x1 + 0.5 and r.y0 - 0.5 <= cy <= r.y1 + 0.5:
             return min((c >> 16) & 255, (c >> 8) & 255, c & 255) >= 0x80
     return False
@@ -113,7 +114,8 @@ def texte_dans(blocs, page):
     """Lettres dessinées DANS un bloc (F, K, RA, ANN, S, DM, +/−…) : elles font partie du symbole et de sa signature —
     sans elles, station manuelle, klaxon et module isolateur ont le même carré. Un mot compte s'il est à ≥ 60 % dans
     la boîte du bloc (marge 1 pt), pas plus grand que le bloc, pas en gris clair (texte de fond), centré dedans."""
-    mots = [w for w in page.get_text("words") if w[4].strip() and not _texte_de_fond(w, page)]
+    spans = _spans(page)
+    mots = [w for w in page.get_text("words") if w[4].strip() and not _texte_de_fond(w, spans)]
     for b in blocs:
         x0, y0 = b["x_pt"] - b["w_pt"] / 2 - 1, b["y_pt"] - b["h_pt"] / 2 - 1
         x1, y1 = b["x_pt"] + b["w_pt"] / 2 + 1, b["y_pt"] + b["h_pt"] / 2 + 1
@@ -227,18 +229,19 @@ def legende_page(page, blocs):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("workdir"); ap.add_argument("pdf"); ap.add_argument("--feuilles", nargs="+", default=None); ap.add_argument("--max-cote", type=float, default=MAX_COTE)
+    ap.add_argument("workdir"); ap.add_argument("pdf", nargs="?", default=None, help="repli seulement : chaque feuille est lue dans travail/feuilles/<F>.pdf ou dans son fichier source")
+    ap.add_argument("--feuilles", nargs="+", default=None); ap.add_argument("--max-cote", type=float, default=MAX_COTE)
     a = ap.parse_args()
     work = os.path.abspath(a.workdir)
     rows = list(csv.DictReader(open(os.path.join(work, "feuilles.csv"), encoding="utf-8")))
-    doc = pymupdf.open(a.pdf)
+    pages = PagesFeuilles(work, a.pdf)
     os.makedirs(os.path.join(work, "blocs"), exist_ok=True)
     sigs = defaultdict(lambda: {"n_total": 0, "par_feuille": {}, "legende": None})
     for r in rows:
         f = r["feuille"]
         if a.feuilles and f not in a.feuilles and r.get("role") != "legende":
             continue
-        page = doc[int(r["page"]) - 1]
+        page = pages.page(r)
         blocs = texte_dans(blocs_page(page, a.max_cote), page)
         if r.get("role") == "legende":
             legende_page(page, blocs)

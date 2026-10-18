@@ -354,13 +354,16 @@ def process(arg, reprendre=False):
                 # blocs CAO ; blocs_vectoriels.py les regroupe, blocs_vignettes.py les indexe, blocs_familles_auto.py
                 # les étiquette depuis la bibliothèque (releve/bibliotheque-blocs.csv, même bureau = mêmes blocs),
                 # blocs_vers_releve.py écrit le relevé. Aucun agent, aucun jeton. L'inconnu va dans blocs-a-etiqueter.md.
-                pdf = pdf_principal(inbox)
+                pdf = pdf_principal(inbox)          # repli seulement (feuille sans travail/feuilles/<F>.pdf)
                 if not pdf: raise RuntimeError("aucun PDF de plans dans l'INBOX")
                 sig = os.path.join(outdir, "signatures")
-                for cmd, nom in (([sys.executable, "releve/blocs_vectoriels.py", workdir, pdf], "blocs_vectoriels"),
-                                 ([sys.executable, "releve/blocs_vignettes.py", workdir, pdf, sig, "--min", "3"], "blocs_vignettes"),
-                                 ([sys.executable, "releve/blocs_familles_auto.py", workdir], "blocs_familles_auto"),
-                                 ([sys.executable, "releve/blocs_vers_releve.py", workdir, pdf, "--modele", os.environ.get("RELEVE_MODELE_OBSERVE", "bibliothèque de blocs (déterministe)")], "blocs_vers_releve")):
+                # `uv run` comme les autres étapes : chaque script déclare ses dépendances inline (pymupdf, numpy, pillow) —
+                # sys.executable n'a rien de tout ça sur un poste neuf (revue Codex PR #28). Le PDF n'est qu'un repli :
+                # chaque feuille est lue dans travail/feuilles/<F>.pdf, donc dans SON document source (commun.PagesFeuilles).
+                for cmd, nom in ((["uv", "run", "releve/blocs_vectoriels.py", workdir, pdf], "blocs_vectoriels"),
+                                 (["uv", "run", "releve/blocs_vignettes.py", workdir, pdf, sig, "--min", "3"], "blocs_vignettes"),
+                                 (["uv", "run", "releve/blocs_familles_auto.py", workdir], "blocs_familles_auto"),
+                                 (["uv", "run", "releve/blocs_vers_releve.py", workdir, pdf, "--modele", os.environ.get("RELEVE_MODELE_OBSERVE", "bibliothèque de blocs (déterministe)")], "blocs_vers_releve")):
                     t = time.time(); code, out = run(cmd, cwd=REPO, log_path=log_path)
                     steps.append((nom, time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
                     if code: raise RuntimeError(f"{nom} a échoué")

@@ -14,7 +14,8 @@ from __future__ import annotations
 import argparse, csv, json, os, re, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-COLS = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "note"]
+COLS = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "reserve", "note"]
+COLS_INDEX = ["sig_id", "signature", "n_plans", "par_feuille", "legende", "lettre", "exemple", "diametre_pt"]   # = blocs_vignettes.py
 TOL = 0.25      # tolérance par valeur numérique de la signature (pictogrammes : courbes quantifiées à ±0,1–0,2 d'un tracé à l'autre)
 
 
@@ -33,13 +34,42 @@ def _proche(a, b, tol=TOL):
     return True
 
 
+CLES_RELEVE = ("label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles_regex")
+
+
 def _trouver(biblio, signature):
+    """Entrée de bibliothèque pour une signature : exacte, sinon tolérante (pictogrammes). Retourne (entrée, ambigu).
+    Plusieurs candidats tolérants : ils doivent s'accorder sur TOUTES les propriétés du relevé (label, famille, forme,
+    code, matériel, légende, diamètres, feuilles) — sinon `ambigu`, jamais « le premier » (revue Codex PR #28). S'ils ne
+    diffèrent que par la PORTÉE (détecteur existant pointillé / neuf plein aux signatures voisines), l'appareil est bien
+    là : il est relevé avec la portée par défaut de la feuille et une réserve * « portée à confirmer » — un appareil
+    non compté est pire qu'un appareil compté à vérifier."""
     if signature in biblio:
-        return biblio[signature]
+        return biblio[signature], False
     # appariement tolérant SEULEMENT pour les entrées qui le déclarent (colonne `tolerance` > 0 : pictogrammes à courbes) —
     # un luminaire 1'x4' ou une prise se reconnaît à l'identique, sinon on attrape des morceaux de mur
     cands = [b for k, b in biblio.items() if b["label"] != "IGNORER" and float(b.get("tolerance") or 0) > 0 and _proche(k, signature, float(b["tolerance"]))]
-    return cands[0] if len(cands) == 1 or (cands and len({c["label"] for c in cands}) == 1) else None
+    if not cands:
+        return None, False
+    if len({tuple((c.get(k) or "").strip() for k in CLES_RELEVE) for c in cands}) != 1:
+        return None, True
+    portees = {(c.get("portee") or "").strip() for c in cands}
+    if len(portees) == 1:
+        return cands[0], False
+    e = dict(cands[0]); e["portee"] = ""
+    e["reserve"] = "portée à confirmer : la bibliothèque connaît ce pictogramme en " + " et en ".join(sorted(p or "défaut feuille" for p in portees))
+    return e, False
+
+
+def _feuilles_admises(entree, feuilles):
+    """(liste de feuilles admises, applicable) : sans `feuilles_regex` → toutes (chaîne vide = toutes pour
+    blocs_vers_releve.py) ; avec regex → les feuilles du dossier qui y répondent, et « non applicable » s'il n'y en a
+    aucune — une restriction sans correspondance ne devient jamais un accès global (revue Codex PR #28)."""
+    rx = (entree.get("feuilles_regex") or "").strip()
+    if not rx:
+        return "", True
+    ok = sorted(f for f in feuilles if re.fullmatch(rx, f))
+    return " ".join(ok), bool(ok)
 
 
 def main():
@@ -57,22 +87,33 @@ def main():
     # un blocs-familles.csv déjà écrit à la main (dossier en cours de validation) a priorité : on n'écrase jamais un choix humain
     p_fam = os.path.join(work, "blocs-familles.csv")
     manuel = {r["sig_id"]: r for r in csv.DictReader(open(p_fam, encoding="utf-8"))} if os.path.exists(p_fam) else {}
-    fam, inconnues = [], []
+    fam, inconnues, ambigus = [], [], []
+    vus_manuel = set()
+
+    def regle(sid, b, note):
+        return {"sig_id": sid, "label": b["label"], "famille": b["famille"], "forme": b["forme"], "code": b["code"], "materiel": b["materiel"],
+                "legende_no": b["legende_no"], "diam_min": b["diam_min"], "diam_max": b["diam_max"], "feuilles": "", "portee": b.get("portee", ""),
+                "reserve": b.get("reserve", ""), "note": note + (f" ; {b['note']}" if b.get("note") else "")}
+
     for r in index:
         if r["sig_id"] in manuel:
-            fam.append(manuel[r["sig_id"]]); continue
-        b = _trouver(biblio, r["signature"])
+            fam.append(manuel[r["sig_id"]]); vus_manuel.add(r["sig_id"]); continue
+        b, ambigu = _trouver(biblio, r["signature"])
+        if ambigu:
+            ambigus.append(r); continue
         if b and b["label"] == "IGNORER":          # vu et jugé non-appareil dans un dossier précédent (mur, trame, cotation)
             continue
         if b:
-            feuilles_ok = " ".join(sorted(f for f in feuilles if re.fullmatch(b["feuilles_regex"], f))) if b.get("feuilles_regex") else ""
-            fam.append({"sig_id": r["sig_id"], "label": b["label"], "famille": b["famille"], "forme": b["forme"], "code": b["code"], "materiel": b["materiel"],
-                        "legende_no": b["legende_no"], "diam_min": b["diam_min"], "diam_max": b["diam_max"], "feuilles": feuilles_ok,
-                        "portee": b.get("portee", ""), "note": f"bibliothèque : {b['source']}" + (f" ; {b['note']}" if b.get("note") else "")})
+            feuilles_ok, applicable = _feuilles_admises(b, feuilles)
+            if not applicable:                     # restreinte à des feuilles absentes de ce dossier : connue, mais pas ici
+                continue
+            rg = regle(r["sig_id"], b, f"bibliothèque : {b['source']}"); rg["feuilles"] = feuilles_ok; fam.append(rg)
         elif int(r["n_plans"] or 0) >= a.min:
             inconnues.append(r)
     # blocs RARES (sous le seuil de l'index) : un pictogramme (détecteur, enseigne) a une signature quasi unique ; s'il
-    # est proche d'une entrée de la bibliothèque, il entre dans l'index (sig_id neuf, mémoire blocs-ids.json) et sa famille
+    # est proche d'une entrée de la bibliothèque — ou s'il porte déjà une règle MANUELLE (sig_id connu de blocs-ids.json,
+    # écrit à la passe précédente) — il entre dans l'index (sig_id stable) et sa famille suit. La règle manuelle gagne
+    # toujours sur la bibliothèque (revue Codex PR #28 : relancer ne doit jamais écraser une correction humaine).
     connus = {r["signature"] for r in index}
     p_ids = os.path.join(work, "blocs-ids.json")
     ids = json.load(open(p_ids, encoding="utf-8")) if os.path.exists(p_ids) else {}
@@ -86,20 +127,39 @@ def main():
             sg = b_["signature"]
             if sg in connus:
                 continue
-            e = _trouver(biblio, sg)
-            if not e or e["label"] == "IGNORER":
-                continue
+            sid_connu = ids.get(sg)
+            if sid_connu and sid_connu in manuel:
+                e, note = manuel[sid_connu], "règle manuelle conservée"
+                if (e.get("feuilles") or "").strip() and f not in e["feuilles"].split():
+                    continue                       # la règle manuelle limite ses feuilles et celle-ci n'en est pas
+            else:
+                e, ambigu = _trouver(biblio, sg)
+                if ambigu:
+                    ambigus.append({"sig_id": "", "n_plans": 1, "par_feuille": f"{f}:1", "lettre": "", "legende": "", "exemple": f"{f} ({b_['x_pt']},{b_['y_pt']})"}); continue
+                if not e or e["label"] == "IGNORER":
+                    continue
+                _, applicable = _feuilles_admises(e, feuilles)
+                rx = (e.get("feuilles_regex") or "").strip()
+                if not applicable or (rx and not re.fullmatch(rx, f)):
+                    continue                       # même restriction de feuilles que pour les signatures de l'index
+                note = f"bibliothèque (appariement tolérant) : {e['source']}"
             connus.add(sg)
-            sid = ids.get(sg) or f"S{prochain:03d}"
+            sid = sid_connu or f"S{prochain:03d}"
             if sg not in ids:
                 ids[sg] = sid; prochain += 1
             ajouts.append({"sig_id": sid, "signature": sg, "n_plans": 1, "par_feuille": f"{f}:1", "legende": "", "lettre": "", "exemple": f"{f} ({b_['x_pt']},{b_['y_pt']})", "diametre_pt": b_["diametre_pt"]})
-            fam.append({"sig_id": sid, "label": e["label"], "famille": e["famille"], "forme": e["forme"], "code": e["code"], "materiel": e["materiel"],
-                        "legende_no": e["legende_no"], "diam_min": e["diam_min"], "diam_max": e["diam_max"], "feuilles": "", "portee": e.get("portee", ""),
-                        "note": f"bibliothèque (appariement tolérant) : {e['source']}"})
+            if sid in manuel:
+                if sid not in vus_manuel:
+                    fam.append(manuel[sid]); vus_manuel.add(sid)
+            else:
+                rg = regle(sid, e, note); rg["feuilles"] = _feuilles_admises(e, feuilles)[0]; fam.append(rg)
+    # règles manuelles dont la signature n'est plus dans l'index ni dans les blocs : conservées telles quelles (jamais effacées)
+    for sid, r in manuel.items():
+        if sid not in vus_manuel:
+            fam.append(r); vus_manuel.add(sid)
     if ajouts:
         with open(p_idx, "a", newline="", encoding="utf-8") as fh:
-            w = csv.DictWriter(fh, fieldnames=list(index[0].keys())); w.writerows(ajouts)
+            w = csv.DictWriter(fh, fieldnames=COLS_INDEX); w.writerows(ajouts)     # un index vide (en-tête seul) s'écrit aussi
         json.dump(ids, open(p_ids, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
     with open(p_fam, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=COLS, extrasaction="ignore"); w.writeheader(); w.writerows(fam)
@@ -111,8 +171,12 @@ def main():
               f"Inconnues fréquentes (≥ {a.min} instances) : {len(inconnues)} — voir les planches `signatures-NN.png`, ajouter la ligne à "
               "`blocs-familles.csv` du dossier ET à la bibliothèque (signature, label, famille, forme, code, matériel).", ""]
     lignes += [f"- {r['sig_id']} : n={r['n_plans']} ({r['par_feuille']}) lettre « {r['lettre']} » légende « {r['legende'][:50]} » ex. {r['exemple']}" for r in inconnues]
+    if ambigus:
+        lignes += ["", "## Appariements AMBIGUS (plusieurs entrées tolérantes de la bibliothèque, propriétés contradictoires — non relevés)", ""]
+        lignes += [f"- {r.get('sig_id') or '(bloc rare)'} : n={r['n_plans']} ({r['par_feuille']}) ex. {r['exemple']}" for r in ambigus]
     open(os.path.join(work, "blocs-a-etiqueter.md"), "w", encoding="utf-8").write("\n".join(lignes) + "\n")
-    print(f"{len(fam)} signatures étiquetées depuis la bibliothèque ({len(manuel)} manuelles conservées, {len(ajouts)} pictogrammes rares appariés) ; {len(inconnues)} inconnues fréquentes → blocs-a-etiqueter.md")
+    print(f"{len(fam)} signatures étiquetées depuis la bibliothèque ({len(manuel)} manuelles conservées, {len(ajouts)} pictogrammes rares appariés) ; "
+          f"{len(inconnues)} inconnues fréquentes, {len(ambigus)} ambiguës → blocs-a-etiqueter.md")
 
 
 if __name__ == "__main__":

@@ -12,10 +12,12 @@ Usage : uv run releve/blocs_vignettes.py WORKDIR PDF SORTIE [--min 2] [--feuille
 WORKDIR/blocs-ids.json (mémoire cumulative signature → sig_id, pour des identifiants stables d'une passe à l'autre).
 """
 from __future__ import annotations
-import argparse, csv, json, os
+import argparse, csv, json, os, sys
 from collections import defaultdict
 import pymupdf
 from PIL import Image, ImageDraw, ImageFont
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from commun import PagesFeuilles  # noqa: E402
 
 
 def main():
@@ -62,7 +64,7 @@ def main():
             ids[k] = f"S{prochain:03d}"; prochain += 1
     anciens.update(ids)
     json.dump(anciens, open(p_ids, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
-    doc = pymupdf.open(a.pdf)
+    pages = PagesFeuilles(work, a.pdf)      # chaque feuille dans son document source (revue Codex PR #28)
     try:
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 13)
         fontb = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 14)
@@ -84,7 +86,7 @@ def main():
             cand = [b for b in ex if b["feuille"] == f_best]
             cx = sum(float(b["x_pt"]) for b in cand) / len(cand); cy = sum(float(b["y_pt"]) for b in cand) / len(cand)
             b = min(cand, key=lambda b: (float(b["x_pt"]) - cx) ** 2 + (float(b["y_pt"]) - cy) ** 2)
-            page = doc[int(feuilles[f_best]["page"]) - 1]
+            page = pages.page(feuilles[f_best])
             x, y = float(b["x_pt"]), float(b["y_pt"]); t = max(a.taille, float(b["diametre_pt"]) * 1.6)
             z = tw / t
             pm = page.get_pixmap(matrix=pymupdf.Matrix(z, z), clip=pymupdf.Rect(x - t / 2, y - t / 2, x + t / 2, y + t / 2))

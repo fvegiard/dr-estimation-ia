@@ -5,8 +5,8 @@
 """Blocs vectoriels étiquetés → fichiers du relevé (`nomenclature.csv`, `occurrences-visuel.csv`, `feuilles-classement.csv`).
 
 Entrées (WORKDIR) : `blocs/<feuille>.csv` + `blocs-index.csv` (blocs_vectoriels.py / blocs_vignettes.py), et
-`blocs-familles.csv` écrit par l'agent après lecture des planches de signatures :
-    sig_id,label,famille,forme,code,materiel,legende_no,diam_min,diam_max,feuilles,note
+`blocs-familles.csv` écrit par l'agent après lecture des planches de signatures (ou par blocs_familles_auto.py) :
+    sig_id,label,famille,forme,code,materiel,legende_no,diam_min,diam_max,feuilles[,portee,reserve],note
 (diam_min/max en pt : une même signature invariante à l'échelle peut être une sortie data à 4 pt ET une flèche de
 circuit à 12 pt ; `feuilles` : liste blanche de feuilles, vide = toutes).
 
@@ -26,6 +26,7 @@ import pymupdf
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from blocs_vectoriels import MAX_COTE, MIN_COTE, MARGE_FUSION, _points  # noqa: E402
 from legende import code_attendu  # noqa: E402
+from commun import PagesFeuilles  # noqa: E402
 
 PORTEE_TAGS = {"E.A.E": "ENLEVER", "E.A.R": "RELOCALISER", "E.A.C": "CONSERVER", "E.A.D": "ENLEVER"}
 TYPES_LUM = re.compile(r"^(A\d|B\d|C\d(_\d)?|D\d|E|G\d|Z\d)$")   # pas « F » seul : lettre de la station manuelle
@@ -68,7 +69,7 @@ def rect_minimal(pts):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("pdf")
+    ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("pdf", nargs="?", default=None, help="repli seulement : chaque feuille est lue dans travail/feuilles/<F>.pdf ou dans son fichier source")
     ap.add_argument("--modele", default=os.environ.get("RELEVE_MODELE_OBSERVE", ""), help="modèle qui a étiqueté les signatures (observé dans le contexte de la session), sinon « non renseigné »")
     a = ap.parse_args()
     work = os.path.abspath(a.workdir)
@@ -79,7 +80,7 @@ def main():
     for r in fam_rows:
         if r["sig_id"] in index:
             par_sig[index[r["sig_id"]]].append(r)
-    doc = pymupdf.open(a.pdf)
+    pages = PagesFeuilles(work, a.pdf)      # chaque feuille dans SON document source (revue Codex PR #28)
     occ, nom, portees = [], {}, defaultdict(Counter)
     for f, fr in feuilles.items():
         if fr.get("role") != "plan":
@@ -90,7 +91,7 @@ def main():
         blocs = [b for b in csv.DictReader(open(p, encoding="utf-8")) if b["signature"] in par_sig]
         if not blocs:
             continue
-        page = doc[int(fr["page"]) - 1]
+        page = pages.page(fr)
         mots = [w for w in page.get_text("words") if w[4].strip()]
         texte_page = page.get_text().upper()
         nouveau = "NOUVEAU" in texte_page and "EXISTANT/DÉMOLITION" not in texte_page
@@ -138,7 +139,7 @@ def main():
             designation = " ".join(t for d, t in vois if CIRCUIT.match(t) and t.upper() not in PORTEE_TAGS and not TYPES_LUM.match(t))[:60]
             o = {"feuille": f, "label": label, "x_pt": f"{x:.1f}", "y_pt": f"{y:.1f}", "source": "visuel",
                  "note": f"bloc {regle['sig_id']}" + (f" ; type {typ}" if typ else ""), "designation": designation, "portee": portee,
-                 "modele": typ, "reserve": "", "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": ""}
+                 "modele": typ, "reserve": (regle.get("reserve") or "").strip(), "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": ""}
             if forme in ("carre", "triangle"):
                 pts = []
                 for r_, d_ in dr:
@@ -174,7 +175,7 @@ def main():
     for f, fr in feuilles.items():
         if fr.get("role") != "plan" or not re.match(r"E1\d\d", f):
             continue
-        page = doc[int(fr["page"]) - 1]
+        page = pages.page(fr)
         texte_page = page.get_text().upper()
         nouveau = "NOUVEAU" in texte_page and "EXISTANT/DÉMOLITION" not in texte_page
         dr = page.get_drawings()
@@ -232,7 +233,7 @@ def main():
     for f, fr in feuilles.items():
         if fr.get("role") != "plan":
             continue
-        page = doc[int(fr["page"]) - 1]
+        page = pages.page(fr)
         texte_page = page.get_text().upper()
         if not ("NOUVEAU" in texte_page and "EXISTANT/DÉMOLITION" not in texte_page):
             continue
@@ -312,7 +313,7 @@ def main():
     leg_rows = []
     f_leg = next((f for f, fr in feuilles.items() if fr.get("role") == "legende"), None)
     if f_leg and os.path.exists(os.path.join(work, "blocs", f_leg + ".csv")):
-        page_l = doc[int(feuilles[f_leg]["page"]) - 1]
+        page_l = pages.page(feuilles[f_leg])
         heads = [(b[0], b[1], b[4].strip().split("\n")[0].upper()) for b in page_l.get_text("blocks")
                  if re.match(r"^(DISTRIBUTION|ÉCLAIRAGE|ECLAIRAGE|ALARME|SERVICES|CHAUFFAGE|TÉLÉ|COMMUNICATION|SÉCURITÉ|MÉCANIQUE)", b[4].strip().upper())
                  and len(b[4].strip().split("\n")[0]) < 40]
