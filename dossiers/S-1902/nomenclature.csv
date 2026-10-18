@@ -1,0 +1,31 @@
+label,famille,forme,rgb,jeton_regex,description,source,code,materiel,portee,modele,prescription,discipline,legende
+BOITIER C,alarme,carre,,,BOITIER « C » (hors légende — R-006 TEST-E201),E-001 légende ; bloc S218,BC,BOITIER « C » (hors légende — R-006 TEST-E201),ENLEVER,,,electricite,HORS LEGENDE
+DETECTEUR FUMEE,alarme,cercle,,,DÉTECTEUR DE FUMÉE,E-001 légende ; bloc S146,DF,DÉTECTEUR DE FUMÉE,CONSERVER,,,electricite,A14
+HP ENCASTRE PLAFOND,alarme,cercle,,,HAUT-PARLEUR ENCASTRÉ AU PLAFOND,E-001 légende ; bloc S321,HP,HAUT-PARLEUR ENCASTRÉ AU PLAFOND,ENLEVER,,,electricite,A06
+PANNEAU ANNONCIATEUR,alarme,carre,,,PANNEAU ANNONCIATEUR,E-001 légende ; bloc S328,ANN,PANNEAU ANNONCIATEUR,INSTALLER,,,electricite,A12
+STATION MANUELLE,alarme,carre,,,STATION MANUELLE,E-001 légende ; bloc S319,SM,STATION MANUELLE,CONSERVER,,,electricite,A01
+THERMOSTAT,chauffage,cercle,,,THERMOSTAT,E-001 légende ; bloc S323,TH,THERMOSTAT,CONSERVER,,,electricite,C08
+DETECTEUR MOUVEMENT,commande,cercle,,,DETECTEUR DE MOUVEMENT,E-001 légende ; bloc S313,DM,DETECTEUR DE MOUVEMENT,CONSERVER,,,electricite,L11
+INT SIMPLE,commande,cercle,,,INTERRUPTEUR À 3 VOIES,E-001 légende ; bloc S098,I3,INTERRUPTEUR À 3 VOIES,INSTALLER,,,electricite,L04
+ENCASTRE,eclairage,cercle,,,APPAREIL D'ÉCLAIRAGE ENCASTRÉ,E-001 légende ; bloc S014,EN,APPAREIL D'ÉCLAIRAGE ENCASTRÉ,CONSERVER,,,electricite,L05
+ENCASTRE URGENCE,eclairage,cercle,,,APPAREIL D'ÉCLAIRAGE ENCASTRÉ SUR CIRCUIT D'URGENCE PP-U1 (quart noir),E-001 légende ; instances manuelles,EU,APPAREIL D'ÉCLAIRAGE ENCASTRÉ SUR CIRCUIT D'URGENCE PP-U1 (quart noir),CONSERVER,,,electricite,L05
+LED 1X4,eclairage,carre,,,APPAREIL D'ÉCLAIRAGE 'x4',E-001 légende ; bloc S035,LX,APPAREIL D'ÉCLAIRAGE 'x4',CONSERVER,,,electricite,L07
+LED 2X2,eclairage,carre,,,APPAREIL D'ÉCLAIRAGE 2'x2' LED,E-001 légende ; bloc S024,L2,APPAREIL D'ÉCLAIRAGE 2'x2' LED,CONSERVER,,,electricite,L01
+LED 4PI,eclairage,carre,,,APPAREIL D'ÉCLAIRAGE 4' LED,E-001 légende ; bloc S316,L4,APPAREIL D'ÉCLAIRAGE 4' LED,CONSERVER,,,electricite,L02
+LUMINAIRE A1,eclairage,carre,,,APPAREIL D'ÉCLAIRAGE 'x4' — type A1,E-001 légende ; bloc S147,LA1,APPAREIL D'ÉCLAIRAGE 'x4' TYPE A1,INSTALLER,A1,,electricite,L07
+LUMINAIRE C1,eclairage,carre,,,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette) — type C1,E-001 légende ; bloc S150,LC1,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette) TYPE C1,INSTALLER,C1,,electricite,HORS LEGENDE
+LUMINAIRE C1_1,eclairage,cercle,,,Luminaire type C1_1 (tableau E-008),E203 étiquettes,C11,APPAREIL D'ÉCLAIRAGE TYPE C1_1,INSTALLER,C1_1,,electricite,E008-C11
+LUMINAIRE C1_3,eclairage,carre,,,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette) — type C1_3,E-001 légende ; bloc S044,C13,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette) TYPE C1_3,INSTALLER,C1_3,,electricite,HORS LEGENDE
+LUMINAIRE E,eclairage,cercle,,,APPAREIL D'ÉCLAIRAGE ENCASTRÉ — type E,E-001 légende ; bloc S014,LE,APPAREIL D'ÉCLAIRAGE ENCASTRÉ TYPE E,INSTALLER,E,,electricite,L05
+GACHE,intrusion,carre,,,GÂCHE ÉLECTRIQUE,E-001 légende ; bloc S290,G,GÂCHE ÉLECTRIQUE,CONSERVER,,,electricite,I02
+LECTEUR CARTE,intrusion,carre,,,LECTEUR DE CARTE,E-001 légende ; bloc S219,LC,LECTEUR DE CARTE,CONSERVER,,,electricite,I01
+MOTEUR MONOPHASE,mecanique,cercle,,,"MOTEUR MONOPHASÉ, PUISSANCE SELON LES INDICATIONS",E-001 légende ; bloc S102,M1,"MOTEUR MONOPHASÉ, PUISSANCE SELON LES INDICATIONS",RELOCALISER,,,electricite,X01
+MOTEUR TRIPHASE,mecanique,cercle,,,"MOTEUR TRIPHASÉ, PUISSANCE SELON LES INDICATIONS",E-001 légende ; bloc S104,M3,"MOTEUR TRIPHASÉ, PUISSANCE SELON LES INDICATIONS",CONSERVER,,,electricite,X36
+PRISE DDFT,prise,cercle,,,PRISE DOUBLE DDFT (moitié pleine),E-001 légende ; bloc S158,GF,PRISE DOUBLE DDFT (moitié pleine),CONSERVER,,,electricite,HORS LEGENDE
+PRISE DOUBLE 15A,prise,cercle,,,PRISE DE COURANT DOUBLE 15A- 120V,E-001 légende ; bloc S020,PC,PRISE DE COURANT DOUBLE 15A- 120V,CONSERVER,,,electricite,S16
+PRISE USB,prise,cercle,,,PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton Decora USB,E-001 légende ; bloc S051,PC,PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton Decora USB,INSTALLER,,,electricite,S16
+BOITE JONCTION,services,carre,,,BOITE DE JONCTION,E-001 légende ; bloc S107,BJ,BOITE DE JONCTION,CONSERVER,,,electricite,S17
+MONUMENT PLANCHER,services,carre,,,"MONUMENT PLANCHER SURFACE, TYPE HUBBELL S1PT / POKE THROUGH",E-001 légende ; bloc S128,MP,"MONUMENT PLANCHER SURFACE, TYPE HUBBELL S1PT / POKE THROUGH",ENLEVER,,,electricite,S15
+SORTIE DATA,telecom,triangle,,,SORTIE INFORMATIQUE/AUDIO,E-001 légende ; bloc S006,DA,SORTIE INFORMATIQUE/AUDIO,INSTALLER,,,electricite,S03
+SORTIE TV,telecom,carre,,,SORTIE DE CÂBLODISTRIBUTION AU MUR,E-001 légende ; bloc S293,TV,SORTIE DE CÂBLODISTRIBUTION AU MUR,CONSERVER,,,electricite,S02
+ENSEIGNE SORTIE Z6,urgence,cercle,,,ENSEIGNE DE SORTIE DE TYPE PICTOGRAMME Z6 (Stanpro RMSOWH-UDC — tableau E-008),E-001 légende ; instances manuelles,Z6,ENSEIGNE DE SORTIE DE TYPE PICTOGRAMME Z6 (Stanpro RMSOWH-UDC — tableau E-008),INSTALLER,,,electricite,HORS LEGENDE
