@@ -68,7 +68,9 @@ def rect_minimal(pts):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("pdf"); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("pdf")
+    ap.add_argument("--modele", default=os.environ.get("RELEVE_MODELE_OBSERVE", ""), help="modèle qui a étiqueté les signatures (observé dans le contexte de la session), sinon « non renseigné »")
+    a = ap.parse_args()
     work = os.path.abspath(a.workdir)
     feuilles = {r["feuille"]: r for r in csv.DictReader(open(os.path.join(work, "feuilles.csv"), encoding="utf-8"))}
     index = {r["sig_id"]: r["signature"] for r in csv.DictReader(open(os.path.join(work, "blocs-index.csv"), encoding="utf-8"))}
@@ -120,7 +122,7 @@ def main():
                     portee = PORTEE_TAGS[t.upper()]; break
             # type de luminaire : étiquette dont le centre tombe dans l'emprise x du bloc (barres linéaires : C1 et C1_1
             # sont écrits côte à côte au-dessus de deux barres), sinon la plus proche à ≤ 10 pt
-            cand_t = [(d, t, m) for (d, t), m in zip(vois, vois_m) if TYPES_LUM.match(t) and d <= 10]
+            cand_t = [(d, t, m) for (d, t), m in zip(vois, vois_m) if TYPES_LUM.match(t) and d <= 10] if regle["famille"] == "eclairage" else []
             dans_x = [c for c in cand_t if bx0 - 1 <= (c[2][0] + c[2][2]) / 2 <= bx1 + 1]
             typ = (dans_x or cand_t or [(0, "", None)])[0][1]
             if regle["famille"] == "eclairage" and typ and typ not in ("E",) or (regle["famille"] == "eclairage" and typ == "E" and label == "ENCASTRE"):
@@ -134,7 +136,7 @@ def main():
             designation = " ".join(t for d, t in vois if CIRCUIT.match(t) and t.upper() not in PORTEE_TAGS and not TYPES_LUM.match(t))[:60]
             o = {"feuille": f, "label": label, "x_pt": f"{x:.1f}", "y_pt": f"{y:.1f}", "source": "visuel",
                  "note": f"bloc {regle['sig_id']}" + (f" ; type {typ}" if typ else ""), "designation": designation, "portee": portee,
-                 "modele": typ, "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": ""}
+                 "modele": typ, "reserve": "", "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": ""}
             if forme in ("carre", "triangle"):
                 pts = []
                 for r_, d_ in dr:
@@ -207,12 +209,12 @@ def main():
             designation = " ".join(t for dd, t in vois_all if CIRCUIT.match(t) and t.upper() not in PORTEE_TAGS)[:60]
             occ.append({"feuille": f, "label": label, "x_pt": f"{cx:.1f}", "y_pt": f"{cy:.1f}", "source": "visuel",
                         "note": f"cercle ø{max(r.width, r.height):.1f} pt ({lignes} trait(s){', plein' if plein else ''})", "designation": designation,
-                        "portee": portee, "modele": "", "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": f"{max(r.width, r.height) / 2 + 0.8:.1f}"})
+                        "portee": portee, "modele": "", "reserve": "", "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": f"{max(r.width, r.height) / 2 + 0.8:.1f}"})
             deja.append((cx, cy))
             if label not in nom:
                 nom[label] = {"label": label, "famille": "prise", "forme": "cercle", "rgb": "", "jeton_regex": "", "description": mat, "source": "E-001 légende ; cercles vectoriels",
                               "code": code, "materiel": mat, "portee": portee, "modele": "", "prescription": "", "discipline": "electricite", "legende": leg}
-    sans_bloc = []
+    sans_bloc, sur_mot = [], []
     # 2) luminaires typés sur feuille NOUVEAU : l'ÉTIQUETTE est l'unité (une rangée linéaire « C1 + C1_1 » = 2 modules ;
     #    E-203 : mots C1 x12, C1_1 x6, C1_3 x15 = tableau E-008). On remplace les occurrences de blocs typés par une
     #    occurrence par étiquette, posée sur le bloc le plus proche (boîte du bloc si ce bloc n'a qu'une étiquette).
@@ -223,10 +225,10 @@ def main():
         texte_page = page.get_text().upper()
         if not ("NOUVEAU" in texte_page and "EXISTANT/DÉMOLITION" not in texte_page):
             continue
-        blocs_typ = [o for o in occ if o["feuille"] == f and o["label"].startswith("LUMINAIRE ")]
+        blocs_typ = [o for o in occ if o["feuille"] == f and o["label"].startswith("LUMINAIRE ") and o.get("modele")]
         if not blocs_typ:
             continue
-        occ = [o for o in occ if not (o["feuille"] == f and o["label"].startswith("LUMINAIRE "))]
+        occ = [o for o in occ if not (o["feuille"] == f and o["label"].startswith("LUMINAIRE ") and o.get("modele"))]   # les linéaires NON typés (CONSERVER) restent
         mots = [w for w in page.get_text("words") if TYPES_LUM.match(w[4].strip())]
         bruts = [b for b in csv.DictReader(open(os.path.join(work, "blocs", f + ".csv"), encoding="utf-8"))
                  if 12 <= float(b["diametre_pt"]) <= 60 and max(float(b["w_pt"]), float(b["h_pt"])) >= 3 * max(0.1, min(float(b["w_pt"]), float(b["h_pt"])))]
@@ -243,9 +245,9 @@ def main():
                 typ = w[4].strip(); cx, cy = (w[0] + w[2]) / 2, (w[1] + w[3]) / 2
                 # portée : celle lue sur le bloc (étiquette E.A.E/E.A.R/E.A.C voisine), INSTALLER seulement en repli
                 o = {"feuille": f, "label": f"LUMINAIRE {typ}", "source": "visuel", "designation": "", "portee": (b["portee"] if b is not None else "INSTALLER"), "modele": typ,
-                     "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": ""}
+                     "reserve": "", "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": ""}
                 if b is not None and len(lst) == 1:
-                    o.update({k2: b[k2] for k2 in ("x_pt", "y_pt", "x0_pt", "y0_pt", "x1_pt", "y1_pt", "angle_deg", "designation")})
+                    o.update({k2: b[k2] for k2 in ("x_pt", "y_pt", "x0_pt", "y0_pt", "x1_pt", "y1_pt", "angle_deg", "rayon_pt", "designation")})
                     o["note"] = f"étiquette {typ} sur {b['note']}"
                 elif b is not None:
                     o.update({"x_pt": f"{cx:.1f}", "y_pt": f"{float(b['y_pt']):.1f}", "note": f"étiquette {typ} ({len(lst)} modules sur la rangée {b['note']})",
@@ -258,7 +260,10 @@ def main():
                     if brut and math.hypot(float(brut["x_pt"]) - cx, float(brut["y_pt"]) - cy) <= 12:
                         o.update({"x_pt": brut["x_pt"], "y_pt": brut["y_pt"], "rayon_pt": "4.0", "note": f"étiquette {typ} sur barre non étiquetée ø{brut['diametre_pt']} pt"})
                     elif any(math.hypot(float(q["x_pt"]) - cx, float(q["y_pt"]) - cy) <= 60 for q in occ if q["feuille"] == f):
-                        o.update({"x_pt": f"{cx:.1f}", "y_pt": f"{cy:.1f}", "rayon_pt": "4.0", "note": f"étiquette {typ} sans bloc à ≤ 12 pt — position = mot, à vérifier"})
+                        # position = le mot, pas un symbole ancré : réserve * (astérisque au rendu, ligne en réserve) — jamais un relevé confirmé
+                        o.update({"x_pt": f"{cx:.1f}", "y_pt": f"{cy:.1f}", "rayon_pt": "4.0", "note": f"étiquette {typ} sans bloc à ≤ 12 pt — position = mot",
+                                  "reserve": "position = étiquette, symbole non ancré — à vérifier au zoom"})
+                        sur_mot.append((f, typ, round(cx), round(cy)))
                     else:
                         sans_bloc.append((f, typ, round(cx), round(cy)))
                         continue
@@ -272,7 +277,7 @@ def main():
     if os.path.exists(p_inst):
         for r in csv.DictReader(open(p_inst, encoding="utf-8")):
             occ.append({"feuille": r["feuille"], "label": r["label"], "x_pt": r["x_pt"], "y_pt": r["y_pt"], "source": "visuel",
-                        "note": "instance manuelle : " + r["note"], "designation": "", "portee": r["portee"], "modele": "",
+                        "note": "instance manuelle : " + r["note"], "designation": "", "portee": r["portee"], "modele": "", "reserve": "",
                         "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": r["rayon_pt"]})
             if r["label"] not in nom:
                 nom[r["label"]] = {"label": r["label"], "famille": r["famille"], "forme": r["forme"], "rgb": "", "jeton_regex": "",
@@ -312,17 +317,27 @@ def main():
             vus.add((float(b["x_pt"]), d))
             sec = section(float(b["x_pt"]), float(b["y_pt"]))
             pref = {"DISTRIBUTION": "D", "ALARME INCENDIE": "A", "ALARME INTRUSION": "I", "ÉCLAIRAGE D'URGENCE": "U", "SERVICES": "S", "ÉCLAIRAGE": "L", "CHAUFFAGE": "C"}.get(sec, "X")
-            comp[pref] += 1
-            leg_rows.append({"feuille": f_leg, "section": sec, "no": f"{pref}{comp[pref]:02d}", "symbole": f"bloc ø{b['diametre_pt']} pt" + (f" [{b.get('texte')}]" if b.get("texte") else ""),
+            leg_rows.append({"feuille": f_leg, "section": sec, "no": pref, "symbole": f"bloc ø{b['diametre_pt']} pt" + (f" [{b.get('texte')}]" if b.get("texte") else ""),
                              "description": d, "code": code_attendu(d), "statut": "absent", "qte": 0,
                              "preuve": "signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json)",
                              "feuille_legende": f_leg, "x_pt": b["x_pt"], "y_pt": b["y_pt"], "taille_pt": b["diametre_pt"]})
-        leg_rows.sort(key=lambda r: (r["section"], float(r["y_pt"])))
+        # numérotation APRÈS tri par (section, y) : l'ordre de lecture de la légende, stable d'une passe à l'autre
+        # (l'ordre des blocs dépend de la fusion) — A09 reste A09 quand un réglage change
+        leg_rows.sort(key=lambda r: (r["section"], float(r["y_pt"]), float(r["x_pt"])))
+        for r in leg_rows:
+            comp[r["no"]] += 1; r["no"] = f"{r['no']}{comp[r['no']]:02d}"
         # rattacher chaque famille à sa ligne (description de la famille = début de la description de légende)
         def norm(t): return re.sub(r"[^A-Z0-9]", "", t.upper().replace("É", "E").replace("È", "E").replace("Â", "A"))
         for label, n in nom.items():
-            cible = norm(n["materiel"].split(" TYPE ")[0].split(" (")[0].split(" — ")[0])
-            cands = [r for r in leg_rows if len(norm(r["description"])) >= 6 and (cible.startswith(norm(r["description"])) or norm(r["description"]).startswith(cible))]
+            cible = norm(n["materiel"].split(" (")[0].split(" — ")[0])                       # matériel complet (« … TYPE Leviton Decora USB »)
+            base = norm(n["materiel"].split(" TYPE ")[0].split(" (")[0].split(" — ")[0])    # sans le type (luminaires « … TYPE C1 »)
+            # exacte d'abord ; sinon la description la plus LONGUE qui est un préfixe du matériel de la famille — jamais
+            # l'inverse (revue Copilot PR #27 : « DÉTECTEUR DE FUMÉE » → A09, pas A15 « … POUR CONDUIT » ; « THERMOSTAT »
+            # → C07, pas « THERMOSTAT INTÉGRÉ » ; « PRISE … 120V » → S11 ; « PRISE … Leviton Decora USB » → S16)
+            exact = [r for r in leg_rows if norm(r["description"]) == cible]
+            cands = exact or [r for r in leg_rows if len(norm(r["description"])) >= 6 and cible.startswith(norm(r["description"]))] \
+                or [r for r in leg_rows if norm(r["description"]) == base] \
+                or [r for r in leg_rows if len(norm(r["description"])) >= 6 and base.startswith(norm(r["description"]))]
             hit = max(cands, key=lambda r: len(norm(r["description"]))) if cands and n["legende"] != "E-008" else None
             if hit:
                 n["legende"] = hit["no"]; hit["statut"] = "compte"; hit["qte"] = int(hit["qte"]) + sum(portees[label].values())
@@ -332,8 +347,9 @@ def main():
             else:
                 n["legende"] = "HORS LEGENDE"
             attendu = code_attendu(n["materiel"])
-            if attendu:
-                n["code"] = attendu
+            pris = {m["code"] for l2, m in nom.items() if l2 != label}
+            if attendu and attendu not in pris:
+                n["code"] = attendu          # sinon on garde le code de la règle (ex. USB « PU » ≠ prises « PC ») : le bordereau groupe par code
         # luminaires typés : leur « légende » est le tableau des appareils E-008 (une ligne par type)
         for label, n in nom.items():
             if n["legende"] == "E-008":
@@ -346,6 +362,8 @@ def main():
             w = csv.DictWriter(fh, fieldnames=["feuille", "section", "no", "symbole", "description", "code", "statut", "qte", "preuve", "feuille_legende", "x_pt", "y_pt", "taille_pt"])
             w.writeheader(); w.writerows(leg_rows)
     # 5) réserves et rapport
+    def no_de(label):
+        return (nom.get(label) or {}).get("legende") or "HORS LEGENDE"
     R = ["# Réserves — relevé par blocs vectoriels (blocs_vectoriels.py → blocs_vers_releve.py)", "",
          "## R-001 — Méthode", "Chaque symbole est un bloc CAO ; les blocs de même signature (invariante à la position, la rotation et l'échelle, "
          "lettre contenue incluse) sont étiquetés une fois (`blocs-familles.csv`, planches `signatures-NN.png`), puis chaque instance devient une "
@@ -356,18 +374,23 @@ def main():
          "À confirmer famille par famille sur les planches de contrôle.", "",
          "## R-003 — Luminaires typés (E-203/E-204)", "L'unité est l'ÉTIQUETTE (A1, C1, C1_1, C1_3, E) : une rangée linéaire « C1 + C1_1 » = 2 modules. "
          "E-203 : A1 11, C1 12, C1_1 6, C1_3 15 = tableau E-008 et relevé d'éclairage du 2026-10-07. LUMINAIRE E : 3 étiquettes sur bloc (l'estimation en compte 4) — à trancher au zoom.", ""]
+    if sur_mot:
+        R += ["## R-004b — Occurrences posées sur l'ÉTIQUETTE (réserve * : symbole non ancré)", ""] + [f"- {f} : « {t} » à ({x}, {y})" for f, t, x, y in sur_mot] + [""]
     if sans_bloc:
         R += ["## R-004 — Étiquettes de type sans bloc à ≤ 12 pt (écartées, cartouche/notes probables)", ""] + [f"- {f} : « {t} » à ({x}, {y})" for f, t, x, y in sans_bloc] + [""]
     R += ["## R-005 — Pictogrammes (instances manuelles, `blocs-instances.csv`)", "Enseignes Z6 (3, tracé pointillé : confirmer neuf — E-008 en liste 3), détecteurs de fumée (3 existants pointillés + neufs pleins), "
           "encastrés sur circuit d'urgence PP-U1 (quart noir). Les pictogrammes ont des signatures uniques (courbes, remplissages), ils ne se regroupent pas automatiquement.", "",
           "## Q12 — familles par type sur une même ligne de légende (justification)",
-          "L05 (encastré) → ENCASTRE (existant), ENCASTRE URGENCE (quart noir, circuit PP-U1) et LUMINAIRE E (type E du tableau E-008) ; "
-          "L07 ('x4) → LED 1X4 (existant) et LUMINAIRE A1 (type A1 neuf) ; S16 (prise double 15 A) → PRISE DOUBLE 15A et PRISE USB (symbole « USB » distinct). "
+          f"{no_de('ENCASTRE')} (encastré) → ENCASTRE (existant), ENCASTRE URGENCE (quart noir, circuit PP-U1) et LUMINAIRE E (type E du tableau E-008) ; "
+          f"{no_de('LED 1X4')} ('x4) → LED 1X4 (existant) et LUMINAIRE A1 (type A1 neuf) ; {no_de('PRISE DOUBLE 15A')} (prise double 15 A) → PRISE DOUBLE 15A, "
+          f"{no_de('PRISE USB')} (symbole « USB ») → PRISE USB. "
           "Une famille par type de luminaire est voulue : le chiffrage est par type (E-008), pas par symbole (règle R7 : nommer comme la légende/le tableau).", "",
           "## R-007 — Prises (cercles vectoriels, feuilles E-10x)", "Détectées au niveau de la partie (cercle fermé 3,3–5 pt, trait ≥ 0,35 pt) parce que deux prises côte à côte ou une prise collée "
           "à une sortie data fusionnent en un seul bloc. PRISE DDFT = cercle contenant une partie remplie (légende : demi-cercle plein = DDFT ; barre pleine = M.A.L.T. isolée — "
           "les deux variantes tombent ici dans PRISE DDFT, à départager au zoom) ; PRISE DOUBLE 15A = cercle traversé d'au moins un trait (15 A et 20 A non distingués : "
           "le crochet 20 A est un petit trait à côté du cercle, à vérifier sur les planches). Comptoir/standard non distingués (même cercle, trait de comptoir à côté).", "",
+          "## Q14 — code PU (PRISE USB)", f"`code_attendu` donne PC pour la description « PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton Decora USB » ({no_de('PRISE USB')}), déjà pris par PRISE DOUBLE 15A ({no_de('PRISE DOUBLE 15A')}) ; "
+          "le bordereau groupant par (code, portée), PU est conservé pour ne pas fondre 20 USB et 23 prises ordinaires en une ligne.", "",
           "## R-006 — Hors relevé", "Sorties data : triangle plein ≤ 6,5 pt seulement (les grandes flèches sont des renvois de circuit). Cercles nus, bulles d'axes, numéros de locaux, mobilier : ignorés. "
           "Longueurs de conduits/filage : hors relevé (estimation du 2026-10-08). Panneaux E-501/E-502, schémas E-006/E-007 : non relevés (tableaux).", ""]
     open(os.path.join(work, "reserves.md"), "w", encoding="utf-8").write("\n".join(R))
@@ -375,13 +398,13 @@ def main():
          f"Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). {len(occ)} occurrences, {len(nom)} familles.", "",
          "| feuille | occurrences |", "|---|--:|"] + [f"| {f} | {n} |" for f, n in sorted(Counter(o["feuille"] for o in occ).items())] + ["", "| famille | total | portées |", "|---|--:|---|"] \
         + [f"| {label} | {sum(c.values())} | {', '.join(f'{k} {v}' for k, v in c.most_common())} |" for label, c in sorted(portees.items())] \
-        + ["", "Modèle : Claude Fable 5.1 (session interactive, route « session = agent »). Outils : prepare.py, blocs_vectoriels.py, blocs_vignettes.py, blocs_vers_releve.py, controle_qualite.py.", "",
+        + ["", f"Étiquetage des signatures : {a.modele or 'non renseigné (--modele / RELEVE_MODELE_OBSERVE)'}. Outils déterministes : prepare.py, blocs_vectoriels.py, blocs_vignettes.py, blocs_vers_releve.py, controle_qualite.py.", "",
            "**STATUT : relevé automatique à VÉRIFIER sur les planches de contrôle avant chiffrage.**"]
     open(os.path.join(work, "rapport-releve.md"), "w", encoding="utf-8").write("\n".join(T))
     with open(os.path.join(work, "nomenclature.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=["label", "famille", "forme", "rgb", "jeton_regex", "description", "source", "code", "materiel", "portee", "modele", "prescription", "discipline", "legende"])
         w.writeheader(); w.writerows(sorted(nom.values(), key=lambda r: (r["famille"], r["label"])))
-    cols = ["feuille", "label", "x_pt", "y_pt", "source", "note", "designation", "portee", "modele", "x0_pt", "y0_pt", "x1_pt", "y1_pt", "angle_deg", "rayon_pt"]
+    cols = ["feuille", "label", "x_pt", "y_pt", "source", "note", "designation", "portee", "modele", "reserve", "x0_pt", "y0_pt", "x1_pt", "y1_pt", "angle_deg", "rayon_pt"]
     with open(os.path.join(work, "occurrences-visuel.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=cols); w.writeheader(); w.writerows(occ)
     with open(os.path.join(work, "occurrences-texte.csv"), "w", newline="", encoding="utf-8") as fh:

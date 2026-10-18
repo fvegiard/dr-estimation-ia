@@ -92,11 +92,28 @@ def _fusionnable(a, b):
     return True
 
 
+_SPANS = {}
+
+
+def _texte_de_fond(w, page):
+    """Mot écrit en gris clair (« PENTE STR », trames d'architecture : couleur ≥ 0x80 sur chaque canal) : jamais une
+    lettre de symbole (celles-ci sont noires ou gris foncé 0x404040). Revue PR #27 : un mot de fond qui chevauche un
+    moteur ne doit pas entrer dans sa signature."""
+    if page.number not in _SPANS:
+        _SPANS[page.number] = [(pymupdf.Rect(sp["bbox"]), sp["color"]) for b in page.get_text("dict")["blocks"]
+                               for l in b.get("lines", []) for sp in l["spans"]]
+    cx, cy = (w[0] + w[2]) / 2, (w[1] + w[3]) / 2
+    for r, c in _SPANS[page.number]:
+        if r.x0 - 0.5 <= cx <= r.x1 + 0.5 and r.y0 - 0.5 <= cy <= r.y1 + 0.5:
+            return min((c >> 16) & 255, (c >> 8) & 255, c & 255) >= 0x80
+    return False
+
+
 def texte_dans(blocs, page):
     """Lettres dessinées DANS un bloc (F, K, RA, ANN, S, DM, +/−…) : elles font partie du symbole et de sa signature —
     sans elles, station manuelle, klaxon et module isolateur ont le même carré. Un mot compte s'il est à ≥ 60 % dans
-    la boîte du bloc (marge 1 pt) et pas plus grand que le bloc."""
-    mots = [w for w in page.get_text("words") if w[4].strip()]
+    la boîte du bloc (marge 1 pt), pas plus grand que le bloc, pas en gris clair (texte de fond), centré dedans."""
+    mots = [w for w in page.get_text("words") if w[4].strip() and not _texte_de_fond(w, page)]
     for b in blocs:
         x0, y0 = b["x_pt"] - b["w_pt"] / 2 - 1, b["y_pt"] - b["h_pt"] / 2 - 1
         x1, y1 = b["x_pt"] + b["w_pt"] / 2 + 1, b["y_pt"] + b["h_pt"] / 2 + 1
@@ -110,7 +127,14 @@ def texte_dans(blocs, page):
         b["texte"] = " ".join(t for _, _, t in sorted(dedans))
         # lettre de symbole (F, K, C, DM, RA, ANN, PAI, S, T, +/−) : petit bloc, 1 à 4 lettres — une désignation
         # (« (j,k) », « PP-2 3 ») dans un luminaire 2'x2' n'est PAS le symbole, elle reste en colonne `texte`
-        if b["texte"] and b.get("diametre_pt", 99) <= 14 and re.fullmatch(r"[A-Za-z+\-/]{1,4}", b["texte"].replace(" ", "")):
+        # critère RELATIF au bloc (la légende dessine ANN à 23 pt, le plan à 7 pt) : lettres seules (1-4), hauteur du mot
+        # ≤ 0,8 × diamètre du bloc — les désignations de circuits (chiffres, tirets, parenthèses) sont exclues par le motif
+        # — et centrée dans le bloc (centre du mot à ≤ 0,5 × diamètre du centre du bloc)
+        D = b.get("diametre_pt", 0) or 1
+        lettres = [w for w in mots if (w[1], w[0], w[4]) in dedans]
+        h_mots = max((w[3] - w[1] for w in lettres), default=0)
+        centres = all(math.hypot((w[0] + w[2]) / 2 - b["x_pt"], (w[1] + w[3]) / 2 - b["y_pt"]) <= 0.5 * D + 0.5 for w in lettres)
+        if b["texte"] and lettres and centres and re.fullmatch(r"[A-Za-z+\-/]{1,4}", b["texte"].replace(" ", "")) and 0.2 * D <= h_mots <= 0.8 * D + 0.5:
             sig = json.loads(b["signature"]); b["signature"] = json.dumps([sig[0], sig[1], b["texte"].replace(" ", "").upper()])
     return blocs
 
@@ -132,6 +156,7 @@ def blocs_page(page, max_cote=MAX_COTE):
     # nombre de « grandes formes fermées » (≥ 10 pt) par composante : deux composantes qui en ont chacune une ne
     # fusionnent jamais, même via un petit trait qui les touche toutes les deux (revue Codex PR #27)
     gros = [1 if (c[1][3] and max(c[0].width, c[0].height) >= 10) else 0 for c in cand]
+    boite = [[c[0].x0, c[0].y0, c[0].x1, c[0].y1] for c in cand]     # boîte de la COMPOSANTE (racine), mise à jour à chaque union
 
     def find(i):
         while parent[i] != i:
@@ -147,12 +172,14 @@ def blocs_page(page, max_cote=MAX_COTE):
         while j_ < n and xs0[j_] <= ri.x1 + MARGE_FUSION:
             j = order[j_]; rj = cand[j][0]
             if rj.y0 <= ri.y1 + MARGE_FUSION and rj.y1 >= ri.y0 - MARGE_FUSION and _fusionnable(cand[i], cand[j]):
-                # taille du bloc fusionné limitée : jamais un mur entier
-                x0, y0 = min(ri.x0, rj.x0), min(ri.y0, rj.y0); x1, y1 = max(ri.x1, rj.x1), max(ri.y1, rj.y1)
-                if max(x1 - x0, y1 - y0) <= max_cote:
-                    pa, pb = find(i), find(j)
-                    if pa != pb and not (gros[pa] and gros[pb]):
-                        parent[pa] = pb; gros[pb] += gros[pa]
+                # contraintes vérifiées sur les COMPOSANTES déjà fusionnées (revues Codex/Copilot PR #27) : la boîte
+                # résultante reste ≤ max_cote (jamais un mur entier par chaînage) et au plus une grande forme fermée
+                pa, pb = find(i), find(j)
+                if pa != pb and not (gros[pa] and gros[pb]):
+                    ba, bb = boite[pa], boite[pb]
+                    x0, y0 = min(ba[0], bb[0]), min(ba[1], bb[1]); x1, y1 = max(ba[2], bb[2]), max(ba[3], bb[3])
+                    if max(x1 - x0, y1 - y0) <= max_cote:
+                        parent[pa] = pb; gros[pb] += gros[pa]; boite[pb] = [x0, y0, x1, y1]
             j_ += 1
     groupes = defaultdict(list)
     for i in range(n):
@@ -166,6 +193,10 @@ def blocs_page(page, max_cote=MAX_COTE):
         parties = [cand[i][1] for i in idx]
         # un bloc fait d'un seul trait ouvert n'est pas un symbole (mur, trame, cotation)
         if len(idx) == 1 and not parties[0][3] and parties[0][2] <= 2:
+            continue
+        # un bloc plat (traits colinéaires : h ou w ≈ 0, aucune forme fermée) n'est pas un symbole non plus — morceau de
+        # mur ou de cadre qui partage la signature « deux segments » d'un luminaire 1'x4' (revue PR #27)
+        if min(x1 - x0, y1 - y0) < 0.5 and not any(p_[3] for p_ in parties):
             continue
         cs = [((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2) for r in rs]
         pts_tous = [q for i in idx for q in cand[i][2]]

@@ -8,7 +8,8 @@ signature est aussi dessinée dans la légende, et la lettre contenue. L'agent (
 signature UNE fois dans `blocs-familles.csv` (sig_id,label,code,forme,materiel,note) — toutes les occurrences suivent.
 
 Usage : uv run releve/blocs_vignettes.py WORKDIR PDF SORTIE [--min 2] [--feuilles E101 …] [--par-planche 30]
-Écrit SORTIE/signatures-NN.png et WORKDIR/blocs-index.csv (sig_id, signature, n_plans, par_feuille, legende, lettre, exemple).
+Écrit SORTIE/signatures-NN.png, WORKDIR/blocs-index.csv (sig_id, signature, n_plans, par_feuille, legende, lettre, exemple) et
+WORKDIR/blocs-ids.json (mémoire cumulative signature → sig_id, pour des identifiants stables d'une passe à l'autre).
 """
 from __future__ import annotations
 import argparse, csv, json, os
@@ -43,10 +44,15 @@ def main():
     rows.sort(key=lambda r: -r[0])
     # identifiants STABLES : une signature déjà indexée garde son sig_id (blocs-familles.csv s'y réfère) ; les
     # nouvelles reçoivent des numéros au-delà du plus grand existant (revue Codex PR #27)
+    # `blocs-ids.json` = mémoire CUMULATIVE signature → sig_id : une signature qui disparaît d'une passe (réglage de
+    # fusion) et réapparaît à la suivante retrouve son identifiant au lieu d'en recevoir un nouveau
     anciens = {}
     p_idx = os.path.join(work, "blocs-index.csv")
     if os.path.exists(p_idx):
-        anciens = {r["signature"]: r["sig_id"] for r in csv.DictReader(open(p_idx, encoding="utf-8"))}
+        anciens.update({r["signature"]: r["sig_id"] for r in csv.DictReader(open(p_idx, encoding="utf-8"))})
+    p_ids = os.path.join(work, "blocs-ids.json")
+    if os.path.exists(p_ids):
+        anciens.update(json.load(open(p_ids, encoding="utf-8")))      # la mémoire cumulative fait foi
     prochain = max([int(v[1:]) for v in anciens.values()] + [0]) + 1
     ids = {}
     for n, k, leg, lettre in rows:
@@ -54,6 +60,8 @@ def main():
             ids[k] = anciens[k]
         else:
             ids[k] = f"S{prochain:03d}"; prochain += 1
+    anciens.update(ids)
+    json.dump(anciens, open(p_ids, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
     doc = pymupdf.open(a.pdf)
     try:
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 13)

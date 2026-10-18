@@ -9,20 +9,20 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | E101 | 127 | 10 |
 | E102 | 58 | 8 |
 | E103 | 6 | 1 |
-| E104 | 115 | 8 |
+| E104 | 116 | 8 |
 | E105 | 33 | 7 |
 | E106 | 2 | 1 |
 | E201 | 106 | 9 |
 | E202 | 57 | 3 |
-| E203 | 69 | 10 |
-| E204 | 67 | 4 |
-| **Total** | **640** | **30** |
+| E203 | 71 | 11 |
+| E204 | 69 | 5 |
+| **Total** | **645** | **31** |
 
 ## Tous les plans
 
 | Libellé | Famille | Quantité |
 |---|---|--:|
-| BOITE JONCTION | services | 9 |
+| BOITE JONCTION | services | 10 |
 | BOITIER C | alarme | 4 |
 | DETECTEUR FUMEE | alarme | 10 |
 | DETECTEUR MOUVEMENT | commande | 3 |
@@ -41,6 +41,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | LUMINAIRE C1_1 | eclairage | 6 |
 | LUMINAIRE C1_3 | eclairage | 15 |
 | LUMINAIRE E | eclairage | 3 |
+| LUMINAIRE LINEAIRE | eclairage | 4 |
 | MONUMENT PLANCHER | services | 7 |
 | MOTEUR MONOPHASE | mecanique | 9 |
 | MOTEUR TRIPHASE | mecanique | 9 |
@@ -57,7 +58,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 
 | Libellé | Ce plan | Tous les plans |
 |---|--:|--:|
-| BOITE JONCTION | 4 | 9 |
+| BOITE JONCTION | 4 | 10 |
 | BOITIER C | 1 | 4 |
 | GACHE | 3 | 3 |
 | LECTEUR CARTE | 3 | 5 |
@@ -72,7 +73,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 
 | Libellé | Ce plan | Tous les plans |
 |---|--:|--:|
-| BOITE JONCTION | 1 | 9 |
+| BOITE JONCTION | 1 | 10 |
 | LED 1X4 | 1 | 33 |
 | MONUMENT PLANCHER | 3 | 7 |
 | MOTEUR TRIPHASE | 5 | 9 |
@@ -91,7 +92,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 
 | Libellé | Ce plan | Tous les plans |
 |---|--:|--:|
-| BOITE JONCTION | 2 | 9 |
+| BOITE JONCTION | 3 | 10 |
 | LECTEUR CARTE | 2 | 5 |
 | LED 4PI | 1 | 2 |
 | PRISE DDFT | 20 | 49 |
@@ -122,7 +123,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 
 | Libellé | Ce plan | Tous les plans |
 |---|--:|--:|
-| BOITE JONCTION | 2 | 9 |
+| BOITE JONCTION | 2 | 10 |
 | BOITIER C | 3 | 4 |
 | DETECTEUR FUMEE | 5 | 10 |
 | DETECTEUR MOUVEMENT | 3 | 3 |
@@ -153,6 +154,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | LUMINAIRE C1_1 | 6 | 6 |
 | LUMINAIRE C1_3 | 15 | 15 |
 | LUMINAIRE E | 3 | 3 |
+| LUMINAIRE LINEAIRE | 2 | 4 |
 | PANNEAU ANNONCIATEUR | 1 | 1 |
 
 ## E204
@@ -163,6 +165,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | ENCASTRE URGENCE | 1 | 10 |
 | ENSEIGNE SORTIE Z6 | 1 | 3 |
 | LED 2X2 | 49 | 94 |
+| LUMINAIRE LINEAIRE | 2 | 4 |
 
 ## Nomenclature (libellé → source de la lecture)
 
@@ -187,6 +190,7 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 | LUMINAIRE C1_1 | eclairage | Luminaire type C1_1 (tableau E-008) | E203 étiquettes |
 | LUMINAIRE C1_3 | eclairage | Luminaire type C1_3 (tableau E-008) | E203 étiquettes |
 | LUMINAIRE E | eclairage | Luminaire type E (tableau E-008) | E203 étiquettes |
+| LUMINAIRE LINEAIRE | eclairage | APPAREIL D&#x27;ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l&#x27;étiquette) | E-001 légende ; bloc S044 |
 | MONUMENT PLANCHER | services | MONUMENT PLANCHER SURFACE, TYPE HUBBELL S1PT / POKE THROUGH | E-001 légende ; bloc S128 |
 | MOTEUR MONOPHASE | mecanique | MOTEUR MONOPHASÉ, PUISSANCE SELON LES INDICATIONS | E-001 légende ; bloc S102 |
 | MOTEUR TRIPHASE | mecanique | MOTEUR TRIPHASÉ, PUISSANCE SELON LES INDICATIONS | E-001 légende ; bloc S104 |
@@ -203,24 +207,24 @@ Généré le 2026-10-17 par le pipeline `releve/` (relevé automatique Claude + 
 
 # Rapport de relevé — S-1902 Bibliothèque Georgette-Lepage (SP-GTER-26-0080, HF experts-conseils 26-29)
 
-Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). 640 occurrences, 30 familles.
+Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). 645 occurrences, 31 familles.
 
 | feuille | occurrences |
 |---|--:|
 | E101 | 127 |
 | E102 | 58 |
 | E103 | 6 |
-| E104 | 115 |
+| E104 | 116 |
 | E105 | 33 |
 | E106 | 2 |
 | E201 | 106 |
 | E202 | 57 |
-| E203 | 69 |
-| E204 | 67 |
+| E203 | 71 |
+| E204 | 69 |
 
 | famille | total | portées |
 |---|--:|---|
-| BOITE JONCTION | 9 | CONSERVER 5, ENLEVER 2, INSTALLER 2 |
+| BOITE JONCTION | 10 | CONSERVER 5, INSTALLER 3, ENLEVER 2 |
 | BOITIER C | 4 | ENLEVER 2, CONSERVER 2 |
 | DETECTEUR FUMEE | 10 | CONSERVER 6, INSTALLER 2, RELOCALISER 1, ENLEVER 1 |
 | DETECTEUR MOUVEMENT | 3 | CONSERVER 2, ENLEVER 1 |
@@ -239,6 +243,7 @@ Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthod
 | LUMINAIRE C1_1 | 6 | INSTALLER 6 |
 | LUMINAIRE C1_3 | 15 | INSTALLER 15 |
 | LUMINAIRE E | 3 | INSTALLER 3 |
+| LUMINAIRE LINEAIRE | 4 | CONSERVER 4 |
 | MONUMENT PLANCHER | 7 | ENLEVER 3, INSTALLER 3, CONSERVER 1 |
 | MOTEUR MONOPHASE | 9 | RELOCALISER 6, INSTALLER 3 |
 | MOTEUR TRIPHASE | 9 | CONSERVER 5, INSTALLER 4 |
@@ -251,7 +256,7 @@ Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthod
 | STATION MANUELLE | 4 | CONSERVER 4 |
 | THERMOSTAT | 9 | CONSERVER 7, INSTALLER 2 |
 
-Modèle : Claude Fable 5.1 (session interactive, route « session = agent »). Outils : prepare.py, blocs_vectoriels.py, blocs_vignettes.py, blocs_vers_releve.py, controle_qualite.py.
+Étiquetage des signatures : Claude Fable 5.1 (claude-fable-5-1, observé dans le contexte de la session Claude Code cloud). Outils déterministes : prepare.py, blocs_vectoriels.py, blocs_vignettes.py, blocs_vers_releve.py, controle_qualite.py.
 
 **STATUT : relevé automatique à VÉRIFIER sur les planches de contrôle avant chiffrage.**
 
@@ -272,16 +277,18 @@ L'unité est l'ÉTIQUETTE (A1, C1, C1_1, C1_3, E) : une rangée linéaire « C1 
 
 - E203 : « E » à (1717, 967)
 - E203 : « E » à (1717, 967)
-- E204 : « E » à (1717, 967)
 
 ## R-005 — Pictogrammes (instances manuelles, `blocs-instances.csv`)
 Enseignes Z6 (3, tracé pointillé : confirmer neuf — E-008 en liste 3), détecteurs de fumée (3 existants pointillés + neufs pleins), encastrés sur circuit d'urgence PP-U1 (quart noir). Les pictogrammes ont des signatures uniques (courbes, remplissages), ils ne se regroupent pas automatiquement.
 
 ## Q12 — familles par type sur une même ligne de légende (justification)
-L05 (encastré) → ENCASTRE (existant), ENCASTRE URGENCE (quart noir, circuit PP-U1) et LUMINAIRE E (type E du tableau E-008) ; L07 ('x4) → LED 1X4 (existant) et LUMINAIRE A1 (type A1 neuf) ; S16 (prise double 15 A) → PRISE DOUBLE 15A et PRISE USB (symbole « USB » distinct). Une famille par type de luminaire est voulue : le chiffrage est par type (E-008), pas par symbole (règle R7 : nommer comme la légende/le tableau).
+L03 (encastré) → ENCASTRE (existant), ENCASTRE URGENCE (quart noir, circuit PP-U1) et LUMINAIRE E (type E du tableau E-008) ; L10 ('x4) → LED 1X4 (existant) et LUMINAIRE A1 (type A1 neuf) ; S01 (prise double 15 A) → PRISE DOUBLE 15A, S17 (symbole « USB ») → PRISE USB. Une famille par type de luminaire est voulue : le chiffrage est par type (E-008), pas par symbole (règle R7 : nommer comme la légende/le tableau).
 
 ## R-007 — Prises (cercles vectoriels, feuilles E-10x)
 Détectées au niveau de la partie (cercle fermé 3,3–5 pt, trait ≥ 0,35 pt) parce que deux prises côte à côte ou une prise collée à une sortie data fusionnent en un seul bloc. PRISE DDFT = cercle contenant une partie remplie (légende : demi-cercle plein = DDFT ; barre pleine = M.A.L.T. isolée — les deux variantes tombent ici dans PRISE DDFT, à départager au zoom) ; PRISE DOUBLE 15A = cercle traversé d'au moins un trait (15 A et 20 A non distingués : le crochet 20 A est un petit trait à côté du cercle, à vérifier sur les planches). Comptoir/standard non distingués (même cercle, trait de comptoir à côté).
+
+## Q14 — code PU (PRISE USB)
+`code_attendu` donne PC pour la description « PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton Decora USB » (S17), déjà pris par PRISE DOUBLE 15A (S01) ; le bordereau groupant par (code, portée), PU est conservé pour ne pas fondre 20 USB et 23 prises ordinaires en une ligne.
 
 ## R-006 — Hors relevé
 Sorties data : triangle plein ≤ 6,5 pt seulement (les grandes flèches sont des renvois de circuit). Cercles nus, bulles d'axes, numéros de locaux, mobilier : ignorés. Longueurs de conduits/filage : hors relevé (estimation du 2026-10-08). Panneaux E-501/E-502, schémas E-006/E-007 : non relevés (tableaux).

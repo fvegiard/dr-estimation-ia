@@ -15,11 +15,11 @@ S035,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,rectangle 
 S343,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
 S134,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
 S168,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
-S101,LUMINAIRE LINEAIRE,eclairage,carre,C1,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
-S044,LUMINAIRE LINEAIRE,eclairage,carre,C1,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,sur E101/E103/E106 la même signature est une barrière : ignorée hors E203/E204
-S148,LUMINAIRE LINEAIRE,eclairage,carre,C1,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
-S149,LUMINAIRE LINEAIRE,eclairage,carre,C1,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
-S150,LUMINAIRE LINEAIRE,eclairage,carre,C1,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S101,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S044,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,sur E101/E103/E106 la même signature est une barrière : ignorée hors E203/E204
+S148,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S149,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S150,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
 S098,INT 3 VOIES,commande,cercle,I3,INTERRUPTEUR À 3 VOIES,EC06,0,99,,$ avec 3 ; sans le 3 = interrupteur simple (trié par le texte voisin)
 S313,DETECTEUR MOUVEMENT,commande,cercle,DM,DETECTEUR DE MOUVEMENT,EC14,0,99,,
 S103,THERMOSTAT,chauffage,cercle,T,THERMOSTAT,CH01,0,99,,
