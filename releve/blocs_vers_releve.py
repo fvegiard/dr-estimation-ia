@@ -386,6 +386,17 @@ def main():
          "À confirmer famille par famille sur les planches de contrôle.", "",
          "## R-003 — Luminaires typés (E-203/E-204)", "L'unité est l'ÉTIQUETTE (A1, C1, C1_1, C1_3, E) : une rangée linéaire « C1 + C1_1 » = 2 modules. "
          "E-203 : A1 11, C1 12, C1_1 6, C1_3 15 = tableau E-008 et relevé d'éclairage du 2026-10-07. LUMINAIRE E : 3 étiquettes sur bloc (l'estimation en compte 4) — à trancher au zoom.", ""]
+    # R-008 — comptage incomplet : signatures non étiquetées / ambiguës (blocs_familles_auto.py) et feuilles sans tracés
+    # vectoriels (run.py) — chaque ligne nomme ses feuilles pour tomber dans leur bloc RÉSERVES du PDF (revue Copilot PR #28)
+    p_inc = os.path.join(work, "blocs-a-etiqueter.json"); p_nr = os.path.join(work, "blocs-non-relevees.json")
+    inc = json.load(open(p_inc, encoding="utf-8")) if os.path.exists(p_inc) else {}
+    nr = json.load(open(p_nr, encoding="utf-8")) if os.path.exists(p_nr) else {}
+    if inc.get("inconnues") or inc.get("ambigues") or nr.get("feuilles"):
+        R += ["## R-008 — COMPTAGE INCOMPLET (à trancher avant chiffrage)", ""]
+        R += [f"- Feuilles {', '.join(nr['feuilles'])} : SANS tracés vectoriels (scan) — non relevées par la route blocs ({nr.get('motif', '')})."] if nr.get("feuilles") else []
+        R += [f"- Signature {r['sig_id']} non étiquetée : {r['n_plans']} blocs ({r['par_feuille']}), ex. {r['exemple']} — à étiqueter (planches signatures-NN.png) puis à ajouter à la bibliothèque." for r in inc.get("inconnues", [])]
+        R += [f"- Appariement ambigu {r['sig_id'] or '(bloc rare)'} : {r['n_plans']} bloc(s) ({r['par_feuille']}), ex. {r['exemple']} — non relevé, à trancher." for r in inc.get("ambigues", [])]
+        R += [""]
     if sur_mot:
         R += ["## R-004b — Occurrences posées sur l'ÉTIQUETTE (réserve * : symbole non ancré)", ""] + [f"- {f} : « {t} » à ({x}, {y})" for f, t, x, y in sur_mot] + [""]
     if sans_bloc:

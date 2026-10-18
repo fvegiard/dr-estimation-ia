@@ -174,7 +174,8 @@ def agent(workdir, log_path):
 def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=None, *, acceptation=None):
     a_verifier = a_verifier or []
     n_raster = raster_ouverts(workdir) if ok else 0
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or n_raster) else "TERMINÉ")
+    n_blocs, l_blocs = blocs_ouverts(workdir) if ok else (0, [])
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or n_raster or n_blocs) else "TERMINÉ")
     if ok and acceptation:     # boucle d'acceptation exécutée : l'état intègre son verdict
         if "INVALIDE" in acceptation:
             etat = "TERMINÉ — ACCEPTATION INVALIDE"
@@ -188,6 +189,9 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
     if n_raster:
         L += ["", f"⚠️ **{n_raster} constat(s) des contrôles raster à trancher au zoom** (symboles non retrouvés, pastilles hors "
               "seuil d'alignement, familles suspectes — détail §Contrôles raster) avant de considérer ce livrable terminé."]
+    if n_blocs:
+        L += ["", f"⚠️ **Comptage incomplet — route blocs : {n_blocs} constat(s)** (feuilles sans tracés vectoriels, signatures non "
+              "étiquetées, appariements ambigus — détail §Route blocs et réserve R-008) à trancher avant chiffrage."]
     if a_verifier:
         L += ["", f"⚠️ **Encadré RELEVE-MATERIEL hors de l'espace libre du plan sur : {', '.join(a_verifier)}** "
               f"(voir `{name}-rendu-rapport.json`) — vérifier visuellement (Read du PDF, zoome) avant de "
@@ -220,6 +224,8 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
     cr = controles_raster(workdir, outdir)
     if cr:
         L += ["## Contrôles raster (ancrage, légende, planches)", ""] + cr + [""]
+    if l_blocs:
+        L += ["## Route blocs (bibliothèque de signatures)", ""] + l_blocs + [""]
     L += ["## Étapes", "", "| étape | durée | résultat |", "|---|--:|---|"] + [f"| {s} | {d / 60:.1f} min | {r} |" for s, d, r in steps]
     if acceptation:
         L += ["", f"**Boucle d'acceptation : {acceptation}** — verdict détaillé dans "
@@ -266,6 +272,26 @@ def feuilles_raster(workdir):
     import csv
     return [r["feuille"] for r in csv.DictReader(open(p, encoding="utf-8"))
             if (r.get("nb_mots") or "0").strip() in ("", "0") or (r.get("classement_fichier") or "") == "scan"]
+
+def blocs_ouverts(workdir):
+    """(nombre, lignes STATUT) des constats de la route blocs : feuilles raster non relevées, signatures fréquentes non
+    étiquetées, appariements ambigus — ils mettent le dossier « À VÉRIFIER » et sont repris en réserve R-008."""
+    n, L = 0, []
+    p = os.path.join(workdir, "blocs-non-relevees.json")
+    if os.path.exists(p):
+        nr = json.load(open(p, encoding="utf-8"))
+        if nr.get("feuilles"):
+            n += len(nr["feuilles"]); L.append(f"- feuilles NON relevées (sans tracés vectoriels) : {', '.join(nr['feuilles'])} — {nr.get('motif', '')}")
+    p = os.path.join(workdir, "blocs-a-etiqueter.json")
+    if os.path.exists(p):
+        a = json.load(open(p, encoding="utf-8"))
+        if a.get("inconnues"):
+            n += len(a["inconnues"]); L.append(f"- {len(a['inconnues'])} signature(s) fréquente(s) non étiquetée(s) ({sum(r['n_plans'] for r in a['inconnues'])} blocs) : "
+                                             + ", ".join(f"{r['sig_id']} ({r['par_feuille']})" for r in a["inconnues"][:12]) + " — voir blocs-a-etiqueter.md")
+        if a.get("ambigues"):
+            n += len(a["ambigues"]); L.append(f"- {len(a['ambigues'])} appariement(s) ambigu(s) non relevé(s) : " + ", ".join(r["exemple"] for r in a["ambigues"][:12]))
+        L.append(f"- bibliothèque `{a.get('bibliotheque')}` : {a.get('etiquetees')} signatures étiquetées automatiquement")
+    return n, L
 
 def raster_ouverts(workdir):
     """Nombre de constats raster à trancher au zoom avant « fait » : symboles non retrouvés, pastilles hors seuil
@@ -356,6 +382,22 @@ def process(arg, reprendre=False):
                 # blocs_vers_releve.py écrit le relevé. Aucun agent, aucun jeton. L'inconnu va dans blocs-a-etiqueter.md.
                 pdf = pdf_principal(inbox)          # repli seulement (feuille sans travail/feuilles/<F>.pdf)
                 if not pdf: raise RuntimeError("aucun PDF de plans dans l'INBOX")
+                # feuilles SANS tracés vectoriels (scan) : la route blocs ne lit que des tracés CAO. Toutes raster → échec
+                # explicite (RELEVE_AGENT=sdk) ; dossier mixte → relevé des feuilles vectorielles seulement, les autres
+                # vont en réserve R-008 et mettent le STATUT « À VÉRIFIER » (revue Copilot PR #28 : jamais un relevé
+                # partiel présenté comme complet)
+                raster_b = feuilles_raster(workdir)
+                import csv as _csv
+                plans_b = [r["feuille"] for r in _csv.DictReader(open(os.path.join(workdir, "feuilles.csv"), encoding="utf-8")) if r.get("role") == "plan"]
+                p_nr = os.path.join(workdir, "blocs-non-relevees.json")
+                if plans_b and all(f in raster_b for f in plans_b):
+                    raise RuntimeError("aucune feuille de plan vectorielle (scans) : la route blocs ne s'applique pas — relancer avec RELEVE_AGENT=sdk (route par agent)")
+                if raster_b:
+                    json.dump({"feuilles": raster_b, "motif": "feuilles sans couche texte ni tracés CAO : route blocs inapplicable, relancer avec RELEVE_AGENT=sdk pour ces feuilles"},
+                              open(p_nr, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                    log(f"feuilles raster non relevées par la route blocs : {', '.join(raster_b)}")
+                elif os.path.exists(p_nr):
+                    os.remove(p_nr)
                 sig = os.path.join(outdir, "signatures")
                 # `uv run` comme les autres étapes : chaque script déclare ses dépendances inline (pymupdf, numpy, pillow) —
                 # sys.executable n'a rien de tout ça sur un poste neuf (revue Codex PR #28). Le PDF n'est qu'un repli :
@@ -369,6 +411,9 @@ def process(arg, reprendre=False):
                     if code: raise RuntimeError(f"{nom} a échoué")
                 res = {"subtype": "blocs", "num_turns": 0, "total_cost_usd": 0}
             else:
+                for f_ in ("blocs-a-etiqueter.json", "blocs-non-relevees.json"):   # constats de la route blocs : périmés ici
+                    try: os.remove(os.path.join(workdir, f_))
+                    except FileNotFoundError: pass
                 code, res, dur = agent(workdir, log_path)
                 steps.append(("agent Claude", dur, f"{res.get('subtype')} / code {code}"))
                 if code:
@@ -478,7 +523,7 @@ def process(arg, reprendre=False):
             log(f"copié sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or raster_ouverts(workdir)) else "TERMINÉ")
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or raster_ouverts(workdir) or blocs_ouverts(workdir)[0]) else "TERMINÉ")
     log(f"{etat} {name} → {outdir}")
     return ok
 

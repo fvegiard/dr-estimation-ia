@@ -207,3 +207,35 @@ def test_pages_feuilles_document_source(tmp_path):
     assert "PLAN-1" in pages.page({"feuille": "P1", "fichier": "plans.pdf", "page": "1"}).get_text()
     with pytest.raises(FileNotFoundError):
         pages.page({"feuille": "X", "fichier": "inconnu.pdf", "page": "7"})
+
+
+def test_run_blocs_feuilles_raster_et_inconnues_mettent_a_verifier(monkeypatch, tmp_path):
+    """Route blocs : une feuille scannée (0 mot) n'est pas relevée → blocs-non-relevees.json, STATUT « À VÉRIFIER » ;
+    toutes scannées → échec explicite ; les signatures inconnues (blocs-a-etiqueter.json) comptent aussi."""
+    sys.path.insert(0, os.path.join(REPO, "releve"))
+    import run as releve_run
+    inbox = tmp_path / "INBOX" / "S-T"; inbox.mkdir(parents=True); (inbox / "plans.pdf").write_bytes(b"%PDF-1.4\n")
+    outbox = tmp_path / "OUTBOX"; outdir = outbox / "S-T"; workdir = outdir / "travail"; workdir.mkdir(parents=True)
+    (workdir / "feuilles.csv").write_text("feuille,fichier,page,nb_mots,classement_fichier,role\nE1,plans.pdf,1,500,plans,plan\nE2,plans.pdf,2,0,plans,plan\n", encoding="utf-8")
+    (workdir / "nomenclature.csv").write_text("label\n", encoding="utf-8"); (workdir / "feuilles-classement.csv").write_text("feuille\n", encoding="utf-8")
+    (workdir / "blocs-a-etiqueter.json").write_text(json.dumps({"bibliotheque": "b.csv", "etiquetees": 3, "inconnues": [{"sig_id": "S009", "n_plans": 7, "par_feuille": "E1:7", "exemple": "E1 (1,1)"}], "ambigues": []}), encoding="utf-8")
+    statuts = []; statut_reel = releve_run.statut
+    monkeypatch.setattr(releve_run, "OUTBOX", str(outbox)); monkeypatch.setattr(releve_run, "ROUTE", "blocs")
+    monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-T", str(inbox)))
+    monkeypatch.setattr(releve_run, "prepare_a_jour", lambda inbox, workdir: True)
+    monkeypatch.setattr(releve_run, "run", lambda cmd, **kw: (0, ""))
+    monkeypatch.setattr(releve_run, "drive_mounted", lambda: False); monkeypatch.setattr(releve_run, "log", lambda *a, **k: None)
+    monkeypatch.setattr(releve_run, "statut", lambda *args, **kw: statuts.append(args))
+    assert releve_run.process("S-T")
+    nr = json.loads((workdir / "blocs-non-relevees.json").read_text(encoding="utf-8"))
+    assert nr["feuilles"] == ["E2"]
+    n, lignes = releve_run.blocs_ouverts(str(workdir))
+    assert n == 2 and any("E2" in l for l in lignes) and any("S009" in l for l in lignes)
+    # STATUT réel : À VÉRIFIER avec les deux constats
+    statut_reel("S-T", str(inbox), str(outdir), str(workdir), [("total", 1.0, "")], None, True, None, [])
+    texte = (outdir / "STATUT.md").read_text(encoding="utf-8")
+    assert "TERMINÉ — À VÉRIFIER" in texte and "Comptage incomplet" in texte and "E2" in texte and "S009" in texte
+    # toutes les feuilles scannées → échec explicite, jamais un relevé vide présenté comme fait
+    (workdir / "feuilles.csv").write_text("feuille,fichier,page,nb_mots,classement_fichier,role\nE1,plans.pdf,1,0,plans,plan\n", encoding="utf-8")
+    assert not releve_run.process("S-T")
+    assert "RELEVE_AGENT=sdk" in (statuts[-1][7] or "")

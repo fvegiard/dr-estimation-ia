@@ -175,6 +175,12 @@ def main():
         lignes += ["", "## Appariements AMBIGUS (plusieurs entrées tolérantes de la bibliothèque, propriétés contradictoires — non relevés)", ""]
         lignes += [f"- {r.get('sig_id') or '(bloc rare)'} : n={r['n_plans']} ({r['par_feuille']}) ex. {r['exemple']}" for r in ambigus]
     open(os.path.join(work, "blocs-a-etiqueter.md"), "w", encoding="utf-8").write("\n".join(lignes) + "\n")
+    # version structurée, reprise par blocs_vers_releve.py (reserves.md → PDF) et run.py (STATUT « À VÉRIFIER ») :
+    # l'inconnu ne reste jamais confiné à un fichier de travail (revue Copilot PR #28)
+    json.dump({"bibliotheque": os.path.relpath(a.bibliotheque, REPO), "etiquetees": len(fam),
+               "inconnues": [{"sig_id": r["sig_id"], "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in inconnues],
+               "ambigues": [{"sig_id": r.get("sig_id") or "", "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in ambigus]},
+              open(os.path.join(work, "blocs-a-etiqueter.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{len(fam)} signatures étiquetées depuis la bibliothèque ({len(manuel)} manuelles conservées, {len(ajouts)} pictogrammes rares appariés) ; "
           f"{len(inconnues)} inconnues fréquentes, {len(ambigus)} ambiguës → blocs-a-etiqueter.md")
 
