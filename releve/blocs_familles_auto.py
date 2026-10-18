@@ -3,7 +3,9 @@
 # ///
 """Étiquetage AUTOMATIQUE des signatures de blocs depuis la bibliothèque `releve/bibliotheque-blocs.csv` : chaque
 signature déjà vue dans un dossier précédent (même bureau d'ingénieurs = mêmes blocs CAO) reçoit sa famille sans
-intervention. Écrit WORKDIR/blocs-familles.csv (format lu par blocs_vers_releve.py) et WORKDIR/blocs-a-etiqueter.md :
+intervention. Écrit WORKDIR/blocs-familles.csv (format lu par blocs_vers_releve.py ; colonne origine=auto pour les règles de la
+bibliothèque — une ligne modifiée à la main, ou sans origine=auto, est une correction humaine : jamais écrasée) et
+WORKDIR/blocs-a-etiqueter.md :
 les signatures fréquentes (≥ --min instances sur les feuilles plan) ABSENTES de la bibliothèque — à étiqueter une fois
 (planches signatures-NN.png) puis à ajouter à la bibliothèque. Jamais bloquant : le relevé sort avec ce qui est connu,
 l'inconnu va en réserve.
@@ -14,7 +16,8 @@ from __future__ import annotations
 import argparse, csv, json, os, re, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-COLS = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "reserve", "note"]
+COLS = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "reserve", "origine", "note"]
+CLES_REGLE = ("label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "portee", "reserve")   # ce qu'une règle dit (hors feuilles)
 COLS_INDEX = ["sig_id", "signature", "n_plans", "par_feuille", "legende", "lettre", "exemple", "diametre_pt"]   # = blocs_vignettes.py
 TOL = 0.25      # tolérance par valeur numérique de la signature (pictogrammes : courbes quantifiées à ±0,1–0,2 d'un tracé à l'autre)
 
@@ -92,13 +95,29 @@ def main():
     if os.path.exists(p_fam):
         for r in csv.DictReader(open(p_fam, encoding="utf-8")):
             manuel.setdefault(r["sig_id"], []).append(r)
+    p_ids = os.path.join(work, "blocs-ids.json")
+    ids = json.load(open(p_ids, encoding="utf-8")) if os.path.exists(p_ids) else {}
+    # règles AUTOMATIQUES inchangées (colonne origine=auto, écrite ici, et contenu identique à ce que la bibliothèque
+    # donnerait aujourd'hui) : régénérées — leurs feuilles admises sont recalculées sur les feuilles ACTUELLES du
+    # dossier (relance après ajout d'E204 : E203 → E203 E204). Toute ligne modifiée par une personne, sans colonne
+    # origine ou avec origine≠auto, est une correction humaine : conservée telle quelle (revue Codex PR #28).
+    sig_de = {r["sig_id"]: r["signature"] for r in index}
+    sig_de.update({v: k for k, v in ids.items()})
+    regenerees = 0
+    for sid, rows in list(manuel.items()):
+        if not all((r.get("origine") or "").strip() == "auto" for r in rows):
+            continue
+        sg = sig_de.get(sid)
+        e = _trouver(biblio, sg)[0] if sg else None
+        if e and e["label"] != "IGNORER" and all(all((r.get(k) or "").strip() == (e.get(k) or "").strip() for k in CLES_REGLE) for r in rows):
+            del manuel[sid]; regenerees += 1
     fam, inconnues, ambigus = [], [], []
     vus_manuel = set()
 
     def regle(sid, b, note):
         return {"sig_id": sid, "label": b["label"], "famille": b["famille"], "forme": b["forme"], "code": b["code"], "materiel": b["materiel"],
                 "legende_no": b["legende_no"], "diam_min": b["diam_min"], "diam_max": b["diam_max"], "feuilles": "", "portee": b.get("portee", ""),
-                "reserve": b.get("reserve", ""), "note": note + (f" ; {b['note']}" if b.get("note") else "")}
+                "reserve": b.get("reserve", ""), "origine": "auto", "note": note + (f" ; {b['note']}" if b.get("note") else "")}
 
     for r in index:
         if r["sig_id"] in manuel:
@@ -120,8 +139,6 @@ def main():
     # écrit à la passe précédente) — il entre dans l'index (sig_id stable) et sa famille suit. La règle manuelle gagne
     # toujours sur la bibliothèque (revue Codex PR #28 : relancer ne doit jamais écraser une correction humaine).
     connus = {r["signature"] for r in index}
-    p_ids = os.path.join(work, "blocs-ids.json")
-    ids = json.load(open(p_ids, encoding="utf-8")) if os.path.exists(p_ids) else {}
     prochain = max([int(v[1:]) for v in ids.values()] + [int(r["sig_id"][1:]) for r in index] + [0]) + 1
     ajouts = []
     for f in sorted(feuilles):
@@ -186,7 +203,7 @@ def main():
                "inconnues": [{"sig_id": r["sig_id"], "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in inconnues],
                "ambigues": [{"sig_id": r.get("sig_id") or "", "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in ambigus]},
               open(os.path.join(work, "blocs-a-etiqueter.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"{len(fam)} signatures étiquetées depuis la bibliothèque ({sum(len(v) for v in manuel.values())} manuelles conservées, {len(ajouts)} pictogrammes rares appariés) ; "
+    print(f"{len(fam)} signatures étiquetées depuis la bibliothèque ({sum(len(v) for v in manuel.values())} manuelles conservées, {regenerees} automatiques régénérées, {len(ajouts)} pictogrammes rares appariés) ; "
           f"{len(inconnues)} inconnues fréquentes, {len(ambigus)} ambiguës → blocs-a-etiqueter.md")
 
 

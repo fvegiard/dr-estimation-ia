@@ -26,7 +26,7 @@ import pymupdf
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from blocs_vectoriels import MAX_COTE, MIN_COTE, MARGE_FUSION, _points  # noqa: E402
 from legende import code_attendu  # noqa: E402
-from commun import PagesFeuilles  # noqa: E402
+from commun import PagesFeuilles, vers_repere_affiche  # noqa: E402
 
 PORTEE_TAGS = {"E.A.E": "ENLEVER", "E.A.R": "RELOCALISER", "E.A.C": "CONSERVER", "E.A.D": "ENLEVER"}
 TYPES_LUM = re.compile(r"^(A\d|B\d|C\d(_\d)?|D\d|E|G\d|Z\d)$")   # pas « F » seul : lettre de la station manuelle
@@ -295,6 +295,27 @@ def main():
                 nom[r["label"]] = {"label": r["label"], "famille": r["famille"], "forme": r["forme"], "rgb": "", "jeton_regex": "",
                                    "description": r["materiel"], "source": "E-001 légende ; instances manuelles", "code": r["code"],
                                    "materiel": r["materiel"], "portee": r["portee"], "modele": "", "prescription": "", "discipline": "electricite", "legende": r["legende_no"]}
+    # Pages tournées (Rotate 90/270) : blocs, tracés et mots sont dans le repère NON tourné ; le relevé, les rasters de
+    # prepare.py et le rendu sont dans le repère AFFICHÉ → conversion de chaque occurrence issue des blocs (centre, boîte
+    # tournée recalculée sur ses 4 coins) ; les instances manuelles (`blocs-instances.csv`) sont déjà saisies sur les
+    # planches, donc dans le repère affiché (revue Codex PR #28)
+    for f, fr in feuilles.items():
+        if fr.get("role") != "plan" or not any(o["feuille"] == f for o in occ):
+            continue
+        page = pages.page(fr)
+        if not page.rotation:
+            continue
+        for o in occ:
+            if o["feuille"] != f or o["note"].startswith("instance manuelle"):
+                continue
+            (o["x_pt"], o["y_pt"]), = [(f"{x:.1f}", f"{y:.1f}") for x, y in vers_repere_affiche(page, [(float(o["x_pt"]), float(o["y_pt"]))])]
+            if o.get("x0_pt"):
+                x0, y0, x1, y1 = (float(o[k]) for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt"))
+                cx, cy, hw, hh = (x0 + x1) / 2, (y0 + y1) / 2, (x1 - x0) / 2, (y1 - y0) / 2
+                t = math.radians(float(o["angle_deg"] or 0)); ct, st = math.cos(t), math.sin(t)
+                coins = [(cx + dx * ct - dy * st, cy + dx * st + dy * ct) for dx, dy in ((-hw, -hh), (hw, -hh), (hw, hh), (-hw, hh))]
+                ncx, ncy, rw, rh, ang = rect_minimal(vers_repere_affiche(page, coins))
+                o.update({"x0_pt": f"{ncx - rw / 2:.1f}", "y0_pt": f"{ncy - rh / 2:.1f}", "x1_pt": f"{ncx + rw / 2:.1f}", "y1_pt": f"{ncy + rh / 2:.1f}", "angle_deg": f"{ang:.1f}"})
     # dédoublonnage final (instances manuelles comprises) : même feuille, même famille, ≤ 2,5 pt
     gardes = []
     for o in occ:
@@ -329,6 +350,8 @@ def main():
             vus.add((float(b["x_pt"]), d))
             sec = section(float(b["x_pt"]), float(b["y_pt"]))
             pref = {"DISTRIBUTION": "D", "ALARME INCENDIE": "A", "ALARME INTRUSION": "I", "ÉCLAIRAGE D'URGENCE": "U", "SERVICES": "S", "ÉCLAIRAGE": "L", "CHAUFFAGE": "C"}.get(sec, "X")
+            (bx, by), = vers_repere_affiche(page_l, [(float(b["x_pt"]), float(b["y_pt"]))])
+            b["x_pt"], b["y_pt"] = f"{bx:.1f}", f"{by:.1f}"
             leg_rows.append({"feuille": f_leg, "section": sec, "no": pref, "symbole": f"bloc ø{b['diametre_pt']} pt" + (f" [{b.get('texte')}]" if b.get("texte") else ""),
                              "description": d, "code": code_attendu(d), "statut": "absent", "qte": 0,
                              "preuve": "signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json)",

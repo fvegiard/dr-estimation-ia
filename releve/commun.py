@@ -123,6 +123,17 @@ class PagesFeuilles:
         raise FileNotFoundError(f"feuille {row['feuille']} : ni {seule}, ni {fichier} dans l'INBOX, ni un PDF du même nom en argument")
 
 
+def vers_repere_affiche(page, pts):
+    """Points du repère NON tourné (get_drawings / get_text) → repère AFFICHÉ (page.rect, celui des rasters de prepare.py,
+    des occurrences du relevé et du rendu) : `page.rotation_matrix`. Identité quand la page n'est pas tournée. Revue
+    Codex PR #28 : pages Rotate 90/270 (S-1714, S-1769…) — sans ça, les pastilles sortent de la page."""
+    if not page.rotation:
+        return [(float(x), float(y)) for x, y in pts]
+    import pymupdf
+    M = page.rotation_matrix
+    return [((q := pymupdf.Point(x, y) * M).x, q.y) for x, y in pts]
+
+
 def shape_points(shape, cx, cy, rx, ry):
     if shape == DIAMOND: return [(cx, cy - ry), (cx + rx, cy), (cx, cy + ry), (cx - rx, cy)]
     if shape == TRI: return [(cx, cy - ry), (cx + rx, cy + ry), (cx - rx, cy + ry)]

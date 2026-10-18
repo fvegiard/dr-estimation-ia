@@ -245,3 +245,72 @@ def test_run_blocs_feuilles_raster_et_inconnues_mettent_a_verifier(monkeypatch, 
     (workdir / "feuilles.csv").write_text("feuille,fichier,page,nb_mots,classement_fichier,role\nE1,plans.pdf,1,0,plans,plan\n", encoding="utf-8")
     assert not releve_run.process("S-T")
     assert "RELEVE_AGENT=sdk" in (statuts[-1][7] or "")
+
+
+def _centroides_encre(page, zoom=4):
+    """Centres (pt, repère affiché) des taches d'encre d'une page rendue — la vérité terrain visuelle."""
+    import numpy as np
+    pm = page.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom)); a = np.frombuffer(pm.samples, dtype=np.uint8).reshape(pm.height, pm.width, pm.n)[:, :, :3]
+    ink = (a.min(axis=2) < 128)
+    from scipy import ndimage
+    lab, n = ndimage.label(ink)
+    return sorted((cx / zoom, cy / zoom) for cy, cx in ndimage.center_of_mass(ink, lab, range(1, n + 1)))
+
+
+def test_page_tournee_occurrences_dans_le_repere_affiche(tmp_path):
+    """Rotate 90 : blocs et mots sont lus dans le repère non tourné, le relevé doit sortir dans le repère AFFICHÉ
+    (celui des rasters, du rendu, des pastilles) — vérifié contre l'encre réellement rendue."""
+    from commun import vers_repere_affiche
+    work = tmp_path / "travail"; (work / "feuilles").mkdir(parents=True); (work / "blocs").mkdir()
+    doc = pymupdf.open(); page = doc.new_page(width=300, height=200)
+    for x, y in ((40, 30), (120, 30), (200, 150)):
+        sh = page.new_shape(); sh.draw_rect(pymupdf.Rect(x, y, x + 8, y + 8)); sh.finish(width=0.5, fill=(0, 0, 0)); sh.commit()
+    page.set_rotation(90); doc.save(work / "feuilles" / "E1.pdf")
+    page = pymupdf.open(work / "feuilles" / "E1.pdf")[0]
+    assert page.rotation == 90 and page.rect.width == 200
+    attendus = _centroides_encre(page)
+    assert len(attendus) == 3
+    # 1) le convertisseur seul
+    conv = sorted(vers_repere_affiche(page, [(44, 34), (124, 34), (204, 154)]))
+    assert all(abs(a[0] - b[0]) < 1 and abs(a[1] - b[1]) < 1 for a, b in zip(conv, attendus))
+    # 2) la chaîne blocs → relevé
+    (work / "feuilles.csv").write_text("feuille,fichier,page,role,nb_mots\nE1,plans.pdf,1,plan,5\n", encoding="utf-8")
+    (work / "inventaire.json").write_text(json.dumps({"inbox": str(tmp_path), "fichiers": []}), encoding="utf-8")
+    env = {**os.environ, "PYTHONPATH": os.path.join(REPO, "releve")}
+    subprocess.run([sys.executable, os.path.join(REPO, "releve", "blocs_vectoriels.py"), str(work)], check=True, capture_output=True, env=env)
+    subprocess.run([sys.executable, os.path.join(REPO, "releve", "blocs_vignettes.py"), str(work), "-", str(tmp_path / "s"), "--min", "3"], check=True, capture_output=True, env=env)
+    idx = list(csv.DictReader(open(work / "blocs-index.csv", encoding="utf-8")))
+    assert len(idx) == 1 and idx[0]["n_plans"] == "3"
+    with open(work / "blocs-familles.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "note"]); w.writeheader()
+        w.writerow({"sig_id": idx[0]["sig_id"], "label": "BOITE JONCTION", "famille": "distribution", "forme": "carre", "code": "BJ", "materiel": "BOITE", "legende_no": "", "diam_min": 0, "diam_max": 99, "feuilles": "", "note": ""})
+    subprocess.run([sys.executable, os.path.join(REPO, "releve", "blocs_vers_releve.py"), str(work)], check=True, capture_output=True, env=env)
+    occ = sorted((float(o["x_pt"]), float(o["y_pt"])) for o in csv.DictReader(open(work / "occurrences-visuel.csv", encoding="utf-8")))
+    assert len(occ) == 3
+    assert all(abs(a[0] - b[0]) < 1.5 and abs(a[1] - b[1]) < 1.5 for a, b in zip(occ, attendus)), (occ, attendus)
+    # la boîte tournée est dans le même repère et contient le centre
+    for o in csv.DictReader(open(work / "occurrences-visuel.csv", encoding="utf-8")):
+        assert float(o["x0_pt"]) <= float(o["x_pt"]) <= float(o["x1_pt"]) and float(o["y0_pt"]) <= float(o["y_pt"]) <= float(o["y1_pt"])
+
+
+def test_regles_automatiques_regenerees_corrections_conservees(tmp_path):
+    """Relance après ajout d'une feuille : une règle automatique inchangée (origine=auto) est régénérée depuis la
+    bibliothèque (feuilles admises recalculées : E203 → E203 E204) ; une règle automatique MODIFIÉE à la main devient
+    manuelle et reste telle quelle."""
+    sigA = json.dumps([[[0.5, 0.0, 1, False, False]], 0.0]); sigB = json.dumps([[[0.9, 0.0, 1, True, False]], 0.0])
+    bib = tmp_path / "bib.csv"
+    _bib(bib, [{"signature": sigA, "label": "ENCASTRE", "famille": "eclairage", "forme": "cercle", "code": "EN", "materiel": "EN", "diam_min": 0, "diam_max": 99, "feuilles_regex": "E20[34]", "tolerance": 0, "source": "a"},
+               {"signature": sigB, "label": "PRISE DOUBLE 15A", "famille": "prise", "forme": "cercle", "code": "PC", "materiel": "PRISE", "diam_min": 0, "diam_max": 99, "tolerance": 0, "source": "a"}])
+    idx = [{"sig_id": "S001", "signature": sigA, "n_plans": 5, "par_feuille": "E203:5", "legende": "", "lettre": "", "exemple": "E203 (1,1)", "diametre_pt": 4},
+           {"sig_id": "S002", "signature": sigB, "n_plans": 5, "par_feuille": "E203:5", "legende": "", "lettre": "", "exemple": "E203 (1,1)", "diametre_pt": 4}]
+    work = _work(tmp_path, idx, [], feuilles="E203")
+    fam = {r["sig_id"]: r for r in _auto(work, bib)}
+    assert fam["S001"]["feuilles"] == "E203" and fam["S001"]["origine"] == "auto"
+    # correction humaine sur S002 (label) ; E204 ajoutée au dossier
+    rows = list(fam.values()); rows[1]["label"] = "PRISE USB"; rows[1]["code"] = "PU"
+    with open(work / "blocs-familles.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+    (work / "feuilles.csv").write_text("feuille,page,role\nE203,1,plan\nE204,2,plan\n", encoding="utf-8")
+    fam2 = {r["sig_id"]: r for r in _auto(work, bib)}
+    assert fam2["S001"]["feuilles"] == "E203 E204"                       # régénérée sur les feuilles actuelles
+    assert fam2["S002"]["label"] == "PRISE USB" and fam2["S002"]["code"] == "PU"   # correction conservée

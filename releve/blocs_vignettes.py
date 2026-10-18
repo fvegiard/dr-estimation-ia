@@ -89,7 +89,8 @@ def main():
             page = pages.page(feuilles[f_best])
             x, y = float(b["x_pt"]), float(b["y_pt"]); t = max(a.taille, float(b["diametre_pt"]) * 1.6)
             z = tw / t
-            pm = page.get_pixmap(matrix=pymupdf.Matrix(z, z), clip=pymupdf.Rect(x - t / 2, y - t / 2, x + t / 2, y + t / 2))
+            clip = pymupdf.Rect(x - t / 2, y - t / 2, x + t / 2, y + t / 2) * page.rotation_matrix     # blocs = repère non tourné ; pixmap = repère affiché
+            pm = page.get_pixmap(matrix=pymupdf.Matrix(z, z), clip=clip)
             v = Image.frombytes("RGB", (pm.width, pm.height), pm.samples).resize((tw, tw))
             vd = ImageDraw.Draw(v)
             w, h = float(b["w_pt"]) * z, float(b["h_pt"]) * z
