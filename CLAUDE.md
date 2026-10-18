@@ -140,6 +140,13 @@ Action unique pour un nouveau dossier (parcours canonique — tout le reste orch
 ```bash
 uv run releve/run.py <NOM>                       # dépose d'abord les PDF dans INBOX/<NOM>/ — c'est tout
 ```
+Route par défaut depuis 2026-10-18 (`RELEVE_AGENT=blocs`) : **déterministe, zéro agent, zéro jeton, zéro étiquetage** —
+`blocs_vectoriels.py` (symboles = blocs CAO) → `blocs_vignettes.py` → `blocs_familles_auto.py` (familles depuis
+`releve/bibliotheque-blocs.csv`, construite sur S-1902 : même bureau d'ingénieurs = mêmes blocs ; les signatures
+inconnues vont dans `travail/blocs-a-etiqueter.md`, à étiqueter UNE fois puis à ajouter à la bibliothèque) →
+`blocs_vers_releve.py` → qpl → PDF → planches → PNG. `RELEVE_AGENT=sdk` rend l'ancienne route par agent.
+Preuve : S-1902 rejoué à l'aveugle par cette seule commande = 653 repères (645 validés + 8 pictogrammes existants
+sur E201/E202), 0 inconnue.
 Reste (débogage, développement) :
 ```bash
 pip install -r requirements.txt

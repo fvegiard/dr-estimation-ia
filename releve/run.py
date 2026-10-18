@@ -6,6 +6,8 @@
     uv run releve/run.py <nom-de-soumission | chemin-du-dossier>     traite un dossier
     uv run releve/run.py --watch                                      surveille les INBOX et traite les nouveaux dossiers
     uv run releve/run.py --reprendre <nom>                            rejoue build_qpl + render_vectoriel + render_pdf (sans agent)
+    RELEVE_AGENT=blocs (défaut) : route déterministe par blocs CAO + bibliothèque de signatures, zéro agent, zéro jeton ;
+    RELEVE_AGENT=sdk|nvidia|cli : l'ancienne route par agent (compétence releve-planexpert).
 
 Dossiers (hors du dépôt, données de Francis) :
     D:\\claude\\releve-auto\\INBOX\\<nom>\\      dépôt des PDF (plans, addendas, relevé de l'estimateur)
@@ -30,6 +32,7 @@ DRIVE = os.environ.get("RELEVE_DRIVE", r"G:\My Drive\AI\Releves-auto" if _WIN el
 LOCK = os.path.join(BASE, ".verrou")
 LOG = os.path.join(BASE, "journal.log")
 MODEL = os.environ.get("RELEVE_MODEL", "opus")
+ROUTE = os.environ.get("RELEVE_AGENT", "blocs")    # blocs (défaut : déterministe, sans agent) | sdk | nvidia | cli
 MAX_TURNS = os.environ.get("RELEVE_MAX_TURNS", "800")
 WSL_EXE = "/mnt/c/Windows/System32/wsl.exe"
 PLANEXPERT_VM_CLI = os.path.join(REPO, "mcp", "planexpert_vm", "server.py")
@@ -132,7 +135,7 @@ def agent(workdir, log_path):
     res_path = os.path.join(workdir, "agent-resultat.json")
     t0 = time.time()
     agent_env = {"RELEVE_TOOL_GUARD_ROOT": workdir}
-    if os.environ.get("RELEVE_AGENT", "sdk") == "nvidia":
+    if ROUTE == "nvidia":
         # Clé NVIDIA_API_KEY héritée du processus ; sous WSL : WSLENV=NVIDIA_API_KEY/u au lancement (jamais journalisée).
         cmd = [sys.executable, "releve/agent_nvidia.py", workdir, res_path, "--max-turns", MAX_TURNS]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
@@ -140,7 +143,7 @@ def agent(workdir, log_path):
             res = json.load(open(res_path, encoding="utf-8"))
         except Exception:  # noqa
             res = {"result": out[-2000:], "is_error": True, "subtype": "agent_nvidia sans résultat"}
-    elif os.environ.get("RELEVE_AGENT", "sdk") == "sdk":
+    elif ROUTE == "sdk":
         cmd = ["uv", "run", "releve/agent_sdk.py", workdir, res_path, "--model", MODEL, "--max-turns", MAX_TURNS]
         code, out = run(cmd, cwd=REPO, log_path=log_path, env=agent_env)
         try:
@@ -324,6 +327,11 @@ def prepare_a_jour(inbox, workdir):
     now = {os.path.relpath(os.path.join(dp, f), inbox): sha256(os.path.join(dp, f)) for dp, _, fs in os.walk(inbox) for f in fs}
     return old == now
 
+def pdf_principal(inbox):
+    """Le plus gros PDF de l'INBOX = les plans (les addendas et relevés de l'estimateur sont plus petits)."""
+    pdfs = [os.path.join(dp, f) for dp, _, fs in os.walk(inbox) for f in fs if f.lower().endswith(".pdf")]
+    return max(pdfs, key=os.path.getsize) if pdfs else None
+
 def process(arg, reprendre=False):
     name, inbox = resolve_inbox(arg)
     outdir = os.path.join(OUTBOX, name); workdir = os.path.join(outdir, "travail"); pe_dir = os.path.join(outdir, f"{name}-planexpert")
@@ -341,10 +349,27 @@ def process(arg, reprendre=False):
                 t = time.time(); code, _ = run(["uv", "run", "releve/prepare.py", inbox, workdir], log_path=log_path)
                 steps.append(("prepare", time.time() - t, "ok" if code == 0 else f"code {code}"))
                 if code: raise RuntimeError("prepare.py a échoué")
-            code, res, dur = agent(workdir, log_path)
-            steps.append(("agent Claude", dur, f"{res.get('subtype')} / code {code}"))
-            if code:
-                raise RuntimeError(f"agent en échec (code {code}, subtype {res.get('subtype')})")
+            if ROUTE == "blocs":
+                # Route DÉTERMINISTE (défaut, 2026-10-18 — « une commande, zéro étiquetage ») : les symboles sont des
+                # blocs CAO ; blocs_vectoriels.py les regroupe, blocs_vignettes.py les indexe, blocs_familles_auto.py
+                # les étiquette depuis la bibliothèque (releve/bibliotheque-blocs.csv, même bureau = mêmes blocs),
+                # blocs_vers_releve.py écrit le relevé. Aucun agent, aucun jeton. L'inconnu va dans blocs-a-etiqueter.md.
+                pdf = pdf_principal(inbox)
+                if not pdf: raise RuntimeError("aucun PDF de plans dans l'INBOX")
+                sig = os.path.join(outdir, "signatures")
+                for cmd, nom in (([sys.executable, "releve/blocs_vectoriels.py", workdir, pdf], "blocs_vectoriels"),
+                                 ([sys.executable, "releve/blocs_vignettes.py", workdir, pdf, sig, "--min", "3"], "blocs_vignettes"),
+                                 ([sys.executable, "releve/blocs_familles_auto.py", workdir], "blocs_familles_auto"),
+                                 ([sys.executable, "releve/blocs_vers_releve.py", workdir, pdf, "--modele", os.environ.get("RELEVE_MODELE_OBSERVE", "bibliothèque de blocs (déterministe)")], "blocs_vers_releve")):
+                    t = time.time(); code, out = run(cmd, cwd=REPO, log_path=log_path)
+                    steps.append((nom, time.time() - t, (out.strip().splitlines() or ["?"])[-1][:160]))
+                    if code: raise RuntimeError(f"{nom} a échoué")
+                res = {"subtype": "blocs", "num_turns": 0, "total_cost_usd": 0}
+            else:
+                code, res, dur = agent(workdir, log_path)
+                steps.append(("agent Claude", dur, f"{res.get('subtype')} / code {code}"))
+                if code:
+                    raise RuntimeError(f"agent en échec (code {code}, subtype {res.get('subtype')})")
             for f in ("nomenclature.csv", "feuilles-classement.csv"):
                 if not os.path.exists(os.path.join(workdir, f)):
                     raise RuntimeError(f"l'agent n'a pas produit {f}")

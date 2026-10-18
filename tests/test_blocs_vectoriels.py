@@ -75,3 +75,35 @@ def test_sig_id_cumulatifs(tmp_path):
     assert i1[sigA] == "S001" and i1[sigB] == "S002"
     assert i2[sigB] == "S002"
     assert i3[sigA] == "S001" and i3[sigB] == "S002"      # une signature disparue puis revenue garde son identifiant
+
+
+def test_blocs_familles_auto_bibliotheque(tmp_path):
+    """Étiquetage automatique : signature exacte → famille ; IGNORER → absente ; pictogramme proche (tolérance) → famille ;
+    signature fréquente inconnue → blocs-a-etiqueter.md."""
+    work = tmp_path / "w"; work.mkdir(); (work / "blocs").mkdir()
+    (work / "feuilles.csv").write_text("feuille,page,role\nE1,1,plan\n", encoding="utf-8")
+    sigA = json.dumps([[[0.5, 0.0, 1, False, False]], 0.0]); sigMur = json.dumps([[[0.9, 0.0, 1, True, False]], 0.0])
+    sigInc = json.dumps([[[0.7, 0.1, 2, False, False]], 0.3]); sigPic = json.dumps([[[1.3, 0.0, 6, False, True], [1.9, 0.0, 6, False, True]], 0.6])
+    sigPic2 = json.dumps([[[1.4, 0.0, 6, False, True], [2.0, 0.0, 6, False, True]], 0.5])      # ≤ 0,25 de sigPic
+    bib = tmp_path / "bib.csv"
+    with open(bib, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["signature", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles_regex", "portee", "tolerance", "source", "note"])
+        w.writeheader()
+        w.writerow({"signature": sigA, "label": "PRISE DOUBLE 15A", "famille": "prise", "forme": "cercle", "code": "PC", "materiel": "PRISE", "legende_no": "", "diam_min": 0, "diam_max": 99, "feuilles_regex": "", "portee": "", "tolerance": 0, "source": "t", "note": ""})
+        w.writerow({"signature": sigMur, "label": "IGNORER", "famille": "", "forme": "", "code": "", "materiel": "", "legende_no": "", "diam_min": "", "diam_max": "", "feuilles_regex": "", "portee": "", "tolerance": 0, "source": "t", "note": ""})
+        w.writerow({"signature": sigPic, "label": "DETECTEUR FUMEE", "famille": "alarme", "forme": "cercle", "code": "DF", "materiel": "DF", "legende_no": "", "diam_min": 5, "diam_max": 20, "feuilles_regex": "", "portee": "CONSERVER", "tolerance": 0.25, "source": "t", "note": ""})
+    with open(work / "blocs-index.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["sig_id", "signature", "n_plans", "par_feuille", "legende", "lettre", "exemple", "diametre_pt"]); w.writeheader()
+        w.writerow({"sig_id": "S001", "signature": sigA, "n_plans": 5, "par_feuille": "E1:5", "legende": "", "lettre": "", "exemple": "E1 (1,1)", "diametre_pt": 4})
+        w.writerow({"sig_id": "S002", "signature": sigMur, "n_plans": 9, "par_feuille": "E1:9", "legende": "", "lettre": "", "exemple": "E1 (1,1)", "diametre_pt": 30})
+        w.writerow({"sig_id": "S003", "signature": sigInc, "n_plans": 4, "par_feuille": "E1:4", "legende": "", "lettre": "", "exemple": "E1 (1,1)", "diametre_pt": 8})
+    with open(work / "blocs" / "E1.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["feuille", "signature", "x_pt", "y_pt", "w_pt", "h_pt", "diametre_pt", "angle_deg", "n_parties", "trait_pt", "texte", "description"]); w.writeheader()
+        w.writerow({"feuille": "E1", "signature": sigPic2, "x_pt": 50, "y_pt": 50, "w_pt": 8, "h_pt": 8, "diametre_pt": 11.3, "angle_deg": 0, "n_parties": 2, "trait_pt": 0.4, "texte": "", "description": ""})
+    subprocess.run([sys.executable, os.path.join(REPO, "releve", "blocs_familles_auto.py"), str(work), "--bibliotheque", str(bib)], check=True, capture_output=True)
+    fam = {r["label"]: r for r in csv.DictReader(open(work / "blocs-familles.csv", encoding="utf-8"))}
+    assert fam["PRISE DOUBLE 15A"]["sig_id"] == "S001"
+    assert "IGNORER" not in fam and not any(r["sig_id"] == "S002" for r in fam.values())
+    assert fam["DETECTEUR FUMEE"]["portee"] == "CONSERVER" and fam["DETECTEUR FUMEE"]["sig_id"] == "S004"     # pictogramme rare apparié, ajouté à l'index
+    assert "S003" in (work / "blocs-a-etiqueter.md").read_text(encoding="utf-8")
+    assert any(r["sig_id"] == "S004" for r in csv.DictReader(open(work / "blocs-index.csv", encoding="utf-8")))

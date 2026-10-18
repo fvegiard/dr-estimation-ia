@@ -116,7 +116,9 @@ def main():
                     vois_all.append((d, m[4], m))
             vois_all.sort(key=lambda v: v[0])
             vois = [(d, t) for d, t, _ in vois_all]; vois_m = [m for _, _, m in vois_all]
-            portee = defaut
+            # portée de la règle (bibliothèque : pictogramme existant pointillé → CONSERVER) seulement sur feuille NOUVEAU ;
+            # sur EXISTANT/DÉMOLITION tout est existant sauf étiquette
+            portee = ((regle.get("portee") or "").strip() if nouveau else "") or defaut
             for d, t in vois:
                 if t.upper() in PORTEE_TAGS:
                     portee = PORTEE_TAGS[t.upper()]; break
@@ -131,7 +133,7 @@ def main():
             if label == "INT 3 VOIES" and not any(t == "3" and d <= 9 for d, t in vois):
                 label = "INT SIMPLE"; meta = {"code": "IS", "materiel": "INTERRUPTEUR SIMPLE", "legende": ""}   # pas « 3 » à côté du $
             # feuille NOUVEAU : un luminaire sans lettre de type est un existant dessiné pour contexte → CONSERVER
-            if nouveau and regle["famille"] == "eclairage" and not typ and portee == "INSTALLER":
+            if nouveau and regle["famille"] == "eclairage" and not typ and portee == "INSTALLER" and not (regle.get("portee") or "").strip():   # noqa: E501
                 portee = "CONSERVER"
             designation = " ".join(t for d, t in vois if CIRCUIT.match(t) and t.upper() not in PORTEE_TAGS and not TYPES_LUM.match(t))[:60]
             o = {"feuille": f, "label": label, "x_pt": f"{x:.1f}", "y_pt": f"{y:.1f}", "source": "visuel",
