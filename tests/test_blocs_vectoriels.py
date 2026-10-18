@@ -314,3 +314,9 @@ def test_regles_automatiques_regenerees_corrections_conservees(tmp_path):
     fam2 = {r["sig_id"]: r for r in _auto(work, bib)}
     assert fam2["S001"]["feuilles"] == "E203 E204"                       # régénérée sur les feuilles actuelles
     assert fam2["S002"]["label"] == "PRISE USB" and fam2["S002"]["code"] == "PU"   # correction conservée
+    # restriction resserrée À LA MAIN (seule la colonne feuilles change) : c'est une correction, elle survit à la relance
+    rows = list(fam2.values()); rows[0]["feuilles"] = "E203"
+    with open(work / "blocs-familles.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+    fam3 = {r["sig_id"]: r for r in _auto(work, bib)}
+    assert fam3["S001"]["feuilles"] == "E203"

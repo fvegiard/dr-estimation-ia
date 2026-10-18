@@ -16,7 +16,7 @@ from __future__ import annotations
 import argparse, csv, json, os, re, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-COLS = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "reserve", "origine", "note"]
+COLS = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "reserve", "origine", "feuilles_auto", "note"]
 CLES_REGLE = ("label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "portee", "reserve")   # ce qu'une règle dit (hors feuilles)
 COLS_INDEX = ["sig_id", "signature", "n_plans", "par_feuille", "legende", "lettre", "exemple", "diametre_pt"]   # = blocs_vignettes.py
 TOL = 0.25      # tolérance par valeur numérique de la signature (pictogrammes : courbes quantifiées à ±0,1–0,2 d'un tracé à l'autre)
@@ -109,7 +109,11 @@ def main():
             continue
         sg = sig_de.get(sid)
         e = _trouver(biblio, sg)[0] if sg else None
-        if e and e["label"] != "IGNORER" and all(all((r.get(k) or "").strip() == (e.get(k) or "").strip() for k in CLES_REGLE) for r in rows):
+        # `feuilles` se compare à la valeur GÉNÉRÉE (colonne feuilles_auto), pas aux feuilles du dossier : une restriction
+        # resserrée à la main (E203 E204 → E203) est une correction, pas une évolution du dossier (revue Codex PR #28)
+        inchangee = all(all((r.get(k) or "").strip() == (e.get(k) or "").strip() for k in CLES_REGLE)
+                        and (r.get("feuilles") or "").strip() == (r.get("feuilles_auto") or "\0").strip() for r in rows) if e else False
+        if e and e["label"] != "IGNORER" and inchangee:
             del manuel[sid]; regenerees += 1
     fam, inconnues, ambigus = [], [], []
     vus_manuel = set()
@@ -117,7 +121,7 @@ def main():
     def regle(sid, b, note):
         return {"sig_id": sid, "label": b["label"], "famille": b["famille"], "forme": b["forme"], "code": b["code"], "materiel": b["materiel"],
                 "legende_no": b["legende_no"], "diam_min": b["diam_min"], "diam_max": b["diam_max"], "feuilles": "", "portee": b.get("portee", ""),
-                "reserve": b.get("reserve", ""), "origine": "auto", "note": note + (f" ; {b['note']}" if b.get("note") else "")}
+                "reserve": b.get("reserve", ""), "origine": "auto", "feuilles_auto": "", "note": note + (f" ; {b['note']}" if b.get("note") else "")}
 
     for r in index:
         if r["sig_id"] in manuel:
@@ -131,7 +135,7 @@ def main():
             feuilles_ok, applicable = _feuilles_admises(b, feuilles)
             if not applicable:                     # restreinte à des feuilles absentes de ce dossier : connue, mais pas ici
                 continue
-            rg = regle(r["sig_id"], b, f"bibliothèque : {b['source']}"); rg["feuilles"] = feuilles_ok; fam.append(rg)
+            rg = regle(r["sig_id"], b, f"bibliothèque : {b['source']}"); rg["feuilles"] = rg["feuilles_auto"] = feuilles_ok; fam.append(rg)
         elif int(r["n_plans"] or 0) >= a.min:
             inconnues.append(r)
     # blocs RARES (sous le seuil de l'index) : un pictogramme (détecteur, enseigne) a une signature quasi unique ; s'il
@@ -174,7 +178,7 @@ def main():
                 if sid not in vus_manuel:
                     fam.extend(manuel[sid]); vus_manuel.add(sid)
             else:
-                rg = regle(sid, e, note); rg["feuilles"] = _feuilles_admises(e, feuilles)[0]; fam.append(rg)
+                rg = regle(sid, e, note); rg["feuilles"] = rg["feuilles_auto"] = _feuilles_admises(e, feuilles)[0]; fam.append(rg)
     # règles manuelles dont la signature n'est plus dans l'index ni dans les blocs : conservées telles quelles (jamais effacées)
     for sid, rs in manuel.items():
         if sid not in vus_manuel:
