@@ -86,7 +86,12 @@ def main():
     feuilles = {r["feuille"] for r in csv.DictReader(open(os.path.join(work, "feuilles.csv"), encoding="utf-8")) if r.get("role") == "plan"}
     # un blocs-familles.csv déjà écrit à la main (dossier en cours de validation) a priorité : on n'écrase jamais un choix humain
     p_fam = os.path.join(work, "blocs-familles.csv")
-    manuel = {r["sig_id"]: r for r in csv.DictReader(open(p_fam, encoding="utf-8"))} if os.path.exists(p_fam) else {}
+    # PLUSIEURS règles par sig_id possibles (blocs_vers_releve.py choisit par diamètre et feuille) : liste, jamais « la
+    # dernière ligne » (revue Codex PR #28)
+    manuel = {}
+    if os.path.exists(p_fam):
+        for r in csv.DictReader(open(p_fam, encoding="utf-8")):
+            manuel.setdefault(r["sig_id"], []).append(r)
     fam, inconnues, ambigus = [], [], []
     vus_manuel = set()
 
@@ -97,7 +102,7 @@ def main():
 
     for r in index:
         if r["sig_id"] in manuel:
-            fam.append(manuel[r["sig_id"]]); vus_manuel.add(r["sig_id"]); continue
+            fam.extend(manuel[r["sig_id"]]); vus_manuel.add(r["sig_id"]); continue
         b, ambigu = _trouver(biblio, r["signature"])
         if ambigu:
             ambigus.append(r); continue
@@ -129,9 +134,9 @@ def main():
                 continue
             sid_connu = ids.get(sg)
             if sid_connu and sid_connu in manuel:
-                e, note = manuel[sid_connu], "règle manuelle conservée"
-                if (e.get("feuilles") or "").strip() and f not in e["feuilles"].split():
-                    continue                       # la règle manuelle limite ses feuilles et celle-ci n'en est pas
+                e, note = manuel[sid_connu][0], "règle manuelle conservée"
+                if not any(not (m.get("feuilles") or "").strip() or f in m["feuilles"].split() for m in manuel[sid_connu]):
+                    continue                       # toutes les règles manuelles limitent leurs feuilles et celle-ci n'en est pas
             else:
                 e, ambigu = _trouver(biblio, sg)
                 if ambigu:
@@ -150,13 +155,13 @@ def main():
             ajouts.append({"sig_id": sid, "signature": sg, "n_plans": 1, "par_feuille": f"{f}:1", "legende": "", "lettre": "", "exemple": f"{f} ({b_['x_pt']},{b_['y_pt']})", "diametre_pt": b_["diametre_pt"]})
             if sid in manuel:
                 if sid not in vus_manuel:
-                    fam.append(manuel[sid]); vus_manuel.add(sid)
+                    fam.extend(manuel[sid]); vus_manuel.add(sid)
             else:
                 rg = regle(sid, e, note); rg["feuilles"] = _feuilles_admises(e, feuilles)[0]; fam.append(rg)
     # règles manuelles dont la signature n'est plus dans l'index ni dans les blocs : conservées telles quelles (jamais effacées)
-    for sid, r in manuel.items():
+    for sid, rs in manuel.items():
         if sid not in vus_manuel:
-            fam.append(r); vus_manuel.add(sid)
+            fam.extend(rs); vus_manuel.add(sid)
     if ajouts:
         with open(p_idx, "a", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=COLS_INDEX); w.writerows(ajouts)     # un index vide (en-tête seul) s'écrit aussi
@@ -181,7 +186,7 @@ def main():
                "inconnues": [{"sig_id": r["sig_id"], "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in inconnues],
                "ambigues": [{"sig_id": r.get("sig_id") or "", "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in ambigus]},
               open(os.path.join(work, "blocs-a-etiqueter.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"{len(fam)} signatures étiquetées depuis la bibliothèque ({len(manuel)} manuelles conservées, {len(ajouts)} pictogrammes rares appariés) ; "
+    print(f"{len(fam)} signatures étiquetées depuis la bibliothèque ({sum(len(v) for v in manuel.values())} manuelles conservées, {len(ajouts)} pictogrammes rares appariés) ; "
           f"{len(inconnues)} inconnues fréquentes, {len(ambigus)} ambiguës → blocs-a-etiqueter.md")
 
 

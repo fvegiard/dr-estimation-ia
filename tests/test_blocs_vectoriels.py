@@ -190,6 +190,12 @@ def test_regle_manuelle_d_un_bloc_rare_conservee_a_la_relance(tmp_path):
     fam2 = _auto(work, bib)
     assert [(r["sig_id"], r["label"], r["portee"]) for r in fam2] == [("S001", "DETECTEUR THERMIQUE", "ENLEVER")]
     assert any(r["sig_id"] == "S001" for r in csv.DictReader(open(work / "blocs-index.csv", encoding="utf-8")))
+    # PLUSIEURS règles manuelles pour un même sig_id (une par feuille) : toutes survivent, jamais « la dernière »
+    r2 = dict(fam2[0]); fam2[0]["feuilles"] = "E1"; r2.update({"label": "KLAXON", "code": "KL", "feuilles": "E9"})
+    with open(work / "blocs-familles.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(fam2[0].keys())); w.writeheader(); w.writerows([fam2[0], r2])
+    fam3 = _auto(work, bib)
+    assert sorted((r["sig_id"], r["label"], r["feuilles"]) for r in fam3) == [("S001", "DETECTEUR THERMIQUE", "E1"), ("S001", "KLAXON", "E9")]
 
 
 def test_pages_feuilles_document_source(tmp_path):
