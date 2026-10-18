@@ -177,14 +177,23 @@ def main():
         nouveau = "NOUVEAU" in texte_page and "EXISTANT/DÉMOLITION" not in texte_page
         dr = page.get_drawings()
         mots = [w for w in page.get_text("words") if w[4].strip()]
-        deja = [(float(o["x_pt"]), float(o["y_pt"])) for o in occ if o["feuille"] == f]
+        # un cercle est déjà relevé s'il tombe DANS l'emprise d'une occurrence existante (prise à cercle, boîtier data à
+        # cercle + triangle S006, glyphe « T » du thermostat) — portée = rayon ou demi-diagonale de la boîte + 0,3 pt, jamais
+        # un rayon fixe : une prise à 3,4 pt d'une sortie data, mais hors de son emprise, compte (revue Codex PR #27)
+        def _emprise(o):
+            if o.get("rayon_pt"):
+                return float(o["rayon_pt"])
+            if o.get("x0_pt"):
+                return math.hypot(float(o["x1_pt"]) - float(o["x0_pt"]), float(o["y1_pt"]) - float(o["y0_pt"])) / 2
+            return 3.5
+        deja = [(float(o["x_pt"]), float(o["y_pt"]), _emprise(o) + 0.3) for o in occ if o["feuille"] == f]
         petits = [d for d in dr if max(d["rect"].width, d["rect"].height) <= 12]
         for d in dr:
             its = d["items"]; r = d["rect"]
             if len(its) != 4 or any(it[0] != "c" for it in its) or not (3.3 <= max(r.width, r.height) <= 5.0) or abs(r.width - r.height) > 0.6 or (d.get("width") or 0) < 0.35:
                 continue
             cx, cy = (r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2
-            if any(math.hypot(cx - x, cy - y) <= 3.5 for x, y in deja):
+            if any(math.hypot(cx - x, cy - y) <= e for x, y, e in deja):
                 continue
             dedans = [e for e in petits if e is not d and e["rect"].x0 >= r.x0 - 0.4 and e["rect"].x1 <= r.x1 + 0.4 and e["rect"].y0 >= r.y0 - 0.4 and e["rect"].y1 <= r.y1 + 0.4]
             traversent = [e for e in petits if e is not d and e["rect"].intersects(r) and max(e["rect"].width, e["rect"].height) <= 2.5 * max(r.width, r.height)]
@@ -210,7 +219,7 @@ def main():
             occ.append({"feuille": f, "label": label, "x_pt": f"{cx:.1f}", "y_pt": f"{cy:.1f}", "source": "visuel",
                         "note": f"cercle ø{max(r.width, r.height):.1f} pt ({lignes} trait(s){', plein' if plein else ''})", "designation": designation,
                         "portee": portee, "modele": "", "reserve": "", "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": f"{max(r.width, r.height) / 2 + 0.8:.1f}"})
-            deja.append((cx, cy))
+            deja.append((cx, cy, max(r.width, r.height) / 2 + 1.1))
             if label not in nom:
                 nom[label] = {"label": label, "famille": "prise", "forme": "cercle", "rgb": "", "jeton_regex": "", "description": mat, "source": "E-001 légende ; cercles vectoriels",
                               "code": code, "materiel": mat, "portee": portee, "modele": "", "prescription": "", "discipline": "electricite", "legende": leg}
