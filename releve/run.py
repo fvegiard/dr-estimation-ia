@@ -347,8 +347,11 @@ def prepare_a_jour(inbox, workdir):
     if not os.path.exists(p) or not os.path.exists(os.path.join(workdir, "feuilles.csv")):
         return False
     try:
-        old = {e["fichier"]: e["sha256"] for e in json.load(open(p, encoding="utf-8"))["fichiers"]}
+        inv = json.load(open(p, encoding="utf-8"))
+        old = {e["fichier"]: e["sha256"] for e in inv["fichiers"]}
     except Exception:  # noqa
+        return False
+    if inv.get("selection"):   # préparation partielle (prepare.py --feuilles) : jamais un cache complet
         return False
     now = {os.path.relpath(os.path.join(dp, f), inbox): sha256(os.path.join(dp, f)) for dp, _, fs in os.walk(inbox) for f in fs}
     return old == now

@@ -4,7 +4,7 @@
 # ///
 """Étape 1 (déterministe) : inventaire d'un dossier de soumission et préparation du travail.
 
-Usage : uv run releve/prepare.py INBOX_DIR WORKDIR
+Usage : uv run releve/prepare.py INBOX_DIR WORKDIR [--feuilles=E203,E-101]  (seulement ces feuilles : essai rapide)
 
 Entrée  : INBOX_DIR = dossier déposé par Francis (PDF de plans, addendas, relevé de l'estimateur…).
 Sortie  : WORKDIR/
@@ -132,7 +132,7 @@ def reset_workdir(work: str):
         if os.path.exists(path):
             os.remove(path)
 
-def main(inbox: str, work: str):
+def main(inbox: str, work: str, seulement: set[str] | None = None):
     reset_workdir(work)
     for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "devis"):
         os.makedirs(os.path.join(work, d), exist_ok=True)
@@ -174,10 +174,15 @@ def main(inbox: str, work: str):
                 fid = sid if seen_sheets[sid] == 1 else f"{sid}_{seen_sheets[sid]}"
                 if seen_sheets[sid] > 1:
                     notes.append(f"{rel} page {i + 1} : feuille {sid} déjà vue (renommée {fid}) — doublon, à arbitrer")
+                # --feuilles : filtre sur l'identifiant FINAL (E101_2 pour la 2e page E101), après le compteur de doublons
+                if seulement and fid.replace("-", "").upper() not in seulement:
+                    continue
                 feuilles.append(prepare_sheet(doc, i, fid, rel, kind, work))
         doc.close()
     with open(os.path.join(work, "inventaire.json"), "w", encoding="utf-8") as fh:
-        json.dump({"inbox": os.path.abspath(inbox), "fichiers": inv, "notes": notes}, fh, indent=1, ensure_ascii=False)
+        # selection : préparation partielle (--feuilles) — run.py ne la prend jamais pour une préparation complète à jour
+        json.dump({"inbox": os.path.abspath(inbox), "fichiers": inv, "notes": notes,
+                   "selection": sorted(seulement) if seulement else None}, fh, indent=1, ensure_ascii=False)
     with open(os.path.join(work, "feuilles.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=["feuille", "fichier", "page", "largeur_pt", "hauteur_pt", "raster_px", "classement_fichier", "nb_mots", "jetons_frequents", "titre", "role", "articles_devis"])
         w.writeheader(); w.writerows(feuilles)
@@ -296,6 +301,8 @@ def write_manifest(work, inv, feuilles, notes):
         fh.write("\n".join(L) + "\n")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    args = [a for a in sys.argv[1:] if not a.startswith("--feuilles=")]
+    if len(args) != 2:
         sys.exit(__doc__)
-    main(sys.argv[1], sys.argv[2])
+    sel = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--feuilles=")), "")
+    main(args[0], args[1], {f.strip().replace("-", "").upper() for f in sel.split(",") if f.strip()} or None)

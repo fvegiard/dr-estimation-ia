@@ -160,10 +160,10 @@ def deposer_fichier(dossier: str, nom_fichier: str, contenu_base64: str, sous_do
 
 
 @mcp.tool()
-def preparer_dossier(dossier: str, chemin_source: str = "") -> dict:
+def preparer_dossier(dossier: str, chemin_source: str = "", feuilles: str = "") -> dict:
     """Prépare le dossier : une page par feuille, rasters, tuiles 3×4 graduées en points PDF, mots positionnés,
     aperçus et MANIFESTE.md. chemin_source (facultatif, serveur local seulement) : dossier ou PDF à copier dans
-    entree/ avant la préparation."""
+    entree/ avant la préparation. feuilles (facultatif) : « E203,E-101 » = ne préparer que ces feuilles (essai rapide)."""
     d = dossier_de(dossier, creer=True)
     if chemin_source:
         src = Path(chemin_source).expanduser().resolve()
@@ -174,7 +174,7 @@ def preparer_dossier(dossier: str, chemin_source: str = "") -> dict:
             (d / "entree" / p.name).write_bytes(p.read_bytes())
     if not list((d / "entree").glob("*.pdf")):
         raise ToolError("entree/ ne contient aucun PDF")
-    log = lancer("prepare.py", str(d / "entree"), str(d / "travail"))
+    log = lancer("prepare.py", str(d / "entree"), str(d / "travail"), *([f"--feuilles={feuilles}"] if feuilles else []))
     feuilles = lire_csv(d / "travail" / "feuilles.csv")
     return {"feuilles": [{k: f.get(k) for k in ("feuille", "fichier", "page", "titre", "nb_mots")} for f in feuilles],
             "manifeste": "travail/MANIFESTE.md", "journal": log[-1500:],
@@ -547,7 +547,8 @@ def controler(travail: Path) -> dict:
             for x2, y2, o2 in pts[i + 1:]:
                 if x2 - x > 4:
                     break
-                if abs(y2 - y) <= 4:
+                # vraie distance (deux prises DDFT côte à côte sont à 4,7–5,5 pt : S-1902 E101, relevé validé)
+                if ((x2 - x) ** 2 + (y2 - y) ** 2) ** 0.5 < 4:
                     doublons.append(f"{f} {lab} ({x:g},{y:g}) {o['_fichier']}:{o['_ligne']} ~ {o2['_fichier']}:{o2['_ligne']}")
     if doublons:
         erreurs.append(f"{len(doublons)} doublon(s) à moins de 4 pt : {doublons[:10]}")
@@ -842,6 +843,10 @@ def _telecharger_source(url: str, dest: Path) -> list[str]:
             cd = re.search(r'filename\*?=(?:UTF-8\'\')?"?([^";]+)', r.headers.get("content-disposition", ""))
             from urllib.parse import unquote
             nom = unquote(cd.group(1)) if cd else (Path(u.split("?")[0]).name or "plans.pdf")
+            try:   # Drive envoie le nom en UTF-8 brut, que HTTP lit en latin-1 (« Ã_lectricitÃ_ »)
+                nom = nom.encode("latin-1").decode("utf-8")
+            except UnicodeError:
+                pass
         nom = re.sub(r"[^\w.\- ()]", "_", nom)[:120]
         nom = nom if nom.lower().endswith(".pdf") else nom + ".pdf"
         if len(r.content) > TAILLE_MAX_DEPOT:
@@ -890,7 +895,7 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
             shutil.rmtree(d / "entree", ignore_errors=True)
             (d / "entree").mkdir(parents=True)
             _telecharger_source(url_source, d / "entree")
-        preparer_dossier(dossier, chemin_source=chemin_source)
+        preparer_dossier(dossier, chemin_source=chemin_source, feuilles=feuille_unique)   # une feuille = une seule préparée
     elif not (d / "travail" / "blocs-index.csv").exists():
         raise ToolError("rien à reprendre : lancer relever_automatique sans reprendre d'abord")
     travail = d / "travail"
@@ -902,7 +907,7 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
     # Si feuille_unique est demandé, restreindre feuilles.csv à cette feuille
     if feuille_unique:
         lignes_f = lire_csv(travail / "feuilles.csv")
-        gardees = [r for r in lignes_f if r.get("feuille") == feuille_unique]
+        gardees = [r for r in lignes_f if r.get("feuille", "").replace("-", "").upper() == feuille_unique.replace("-", "").upper()]
         if not gardees:
             raise ToolError(f"feuille {feuille_unique!r} absente de feuilles.csv ({[r.get('feuille') for r in lignes_f]})")
         with open(travail / "feuilles.csv", "w", encoding="utf-8", newline="") as fh:

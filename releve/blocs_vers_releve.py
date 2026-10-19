@@ -134,7 +134,8 @@ def main():
             typ = (dans_x or cand_t or [(0, "", None)])[0][1]
             if regle["famille"] == "eclairage" and typ and typ not in ("E",) or (regle["famille"] == "eclairage" and typ == "E" and label == "ENCASTRE"):
                 label = f"LUMINAIRE {typ}"
-            meta = {"code": regle["code"], "materiel": regle["materiel"], "legende": regle["legende_no"]}
+            # code du vocabulaire de la légende d'abord (Q14 : DDFT → GF, THERMOSTAT → TH), sinon celui de la règle
+            meta = {"code": code_attendu(regle["materiel"]) or regle["code"], "materiel": regle["materiel"], "legende": regle["legende_no"]}
             if label == "INT 3 VOIES" and not any(t == "3" and d <= 9 for d, t in vois):
                 label = "INT SIMPLE"; meta = {"code": "IS", "materiel": "INTERRUPTEUR SIMPLE", "legende": ""}   # pas « 3 » à côté du $
             # feuille NOUVEAU : un luminaire sans lettre de type est un existant dessiné pour contexte → CONSERVER
@@ -161,7 +162,9 @@ def main():
             if label not in nom:
                 nom[label] = {"label": label, "famille": regle["famille"], "forme": forme, "rgb": "", "jeton_regex": "",
                               "description": meta["materiel"] + (f" — type {typ}" if typ else ""), "source": f"E-001 légende ; bloc {regle['sig_id']}",
-                              "code": (typ.replace("_", "") if typ else meta["code"]), "materiel": meta["materiel"] + (f" TYPE {typ}" if typ else ""),
+                              # code du vocabulaire (Q14 : « TYPE A1 » → LA1), sinon le type sans « _ » (C1_1 → C11)
+                              "code": ((code_attendu(meta["materiel"] + f" TYPE {typ}") or typ.replace("_", "")) if typ else meta["code"]),
+                              "materiel": meta["materiel"] + (f" TYPE {typ}" if typ else ""),
                               "portee": "", "modele": typ, "prescription": "", "discipline": "electricite", "legende": meta["legende"]}
     # 1) dédoublonnage : deux blocs superposés (barre + son contour, deux signatures) = un seul appareil
     occ.sort(key=lambda o: -(float(o["x1_pt"] or 0) - float(o["x0_pt"] or 0) + float(o["rayon_pt"] or 0)))
@@ -286,7 +289,7 @@ def main():
                 occ.append(o)
                 # fiche de famille normalisée pour TOUS les types (même si le passage par blocs l'avait déjà créée)
                 nom[o["label"]] = {"label": o["label"], "famille": "eclairage", "forme": nom.get(o["label"], {}).get("forme") or ("cercle" if not o["x0_pt"] else "carre"),
-                                   "rgb": "", "jeton_regex": "", "description": f"Luminaire type {typ} (tableau E-008)", "source": f"{f} étiquettes", "code": typ.replace("_", ""),
+                                   "rgb": "", "jeton_regex": "", "description": f"Luminaire type {typ} (tableau E-008)", "source": f"{f} étiquettes", "code": code_attendu(f"APPAREIL D'ÉCLAIRAGE TYPE {typ}") or typ.replace("_", ""),
                                    "materiel": f"APPAREIL D'ÉCLAIRAGE TYPE {typ}", "portee": "INSTALLER", "modele": typ, "prescription": "", "discipline": "electricite", "legende": "E-008"}
     # 3) instances posées à la main (pictogrammes aux signatures uniques : enseignes, détecteurs, encastrés d'urgence)
     p_inst = os.path.join(work, "blocs-instances.csv")
