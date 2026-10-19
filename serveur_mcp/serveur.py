@@ -160,10 +160,10 @@ def deposer_fichier(dossier: str, nom_fichier: str, contenu_base64: str, sous_do
 
 
 @mcp.tool()
-def preparer_dossier(dossier: str, chemin_source: str = "") -> dict:
+def preparer_dossier(dossier: str, chemin_source: str = "", feuilles: str = "") -> dict:
     """Prépare le dossier : une page par feuille, rasters, tuiles 3×4 graduées en points PDF, mots positionnés,
     aperçus et MANIFESTE.md. chemin_source (facultatif, serveur local seulement) : dossier ou PDF à copier dans
-    entree/ avant la préparation."""
+    entree/ avant la préparation. feuilles (facultatif) : « E203,E-101 » = ne préparer que ces feuilles (essai rapide)."""
     d = dossier_de(dossier, creer=True)
     if chemin_source:
         src = Path(chemin_source).expanduser().resolve()
@@ -174,7 +174,7 @@ def preparer_dossier(dossier: str, chemin_source: str = "") -> dict:
             (d / "entree" / p.name).write_bytes(p.read_bytes())
     if not list((d / "entree").glob("*.pdf")):
         raise ToolError("entree/ ne contient aucun PDF")
-    log = lancer("prepare.py", str(d / "entree"), str(d / "travail"))
+    log = lancer("prepare.py", str(d / "entree"), str(d / "travail"), *([f"--feuilles={feuilles}"] if feuilles else []))
     feuilles = lire_csv(d / "travail" / "feuilles.csv")
     return {"feuilles": [{k: f.get(k) for k in ("feuille", "fichier", "page", "titre", "nb_mots")} for f in feuilles],
             "manifeste": "travail/MANIFESTE.md", "journal": log[-1500:],
@@ -894,7 +894,7 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
             shutil.rmtree(d / "entree", ignore_errors=True)
             (d / "entree").mkdir(parents=True)
             _telecharger_source(url_source, d / "entree")
-        preparer_dossier(dossier, chemin_source=chemin_source)
+        preparer_dossier(dossier, chemin_source=chemin_source, feuilles=feuille_unique)   # une feuille = une seule préparée
     elif not (d / "travail" / "blocs-index.csv").exists():
         raise ToolError("rien à reprendre : lancer relever_automatique sans reprendre d'abord")
     travail = d / "travail"
@@ -906,7 +906,7 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
     # Si feuille_unique est demandé, restreindre feuilles.csv à cette feuille
     if feuille_unique:
         lignes_f = lire_csv(travail / "feuilles.csv")
-        gardees = [r for r in lignes_f if r.get("feuille") == feuille_unique]
+        gardees = [r for r in lignes_f if r.get("feuille", "").replace("-", "").upper() == feuille_unique.replace("-", "").upper()]
         if not gardees:
             raise ToolError(f"feuille {feuille_unique!r} absente de feuilles.csv ({[r.get('feuille') for r in lignes_f]})")
         with open(travail / "feuilles.csv", "w", encoding="utf-8", newline="") as fh:

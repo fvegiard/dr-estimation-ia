@@ -4,7 +4,7 @@
 # ///
 """Étape 1 (déterministe) : inventaire d'un dossier de soumission et préparation du travail.
 
-Usage : uv run releve/prepare.py INBOX_DIR WORKDIR
+Usage : uv run releve/prepare.py INBOX_DIR WORKDIR [--feuilles=E203,E-101]  (seulement ces feuilles : essai rapide)
 
 Entrée  : INBOX_DIR = dossier déposé par Francis (PDF de plans, addendas, relevé de l'estimateur…).
 Sortie  : WORKDIR/
@@ -132,7 +132,7 @@ def reset_workdir(work: str):
         if os.path.exists(path):
             os.remove(path)
 
-def main(inbox: str, work: str):
+def main(inbox: str, work: str, seulement: set[str] | None = None):
     reset_workdir(work)
     for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "devis"):
         os.makedirs(os.path.join(work, d), exist_ok=True)
@@ -170,6 +170,8 @@ def main(inbox: str, work: str):
                                  "numéro réel à lire sur l'aperçu (cartouche) par l'agent")
                 if kind == "addenda":
                     sid = f"{sid}_ADD"
+                if seulement and sid.replace("-", "").upper() not in seulement:   # --feuilles : seulement celles demandées
+                    continue
                 seen_sheets[sid] += 1
                 fid = sid if seen_sheets[sid] == 1 else f"{sid}_{seen_sheets[sid]}"
                 if seen_sheets[sid] > 1:
@@ -296,6 +298,8 @@ def write_manifest(work, inv, feuilles, notes):
         fh.write("\n".join(L) + "\n")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    args = [a for a in sys.argv[1:] if not a.startswith("--feuilles=")]
+    if len(args) != 2:
         sys.exit(__doc__)
-    main(sys.argv[1], sys.argv[2])
+    sel = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--feuilles=")), "")
+    main(args[0], args[1], {f.strip().replace("-", "").upper() for f in sel.split(",") if f.strip()} or None)
