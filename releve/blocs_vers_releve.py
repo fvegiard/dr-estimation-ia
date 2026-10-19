@@ -134,7 +134,8 @@ def main():
             typ = (dans_x or cand_t or [(0, "", None)])[0][1]
             if regle["famille"] == "eclairage" and typ and typ not in ("E",) or (regle["famille"] == "eclairage" and typ == "E" and label == "ENCASTRE"):
                 label = f"LUMINAIRE {typ}"
-            meta = {"code": regle["code"], "materiel": regle["materiel"], "legende": regle["legende_no"]}
+            # code du vocabulaire de la légende d'abord (Q14 : DDFT → GF, THERMOSTAT → TH), sinon celui de la règle
+            meta = {"code": code_attendu(regle["materiel"]) or regle["code"], "materiel": regle["materiel"], "legende": regle["legende_no"]}
             if label == "INT 3 VOIES" and not any(t == "3" and d <= 9 for d, t in vois):
                 label = "INT SIMPLE"; meta = {"code": "IS", "materiel": "INTERRUPTEUR SIMPLE", "legende": ""}   # pas « 3 » à côté du $
             # feuille NOUVEAU : un luminaire sans lettre de type est un existant dessiné pour contexte → CONSERVER

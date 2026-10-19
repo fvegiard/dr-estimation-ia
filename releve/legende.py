@@ -27,7 +27,7 @@ VOCABULAIRE: tuple[tuple[str, str], ...] = (
     ("GF", rf"PRISE.*{_DDFT}"),
     ("CP", r"PRISE.*CUISINIERE"),
     ("SE", r"PRISE.*(SECHEUSE|SIMPLE 30 ?A)"),
-    ("PC", r"PRISE.*DOUBLE 15 ?A(?!/)"),
+    ("PC", r"PRISE.*DOUBLE 15 ?A(?!/)(?!.*USB)"),   # prise USB = sa propre famille (PU), jamais PC (S-1902)
     ("RA", r"RACCORD(EMENT)? DIRECT"),
     ("BJ", r"BOITE DE JONCTION"),
     ("EV", r"EVACUA(TEUR|TION)"),
