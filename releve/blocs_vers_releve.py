@@ -108,7 +108,7 @@ def main():
             for r in par_sig[b["signature"]]:
                 if float(r["diam_min"] or 0) <= D <= float(r["diam_max"] or 99) and (not r["feuilles"].strip() or f in r["feuilles"].split()):
                     regle = r; break
-            if not regle:
+            if not regle or regle["label"] == "IGNORER":   # vu et jugé non-appareil (fil, trame, numéro de détail)
                 continue
             label, forme = regle["label"], regle["forme"]
             bx0, by0, bx1, by1 = x - w / 2, y - h / 2, x + w / 2, y + h / 2
