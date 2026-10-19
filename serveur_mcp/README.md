@@ -49,6 +49,33 @@ Point d'accès : `https://estim.mondomaine.ca/mcp`, en-tête `Authorization: Bea
 dès que l'hôte n'est pas local ; la protection contre le « DNS rebinding » reste active (seuls les hôtes permis
 passent). Mettre un proxy TLS devant (Caddy, nginx, Azure Container Apps…).
 
+## Pour les collègues : n'importe quel Claude, même résultat
+
+**Un seul serveur pour tous** (sinon chaque poste a sa bibliothèque de blocs et les résultats divergent).
+
+Mise en service (une fois, par Francis) :
+```bash
+docker build -t expert-estimateur .
+docker run -d -p 8765:8765 -v estim:/data -e ESTIMATEUR_MCP_CLE=<clé 24+ car.> \
+  -e ESTIMATEUR_URL_PUBLIQUE=https://<hôte> -e ESTIMATEUR_HOTE_PERMIS=<hôte> expert-estimateur
+```
+(proxy TLS devant ; sans Docker : `python -m serveur_mcp --transport http --hote 0.0.0.0 --hote-permis <hôte>` avec
+les mêmes variables.)
+
+Chaque collègue, une fois : claude.ai ou Claude Desktop → Paramètres → Connecteurs → **Ajouter un connecteur
+personnalisé** → URL `https://<hôte>/mcp?cle=<clé>` (le connecteur n'envoie pas d'en-tête : la clé passe dans l'URL).
+
+Ensuite, dans n'importe quelle conversation : « Fais le relevé de S-1902 : <lien Google Drive du PDF ou du dossier
+de plans> ». Claude appelle `relever_automatique(dossier, url_source)` — c'est écrit dans les instructions du serveur —
+et rend `lien_zip` (PNG annotés, calques, bordereaux, BOM) et `lien_releve_pdf` (format HR26-14). Le lien Drive doit
+être partagé « toute personne disposant du lien » ; dans un dossier, les sous-dossiers Prix / take off / relevés ne sont
+jamais lus. Les liens de livrables portent un jeton propre au fichier, jamais la clé.
+
+Même PDF = mêmes fichiers (vérifié : deux appels → BOM, occurrences et nomenclature identiques au sha256). Seule
+exception voulue : un bureau d'ingénieurs inconnu demande un étiquetage, une fois ; il entre alors dans la
+bibliothèque du serveur et sort ensuite seul pour tout le monde. `verification_vision` (Gemini/NVIDIA) est hors du
+parcours standard parce qu'elle n'est pas déterministe.
+
 ## En un appel : `relever_automatique`
 
 `relever_automatique(dossier, chemin_source="<PDF ou dossier>")` fait tout, sans agent ni jeton : préparation,

@@ -60,7 +60,15 @@ MORCEAU = 60_000
 
 INSTRUCTIONS = """Tu es l'expert estimateur électrique du Groupe DR Électrique. Tu fais le relevé de quantités d'un
 dossier de plans PDF brut et tu livres le PDF annoté au format de l'exemplaire HR26-14.
-Déroulement : deposer_fichier (ou preparer_dossier avec chemin_source) → preparer_dossier → lire la ressource
+PARCOURS STANDARD (toujours celui-ci : même PDF = même résultat, quel que soit le Claude qui appelle) :
+1. relever_automatique(dossier="<no de soumission, ex. S-1902>", url_source="<lien Google Drive du PDF ou du dossier
+   de plans>") — ou chemin_source="<chemin local>" sur le poste. Ne rien passer d'autre.
+2. Si « produit »: true → donner à l'utilisateur lien_zip et lien_releve_pdf (ou zip / releve_pdf), le nombre de
+   repères par feuille et les réserves ; montrer voir_image("sortie/<S>-RELEVE.pdf#1"). Ne jamais modifier le relevé.
+3. Si a_etiqueter.inconnues n'est pas vide (bureau d'ingénieurs encore inconnu) : voir_image de chaque planche,
+   etiqueter_signatures (vrais appareils seulement, IGNORER pour le reste, rien deviné : dans le doute ne pas
+   étiqueter), puis relever_automatique(dossier, reprendre=True). Une fois appris, ce bureau sort seul pour tous.
+Déroulement manuel (seulement si l'utilisateur le demande) : deposer_fichier (ou preparer_dossier avec chemin_source) → preparer_dossier → lire la ressource
 estimateur://methode et l'appliquer (voir_image des aperçus/tuiles, zoomer, ecrire_fichier) → extraire_occurrences →
 multiplicateurs.csv si une feuille montre des unités types (logements, chambres, salles « TYPE ») : facteur = nombre
 d'unités réelles, avec sa source (cartouche, liste des logements, note) → verifier_releve jusqu'à « pret »: true →
@@ -797,9 +805,73 @@ def _empaqueter_zip_png(travail: Path, sortie: Path, nom: str, rapport: dict) ->
     }
 
 
+_DRIVE_DOSSIER = re.compile(r"/folders/([\w-]{20,})")
+_DRIVE_FICHIER = re.compile(r"(?:/file/d/|/d/|[?&]id=)([\w-]{20,})")
+# jamais la réponse de l'estimateur ni les prix comme entrée de relevé (CLAUDE.md, critère d'acceptation étape 1)
+_EXCLU = re.compile(r"prix|soumission|take ?off|relev|estimat|\.qpl", re.I)
+
+
+def _telecharger_source(url: str, dest: Path) -> list[str]:
+    """Télécharge le PDF (ou les PDF d'un dossier) d'un lien Google Drive public ou d'une URL directe dans dest/."""
+    import requests
+
+    s = requests.Session()
+    cibles = []
+    m = _DRIVE_DOSSIER.search(url)
+    if m and "google.com" in url:
+        from src.apprentissage.gdrive import DossierDrive
+
+        for f in DossierDrive(s).fichiers(m.group(1)):
+            if f["nom"].lower().endswith(".pdf") and not _EXCLU.search(f["chemin"]):
+                cibles.append((f"https://drive.usercontent.google.com/download?id={f['id']}&export=download&confirm=t",
+                               f["nom"]))
+    else:
+        m = _DRIVE_FICHIER.search(url) if "google.com" in url else None
+        cibles.append((f"https://drive.usercontent.google.com/download?id={m.group(1)}&export=download&confirm=t"
+                       if m else url, ""))
+    if not cibles:
+        raise ToolError(f"aucun PDF de plans dans {url}")
+    noms = []
+    for u, nom in cibles:
+        r = s.get(u, timeout=600)
+        r.raise_for_status()
+        if not r.content.startswith(b"%PDF"):
+            raise ToolError(f"{nom or u} n'est pas un PDF lisible (lien privé ? le partager « toute personne disposant "
+                            "du lien »)")
+        if not nom:
+            cd = re.search(r'filename\*?=(?:UTF-8\'\')?"?([^";]+)', r.headers.get("content-disposition", ""))
+            from urllib.parse import unquote
+            nom = unquote(cd.group(1)) if cd else (Path(u.split("?")[0]).name or "plans.pdf")
+        nom = re.sub(r"[^\w.\- ()]", "_", nom)[:120]
+        nom = nom if nom.lower().endswith(".pdf") else nom + ".pdf"
+        if len(r.content) > TAILLE_MAX_DEPOT:
+            raise ToolError(f"{nom} : plus de 200 Mo")
+        (dest / nom).write_bytes(r.content)
+        noms.append(nom)
+    return noms
+
+
+def _jeton(chemin: str) -> str:
+    """Jeton de téléchargement d'un livrable : HMAC de la clé du serveur, la clé elle-même ne sort jamais."""
+    return hmac.new(os.environ.get("ESTIMATEUR_MCP_CLE", "").encode(), chemin.encode(), "sha256").hexdigest()[:32]
+
+
+def _liens(dossier: str, liv: dict) -> dict:
+    """Liens cliquables (ESTIMATEUR_URL_PUBLIQUE) vers le ZIP et le PDF de relevé, pour un Claude distant."""
+    racine = os.environ.get("ESTIMATEUR_URL_PUBLIQUE", "").rstrip("/")
+    if not racine:
+        return {}
+    out = {}
+    for cle, champ in (("lien_zip", "zip"), ("lien_releve_pdf", "releve_pdf")):
+        if liv.get(champ):
+            rel = f"{dossier}/{liv[champ].removeprefix('sortie/')}"
+            out[cle] = f"{racine}/livrables/{rel}?jeton={_jeton(rel)}"
+    return out
+
+
 @mcp.tool()
-def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: str = "", verification_vision: bool = True,
-                        reprendre: bool = False) -> dict:
+def relever_automatique(dossier: str, url_source: str = "", chemin_source: str = "", feuille_unique: str = "",
+                        verification_vision: bool = False, reprendre: bool = False) -> dict:
     """Pipeline automatique de bout en bout (PDF -> PNG -> relevé des symboles + calque coloré + BOM -> ZIP de PNG + BOM).
     Accepte un PDF ou un dossier de PDFs via `chemin_source` (ou déjà déposé dans `entree/`), prépare les PNG,
     extrait et étiquette les symboles page par page (route blocs CAO + texte, avec repli vision Gemini/NVIDIA),
@@ -807,9 +879,17 @@ def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: s
     et retourne le chemin du fichier ZIP final prêt à livrer.
     Signatures inconnues de la bibliothèque (autre bureau d'ingénieurs) : la réponse liste `a_etiqueter` et les
     planches ; les regarder (voir_image), appeler etiqueter_signatures, puis relancer avec reprendre=True (garde la
-    préparation et les blocs déjà extraits, refait seulement familles → relevé → livrables)."""
+    préparation et les blocs déjà extraits, refait seulement familles → relevé → livrables).
+    url_source : lien du PDF ou du DOSSIER de plans (Google Drive « toute personne disposant du lien », ou URL
+    directe) — le serveur le télécharge lui-même ; c'est l'entrée normale depuis un Claude distant.
+    verification_vision (défaut non) : modèles de vision Gemini/NVIDIA du serveur ; non déterministe, donc hors du
+    parcours standard (même PDF = même résultat, quel que soit le Claude qui appelle)."""
     d = dossier_de(dossier, creer=not reprendre)
     if not reprendre:
+        if url_source:
+            shutil.rmtree(d / "entree", ignore_errors=True)
+            (d / "entree").mkdir(parents=True)
+            _telecharger_source(url_source, d / "entree")
         preparer_dossier(dossier, chemin_source=chemin_source)
     elif not (d / "travail" / "blocs-index.csv").exists():
         raise ToolError("rien à reprendre : lancer relever_automatique sans reprendre d'abord")
@@ -834,7 +914,7 @@ def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: s
         lancer("blocs_vectoriels.py", str(travail), str(pdf_princ))
         lancer("blocs_vignettes.py", str(travail), str(pdf_princ), str(sig_dir), "--min", "1")
     lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
-    vision = _etiqueter_signatures_vision(travail, sig_dir)
+    vision = _etiqueter_signatures_vision(travail, sig_dir) if verification_vision else 0
     if vision:   # nouvelles règles : les inconnues restantes sont recalculées
         lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
     lancer("blocs_vers_releve.py", str(travail), str(pdf_princ), "--modele", "automatique-mcp")
@@ -857,6 +937,7 @@ def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: s
             liv.update(_empaqueter_zip_png(travail, sortie, dossier, rapport))
         except Exception as e:
             liv["verification_vision_note"] = str(e)[:300]
+    liv.update(_liens(dossier, liv))
     return liv
 
 
@@ -1013,20 +1094,44 @@ def prompt_releve(dossier: str) -> str:
 
 # ---------------------------------------------------------------- transport HTTP protégé
 class CleBearer:
-    """Middleware ASGI : exige « Authorization: Bearer <ESTIMATEUR_MCP_CLE> » sur chaque requête HTTP."""
+    """Middleware ASGI : exige la clé ESTIMATEUR_MCP_CLE, en « Authorization: Bearer <clé> » ou dans l'URL
+    (« /mcp?cle=<clé> » : le connecteur personnalisé de claude.ai n'envoie pas d'en-tête). /livrables/<dossier>/<fichier>
+    sert un fichier de sortie/ sur présentation de son jeton (lien rendu par relever_automatique)."""
 
     def __init__(self, app, cle: str):
         self.app, self.cle = app, cle.encode()
 
+    async def _refus(self, send, statut=401, corps=b'{"erreur":"cle absente ou invalide"}'):
+        await send({"type": "http.response.start", "status": statut,
+                    "headers": [(b"content-type", b"application/json"), (b"www-authenticate", b"Bearer")]})
+        await send({"type": "http.response.body", "body": corps})
+
     async def __call__(self, scope, receive, send):
         if scope["type"] == "http":
+            from urllib.parse import parse_qs, unquote
+
+            qs = parse_qs((scope.get("query_string") or b"").decode())
+            if scope["path"].startswith("/livrables/"):
+                rel = unquote(scope["path"][len("/livrables/"):])
+                if not hmac.compare_digest((qs.get("jeton") or [""])[0], _jeton(rel)) or "/" not in rel:
+                    return await self._refus(send, 403, b'{"erreur":"jeton invalide"}')
+                dossier, fichier = rel.split("/", 1)
+                try:
+                    p = sous_chemin(dossier_de(dossier) / "sortie", fichier)
+                except ToolError:
+                    p = None
+                if p is None or not p.is_file():
+                    return await self._refus(send, 404, b'{"erreur":"introuvable"}')
+                await send({"type": "http.response.start", "status": 200, "headers": [
+                    (b"content-type", b"application/zip" if p.suffix == ".zip" else b"application/pdf"),
+                    (b"content-disposition", f'attachment; filename="{p.name}"'.encode())]})
+                await send({"type": "http.response.body", "body": p.read_bytes()})
+                return
             entetes = dict(scope.get("headers") or [])
             fourni = entetes.get(b"authorization", b"")
-            if not (fourni.startswith(b"Bearer ") and hmac.compare_digest(fourni[7:].strip(), self.cle)):
-                await send({"type": "http.response.start", "status": 401,
-                            "headers": [(b"content-type", b"application/json"), (b"www-authenticate", b"Bearer")]})
-                await send({"type": "http.response.body", "body": b'{"erreur":"cle absente ou invalide"}'})
-                return
+            fourni = fourni[7:].strip() if fourni.startswith(b"Bearer ") else (qs.get("cle") or [""])[0].encode()
+            if self.cle and not hmac.compare_digest(fourni, self.cle):
+                return await self._refus(send)
         await self.app(scope, receive, send)
 
 
@@ -1041,7 +1146,7 @@ def application_http(hote: str = "127.0.0.1", hotes_permis: list[str] | None = N
     securite = TransportSecuritySettings(enable_dns_rebinding_protection=True, allowed_hosts=permis,
                                          allowed_origins=[f"{s}://{h}" for h in permis for s in ("http", "https")])
     app = mcp.streamable_http_app(host=hote, transport_security=securite)
-    return CleBearer(app, cle) if cle else app
+    return CleBearer(app, cle)   # sans clé (hôte local) : seulement la route /livrables
 
 
 def main(argv: list[str] | None = None) -> int:
