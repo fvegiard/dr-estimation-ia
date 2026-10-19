@@ -69,6 +69,11 @@ def test_lien_drive_fichier_et_dossier(tmp_path, monkeypatch):
     serveur._telecharger_source("https://drive.google.com/drive/folders/13JWszeHOEIM41Gf6GnNO0o4sOtWZHOW7", tmp_path)
     assert len(vus) == 1 and "a" * 25 in vus[0]
 
+    brut = 'attachment; filename="P-D Électricité.pdf"'.encode("utf-8").decode("latin-1")   # tel que lu par HTTP
+    monkeypatch.setattr(requests.Session, "get", lambda self, url, **kw: _Rep(b"%PDF-1.7", {"content-disposition": brut}))
+    assert serveur._telecharger_source("https://drive.google.com/file/d/1CpgOD3xxkjv3ge13-92eTb2xjFmggjBA/view",
+                                       tmp_path) == ["P-D Électricité.pdf"]
+
     monkeypatch.setattr(requests.Session, "get", lambda self, url, **kw: _Rep(b"<html>connexion</html>"))
     with pytest.raises(serveur.ToolError, match="partager"):
         serveur._telecharger_source("https://drive.google.com/file/d/1CpgOD3xxkjv3ge13-92eTb2xjFmggjBA/view", tmp_path)

@@ -842,6 +842,10 @@ def _telecharger_source(url: str, dest: Path) -> list[str]:
             cd = re.search(r'filename\*?=(?:UTF-8\'\')?"?([^";]+)', r.headers.get("content-disposition", ""))
             from urllib.parse import unquote
             nom = unquote(cd.group(1)) if cd else (Path(u.split("?")[0]).name or "plans.pdf")
+            try:   # Drive envoie le nom en UTF-8 brut, que HTTP lit en latin-1 (« Ã_lectricitÃ_ »)
+                nom = nom.encode("latin-1").decode("utf-8")
+            except UnicodeError:
+                pass
         nom = re.sub(r"[^\w.\- ()]", "_", nom)[:120]
         nom = nom if nom.lower().endswith(".pdf") else nom + ".pdf"
         if len(r.content) > TAILLE_MAX_DEPOT:
