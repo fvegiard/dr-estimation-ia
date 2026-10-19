@@ -58,6 +58,13 @@ python -m compileall src        # propre
 python -m pytest tests -q       # vert
 ```
 
+Environnement prêt à travailler :
+- **Session cloud Claude Code** : rien à faire — `.claude/hooks/session-start.sh` (hook SessionStart) installe
+  `requirements.txt` + OpenCV au démarrage et vérifie les imports avant le premier tour.
+- **Poste Windows (conda / Anaconda Desktop)** : `conda env create -f environment.yml` puis
+  `conda activate dr-estimation` (Python 3.12 comme la CI, `uv` inclus pour `uv run releve/run.py`) ;
+  après un changement de `requirements.txt` : `conda env update -f environment.yml --prune`.
+
 ## Boucle d'acceptation
 
 Le critère d'acceptation de `CLAUDE.md` (jamais en dessous de l'estimateur) est une porte

@@ -149,7 +149,7 @@ Preuve : S-1902 rejoué à l'aveugle par cette seule commande = 653 repères (64
 sur E201/E202), 0 inconnue.
 Reste (débogage, développement) :
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt                 # session cloud : déjà fait par .claude/hooks/session-start.sh ; poste : conda env create -f environment.yml
 python -m pytest tests -q                       # tests unitaires
 python -m src.validation.jeu_reference          # jeu de référence (code 1 si régression)
 uv run releve/prepare.py INBOX/<S> OUTBOX/<S>/travail
