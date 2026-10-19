@@ -69,6 +69,10 @@ def rect_minimal(pts):
 
 
 def main():
+    if hasattr(sys.stdout, 'reconfigure'): sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'): sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stdout, 'reconfigure'): sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'): sys.stderr.reconfigure(encoding='utf-8', errors='replace')
     ap = argparse.ArgumentParser(); ap.add_argument("workdir"); ap.add_argument("pdf", nargs="?", default=None, help="repli seulement : chaque feuille est lue dans travail/feuilles/<F>.pdf ou dans son fichier source")
     ap.add_argument("--modele", default=os.environ.get("RELEVE_MODELE_OBSERVE", ""), help="modèle qui a étiqueté les signatures (observé dans le contexte de la session), sinon « non renseigné »")
     a = ap.parse_args()

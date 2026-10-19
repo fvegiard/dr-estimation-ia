@@ -38,8 +38,17 @@ from controle_qualite import (
 )
 
 REFUS_QUALITE_MAX = 3       # refus de `terminer` pour qualité avant d'accepter en « qualite_insuffisante »
-URL = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1") + "/chat/completions"
-MODELE = "moonshotai/kimi-k3"
+# Fournisseurs à point d'accès compatible OpenAI (chat/completions, tools, image_url en data: base64).
+# gemini : https://ai.google.dev/gemini-api/docs/openai (vérifié 2026-10-15) ; clé en Authorization: Bearer.
+FOURNISSEURS = {
+    "nvidia": {"url": os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1"), "cle": "NVIDIA_API_KEY",
+               "modele": "moonshotai/kimi-k3"},
+    "gemini": {"url": os.environ.get("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai"), "cle": "GEMINI_API_KEY",
+               "modele": "gemini-3.8-flash"},    # ai.google.dev/gemini-api/docs/models (2026-10-15) : flash agentique ; gemini-4-argon = raisonnement
+}
+FOURNISSEUR = os.environ.get("RELEVE_FOURNISSEUR", "nvidia")
+URL = FOURNISSEURS[FOURNISSEUR]["url"].rstrip("/") + "/chat/completions"
+MODELE = FOURNISSEURS[FOURNISSEUR]["modele"]
 # Essai DSI01 (HR26-14, 122 marques chez l'estimateur), 2026-09-29, même consigne et mêmes outils :
 #   kimi-k3          104 marques, rappel 63 %, 38 tours, 49 min — DT/K/F/RA quasi exacts
 #   gemma-4-31b-it    53 marques, rappel 33 %, 36 tours, 31 min — 53/53 coordonnées sur une grille
@@ -198,18 +207,23 @@ def alleger(messages):
         messages[i] = {"role": "user", "content": messages[i]["content"][0]["text"] + " (déjà vue, retirée du contexte)"}
 
 def run(workdir, out_json, model, max_turns):
-    cle = os.environ.get("NVIDIA_API_KEY")
+    cle = os.environ.get(FOURNISSEURS[FOURNISSEUR]["cle"])
+    if not cle and FOURNISSEUR == "gemini":
+        try:
+            cle = json.load(open(os.path.expanduser("~/.omo/agent/auth.json"), encoding="utf-8")).get("google", {}).get("key")
+        except Exception:
+            pass
     log = open(os.path.join(workdir, "agent-journal.log"), "a", encoding="utf-8")
     def j(msg):
         log.write(f"{datetime.datetime.now():%H:%M:%S} {msg}\n"); log.flush()
     t0 = time.time(); usage = {"input_tokens": 0, "output_tokens": 0}
-    data = {"lanceur": f"agent_nvidia.py (API NVIDIA, {model})", "model": model}
+    data = {"lanceur": f"agent_nvidia.py (API {FOURNISSEUR}, {model})", "model": model, "fournisseur": FOURNISSEUR, "url": URL}
     if not cle:
-        data.update(subtype="clé NVIDIA_API_KEY absente du processus", is_error=True, num_turns=0)
+        data.update(subtype=f"clé {FOURNISSEURS[FOURNISSEUR]['cle']} absente du processus", is_error=True, num_turns=0)
         j("fin  " + data["subtype"]); json.dump(data, open(out_json, "w", encoding="utf-8"), indent=1, ensure_ascii=False); return 1
     skill = open(os.path.join(REPO, ".claude", "skills", "releve-planexpert", "SKILL.md"), encoding="utf-8").read()
     skill = skill.split("---", 2)[2].replace("$ARGUMENTS", ".")
-    systeme = (skill + "\n\n## Outils de cette exécution (API NVIDIA)\nTu n'as pas de Bash : utilise les outils fournis "
+    systeme = (skill + f"\n\n## Outils de cette exécution (API {FOURNISSEUR})\nTu n'as pas de Bash : utilise les outils fournis "
                "(lister, lire, ecrire, zoom, extract_occurrences, traits). Les chemins sont relatifs au dossier de travail « . ». "
                "Lis une image avec `lire` (tuiles/…, apercus/…) ou `zoom`. Écris chaque sortie avec `ecrire` (contenu complet). "
                "Plans raster (0 mot) : tout se relève à l'œil. Parcours CHAQUE feuille plan en zooms de 600 pt × 600 pt au plus "

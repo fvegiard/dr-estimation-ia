@@ -76,6 +76,8 @@ def _feuilles_admises(entree, feuilles):
 
 
 def main():
+    if hasattr(sys.stdout, 'reconfigure'): sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'): sys.stderr.reconfigure(encoding='utf-8', errors='replace')
     ap = argparse.ArgumentParser()
     ap.add_argument("workdir"); ap.add_argument("--bibliotheque", default=os.path.join(REPO, "releve", "bibliotheque-blocs.csv"))
     ap.add_argument("--min", type=int, default=3)
@@ -193,7 +195,7 @@ def main():
     if not os.path.exists(p_inst):
         open(p_inst, "w", encoding="utf-8").write("feuille,x_pt,y_pt,label,famille,forme,code,materiel,legende_no,portee,rayon_pt,note\n")
     lignes = ["# Signatures de blocs à étiqueter (absentes de la bibliothèque)", "",
-              f"Bibliothèque : `{os.path.relpath(a.bibliotheque, REPO)}` ({len(biblio)} signatures). Étiquetées automatiquement : {len(fam)}. "
+              f"Bibliothèque : `{(os.path.relpath(a.bibliotheque, REPO) if os.path.splitdrive(os.path.abspath(a.bibliotheque))[0].lower() == os.path.splitdrive(REPO)[0].lower() else a.bibliotheque)}` ({len(biblio)} signatures). Étiquetées automatiquement : {len(fam)}. "
               f"Inconnues fréquentes (≥ {a.min} instances) : {len(inconnues)} — voir les planches `signatures-NN.png`, ajouter la ligne à "
               "`blocs-familles.csv` du dossier ET à la bibliothèque (signature, label, famille, forme, code, matériel).", ""]
     lignes += [f"- {r['sig_id']} : n={r['n_plans']} ({r['par_feuille']}) lettre « {r['lettre']} » légende « {r['legende'][:50]} » ex. {r['exemple']}" for r in inconnues]
@@ -203,7 +205,7 @@ def main():
     open(os.path.join(work, "blocs-a-etiqueter.md"), "w", encoding="utf-8").write("\n".join(lignes) + "\n")
     # version structurée, reprise par blocs_vers_releve.py (reserves.md → PDF) et run.py (STATUT « À VÉRIFIER ») :
     # l'inconnu ne reste jamais confiné à un fichier de travail (revue Copilot PR #28)
-    json.dump({"bibliotheque": os.path.relpath(a.bibliotheque, REPO), "etiquetees": len(fam),
+    json.dump({"bibliotheque": (os.path.relpath(a.bibliotheque, REPO) if os.path.splitdrive(os.path.abspath(a.bibliotheque))[0].lower() == os.path.splitdrive(REPO)[0].lower() else a.bibliotheque), "etiquetees": len(fam),
                "inconnues": [{"sig_id": r["sig_id"], "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in inconnues],
                "ambigues": [{"sig_id": r.get("sig_id") or "", "n_plans": int(r["n_plans"] or 0), "par_feuille": r["par_feuille"], "exemple": r["exemple"]} for r in ambigus]},
               open(os.path.join(work, "blocs-a-etiqueter.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

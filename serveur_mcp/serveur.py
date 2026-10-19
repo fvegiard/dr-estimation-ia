@@ -32,6 +32,7 @@ import re
 import shutil
 import subprocess
 import sys
+import zipfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -93,12 +94,12 @@ def sous_chemin(racine: Path, relatif: str) -> Path:
     return p
 
 
-def lancer(script: str, *args: str, delai: int = 1800) -> str:
+def lancer(script: str, *args: str, delai: int = 1800, codes_ok: tuple[int, ...] = (0,)) -> str:
     env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
     r = subprocess.run([sys.executable, str(RELEVE / script), *args], cwd=RACINE, env=env,
                            stdin=subprocess.DEVNULL, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=delai)
     sortie = (r.stdout + ("\n" + r.stderr if r.stderr.strip() else "")).strip()
-    if r.returncode != 0:
+    if r.returncode not in codes_ok:
         raise ToolError(f"{script} a échoué (code {r.returncode}) :\n{sortie[-4000:]}")
     return sortie[-4000:]
 
@@ -441,6 +442,187 @@ def verifier_releve(dossier: str) -> dict:
     return controler(dossier_de(dossier) / "travail")
 
 
+def _etiqueter_signatures_vision(travail: Path, sig_dir: Path) -> int:
+    """Quand blocs_familles_auto laisse des signatures inconnues et que GEMINI_API_KEY (ou auth.json) est disponible,
+    demande à Gemini Vision (gemini-3.8-flash) d'identifier les symboles d'appareils sur signatures-*.png et complète
+    blocs-familles.csv."""
+    p_inc = travail / "blocs-a-etiqueter.json"
+    if not p_inc.exists():
+        return 0
+    inc = json.loads(p_inc.read_text(encoding="utf-8")).get("inconnues") or []
+    if not inc:
+        return 0
+    planches = sorted(sig_dir.glob("signatures-*.png"))
+    if not planches:
+        return 0
+    cle = os.environ.get("GEMINI_API_KEY") or ""
+    if not cle:
+        p_auth = Path.home() / ".omo" / "agent" / "auth.json"
+        if p_auth.exists():
+            try:
+                cle = json.loads(p_auth.read_text(encoding="utf-8")).get("google", {}).get("key", "")
+            except Exception:
+                pass
+    if not cle:
+        return 0
+    import urllib.request
+    b64 = base64.b64encode(planches[0].read_bytes()).decode("ascii")
+    sids = [r["sig_id"] for r in inc[:15]]
+    prompt = (
+        f"Voici la planche de vignettes de symboles CAO ({', '.join(sids)}) extraits d'un plan électrique. "
+        "Pour chaque vignette (S001, S002...) qui montre un VRAI boîtier ou symbole d'appareil électrique (par ex. boîtier "
+        "avec code DP1, DP2, PP1, SO3, SO4, SW1, SW5, prise, luminaire, détecteur — PAS un bout de câble, ni un numéro "
+        "de détail dans un grand cercle, ni une légende de fil), renvoie un tableau JSON d'objets : "
+        "[{\"sig_id\": \"S002\", \"label\": \"APPAREIL NLIGHT DP1\", \"famille\": \"commande\", \"forme\": \"carre\", "
+        "\"code\": \"DP1\", \"materiel\": \"APPAREIL DE CONTROLE NLIGHT DP1\"}]. Réponds UNIQUEMENT par le tableau JSON."
+    )
+    corps = {
+        "model": "gemini-3.8-flash",
+        "max_tokens": 4000,
+        "temperature": 0,
+        "messages": [{"role": "user", "content": [
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": "data:image/png;base64," + b64}},
+        ]}],
+    }
+    try:
+        req = urllib.request.Request(
+            "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+            data=json.dumps(corps).encode("utf-8"),
+            headers={"Authorization": "Bearer " + cle, "Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            data = json.load(resp)
+        texte = data["choices"][0]["message"]["content"]
+        m = re.search(r"\[.*\]", texte, re.S)
+        if not m:
+            return 0
+        items = json.loads(m.group(0))
+    except Exception:
+        return 0
+    if not isinstance(items, list) or not items:
+        return 0
+    p_fam = travail / "blocs-familles.csv"
+    existantes = lire_csv(p_fam)
+    vus = {r["sig_id"] for r in existantes}
+    ajout = 0
+    if str(RELEVE) not in sys.path:
+        sys.path.insert(0, str(RELEVE))
+    from legende import code_attendu
+    cols = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "reserve", "origine", "feuilles_auto", "note"]
+    with open(p_fam, "a", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=cols)
+        for it in items:
+            sid = str(it.get("sig_id") or "").strip()
+            if not sid or sid in vus or not it.get("label"):
+                continue
+            vus.add(sid)
+            ajout += 1
+            w.writerow({
+                "sig_id": sid,
+                "label": str(it.get("label")).upper(),
+                "famille": str(it.get("famille") or "commande").lower(),
+                "forme": str(it.get("forme") or "carre").lower(),
+                "code": (code_attendu(str(it.get("materiel") or it.get("label") or "")) or str(it.get("code") or "M01")).upper(),
+                "materiel": str(it.get("materiel") or it.get("label")).upper(),
+                "legende_no": "",
+                "diam_min": "0",
+                "diam_max": "99",
+                "feuilles": "",
+                "portee": "INSTALLER",
+                "reserve": "",
+                "origine": "vision-gemini",
+                "feuilles_auto": "",
+                "note": "étiqueté par Gemini Vision sur signatures-01.png",
+            })
+    return ajout
+
+
+def _empaqueter_zip_png(travail: Path, sortie: Path, nom: str, rapport: dict) -> dict:
+    """Exporte chaque feuille et bordereau en PNG (<F>_annote.png, <F>_calque.png, <F>_bordereau_NN.png) + BOM (.csv, .xlsx)
+    et empaquette le tout dans sortie/<nom>-LIVRABLES-PNG.zip."""
+    png_dir = sortie / "png"
+    shutil.rmtree(png_dir, ignore_errors=True)
+    png_dir.mkdir(parents=True, exist_ok=True)
+    annote_pdf = sortie / f"{nom}-Plans-annotes.pdf"
+    sheets = rapport.get("sheets") or []
+    total_pages = int(rapport.get("pages") or 0)
+    for idx, sh in enumerate(sheets):
+        f_nom = str(sh.get("sheet"))
+        p_plan = int(sh.get("plan_page") or 1)
+        p_suiv = int(sheets[idx + 1]["plan_page"]) if idx + 1 < len(sheets) else (total_pages + 1)
+        nb_bord = max(0, p_suiv - p_plan - 1)
+        lancer("calque_png.py", str(annote_pdf), str(png_dir), "--page", str(p_plan), "--nom", f_nom, "--bordereaux", str(nb_bord))
+    # Export BOM CSV + XLSX
+    bom_csv = sortie / "vecteur" / "bordereau.csv"
+    if bom_csv.exists():
+        shutil.copyfile(bom_csv, png_dir / f"{nom}-BOM.csv")
+    try:
+        from src.releve.xlsx_export import main as xlsx_main
+        occ_files = [travail / f for f in ("occurrences-visuel.csv", "occurrences-texte.csv") if (travail / f).exists() and (travail / f).stat().st_size > 35]
+        if occ_files:
+            xlsx_main([str(occ_files[0]), "--sortie", str(png_dir / f"{nom}-BOM.xlsx"), "--nomenclature", str(travail / "nomenclature.csv")])
+    except Exception:
+        pass
+    zip_path = sortie / f"{nom}-LIVRABLES-PNG.zip"
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for p in sorted(png_dir.glob("*")):
+            if p.is_file():
+                zf.write(p, arcname=p.name)
+        for extra in ("nomenclature.csv", "occurrences-visuel.csv", "occurrences-texte.csv", "reserves.md"):
+            ep = travail / extra
+            if ep.exists():
+                zf.write(ep, arcname=f"releve/{extra}")
+    return {
+        "zip": f"sortie/{zip_path.name}",
+        "zip_chemin_absolu": str(zip_path.resolve()),
+        "png_fichiers": sorted(p.name for p in png_dir.glob("*.png")),
+        "bom_fichiers": sorted(p.name for p in png_dir.glob("*-BOM.*")),
+    }
+
+
+@mcp.tool()
+def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: str = "", verification_vision: bool = True) -> dict:
+    """Pipeline automatique de bout en bout (PDF -> PNG -> relevé des symboles + calque coloré + BOM -> ZIP de PNG + BOM).
+    Accepte un PDF ou un dossier de PDFs via `chemin_source` (ou déjà déposé dans `entree/`), prépare les PNG,
+    extrait et étiquette les symboles page par page (route blocs CAO + texte, avec repli vision Gemini/NVIDIA),
+    génère les calques PNG (<feuille>_annote.png, <feuille>_calque.png, <feuille>_bordereau_01.png) et la BOM,
+    et retourne le chemin du fichier ZIP final prêt à livrer."""
+    prep = preparer_dossier(dossier, chemin_source=chemin_source)
+    d = dossier_de(dossier)
+    travail = d / "travail"
+    sortie = d / "sortie"
+    pdfs = sorted((d / "entree").glob("*.pdf"))
+    if not pdfs:
+        raise ToolError("aucun PDF dans entree/")
+    pdf_princ = max(pdfs, key=lambda p: p.stat().st_size)
+    # Si feuille_unique est demandé, restreindre feuilles.csv à cette feuille
+    if feuille_unique:
+        lignes_f = lire_csv(travail / "feuilles.csv")
+        gardees = [r for r in lignes_f if r.get("feuille") == feuille_unique]
+        if not gardees:
+            raise ToolError(f"feuille {feuille_unique!r} absente de feuilles.csv ({[r.get('feuille') for r in lignes_f]})")
+        with open(travail / "feuilles.csv", "w", encoding="utf-8", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(gardees[0].keys()))
+            w.writeheader()
+            w.writerows(gardees)
+    sig_dir = sortie / "signatures"
+    lancer("blocs_vectoriels.py", str(travail), str(pdf_princ))
+    lancer("blocs_vignettes.py", str(travail), str(pdf_princ), str(sig_dir), "--min", "1")
+    lancer("blocs_familles_auto.py", str(travail))
+    _etiqueter_signatures_vision(travail, sig_dir)
+    lancer("blocs_vers_releve.py", str(travail), str(pdf_princ), "--modele", "automatique-mcp")
+    liv = produire_livrables(dossier, nom=dossier)
+    if verification_vision and (os.environ.get("GEMINI_API_KEY") or os.environ.get("NVIDIA_API_KEY")):
+        try:
+            lancer("verif_visuelle.py", str(sortie), dossier, "--max-marques", "25", codes_ok=(0, 2, 4))
+            rapport = json.loads((sortie / f"{dossier}-rendu-rapport.json").read_text(encoding="utf-8"))
+            liv.update(_empaqueter_zip_png(travail, sortie, dossier, rapport))
+        except Exception as e:
+            liv["verification_vision_note"] = str(e)[:300]
+    return liv
+
+
 @mcp.tool()
 def produire_livrables(dossier: str, nom: str = "") -> dict:
     """Produit les livrables dans sortie/ : <S>-RELEVE.pdf au format de l'exemplaire (plans annotés + bordereau
@@ -469,7 +651,8 @@ def produire_livrables(dossier: str, nom: str = "") -> dict:
     if a_verifier:
         controle += (f" ATTENTION : encadré RELEVE-MATERIEL hors de l'espace libre du plan sur "
                      f"{', '.join(a_verifier)} — valider visuellement avant de considérer ce relevé terminé.")
-    return {"produit": True, "releve_pdf": f"sortie/{nom}-RELEVE.pdf", "pages": rapport["pages"],
+    zip_info = _empaqueter_zip_png(d / "travail", sortie, nom, rapport)
+    return {"produit": True, **zip_info, "releve_pdf": f"sortie/{nom}-RELEVE.pdf", "pages": rapport["pages"],
             "reperes": rapport["reperes"],
             "feuilles": [{k: s[k] for k in ("sheet", "plan_page", "reperes", "familles", "res", "box_in_free_space")}
                          for s in rapport["sheets"]],

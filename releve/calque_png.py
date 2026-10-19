@@ -44,9 +44,13 @@ def flux_releve(doc: pymupdf.Document, page: pymupdf.Page) -> tuple[list[int], l
 
 
 def main():
+    if hasattr(sys.stdout, 'reconfigure'): sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'): sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stdout, 'reconfigure'): sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'): sys.stderr.reconfigure(encoding='utf-8', errors='replace')
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf"); ap.add_argument("sortie"); ap.add_argument("--page", type=int, default=1)
-    ap.add_argument("--largeur", type=int, default=4967); ap.add_argument("--nom", default=None)
+    ap.add_argument("--largeur", type=int, default=4967); ap.add_argument("--nom", default=None); ap.add_argument("--bordereaux", type=int, default=0)
     a = ap.parse_args()
     os.makedirs(a.sortie, exist_ok=True)
     doc = pymupdf.open(a.pdf)
@@ -56,6 +60,12 @@ def main():
     z = a.largeur / page.rect.width
     nom = a.nom or f"p{a.page:02d}"
     page.get_pixmap(matrix=pymupdf.Matrix(z, z)).save(os.path.join(a.sortie, f"{nom}_annote.png"))
+    for b_idx in range(1, a.bordereaux + 1):
+        b_pg_no = a.page + b_idx
+        if 1 <= b_pg_no <= doc.page_count:
+            b_pg = doc[b_pg_no - 1]
+            bz = a.largeur / b_pg.rect.width
+            b_pg.get_pixmap(matrix=pymupdf.Matrix(bz, bz)).save(os.path.join(a.sortie, f"{nom}_bordereau_{b_idx:02d}.png"))
     garder, retirer = flux_releve(doc, page)
     if not garder:
         sys.exit(f"aucun flux de contenu « {PREFIXE_CALQUE} » sur la page {a.page} : pas un PDF de render_vectoriel.py ?")
