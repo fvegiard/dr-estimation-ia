@@ -170,16 +170,19 @@ def main(inbox: str, work: str, seulement: set[str] | None = None):
                                  "numéro réel à lire sur l'aperçu (cartouche) par l'agent")
                 if kind == "addenda":
                     sid = f"{sid}_ADD"
-                if seulement and sid.replace("-", "").upper() not in seulement:   # --feuilles : seulement celles demandées
-                    continue
                 seen_sheets[sid] += 1
                 fid = sid if seen_sheets[sid] == 1 else f"{sid}_{seen_sheets[sid]}"
                 if seen_sheets[sid] > 1:
                     notes.append(f"{rel} page {i + 1} : feuille {sid} déjà vue (renommée {fid}) — doublon, à arbitrer")
+                # --feuilles : filtre sur l'identifiant FINAL (E101_2 pour la 2e page E101), après le compteur de doublons
+                if seulement and fid.replace("-", "").upper() not in seulement:
+                    continue
                 feuilles.append(prepare_sheet(doc, i, fid, rel, kind, work))
         doc.close()
     with open(os.path.join(work, "inventaire.json"), "w", encoding="utf-8") as fh:
-        json.dump({"inbox": os.path.abspath(inbox), "fichiers": inv, "notes": notes}, fh, indent=1, ensure_ascii=False)
+        # selection : préparation partielle (--feuilles) — run.py ne la prend jamais pour une préparation complète à jour
+        json.dump({"inbox": os.path.abspath(inbox), "fichiers": inv, "notes": notes,
+                   "selection": sorted(seulement) if seulement else None}, fh, indent=1, ensure_ascii=False)
     with open(os.path.join(work, "feuilles.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=["feuille", "fichier", "page", "largeur_pt", "hauteur_pt", "raster_px", "classement_fichier", "nb_mots", "jetons_frequents", "titre", "role", "articles_devis"])
         w.writeheader(); w.writerows(feuilles)
