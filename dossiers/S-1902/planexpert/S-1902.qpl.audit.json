@@ -1,0 +1,94 @@
+{
+ "qpl": "/home/claude/work/OUTBOX/S-1902/S-1902-planexpert/S-1902.qpl",
+ "sha256": "d328ddd8fbad35b35ff77e063f33a57fbc81255a21845d0322971d753a728414",
+ "octets": 72133,
+ "plans": 21,
+ "compteurs": 63,
+ "marques": 645,
+ "libelles": 31,
+ "par_feuille": {
+  "E101": {
+   "BOITE JONCTION": 4,
+   "BOITIER C": 1,
+   "GACHE": 3,
+   "LECTEUR CARTE": 3,
+   "MONUMENT PLANCHER": 1,
+   "PRISE DDFT": 23,
+   "PRISE DOUBLE 15A": 48,
+   "SORTIE DATA": 36,
+   "SORTIE TV": 1,
+   "THERMOSTAT": 7
+  },
+  "E102": {
+   "BOITE JONCTION": 1,
+   "LED 1X4": 1,
+   "MONUMENT PLANCHER": 3,
+   "MOTEUR TRIPHASE": 5,
+   "PRISE DDFT": 4,
+   "PRISE DOUBLE 15A": 22,
+   "SORTIE DATA": 19,
+   "SORTIE TV": 3
+  },
+  "E103": {
+   "MOTEUR MONOPHASE": 6
+  },
+  "E104": {
+   "BOITE JONCTION": 3,
+   "LECTEUR CARTE": 2,
+   "LED 4PI": 1,
+   "PRISE DDFT": 20,
+   "PRISE DOUBLE 15A": 23,
+   "PRISE USB": 20,
+   "SORTIE DATA": 45,
+   "THERMOSTAT": 2
+  },
+  "E105": {
+   "LED 4PI": 1,
+   "MONUMENT PLANCHER": 3,
+   "MOTEUR MONOPHASE": 3,
+   "MOTEUR TRIPHASE": 2,
+   "PRISE DDFT": 2,
+   "PRISE DOUBLE 15A": 2,
+   "SORTIE DATA": 20
+  },
+  "E106": {
+   "MOTEUR TRIPHASE": 2
+  },
+  "E201": {
+   "BOITE JONCTION": 2,
+   "BOITIER C": 3,
+   "DETECTEUR FUMEE": 5,
+   "DETECTEUR MOUVEMENT": 3,
+   "ENCASTRE": 28,
+   "INT SIMPLE": 5,
+   "LED 1X4": 11,
+   "LED 2X2": 45,
+   "STATION MANUELLE": 4
+  },
+  "E202": {
+   "ENCASTRE": 35,
+   "HP ENCASTRE PLAFOND": 1,
+   "LED 1X4": 21
+  },
+  "E203": {
+   "DETECTEUR FUMEE": 5,
+   "ENCASTRE URGENCE": 9,
+   "ENSEIGNE SORTIE Z6": 2,
+   "INT SIMPLE": 5,
+   "LUMINAIRE A1": 11,
+   "LUMINAIRE C1": 12,
+   "LUMINAIRE C1_1": 6,
+   "LUMINAIRE C1_3": 15,
+   "LUMINAIRE E": 3,
+   "LUMINAIRE LINEAIRE": 2,
+   "PANNEAU ANNONCIATEUR": 1
+  },
+  "E204": {
+   "ENCASTRE": 16,
+   "ENCASTRE URGENCE": 1,
+   "ENSEIGNE SORTIE Z6": 1,
+   "LED 2X2": 49,
+   "LUMINAIRE LINEAIRE": 2
+  }
+ }
+}

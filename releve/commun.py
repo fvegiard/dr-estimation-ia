@@ -55,7 +55,8 @@ def load_nomenclature(work):
             k = used.get(fam, 0); used[fam] = k + 1
             d = VARIANTES[k % len(VARIANTES)]
             rgb = tuple(max(0, min(255, base_rgb[i] + d[i])) for i in range(3))
-        out[label] = {"famille": fam, "forme": shape, "rgb": rgb, "taille": 26, "description": r.get("description") or "", "source": r.get("source") or ""}
+        out[label] = {"famille": fam, "forme": shape, "rgb": rgb, "taille": 26, "description": r.get("description") or "", "source": r.get("source") or "",
+                      "legende": (r.get("legende") or "").strip()}     # no de ligne de légende (ancrage_raster : glyphe ou cercle, taille)
     return out
 
 def load_occurrences(work):
@@ -85,6 +86,53 @@ def load_feuilles(work):
         vus[nom] = vus.get(nom, 0) + 1
         r["nom"] = nom if vus[nom] == 1 else f"{nom}_{vus[nom]}"
     return feuilles
+
+class PagesFeuilles:
+    """La page de chaque feuille dans SON document source — jamais « page n du plus gros PDF » (revue Codex PR #28 :
+    une INBOX peut contenir plusieurs PDF de plans ou un addenda ; `feuilles.csv` porte `fichier` + `page` relative à
+    ce fichier). Ordre de résolution : `travail/feuilles/<F>.pdf` (la page seule écrite par prepare.py) →
+    `<inbox>/<fichier>` (inbox lue dans inventaire.json) → le PDF passé en argument si son nom est celui de `fichier`."""
+
+    def __init__(self, work, pdf=None):
+        import json
+        self.work, self.pdf, self._docs = work, (os.path.abspath(pdf) if pdf else None), {}
+        self.inbox = None
+        p = os.path.join(work, "inventaire.json")
+        if os.path.exists(p):
+            try:
+                self.inbox = json.load(open(p, encoding="utf-8")).get("inbox")
+            except Exception:  # noqa
+                self.inbox = None
+
+    def _open(self, path):
+        import pymupdf
+        if path not in self._docs:
+            self._docs[path] = pymupdf.open(path)
+        return self._docs[path]
+
+    def page(self, row):
+        """`row` = une ligne de feuilles.csv (feuille, fichier, page)."""
+        seule = os.path.join(self.work, "feuilles", f"{row['feuille']}.pdf")
+        if os.path.exists(seule):
+            return self._open(seule)[0]
+        fichier = row.get("fichier") or ""
+        if self.inbox and fichier and os.path.exists(os.path.join(self.inbox, fichier)):
+            return self._open(os.path.join(self.inbox, fichier))[int(row["page"]) - 1]
+        if self.pdf and (not fichier or os.path.basename(self.pdf) == os.path.basename(fichier)):
+            return self._open(self.pdf)[int(row["page"]) - 1]
+        raise FileNotFoundError(f"feuille {row['feuille']} : ni {seule}, ni {fichier} dans l'INBOX, ni un PDF du même nom en argument")
+
+
+def vers_repere_affiche(page, pts):
+    """Points du repère NON tourné (get_drawings / get_text) → repère AFFICHÉ (page.rect, celui des rasters de prepare.py,
+    des occurrences du relevé et du rendu) : `page.rotation_matrix`. Identité quand la page n'est pas tournée. Revue
+    Codex PR #28 : pages Rotate 90/270 (S-1714, S-1769…) — sans ça, les pastilles sortent de la page."""
+    if not page.rotation:
+        return [(float(x), float(y)) for x, y in pts]
+    import pymupdf
+    M = page.rotation_matrix
+    return [((q := pymupdf.Point(x, y) * M).x, q.y) for x, y in pts]
+
 
 def shape_points(shape, cx, cy, rx, ry):
     if shape == DIAMOND: return [(cx, cy - ry), (cx + rx, cy), (cx, cy + ry), (cx - rx, cy)]

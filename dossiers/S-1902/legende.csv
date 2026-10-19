@@ -1,0 +1,133 @@
+feuille,section,no,symbole,description,code,statut,qte,preuve,feuille_legende,x_pt,y_pt,taille_pt
+E001,ALARME INCENDIE,A01,bloc ø13.3 pt [F],STATION MANUELLE,,compte,4,famille STATION MANUELLE : 4 occurrences (blocs vectoriels),E001,1203.6,112.9,13.3
+E001,ALARME INCENDIE,A02,bloc ø9.4 pt,DÉTECTEUR THERMIQUE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.7,133.1,9.4
+E001,ALARME INCENDIE,A03,bloc ø9.4 pt,COMBINÉ ''CO'' ET PILE DE SECOURS,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.6,159.8,9.4
+E001,ALARME INCENDIE,A04,bloc ø9.4 pt,DÉTECTEUR DE FUMÉE,,compte,10,famille DETECTEUR FUMEE : 10 occurrences (blocs vectoriels),E001,1203.7,187.3,9.4
+E001,ALARME INCENDIE,A05,bloc ø16.0 pt [K],KLAXON,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.8,215.5,16.0
+E001,ALARME INCENDIE,A06,bloc ø16.0 pt [F],PIEZO COMBINÉ À UN STROBE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.7,247.0,16.0
+E001,ALARME INCENDIE,A07,bloc ø11.5 pt [C],CLOCHE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.1,273.4,11.5
+E001,ALARME INCENDIE,A08,bloc ø15.5 pt [C],CLOCHE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.5,273.8,15.5
+E001,ALARME INCENDIE,A09,bloc ø20.7 pt,HAUT-PARLEUR EN SURFACE AU PLAFOND,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.0,302.0,20.7
+E001,ALARME INCENDIE,A10,bloc ø14.7 pt,HAUT-PARLEUR ENCASTRÉ AU PLAFOND,,compte,1,famille HP ENCASTRE PLAFOND : 1 occurrences (blocs vectoriels),E001,1203.1,330.2,14.7
+E001,ALARME INCENDIE,A11,bloc ø24.4 pt,HAUT-PARLEUR MURAL,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1200.2,359.1,24.4
+E001,ALARME INCENDIE,A12,bloc ø17.2 pt [RA],MODULE RELAIS ADRESSABLE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1203.0,382.6,17.2
+E001,ALARME INCENDIE,A13,bloc ø19.6 pt,DÉTECTEUR DE FUMÉE POUR CONDUIT DE VENTILATION,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1202.5,400.7,19.6
+E001,ALARME INCENDIE,A14,bloc ø23.1 pt [PAI],PANNEAU D'ALARME-INCENDIE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1210.0,423.1,23.1
+E001,ALARME INCENDIE,A15,bloc ø23.1 pt [ANN],PANNEAU ANNONCIATEUR,,compte,1,famille PANNEAU ANNONCIATEUR : 1 occurrences (blocs vectoriels),E001,1209.5,442.0,23.1
+E001,ALARME INTRUSION,I01,bloc ø17.7 pt [LC],LECTEUR DE CARTES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1206.1,480.5,17.7
+E001,ALARME INTRUSION,I02,bloc ø19.8 pt [G],GÂCHE ELECTRIQUE,,compte,3,famille GACHE : 3 occurrences (blocs vectoriels),E001,1206.0,502.4,19.8
+E001,ALARME INTRUSION,I03,bloc ø19.2 pt [ICM],INTERCOM MAITRE,IC,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1205.7,523.5,19.2
+E001,ALARME INTRUSION,I04,bloc ø19.2 pt [IS],INTERCOM,IC,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1205.7,549.0,19.2
+E001,ALARME INTRUSION,I05,bloc ø23.4 pt [PAS],PANNEAU D'ALARME INRUSION,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1204.9,574.4,23.4
+E001,ALARME INTRUSION,I06,bloc ø21.1 pt,RÉSISTANCE FIN DE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1206.8,605.0,21.1
+E001,ALARME INTRUSION,I07,bloc ø18.4 pt [MI],MODULE ISOLATEUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1207.9,634.1,18.4
+E001,CHAUFFAGE,C01,bloc ø10.9 pt [T],THERMOSTAT,TH,compte,9,famille THERMOSTAT : 9 occurrences (blocs vectoriels),E001,1211.0,1070.8,10.9
+E001,CHAUFFAGE,C02,bloc ø10.9 pt [TI],THERMOSTAT INTÉGRÉ,TH,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1210.3,1096.8,10.9
+E001,CHAUFFAGE,C03,bloc ø18.7 pt [CE],CHAUFFE-EAU,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1211.2,1127.2,18.7
+E001,CHAUFFAGE,C04,bloc ø37.8 pt,"PLINTHE DE CHAUFFAGE, TYPE OFM PAR",PL,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1211.7,1153.8,37.8
+E001,CHAUFFAGE,C05,bloc ø23.0 pt,MURAL ENCASTRÉ,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1210.8,1198.8,23.0
+E001,CHAUFFAGE,C06,bloc ø35.9 pt,MURAL ENCASTRÉ,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1220.2,1198.8,35.9
+E001,CHAUFFAGE,C07,bloc ø32.8 pt [T],AÉROTHERME DE CHAUFFAGE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1217.5,1249.9,32.8
+E001,CHAUFFAGE,C08,bloc ø42.4 pt,CÂBLE CHAUFFANT SERGE BARIL MODÈLE 12GRD-2BA.,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1224.9,1281.8,42.4
+E001,CHAUFFAGE,C09,bloc ø16.9 pt [SM],SÈCHE-MAINS,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1215.3,1309.8,16.9
+E001,CHAUFFAGE,C10,bloc ø16.2 pt,SERPENTIN 240V 1PH,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1211.3,1340.2,16.2
+E001,CHAUFFAGE,C11,bloc ø17.9 pt,SERPENTIN 240V 1PH,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1221.9,1340.2,17.9
+E001,CHAUFFAGE,C12,bloc ø16.9 pt [RT],RELAIS TRIAC (RE306C),,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1214.0,1367.0,16.9
+E001,CHAUFFAGE,C13,bloc ø11.7 pt,TI,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1217.2,1411.2,11.7
+E001,CHAUFFAGE,C14,bloc ø50.3 pt [TI],ENCASTRÉ,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1217.1,1411.4,50.3
+E001,DISTRIBUTION ÉLECTRIQUE,X01,bloc ø21.0 pt,OU,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,812.3,114.7,21.0
+E001,DISTRIBUTION ÉLECTRIQUE,X02,bloc ø26.2 pt,PANNEAU DE DISTRIBUTION 347/600V SURFACE OU ENCASTRÉ,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,855.6,114.7,26.2
+E001,DISTRIBUTION ÉLECTRIQUE,X03,bloc ø26.2 pt,PANNEAU DE DISTRIBUTION 120/208V SURFACE OU ENCASTRÉ,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,855.6,141.7,26.2
+E001,DISTRIBUTION ÉLECTRIQUE,X04,bloc ø13.3 pt,BOÎTE DE TIRAGE OU DE JONCTION,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.8,171.0,13.3
+E001,DISTRIBUTION ÉLECTRIQUE,X05,bloc ø20.9 pt,INTERRUPTEUR DE SÛRETÉ SANS FUSIBLES EN SURFACE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,835.4,199.5,20.9
+E001,DISTRIBUTION ÉLECTRIQUE,X06,bloc ø20.9 pt,INTERRUPTEUR DE SÛRETÉ AVEC FUSIBLES EN SURFACE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,835.4,228.7,20.9
+E001,DISTRIBUTION ÉLECTRIQUE,X07,bloc ø42.2 pt,OU CANIVEAU (SELON LES INDICATIONS),,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.4,333.7,42.2
+E001,DISTRIBUTION ÉLECTRIQUE,X08,bloc ø41.3 pt,TRANSFORMATEUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,829.2,374.3,41.3
+E001,DISTRIBUTION ÉLECTRIQUE,X09,bloc ø43.7 pt,SECTIONNEUR À FUSIBLES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,836.6,400.7,43.7
+E001,DISTRIBUTION ÉLECTRIQUE,X10,bloc ø8.6 pt,SECTIONNEUR À FUSIBLES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,809.6,401.9,8.6
+E001,DISTRIBUTION ÉLECTRIQUE,X11,bloc ø12.8 pt,ÉQUIPEMENT DE TYPE DÉBROCHABLE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,815.5,424.0,12.8
+E001,DISTRIBUTION ÉLECTRIQUE,X12,bloc ø9.7 pt,ÉQUIPEMENT DE TYPE DÉBROCHABLE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,849.8,424.0,9.7
+E001,DISTRIBUTION ÉLECTRIQUE,X13,bloc ø2.6 pt,CHÂSSIS,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,814.5,441.9,2.6
+E001,DISTRIBUTION ÉLECTRIQUE,X14,bloc ø22.3 pt,DISJONCTEUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,870.5,443.6,22.3
+E001,DISTRIBUTION ÉLECTRIQUE,X15,bloc ø22.3 pt,SEUIL DE MISE AU TRAVAIL,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,870.5,454.4,22.3
+E001,DISTRIBUTION ÉLECTRIQUE,X16,bloc ø2.6 pt,FICHE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,814.5,455.8,2.6
+E001,DISTRIBUTION ÉLECTRIQUE,X17,bloc ø26.5 pt,FUSIBLE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.5,477.5,26.5
+E001,DISTRIBUTION ÉLECTRIQUE,X18,bloc ø20.6 pt,SECTIONNEUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,839.3,493.7,20.6
+E001,DISTRIBUTION ÉLECTRIQUE,X19,bloc ø8.9 pt,SECTIONNEUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,824.2,497.0,8.9
+E001,DISTRIBUTION ÉLECTRIQUE,X20,bloc ø15.9 pt,POINT DE MISE À L A TERRE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.6,518.9,15.9
+E001,DISTRIBUTION ÉLECTRIQUE,X21,bloc ø48.2 pt,BARRES BLINDÉES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.4,563.9,48.2
+E001,DISTRIBUTION ÉLECTRIQUE,X22,bloc ø34.4 pt [HQ],ARMOIRE HYDRO-QUÉBEC,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.4,610.8,34.4
+E001,DISTRIBUTION ÉLECTRIQUE,X23,bloc ø20.7 pt,TRANSFORMATEUR DE POTENTIEL,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,820.1,643.3,20.7
+E001,DISTRIBUTION ÉLECTRIQUE,X24,bloc ø25.4 pt,TRANSFORMATEUR DE POTENTIEL,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,849.3,643.3,25.4
+E001,DISTRIBUTION ÉLECTRIQUE,X25,bloc ø24.3 pt,DISJONCTEUR MOYENNE TENSION,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,834.1,669.5,24.3
+E001,DISTRIBUTION ÉLECTRIQUE,X26,bloc ø17.7 pt [50/5],50N/5N,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,822.5,698.8,17.7
+E001,DISTRIBUTION ÉLECTRIQUE,X27,bloc ø17.7 pt [50N/5N],RELAIS DE PROTECTION DE SURINTENSITÉ,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,845.5,698.8,17.7
+E001,DISTRIBUTION ÉLECTRIQUE,X28,bloc ø24.5 pt,ÉTAGÈRE À CÂBLE EN ÉCHELLE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,834.1,729.3,24.5
+E001,DISTRIBUTION ÉLECTRIQUE,X29,bloc ø26.5 pt,TRANSFORMATEUR DE COURANT HOMOPOLAIRE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,842.1,767.5,26.5
+E001,DISTRIBUTION ÉLECTRIQUE,X30,bloc ø25.0 pt,TRANSFORMATEUR DE COURANT,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,842.1,803.9,25.0
+E001,DISTRIBUTION ÉLECTRIQUE,X31,bloc ø21.5 pt,RÉSISTANCE DE MISE À LA TERRE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.8,845.0,21.5
+E001,DISTRIBUTION ÉLECTRIQUE,X32,bloc ø32.4 pt [A],INVERSEUR AUTOMATIQUE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.5,883.7,32.4
+E001,DISTRIBUTION ÉLECTRIQUE,X33,bloc ø11.5 pt [M],EMBASE HYDRO-QUÉBEC,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,834.0,923.8,11.5
+E001,DISTRIBUTION ÉLECTRIQUE,X34,bloc ø25.9 pt [M],EMBASE HYDRO-QUÉBEC,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,834.1,924.0,25.9
+E001,DISTRIBUTION ÉLECTRIQUE,X35,bloc ø18.6 pt [EV],BORNE DE RECHARGE MURAL TYPE SIEMENS,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,829.8,954.7,18.6
+E001,DISTRIBUTION ÉLECTRIQUE,X36,bloc ø27.2 pt [G],GÉNÉRATRICE TYPE GÉNÉRAC,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,834.1,990.4,27.2
+E001,DISTRIBUTION ÉLECTRIQUE,X37,bloc ø21.7 pt [PC],PANNEAU DE CONTROLE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,833.2,1020.4,21.7
+E001,DISTRIBUTION ÉLECTRIQUE,X38,bloc ø23.3 pt,Démarreur manuel.,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,835.4,1054.3,23.3
+E001,DISTRIBUTION ÉLECTRIQUE,X39,bloc ø23.3 pt,Démarreur magnétique.,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,835.4,1094.4,23.3
+E001,DISTRIBUTION ÉLECTRIQUE,X40,bloc ø23.3 pt,Démarreur magnétique combiné.,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,837.4,1128.5,23.3
+E001,DISTRIBUTION ÉLECTRIQUE,X41,bloc ø27.6 pt,"MOTEUR MONOPHASÉ, PUISSANCE SELON LES INDICATIONS",,compte,9,famille MOTEUR MONOPHASE : 9 occurrences (blocs vectoriels),E001,832.1,1210.7,27.6
+E001,DISTRIBUTION ÉLECTRIQUE,X42,bloc ø23.9 pt,"MOTEUR TRIPHASÉ, PUISSANCE SELON LES INDICATIONS",,compte,9,famille MOTEUR TRIPHASE : 9 occurrences (blocs vectoriels),E001,832.0,1247.8,23.9
+E001,SERVICES,S01,bloc ø13.6 pt,PRISE DE COURANT DOUBLE 15A- 120V,PC,compte,95,famille PRISE DOUBLE 15A : 95 occurrences (blocs vectoriels),E001,1624.2,112.6,13.6
+E001,SERVICES,S02,bloc ø14.6 pt,PRISE DE COURANT DOUBLE 20A- 120V,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1624.2,138.9,14.6
+E001,SERVICES,S03,bloc ø13.6 pt,PRISE COMPTOIR DOUBLE 15A- 120V,CT,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1624.2,167.1,13.6
+E001,SERVICES,S04,bloc ø14.6 pt,PRISE COMPTOIR DOUBLE 20A- 120V,CT,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1624.2,190.5,14.6
+E001,SERVICES,S05,bloc ø13.5 pt,PRISE COMPTOIR DOUBLE 15A- 120V DDFT,CG,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1623.9,217.9,13.5
+E001,SERVICES,S06,bloc ø13.6 pt,PRISE DOUBLE 20A- 120V DDFT,GF,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1624.7,244.0,13.6
+E001,SERVICES,S07,bloc ø13.6 pt,PRISE COMPTOIR DOUBLE 20A- 120V DDFT,CG,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1624.4,271.5,13.6
+E001,SERVICES,S08,bloc ø13.6 pt,PRISE DOUBLE 15A 120V AVEC M.A.L.T. ISOLÉE,PC,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1623.8,300.3,13.6
+E001,SERVICES,S09,bloc ø12.6 pt,PRISE DE COURANT DIFFÉRENTIELLE,GF,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1623.4,320.6,12.6
+E001,SERVICES,S10,bloc ø12.6 pt,PRISE SPÉCIALE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1623.4,345.5,12.6
+E001,SERVICES,S11,bloc ø13.8 pt,PRISE QUADRUPLE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1624.6,371.9,13.8
+E001,SERVICES,S12,bloc ø10.0 pt,BOUTON POUSSOIR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1621.0,400.9,10.0
+E001,SERVICES,S13,bloc ø16.9 pt [TV],SORTIE DE CÂBLODISTRIBUTION AU MUR,TV,compte,4,famille SORTIE TV : 4 occurrences (blocs vectoriels),E001,1622.3,425.4,16.9
+E001,SERVICES,S14,bloc ø10.8 pt,SORTIE INFORMATIQUE/AUDIO,,compte,120,famille SORTIE DATA : 120 occurrences (blocs vectoriels),E001,1622.2,451.9,10.8
+E001,SERVICES,S15,bloc ø4.8 pt,BOUTON DE SONETTE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1622.3,478.1,4.8
+E001,SERVICES,S16,bloc ø24.8 pt,"MONUMENT PLANCHER SURFACE, TYPE HUBBELL S1PT",,compte,7,famille MONUMENT PLANCHER : 7 occurrences (blocs vectoriels),E001,1622.9,507.2,24.8
+E001,SERVICES,S17,bloc ø13.5 pt [USB],PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton,PC,compte,20,famille PRISE USB : 20 occurrences (blocs vectoriels),E001,1623.9,531.5,13.5
+E001,SERVICES,S18,bloc ø16.5 pt,BOITE DE JONCTION,BJ,compte,10,famille BOITE JONCTION : 10 occurrences (blocs vectoriels),E001,1622.5,587.2,16.5
+E001,SERVICES,S19,bloc ø16.5 pt,ANNTENE WIFI FOURNI PAR D'AUTRE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1622.2,607.8,16.5
+E001,SERVICES,S20,bloc ø17.0 pt,ANNTENE WIFI FOURNI PAR D'AUTRE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1622.1,608.1,17.0
+E001,SERVICES,S21,bloc ø17.8 pt,BORNE DE RECHARGE ÉLECTRIQUE - WALLBOX,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1621.8,639.5,17.8
+E001,ÉCLAIRAGE,L01,bloc ø26.6 pt,APPAREIL D'ÉCLAIRAGE 2'x2' LED,,compte,94,famille LED 2X2 : 94 occurrences (blocs vectoriels),E001,1620.5,728.5,26.6
+E001,ÉCLAIRAGE,L02,bloc ø37.9 pt,APPAREIL D'ÉCLAIRAGE 4' LED,,compte,2,famille LED 4PI : 2 occurrences (blocs vectoriels),E001,1620.5,787.5,37.9
+E001,ÉCLAIRAGE,L03,bloc ø15.6 pt,APPAREIL D'ÉCLAIRAGE ENCASTRÉ,,compte,89,famille ENCASTRE URGENCE : 10 occurrences (blocs vectoriels),E001,1620.5,843.7,15.6
+E001,ÉCLAIRAGE,L04,bloc ø14.5 pt,INTERRUPTEUR À 3 VOIES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1620.7,880.8,14.5
+E001,ÉCLAIRAGE,L05,bloc ø14.6 pt,INTERRUPTEUR SIMPLE,,compte,10,famille INT SIMPLE : 10 occurrences (blocs vectoriels),E001,1620.7,906.4,14.6
+E001,ÉCLAIRAGE,L06,bloc ø15.7 pt,GRADATEUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1620.7,938.3,15.7
+E001,ÉCLAIRAGE,L07,bloc ø18.7 pt,APPAREIL D'ÉCLAIRAGE MURAL,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1620.5,970.4,18.7
+E001,ÉCLAIRAGE,L08,bloc ø39.4 pt,FLUORESCENT RÉGLETTE MURAL 4',,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1620.3,999.9,39.4
+E001,ÉCLAIRAGE,L09,bloc ø9.7 pt,FLUORESCENT RÉGLETTE MURAL 6',,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1620.2,1036.0,9.7
+E001,ÉCLAIRAGE,L10,bloc ø38.8 pt,APPAREIL D'ÉCLAIRAGE 'x4',,compte,33,famille LED 1X4 : 33 occurrences (blocs vectoriels),E001,1619.6,1067.4,38.8
+E001,ÉCLAIRAGE,L11,bloc ø37.9 pt,-,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1620.1,1095.0,37.9
+E001,ÉCLAIRAGE,L12,bloc ø29.0 pt [DM],DETECTEUR DE MOUVEMENT,,compte,3,famille DETECTEUR MOUVEMENT : 3 occurrences (blocs vectoriels),E001,1621.3,1118.8,29.0
+E001,ÉCLAIRAGE,L13,bloc ø20.2 pt,INTERRUPTEUR SIMPLE 347V,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1620.9,1144.7,20.2
+E001,ÉCLAIRAGE,L14,bloc ø9.9 pt,APPAREIL D'ÉCLAIRAGE SUR RAIL,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1636.7,1180.7,9.9
+E001,ÉCLAIRAGE,L15,bloc ø10.3 pt,APPAREIL D'ÉCLAIRAGE SUR RAIL,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1608.6,1192.0,10.3
+E001,ÉCLAIRAGE,L16,bloc ø55.4 pt,APPAREIL D'ÉCLAIRAGE TYPE DAYLIGHT W60L60,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1622.1,1238.9,55.4
+E001,ÉCLAIRAGE D'URGENCE,U01,bloc ø14.4 pt,ENSEIGNE DE SORTIE AU MUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1199.0,697.9,14.4
+E001,ÉCLAIRAGE D'URGENCE,U02,bloc ø18.2 pt,ENSEIGNE DE SORTIE AU MUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1199.2,709.6,18.2
+E001,ÉCLAIRAGE D'URGENCE,U03,bloc ø18.2 pt,ENSEIGNE DE SORTIE AU MUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1221.7,709.6,18.2
+E001,ÉCLAIRAGE D'URGENCE,U04,bloc ø11.7 pt,ENSEIGNE DE SORTIE AU PLAFOND,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1199.2,740.2,11.7
+E001,ÉCLAIRAGE D'URGENCE,U05,bloc ø11.7 pt,ENSEIGNE DE SORTIE AU PLAFOND,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1221.7,740.2,11.7
+E001,ÉCLAIRAGE D'URGENCE,U06,bloc ø26.0 pt,C/A INDICATEUR DE SORTIE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1208.9,776.4,26.0
+E001,ÉCLAIRAGE D'URGENCE,U07,bloc ø21.5 pt,ACCUMULATEUR,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1208.9,803.8,21.5
+E001,ÉCLAIRAGE D'URGENCE,U08,bloc ø23.9 pt,ACCUMULATEUR D'ÉCLAIRAGE D'URGENCE C/A 1 PHARE,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1208.9,827.9,23.9
+E001,ÉCLAIRAGE D'URGENCE,U09,bloc ø23.9 pt,ACCUMULATEUR D'ÉCLAIRGE D'URGENCE C/A 2 PHARES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1208.9,851.6,23.9
+E001,ÉCLAIRAGE D'URGENCE,U10,bloc ø22.0 pt,"PHARE D'ÉCLAIRAGE D'URGENCE SIMPLE OU DOUBLE,",,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1208.9,908.7,22.0
+E001,ÉCLAIRAGE D'URGENCE,U11,bloc ø18.2 pt,INDICATEUR DE SORTIE D'URGENCE 2 PHARES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1209.0,940.3,18.2
+E001,ÉCLAIRAGE D'URGENCE,U12,bloc ø24.1 pt,ACCUMULATEUR D'ÉCLAIRAGE D'URGENCE 2 PHARES,,absent,0,signature de bloc vectoriel absente des feuilles plan (blocs-signatures.json),E001,1208.5,978.6,24.1
+E001,TABLEAU E-008,E008-C11,étiquette C1_1,APPAREIL D'ÉCLAIRAGE TYPE C1_1,C11,compte,6,étiquettes C1_1 sur les feuilles NOUVEAU,,,,
+E001,TABLEAU E-008,E008-A1,étiquette A1,APPAREIL D'ÉCLAIRAGE TYPE A1,LA1,compte,11,étiquettes A1 sur les feuilles NOUVEAU,,,,
+E001,TABLEAU E-008,E008-C13,étiquette C1_3,APPAREIL D'ÉCLAIRAGE TYPE C1_3,C13,compte,15,étiquettes C1_3 sur les feuilles NOUVEAU,,,,
+E001,TABLEAU E-008,E008-C1,étiquette C1,APPAREIL D'ÉCLAIRAGE TYPE C1,LC1,compte,12,étiquettes C1 sur les feuilles NOUVEAU,,,,
+E001,TABLEAU E-008,E008-E,étiquette E,APPAREIL D'ÉCLAIRAGE TYPE E,LE,compte,3,étiquettes E sur les feuilles NOUVEAU,,,,

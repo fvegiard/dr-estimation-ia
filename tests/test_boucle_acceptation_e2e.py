@@ -38,6 +38,8 @@ from pathlib import Path
 
 import pytest
 
+from conftest import env_sans_encodage
+
 ROOT = Path(__file__).resolve().parents[1]
 
 EN_TETE_CONTRAT = [
@@ -114,7 +116,7 @@ def _lancer_boucle(workdir: Path, dossier: Path) -> subprocess.CompletedProcess:
     return subprocess.run(
         [sys.executable, "-m", "src.validation.boucle_acceptation", "S-TEST",
          "--workdir", str(workdir), "--dossier", str(dossier)],
-        cwd=ROOT, capture_output=True, text=True)
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage())
 
 
 def _verdict(p: subprocess.CompletedProcess) -> str:

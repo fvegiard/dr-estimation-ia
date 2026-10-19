@@ -3,7 +3,9 @@
 Input directory layout (the `python -m src.estimer` output, optionally enriched):
 
   estimate.json   required. `sheets[]` gives page (1-based, in the plans PDF), sheet name and the
-                  raster size the positions are expressed in (width_px / height_px). `counters[].elements[]`
+                  raster size the positions are expressed in (width_px / height_px); optional per sheet:
+                  version (v<n> of its bookmark), signets (original bookmarks of its plan), pied (box footer).
+                  Optional top level: projet (bookmark prefix, the soumission name). `counters[].elements[]`
                   gives one detected symbol each: sheet, page, x, y (raster px, top-left origin).
                   Optional per-element keys understood here: repere, source, bbox [x0, y0, x1, y1]
                   (same units as x/y), shape (circle | rect | diamond | triangle), code, flags.
@@ -54,6 +56,7 @@ class Item:
     prescription: str = ""
     parent: str = ""
     bbox: tuple[float, float, float, float] | None = None
+    angle: float = 0.0             # rotation (degrés, sens horaire PDF) d'une boîte `rect` : 0 = axée (gold)
     shape: str = "circle"
     flags: list[str] = field(default_factory=list)
     reserve_override: bool | None = None
@@ -107,12 +110,19 @@ class Sheet:
     rows: list[dict] = field(default_factory=list)   # given family rows (familles.csv); else aggregated
     box_hint: tuple[float, float, float, float] | None = None   # imposed RELEVE box (PDF points)
     legend_shapes: dict[str, str] = field(default_factory=dict)   # imposed legend glyph per family code
-    legend_rows: tuple[float, float] | None = None   # imposed (first row offset, pitch) in the box, PDF points
+    legend_rows: tuple | None = None   # imposed (first row offset, row pitch, columns, column pitch or 0) in the box, PDF points
     # encadré v6 (spec §3.3) : lignes rouges seulement quand l'entrée donne le compte (jamais inventé)
     divergences: int | None = None   # "N divergences plan/cedule A RESOUDRE"
     calibres: int | None = None      # "N calibres distincts dans les sources - voir bordereau"
     note: str = ""                   # note de classement de la feuille (cartouche lu par le relevé)
     troncatures: int = 0             # cellules de bordereau coupées pour tenir sur 1 page (posé au rendu)
+    # signets (spec §1, gold : `HR26-14-E03-annote-v6` sur la page plan, signets d'origine du plan dessous)
+    projet: str = ""                 # préfixe du signet : nom de la soumission (gold « HR26-14 »)
+    version: int = 1                 # v<n> du signet : version du relevé de la feuille, 1 si inconnue
+    signets: list | None = None      # signets d'origine du plan de la feuille [[niveau, titre, 1 | -1]] (1 = sa
+                                     # page plan, -1 = sans destination) ; None = ceux du PDF de plans
+    pied: str | None = None          # pied de l'encadré standard propre à la feuille (gold E10 « Reperes
+                                     # source; ... ») ; None = pied par défaut du format
 
     def families(self) -> list[Family]:
         by: dict[str, list[Item]] = defaultdict(list)
@@ -213,7 +223,11 @@ def load_input(in_dir: Path) -> list[Sheet]:
                                    box_hint=tuple(s["box_hint"]) if s.get("box_hint") else None,
                                    legend_shapes=dict(s.get("legend_shapes") or {}),
                                    legend_rows=tuple(s["legend_rows"]) if s.get("legend_rows") else None,
-                                   divergences=s.get("divergences"), calibres=s.get("calibres"))
+                                   divergences=s.get("divergences"), calibres=s.get("calibres"),
+                                   projet=str(s.get("projet") or est.get("projet") or ""),
+                                   version=int(s.get("version") or 1),
+                                   signets=[list(x) for x in s["signets"]] if s.get("signets") is not None else None,
+                                   pied=s.get("pied"))
 
     # family codes for plain estimator output: one code per estimator family, stable across sheets
     fam_codes: dict[str, str] = {}
@@ -225,7 +239,7 @@ def load_input(in_dir: Path) -> list[Sheet]:
             name = el["sheet"]
             sh = sheets.get(name)
             if sh is None:
-                sh = sheets[name] = Sheet(name, int(el["page"]), None, None)
+                sh = sheets[name] = Sheet(name, int(el["page"]), None, None, projet=str(est.get("projet") or ""))
             n_in_sheet[name] += 1
             repere = el.get("repere")
             code = el.get("code")
@@ -251,6 +265,7 @@ def load_input(in_dir: Path) -> list[Sheet]:
                 prescription=(row.get("prescription") if row else el.get("prescription", DEFAULT_PRESCRIPTION)) or "",
                 parent=(row.get("parent") or el.get("parent") or "").strip(),
                 bbox=tuple(bbox) if bbox else None,
+                angle=float(el.get("angle") or 0.0),
                 shape=el.get("shape", "circle"),
                 flags=list(el.get("flags", [])),
                 reserve_override=_parse_bool(row.get("reserve")) if row else _parse_bool(el.get("reserve")),

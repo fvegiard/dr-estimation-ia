@@ -59,6 +59,7 @@ FILL_OPACITY = 0.28
 STROKE_OPACITY = 0.9
 MARK_LINE_W = 0.7
 MARK_RADIUS = 4.1859                          # default circle radius when no symbol bbox is known
+MARK_RADIUS_MIN = 2.6                         # plancher d'un rayon mesuré (petit symbole : avertisseur 4,6 pt) ; le défaut reste 4,1859
                                               # (rayon gold des DSI seulement ; E/EU : 4,6045 a 5,8603, spec §2.2)
 MARK_RADIUS_MAX = 8.0                         # cap of the circle drawn around an anchored (larger) symbol
 
@@ -84,6 +85,7 @@ HINT_SIZE = 8.2
 WARN_SIZE, WARN_COLOR = 7.2, (0.55, 0.1, 0.1)
 ROW_CODE_SIZE = 8.2                           # bold family code
 ROW_LABEL_SIZE = 6.6
+ROW_LABEL_STEP = 7.4498                       # 2e ligne d'un libellé coupé (gold DSI05 p.22, E07 p.58)
 ROW_QTY_SIZE = 7.1
 FOOTER_SIZE = 7.0
 ROW_PITCH = 27.0
@@ -97,6 +99,16 @@ WARN_TEXT = ("RES = reserve source, modele, position, portee ou reconciliation; 
 HINT_TEXT = "Calques activables; modeles, prescriptions et reserves completes page {page}"
 FOOTER_TEXT = "Quantites source et renvois; voir bordereau detaille."
 LEGEND_LAYER = "RELEVE - Legende et avertissements"
+# Renvoi de page de l'encadré (spec §3, écart E3) : le gold écrit « page 2 » sur ses 26 feuilles = la 2e page
+# de la feuille (page plan 1, bordereau 2), jamais le numéro absolu dans le document.
+RENVOI_PAGE = 2
+# Encadré empilé (spec §3.2 ; gold DSI03 p.12, E07 p.58, EU02 p.82) : titre seul sur la 1re ligne, puis compteur,
+# renvoi court et ligne RES courte en noir 8,2 pt au pas de 10,137 pt (baselines depuis le haut du cadre).
+HINT_TEXT_PILE = "Calques activables; prescriptions completes page {page}."
+WARN_TEXT_PILE = "RES = reserve source, modele, position ou portee; * = identification a revalider"
+PILE_COUNTER_Y, PILE_STEP = 29.815, 10.137
+HINT_X = 530.0                                # renvoi « 1 ligne » à x+530 du cadre (gold p.1, 70, 80)
+FOOTER_UP = 6.475                             # baseline du pied au-dessus du bas du cadre (gold p.1, 12, 58, 80)
 REVALIDER = "revalider"                       # item flag: identification a revalider, label gets "*"
 TRAVAUX_FOOTER_TEXT = ("Emplacements de travaux sur calques; achats, prescriptions et reserves detaillees "
                        "page {page}.")
@@ -116,13 +128,17 @@ V6_GLYPH = 13.0
 V6_CODE_X, V6_CODE_SIZE = 33.0, 10.0
 V6_LABEL_X, V6_LABEL_SIZE, V6_LABEL_STEP, V6_LABEL_UP = 62.0, 8.7, 10.47, 2.65
 V6_QTY_FROM_RIGHT, V6_QTY_SIZE = 27.0, 10.0
+V6_LABEL_GAP = 12.0                           # libellé coupé 12 pt avant la quantité : largeur 134 pt sur E08
+                                              # (gold : coupe entre 130,5 et 138,7), 194 sur E04/E05 (185,8-204,9)
 V6_FOOT_SIZE, V6_FOOT_STEP, V6_FOOT_GAP, V6_FOOT_BOTTOM = 8.0, 10.32, 36.65, 9.48
+V6_FOOT_MIN_STEPS = 6                         # gold : 1re ligne du pied à 9,48 + 6 x 10,32 = 71,4 pt du bas du
+                                              # cadre, que le pied ait 6 lignes (E03-E05) ou 7 (E08)
 V6_FOOTER = (
     "PL : rectangles aux dimensions graphiques du plan.",
     "W et circuits affiches uniquement si verifies.",
     "* : identification heritee a revalider ; NI : materiel non identifie.",
     "Les quantites concernent cette feuille{type}.",
-    "R-001 : designation conservee au registre des reserves.",
+    "{registre} : designation conservee au registre des reserves.",
     "Modeles, prescriptions et sources : bordereau page {page}.",
 )
 

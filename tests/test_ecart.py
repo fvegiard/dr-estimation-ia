@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from conftest import FIXTURES, ROOT, run_cli
+from conftest import FIXTURES, ROOT, env_sans_encodage, run_cli
 from src.validation import ecart
 
 
@@ -157,7 +157,7 @@ def test_code_sortie_fail(tmp_path):
     result = subprocess.run(
         [sys.executable, "-m", "src.validation.ecart",
          "--reference", str(ref), "--ia", str(ia), "--sortie", str(tmp_path / "ecart.md")],
-        cwd=ROOT, capture_output=True, text=True,
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage(),
     )
     assert result.returncode == 1  # FAIL : verdict calculé, pas une erreur
     assert "FAIL" in result.stdout

@@ -1,0 +1,1127 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="S-1902">
+		<Description/>
+		<ContactName/>
+		<ContactInfo/>
+		<JobNumber/>
+		<Comment/>
+		<CreationDate>2026/10/17</CreationDate>
+		<LastModified>2026/10/17</LastModified>
+		<DisplayResultsForAllPlans>True</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+		<ActivePlan Name="E101"/>
+		<RecentPlans>
+			<Plan Name="E101"/>
+			<Plan Name="E102"/>
+			<Plan Name="E103"/>
+			<Plan Name="E104"/>
+			<Plan Name="E105"/>
+			<Plan Name="E106"/>
+			<Plan Name="E201"/>
+			<Plan Name="E202"/>
+			<Plan Name="E203"/>
+			<Plan Name="E204"/>
+		</RecentPlans>
+	</Workspace>
+	<Plans>
+		<Plan Name="E101" FileName="E101.png">
+			<Thumbnail FileName="bed11d96-9b71-4c73-9145-6ccd0e6600c1"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="BOITE JONCTION" GroupID="1" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2774" Y="1359" Width="26" Height="26"/>&#13;
+						<Element X="3257" Y="1849" Width="26" Height="26"/>&#13;
+						<Element X="3258" Y="471" Width="26" Height="26"/>&#13;
+						<Element X="1012" Y="2608" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="BOITIER C" GroupID="2" Shape="1" DefaultSize="26" Text="1" Color="-13264487" PenWidth="2" PenType="Generic" FillColor="-13264487" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2397" Y="1283" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="GACHE" GroupID="8" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2801" Y="812" Width="26" Height="26"/>&#13;
+						<Element X="2665" Y="878" Width="26" Height="26"/>&#13;
+						<Element X="1005" Y="3216" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LECTEUR CARTE" GroupID="11" Shape="1" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2647" Y="882" Width="26" Height="26"/>&#13;
+						<Element X="987" Y="3219" Width="26" Height="26"/>&#13;
+						<Element X="2801" Y="800" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="MONUMENT PLANCHER" GroupID="21" Shape="1" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2136" Y="1198" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DDFT" GroupID="25" Shape="0" DefaultSize="26" Text="1" Color="-2182091" PenWidth="2" PenType="Generic" FillColor="-2182091" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1621" Y="737" Width="26" Height="26"/>&#13;
+						<Element X="1366" Y="1483" Width="26" Height="26"/>&#13;
+						<Element X="1770" Y="1852" Width="26" Height="26"/>&#13;
+						<Element X="2358" Y="1615" Width="26" Height="26"/>&#13;
+						<Element X="1855" Y="1920" Width="26" Height="26"/>&#13;
+						<Element X="2272" Y="1712" Width="26" Height="26"/>&#13;
+						<Element X="2193" Y="1795" Width="26" Height="26"/>&#13;
+						<Element X="2430" Y="1534" Width="26" Height="26"/>&#13;
+						<Element X="1217" Y="961" Width="26" Height="26"/>&#13;
+						<Element X="1233" Y="953" Width="26" Height="26"/>&#13;
+						<Element X="1382" Y="1151" Width="26" Height="26"/>&#13;
+						<Element X="1788" Y="1560" Width="26" Height="26"/>&#13;
+						<Element X="1601" Y="1826" Width="26" Height="26"/>&#13;
+						<Element X="3718" Y="912" Width="26" Height="26"/>&#13;
+						<Element X="2736" Y="1964" Width="26" Height="26"/>&#13;
+						<Element X="2736" Y="1990" Width="26" Height="26"/>&#13;
+						<Element X="2535" Y="1432" Width="26" Height="26"/>&#13;
+						<Element X="2449" Y="1510" Width="26" Height="26"/>&#13;
+						<Element X="2366" Y="1607" Width="26" Height="26"/>&#13;
+						<Element X="2183" Y="1803" Width="26" Height="26"/>&#13;
+						<Element X="2263" Y="1722" Width="26" Height="26"/>&#13;
+						<Element X="1958" Y="1962" Width="26" Height="26"/>&#13;
+						<Element X="1848" Y="1912" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DOUBLE 15A" GroupID="26" Shape="0" DefaultSize="26" Text="1" Color="-226191" PenWidth="2" PenType="Generic" FillColor="-226191" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2337" Y="1331" Width="26" Height="26"/>&#13;
+						<Element X="1760" Y="1596" Width="26" Height="26"/>&#13;
+						<Element X="1228" Y="919" Width="26" Height="26"/>&#13;
+						<Element X="1971" Y="945" Width="26" Height="26"/>&#13;
+						<Element X="2495" Y="1165" Width="26" Height="26"/>&#13;
+						<Element X="2021" Y="1452" Width="26" Height="26"/>&#13;
+						<Element X="1310" Y="1509" Width="26" Height="26"/>&#13;
+						<Element X="1088" Y="1221" Width="26" Height="26"/>&#13;
+						<Element X="2253" Y="1057" Width="26" Height="26"/>&#13;
+						<Element X="2854" Y="2380" Width="26" Height="26"/>&#13;
+						<Element X="1722" Y="1588" Width="26" Height="26"/>&#13;
+						<Element X="905" Y="2018" Width="26" Height="26"/>&#13;
+						<Element X="946" Y="2018" Width="26" Height="26"/>&#13;
+						<Element X="2595" Y="801" Width="26" Height="26"/>&#13;
+						<Element X="3616" Y="2369" Width="26" Height="26"/>&#13;
+						<Element X="3729" Y="1848" Width="26" Height="26"/>&#13;
+						<Element X="3258" Y="453" Width="26" Height="26"/>&#13;
+						<Element X="1460" Y="2610" Width="26" Height="26"/>&#13;
+						<Element X="1066" Y="2611" Width="26" Height="26"/>&#13;
+						<Element X="3251" Y="914" Width="26" Height="26"/>&#13;
+						<Element X="2794" Y="1340" Width="26" Height="26"/>&#13;
+						<Element X="3637" Y="2346" Width="26" Height="26"/>&#13;
+						<Element X="3270" Y="2272" Width="26" Height="26"/>&#13;
+						<Element X="3728" Y="1340" Width="26" Height="26"/>&#13;
+						<Element X="3257" Y="1337" Width="26" Height="26"/>&#13;
+						<Element X="3262" Y="871" Width="26" Height="26"/>&#13;
+						<Element X="3284" Y="1830" Width="26" Height="26"/>&#13;
+						<Element X="2854" Y="783" Width="26" Height="26"/>&#13;
+						<Element X="1803" Y="3199" Width="26" Height="26"/>&#13;
+						<Element X="1451" Y="3210" Width="26" Height="26"/>&#13;
+						<Element X="3729" Y="871" Width="26" Height="26"/>&#13;
+						<Element X="1867" Y="1754" Width="26" Height="26"/>&#13;
+						<Element X="1276" Y="1994" Width="26" Height="26"/>&#13;
+						<Element X="2517" Y="1447" Width="26" Height="26"/>&#13;
+						<Element X="2196" Y="1556" Width="26" Height="26"/>&#13;
+						<Element X="1776" Y="1863" Width="26" Height="26"/>&#13;
+						<Element X="1971" Y="1969" Width="26" Height="26"/>&#13;
+						<Element X="1385" Y="1474" Width="26" Height="26"/>&#13;
+						<Element X="1582" Y="1836" Width="26" Height="26"/>&#13;
+						<Element X="1402" Y="1842" Width="26" Height="26"/>&#13;
+						<Element X="1008" Y="1016" Width="26" Height="26"/>&#13;
+						<Element X="1225" Y="977" Width="26" Height="26"/>&#13;
+						<Element X="1250" Y="1212" Width="26" Height="26"/>&#13;
+						<Element X="1241" Y="970" Width="26" Height="26"/>&#13;
+						<Element X="1485" Y="959" Width="26" Height="26"/>&#13;
+						<Element X="1463" Y="867" Width="26" Height="26"/>&#13;
+						<Element X="1634" Y="732" Width="26" Height="26"/>&#13;
+						<Element X="1389" Y="1338" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="SORTIE DATA" GroupID="28" Shape="3" DefaultSize="26" Text="1" Color="-13290082" PenWidth="2" PenType="Generic" FillColor="-13290082" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1268" Y="1205" Width="26" Height="26"/>&#13;
+						<Element X="1651" Y="725" Width="26" Height="26"/>&#13;
+						<Element X="1783" Y="1872" Width="26" Height="26"/>&#13;
+						<Element X="3252" Y="2272" Width="26" Height="26"/>&#13;
+						<Element X="1372" Y="1157" Width="26" Height="26"/>&#13;
+						<Element X="1283" Y="1057" Width="26" Height="26"/>&#13;
+						<Element X="1985" Y="975" Width="26" Height="26"/>&#13;
+						<Element X="2140" Y="1198" Width="26" Height="26"/>&#13;
+						<Element X="1821" Y="3199" Width="26" Height="26"/>&#13;
+						<Element X="2204" Y="1550" Width="26" Height="26"/>&#13;
+						<Element X="1981" Y="1972" Width="26" Height="26"/>&#13;
+						<Element X="2277" Y="1704" Width="26" Height="26"/>&#13;
+						<Element X="2198" Y="1787" Width="26" Height="26"/>&#13;
+						<Element X="1612" Y="1821" Width="26" Height="26"/>&#13;
+						<Element X="1255" Y="1048" Width="26" Height="26"/>&#13;
+						<Element X="1513" Y="1417" Width="26" Height="26"/>&#13;
+						<Element X="2075" Y="698" Width="26" Height="26"/>&#13;
+						<Element X="3498" Y="2294" Width="26" Height="26"/>&#13;
+						<Element X="3499" Y="2186" Width="26" Height="26"/>&#13;
+						<Element X="3269" Y="914" Width="26" Height="26"/>&#13;
+						<Element X="1276" Y="1046" Width="26" Height="26"/>&#13;
+						<Element X="1255" Y="2883" Width="26" Height="26"/>&#13;
+						<Element X="1088" Y="2607" Width="26" Height="26"/>&#13;
+						<Element X="2717" Y="1128" Width="26" Height="26"/>&#13;
+						<Element X="2777" Y="1972" Width="26" Height="26"/>&#13;
+						<Element X="1864" Y="1928" Width="26" Height="26"/>&#13;
+						<Element X="1454" Y="850" Width="26" Height="26"/>&#13;
+						<Element X="2129" Y="914" Width="26" Height="26"/>&#13;
+						<Element X="1498" Y="1423" Width="26" Height="26"/>&#13;
+						<Element X="1249" Y="1034" Width="26" Height="26"/>&#13;
+						<Element X="1849" Y="1090" Width="26" Height="26"/>&#13;
+						<Element X="3734" Y="912" Width="26" Height="26"/>&#13;
+						<Element X="1638" Y="2347" Width="26" Height="26"/>&#13;
+						<Element X="1441" Y="2937" Width="26" Height="26"/>&#13;
+						<Element X="2321" Y="1845" Width="26" Height="26"/>&#13;
+						<Element X="2547" Y="1425" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="SORTIE TV" GroupID="29" Shape="1" DefaultSize="26" Text="1" Color="-11334182" PenWidth="2" PenType="Generic" FillColor="-11334182" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2332" Y="1862" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="THERMOSTAT" GroupID="31" Shape="0" DefaultSize="26" Text="1" Color="-2083531" PenWidth="2" PenType="Generic" FillColor="-2083531" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1301" Y="1987" Width="26" Height="26"/>&#13;
+						<Element X="1114" Y="1274" Width="26" Height="26"/>&#13;
+						<Element X="1239" Y="1194" Width="26" Height="26"/>&#13;
+						<Element X="1928" Y="1068" Width="26" Height="26"/>&#13;
+						<Element X="1384" Y="1127" Width="26" Height="26"/>&#13;
+						<Element X="3257" Y="1864" Width="26" Height="26"/>&#13;
+						<Element X="2772" Y="1343" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E102" FileName="E102.png">
+			<Thumbnail FileName="ab30b83e-b1aa-4f96-9cfa-07fd5842ae76"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="BOITE JONCTION" GroupID="1" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3728" Y="2725" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LED 1X4" GroupID="12" Shape="1" DefaultSize="26" Text="1" Color="-12151206" PenWidth="2" PenType="Generic" FillColor="-12151206" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1165" Y="1365" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="MONUMENT PLANCHER" GroupID="21" Shape="1" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3026" Y="2145" Width="26" Height="26"/>&#13;
+						<Element X="1613" Y="815" Width="26" Height="26"/>&#13;
+						<Element X="1404" Y="902" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="MOTEUR TRIPHASE" GroupID="23" Shape="0" DefaultSize="26" Text="1" Color="-4190863" PenWidth="2" PenType="Generic" FillColor="-4190863" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1605" Y="2722" Width="26" Height="26"/>&#13;
+						<Element X="1733" Y="2722" Width="26" Height="26"/>&#13;
+						<Element X="1176" Y="2444" Width="26" Height="26"/>&#13;
+						<Element X="1225" Y="2710" Width="26" Height="26"/>&#13;
+						<Element X="1208" Y="3137" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DDFT" GroupID="25" Shape="0" DefaultSize="26" Text="1" Color="-2182091" PenWidth="2" PenType="Generic" FillColor="-2182091" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2390" Y="1672" Width="26" Height="26"/>&#13;
+						<Element X="2455" Y="1641" Width="26" Height="26"/>&#13;
+						<Element X="2601" Y="1527" Width="26" Height="26"/>&#13;
+						<Element X="3701" Y="3662" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DOUBLE 15A" GroupID="26" Shape="0" DefaultSize="26" Text="1" Color="-226191" PenWidth="2" PenType="Generic" FillColor="-226191" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2068" Y="1448" Width="26" Height="26"/>&#13;
+						<Element X="1845" Y="961" Width="26" Height="26"/>&#13;
+						<Element X="1359" Y="1271" Width="26" Height="26"/>&#13;
+						<Element X="3484" Y="3540" Width="26" Height="26"/>&#13;
+						<Element X="3699" Y="3586" Width="26" Height="26"/>&#13;
+						<Element X="1812" Y="3251" Width="26" Height="26"/>&#13;
+						<Element X="1758" Y="3251" Width="26" Height="26"/>&#13;
+						<Element X="3261" Y="453" Width="26" Height="26"/>&#13;
+						<Element X="3282" Y="2295" Width="26" Height="26"/>&#13;
+						<Element X="3290" Y="3532" Width="26" Height="26"/>&#13;
+						<Element X="3505" Y="3538" Width="26" Height="26"/>&#13;
+						<Element X="1648" Y="3418" Width="26" Height="26"/>&#13;
+						<Element X="3277" Y="1360" Width="26" Height="26"/>&#13;
+						<Element X="3277" Y="892" Width="26" Height="26"/>&#13;
+						<Element X="3734" Y="2746" Width="26" Height="26"/>&#13;
+						<Element X="3290" Y="3646" Width="26" Height="26"/>&#13;
+						<Element X="2239" Y="1512" Width="26" Height="26"/>&#13;
+						<Element X="2396" Y="1440" Width="26" Height="26"/>&#13;
+						<Element X="2379" Y="1676" Width="26" Height="26"/>&#13;
+						<Element X="2095" Y="1501" Width="26" Height="26"/>&#13;
+						<Element X="2090" Y="1491" Width="26" Height="26"/>&#13;
+						<Element X="1240" Y="910" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="SORTIE DATA" GroupID="28" Shape="3" DefaultSize="26" Text="1" Color="-13290082" PenWidth="2" PenType="Generic" FillColor="-13290082" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3290" Y="3568" Width="26" Height="26"/>&#13;
+						<Element X="2398" Y="1665" Width="26" Height="26"/>&#13;
+						<Element X="2083" Y="1478" Width="26" Height="26"/>&#13;
+						<Element X="2245" Y="1527" Width="26" Height="26"/>&#13;
+						<Element X="2609" Y="1521" Width="26" Height="26"/>&#13;
+						<Element X="2463" Y="1635" Width="26" Height="26"/>&#13;
+						<Element X="2078" Y="1468" Width="26" Height="26"/>&#13;
+						<Element X="1266" Y="1064" Width="26" Height="26"/>&#13;
+						<Element X="3136" Y="1847" Width="26" Height="26"/>&#13;
+						<Element X="3504" Y="3614" Width="26" Height="26"/>&#13;
+						<Element X="2760" Y="1849" Width="26" Height="26"/>&#13;
+						<Element X="3027" Y="2144" Width="26" Height="26"/>&#13;
+						<Element X="1411" Y="1334" Width="26" Height="26"/>&#13;
+						<Element X="2312" Y="1831" Width="26" Height="26"/>&#13;
+						<Element X="1406" Y="901" Width="26" Height="26"/>&#13;
+						<Element X="1615" Y="814" Width="26" Height="26"/>&#13;
+						<Element X="3724" Y="2748" Width="26" Height="26"/>&#13;
+						<Element X="3701" Y="3637" Width="26" Height="26"/>&#13;
+						<Element X="3701" Y="3571" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="SORTIE TV" GroupID="29" Shape="1" DefaultSize="26" Text="1" Color="-11334182" PenWidth="2" PenType="Generic" FillColor="-11334182" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3297" Y="3577" Width="26" Height="26"/>&#13;
+						<Element X="1728" Y="3475" Width="26" Height="26"/>&#13;
+						<Element X="3681" Y="3576" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E103" FileName="E103.png">
+			<Thumbnail FileName="84bdfbdf-d99f-44eb-9204-950129eacd5a"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="MOTEUR MONOPHASE" GroupID="22" Shape="0" DefaultSize="26" Text="1" Color="-6146763" PenWidth="2" PenType="Generic" FillColor="-6146763" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3346" Y="619" Width="26" Height="26"/>&#13;
+						<Element X="933" Y="1592" Width="26" Height="26"/>&#13;
+						<Element X="891" Y="2547" Width="26" Height="26"/>&#13;
+						<Element X="3028" Y="660" Width="26" Height="26"/>&#13;
+						<Element X="3058" Y="538" Width="26" Height="26"/>&#13;
+						<Element X="947" Y="1487" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E104" FileName="E104.png">
+			<Thumbnail FileName="389138ea-ebac-479b-b51c-0abda3b7d98a"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="BOITE JONCTION" GroupID="1" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2091" Y="1750" Width="26" Height="26"/>&#13;
+						<Element X="3777" Y="768" Width="26" Height="26"/>&#13;
+						<Element X="1755" Y="1691" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LECTEUR CARTE" GroupID="11" Shape="1" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1461" Y="1970" Width="26" Height="26"/>&#13;
+						<Element X="1373" Y="1957" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LED 4PI" GroupID="14" Shape="1" DefaultSize="26" Text="1" Color="-10863456" PenWidth="2" PenType="Generic" FillColor="-10863456" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1110" Y="2349" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DDFT" GroupID="25" Shape="0" DefaultSize="26" Text="1" Color="-2182091" PenWidth="2" PenType="Generic" FillColor="-2182091" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1261" Y="961" Width="26" Height="26"/>&#13;
+						<Element X="1354" Y="1509" Width="26" Height="26"/>&#13;
+						<Element X="2028" Y="1781" Width="26" Height="26"/>&#13;
+						<Element X="2080" Y="1466" Width="26" Height="26"/>&#13;
+						<Element X="2027" Y="2001" Width="26" Height="26"/>&#13;
+						<Element X="1876" Y="1849" Width="26" Height="26"/>&#13;
+						<Element X="1957" Y="1523" Width="26" Height="26"/>&#13;
+						<Element X="1105" Y="1402" Width="26" Height="26"/>&#13;
+						<Element X="2156" Y="1952" Width="26" Height="26"/>&#13;
+						<Element X="2063" Y="608" Width="26" Height="26"/>&#13;
+						<Element X="1505" Y="1305" Width="26" Height="26"/>&#13;
+						<Element X="2213" Y="940" Width="26" Height="26"/>&#13;
+						<Element X="1362" Y="1370" Width="26" Height="26"/>&#13;
+						<Element X="2136" Y="770" Width="26" Height="26"/>&#13;
+						<Element X="1759" Y="932" Width="26" Height="26"/>&#13;
+						<Element X="1732" Y="866" Width="26" Height="26"/>&#13;
+						<Element X="1742" Y="861" Width="26" Height="26"/>&#13;
+						<Element X="1774" Y="929" Width="26" Height="26"/>&#13;
+						<Element X="2924" Y="2256" Width="26" Height="26"/>&#13;
+						<Element X="2946" Y="2243" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DOUBLE 15A" GroupID="26" Shape="0" DefaultSize="26" Text="1" Color="-226191" PenWidth="2" PenType="Generic" FillColor="-226191" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1778" Y="1771" Width="26" Height="26"/>&#13;
+						<Element X="1804" Y="1596" Width="26" Height="26"/>&#13;
+						<Element X="1364" Y="1941" Width="26" Height="26"/>&#13;
+						<Element X="3575" Y="2114" Width="26" Height="26"/>&#13;
+						<Element X="3586" Y="2092" Width="26" Height="26"/>&#13;
+						<Element X="1373" Y="1365" Width="26" Height="26"/>&#13;
+						<Element X="1514" Y="1301" Width="26" Height="26"/>&#13;
+						<Element X="2381" Y="1330" Width="26" Height="26"/>&#13;
+						<Element X="1887" Y="1844" Width="26" Height="26"/>&#13;
+						<Element X="2039" Y="1776" Width="26" Height="26"/>&#13;
+						<Element X="2150" Y="1744" Width="26" Height="26"/>&#13;
+						<Element X="1947" Y="1528" Width="26" Height="26"/>&#13;
+						<Element X="2070" Y="1471" Width="26" Height="26"/>&#13;
+						<Element X="2039" Y="1995" Width="26" Height="26"/>&#13;
+						<Element X="2167" Y="1946" Width="26" Height="26"/>&#13;
+						<Element X="2361" Y="1746" Width="26" Height="26"/>&#13;
+						<Element X="1777" Y="939" Width="26" Height="26"/>&#13;
+						<Element X="1747" Y="871" Width="26" Height="26"/>&#13;
+						<Element X="1763" Y="943" Width="26" Height="26"/>&#13;
+						<Element X="1736" Y="877" Width="26" Height="26"/>&#13;
+						<Element X="2067" Y="618" Width="26" Height="26"/>&#13;
+						<Element X="2141" Y="780" Width="26" Height="26"/>&#13;
+						<Element X="2217" Y="949" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE USB" GroupID="27" Shape="0" DefaultSize="26" Text="1" Color="-5451241" PenWidth="2" PenType="Generic" FillColor="-5451241" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3177" Y="2122" Width="26" Height="26"/>&#13;
+						<Element X="3166" Y="2122" Width="26" Height="26"/>&#13;
+						<Element X="3361" Y="2122" Width="26" Height="26"/>&#13;
+						<Element X="3350" Y="2122" Width="26" Height="26"/>&#13;
+						<Element X="3770" Y="572" Width="26" Height="26"/>&#13;
+						<Element X="3770" Y="561" Width="26" Height="26"/>&#13;
+						<Element X="3770" Y="792" Width="26" Height="26"/>&#13;
+						<Element X="3770" Y="781" Width="26" Height="26"/>&#13;
+						<Element X="3770" Y="1262" Width="26" Height="26"/>&#13;
+						<Element X="3770" Y="1251" Width="26" Height="26"/>&#13;
+						<Element X="3177" Y="2107" Width="26" Height="26"/>&#13;
+						<Element X="3166" Y="2107" Width="26" Height="26"/>&#13;
+						<Element X="3361" Y="2107" Width="26" Height="26"/>&#13;
+						<Element X="3350" Y="2107" Width="26" Height="26"/>&#13;
+						<Element X="3786" Y="572" Width="26" Height="26"/>&#13;
+						<Element X="3786" Y="561" Width="26" Height="26"/>&#13;
+						<Element X="3786" Y="792" Width="26" Height="26"/>&#13;
+						<Element X="3786" Y="781" Width="26" Height="26"/>&#13;
+						<Element X="3786" Y="1262" Width="26" Height="26"/>&#13;
+						<Element X="3786" Y="1251" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="SORTIE DATA" GroupID="28" Shape="3" DefaultSize="26" Text="1" Color="-13290082" PenWidth="2" PenType="Generic" FillColor="-13290082" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1856" Y="1857" Width="26" Height="26"/>&#13;
+						<Element X="1344" Y="1378" Width="26" Height="26"/>&#13;
+						<Element X="1416" Y="1157" Width="26" Height="26"/>&#13;
+						<Element X="1845" Y="1553" Width="26" Height="26"/>&#13;
+						<Element X="1495" Y="1309" Width="26" Height="26"/>&#13;
+						<Element X="1484" Y="1314" Width="26" Height="26"/>&#13;
+						<Element X="2058" Y="600" Width="26" Height="26"/>&#13;
+						<Element X="2743" Y="1128" Width="26" Height="26"/>&#13;
+						<Element X="3780" Y="913" Width="26" Height="26"/>&#13;
+						<Element X="1325" Y="1057" Width="26" Height="26"/>&#13;
+						<Element X="2367" Y="1846" Width="26" Height="26"/>&#13;
+						<Element X="1353" Y="1373" Width="26" Height="26"/>&#13;
+						<Element X="1865" Y="1853" Width="26" Height="26"/>&#13;
+						<Element X="2017" Y="2005" Width="26" Height="26"/>&#13;
+						<Element X="1770" Y="920" Width="26" Height="26"/>&#13;
+						<Element X="1739" Y="852" Width="26" Height="26"/>&#13;
+						<Element X="1750" Y="913" Width="26" Height="26"/>&#13;
+						<Element X="1299" Y="1048" Width="26" Height="26"/>&#13;
+						<Element X="1312" Y="1205" Width="26" Height="26"/>&#13;
+						<Element X="1293" Y="1036" Width="26" Height="26"/>&#13;
+						<Element X="1320" Y="1046" Width="26" Height="26"/>&#13;
+						<Element X="3298" Y="2274" Width="26" Height="26"/>&#13;
+						<Element X="3314" Y="913" Width="26" Height="26"/>&#13;
+						<Element X="2016" Y="1785" Width="26" Height="26"/>&#13;
+						<Element X="1969" Y="1519" Width="26" Height="26"/>&#13;
+						<Element X="2092" Y="1462" Width="26" Height="26"/>&#13;
+						<Element X="2146" Y="1955" Width="26" Height="26"/>&#13;
+						<Element X="2133" Y="1962" Width="26" Height="26"/>&#13;
+						<Element X="2367" Y="1763" Width="26" Height="26"/>&#13;
+						<Element X="1682" Y="2327" Width="26" Height="26"/>&#13;
+						<Element X="2006" Y="1790" Width="26" Height="26"/>&#13;
+						<Element X="1980" Y="1514" Width="26" Height="26"/>&#13;
+						<Element X="2105" Y="1457" Width="26" Height="26"/>&#13;
+						<Element X="2053" Y="589" Width="26" Height="26"/>&#13;
+						<Element X="2204" Y="920" Width="26" Height="26"/>&#13;
+						<Element X="3588" Y="2114" Width="26" Height="26"/>&#13;
+						<Element X="3572" Y="2092" Width="26" Height="26"/>&#13;
+						<Element X="2006" Y="2011" Width="26" Height="26"/>&#13;
+						<Element X="1670" Y="2325" Width="26" Height="26"/>&#13;
+						<Element X="2934" Y="2260" Width="26" Height="26"/>&#13;
+						<Element X="2936" Y="2240" Width="26" Height="26"/>&#13;
+						<Element X="1650" Y="1814" Width="26" Height="26"/>&#13;
+						<Element X="1765" Y="912" Width="26" Height="26"/>&#13;
+						<Element X="2129" Y="752" Width="26" Height="26"/>&#13;
+						<Element X="1646" Y="1838" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="THERMOSTAT" GroupID="31" Shape="0" DefaultSize="26" Text="1" Color="-2083531" PenWidth="2" PenType="Generic" FillColor="-2083531" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1158" Y="1274" Width="26" Height="26"/>&#13;
+						<Element X="1972" Y="1068" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E105" FileName="E105.png">
+			<Thumbnail FileName="99ca6e24-9799-4404-ac7d-9d1ca13f2854"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="LED 4PI" GroupID="14" Shape="1" DefaultSize="26" Text="1" Color="-10863456" PenWidth="2" PenType="Generic" FillColor="-10863456" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1433" Y="1337" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="MONUMENT PLANCHER" GroupID="21" Shape="1" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">&#13;
+						<Element X="3026" Y="2145" Width="26" Height="26"/>&#13;
+						<Element X="3316" Y="2145" Width="26" Height="26"/>&#13;
+						<Element X="1403" Y="897" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="MOTEUR MONOPHASE" GroupID="22" Shape="0" DefaultSize="26" Text="1" Color="-6146763" PenWidth="2" PenType="Generic" FillColor="-6146763" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1488" Y="2701" Width="26" Height="26"/>&#13;
+						<Element X="1827" Y="2878" Width="26" Height="26"/>&#13;
+						<Element X="1639" Y="2492" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="MOTEUR TRIPHASE" GroupID="23" Shape="0" DefaultSize="26" Text="1" Color="-4190863" PenWidth="2" PenType="Generic" FillColor="-4190863" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1613" Y="2722" Width="26" Height="26"/>&#13;
+						<Element X="1747" Y="2722" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DDFT" GroupID="25" Shape="0" DefaultSize="26" Text="1" Color="-2182091" PenWidth="2" PenType="Generic" FillColor="-2182091" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2587" Y="1631" Width="26" Height="26"/>&#13;
+						<Element X="2502" Y="1803" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PRISE DOUBLE 15A" GroupID="26" Shape="0" DefaultSize="26" Text="1" Color="-226191" PenWidth="2" PenType="Generic" FillColor="-226191" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2599" Y="1625" Width="26" Height="26"/>&#13;
+						<Element X="2515" Y="1803" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="SORTIE DATA" GroupID="28" Shape="3" DefaultSize="26" Text="1" Color="-13290082" PenWidth="2" PenType="Generic" FillColor="-13290082" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2429" Y="1444" Width="26" Height="26"/>&#13;
+						<Element X="2564" Y="1641" Width="26" Height="26"/>&#13;
+						<Element X="2372" Y="1453" Width="26" Height="26"/>&#13;
+						<Element X="3722" Y="2747" Width="26" Height="26"/>&#13;
+						<Element X="3289" Y="3570" Width="26" Height="26"/>&#13;
+						<Element X="3504" Y="3614" Width="26" Height="26"/>&#13;
+						<Element X="2762" Y="1850" Width="26" Height="26"/>&#13;
+						<Element X="1409" Y="1334" Width="26" Height="26"/>&#13;
+						<Element X="1265" Y="1064" Width="26" Height="26"/>&#13;
+						<Element X="2311" Y="1833" Width="26" Height="26"/>&#13;
+						<Element X="2277" Y="1496" Width="26" Height="26"/>&#13;
+						<Element X="2577" Y="1633" Width="26" Height="26"/>&#13;
+						<Element X="3700" Y="3639" Width="26" Height="26"/>&#13;
+						<Element X="3700" Y="3573" Width="26" Height="26"/>&#13;
+						<Element X="3027" Y="2144" Width="26" Height="26"/>&#13;
+						<Element X="3318" Y="2144" Width="26" Height="26"/>&#13;
+						<Element X="1404" Y="897" Width="26" Height="26"/>&#13;
+						<Element X="1594" Y="819" Width="26" Height="26"/>&#13;
+						<Element X="2494" Y="1803" Width="26" Height="26"/>&#13;
+						<Element X="2479" Y="1803" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E106" FileName="E106.png">
+			<Thumbnail FileName="bff4fae0-7128-44fa-a935-2390ec193bfb"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="MOTEUR TRIPHASE" GroupID="23" Shape="0" DefaultSize="26" Text="1" Color="-4190863" PenWidth="2" PenType="Generic" FillColor="-4190863" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1355" Y="1470" Width="26" Height="26"/>&#13;
+						<Element X="1107" Y="1834" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E201" FileName="E201.png">
+			<Thumbnail FileName="9a1c936e-a349-430c-bda0-c99b017df8a3"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="BOITE JONCTION" GroupID="1" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2766" Y="1477" Width="26" Height="26"/>&#13;
+						<Element X="2468" Y="1873" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="BOITIER C" GroupID="2" Shape="1" DefaultSize="26" Text="1" Color="-13264487" PenWidth="2" PenType="Generic" FillColor="-13264487" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1378" Y="1937" Width="26" Height="26"/>&#13;
+						<Element X="2636" Y="864" Width="26" Height="26"/>&#13;
+						<Element X="2718" Y="786" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="DETECTEUR FUMEE" GroupID="3" Shape="0" DefaultSize="26" Text="1" Color="-11308587" PenWidth="2" PenType="Generic" FillColor="-11308587" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1091" Y="973" Width="26" Height="26"/>&#13;
+						<Element X="1279" Y="888" Width="26" Height="26"/>&#13;
+						<Element X="2455" Y="916" Width="26" Height="26"/>&#13;
+						<Element X="2091" Y="1671" Width="26" Height="26"/>&#13;
+						<Element X="2728" Y="1211" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="DETECTEUR MOUVEMENT" GroupID="4" Shape="0" DefaultSize="26" Text="1" Color="-13290019" PenWidth="2" PenType="Generic" FillColor="-13290019" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1401" Y="1915" Width="26" Height="26"/>&#13;
+						<Element X="2557" Y="755" Width="26" Height="26"/>&#13;
+						<Element X="1227" Y="2026" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="ENCASTRE" GroupID="5" Shape="0" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2603" Y="851" Width="26" Height="26"/>&#13;
+						<Element X="2603" Y="980" Width="26" Height="26"/>&#13;
+						<Element X="2429" Y="1244" Width="26" Height="26"/>&#13;
+						<Element X="2215" Y="1944" Width="26" Height="26"/>&#13;
+						<Element X="2562" Y="1592" Width="26" Height="26"/>&#13;
+						<Element X="2468" Y="1409" Width="26" Height="26"/>&#13;
+						<Element X="2362" Y="1457" Width="26" Height="26"/>&#13;
+						<Element X="2255" Y="1506" Width="26" Height="26"/>&#13;
+						<Element X="2214" Y="1416" Width="26" Height="26"/>&#13;
+						<Element X="2320" Y="1367" Width="26" Height="26"/>&#13;
+						<Element X="2043" Y="1603" Width="26" Height="26"/>&#13;
+						<Element X="1937" Y="1651" Width="26" Height="26"/>&#13;
+						<Element X="1789" Y="1609" Width="26" Height="26"/>&#13;
+						<Element X="2731" Y="1166" Width="26" Height="26"/>&#13;
+						<Element X="2731" Y="1288" Width="26" Height="26"/>&#13;
+						<Element X="2829" Y="957" Width="26" Height="26"/>&#13;
+						<Element X="2738" Y="857" Width="26" Height="26"/>&#13;
+						<Element X="2365" Y="1102" Width="26" Height="26"/>&#13;
+						<Element X="2427" Y="1319" Width="26" Height="26"/>&#13;
+						<Element X="2399" Y="1757" Width="26" Height="26"/>&#13;
+						<Element X="2564" Y="1757" Width="26" Height="26"/>&#13;
+						<Element X="2728" Y="1425" Width="26" Height="26"/>&#13;
+						<Element X="2002" Y="1512" Width="26" Height="26"/>&#13;
+						<Element X="1895" Y="1561" Width="26" Height="26"/>&#13;
+						<Element X="1830" Y="1699" Width="26" Height="26"/>&#13;
+						<Element X="2564" Y="1166" Width="26" Height="26"/>&#13;
+						<Element X="2829" Y="1064" Width="26" Height="26"/>&#13;
+						<Element X="2829" Y="859" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="INT SIMPLE" GroupID="10" Shape="0" DefaultSize="26" Text="1" Color="-11334145" PenWidth="2" PenType="Generic" FillColor="-11334145" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1386" Y="1921" Width="26" Height="26"/>&#13;
+						<Element X="2404" Y="986" Width="26" Height="26"/>&#13;
+						<Element X="2415" Y="981" Width="26" Height="26"/>&#13;
+						<Element X="1213" Y="1205" Width="26" Height="26"/>&#13;
+						<Element X="1398" Y="1121" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LED 1X4" GroupID="12" Shape="1" DefaultSize="26" Text="1" Color="-12151206" PenWidth="2" PenType="Generic" FillColor="-12151206" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1192" Y="1501" Width="26" Height="26"/>&#13;
+						<Element X="1418" Y="1398" Width="26" Height="26"/>&#13;
+						<Element X="1482" Y="1369" Width="26" Height="26"/>&#13;
+						<Element X="1267" Y="1467" Width="26" Height="26"/>&#13;
+						<Element X="1339" Y="1434" Width="26" Height="26"/>&#13;
+						<Element X="2239" Y="1679" Width="26" Height="26"/>&#13;
+						<Element X="2081" Y="1838" Width="26" Height="26"/>&#13;
+						<Element X="1857" Y="1829" Width="26" Height="26"/>&#13;
+						<Element X="1972" Y="1943" Width="26" Height="26"/>&#13;
+						<Element X="2162" Y="1757" Width="26" Height="26"/>&#13;
+						<Element X="2326" Y="1602" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LED 2X2" GroupID="13" Shape="1" DefaultSize="26" Text="1" Color="-4944836" PenWidth="2" PenType="Generic" FillColor="-4944836" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1368" Y="1838" Width="26" Height="26"/>&#13;
+						<Element X="1267" Y="1612" Width="26" Height="26"/>&#13;
+						<Element X="1317" Y="1723" Width="26" Height="26"/>&#13;
+						<Element X="1517" Y="1767" Width="26" Height="26"/>&#13;
+						<Element X="2218" Y="1313" Width="26" Height="26"/>&#13;
+						<Element X="1291" Y="1270" Width="26" Height="26"/>&#13;
+						<Element X="1467" Y="1655" Width="26" Height="26"/>&#13;
+						<Element X="1213" Y="1498" Width="26" Height="26"/>&#13;
+						<Element X="1185" Y="1137" Width="26" Height="26"/>&#13;
+						<Element X="2074" Y="597" Width="26" Height="26"/>&#13;
+						<Element X="1923" Y="665" Width="26" Height="26"/>&#13;
+						<Element X="2043" Y="928" Width="26" Height="26"/>&#13;
+						<Element X="1992" Y="815" Width="26" Height="26"/>&#13;
+						<Element X="1773" Y="733" Width="26" Height="26"/>&#13;
+						<Element X="1841" Y="884" Width="26" Height="26"/>&#13;
+						<Element X="1892" Y="996" Width="26" Height="26"/>&#13;
+						<Element X="1742" Y="1065" Width="26" Height="26"/>&#13;
+						<Element X="1592" Y="1133" Width="26" Height="26"/>&#13;
+						<Element X="1622" Y="802" Width="26" Height="26"/>&#13;
+						<Element X="2115" Y="1088" Width="26" Height="26"/>&#13;
+						<Element X="2266" Y="1019" Width="26" Height="26"/>&#13;
+						<Element X="2167" Y="1201" Width="26" Height="26"/>&#13;
+						<Element X="1918" Y="1450" Width="26" Height="26"/>&#13;
+						<Element X="1866" Y="1337" Width="26" Height="26"/>&#13;
+						<Element X="2017" Y="1269" Width="26" Height="26"/>&#13;
+						<Element X="1815" Y="1224" Width="26" Height="26"/>&#13;
+						<Element X="1664" Y="1292" Width="26" Height="26"/>&#13;
+						<Element X="1514" Y="1361" Width="26" Height="26"/>&#13;
+						<Element X="1364" Y="1429" Width="26" Height="26"/>&#13;
+						<Element X="1141" Y="1338" Width="26" Height="26"/>&#13;
+						<Element X="1617" Y="1587" Width="26" Height="26"/>&#13;
+						<Element X="1767" Y="1518" Width="26" Height="26"/>&#13;
+						<Element X="1134" Y="1024" Width="26" Height="26"/>&#13;
+						<Element X="1373" Y="1051" Width="26" Height="26"/>&#13;
+						<Element X="1441" Y="1202" Width="26" Height="26"/>&#13;
+						<Element X="1415" Y="1542" Width="26" Height="26"/>&#13;
+						<Element X="1716" Y="1406" Width="26" Height="26"/>&#13;
+						<Element X="2142" Y="747" Width="26" Height="26"/>&#13;
+						<Element X="2193" Y="860" Width="26" Height="26"/>&#13;
+						<Element X="1691" Y="952" Width="26" Height="26"/>&#13;
+						<Element X="2068" Y="1382" Width="26" Height="26"/>&#13;
+						<Element X="1965" Y="1155" Width="26" Height="26"/>&#13;
+						<Element X="1566" Y="1474" Width="26" Height="26"/>&#13;
+						<Element X="1322" Y="938" Width="26" Height="26"/>&#13;
+						<Element X="2433" Y="881" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="STATION MANUELLE" GroupID="30" Shape="1" DefaultSize="26" Text="1" Color="-15245887" PenWidth="2" PenType="Generic" FillColor="-15245887" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2807" Y="803" Width="26" Height="26"/>&#13;
+						<Element X="1018" Y="2018" Width="26" Height="26"/>&#13;
+						<Element X="912" Y="2016" Width="26" Height="26"/>&#13;
+						<Element X="2786" Y="801" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E202" FileName="E202.png">
+			<Thumbnail FileName="bd0cefec-9996-4527-807d-e5f619160cf5"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="ENCASTRE" GroupID="5" Shape="0" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2615" Y="1558" Width="26" Height="26"/>&#13;
+						<Element X="2558" Y="1419" Width="26" Height="26"/>&#13;
+						<Element X="2729" Y="1424" Width="26" Height="26"/>&#13;
+						<Element X="2730" Y="1591" Width="26" Height="26"/>&#13;
+						<Element X="2730" Y="1758" Width="26" Height="26"/>&#13;
+						<Element X="2398" Y="1758" Width="26" Height="26"/>&#13;
+						<Element X="932" Y="1548" Width="26" Height="26"/>&#13;
+						<Element X="810" Y="1666" Width="26" Height="26"/>&#13;
+						<Element X="894" Y="1851" Width="26" Height="26"/>&#13;
+						<Element X="1054" Y="2058" Width="26" Height="26"/>&#13;
+						<Element X="1147" Y="2016" Width="26" Height="26"/>&#13;
+						<Element X="1239" Y="1974" Width="26" Height="26"/>&#13;
+						<Element X="1392" Y="1903" Width="26" Height="26"/>&#13;
+						<Element X="1484" Y="1861" Width="26" Height="26"/>&#13;
+						<Element X="1559" Y="1437" Width="26" Height="26"/>&#13;
+						<Element X="1539" Y="1390" Width="26" Height="26"/>&#13;
+						<Element X="2368" Y="1686" Width="26" Height="26"/>&#13;
+						<Element X="2479" Y="1632" Width="26" Height="26"/>&#13;
+						<Element X="2565" Y="1583" Width="26" Height="26"/>&#13;
+						<Element X="2637" Y="1517" Width="26" Height="26"/>&#13;
+						<Element X="2564" Y="1758" Width="26" Height="26"/>&#13;
+						<Element X="1576" Y="1763" Width="26" Height="26"/>&#13;
+						<Element X="1492" Y="1579" Width="26" Height="26"/>&#13;
+						<Element X="1408" Y="1394" Width="26" Height="26"/>&#13;
+						<Element X="1271" Y="1393" Width="26" Height="26"/>&#13;
+						<Element X="1179" Y="1435" Width="26" Height="26"/>&#13;
+						<Element X="1003" Y="1515" Width="26" Height="26"/>&#13;
+						<Element X="833" Y="1593" Width="26" Height="26"/>&#13;
+						<Element X="852" Y="1759" Width="26" Height="26"/>&#13;
+						<Element X="936" Y="1944" Width="26" Height="26"/>&#13;
+						<Element X="978" Y="2036" Width="26" Height="26"/>&#13;
+						<Element X="1645" Y="1620" Width="26" Height="26"/>&#13;
+						<Element X="1685" Y="1714" Width="26" Height="26"/>&#13;
+						<Element X="1517" Y="1344" Width="26" Height="26"/>&#13;
+						<Element X="1665" Y="1667" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="HP ENCASTRE PLAFOND" GroupID="9" Shape="0" DefaultSize="26" Text="1" Color="-16533637" PenWidth="2" PenType="Generic" FillColor="-16533637" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2647" Y="1549" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LED 1X4" GroupID="12" Shape="1" DefaultSize="26" Text="1" Color="-12151206" PenWidth="2" PenType="Generic" FillColor="-12151206" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1106" Y="1735" Width="26" Height="26"/>&#13;
+						<Element X="999" Y="1953" Width="26" Height="26"/>&#13;
+						<Element X="1255" Y="1837" Width="26" Height="26"/>&#13;
+						<Element X="1510" Y="1721" Width="26" Height="26"/>&#13;
+						<Element X="1385" Y="1448" Width="26" Height="26"/>&#13;
+						<Element X="1276" Y="1658" Width="26" Height="26"/>&#13;
+						<Element X="1191" Y="1697" Width="26" Height="26"/>&#13;
+						<Element X="1130" Y="1564" Width="26" Height="26"/>&#13;
+						<Element X="1170" Y="1876" Width="26" Height="26"/>&#13;
+						<Element X="1046" Y="1603" Width="26" Height="26"/>&#13;
+						<Element X="1084" Y="1914" Width="26" Height="26"/>&#13;
+						<Element X="960" Y="1641" Width="26" Height="26"/>&#13;
+						<Element X="936" Y="1813" Width="26" Height="26"/>&#13;
+						<Element X="875" Y="1680" Width="26" Height="26"/>&#13;
+						<Element X="1446" Y="1581" Width="26" Height="26"/>&#13;
+						<Element X="1425" Y="1759" Width="26" Height="26"/>&#13;
+						<Element X="1361" Y="1619" Width="26" Height="26"/>&#13;
+						<Element X="1300" Y="1487" Width="26" Height="26"/>&#13;
+						<Element X="1340" Y="1798" Width="26" Height="26"/>&#13;
+						<Element X="1215" Y="1525" Width="26" Height="26"/>&#13;
+						<Element X="1021" Y="1774" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E203" FileName="E203.png">
+			<Thumbnail FileName="1ab5f7b3-df86-4bb1-a641-94dd4daf96a5"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="DETECTEUR FUMEE" GroupID="3" Shape="0" DefaultSize="26" Text="1" Color="-11308587" PenWidth="2" PenType="Generic" FillColor="-11308587" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1506" Y="1677" Width="26" Height="26"/>&#13;
+						<Element X="1090" Y="976" Width="26" Height="26"/>&#13;
+						<Element X="1279" Y="890" Width="26" Height="26"/>&#13;
+						<Element X="2457" Y="918" Width="26" Height="26"/>&#13;
+						<Element X="2051" Y="1855" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="ENCASTRE URGENCE" GroupID="6" Shape="0" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2323" Y="971" Width="26" Height="26"/>&#13;
+						<Element X="2447" Y="821" Width="26" Height="26"/>&#13;
+						<Element X="2672" Y="835" Width="26" Height="26"/>&#13;
+						<Element X="1358" Y="1950" Width="26" Height="26"/>&#13;
+						<Element X="1160" Y="1525" Width="26" Height="26"/>&#13;
+						<Element X="2158" Y="1664" Width="26" Height="26"/>&#13;
+						<Element X="785" Y="2156" Width="26" Height="26"/>&#13;
+						<Element X="2602" Y="981" Width="26" Height="26"/>&#13;
+						<Element X="2829" Y="957" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="ENSEIGNE SORTIE Z6" GroupID="7" Shape="0" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2863" Y="892" Width="26" Height="26"/>&#13;
+						<Element X="1960" Y="2103" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="INT SIMPLE" GroupID="10" Shape="0" DefaultSize="26" Text="1" Color="-11334145" PenWidth="2" PenType="Generic" FillColor="-11334145" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2404" Y="986" Width="26" Height="26"/>&#13;
+						<Element X="2415" Y="981" Width="26" Height="26"/>&#13;
+						<Element X="1331" Y="1958" Width="26" Height="26"/>&#13;
+						<Element X="2196" Y="1668" Width="26" Height="26"/>&#13;
+						<Element X="2137" Y="1730" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE A1" GroupID="15" Shape="1" DefaultSize="26" Text="1" Color="-6245236" PenWidth="2" PenType="Generic" FillColor="-6245236" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1382" Y="1818" Width="26" Height="26"/>&#13;
+						<Element X="1607" Y="1715" Width="26" Height="26"/>&#13;
+						<Element X="1556" Y="1603" Width="26" Height="26"/>&#13;
+						<Element X="1505" Y="1491" Width="26" Height="26"/>&#13;
+						<Element X="1280" Y="1593" Width="26" Height="26"/>&#13;
+						<Element X="1331" Y="1706" Width="26" Height="26"/>&#13;
+						<Element X="1890" Y="1626" Width="26" Height="26"/>&#13;
+						<Element X="1941" Y="1738" Width="26" Height="26"/>&#13;
+						<Element X="2087" Y="1662" Width="26" Height="26"/>&#13;
+						<Element X="2040" Y="1558" Width="26" Height="26"/>&#13;
+						<Element X="2668" Y="1184" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE C1" GroupID="16" Shape="1" DefaultSize="26" Text="1" Color="-12814216" PenWidth="2" PenType="Generic" FillColor="-12814216" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2416" Y="1545" Width="26" Height="26"/>&#13;
+						<Element X="2666" Y="1545" Width="26" Height="26"/>&#13;
+						<Element X="2541" Y="1639" Width="26" Height="26"/>&#13;
+						<Element X="2416" Y="1919" Width="26" Height="26"/>&#13;
+						<Element X="2665" Y="1919" Width="26" Height="26"/>&#13;
+						<Element X="2373" Y="1639" Width="26" Height="26"/>&#13;
+						<Element X="2519" Y="1734" Width="26" Height="26"/>&#13;
+						<Element X="2706" Y="1639" Width="26" Height="26"/>&#13;
+						<Element X="2206" Y="1545" Width="26" Height="26"/>&#13;
+						<Element X="2519" Y="1452" Width="26" Height="26"/>&#13;
+						<Element X="2568" Y="1318" Width="26" Height="26"/>&#13;
+						<Element X="2064" Y="1917" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE C1_1" GroupID="17" Shape="1" DefaultSize="26" Text="1" Color="-8894906" PenWidth="2" PenType="Generic" FillColor="-8894906" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2747" Y="1647" Width="26" Height="26"/>&#13;
+						<Element X="2455" Y="1639" Width="26" Height="26"/>&#13;
+						<Element X="2601" Y="1734" Width="26" Height="26"/>&#13;
+						<Element X="2288" Y="1545" Width="26" Height="26"/>&#13;
+						<Element X="2601" Y="1452" Width="26" Height="26"/>&#13;
+						<Element X="2650" Y="1318" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE C1_3" GroupID="18" Shape="1" DefaultSize="26" Text="1" Color="-5592406" PenWidth="2" PenType="Generic" FillColor="-5592406" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2405" Y="1452" Width="26" Height="26"/>&#13;
+						<Element X="2676" Y="1452" Width="26" Height="26"/>&#13;
+						<Element X="2540" Y="1546" Width="26" Height="26"/>&#13;
+						<Element X="2644" Y="1545" Width="26" Height="26"/>&#13;
+						<Element X="2695" Y="1734" Width="26" Height="26"/>&#13;
+						<Element X="2424" Y="1735" Width="26" Height="26"/>&#13;
+						<Element X="2540" Y="1920" Width="26" Height="26"/>&#13;
+						<Element X="2643" Y="1919" Width="26" Height="26"/>&#13;
+						<Element X="2208" Y="1919" Width="26" Height="26"/>&#13;
+						<Element X="2394" Y="1919" Width="26" Height="26"/>&#13;
+						<Element X="2228" Y="1735" Width="26" Height="26"/>&#13;
+						<Element X="1771" Y="1920" Width="26" Height="26"/>&#13;
+						<Element X="2519" Y="1639" Width="26" Height="26"/>&#13;
+						<Element X="2394" Y="1545" Width="26" Height="26"/>&#13;
+						<Element X="1999" Y="1947" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE E" GroupID="19" Shape="0" DefaultSize="26" Text="1" Color="-11493216" PenWidth="2" PenType="Generic" FillColor="-11493216" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2233" Y="1474" Width="26" Height="26"/>&#13;
+						<Element X="2384" Y="1405" Width="26" Height="26"/>&#13;
+						<Element X="2510" Y="1348" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE LINEAIRE" GroupID="20" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="937" Y="2049" Width="26" Height="26"/>&#13;
+						<Element X="937" Y="2252" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="PANNEAU ANNONCIATEUR" GroupID="24" Shape="1" DefaultSize="26" Text="1" Color="-9327267" PenWidth="2" PenType="Generic" FillColor="-9327267" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2117" Y="1739" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E204" FileName="E204.png">
+			<Thumbnail FileName="12d12159-b0cd-447a-9270-243295676604"/>
+			<Scale Value="100" Type="0" Precision="2" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1351" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="ENCASTRE" GroupID="5" Shape="0" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="934" Y="1547" Width="26" Height="26"/>&#13;
+						<Element X="1181" Y="1434" Width="26" Height="26"/>&#13;
+						<Element X="1452" Y="1485" Width="26" Height="26"/>&#13;
+						<Element X="1536" Y="1670" Width="26" Height="26"/>&#13;
+						<Element X="1394" Y="1903" Width="26" Height="26"/>&#13;
+						<Element X="1148" Y="2015" Width="26" Height="26"/>&#13;
+						<Element X="896" Y="1850" Width="26" Height="26"/>&#13;
+						<Element X="811" Y="1666" Width="26" Height="26"/>&#13;
+						<Element X="1005" Y="1514" Width="26" Height="26"/>&#13;
+						<Element X="1273" Y="1392" Width="26" Height="26"/>&#13;
+						<Element X="1410" Y="1393" Width="26" Height="26"/>&#13;
+						<Element X="1494" Y="1578" Width="26" Height="26"/>&#13;
+						<Element X="1486" Y="1860" Width="26" Height="26"/>&#13;
+						<Element X="1241" Y="1973" Width="26" Height="26"/>&#13;
+						<Element X="1056" Y="2058" Width="26" Height="26"/>&#13;
+						<Element X="854" Y="1758" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="ENCASTRE URGENCE" GroupID="6" Shape="0" DefaultSize="26" Text="1" Color="-6926156" PenWidth="2" PenType="Generic" FillColor="-6926156" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2648" Y="1468" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="ENSEIGNE SORTIE Z6" GroupID="7" Shape="0" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2796" Y="1446" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LED 2X2" GroupID="13" Shape="1" DefaultSize="26" Text="1" Color="-4944836" PenWidth="2" PenType="Generic" FillColor="-4944836" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1840" Y="1020" Width="26" Height="26"/>&#13;
+						<Element X="1335" Y="1068" Width="26" Height="26"/>&#13;
+						<Element X="1486" Y="1000" Width="26" Height="26"/>&#13;
+						<Element X="1667" Y="1099" Width="26" Height="26"/>&#13;
+						<Element X="1670" Y="1007" Width="26" Height="26"/>&#13;
+						<Element X="1598" Y="949" Width="26" Height="26"/>&#13;
+						<Element X="1772" Y="870" Width="26" Height="26"/>&#13;
+						<Element X="1866" Y="1337" Width="26" Height="26"/>&#13;
+						<Element X="1918" Y="1450" Width="26" Height="26"/>&#13;
+						<Element X="1404" Y="1218" Width="26" Height="26"/>&#13;
+						<Element X="1407" Y="1126" Width="26" Height="26"/>&#13;
+						<Element X="1702" Y="1276" Width="26" Height="26"/>&#13;
+						<Element X="1716" Y="1405" Width="26" Height="26"/>&#13;
+						<Element X="1767" Y="1518" Width="26" Height="26"/>&#13;
+						<Element X="1554" Y="1150" Width="26" Height="26"/>&#13;
+						<Element X="1558" Y="1058" Width="26" Height="26"/>&#13;
+						<Element X="4005" Y="2698" Width="26" Height="26"/>&#13;
+						<Element X="4005" Y="2829" Width="26" Height="26"/>&#13;
+						<Element X="3798" Y="2698" Width="26" Height="26"/>&#13;
+						<Element X="3369" Y="1902" Width="26" Height="26"/>&#13;
+						<Element X="2175" Y="1943" Width="26" Height="26"/>&#13;
+						<Element X="2051" Y="1943" Width="26" Height="26"/>&#13;
+						<Element X="3614" Y="960" Width="26" Height="26"/>&#13;
+						<Element X="3614" Y="1083" Width="26" Height="26"/>&#13;
+						<Element X="3490" Y="960" Width="26" Height="26"/>&#13;
+						<Element X="3364" Y="960" Width="26" Height="26"/>&#13;
+						<Element X="3364" Y="1083" Width="26" Height="26"/>&#13;
+						<Element X="3490" Y="1083" Width="26" Height="26"/>&#13;
+						<Element X="3881" Y="2698" Width="26" Height="26"/>&#13;
+						<Element X="3615" Y="1166" Width="26" Height="26"/>&#13;
+						<Element X="3366" Y="1166" Width="26" Height="26"/>&#13;
+						<Element X="3491" Y="1166" Width="26" Height="26"/>&#13;
+						<Element X="3615" Y="1290" Width="26" Height="26"/>&#13;
+						<Element X="3366" Y="1290" Width="26" Height="26"/>&#13;
+						<Element X="3491" Y="1290" Width="26" Height="26"/>&#13;
+						<Element X="3655" Y="1427" Width="26" Height="26"/>&#13;
+						<Element X="3490" Y="1427" Width="26" Height="26"/>&#13;
+						<Element X="3366" Y="1427" Width="26" Height="26"/>&#13;
+						<Element X="3366" Y="1551" Width="26" Height="26"/>&#13;
+						<Element X="3490" Y="1551" Width="26" Height="26"/>&#13;
+						<Element X="3655" Y="1633" Width="26" Height="26"/>&#13;
+						<Element X="3366" Y="1633" Width="26" Height="26"/>&#13;
+						<Element X="3490" Y="1633" Width="26" Height="26"/>&#13;
+						<Element X="3655" Y="1757" Width="26" Height="26"/>&#13;
+						<Element X="3366" Y="1757" Width="26" Height="26"/>&#13;
+						<Element X="3490" Y="1757" Width="26" Height="26"/>&#13;
+						<Element X="3659" Y="1902" Width="26" Height="26"/>&#13;
+						<Element X="3494" Y="1902" Width="26" Height="26"/>&#13;
+						<Element X="3655" Y="1551" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="LUMINAIRE LINEAIRE" GroupID="20" Shape="1" DefaultSize="26" Text="1" Color="-8882056" PenWidth="2" PenType="Generic" FillColor="-8882056" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1597" Y="1899" Width="26" Height="26"/>&#13;
+						<Element X="1986" Y="1013" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E001" FileName="E001.png">
+			<Thumbnail FileName="fb03a1c2-24d7-44db-853c-82888a53f326"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E002" FileName="E002.png">
+			<Thumbnail FileName="a4f5bd40-f946-4403-a70f-5ebe43f19e45"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E003" FileName="E003.png">
+			<Thumbnail FileName="9dd92115-4668-4ca6-b61b-41ce7c689466"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E006" FileName="E006.png">
+			<Thumbnail FileName="7f00b961-33bd-4429-8bdb-ee87326fcedd"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E007" FileName="E007.png">
+			<Thumbnail FileName="cc321993-ae02-41f7-8a9d-bd78f87fb983"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E008" FileName="E008.png">
+			<Thumbnail FileName="6a3e9901-b1b0-409d-95e7-82ff46bb5b49"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E009" FileName="E009.png">
+			<Thumbnail FileName="39565aaf-5b9c-4f7c-8359-ce41110764b7"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E501" FileName="E501.png">
+			<Thumbnail FileName="1b10c46a-45be-4d4a-bd6b-cfca58bf7c02"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="E502" FileName="E502.png">
+			<Thumbnail FileName="69435000-5825-4105-a95a-cb725959ef92"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="PDElectric-p04" FileName="PDElectric-p04.png">
+			<Thumbnail FileName="06e0521d-270e-4952-ac6a-af797e2a6c11"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+		<Plan Name="PDElectric-p05" FileName="PDElectric-p05.png">
+			<Thumbnail FileName="324881c2-c1c3-45d1-950b-4fa882e2ffaa"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="100" Y="100" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+		<Price Key="1;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="2;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="3;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="4;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="5;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="6;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="7;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="8;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="9;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="10;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="11;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="12;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="13;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="14;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="15;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="16;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="17;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="18;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="19;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="20;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="21;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="22;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="23;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="24;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="25;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="26;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="27;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="28;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="29;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="30;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="31;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="1" Precision="0">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>

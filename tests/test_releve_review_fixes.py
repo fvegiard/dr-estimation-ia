@@ -269,6 +269,7 @@ def test_run_process_propagates_box_overlap_from_rendu_rapport(monkeypatch, tmp_
     monkeypatch.setattr(releve_run, "resolve_inbox", lambda arg: ("S-TEST", str(inbox)))
     monkeypatch.setattr(releve_run, "prepare_a_jour", lambda inbox, workdir: True)
     monkeypatch.setattr(releve_run, "run", _run)
+    monkeypatch.setattr(releve_run, "ROUTE", "sdk")          # ce test couvre la route par agent (défaut = blocs depuis 2026-10-18)
     monkeypatch.setattr(releve_run, "agent", lambda workdir, log_path: (0, {"subtype": "success"}, 0.01))
     monkeypatch.setattr(releve_run, "drive_mounted", lambda: False)
     monkeypatch.setattr(releve_run, "statut", lambda *args: statut_calls.append(args))

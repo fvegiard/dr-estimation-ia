@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pytest
 
-from conftest import ROOT
+from conftest import ROOT, env_sans_encodage
 from src.validation import aveugle
 
 NOM_RAPPORT = "controle-aveugle.json"
@@ -29,7 +29,7 @@ def _ecrire(workdir: Path, nom: str, contenu: str = "contenu synthetique de test
 def _cli(workdir: Path) -> subprocess.CompletedProcess:
     return subprocess.run(
         [sys.executable, "-m", "src.validation.aveugle", str(workdir)],
-        cwd=ROOT, capture_output=True, text=True,
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage(),
     )
 
 

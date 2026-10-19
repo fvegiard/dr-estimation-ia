@@ -25,6 +25,8 @@ import pytest
 
 from src.validation import aveugle, boucle_acceptation as boucle
 
+from conftest import env_sans_encodage
+
 ROOT = Path(__file__).resolve().parents[1]
 
 EN_TETE_CONTRAT = [
@@ -287,7 +289,7 @@ def test_cli_boucle(tmp_path):
     p = subprocess.run(
         [sys.executable, "-m", "src.validation.boucle_acceptation", "S-TEST",
          "--workdir", str(f["workdir"]), "--dossier", str(f["dossier"])],
-        cwd=ROOT, capture_output=True, text=True)
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage())
     assert p.returncode == 1, f"stdout={p.stdout}\nstderr={p.stderr}"
     lignes = [l for l in p.stdout.splitlines() if l.startswith("VERDICT : ")]
     assert lignes and lignes[-1] == f"VERDICT : {boucle.VERDICT_JUSTIF}"
@@ -296,7 +298,7 @@ def test_cli_boucle(tmp_path):
     p2 = subprocess.run(
         [sys.executable, "-m", "src.validation.boucle_acceptation", "S-TEST",
          "--workdir", str(tmp_path / "absent"), "--dossier", str(f["dossier"])],
-        cwd=ROOT, capture_output=True, text=True)
+        cwd=ROOT, capture_output=True, encoding="utf-8", env=env_sans_encodage())
     assert p2.returncode == 2 and "ERREUR" in p2.stderr
 
 

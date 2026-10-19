@@ -1,0 +1,54 @@
+# Rapport de relevé — S-1902 Bibliothèque Georgette-Lepage (SP-GTER-26-0080, HF experts-conseils 26-29)
+
+Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). 645 occurrences, 31 familles.
+
+| feuille | occurrences |
+|---|--:|
+| E101 | 127 |
+| E102 | 58 |
+| E103 | 6 |
+| E104 | 116 |
+| E105 | 33 |
+| E106 | 2 |
+| E201 | 106 |
+| E202 | 57 |
+| E203 | 71 |
+| E204 | 69 |
+
+| famille | total | portées |
+|---|--:|---|
+| BOITE JONCTION | 10 | CONSERVER 5, INSTALLER 3, ENLEVER 2 |
+| BOITIER C | 4 | ENLEVER 2, CONSERVER 2 |
+| DETECTEUR FUMEE | 10 | CONSERVER 6, INSTALLER 2, RELOCALISER 1, ENLEVER 1 |
+| DETECTEUR MOUVEMENT | 3 | CONSERVER 2, ENLEVER 1 |
+| ENCASTRE | 79 | CONSERVER 49, ENLEVER 26, RELOCALISER 4 |
+| ENCASTRE URGENCE | 10 | CONSERVER 10 |
+| ENSEIGNE SORTIE Z6 | 3 | INSTALLER 3 |
+| GACHE | 3 | CONSERVER 3 |
+| HP ENCASTRE PLAFOND | 1 | ENLEVER 1 |
+| INT SIMPLE | 10 | INSTALLER 5, CONSERVER 4, ENLEVER 1 |
+| LECTEUR CARTE | 5 | CONSERVER 3, INSTALLER 2 |
+| LED 1X4 | 33 | CONSERVER 27, ENLEVER 6 |
+| LED 2X2 | 94 | CONSERVER 86, ENLEVER 8 |
+| LED 4PI | 2 | CONSERVER 2 |
+| LUMINAIRE A1 | 11 | INSTALLER 11 |
+| LUMINAIRE C1 | 12 | INSTALLER 12 |
+| LUMINAIRE C1_1 | 6 | INSTALLER 6 |
+| LUMINAIRE C1_3 | 15 | INSTALLER 15 |
+| LUMINAIRE E | 3 | INSTALLER 3 |
+| LUMINAIRE LINEAIRE | 4 | CONSERVER 4 |
+| MONUMENT PLANCHER | 7 | ENLEVER 3, INSTALLER 3, CONSERVER 1 |
+| MOTEUR MONOPHASE | 9 | RELOCALISER 6, INSTALLER 3 |
+| MOTEUR TRIPHASE | 9 | CONSERVER 5, INSTALLER 4 |
+| PANNEAU ANNONCIATEUR | 1 | INSTALLER 1 |
+| PRISE DDFT | 49 | CONSERVER 22, INSTALLER 22, ENLEVER 4, RELOCALISER 1 |
+| PRISE DOUBLE 15A | 95 | CONSERVER 55, INSTALLER 25, RELOCALISER 8, ENLEVER 7 |
+| PRISE USB | 20 | INSTALLER 20 |
+| SORTIE DATA | 120 | INSTALLER 65, CONSERVER 35, ENLEVER 17, RELOCALISER 3 |
+| SORTIE TV | 4 | CONSERVER 4 |
+| STATION MANUELLE | 4 | CONSERVER 4 |
+| THERMOSTAT | 9 | CONSERVER 7, INSTALLER 2 |
+
+Étiquetage des signatures : Claude Fable 5.1 (claude-fable-5-1, observé dans le contexte de la session Claude Code cloud). Outils déterministes : prepare.py, blocs_vectoriels.py, blocs_vignettes.py, blocs_vers_releve.py, controle_qualite.py.
+
+**STATUT : relevé automatique à VÉRIFIER sur les planches de contrôle avant chiffrage.**

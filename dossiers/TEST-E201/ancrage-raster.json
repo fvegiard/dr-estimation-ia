@@ -1,0 +1,122 @@
+{
+ "ancres": 119,
+ "deplacement_max_pt": 6.9,
+ "non_ancres": [],
+ "par_feuille": {
+  "E201plan-p01": 119
+ },
+ "par_gabarit": [
+  {
+   "feuille": "E201plan-p01",
+   "label": "STATION MANUELLE",
+   "x_pt": 1172.1,
+   "y_pt": 340.6,
+   "w_pt": 5.2,
+   "h_pt": 5.2,
+   "angle_deg": 5.4,
+   "score": 0.63
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "STATION MANUELLE",
+   "x_pt": 387.4,
+   "y_pt": 849.3,
+   "w_pt": 5.3,
+   "h_pt": 5.2,
+   "angle_deg": -5.0,
+   "score": 0.61
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "BOITIER C",
+   "x_pt": 1109.1,
+   "y_pt": 367.3,
+   "w_pt": 7.9,
+   "h_pt": 5.8,
+   "angle_deg": 0.0,
+   "score": 0.62
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "BOITIER C",
+   "x_pt": 1016.1,
+   "y_pt": 542.2,
+   "w_pt": 7.8,
+   "h_pt": 5.5,
+   "angle_deg": -25.8,
+   "score": 0.62
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "BOITIER C",
+   "x_pt": 582.4,
+   "y_pt": 816.6,
+   "w_pt": 7.9,
+   "h_pt": 5.5,
+   "angle_deg": -25.1,
+   "score": 0.51
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "PANNEAU ANNONCIATEUR",
+   "x_pt": 995.2,
+   "y_pt": 558.0,
+   "w_pt": 7.2,
+   "h_pt": 7.1,
+   "angle_deg": -25.4,
+   "score": 0.35
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "LED 1X4",
+   "x_pt": 875.0,
+   "y_pt": 776.6,
+   "w_pt": 35.4,
+   "h_pt": 9.8,
+   "angle_deg": 45.0,
+   "score": 0.57
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "BOITE JONCTION",
+   "x_pt": 1038.7,
+   "y_pt": 789.6,
+   "w_pt": 6.3,
+   "h_pt": 6.4,
+   "angle_deg": -4.7,
+   "score": 0.5
+  },
+  {
+   "feuille": "E201plan-p01",
+   "label": "ACCUMULATEUR",
+   "x_pt": 472.6,
+   "y_pt": 607.2,
+   "w_pt": 19.7,
+   "h_pt": 7.3,
+   "angle_deg": -24.7,
+   "score": 0.59
+  }
+ ],
+ "alignement": {
+  "mesures": 119,
+  "seuil_ecart_pt": 0.5,
+  "seuil_couverture": 0.75,
+  "ecart_moyen_pt": 0.06,
+  "par_mesure": {
+   "contour": 107,
+   "contour gris": 2,
+   "englobant": 10
+  },
+  "hors_seuil": [
+   {
+    "feuille": "E201plan-p01",
+    "label": "LED 2X2",
+    "x_pt": "872.3",
+    "y_pt": "255.6",
+    "mesure": "contour",
+    "ecart_pt": "0.47",
+    "couverture": "0.74"
+   }
+  ]
+ }
+}

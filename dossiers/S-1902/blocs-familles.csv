@@ -1,0 +1,42 @@
+sig_id,label,famille,forme,code,materiel,legende_no,diam_min,diam_max,feuilles,note
+S006,SORTIE DATA,telecom,triangle,DA,SORTIE INFORMATIQUE/AUDIO,SV14,0,6.5,,triangle plein ≤6 pt = sortie data ; plus grand = flèche de circuit (ignorée)
+S071,SORTIE DATA,telecom,triangle,DA,SORTIE INFORMATIQUE/AUDIO,SV14,0,6.5,,
+S080,SORTIE DATA,telecom,triangle,DA,SORTIE INFORMATIQUE/AUDIO,SV14,0,6.5,,
+S014,ENCASTRE,eclairage,cercle,EN,APPAREIL D'ÉCLAIRAGE ENCASTRÉ,EC05,0,99,,cercle + croix
+S067,ENCASTRE,eclairage,cercle,EN,APPAREIL D'ÉCLAIRAGE ENCASTRÉ,EC05,0,99,E204,cercle + croix pointillé (existant conservé sur E-204)
+S020,PRISE DOUBLE 15A,prise,cercle,PC,PRISE DE COURANT DOUBLE 15A- 120V,SV01,0,99,,
+S141,PRISE DOUBLE 15A,prise,cercle,PC,PRISE DE COURANT DOUBLE 15A- 120V,SV01,0,99,,
+S158,PRISE DDFT,prise,cercle,PG,PRISE DOUBLE DDFT (moitié pleine),SV06,0,99,,variante à demi-cercle plein : DDFT / M.A.L.T. isolée — à préciser au devis
+S159,PRISE DDFT,prise,cercle,PG,PRISE DOUBLE DDFT (moitié pleine),SV06,0,99,,
+S051,PRISE USB,prise,cercle,PU,PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton Decora USB,SV18,0,99,,
+S024,LED 2X2,eclairage,carre,L2,APPAREIL D'ÉCLAIRAGE 2'x2' LED,EC01,0,99,,
+S330,LED 2X2,eclairage,carre,L2,APPAREIL D'ÉCLAIRAGE 2'x2' LED,EC01,0,99,,
+S035,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,rectangle à diagonale (A1 sur E-203 : 2'x4' Cooper 24CGTS)
+S343,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
+S134,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
+S168,LED 1X4,eclairage,carre,LX,APPAREIL D'ÉCLAIRAGE 'x4',EC12,0,99,,
+S101,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S044,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,sur E101/E103/E106 la même signature est une barrière : ignorée hors E203/E204
+S148,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S149,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S150,LUMINAIRE LINEAIRE,eclairage,carre,LL,APPAREIL D'ÉCLAIRAGE LINÉAIRE (barre C1 / C1_1 / C1_3 — type lu sur l'étiquette),EC13,0,99,E203 E204,
+S098,INT 3 VOIES,commande,cercle,I3,INTERRUPTEUR À 3 VOIES,EC06,0,99,,$ avec 3 ; sans le 3 = interrupteur simple (trié par le texte voisin)
+S313,DETECTEUR MOUVEMENT,commande,cercle,DM,DETECTEUR DE MOUVEMENT,EC14,0,99,,
+S103,THERMOSTAT,chauffage,cercle,T,THERMOSTAT,CH01,0,99,,
+S323,THERMOSTAT,chauffage,cercle,T,THERMOSTAT,CH01,0,99,,
+S102,MOTEUR MONOPHASE,mecanique,cercle,M1,"MOTEUR MONOPHASÉ, PUISSANCE SELON LES INDICATIONS",DI01,0,99,,
+S104,MOTEUR TRIPHASE,mecanique,cercle,M3,"MOTEUR TRIPHASÉ, PUISSANCE SELON LES INDICATIONS",DI02,0,99,,
+S107,BOITE JONCTION,services,carre,BJ,BOITE DE JONCTION,SV21,0,99,,carré X
+S128,MONUMENT PLANCHER,services,carre,MP,"MONUMENT PLANCHER SURFACE, TYPE HUBBELL S1PT / POKE THROUGH",SV17,0,99,,
+S218,BOITIER C,alarme,carre,BC,BOITIER « C » (hors légende — R-006 TEST-E201),HORS LEGENDE,0,99,,
+S219,LECTEUR CARTE,intrusion,carre,LC,LECTEUR DE CARTE,AI01,0,99,,
+S327,LECTEUR CARTE,intrusion,carre,LC,LECTEUR DE CARTE,AI01,0,99,,
+S290,GACHE,intrusion,carre,G,GÂCHE ÉLECTRIQUE,AI02,0,99,,
+S293,SORTIE TV,telecom,carre,TV,SORTIE DE CÂBLODISTRIBUTION AU MUR,SV13,0,99,,
+S326,SORTIE TV,telecom,carre,TV,SORTIE DE CÂBLODISTRIBUTION AU MUR,SV13,0,99,,
+S319,STATION MANUELLE,alarme,carre,SM,STATION MANUELLE,A01,0,99,,F dans carré
+S320,STATION MANUELLE,alarme,carre,SM,STATION MANUELLE,A01,0,99,,
+S146,DETECTEUR FUMEE,alarme,cercle,DF,DÉTECTEUR DE FUMÉE,A04,0,99,,cercle coupé en diagonale
+S328,PANNEAU ANNONCIATEUR,alarme,carre,ANN,PANNEAU ANNONCIATEUR,A14,0,99,,
+S321,HP ENCASTRE PLAFOND,alarme,cercle,HP,HAUT-PARLEUR ENCASTRÉ AU PLAFOND,A09,0,99,,
+S316,LED 4PI,eclairage,carre,L4,APPAREIL D'ÉCLAIRAGE 4' LED,EC03,0,99,,
