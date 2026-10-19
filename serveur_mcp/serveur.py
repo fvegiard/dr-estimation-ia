@@ -547,7 +547,8 @@ def controler(travail: Path) -> dict:
             for x2, y2, o2 in pts[i + 1:]:
                 if x2 - x > 4:
                     break
-                if abs(y2 - y) <= 4:
+                # vraie distance (deux prises DDFT côte à côte sont à 4,7–5,5 pt : S-1902 E101, relevé validé)
+                if ((x2 - x) ** 2 + (y2 - y) ** 2) ** 0.5 < 4:
                     doublons.append(f"{f} {lab} ({x:g},{y:g}) {o['_fichier']}:{o['_ligne']} ~ {o2['_fichier']}:{o2['_ligne']}")
     if doublons:
         erreurs.append(f"{len(doublons)} doublon(s) à moins de 4 pt : {doublons[:10]}")

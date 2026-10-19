@@ -105,14 +105,15 @@ def test_doublon_bloque(tmp_path, monkeypatch):
     t.mkdir(parents=True)
     (t / "feuilles.csv").write_text("feuille,fichier,page,largeur_pt,hauteur_pt\nE101,a.pdf,1,100,100\n", encoding="utf-8")
     (t / "feuilles-classement.csv").write_text("feuille,type\nE101,plan\n", encoding="utf-8")
-    (t / "nomenclature.csv").write_text("label,famille\nX,alarme\n", encoding="utf-8")
-    (t / "occurrences-visuel.csv").write_text("feuille,label,x_pt,y_pt\nE101,X,10,10\nE101,X,11,12\nE101,Y,500,5\n",
+    (t / "nomenclature.csv").write_text("label,famille\nX,alarme\nZ,prise\n", encoding="utf-8")
+    (t / "occurrences-visuel.csv").write_text("feuille,label,x_pt,y_pt\nE101,X,10,10\nE101,X,11,12\nE101,Y,500,5\nE101,Z,50,50\nE101,Z,53.2,53.4\n",
                                               encoding="utf-8")
     (t / "reserves.md").write_text("", encoding="utf-8")
     ctl = serveur.controler(t)
     assert not ctl["pret"]
     texte = " ".join(ctl["erreurs"])
     assert "doublon" in texte and "Y" in texte and "hors de la page" in texte
+    assert "E101 Z" not in texte   # 4,67 pt : deux prises côte à côte, pas un doublon
 
 
 def test_http_exige_cle(monkeypatch):
