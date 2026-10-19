@@ -1,13 +1,17 @@
 # Environnement conda du poste (Windows, Anaconda Desktop ou conda en ligne de commande).
 #   conda env create -f environment.yml          # première fois
-#   conda env update -f environment.yml --prune  # après une modification de requirements.txt
+#   conda env update -f environment.yml --prune  # après un AJOUT ou une mise à jour dans requirements.txt
 #   conda activate dr-estimation
 #   python -m pytest tests -q
+# Un paquet RETIRÉ de requirements.txt reste installé (--prune ne touche pas la partie pip) :
+#   conda env remove -n dr-estimation puis conda env create -f environment.yml
 # Même Python que la CI et le Dockerfile (3.12) ; les paquets viennent de requirements.txt, seule liste
 # maintenue — ne pas les recopier ici. Session cloud : .claude/hooks/session-start.sh fait l'équivalent.
 name: dr-estimation
 channels:
   - conda-forge
+  # nodefaults : seulement conda-forge, quel que soit le .condarc d'Anaconda (pas de canal defaults)
+  - nodefaults
 dependencies:
   - python=3.12
   - pip

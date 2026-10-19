@@ -60,10 +60,12 @@ python -m pytest tests -q       # vert
 
 Environnement prêt à travailler :
 - **Session cloud Claude Code** : rien à faire — `.claude/hooks/session-start.sh` (hook SessionStart) installe
-  `requirements.txt` + OpenCV au démarrage et vérifie les imports avant le premier tour.
+  `requirements.txt` + OpenCV au démarrage, vérifie les paquets avant le premier tour et pose
+  `RELEVE_BASE` = racine du dépôt (`INBOX/<S>`, `OUTBOX/<S>` dans le dépôt, ignorés par git).
 - **Poste Windows (conda / Anaconda Desktop)** : `conda env create -f environment.yml` puis
   `conda activate dr-estimation` (Python 3.12 comme la CI, `uv` inclus pour `uv run releve/run.py`) ;
-  après un changement de `requirements.txt` : `conda env update -f environment.yml --prune`.
+  après un ajout dans `requirements.txt` : `conda env update -f environment.yml --prune` (un paquet retiré
+  demande `conda env remove -n dr-estimation` puis une nouvelle création).
 
 ## Boucle d'acceptation
 

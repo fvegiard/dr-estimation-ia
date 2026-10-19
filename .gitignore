@@ -47,3 +47,10 @@ dossiers/*/export-natif/[sS]-1???.pdf
 
 # serveur MCP : dossiers de travail locaux
 travail-mcp/
+
+# run.py en session cloud (RELEVE_BASE = racine du dépôt, posé par .claude/hooks/session-start.sh) :
+# entrées, sorties, journal et verrou restent hors git (livrables copiés par outils/assembler_dossier.py)
+/INBOX/
+/OUTBOX/
+/journal.log
+/.verrou

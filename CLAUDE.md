@@ -158,8 +158,9 @@ uv run releve/run.py --reprendre <S>            # rejoue seulement qpl + render_
 
 ## Agents (`.claude/agents/`)
 Le parcours canonique (`uv run releve/run.py <NOM>`, §Commandes) ne passe PAS par ces sous-agents : `run.py`
-lance lui-même un agent séparé pour la lecture du plan (`releve/agent_sdk.py` par défaut — voir
-`RELEVE_AGENT`/`RELEVE_MODEL` dans `releve/run.py`), un processus indépendant de toute session interactive.
+lance lui-même, seulement avec `RELEVE_AGENT=sdk` (la route `blocs` par défaut n'a aucun agent), un agent séparé
+pour la lecture du plan (`releve/agent_sdk.py` — voir `RELEVE_AGENT`/`RELEVE_MODEL` dans `releve/run.py`), un
+processus indépendant de toute session interactive.
 
 **Deux routes existent pour cette étape « agent », selon l'environnement — vérifier laquelle est active
 avant d'agir, ne jamais supposer** (`python3 -c "import claude_agent_sdk"`, `which claude`, présence de
@@ -185,6 +186,12 @@ avant d'agir, ne jamais supposer** (`python3 -c "import claude_agent_sdk"`, `whi
   Preuve de ce parcours, avec sa portée exacte : `preuve-mecanisme-E103/README.md`. Le modèle réellement
   exécuté est celui observé dans le contexte système de la session elle-même (jamais déduit d'un défaut de
   code) — le consigner dans tout rapport produit par ce parcours.
+
+- **Session cloud Claude Code** (vérifié le 2026-10-19) : `.claude/hooks/session-start.sh` installe les dépendances
+  et pose `RELEVE_BASE` = racine du dépôt, donc `uv run releve/run.py <NOM>` (route `blocs`, sans agent) trouve
+  `INBOX/<NOM>` et écrit `OUTBOX/<NOM>`. `claude_agent_sdk` et le binaire `claude` sont présents dans l'image,
+  `CLAUDE_CODE_OAUTH_TOKEN`/`NVIDIA_API_KEY` absents de l'environnement : la route `RELEVE_AGENT=sdk` n'y a pas
+  été éprouvée de bout en bout — la vérifier avant de s'y fier, sinon appliquer la procédure ci-dessus.
 
 Ces sous-agents servent une session interactive (Claude Code, OpenHands) qui travaille directement dans ce
 dépôt. **Par défaut, une session interactive travaille elle-même** — lit les tuiles, écrit les CSV, exécute
