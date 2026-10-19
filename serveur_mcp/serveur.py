@@ -611,7 +611,9 @@ def _etiqueter_signatures_vision(travail: Path, sig_dir: Path) -> int:
     )
     corps = {
         "model": "gemini-3.8-flash",
-        "max_tokens": 4000,
+        # 16000 et non 4000 : la réflexion du modèle compte dans max_tokens ; à 4000 la réponse revenait tronquée
+        # (finish_reason « length », JSON illisible) et l'étiquetage rendait 0 en silence (TEST-JO-02, 2026-10-19).
+        "max_tokens": 16000,
         "temperature": 0,
         "messages": [{"role": "user", "content": [
             {"type": "text", "text": prompt},
@@ -626,12 +628,13 @@ def _etiqueter_signatures_vision(travail: Path, sig_dir: Path) -> int:
         )
         with urllib.request.urlopen(req, timeout=120) as resp:
             data = json.load(resp)
-        texte = data["choices"][0]["message"]["content"]
+        texte = data["choices"][0]["message"]["content"] or ""
         m = re.search(r"\[.*\]", texte, re.S)
         if not m:
-            return 0
+            raise ValueError(f"pas de tableau JSON (finish_reason={data['choices'][0].get('finish_reason')}) : {texte[:300]!r}")
         items = json.loads(m.group(0))
-    except Exception:
+    except Exception as e:   # jamais silencieux : la raison reste lisible dans travail/vision-gemini.log
+        (travail / "vision-gemini.log").write_text(type(e).__name__ + ": " + str(e)[:1500], encoding="utf-8")
         return 0
     if not isinstance(items, list) or not items:
         return 0
