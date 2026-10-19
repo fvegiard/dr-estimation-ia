@@ -8,6 +8,7 @@ N'importe quel LLM compatible MCP (Claude, GPT, Gemini, modèle local…) se bra
   ecrire_fichier                      → classement, nomenclature, occurrences, réserves (méthode : ressource
                                         estimateur://methode, gabarit : prompt releve_planexpert)
   extraire_occurrences / verifier_releve
+  quantites                           → repères × multiplicateurs.csv (unités types) = quantités à soumissionner
   produire_livrables                  → <S>-RELEVE.pdf au format de l'exemplaire HR26-14 (pastilles, encadré
                                         « RELEVE <feuille> - MATERIEL », bordereau 8 colonnes, réserves) + projet
                                         Plan Expert .qpl + rapport de métré
@@ -45,12 +46,13 @@ RELEVE = RACINE / "releve"
 METHODE = RACINE / ".claude" / "skills" / "releve-planexpert" / "SKILL.md"
 STANDARD = RACINE / "apprentissage" / "hr26-14-exemplaire" / "STANDARD-RELEVE.md"
 LIBELLES = RACINE / "apprentissage" / "qpl-2021-2026" / "dictionnaire-symboles.json"
+BIBLIOTHEQUE = Path(os.environ.get("ESTIMATEUR_BIBLIOTHEQUE") or RELEVE / "bibliotheque-blocs.csv")
 LIEN_HUMAIN = Path(os.environ.get("ESTIMATEUR_LIEN_HUMAIN") or RACINE / "apprentissage" / "lien-humain")
 NOM_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 FEUILLE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 ECRITURE_PERMISE = {
     "feuilles-classement.csv", "nomenclature.csv", "occurrences-texte.csv", "occurrences-visuel.csv",
-    "reserves.md", "rapport-releve.md", "comparaison-estimateur.md",
+    "reserves.md", "rapport-releve.md", "comparaison-estimateur.md", "multiplicateurs.csv",
 }
 TAILLE_MAX_DEPOT = 200 * 1024 * 1024
 TAILLE_MAX_LIVRABLE = 25 * 1024 * 1024
@@ -58,9 +60,19 @@ MORCEAU = 60_000
 
 INSTRUCTIONS = """Tu es l'expert estimateur électrique du Groupe DR Électrique. Tu fais le relevé de quantités d'un
 dossier de plans PDF brut et tu livres le PDF annoté au format de l'exemplaire HR26-14.
-Déroulement : deposer_fichier (ou preparer_dossier avec chemin_source) → preparer_dossier → lire la ressource
+PARCOURS STANDARD (toujours celui-ci : même PDF = même résultat, quel que soit le Claude qui appelle) :
+1. relever_automatique(dossier="<no de soumission, ex. S-1902>", url_source="<lien Google Drive du PDF ou du dossier
+   de plans>") — ou chemin_source="<chemin local>" sur le poste. Ne rien passer d'autre.
+2. Si « produit »: true → donner à l'utilisateur lien_zip et lien_releve_pdf (ou zip / releve_pdf), le nombre de
+   repères par feuille et les réserves ; montrer voir_image("sortie/<S>-RELEVE.pdf#1"). Ne jamais modifier le relevé.
+3. Si a_etiqueter.inconnues n'est pas vide (bureau d'ingénieurs encore inconnu) : voir_image de chaque planche,
+   etiqueter_signatures (vrais appareils seulement, IGNORER pour le reste, rien deviné : dans le doute ne pas
+   étiqueter), puis relever_automatique(dossier, reprendre=True). Une fois appris, ce bureau sort seul pour tous.
+Déroulement manuel (seulement si l'utilisateur le demande) : deposer_fichier (ou preparer_dossier avec chemin_source) → preparer_dossier → lire la ressource
 estimateur://methode et l'appliquer (voir_image des aperçus/tuiles, zoomer, ecrire_fichier) → extraire_occurrences →
-verifier_releve jusqu'à « pret »: true → produire_livrables → voir_image du rendu pour te contrôler toi-même →
+multiplicateurs.csv si une feuille montre des unités types (logements, chambres, salles « TYPE ») : facteur = nombre
+d'unités réelles, avec sa source (cartouche, liste des logements, note) → verifier_releve jusqu'à « pret »: true →
+quantites (repères × multiplicateur = quantités à soumissionner) → produire_livrables → voir_image du rendu pour te contrôler toi-même →
 comparer_estimateur si une référence existe. Avant de nommer un article de nomenclature : chercher_libelle (nom
 employé par les estimateurs) puis exemples_humains (comment ils l'ont repéré sur leurs plans). Rien n'est inventé :
 chaque quantité vient d'un symbole vu, d'une étiquette, d'une cédule ou d'une note ; le doute va dans reserves.md."""
@@ -203,9 +215,16 @@ def ecrire_fichier(dossier: str, nom: str, contenu: str) -> dict:
     return {"ecrit": f"travail/{nom}", "lignes": lignes}
 
 
+def _jpeg(im, qualite: int = 85) -> Image:
+    """Image PIL -> JPEG (plus léger que PNG pour les plans ; préférence de Francis)."""
+    buf = io.BytesIO()
+    im.convert("RGB").save(buf, "JPEG", quality=qualite, optimize=True)
+    return Image(data=buf.getvalue(), format="jpeg")
+
+
 @mcp.tool()
 def voir_image(dossier: str, chemin: str, largeur_max: int = 1600) -> Image:
-    """Renvoie une image du dossier (aperçu, tuile, zoom, rendu) réduite à largeur_max pixels.
+    """Renvoie une image JPEG du dossier (aperçu, tuile, zoom, rendu) réduite à largeur_max pixels.
     Pour voir une page d'un PDF de sortie : chemin « sortie/<fichier>.pdf#<page> » (page 1 = première)."""
     from PIL import Image as PILImage
 
@@ -220,13 +239,12 @@ def voir_image(dossier: str, chemin: str, largeur_max: int = 1600) -> Image:
         with pymupdf.open(p) as doc:
             pg = doc[int(page or 1) - 1]
             zoom = min(4.0, max(0.2, largeur_max / pg.rect.width))
-            return Image(data=pg.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom)).tobytes("png"), format="png")
+            pix = pg.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom))
+            return _jpeg(PILImage.frombytes("RGB", (pix.width, pix.height), pix.samples))
     im = PILImage.open(p)
     if im.width > largeur_max:
         im = im.resize((largeur_max, round(im.height * largeur_max / im.width)))
-    buf = io.BytesIO()
-    im.convert("RGB").save(buf, "PNG", optimize=True)
-    return Image(data=buf.getvalue(), format="png")
+    return _jpeg(im)
 
 
 # ---------------------------------------------------------------- outils : savoir des estimateurs (projets Plan Expert)
@@ -314,7 +332,8 @@ def zoomer(dossier: str, feuille: str, x0: float, y0: float, x1: float, y1: floa
     zooms = sorted((d / "travail" / "zooms").glob(f"{feuille}_*.png"), key=lambda p: p.stat().st_mtime)
     if not zooms:
         raise ToolError("zoom.py n'a produit aucune image")
-    return Image(data=zooms[-1].read_bytes(), format="png")
+    from PIL import Image as PILImage
+    return _jpeg(PILImage.open(zooms[-1]))
 
 
 @mcp.tool()
@@ -334,6 +353,117 @@ def extraire_occurrences(dossier: str) -> dict:
     occ = lire_csv(d / "travail" / "occurrences-texte.csv")
     return {"occurrences": len(occ), "par_label": dict(Counter(o["label"] for o in occ).most_common()),
             "journal": log[-1500:]}
+
+
+# ---------------------------------------------------------------- multiplicateurs (unités / logements / chambres types)
+TYPIQUE_RE = re.compile(r"\bTYP(E|ES|IQUE|IQUES|ICAL)\b", re.I)
+
+
+def lire_multiplicateurs(travail: Path) -> list[dict]:
+    """multiplicateurs.csv : feuille,facteur,x0_pt,y0_pt,x1_pt,y1_pt,source.
+    Zone vide = toute la feuille. Une occurrence prend le facteur de la zone la plus petite qui la contient."""
+    regles = []
+    for i, r in enumerate(lire_csv(travail / "multiplicateurs.csv"), start=2):
+        try:
+            fac = float(r.get("facteur") or "")
+        except ValueError:
+            raise ToolError(f"multiplicateurs.csv:{i} facteur illisible : {r.get('facteur')!r}")
+        z = [r.get(k, "").strip() for k in ("x0_pt", "y0_pt", "x1_pt", "y1_pt")]
+        zone = tuple(float(v) for v in z) if all(z) else None
+        regles.append({"feuille": r.get("feuille", ""), "facteur": fac, "zone": zone,
+                       "source": r.get("source", "").strip(), "_ligne": i})
+    return regles
+
+
+def facteur_de(regles: list[dict], feuille: str, x: float, y: float) -> float:
+    """Zone explicite la plus petite qui contient le point, sinon règle « toute la feuille », sinon 1."""
+    feuille_entiere, meilleur, aire = None, None, float("inf")
+    for r in regles:
+        if r["feuille"] != feuille:
+            continue
+        if r["zone"] is None:
+            feuille_entiere = r["facteur"]
+            continue
+        x0, y0, x1, y1 = r["zone"]
+        if min(x0, x1) <= x <= max(x0, x1) and min(y0, y1) <= y <= max(y0, y1):
+            a = abs(x1 - x0) * abs(y1 - y0)
+            if a < aire:
+                meilleur, aire = r["facteur"], a
+    if meilleur is not None:
+        return meilleur
+    return feuille_entiere if feuille_entiere is not None else 1.0
+
+
+def controle_multiplicateurs(travail: Path, classement: list[dict]) -> tuple[list[str], list[str]]:
+    """Bloquant : une feuille « plan » dont le cartouche/la note dit TYPE/TYPIQUE sans ligne dans
+    multiplicateurs.csv (cause de S-1695 : chambres types non multipliées, -64 % luminaires).
+    Facteur 1 accepté s'il est justifié (source)."""
+    erreurs, alertes = [], []
+    try:
+        regles = lire_multiplicateurs(travail)
+    except ToolError as e:
+        return [str(e)], []
+    avec = {r["feuille"] for r in regles}
+    for r in regles:
+        if not r["source"]:
+            erreurs.append(f"multiplicateurs.csv:{r['_ligne']} sans source (dire d'où vient le facteur : "
+                           "nombre de logements, liste des chambres, note de plan…)")
+        if r["facteur"] <= 0:
+            erreurs.append(f"multiplicateurs.csv:{r['_ligne']} facteur <= 0")
+    for c in classement:
+        if c.get("type") == "plan" and TYPIQUE_RE.search(c.get("note", "")) and c["feuille"] not in avec:
+            msg = (f"feuille {c['feuille']} : unités types (« {c.get('note', '')[:80]} ») sans "
+                   "multiplicateur — ajouter une ligne dans multiplicateurs.csv (facteur 1 si justifié)")
+            # route automatique : la note est un extrait brut du cartouche (« Type D3-N » d'un appareil) → à vérifier
+            (alertes if c.get("note", "").startswith("cartouche=") else erreurs).append(msg)
+    return erreurs, alertes
+
+
+@mcp.tool()
+def quantites(dossier: str) -> dict:
+    """Quantités à soumissionner : repères représentés × multiplicateur (unités/logements/chambres types).
+    Écrit sortie/quantites.csv (label, code, famille, represente, total) et renvoie le détail par feuille."""
+    d = dossier_de(dossier)
+    t = d / "travail"
+    regles = lire_multiplicateurs(t)
+    nomen = {r.get("label"): r for r in lire_csv(t / "nomenclature.csv")}
+    plans = {r["feuille"] for r in lire_csv(t / "feuilles-classement.csv") if r.get("type") == "plan"}
+    rep, tot = Counter(), defaultdict(float)
+    detail = defaultdict(lambda: defaultdict(lambda: [0, 0.0]))
+    vus = set()
+    for nom in ("occurrences-texte.csv", "occurrences-visuel.csv"):
+        for o in lire_csv(t / nom):
+            if o.get("exclure") == "1" or o.get("feuille") not in plans:
+                continue
+            try:
+                x, y = float(o["x_pt"]), float(o["y_pt"])
+            except (KeyError, ValueError):
+                continue
+            cle = (o["feuille"], o["label"], round(x), round(y))
+            if cle in vus:
+                continue
+            vus.add(cle)
+            f = facteur_de(regles, o["feuille"], x, y)
+            rep[o["label"]] += 1
+            tot[o["label"]] += f
+            detail[o["feuille"]][o["label"]][0] += 1
+            detail[o["feuille"]][o["label"]][1] += f
+    lignes = []
+    for lab in sorted(rep, key=lambda l: (nomen.get(l, {}).get("famille", ""), l)):
+        n = nomen.get(lab, {})
+        total = tot[lab]
+        lignes.append({"label": lab, "code": n.get("code", ""), "famille": n.get("famille", ""),
+                       "represente": rep[lab], "total": int(total) if total == int(total) else round(total, 2)})
+    sortie = d / "sortie"
+    sortie.mkdir(exist_ok=True)
+    with (sortie / "quantites.csv").open("w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=["label", "code", "famille", "represente", "total"])
+        w.writeheader()
+        w.writerows(lignes)
+    return {"ecrit": "sortie/quantites.csv", "represente": sum(rep.values()),
+            "total": round(sum(tot.values()), 2), "lignes": lignes,
+            "multiplicateurs": [{k: v for k, v in r.items() if k != "_ligne"} for r in regles],
+            "par_feuille": {f: {l: {"represente": a, "total": b} for l, (a, b) in v.items()} for f, v in detail.items()}}
 
 
 # ---------------------------------------------------------------- contrôle du relevé
@@ -430,6 +560,9 @@ def controler(travail: Path) -> dict:
     # Q11-Q14 de releve/controle_qualite.py (légende, une famille par symbole, modèle du devis, code du vocabulaire) :
     # la méthode exposée renvoie « controle_qualite » vers verifier_releve, qui doit donc les appliquer aussi.
     erreurs += _controle_legende(travail, nomen, occ, classes)
+    e_mult, a_mult = controle_multiplicateurs(travail, lire_csv(travail / "feuilles-classement.csv"))
+    erreurs += e_mult
+    alertes += a_mult
     return {"pret": not erreurs, "erreurs": erreurs, "alertes": alertes, "occurrences": len(occ),
             "reserves": n_res, "par_feuille": {f: dict(c) for f, c in sorted(comptes.items())},
             "feuilles_plan": sorted(f for f, t in classes.items() if t == "plan")}
@@ -502,40 +635,131 @@ def _etiqueter_signatures_vision(travail: Path, sig_dir: Path) -> int:
         return 0
     if not isinstance(items, list) or not items:
         return 0
-    p_fam = travail / "blocs-familles.csv"
-    existantes = lire_csv(p_fam)
-    vus = {r["sig_id"] for r in existantes}
-    ajout = 0
+    items = [it for it in items if isinstance(it, dict) and str(it.get("sig_id") or "").strip().upper() in sids]   # jamais une règle existante
+    return _ajouter_etiquettes(travail, items, "vision-gemini", "étiqueté par Gemini Vision sur signatures-01.png")["ajoutees"]
+
+
+COLS_FAMILLES = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles",
+                 "portee", "reserve", "origine", "feuilles_auto", "note"]
+
+
+def _ajouter_etiquettes(travail: Path, items: list, origine: str, note: str) -> dict:
+    """Écrit des règles de signatures dans blocs-familles.csv (origine ≠ auto : blocs_familles_auto.py ne les écrase
+    jamais). Une règle existante du même sig_id dont la plage diam_min–diam_max chevauche la nouvelle est remplacée
+    (correction) ; les autres plages restent (S002 sortie data ≤ 6,5 pt ET boîtier DP1 à 16 pt). label IGNORER = vu,
+    pas un appareil."""
     if str(RELEVE) not in sys.path:
         sys.path.insert(0, str(RELEVE))
     from legende import code_attendu
-    cols = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles", "portee", "reserve", "origine", "feuilles_auto", "note"]
-    with open(p_fam, "a", encoding="utf-8", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=cols)
-        for it in items:
-            sid = str(it.get("sig_id") or "").strip()
-            if not sid or sid in vus or not it.get("label"):
-                continue
-            vus.add(sid)
-            ajout += 1
-            w.writerow({
-                "sig_id": sid,
-                "label": str(it.get("label")).upper(),
-                "famille": str(it.get("famille") or "commande").lower(),
-                "forme": str(it.get("forme") or "carre").lower(),
-                "code": (code_attendu(str(it.get("materiel") or it.get("label") or "")) or str(it.get("code") or "M01")).upper(),
-                "materiel": str(it.get("materiel") or it.get("label")).upper(),
-                "legende_no": "",
-                "diam_min": "0",
-                "diam_max": "99",
-                "feuilles": "",
-                "portee": "INSTALLER",
-                "reserve": "",
-                "origine": "vision-gemini",
-                "feuilles_auto": "",
-                "note": "étiqueté par Gemini Vision sur signatures-01.png",
-            })
-    return ajout
+    connus = {r["sig_id"] for r in lire_csv(travail / "blocs-index.csv")}
+    ids = travail / "blocs-ids.json"
+    if ids.exists():
+        connus |= set(json.loads(ids.read_text(encoding="utf-8")).values())
+    p_fam = travail / "blocs-familles.csv"
+    existantes = lire_csv(p_fam)
+    code_de = {r["materiel"]: r["code"] for r in existantes if r.get("code") and r.get("label") != "IGNORER"}
+
+    def code_pour(materiel: str, propose: str) -> str:
+        """Vocabulaire d'abord (contrôle Q14), puis le code lu sur le symbole, puis Mnn libre — jamais un code déjà
+        porté par un autre matériel du dossier (les repères DP1/DP2 se mélangeraient)."""
+        if materiel in code_de:
+            return code_de[materiel]
+        pris = {c for m, c in code_de.items() if m != materiel}
+        for c in (code_attendu(materiel), re.sub(r"[^A-Z0-9]", "", propose.upper())[:4]):
+            if c and c not in pris:
+                break
+        else:
+            c = next(f"M{i:02d}" for i in range(1, 100) if f"M{i:02d}" not in pris)
+        code_de[materiel] = c
+        return c
+
+    nouvelles, refusees = {}, []
+    for it in items if isinstance(items, list) else []:
+        sid = str((it or {}).get("sig_id") or "").strip().upper()
+        label = str(it.get("label") or "").strip().upper()
+        if not sid or sid not in connus or not label:
+            refusees.append({"sig_id": sid, "raison": "sig_id inconnu de blocs-index.csv" if sid else "sig_id vide"} if label
+                            else {"sig_id": sid, "raison": "label vide"})
+            continue
+        materiel = str(it.get("materiel") or label).strip().upper()
+        nouvelles[sid] = {
+            "sig_id": sid, "label": label, "famille": str(it.get("famille") or "commande").strip().lower(),
+            "forme": str(it.get("forme") or "carre").strip().lower(),
+            "code": "" if label == "IGNORER" else code_pour(materiel, str(it.get("code") or "")), "materiel": materiel,
+            "legende_no": str(it.get("legende_no") or ""), "diam_min": str(it.get("diam_min") or "0"),
+            "diam_max": str(it.get("diam_max") or "99"), "feuilles": str(it.get("feuilles") or ""),
+            "portee": str(it.get("portee") or "").upper(), "reserve": str(it.get("reserve") or ""),
+            "origine": origine, "feuilles_auto": "", "note": str(it.get("note") or note)}
+    def chevauche(r: dict, n: dict) -> bool:
+        return float(r.get("diam_min") or 0) <= float(n["diam_max"]) and float(n["diam_min"]) <= float(r.get("diam_max") or 99)
+    gardees = [r for r in existantes if not (r.get("sig_id") in nouvelles and chevauche(r, nouvelles[r["sig_id"]]))]
+    with open(p_fam, "w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=COLS_FAMILLES, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(gardees + list(nouvelles.values()))
+    return {"ajoutees": len(nouvelles), "refusees": refusees, "regles": list(nouvelles.values())}
+
+
+def _signatures_a_etiqueter(d: Path) -> dict:
+    """Ce que le LLM doit regarder quand la bibliothèque ne connaît pas les blocs de ce bureau d'ingénieurs."""
+    p = d / "travail" / "blocs-a-etiqueter.json"
+    inc = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    return {"inconnues": [{k: r.get(k) for k in ("sig_id", "n_plans", "par_feuille", "exemple")} for r in inc.get("inconnues") or []],
+            "ambigues": [r.get("sig_id") for r in inc.get("ambigues") or []],
+            "planches": [f"sortie/signatures/{p.name}" for p in sorted((d / "sortie" / "signatures").glob("signatures-*.png"))]}
+
+
+@mcp.tool()
+def etiqueter_signatures(dossier: str, etiquettes: list[dict], apprendre: bool = True) -> dict:
+    """Étiquette les signatures de blocs CAO inconnues (vues sur sortie/signatures/signatures-NN.png avec voir_image).
+    etiquettes : [{"sig_id": "S002", "label": "APPAREIL NLIGHT DP1", "famille": "commande", "forme": "carre",
+    "materiel": "APPAREIL DE CONTROLE NLIGHT DP1"}, ...] ; facultatif : code, diam_min, diam_max, feuilles, portee,
+    reserve, note. label "IGNORER" pour un bloc qui n'est pas un appareil (fil, trame, texte, numéro de détail).
+    apprendre (défaut oui) : chaque signature encore absente de releve/bibliotheque-blocs.csv y est ajoutée — même
+    bureau d'ingénieurs = mêmes blocs, le prochain dossier sort sans rien étiqueter. Une signature déjà connue de la
+    bibliothèque avec une autre règle n'y est jamais réécrite (la règle reste propre au dossier).
+    Ensuite : relever_automatique(dossier, reprendre=True)."""
+    d = dossier_de(dossier)
+    if not (d / "travail" / "blocs-index.csv").exists():
+        raise ToolError("blocs-index.csv absent : lancer relever_automatique d'abord")
+    res = _ajouter_etiquettes(d / "travail", etiquettes, "llm-mcp", "étiqueté par le LLM client MCP sur les planches de signatures")
+    appris, non_appris = _apprendre(d / "travail", res.pop("regles"), dossier) if apprendre else ([], [])
+    return {**res, "appris_bibliotheque": appris, "non_appris": non_appris,
+            "suite": "relever_automatique(dossier, reprendre=True)"}
+
+
+COLS_BIBLIOTHEQUE = ["signature", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max",
+                     "feuilles_regex", "portee", "tolerance", "source", "note"]
+
+
+def _apprendre(travail: Path, regles: list[dict], dossier: str) -> tuple[list[str], list[dict]]:
+    """Ajoute à la bibliothèque les règles dont la signature y est absente (jamais d'écrasement). Une signature déjà
+    connue (forme générique : un rectangle est un mur chez un bureau, un boîtier DP2 chez un autre) reste une règle du
+    dossier seulement : elle est rendue dans non_appris, à étiqueter de nouveau sur le prochain dossier."""
+    sig_de = {r["sig_id"]: r["signature"] for r in lire_csv(travail / "blocs-index.csv")}
+    ids = travail / "blocs-ids.json"
+    if ids.exists():
+        sig_de.update({v: k for k, v in json.loads(ids.read_text(encoding="utf-8")).items()})
+    connues = {r["signature"] for r in lire_csv(BIBLIOTHEQUE)}
+    nouvelles, non_appris = [], []
+    for r in regles:
+        sg = sig_de.get(r["sig_id"])
+        if not sg or sg in connues:
+            if r["label"] != "IGNORER":
+                non_appris.append({"sig_id": r["sig_id"], "raison": "signature générique déjà dans la bibliothèque "
+                                   "avec une autre règle : règle gardée pour ce dossier seulement"})
+            continue
+        connues.add(sg)
+        nouvelles.append({**{k: r.get(k, "") for k in COLS_BIBLIOTHEQUE}, "signature": sg, "feuilles_regex": "",
+                          "tolerance": "0", "source": f"{dossier} {r['sig_id']} (LLM client MCP)"})
+    if nouvelles:
+        neuf = not BIBLIOTHEQUE.exists()
+        with open(BIBLIOTHEQUE, "a", encoding="utf-8", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=COLS_BIBLIOTHEQUE, extrasaction="ignore")
+            if neuf:
+                w.writeheader()
+            w.writerows(nouvelles)
+    return [r["source"].split()[1] for r in nouvelles], non_appris
 
 
 def _empaqueter_zip_png(travail: Path, sortie: Path, nom: str, rapport: dict) -> dict:
@@ -581,15 +805,94 @@ def _empaqueter_zip_png(travail: Path, sortie: Path, nom: str, rapport: dict) ->
     }
 
 
+_DRIVE_DOSSIER = re.compile(r"/folders/([\w-]{20,})")
+_DRIVE_FICHIER = re.compile(r"(?:/file/d/|/d/|[?&]id=)([\w-]{20,})")
+# jamais la réponse de l'estimateur ni les prix comme entrée de relevé (CLAUDE.md, critère d'acceptation étape 1)
+_EXCLU = re.compile(r"prix|soumission|take ?off|relev|estimat|\.qpl", re.I)
+
+
+def _telecharger_source(url: str, dest: Path) -> list[str]:
+    """Télécharge le PDF (ou les PDF d'un dossier) d'un lien Google Drive public ou d'une URL directe dans dest/."""
+    import requests
+
+    s = requests.Session()
+    cibles = []
+    m = _DRIVE_DOSSIER.search(url)
+    if m and "google.com" in url:
+        from src.apprentissage.gdrive import DossierDrive
+
+        for f in DossierDrive(s).fichiers(m.group(1)):
+            if f["nom"].lower().endswith(".pdf") and not _EXCLU.search(f["chemin"]):
+                cibles.append((f"https://drive.usercontent.google.com/download?id={f['id']}&export=download&confirm=t",
+                               f["nom"]))
+    else:
+        m = _DRIVE_FICHIER.search(url) if "google.com" in url else None
+        cibles.append((f"https://drive.usercontent.google.com/download?id={m.group(1)}&export=download&confirm=t"
+                       if m else url, ""))
+    if not cibles:
+        raise ToolError(f"aucun PDF de plans dans {url}")
+    noms = []
+    for u, nom in cibles:
+        r = s.get(u, timeout=600)
+        r.raise_for_status()
+        if not r.content.startswith(b"%PDF"):
+            raise ToolError(f"{nom or u} n'est pas un PDF lisible (lien privé ? le partager « toute personne disposant "
+                            "du lien »)")
+        if not nom:
+            cd = re.search(r'filename\*?=(?:UTF-8\'\')?"?([^";]+)', r.headers.get("content-disposition", ""))
+            from urllib.parse import unquote
+            nom = unquote(cd.group(1)) if cd else (Path(u.split("?")[0]).name or "plans.pdf")
+        nom = re.sub(r"[^\w.\- ()]", "_", nom)[:120]
+        nom = nom if nom.lower().endswith(".pdf") else nom + ".pdf"
+        if len(r.content) > TAILLE_MAX_DEPOT:
+            raise ToolError(f"{nom} : plus de 200 Mo")
+        (dest / nom).write_bytes(r.content)
+        noms.append(nom)
+    return noms
+
+
+def _jeton(chemin: str) -> str:
+    """Jeton de téléchargement d'un livrable : HMAC de la clé du serveur, la clé elle-même ne sort jamais."""
+    return hmac.new(os.environ.get("ESTIMATEUR_MCP_CLE", "").encode(), chemin.encode(), "sha256").hexdigest()[:32]
+
+
+def _liens(dossier: str, liv: dict) -> dict:
+    """Liens cliquables (ESTIMATEUR_URL_PUBLIQUE) vers le ZIP et le PDF de relevé, pour un Claude distant."""
+    racine = os.environ.get("ESTIMATEUR_URL_PUBLIQUE", "").rstrip("/")
+    if not racine:
+        return {}
+    out = {}
+    for cle, champ in (("lien_zip", "zip"), ("lien_releve_pdf", "releve_pdf")):
+        if liv.get(champ):
+            rel = f"{dossier}/{liv[champ].removeprefix('sortie/')}"
+            out[cle] = f"{racine}/livrables/{rel}?jeton={_jeton(rel)}"
+    return out
+
+
 @mcp.tool()
-def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: str = "", verification_vision: bool = True) -> dict:
+def relever_automatique(dossier: str, url_source: str = "", chemin_source: str = "", feuille_unique: str = "",
+                        verification_vision: bool = False, reprendre: bool = False) -> dict:
     """Pipeline automatique de bout en bout (PDF -> PNG -> relevé des symboles + calque coloré + BOM -> ZIP de PNG + BOM).
     Accepte un PDF ou un dossier de PDFs via `chemin_source` (ou déjà déposé dans `entree/`), prépare les PNG,
     extrait et étiquette les symboles page par page (route blocs CAO + texte, avec repli vision Gemini/NVIDIA),
     génère les calques PNG (<feuille>_annote.png, <feuille>_calque.png, <feuille>_bordereau_01.png) et la BOM,
-    et retourne le chemin du fichier ZIP final prêt à livrer."""
-    prep = preparer_dossier(dossier, chemin_source=chemin_source)
-    d = dossier_de(dossier)
+    et retourne le chemin du fichier ZIP final prêt à livrer.
+    Signatures inconnues de la bibliothèque (autre bureau d'ingénieurs) : la réponse liste `a_etiqueter` et les
+    planches ; les regarder (voir_image), appeler etiqueter_signatures, puis relancer avec reprendre=True (garde la
+    préparation et les blocs déjà extraits, refait seulement familles → relevé → livrables).
+    url_source : lien du PDF ou du DOSSIER de plans (Google Drive « toute personne disposant du lien », ou URL
+    directe) — le serveur le télécharge lui-même ; c'est l'entrée normale depuis un Claude distant.
+    verification_vision (défaut non) : modèles de vision Gemini/NVIDIA du serveur ; non déterministe, donc hors du
+    parcours standard (même PDF = même résultat, quel que soit le Claude qui appelle)."""
+    d = dossier_de(dossier, creer=not reprendre)
+    if not reprendre:
+        if url_source:
+            shutil.rmtree(d / "entree", ignore_errors=True)
+            (d / "entree").mkdir(parents=True)
+            _telecharger_source(url_source, d / "entree")
+        preparer_dossier(dossier, chemin_source=chemin_source)
+    elif not (d / "travail" / "blocs-index.csv").exists():
+        raise ToolError("rien à reprendre : lancer relever_automatique sans reprendre d'abord")
     travail = d / "travail"
     sortie = d / "sortie"
     pdfs = sorted((d / "entree").glob("*.pdf"))
@@ -607,12 +910,26 @@ def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: s
             w.writeheader()
             w.writerows(gardees)
     sig_dir = sortie / "signatures"
-    lancer("blocs_vectoriels.py", str(travail), str(pdf_princ))
-    lancer("blocs_vignettes.py", str(travail), str(pdf_princ), str(sig_dir), "--min", "1")
-    lancer("blocs_familles_auto.py", str(travail))
-    _etiqueter_signatures_vision(travail, sig_dir)
+    if not reprendre:
+        lancer("blocs_vectoriels.py", str(travail), str(pdf_princ))
+        lancer("blocs_vignettes.py", str(travail), str(pdf_princ), str(sig_dir), "--min", "1")
+    lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
+    vision = _etiqueter_signatures_vision(travail, sig_dir) if verification_vision else 0
+    if vision:   # nouvelles règles : les inconnues restantes sont recalculées
+        lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
     lancer("blocs_vers_releve.py", str(travail), str(pdf_princ), "--modele", "automatique-mcp")
+    a_etiqueter = _signatures_a_etiqueter(d)
     liv = produire_livrables(dossier, nom=dossier)
+    liv["a_etiqueter"] = a_etiqueter
+    liv["etiquetees_vision"] = vision
+    if not liv.get("produit"):
+        liv["suite"] = ("Aucun bloc reconnu par la bibliothèque : voir_image chaque planche de a_etiqueter.planches, "
+                        "etiqueter_signatures(dossier, [...]) pour les vrais appareils (IGNORER pour le reste), "
+                        "puis relever_automatique(dossier, reprendre=True).")
+        return liv
+    if a_etiqueter["inconnues"]:
+        liv["suite"] = ("Livré avec des signatures non étiquetées (en réserve R-008) : etiqueter_signatures puis "
+                        "relever_automatique(dossier, reprendre=True) pour les compter.")
     if verification_vision and (os.environ.get("GEMINI_API_KEY") or os.environ.get("NVIDIA_API_KEY")):
         try:
             lancer("verif_visuelle.py", str(sortie), dossier, "--max-marques", "25", codes_ok=(0, 2, 4))
@@ -620,6 +937,7 @@ def relever_automatique(dossier: str, chemin_source: str = "", feuille_unique: s
             liv.update(_empaqueter_zip_png(travail, sortie, dossier, rapport))
         except Exception as e:
             liv["verification_vision_note"] = str(e)[:300]
+    liv.update(_liens(dossier, liv))
     return liv
 
 
@@ -776,20 +1094,44 @@ def prompt_releve(dossier: str) -> str:
 
 # ---------------------------------------------------------------- transport HTTP protégé
 class CleBearer:
-    """Middleware ASGI : exige « Authorization: Bearer <ESTIMATEUR_MCP_CLE> » sur chaque requête HTTP."""
+    """Middleware ASGI : exige la clé ESTIMATEUR_MCP_CLE, en « Authorization: Bearer <clé> » ou dans l'URL
+    (« /mcp?cle=<clé> » : le connecteur personnalisé de claude.ai n'envoie pas d'en-tête). /livrables/<dossier>/<fichier>
+    sert un fichier de sortie/ sur présentation de son jeton (lien rendu par relever_automatique)."""
 
     def __init__(self, app, cle: str):
         self.app, self.cle = app, cle.encode()
 
+    async def _refus(self, send, statut=401, corps=b'{"erreur":"cle absente ou invalide"}'):
+        await send({"type": "http.response.start", "status": statut,
+                    "headers": [(b"content-type", b"application/json"), (b"www-authenticate", b"Bearer")]})
+        await send({"type": "http.response.body", "body": corps})
+
     async def __call__(self, scope, receive, send):
         if scope["type"] == "http":
+            from urllib.parse import parse_qs, unquote
+
+            qs = parse_qs((scope.get("query_string") or b"").decode())
+            if scope["path"].startswith("/livrables/"):
+                rel = unquote(scope["path"][len("/livrables/"):])
+                if not hmac.compare_digest((qs.get("jeton") or [""])[0], _jeton(rel)) or "/" not in rel:
+                    return await self._refus(send, 403, b'{"erreur":"jeton invalide"}')
+                dossier, fichier = rel.split("/", 1)
+                try:
+                    p = sous_chemin(dossier_de(dossier) / "sortie", fichier)
+                except ToolError:
+                    p = None
+                if p is None or not p.is_file():
+                    return await self._refus(send, 404, b'{"erreur":"introuvable"}')
+                await send({"type": "http.response.start", "status": 200, "headers": [
+                    (b"content-type", b"application/zip" if p.suffix == ".zip" else b"application/pdf"),
+                    (b"content-disposition", f'attachment; filename="{p.name}"'.encode())]})
+                await send({"type": "http.response.body", "body": p.read_bytes()})
+                return
             entetes = dict(scope.get("headers") or [])
             fourni = entetes.get(b"authorization", b"")
-            if not (fourni.startswith(b"Bearer ") and hmac.compare_digest(fourni[7:].strip(), self.cle)):
-                await send({"type": "http.response.start", "status": 401,
-                            "headers": [(b"content-type", b"application/json"), (b"www-authenticate", b"Bearer")]})
-                await send({"type": "http.response.body", "body": b'{"erreur":"cle absente ou invalide"}'})
-                return
+            fourni = fourni[7:].strip() if fourni.startswith(b"Bearer ") else (qs.get("cle") or [""])[0].encode()
+            if self.cle and not hmac.compare_digest(fourni, self.cle):
+                return await self._refus(send)
         await self.app(scope, receive, send)
 
 
@@ -804,7 +1146,7 @@ def application_http(hote: str = "127.0.0.1", hotes_permis: list[str] | None = N
     securite = TransportSecuritySettings(enable_dns_rebinding_protection=True, allowed_hosts=permis,
                                          allowed_origins=[f"{s}://{h}" for h in permis for s in ("http", "https")])
     app = mcp.streamable_http_app(host=hote, transport_security=securite)
-    return CleBearer(app, cle) if cle else app
+    return CleBearer(app, cle)   # sans clé (hôte local) : seulement la route /livrables
 
 
 def main(argv: list[str] | None = None) -> int:

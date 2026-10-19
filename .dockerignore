@@ -1,0 +1,7 @@
+.git
+dossiers
+travail-mcp
+INBOX
+OUTBOX
+**/__pycache__
+.pytest_cache
