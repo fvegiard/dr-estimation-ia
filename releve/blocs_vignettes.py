@@ -20,6 +20,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from commun import PagesFeuilles  # noqa: E402
 
 
+def _pixmap_cache(page, cache, *, matrix, clip):
+    """Réutilise l'interprétation de chaque page source, immuable pendant cette passe."""
+    cle = (page.parent, page.number)
+    if cle not in cache:
+        cache[cle] = page.get_displaylist(annots=True)
+    return cache[cle].get_pixmap(matrix=matrix, clip=clip)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("workdir"); ap.add_argument("pdf"); ap.add_argument("sortie")
@@ -65,6 +73,7 @@ def main():
     anciens.update(ids)
     json.dump(anciens, open(p_ids, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
     pages = PagesFeuilles(work, a.pdf)      # chaque feuille dans son document source (revue Codex PR #28)
+    displaylists = {}
     try:
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 13)
         fontb = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 14)
@@ -82,7 +91,7 @@ def main():
             # instance « la plus centrale » de la feuille qui en a le plus
             par = defaultdict(int)
             for b in ex: par[b["feuille"]] += 1
-            f_best = max(par, key=par.get)
+            f_best = max(par, key=par.__getitem__)
             cand = [b for b in ex if b["feuille"] == f_best]
             cx = sum(float(b["x_pt"]) for b in cand) / len(cand); cy = sum(float(b["y_pt"]) for b in cand) / len(cand)
             b = min(cand, key=lambda b: (float(b["x_pt"]) - cx) ** 2 + (float(b["y_pt"]) - cy) ** 2)
@@ -90,7 +99,7 @@ def main():
             x, y = float(b["x_pt"]), float(b["y_pt"]); t = max(a.taille, float(b["diametre_pt"]) * 1.6)
             z = tw / t
             clip = pymupdf.Rect(x - t / 2, y - t / 2, x + t / 2, y + t / 2) * page.rotation_matrix     # blocs = repère non tourné ; pixmap = repère affiché
-            pm = page.get_pixmap(matrix=pymupdf.Matrix(z, z), clip=clip)
+            pm = _pixmap_cache(page, displaylists, matrix=pymupdf.Matrix(z, z), clip=clip)
             v = Image.frombytes("RGB", (pm.width, pm.height), pm.samples).resize((tw, tw))
             vd = ImageDraw.Draw(v)
             w, h = float(b["w_pt"]) * z, float(b["h_pt"]) * z
