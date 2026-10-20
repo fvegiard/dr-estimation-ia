@@ -576,70 +576,32 @@ def verifier_releve(dossier: str) -> dict:
 
 
 def _etiqueter_signatures_vision(travail: Path, sig_dir: Path) -> int:
-    """Quand blocs_familles_auto laisse des signatures inconnues et que GEMINI_API_KEY (ou auth.json) est disponible,
-    demande à Gemini Vision (gemini-3.8-flash) d'identifier les symboles d'appareils sur signatures-*.png et complète
-    blocs-familles.csv."""
+    """Signatures inconnues → vision (Gemini ou NVIDIA selon la clé présente dans l'environnement ; releve/vision_signatures.py
+    donne les règles). Toutes les planches sont lues. Chaque planche est journalisée dans travail/vision.log (aucune
+    clé, hôte refusé, réponse tronquée : jamais silencieux). Rend le nombre de règles ajoutées."""
     p_inc = travail / "blocs-a-etiqueter.json"
     if not p_inc.exists():
         return 0
-    inc = json.loads(p_inc.read_text(encoding="utf-8")).get("inconnues") or []
-    if not inc:
-        return 0
+    inc = [r["sig_id"] for r in json.loads(p_inc.read_text(encoding="utf-8")).get("inconnues") or []]
     planches = sorted(sig_dir.glob("signatures-*.png"))
-    if not planches:
+    if not inc or not planches:
         return 0
-    cle = os.environ.get("GEMINI_API_KEY") or ""
-    if not cle:
-        p_auth = Path.home() / ".omo" / "agent" / "auth.json"
-        if p_auth.exists():
-            try:
-                cle = json.loads(p_auth.read_text(encoding="utf-8")).get("google", {}).get("key", "")
-            except Exception:
-                pass
-    if not cle:
+    if str(RELEVE) not in sys.path:
+        sys.path.insert(0, str(RELEVE))
+    import vision_signatures as vs
+    prov = vs.fournisseur()
+    if not prov:
+        vs.ecrire_journal(travail, [{"erreur": "aucune clé de vision : définir GEMINI_API_KEY ou NVIDIA_API_KEY dans l'environnement "
+                                              "(ESTIMATEUR_VISION=gemini|nvidia|off pour forcer)", "inconnues": len(inc)}])
         return 0
-    import urllib.request
-    b64 = base64.b64encode(planches[0].read_bytes()).decode("ascii")
-    sids = [r["sig_id"] for r in inc[:15]]
-    prompt = (
-        f"Voici la planche de vignettes de symboles CAO ({', '.join(sids)}) extraits d'un plan électrique. "
-        "Pour chaque vignette (S001, S002...) qui montre un VRAI boîtier ou symbole d'appareil électrique (par ex. boîtier "
-        "avec code DP1, DP2, PP1, SO3, SO4, SW1, SW5, prise, luminaire, détecteur — PAS un bout de câble, ni un numéro "
-        "de détail dans un grand cercle, ni une légende de fil), renvoie un tableau JSON d'objets : "
-        "[{\"sig_id\": \"S002\", \"label\": \"APPAREIL NLIGHT DP1\", \"famille\": \"commande\", \"forme\": \"carre\", "
-        "\"code\": \"DP1\", \"materiel\": \"APPAREIL DE CONTROLE NLIGHT DP1\"}]. Réponds UNIQUEMENT par le tableau JSON."
-    )
-    corps = {
-        "model": "gemini-3.8-flash",
-        # 16000 et non 4000 : la réflexion du modèle compte dans max_tokens ; à 4000 la réponse revenait tronquée
-        # (finish_reason « length », JSON illisible) et l'étiquetage rendait 0 en silence (TEST-JO-02, 2026-10-19).
-        "max_tokens": 16000,
-        "temperature": 0,
-        "messages": [{"role": "user", "content": [
-            {"type": "text", "text": prompt},
-            {"type": "image_url", "image_url": {"url": "data:image/png;base64," + b64}},
-        ]}],
-    }
-    try:
-        req = urllib.request.Request(
-            "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-            data=json.dumps(corps).encode("utf-8"),
-            headers={"Authorization": "Bearer " + cle, "Content-Type": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = json.load(resp)
-        texte = data["choices"][0]["message"]["content"] or ""
-        m = re.search(r"\[.*\]", texte, re.S)
-        if not m:
-            raise ValueError(f"pas de tableau JSON (finish_reason={data['choices'][0].get('finish_reason')}) : {texte[:300]!r}")
-        items = json.loads(m.group(0))
-    except Exception as e:   # jamais silencieux : la raison reste lisible dans travail/vision-gemini.log
-        (travail / "vision-gemini.log").write_text(type(e).__name__ + ": " + str(e)[:1500], encoding="utf-8")
+    par = vs.signatures_par_planche(travail / "blocs-index.csv", inc, len(planches))
+    journal: list[dict] = []
+    items = vs.etiqueter({planches[k - 1]: sigs for k, sigs in sorted(par.items())}, prov, journal,
+                         os.environ.get("ESTIMATEUR_VISION_MODELE_" + prov.upper(), ""))
+    vs.ecrire_journal(travail, journal)
+    if not items:
         return 0
-    if not isinstance(items, list) or not items:
-        return 0
-    items = [it for it in items if isinstance(it, dict) and str(it.get("sig_id") or "").strip().upper() in sids]   # jamais une règle existante
-    return _ajouter_etiquettes(travail, items, "vision-gemini", "étiqueté par Gemini Vision sur signatures-01.png")["ajoutees"]
+    return _ajouter_etiquettes(travail, items, "vision-" + prov, "étiqueté par " + prov + " sur les planches de signatures")["ajoutees"]
 
 
 COLS_FAMILLES = ["sig_id", "label", "famille", "forme", "code", "materiel", "legende_no", "diam_min", "diam_max", "feuilles",
@@ -874,7 +836,7 @@ def _liens(dossier: str, liv: dict) -> dict:
 
 @mcp.tool()
 def relever_automatique(dossier: str, url_source: str = "", chemin_source: str = "", feuille_unique: str = "",
-                        verification_vision: bool = False, reprendre: bool = False) -> dict:
+                        verification_vision: bool = False, reprendre: bool = False, etiquetage_vision: bool = True) -> dict:
     """Pipeline automatique de bout en bout (PDF -> PNG -> relevé des symboles + calque coloré + BOM -> ZIP de PNG + BOM).
     Accepte un PDF ou un dossier de PDFs via `chemin_source` (ou déjà déposé dans `entree/`), prépare les PNG,
     extrait et étiquette les symboles page par page (route blocs CAO + texte, avec repli vision Gemini/NVIDIA),
@@ -885,8 +847,12 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
     préparation et les blocs déjà extraits, refait seulement familles → relevé → livrables).
     url_source : lien du PDF ou du DOSSIER de plans (Google Drive « toute personne disposant du lien », ou URL
     directe) — le serveur le télécharge lui-même ; c'est l'entrée normale depuis un Claude distant.
-    verification_vision (défaut non) : modèles de vision Gemini/NVIDIA du serveur ; non déterministe, donc hors du
-    parcours standard (même PDF = même résultat, quel que soit le Claude qui appelle)."""
+    etiquetage_vision (défaut OUI) : si des signatures restent inconnues après la bibliothèque et la lecture des repères
+    dans les boîtes, un modèle de vision (Gemini si GEMINI_API_KEY, sinon NVIDIA si NVIDIA_API_KEY ; ESTIMATEUR_VISION
+    force ou coupe) lit TOUTES les planches et étiquette les appareils ; le détail de chaque appel est dans
+    `vision_log` (aucune clé, hôte refusé, réponse tronquée : jamais silencieux). Les règles obtenues restent propres
+    au dossier : elles n'entrent pas dans la bibliothèque sans étiqueter_signatures.
+    verification_vision (défaut non) : contrôle visuel du rendu par un modèle de vision, en plus ; non déterministe."""
     d = dossier_de(dossier, creer=not reprendre)
     if not reprendre:
         if url_source:
@@ -918,7 +884,7 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
         lancer("blocs_vignettes.py", str(travail), str(pdf_princ), str(sig_dir), "--min", "1")
     lancer("blocs_etiquettes_texte.py", str(travail), str(pdf_princ), "--bibliotheque", str(BIBLIOTHEQUE))
     lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
-    vision = _etiqueter_signatures_vision(travail, sig_dir) if verification_vision else 0
+    vision = _etiqueter_signatures_vision(travail, sig_dir) if etiquetage_vision else 0
     if vision:   # nouvelles règles : les inconnues restantes sont recalculées
         lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
     lancer("blocs_vers_releve.py", str(travail), str(pdf_princ), "--modele", "automatique-mcp")
@@ -926,6 +892,9 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
     liv = produire_livrables(dossier, nom=dossier)
     liv["a_etiqueter"] = a_etiqueter
     liv["etiquetees_vision"] = vision
+    p_log = travail / "vision.log"
+    if p_log.exists():
+        liv["vision_log"] = [json.loads(l) for l in p_log.read_text(encoding="utf-8").splitlines() if l.strip()]
     if not liv.get("produit"):
         liv["suite"] = ("Aucun bloc reconnu par la bibliothèque : voir_image chaque planche de a_etiqueter.planches, "
                         "etiqueter_signatures(dossier, [...]) pour les vrais appareils (IGNORER pour le reste), "
