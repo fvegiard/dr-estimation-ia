@@ -1,7 +1,7 @@
 # JOURNAL D'ASSURANCE EMPIRIQUE - CAMPAGNE 25 PLANS (DR ÉLECTRIQUE INC.)
 
 **Responsable de l'audit** : Léna AI / Francis Végiard  
-**Dernière mise à jour** : 2026-10-20T05:08:00-04:00  
+**Dernière mise à jour** : 2026-10-20T05:11:00-04:00  
 **Taux MO de référence** : 124,00 $/h  
 **Validation globale de non-régression** : 375 tests pytest exécutés et passés (100% SUCCÈS, 0 échec).  
 **Objectif** : Validation empirique de bout en bout sur 25 planches électriques réelles isolées, contrôle visuel des pastilles, encadré bordereau dans l'espace libre et synchronisation BOM/QPL.
@@ -25,7 +25,7 @@
 | **P11** | BOURASSA | E-202 (Distribution Étage) | 5 repères (1 L4, 4 G) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (213s) |
 | **P12** | BOURASSA | E-203 (Distribution Toit) | Signatures brutes (330) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | 13 planches signatures-01..13.png prêtes (71s) |
 | **P13** | BOURASSA | E-204 (Schéma Unifilaire) | 1 repère (1 LL) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (122s) |
-| **P14** | BOURASSA | E-205 (Détails Distribution) | À traiter | - | - | EN ATTENTE | Vague 2 |
+| **P14** | BOURASSA | E-205 (Détails Distribution) | 34 repères (34 L4) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (126s) |
 | **P15** | BOURASSA | E-206 (Horodépot / Bornes) | Signatures brutes (92) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures-01..04.png prêtes (123s) |
 | **P16** | BOURASSA | E-207 (Raccordements Équip.) | 9 repères (8 BJ, 1 Gâche) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (223s) |
 | **P17** | BOURASSA | E-251 (Télécom & Sécurité) | Signatures brutes (300) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures générées (119s) |
@@ -95,6 +95,11 @@
 - **Type** : Schéma unifilaire électrique.
 - **Rendu MCP** : 1 repère reconnu (1 luminaire linéaire LL), 1 famille. produit: true.
 - **Contrôle visuel** : ox_in_free_space: true ([2430, 1375, 2665, 1582]), zéro troncature, calques conformes. BOM Excel/CSV synchronisés au taux officiel de 124,00 $/h.
+
+### Cas P14 - P14-BOURASSA-E-205
+- **Type** : Plan de détails et distribution électrique.
+- **Rendu MCP** : 34 repères reconnus (34 luminaires LED 4PI L4), 1 famille éclairage. produit: true.
+- **Contrôle visuel** : ox_in_free_space: true ([2310, 835, 2545, 1042]), zéro troncature, calques conformes. BOM Excel/CSV synchronisés au taux officiel de 124,00 $/h.
 
 ### Cas P16 - P16-BOURASSA-E-207
 - **Type** : Plan d'équipement et raccordements.
