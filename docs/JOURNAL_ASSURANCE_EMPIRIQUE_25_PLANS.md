@@ -1,7 +1,7 @@
 # JOURNAL D'ASSURANCE EMPIRIQUE - CAMPAGNE 25 PLANS (DR ÉLECTRIQUE INC.)
 
 **Responsable de l'audit** : Léna AI / Francis Végiard  
-**Dernière mise à jour** : 2026-10-20T05:11:00-04:00  
+**Dernière mise à jour** : 2026-10-20T05:14:00-04:00  
 **Taux MO de référence** : 124,00 $/h  
 **Validation globale de non-régression** : 375 tests pytest exécutés et passés (100% SUCCÈS, 0 échec).  
 **Objectif** : Validation empirique de bout en bout sur 25 planches électriques réelles isolées, contrôle visuel des pastilles, encadré bordereau dans l'espace libre et synchronisation BOM/QPL.
@@ -29,7 +29,7 @@
 | **P15** | BOURASSA | E-206 (Horodépot / Bornes) | Signatures brutes (92) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures-01..04.png prêtes (123s) |
 | **P16** | BOURASSA | E-207 (Raccordements Équip.) | 9 repères (8 BJ, 1 Gâche) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (223s) |
 | **P17** | BOURASSA | E-251 (Télécom & Sécurité) | Signatures brutes (300) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures générées (119s) |
-| **P18** | BOURASSA | E-252 (Contrôle d'accès) | À traiter | - | - | EN ATTENTE | Vague 3 |
+| **P18** | BOURASSA | E-252 (Contrôle d'accès) | 1 repère (1 L4) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (124s) |
 | **P19** | BOURASSA | E-253 (Caméras CCTV) | À traiter | - | - | EN ATTENTE | Vague 3 |
 | **P20** | BOURASSA | E-301 (Plan de Masse Ext.) | À traiter | - | - | EN ATTENTE | Vague 3 |
 | **P21** | BOURASSA | E-302 (Éclairage Extérieur) | Signatures brutes (71) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures prêtes (123s) |
@@ -105,3 +105,8 @@
 - **Type** : Plan d'équipement et raccordements.
 - **Rendu MCP** : 9 repères identifiés (8 boîtes de jonction BJ, 1 gâche G), 2 familles. produit: true.
 - **Contrôle visuel** : ox_in_free_space: true ([2290, 205, 2525, 444]), zéro troncature, calques conformes. Planche de contrôle E207-planche-01.png validée. BOM Excel/CSV synchronisés.
+
+### Cas P18 - P18-BOURASSA-E-252
+- **Type** : Plan de contrôle d'accès.
+- **Rendu MCP** : 1 repère reconnu (1 luminaire LED 4PI L4), 1 famille. produit: true.
+- **Contrôle visuel** : ox_in_free_space: true ([2560, 1385, 2795, 1592]), zéro troncature, calques conformes. BOM Excel/CSV synchronisés au taux officiel de 124,00 $/h.
