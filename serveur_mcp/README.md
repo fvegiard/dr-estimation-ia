@@ -97,6 +97,21 @@ Plan d'un **bureau d'ingénieurs encore inconnu** (blocs absents de la biblioth�
 Penser à committer `releve/bibliotheque-blocs.csv` après un nouveau bureau. `ESTIMATEUR_BIBLIOTHEQUE` : autre
 fichier de bibliothèque (essais).
 
+### Vision par API (Gemini ou NVIDIA) — automatique quand une clé est présente
+Après la bibliothèque et la lecture des repères dans les boîtes (`releve/blocs_etiquettes_texte.py`), les signatures encore
+inconnues sont envoyées à un modèle de vision (`releve/vision_signatures.py`), **toutes les planches**, une par appel.
+Rien à appeler : `relever_automatique` le fait seul (`etiquetage_vision=True` par défaut). À mettre dans les réglages de
+l'environnement (jamais dans le dépôt ni dans le chat) :
+- `GEMINI_API_KEY` (ou `GOOGLE_API_KEY`) — modèle `gemini-3.8-flash`, schéma JSON, réflexion LOW ;
+- `NVIDIA_API_KEY` (`nvapi-…`) — modèle `nvidia/nemotron-3.5-super-vl-120b-a12b`, réflexion coupée ; autoriser l'hôte
+  `integrate.api.nvidia.com` dans le réseau de l'environnement ;
+- `ESTIMATEUR_VISION=gemini|nvidia|off` force ou coupe ; `ESTIMATEUR_VISION_MODELE_GEMINI` / `_NVIDIA` changent le modèle.
+
+Chaque appel est journalisé dans `travail/vision.log` et dans `vision_log` de la réponse (aucune clé, hôte refusé, réponse
+tronquée : jamais silencieux). Les règles obtenues restent propres au dossier ; elles n'entrent dans la bibliothèque que par
+`etiqueter_signatures`. **Non vérifié en réel le 2026-10-20** : aucune clé dans la session et NVIDIA refusé par le réseau ;
+seuls le transport simulé et le filtrage des réponses sont testés (`tests/test_vision_signatures.py`).
+
 ## Déroulement manuel (ce que fait le LLM)
 
 1. `deposer_fichier` (base64) ou `preparer_dossier(chemin_source=…)` en local → `preparer_dossier`.

@@ -299,6 +299,19 @@ def main():
                 nom[r["label"]] = {"label": r["label"], "famille": r["famille"], "forme": r["forme"], "rgb": "", "jeton_regex": "",
                                    "description": r["materiel"], "source": "E-001 légende ; instances manuelles", "code": r["code"],
                                    "materiel": r["materiel"], "portee": r["portee"], "modele": "", "prescription": "", "discipline": "electricite", "legende": r["legende_no"]}
+    # 3b) appareils dont le repère est écrit dans la boîte (blocs_etiquettes_texte.py) : coordonnées de la page source,
+    # donc converties plus bas comme les blocs ; un repère = une famille, matériel = texte lu sous la boîte
+    p_et = os.path.join(work, "blocs-etiquettes-auto.csv")
+    if os.path.exists(p_et):
+        for r in csv.DictReader(open(p_et, encoding="utf-8")):
+            occ.append({"feuille": r["feuille"], "label": r["label"], "x_pt": r["x_pt"], "y_pt": r["y_pt"], "source": "visuel",
+                        "note": r["note"], "designation": r["designation"], "portee": r["portee"], "modele": "", "reserve": r["reserve"],
+                        "x0_pt": r["x0_pt"], "y0_pt": r["y0_pt"], "x1_pt": r["x1_pt"], "y1_pt": r["y1_pt"], "angle_deg": "0.0", "rayon_pt": ""})
+            if r["label"] not in nom:
+                mat = r["materiel"] or r["label"]
+                nom[r["label"]] = {"label": r["label"], "famille": "autre", "forme": "carre", "rgb": "", "jeton_regex": "",
+                                   "description": mat, "source": "repère lu dans la boîte sur le plan", "code": r["label"],
+                                   "materiel": mat, "portee": r["portee"], "modele": "", "prescription": "", "discipline": "electricite", "legende": ""}
     # Pages tournées (Rotate 90/270) : blocs, tracés et mots sont dans le repère NON tourné ; le relevé, les rasters de
     # prepare.py et le rendu sont dans le repère AFFICHÉ → conversion de chaque occurrence issue des blocs (centre, boîte
     # tournée recalculée sur ses 4 coins) ; les instances manuelles (`blocs-instances.csv`) sont déjà saisies sur les

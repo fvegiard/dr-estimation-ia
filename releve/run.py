@@ -404,6 +404,7 @@ def process(arg, reprendre=False):
                 # chaque feuille est lue dans travail/feuilles/<F>.pdf, donc dans SON document source (commun.PagesFeuilles).
                 for cmd, nom in ((["uv", "run", "releve/blocs_vectoriels.py", workdir, pdf], "blocs_vectoriels"),
                                  (["uv", "run", "releve/blocs_vignettes.py", workdir, pdf, sig, "--min", "3"], "blocs_vignettes"),
+                                 (["uv", "run", "releve/blocs_etiquettes_texte.py", workdir, pdf], "blocs_etiquettes_texte"),
                                  (["uv", "run", "releve/blocs_familles_auto.py", workdir], "blocs_familles_auto"),
                                  (["uv", "run", "releve/blocs_vers_releve.py", workdir, pdf, "--modele", os.environ.get("RELEVE_MODELE_OBSERVE", "bibliothèque de blocs (déterministe)")], "blocs_vers_releve")):
                     t = time.time(); code, out = run(cmd, cwd=REPO, log_path=log_path)
