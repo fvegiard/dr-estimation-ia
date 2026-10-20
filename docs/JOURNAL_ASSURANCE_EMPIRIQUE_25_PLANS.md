@@ -1,7 +1,7 @@
 # JOURNAL D'ASSURANCE EMPIRIQUE - CAMPAGNE 25 PLANS (DR ÉLECTRIQUE INC.)
 
 **Responsable de l'audit** : Léna AI / Francis Végiard  
-**Dernière mise à jour** : 2026-10-20T04:44:00-04:00  
+**Dernière mise à jour** : 2026-10-20T04:48:00-04:00  
 **Taux MO de référence** : 124,00 $/h  
 **Objectif** : Validation empirique de bout en bout sur 25 planches électriques réelles isolées, contrôle visuel des pastilles, encadré bordereau dans l'espace libre et synchronisation BOM/QPL.
 
@@ -21,7 +21,7 @@
 | **P08** | BOURASSA | E-152 (Alarme Incendie Étage) | À traiter | - | - | EN ATTENTE | Vague 1 |
 | **P09** | BOURASSA | E-153 (Réseau Incendie) | 1 repère | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (225s) |
 | **P10** | BOURASSA | E-201 (Distribution RDC) | Signatures brutes (368) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures générées (127s) |
-| **P11** | BOURASSA | E-202 (Distribution Étage) | À traiter | - | - | EN ATTENTE | Vague 2 |
+| **P11** | BOURASSA | E-202 (Distribution Étage) | 5 repères (1 L4, 4 G) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (213s) |
 | **P12** | BOURASSA | E-203 (Distribution Toit) | À traiter | - | - | EN ATTENTE | Vague 2 |
 | **P13** | BOURASSA | E-204 (Schéma Unifilaire) | À traiter | - | - | EN ATTENTE | Vague 2 |
 | **P14** | BOURASSA | E-205 (Détails Distribution) | À traiter | - | - | EN ATTENTE | Vague 2 |
@@ -34,7 +34,7 @@
 | **P21** | BOURASSA | E-302 (Éclairage Extérieur) | Signatures brutes (71) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures prêtes (123s) |
 | **P22** | CAMPUS MIL | page-1 (Tracé MT 25kV) | 0 (tracé raster) | Conforme | Conforme | **SUCCÈS (0 err)** | Analyse raster MT complétée (124s) |
 | **P23** | CAMPUS MIL | page-2 (Profils Tranchées MT) | 0 (tracé raster) | Conforme | Conforme | **SUCCÈS (0 err)** | Analyse profils MT complétée (126s) |
-| **P24** | CAMPUS MIL | E-100B (Jonctions 25kV Pav. C/D) | À traiter | - | - | EN ATTENTE | Vague 4 |
+| **P24** | CAMPUS MIL | E-100B (Jonctions 25kV Pav. C/D) | 5 signatures isolées | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Raccordements 25kV Pavillons C/D (116s) |
 | **P25** | SUN LIFE | E003 (Opérateurs Portes 9-10) | À traiter | - | - | EN ATTENTE | Vague 4 |
 
 ---
@@ -64,6 +64,11 @@
 - **Type** : Plan d'alarme incendie réseau.
 - **Rendu MCP** : 1 repère, 1 famille. produit: true.
 - **Contrôle visuel** : ox_in_free_space: true. BOM Excel et CSV synchronisés.
+
+### Cas P11 - P11-BOURASSA-E-202
+- **Type** : Plan de distribution électrique étage.
+- **Rendu MCP** : 5 repères identifiés (1 luminaire LED 4PI L4, 4 gâches G), 2 familles. produit: true.
+- **Contrôle visuel** : ox_in_free_space: true ([2515, 1445, 2750, 1684]), zéro troncature, calques conformes. Planche de contrôle E202-planche-01.png validée. BOM Excel/CSV synchronisés.
 
 ### Cas P16 - P16-BOURASSA-E-207
 - **Type** : Plan d'équipement et raccordements.
