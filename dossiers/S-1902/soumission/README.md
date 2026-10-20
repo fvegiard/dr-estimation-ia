@@ -8,13 +8,15 @@ Dossier d'évaluation : la soumission produite avec Claude est comparée à cell
 |---|---|
 | `chiffrage_dupuis.py` → `chiffrage_dupuis.json` | modèle de chiffrage ligne par ligne (quantités, prix d'assemblage et temps Dupuis, lots) |
 | `soumission.json` | contenu de la soumission (client, détails, ventilation par article, travaux, prix séparés, exclusions, signataire) |
-| `S-1902_Chiffrage_methode_Dupuis.xlsx` | classeur imprimable (Sommaire / Détail / Par article), 179 formules |
+| `S-1902_Chiffrage_methode_Dupuis.xlsx` | classeur imprimable (Sommaire 1 page / Détail / Par article), 177 formules |
 | `Soumission_S-1902_Georgette-Lepage.pdf` | soumission au gabarit DR, 3 pages |
+| `S-1902_Dossier_complet.pdf` | soumission + chiffrage imprimable en un seul PDF lettre (9 p.), sans les plans |
 | `S-1902_Chiffrage_p*.png` | aperçus regardés avant émission |
 
-**Prix soumis : 183 000 $ avant taxes** (TPS 9 150 $, TVQ 18 254,25 $, 210 404,25 $ taxes incluses) — 990 h chargées × 85 $/h + 62 962,68 $
-matériel/lots = 147 112,68 $ (sommaire ACCEO) × 1,244. Prix séparé PS-1 parasismique 8 058 $. Validité 30 jours.
+**Prix soumis : 194 000 $ avant taxes** (TPS 9 700 $, TVQ 19 351,50 $, 223 051,50 $ taxes incluses) — 1 050 h chargées × 85 $/h + 66 649,11 $
+matériel/lots = 155 899,11 $ (sommaire ACCEO) × 1,244 = 193 938 → 194 000 $. Prix séparé PS-1 parasismique 8 058 $. Validité 30 jours.
 
 Sources du chiffrage : `../releve.xlsx` et `../Plans-annotes.pdf` (relevé 2026-10-17, 645 repères), `../entree/reference-Estimation_2.xlsx`
 (quantités hors plan et liste Lumen du 2026-10-07), `../../../prix/dupuis/` (catalogue Dupuis), `../../../outils/soumission/README.md` (méthode).
-Historique des prix : Estimation_2 Léna 2026-10-08 = 112 381,39 $ (sans marge) ; v2 2026-10-20 midi = 158 296 $ ; v3 méthode Dupuis = 183 000 $.
+Historique des prix : Estimation_2 Léna 2026-10-08 = 112 381,39 $ (sans marge) ; v2 2026-10-20 midi = 158 296 $ ; v3 méthode Dupuis avec
+médianes de conduits = 183 000 $ ; v4 (gelée) = dernières valeurs du catalogue = 194 000 $.

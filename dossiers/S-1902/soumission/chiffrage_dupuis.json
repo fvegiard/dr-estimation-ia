@@ -1,10 +1,10 @@
 {
  "taux": 85.0,
- "materiel": 62962.65,
- "heures_relevees": 980.775,
- "heures_chargees": 990,
- "main_doeuvre": 84150.0,
- "total_acceo": 147112.65,
+ "materiel": 66649.07,
+ "heures_relevees": 1045.845,
+ "heures_chargees": 1050,
+ "main_doeuvre": 89250.0,
+ "total_acceo": 155899.07,
  "lignes": [
   {
    "code": "A-01",
@@ -52,9 +52,9 @@
    "q": 13,
    "u": "u",
    "p": 0,
-   "h": 1.0,
+   "h": 1.5,
    "art": "3.22",
-   "src": "Dupuis « RELO PRISE » 1 h"
+   "src": "Dupuis « RELO PRISE » 1,5 h (dernier, S-1753 2026-05-05)"
   },
   {
    "code": "A-06",
@@ -201,10 +201,10 @@
    "desc": "Conduit EMT 1\" 4 #8 (alim. UTA-01) incl. supports",
    "q": 114.82939999999999,
    "u": "pi",
-   "p": 6.82,
+   "p": 7.6607,
    "h": 0.135,
    "art": "3.23",
-   "src": "Dupuis « CONDUIT 1 13C12 » 6,82 $/pi, 0,135 h/pi (ens. 1\" #8 absent → proche)"
+   "src": "Dupuis « CONDUIT 1 13C12 » 7,6607 $/pi, 0,135 h/pi (dernier 2026-10-07 ; ens. 1\" #8 absent → proche)"
   },
   {
    "code": "C-02",
@@ -212,9 +212,9 @@
    "q": 1,
    "u": "u",
    "p": 25.0,
-   "h": 0.5,
+   "h": 0.75,
    "art": "3.23",
-   "src": "Dupuis « MOTEUR » 0,5 h / 25 $"
+   "src": "Dupuis « MOTEUR » 0,75 h / 25 $ (dernier)"
   },
   {
    "code": "C-03",
@@ -251,10 +251,10 @@
    "desc": "Conduit EMT 3/4\" 03c12 (VE-02N + HUM)",
    "q": 262.4672,
    "u": "pi",
-   "p": 2.3,
-   "h": 0.071,
+   "p": 4.2441,
+   "h": 0.1128,
    "art": "3.23",
-   "src": "Dupuis « CONDUIT 3/4 03C12 » 2,30 $/pi, 0,071 h/pi"
+   "src": "Dupuis « CONDUIT 3/4 03C12 » 4,2441 $/pi, 0,1128 h/pi (dernier, S-1857 2026-09-25)"
   },
   {
    "code": "C-08",
@@ -392,9 +392,9 @@
    "q": 7,
    "u": "u",
    "p": 30.0,
-   "h": 1.0,
+   "h": 0.85,
    "art": "3.31",
-   "src": "Dupuis « LECTEUR DE CARTE » 15/0,5 + « GACHE » 15/0,5"
+   "src": "Dupuis « LECTEUR DE CARTE » 15 $/0,5 h + « GACHE » 15 $/0,35 h (dernier)"
   },
   {
    "code": "D-21",
@@ -428,33 +428,33 @@
   },
   {
    "code": "D-12b",
-   "desc": "Coupe-feu 3M CP25WB+ (tubes)",
+   "desc": "Coupe-feu (tubes)",
    "q": 8,
    "u": "u",
-   "p": 26.22,
-   "h": 0.25,
+   "p": 13.53,
+   "h": 0.5,
    "art": "3.31",
-   "src": "Lumen 26,22 $ ; 0,25 h"
+   "src": "Dupuis « COUPE FEU TUBE 10.1 FL O » 13,53 $ / 0,5 h (dernier 2026-03-09 ; Lumen 2026-10-07 : 26,22 $ — Dupuis prime)"
   },
   {
    "code": "D-13",
    "desc": "Conduit EMT 1\" sous dalle (16 courses RDC + 7 étage), 5 cond. #12",
    "q": 2148.9501999999998,
    "u": "pi",
-   "p": 3.49,
+   "p": 4.1197,
    "h": 0.091,
    "art": "3.31",
-   "src": "Dupuis « CONDUIT 3/4 07C12 » 3,49 $/pi, 0,091 h/pi (1\" 05c12 absent → équivalent)"
+   "src": "Dupuis « CONDUIT 3/4 07C12 » 4,1197 $/pi, 0,091 h/pi (dernier 2026-09-25 ; 1\" 05c12 absent → équivalent)"
   },
   {
    "code": "D-14",
    "desc": "Conduit EMT 3/4\" data sous dalle, vide + corde (11 + 7 courses)",
    "q": 1656.8242,
    "u": "pi",
-   "p": 1.4,
+   "p": 1.4097,
    "h": 0.056,
    "art": "3.33",
-   "src": "Dupuis « CONDUIT VIDE 3/4 » 1,4028 $/pi, 0,056 h/pi"
+   "src": "Dupuis « CONDUIT VIDE 3/4 » 1,4097 $/pi, 0,056 h/pi (dernier 2026-08-19)"
   },
   {
    "code": "D-16",
@@ -591,10 +591,10 @@
    "desc": "Conduit EMT 3/4\" 03c12 + flexible — raccordement luminaires (35 points)",
    "q": 918.6351999999999,
    "u": "pi",
-   "p": 2.3,
-   "h": 0.071,
+   "p": 4.2441,
+   "h": 0.1128,
    "art": "3.35",
-   "src": "Dupuis « CONDUIT 3/4 03C12 »"
+   "src": "Dupuis « CONDUIT 3/4 03C12 » 4,2441 $/pi, 0,1128 h/pi (dernier)"
   },
   {
    "code": "F-10",
@@ -651,10 +651,10 @@
    "desc": "Conduit EMT 3/4\" boucle AI + câble FA 16/2",
    "q": 98.4252,
    "u": "pi",
-   "p": 1.8099999999999998,
+   "p": 1.8196999999999999,
    "h": 0.084,
    "art": "3.36",
-   "src": "Dupuis conduit vide 3/4 + fil alarme 16 AWG 0,028 h/pi"
+   "src": "Dupuis conduit vide 3/4 1,4097 $/pi (dernier) + fil alarme 16 AWG 0,41 $/pi, 0,028 h/pi"
   },
   {
    "code": "G-04",
@@ -701,10 +701,10 @@
    "desc": "Mobilisation / démobilisation, plateforme roulante",
    "q": 1,
    "u": "lot",
-   "p": 1225.0,
-   "h": 8.0,
+   "p": 1250.0,
+   "h": 16.0,
    "art": "3.31",
-   "src": "Dupuis « NACELLE » 1 225 $ / 8 h"
+   "src": "Dupuis « NACELLE » 1 250 $ / 16 h (dernier, S-1811 2026-07-14)"
   },
   {
    "code": "H-02",
@@ -740,111 +740,111 @@
  "par_article": {
   "3.22": {
    "materiel": 0.0,
-   "heures": 101.85,
-   "mo": 8738.68,
-   "total": 8738.68
+   "heures": 108.35,
+   "mo": 9246.34,
+   "total": 9246.34
   },
   "3.23": {
-   "materiel": 2192.28,
-   "heures": 42.44,
-   "mo": 3641.09,
-   "total": 5833.37
+   "materiel": 2799.08,
+   "heures": 53.66,
+   "mo": 4579.07,
+   "total": 7378.16
   },
   "3.24": {
    "materiel": 6335.0,
    "heures": 27.5,
-   "mo": 2359.49,
-   "total": 8694.49
+   "mo": 2346.79,
+   "total": 8681.79
   },
   "3.25": {
    "materiel": 0.0,
    "heures": 7.6,
-   "mo": 652.08,
-   "total": 652.08
+   "mo": 648.57,
+   "total": 648.57
   },
   "3.26": {
    "materiel": 30.0,
    "heures": 4.0,
-   "mo": 343.2,
-   "total": 373.2
+   "mo": 341.35,
+   "total": 371.35
   },
   "3.27": {
    "materiel": 2197.1,
    "heures": 34.25,
-   "mo": 2938.63,
-   "total": 5135.73
+   "mo": 2922.82,
+   "total": 5119.92
   },
   "3.28": {
    "materiel": 4259.79,
    "heures": 92.0,
-   "mo": 7893.13,
-   "total": 12152.92
+   "mo": 7850.64,
+   "total": 12110.43
   },
   "3.29": {
    "materiel": 1689.82,
    "heures": 25.85,
-   "mo": 2217.92,
-   "total": 3907.74
+   "mo": 2205.98,
+   "total": 3895.8
   },
   "3.30": {
    "materiel": 65.38,
    "heures": 1.3,
-   "mo": 111.54,
-   "total": 176.92
+   "mo": 110.94,
+   "total": 176.32
   },
   "3.31": {
-   "materiel": 13155.01,
-   "heures": 290.7,
-   "mo": 24942.31,
-   "total": 38097.31
+   "materiel": 14431.68,
+   "heures": 299.65,
+   "mo": 25571.83,
+   "total": 40003.51
   },
   "3.32": {
    "materiel": 1250.0,
    "heures": 2.0,
-   "mo": 171.6,
-   "total": 1421.6
+   "mo": 170.68,
+   "total": 1420.68
   },
   "3.33": {
-   "materiel": 3294.67,
+   "materiel": 3310.75,
    "heures": 131.27,
-   "mo": 11263.09,
-   "total": 14557.76
+   "mo": 11202.47,
+   "total": 14513.21
   },
   "3.34": {
    "materiel": 3422.44,
    "heures": 4.0,
-   "mo": 343.2,
-   "total": 3765.64
+   "mo": 341.35,
+   "total": 3763.79
   },
   "3.35": {
-   "materiel": 16893.01,
-   "heures": 140.35,
-   "mo": 12041.8,
-   "total": 28934.81
+   "materiel": 18678.93,
+   "heures": 178.75,
+   "mo": 15253.87,
+   "total": 33932.8
   },
   "3.36": {
-   "materiel": 778.15,
+   "materiel": 779.1,
    "heures": 9.27,
-   "mo": 795.17,
-   "total": 1573.32
+   "mo": 790.89,
+   "total": 1569.99
   },
   "3.37": {
    "materiel": 0.0,
    "heures": 20.0,
-   "mo": 1715.99,
-   "total": 1715.99
+   "mo": 1706.75,
+   "total": 1706.75
   },
   "3.38": {
    "materiel": 7400.0,
    "heures": 8.0,
-   "mo": 686.4,
-   "total": 8086.4
+   "mo": 682.7,
+   "total": 8082.7
   },
   "5.19": {
    "materiel": 0.0,
    "heures": 38.4,
-   "mo": 3294.7,
-   "total": 3294.7
+   "mo": 3276.97,
+   "total": 3276.97
   }
  }
 }

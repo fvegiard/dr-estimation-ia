@@ -19,7 +19,7 @@ add('A-01', 'Démantèlement luminaires existants RDC (E.A.E)', 39, 'u', 0, 0.50
 add('A-02', 'Démantèlement luminaires existants étage (E.A.E)', 7, 'u', 0, 0.50, '5.19', 'idem')
 add('A-03', 'Démantèlement services RDC (prises, boîtes, câbles) E.A.E', 34, 'u', 0, 0.35, '5.19', 'Dupuis « ENLEVER PRISE » 0,35 h')
 add('A-04', 'Démantèlement services étage (E.A.E)', 10, 'u', 0, 0.35, '5.19', 'idem')
-add('A-05', 'Relocalisation équipements services (E.A.R) RDC + étage', 13, 'u', 0, 1.00, '3.22', 'Dupuis « RELO PRISE » 1 h')
+add('A-05', 'Relocalisation équipements services (E.A.R) RDC + étage', 13, 'u', 0, 1.50, '3.22', 'Dupuis « RELO PRISE » 1,5 h (dernier, S-1753 2026-05-05)')
 add('A-06', 'Relocalisation luminaires (E.A.R) RDC + étage', 7, 'u', 0, 1.00, '3.22', 'Dupuis « RELO ENCASTRE » 1 h')
 add('A-07', 'Relocalisation interrupteurs maîtres du hall (note 1 E-201)', 1, 'lot', 0, 6.0, '3.22', 'jugement (Estimation_2)')
 add('A-08', 'FabLab 210 : retrait temporaire + réinstallation luminaires linéaires', 21, 'u', 0, 0.85, '3.22', 'Dupuis FIXTURE ENLEVE 0,5 + réinstall. 0,35 (ENLEVER FIXTURE 1X4)')
@@ -38,12 +38,12 @@ add('B-10', 'Tiroirs CCM-1 F15A — vérification/réutilisation (MCC)', 2, 'u',
 
 # --- C RACCORDEMENTS MÉCANIQUES ---
 add('C-01', 'UTA-01 575 V/3Ø au toit — raccordement final LFMC + sectionneur d’usine', 1, 'u', 25.0, 1.0, '3.23', 'Dupuis « MOTEUR UAF-1 » 1 h / 25 $')
-add('C-01b', 'Conduit EMT 1" 4 #8 (alim. UTA-01) incl. supports', 35 * PI, 'pi', 6.82, 0.135, '3.23', 'Dupuis « CONDUIT 1 13C12 » 6,82 $/pi, 0,135 h/pi (ens. 1" #8 absent → proche)')
-add('C-02', 'VE-02N 1,5 HP 575 V c/a VFD — raccordement', 1, 'u', 25.0, 0.5, '3.23', 'Dupuis « MOTEUR » 0,5 h / 25 $')
+add('C-01b', 'Conduit EMT 1" 4 #8 (alim. UTA-01) incl. supports', 35 * PI, 'pi', 7.6607, 0.135, '3.23', 'Dupuis « CONDUIT 1 13C12 » 7,6607 $/pi, 0,135 h/pi (dernier 2026-10-07 ; ens. 1" #8 absent → proche)')
+add('C-02', 'VE-02N 1,5 HP 575 V c/a VFD — raccordement', 1, 'u', 25.0, 0.75, '3.23', 'Dupuis « MOTEUR » 0,75 h / 25 $ (dernier)')
 add('C-03', 'Chaudières CH-01/CH-02 — raccord final LFMC, tiroirs CCM', 2, 'u', 15.0, 0.5, '3.23', 'Dupuis « CHAUDIERE » 0,5 h / 15 $')
 add('C-04', 'Humidificateurs HUM-1/2/3 — raccordement', 3, 'u', 15.0, 0.35, '3.23', 'Dupuis « HUMIDIFICATEUR » 0,35 h / 15 $')
 add('C-04b', 'Sectionneurs 30 A sans fusible (HUM)', 3, 'u', 133.49, 1.0, '3.23', 'Dupuis « INTERR 30A 3P 600V » 1 h / 133,49 $')
-add('C-07', 'Conduit EMT 3/4" 03c12 (VE-02N + HUM)', 80 * PI, 'pi', 2.30, 0.071, '3.23', 'Dupuis « CONDUIT 3/4 03C12 » 2,30 $/pi, 0,071 h/pi')
+add('C-07', 'Conduit EMT 3/4" 03c12 (VE-02N + HUM)', 80 * PI, 'pi', 4.2441, 0.1128, '3.23', 'Dupuis « CONDUIT 3/4 03C12 » 4,2441 $/pi, 0,1128 h/pi (dernier, S-1857 2026-09-25)')
 add('C-08', 'Raccords flexibles LFMC + connecteurs (7 équipements)', 7, 'u', 40.0, 0.25, '3.23', 'Lumen Hydrotite 12,40 $/m + Conseal 15,14 $ ×2 ; 0,25 h')
 
 # --- D / E SERVICES ---
@@ -59,13 +59,13 @@ add('D-08', 'Sorties data murales/colonne : boîte + conduit 3/4" + corde (65 so
 add('D-09', 'Barrière antivol : 2 JB + raccord panneau PU-1', 1, 'lot', 60.0, 4.0, '3.31', 'jugement (2 boîtes 12x12 + conduit) — Estimation_2 6 h')
 add('D-10', 'Bornes de prêt / fontaine hall — JB', 1, 'u', 17.43, 1.0, '3.31', 'Dupuis boîte 12x12 1 h')
 add('D-11', 'Boutons d’appel (3) et de panique (1) — boîte + conduit vide', 4, 'u', 15.0, 0.5, '3.31', 'Dupuis « GACHE »/« LECTEUR » 15 $ / 0,5 h (même nature)')
-add('D-20', 'Portes à contrôle d’accès : lecteur + gâche (boîtes + conduits)', 7, 'u', 15.0 + 15.0, 0.5 + 0.5, '3.31', 'Dupuis « LECTEUR DE CARTE » 15/0,5 + « GACHE » 15/0,5')
+add('D-20', 'Portes à contrôle d’accès : lecteur + gâche (boîtes + conduits)', 7, 'u', 15.0 + 15.0, 0.5 + 0.35, '3.31', 'Dupuis « LECTEUR DE CARTE » 15 $/0,5 h + « GACHE » 15 $/0,35 h (dernier)')
 add('D-21', 'Thermostats — boîte + conduit', 6, 'u', 35.0, 0.4, '3.31', 'Dupuis « THERMOSTAT » 35 $ / 0,4 h')
 add('D-22', 'Sorties TV', 4, 'u', 15.0, 0.5, '3.33', 'Dupuis « SORTIE TV » 15 $ / 0,5 h')
 add('D-12', 'Percements de dalle carottés + coupe-feu (RDC + étage)', 23, 'u', 150.0, 1.0, '3.31', 'Dupuis « PERCEMENT PLANCHER » 150 $ (S-1881) / 1 h')
-add('D-12b', 'Coupe-feu 3M CP25WB+ (tubes)', 8, 'u', 26.22, 0.25, '3.31', 'Lumen 26,22 $ ; 0,25 h')
-add('D-13', 'Conduit EMT 1" sous dalle (16 courses RDC + 7 étage), 5 cond. #12', (480 + 175) * PI, 'pi', 3.49, 0.091, '3.31', 'Dupuis « CONDUIT 3/4 07C12 » 3,49 $/pi, 0,091 h/pi (1" 05c12 absent → équivalent)')
-add('D-14', 'Conduit EMT 3/4" data sous dalle, vide + corde (11 + 7 courses)', (330 + 175) * PI, 'pi', 1.40, 0.056, '3.33', 'Dupuis « CONDUIT VIDE 3/4 » 1,4028 $/pi, 0,056 h/pi')
+add('D-12b', 'Coupe-feu (tubes)', 8, 'u', 13.53, 0.5, '3.31', 'Dupuis « COUPE FEU TUBE 10.1 FL O » 13,53 $ / 0,5 h (dernier 2026-03-09 ; Lumen 2026-10-07 : 26,22 $ — Dupuis prime)')
+add('D-13', 'Conduit EMT 1" sous dalle (16 courses RDC + 7 étage), 5 cond. #12', (480 + 175) * PI, 'pi', 4.1197, 0.091, '3.31', 'Dupuis « CONDUIT 3/4 07C12 » 4,1197 $/pi, 0,091 h/pi (dernier 2026-09-25 ; 1" 05c12 absent → équivalent)')
+add('D-14', 'Conduit EMT 3/4" data sous dalle, vide + corde (11 + 7 courses)', (330 + 175) * PI, 'pi', 1.4097, 0.056, '3.33', 'Dupuis « CONDUIT VIDE 3/4 » 1,4097 $/pi, 0,056 h/pi (dernier 2026-08-19)')
 add('D-16', 'Boîtes de tirage 4-11/16, connecteurs, supports — sous dalle', 23, 'u', 9.26, 0.25, '3.31', 'Lumen 6,05 + 3,21 ; Dupuis boîte 0,25 h')
 add('D-19', 'Scan dalle béton (GPR) avant carottage', 1, 'lot', 1250.0, 2.0, '3.32', 'Dupuis « SCAN DALLE BETON » 1 250 $ / 2 h')
 add('E-02', 'Monuments de plancher Hubbell poke-through (prise 20 A + 2 RJ45)', 2, 'u', 1461.22, 1.0, '3.34', 'Lumen 1 461,22 $ ; Dupuis monument 1 h')
@@ -81,7 +81,7 @@ add('F-05', 'Rangées linéaires suspendues (20) : suspension à la dalle, alime
 add('F-06', 'Luminaire E cylindre suspendu — pose', 3, 'u', 0, 0.75, '3.35', 'Dupuis 0,75 h ; 3 u (E-203)')
 add('F-07', 'Enseignes de sortie Z6 — pose', 3, 'u', 0, 1.0, '3.35', 'Dupuis « ENSEIGNE SORTIE » 1 h')
 add('F-11', 'Interrupteurs neufs 15 A', 5, 'u', 75.47, 1.075, '3.35', 'Dupuis « INTERRUPTEUR 15A 120V » 75,47 $ / 1,075 h')
-add('F-08', 'Conduit EMT 3/4" 03c12 + flexible — raccordement luminaires (35 points)', 280 * PI, 'pi', 2.30, 0.071, '3.35', 'Dupuis « CONDUIT 3/4 03C12 »')
+add('F-08', 'Conduit EMT 3/4" 03c12 + flexible — raccordement luminaires (35 points)', 280 * PI, 'pi', 4.2441, 0.1128, '3.35', 'Dupuis « CONDUIT 3/4 03C12 » 4,2441 $/pi, 0,1128 h/pi (dernier)')
 add('F-10', 'Chaînes de retenue à la dalle, boîtes de jonction, quincaillerie', 46, 'u', 8.0, 0.25, '3.35', 'Dupuis « PARASIMIC » 10 $ / 0,25 h (retenue) — 1 par luminaire')
 add('F-LOT', 'PRIX DE LOT ÉCLAIRAGE : A1 ×11 (185 $), Axis SL1 4′×12 (290), 3′×15 (230), 1′×6 (110), trousses rangées (1 500), E ×3 (475), Z6 ×3 (161,60)',
     1, 'lot', 11 * 185 + 12 * 290 + 15 * 230 + 6 * 110 + 1500 + 3 * 475 + 3 * 161.60, 0, '3.35', 'Prix retenus (Gerrie prix réguliers / agents) — confirmés par Frank 2026-10-20')
@@ -91,14 +91,14 @@ add('B-LOT', 'PRIX DE LOT DISTRIBUTION : panneau NF 225 A 42 cct + 17 disj. 1P-1
 # --- G ALARME INCENDIE ---
 add('G-01', 'Détecteurs de fumée adressables + base (fournis JCI) — pose', 2, 'u', 0, 0.5, '3.36', 'Dupuis « DETECTEUR A FUMEE » 0,5 h')
 add('G-01b', 'Détecteurs Simplex 4098-9714 + base (fourniture JCI)', 2, 'u', 300.0, 0, '3.36', 'Détecteurs JCI — confirmé par Frank 2026-10-20')
-add('G-02', 'Conduit EMT 3/4" boucle AI + câble FA 16/2', 30 * PI, 'pi', 1.40 + 0.41, 0.056 + 0.028, '3.36', 'Dupuis conduit vide 3/4 + fil alarme 16 AWG 0,028 h/pi')
+add('G-02', 'Conduit EMT 3/4" boucle AI + câble FA 16/2', 30 * PI, 'pi', 1.4097 + 0.41, 0.056 + 0.028, '3.36', 'Dupuis conduit vide 3/4 1,4097 $/pi (dernier) + fil alarme 16 AWG 0,41 $/pi, 0,028 h/pi')
 add('G-04', 'Relocalisation annonciateur Simplex', 1, 'u', 0, 8.0, '3.37', 'Dupuis « RELO PANN ANNOCIATEUR » 8 h')
 add('G-05', 'Démontage / protection / réinstallation dispositifs AI existants (zones touchées)', 1, 'lot', 0, 12.0, '3.37', 'jugement (Estimation_2)')
 add('G-06', 'Assistance électricien programmation / vérification ULC-S537', 1, 'lot', 0, 8.0, '3.38', 'jugement (Estimation_2)')
 add('G-07', 'Services JCI/Simplex : bypass, programmation 4007ES, annonciateur, vérification partielle + certificat', 1, 'lot', 7400.0, 0, '3.38', 'Services JCI — confirmé par Frank 2026-10-20')
 
 # --- H FRAIS DE CHANTIER (Dupuis : nacelle/plateforme au lot, sinon heures de jugement) ---
-add('H-01', 'Mobilisation / démobilisation, plateforme roulante', 1, 'lot', 1225.0, 8.0, '3.31', 'Dupuis « NACELLE » 1 225 $ / 8 h')
+add('H-01', 'Mobilisation / démobilisation, plateforme roulante', 1, 'lot', 1250.0, 16.0, '3.31', 'Dupuis « NACELLE » 1 250 $ / 16 h (dernier, S-1811 2026-07-14)')
 add('H-02', 'Coordination EG, dessins d’atelier, plans tels que construits', 1, 'lot', 0, 20.0, '3.31', 'jugement (Estimation_2)')
 add('H-03', 'Essais, mise en service, vérification prises existantes (note 3), étiquetage', 1, 'lot', 0, 12.0, '3.31', 'jugement (Estimation_2)')
 add('H-04', 'Nettoyage, gestion des déchets', 1, 'lot', 0, 8.0, '3.31', 'jugement (Estimation_2)')

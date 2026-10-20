@@ -19,99 +19,99 @@
   "<b>Préparé par :</b> Francis Végiard, Chargé de projets et estimateur"
  ],
  "prix_sous_titre": "TRAVAUX D'ÉLECTRICITÉ, D'ÉCLAIRAGE ET D'ALARME INCENDIE — DIVISION 26 / 28",
- "prix_note": "Prix forfaitaire pour l'ensemble des travaux d'électricité décrits aux plans et devis ci-dessus, ventilé selon le bordereau de prix (Annexe 2.00). Le prix comprend 990 heures de main-d'œuvre d'électriciens qualifiés (contremaître inclus), le matériel au prix régulier des distributeurs, les luminaires du tableau E-008 (A1, C1/C1_1/C1_3 avec suspensions, E, Z6), le panneau NF et ses disjoncteurs, les services Johnson Controls/Simplex et le scan GPR de la dalle. Travaux prévus de jour, aux heures normales, du ±17 novembre 2026 au 16 juillet 2027 selon l'échéancier de l'entrepreneur général.",
+ "prix_note": "Prix forfaitaire pour l'ensemble des travaux d'électricité décrits aux plans et devis ci-dessus, ventilé selon le bordereau de prix (Annexe 2.00). Le prix comprend 1 050 heures de main-d'œuvre d'électriciens qualifiés (contremaître inclus), le matériel au prix régulier des distributeurs, les luminaires du tableau E-008 (A1, C1/C1_1/C1_3 avec suspensions, E, Z6), le panneau NF et ses disjoncteurs, les services Johnson Controls/Simplex et le scan GPR de la dalle. Travaux prévus de jour, aux heures normales, du ±17 novembre 2026 au 16 juillet 2027 selon l'échéancier de l'entrepreneur général.",
  "ventilation_titre": "VENTILATION SELON LE BORDEREAU DE PRIX (ANNEXE 2.00)",
  "ventilation_note": "Montants avant taxes. Frais de chantier, mobilisation, coordination et matériel courant répartis sur les articles au prorata des heures; article 3.31 ajusté de l'arrondi du total.",
  "ventilation": [
   [
    "3.22",
    "Démontage des éléments électriques",
-   10871
+   11502
   ],
   [
    "3.23",
    "Raccordement des équipements mécaniques",
-   7257
+   9178
   ],
   [
    "3.24",
    "Nouveau panneau 600 V",
-   10816
+   10800
   ],
   [
    "3.25",
    "Lot disjoncteurs",
-   811
+   807
   ],
   [
    "3.26",
    "MCC",
-   464
+   462
   ],
   [
    "3.27",
    "Prises doubles 15 A-120 V – USB",
-   6389
+   6369
   ],
   [
    "3.28",
    "Prises doubles 15 A-120 V",
-   15118
+   15065
   ],
   [
    "3.29",
    "Prises doubles 15 A-120 V MALT isolées",
-   4861
+   4846
   ],
   [
    "3.30",
    "Prises doubles 15 A-120 V GFI",
-   220
+   219
   ],
   [
    "3.31",
    "Percements, conduit, filage et boîtes de jonction",
-   47386
+   49829
   ],
   [
    "3.32",
    "Scan dalle béton",
-   1768
+   1767
   ],
   [
    "3.33",
    "Sorties informatique/réseau",
-   18110
+   18054
   ],
   [
    "3.34",
    "Monument plancher",
-   4684
+   4682
   ],
   [
    "3.35",
    "Appareils de contrôle + appareils d'éclairage",
-   35995
+   42212
   ],
   [
    "3.36",
    "Détecteur de fumée",
-   1957
+   1953
   ],
   [
    "3.37",
    "Panneau alarme incendie : déplacement annonciateur",
-   2135
+   2123
   ],
   [
    "3.38",
    "Panneau alarme incendie : mise en marche et certification",
-   10059
+   10055
   ],
   [
    "5.19",
    "Démolition des systèmes électriques",
-   4099
+   4077
   ]
  ],
  "travaux": [

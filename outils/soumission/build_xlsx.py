@@ -122,54 +122,86 @@ D.freeze_panes = 'A5'
 
 # ============================ SOMMAIRE ============================
 S = wb.active; S.title = 'Sommaire'
-setup_print(S, False, '1:3', [54, 20, 54])
+setup_print(S, False, '1:3', [50, 22, 56])
 banner(S, 'S-1902 — SOMMAIRE DU CHIFFRAGE',
-       'Bibliothèque Georgette-Lepage (Brossard) — RFID, RDC et étage — AO SP-GTER-26-0080 — R.D.J. E-26-75-GE', 3)
-S['A3'] = ('Méthode de M. Dupuis (Expert Estimateur / ACCEO) : matériel au prix vendant de son catalogue, administration et profit 0 % dans le sommaire, '
-           'main-d’œuvre = heures relevées arrondies vers le haut × taux horaire, puis facteur de passage au prix de vente observé sur S-1844.')
-S['A3'].font = fSub; S.merge_cells('A3:C3'); S['A3'].alignment = Alignment(wrap_text=True, vertical='center'); S.row_dimensions[3].height = 34
-header_row(S, 5, ['Poste', 'Valeur', 'Source / preuve'])
-rows = [
-    ('Taux horaire ($/h)', 85, CUR, 'Dupuis, août–oct. 2026 : S-1797, S-1835, S-1854, S-1881', True),
-    ('Matériel + lots fournisseur (prix vendant Dupuis + allocations)', f"=Détail!H{TOT_ROW}", CUR, 'Feuille Détail', False),
-    ('Heures relevées', f"=Détail!I{TOT_ROW}", HRS, 'Feuille Détail (temps unitaires Dupuis)', False),
-    ('Heures chargées (arrondi vers le haut, multiple de 10)', '=CEILING(B8,10)', HRS, 'Pratique Dupuis (S-1881 : 4 128,6 → 4 150 h)', False),
-    ('Main-d’œuvre = heures chargées × taux', '=B9*B6', CUR, '', False),
-    ('TOTAL SOMMAIRE ACCEO (admin/profit 0 %, comme Dupuis)', '=B7+B10', CUR, 'Équivalent de son « Grand total »', False),
-    ('Part main-d’œuvre du sommaire', '=B10/B11', '0.0%', 'Dupuis : 30–69 %, médiane ≈ 45 % (S-1783 : 50,5 %)', False),
-    ('Facteur de passage au prix de vente', 1.244, '0.000', 'S-1844 : prix remis 238 744 $ ÷ sommaire ACCEO 191 909,19 $', True),
-    ('Prix de vente calculé', '=ROUND(B11*B13,0)', CUR0, '', False),
-    ('PRIX SOUMIS (arrondi au millier)', 183000, CUR0, 'Soumission_S-1902_Georgette-Lepage.pdf', True),
-    ('Heures par 100 k$ de prix', '=B9/(B15/100000)', '#,##0', 'Dupuis : ≈ 450–520 h / 100 k$ (S-1783, S-1775, S-1857, S-1881)', False),
-]
-r = 6
-for lab, val, fmt, src, blue in rows:
-    S.cell(r, 1, lab).font = fN; c = S.cell(r, 2, val); c.number_format = fmt; c.font = fBlue if blue else fN; c.alignment = right
-    S.cell(r, 3, src).font = fSub
-    for j in range(1, 4): S.cell(r, j).border = box; S.cell(r, j).alignment = Alignment(wrap_text=True, vertical='center', horizontal='right' if j == 2 else 'left')
-    S.row_dimensions[r].height = 22
-    if lab.startswith('TOTAL') or lab.startswith('PRIX SOUMIS'):
-        for j in range(1, 4): S.cell(r, j).fill = fillSec; S.cell(r, j).font = fTot if j == 2 else fB
-    r += 1
-r += 1
-S.cell(r, 1, 'COMPARAISONS').font = fSec; r += 1
-header_row(S, r, ['Version', 'Prix avant taxes', 'Base']); r += 1
-for lab, val, src in [('Estimation_2 — Léna AI, 2026-10-08', 112381.39, '719,5 h × 124 $ + Lumen 23 160 $ ; sans FG, profit ni sous-traitance'),
-                      ('v2 — 2026-10-20 (midi)', 158296, '745 h × 113,50 $ pondéré + matériel + allocations'),
-                      ('v3 — méthode Dupuis (ce classeur)', '=B15', 'Ses temps, ses prix d’assemblage, 85 $/h, × 1,244')]:
-    S.cell(r, 1, lab).font = fN; c = S.cell(r, 2, val); c.number_format = CUR0; c.alignment = right; c.font = fN; S.cell(r, 3, src).font = fSub
-    for j in range(1, 4): S.cell(r, j).border = box
-    r += 1
-r += 1
-S.cell(r, 1, 'LOTS FOURNISSEUR INCLUS (prix confirmés par Frank, 2026-10-20)').font = fSec; r += 1
-header_row(S, r, ['Poste', 'Montant ($)', 'Note']); r += 1
-for lab, val, st in [('Luminaires A1 ×11, Axis SL1 (4′×12, 3′×15, 1′×6) + trousses, E ×3, Z6 ×3', 11 * 185 + 12 * 290 + 15 * 230 + 6 * 110 + 1500 + 3 * 475 + 3 * 161.60, 'Prix retenus (Gerrie prix réguliers / agents) — confirmés'),
-                     ('Panneau NF 225 A 42 cct + disjoncteurs EDB/EJB', 6200, 'Schneider NF 225 A 42 cct + EDB/EJB — confirmé'),
-                     ('Services JCI/Simplex + 2 détecteurs adressables', 8000, 'Services JCI + 2 détecteurs 4098-9714 — confirmé'),
-                     ('Scan GPR de la dalle', 1250, 'Dupuis « SCAN DALLE BETON » 1 250 $')]:
-    S.cell(r, 1, lab).font = fN; c = S.cell(r, 2, val); c.number_format = CUR0; c.alignment = right; c.font = fN; S.cell(r, 3, st).font = fSub
-    for j in range(1, 4): S.cell(r, j).border = box; S.cell(r, j).alignment = Alignment(wrap_text=True, vertical='center', horizontal='right' if j == 2 else 'left')
-    S.row_dimensions[r].height = 26; r += 1
+       'Bibliothèque Georgette-Lepage (Brossard) — RFID — AO SP-GTER-26-0080 — R.D.J. E-26-75-GE', 3)
+PRIX_SOUMIS = sum(m for _, _, m in V)
+tot_mat = C['materiel']; tot_h = C['heures_relevees']; tot_hc = C['heures_chargees']; tot_acceo = C['total_acceo']
+
+def section_title(ws, r, txt, ncols=3):
+    c = ws.cell(r, 1, txt); c.font = fSec; c.alignment = Alignment(vertical='center', indent=0)
+    for j in range(1, ncols + 1): ws.cell(r, j).border = Border(bottom=Side(style='medium', color=BORD))
+    ws.row_dimensions[r].height = 20
+
+def kpi(ws, r, j, label, value, fmt, big=True):
+    a = ws.cell(r, j, label); a.font = Font(name=F, bold=True, size=8, color=BORD); a.alignment = Alignment(horizontal='center', vertical='bottom'); a.fill = fillSec
+    b = ws.cell(r + 1, j, value); b.number_format = fmt; b.font = Font(name=F, bold=True, size=16 if big else 13, color=BORD if big else INK_C); b.alignment = Alignment(horizontal='center', vertical='top'); b.fill = fillSec
+    for rr in (r, r + 1): ws.cell(rr, j).border = box
+
+INK_C = '1F1F1F'
+# --- bandeau KPI (ligne 4-5) ---
+r = 4
+kpi(S, r, 1, 'PRIX SOUMIS (avant taxes)', PRIX_SOUMIS, CUR0, True)
+kpi(S, r, 2, 'HEURES CHARGÉES', tot_hc, '#,##0 "h"', False)
+kpi(S, r, 3, 'SOMMAIRE ACCEO (matériel + MO, admin/profit 0 %)', tot_acceo, CUR0, False)
+S.row_dimensions[4].height = 14; S.row_dimensions[5].height = 26
+r = 7
+
+def table(ws, r, headers, rows, fmts, bold_last=False):
+    """rows: list de tuples (col1, col2, col3) ; fmts: format de la colonne 2 ; retourne la ligne suivante."""
+    header_row(ws, r, headers); ws.row_dimensions[r].height = 18; r += 1
+    for i, (a, b, c3) in enumerate(rows):
+        last = bold_last and i == len(rows) - 1
+        ca = ws.cell(r, 1, a); ca.font = fB if last else fN
+        cb = ws.cell(r, 2, b); cb.number_format = fmts[i] if isinstance(fmts, list) else fmts; cb.font = fTot if last else (fBlue if isinstance(b, (int, float)) and str(a).startswith(('Taux', 'Facteur')) else fN)
+        cc = ws.cell(r, 3, c3); cc.font = fSub
+        for j in range(1, 4):
+            cell = ws.cell(r, j); cell.border = box
+            cell.alignment = Alignment(vertical='center', horizontal='right' if j == 2 else 'left', indent=1 if j != 2 else 0, wrap_text=(j == 3))
+            if last: cell.fill = fillSec
+            elif i % 2 == 1: cell.fill = fillZ
+        ws.row_dimensions[r].height = 17
+        r += 1
+    return r + 1
+
+# --- 1. Calcul ---
+section_title(S, r, '1. CALCUL (méthode Dupuis — Expert Estimateur / ACCEO)'); r += 1
+rows = [('Taux horaire', 85, 'Dupuis, août–oct. 2026 : S-1797, S-1835, S-1854, S-1881'),
+        ('Matériel + lots fournisseur (prix vendant Dupuis)', f"=Détail!H{TOT_ROW}", 'Feuille Détail — dernière valeur du catalogue par article'),
+        ('Heures relevées', f"=Détail!I{TOT_ROW}", 'Feuille Détail — temps unitaires Dupuis'),
+        ('Heures chargées (arrondi vers le haut, multiple de 10)', '=CEILING(B11,10)', 'Pratique Dupuis (S-1881 : 4 128,6 → 4 150 h)'),
+        ("Main-d'œuvre = heures chargées × taux", '=B12*B9', ''),
+        ('Sommaire ACCEO = matériel + main-d\'œuvre', '=B10+B13', 'Admin/profit 0 % — équivalent de son « Grand total » ; part MO ' + f'{C["main_doeuvre"]/C["total_acceo"]:.0%}' + ' (Dupuis : 30–69 %)'),
+        ('Facteur de passage au prix de vente', 1.244, 'S-1844 : prix remis 238 744 $ ÷ sommaire ACCEO 191 909,19 $'),
+        ('Prix de vente calculé', '=ROUND(B14*B15,0)', ''),
+        ('PRIX SOUMIS (arrondi au millier)', PRIX_SOUMIS, 'Somme des articles de la soumission (PDF)')]
+fm = [CUR, CUR, HRS, '#,##0', CUR, CUR, '0.000', CUR0, CUR0]
+r = table(S, r, ['Poste', 'Valeur', 'Source / preuve'], rows, fm, bold_last=True)
+
+# --- 2. Comparaisons ---
+section_title(S, r, '2. COMPARAISONS'); r += 1
+rows = [('Estimation_2 — Léna AI, 2026-10-08', 112381.39, '719,5 h × 124 $ + Lumen 23 160 $ ; sans FG, profit ni sous-traitance'),
+        ('v2 — 2026-10-20 (midi)', 158296, '745 h × 113,50 $ pondéré + matériel + allocations'),
+        ('v3 — méthode Dupuis, médianes conduits', 183000, '990 h ; conduits aux valeurs médianes du catalogue'),
+        ('v4 — méthode Dupuis, dernières valeurs (ce classeur)', PRIX_SOUMIS, 'Ses temps et prix « dernier », 85 $/h, × 1,244')]
+r = table(S, r, ['Version', 'Prix avant taxes', 'Base'], rows, CUR0, bold_last=True)
+
+# --- 3. Lots ---
+section_title(S, r, '3. LOTS FOURNISSEUR INCLUS (prix confirmés par Frank, 2026-10-20)'); r += 1
+rows = [('Luminaires A1 ×11, Axis SL1 ×33 + trousses, E ×3, Z6 ×3', 11 * 185 + 12 * 290 + 15 * 230 + 6 * 110 + 1500 + 3 * 475 + 3 * 161.60, 'Gerrie prix réguliers / agents'),
+        ('Panneau NF 225 A 42 cct + disjoncteurs EDB/EJB', 6200, 'Schneider NF + EDB 1P ×20 + EJB 3P ×3'),
+        ('Services JCI/Simplex + 2 détecteurs adressables', 8000, 'Bypass, programmation 4007ES, annonciateur, vérification ULC-S537'),
+        ('Scan GPR de la dalle', 1250, 'Dupuis « SCAN DALLE BETON »')]
+r = table(S, r, ['Poste', 'Montant ($)', 'Note'], rows, CUR0)
+
+# --- 4. Ventilation ---
+section_title(S, r, '4. VENTILATION PAR ARTICLE DU BORDEREAU (Annexe 2.00, prix soumis avant taxes)'); r += 1
+rows = []
+for a, d, m in V:
+    pa = C['par_article'][a]
+    rows.append((f"{a} — {d}", m, f"{pa['materiel']:,.0f} $ matériel · {pa['heures']:,.1f} h".replace(',', ' ')))
+rows.append(('TOTAL ÉLECTRICITÉ, avant taxes', f'=SUM(B{r+1}:B{r+len(V)})', ''))
+r = table(S, r, ['Article — description (bordereau R.D.J.)', 'Prix soumis ($)', 'Base ACCEO'], rows, CUR0, bold_last=True)
 
 # ============================ PAR ARTICLE ============================
 A = wb.create_sheet('Par article')
