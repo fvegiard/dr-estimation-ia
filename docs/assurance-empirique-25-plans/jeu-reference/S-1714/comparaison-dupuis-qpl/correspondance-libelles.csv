@@ -1,0 +1,94 @@
+libelle_humain,libelle_ia,proportion,appariees,humain,ia_libelle_total,humain_groupe,ecart_groupe,libelles_humains_partages,manquantes_ia,meme_position_libelle_different,repartition
+LO PRISE,Prise double,0.62,2167,2167,1616,2561,-945,LO P3000 ; LO PRISE ; LO TV ; P-4 ; SERV PRISE ; V-3,0,820,Prise double=1347 ; Raccordement lave-vaisselle=135 ; Prise micro-onde=132 ; Prise comptoir=132 ; Prise réfrigérateur=119 ; Prise laveuse=107 ; Panneau de logement=60 ; Sectionneur=49 ; Prise demi-commandée=17 ; Aéroconvecteur 1500W=13 ; Prise salle de bain=10 ; Plinthe 1000W=9 ; Aéroconvecteur 2000W=8 ; Thermostat=5 ; Raccordement volet motorisé=5 ; Raccordement évaporateur=4 ; Sortie informatique=4 ; Raccordement ventilateur=3 ; Prise étanche=3 ; Aéroconvecteur 1250W=2 ; Plinthe 1250W=1 ; Raccordement condenseur=1 ; Panneau de distribution=1
+LO PRISE CONTROLÉ,Prise demi-commandée,0.95,587,588,586,588,-2,,1,32,Prise demi-commandée=555 ; Sectionneur=18 ; Plinthe 1000W=6 ; Prise double=5 ; Panneau de logement=2 ; Prise laveuse=1
+TH,Thermostat,0.94,398,398,398,398,0,,0,22,Thermostat=376 ; Prise double=9 ; Prise réfrigérateur=4 ; Panneau de logement=3 ; Prise micro-onde=2 ; Prise laveuse=2 ; Plinthe 300W=1 ; Sectionneur=1
+AF1-5,Avertisseur de fumée,0.87,383,387,336,387,-51,,4,48,Avertisseur de fumée=335 ; Avertisseur fumée/CO=48
+KS,Klaxon/stroboscope,1.00,361,363,362,363,-1,,2,0,Klaxon/stroboscope=361
+LO PRISE GFI,Prise salle de bain,0.47,334,334,179,334,-155,,0,177,Prise salle de bain=157 ; Prise comptoir=141 ; Panneau de logement=15 ; Prise micro-onde=5 ; Prise réfrigérateur=5 ; Prise double=4 ; Thermostat=2 ; Raccordement lave-vaisselle=2 ; Plinthe 300W=1 ; Prise demi-commandée=1 ; Sortie informatique=1
+INT,Avertisseur fumée/CO,0.67,6,227,52,227,-175,,221,2,Avertisseur fumée/CO=4 ; Résistance fin de ligne=1 ; Klaxon=1
+FIXT TYPE UE2,Luminaire — à classer,0.77,212,214,325,503,-178,APPLIQUE MURAL EXT ; FIXT TYPE UE2 ; PLAFONNIER ; exit,2,48,Luminaire — à classer=164 ; Luminaire linéaire applique urgence=48
+PLAFONNIER,Luminaire — à classer,0.55,206,207,325,503,-178,APPLIQUE MURAL EXT ; FIXT TYPE UE2 ; PLAFONNIER ; exit,1,93,Luminaire — à classer=113 ; Luminaire encastré urgence=93
+B 1000W,Plinthe 1000W,0.87,203,203,232,233,-1,B 1000W ; b 1000w 347v,0,27,Plinthe 1000W=176 ; Sectionneur=22 ; Prise double=2 ; Prise demi-commandée=2 ; Plinthe 1250W=1
+LO TEL,Sortie câblo/informatique,0.71,192,193,140,193,-53,,1,55,Sortie câblo/informatique=137 ; Sortie informatique=43 ; Panneau de logement=7 ; Prise réfrigérateur=3 ; Prise double=1 ; Prise demi-commandée=1
+B 300W,Plinthe 300W,0.98,157,157,159,159,0,B 300W ; B 300W 347V,0,3,Plinthe 300W=154 ; Panneau de logement=2 ; Prise comptoir=1
+LO PRISE GFI WP,Prise étanche,0.98,156,156,163,163,0,LO PRISE GFI WP ; SERV PRISE GFI WP ; serv gfi wp,0,3,Prise étanche=153 ; Sectionneur=2 ; Aéroconvecteur 2000W=1
+LO CONENSEUR,Raccordement condenseur,0.97,143,144,145,147,-2,COND BUREAU ; COND CONF ; COND YOGA ; LO CONENSEUR,1,4,Raccordement condenseur=139 ; Prise demi-commandée=3 ; Sectionneur=1
+LO P3000,Prise double,0.26,140,142,1616,2561,-945,LO P3000 ; LO PRISE ; LO TV ; P-4 ; SERV PRISE ; V-3,2,103,Prise double=37 ; Prise laveuse=29 ; Panneau de logement=27 ; Thermostat=15 ; Prise salle de bain=12 ; Prise réfrigérateur=7 ; Sortie informatique=4 ; Prise comptoir=3 ; Raccordement lave-vaisselle=2 ; Plinthe 300W=1 ; Prise demi-commandée=1 ; Plinthe 1000W=1 ; Prise micro-onde=1
+LO PRISE POELE,Prise cuisinière,0.99,141,141,140,141,-1,,0,1,Prise cuisinière=140 ; Prise comptoir=1
+LO PRISE SÉCHEUSE,Prise sécheuse,0.99,141,141,140,141,-1,,0,1,Prise sécheuse=140 ; Raccordement lave-vaisselle=1
+LO HOTTE,Raccordement hotte,1.00,140,140,140,140,0,,0,0,Raccordement hotte=140
+LO TV,Prise double,0.71,136,139,1616,2561,-945,LO P3000 ; LO PRISE ; LO TV ; P-4 ; SERV PRISE ; V-3,3,40,Prise double=96 ; Panneau de logement=18 ; Plinthe 1000W=10 ; Aéroconvecteur 1500W=7 ; Sortie câblo/informatique=3 ; Raccordement évaporateur=1 ; Sectionneur=1
+LO EVAP,Raccordement évaporateur,0.98,125,125,147,147,0,EVG ; L EVAP ; LO EVAP,0,3,Raccordement évaporateur=122 ; Panneau de logement=3
+SERV PRISE,Prise double,0.99,110,111,1616,2561,-945,LO P3000 ; LO PRISE ; LO TV ; P-4 ; SERV PRISE ; V-3,1,1,Prise double=109 ; Raccordement ventilateur=1
+DF1,Détecteur de fumée,1.00,105,105,106,105,1,,0,0,Détecteur de fumée=105
+exit,Luminaire — à classer,0.54,72,72,325,503,-178,APPLIQUE MURAL EXT ; FIXT TYPE UE2 ; PLAFONNIER ; exit,0,33,Luminaire — à classer=39 ; Enseigne sortie=33
+RWF 1500W,Aéroconvecteur 1500W,0.72,71,71,71,71,0,,0,20,Aéroconvecteur 1500W=51 ; Sectionneur=14 ; Prise demi-commandée=6
+KLAXON,Klaxon,1.00,50,50,52,50,2,,0,0,Klaxon=50
+B 1250W,Plinthe 1250W,0.98,46,46,47,46,1,,0,1,Plinthe 1250W=45 ; Sectionneur=1
+RWF 2000W,Aéroconvecteur 2000W,0.76,38,38,38,38,0,,0,9,Aéroconvecteur 2000W=29 ; Sectionneur=8 ; Sortie informatique=1
+DM,Déclencheur manuel,1.00,36,36,36,36,0,,0,0,Déclencheur manuel=36
+LO VENT,Raccordement ventilateur,1.00,35,35,62,40,22,LO VENT ; P-1B ; P-2A ; V-15 ; V-1A ; V-9,0,0,Raccordement ventilateur=35
+DF2,Détecteur de fumée de gaine,0.97,34,34,33,34,-1,,0,1,Détecteur de fumée de gaine=33 ; Résistance fin de ligne=1
+RELAIS,Relais adressable,1.00,30,31,31,31,0,,1,0,Relais adressable=30
+b 1000w 347v,Plinthe 1000W,1.00,30,30,232,233,-1,B 1000W ; b 1000w 347v,0,0,Plinthe 1000W=30
+MA,Module adressable,0.96,28,28,27,28,-1,,0,1,Module adressable=27 ; Relais adressable=1
+B 500W,Plinthe 500W,1.00,26,26,26,26,0,,0,0,Plinthe 500W=26
+RWF 1250W,Aéroconvecteur 1250W,0.92,25,25,25,25,0,,0,2,Aéroconvecteur 1250W=23 ; Sectionneur=2
+DV,Supervision vanne gicleur,1.00,22,22,22,22,0,,0,0,Supervision vanne gicleur=22
+PLAFOND,,0.00,0,21,0,21,,,21,0,
+L EVAP,Raccordement évaporateur,0.89,18,18,147,147,0,EVG ; L EVAP ; LO EVAP,0,2,Raccordement évaporateur=16 ; Panneau de logement=2
+DD,Détecteur débit gicleur,1.00,17,17,17,17,0,,0,0,Détecteur débit gicleur=17
+INX,Panneau INX,1.00,14,14,14,14,0,,0,0,Panneau INX=14
+RWF1000W,Aéroconvecteur 1000W,1.00,14,14,14,14,0,,0,0,Aéroconvecteur 1000W=14
+VCFF,Raccordement volet motorisé,0.64,14,14,14,14,0,,0,5,Raccordement volet motorisé=9 ; Prise réfrigérateur=2 ; Prise double=2 ; Prise laveuse=1
+APPLIQUE MURAL EXT,Luminaire — à classer,1.00,9,10,325,503,-178,APPLIQUE MURAL EXT ; FIXT TYPE UE2 ; PLAFONNIER ; exit,1,0,Luminaire — à classer=9
+B 1500W,Plinthe 1500W,1.00,6,6,6,6,0,,0,0,Plinthe 1500W=6
+EVG,Raccordement évaporateur,1.00,4,4,147,147,0,EVG ; L EVAP ; LO EVAP,0,0,Raccordement évaporateur=4
+serv gfi wp,Prise étanche,1.00,4,4,163,163,0,LO PRISE GFI WP ; SERV PRISE GFI WP ; serv gfi wp,0,0,Prise étanche=4
+SERV PRISE GFI WP,Prise étanche,1.00,3,3,163,163,0,LO PRISE GFI WP ; SERV PRISE GFI WP ; serv gfi wp,0,0,Prise étanche=3
+B 300W 347V,Plinthe 300W,1.00,2,2,159,159,0,B 300W ; B 300W 347V,0,0,Plinthe 300W=2
+PANN POMPE,Raccordement équipement mécanique,1.00,1,2,28,9,19,AF-1 ; EA-1 ; PANN POMPE ; SERPENTIN ; V-10 ; V-5A ; serv af-2,1,0,Raccordement équipement mécanique=1
+SERPENTIN,Raccordement équipement mécanique,1.00,2,2,28,9,19,AF-1 ; EA-1 ; PANN POMPE ; SERPENTIN ; V-10 ; V-5A ; serv af-2,0,0,Raccordement équipement mécanique=2
+SERV TEL,Sortie informatique,1.00,2,2,55,2,53,,0,0,Sortie informatique=2
+WF 4000W 347V,Aéroconvecteur commun,1.00,2,2,2,2,0,,0,0,Aéroconvecteur commun=2
+AF-1,Raccordement équipement mécanique,1.00,1,1,28,9,19,AF-1 ; EA-1 ; PANN POMPE ; SERPENTIN ; V-10 ; V-5A ; serv af-2,0,0,Raccordement équipement mécanique=1
+AG-1A,,0.00,0,1,0,1,,,1,0,
+AG-1B,,0.00,0,1,0,1,,,1,0,
+COND BUREAU,Raccordement condenseur,1.00,1,1,145,147,-2,COND BUREAU ; COND CONF ; COND YOGA ; LO CONENSEUR,0,0,Raccordement condenseur=1
+COND CONF,Raccordement condenseur,1.00,1,1,145,147,-2,COND BUREAU ; COND CONF ; COND YOGA ; LO CONENSEUR,0,0,Raccordement condenseur=1
+COND YOGA,Raccordement condenseur,1.00,1,1,145,147,-2,COND BUREAU ; COND CONF ; COND YOGA ; LO CONENSEUR,0,0,Raccordement condenseur=1
+DF3,Détecteur fumée/CO,1.00,1,1,1,1,0,,0,0,Détecteur fumée/CO=1
+EA-1,Raccordement équipement mécanique,1.00,1,1,28,9,19,AF-1 ; EA-1 ; PANN POMPE ; SERPENTIN ; V-10 ; V-5A ; serv af-2,0,0,Raccordement équipement mécanique=1
+GSM,,0.00,0,1,0,1,,,1,0,
+P--1A,,0.00,0,1,0,1,,,1,0,
+P-1B,Raccordement ventilateur,1.00,1,1,62,40,22,LO VENT ; P-1B ; P-2A ; V-15 ; V-1A ; V-9,0,0,Raccordement ventilateur=1
+P-2A,Raccordement ventilateur,1.00,1,1,62,40,22,LO VENT ; P-1B ; P-2A ; V-15 ; V-1A ; V-9,0,0,Raccordement ventilateur=1
+P-2B,,0.00,0,1,0,1,,,1,0,
+P-3,,0.00,0,1,0,1,,,1,0,
+P-4,Prise double,1.00,1,1,1616,2561,-945,LO P3000 ; LO PRISE ; LO TV ; P-4 ; SERV PRISE ; V-3,0,0,Prise double=1
+PORTE GARAGE,,0.00,0,1,0,1,,,1,0,
+V-10,Raccordement équipement mécanique,1.00,1,1,28,9,19,AF-1 ; EA-1 ; PANN POMPE ; SERPENTIN ; V-10 ; V-5A ; serv af-2,0,0,Raccordement équipement mécanique=1
+V-11,Sectionneur,1.00,1,1,148,2,146,V-11 ; V-4,0,0,Sectionneur=1
+V-12,Équipement salle électrique — à classer,1.00,1,1,11,2,9,V-12 ; V-2A,0,0,Équipement salle électrique — à classer=1
+V-13,,0.00,0,1,0,1,,,1,0,
+V-14A,,0.00,0,1,0,1,,,1,0,
+V-14B,,0.00,0,1,0,1,,,1,0,
+V-14C,,0.00,0,1,0,1,,,1,0,
+V-15,Raccordement ventilateur,1.00,1,1,62,40,22,LO VENT ; P-1B ; P-2A ; V-15 ; V-1A ; V-9,0,0,Raccordement ventilateur=1
+V-16,,0.00,0,1,0,1,,,1,0,
+V-1A,Raccordement ventilateur,1.00,1,1,62,40,22,LO VENT ; P-1B ; P-2A ; V-15 ; V-1A ; V-9,0,0,Raccordement ventilateur=1
+V-1B,,0.00,0,1,0,1,,,1,0,
+V-1C,,0.00,0,1,0,1,,,1,0,
+V-1D,,0.00,0,1,0,1,,,1,0,
+V-2A,Équipement salle électrique — à classer,1.00,1,1,11,2,9,V-12 ; V-2A,0,0,Équipement salle électrique — à classer=1
+V-2B,Transformateur,1.00,1,1,11,1,10,,0,0,Transformateur=1
+V-2C,,0.00,0,1,0,1,,,1,0,
+V-3,Prise double,1.00,1,1,1616,2561,-945,LO P3000 ; LO PRISE ; LO TV ; P-4 ; SERV PRISE ; V-3,0,0,Prise double=1
+V-4,Sectionneur,1.00,1,1,148,2,146,V-11 ; V-4,0,0,Sectionneur=1
+V-5A,Raccordement équipement mécanique,1.00,1,1,28,9,19,AF-1 ; EA-1 ; PANN POMPE ; SERPENTIN ; V-10 ; V-5A ; serv af-2,0,0,Raccordement équipement mécanique=1
+V-5B,,0.00,0,1,0,1,,,1,0,
+V-6,,0.00,0,1,0,1,,,1,0,
+V-7,,0.00,0,1,0,1,,,1,0,
+V-8,,0.00,0,1,0,1,,,1,0,
+V-9,Raccordement ventilateur,1.00,1,1,62,40,22,LO VENT ; P-1B ; P-2A ; V-15 ; V-1A ; V-9,0,0,Raccordement ventilateur=1
+serv af-2,Raccordement équipement mécanique,1.00,1,1,28,9,19,AF-1 ; EA-1 ; PANN POMPE ; SERPENTIN ; V-10 ; V-5A ; serv af-2,0,0,Raccordement équipement mécanique=1

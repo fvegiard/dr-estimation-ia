@@ -1,0 +1,36 @@
+libelle_humain,libelle_ia,proportion,appariees,humain,ia_libelle_total,humain_groupe,ecart_groupe,libelles_humains_partages,manquantes_ia,meme_position_libelle_different,repartition
+FIXTURE TYPE A,Luminaire A 2x2 30W,1.00,18,18,18,18,0,,0,0,Luminaire A 2x2 30W=18
+PRISE,Prise double 15A @48po,0.82,11,11,10,12,-2,PRISE ; PRISE GFI,0,2,Prise double 15A @48po=9 ; Prise réfrigérateur=1 ; Prise double 15A=1
+FIXTURE TYPE B,Luminaire B encastré 6po 18W,1.00,8,8,8,8,0,,0,0,Luminaire B encastré 6po 18W=8
+PLINTHE A 1500W,Chauffage type A 1500W,1.00,7,7,7,7,0,,0,0,Chauffage type A 1500W=7
+DÉTECTEUR FUMÉE,Détecteur de fumée,1.00,5,5,5,5,0,,0,0,Détecteur de fumée=5
+FIXTURE TYPE A1,Luminaire A1 2x2 40W,1.00,4,4,4,4,0,,0,0,Luminaire A1 2x2 40W=4
+FIXTURE TYPE E,Luminaire E encastré ext. 4po,1.00,4,4,4,4,0,,0,0,Luminaire E encastré ext. 4po=4
+GRADATEUR,Gradateur à glissière,1.00,4,4,4,4,0,,0,0,Gradateur à glissière=4
+INT 1 VOIE,Commande éclairage ($),1.00,4,4,4,4,0,,0,0,Commande éclairage ($)=4
+SERPENTIN,Serpentin électrique SE,1.00,4,4,4,4,0,,0,0,Serpentin électrique SE=4
+TRIAC,Relais bas voltage RT,1.00,4,4,4,4,0,,0,0,Relais bas voltage RT=4
+FIXTURE TYPE B1,Luminaire B1 encastré 6po 12W,1.00,3,3,3,3,0,,0,0,Luminaire B1 encastré 6po 12W=3
+FIXTURE TYPE C,Luminaire C applique ext.,1.00,3,3,3,3,0,,0,0,Luminaire C applique ext.=3
+KLAXON,Klaxon alarme-incendie,1.00,2,3,2,3,-1,,1,0,Klaxon alarme-incendie=2
+PRISE 15/20A GFI,Prise 15-20A DDFT @48po,0.67,3,3,2,3,-1,,0,1,Prise 15-20A DDFT @48po=2 ; Prise extérieure DDFT EI=1
+TETE DOUBLE,Unité urgence UA plafond,0.67,3,3,2,3,-1,,0,1,Unité urgence UA plafond=2 ; Unité urgence UA mur tête double=1
+30A NF WP,Sectionneur 30A sans fusible,1.00,2,2,2,2,0,,0,0,Sectionneur 30A sans fusible=2
+CONDENSEUR,Raccordement condenseur CD,1.00,2,2,2,2,0,,0,0,Raccordement condenseur CD=2
+ECHANGEUR AIR,,0.00,0,2,0,2,,,2,0,
+EVAPORATEUR,Raccordement unité AC,1.00,2,2,2,2,0,,0,0,Raccordement unité AC=2
+PLINTHE A 900W,Chauffage type A 900W,1.00,2,2,2,2,0,,0,0,Chauffage type A 900W=2
+SORTIE TEL,Raccordement échangeur d'air ECH,0.50,2,2,2,2,0,,0,1,Raccordement échangeur d'air ECH=1 ; Sortie data murale=1
+TETE SIMPLE,Unité urgence UA mur tête simple,1.00,2,2,2,2,0,,0,0,Unité urgence UA mur tête simple=2
+THERMOSTAT,Thermostat unipolaire,1.00,2,2,2,2,0,,0,0,Thermostat unipolaire=2
+THERMOSTAT PLANCHER CHAUFFANT,Thermostat esclave plancher — à confirmer,0.50,2,2,1,2,-1,,0,1,Thermostat maître plancher=1 ; Thermostat esclave plancher — à confirmer=1
+CHAUFFE-EAU,Raccordement chauffe-eau CE-1,1.00,1,1,1,1,0,,0,0,Raccordement chauffe-eau CE-1=1
+ENSEIGNE SORTIE COMBO,Enseigne sortie mur tête double,1.00,1,1,1,1,0,,0,0,Enseigne sortie mur tête double=1
+FIXTURE TYPE D,Luminaire D applique ext.,1.00,1,1,2,1,1,,0,0,Luminaire D applique ext.=1
+FIXTURE TYPE F,Luminaire F sous armoire,1.00,1,1,1,1,0,,0,0,Luminaire F sous armoire=1
+FIXTURE TYPE F1,Luminaire F1 sous armoire,1.00,1,1,1,1,0,,0,0,Luminaire F1 sous armoire=1
+FIXTURE TYPE G,Luminaire G applique toilette,1.00,1,1,1,1,0,,0,0,Luminaire G applique toilette=1
+PRISE 15/20A,Prise micro-onde 5-20R,1.00,1,1,1,1,0,,0,0,Prise micro-onde 5-20R=1
+PRISE GFI,Prise double 15A @48po,1.00,1,1,10,12,-2,PRISE ; PRISE GFI,0,0,Prise double 15A @48po=1
+RELO FORCE FLOW,Aéroconvecteur existant relocalisé,1.00,1,1,1,1,0,,0,0,Aéroconvecteur existant relocalisé=1
+RELO STATION MANUEL,Boîtier protection station manuelle,1.00,1,1,1,1,0,,0,0,Boîtier protection station manuelle=1

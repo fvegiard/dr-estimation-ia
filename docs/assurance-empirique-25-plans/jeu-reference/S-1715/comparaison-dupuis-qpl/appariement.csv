@@ -1,0 +1,761 @@
+cote,page_humaine,feuille_ia,libelle,x_px,y_px,x_norm,y_norm,x_px_ia,y_px_ia,statut,id,id_apparie,libelle_apparie,distance_px_ia
+humain,Électrique_Plans pour soumission - 4,E102,LAMPADAIRE D1,5749,2918,0.7141,0.5125,4066,2064,appariée,H:Électrique_Plans pour soumission - 4:1,IA:E102:3,Lampadaire D1,29.4
+humain,Électrique_Plans pour soumission - 4,E102,LAMPADAIRE D1,4690,2912,0.5825,0.5114,3317,2060,appariée,H:Électrique_Plans pour soumission - 4:2,IA:E102:2,Lampadaire D1,25.0
+humain,Électrique_Plans pour soumission - 4,E102,HPEXT,3367,4707,0.4182,0.8267,2381,3330,manquante IA,H:Électrique_Plans pour soumission - 4:3,,,
+humain,Électrique_Plans pour soumission - 4,E102,HPEXT,2687,4149,0.3337,0.7287,1900,2935,manquante IA,H:Électrique_Plans pour soumission - 4:4,,,
+humain,Électrique_Plans pour soumission - 4,E102,HPEXT,2687,3103,0.3337,0.5450,1900,2195,manquante IA,H:Électrique_Plans pour soumission - 4:5,,,
+humain,Électrique_Plans pour soumission - 4,E102,HPEXT,3144,2551,0.3905,0.4480,2224,1805,manquante IA,H:Électrique_Plans pour soumission - 4:6,,,
+humain,Électrique_Plans pour soumission - 4,E102,HPEXT,3778,3149,0.4693,0.5530,2672,2228,manquante IA,H:Électrique_Plans pour soumission - 4:7,,,
+humain,Électrique_Plans pour soumission - 4,E102,VIDEO,3550,4714,0.4409,0.8279,2511,3335,manquante IA,H:Électrique_Plans pour soumission - 4:8,,,
+humain,Électrique_Plans pour soumission - 4,E102,VIDEO,3317,4712,0.4120,0.8275,2346,3333,manquante IA,H:Électrique_Plans pour soumission - 4:9,,,
+humain,Électrique_Plans pour soumission - 4,E102,3,3782,2948,0.4698,0.5177,2675,2085,manquante IA,H:Électrique_Plans pour soumission - 4:10,,,
+humain,Électrique_Plans pour soumission - 4,E102,3,3321,2539,0.4125,0.4459,2349,1796,manquante IA,H:Électrique_Plans pour soumission - 4:11,,,
+humain,Électrique_Addenda ELE-001_Plans - 3,E201_ADD,FIXT TYPE R3,4654,2050,0.5781,0.3600,3287,1435,appariée,H:Électrique_Addenda ELE-001_Plans - 3:1,IA:E201_ADD:93,Luminaire R3,1.3
+humain,Électrique_Addenda ELE-001_Plans - 3,E201_ADD,FIXT TYPE R3,4411,2050,0.5479,0.3600,3116,1435,appariée,H:Électrique_Addenda ELE-001_Plans - 3:2,IA:E201_ADD:91,Luminaire R3,1.8
+humain,Électrique_Addenda ELE-001_Plans - 3,E201_ADD,FIXT TYPE R3,4163,2048,0.5171,0.3597,2941,1434,appariée,H:Électrique_Addenda ELE-001_Plans - 3:3,IA:E201_ADD:89,Luminaire R3,1.5
+humain,Électrique_Addenda ELE-001_Plans - 3,E201_ADD,FIXT TYPE R3,4165,2238,0.5173,0.3930,2942,1567,appariée,H:Électrique_Addenda ELE-001_Plans - 3:4,IA:E201_ADD:90,Luminaire R3,1.0
+humain,Électrique_Addenda ELE-001_Plans - 3,E201_ADD,FIXT TYPE R3,4409,2240,0.5476,0.3934,3114,1568,appariée,H:Électrique_Addenda ELE-001_Plans - 3:5,IA:E201_ADD:92,Luminaire R3,0.6
+humain,Électrique_Addenda ELE-001_Plans - 3,E201_ADD,FIXT TYPE R3,4649,2240,0.5774,0.3934,3284,1568,appariée,H:Électrique_Addenda ELE-001_Plans - 3:6,IA:E201_ADD:94,Luminaire R3,2.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,3946,1213,0.4901,0.2130,2786,848,appariée,H:Électrique_Plans pour soumission - 5:1,IA:E201_ADD:46,Luminaire A1,10.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,3954,1318,0.4911,0.2315,2791,922,appariée,H:Électrique_Plans pour soumission - 5:2,IA:E201_ADD:47,Luminaire A1,10.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,3954,1444,0.4911,0.2536,2791,1011,appariée,H:Électrique_Plans pour soumission - 5:3,IA:E201_ADD:48,Luminaire A1,25.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,3955,1524,0.4912,0.2677,2792,1068,appariée,H:Électrique_Plans pour soumission - 5:4,IA:E201_ADD:49,Luminaire A1,11.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,3954,1647,0.4911,0.2893,2791,1155,appariée,H:Électrique_Plans pour soumission - 5:5,IA:E201_ADD:50,Luminaire A1,9.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,3952,1791,0.4909,0.3145,2790,1257,appariée,H:Électrique_Plans pour soumission - 5:6,IA:E201_ADD:51,Luminaire A1,22.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,4035,1873,0.5012,0.3289,2849,1315,appariée,H:Électrique_Plans pour soumission - 5:7,IA:E201_ADD:52,Luminaire A1,9.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,4374,1218,0.5433,0.2139,3089,852,appariée,H:Électrique_Plans pour soumission - 5:8,IA:E201_ADD:53,Luminaire A1,10.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,4503,1216,0.5593,0.2136,3180,850,appariée,H:Électrique_Plans pour soumission - 5:9,IA:E201_ADD:54,Luminaire A1,13.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type a1,4660,1258,0.5788,0.2209,3291,880,appariée,H:Électrique_Plans pour soumission - 5:10,IA:E201_ADD:55,Luminaire A1,26.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5393,1253,0.6699,0.2201,3810,877,appariée,H:Électrique_Plans pour soumission - 5:11,IA:E201_ADD:69,Luminaire L3,9.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5630,1252,0.6993,0.2199,3978,876,appariée,H:Électrique_Plans pour soumission - 5:12,IA:E201_ADD:70,Luminaire L3,9.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5396,1406,0.6702,0.2469,3812,985,appariée,H:Électrique_Plans pour soumission - 5:13,IA:E201_ADD:68,Luminaire L3,10.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5631,1407,0.6994,0.2471,3979,985,appariée,H:Électrique_Plans pour soumission - 5:14,IA:E201_ADD:67,Luminaire L3,11.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5630,1557,0.6993,0.2734,3978,1091,appariée,H:Électrique_Plans pour soumission - 5:15,IA:E201_ADD:66,Luminaire L3,9.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5398,1558,0.6705,0.2736,3814,1092,appariée,H:Électrique_Plans pour soumission - 5:16,IA:E201_ADD:65,Luminaire L3,10.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5395,1710,0.6701,0.3003,3812,1199,appariée,H:Électrique_Plans pour soumission - 5:17,IA:E201_ADD:64,Luminaire L3,10.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5399,1861,0.6706,0.3268,3814,1306,appariée,H:Électrique_Plans pour soumission - 5:18,IA:E201_ADD:61,Luminaire L3,22.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5629,1710,0.6992,0.3003,3977,1199,appariée,H:Électrique_Plans pour soumission - 5:19,IA:E201_ADD:63,Luminaire L3,10.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5627,1858,0.6989,0.3263,3976,1304,appariée,H:Électrique_Plans pour soumission - 5:20,IA:E201_ADD:62,Luminaire L3,6.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5181,1246,0.6435,0.2188,3660,872,appariée,H:Électrique_Plans pour soumission - 5:21,IA:E201_ADD:71,Luminaire L3A,23.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,5184,1370,0.6439,0.2406,3662,959,appariée,H:Électrique_Plans pour soumission - 5:22,IA:E201_ADD:72,Luminaire L3A,10.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,4849,1245,0.6023,0.2187,3425,871,appariée,H:Électrique_Plans pour soumission - 5:23,IA:E201_ADD:73,Luminaire L3A,24.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l3,4852,1369,0.6027,0.2404,3427,959,appariée,H:Électrique_Plans pour soumission - 5:24,IA:E201_ADD:85,Luminaire R2,65.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,4890,1497,0.6074,0.2629,3454,1049,appariée,H:Électrique_Plans pour soumission - 5:25,IA:E201_ADD:75,Luminaire L4,10.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,4892,1624,0.6076,0.2852,3455,1139,appariée,H:Électrique_Plans pour soumission - 5:26,IA:E201_ADD:76,Luminaire L4,10.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,4892,1750,0.6076,0.3073,3455,1228,appariée,H:Électrique_Plans pour soumission - 5:27,IA:E201_ADD:77,Luminaire L4,10.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,4890,1877,0.6074,0.3296,3454,1317,appariée,H:Électrique_Plans pour soumission - 5:28,IA:E201_ADD:78,Luminaire L4,11.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,5138,1876,0.6382,0.3295,3630,1317,appariée,H:Électrique_Plans pour soumission - 5:29,IA:E201_ADD:79,Luminaire L4,10.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,5139,1750,0.6383,0.3073,3630,1228,appariée,H:Électrique_Plans pour soumission - 5:30,IA:E201_ADD:80,Luminaire L4,10.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,5136,1621,0.6379,0.2847,3628,1137,appariée,H:Électrique_Plans pour soumission - 5:31,IA:E201_ADD:81,Luminaire L4,8.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,5139,1496,0.6383,0.2627,3630,1048,appariée,H:Électrique_Plans pour soumission - 5:32,IA:E201_ADD:82,Luminaire L4,10.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,5015,1242,0.6229,0.2181,3543,869,appariée,H:Électrique_Plans pour soumission - 5:33,IA:E201_ADD:2,Armoire de relais BT (P.R.),60.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,fixt type l4,5018,1368,0.6233,0.2403,3545,958,appariée,H:Électrique_Plans pour soumission - 5:34,IA:E201_ADD:84,Luminaire L4A,10.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE L1,4162,1266,0.5170,0.2223,2939,886,appariée,H:Électrique_Plans pour soumission - 5:35,IA:E201_ADD:56,Luminaire L1,9.2
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE L1,4161,1389,0.5168,0.2439,2938,973,appariée,H:Électrique_Plans pour soumission - 5:36,IA:E201_ADD:57,Luminaire L1,10.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT  TYPE L2,4163,1843,0.5171,0.3237,2939,1293,appariée,H:Électrique_Plans pour soumission - 5:37,IA:E201_ADD:60,Luminaire L2,10.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT  TYPE L2,4164,1678,0.5172,0.2947,2940,1177,appariée,H:Électrique_Plans pour soumission - 5:38,IA:E201_ADD:59,Luminaire L2,10.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT  TYPE L2,4164,1514,0.5172,0.2659,2940,1061,appariée,H:Électrique_Plans pour soumission - 5:39,IA:E201_ADD:58,Luminaire L2,12.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,ENSEIGNE SORTIE,5005,1192,0.6217,0.2093,3535,833,appariée,H:Électrique_Plans pour soumission - 5:40,IA:E201_ADD:33,Indicateur d'issue Z1 (mur) — à confirmer,18.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,ENSEIGNE SORTIE,4238,1190,0.5264,0.2090,2992,832,appariée,H:Électrique_Plans pour soumission - 5:41,IA:E201_ADD:32,Indicateur d'issue Z1 (mur) — à confirmer,27.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,ENSEIGNE SORTIE,4233,1914,0.5258,0.3361,2989,1343,appariée,H:Électrique_Plans pour soumission - 5:42,IA:E201_ADD:34,Indicateur d'issue Z2 (plafond) — à confirmer,24.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,ENSEIGNE SORTIE,4835,1912,0.6005,0.3358,3415,1342,appariée,H:Électrique_Plans pour soumission - 5:43,IA:E201_ADD:30,Indicateur d'issue Z1 (mur) — à confirmer,26.2
+humain,Électrique_Plans pour soumission - 5,E201_ADD,ENSEIGNE SORTIE,5384,1911,0.6687,0.3356,3804,1341,appariée,H:Électrique_Plans pour soumission - 5:44,IA:E201_ADD:31,Indicateur d'issue Z1 (mur) — à confirmer,23.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE DOUBLE,5318,1767,0.6605,0.3103,3757,1240,appariée,H:Électrique_Plans pour soumission - 5:45,IA:E201_ADD:156,Tête d'éclairage double,9.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE DOUBLE,5751,1200,0.7143,0.2107,4064,839,appariée,H:Électrique_Plans pour soumission - 5:46,IA:E201_ADD:157,Tête d'éclairage double,16.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE DOUBLE,5099,1283,0.6333,0.2253,3602,898,appariée,H:Électrique_Plans pour soumission - 5:47,IA:E201_ADD:155,Tête d'éclairage double,11.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE DOUBLE,4579,1407,0.5687,0.2471,3234,985,appariée,H:Électrique_Plans pour soumission - 5:48,IA:E201_ADD:87,Luminaire R2,49.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE DOUBLE,4159,1893,0.5166,0.3325,2936,1329,appariée,H:Électrique_Plans pour soumission - 5:49,IA:E201_ADD:152,Tête d'éclairage double,11.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE DOUBLE,4159,1424,0.5166,0.2501,2936,997,appariée,H:Électrique_Plans pour soumission - 5:50,IA:E201_ADD:151,Tête d'éclairage double,4.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE DOUBLE,4805,1800,0.5968,0.3161,3394,1263,appariée,H:Électrique_Plans pour soumission - 5:51,IA:E201_ADD:154,Tête d'éclairage double,25.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE SIMPLE,4354,1297,0.5408,0.2278,3075,908,appariée,H:Électrique_Plans pour soumission - 5:52,IA:E201_ADD:130,Panneau d'alarme incendie (PAI),26.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE SIMPLE,4486,1296,0.5572,0.2276,3168,907,appariée,H:Électrique_Plans pour soumission - 5:53,IA:E201_ADD:36,Interrupteur basse tension,79.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,TETE SIMPLE,4714,1300,0.5855,0.2283,3329,910,appariée,H:Électrique_Plans pour soumission - 5:54,IA:E201_ADD:160,Tête d'éclairage simple,3.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,BATTERIE UNIT 2T,4890,1406,0.6074,0.2469,3454,985,appariée,H:Électrique_Plans pour soumission - 5:55,IA:E201_ADD:1,Accumulateur AUBX,5.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,4268,1584,0.5301,0.2782,3014,1110,appariée,H:Électrique_Plans pour soumission - 5:56,IA:E201_ADD:19,Détecteur de présence 360°,11.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,4682,1589,0.5815,0.2791,3307,1114,appariée,H:Électrique_Plans pour soumission - 5:57,IA:E201_ADD:20,Détecteur de présence 360°,8.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,5041,1669,0.6261,0.2931,3561,1170,appariée,H:Électrique_Plans pour soumission - 5:58,IA:E201_ADD:23,Détecteur de présence 360°,11.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,5539,1733,0.6880,0.3044,3914,1216,appariée,H:Électrique_Plans pour soumission - 5:59,IA:E201_ADD:24,Détecteur de présence 360°,11.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,5537,1355,0.6877,0.2380,3912,949,appariée,H:Électrique_Plans pour soumission - 5:60,IA:E201_ADD:25,Détecteur de présence 360°,9.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,4271,1298,0.5305,0.2280,3016,908,appariée,H:Électrique_Plans pour soumission - 5:61,IA:E201_ADD:18,Détecteur de présence 360°,8.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,4050,1218,0.5030,0.2139,2859,852,appariée,H:Électrique_Plans pour soumission - 5:62,IA:E201_ADD:15,Détecteur de présence 360°,8.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,3979,1484,0.4942,0.2606,2809,1040,appariée,H:Électrique_Plans pour soumission - 5:63,IA:E201_ADD:16,Détecteur de présence 360°,11.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,3950,1836,0.4906,0.3224,2788,1288,appariée,H:Électrique_Plans pour soumission - 5:64,IA:E201_ADD:17,Détecteur de présence 360°,10.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,4873,1284,0.6053,0.2255,3442,898,appariée,H:Électrique_Plans pour soumission - 5:65,IA:E201_ADD:21,Détecteur de présence 360°,13.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DECT 360,5205,1284,0.6465,0.2255,3677,898,appariée,H:Électrique_Plans pour soumission - 5:66,IA:E201_ADD:22,Détecteur de présence 360°,12.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT GR,4369,1916,0.5427,0.3365,3085,1345,appariée,H:Électrique_Plans pour soumission - 5:67,IA:E201_ADD:29,Gradateur basse tension,6.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT GR,4128,1791,0.5127,0.3145,2915,1257,appariée,H:Électrique_Plans pour soumission - 5:68,IA:E201_ADD:27,Gradateur basse tension,7.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT GR,3923,1684,0.4873,0.2957,2769,1181,appariée,H:Électrique_Plans pour soumission - 5:69,IA:E201_ADD:26,Gradateur basse tension,9.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT GR,4346,1342,0.5398,0.2357,3069,939,appariée,H:Électrique_Plans pour soumission - 5:70,IA:E201_ADD:28,Gradateur basse tension,5.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,5316,1859,0.6603,0.3265,3756,1305,manquante IA,H:Électrique_Plans pour soumission - 5:71,,,
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,5314,1884,0.6600,0.3309,3754,1322,appariée,H:Électrique_Plans pour soumission - 5:72,IA:E201_ADD:134,Poste BT double (a/b),18.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,4945,1326,0.6142,0.2329,3493,928,appariée,H:Électrique_Plans pour soumission - 5:73,IA:E201_ADD:40,Interrupteur basse tension,5.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,4377,1309,0.5437,0.2299,3091,916,appariée,H:Électrique_Plans pour soumission - 5:74,IA:E201_ADD:158,Tête d'éclairage simple,16.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,4508,1307,0.5599,0.2295,3184,915,appariée,H:Électrique_Plans pour soumission - 5:75,IA:E201_ADD:37,Interrupteur basse tension,12.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,4683,1310,0.5817,0.2301,3307,917,appariée,H:Électrique_Plans pour soumission - 5:76,IA:E201_ADD:38,Interrupteur basse tension,12.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,4724,1335,0.5868,0.2345,3337,934,appariée,H:Électrique_Plans pour soumission - 5:77,IA:E201_ADD:88,Luminaire R2,66.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,5133,1329,0.6376,0.2334,3626,930,appariée,H:Électrique_Plans pour soumission - 5:78,IA:E201_ADD:41,Interrupteur basse tension,8.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 1 VOIE,4130,1190,0.5130,0.2090,2916,832,appariée,H:Électrique_Plans pour soumission - 5:79,IA:E201_ADD:35,Interrupteur basse tension,7.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R2,4397,1380,0.5461,0.2424,3105,966,appariée,H:Électrique_Plans pour soumission - 5:80,IA:E201_ADD:86,Luminaire R2,4.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R2,4518,1383,0.5612,0.2429,3191,968,appariée,H:Électrique_Plans pour soumission - 5:81,IA:E201_ADD:159,Tête d'éclairage simple,65.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R2,4644,1383,0.5768,0.2429,3280,968,appariée,H:Électrique_Plans pour soumission - 5:82,IA:E201_ADD:153,Tête d'éclairage double,50.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R2,4764,1350,0.5917,0.2371,3365,945,appariée,H:Électrique_Plans pour soumission - 5:83,IA:E201_ADD:39,Interrupteur basse tension,28.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE M1,5466,1973,0.6789,0.3465,3862,1385,appariée,H:Électrique_Plans pour soumission - 5:84,IA:E201_ADD:98,Luminaire mural M1,24.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE M1,5820,1702,0.7229,0.2989,4113,1194,appariée,H:Électrique_Plans pour soumission - 5:85,IA:E201_ADD:97,Luminaire mural M1,20.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE M1,5060,1117,0.6285,0.1962,3574,781,appariée,H:Électrique_Plans pour soumission - 5:86,IA:E201_ADD:96,Luminaire mural M1,24.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE M1,4325,1121,0.5372,0.1969,3054,783,appariée,H:Électrique_Plans pour soumission - 5:87,IA:E201_ADD:95,Luminaire mural M1,19.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE M1,3837,1570,0.4766,0.2757,2708,1100,appariée,H:Électrique_Plans pour soumission - 5:88,IA:E201_ADD:99,Luminaire mural M1,12.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 3 VOIE,4805,1843,0.5968,0.3237,3394,1293,manquante IA,H:Électrique_Plans pour soumission - 5:89,,,
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 3 VOIE,4803,1874,0.5966,0.3291,3392,1315,appariée,H:Électrique_Plans pour soumission - 5:90,IA:E201_ADD:132,Poste BT double (a/b),24.2
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 3 VOIE,5112,1177,0.6350,0.2067,3611,823,appariée,H:Électrique_Plans pour soumission - 5:91,IA:E201_ADD:133,Poste BT double (a/b),31.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,INT 3 VOIE,5084,1179,0.6315,0.2071,3591,824,appariée,H:Électrique_Plans pour soumission - 5:92,IA:E201_ADD:83,Luminaire L4A,58.2
+humain,Électrique_Plans pour soumission - 5,E201_ADD,KLAXON,4315,1307,0.5360,0.2295,3047,915,appariée,H:Électrique_Plans pour soumission - 5:93,IA:E201_ADD:44,Klaxon alarme incendie,11.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,KLAXON,5098,1325,0.6332,0.2327,3601,927,appariée,H:Électrique_Plans pour soumission - 5:94,IA:E201_ADD:45,Klaxon alarme incendie,12.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,STROB,5318,1568,0.6605,0.2754,3757,1099,appariée,H:Électrique_Plans pour soumission - 5:95,IA:E201_ADD:43,Klaxon + stroboscope,6.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,STATION MANUEL,4804,1906,0.5967,0.3347,3393,1338,appariée,H:Électrique_Plans pour soumission - 5:96,IA:E201_ADD:137,Poste manuel,7.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,STATION MANUEL,5318,1916,0.6605,0.3365,3757,1345,appariée,H:Électrique_Plans pour soumission - 5:97,IA:E201_ADD:139,Poste manuel,6.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,STATION MANUEL,5060,1179,0.6285,0.2071,3574,824,appariée,H:Électrique_Plans pour soumission - 5:98,IA:E201_ADD:138,Poste manuel,7.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,STATION MANUEL,4316,1186,0.5361,0.2083,3048,829,appariée,H:Électrique_Plans pour soumission - 5:99,IA:E201_ADD:135,Poste manuel,8.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,STATION MANUEL,4320,1917,0.5366,0.3367,3050,1346,appariée,H:Électrique_Plans pour soumission - 5:100,IA:E201_ADD:136,Poste manuel,7.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4052,1797,0.5033,0.3156,2861,1261,appariée,H:Électrique_Plans pour soumission - 5:101,IA:E201_ADD:6,Détecteur de fumée,5.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4061,1527,0.5044,0.2682,2867,1070,appariée,H:Électrique_Plans pour soumission - 5:102,IA:E201_ADD:4,Détecteur de fumée,8.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4053,1256,0.5034,0.2206,2861,879,appariée,H:Électrique_Plans pour soumission - 5:103,IA:E201_ADD:3,Détecteur de fumée,5.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4086,1236,0.5075,0.2171,2885,865,appariée,H:Électrique_Plans pour soumission - 5:104,IA:E201_ADD:13,Détecteur de fumée de conduit (note 2),7.2
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4156,1206,0.5162,0.2118,2934,843,appariée,H:Électrique_Plans pour soumission - 5:105,IA:E201_ADD:14,Détecteur de fumée de conduit (note 2),7.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4276,1547,0.5311,0.2717,3019,1084,appariée,H:Électrique_Plans pour soumission - 5:106,IA:E201_ADD:5,Détecteur de fumée,9.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4687,1543,0.5822,0.2710,3310,1081,appariée,H:Électrique_Plans pour soumission - 5:107,IA:E201_ADD:7,Détecteur de fumée,6.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,4918,1289,0.6109,0.2264,3474,902,appariée,H:Électrique_Plans pour soumission - 5:108,IA:E201_ADD:74,Luminaire L3A,54.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,5045,1592,0.6266,0.2796,3564,1116,appariée,H:Électrique_Plans pour soumission - 5:109,IA:E201_ADD:10,Détecteur de fumée,9.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,5163,1289,0.6413,0.2264,3647,902,appariée,H:Électrique_Plans pour soumission - 5:110,IA:E201_ADD:9,Détecteur de fumée,7.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,5539,1301,0.6880,0.2285,3914,910,appariée,H:Électrique_Plans pour soumission - 5:111,IA:E201_ADD:11,Détecteur de fumée,3.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,DETECTEUR FUMÉ,5540,1794,0.6881,0.3151,3914,1259,appariée,H:Électrique_Plans pour soumission - 5:112,IA:E201_ADD:12,Détecteur de fumée,8.2
+humain,Électrique_Plans pour soumission - 5,E201_ADD,RA,4161,1182,0.5168,0.2076,2938,826,appariée,H:Électrique_Plans pour soumission - 5:113,IA:E201_ADD:150,Relais adressable RA,5.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,RA,4128,1249,0.5127,0.2194,2915,874,appariée,H:Électrique_Plans pour soumission - 5:114,IA:E201_ADD:149,Relais adressable RA,8.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,1854,3225,0.2303,0.5664,1304,2269,appariée,H:Électrique_Plans pour soumission - 5:115,IA:E201_ADD:100,Luminaire suspendu R1,3.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2291,2823,0.2846,0.4958,1614,1986,appariée,H:Électrique_Plans pour soumission - 5:116,IA:E201_ADD:101,Luminaire suspendu R1,4.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2405,3234,0.2987,0.5680,1695,2276,appariée,H:Électrique_Plans pour soumission - 5:117,IA:E201_ADD:105,Luminaire suspendu R1,7.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2412,3749,0.2996,0.6584,1699,2640,appariée,H:Électrique_Plans pour soumission - 5:118,IA:E201_ADD:103,Luminaire suspendu R1,10.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2299,4159,0.2856,0.7304,1619,2929,appariée,H:Électrique_Plans pour soumission - 5:119,IA:E201_ADD:104,Luminaire suspendu R1,7.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,1857,3747,0.2307,0.6581,1307,2638,appariée,H:Électrique_Plans pour soumission - 5:120,IA:E201_ADD:102,Luminaire suspendu R1,3.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2818,2819,0.3500,0.4951,1987,1983,appariée,H:Électrique_Plans pour soumission - 5:121,IA:E201_ADD:106,Luminaire suspendu R1,6.0
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2961,3232,0.3678,0.5676,2088,2274,appariée,H:Électrique_Plans pour soumission - 5:122,IA:E201_ADD:109,Luminaire suspendu R1,6.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2963,3749,0.3680,0.6584,2090,2640,appariée,H:Électrique_Plans pour soumission - 5:123,IA:E201_ADD:107,Luminaire suspendu R1,8.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,2816,4159,0.3498,0.7304,1986,2929,appariée,H:Électrique_Plans pour soumission - 5:124,IA:E201_ADD:108,Luminaire suspendu R1,4.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,3367,4161,0.4182,0.7308,2376,2931,appariée,H:Électrique_Plans pour soumission - 5:125,IA:E201_ADD:112,Luminaire suspendu R1,6.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,3508,3747,0.4357,0.6581,2476,2638,appariée,H:Électrique_Plans pour soumission - 5:126,IA:E201_ADD:111,Luminaire suspendu R1,5.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,3510,3232,0.4360,0.5676,2477,2274,appariée,H:Électrique_Plans pour soumission - 5:127,IA:E201_ADD:113,Luminaire suspendu R1,7.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,3363,2819,0.4177,0.4951,2373,1983,appariée,H:Électrique_Plans pour soumission - 5:128,IA:E201_ADD:110,Luminaire suspendu R1,3.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,3850,2813,0.4782,0.4940,2718,1978,appariée,H:Électrique_Plans pour soumission - 5:129,IA:E201_ADD:114,Luminaire suspendu R1,8.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4337,2813,0.5387,0.4940,3062,1978,appariée,H:Électrique_Plans pour soumission - 5:130,IA:E201_ADD:116,Luminaire suspendu R1,11.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4191,3236,0.5206,0.5683,2959,2277,appariée,H:Électrique_Plans pour soumission - 5:131,IA:E201_ADD:119,Luminaire suspendu R1,9.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4188,3747,0.5202,0.6581,2957,2638,appariée,H:Électrique_Plans pour soumission - 5:132,IA:E201_ADD:126,Luminaire suspendu R1,6.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,3852,4157,0.4784,0.7301,2719,2928,appariée,H:Électrique_Plans pour soumission - 5:133,IA:E201_ADD:115,Luminaire suspendu R1,9.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4333,4155,0.5382,0.7297,3060,2926,appariée,H:Électrique_Plans pour soumission - 5:134,IA:E201_ADD:127,Luminaire suspendu R1,5.9
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4746,3744,0.5895,0.6575,3352,2636,appariée,H:Électrique_Plans pour soumission - 5:135,IA:E201_ADD:125,Luminaire suspendu R1,13.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4737,3230,0.5884,0.5673,3346,2273,appariée,H:Électrique_Plans pour soumission - 5:136,IA:E201_ADD:120,Luminaire suspendu R1,6.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4882,2817,0.6064,0.4947,3448,1981,appariée,H:Électrique_Plans pour soumission - 5:137,IA:E201_ADD:117,Luminaire suspendu R1,8.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,5399,2817,0.6706,0.4947,3814,1981,appariée,H:Électrique_Plans pour soumission - 5:138,IA:E201_ADD:118,Luminaire suspendu R1,5.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,5842,3230,0.7256,0.5673,4128,2273,appariée,H:Électrique_Plans pour soumission - 5:139,IA:E201_ADD:122,Luminaire suspendu R1,11.2
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,5303,3225,0.6587,0.5664,3746,2269,appariée,H:Électrique_Plans pour soumission - 5:140,IA:E201_ADD:121,Luminaire suspendu R1,13.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,5295,3753,0.6577,0.6591,3741,2642,appariée,H:Électrique_Plans pour soumission - 5:141,IA:E201_ADD:124,Luminaire suspendu R1,9.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,5839,3747,0.7253,0.6581,4126,2638,appariée,H:Électrique_Plans pour soumission - 5:142,IA:E201_ADD:123,Luminaire suspendu R1,9.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,5397,4153,0.6704,0.7294,3813,2925,appariée,H:Électrique_Plans pour soumission - 5:143,IA:E201_ADD:129,Luminaire suspendu R1,3.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE R1,4876,4149,0.6056,0.7287,3444,2922,appariée,H:Électrique_Plans pour soumission - 5:144,IA:E201_ADD:128,Luminaire suspendu R1,6.3
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,5673,4597,0.7046,0.8073,4008,3239,appariée,H:Électrique_Plans pour soumission - 5:145,IA:E201_ADD:148,Projecteur P1,22.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,4477,4598,0.5561,0.8075,3162,3239,appariée,H:Électrique_Plans pour soumission - 5:146,IA:E201_ADD:147,Projecteur P1,21.6
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,3279,4600,0.4073,0.8079,2313,3241,appariée,H:Électrique_Plans pour soumission - 5:147,IA:E201_ADD:146,Projecteur P1,22.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,2074,4601,0.2576,0.8080,1460,3241,appariée,H:Électrique_Plans pour soumission - 5:148,IA:E201_ADD:145,Projecteur P1,27.8
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,2079,2435,0.2582,0.4276,1464,1711,appariée,H:Électrique_Plans pour soumission - 5:149,IA:E201_ADD:141,Projecteur P1,24.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,3278,2433,0.4072,0.4273,2313,1710,appariée,H:Électrique_Plans pour soumission - 5:150,IA:E201_ADD:142,Projecteur P1,23.4
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,5673,2432,0.7046,0.4271,4008,1709,appariée,H:Électrique_Plans pour soumission - 5:151,IA:E201_ADD:144,Projecteur P1,22.5
+humain,Électrique_Plans pour soumission - 5,E201_ADD,FIXT TYPE P1,4476,2433,0.5560,0.4273,3161,1710,appariée,H:Électrique_Plans pour soumission - 5:152,IA:E201_ADD:143,Projecteur P1,22.1
+humain,Électrique_Plans pour soumission - 5,E201_ADD,P.R,4954,1285,0.6153,0.2257,3499,899,appariée,H:Électrique_Plans pour soumission - 5:153,IA:E201_ADD:8,Détecteur de fumée,29.7
+humain,Électrique_Plans pour soumission - 5,E201_ADD,PRISE,4936,1402,0.6131,0.2462,3487,982,appariée,H:Électrique_Plans pour soumission - 5:154,IA:E201_ADD:140,Prise hauteur spéciale,6.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B1000W,3976,1181,0.4939,0.2074,2816,822,appariée,H:Électrique_Plans pour soumission - 6:1,IA:E301_ADD:15,Plinthe B10,67.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B1500W,3902,1558,0.4847,0.2736,2764,1097,appariée,H:Électrique_Plans pour soumission - 6:2,IA:E301_ADD:63,Raccordement VC,38.5
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B1250W,3903,1813,0.4848,0.3184,2764,1283,appariée,H:Électrique_Plans pour soumission - 6:3,IA:E301_ADD:67,Raccordement serpentin SE,48.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B1250W,3936,1935,0.4889,0.3398,2787,1372,appariée,H:Électrique_Plans pour soumission - 6:4,IA:E301_ADD:16,Plinthe B12,82.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B2500W,4456,1938,0.5535,0.3404,3153,1374,manquante IA,H:Électrique_Plans pour soumission - 6:5,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B500W,4670,1181,0.5801,0.2074,3304,822,appariée,H:Électrique_Plans pour soumission - 6:6,IA:E301_ADD:22,Plinthe B5,66.4
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B500W,4809,1352,0.5973,0.2374,3402,947,appariée,H:Électrique_Plans pour soumission - 6:7,IA:E301_ADD:76,Raccordement ventilateur VE,34.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B500W,4351,1228,0.5404,0.2157,3079,857,manquante IA,H:Électrique_Plans pour soumission - 6:8,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B500W,4483,1231,0.5568,0.2162,3172,859,manquante IA,H:Électrique_Plans pour soumission - 6:9,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,B500W,5215,1182,0.6477,0.2076,3687,823,appariée,H:Électrique_Plans pour soumission - 6:10,IA:E301_ADD:24,Plinthe B5,68.2
+humain,Électrique_Plans pour soumission - 6,E301_ADD,A1500W,5128,1196,0.6369,0.2100,3626,833,appariée,H:Électrique_Plans pour soumission - 6:11,IA:E301_ADD:3,Aérotherme mural A15,77.7
+humain,Électrique_Plans pour soumission - 6,E301_ADD,A1500W,4330,1199,0.5378,0.2106,3065,835,appariée,H:Électrique_Plans pour soumission - 6:12,IA:E301_ADD:1,Aérotherme mural A15,79.5
+humain,Électrique_Plans pour soumission - 6,E301_ADD,A1500W,4339,1929,0.5389,0.3388,3071,1367,manquante IA,H:Électrique_Plans pour soumission - 6:13,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,T4000W,5735,1890,0.7123,0.3319,4053,1339,manquante IA,H:Électrique_Plans pour soumission - 6:14,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,3912,1632,0.4859,0.2866,2771,1151,appariée,H:Électrique_Plans pour soumission - 6:15,IA:E301_ADD:86,Relais triac RT,10.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,4359,1243,0.5414,0.2183,3085,867,appariée,H:Électrique_Plans pour soumission - 6:16,IA:E301_ADD:79,Relais triac RT,11.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,4494,1246,0.5582,0.2188,3180,870,appariée,H:Électrique_Plans pour soumission - 6:17,IA:E301_ADD:80,Relais triac RT,10.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,4685,1189,0.5819,0.2088,3314,828,appariée,H:Électrique_Plans pour soumission - 6:18,IA:E301_ADD:81,Relais triac RT,11.5
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,4813,1370,0.5978,0.2406,3404,960,appariée,H:Électrique_Plans pour soumission - 6:19,IA:E301_ADD:82,Relais triac RT,5.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,5224,1188,0.6489,0.2086,3694,827,appariée,H:Électrique_Plans pour soumission - 6:20,IA:E301_ADD:83,Relais triac RT,9.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,3987,1191,0.4952,0.2092,2823,830,appariée,H:Électrique_Plans pour soumission - 6:21,IA:E301_ADD:78,Relais triac RT,10.4
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,3997,1913,0.4965,0.3360,2830,1356,appariée,H:Électrique_Plans pour soumission - 6:22,IA:E301_ADD:85,Relais triac RT,8.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,RELAIS,4604,1912,0.5719,0.3358,3257,1355,appariée,H:Électrique_Plans pour soumission - 6:23,IA:E301_ADD:84,Relais triac RT,8.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,T1500W,5259,1443,0.6532,0.2534,3718,1013,appariée,H:Électrique_Plans pour soumission - 6:24,IA:E301_ADD:66,Raccordement chauffe-eau CE (36 kW),76.1
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SÉCHOIRE,4579,1230,0.5687,0.2160,3240,858,appariée,H:Électrique_Plans pour soumission - 6:25,IA:E301_ADD:88,Sèche-mains,30.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SÉCHOIRE,4718,1311,0.5860,0.2302,3338,917,appariée,H:Électrique_Plans pour soumission - 6:26,IA:E301_ADD:89,Sèche-mains,15.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SÉCHOIRE,4447,1227,0.5524,0.2155,3147,856,appariée,H:Électrique_Plans pour soumission - 6:27,IA:E301_ADD:87,Sèche-mains,21.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SERPENTIN,3943,1307,0.4898,0.2295,2792,914,appariée,H:Électrique_Plans pour soumission - 6:28,IA:E301_ADD:70,Raccordement serpentin SE,67.5
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SERPENTIN,4091,1686,0.5081,0.2961,2896,1190,manquante IA,H:Électrique_Plans pour soumission - 6:29,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SERPENTIN,4076,1835,0.5063,0.3223,2886,1299,manquante IA,H:Électrique_Plans pour soumission - 6:30,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SERPENTIN,4169,1790,0.5178,0.3144,2951,1266,appariée,H:Électrique_Plans pour soumission - 6:31,IA:E301_ADD:68,Raccordement serpentin SE,28.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SERPENTIN,5435,1228,0.6751,0.2157,3842,857,appariée,H:Électrique_Plans pour soumission - 6:32,IA:E301_ADD:65,Raccordement chauffe-eau CE (36 kW),59.4
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SERPENTIN,5535,1224,0.6875,0.2150,3912,854,appariée,H:Électrique_Plans pour soumission - 6:33,IA:E301_ADD:71,Raccordement serpentin SE,33.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,SERPENTIN,4998,1346,0.6208,0.2364,3535,943,appariée,H:Électrique_Plans pour soumission - 6:34,IA:E301_ADD:73,Raccordement serpentin SE,24.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,3995,1291,0.4962,0.2267,2829,902,appariée,H:Électrique_Plans pour soumission - 6:35,IA:E301_ADD:47,Prise double 15A,14.4
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4092,1362,0.5083,0.2392,2897,954,appariée,H:Électrique_Plans pour soumission - 6:36,IA:E301_ADD:37,Prise au plafond,13.7
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4124,1491,0.5122,0.2619,2920,1048,appariée,H:Électrique_Plans pour soumission - 6:37,IA:E301_ADD:41,Prise au-dessus du comptoir,13.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4127,1616,0.5126,0.2838,2922,1139,appariée,H:Électrique_Plans pour soumission - 6:38,IA:E301_ADD:38,Prise au plafond,12.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,3924,1720,0.4874,0.3021,2779,1215,appariée,H:Électrique_Plans pour soumission - 6:39,IA:E301_ADD:48,Prise double 15A,15.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4130,1794,0.5130,0.3151,2924,1269,appariée,H:Électrique_Plans pour soumission - 6:40,IA:E301_ADD:39,Prise au plafond,16.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4096,1917,0.5088,0.3367,2900,1359,appariée,H:Électrique_Plans pour soumission - 6:41,IA:E301_ADD:49,Prise double 15A,19.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,5085,1694,0.6316,0.2975,3596,1196,appariée,H:Électrique_Plans pour soumission - 6:42,IA:E301_ADD:40,Prise au plafond,14.4
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,5319,1757,0.6607,0.3086,3760,1242,appariée,H:Électrique_Plans pour soumission - 6:43,IA:E301_ADD:45,Prise au-dessus du comptoir,17.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,5765,1578,0.7161,0.2771,4074,1112,appariée,H:Électrique_Plans pour soumission - 6:44,IA:E301_ADD:46,Prise au-dessus du comptoir,10.5
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,5323,1303,0.6612,0.2288,3763,911,appariée,H:Électrique_Plans pour soumission - 6:45,IA:E301_ADD:72,Raccordement serpentin SE,62.1
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,5137,1312,0.6381,0.2304,3632,918,appariée,H:Électrique_Plans pour soumission - 6:46,IA:E301_ADD:43,Prise au-dessus du comptoir,2.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4952,1331,0.6151,0.2338,3502,932,appariée,H:Électrique_Plans pour soumission - 6:47,IA:E301_ADD:42,Prise au-dessus du comptoir,19.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4921,1403,0.6112,0.2464,3480,984,appariée,H:Électrique_Plans pour soumission - 6:48,IA:E301_ADD:54,Prise double 15A,6.5
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4891,1405,0.6075,0.2468,3459,986,appariée,H:Électrique_Plans pour soumission - 6:49,IA:E301_ADD:53,Prise double 15A,4.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4862,1404,0.6039,0.2466,3439,985,appariée,H:Électrique_Plans pour soumission - 6:50,IA:E301_ADD:52,Prise double 15A,1.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4837,1404,0.6008,0.2466,3421,985,appariée,H:Électrique_Plans pour soumission - 6:51,IA:E301_ADD:51,Prise double 15A,1.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE,4818,1405,0.5984,0.2468,3408,986,appariée,H:Électrique_Plans pour soumission - 6:52,IA:E301_ADD:50,Prise double 15A,6.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE USB,4608,1450,0.5724,0.2547,3260,1018,appariée,H:Électrique_Plans pour soumission - 6:53,IA:E301_ADD:55,Prise double USB,28.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE USB,4766,1577,0.5920,0.2770,3371,1111,appariée,H:Électrique_Plans pour soumission - 6:54,IA:E301_ADD:56,Prise double USB,17.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI,5275,1523,0.6552,0.2675,3729,1071,appariée,H:Électrique_Plans pour soumission - 6:55,IA:E301_ADD:31,Prise DDFT,9.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI,4807,1521,0.5971,0.2671,3400,1070,appariée,H:Électrique_Plans pour soumission - 6:56,IA:E301_ADD:29,Prise DDFT,12.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI,4807,1762,0.5971,0.3094,3400,1246,appariée,H:Électrique_Plans pour soumission - 6:57,IA:E301_ADD:30,Prise DDFT,13.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI,5279,1775,0.6557,0.3117,3732,1255,appariée,H:Électrique_Plans pour soumission - 6:58,IA:E301_ADD:32,Prise DDFT,12.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI,4362,1460,0.5418,0.2564,3087,1026,appariée,H:Électrique_Plans pour soumission - 6:59,IA:E301_ADD:33,Prise DDFT fontaine réfrigérée,23.4
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI,3970,1261,0.4931,0.2215,2811,881,appariée,H:Électrique_Plans pour soumission - 6:60,IA:E301_ADD:28,Prise DDFT,16.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE 15/20A,4587,1422,0.5697,0.2497,3245,998,appariée,H:Électrique_Plans pour soumission - 6:61,IA:E301_ADD:26,Prise 15/20A (5-20R),14.7
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE 15/20A,4163,1702,0.5171,0.2989,2947,1202,appariée,H:Électrique_Plans pour soumission - 6:62,IA:E301_ADD:25,Prise 15/20A (5-20R),15.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,PRISE 15/20A,4959,1438,0.6159,0.2525,3507,1010,appariée,H:Électrique_Plans pour soumission - 6:63,IA:E301_ADD:27,Prise 15/20A (5-20R),18.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI WP,5085,1130,0.6316,0.1985,3596,785,appariée,H:Électrique_Plans pour soumission - 6:64,IA:E301_ADD:35,Prise DDFT intempéries,13.4
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI WP,4897,1969,0.6082,0.3458,3464,1397,appariée,H:Électrique_Plans pour soumission - 6:65,IA:E301_ADD:34,Prise DDFT intempéries,17.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,GFI WP,5813,1709,0.7220,0.3001,4108,1207,appariée,H:Électrique_Plans pour soumission - 6:66,IA:E301_ADD:36,Prise DDFT intempéries,10.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR 1 HP 120V,5485,1231,0.6813,0.2162,3877,859,appariée,H:Électrique_Plans pour soumission - 6:67,IA:E301_ADD:61,Raccordement VA,35.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR 1 HP 120V,5667,1547,0.7039,0.2717,4005,1089,appariée,H:Électrique_Plans pour soumission - 6:68,IA:E301_ADD:75,Raccordement ventilateur VE,69.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,2510,5276,1847,0.6553,0.3244,3730,1308,appariée,H:Électrique_Plans pour soumission - 6:69,IA:E301_ADD:12,Interrupteur unipolaire,14.7
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR .5 HP 120V,5262,1891,0.6536,0.3321,3720,1340,appariée,H:Électrique_Plans pour soumission - 6:70,IA:E301_ADD:58,Raccordement DEV,69.5
+humain,Électrique_Plans pour soumission - 6,E301_ADD,CHAUFFE-EAU,5255,1385,0.6527,0.2432,3715,971,appariée,H:Électrique_Plans pour soumission - 6:71,IA:E301_ADD:77,Raccordement ventilateur VE,80.7
+humain,Électrique_Plans pour soumission - 6,E301_ADD,CHAUFFE-EAU,5251,1315,0.6522,0.2309,3713,920,manquante IA,H:Électrique_Plans pour soumission - 6:72,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,CHAUFFE-EAU,5254,1250,0.6526,0.2195,3715,873,manquante IA,H:Électrique_Plans pour soumission - 6:73,,,
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR .25HP 120V,5275,1309,0.6552,0.2299,3729,916,appariée,H:Électrique_Plans pour soumission - 6:74,IA:E301_ADD:44,Prise au-dessus du comptoir,28.6
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR VC,3958,1632,0.4916,0.2866,2803,1151,appariée,H:Électrique_Plans pour soumission - 6:75,IA:E301_ADD:69,Raccordement serpentin SE,26.1
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR ECH,3962,1405,0.4921,0.2468,2806,986,appariée,H:Électrique_Plans pour soumission - 6:76,IA:E301_ADD:59,Raccordement ECH,24.8
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR VE-3,4809,1310,0.5973,0.2301,3402,916,appariée,H:Électrique_Plans pour soumission - 6:77,IA:E301_ADD:90,Transformateur RC-TRNO-600,11.9
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR VE-1,4945,1476,0.6142,0.2592,3497,1037,appariée,H:Électrique_Plans pour soumission - 6:78,IA:E301_ADD:74,Raccordement ventilateur VE,32.1
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR VA-2,5014,1384,0.6228,0.2431,3546,970,appariée,H:Électrique_Plans pour soumission - 6:79,IA:E301_ADD:62,Raccordement VA,36.0
+humain,Électrique_Plans pour soumission - 6,E301_ADD,MOTEUR PERC,5197,1388,0.6455,0.2438,3675,973,appariée,H:Électrique_Plans pour soumission - 6:80,IA:E301_ADD:60,Raccordement PECR,58.3
+humain,Électrique_Plans pour soumission - 6,E301_ADD,CONDENSEUR,5812,1632,0.7219,0.2866,4107,1151,appariée,H:Électrique_Plans pour soumission - 6:81,IA:E301_ADD:57,Raccordement COND,55.1
+humain,Électrique_Plans pour soumission - 6,E301_ADD,BOITIER CAMLOCK,5737,1967,0.7126,0.3455,4054,1395,appariée,H:Électrique_Plans pour soumission - 6:82,IA:E301_ADD:7,Boîtier Camlock 200A,14.7
+humain,Électrique_Plans pour soumission - 11,T201,BG,4321,2093,0.5367,0.3676,3055,1477,appariée,H:Électrique_Plans pour soumission - 11:1,IA:T201:9,Boîte de groupe sécurité BG,3.5
+humain,Électrique_Plans pour soumission - 11,T201,BG,4128,1981,0.5127,0.3479,2919,1399,appariée,H:Électrique_Plans pour soumission - 11:2,IA:T201:8,Boîte de groupe sécurité BG,4.2
+humain,Électrique_Plans pour soumission - 11,T201,BG,4887,2093,0.6070,0.3676,3453,1477,appariée,H:Électrique_Plans pour soumission - 11:3,IA:T201:10,Boîte de groupe sécurité BG,1.6
+humain,Électrique_Plans pour soumission - 11,T201,BG,5471,2095,0.6795,0.3679,3863,1478,appariée,H:Électrique_Plans pour soumission - 11:4,IA:T201:11,Boîte de groupe sécurité BG,1.3
+humain,Électrique_Plans pour soumission - 11,T201,BG,5063,1361,0.6289,0.2390,3576,968,appariée,H:Électrique_Plans pour soumission - 11:5,IA:T201:6,Boîte de groupe sécurité BG,10.3
+humain,Électrique_Plans pour soumission - 11,T201,BG,4953,1502,0.6152,0.2638,3499,1066,appariée,H:Électrique_Plans pour soumission - 11:6,IA:T201:5,Boîte de groupe sécurité BG,9.2
+humain,Électrique_Plans pour soumission - 11,T201,BG,5140,1499,0.6384,0.2633,3631,1064,appariée,H:Électrique_Plans pour soumission - 11:7,IA:T201:7,Boîte de groupe sécurité BG,6.2
+humain,Électrique_Plans pour soumission - 11,T201,BG,4318,1362,0.5363,0.2392,3052,969,appariée,H:Électrique_Plans pour soumission - 11:8,IA:T201:3,Boîte de groupe sécurité BG,11.5
+humain,Électrique_Plans pour soumission - 11,T201,BG,4134,1360,0.5135,0.2388,2923,968,appariée,H:Électrique_Plans pour soumission - 11:9,IA:T201:2,Boîte de groupe sécurité BG,10.3
+humain,Électrique_Plans pour soumission - 11,T201,BG,4694,1484,0.5830,0.2606,3317,1054,appariée,H:Électrique_Plans pour soumission - 11:10,IA:T201:12,Boîte de groupe sécurité BG,8.6
+humain,Électrique_Plans pour soumission - 11,T201,BG,4731,1598,0.5876,0.2806,3343,1133,appariée,H:Électrique_Plans pour soumission - 11:11,IA:T201:4,Boîte de groupe sécurité BG,8.0
+humain,Électrique_Plans pour soumission - 11,T201,CL1,4351,2092,0.5404,0.3674,3076,1476,appariée,H:Électrique_Plans pour soumission - 11:12,IA:T201:15,Clavier d'intrusion CLI,1.1
+humain,Électrique_Plans pour soumission - 11,T201,CL1,4914,2095,0.6104,0.3679,3472,1478,appariée,H:Électrique_Plans pour soumission - 11:13,IA:T201:16,Clavier d'intrusion CLI,2.7
+humain,Électrique_Plans pour soumission - 11,T201,CL1,5501,2090,0.6833,0.3671,3884,1475,appariée,H:Électrique_Plans pour soumission - 11:14,IA:T201:17,Clavier d'intrusion CLI,3.4
+humain,Électrique_Plans pour soumission - 11,T201,CL1,5091,1358,0.6323,0.2385,3596,966,appariée,H:Électrique_Plans pour soumission - 11:15,IA:T201:18,Clavier d'intrusion CLI,8.4
+humain,Électrique_Plans pour soumission - 11,T201,CL1,4165,1359,0.5173,0.2387,2945,967,appariée,H:Électrique_Plans pour soumission - 11:16,IA:T201:14,Clavier d'intrusion CLI,7.6
+humain,Électrique_Plans pour soumission - 11,T201,DETECT MOUV,5280,2091,0.6558,0.3672,3729,1475,appariée,H:Électrique_Plans pour soumission - 11:17,IA:T201:22,Détecteur de mouvement,0.4
+humain,Électrique_Plans pour soumission - 11,T201,DETECT MOUV,5763,2092,0.7158,0.3674,4069,1476,appariée,H:Électrique_Plans pour soumission - 11:18,IA:T201:23,Détecteur de mouvement,3.4
+humain,Électrique_Plans pour soumission - 11,T201,DETECT MOUV,4767,2095,0.5921,0.3679,3368,1478,appariée,H:Électrique_Plans pour soumission - 11:19,IA:T201:21,Détecteur de mouvement,6.3
+humain,Électrique_Plans pour soumission - 11,T201,DETECT MOUV,4129,2095,0.5129,0.3679,2919,1478,appariée,H:Électrique_Plans pour soumission - 11:20,IA:T201:20,Détecteur de mouvement,14.8
+humain,Électrique_Plans pour soumission - 11,T201,DETECT MOUV,4092,1864,0.5083,0.3274,2893,1318,appariée,H:Électrique_Plans pour soumission - 11:21,IA:T201:19,Détecteur de mouvement,12.4
+humain,Électrique_Plans pour soumission - 11,T201,TEL,4123,1640,0.5121,0.2880,2915,1162,appariée,H:Électrique_Plans pour soumission - 11:22,IA:T201:46,Sortie télécom (note),10.5
+humain,Électrique_Plans pour soumission - 11,T201,TEL,4128,1665,0.5127,0.2924,2919,1179,appariée,H:Électrique_Plans pour soumission - 11:23,IA:T201:53,Sortie télécom D,17.1
+humain,Électrique_Plans pour soumission - 11,T201,TEL,4126,1850,0.5125,0.3249,2917,1308,appariée,H:Électrique_Plans pour soumission - 11:24,IA:T201:47,Sortie télécom (note),10.1
+humain,Électrique_Plans pour soumission - 11,T201,TEL,4127,2008,0.5126,0.3527,2918,1418,appariée,H:Électrique_Plans pour soumission - 11:25,IA:T201:52,Sortie télécom D,15.0
+humain,Électrique_Plans pour soumission - 11,T201,TEL,5244,2090,0.6513,0.3671,3704,1475,appariée,H:Électrique_Plans pour soumission - 11:26,IA:T201:63,Sortie télécom WF,12.1
+humain,Électrique_Plans pour soumission - 11,T201,TEL,4809,1482,0.5973,0.2603,3398,1052,appariée,H:Électrique_Plans pour soumission - 11:27,IA:T201:48,Sortie télécom CA,14.6
+humain,Électrique_Plans pour soumission - 11,T201,TEL,4457,1855,0.5536,0.3258,3150,1311,appariée,H:Électrique_Plans pour soumission - 11:28,IA:T201:62,Sortie télécom WF,20.5
+humain,Électrique_Plans pour soumission - 11,T201,HP,5270,1965,0.6546,0.3451,3722,1388,appariée,H:Électrique_Plans pour soumission - 11:29,IA:T201:29,Haut-parleur — fourni par autres,2.7
+humain,Électrique_Plans pour soumission - 11,T201,HP,4815,1718,0.5981,0.3017,3402,1216,appariée,H:Électrique_Plans pour soumission - 11:30,IA:T201:28,Haut-parleur — fourni par autres,9.3
+humain,Électrique_Plans pour soumission - 11,T201,HP,4476,1791,0.5560,0.3145,3164,1267,appariée,H:Électrique_Plans pour soumission - 11:31,IA:T201:26,Haut-parleur — fourni par autres,10.0
+humain,Électrique_Plans pour soumission - 11,T201,HP,4478,1622,0.5562,0.2849,3165,1150,appariée,H:Électrique_Plans pour soumission - 11:32,IA:T201:25,Haut-parleur — fourni par autres,12.7
+humain,Électrique_Plans pour soumission - 11,T201,HP,4478,2012,0.5562,0.3534,3165,1420,appariée,H:Électrique_Plans pour soumission - 11:33,IA:T201:27,Haut-parleur — fourni par autres,5.8
+humain,Électrique_Plans pour soumission - 11,T201,HP,4180,1498,0.5192,0.2631,2955,1063,appariée,H:Électrique_Plans pour soumission - 11:34,IA:T201:24,Haut-parleur — fourni par autres,18.2
+humain,Électrique_Plans pour soumission - 11,T201,HP,4131,1773,0.5131,0.3114,2921,1254,appariée,H:Électrique_Plans pour soumission - 11:35,IA:T201:43,Sortie contrôle de volume,16.5
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE VIDEOSURVEILLANCE,5766,1357,0.7162,0.2383,4071,966,appariée,H:Électrique_Plans pour soumission - 11:36,IA:T201:59,Sortie télécom VS,6.5
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE VIDEOSURVEILLANCE,4744,2095,0.5892,0.3679,3352,1478,appariée,H:Électrique_Plans pour soumission - 11:37,IA:T201:58,Sortie télécom VS,14.3
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE VIDEOSURVEILLANCE,3903,1360,0.4848,0.2388,2760,968,appariée,H:Électrique_Plans pour soumission - 11:38,IA:T201:54,Sortie télécom VS,5.9
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE VIDEOSURVEILLANCE,3909,1860,0.4855,0.3267,2765,1315,appariée,H:Électrique_Plans pour soumission - 11:39,IA:T201:56,Sortie télécom VS,7.6
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE VIDEOSURVEILLANCE,3900,2091,0.4844,0.3672,2758,1475,appariée,H:Électrique_Plans pour soumission - 11:40,IA:T201:57,Sortie télécom VS,13.6
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE VIDEOSURVEILLANCE,4166,1598,0.5175,0.2806,2945,1133,appariée,H:Électrique_Plans pour soumission - 11:41,IA:T201:55,Sortie télécom VS,10.7
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE CONTROL BATIMENT,4016,1435,0.4988,0.2520,2840,1020,appariée,H:Électrique_Plans pour soumission - 11:42,IA:T201:51,Sortie télécom CB,18.4
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE CONTROL BATIMENT,5266,1351,0.6541,0.2373,3719,961,appariée,H:Électrique_Plans pour soumission - 11:43,IA:T201:50,Sortie télécom CB,8.5
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE CONTROL BATIMENT,5598,2093,0.6953,0.3676,3953,1477,appariée,H:Électrique_Plans pour soumission - 11:44,IA:T201:49,Sortie télécom CB,13.5
+humain,Électrique_Plans pour soumission - 11,T201,CAB,4865,1578,0.6043,0.2771,3437,1119,appariée,H:Électrique_Plans pour soumission - 11:45,IA:T201:13,Cabinet mural télécom — fourni par autres,8.9
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5606,2037,0.6963,0.3577,3958,1438,manquante IA,H:Électrique_Plans pour soumission - 11:46,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5604,1958,0.6961,0.3439,3957,1383,manquante IA,H:Électrique_Plans pour soumission - 11:47,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5574,1928,0.6923,0.3386,3936,1362,manquante IA,H:Électrique_Plans pour soumission - 11:48,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5489,1924,0.6818,0.3379,3876,1359,manquante IA,H:Électrique_Plans pour soumission - 11:49,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5404,1922,0.6712,0.3375,3816,1358,manquante IA,H:Électrique_Plans pour soumission - 11:50,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5329,1922,0.6619,0.3375,3764,1358,manquante IA,H:Électrique_Plans pour soumission - 11:51,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5293,1964,0.6574,0.3449,3738,1387,manquante IA,H:Électrique_Plans pour soumission - 11:52,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5284,2037,0.6563,0.3577,3732,1438,manquante IA,H:Électrique_Plans pour soumission - 11:53,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5193,1922,0.6450,0.3375,3668,1358,manquante IA,H:Électrique_Plans pour soumission - 11:54,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5110,1922,0.6347,0.3375,3609,1358,manquante IA,H:Électrique_Plans pour soumission - 11:55,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5029,1924,0.6246,0.3379,3552,1359,manquante IA,H:Électrique_Plans pour soumission - 11:56,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4954,1922,0.6153,0.3375,3500,1358,manquante IA,H:Électrique_Plans pour soumission - 11:57,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4867,1924,0.6045,0.3379,3439,1359,manquante IA,H:Électrique_Plans pour soumission - 11:58,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4852,1897,0.6027,0.3332,3428,1341,manquante IA,H:Électrique_Plans pour soumission - 11:59,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4854,1820,0.6029,0.3196,3429,1287,manquante IA,H:Électrique_Plans pour soumission - 11:60,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4848,1745,0.6022,0.3065,3425,1235,manquante IA,H:Électrique_Plans pour soumission - 11:61,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4844,1660,0.6017,0.2915,3422,1176,manquante IA,H:Électrique_Plans pour soumission - 11:62,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4465,2045,0.5546,0.3591,3156,1443,manquante IA,H:Électrique_Plans pour soumission - 11:63,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4420,2037,0.5490,0.3577,3124,1438,manquante IA,H:Électrique_Plans pour soumission - 11:64,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4423,1954,0.5494,0.3432,3126,1380,manquante IA,H:Électrique_Plans pour soumission - 11:65,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4427,1881,0.5499,0.3303,3129,1329,manquante IA,H:Électrique_Plans pour soumission - 11:66,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4355,1865,0.5409,0.3275,3078,1318,manquante IA,H:Électrique_Plans pour soumission - 11:67,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4355,1788,0.5409,0.3140,3078,1265,manquante IA,H:Électrique_Plans pour soumission - 11:68,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4357,1701,0.5412,0.2987,3080,1204,manquante IA,H:Électrique_Plans pour soumission - 11:69,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4357,1616,0.5412,0.2838,3080,1145,manquante IA,H:Électrique_Plans pour soumission - 11:70,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4278,1631,0.5314,0.2864,3024,1156,manquante IA,H:Électrique_Plans pour soumission - 11:71,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4203,1520,0.5220,0.2669,2972,1079,manquante IA,H:Électrique_Plans pour soumission - 11:72,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4199,1601,0.5216,0.2812,2969,1135,manquante IA,H:Électrique_Plans pour soumission - 11:73,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4191,1626,0.5206,0.2856,2963,1152,manquante IA,H:Électrique_Plans pour soumission - 11:74,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4159,1690,0.5166,0.2968,2941,1197,manquante IA,H:Électrique_Plans pour soumission - 11:75,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4152,1762,0.5157,0.3094,2936,1247,manquante IA,H:Électrique_Plans pour soumission - 11:76,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4159,1847,0.5166,0.3244,2941,1306,manquante IA,H:Électrique_Plans pour soumission - 11:77,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4159,2003,0.5166,0.3518,2941,1414,manquante IA,H:Électrique_Plans pour soumission - 11:78,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4163,1928,0.5171,0.3386,2943,1362,manquante IA,H:Électrique_Plans pour soumission - 11:79,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4440,1581,0.5515,0.2777,3138,1121,manquante IA,H:Électrique_Plans pour soumission - 11:80,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4521,1586,0.5615,0.2785,3195,1125,manquante IA,H:Électrique_Plans pour soumission - 11:81,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4612,1586,0.5728,0.2785,3259,1125,manquante IA,H:Électrique_Plans pour soumission - 11:82,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4684,1588,0.5818,0.2789,3310,1126,manquante IA,H:Électrique_Plans pour soumission - 11:83,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4769,1582,0.5923,0.2778,3370,1122,manquante IA,H:Électrique_Plans pour soumission - 11:84,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4880,1543,0.6061,0.2710,3448,1095,appariée,H:Électrique_Plans pour soumission - 11:85,IA:T201:1,Barre MALT télécom (note 7),24.2
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4884,1469,0.6066,0.2580,3451,1043,manquante IA,H:Électrique_Plans pour soumission - 11:86,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,4914,1439,0.6104,0.2527,3472,1022,manquante IA,H:Électrique_Plans pour soumission - 11:87,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5001,1437,0.6212,0.2524,3533,1021,manquante IA,H:Électrique_Plans pour soumission - 11:88,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5088,1437,0.6320,0.2524,3594,1021,manquante IA,H:Électrique_Plans pour soumission - 11:89,,,
+humain,Électrique_Plans pour soumission - 11,T201,Compteur J HOOCK,5159,1439,0.6408,0.2527,3644,1022,manquante IA,H:Électrique_Plans pour soumission - 11:90,,,
+humain,Électrique_Plans pour soumission - 11,T201,CONTROL VOLUME,5274,1925,0.6551,0.3381,3725,1360,appariée,H:Électrique_Plans pour soumission - 11:91,IA:T201:44,Sortie contrôle de volume,4.2
+humain,Électrique_Plans pour soumission - 11,T201,SORTIE MICROPHONE,4135,1742,0.5136,0.3059,2924,1233,appariée,H:Électrique_Plans pour soumission - 11:92,IA:T201:45,Sortie microphone,19.4
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4999,1286,0.6209,0.2259,3531,916,appariée,H:Électrique_Plans pour soumission - 11:93,IA:T201:37,Porte contrôlée,9.8
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4970,1537,0.6173,0.2699,3511,1091,appariée,H:Électrique_Plans pour soumission - 11:94,IA:T201:41,Porte contrôlée,16.4
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,5106,1543,0.6342,0.2710,3607,1095,appariée,H:Électrique_Plans pour soumission - 11:95,IA:T201:42,Porte contrôlée,11.4
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4589,1466,0.5700,0.2575,3243,1041,appariée,H:Électrique_Plans pour soumission - 11:96,IA:T201:39,Porte contrôlée,14.1
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4659,1551,0.5787,0.2724,3292,1100,appariée,H:Électrique_Plans pour soumission - 11:97,IA:T201:40,Porte contrôlée,14.1
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4217,1275,0.5238,0.2239,2981,909,appariée,H:Électrique_Plans pour soumission - 11:98,IA:T201:36,Porte contrôlée,15.3
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4121,1385,0.5119,0.2432,2914,985,appariée,H:Électrique_Plans pour soumission - 11:99,IA:T201:38,Porte contrôlée,16.3
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4227,2141,0.5250,0.3760,2988,1510,appariée,H:Électrique_Plans pour soumission - 11:100,IA:T201:33,Porte contrôlée,12.5
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4829,2147,0.5998,0.3771,3412,1514,appariée,H:Électrique_Plans pour soumission - 11:101,IA:T201:34,Porte contrôlée,9.2
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,5387,2145,0.6691,0.3767,3804,1513,appariée,H:Électrique_Plans pour soumission - 11:102,IA:T201:35,Porte contrôlée,7.6
+humain,Électrique_Plans pour soumission - 11,T201,PORTE,4082,1905,0.5070,0.3346,2886,1346,appariée,H:Électrique_Plans pour soumission - 11:103,IA:T201:32,Porte contrôlée,17.4
+humain,Électrique_Plans pour soumission - 11,T201,BARRE MISE A LA TERRE,4872,1605,0.6051,0.2819,3442,1138,manquante IA,H:Électrique_Plans pour soumission - 11:104,,,
+humain,Électrique_Plans pour soumission - 11,T201,PDI,4815,1585,0.5981,0.2784,3402,1124,appariée,H:Électrique_Plans pour soumission - 11:105,IA:T201:31,Panneau de détection d'intrusion PDI,9.9
+humain,Électrique_Plans pour soumission - 11,T201,PCA,4810,1515,0.5974,0.2661,3398,1075,appariée,H:Électrique_Plans pour soumission - 11:106,IA:T201:30,Panneau de contrôle d'accès PCA,2.8
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,WST-C-3D,5993,1812,0.7444,0.3182,4294,1212,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:1,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,WST-C-3D,5756,2539,0.7149,0.4459,4127,1725,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:2,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,WST-C-3D,6787,2537,0.8430,0.4456,4856,1724,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:3,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,WST-C-3D,4769,1657,0.5923,0.2910,3428,1103,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:4,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,WST-C-3D,4760,2386,0.5912,0.4190,3422,1617,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:5,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-3,1348,1657,0.1674,0.2910,1007,1103,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:6,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-3,2515,1662,0.3124,0.2919,1833,1106,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:7,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-3,1348,2385,0.1674,0.4189,1007,1617,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:8,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-5D,2502,3841,0.3108,0.6746,1824,2644,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:9,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-1,4558,3115,0.5661,0.5471,3279,2132,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:10,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-1,5522,3260,0.6859,0.5725,3961,2234,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:11,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-1,5723,3985,0.7108,0.6999,4103,2746,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:12,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,INT WST-C-1,4555,3839,0.5658,0.6742,3277,2643,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:13,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,1649,1744,0.2048,0.3063,1220,1164,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:14,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,1644,2467,0.2042,0.4333,1217,1674,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:15,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,1921,2472,0.2386,0.4341,1413,1678,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:16,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,4559,1753,0.5663,0.3079,3280,1170,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:17,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,4553,2469,0.5655,0.4336,3275,1676,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:18,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,5773,1905,0.7171,0.3346,4139,1278,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:19,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,6059,2624,0.7526,0.4608,4341,1785,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:20,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,6294,2620,0.7818,0.4601,4507,1782,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:21,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,6504,2634,0.8078,0.4626,4656,1792,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:22,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,OSC-C-P,5507,4072,0.6840,0.7151,3951,2807,manquante IA,H:ELectrique_Addenda ELE-002_Plans - 3:23,,,
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,2476,2438,0.3075,0.4282,1806,1654,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:24,IA:E003_ADD:14,Contrôleur WaveLinx RSP-C-347-Z1,1.7
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,2176,2439,0.2703,0.4283,1593,1655,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:25,IA:E003_ADD:15,Contrôleur WaveLinx RSP-C-347-Z1,2.1
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,2489,3165,0.3092,0.5558,1815,2167,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:26,IA:E003_ADD:16,Contrôleur WaveLinx RSP-C-347-Z1,1.2
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,4238,3167,0.5264,0.5562,3053,2169,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:27,IA:E003_ADD:8,Contrôleur WaveLinx RSP-C-347-Z1,2.9
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,4235,2437,0.5260,0.4280,3050,1653,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:28,IA:E003_ADD:6,Contrôleur WaveLinx RSP-C-347-Z1,0.5
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,5458,2586,0.6779,0.4542,3916,1758,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:29,IA:E003_ADD:7,Contrôleur WaveLinx RSP-C-347-Z1,3.7
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,5195,3324,0.6453,0.5838,3730,2279,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:30,IA:E003_ADD:9,Contrôleur WaveLinx RSP-C-347-Z1,3.4
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,5457,1864,0.6778,0.3274,3915,1249,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:31,IA:E003_ADD:5,Contrôleur WaveLinx RSP-C-347-Z1,1.9
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,4236,1704,0.5261,0.2993,3051,1136,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:32,IA:E003_ADD:4,Contrôleur WaveLinx RSP-C-347-Z1,4.2
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,2207,1710,0.2741,0.3003,1615,1140,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:33,IA:E003_ADD:12,Contrôleur WaveLinx RSP-C-347-Z1,1.2
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,1903,1713,0.2364,0.3008,1400,1142,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:34,IA:E003_ADD:13,Contrôleur WaveLinx RSP-C-347-Z1,2.3
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,748,3894,0.0929,0.6839,583,2682,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:35,IA:E003_ADD:17,Contrôleur WaveLinx RSP-C-347-Z1,5.0
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,1022,3896,0.1269,0.6842,777,2683,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:36,IA:E003_ADD:18,Contrôleur WaveLinx RSP-C-347-Z1,6.2
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,1313,3894,0.1631,0.6839,983,2682,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:37,IA:E003_ADD:19,Contrôleur WaveLinx RSP-C-347-Z1,3.8
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,1615,3897,0.2006,0.6844,1196,2684,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:38,IA:E003_ADD:20,Contrôleur WaveLinx RSP-C-347-Z1,6.5
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,1892,3892,0.2350,0.6835,1392,2680,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:39,IA:E003_ADD:21,Contrôleur WaveLinx RSP-C-347-Z1,2.7
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,2183,3890,0.2711,0.6832,1598,2679,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:40,IA:E003_ADD:22,Contrôleur WaveLinx RSP-C-347-Z1,1.4
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,4237,3890,0.5263,0.6832,3052,2679,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:41,IA:E003_ADD:10,Contrôleur WaveLinx RSP-C-347-Z1,2.1
+humain,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,RSP-C-347-Z1,5195,4031,0.6453,0.7079,3730,2778,appariée,H:ELectrique_Addenda ELE-002_Plans - 3:42,IA:E003_ADD:11,Contrôleur WaveLinx RSP-C-347-Z1,10.6
+ia,Électrique_Plans pour soumission - 4,E102,Boîtier borne de recharge future,2955,2357,0.5190,0.5852,2955,2357,en trop IA,IA:E102:1,,,
+ia,Électrique_Plans pour soumission - 4,E102,Lampadaire D1,3318,2035,0.5827,0.5052,3318,2035,appariée,IA:E102:2,H:Électrique_Plans pour soumission - 4:2,LAMPADAIRE D1,25.0
+ia,Électrique_Plans pour soumission - 4,E102,Lampadaire D1,4069,2035,0.7146,0.5052,4069,2035,appariée,IA:E102:3,H:Électrique_Plans pour soumission - 4:1,LAMPADAIRE D1,29.4
+ia,Électrique_Plans pour soumission - 4,E102,Poteau client — fourni par autres,1033,808,0.1814,0.2006,1033,808,en trop IA,IA:E102:4,,,
+ia,Électrique_Plans pour soumission - 4,E102,Puits de tirage,1886,1712,0.3312,0.4250,1886,1712,en trop IA,IA:E102:5,,,
+ia,Électrique_Plans pour soumission - 4,E102,Puits de tirage,3232,1774,0.5676,0.4404,3232,1774,en trop IA,IA:E102:6,,,
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Accumulateur AUBX,3459,987,0.6075,0.2450,3459,987,appariée,IA:E201_ADD:1,H:Électrique_Plans pour soumission - 5:55,BATTERIE UNIT 2T,5.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Armoire de relais BT (P.R.),3498,910,0.6143,0.2259,3498,910,appariée,IA:E201_ADD:2,H:Électrique_Plans pour soumission - 5:33,fixt type l4,60.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,2856,881,0.5016,0.2187,2856,881,appariée,IA:E201_ADD:3,H:Électrique_Plans pour soumission - 5:103,DETECTEUR FUMÉ,5.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,2862,1077,0.5026,0.2674,2862,1077,appariée,IA:E201_ADD:4,H:Électrique_Plans pour soumission - 5:102,DETECTEUR FUMÉ,8.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,3011,1088,0.5288,0.2701,3011,1088,appariée,IA:E201_ADD:5,H:Électrique_Plans pour soumission - 5:106,DETECTEUR FUMÉ,9.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,2856,1264,0.5016,0.3138,2856,1264,appariée,IA:E201_ADD:6,H:Électrique_Plans pour soumission - 5:101,DETECTEUR FUMÉ,5.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,3310,1088,0.5813,0.2701,3310,1088,appariée,IA:E201_ADD:7,H:Électrique_Plans pour soumission - 5:107,DETECTEUR FUMÉ,6.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,3471,908,0.6096,0.2254,3471,908,appariée,IA:E201_ADD:8,H:Électrique_Plans pour soumission - 5:153,P.R,29.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,3643,908,0.6398,0.2254,3643,908,appariée,IA:E201_ADD:9,H:Électrique_Plans pour soumission - 5:110,DETECTEUR FUMÉ,7.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,3558,1124,0.6249,0.2790,3558,1124,appariée,IA:E201_ADD:10,H:Électrique_Plans pour soumission - 5:109,DETECTEUR FUMÉ,9.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,3915,914,0.6876,0.2269,3915,914,appariée,IA:E201_ADD:11,H:Électrique_Plans pour soumission - 5:111,DETECTEUR FUMÉ,3.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée,3908,1264,0.6863,0.3138,3908,1264,appariée,IA:E201_ADD:12,H:Électrique_Plans pour soumission - 5:112,DETECTEUR FUMÉ,8.2
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée de conduit (note 2),2878,867,0.5054,0.2152,2878,867,appariée,IA:E201_ADD:13,H:Électrique_Plans pour soumission - 5:104,DETECTEUR FUMÉ,7.2
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de fumée de conduit (note 2),2930,849,0.5146,0.2108,2930,849,appariée,IA:E201_ADD:14,H:Électrique_Plans pour soumission - 5:105,DETECTEUR FUMÉ,7.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,2863,860,0.5028,0.2135,2863,860,appariée,IA:E201_ADD:15,H:Électrique_Plans pour soumission - 5:62,DECT 360,8.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,2812,1051,0.4939,0.2609,2812,1051,appariée,IA:E201_ADD:16,H:Électrique_Plans pour soumission - 5:63,DECT 360,11.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,2791,1298,0.4902,0.3222,2791,1298,appariée,IA:E201_ADD:17,H:Électrique_Plans pour soumission - 5:64,DECT 360,10.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3018,917,0.5300,0.2277,3018,917,appariée,IA:E201_ADD:18,H:Électrique_Plans pour soumission - 5:61,DECT 360,8.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3018,1121,0.5300,0.2783,3018,1121,appariée,IA:E201_ADD:19,H:Électrique_Plans pour soumission - 5:56,DECT 360,11.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3311,1121,0.5815,0.2783,3311,1121,appariée,IA:E201_ADD:20,H:Électrique_Plans pour soumission - 5:57,DECT 360,8.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3446,911,0.6052,0.2262,3446,911,appariée,IA:E201_ADD:21,H:Électrique_Plans pour soumission - 5:65,DECT 360,13.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3679,911,0.6461,0.2262,3679,911,appariée,IA:E201_ADD:22,H:Électrique_Plans pour soumission - 5:66,DECT 360,12.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3564,1181,0.6259,0.2932,3564,1181,appariée,IA:E201_ADD:23,H:Électrique_Plans pour soumission - 5:58,DECT 360,11.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3914,1227,0.6874,0.3046,3914,1227,appariée,IA:E201_ADD:24,H:Électrique_Plans pour soumission - 5:59,DECT 360,11.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Détecteur de présence 360°,3914,958,0.6874,0.2378,3914,958,appariée,IA:E201_ADD:25,H:Électrique_Plans pour soumission - 5:60,DECT 360,9.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Gradateur basse tension,2763,1188,0.4852,0.2949,2763,1188,appariée,IA:E201_ADD:26,H:Électrique_Plans pour soumission - 5:69,INT GR,9.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Gradateur basse tension,2910,1262,0.5111,0.3133,2910,1262,appariée,IA:E201_ADD:27,H:Électrique_Plans pour soumission - 5:68,INT GR,7.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Gradateur basse tension,3070,945,0.5392,0.2346,3070,945,appariée,IA:E201_ADD:28,H:Électrique_Plans pour soumission - 5:70,INT GR,5.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Gradateur basse tension,3082,1350,0.5413,0.3352,3082,1350,appariée,IA:E201_ADD:29,H:Électrique_Plans pour soumission - 5:67,INT GR,6.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Indicateur d'issue Z1 (mur) — à confirmer,3440,1334,0.6041,0.3312,3440,1334,appariée,IA:E201_ADD:30,H:Électrique_Plans pour soumission - 5:43,ENSEIGNE SORTIE,26.2
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Indicateur d'issue Z1 (mur) — à confirmer,3807,1318,0.6686,0.3272,3807,1318,appariée,IA:E201_ADD:31,H:Électrique_Plans pour soumission - 5:44,ENSEIGNE SORTIE,23.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Indicateur d'issue Z1 (mur) — à confirmer,3019,840,0.5302,0.2085,3019,840,appariée,IA:E201_ADD:32,H:Électrique_Plans pour soumission - 5:41,ENSEIGNE SORTIE,27.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Indicateur d'issue Z1 (mur) — à confirmer,3519,841,0.6180,0.2088,3519,841,appariée,IA:E201_ADD:33,H:Électrique_Plans pour soumission - 5:40,ENSEIGNE SORTIE,18.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Indicateur d'issue Z2 (plafond) — à confirmer,2995,1320,0.5260,0.3277,2995,1320,appariée,IA:E201_ADD:34,H:Électrique_Plans pour soumission - 5:42,ENSEIGNE SORTIE,24.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur basse tension,2911,837,0.5112,0.2078,2911,837,appariée,IA:E201_ADD:35,H:Électrique_Plans pour soumission - 5:79,INT 1 VOIE,7.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur basse tension,3090,921,0.5427,0.2286,3090,921,appariée,IA:E201_ADD:36,H:Électrique_Plans pour soumission - 5:53,TETE SIMPLE,79.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur basse tension,3172,920,0.5571,0.2284,3172,920,appariée,IA:E201_ADD:37,H:Électrique_Plans pour soumission - 5:75,INT 1 VOIE,12.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur basse tension,3295,920,0.5787,0.2284,3295,920,appariée,IA:E201_ADD:38,H:Électrique_Plans pour soumission - 5:76,INT 1 VOIE,12.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur basse tension,3337,940,0.5861,0.2334,3337,940,appariée,IA:E201_ADD:39,H:Électrique_Plans pour soumission - 5:83,FIXT TYPE R2,28.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur basse tension,3491,933,0.6131,0.2316,3491,933,appariée,IA:E201_ADD:40,H:Électrique_Plans pour soumission - 5:73,INT 1 VOIE,5.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur basse tension,3623,938,0.6363,0.2329,3623,938,appariée,IA:E201_ADD:41,H:Électrique_Plans pour soumission - 5:78,INT 1 VOIE,8.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Interrupteur unipolaire,3067,1350,0.5386,0.3352,3067,1350,en trop IA,IA:E201_ADD:42,,,
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Klaxon + stroboscope,3756,1105,0.6596,0.2743,3756,1105,appariée,IA:E201_ADD:43,H:Électrique_Plans pour soumission - 5:95,STROB,6.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Klaxon alarme incendie,3053,924,0.5362,0.2294,3053,924,appariée,IA:E201_ADD:44,H:Électrique_Plans pour soumission - 5:93,KLAXON,11.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Klaxon alarme incendie,3609,937,0.6338,0.2326,3609,937,appariée,IA:E201_ADD:45,H:Électrique_Plans pour soumission - 5:94,KLAXON,12.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,2786,838,0.4893,0.2080,2786,838,appariée,IA:E201_ADD:46,H:Électrique_Plans pour soumission - 5:1,fixt type a1,10.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,2792,912,0.4903,0.2264,2792,912,appariée,IA:E201_ADD:47,H:Électrique_Plans pour soumission - 5:2,fixt type a1,10.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,2792,986,0.4903,0.2448,2792,986,appariée,IA:E201_ADD:48,H:Électrique_Plans pour soumission - 5:3,fixt type a1,25.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,2792,1057,0.4903,0.2624,2792,1057,appariée,IA:E201_ADD:49,H:Électrique_Plans pour soumission - 5:4,fixt type a1,11.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,2792,1145,0.4903,0.2843,2792,1145,appariée,IA:E201_ADD:50,H:Électrique_Plans pour soumission - 5:5,fixt type a1,9.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,2792,1234,0.4903,0.3064,2792,1234,appariée,IA:E201_ADD:51,H:Électrique_Plans pour soumission - 5:6,fixt type a1,22.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,2850,1305,0.5005,0.3240,2850,1305,appariée,IA:E201_ADD:52,H:Électrique_Plans pour soumission - 5:7,fixt type a1,9.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,3084,843,0.5416,0.2093,3084,843,appariée,IA:E201_ADD:53,H:Électrique_Plans pour soumission - 5:8,fixt type a1,10.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,3169,843,0.5566,0.2093,3169,843,appariée,IA:E201_ADD:54,H:Électrique_Plans pour soumission - 5:9,fixt type a1,13.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire A1,3301,856,0.5797,0.2125,3301,856,appariée,IA:E201_ADD:55,H:Électrique_Plans pour soumission - 5:10,fixt type a1,26.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L1,2939,895,0.5162,0.2222,2939,895,appariée,IA:E201_ADD:56,H:Électrique_Plans pour soumission - 5:35,FIXT TYPE L1,9.2
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L1,2939,962,0.5162,0.2388,2939,962,appariée,IA:E201_ADD:57,H:Électrique_Plans pour soumission - 5:36,FIXT TYPE L1,10.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L2,2939,1049,0.5162,0.2604,2939,1049,appariée,IA:E201_ADD:58,H:Électrique_Plans pour soumission - 5:39,FIXT  TYPE L2,12.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L2,2939,1166,0.5162,0.2895,2939,1166,appariée,IA:E201_ADD:59,H:Électrique_Plans pour soumission - 5:38,FIXT  TYPE L2,10.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L2,2939,1283,0.5162,0.3185,2939,1283,appariée,IA:E201_ADD:60,H:Électrique_Plans pour soumission - 5:37,FIXT  TYPE L2,10.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3810,1284,0.6691,0.3188,3810,1284,appariée,IA:E201_ADD:61,H:Électrique_Plans pour soumission - 5:18,fixt type l3,22.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3976,1297,0.6983,0.3220,3976,1297,appariée,IA:E201_ADD:62,H:Électrique_Plans pour soumission - 5:20,fixt type l3,6.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3976,1189,0.6983,0.2952,3976,1189,appariée,IA:E201_ADD:63,H:Électrique_Plans pour soumission - 5:19,fixt type l3,10.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3810,1189,0.6691,0.2952,3810,1189,appariée,IA:E201_ADD:64,H:Électrique_Plans pour soumission - 5:17,fixt type l3,10.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3810,1082,0.6691,0.2686,3810,1082,appariée,IA:E201_ADD:65,H:Électrique_Plans pour soumission - 5:16,fixt type l3,10.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3976,1082,0.6983,0.2686,3976,1082,appariée,IA:E201_ADD:66,H:Électrique_Plans pour soumission - 5:15,fixt type l3,9.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3976,974,0.6983,0.2418,3976,974,appariée,IA:E201_ADD:67,H:Électrique_Plans pour soumission - 5:14,fixt type l3,11.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3810,974,0.6691,0.2418,3810,974,appariée,IA:E201_ADD:68,H:Électrique_Plans pour soumission - 5:13,fixt type l3,10.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3810,867,0.6691,0.2152,3810,867,appariée,IA:E201_ADD:69,H:Électrique_Plans pour soumission - 5:11,fixt type l3,9.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3,3976,867,0.6983,0.2152,3976,867,appariée,IA:E201_ADD:70,H:Électrique_Plans pour soumission - 5:12,fixt type l3,9.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3A,3661,848,0.6430,0.2105,3661,848,appariée,IA:E201_ADD:71,H:Électrique_Plans pour soumission - 5:21,fixt type l3,23.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3A,3661,949,0.6430,0.2356,3661,949,appariée,IA:E201_ADD:72,H:Électrique_Plans pour soumission - 5:22,fixt type l3,10.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3A,3427,847,0.6019,0.2103,3427,847,appariée,IA:E201_ADD:73,H:Électrique_Plans pour soumission - 5:23,fixt type l3,24.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L3A,3424,925,0.6013,0.2296,3424,925,appariée,IA:E201_ADD:74,H:Électrique_Plans pour soumission - 5:108,DETECTEUR FUMÉ,54.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3454,1038,0.6066,0.2577,3454,1038,appariée,IA:E201_ADD:75,H:Électrique_Plans pour soumission - 5:25,fixt type l4,10.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3454,1128,0.6066,0.2800,3454,1128,appariée,IA:E201_ADD:76,H:Électrique_Plans pour soumission - 5:26,fixt type l4,10.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3454,1217,0.6066,0.3021,3454,1217,appariée,IA:E201_ADD:77,H:Électrique_Plans pour soumission - 5:27,fixt type l4,10.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3454,1306,0.6066,0.3242,3454,1306,appariée,IA:E201_ADD:78,H:Électrique_Plans pour soumission - 5:28,fixt type l4,11.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3629,1306,0.6373,0.3242,3629,1306,appariée,IA:E201_ADD:79,H:Électrique_Plans pour soumission - 5:29,fixt type l4,10.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3629,1217,0.6373,0.3021,3629,1217,appariée,IA:E201_ADD:80,H:Électrique_Plans pour soumission - 5:30,fixt type l4,10.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3629,1128,0.6373,0.2800,3629,1128,appariée,IA:E201_ADD:81,H:Électrique_Plans pour soumission - 5:31,fixt type l4,8.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4,3629,1038,0.6373,0.2577,3629,1038,appariée,IA:E201_ADD:82,H:Électrique_Plans pour soumission - 5:32,fixt type l4,10.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4A,3544,858,0.6224,0.2130,3544,858,appariée,IA:E201_ADD:83,H:Électrique_Plans pour soumission - 5:92,INT 3 VOIE,58.2
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire L4A,3544,947,0.6224,0.2351,3544,947,appariée,IA:E201_ADD:84,H:Électrique_Plans pour soumission - 5:34,fixt type l4,10.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R2,3365,938,0.5910,0.2329,3365,938,appariée,IA:E201_ADD:85,H:Électrique_Plans pour soumission - 5:24,fixt type l3,65.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R2,3103,962,0.5450,0.2388,3103,962,appariée,IA:E201_ADD:86,H:Électrique_Plans pour soumission - 5:80,FIXT TYPE R2,4.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R2,3190,962,0.5602,0.2388,3190,962,appariée,IA:E201_ADD:87,H:Électrique_Plans pour soumission - 5:48,TETE DOUBLE,49.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R2,3276,962,0.5753,0.2388,3276,962,appariée,IA:E201_ADD:88,H:Électrique_Plans pour soumission - 5:77,INT 1 VOIE,66.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R3,2942,1435,0.5167,0.3563,2942,1435,appariée,IA:E201_ADD:89,H:Électrique_Addenda ELE-001_Plans - 3:3,FIXT TYPE R3,1.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R3,2942,1568,0.5167,0.3893,2942,1568,appariée,IA:E201_ADD:90,H:Électrique_Addenda ELE-001_Plans - 3:4,FIXT TYPE R3,1.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R3,3114,1435,0.5469,0.3563,3114,1435,appariée,IA:E201_ADD:91,H:Électrique_Addenda ELE-001_Plans - 3:2,FIXT TYPE R3,1.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R3,3114,1568,0.5469,0.3893,3114,1568,appariée,IA:E201_ADD:92,H:Électrique_Addenda ELE-001_Plans - 3:5,FIXT TYPE R3,0.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R3,3286,1435,0.5771,0.3563,3286,1435,appariée,IA:E201_ADD:93,H:Électrique_Addenda ELE-001_Plans - 3:1,FIXT TYPE R3,1.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire R3,3286,1568,0.5771,0.3893,3286,1568,appariée,IA:E201_ADD:94,H:Électrique_Addenda ELE-001_Plans - 3:6,FIXT TYPE R3,2.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire mural M1,3073,781,0.5397,0.1939,3073,781,appariée,IA:E201_ADD:95,H:Électrique_Plans pour soumission - 5:87,FIXT TYPE M1,19.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire mural M1,3599,781,0.6321,0.1939,3599,781,appariée,IA:E201_ADD:96,H:Électrique_Plans pour soumission - 5:86,FIXT TYPE M1,24.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire mural M1,4133,1195,0.7259,0.2967,4133,1195,appariée,IA:E201_ADD:97,H:Électrique_Plans pour soumission - 5:85,FIXT TYPE M1,20.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire mural M1,3886,1388,0.6825,0.3446,3886,1388,appariée,IA:E201_ADD:98,H:Électrique_Plans pour soumission - 5:84,FIXT TYPE M1,24.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire mural M1,2696,1099,0.4735,0.2728,2696,1099,appariée,IA:E201_ADD:99,H:Électrique_Plans pour soumission - 5:88,FIXT TYPE M1,12.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1303,2273,0.2288,0.5643,1303,2273,appariée,IA:E201_ADD:100,H:Électrique_Plans pour soumission - 5:115,FIXT TYPE R1,3.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1612,1982,0.2831,0.4921,1612,1982,appariée,IA:E201_ADD:101,H:Électrique_Plans pour soumission - 5:116,FIXT TYPE R1,4.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1303,2638,0.2288,0.6549,1303,2638,appariée,IA:E201_ADD:102,H:Électrique_Plans pour soumission - 5:120,FIXT TYPE R1,3.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1689,2637,0.2966,0.6547,1689,2637,appariée,IA:E201_ADD:103,H:Électrique_Plans pour soumission - 5:118,FIXT TYPE R1,10.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1612,2930,0.2831,0.7274,1612,2930,appariée,IA:E201_ADD:104,H:Électrique_Plans pour soumission - 5:119,FIXT TYPE R1,7.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1688,2273,0.2965,0.5643,1688,2273,appariée,IA:E201_ADD:105,H:Électrique_Plans pour soumission - 5:117,FIXT TYPE R1,7.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1981,1982,0.3479,0.4921,1981,1982,appariée,IA:E201_ADD:106,H:Électrique_Plans pour soumission - 5:121,FIXT TYPE R1,6.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2082,2637,0.3656,0.6547,2082,2637,appariée,IA:E201_ADD:107,H:Électrique_Plans pour soumission - 5:123,FIXT TYPE R1,8.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,1981,2930,0.3479,0.7274,1981,2930,appariée,IA:E201_ADD:108,H:Électrique_Plans pour soumission - 5:124,FIXT TYPE R1,4.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2082,2272,0.3656,0.5641,2082,2272,appariée,IA:E201_ADD:109,H:Électrique_Plans pour soumission - 5:122,FIXT TYPE R1,6.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2369,1982,0.4161,0.4921,2369,1982,appariée,IA:E201_ADD:110,H:Électrique_Plans pour soumission - 5:128,FIXT TYPE R1,3.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2470,2637,0.4338,0.6547,2470,2637,appariée,IA:E201_ADD:111,H:Électrique_Plans pour soumission - 5:126,FIXT TYPE R1,5.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2369,2930,0.4161,0.7274,2369,2930,appariée,IA:E201_ADD:112,H:Électrique_Plans pour soumission - 5:125,FIXT TYPE R1,6.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2470,2272,0.4338,0.5641,2470,2272,appariée,IA:E201_ADD:113,H:Électrique_Plans pour soumission - 5:127,FIXT TYPE R1,7.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2710,1982,0.4759,0.4921,2710,1982,appariée,IA:E201_ADD:114,H:Électrique_Plans pour soumission - 5:129,FIXT TYPE R1,8.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2710,2930,0.4759,0.7274,2710,2930,appariée,IA:E201_ADD:115,H:Électrique_Plans pour soumission - 5:133,FIXT TYPE R1,9.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3052,1982,0.5360,0.4921,3052,1982,appariée,IA:E201_ADD:116,H:Électrique_Plans pour soumission - 5:130,FIXT TYPE R1,11.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3440,1982,0.6041,0.4921,3440,1982,appariée,IA:E201_ADD:117,H:Électrique_Plans pour soumission - 5:137,FIXT TYPE R1,8.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3809,1982,0.6689,0.4921,3809,1982,appariée,IA:E201_ADD:118,H:Électrique_Plans pour soumission - 5:138,FIXT TYPE R1,5.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2951,2272,0.5183,0.5641,2951,2272,appariée,IA:E201_ADD:119,H:Électrique_Plans pour soumission - 5:131,FIXT TYPE R1,9.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3339,2272,0.5864,0.5641,3339,2272,appariée,IA:E201_ADD:120,H:Électrique_Plans pour soumission - 5:136,FIXT TYPE R1,6.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3733,2272,0.6556,0.5641,3733,2272,appariée,IA:E201_ADD:121,H:Électrique_Plans pour soumission - 5:140,FIXT TYPE R1,13.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,4117,2272,0.7230,0.5641,4117,2272,appariée,IA:E201_ADD:122,H:Électrique_Plans pour soumission - 5:139,FIXT TYPE R1,11.2
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,4117,2637,0.7230,0.6547,4117,2637,appariée,IA:E201_ADD:123,H:Électrique_Plans pour soumission - 5:142,FIXT TYPE R1,9.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3733,2637,0.6556,0.6547,3733,2637,appariée,IA:E201_ADD:124,H:Électrique_Plans pour soumission - 5:141,FIXT TYPE R1,9.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3339,2637,0.5864,0.6547,3339,2637,appariée,IA:E201_ADD:125,H:Électrique_Plans pour soumission - 5:135,FIXT TYPE R1,13.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,2951,2637,0.5183,0.6547,2951,2637,appariée,IA:E201_ADD:126,H:Électrique_Plans pour soumission - 5:132,FIXT TYPE R1,6.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3054,2928,0.5364,0.7269,3054,2928,appariée,IA:E201_ADD:127,H:Électrique_Plans pour soumission - 5:134,FIXT TYPE R1,5.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3442,2928,0.6045,0.7269,3442,2928,appariée,IA:E201_ADD:128,H:Électrique_Plans pour soumission - 5:144,FIXT TYPE R1,6.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Luminaire suspendu R1,3811,2928,0.6693,0.7269,3811,2928,appariée,IA:E201_ADD:129,H:Électrique_Plans pour soumission - 5:143,FIXT TYPE R1,3.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Panneau d'alarme incendie (PAI),3057,888,0.5369,0.2205,3057,888,appariée,IA:E201_ADD:130,H:Électrique_Plans pour soumission - 5:52,TETE SIMPLE,26.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Panneau de contrôle P1 (note 1),2905,1349,0.5102,0.3349,2905,1349,en trop IA,IA:E201_ADD:131,,,
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste BT double (a/b),3415,1324,0.5998,0.3287,3415,1324,appariée,IA:E201_ADD:132,H:Électrique_Plans pour soumission - 5:90,INT 3 VOIE,24.2
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste BT double (a/b),3593,848,0.6310,0.2105,3593,848,appariée,IA:E201_ADD:133,H:Électrique_Plans pour soumission - 5:91,INT 3 VOIE,31.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste BT double (a/b),3771,1331,0.6623,0.3304,3771,1331,appariée,IA:E201_ADD:134,H:Électrique_Plans pour soumission - 5:72,INT 1 VOIE,18.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste manuel,3051,837,0.5358,0.2078,3051,837,appariée,IA:E201_ADD:135,H:Électrique_Plans pour soumission - 5:99,STATION MANUEL,8.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste manuel,3053,1353,0.5362,0.3359,3053,1353,appariée,IA:E201_ADD:136,H:Électrique_Plans pour soumission - 5:100,STATION MANUEL,7.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste manuel,3396,1345,0.5964,0.3339,3396,1345,appariée,IA:E201_ADD:137,H:Électrique_Plans pour soumission - 5:96,STATION MANUEL,7.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste manuel,3574,832,0.6277,0.2066,3574,832,appariée,IA:E201_ADD:138,H:Électrique_Plans pour soumission - 5:98,STATION MANUEL,7.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Poste manuel,3757,1351,0.6598,0.3354,3757,1351,appariée,IA:E201_ADD:139,H:Électrique_Plans pour soumission - 5:97,STATION MANUEL,6.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Prise hauteur spéciale,3481,984,0.6113,0.2443,3481,984,appariée,IA:E201_ADD:140,H:Électrique_Plans pour soumission - 5:154,PRISE,6.0
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,1488,1709,0.2613,0.4243,1488,1709,appariée,IA:E201_ADD:141,H:Électrique_Plans pour soumission - 5:149,FIXT TYPE P1,24.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,2336,1709,0.4103,0.4243,2336,1709,appariée,IA:E201_ADD:142,H:Électrique_Plans pour soumission - 5:150,FIXT TYPE P1,23.4
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,3183,1709,0.5590,0.4243,3183,1709,appariée,IA:E201_ADD:143,H:Électrique_Plans pour soumission - 5:152,FIXT TYPE P1,22.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,4031,1709,0.7079,0.4243,4031,1709,appariée,IA:E201_ADD:144,H:Électrique_Plans pour soumission - 5:151,FIXT TYPE P1,22.5
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,1488,3242,0.2613,0.8049,1488,3242,appariée,IA:E201_ADD:145,H:Électrique_Plans pour soumission - 5:148,FIXT TYPE P1,27.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,2336,3242,0.4103,0.8049,2336,3242,appariée,IA:E201_ADD:146,H:Électrique_Plans pour soumission - 5:147,FIXT TYPE P1,22.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,3183,3242,0.5590,0.8049,3183,3242,appariée,IA:E201_ADD:147,H:Électrique_Plans pour soumission - 5:146,FIXT TYPE P1,21.6
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Projecteur P1,4031,3242,0.7079,0.8049,4031,3242,appariée,IA:E201_ADD:148,H:Électrique_Plans pour soumission - 5:145,FIXT TYPE P1,22.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Relais adressable RA,2914,882,0.5118,0.2190,2914,882,appariée,IA:E201_ADD:149,H:Électrique_Plans pour soumission - 5:114,RA,8.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Relais adressable RA,2939,832,0.5162,0.2066,2939,832,appariée,IA:E201_ADD:150,H:Électrique_Plans pour soumission - 5:113,RA,5.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage double,2935,1002,0.5155,0.2488,2935,1002,appariée,IA:E201_ADD:151,H:Électrique_Plans pour soumission - 5:50,TETE DOUBLE,4.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage double,2940,1340,0.5163,0.3327,2940,1340,appariée,IA:E201_ADD:152,H:Électrique_Plans pour soumission - 5:49,TETE DOUBLE,11.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage double,3236,994,0.5683,0.2468,3236,994,appariée,IA:E201_ADD:153,H:Électrique_Plans pour soumission - 5:82,FIXT TYPE R2,50.8
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage double,3396,1288,0.5964,0.3198,3396,1288,appariée,IA:E201_ADD:154,H:Électrique_Plans pour soumission - 5:51,TETE DOUBLE,25.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage double,3596,908,0.6315,0.2254,3596,908,appariée,IA:E201_ADD:155,H:Électrique_Plans pour soumission - 5:47,TETE DOUBLE,11.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage double,3754,1249,0.6593,0.3101,3754,1249,appariée,IA:E201_ADD:156,H:Électrique_Plans pour soumission - 5:45,TETE DOUBLE,9.9
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage double,4069,855,0.7146,0.2123,4069,855,appariée,IA:E201_ADD:157,H:Électrique_Plans pour soumission - 5:46,TETE DOUBLE,16.7
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage simple,3075,913,0.5400,0.2267,3075,913,appariée,IA:E201_ADD:158,H:Électrique_Plans pour soumission - 5:74,INT 1 VOIE,16.1
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage simple,3156,913,0.5543,0.2267,3156,913,appariée,IA:E201_ADD:159,H:Électrique_Plans pour soumission - 5:81,FIXT TYPE R2,65.3
+ia,Électrique_Plans pour soumission - 5 + Électrique_Addenda ELE-001_Plans - 3,E201_ADD,Tête d'éclairage simple,3330,913,0.5848,0.2267,3330,913,appariée,IA:E201_ADD:160,H:Électrique_Plans pour soumission - 5:54,TETE SIMPLE,3.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Aérotherme mural A15,3061,756,0.5376,0.1877,3061,756,appariée,IA:E301_ADD:1,H:Électrique_Plans pour soumission - 6:12,A1500W,79.5
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Aérotherme mural A15,3056,1453,0.5367,0.3607,3056,1453,en trop IA,IA:E301_ADD:2,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Aérotherme mural A15,3617,756,0.6352,0.1877,3617,756,appariée,IA:E301_ADD:3,H:Électrique_Plans pour soumission - 6:11,A1500W,77.7
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Aérotherme plafond T15,3784,1079,0.6646,0.2679,3784,1079,en trop IA,IA:E301_ADD:4,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Aérotherme plafond T4,4147,1335,0.7283,0.3314,4147,1335,en trop IA,IA:E301_ADD:5,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Barre de mise à la terre,3494,913,0.6136,0.2267,3494,913,en trop IA,IA:E301_ADD:6,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Boîtier Camlock 200A,4050,1381,0.7113,0.3429,4050,1381,appariée,IA:E301_ADD:7,H:Électrique_Plans pour soumission - 6:82,BOITIER CAMLOCK,14.7
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Cabinet de mesurage HQ,3473,850,0.6099,0.2110,3473,850,en trop IA,IA:E301_ADD:8,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Interrupteur de sûreté 400A SF (réfrigération),4067,948,0.7143,0.2354,4067,948,en trop IA,IA:E301_ADD:9,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Interrupteur de sûreté 600A,3442,827,0.6045,0.2053,3442,827,en trop IA,IA:E301_ADD:10,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Interrupteur de sûreté 600A,3498,850,0.6143,0.2110,3498,850,en trop IA,IA:E301_ADD:11,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Interrupteur unipolaire,3717,1301,0.6528,0.3230,3717,1301,appariée,IA:E301_ADD:12,H:Électrique_Plans pour soumission - 6:69,2510,14.7
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Panneau RC-PDNO-600,3410,857,0.5989,0.2128,3410,857,en trop IA,IA:E301_ADD:13,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Panneau RC-PSNO-200,3492,884,0.6133,0.2195,3492,884,en trop IA,IA:E301_ADD:14,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B10,2829,756,0.4968,0.1877,2829,756,appariée,IA:E301_ADD:15,H:Électrique_Plans pour soumission - 6:1,B1000W,67.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B12,2804,1453,0.4924,0.3607,2804,1453,appariée,IA:E301_ADD:16,H:Électrique_Plans pour soumission - 6:4,B1250W,82.9
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B12,2667,1307,0.4684,0.3245,2667,1307,en trop IA,IA:E301_ADD:17,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B15,2667,1128,0.4684,0.2800,2667,1128,en trop IA,IA:E301_ADD:18,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B25,3204,1453,0.5627,0.3607,3204,1453,en trop IA,IA:E301_ADD:19,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B5,3100,756,0.5444,0.1877,3100,756,en trop IA,IA:E301_ADD:20,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B5,3153,754,0.5537,0.1872,3153,754,en trop IA,IA:E301_ADD:21,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B5,3308,756,0.5810,0.1877,3308,756,appariée,IA:E301_ADD:22,H:Électrique_Plans pour soumission - 6:6,B500W,66.4
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B5,3391,756,0.5955,0.1877,3391,756,en trop IA,IA:E301_ADD:23,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Plinthe B5,3693,755,0.6486,0.1874,3693,755,appariée,IA:E301_ADD:24,H:Électrique_Plans pour soumission - 6:10,B500W,68.2
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise 15/20A (5-20R),2932,1197,0.5149,0.2972,2932,1197,appariée,IA:E301_ADD:25,H:Électrique_Plans pour soumission - 6:62,PRISE 15/20A,15.9
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise 15/20A (5-20R),3232,992,0.5676,0.2463,3232,992,appariée,IA:E301_ADD:26,H:Électrique_Plans pour soumission - 6:61,PRISE 15/20A,14.7
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise 15/20A (5-20R),3489,1007,0.6128,0.2500,3489,1007,appariée,IA:E301_ADD:27,H:Électrique_Plans pour soumission - 6:63,PRISE 15/20A,18.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT,2795,881,0.4909,0.2187,2795,881,appariée,IA:E301_ADD:28,H:Électrique_Plans pour soumission - 6:60,GFI,16.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT,3388,1067,0.5950,0.2649,3388,1067,appariée,IA:E301_ADD:29,H:Électrique_Plans pour soumission - 6:56,GFI,12.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT,3389,1239,0.5952,0.3076,3389,1239,appariée,IA:E301_ADD:30,H:Électrique_Plans pour soumission - 6:57,GFI,13.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT,3722,1065,0.6537,0.2644,3722,1065,appariée,IA:E301_ADD:31,H:Électrique_Plans pour soumission - 6:55,GFI,9.9
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT,3722,1249,0.6537,0.3101,3722,1249,appariée,IA:E301_ADD:32,H:Électrique_Plans pour soumission - 6:58,GFI,12.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT fontaine réfrigérée,3064,1029,0.5381,0.2555,3064,1029,appariée,IA:E301_ADD:33,H:Électrique_Plans pour soumission - 6:59,GFI,23.4
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT intempéries,3452,1384,0.6063,0.3436,3452,1384,appariée,IA:E301_ADD:34,H:Électrique_Plans pour soumission - 6:65,GFI WP,17.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT intempéries,3585,793,0.6296,0.1969,3585,793,appariée,IA:E301_ADD:35,H:Électrique_Plans pour soumission - 6:64,GFI WP,13.4
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise DDFT intempéries,4099,1202,0.7199,0.2984,4099,1202,appariée,IA:E301_ADD:36,H:Électrique_Plans pour soumission - 6:66,GFI WP,10.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au plafond,2884,958,0.5065,0.2378,2884,958,appariée,IA:E301_ADD:37,H:Électrique_Plans pour soumission - 6:36,PRISE,13.7
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au plafond,2910,1137,0.5111,0.2823,2910,1137,appariée,IA:E301_ADD:38,H:Électrique_Plans pour soumission - 6:38,PRISE,12.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au plafond,2910,1261,0.5111,0.3131,2910,1261,appariée,IA:E301_ADD:39,H:Électrique_Plans pour soumission - 6:40,PRISE,16.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au plafond,3582,1192,0.6291,0.2959,3582,1192,appariée,IA:E301_ADD:40,H:Électrique_Plans pour soumission - 6:42,PRISE,14.4
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au-dessus du comptoir,2906,1046,0.5104,0.2597,2906,1046,appariée,IA:E301_ADD:41,H:Électrique_Plans pour soumission - 6:37,PRISE,13.9
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au-dessus du comptoir,3484,938,0.6119,0.2329,3484,938,appariée,IA:E301_ADD:42,H:Électrique_Plans pour soumission - 6:47,PRISE,19.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au-dessus du comptoir,3631,920,0.6377,0.2284,3631,920,appariée,IA:E301_ADD:43,H:Électrique_Plans pour soumission - 6:46,PRISE,2.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au-dessus du comptoir,3758,914,0.6600,0.2269,3758,914,appariée,IA:E301_ADD:44,H:Électrique_Plans pour soumission - 6:74,MOTEUR .25HP 120V,28.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au-dessus du comptoir,3749,1229,0.6584,0.3051,3749,1229,appariée,IA:E301_ADD:45,H:Électrique_Plans pour soumission - 6:43,PRISE,17.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise au-dessus du comptoir,4064,1109,0.7137,0.2753,4064,1109,appariée,IA:E301_ADD:46,H:Électrique_Plans pour soumission - 6:44,PRISE,10.5
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,2815,906,0.4944,0.2249,2815,906,appariée,IA:E301_ADD:47,H:Électrique_Plans pour soumission - 6:35,PRISE,14.4
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,2764,1210,0.4854,0.3004,2764,1210,appariée,IA:E301_ADD:48,H:Électrique_Plans pour soumission - 6:39,PRISE,15.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,2884,1347,0.5065,0.3344,2884,1347,appariée,IA:E301_ADD:49,H:Électrique_Plans pour soumission - 6:41,PRISE,19.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,3401,985,0.5973,0.2445,3401,985,appariée,IA:E301_ADD:50,H:Électrique_Plans pour soumission - 6:52,PRISE,6.9
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,3420,985,0.6006,0.2445,3420,985,appariée,IA:E301_ADD:51,H:Électrique_Plans pour soumission - 6:51,PRISE,1.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,3437,985,0.6036,0.2445,3437,985,appariée,IA:E301_ADD:52,H:Électrique_Plans pour soumission - 6:50,PRISE,1.9
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,3455,985,0.6068,0.2445,3455,985,appariée,IA:E301_ADD:53,H:Électrique_Plans pour soumission - 6:49,PRISE,4.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double 15A,3474,985,0.6101,0.2445,3474,985,appariée,IA:E301_ADD:54,H:Électrique_Plans pour soumission - 6:48,PRISE,6.5
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double USB,3234,1029,0.5680,0.2555,3234,1029,appariée,IA:E301_ADD:55,H:Électrique_Plans pour soumission - 6:53,PRISE USB,28.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Prise double USB,3363,1096,0.5906,0.2721,3363,1096,appariée,IA:E301_ADD:56,H:Électrique_Plans pour soumission - 6:54,PRISE USB,17.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement COND,4162,1145,0.7309,0.2843,4162,1145,appariée,IA:E301_ADD:57,H:Électrique_Plans pour soumission - 6:81,CONDENSEUR,55.1
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement DEV,3652,1327,0.6414,0.3294,3652,1327,appariée,IA:E301_ADD:58,H:Électrique_Plans pour soumission - 6:70,MOTEUR .5 HP 120V,69.5
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement ECH,2829,977,0.4968,0.2426,2829,977,appariée,IA:E301_ADD:59,H:Électrique_Plans pour soumission - 6:76,MOTEUR ECH,24.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement PECR,3621,950,0.6359,0.2358,3621,950,appariée,IA:E301_ADD:60,H:Électrique_Plans pour soumission - 6:80,MOTEUR PERC,58.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement VA,3874,823,0.6804,0.2043,3874,823,appariée,IA:E301_ADD:61,H:Électrique_Plans pour soumission - 6:67,MOTEUR 1 HP 120V,35.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement VA,3529,1002,0.6198,0.2488,3529,1002,appariée,IA:E301_ADD:62,H:Électrique_Plans pour soumission - 6:79,MOTEUR VA-2,36.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement VC,2802,1097,0.4921,0.2723,2802,1097,appariée,IA:E301_ADD:63,H:Électrique_Plans pour soumission - 6:2,B1500W,38.5
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement chauffe-eau CE (36 kW),3796,765,0.6667,0.1899,3796,765,en trop IA,IA:E301_ADD:64,,,
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement chauffe-eau CE (36 kW),3796,819,0.6667,0.2033,3796,819,appariée,IA:E301_ADD:65,H:Électrique_Plans pour soumission - 6:32,SERPENTIN,59.4
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement chauffe-eau CE (36 kW),3794,1007,0.6663,0.2500,3794,1007,appariée,IA:E301_ADD:66,H:Électrique_Plans pour soumission - 6:24,T1500W,76.1
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement serpentin SE,2813,1285,0.4940,0.3190,2813,1285,appariée,IA:E301_ADD:67,H:Électrique_Plans pour soumission - 6:3,B1250W,48.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement serpentin SE,2977,1253,0.5228,0.3111,2977,1253,appariée,IA:E301_ADD:68,H:Électrique_Plans pour soumission - 6:31,SERPENTIN,28.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement serpentin SE,2826,1163,0.4963,0.2887,2826,1163,appariée,IA:E301_ADD:69,H:Électrique_Plans pour soumission - 6:75,MOTEUR VC,26.1
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement serpentin SE,2725,919,0.4786,0.2282,2725,919,appariée,IA:E301_ADD:70,H:Électrique_Plans pour soumission - 6:28,SERPENTIN,67.5
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement serpentin SE,3946,850,0.6930,0.2110,3946,850,appariée,IA:E301_ADD:71,H:Électrique_Plans pour soumission - 6:33,SERPENTIN,33.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement serpentin SE,3825,905,0.6718,0.2247,3825,905,appariée,IA:E301_ADD:72,H:Électrique_Plans pour soumission - 6:45,PRISE,62.1
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement serpentin SE,3545,920,0.6226,0.2284,3545,920,appariée,IA:E301_ADD:73,H:Électrique_Plans pour soumission - 6:34,SERPENTIN,24.8
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement ventilateur VE,3483,1066,0.6117,0.2646,3483,1066,appariée,IA:E301_ADD:74,H:Électrique_Plans pour soumission - 6:78,MOTEUR VE-1,32.1
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement ventilateur VE,3937,1077,0.6914,0.2674,3937,1077,appariée,IA:E301_ADD:75,H:Électrique_Plans pour soumission - 6:68,MOTEUR 1 HP 120V,69.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement ventilateur VE,3433,933,0.6029,0.2316,3433,933,appariée,IA:E301_ADD:76,H:Électrique_Plans pour soumission - 6:7,B500W,34.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Raccordement ventilateur VE,3796,967,0.6667,0.2401,3796,967,appariée,IA:E301_ADD:77,H:Électrique_Plans pour soumission - 6:71,CHAUFFE-EAU,80.7
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,2816,837,0.4946,0.2078,2816,837,appariée,IA:E301_ADD:78,H:Électrique_Plans pour soumission - 6:21,RELAIS,10.4
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,3079,877,0.5407,0.2177,3079,877,appariée,IA:E301_ADD:79,H:Électrique_Plans pour soumission - 6:16,RELAIS,11.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,3172,877,0.5571,0.2177,3172,877,appariée,IA:E301_ADD:80,H:Électrique_Plans pour soumission - 6:17,RELAIS,10.9
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,3307,837,0.5808,0.2078,3307,837,appariée,IA:E301_ADD:81,H:Électrique_Plans pour soumission - 6:18,RELAIS,11.5
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,3401,964,0.5973,0.2393,3401,964,appariée,IA:E301_ADD:82,H:Électrique_Plans pour soumission - 6:19,RELAIS,5.3
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,3693,837,0.6486,0.2078,3693,837,appariée,IA:E301_ADD:83,H:Électrique_Plans pour soumission - 6:20,RELAIS,9.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,3252,1349,0.5711,0.3349,3252,1349,appariée,IA:E301_ADD:84,H:Électrique_Plans pour soumission - 6:23,RELAIS,8.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,2825,1349,0.4961,0.3349,2825,1349,appariée,IA:E301_ADD:85,H:Électrique_Plans pour soumission - 6:22,RELAIS,8.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Relais triac RT,2761,1154,0.4849,0.2865,2761,1154,appariée,IA:E301_ADD:86,H:Électrique_Plans pour soumission - 6:15,RELAIS,10.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Sèche-mains,3128,865,0.5494,0.2147,3128,865,appariée,IA:E301_ADD:87,H:Électrique_Plans pour soumission - 6:27,SÉCHOIRE,21.0
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Sèche-mains,3210,865,0.5638,0.2147,3210,865,appariée,IA:E301_ADD:88,H:Électrique_Plans pour soumission - 6:25,SÉCHOIRE,30.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Sèche-mains,3322,918,0.5834,0.2279,3322,918,appariée,IA:E301_ADD:89,H:Électrique_Plans pour soumission - 6:26,SÉCHOIRE,15.6
+ia,Électrique_Plans pour soumission - 6,E301_ADD,Transformateur RC-TRNO-600,3411,909,0.5991,0.2257,3411,909,appariée,IA:E301_ADD:90,H:Électrique_Plans pour soumission - 6:77,MOTEUR VE-3,11.9
+ia,Électrique_Plans pour soumission - 11,T201,Barre MALT télécom (note 7),3457,1117,0.6071,0.2773,3457,1117,appariée,IA:T201:1,H:Électrique_Plans pour soumission - 11:85,Compteur J HOOCK,24.2
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,2915,961,0.5119,0.2386,2915,961,appariée,IA:T201:2,H:Électrique_Plans pour soumission - 11:9,BG,10.3
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3049,958,0.5355,0.2378,3049,958,appariée,IA:T201:3,H:Électrique_Plans pour soumission - 11:8,BG,11.5
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3342,1125,0.5869,0.2793,3342,1125,appariée,IA:T201:4,H:Électrique_Plans pour soumission - 11:11,BG,8.0
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3495,1058,0.6138,0.2627,3495,1058,appariée,IA:T201:5,H:Électrique_Plans pour soumission - 11:6,BG,9.2
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3576,958,0.6280,0.2378,3576,958,appariée,IA:T201:6,H:Électrique_Plans pour soumission - 11:5,BG,10.3
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3631,1058,0.6377,0.2627,3631,1058,appariée,IA:T201:7,H:Électrique_Plans pour soumission - 11:7,BG,6.2
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,2915,1397,0.5119,0.3468,2915,1397,appariée,IA:T201:8,H:Électrique_Plans pour soumission - 11:2,BG,4.2
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3051,1477,0.5358,0.3667,3051,1477,appariée,IA:T201:9,H:Électrique_Plans pour soumission - 11:1,BG,3.5
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3451,1477,0.6061,0.3667,3451,1477,appariée,IA:T201:10,H:Électrique_Plans pour soumission - 11:3,BG,1.6
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3864,1477,0.6786,0.3667,3864,1477,appariée,IA:T201:11,H:Électrique_Plans pour soumission - 11:4,BG,1.3
+ia,Électrique_Plans pour soumission - 11,T201,Boîte de groupe sécurité BG,3313,1046,0.5818,0.2597,3313,1046,appariée,IA:T201:12,H:Électrique_Plans pour soumission - 11:10,BG,8.6
+ia,Électrique_Plans pour soumission - 11,T201,Cabinet mural télécom — fourni par autres,3441,1111,0.6043,0.2758,3441,1111,appariée,IA:T201:13,H:Électrique_Plans pour soumission - 11:45,CAB,8.9
+ia,Électrique_Plans pour soumission - 11,T201,Clavier d'intrusion CLI,2940,961,0.5163,0.2386,2940,961,appariée,IA:T201:14,H:Électrique_Plans pour soumission - 11:16,CL1,7.6
+ia,Électrique_Plans pour soumission - 11,T201,Clavier d'intrusion CLI,3075,1477,0.5400,0.3667,3075,1477,appariée,IA:T201:15,H:Électrique_Plans pour soumission - 11:12,CL1,1.1
+ia,Électrique_Plans pour soumission - 11,T201,Clavier d'intrusion CLI,3474,1477,0.6101,0.3667,3474,1477,appariée,IA:T201:16,H:Électrique_Plans pour soumission - 11:13,CL1,2.7
+ia,Électrique_Plans pour soumission - 11,T201,Clavier d'intrusion CLI,3887,1477,0.6826,0.3667,3887,1477,appariée,IA:T201:17,H:Électrique_Plans pour soumission - 11:14,CL1,3.4
+ia,Électrique_Plans pour soumission - 11,T201,Clavier d'intrusion CLI,3598,958,0.6319,0.2378,3598,958,appariée,IA:T201:18,H:Électrique_Plans pour soumission - 11:15,CL1,8.4
+ia,Électrique_Plans pour soumission - 11,T201,Détecteur de mouvement,2883,1311,0.5063,0.3255,2883,1311,appariée,IA:T201:19,H:Électrique_Plans pour soumission - 11:21,DETECT MOUV,12.4
+ia,Électrique_Plans pour soumission - 11,T201,Détecteur de mouvement,2906,1472,0.5104,0.3654,2906,1472,appariée,IA:T201:20,H:Électrique_Plans pour soumission - 11:20,DETECT MOUV,14.8
+ia,Électrique_Plans pour soumission - 11,T201,Détecteur de mouvement,3367,1472,0.5913,0.3654,3367,1472,appariée,IA:T201:21,H:Électrique_Plans pour soumission - 11:19,DETECT MOUV,6.3
+ia,Électrique_Plans pour soumission - 11,T201,Détecteur de mouvement,3729,1475,0.6549,0.3662,3729,1475,appariée,IA:T201:22,H:Électrique_Plans pour soumission - 11:17,DETECT MOUV,0.4
+ia,Électrique_Plans pour soumission - 11,T201,Détecteur de mouvement,4072,1475,0.7151,0.3662,4072,1475,appariée,IA:T201:23,H:Électrique_Plans pour soumission - 11:18,DETECT MOUV,3.4
+ia,Électrique_Plans pour soumission - 11,T201,Haut-parleur — fourni par autres,2943,1050,0.5169,0.2607,2943,1050,appariée,IA:T201:24,H:Électrique_Plans pour soumission - 11:34,HP,18.2
+ia,Électrique_Plans pour soumission - 11,T201,Haut-parleur — fourni par autres,3163,1137,0.5555,0.2823,3163,1137,appariée,IA:T201:25,H:Électrique_Plans pour soumission - 11:32,HP,12.7
+ia,Électrique_Plans pour soumission - 11,T201,Haut-parleur — fourni par autres,3163,1257,0.5555,0.3121,3163,1257,appariée,IA:T201:26,H:Électrique_Plans pour soumission - 11:31,HP,10.0
+ia,Électrique_Plans pour soumission - 11,T201,Haut-parleur — fourni par autres,3163,1415,0.5555,0.3513,3163,1415,appariée,IA:T201:27,H:Électrique_Plans pour soumission - 11:33,HP,5.8
+ia,Électrique_Plans pour soumission - 11,T201,Haut-parleur — fourni par autres,3403,1207,0.5976,0.2997,3403,1207,appariée,IA:T201:28,H:Électrique_Plans pour soumission - 11:30,HP,9.3
+ia,Électrique_Plans pour soumission - 11,T201,Haut-parleur — fourni par autres,3724,1386,0.6540,0.3441,3724,1386,appariée,IA:T201:29,H:Électrique_Plans pour soumission - 11:29,HP,2.7
+ia,Électrique_Plans pour soumission - 11,T201,Panneau de contrôle d'accès PCA,3396,1074,0.5964,0.2666,3396,1074,appariée,IA:T201:30,H:Électrique_Plans pour soumission - 11:106,PCA,2.8
+ia,Électrique_Plans pour soumission - 11,T201,Panneau de détection d'intrusion PDI,3408,1116,0.5985,0.2771,3408,1116,appariée,IA:T201:31,H:Électrique_Plans pour soumission - 11:105,PDI,9.9
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,2897,1360,0.5088,0.3376,2897,1360,appariée,IA:T201:32,H:Électrique_Plans pour soumission - 11:103,PORTE,17.4
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,2996,1520,0.5262,0.3774,2996,1520,appariée,IA:T201:33,H:Électrique_Plans pour soumission - 11:100,PORTE,12.5
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,3419,1520,0.6005,0.3774,3419,1520,appariée,IA:T201:34,H:Électrique_Plans pour soumission - 11:101,PORTE,9.2
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,3807,1520,0.6686,0.3774,3807,1520,appariée,IA:T201:35,H:Électrique_Plans pour soumission - 11:102,PORTE,7.6
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,2996,913,0.5262,0.2267,2996,913,appariée,IA:T201:36,H:Électrique_Plans pour soumission - 11:98,PORTE,15.3
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,3541,918,0.6219,0.2279,3541,918,appariée,IA:T201:37,H:Électrique_Plans pour soumission - 11:93,PORTE,9.8
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,2928,993,0.5142,0.2465,2928,993,appariée,IA:T201:38,H:Électrique_Plans pour soumission - 11:99,PORTE,16.3
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,3254,1050,0.5715,0.2607,3254,1050,appariée,IA:T201:39,H:Électrique_Plans pour soumission - 11:96,PORTE,14.1
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,3304,1108,0.5803,0.2751,3304,1108,appariée,IA:T201:40,H:Électrique_Plans pour soumission - 11:97,PORTE,14.1
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,3527,1094,0.6194,0.2716,3527,1094,appariée,IA:T201:41,H:Électrique_Plans pour soumission - 11:94,PORTE,16.4
+ia,Électrique_Plans pour soumission - 11,T201,Porte contrôlée,3618,1094,0.6354,0.2716,3618,1094,appariée,IA:T201:42,H:Électrique_Plans pour soumission - 11:95,PORTE,11.4
+ia,Électrique_Plans pour soumission - 11,T201,Sortie contrôle de volume,2910,1242,0.5111,0.3083,2910,1242,appariée,IA:T201:43,H:Électrique_Plans pour soumission - 11:35,HP,16.5
+ia,Électrique_Plans pour soumission - 11,T201,Sortie contrôle de volume,3729,1360,0.6549,0.3376,3729,1360,appariée,IA:T201:44,H:Électrique_Plans pour soumission - 11:91,CONTROL VOLUME,4.2
+ia,Électrique_Plans pour soumission - 11,T201,Sortie microphone,2906,1225,0.5104,0.3041,2906,1225,appariée,IA:T201:45,H:Électrique_Plans pour soumission - 11:92,SORTIE MICROPHONE,19.4
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom (note),2910,1153,0.5111,0.2862,2910,1153,appariée,IA:T201:46,H:Électrique_Plans pour soumission - 11:22,TEL,10.5
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom (note),2910,1301,0.5111,0.3230,2910,1301,appariée,IA:T201:47,H:Électrique_Plans pour soumission - 11:24,TEL,10.1
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom CA,3412,1049,0.5992,0.2604,3412,1049,appariée,IA:T201:48,H:Électrique_Plans pour soumission - 11:27,TEL,14.6
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom CB,3957,1464,0.6949,0.3635,3957,1464,appariée,IA:T201:49,H:Électrique_Plans pour soumission - 11:44,SORTIE CONTROL BATIMENT,13.5
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom CB,3723,969,0.6538,0.2406,3723,969,appariée,IA:T201:50,H:Électrique_Plans pour soumission - 11:43,SORTIE CONTROL BATIMENT,8.5
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom CB,2835,1002,0.4979,0.2488,2835,1002,appariée,IA:T201:51,H:Électrique_Plans pour soumission - 11:42,SORTIE CONTROL BATIMENT,18.4
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom D,2903,1418,0.5098,0.3520,2903,1418,appariée,IA:T201:52,H:Électrique_Plans pour soumission - 11:25,TEL,15.0
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom D,2902,1176,0.5097,0.2920,2902,1176,appariée,IA:T201:53,H:Électrique_Plans pour soumission - 11:23,TEL,17.1
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,2758,973,0.4844,0.2416,2758,973,appariée,IA:T201:54,H:Électrique_Plans pour soumission - 11:38,SORTIE VIDEOSURVEILLANCE,5.9
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,2955,1128,0.5190,0.2800,2955,1128,appariée,IA:T201:55,H:Électrique_Plans pour soumission - 11:41,SORTIE VIDEOSURVEILLANCE,10.7
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,2772,1317,0.4868,0.3270,2772,1317,appariée,IA:T201:56,H:Électrique_Plans pour soumission - 11:39,SORTIE VIDEOSURVEILLANCE,7.6
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,2756,1462,0.4840,0.3630,2756,1462,appariée,IA:T201:57,H:Électrique_Plans pour soumission - 11:40,SORTIE VIDEOSURVEILLANCE,13.6
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,3350,1464,0.5883,0.3635,3350,1464,appariée,IA:T201:58,H:Électrique_Plans pour soumission - 11:37,SORTIE VIDEOSURVEILLANCE,14.3
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,4071,972,0.7150,0.2413,4071,972,appariée,IA:T201:59,H:Électrique_Plans pour soumission - 11:36,SORTIE VIDEOSURVEILLANCE,6.5
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,1221,2450,0.2144,0.6082,1221,2450,en trop IA,IA:T201:60,,,
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom VS,4253,2452,0.7469,0.6087,4253,2452,en trop IA,IA:T201:61,,,
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom WF,3148,1291,0.5529,0.3205,3148,1291,appariée,IA:T201:62,H:Électrique_Plans pour soumission - 11:28,TEL,20.5
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom WF,3707,1463,0.6510,0.3632,3707,1463,appariée,IA:T201:63,H:Électrique_Plans pour soumission - 11:26,TEL,12.1
+ia,Électrique_Plans pour soumission - 11,T201,Sortie télécom WF,1748,1856,0.3070,0.4608,1748,1856,en trop IA,IA:T201:64,,,
+ia,,E002_ADD,Raccordement RCFFM — à confirmer,2133,3430,0.3746,0.8515,2133,3430,en trop IA (feuille sans page humaine),IA:E002_ADD:1,,,
+ia,,E002_ADD,Raccordement réfrigération de la glace,1761,2905,0.3093,0.7212,1761,2905,en trop IA (feuille sans page humaine),IA:E002_ADD:2,,,
+ia,,E002_ADD,Raccordement régulation,3163,3362,0.5555,0.8347,3163,3362,en trop IA (feuille sans page humaine),IA:E002_ADD:3,,,
+ia,,E002_ADD,Raccordement régulation,3163,3384,0.5555,0.8401,3163,3384,en trop IA (feuille sans page humaine),IA:E002_ADD:4,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Commutateur PoE GS308PP,2404,728,0.4222,0.1807,2404,728,en trop IA,IA:E003_ADD:1,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Concentrateur WAH-C-POE-ID,2618,893,0.4598,0.2217,2618,893,en trop IA,IA:E003_ADD:2,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Concentrateur WAH-C-POE-ID,2300,893,0.4039,0.2217,2300,893,en trop IA,IA:E003_ADD:3,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3050,1140,0.5357,0.2830,3050,1140,appariée,IA:E003_ADD:4,H:ELectrique_Addenda ELE-002_Plans - 3:32,RSP-C-347-Z1,4.2
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3917,1249,0.6879,0.3101,3917,1249,appariée,IA:E003_ADD:5,H:ELectrique_Addenda ELE-002_Plans - 3:31,RSP-C-347-Z1,1.9
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3050,1653,0.5357,0.4104,3050,1653,appariée,IA:E003_ADD:6,H:ELectrique_Addenda ELE-002_Plans - 3:28,RSP-C-347-Z1,0.5
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3917,1762,0.6879,0.4374,3917,1762,appariée,IA:E003_ADD:7,H:ELectrique_Addenda ELE-002_Plans - 3:29,RSP-C-347-Z1,3.7
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3050,2167,0.5357,0.5380,3050,2167,appariée,IA:E003_ADD:8,H:ELectrique_Addenda ELE-002_Plans - 3:27,RSP-C-347-Z1,2.9
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3730,2276,0.6551,0.5650,3730,2276,appariée,IA:E003_ADD:9,H:ELectrique_Addenda ELE-002_Plans - 3:30,RSP-C-347-Z1,3.4
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3050,2680,0.5357,0.6653,3050,2680,appariée,IA:E003_ADD:10,H:ELectrique_Addenda ELE-002_Plans - 3:41,RSP-C-347-Z1,2.1
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,3730,2789,0.6551,0.6924,3730,2789,appariée,IA:E003_ADD:11,H:ELectrique_Addenda ELE-002_Plans - 3:42,RSP-C-347-Z1,10.6
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1614,1140,0.2835,0.2830,1614,1140,appariée,IA:E003_ADD:12,H:ELectrique_Addenda ELE-002_Plans - 3:33,RSP-C-347-Z1,1.2
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1400,1140,0.2459,0.2830,1400,1140,appariée,IA:E003_ADD:13,H:ELectrique_Addenda ELE-002_Plans - 3:34,RSP-C-347-Z1,2.3
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1807,1653,0.3174,0.4104,1807,1653,appariée,IA:E003_ADD:14,H:ELectrique_Addenda ELE-002_Plans - 3:24,RSP-C-347-Z1,1.7
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1592,1653,0.2796,0.4104,1592,1653,appariée,IA:E003_ADD:15,H:ELectrique_Addenda ELE-002_Plans - 3:25,RSP-C-347-Z1,2.1
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1816,2167,0.3189,0.5380,1816,2167,appariée,IA:E003_ADD:16,H:ELectrique_Addenda ELE-002_Plans - 3:26,RSP-C-347-Z1,1.2
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,578,2680,0.1015,0.6653,578,2680,appariée,IA:E003_ADD:17,H:ELectrique_Addenda ELE-002_Plans - 3:35,RSP-C-347-Z1,5.0
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,782,2680,0.1373,0.6653,782,2680,appariée,IA:E003_ADD:18,H:ELectrique_Addenda ELE-002_Plans - 3:36,RSP-C-347-Z1,6.2
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,986,2680,0.1732,0.6653,986,2680,appariée,IA:E003_ADD:19,H:ELectrique_Addenda ELE-002_Plans - 3:37,RSP-C-347-Z1,3.8
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1191,2680,0.2092,0.6653,1191,2680,appariée,IA:E003_ADD:20,H:ELectrique_Addenda ELE-002_Plans - 3:38,RSP-C-347-Z1,6.5
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1395,2680,0.2450,0.6653,1395,2680,appariée,IA:E003_ADD:21,H:ELectrique_Addenda ELE-002_Plans - 3:39,RSP-C-347-Z1,2.7
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur WaveLinx RSP-C-347-Z1,1599,2680,0.2808,0.6653,1599,2680,appariée,IA:E003_ADD:22,H:ELectrique_Addenda ELE-002_Plans - 3:40,RSP-C-347-Z1,1.4
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Contrôleur de zone WAC2-POE,2646,728,0.4647,0.1807,2646,728,en trop IA,IA:E003_ADD:23,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,3483,1384,0.6117,0.3436,3483,1384,en trop IA,IA:E003_ADD:24,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,4350,1493,0.7640,0.3707,4350,1493,en trop IA,IA:E003_ADD:25,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,3483,1897,0.6117,0.4710,3483,1897,en trop IA,IA:E003_ADD:26,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,4916,2006,0.8634,0.4980,4916,2006,en trop IA,IA:E003_ADD:27,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,3338,2411,0.5862,0.5986,3338,2411,en trop IA,IA:E003_ADD:28,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,4018,2520,0.7057,0.6256,4018,2520,en trop IA,IA:E003_ADD:29,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,3338,2924,0.5862,0.7259,3338,2924,en trop IA,IA:E003_ADD:30,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,4163,3033,0.7311,0.7530,4163,3033,en trop IA,IA:E003_ADD:31,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,913,1384,0.1603,0.3436,913,1384,en trop IA,IA:E003_ADD:32,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,913,1897,0.1603,0.4710,913,1897,en trop IA,IA:E003_ADD:33,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,1755,2411,0.3082,0.5986,1755,2411,en trop IA,IA:E003_ADD:34,,,
+ia,ELectrique_Addenda ELE-002_Plans - 3,E003_ADD,Terminaison ACC-C-TP,516,2925,0.0906,0.7262,516,2925,en trop IA,IA:E003_ADD:35,,,

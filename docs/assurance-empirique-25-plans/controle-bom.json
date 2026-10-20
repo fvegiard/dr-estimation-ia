@@ -1,0 +1,286 @@
+{
+  "genere_le": "2026-10-20T08:40:54.347689+00:00",
+  "portee": "Concordance des artefacts produits; ne valide ni exhaustivité du relevé ni acceptation Plan Expert.",
+  "bilan": {
+    "NON_PRODUIT": 8,
+    "CONFORME": 5,
+    "EN_ATTENTE": 12
+  },
+  "cas": [
+    {
+      "id": "P01-BOURASSA-E-002",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P02-BOURASSA-E-101",
+      "statut": "CONFORME",
+      "erreurs": [],
+      "reperes": 5,
+      "lignes_bom": 5,
+      "quantite_totale": 5.0,
+      "taux_mo": 124.0,
+      "postes_mo_non_chiffres": 3,
+      "racine_qpl": "QuoterPlanSession"
+    },
+    {
+      "id": "P03-BOURASSA-E-102",
+      "statut": "CONFORME",
+      "erreurs": [],
+      "reperes": 4,
+      "lignes_bom": 4,
+      "quantite_totale": 4.0,
+      "taux_mo": 124.0,
+      "postes_mo_non_chiffres": 2,
+      "racine_qpl": "QuoterPlanSession"
+    },
+    {
+      "id": "P04-BOURASSA-E-103",
+      "statut": "CONFORME",
+      "erreurs": [],
+      "reperes": 2,
+      "lignes_bom": 2,
+      "quantite_totale": 2.0,
+      "taux_mo": 124.0,
+      "postes_mo_non_chiffres": 1,
+      "racine_qpl": "QuoterPlanSession"
+    },
+    {
+      "id": "P05-BOURASSA-E-104",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P06-BOURASSA-E-105",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P07-BOURASSA-E-151",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P08-BOURASSA-E-152",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P09-BOURASSA-E-153",
+      "statut": "CONFORME",
+      "erreurs": [],
+      "reperes": 1,
+      "lignes_bom": 1,
+      "quantite_totale": 1.0,
+      "taux_mo": 124.0,
+      "postes_mo_non_chiffres": 1,
+      "racine_qpl": "QuoterPlanSession"
+    },
+    {
+      "id": "P10-BOURASSA-E-201",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P11-BOURASSA-E-202",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P12-BOURASSA-E-203",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P13-BOURASSA-E-204",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P14-BOURASSA-E-205",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P15-BOURASSA-E-206",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P16-BOURASSA-E-207",
+      "statut": "CONFORME",
+      "erreurs": [],
+      "reperes": 9,
+      "lignes_bom": 9,
+      "quantite_totale": 9.0,
+      "taux_mo": 124.0,
+      "postes_mo_non_chiffres": 2,
+      "racine_qpl": "QuoterPlanSession"
+    },
+    {
+      "id": "P17-BOURASSA-E-251",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P18-BOURASSA-E-252",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P19-BOURASSA-E-253",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P20-BOURASSA-E-301",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P21-BOURASSA-E-302",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P22-MIL-page-1",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P23-MIL-page-2",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P24-MIL-E-100B",
+      "statut": "NON_PRODUIT",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    },
+    {
+      "id": "P25-SUNLIFE-E003",
+      "statut": "EN_ATTENTE",
+      "erreurs": [],
+      "reperes": null,
+      "lignes_bom": null,
+      "quantite_totale": null,
+      "taux_mo": null,
+      "postes_mo_non_chiffres": null,
+      "racine_qpl": null
+    }
+  ]
+}

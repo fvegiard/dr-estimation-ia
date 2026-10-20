@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-20",
+  "methode": "Inspection directe par la session principale des planches de contrôle, des plans annotés et des bordereaux. Une case est acceptée si la pastille est centrée sur un appareil identifiable, sa famille est justifiée et son repère est lisible. Un doute ne compte pas comme réussite. Le score ne mesure pas le rappel des appareils absents.",
+  "reference_format": "docs/FORMAT-EXEMPLE.md",
+  "cas": [
+    {
+      "id": "P02-BOURASSA-E-101",
+      "planches_vues": [
+        "sortie/controle/E101-planche-01.png"
+      ],
+      "plans_vus": [
+        "sortie/png/E101_annote.png"
+      ],
+      "cases_acceptees": 2,
+      "cases_total": 5,
+      "cases_non_validees": [
+        {
+          "repere": "EU-01",
+          "motif": "Pastille décentrée vers la droite par rapport au cercle du symbole source; classification éclairage urgence non confirmée par la légende."
+        },
+        {
+          "repere": "PC-01",
+          "motif": "Cercle repéré au sein d'un symbole voisin de commandes; identité prise double 15 A non démontrée. Ne pas confondre centrage géométrique et bonne famille."
+        },
+        {
+          "repere": "PC-02",
+          "motif": "Même incertitude de famille que PC-01."
+        }
+      ],
+      "cases_acceptees_ids": [
+        "SM-01",
+        "SM-02"
+      ],
+      "encadre_espace_libre": true,
+      "observation": "Les deux stations manuelles sont centrées sur les carrés F. Encadré visible sous le plan, à droite, sans recouvrement des notes. Exhaustivité non démontrée, 337 signatures inconnues.",
+      "bordereaux_vus": [
+        "sortie/png/E101_bordereau_01.png"
+      ]
+    },
+    {
+      "id": "P03-BOURASSA-E-102",
+      "planches_vues": [
+        "sortie/controle/E102-planche-01.png"
+      ],
+      "plans_vus": [
+        "sortie/png/E102_annote.png"
+      ],
+      "bordereaux_vus": [
+        "sortie/png/E102_bordereau_01.png"
+      ],
+      "cases_acceptees": 3,
+      "cases_total": 4,
+      "cases_acceptees_ids": [
+        "SM-01",
+        "SM-02",
+        "SM-03"
+      ],
+      "cases_non_validees": [
+        {
+          "repere": "L4-01",
+          "motif": "Aucune pastille ni étiquette visible dans la vignette autour du rectangle vertical. Apparence du repère non validée."
+        }
+      ],
+      "encadre_espace_libre": true,
+      "observation": "Stations manuelles centrées sur carrés F. Encadré dans le blanc en bas à droite. Bordereau lisible, modèles non précisés explicites."
+    },
+    {
+      "id": "P09-BOURASSA-E-153",
+      "planches_vues": [
+        "sortie/controle/E153-planche-01.png"
+      ],
+      "plans_vus": [
+        "sortie/png/E153_annote.png"
+      ],
+      "bordereaux_vus": [
+        "sortie/png/E153_bordereau_01.png"
+      ],
+      "cases_acceptees": 1,
+      "cases_total": 1,
+      "cases_acceptees_ids": [
+        "SM-01"
+      ],
+      "cases_non_validees": [],
+      "encadre_espace_libre": true,
+      "observation": "Station manuelle centrée sur carré F; encadré sous le plan sans recouvrement. Bordereau lisible. Le score ne valide ni exhaustivité ni portée de démolition."
+    },
+    {
+      "id": "P04-BOURASSA-E-103",
+      "planches_vues": [
+        "sortie/controle/E103-planche-01.png"
+      ],
+      "plans_vus": [
+        "sortie/png/E103_annote.png"
+      ],
+      "bordereaux_vus": [
+        "sortie/png/E103_bordereau_01.png"
+      ],
+      "cases_acceptees": 2,
+      "cases_total": 2,
+      "cases_acceptees_ids": [
+        "SM-01",
+        "SM-02"
+      ],
+      "cases_non_validees": [],
+      "encadre_espace_libre": true,
+      "observation": "Deux stations manuelles centrées. Encadré libre sous le plan et bordereau lisible."
+    },
+    {
+      "id": "P16-BOURASSA-E-207",
+      "planches_vues": [
+        "sortie/controle/E207-planche-01.png"
+      ],
+      "plans_vus": [
+        "sortie/png/E207_annote.png"
+      ],
+      "bordereaux_vus": [
+        "sortie/png/E207_bordereau_01.png"
+      ],
+      "cases_acceptees": 6,
+      "cases_total": 9,
+      "cases_acceptees_ids": [
+        "BJ-03",
+        "BJ-04",
+        "BJ-05",
+        "BJ-06",
+        "BJ-07",
+        "BJ-08"
+      ],
+      "cases_non_validees": [
+        {
+          "repere": "BJ-01",
+          "motif": "Symbole de boîte de jonction compté dans la légende, pas un appareil implanté."
+        },
+        {
+          "repere": "G-01",
+          "motif": "Gâche comptée dans la légende; aucune gâche réelle identifiée par ce repère."
+        },
+        {
+          "repere": "BJ-02",
+          "motif": "Repère sur le schéma de principe générique, quantité installée non démontrée."
+        }
+      ],
+      "encadre_espace_libre": true,
+      "observation": "Pastilles centrées géométriquement. Six boîtes repérées sur les schémas de groupes de portes; multiplication par portes réelles non vérifiée. Encadré libre en haut à droite et bordereau lisible."
+    }
+  ]
+}

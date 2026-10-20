@@ -1,0 +1,2976 @@
+{
+  "genere_le": "2026-10-20T08:39:53.818Z",
+  "manifeste": {
+    "chemin": "travail-mcp/campagne-25-plans/manifest.json",
+    "sha256": "ba60c44528c789937e85cc0d1e51d4de0372a526001f0868bac6f0cc083bad12"
+  },
+  "bibliotheque": {
+    "chemin": "travail-mcp/campagne-25-plans/bibliotheque-blocs.csv",
+    "present": true,
+    "sha256": "a564084068debe8c3e54e690098b055b3daa1c3a13b9d1e1cbed16537e47a39f",
+    "octets": 186076,
+    "sha256_manifeste": "a564084068debe8c3e54e690098b055b3daa1c3a13b9d1e1cbed16537e47a39f"
+  },
+  "limites": [
+    "Une production MCP réussie ne constitue pas une acceptation visuelle ou métier.",
+    "Les scores visuels restent à établir par inspection directe des images.",
+    "Les empreintes des sources originales sont celles du manifeste; les extraits et livrables sont relus."
+  ],
+  "bilan": {
+    "plans": 25,
+    "preuves": 11,
+    "produits": 5,
+    "bloques": 6,
+    "en_attente": 14,
+    "reperes": 21
+  },
+  "cas": [
+    {
+      "id": "P01-BOURASSA-E-002",
+      "plan": "BOURASSA",
+      "feuille": "E-002",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 3,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P01-BOURASSA-E-002.pdf",
+        "present": true,
+        "sha256": "a6172bfe595be8a67b7ed965ac14b6fc7d609eab4f5213d4463eff4e19125b86",
+        "octets": 955979,
+        "sha256_manifeste": "a6172bfe595be8a67b7ed965ac14b6fc7d609eab4f5213d4463eff4e19125b86",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P01-BOURASSA-E-002.json",
+        "present": true,
+        "sha256": "137efcfc282b97fbc28136fe066478bb771a97302214b900160ca52cbe98aa25"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P01-BOURASSA-E-002-rpc.json",
+        "present": true,
+        "sha256": "0c017dd79a1c03d3cbcfb672b2c315cf77fbb0dc6be04ebd97b1da8d126d3cca",
+        "octets": 73305
+      },
+      "preuves_initiales_preservees": true,
+      "debut": "2026-10-20T08:20:34.684Z",
+      "duree_s": 110.056,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": false,
+      "succes_technique": false,
+      "statut": "BLOQUE",
+      "raison": "relevé non prêt",
+      "erreurs": [
+        "aucune occurrence (occurrences-texte.csv / occurrences-visuel.csv vides)"
+      ],
+      "inconnues": {
+        "signatures": 429,
+        "occurrences": 3291
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/P01-BOURASSA-E-002-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/P01-BOURASSA-E-002-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/P01-BOURASSA-E-002-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "f9bd04007666ce1723ac4b2106ad2dd0c32bc6afdfb1ee7e022599afc8967ac6",
+          "octets": 281572
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "d03a78f1e06a1ca55c21bfe9de4e82b00bf565473828dff8ed93b50a63e217a0",
+          "octets": 268896
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "d1a81bbbcb4316f80a8dee6c68ba843aa1e8cb6fb1347b45c4cfe601df6b1971",
+          "octets": 381910
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "a42ecff1e3be9253826a6b5df71b204eb3044ac5792ce444be13c2d09f53b933",
+          "octets": 352815
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-05.png",
+          "present": true,
+          "sha256": "742b5ef95aa5613538f0f21d0147ac47d612379cac1f94a68ad57f3d10572c31",
+          "octets": 259875
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-06.png",
+          "present": true,
+          "sha256": "98673b926c95d6c4f1cf00bee99a93a94545fb2131eaf90428b254d2ad9554d7",
+          "octets": 350343
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-07.png",
+          "present": true,
+          "sha256": "8a0574e3631cc526dc851cf61abcbc8adadad74afafb4bb5312dbbe47d243609",
+          "octets": 382208
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-08.png",
+          "present": true,
+          "sha256": "39f486fe7819dcbc437d70f913052bb0e508efa0160925bbb8164b6224678668",
+          "octets": 444030
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-09.png",
+          "present": true,
+          "sha256": "dad3aefff0a056efe909b11fb0a4a9d70951d48700bb9f9f0035599620e82356",
+          "octets": 340989
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-10.png",
+          "present": true,
+          "sha256": "b61fb1b05defa62cfcc9fdad96dca931fc01d0cc9efbeb5e72cdf5765125ed57",
+          "octets": 522605
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-11.png",
+          "present": true,
+          "sha256": "5d52ad2a9ea2f6f113e57622302d4ab67cc7e5d86964db3121e648006595d9e4",
+          "octets": 640929
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-12.png",
+          "present": true,
+          "sha256": "1961eb43c5061b47d54d4c927c01e145c1908b603c2095356cf26a9fa896e10c",
+          "octets": 321994
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-13.png",
+          "present": true,
+          "sha256": "04106bc3f60561b593cad9d2f79a22533097294197ba08fa7522ea4682b8eccc",
+          "octets": 455182
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-14.png",
+          "present": true,
+          "sha256": "14729166585c215ed759bbdcacdeb767ac1c682fc8dabd8ed5d4933906e78c3d",
+          "octets": 502067
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-15.png",
+          "present": true,
+          "sha256": "f38ff9ac16976526ae291e0fabb20941db12d2879e1e852c0039ced73489a8f0",
+          "octets": 300040
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P01-BOURASSA-E-002/sortie/signatures/signatures-16.png",
+          "present": true,
+          "sha256": "40c1f62567065d444f797c3740765ba0d9cfd4091112541272df1b797e7c688f",
+          "octets": 67573
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P02-BOURASSA-E-101",
+      "plan": "BOURASSA",
+      "feuille": "E-101",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 4,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P02-BOURASSA-E-101.pdf",
+        "present": true,
+        "sha256": "12ac7374f9f49dac6f40e4871a34bd131103e8365e07716c2257da68b9f9a1e4",
+        "octets": 859520,
+        "sha256_manifeste": "12ac7374f9f49dac6f40e4871a34bd131103e8365e07716c2257da68b9f9a1e4",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P02-BOURASSA-E-101.json",
+        "present": true,
+        "sha256": "cc468457a7d91ac9763605e33c4a544afd1debae64337391a1f4fc09f35116f0"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P02-BOURASSA-E-101-rpc.json",
+        "present": true,
+        "sha256": "dbd69fbcd365081c40d7516a59a44c5fea5b592aff49e03e2516e51c45e1fa08",
+        "octets": 63845
+      },
+      "preuves_initiales_preservees": true,
+      "debut": "2026-10-20T08:22:24.744Z",
+      "duree_s": 195.501,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": true,
+      "succes_technique": true,
+      "statut": "PRODUIT_A_VERIFIER",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 337,
+        "occurrences": 1039
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": 5,
+      "feuilles": [
+        {
+          "sheet": "E101",
+          "format": "agrege",
+          "plan_page": 1,
+          "bordereau_pages": [
+            2
+          ],
+          "reperes": 5,
+          "familles": 3,
+          "res": 5,
+          "box": [
+            2455,
+            1430,
+            2690,
+            1701.1
+          ],
+          "box_layout": [
+            1,
+            211,
+            32.045
+          ],
+          "box_in_free_space": true,
+          "bordereau_troncatures": 0,
+          "encadre": "v6",
+          "calques": 4,
+          "signet": "P02-BOURASSA-E-101-E101-annote-v1",
+          "signets_origine": 0
+        }
+      ],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/P02-BOURASSA-E-101-rendu-rapport.json",
+        "present": true,
+        "sha256": "f1a5ae2026ae1663416537bb360100d5939e0e5a2e24d67f0cbdd7fa778cb6f5",
+        "octets": 651
+      },
+      "conformite_rendu": {
+        "encadre_hors_espace_libre": [],
+        "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+      },
+      "pages": 2,
+      "quantites": {
+        "represente": 5,
+        "total": 5,
+        "lignes": [
+          {
+            "label": "STATION MANUELLE",
+            "code": "SM",
+            "famille": "alarme",
+            "represente": 2,
+            "total": 2
+          },
+          {
+            "label": "ENCASTRE URGENCE",
+            "code": "EU",
+            "famille": "eclairage",
+            "represente": 1,
+            "total": 1
+          },
+          {
+            "label": "PRISE DOUBLE 15A",
+            "code": "PC",
+            "famille": "prise",
+            "represente": 2,
+            "total": 2
+          }
+        ]
+      },
+      "bom": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/png/P02-BOURASSA-E-101-BOM-QUANTITES.csv",
+          "present": true,
+          "sha256": "0f44037c1b7a55d6ebc2f2eea7f93bdf45002adada0b23868aec641c39c273a6",
+          "octets": 271
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/png/P02-BOURASSA-E-101-BOM.csv",
+          "present": true,
+          "sha256": "0c3dede0e4c29fa3c68af39a0c3bb0547af335289b07c96aac7453ac8100245b",
+          "octets": 1133
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/png/P02-BOURASSA-E-101-BOM.xlsx",
+          "present": true,
+          "sha256": "c5d926126b13f57b573bae88bf4e7e97c1043db20a3b26ae0bf61a892d5b005a",
+          "octets": 6960
+        }
+      ],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/quantites.csv",
+        "present": true,
+        "sha256": "aaa476f7d3d6b56ddf17ec8294361a1147481deca6e29d6a9c64e03c0ce7e855",
+        "octets": 135
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/P02-BOURASSA-E-101-RELEVE.pdf",
+        "present": true,
+        "sha256": "80cfbb5d94d97672543dd6c5ab99accedac060d9ce2366afc9cc314ebe7f8eb1",
+        "octets": 868068
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/P02-BOURASSA-E-101-LIVRABLES-PNG.zip",
+        "present": true,
+        "sha256": "9b2843e580c8dbe53701abb8f0b65c04087b6fa3fa942ba30b9ef961c66a3bad",
+        "octets": 1366830
+      },
+      "planches_controle": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/controle/E101-planche-01.png",
+          "present": true,
+          "sha256": "1c3eda54d023f760ecd5bffcd4edd4b173c5edefb639ed929d8a41d269ec6915",
+          "octets": 94207
+        }
+      ],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "08d95a46b9c4927e545bc4d317d3aca7ccb07f1ac9b8e70a23df34fda9000042",
+          "octets": 255921
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "9083ca16ecf27af351117f6b8e065d85a9867cb6f8ebe7ae809e495d43ecd7e0",
+          "octets": 309827
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "f34f12a526ecf339f755e6865b643aa280b81afd368f589afea8e73d143eda41",
+          "octets": 311516
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "5ddbb2fea838d75fb88427d7250b94b4403253a7879aedcf3fc0988b886e4b9e",
+          "octets": 291421
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-05.png",
+          "present": true,
+          "sha256": "fd93c04986c0a0e72415bbc55cb7b2eff25e43c3d3d38108d3a064af61dc31a4",
+          "octets": 212723
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-06.png",
+          "present": true,
+          "sha256": "094e10347cc1a1fb183ef77899a6d0c4eda58c36c9f53ff585f381309e0e7c40",
+          "octets": 276560
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-07.png",
+          "present": true,
+          "sha256": "d7d64a3f3c4ad57afb38686821a0e9fd03d46ea55e9022e0c542bbc68bef330d",
+          "octets": 393973
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-08.png",
+          "present": true,
+          "sha256": "d7943f6db6e48b1795e27da8f46904940a7a58180120279d3e2ff56be2aeefea",
+          "octets": 265614
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-09.png",
+          "present": true,
+          "sha256": "e4bb5b137fc629c7319cf4bcecbe12e5d840dbb34a4acea7ef31d2c171a6af39",
+          "octets": 308561
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-10.png",
+          "present": true,
+          "sha256": "c0543c512de190ec567d02cda5972a917ea0671097a9787fa28ac2ccd0b2373b",
+          "octets": 302098
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-11.png",
+          "present": true,
+          "sha256": "a42cb907bf1dbbe0be22cea67478d216bd418a2b16bbb6db4b9406d03482a7b3",
+          "octets": 351205
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-12.png",
+          "present": true,
+          "sha256": "0bd7fb6459ec97a4cbf39ad6f249c9b6be36a67ecc84cb2ae36cff08e6488a49",
+          "octets": 320252
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P02-BOURASSA-E-101/sortie/signatures/signatures-13.png",
+          "present": true,
+          "sha256": "b38e3ce6a9f850a8f391afab2c108124773a98aa9ce49380c139e8ed0b173c6e",
+          "octets": 94240
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P03-BOURASSA-E-102",
+      "plan": "BOURASSA",
+      "feuille": "E-102",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 5,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P03-BOURASSA-E-102.pdf",
+        "present": true,
+        "sha256": "714a9bf764b27b394331d7be988192ca2c980f325022ffc79f3dbb4a1845a457",
+        "octets": 852351,
+        "sha256_manifeste": "714a9bf764b27b394331d7be988192ca2c980f325022ffc79f3dbb4a1845a457",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P03-BOURASSA-E-102.json",
+        "present": true,
+        "sha256": "bd33c39eecff938d4078af56d22b1dc8d1597747c4bf03cec628f470177753ff"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P03-BOURASSA-E-102-rpc.json",
+        "present": true,
+        "sha256": "0534f5bf74ca08aad77cae02a3209c1eb7310ff9bc4050bb44bbb17819c13fa7",
+        "octets": 61437
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:32:25.154Z",
+      "duree_s": 217.753,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": true,
+      "succes_technique": true,
+      "statut": "PRODUIT_A_VERIFIER",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 326,
+        "occurrences": 793
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": 4,
+      "feuilles": [
+        {
+          "sheet": "E102",
+          "format": "agrege",
+          "plan_page": 1,
+          "bordereau_pages": [
+            2
+          ],
+          "reperes": 4,
+          "familles": 2,
+          "res": 4,
+          "box": [
+            2500,
+            1420,
+            2735,
+            1659.1
+          ],
+          "box_layout": [
+            1,
+            211,
+            32.045
+          ],
+          "box_in_free_space": true,
+          "bordereau_troncatures": 0,
+          "encadre": "v6",
+          "calques": 3,
+          "signet": "P03-BOURASSA-E-102-E102-annote-v1",
+          "signets_origine": 0
+        }
+      ],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/P03-BOURASSA-E-102-rendu-rapport.json",
+        "present": true,
+        "sha256": "4c7e7db12751b7005e28edef4b9cb9eed946b9432345e434158003fd3ba1f72e",
+        "octets": 651
+      },
+      "conformite_rendu": {
+        "encadre_hors_espace_libre": [],
+        "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+      },
+      "pages": 2,
+      "quantites": {
+        "represente": 4,
+        "total": 4,
+        "lignes": [
+          {
+            "label": "STATION MANUELLE",
+            "code": "SM",
+            "famille": "alarme",
+            "represente": 3,
+            "total": 3
+          },
+          {
+            "label": "LED 4PI",
+            "code": "L4",
+            "famille": "eclairage",
+            "represente": 1,
+            "total": 1
+          }
+        ]
+      },
+      "bom": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/png/P03-BOURASSA-E-102-BOM-QUANTITES.csv",
+          "present": true,
+          "sha256": "ed088586cde56db5785b4fc345fa23c18f1dd6ad81cf808041421b3e42ee65ed",
+          "octets": 153
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/png/P03-BOURASSA-E-102-BOM.csv",
+          "present": true,
+          "sha256": "1aefafbb4ee32cbcfaf85e32ad65036d8b9d67b83cea2ea23171b240c3133c56",
+          "octets": 785
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/png/P03-BOURASSA-E-102-BOM.xlsx",
+          "present": true,
+          "sha256": "b397c05cfc345f640725a2bcda35c8b01d4546a2dc33a89527ed2ea5b4c0c9bc",
+          "octets": 6786
+        }
+      ],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/quantites.csv",
+        "present": true,
+        "sha256": "9bce484985151d87ad1edf2543d4a12adb687f729e074937f877f617adf3b681",
+        "octets": 95
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/P03-BOURASSA-E-102-RELEVE.pdf",
+        "present": true,
+        "sha256": "60cb00ef783f6f2deb178f5dfbaa43da65ae658e6ef6878db1f63bf44040fd80",
+        "octets": 858431
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/P03-BOURASSA-E-102-LIVRABLES-PNG.zip",
+        "present": true,
+        "sha256": "35c8d95b687298e206109a8433a9ead236d8f4610ddb813fcba69aad98be1b3d",
+        "octets": 1251352
+      },
+      "planches_controle": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/controle/E102-planche-01.png",
+          "present": true,
+          "sha256": "deea9ce0c1c2b286f2c2f69cf67d549e42b01ec65efe6172120708ba5e587d1f",
+          "octets": 50514
+        }
+      ],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "6f6661c833363c90f1a092c5607970962db6ef43639380942508516e43cfb070",
+          "octets": 232208
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "909c37a6d02d31b94606d7674dd828ef11f9ee4cf99b2f22f501c4e59c8e5a9c",
+          "octets": 271010
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "3c5313abddd9d5c512a2cfa6b96ce3dc496f98c4d54f428c21c5667c50c5eaa4",
+          "octets": 253567
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "fa63f0e9c9505b7f95926dbcd0d3a20e40dd6c6843025a348769ba9695abecf5",
+          "octets": 303904
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-05.png",
+          "present": true,
+          "sha256": "5b6d84ee7787bf123c9b779169b6f59f6500a7c82a72afadcd654d55d99b4ce9",
+          "octets": 164589
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-06.png",
+          "present": true,
+          "sha256": "d98023bdc6fa6a76659d1023d6ca6e702d9c796d4d6ffa3914a0487f8a190ca0",
+          "octets": 187391
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-07.png",
+          "present": true,
+          "sha256": "d287ffcb974c3d97c7547f1a68a947b486d0a54319c9f548e3c6534cf8cc5f76",
+          "octets": 211617
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-08.png",
+          "present": true,
+          "sha256": "61071a338aee440dae09237107a2dd9f91ed40d8db4d02eb4c7d0e88876d8493",
+          "octets": 246495
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-09.png",
+          "present": true,
+          "sha256": "11b08c3e211651252bf325f10d07712884b628d337ea4d1740a22774de4bdac2",
+          "octets": 258865
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-10.png",
+          "present": true,
+          "sha256": "7d43ef9b00fa22ea084e2ed53f7684e20a03089933bdcd5fddaea082858a406c",
+          "octets": 319881
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-11.png",
+          "present": true,
+          "sha256": "52dbd8631805a05b0839c05088d0579d48c7fe26072b0fb6dfd58f6539c5acc6",
+          "octets": 382289
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-12.png",
+          "present": true,
+          "sha256": "52dd365053c8d7570770d7ab34793ecb8fc24d72b80508fee522eb38cf876751",
+          "octets": 275072
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P03-BOURASSA-E-102/sortie/signatures/signatures-13.png",
+          "present": true,
+          "sha256": "3b67ce7e06dee33be51e909420ad54ee8e70e5ce79bf6fee2c65626be534a2f6",
+          "octets": 39913
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P04-BOURASSA-E-103",
+      "plan": "BOURASSA",
+      "feuille": "E-103",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 6,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P04-BOURASSA-E-103.pdf",
+        "present": true,
+        "sha256": "37c13e66b4b22061a6789abd87a92220ab42cfbb5487100ac8a9380c95bd75a4",
+        "octets": 849357,
+        "sha256_manifeste": "37c13e66b4b22061a6789abd87a92220ab42cfbb5487100ac8a9380c95bd75a4",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P04-BOURASSA-E-103.json",
+        "present": true,
+        "sha256": "2e66680f05aea683e6f7bed1f7a073d2ed7d800b02a951a86238c183519ac449"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P04-BOURASSA-E-103-rpc.json",
+        "present": true,
+        "sha256": "ab1d0bd80ef1700b7da06af793b95952fb261e17cd011222a8276eeb8875611b",
+        "octets": 63990
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:36:02.911Z",
+      "duree_s": 225.202,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": true,
+      "succes_technique": true,
+      "statut": "PRODUIT_A_VERIFIER",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 346,
+        "occurrences": 786
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": 2,
+      "feuilles": [
+        {
+          "sheet": "E103",
+          "format": "agrege",
+          "plan_page": 1,
+          "bordereau_pages": [
+            2
+          ],
+          "reperes": 2,
+          "familles": 1,
+          "res": 2,
+          "box": [
+            2430,
+            1410,
+            2665,
+            1617
+          ],
+          "box_layout": [
+            1,
+            211,
+            32.045
+          ],
+          "box_in_free_space": true,
+          "bordereau_troncatures": 0,
+          "encadre": "v6",
+          "calques": 2,
+          "signet": "P04-BOURASSA-E-103-E103-annote-v1",
+          "signets_origine": 0
+        }
+      ],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/P04-BOURASSA-E-103-rendu-rapport.json",
+        "present": true,
+        "sha256": "a8b29bf4cf9382b9ec46cd5f528242a6153639e24d5409b9a9fa00b87ff08ac8",
+        "octets": 651
+      },
+      "conformite_rendu": {
+        "encadre_hors_espace_libre": [],
+        "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+      },
+      "pages": 2,
+      "quantites": {
+        "represente": 2,
+        "total": 2,
+        "lignes": [
+          {
+            "label": "STATION MANUELLE",
+            "code": "SM",
+            "famille": "alarme",
+            "represente": 2,
+            "total": 2
+          }
+        ]
+      },
+      "bom": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/png/P04-BOURASSA-E-103-BOM-QUANTITES.csv",
+          "present": true,
+          "sha256": "4033f7383e90b48d6c6829017488984a1d1d3797cd928bf88837b36ef85cb27d",
+          "octets": 98
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/png/P04-BOURASSA-E-103-BOM.csv",
+          "present": true,
+          "sha256": "3b217b77dc826309544cdb07426e4517450a228cac43dc47e06169f0996e08e4",
+          "octets": 439
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/png/P04-BOURASSA-E-103-BOM.xlsx",
+          "present": true,
+          "sha256": "306029883c7b13f4e750de8c218fe5d01b7b37d6061d01174251f55501a6e4a0",
+          "octets": 6689
+        }
+      ],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/quantites.csv",
+        "present": true,
+        "sha256": "247c71efd48aaeb57a110b9ad8211ce6177464402b4878032e80cda46e198bca",
+        "octets": 69
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/P04-BOURASSA-E-103-RELEVE.pdf",
+        "present": true,
+        "sha256": "38b0898447034d1a39a2d961b04935580978c8ac3dbec0dbbb4a2faa48f759b3",
+        "octets": 854205
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/P04-BOURASSA-E-103-LIVRABLES-PNG.zip",
+        "present": true,
+        "sha256": "adecdbc1118e28e968fcdbf61a3ce6c9474fc8a98748b2ccf64f5c986ae30d6e",
+        "octets": 1186323
+      },
+      "planches_controle": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/controle/E103-planche-01.png",
+          "present": true,
+          "sha256": "6ce786634ab85289b7d6c1fd664a659e99d298a92b54c25bc801a50e84b3f43d",
+          "octets": 42993
+        }
+      ],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "69d8bb79156e20ee34da14825c26818f8a638ba45d9ff2d6774bc466225e1197",
+          "octets": 260135
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "087d0fc54e7639c3c80a235134fcc0c163c42a944ac830b0d1686d091b56ad64",
+          "octets": 309067
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "cfe1867ebd2c2c1be16b22ad78b25c16aa6e4f761e9921fe395548535982d522",
+          "octets": 297399
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "f3210c7bf949d045f36d6fa6874adee69d86082076c32f392382d791c35243e6",
+          "octets": 245948
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-05.png",
+          "present": true,
+          "sha256": "d0d848b79b56e65523cdd1d512c6f6585c6622afaf45828cb51984218c1e7e7c",
+          "octets": 318360
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-06.png",
+          "present": true,
+          "sha256": "17cda8ca42520e413c454a9a1f57a2f29b560d1d2f7cf535e0e7dfb5a217dbe5",
+          "octets": 253701
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-07.png",
+          "present": true,
+          "sha256": "60f2f1b5b9d40112238a89f90e8de90bd3b04b804b3283b59252bb269bb64e25",
+          "octets": 267623
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-08.png",
+          "present": true,
+          "sha256": "0b6db788e7eb8a842b17b6f62c21f97ab6cb75b83bec9ed479f60de66b845813",
+          "octets": 308720
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-09.png",
+          "present": true,
+          "sha256": "4c60961d362eb639abfd8266441808f8878254030fd7ff3ddb705936b76b75d2",
+          "octets": 306577
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-10.png",
+          "present": true,
+          "sha256": "884da3ba4457766d4f0def9599a6d648fdbe0f64c8bb6289fa9632a0cc115119",
+          "octets": 380244
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-11.png",
+          "present": true,
+          "sha256": "e49305b664fe3a8555dea6a42091375c1d688a9b3d1bca2c8bf7a1473e1b8ab6",
+          "octets": 460416
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-12.png",
+          "present": true,
+          "sha256": "c8bfcc0402b14cd7c186198a62c503d228a21ca54bd666139da05b006a43412a",
+          "octets": 334023
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P04-BOURASSA-E-103/sortie/signatures/signatures-13.png",
+          "present": true,
+          "sha256": "0a3e01e912703914c5091ea61c3f2c64194b388e59e1f3bf997a04a100ea6e81",
+          "octets": 143314
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P05-BOURASSA-E-104",
+      "plan": "BOURASSA",
+      "feuille": "E-104",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 7,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P05-BOURASSA-E-104.pdf",
+        "present": true,
+        "sha256": "66321a6520248d9bedaa8ac8bbe55da14dca4209a440bd3cff72543e20c1efe2",
+        "octets": 594249,
+        "sha256_manifeste": "66321a6520248d9bedaa8ac8bbe55da14dca4209a440bd3cff72543e20c1efe2",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P05-BOURASSA-E-104.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P05-BOURASSA-E-104-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P05-BOURASSA-E-104/sortie/P05-BOURASSA-E-104-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P05-BOURASSA-E-104/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P05-BOURASSA-E-104/sortie/P05-BOURASSA-E-104-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P05-BOURASSA-E-104/sortie/P05-BOURASSA-E-104-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P06-BOURASSA-E-105",
+      "plan": "BOURASSA",
+      "feuille": "E-105",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 8,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P06-BOURASSA-E-105.pdf",
+        "present": true,
+        "sha256": "b2a07030ef6a56dc03b2f965c3cf3efe17876c5b7aa6fc1ecda7030f41bf9832",
+        "octets": 583919,
+        "sha256_manifeste": "b2a07030ef6a56dc03b2f965c3cf3efe17876c5b7aa6fc1ecda7030f41bf9832",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P06-BOURASSA-E-105.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P06-BOURASSA-E-105-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P06-BOURASSA-E-105/sortie/P06-BOURASSA-E-105-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P06-BOURASSA-E-105/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P06-BOURASSA-E-105/sortie/P06-BOURASSA-E-105-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P06-BOURASSA-E-105/sortie/P06-BOURASSA-E-105-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P07-BOURASSA-E-151",
+      "plan": "BOURASSA",
+      "feuille": "E-151",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 9,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P07-BOURASSA-E-151.pdf",
+        "present": true,
+        "sha256": "4281b03eea76510ff2a466bac5ba87b97c4f8fae35f7f5a4d4ec07b69ebb1a4c",
+        "octets": 880529,
+        "sha256_manifeste": "4281b03eea76510ff2a466bac5ba87b97c4f8fae35f7f5a4d4ec07b69ebb1a4c",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P07-BOURASSA-E-151.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P07-BOURASSA-E-151-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P07-BOURASSA-E-151/sortie/P07-BOURASSA-E-151-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P07-BOURASSA-E-151/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P07-BOURASSA-E-151/sortie/P07-BOURASSA-E-151-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P07-BOURASSA-E-151/sortie/P07-BOURASSA-E-151-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P08-BOURASSA-E-152",
+      "plan": "BOURASSA",
+      "feuille": "E-152",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 10,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P08-BOURASSA-E-152.pdf",
+        "present": true,
+        "sha256": "954656aece0a0574147f5f60716f93d96820186f8a690af585cd81ba7619f225",
+        "octets": 921895,
+        "sha256_manifeste": "954656aece0a0574147f5f60716f93d96820186f8a690af585cd81ba7619f225",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P08-BOURASSA-E-152.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P08-BOURASSA-E-152-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P08-BOURASSA-E-152/sortie/P08-BOURASSA-E-152-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P08-BOURASSA-E-152/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P08-BOURASSA-E-152/sortie/P08-BOURASSA-E-152-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P08-BOURASSA-E-152/sortie/P08-BOURASSA-E-152-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P09-BOURASSA-E-153",
+      "plan": "BOURASSA",
+      "feuille": "E-153",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 11,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P09-BOURASSA-E-153.pdf",
+        "present": true,
+        "sha256": "746f2b0775149798bcc749366ecc42d4981f7c8255a5c5a93f1917793ab7501f",
+        "octets": 692975,
+        "sha256_manifeste": "746f2b0775149798bcc749366ecc42d4981f7c8255a5c5a93f1917793ab7501f",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P09-BOURASSA-E-153.json",
+        "present": true,
+        "sha256": "448a6ff4797dc25d6a303bfbaf2c0b2f1d7537519f50827897eeb1463608d27d"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P09-BOURASSA-E-153-rpc.json",
+        "present": true,
+        "sha256": "f68c31361502da98db37fc9e764a8449f2009e223978c1369c4200d7d183fabd",
+        "octets": 50879
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:32:45.096Z",
+      "duree_s": 225.102,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": true,
+      "succes_technique": true,
+      "statut": "PRODUIT_A_VERIFIER",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 265,
+        "occurrences": 489
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": 1,
+      "feuilles": [
+        {
+          "sheet": "E153",
+          "format": "agrege",
+          "plan_page": 1,
+          "bordereau_pages": [
+            2
+          ],
+          "reperes": 1,
+          "familles": 1,
+          "res": 1,
+          "box": [
+            2430,
+            1370,
+            2665,
+            1577
+          ],
+          "box_layout": [
+            1,
+            211,
+            32.045
+          ],
+          "box_in_free_space": true,
+          "bordereau_troncatures": 0,
+          "encadre": "v6",
+          "calques": 2,
+          "signet": "P09-BOURASSA-E-153-E153-annote-v1",
+          "signets_origine": 0
+        }
+      ],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/P09-BOURASSA-E-153-rendu-rapport.json",
+        "present": true,
+        "sha256": "069fce85d687e147332e6f866b7e2939db6f6348991a7de22b0c2a6fe41636fa",
+        "octets": 651
+      },
+      "conformite_rendu": {
+        "encadre_hors_espace_libre": [],
+        "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+      },
+      "pages": 2,
+      "quantites": {
+        "represente": 1,
+        "total": 1,
+        "lignes": [
+          {
+            "label": "STATION MANUELLE",
+            "code": "SM",
+            "famille": "alarme",
+            "represente": 1,
+            "total": 1
+          }
+        ]
+      },
+      "bom": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/png/P09-BOURASSA-E-153-BOM-QUANTITES.csv",
+          "present": true,
+          "sha256": "f6da7cb462af32f2a9b331327bda73d6f51ad8ff48dc4f134d9b9f6bf5f2bbb2",
+          "octets": 98
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/png/P09-BOURASSA-E-153-BOM.csv",
+          "present": true,
+          "sha256": "20ff2accb3c80fd3173e1a45e6c8d4ac87f82746e0c4ada36af54f1c2d507ff2",
+          "octets": 271
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/png/P09-BOURASSA-E-153-BOM.xlsx",
+          "present": true,
+          "sha256": "d5dccd5a63a81bc481fd2302a14ae9a4ddd7f2aa7856224ddef366a4f195fdb4",
+          "octets": 6686
+        }
+      ],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/quantites.csv",
+        "present": true,
+        "sha256": "97dccc2ebc3a003c4ddaad92c36ab09229b40a59e8d324d5fca77c8dc0a3b878",
+        "octets": 69
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/P09-BOURASSA-E-153-RELEVE.pdf",
+        "present": true,
+        "sha256": "bbeecfa935e12e10125104d7ea1bb2faea04694b8f5c462e5ae834d725921246",
+        "octets": 698410
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/P09-BOURASSA-E-153-LIVRABLES-PNG.zip",
+        "present": true,
+        "sha256": "5e59c997b3fd6e19927b88a23c5210ae313f06606f8a31ae7fefd42dea1121f9",
+        "octets": 808660
+      },
+      "planches_controle": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/controle/E153-planche-01.png",
+          "present": true,
+          "sha256": "9fa2fdddf840a43f8f35842c7e483e0b60463b09a5535dba2deeb7c95355b4a1",
+          "octets": 18505
+        }
+      ],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "20dc68d72bff75cad84e3cce7ee2654abbba454c53b6df7f98fdbdbc130aefde",
+          "octets": 155957
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "573f6a1482d03db72ea2f0e69f98b7da08030b2416643838c75598add254a24b",
+          "octets": 166403
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "c25e4a3447a84daeb3ba5a8568c8cdba925451daabe599d4ec9dad1a09c09e52",
+          "octets": 207613
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "07285f48987935e8a37360e8d2044855a34632b5fc1b7d7ed0c05e8dd03d6400",
+          "octets": 185417
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-05.png",
+          "present": true,
+          "sha256": "3149a7250e8db36e8dc8159ea97351469ca6ee2f18898492e922e5a09a1dd86e",
+          "octets": 167515
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-06.png",
+          "present": true,
+          "sha256": "cb95c24d52b450dfd5c1e97068c0a32d41f2b5ea9c908a5f45697029a8232d35",
+          "octets": 129487
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-07.png",
+          "present": true,
+          "sha256": "13389872353bbaa74b99347f315048a2ae469a227d74e459eee921f0b827e194",
+          "octets": 192055
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-08.png",
+          "present": true,
+          "sha256": "314999463639e6221db831f998d6ed3f01db942b8ab3c7e66fc96cda0d60a97d",
+          "octets": 205424
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-09.png",
+          "present": true,
+          "sha256": "e001df36eab4c108927e8060e809c11ac2285274cf3f442c5adb365c8bd6bbd8",
+          "octets": 339083
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P09-BOURASSA-E-153/sortie/signatures/signatures-10.png",
+          "present": true,
+          "sha256": "36ae172bb36d4bd621fc1f3f2b4a714fd19e2a1552a9b6c1fe6cdc3e4439a114",
+          "octets": 228471
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P10-BOURASSA-E-201",
+      "plan": "BOURASSA",
+      "feuille": "E-201",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 12,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P10-BOURASSA-E-201.pdf",
+        "present": true,
+        "sha256": "c7070266ff6e4f7353d30dea30c0bce3549436b936e5c67596bdecc0db156b28",
+        "octets": 703781,
+        "sha256_manifeste": "c7070266ff6e4f7353d30dea30c0bce3549436b936e5c67596bdecc0db156b28",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P10-BOURASSA-E-201.json",
+        "present": true,
+        "sha256": "67c4dc0f02022aca8d68cae5b1d0e85ce55430e598ce859c1f5ad72e2481d978"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P10-BOURASSA-E-201-rpc.json",
+        "present": true,
+        "sha256": "63b106deb6534782d6b1d01c027ec98e765f98107da1eb4130fe9012acb1b003",
+        "octets": 63552
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:36:30.203Z",
+      "duree_s": 126.518,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": false,
+      "succes_technique": false,
+      "statut": "BLOQUE",
+      "raison": "relevé non prêt",
+      "erreurs": [
+        "aucune occurrence (occurrences-texte.csv / occurrences-visuel.csv vides)"
+      ],
+      "inconnues": {
+        "signatures": 368,
+        "occurrences": 882
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/P10-BOURASSA-E-201-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/P10-BOURASSA-E-201-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/P10-BOURASSA-E-201-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "c6733d54c4f4687ac0af0e3dfd83d76c4a285ddacca688b4cf83559d9d5976d7",
+          "octets": 177626
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "89c83a863d0589a2d23423f172b1ac9d3548cef683fac5235dc4f5365ee54263",
+          "octets": 235030
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "68b260b197b0eecb5bb569eefed881c984c51964b476ae202a0182334565a777",
+          "octets": 229775
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "19f8f7f086741d888db077b924e4a7a59fb34196ba2f36bf63dbeb2d65c3f8d2",
+          "octets": 203845
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-05.png",
+          "present": true,
+          "sha256": "0823183b80402b8d1dfc61fd383d6ce78f1ae8dc4b2cce401e4c0082f1b7b2ee",
+          "octets": 142338
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-06.png",
+          "present": true,
+          "sha256": "cf0275e1bafda9a2a02ff6ce497878ebe2aa97f2827955833df0d3c3e22d715a",
+          "octets": 219330
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-07.png",
+          "present": true,
+          "sha256": "598df2f9ca0263e57e5407f26825599a91a0bab9033ea08a78c396ff27d1368e",
+          "octets": 269990
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-08.png",
+          "present": true,
+          "sha256": "fabaa2446ee84be8e492a7833c5a45d297cb04126289c633e1465c59dc120caa",
+          "octets": 233358
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-09.png",
+          "present": true,
+          "sha256": "41ac44a204e00db9fc212b094dd24b0600e0a34686f390b41abe0664937f2e6b",
+          "octets": 218159
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-10.png",
+          "present": true,
+          "sha256": "b8d18315ee272087a13609981816f86a83ccdada2db84040bd81b0c1277a040c",
+          "octets": 277597
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-11.png",
+          "present": true,
+          "sha256": "48e32f8906d4ee4a447e187b2a02b6e3f41622aaa29d951b43f262d37cda02b0",
+          "octets": 229538
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-12.png",
+          "present": true,
+          "sha256": "3db55b8496e07c1ef795c7e05c60061fc6933ad1069e822d5549609d04578f81",
+          "octets": 195940
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-13.png",
+          "present": true,
+          "sha256": "7bb8e0a8f66f55d9b16ed484a0bb8f3d6e5ea6e6cf6f3550fc2e10fd949c5cc8",
+          "octets": 320884
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P10-BOURASSA-E-201/sortie/signatures/signatures-14.png",
+          "present": true,
+          "sha256": "e9fd5e4260b155e94fb0c79da233146eb176bd7a93adeda136fc5b8513b20d8c",
+          "octets": 94711
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P11-BOURASSA-E-202",
+      "plan": "BOURASSA",
+      "feuille": "E-202",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 13,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P11-BOURASSA-E-202.pdf",
+        "present": true,
+        "sha256": "b3b40e993ea8e44a27a64ae15cf660a9f812883e4d875be69d69c25fe76c4927",
+        "octets": 691659,
+        "sha256_manifeste": "b3b40e993ea8e44a27a64ae15cf660a9f812883e4d875be69d69c25fe76c4927",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P11-BOURASSA-E-202.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P11-BOURASSA-E-202-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P11-BOURASSA-E-202/sortie/P11-BOURASSA-E-202-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P11-BOURASSA-E-202/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P11-BOURASSA-E-202/sortie/P11-BOURASSA-E-202-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P11-BOURASSA-E-202/sortie/P11-BOURASSA-E-202-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P12-BOURASSA-E-203",
+      "plan": "BOURASSA",
+      "feuille": "E-203",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 14,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P12-BOURASSA-E-203.pdf",
+        "present": true,
+        "sha256": "92637c312d9bf67a15fed302f7c6bd1b8e845f1dab82f805ac92619f2a96f07f",
+        "octets": 673053,
+        "sha256_manifeste": "92637c312d9bf67a15fed302f7c6bd1b8e845f1dab82f805ac92619f2a96f07f",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P12-BOURASSA-E-203.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P12-BOURASSA-E-203-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P12-BOURASSA-E-203/sortie/P12-BOURASSA-E-203-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P12-BOURASSA-E-203/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P12-BOURASSA-E-203/sortie/P12-BOURASSA-E-203-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P12-BOURASSA-E-203/sortie/P12-BOURASSA-E-203-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P13-BOURASSA-E-204",
+      "plan": "BOURASSA",
+      "feuille": "E-204",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 15,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P13-BOURASSA-E-204.pdf",
+        "present": true,
+        "sha256": "f22a3f8667f65cf83fb6c034e387228650ebe75338d06261d5a441ac02047b91",
+        "octets": 562159,
+        "sha256_manifeste": "f22a3f8667f65cf83fb6c034e387228650ebe75338d06261d5a441ac02047b91",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P13-BOURASSA-E-204.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P13-BOURASSA-E-204-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P13-BOURASSA-E-204/sortie/P13-BOURASSA-E-204-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P13-BOURASSA-E-204/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P13-BOURASSA-E-204/sortie/P13-BOURASSA-E-204-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P13-BOURASSA-E-204/sortie/P13-BOURASSA-E-204-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P14-BOURASSA-E-205",
+      "plan": "BOURASSA",
+      "feuille": "E-205",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 16,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P14-BOURASSA-E-205.pdf",
+        "present": true,
+        "sha256": "f3cb35d06b488512cc5347ad962ced04ba1d86e7c26b67c5a5ce66775cca8fa0",
+        "octets": 679444,
+        "sha256_manifeste": "f3cb35d06b488512cc5347ad962ced04ba1d86e7c26b67c5a5ce66775cca8fa0",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P14-BOURASSA-E-205.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P14-BOURASSA-E-205-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P14-BOURASSA-E-205/sortie/P14-BOURASSA-E-205-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P14-BOURASSA-E-205/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P14-BOURASSA-E-205/sortie/P14-BOURASSA-E-205-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P14-BOURASSA-E-205/sortie/P14-BOURASSA-E-205-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P15-BOURASSA-E-206",
+      "plan": "BOURASSA",
+      "feuille": "E-206",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 17,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P15-BOURASSA-E-206.pdf",
+        "present": true,
+        "sha256": "6926a1601dcb5bb6e33c34b56d73c94be9e2dfbc4b450a424e8511bbe4f235ff",
+        "octets": 749026,
+        "sha256_manifeste": "6926a1601dcb5bb6e33c34b56d73c94be9e2dfbc4b450a424e8511bbe4f235ff",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P15-BOURASSA-E-206.json",
+        "present": true,
+        "sha256": "3d35459fc940b3cf29dcfe77a3e02f1b382fe2ec3d25693156b81cff4ccdb024"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P15-BOURASSA-E-206-rpc.json",
+        "present": true,
+        "sha256": "36f93951e3225012b7f07c0288117062034017d5d3e01a612564b7ff6750f1aa",
+        "octets": 19064
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:32:45.078Z",
+      "duree_s": 123.223,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": false,
+      "succes_technique": false,
+      "statut": "BLOQUE",
+      "raison": "relevé non prêt",
+      "erreurs": [
+        "aucune occurrence (occurrences-texte.csv / occurrences-visuel.csv vides)"
+      ],
+      "inconnues": {
+        "signatures": 92,
+        "occurrences": 286
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/P15-BOURASSA-E-206-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/P15-BOURASSA-E-206-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/P15-BOURASSA-E-206-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "8ea9b8a45ea9979e1d4b1aa281b509c85e25cec920f45c41c139a6826f6c6102",
+          "octets": 257341
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "90848bbb83763372bed36820fe222402d1d4d5957c6013630144bd19a368a1cc",
+          "octets": 349409
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "a842c9352860631b07d681f98386b79c5ae5cc03d62810eafc25bcf245960d75",
+          "octets": 295836
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P15-BOURASSA-E-206/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "e6dc11ae5c884fd4a5651c0081e53a3c02581730aace063e39d8dda3474d6bc5",
+          "octets": 64987
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P16-BOURASSA-E-207",
+      "plan": "BOURASSA",
+      "feuille": "E-207",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 18,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P16-BOURASSA-E-207.pdf",
+        "present": true,
+        "sha256": "0c1b4cd747771794ff2a38de7d7e4697be000fdbce6fd5f271e150671c0c6a2c",
+        "octets": 559833,
+        "sha256_manifeste": "0c1b4cd747771794ff2a38de7d7e4697be000fdbce6fd5f271e150671c0c6a2c",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P16-BOURASSA-E-207.json",
+        "present": true,
+        "sha256": "9f4eada4e11d04f68071a722727c8e97d7d38663e937dbd57d7ec4eafa9ffa3b"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P16-BOURASSA-E-207-rpc.json",
+        "present": true,
+        "sha256": "93d8c5c4d68dcae50b298f592caf2a959ea2c80d63148a50cfd3a8018dc7984c",
+        "octets": 24030
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:34:48.305Z",
+      "duree_s": 222.503,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": true,
+      "succes_technique": true,
+      "statut": "PRODUIT_A_VERIFIER",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 95,
+        "occurrences": 153
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": 9,
+      "feuilles": [
+        {
+          "sheet": "E207",
+          "format": "agrege",
+          "plan_page": 1,
+          "bordereau_pages": [
+            2
+          ],
+          "reperes": 9,
+          "familles": 2,
+          "res": 9,
+          "box": [
+            2290,
+            205,
+            2525,
+            444.1
+          ],
+          "box_layout": [
+            1,
+            211,
+            32.045
+          ],
+          "box_in_free_space": true,
+          "bordereau_troncatures": 0,
+          "encadre": "v6",
+          "calques": 3,
+          "signet": "P16-BOURASSA-E-207-E207-annote-v1",
+          "signets_origine": 0
+        }
+      ],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/P16-BOURASSA-E-207-rendu-rapport.json",
+        "present": true,
+        "sha256": "d3426387fb0170aa53db89a4e003374ffef54b53e538db0de72187cc239ffd37",
+        "octets": 649
+      },
+      "conformite_rendu": {
+        "encadre_hors_espace_libre": [],
+        "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+      },
+      "pages": 2,
+      "quantites": {
+        "represente": 9,
+        "total": 9,
+        "lignes": [
+          {
+            "label": "GACHE",
+            "code": "G",
+            "famille": "intrusion",
+            "represente": 1,
+            "total": 1
+          },
+          {
+            "label": "BOITE JONCTION",
+            "code": "BJ",
+            "famille": "services",
+            "represente": 8,
+            "total": 8
+          }
+        ]
+      },
+      "bom": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/png/P16-BOURASSA-E-207-BOM-QUANTITES.csv",
+          "present": true,
+          "sha256": "23195da34643b12d8005ed3674ea937fcf05e498b28a76387013f40d403c7932",
+          "octets": 141
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/png/P16-BOURASSA-E-207-BOM.csv",
+          "present": true,
+          "sha256": "777e88a0eda90dc3bce5be23232e342c5be64414b08a1743cc0eab7844cf9a5b",
+          "octets": 1581
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/png/P16-BOURASSA-E-207-BOM.xlsx",
+          "present": true,
+          "sha256": "4ea88f2bed2db27c41b01d3a4a400839b09bec61d28a912f364e998559325a2e",
+          "octets": 6781
+        }
+      ],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/quantites.csv",
+        "present": true,
+        "sha256": "f548f66f3935c3e6e7f77f4437b65df5c799742364901c61be700aa57a29435e",
+        "octets": 92
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/P16-BOURASSA-E-207-RELEVE.pdf",
+        "present": true,
+        "sha256": "be803a99d32590a76c5f2714177f748eb4dde4ab8e72c7a898b95bdfec41c1d2",
+        "octets": 567485
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/P16-BOURASSA-E-207-LIVRABLES-PNG.zip",
+        "present": true,
+        "sha256": "7b44324082401d36c4125d8bc19dab5c71dfa568fd2ae66605bd74627bf43c0f",
+        "octets": 704471
+      },
+      "planches_controle": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/controle/E207-planche-01.png",
+          "present": true,
+          "sha256": "cac04b207ddd621b82df79505bca8209a4e26db0c64d92c6644f1ffb0967fe36",
+          "octets": 65569
+        }
+      ],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "326ea164e35261f9e5fbae73e5286619e94c57d200ef8337ebc7701a386f8efc",
+          "octets": 204891
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "811e3f7b06c70704182a12a36c480cdb02505686659b3d618f7313002b09d6c6",
+          "octets": 186088
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "4b22349d145c8ce511bdb65533990bb9789100632fac6314188c7d9f75d8f099",
+          "octets": 342832
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P16-BOURASSA-E-207/sortie/signatures/signatures-04.png",
+          "present": true,
+          "sha256": "83e826d2374e1a63bd79f70f8b0cf2332c4cf8dfdd994a7a75363b3cab145599",
+          "octets": 124297
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P17-BOURASSA-E-251",
+      "plan": "BOURASSA",
+      "feuille": "E-251",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 19,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P17-BOURASSA-E-251.pdf",
+        "present": true,
+        "sha256": "f3712290297b74e8119c67cdc3a640c99814148b9275c8d07dedc6ca8afca652",
+        "octets": 821082,
+        "sha256_manifeste": "f3712290297b74e8119c67cdc3a640c99814148b9275c8d07dedc6ca8afca652",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P17-BOURASSA-E-251.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P17-BOURASSA-E-251-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P17-BOURASSA-E-251/sortie/P17-BOURASSA-E-251-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P17-BOURASSA-E-251/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P17-BOURASSA-E-251/sortie/P17-BOURASSA-E-251-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P17-BOURASSA-E-251/sortie/P17-BOURASSA-E-251-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P18-BOURASSA-E-252",
+      "plan": "BOURASSA",
+      "feuille": "E-252",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 20,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P18-BOURASSA-E-252.pdf",
+        "present": true,
+        "sha256": "ec802fbce1f4d7214307e2086ccb6c6dfc7a06a0aaffb62274b52120699c64e2",
+        "octets": 699829,
+        "sha256_manifeste": "ec802fbce1f4d7214307e2086ccb6c6dfc7a06a0aaffb62274b52120699c64e2",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P18-BOURASSA-E-252.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P18-BOURASSA-E-252-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P18-BOURASSA-E-252/sortie/P18-BOURASSA-E-252-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P18-BOURASSA-E-252/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P18-BOURASSA-E-252/sortie/P18-BOURASSA-E-252-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P18-BOURASSA-E-252/sortie/P18-BOURASSA-E-252-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P19-BOURASSA-E-253",
+      "plan": "BOURASSA",
+      "feuille": "E-253",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 21,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P19-BOURASSA-E-253.pdf",
+        "present": true,
+        "sha256": "856de2e7b8aa7be9ef1e678b4ddc65aa9bb6613d08fb5e8c8101f5c00ba284d3",
+        "octets": 621760,
+        "sha256_manifeste": "856de2e7b8aa7be9ef1e678b4ddc65aa9bb6613d08fb5e8c8101f5c00ba284d3",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P19-BOURASSA-E-253.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P19-BOURASSA-E-253-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P19-BOURASSA-E-253/sortie/P19-BOURASSA-E-253-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P19-BOURASSA-E-253/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P19-BOURASSA-E-253/sortie/P19-BOURASSA-E-253-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P19-BOURASSA-E-253/sortie/P19-BOURASSA-E-253-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P20-BOURASSA-E-301",
+      "plan": "BOURASSA",
+      "feuille": "E-301",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 22,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P20-BOURASSA-E-301.pdf",
+        "present": true,
+        "sha256": "e3ad81d12f2e7b9a31194fc25284104b1bfe541116315f543705b26f07141ff8",
+        "octets": 584928,
+        "sha256_manifeste": "e3ad81d12f2e7b9a31194fc25284104b1bfe541116315f543705b26f07141ff8",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P20-BOURASSA-E-301.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P20-BOURASSA-E-301-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P20-BOURASSA-E-301/sortie/P20-BOURASSA-E-301-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P20-BOURASSA-E-301/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P20-BOURASSA-E-301/sortie/P20-BOURASSA-E-301-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P20-BOURASSA-E-301/sortie/P20-BOURASSA-E-301-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P21-BOURASSA-E-302",
+      "plan": "BOURASSA",
+      "feuille": "E-302",
+      "source": {
+        "chemin": "G:\\Mon disque\\D-claude-non-public-20260923\\dr-electrique-soumissions-2026\\S-1645 ANNEXE-BOURASSA\\25084_Plans_Electrique.pdf",
+        "page": 23,
+        "sha256_manifeste": "15af03539fe0b3966c48689187d4a82fe9be35c24b89e3126cc7739891e4fcd0",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P21-BOURASSA-E-302.pdf",
+        "present": true,
+        "sha256": "6f676ab688ae2c23c894551a68d0cad02cab845e3bc9d04d526135a0f46417cd",
+        "octets": 711175,
+        "sha256_manifeste": "6f676ab688ae2c23c894551a68d0cad02cab845e3bc9d04d526135a0f46417cd",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P21-BOURASSA-E-302.json",
+        "present": true,
+        "sha256": "657b52fc93a36c69bac76289a8cac971d75de342eec1dfe6fd78b562377f66b3"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P21-BOURASSA-E-302-rpc.json",
+        "present": true,
+        "sha256": "58df5da4785038475091f8dac238f7030d8bc9f51efd2c7fe888bea0a5491541",
+        "octets": 15688
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:32:45.141Z",
+      "duree_s": 123.172,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": false,
+      "succes_technique": false,
+      "statut": "BLOQUE",
+      "raison": "relevé non prêt",
+      "erreurs": [
+        "aucune occurrence (occurrences-texte.csv / occurrences-visuel.csv vides)"
+      ],
+      "inconnues": {
+        "signatures": 71,
+        "occurrences": 221
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P21-BOURASSA-E-302/sortie/P21-BOURASSA-E-302-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P21-BOURASSA-E-302/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P21-BOURASSA-E-302/sortie/P21-BOURASSA-E-302-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P21-BOURASSA-E-302/sortie/P21-BOURASSA-E-302-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P21-BOURASSA-E-302/sortie/signatures/signatures-01.png",
+          "present": true,
+          "sha256": "56ad9986e2ccce5044099b063f00653adab2dacd8a8c6e0b70a0cbfbe7abf833",
+          "octets": 191002
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P21-BOURASSA-E-302/sortie/signatures/signatures-02.png",
+          "present": true,
+          "sha256": "a88fed5fc3ed8b1548847c275db0bc0aecda770917999cdd1dfa56044955645a",
+          "octets": 352930
+        },
+        {
+          "chemin": "travail-mcp/campagne-25-plans/P21-BOURASSA-E-302/sortie/signatures/signatures-03.png",
+          "present": true,
+          "sha256": "11e5096a693b2faf8b849087d3ec2c70e67f22a27e42136b119ee103f15a33d3",
+          "octets": 131103
+        }
+      ],
+      "score_visuel": null
+    },
+    {
+      "id": "P22-MIL-page-1",
+      "plan": "MIL",
+      "feuille": "page-1",
+      "source": {
+        "chemin": "D:\\github\\dr-estimation-ia\\travail-mcp\\S-1842-MIL-25KV\\entree\\S-1842-MIL-25Kv-3pages.pdf",
+        "page": 1,
+        "sha256_manifeste": "fbe8f175aaa438262b193d70fc5bd1a05ad2bd63fbb65968eaa00bc7ba0f85f5",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P22-MIL-page-1.pdf",
+        "present": true,
+        "sha256": "2f725695516ca24d036d871555b70a623c1051e973217d939b6cd274cf5aea27",
+        "octets": 8835342,
+        "sha256_manifeste": "2f725695516ca24d036d871555b70a623c1051e973217d939b6cd274cf5aea27",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P22-MIL-page-1.json",
+        "present": true,
+        "sha256": "7ab76b1c0863fa7c3b0cdda539613f07f20574a685c709b5aa0e4d8b46749483"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P22-MIL-page-1-rpc.json",
+        "present": true,
+        "sha256": "9eed0d26c8aa8464fe1cc843e47468c23ce530b0ea5c5bce8b581b524c4bded9",
+        "octets": 4210
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:34:48.317Z",
+      "duree_s": 123.733,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": false,
+      "succes_technique": false,
+      "statut": "BLOQUE",
+      "raison": "relevé non prêt",
+      "erreurs": [
+        "aucune occurrence (occurrences-texte.csv / occurrences-visuel.csv vides)"
+      ],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P22-MIL-page-1/sortie/P22-MIL-page-1-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P22-MIL-page-1/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P22-MIL-page-1/sortie/P22-MIL-page-1-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P22-MIL-page-1/sortie/P22-MIL-page-1-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P23-MIL-page-2",
+      "plan": "MIL",
+      "feuille": "page-2",
+      "source": {
+        "chemin": "D:\\github\\dr-estimation-ia\\travail-mcp\\S-1842-MIL-25KV\\entree\\S-1842-MIL-25Kv-3pages.pdf",
+        "page": 2,
+        "sha256_manifeste": "fbe8f175aaa438262b193d70fc5bd1a05ad2bd63fbb65968eaa00bc7ba0f85f5",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P23-MIL-page-2.pdf",
+        "present": true,
+        "sha256": "b540ac25d88fea17cf6d8c8389516e29d42b35bfa959593df56d7ec5e879727a",
+        "octets": 5161034,
+        "sha256_manifeste": "b540ac25d88fea17cf6d8c8389516e29d42b35bfa959593df56d7ec5e879727a",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P23-MIL-page-2.json",
+        "present": true,
+        "sha256": "7195eea443502d143af9cecb1f7e1075d8c872da1ceb5a54baf833ab02589eed"
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P23-MIL-page-2-rpc.json",
+        "present": true,
+        "sha256": "ae1a80152ec8f462638b2beea11c13f86e64f1df6f04b88c82b9a8b22159bea3",
+        "octets": 4210
+      },
+      "preuves_initiales_preservees": null,
+      "debut": "2026-10-20T08:36:52.053Z",
+      "duree_s": 125.617,
+      "fermeture": {
+        "code": 0,
+        "signal": null
+      },
+      "produit": false,
+      "succes_technique": false,
+      "statut": "BLOQUE",
+      "raison": "relevé non prêt",
+      "erreurs": [
+        "aucune occurrence (occurrences-texte.csv / occurrences-visuel.csv vides)"
+      ],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P23-MIL-page-2/sortie/P23-MIL-page-2-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P23-MIL-page-2/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P23-MIL-page-2/sortie/P23-MIL-page-2-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P23-MIL-page-2/sortie/P23-MIL-page-2-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P24-MIL-E-100B",
+      "plan": "MIL",
+      "feuille": "E-100B",
+      "source": {
+        "chemin": "D:\\github\\dr-estimation-ia\\travail-mcp\\S-1842-MIL-25KV\\entree\\S-1842-MIL-25Kv-3pages.pdf",
+        "page": 3,
+        "sha256_manifeste": "fbe8f175aaa438262b193d70fc5bd1a05ad2bd63fbb65968eaa00bc7ba0f85f5",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P24-MIL-E-100B.pdf",
+        "present": true,
+        "sha256": "89f6039ebf5a59bf7a4594682a75a56841b4d01f35be883af81ad4b139a0b63a",
+        "octets": 3177937,
+        "sha256_manifeste": "89f6039ebf5a59bf7a4594682a75a56841b4d01f35be883af81ad4b139a0b63a",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P24-MIL-E-100B.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P24-MIL-E-100B-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P24-MIL-E-100B/sortie/P24-MIL-E-100B-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P24-MIL-E-100B/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P24-MIL-E-100B/sortie/P24-MIL-E-100B-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P24-MIL-E-100B/sortie/P24-MIL-E-100B-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    },
+    {
+      "id": "P25-SUNLIFE-E003",
+      "plan": "SUNLIFE",
+      "feuille": "E003",
+      "source": {
+        "chemin": "D:\\github\\dr-estimation-ia\\travail-mcp\\S-1644-SUNLIFE\\entree\\S-1644-ELEC-page5.pdf",
+        "page": 1,
+        "sha256_manifeste": "278d63308e94c0a0fefa273eec1bbb552be7c45e94da9e7e1ae1099b6ffc9f19",
+        "controle": "empreinte initiale du manifeste"
+      },
+      "extrait": {
+        "chemin": "travail-mcp/campagne-25-plans/sources/P25-SUNLIFE-E003.pdf",
+        "present": true,
+        "sha256": "8ca69d918cb34cedbf5bea8683720418de8582533f6f3724610e976283f7fbc8",
+        "octets": 227328,
+        "sha256_manifeste": "8ca69d918cb34cedbf5bea8683720418de8582533f6f3724610e976283f7fbc8",
+        "conforme_manifeste": true
+      },
+      "preuve": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P25-SUNLIFE-E003.json",
+        "present": false,
+        "sha256": null
+      },
+      "rpc": {
+        "chemin": "travail-mcp/campagne-25-plans/preuves/P25-SUNLIFE-E003-rpc.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "preuves_initiales_preservees": null,
+      "debut": null,
+      "duree_s": null,
+      "fermeture": null,
+      "produit": null,
+      "succes_technique": false,
+      "statut": "EN_ATTENTE",
+      "raison": null,
+      "erreurs": [],
+      "inconnues": {
+        "signatures": 0,
+        "occurrences": 0
+      },
+      "ambigues": {
+        "signatures": 0
+      },
+      "reperes": null,
+      "feuilles": [],
+      "rapport_rendu": {
+        "chemin": "travail-mcp/campagne-25-plans/P25-SUNLIFE-E003/sortie/P25-SUNLIFE-E003-rendu-rapport.json",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "conformite_rendu": null,
+      "pages": null,
+      "quantites": null,
+      "bom": [],
+      "quantites_csv": {
+        "chemin": "travail-mcp/campagne-25-plans/P25-SUNLIFE-E003/sortie/quantites.csv",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "releve_pdf": {
+        "chemin": "travail-mcp/campagne-25-plans/P25-SUNLIFE-E003/sortie/P25-SUNLIFE-E003-RELEVE.pdf",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "zip": {
+        "chemin": "travail-mcp/campagne-25-plans/P25-SUNLIFE-E003/sortie/P25-SUNLIFE-E003-LIVRABLES-PNG.zip",
+        "present": false,
+        "sha256": null,
+        "octets": null
+      },
+      "planches_controle": [],
+      "planches_signatures": [],
+      "score_visuel": null
+    }
+  ]
+}

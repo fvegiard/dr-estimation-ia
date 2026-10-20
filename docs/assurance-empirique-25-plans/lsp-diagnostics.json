@@ -1,0 +1,33 @@
+{
+  "decouverte": {
+    "tool_search": "unsupported call: tool_searchtool_search_tool",
+    "route_recuperee": "functions.exec -> tools.mcp__lsp__diagnostics"
+  },
+  "fichiers": [
+    {
+      "fichier": "outils/preparer_campagne_25.py",
+      "severity": "error",
+      "isError": false,
+      "diagnostics": [
+        "error[Pyright] (reportMissingImports) at 10:7: Import \"pymupdf\" could not be resolved"
+      ]
+    },
+    {
+      "fichier": "tests/test_blocs_vignettes_cache.py",
+      "severity": "error",
+      "isError": false,
+      "diagnostics": [
+        "error[Pyright] (reportMissingImports) at 8:7: Import \"pymupdf\" could not be resolved",
+        "error[Pyright] (reportMissingImports) at 9:7: Import \"pytest\" could not be resolved"
+      ]
+    }
+  ],
+  "verification_environnement_explicite": {
+    "preuve": "pyright.json",
+    "commande": "pyright --pythonpath .venv/Scripts/python.exe --outputjson releve/blocs_vignettes.py outils/preparer_campagne_25.py tests/test_blocs_vignettes_cache.py",
+    "exit_code": 0,
+    "erreurs": 0,
+    "avertissements": 0,
+    "interpretation": "Les imports sont resolus par le controle explicite dans .venv; le diagnostic LSP ne prouve pas un defaut du code et son environnement n'a pas ete modifie."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "source": "C:/Users/fvegiard/AppData/Roaming/npm/pyright.ps1",
+  "inventaire_venv": {
+    "flake8": false,
+    "mypy": false,
+    "pyright": false,
+    "pylint": false,
+    "ruff": false
+  },
+  "commande": "pyright --pythonpath .venv/Scripts/python.exe --outputjson releve/blocs_vignettes.py outils/preparer_campagne_25.py tests/test_blocs_vignettes_cache.py",
+  "exit_code": 0
+}
