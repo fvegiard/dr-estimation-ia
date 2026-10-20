@@ -1,7 +1,7 @@
 # JOURNAL D'ASSURANCE EMPIRIQUE - CAMPAGNE 25 PLANS (DR ÉLECTRIQUE INC.)
 
 **Responsable de l'audit** : Léna AI / Francis Végiard  
-**Dernière mise à jour** : 2026-10-20T04:57:00-04:00  
+**Dernière mise à jour** : 2026-10-20T05:00:00-04:00  
 **Taux MO de référence** : 124,00 $/h  
 **Validation globale de non-régression** : 375 tests pytest exécutés et passés (100% SUCCÈS, 0 échec).  
 **Objectif** : Validation empirique de bout en bout sur 25 planches électriques réelles isolées, contrôle visuel des pastilles, encadré bordereau dans l'espace libre et synchronisation BOM/QPL.
@@ -18,7 +18,7 @@
 | **P04** | BOURASSA | E-103 (Éclairage Toit) | 2 repères | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (225s) |
 | **P05** | BOURASSA | E-104 (Détails Éclairage) | 2 repères (1 EU, 1 PC) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (144s) |
 | **P06** | BOURASSA | E-105 (Tableaux Éclairage) | 6 repères (2 DF, 4 SM) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (139s) |
-| **P07** | BOURASSA | E-151 (Alarme Incendie RDC) | À traiter | - | - | EN ATTENTE | Vague 1 |
+| **P07** | BOURASSA | E-151 (Alarme Incendie RDC) | 6 repères (2 SM, 3 EU, 1 PC) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (126s) |
 | **P08** | BOURASSA | E-152 (Alarme Incendie Étage) | À traiter | - | - | EN ATTENTE | Vague 1 |
 | **P09** | BOURASSA | E-153 (Réseau Incendie) | 1 repère | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (225s) |
 | **P10** | BOURASSA | E-201 (Distribution RDC) | Signatures brutes (368) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures générées (127s) |
@@ -70,6 +70,11 @@
 - **Type** : Tableaux et agencements d'éclairage.
 - **Rendu MCP** : 6 repères reconnus (2 détecteurs de fumée DF, 4 stations manuelles SM), 2 familles alarme. produit: true.
 - **Contrôle visuel** : ox_in_free_space: true ([260, 1260, 495, 1499.1]), zéro troncature, calques conformes. BOM Excel/CSV synchronisés au taux officiel de 124,00 $/h.
+
+### Cas P07 - P07-BOURASSA-E-151
+- **Type** : Plan d'alarme incendie RDC.
+- **Rendu MCP** : 6 repères reconnus (2 stations manuelles SM, 3 encastrés d'urgence EU, 1 prise double 15A PC), 3 familles. produit: true.
+- **Contrôle visuel** : ox_in_free_space: true ([280, 1660, 515, 1931.1]), zéro troncature, calques conformes. BOM Excel/CSV synchronisés au taux officiel de 124,00 $/h.
 
 ### Cas P09 - P09-BOURASSA-E-153
 - **Type** : Plan d'alarme incendie réseau.
