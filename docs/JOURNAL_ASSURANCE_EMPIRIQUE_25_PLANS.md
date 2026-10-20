@@ -1,7 +1,7 @@
 # JOURNAL D'ASSURANCE EMPIRIQUE - CAMPAGNE 25 PLANS (DR ÉLECTRIQUE INC.)
 
 **Responsable de l'audit** : Léna AI / Francis Végiard  
-**Dernière mise à jour** : 2026-10-20T05:14:00-04:00  
+**Dernière mise à jour** : 2026-10-20T05:16:00-04:00  
 **Taux MO de référence** : 124,00 $/h  
 **Validation globale de non-régression** : 375 tests pytest exécutés et passés (100% SUCCÈS, 0 échec).  
 **Objectif** : Validation empirique de bout en bout sur 25 planches électriques réelles isolées, contrôle visuel des pastilles, encadré bordereau dans l'espace libre et synchronisation BOM/QPL.
@@ -30,7 +30,7 @@
 | **P16** | BOURASSA | E-207 (Raccordements Équip.) | 9 repères (8 BJ, 1 Gâche) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (223s) |
 | **P17** | BOURASSA | E-251 (Télécom & Sécurité) | Signatures brutes (300) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures générées (119s) |
 | **P18** | BOURASSA | E-252 (Contrôle d'accès) | 1 repère (1 L4) | **5/5 Conforme** | **Conforme (ox_in_free_space: true)** | **SUCCÈS (0 err)** | BOM.xlsx, BOM.csv, Plans-annotes.pdf (124s) |
-| **P19** | BOURASSA | E-253 (Caméras CCTV) | À traiter | - | - | EN ATTENTE | Vague 3 |
+| **P19** | BOURASSA | E-253 (Caméras CCTV) | Signatures brutes (260) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | 10 planches signatures prêtes (67s) |
 | **P20** | BOURASSA | E-301 (Plan de Masse Ext.) | À traiter | - | - | EN ATTENTE | Vague 3 |
 | **P21** | BOURASSA | E-302 (Éclairage Extérieur) | Signatures brutes (71) | À étiqueter | Conforme | **ISOLÉ (signatures extraites)** | Planches signatures prêtes (123s) |
 | **P22** | CAMPUS MIL | page-1 (Tracé MT 25kV) | 0 (tracé raster) | Conforme | Conforme | **SUCCÈS (0 err)** | Analyse raster MT complétée (124s) |
