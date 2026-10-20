@@ -916,6 +916,7 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
     if not reprendre:
         lancer("blocs_vectoriels.py", str(travail), str(pdf_princ))
         lancer("blocs_vignettes.py", str(travail), str(pdf_princ), str(sig_dir), "--min", "1")
+    lancer("blocs_etiquettes_texte.py", str(travail), str(pdf_princ), "--bibliotheque", str(BIBLIOTHEQUE))
     lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
     vision = _etiqueter_signatures_vision(travail, sig_dir) if verification_vision else 0
     if vision:   # nouvelles règles : les inconnues restantes sont recalculées

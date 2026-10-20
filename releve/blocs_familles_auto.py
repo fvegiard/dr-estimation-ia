@@ -119,6 +119,9 @@ def main():
             del manuel[sid]; regenerees += 1
     fam, inconnues, ambigus = [], [], []
     vus_manuel = set()
+    # signatures déjà relevées par repère lu dans la boîte (blocs_etiquettes_texte.py) : plus rien à étiqueter pour elles
+    p_trait = os.path.join(work, "blocs-etiquettes-traitees.json")
+    traitees = set(json.load(open(p_trait, encoding="utf-8")).get("signatures", [])) if os.path.exists(p_trait) else set()
 
     def regle(sid, b, note):
         return {"sig_id": sid, "label": b["label"], "famille": b["famille"], "forme": b["forme"], "code": b["code"], "materiel": b["materiel"],
@@ -138,7 +141,7 @@ def main():
             if not applicable:                     # restreinte à des feuilles absentes de ce dossier : connue, mais pas ici
                 continue
             rg = regle(r["sig_id"], b, f"bibliothèque : {b['source']}"); rg["feuilles"] = rg["feuilles_auto"] = feuilles_ok; fam.append(rg)
-        elif int(r["n_plans"] or 0) >= a.min:
+        elif int(r["n_plans"] or 0) >= a.min and r["signature"] not in traitees:
             inconnues.append(r)
     # blocs RARES (sous le seuil de l'index) : un pictogramme (détecteur, enseigne) a une signature quasi unique ; s'il
     # est proche d'une entrée de la bibliothèque — ou s'il porte déjà une règle MANUELLE (sig_id connu de blocs-ids.json,
