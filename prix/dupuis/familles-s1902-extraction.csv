@@ -1,0 +1,189 @@
+Famille,Description (ACCEO),UM,Classe,PRIX À UTILISER $ (dernier de Dupuis),TEMPS À UTILISER h (dernier de Dupuis),Nb projets,Nb lignes,Prix unit. médian $,Prix min,Prix max,Variation prix %,Temps unit. médian h,Temps min,Temps max,Variation temps %,Nb fois à 0 $,Dernier prix $,Date dernier,Projet dernier,Projets
+Prise duplex 15 A 120 V,PRISE DUPLEX 15A 120V,U,Standard (stable),64.81,1.175,20,23,57.08,54.81,64.81,6.4,1.175,1.175,1.175,0,0,64.81,2026-09-25,S-1857 - Maison St-Michel,"25-066, S-1645, S-1665, S-1676, S-1689, S-1692, S-1693, S-1695, S-1714, S-1715, S-1769, S-1775, S-1783, S-1795, S-1797, S-1807, S-1808, S-1811, S-1854, S-1857"
+Prise duplex 15 A 120 V,PRISE DUPLEX 15/20A 120V,U,Standard (stable),60.19,1.225,17,21,54.26,51.51,60.19,4.3,1.225,1.225,1.225,0,0,60.19,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"25-066, S-1645, S-1665, S-1689, S-1692, S-1693, S-1715, S-1763, S-1769, S-1775, S-1783, S-1795, S-1808, S-1811, S-1854, S-1857, S-1881"
+Prise duplex 15 A 120 V,DROP DE PRISE,U,Standard (stable),35.43,0.9,4,4,35,34.57,36.3,2,0.9,0.9,0.9,0,0,35.43,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,"S-1645, S-1693, S-1695, S-1783"
+Prise USB,PRISE USB 125V 15 AMP,U,Standard (stable),77.45,1.125,6,7,71.77,70.74,77.45,3.8,1.125,1.125,1.125,0,0,77.45,2026-09-10,s-1854 sollio st hubert lanthier,"S-1693, S-1695, S-1715, S-1775, S-1795, S-1854"
+Prise DDFT/GFI,PRISE DUPLEX 20A 125V GFI,U,Standard (stable),65.38,1.3,16,18,59.53,56.71,65.38,4.6,1.3,1.3,1.3,0,0,65.38,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1692, S-1693, S-1715, S-1763, S-1769, S-1775, S-1783, S-1795, S-1797, S-1807, S-1808, S-1811, S-1854, S-1857, S-1881"
+Prise DDFT/GFI,PRISE DUPLEX 15A 120V GFI,U,Standard (stable),55.51,1.225,2,3,56.46,55.51,56.46,0.8,1.225,1.225,1.225,0,0,55.51,2026-03-11,S-1695_Hotel Playground Kahnawake,"S-1689, S-1695"
+Prise DDFT/GFI,PRISE GFI,U,Standard (stable),55,0.6,2,2,60,55,65,8.3,0.6,0.6,0.6,0,0,55,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1714, S-1881"
+Prise DDFT/GFI,PRISE GFI WP,U,Variable (à valider),65.5,1.25,2,2,70.25,65.5,75,6.8,1,0.75,1.25,25,0,65.5,2026-03-31,S-1693_Ecole Primaire Beloeil,"S-1693, S-1714"
+Prise DDFT/GFI,RECEPT DDFT AUTO TEST 20 A125V INVIOL BLANC,U,Vu 1 seul projet,22.54,0.25,1,3,22.54,22.54,22.54,0,0.25,0.25,0.25,0,0,22.54,2026-09-23,s-1866 gar mun st amable,S-1866
+Sortie tel/data (boîte+conduit+corde),TEL/DATA,U,Standard (stable),13.96,0.63,17,22,15.09,13.96,15.4,3.6,0.63,0.63,0.63,0,0,13.96,2026-09-25,S-1857 - Maison St-Michel,"25-066, S-1645, S-1665, S-1676, S-1689, S-1692, S-1693, S-1695, S-1769, S-1775, S-1783, S-1795, S-1807, S-1808, S-1811, S-1854, S-1857"
+Sortie tel/data (boîte+conduit+corde),SORTIE TEL,U,Variable (à valider),15,0.5,3,3,16.5,15,18,9.1,0.4,0,0.5,54,1,15,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1714, S-1881"
+Sortie tel/data (boîte+conduit+corde),SORTIE RESEAU,U,Vu 1 seul projet,15.4,0.63,1,1,15.4,15.4,15.4,,0.63,0.63,0.63,,0,15.4,2026-06-03,s-1775 clinique mieux etre,S-1775
+Sortie tel/data (boîte+conduit+corde),SORTIE DATA,U,Vu 1 seul projet,20,0.25,1,1,20,20,20,,0.25,0.25,0.25,,0,20,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Sortie tel/data (boîte+conduit+corde),TEL/DATA 3/4,U,Vu 1 seul projet,22.32,0.89,1,1,22.32,22.32,22.32,,0.89,0.89,0.89,,0,22.32,2026-09-23,s-1866 gar mun st amable,S-1866
+Luminaire encastré 2x4 LED,FIXTURE TYPE A,U,Standard (stable),0,0.75,7,8,0,,,,0.75,0.75,0.75,0,8,0,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"25-066, S-1665, S-1689, S-1769, S-1775, S-1808, S-1881"
+Luminaire encastré 2x4 LED,FIXTURE TYPE B,U,Standard (stable),0,0.75,7,8,0,,,,0.75,0.75,0.75,0,8,0,2026-07-13,s-1808 cpe les copain d'ABORD,"25-066, S-1665, S-1689, S-1769, S-1775, S-1795, S-1808"
+Luminaire encastré 2x4 LED,FIXTURE TYPE 2X2 NOUVE,U,Vu 1 seul projet,40,0.75,1,2,40,40,40,0,0.75,0.75,0.75,0,0,40,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Luminaire encastré 2x4 LED,FIXTURE TYPE 2X2 LED NO,U,Vu 1 seul projet,40,0.75,1,1,40,40,40,,0.75,0.75,0.75,,0,40,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Luminaire encastré 2x4 LED,FIXTURE ENCASTRE,U,Vu 1 seul projet,0,0.75,1,1,0,,,,0.75,0.75,0.75,,1,0,2026-02-02,S-1645 ANNEXE-BOURASSA,S-1645
+Luminaire encastré 2x4 LED,PRIX DE LOT FIXTURE,U,Jugement / forfait,24599,0,8,8,21543.98,5189.81,312076.98,609.2,0,0,0,,1,24599,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1689, S-1692, S-1714, S-1753, S-1795, S-1811, S-1881"
+Luminaire suspendu/linéaire (rangée),FIXTURE TYPE D 6 PI,U,Standard (stable),0,8,2,3,0,,,,8,8,8,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Luminaire suspendu/linéaire (rangée),FIXTURE TYPE D 18PI,U,Standard (stable),0,8,2,3,0,,,,8,8,8,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Luminaire suspendu/linéaire (rangée),FIXTURE TYPE D 75PI,U,Standard (stable),0,16,2,3,0,,,,16,16,16,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Luminaire suspendu/linéaire (rangée),FIXTURE TYPE F 72 PI,U,Standard (stable),0,16,2,3,0,,,,16,16,16,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Luminaire suspendu/linéaire (rangée),FIXTURE TYPE H 24 PI,U,Standard (stable),0,16,2,3,0,,,,16,16,16,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Luminaire suspendu/linéaire (rangée),FIXTURE TYPE H 36 PI,U,Standard (stable),0,12,2,3,0,,,,12,12,12,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Luminaire suspendu/linéaire (rangée),FIXTURE TYPE H 71 PI,U,Standard (stable),0,16,2,3,0,,,,16,16,16,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Luminaire suspendu/linéaire (rangée),LENIAIRE SUSPENDU DIRE,U,Vu 1 seul projet,2400,0,1,1,2400,2400,2400,,0,0,0,,0,2400,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Luminaire suspendu/linéaire (rangée),ECLAIRAGE SUSPENDU TU,U,Vu 1 seul projet,250,0,1,1,250,250,250,,0,0,0,,0,250,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Luminaire mural/pendant,APPAREIL ECL MURAL CAB,U,Vu 1 seul projet,450,0,1,1,450,450,450,,0,0,0,,0,450,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Luminaire mural/pendant,APPLIQUE MURAL BALCON,U,Vu 1 seul projet,0,0.75,1,1,0,,,,0.75,0.75,0.75,,1,0,2026-03-27,S-1714 PARTAGE DE RIVIERA,S-1714
+Luminaire mural/pendant,APPLIQUE MURAL EXT,U,Vu 1 seul projet,0,0.75,1,1,0,,,,0.75,0.75,0.75,,1,0,2026-03-27,S-1714 PARTAGE DE RIVIERA,S-1714
+Enseigne de sortie,ENSEIGNE SORTIE,U,Variable (à valider),0,1,10,14,89.38,89.38,89.38,,1,0,1,44.7,13,0,2026-09-25,S-1857 - Maison St-Michel,"S-1645, S-1695, S-1714, S-1715, S-1775, S-1783, S-1797, S-1811, S-1854, S-1857"
+Enseigne de sortie,ENSEIGNE SORTIE COMBO,U,Standard (stable),0,1,3,4,0,,,,1,1,1,0,4,0,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1769, S-1857, S-1881"
+Enseigne de sortie,ENSIGNE SORTIE,U,Vu 1 seul projet,89.38,1,1,1,89.38,89.38,89.38,,1,1,1,,0,89.38,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Enseigne de sortie,ENSEIGNE PICTOGR ACIER,U,Vu 1 seul projet,89.38,1,1,1,89.38,89.38,89.38,,1,1,1,,0,89.38,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Enseigne de sortie,PRIX DE LOT ENSEIGNE SO,U,Jugement / forfait,0,0,1,1,0,,,,0,0,0,,1,0,2026-05-05,s-1753 ecole asomption,S-1753
+Tête d'urgence,TETE SIMPLE,U,Standard (stable),0,0.5,4,4,0,,,,0.5,0.5,0.5,0,4,0,2026-09-25,S-1857 - Maison St-Michel,"S-1715, S-1769, S-1775, S-1857"
+Tête d'urgence,TETE DOUBLE,U,Standard (stable),0,0.5,5,5,0,,,,0.5,0.5,0.5,0,5,0,2026-09-25,S-1857 - Maison St-Michel,"S-1715, S-1769, S-1775, S-1797, S-1857"
+Tête d'urgence,TETE URGENCE DOUBLE,U,Standard (stable),0,0.5,2,2,0,,,,0.5,0.5,0.5,0,2,0,2026-07-13,s-1808 cpe les copain d'ABORD,"S-1645, S-1808"
+Tête d'urgence,TETE URGENCE SIMPLE,U,Vu 1 seul projet,0,0.5,1,1,0,,,,0.5,0.5,0.5,,1,0,2026-02-02,S-1645 ANNEXE-BOURASSA,S-1645
+Tête d'urgence,PRIX DE LOT URGENCE,U,Jugement / forfait,0,0,5,5,16235.025,10332.9,27794.2,43.9,0,0,0,,1,0,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1692, S-1693, S-1808, S-1881"
+Interrupteur,INTERRUPTEUR 15A 120V,U,Standard (stable),75.47,1.075,13,17,69.9,66.39,75.47,3.2,1.075,1.075,1.075,0,0,75.47,2026-09-25,S-1857 - Maison St-Michel,"S-1645, S-1676, S-1689, S-1692, S-1693, S-1695, S-1763, S-1769, S-1783, S-1795, S-1811, S-1854, S-1857"
+Interrupteur,INTERRUPTEUR 3 WAY 15A 120V,U,Standard (stable),101.5,1.325,2,2,100.295,99.09,101.5,1.2,1.325,1.325,1.325,0,0,101.5,2026-03-11,S-1695_Hotel Playground Kahnawake,"S-1645, S-1695"
+Interrupteur,INTERRUPTEUR 4 WAY 15A 120V,U,Standard (stable),56.24,1.5,2,2,56.835,56.24,57.43,1,1.5,1.5,1.5,0,0,56.24,2026-03-11,S-1695_Hotel Playground Kahnawake,"S-1645, S-1695"
+Interrupteur,INT 1 VOIE,U,Standard (stable),35,0.5,2,2,38.5,35,42,9.1,0.55,0.5,0.6,9.1,0,35,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1714, S-1881"
+Interrupteur,INTERRUPTEUR 15A 347V,U,Vu 1 seul projet,57.24,1.325,1,1,57.24,57.24,57.24,,1.325,1.325,1.325,,0,57.24,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Détecteur de fumée,DETECTEUR A FUMEE,U,Standard (stable),0,0.5,9,9,0,,,,0.5,0.5,0.5,0,9,0,2026-09-25,S-1857 - Maison St-Michel,"S-1692, S-1693, S-1695, S-1753, S-1769, S-1795, S-1808, S-1811, S-1857"
+Détecteur de fumée,DETECTEUR FUMEE,U,Standard (stable),0,0.5,5,5,0,,,,0.5,0.5,0.5,0,5,0,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1775, S-1797, S-1854, S-1881"
+Détecteur de fumée,DETECTEUR A FUME,U,Standard (stable),0,0.5,3,4,0,,,,0.5,0.5,0.5,0,4,0,2026-09-10,s-1854 sollio st hubert lanthier,"25-066, S-1665, S-1854"
+Détecteur de fumée,DETECTEUR FUMER,U,Standard (stable),25,0.5,2,2,25,25,25,,0.5,0.5,0.5,0,1,25,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1854, S-1881"
+Détecteur de fumée,DETECTEUR DE GAINE,U,Standard (stable),0,2.5,7,7,0,,,,2.5,1.5,2.5,14.6,7,0,2026-09-25,S-1857 - Maison St-Michel,"S-1692, S-1693, S-1695, S-1714, S-1753, S-1808, S-1857"
+Détecteur de fumée,DETECTEUR GAINE,U,Standard (stable),0,2,4,4,0,,,,2,2,2.5,10.8,4,0,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1775, S-1811, S-1881"
+Annonciateur / relocalisation alarme,PANNEAU ANNONCIATEUR,U,Variable (à valider),0,8,4,4,0,,,,6,4,8,33.3,4,0,2026-08-19,S-1797 - École Chambly,"S-1714, S-1797, S-1808, S-1811"
+Annonciateur / relocalisation alarme,RELO PANN ANNOCIATEUR,U,Standard (stable),0,8,2,2,0,,,,8,8,8,0,2,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Annonciateur / relocalisation alarme,RELO PANN ANNONCIATEU,U,Standard (stable),0,0,2,2,0,,,,0,0,0,,2,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Annonciateur / relocalisation alarme,RELO PANN ALARME,U,Standard (stable),0,0,2,2,0,,,,0,0,0,,2,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Annonciateur / relocalisation alarme,RELO PANN ALARME TEMP,U,Standard (stable),0,16,2,2,0,,,,16,16,16,0,2,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Annonciateur / relocalisation alarme,REINSTALLER PANN ANNO,U,Standard (stable),0,24,2,2,0,,,,24,24,24,0,2,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Annonciateur / relocalisation alarme,RELO PANNEAU ANNONCIA,U,Vu 1 seul projet,550,8,1,1,550,550,550,,8,8,8,,0,550,2026-06-26,S-1795 Lanthier Arthesa,S-1795
+Annonciateur / relocalisation alarme,RELO DETECTEUR A FUME,U,Standard (stable),0,0.75,3,3,0,,,,0,0,0.75,,3,0,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"25-066, S-1665, S-1881"
+Annonciateur / relocalisation alarme,RELO STATION MANUEL,U,Standard (stable),0,0.75,3,3,25,25,25,,1,0.75,1,11.8,2,0,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1769, S-1881, S1659"
+Annonciateur / relocalisation alarme,PANNEAU ALARME,U,Variable (à valider),0,16,8,8,7849.44,7849.44,7849.44,,8,6,16,35.2,7,0,2026-08-19,S-1797 - École Chambly,"S-1645, S-1692, S-1714, S-1715, S-1775, S-1797, S-1808, S-1811"
+Annonciateur / relocalisation alarme,PANNEAU ALARME INCEND,U,Variable (à valider),0,8,4,4,20070,20070,20070,,4,0,8,100,3,0,2026-09-25,S-1857 - Maison St-Michel,"25-066, S-1665, S-1753, S-1857"
+Panneau 42 cct 347/600,PANN PD 400A 347/600V 42CCT 35KA C/A,U,Vu 1 seul projet,0,8,1,1,0,,,,8,8,8,,1,0,2026-02-02,S-1645 ANNEXE-BOURASSA,S-1645
+Panneau 42 cct 347/600,PA PANN 200A 347/600V 3P,U,Vu 1 seul projet,0,8,1,1,0,,,,8,8,8,,1,0,2026-03-31,S-1693_Ecole Primaire Beloeil,S-1693
+Panneau 42 cct 347/600,PANN S 347/600V 3PH 4F 60,U,Vu 1 seul projet,0,8,1,1,0,,,,8,8,8,,1,0,2026-03-27,S-1714 PARTAGE DE RIVIERA,S-1714
+Panneau 42 cct 347/600,PANN 100A 347/600V 3PH 4,U,Vu 1 seul projet,0,6,1,1,0,,,,6,6,6,,1,0,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Panneau 42 cct 347/600,PANN 400A 347/600V 3PH 4,U,Vu 1 seul projet,0,8,1,1,0,,,,8,8,8,,1,0,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Panneau 42 cct 347/600,PANN 600A 347/600V 3PH 4,U,Vu 1 seul projet,0,8,1,1,0,,,,8,8,8,,1,0,2026-03-30,s-1715 sprotive parc lionel groulx,S-1715
+Panneau 42 cct 347/600,PP1 PANN 600A 347/600V 3,U,Vu 1 seul projet,0,24,1,2,0,,,,20,16,24,20,2,0,2026-03-31,S-1693_Ecole Primaire Beloeil,S-1693
+Panneau 42 cct 347/600,PANN PS 400A 347/600V 66,U,Vu 1 seul projet,0,8,1,1,0,,,,8,8,8,,1,0,2026-07-13,s-1808 cpe les copain d'ABORD,S-1808
+Panneau 42 cct 347/600,ENL PANN 42CCT 120/208V,U,Standard (stable),0,4,2,3,0,,,,4,4,4,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Panneau 42 cct 347/600,PANN PS1 100A 120/208V 3PH 4F 42CCT,U,Vu 1 seul projet,0,8,1,1,0,,,,8,8,8,,1,0,2026-02-02,S-1645 ANNEXE-BOURASSA,S-1645
+Disjoncteur 1P/2P/3P,DISJ15A1P,U,Standard (stable),0,0.2,2,3,0,,,,0.2,0.2,0.2,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Disjoncteur 1P/2P/3P,DISJ 15A2P,U,Standard (stable),0,0.4,2,3,0,,,,0.4,0.4,0.4,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Disjoncteur 1P/2P/3P,DISJ 40A1P,U,Standard (stable),0,0.4,2,3,0,,,,0.4,0.4,0.4,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Disjoncteur 1P/2P/3P,DISJ 20A 1P 120V 10KA,U,Variable (à valider),10.17,0.2,2,2,32.495,10.17,54.82,68.7,0.2,0.2,0.2,0,0,10.17,2026-06-26,S-1795 Lanthier Arthesa,"S-1775, S-1795"
+Disjoncteur 1P/2P/3P,DISJ 15A 1P 120V 10KA,U,Vu 1 seul projet,54.82,0.2,1,1,54.82,54.82,54.82,,0.2,0.2,0.2,,0,54.82,2026-06-03,s-1775 clinique mieux etre,S-1775
+Disjoncteur 1P/2P/3P,DISJ 20A 2P 347/600V 10K A,U,Vu 1 seul projet,244.82,0.4,1,1,244.82,244.82,244.82,,0.4,0.4,0.4,,0,244.82,2026-06-03,s-1775 clinique mieux etre,S-1775
+Disjoncteur 1P/2P/3P,DISJ 30A 2P 347/600V 10K A,U,Vu 1 seul projet,244.82,0.4,1,1,244.82,244.82,244.82,,0.4,0.4,0.4,,0,244.82,2026-06-03,s-1775 clinique mieux etre,S-1775
+Disjoncteur 1P/2P/3P,DISJ 40A 2P 240V 10KA,U,Vu 1 seul projet,130.53,0.4,1,1,130.53,130.53,130.53,,0.4,0.4,0.4,,0,130.53,2026-03-11,S-1695_Hotel Playground Kahnawake,S-1695
+Disjoncteur 1P/2P/3P,DISJ 100A 3P 120/240V 22 K,U,Vu 1 seul projet,719.6,1,1,1,719.6,719.6,719.6,,1,1,1,,0,719.6,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Disjoncteur 1P/2P/3P,DISJ 125A 3P 600V 18KA,U,Vu 1 seul projet,2657.38,4,1,1,2657.38,2657.38,2657.38,,4,4,4,,0,2657.38,2026-03-11,S-1695_Hotel Playground Kahnawake,S-1695
+Disjoncteur 1P/2P/3P,DISJONCTEUR 400A3P 50KA HCP,U,Vu 1 seul projet,7500,4,1,1,7500,7500,7500,,4,4,4,,0,7500,2026-10-07,s-1881 hotel candlewood st-hyacinthe,S-1881
+Raccordement moteur/UTA/chaudière/humidificateur,RACCORD DIRECT,U,Variable (à valider),25,0.5,5,6,15,15,25,32.7,0.5,0.35,0.5,14.1,1,25,2026-09-10,s-1854 sollio st hubert lanthier,"S-1692, S-1693, S-1695, S-1811, S-1854"
+Raccordement moteur/UTA/chaudière/humidificateur,MOTEUR,U,Variable (à valider),25,0.75,2,2,25,25,25,,0.5,0.25,0.75,50,1,25,2026-02-19,S-1676 ARC'TERTX,"S-1645, S-1676"
+Raccordement moteur/UTA/chaudière/humidificateur,MOTEUR VE,U,Variable (à valider),15,0.35,2,2,20,15,25,25,0.425,0.35,0.5,17.6,0,15,2026-03-30,s-1715 sprotive parc lionel groulx,"S-1689, S-1715"
+Raccordement moteur/UTA/chaudière/humidificateur,CHAUDIERE,U,Vu 1 seul projet,15,0.5,1,1,15,15,15,,0.5,0.5,0.5,,0,15,2026-02-02,S-1645 ANNEXE-BOURASSA,S-1645
+Raccordement moteur/UTA/chaudière/humidificateur,CHAUDIERE ELECTRIQUE 1,U,Vu 1 seul projet,15,0.5,1,1,15,15,15,,0.5,0.5,0.5,,0,15,2026-08-19,S-1797 - École Chambly,S-1797
+Raccordement moteur/UTA/chaudière/humidificateur,HUMIDIFICATEUR,U,Vu 1 seul projet,15,0.35,1,1,15,15,15,,0.35,0.35,0.35,,0,15,2026-07-13,s-1808 cpe les copain d'ABORD,S-1808
+Raccordement moteur/UTA/chaudière/humidificateur,HUMIDIFICATEUR HU-01 21I,U,Vu 1 seul projet,15,0.35,1,1,15,15,15,,0.35,0.35,0.35,,0,15,2026-08-19,S-1797 - École Chambly,S-1797
+Raccordement moteur/UTA/chaudière/humidificateur,MOTEUR UAF-1,U,Vu 1 seul projet,25,1,1,1,25,25,25,,1,1,1,,0,25,2026-10-07,s-1881 hotel candlewood st-hyacinthe,S-1881
+Raccordement moteur/UTA/chaudière/humidificateur,DEMARREUR MOTEUR UAF,U,Vu 1 seul projet,115,1,1,1,115,115,115,,1,1,1,,0,115,2026-10-07,s-1881 hotel candlewood st-hyacinthe,S-1881
+Raccordement moteur/UTA/chaudière/humidificateur,MOTEUR HUM,U,Vu 1 seul projet,15,0.35,1,1,15,15,15,,0.35,0.35,0.35,,0,15,2026-07-14,s-1811 cdc construction de 6 batiment,S-1811
+Raccordement moteur/UTA/chaudière/humidificateur,MOTEUR BC,U,Vu 1 seul projet,15,0.35,1,1,15,15,15,,0.35,0.35,0.35,,0,15,2026-03-11,S-1695_Hotel Playground Kahnawake,S-1695
+Raccordement moteur/UTA/chaudière/humidificateur,MOTEUR EV,U,Vu 1 seul projet,15,0.35,1,1,15,15,15,,0.35,0.35,0.35,,0,15,2026-03-11,S-1695_Hotel Playground Kahnawake,S-1695
+Sectionneur,INTERR 30A 3P 600V CEMA,U,Standard (stable),133.49,1,5,5,133.49,133.49,133.49,0,1,1,1,0,0,133.49,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1769, S-1775, S-1854, S-1857, S-1881"
+Sectionneur,INTERR 30A 3P 600V CEMA:,U,Standard (stable),133.49,1.2,5,5,133.49,133.49,133.49,0,1.2,1,1.2,8.2,0,133.49,2026-07-14,s-1811 cdc construction de 6 batiment,"S-1689, S-1692, S-1695, S-1808, S-1811"
+Sectionneur,INTERRUPTEUR DE SECURITE 30A 3,U,Standard (stable),219.89,1.2,2,2,219.89,219.89,219.89,0,1.2,1.2,1.2,0,0,219.89,2026-07-14,s-1811 cdc construction de 6 batiment,"S-1775, S-1811"
+Sectionneur,INTERR 60A 3P 600V CEMA,U,Vu 1 seul projet,346.36,1,1,1,346.36,346.36,346.36,,1,1,1,,0,346.36,2026-09-25,S-1857 - Maison St-Michel,S-1857
+Sectionneur,INTERR 100A 3P 600V CEM,U,Vu 1 seul projet,522.09,3,1,1,522.09,522.09,522.09,,3,3,3,,0,522.09,2026-05-18,s-1763 temporaire chemin du golf qmd,S-1763
+Sectionneur,INTERR 200A 3P 600V CEM,U,Vu 1 seul projet,732.42,4,1,1,732.42,732.42,732.42,,4,4,4,,0,732.42,2026-05-18,s-1763 temporaire chemin du golf qmd,S-1763
+Sectionneur,INTERR 600A 3P 600V CEM,U,Vu 1 seul projet,2849.11,5,1,1,2849.11,2849.11,2849.11,,5,5,5,,0,2849.11,2026-05-18,s-1763 temporaire chemin du golf qmd,S-1763
+Sectionneur,SECTIONNEUR ENL,U,Standard (stable),0,0.5,2,3,0,,,,0.5,0.5,0.5,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Sectionneur,SECTIONNEUR POR ENTRETIEN HUBHBL13R22,U,Vu 1 seul projet,165.61,0.75,1,1,165.61,165.61,165.61,,0.75,0.75,0.75,,0,165.61,2026-09-23,s-1866 gar mun st amable,S-1866
+Conduit EMT 3/4 et 1 po (par pi),COND TME 3/4PO,P,Standard (stable),1.084,0.04,2,2,1.084,1.084,1.084,0,0.04,0.04,0.04,0,0,1.084,2026-07-14,s-1811 cdc construction de 6 batiment,"S-1693, S-1811"
+Conduit EMT 3/4 et 1 po (par pi),COND TME 1PO,P,Standard (stable),1.8378,0.05,6,6,1.8985,1.645,1.8985,4.9,0.05,0.0405,0.05,7.1,0,1.8378,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"25-066, S-1665, S-1689, S-1715, S-1866, S-1881"
+Conduit EMT 3/4 et 1 po (par pi),CONDUIT VIDE 3/4,P,Standard (stable),1.4097,0.056,12,27,1.4028,1.4028,1.4097,0.2,0.056,0.056,0.056,0,0,1.4097,2026-08-19,S-1797 - École Chambly,"25-066, S-1665, S-1676, S-1692, S-1693, S-1695, S-1714, S-1715, S-1783, S-1797, S-1811, S1659"
+Conduit EMT 3/4 et 1 po (par pi),CONDUIT VIDE 1,P,Standard (stable),2.4307,0.07,3,4,2.4099,2.4099,2.4307,0.4,0.07,0.07,0.07,0,0,2.4307,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,"S-1714, S-1715, S-1783"
+Conduit EMT 3/4 et 1 po (par pi),CONDUIT 3/4 03C12,P,Variable (à valider),4.2441,0.1128,20,39,2.3028,0.387,4.2441,19.1,0.071,0.0215,0.1128,14.6,0,4.2441,2026-09-25,S-1857 - Maison St-Michel,"25-066, S-1645, S-1665, S-1676, S-1692, S-1693, S-1695, S-1714, S-1715, S-1753, S-1769, S-1775, S-1783, S-1797, S-1807, S-1808, S-1811, S-1854, S-1857, S1659"
+Conduit EMT 3/4 et 1 po (par pi),CONDUIT 3/4 03C10,P,Standard (stable),3.0997,0.074,15,21,2.8328,2.8228,3.0997,3.1,0.074,0.074,0.074,0,0,3.0997,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"25-066, S-1645, S-1665, S-1692, S-1693, S-1695, S-1714, S-1715, S-1753, S-1775, S-1808, S-1811, S-1854, S-1857, S-1881"
+Conduit EMT 3/4 et 1 po (par pi),CONDUIT 1 13C12,P,Variable (à valider),7.6607,0.135,13,16,6.8207,6.2999,8.729,9,0.135,0.117,0.315,32.7,0,7.6607,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1676, S-1692, S-1693, S-1714, S-1775, S-1783, S-1797, S-1807, S-1811, S-1854, S-1857, S-1881"
+Conduit EMT 3/4 et 1 po (par pi),CONDUIT 1 03C06,P,Standard (stable),7.1507,0.1,5,5,6.17,6.0599,7.1507,6.4,0.1,0.1,0.1,0,0,7.1507,2026-09-25,S-1857 - Maison St-Michel,"25-066, S-1645, S-1665, S-1715, S-1857"
+Fil #12/#10/#8 RW90 (par pi),12AWG SOLIDE RW90 600V,P,Variable (à valider),0.3896,0.005,3,4,0.3373,0.2989,0.3896,9.6,0.005,0.004,0.007,21.8,0,0.3896,2026-09-10,s-1854 sollio st hubert lanthier,"S-1715, S-1797, S-1854"
+Fil #12/#10/#8 RW90 (par pi),12AWG 7 BRINS RW90 600V 90C NOIR,P,Vu 1 seul projet,0.3687,0.0051,1,19,0.3687,0.3687,0.3688,0,0.0052,0.0051,0.0052,0,0,0.3687,2026-09-23,s-1866 gar mun st amable,S-1866
+Fil #12/#10/#8 RW90 (par pi),10AWG 7 BRINS RW90 600V,P,Variable (à valider),0.5531,0.006,3,3,0.5207,0.5205,0.5531,2.9,0.006,0.006,0.009,23.6,0,0.5531,2026-08-19,S-1797 - École Chambly,"S-1689, S-1715, S-1797"
+Fil #12/#10/#8 RW90 (par pi),10AWG SOLIDE RW90 600V,P,Variable (à valider),0.5173,0.006,2,2,0.5113,0.5052,0.5173,1.2,0.0075,0.006,0.009,20,0,0.5173,2026-08-19,S-1797 - École Chambly,"S-1797, S-1811"
+Fil #12/#10/#8 RW90 (par pi),10AWG 7 BRINS RW90 600V 90C NOIR,P,Vu 1 seul projet,0.5591,0.0057,1,5,0.5591,0.5591,0.5591,0,0.0057,0.0056,0.0057,0.1,0,0.5591,2026-09-23,s-1866 gar mun st amable,S-1866
+Fil #12/#10/#8 RW90 (par pi),8AWG 7 BRINS RW90 600V,P,Vu 1 seul projet,1.0625,0.007,1,1,1.0625,1.0625,1.0625,,0.007,0.007,0.007,,0,1.0625,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Fil #12/#10/#8 RW90 (par pi),8AWG 7 BRINS RW90 600V 90C NOIR,P,Vu 1 seul projet,1.0287,0.007,1,6,1.0287,1.0286,1.0288,0,0.007,0.007,0.007,0,0,1.0287,2026-09-23,s-1866 gar mun st amable,S-1866
+Boîte 4x4 / 1104,BOITE CARRE 2-1/8PO KO 1,U,Standard (stable),6.1778,0.25,22,75,6.1778,6.1775,6.178,0,0.25,0.25,0.25,0,0,6.1778,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"25-066, S-1665, S-1676, S-1689, S-1692, S-1693, S-1695, S-1714, S-1715, S-1753, S-1769, S-1775, S-1783, S-1795, S-1797, S-1807, S-1808, S-1811, S-1854, S-1857, S-1881, S1659"
+Boîte 4x4 / 1104,COUV CARRE 4PO VIERGE,U,Standard (stable),1.4985,0.05,23,79,1.4985,1.4975,1.5,0,0.05,0.05,0.05,0,0,1.4985,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"25-066, S-1645, S-1665, S-1676, S-1689, S-1692, S-1693, S-1695, S-1714, S-1715, S-1753, S-1769, S-1775, S-1783, S-1795, S-1797, S-1807, S-1808, S-1811, S-1854, S-1857, S-1881, S1659"
+Boîte 4x4 / 1104,BOITE CARREES 4 PO,U,Vu 1 seul projet,7.68,0.15,1,5,7.68,7.68,7.68,0,0.15,0.15,0.15,0,0,7.68,2026-09-23,s-1866 gar mun st amable,S-1866
+Boîte 4x4 / 1104,BOITE CARRE 1-1/2PO KO 1,U,Variable (à valider),17.164,0.3,4,4,11.1918,5.2196,17.165,53.4,0.25,0.2,0.3,20,0,17.164,2026-06-26,S-1795 Lanthier Arthesa,"S-1692, S-1695, S-1769, S-1795"
+Percement de dalle (carottage),PERCEMENT PLANCHER,U,Jugement / forfait,150,1,8,11,75,75,150,29.4,1,0,1.5,34.5,0,150,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1645, S-1676, S-1689, S-1753, S-1783, S-1854, S-1857, S-1881"
+Percement de dalle (carottage),PERCEMENT DALLE,U,Jugement / forfait,75,2,2,2,75,75,75,0,2,2,2,0,0,75,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Percement de dalle (carottage),PERCEMENT PLANCHER PC,U,Jugement / forfait,75,1,3,3,75,75,75,0,1.5,1,1.5,15.7,0,75,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,"25-066, S-1665, S-1783"
+Percement de dalle (carottage),PERCEMENT PLANCHER LE,U,Jugement / forfait,75,1.5,2,3,75,75,75,0,1.5,1.5,1.5,0,0,75,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Percement de dalle (carottage),PERCEMENT MUR,U,Jugement / forfait,10,0.5,2,2,80,10,150,87.5,1.25,0.5,2,60,0,10,2026-05-05,s-1753 ecole asomption,"S-1645, S-1753"
+Percement de dalle (carottage),PERCEMENT ET SCELLEMENT,U,Jugement / forfait,50,0.5,1,1,50,50,50,,0.5,0.5,0.5,,0,50,2026-09-23,s-1866 gar mun st amable,S-1866
+Scan dalle,SCAN DALLE BETON,U,Standard (stable),1250,2,2,3,1250,1250,1250,0,2,2,2,0,0,1250,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Scan dalle,SCAN DALLE,U,Standard (stable),750,1,2,2,750,750,750,0,1,1,1,0,0,750,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Scan dalle,SCAN,U,Variable (à valider),750,4,4,4,750,750,1500,43.3,2.5,1,4,60,0,750,2026-09-25,S-1857 - Maison St-Michel,"S-1676, S-1689, S-1753, S-1857"
+Scan dalle,SCAN BETON,U,Vu 1 seul projet,750,4,1,1,750,750,750,,4,4,4,,0,750,2026-02-02,S-1645 ANNEXE-BOURASSA,S-1645
+Scan dalle,SCANN DALLE,U,Vu 1 seul projet,950,8,1,1,950,950,950,,8,8,8,,0,950,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Démolition / démantèlement d'appareil,ENLEVER FIXTURE 2X4,U,Vu 1 seul projet,0,0.35,1,2,0,,,,0.35,0.35,0.35,0,2,0,2026-08-26,s-1835 esbg  rehabilitation inbterieur,S-1835
+Démolition / démantèlement d'appareil,ENLEVER FIXTURE 2X2,U,Vu 1 seul projet,0,0.35,1,2,0,,,,0.35,0.35,0.35,0,2,0,2026-08-26,s-1835 esbg  rehabilitation inbterieur,S-1835
+Démolition / démantèlement d'appareil,ENLEVER FIXTURE 1X4,U,Vu 1 seul projet,0,0.35,1,2,0,,,,0.35,0.35,0.35,0,2,0,2026-08-26,s-1835 esbg  rehabilitation inbterieur,S-1835
+Démolition / démantèlement d'appareil,ENLEVER FIXTURE MURAL,U,Vu 1 seul projet,0,0.35,1,2,0,,,,0.35,0.35,0.35,0,2,0,2026-08-26,s-1835 esbg  rehabilitation inbterieur,S-1835
+Démolition / démantèlement d'appareil,ENLEVER FIXTURE ENCAST,U,Vu 1 seul projet,0,0.35,1,2,0,,,,0.35,0.35,0.35,0,2,0,2026-08-26,s-1835 esbg  rehabilitation inbterieur,S-1835
+Démolition / démantèlement d'appareil,FIXTURE ENCASTRE ENLEV,U,Standard (stable),0,0.25,2,3,0,,,,0.25,0.25,0.25,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Démolition / démantèlement d'appareil,ENLEVER MOTEUR 1/2 HP 6,U,Standard (stable),0,0.25,2,3,0,,,,0.25,0.25,0.25,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Démolition / démantèlement d'appareil,ENLEVER PRISE,U,Vu 1 seul projet,0,0.35,1,2,0,,,,0.35,0.35,0.35,0,2,0,2026-08-26,s-1835 esbg  rehabilitation inbterieur,S-1835
+Démolition / démantèlement d'appareil,PRISES A DEMANTELER,U,Vu 1 seul projet,0,0.2,1,2,0,,,,0.2,0.2,0.2,0,2,0,2026-09-23,s-1866 gar mun st amable,S-1866
+Démolition / démantèlement d'appareil,INTERRUPTEUR A DEMANTELER,U,Vu 1 seul projet,0,0.1,1,2,0,,,,0.1,0.1,0.1,0,2,0,2026-09-23,s-1866 gar mun st amable,S-1866
+Démolition / démantèlement d'appareil,APPAREIL D'ECLAIRAGE A DEMANTELER,U,Vu 1 seul projet,0,0.2,1,2,0,,,,0.2,0.2,0.2,0,2,0,2026-09-23,s-1866 gar mun st amable,S-1866
+Démolition / démantèlement d'appareil,ENLEVER ENSEIGNE SORTI,U,Vu 1 seul projet,0,0.5,1,1,0,,,,0.5,0.5,0.5,,1,0,2026-02-09,s1659 ecole arc en ciel ste julie,S1659
+Démolition / démantèlement d'appareil,DEMOLITION,U,Jugement / forfait,0,40,3,3,0,,,,40,0.75,40,46.3,3,0,2026-07-13,s-1807 groupe maurice lanthier,"S-1676, S-1783, S-1807"
+Démolition / démantèlement d'appareil,ENLEVER CONDUIT ET FILA,U,Standard (stable),0,0,2,3,0,,,,0,0,160,,3,0,2026-08-26,s-1835 esbg  rehabilitation inbterieur,"S-1753, S-1835"
+Démolition / démantèlement d'appareil,ENL PANN 42CCT 120/208V,U,Standard (stable),0,4,2,3,0,,,,4,4,4,0,3,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Relocalisation d'appareil,RELO PRISE,U,Variable (à valider),0,1.5,3,4,0,,,,1,1,1.5,21.7,4,0,2026-05-05,s-1753 ecole asomption,"25-066, S-1665, S-1753"
+Relocalisation d'appareil,RELO ENCASTRE,U,Vu 1 seul projet,0,1,1,1,0,,,,1,1,1,,1,0,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Relocalisation d'appareil,RELO HAUT PARLEUR,U,Standard (stable),0,0,2,2,0,,,,0,0,0,,2,0,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Relocalisation d'appareil,RELO HAUPARLEUR MURAL,U,Vu 1 seul projet,0,1,1,1,0,,,,1,1,1,,1,0,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Relocalisation d'appareil,RELO ENSEIGNE SORTIE,U,Vu 1 seul projet,0,1.25,1,1,0,,,,1.25,1.25,1.25,,1,0,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Relocalisation d'appareil,ENSEIGNE RELO,U,Vu 1 seul projet,25,1,1,1,25,25,25,,1,1,1,,0,25,2026-02-09,s1659 ecole arc en ciel ste julie,S1659
+Relocalisation d'appareil,RELO CLOCHE,U,Vu 1 seul projet,0,2,1,1,0,,,,2,2,2,,1,0,2026-05-05,s-1753 ecole asomption,S-1753
+Relocalisation d'appareil,RELO HORN,U,Vu 1 seul projet,0,1,1,1,0,,,,1,1,1,,1,0,2026-02-19,S-1676 ARC'TERTX,S-1676
+Relocalisation d'appareil,LECTEUR RELO,U,Vu 1 seul projet,15,0.5,1,1,15,15,15,,0.5,0.5,0.5,,0,15,2026-02-09,s1659 ecole arc en ciel ste julie,S1659
+Relocalisation d'appareil,GACHE RELO,U,Vu 1 seul projet,15,0.5,1,1,15,15,15,,0.5,0.5,0.5,,0,15,2026-02-09,s1659 ecole arc en ciel ste julie,S1659
+Relocalisation d'appareil,RELO MAT TELECOMME,U,Vu 1 seul projet,1250,16,1,1,1250,1250,1250,,16,16,16,,0,1250,2026-05-05,s-1753 ecole asomption,S-1753
+Monument de plancher,MONUMENT PLANCHER,U,Vu 1 seul projet,250,1,1,1,250,250,250,,1,1,1,,0,250,2026-02-19,S-1676 ARC'TERTX,S-1676
+Monument de plancher,MONUMENT PLANCHER 1TE,U,Vu 1 seul projet,250,1,1,1,250,250,250,,1,1,1,,0,250,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,S-1783
+Monument de plancher,MONUMENT PLANCHER PR,U,Vu 1 seul projet,65,1,1,1,65,65,65,,1,1,1,,0,65,2026-09-25,S-1857 - Maison St-Michel,S-1857
+Monument de plancher,MONUMENT PLANCHER EN,U,Vu 1 seul projet,735.29,1,1,4,894.115,735.29,1052.94,17.8,0.5,0,1,100,2,735.29,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Monument de plancher,MONUMENT PLANCHER SU,U,Vu 1 seul projet,118.75,1,1,4,118.75,118.75,118.75,0,1,0,1,43.3,1,118.75,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Thermostat (boîte+conduit),THERMOSTAT,U,Variable (à valider),35,0.4,4,5,33.7,32.4,35,3.9,0.35,0,0.4,43.3,3,35,2026-06-03,s-1775 clinique mieux etre,"S-1689, S-1714, S-1769, S-1775"
+Thermostat (boîte+conduit),THERMOSTAT B/V,U,Vu 1 seul projet,68,0.35,1,1,68,68,68,,0.35,0.35,0.35,,0,68,2026-03-11,s-1689 pultrusion st-bruno,S-1689
+Thermostat (boîte+conduit),THERMOSTAT TS,U,Vu 1 seul projet,81.88,0.35,1,1,81.88,81.88,81.88,,0.35,0.35,0.35,,0,81.88,2026-09-25,S-1857 - Maison St-Michel,S-1857
+Thermostat (boîte+conduit),THERMOSTAT ELECTRONIQUE INTEGRE,U,Vu 1 seul projet,66,0,1,1,66,66,66,,0,0,0,,0,66,2026-09-23,s-1866 gar mun st amable,S-1866
+Thermostat (boîte+conduit),THERMOSTAT FDP,U,Vu 1 seul projet,0,0.35,1,1,0,,,,0.35,0.35,0.35,,1,0,2026-07-13,s-1808 cpe les copain d'ABORD,S-1808
+Thermostat (boîte+conduit),THERMOSTAT T1 INTEGRE,U,Vu 1 seul projet,0,0.35,1,1,0,,,,0.35,0.35,0.35,,1,0,2026-07-13,s-1808 cpe les copain d'ABORD,S-1808
+Contrôle d'accès (boîte+conduit),LECTEUR DE CARTE,U,Variable (à valider),15,0.5,5,6,12.5,10,15,20,0.25,0,0.5,68.7,4,15,2026-04-02,S-1692_École Primaire St-Marc Candiac,"25-066, S-1645, S-1665, S-1676, S-1692"
+Contrôle d'accès (boîte+conduit),LECTEUR CARTE,U,Variable (à valider),15,0.35,2,2,15,15,15,0,0.425,0.35,0.5,17.6,0,15,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,"S-1783, S1659"
+Contrôle d'accès (boîte+conduit),GACHE,U,Standard (stable),15,0.35,3,3,15,15,15,0,0.5,0.35,0.5,14.1,1,15,2026-06-02,s-1783 anjinnov mcgill 1981 accenture,"S-1693, S-1783, S1659"
+Contrôle d'accès (boîte+conduit),GACHE ELECTRIQUE,U,Vu 1 seul projet,10,0.5,1,1,10,10,10,,0.5,0.5,0.5,,0,10,2026-02-02,S-1645 ANNEXE-BOURASSA,S-1645
+Contrôle d'accès (boîte+conduit),LECTEUR RELO,U,Vu 1 seul projet,15,0.5,1,1,15,15,15,,0.5,0.5,0.5,,0,15,2026-02-09,s1659 ecole arc en ciel ste julie,S1659
+Contrôle d'accès (boîte+conduit),GACHE RELO,U,Vu 1 seul projet,15,0.5,1,1,15,15,15,,0.5,0.5,0.5,,0,15,2026-02-09,s1659 ecole arc en ciel ste julie,S1659
+Sortie TV,SORTIE TV,U,Variable (à valider),15,0.5,5,5,15.09,15,18,7.8,0.5,0.4,0.63,17.6,0,15,2026-10-07,s-1881 hotel candlewood st-hyacinthe,"S-1689, S-1695, S-1714, S-1807, S-1881"
+Sortie TV,TV,U,Vu 1 seul projet,4.25,0.63,1,1,4.25,4.25,4.25,,0.63,0.63,0.63,,0,4.25,2026-03-31,S-1693_Ecole Primaire Beloeil,S-1693
+Sortie TV,ENS BOITIER TV ENCASTRE,U,Vu 1 seul projet,38.7139,1,1,2,38.7141,38.7139,38.7143,0,1,1,1,0,0,38.7139,2026-09-10,s-1854 sollio st hubert lanthier,S-1854
+Coupe-feu,COUPE FEU TUBE 10.1 FL O,U,Standard (stable),13.53,0.5,2,3,13.53,13.53,13.53,0,0.5,0.5,0.5,0,0,13.53,2026-03-09,25-066G_Canderel Lobby 2000 McGill College (S-1665),"25-066, S-1665"
+Coupe-feu,3M 7100006311 COUPE FEU,U,Variable (à valider),736.47,40,2,2,736.47,736.47,736.47,0,20,0,40,100,0,736.47,2026-04-02,S-1692_École Primaire St-Marc Candiac,"S-1692, S-1693"
+Parasismique,ANTISISMIQUE,U,Jugement / forfait,15,0.15,6,7,20,15,1250,2156.5,0.25,0.15,4,532.2,0,15,2026-09-25,S-1857 - Maison St-Michel,"S-1676, S-1769, S-1775, S-1783, S-1854, S-1857"
+Parasismique,PARASISMIQUE,U,Jugement / forfait,800,0,4,5,950,15,950,38.3,0,0,0.15,,0,800,2026-09-23,s-1866 gar mun st amable,"25-066, S-1665, S-1854, S-1866"
+Parasismique,PASISMIQUE,U,Vu 1 seul projet,7500,60,1,1,7500,7500,7500,,60,60,60,,0,7500,2026-03-11,S-1695_Hotel Playground Kahnawake,S-1695
+Parasismique,SEISMIC SUPPORT FLUOR,U,Vu 1 seul projet,15,0.25,1,1,15,15,15,,0.25,0.25,0.25,,0,15,2026-08-19,S-1797 - École Chambly,S-1797

@@ -1,0 +1,850 @@
+{
+ "taux": 85.0,
+ "materiel": 62962.65,
+ "heures_relevees": 980.775,
+ "heures_chargees": 990,
+ "main_doeuvre": 84150.0,
+ "total_acceo": 147112.65,
+ "lignes": [
+  {
+   "code": "A-01",
+   "desc": "Démantèlement luminaires existants RDC (E.A.E)",
+   "q": 39,
+   "u": "u",
+   "p": 0,
+   "h": 0.5,
+   "art": "5.19",
+   "src": "Dupuis « FIXTURE ENLEVE » 0,5 h (S-1844 ×204)"
+  },
+  {
+   "code": "A-02",
+   "desc": "Démantèlement luminaires existants étage (E.A.E)",
+   "q": 7,
+   "u": "u",
+   "p": 0,
+   "h": 0.5,
+   "art": "5.19",
+   "src": "idem"
+  },
+  {
+   "code": "A-03",
+   "desc": "Démantèlement services RDC (prises, boîtes, câbles) E.A.E",
+   "q": 34,
+   "u": "u",
+   "p": 0,
+   "h": 0.35,
+   "art": "5.19",
+   "src": "Dupuis « ENLEVER PRISE » 0,35 h"
+  },
+  {
+   "code": "A-04",
+   "desc": "Démantèlement services étage (E.A.E)",
+   "q": 10,
+   "u": "u",
+   "p": 0,
+   "h": 0.35,
+   "art": "5.19",
+   "src": "idem"
+  },
+  {
+   "code": "A-05",
+   "desc": "Relocalisation équipements services (E.A.R) RDC + étage",
+   "q": 13,
+   "u": "u",
+   "p": 0,
+   "h": 1.0,
+   "art": "3.22",
+   "src": "Dupuis « RELO PRISE » 1 h"
+  },
+  {
+   "code": "A-06",
+   "desc": "Relocalisation luminaires (E.A.R) RDC + étage",
+   "q": 7,
+   "u": "u",
+   "p": 0,
+   "h": 1.0,
+   "art": "3.22",
+   "src": "Dupuis « RELO ENCASTRE » 1 h"
+  },
+  {
+   "code": "A-07",
+   "desc": "Relocalisation interrupteurs maîtres du hall (note 1 E-201)",
+   "q": 1,
+   "u": "lot",
+   "p": 0,
+   "h": 6.0,
+   "art": "3.22",
+   "src": "jugement (Estimation_2)"
+  },
+  {
+   "code": "A-08",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation luminaires linéaires",
+   "q": 21,
+   "u": "u",
+   "p": 0,
+   "h": 0.85,
+   "art": "3.22",
+   "src": "Dupuis FIXTURE ENLEVE 0,5 + réinstall. 0,35 (ENLEVER FIXTURE 1X4)"
+  },
+  {
+   "code": "A-09",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation encastrés",
+   "q": 24,
+   "u": "u",
+   "p": 0,
+   "h": 0.75,
+   "art": "3.22",
+   "src": "Dupuis 0,25 (FIXTURE ENCASTRE ENLEV) + 0,5 (réinstall.)"
+  },
+  {
+   "code": "A-10",
+   "desc": "Toit : débrancher/entreposer sectionneurs, isoler câbles, rebrancher ventilation (E.A.R)",
+   "q": 6,
+   "u": "u",
+   "p": 0,
+   "h": 4.0,
+   "art": "3.22",
+   "src": "jugement (Estimation_2)"
+  },
+  {
+   "code": "A-11",
+   "desc": "Continuité de service, traçage circuits, réalimentation circuits libérés",
+   "q": 1,
+   "u": "lot",
+   "p": 0,
+   "h": 16.0,
+   "art": "3.22",
+   "src": "jugement (Estimation_2)"
+  },
+  {
+   "code": "B-01",
+   "desc": "Panneau PP-3 NF 225 A 347/600 V 42 cct 14 kA (remplacement) — pose",
+   "q": 1,
+   "u": "u",
+   "p": 0,
+   "h": 8.0,
+   "art": "3.24",
+   "src": "Dupuis « PANN 200A 347/600V » 8 h ; fourniture au lot"
+  },
+  {
+   "code": "B-01b",
+   "desc": "Transfert des circuits existants dans PP-3 (14 cct)",
+   "q": 14,
+   "u": "cct",
+   "p": 0,
+   "h": 0.75,
+   "art": "3.24",
+   "src": "jugement : 0,75 h/cct"
+  },
+  {
+   "code": "B-02",
+   "desc": "Disjoncteurs NF 1P-15 A (pose)",
+   "q": 17,
+   "u": "u",
+   "p": 0,
+   "h": 0.2,
+   "art": "3.25",
+   "src": "Dupuis « DISJ15A1P » 0,2 h ; fourniture au lot"
+  },
+  {
+   "code": "B-03",
+   "desc": "Disjoncteurs NF 3P 15/20/40 A (pose)",
+   "q": 3,
+   "u": "u",
+   "p": 0,
+   "h": 1.0,
+   "art": "3.25",
+   "src": "Dupuis « DISJ 100A 3P » 1 h"
+  },
+  {
+   "code": "B-04",
+   "desc": "Disjoncteurs 1P-15 A DDFT et 1P-20 A (pose)",
+   "q": 3,
+   "u": "u",
+   "p": 0,
+   "h": 0.4,
+   "art": "3.25",
+   "src": "Dupuis « DISJ 15A2P » 0,4 h"
+  },
+  {
+   "code": "B-09",
+   "desc": "Mise à jour fiches + identification 9 panneaux",
+   "q": 9,
+   "u": "u",
+   "p": 15.0,
+   "h": 1.0,
+   "art": "3.24",
+   "src": "Dupuis lamicoïd ≈ 15 $ ; 1 h (Estimation_2)"
+  },
+  {
+   "code": "B-10",
+   "desc": "Tiroirs CCM-1 F15A — vérification/réutilisation (MCC)",
+   "q": 2,
+   "u": "u",
+   "p": 15.0,
+   "h": 2.0,
+   "art": "3.26",
+   "src": "jugement"
+  },
+  {
+   "code": "C-01",
+   "desc": "UTA-01 575 V/3Ø au toit — raccordement final LFMC + sectionneur d’usine",
+   "q": 1,
+   "u": "u",
+   "p": 25.0,
+   "h": 1.0,
+   "art": "3.23",
+   "src": "Dupuis « MOTEUR UAF-1 » 1 h / 25 $"
+  },
+  {
+   "code": "C-01b",
+   "desc": "Conduit EMT 1\" 4 #8 (alim. UTA-01) incl. supports",
+   "q": 114.82939999999999,
+   "u": "pi",
+   "p": 6.82,
+   "h": 0.135,
+   "art": "3.23",
+   "src": "Dupuis « CONDUIT 1 13C12 » 6,82 $/pi, 0,135 h/pi (ens. 1\" #8 absent → proche)"
+  },
+  {
+   "code": "C-02",
+   "desc": "VE-02N 1,5 HP 575 V c/a VFD — raccordement",
+   "q": 1,
+   "u": "u",
+   "p": 25.0,
+   "h": 0.5,
+   "art": "3.23",
+   "src": "Dupuis « MOTEUR » 0,5 h / 25 $"
+  },
+  {
+   "code": "C-03",
+   "desc": "Chaudières CH-01/CH-02 — raccord final LFMC, tiroirs CCM",
+   "q": 2,
+   "u": "u",
+   "p": 15.0,
+   "h": 0.5,
+   "art": "3.23",
+   "src": "Dupuis « CHAUDIERE » 0,5 h / 15 $"
+  },
+  {
+   "code": "C-04",
+   "desc": "Humidificateurs HUM-1/2/3 — raccordement",
+   "q": 3,
+   "u": "u",
+   "p": 15.0,
+   "h": 0.35,
+   "art": "3.23",
+   "src": "Dupuis « HUMIDIFICATEUR » 0,35 h / 15 $"
+  },
+  {
+   "code": "C-04b",
+   "desc": "Sectionneurs 30 A sans fusible (HUM)",
+   "q": 3,
+   "u": "u",
+   "p": 133.49,
+   "h": 1.0,
+   "art": "3.23",
+   "src": "Dupuis « INTERR 30A 3P 600V » 1 h / 133,49 $"
+  },
+  {
+   "code": "C-07",
+   "desc": "Conduit EMT 3/4\" 03c12 (VE-02N + HUM)",
+   "q": 262.4672,
+   "u": "pi",
+   "p": 2.3,
+   "h": 0.071,
+   "art": "3.23",
+   "src": "Dupuis « CONDUIT 3/4 03C12 » 2,30 $/pi, 0,071 h/pi"
+  },
+  {
+   "code": "C-08",
+   "desc": "Raccords flexibles LFMC + connecteurs (7 équipements)",
+   "q": 7,
+   "u": "u",
+   "p": 40.0,
+   "h": 0.25,
+   "art": "3.23",
+   "src": "Lumen Hydrotite 12,40 $/m + Conseal 15,14 $ ×2 ; 0,25 h"
+  },
+  {
+   "code": "D-01",
+   "desc": "Poste de travail intégré mobilier : JB + prise 15 A + prise 20 A + boîte data",
+   "q": 18,
+   "u": "poste",
+   "p": 156.39000000000001,
+   "h": 3.5300000000000002,
+   "art": "3.28",
+   "src": "Dupuis prise 15A 64,81/1,175 + prise 15/20A 60,19/1,225 + tel/data 13,96/0,63 + boîte 12x12 17,43/0,5"
+  },
+  {
+   "code": "D-02",
+   "desc": "Tables c/a boîte d’électrification (5) : 2 prises doubles + 4 prises USB chacune (20 USB au relevé E-104)",
+   "q": 5,
+   "u": "u",
+   "p": 439.42,
+   "h": 6.85,
+   "art": "3.27",
+   "src": "Dupuis prise 15A 64,81/1,175 ; USB 77,45/1,125 ; relevé IA : PRISE USB INSTALLER 20"
+  },
+  {
+   "code": "D-03",
+   "desc": "Cabine/isoloir : prise double par JB",
+   "q": 2,
+   "u": "u",
+   "p": 64.81,
+   "h": 1.175,
+   "art": "3.28",
+   "src": "Dupuis prise 15A"
+  },
+  {
+   "code": "D-04",
+   "desc": "Écran mur/colonne : prise + data",
+   "q": 2,
+   "u": "u",
+   "p": 78.77000000000001,
+   "h": 1.8050000000000002,
+   "art": "3.28",
+   "src": "Dupuis"
+  },
+  {
+   "code": "D-05",
+   "desc": "Kiosque TV : prise + data",
+   "q": 1,
+   "u": "u",
+   "p": 78.77000000000001,
+   "h": 1.8050000000000002,
+   "art": "3.28",
+   "src": "Dupuis"
+  },
+  {
+   "code": "D-06",
+   "desc": "Prises doubles murales/colonne neuves",
+   "q": 8,
+   "u": "u",
+   "p": 64.81,
+   "h": 1.175,
+   "art": "3.28",
+   "src": "Dupuis prise 15A"
+  },
+  {
+   "code": "D-17",
+   "desc": "Prises MALT isolées (IG orange) — 22 dispositifs",
+   "q": 22,
+   "u": "u",
+   "p": 76.81,
+   "h": 1.175,
+   "art": "3.29",
+   "src": "Dupuis prise 15A + supplément dispositif IG (≈12 $, Lumen LEV5262IG non lu)"
+  },
+  {
+   "code": "D-07",
+   "desc": "Prise DDFT 15 A fontaine",
+   "q": 1,
+   "u": "u",
+   "p": 65.38,
+   "h": 1.3,
+   "art": "3.30",
+   "src": "Dupuis « PRISE DUPLEX 20A GFI » 65,38 $ / 1,3 h"
+  },
+  {
+   "code": "D-08",
+   "desc": "Sorties data murales/colonne : boîte + conduit 3/4\" + corde (65 sorties au relevé − 24 déjà dans les postes/écrans/kiosque)",
+   "q": 41,
+   "u": "u",
+   "p": 22.32,
+   "h": 0.89,
+   "art": "3.33",
+   "src": "Dupuis « TEL/DATA 3/4 » 22,32 $ / 0,89 h ; relevé IA : SORTIE DATA INSTALLER 65 (E104 45 + E105 20)"
+  },
+  {
+   "code": "D-09",
+   "desc": "Barrière antivol : 2 JB + raccord panneau PU-1",
+   "q": 1,
+   "u": "lot",
+   "p": 60.0,
+   "h": 4.0,
+   "art": "3.31",
+   "src": "jugement (2 boîtes 12x12 + conduit) — Estimation_2 6 h"
+  },
+  {
+   "code": "D-10",
+   "desc": "Bornes de prêt / fontaine hall — JB",
+   "q": 1,
+   "u": "u",
+   "p": 17.43,
+   "h": 1.0,
+   "art": "3.31",
+   "src": "Dupuis boîte 12x12 1 h"
+  },
+  {
+   "code": "D-11",
+   "desc": "Boutons d’appel (3) et de panique (1) — boîte + conduit vide",
+   "q": 4,
+   "u": "u",
+   "p": 15.0,
+   "h": 0.5,
+   "art": "3.31",
+   "src": "Dupuis « GACHE »/« LECTEUR » 15 $ / 0,5 h (même nature)"
+  },
+  {
+   "code": "D-20",
+   "desc": "Portes à contrôle d’accès : lecteur + gâche (boîtes + conduits)",
+   "q": 7,
+   "u": "u",
+   "p": 30.0,
+   "h": 1.0,
+   "art": "3.31",
+   "src": "Dupuis « LECTEUR DE CARTE » 15/0,5 + « GACHE » 15/0,5"
+  },
+  {
+   "code": "D-21",
+   "desc": "Thermostats — boîte + conduit",
+   "q": 6,
+   "u": "u",
+   "p": 35.0,
+   "h": 0.4,
+   "art": "3.31",
+   "src": "Dupuis « THERMOSTAT » 35 $ / 0,4 h"
+  },
+  {
+   "code": "D-22",
+   "desc": "Sorties TV",
+   "q": 4,
+   "u": "u",
+   "p": 15.0,
+   "h": 0.5,
+   "art": "3.33",
+   "src": "Dupuis « SORTIE TV » 15 $ / 0,5 h"
+  },
+  {
+   "code": "D-12",
+   "desc": "Percements de dalle carottés + coupe-feu (RDC + étage)",
+   "q": 23,
+   "u": "u",
+   "p": 150.0,
+   "h": 1.0,
+   "art": "3.31",
+   "src": "Dupuis « PERCEMENT PLANCHER » 150 $ (S-1881) / 1 h"
+  },
+  {
+   "code": "D-12b",
+   "desc": "Coupe-feu 3M CP25WB+ (tubes)",
+   "q": 8,
+   "u": "u",
+   "p": 26.22,
+   "h": 0.25,
+   "art": "3.31",
+   "src": "Lumen 26,22 $ ; 0,25 h"
+  },
+  {
+   "code": "D-13",
+   "desc": "Conduit EMT 1\" sous dalle (16 courses RDC + 7 étage), 5 cond. #12",
+   "q": 2148.9501999999998,
+   "u": "pi",
+   "p": 3.49,
+   "h": 0.091,
+   "art": "3.31",
+   "src": "Dupuis « CONDUIT 3/4 07C12 » 3,49 $/pi, 0,091 h/pi (1\" 05c12 absent → équivalent)"
+  },
+  {
+   "code": "D-14",
+   "desc": "Conduit EMT 3/4\" data sous dalle, vide + corde (11 + 7 courses)",
+   "q": 1656.8242,
+   "u": "pi",
+   "p": 1.4,
+   "h": 0.056,
+   "art": "3.33",
+   "src": "Dupuis « CONDUIT VIDE 3/4 » 1,4028 $/pi, 0,056 h/pi"
+  },
+  {
+   "code": "D-16",
+   "desc": "Boîtes de tirage 4-11/16, connecteurs, supports — sous dalle",
+   "q": 23,
+   "u": "u",
+   "p": 9.26,
+   "h": 0.25,
+   "art": "3.31",
+   "src": "Lumen 6,05 + 3,21 ; Dupuis boîte 0,25 h"
+  },
+  {
+   "code": "D-19",
+   "desc": "Scan dalle béton (GPR) avant carottage",
+   "q": 1,
+   "u": "lot",
+   "p": 1250.0,
+   "h": 2.0,
+   "art": "3.32",
+   "src": "Dupuis « SCAN DALLE BETON » 1 250 $ / 2 h"
+  },
+  {
+   "code": "E-02",
+   "desc": "Monuments de plancher Hubbell poke-through (prise 20 A + 2 RJ45)",
+   "q": 2,
+   "u": "u",
+   "p": 1461.22,
+   "h": 1.0,
+   "art": "3.34",
+   "src": "Lumen 1 461,22 $ ; Dupuis monument 1 h"
+  },
+  {
+   "code": "E-03",
+   "desc": "Boîtes de plancher refaites (salle 208)",
+   "q": 2,
+   "u": "u",
+   "p": 250.0,
+   "h": 1.0,
+   "art": "3.34",
+   "src": "Dupuis « MONUMENT PLANCHER » 250 $ / 1 h"
+  },
+  {
+   "code": "E-04",
+   "desc": "Cabines/salles étage : JB + prise",
+   "q": 3,
+   "u": "u",
+   "p": 64.81,
+   "h": 1.175,
+   "art": "3.28",
+   "src": "Dupuis prise 15A"
+  },
+  {
+   "code": "E-01",
+   "desc": "Postes aide au lecteur 227 : JB, 2 prises, data",
+   "q": 2,
+   "u": "poste",
+   "p": 143.58,
+   "h": 2.98,
+   "art": "3.28",
+   "src": "Dupuis"
+  },
+  {
+   "code": "E-05",
+   "desc": "Écran colonne étage : prise + data",
+   "q": 1,
+   "u": "u",
+   "p": 78.77000000000001,
+   "h": 1.8050000000000002,
+   "art": "3.28",
+   "src": "Dupuis"
+  },
+  {
+   "code": "F-01",
+   "desc": "Luminaire A1 2x4 LED encastré — pose",
+   "q": 11,
+   "u": "u",
+   "p": 0,
+   "h": 0.75,
+   "art": "3.35",
+   "src": "Dupuis « FIXTURE TYPE A » 0,75 h ; fourniture au lot"
+  },
+  {
+   "code": "F-02",
+   "desc": "Luminaires C1 / C1_1 / C1_3 Axis (33 modules) — pose",
+   "q": 33,
+   "u": "u",
+   "p": 0,
+   "h": 0.75,
+   "art": "3.35",
+   "src": "Dupuis 0,75 h/luminaire"
+  },
+  {
+   "code": "F-05",
+   "desc": "Rangées linéaires suspendues (20) : suspension à la dalle, alimentation",
+   "q": 20,
+   "u": "rangée",
+   "p": 50.0,
+   "h": 1.0,
+   "art": "3.35",
+   "src": "Dupuis « DROP DE SWITCH »/alim. 0-10V 32-55 $ ; 1 h (Estimation_2)"
+  },
+  {
+   "code": "F-06",
+   "desc": "Luminaire E cylindre suspendu — pose",
+   "q": 3,
+   "u": "u",
+   "p": 0,
+   "h": 0.75,
+   "art": "3.35",
+   "src": "Dupuis 0,75 h ; 3 u (E-203)"
+  },
+  {
+   "code": "F-07",
+   "desc": "Enseignes de sortie Z6 — pose",
+   "q": 3,
+   "u": "u",
+   "p": 0,
+   "h": 1.0,
+   "art": "3.35",
+   "src": "Dupuis « ENSEIGNE SORTIE » 1 h"
+  },
+  {
+   "code": "F-11",
+   "desc": "Interrupteurs neufs 15 A",
+   "q": 5,
+   "u": "u",
+   "p": 75.47,
+   "h": 1.075,
+   "art": "3.35",
+   "src": "Dupuis « INTERRUPTEUR 15A 120V » 75,47 $ / 1,075 h"
+  },
+  {
+   "code": "F-08",
+   "desc": "Conduit EMT 3/4\" 03c12 + flexible — raccordement luminaires (35 points)",
+   "q": 918.6351999999999,
+   "u": "pi",
+   "p": 2.3,
+   "h": 0.071,
+   "art": "3.35",
+   "src": "Dupuis « CONDUIT 3/4 03C12 »"
+  },
+  {
+   "code": "F-10",
+   "desc": "Chaînes de retenue à la dalle, boîtes de jonction, quincaillerie",
+   "q": 46,
+   "u": "u",
+   "p": 8.0,
+   "h": 0.25,
+   "art": "3.35",
+   "src": "Dupuis « PARASIMIC » 10 $ / 0,25 h (retenue) — 1 par luminaire"
+  },
+  {
+   "code": "F-LOT",
+   "desc": "PRIX DE LOT ÉCLAIRAGE : A1 ×11 (185 $), Axis SL1 4′×12 (290), 3′×15 (230), 1′×6 (110), trousses rangées (1 500), E ×3 (475), Z6 ×3 (161,60)",
+   "q": 1,
+   "u": "lot",
+   "p": 13034.8,
+   "h": 0,
+   "art": "3.35",
+   "src": "Prix retenus (Gerrie prix réguliers / agents) — confirmés par Frank 2026-10-20"
+  },
+  {
+   "code": "B-LOT",
+   "desc": "PRIX DE LOT DISTRIBUTION : panneau NF 225 A 42 cct + 17 disj. 1P-15, 3 disj. 3P, 3 disj. 1P (DDFT/20 A)",
+   "q": 1,
+   "u": "lot",
+   "p": 6200.0,
+   "h": 0,
+   "art": "3.24",
+   "src": "Schneider NF 225A 42cct 3 400 $ + EDB 1P 95 $ ×20 + EJB 3P 300 $ ×3 — confirmé par Frank 2026-10-20"
+  },
+  {
+   "code": "G-01",
+   "desc": "Détecteurs de fumée adressables + base (fournis JCI) — pose",
+   "q": 2,
+   "u": "u",
+   "p": 0,
+   "h": 0.5,
+   "art": "3.36",
+   "src": "Dupuis « DETECTEUR A FUMEE » 0,5 h"
+  },
+  {
+   "code": "G-01b",
+   "desc": "Détecteurs Simplex 4098-9714 + base (fourniture JCI)",
+   "q": 2,
+   "u": "u",
+   "p": 300.0,
+   "h": 0,
+   "art": "3.36",
+   "src": "Détecteurs JCI — confirmé par Frank 2026-10-20"
+  },
+  {
+   "code": "G-02",
+   "desc": "Conduit EMT 3/4\" boucle AI + câble FA 16/2",
+   "q": 98.4252,
+   "u": "pi",
+   "p": 1.8099999999999998,
+   "h": 0.084,
+   "art": "3.36",
+   "src": "Dupuis conduit vide 3/4 + fil alarme 16 AWG 0,028 h/pi"
+  },
+  {
+   "code": "G-04",
+   "desc": "Relocalisation annonciateur Simplex",
+   "q": 1,
+   "u": "u",
+   "p": 0,
+   "h": 8.0,
+   "art": "3.37",
+   "src": "Dupuis « RELO PANN ANNOCIATEUR » 8 h"
+  },
+  {
+   "code": "G-05",
+   "desc": "Démontage / protection / réinstallation dispositifs AI existants (zones touchées)",
+   "q": 1,
+   "u": "lot",
+   "p": 0,
+   "h": 12.0,
+   "art": "3.37",
+   "src": "jugement (Estimation_2)"
+  },
+  {
+   "code": "G-06",
+   "desc": "Assistance électricien programmation / vérification ULC-S537",
+   "q": 1,
+   "u": "lot",
+   "p": 0,
+   "h": 8.0,
+   "art": "3.38",
+   "src": "jugement (Estimation_2)"
+  },
+  {
+   "code": "G-07",
+   "desc": "Services JCI/Simplex : bypass, programmation 4007ES, annonciateur, vérification partielle + certificat",
+   "q": 1,
+   "u": "lot",
+   "p": 7400.0,
+   "h": 0,
+   "art": "3.38",
+   "src": "Services JCI — confirmé par Frank 2026-10-20"
+  },
+  {
+   "code": "H-01",
+   "desc": "Mobilisation / démobilisation, plateforme roulante",
+   "q": 1,
+   "u": "lot",
+   "p": 1225.0,
+   "h": 8.0,
+   "art": "3.31",
+   "src": "Dupuis « NACELLE » 1 225 $ / 8 h"
+  },
+  {
+   "code": "H-02",
+   "desc": "Coordination EG, dessins d’atelier, plans tels que construits",
+   "q": 1,
+   "u": "lot",
+   "p": 0,
+   "h": 20.0,
+   "art": "3.31",
+   "src": "jugement (Estimation_2)"
+  },
+  {
+   "code": "H-03",
+   "desc": "Essais, mise en service, vérification prises existantes (note 3), étiquetage",
+   "q": 1,
+   "u": "lot",
+   "p": 0,
+   "h": 12.0,
+   "art": "3.31",
+   "src": "jugement (Estimation_2)"
+  },
+  {
+   "code": "H-04",
+   "desc": "Nettoyage, gestion des déchets",
+   "q": 1,
+   "u": "lot",
+   "p": 0,
+   "h": 8.0,
+   "art": "3.31",
+   "src": "jugement (Estimation_2)"
+  }
+ ],
+ "par_article": {
+  "3.22": {
+   "materiel": 0.0,
+   "heures": 101.85,
+   "mo": 8738.68,
+   "total": 8738.68
+  },
+  "3.23": {
+   "materiel": 2192.28,
+   "heures": 42.44,
+   "mo": 3641.09,
+   "total": 5833.37
+  },
+  "3.24": {
+   "materiel": 6335.0,
+   "heures": 27.5,
+   "mo": 2359.49,
+   "total": 8694.49
+  },
+  "3.25": {
+   "materiel": 0.0,
+   "heures": 7.6,
+   "mo": 652.08,
+   "total": 652.08
+  },
+  "3.26": {
+   "materiel": 30.0,
+   "heures": 4.0,
+   "mo": 343.2,
+   "total": 373.2
+  },
+  "3.27": {
+   "materiel": 2197.1,
+   "heures": 34.25,
+   "mo": 2938.63,
+   "total": 5135.73
+  },
+  "3.28": {
+   "materiel": 4259.79,
+   "heures": 92.0,
+   "mo": 7893.13,
+   "total": 12152.92
+  },
+  "3.29": {
+   "materiel": 1689.82,
+   "heures": 25.85,
+   "mo": 2217.92,
+   "total": 3907.74
+  },
+  "3.30": {
+   "materiel": 65.38,
+   "heures": 1.3,
+   "mo": 111.54,
+   "total": 176.92
+  },
+  "3.31": {
+   "materiel": 13155.01,
+   "heures": 290.7,
+   "mo": 24942.31,
+   "total": 38097.31
+  },
+  "3.32": {
+   "materiel": 1250.0,
+   "heures": 2.0,
+   "mo": 171.6,
+   "total": 1421.6
+  },
+  "3.33": {
+   "materiel": 3294.67,
+   "heures": 131.27,
+   "mo": 11263.09,
+   "total": 14557.76
+  },
+  "3.34": {
+   "materiel": 3422.44,
+   "heures": 4.0,
+   "mo": 343.2,
+   "total": 3765.64
+  },
+  "3.35": {
+   "materiel": 16893.01,
+   "heures": 140.35,
+   "mo": 12041.8,
+   "total": 28934.81
+  },
+  "3.36": {
+   "materiel": 778.15,
+   "heures": 9.27,
+   "mo": 795.17,
+   "total": 1573.32
+  },
+  "3.37": {
+   "materiel": 0.0,
+   "heures": 20.0,
+   "mo": 1715.99,
+   "total": 1715.99
+  },
+  "3.38": {
+   "materiel": 7400.0,
+   "heures": 8.0,
+   "mo": 686.4,
+   "total": 8086.4
+  },
+  "5.19": {
+   "materiel": 0.0,
+   "heures": 38.4,
+   "mo": 3294.7,
+   "total": 3294.7
+  }
+ }
+}

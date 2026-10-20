@@ -214,3 +214,9 @@ Débogage étape par étape (à la place de l'étape 2 ci-dessus, seulement si `
 entre étapes est nécessaire) : `prepare.py` → la session fait elle-même le relevé par défaut (§Agents — le
 sous-agent `releveur` seulement si Francis l'autorise explicitement) → `run.py --reprendre <S>` (rejoue qpl +
 render) → étape 3 ci-dessus.
+
+## Soumission et chiffrage (référence officielle, 2026-10-20)
+- `outils/soumission/` — chiffrage « méthode Dupuis » + gabarit de soumission DR (ReportLab) + classeur imprimable ; processus complet dans `outils/soumission/README.md`.
+- `dossiers/<S>/soumission/` — dossier gelé par soumission (S-1902 = première application, 183 000 $).
+- `prix/dupuis/` — catalogue prix/temps de M. Dupuis (27 relevés ACCEO 2026) : sa dernière valeur fait foi.
+- Règle : aperçu PNG regardé avant tout PDF ; commit direct sur `main`, pas de PR, pour ces dossiers.

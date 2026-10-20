@@ -1,0 +1,169 @@
+{
+ "no": "S-1902",
+ "titre_court": "RFID Bibliothèque Georgette-Lepage",
+ "date_ligne": "Varennes, le 20 octobre 2026",
+ "client": [
+  "<b>Constructions R.D.J. Inc.</b>",
+  "1410, boul. Taschereau",
+  "Laprairie (Québec) J5R 4E8",
+  "Attention : <b>Nancy Dubois</b>, Estimation",
+  "estimation@constructionsrdj.com",
+  "Estimateur : Gabriel Epureanu, poste 223 — Tél. : 450 656-1114"
+ ],
+ "details": [
+  "<b>Soumission :</b> S-1902",
+  "<b>Date :</b> 20 octobre 2026",
+  "<b>Projet :</b> E-26-75-GE — Technologie RFID, Bibliothèque Georgette-Lepage — aménagement du rez-de-chaussée et de l'étage",
+  "<b>Lieu :</b> 2001, boul. Rome, Brossard",
+  "<b>Références :</b> SEAO 20173885 / BSDQ M-1026-26 — AO SP-GTER-26-0080 — plans et devis HF Experts-Conseils 26-29 (E-001 à E-502), émis pour AO le 2026-09-16, sans addenda",
+  "<b>Préparé par :</b> Francis Végiard, Chargé de projets et estimateur"
+ ],
+ "prix_sous_titre": "TRAVAUX D'ÉLECTRICITÉ, D'ÉCLAIRAGE ET D'ALARME INCENDIE — DIVISION 26 / 28",
+ "prix_note": "Prix forfaitaire pour l'ensemble des travaux d'électricité décrits aux plans et devis ci-dessus, ventilé selon le bordereau de prix (Annexe 2.00). Le prix comprend 990 heures de main-d'œuvre d'électriciens qualifiés (contremaître inclus), le matériel au prix régulier des distributeurs, les luminaires du tableau E-008 (A1, C1/C1_1/C1_3 avec suspensions, E, Z6), le panneau NF et ses disjoncteurs, les services Johnson Controls/Simplex et le scan GPR de la dalle. Travaux prévus de jour, aux heures normales, du ±17 novembre 2026 au 16 juillet 2027 selon l'échéancier de l'entrepreneur général.",
+ "ventilation_titre": "VENTILATION SELON LE BORDEREAU DE PRIX (ANNEXE 2.00)",
+ "ventilation_note": "Montants avant taxes. Frais de chantier, mobilisation, coordination et matériel courant répartis sur les articles au prorata des heures; article 3.31 ajusté de l'arrondi du total.",
+ "ventilation": [
+  [
+   "3.22",
+   "Démontage des éléments électriques",
+   10871
+  ],
+  [
+   "3.23",
+   "Raccordement des équipements mécaniques",
+   7257
+  ],
+  [
+   "3.24",
+   "Nouveau panneau 600 V",
+   10816
+  ],
+  [
+   "3.25",
+   "Lot disjoncteurs",
+   811
+  ],
+  [
+   "3.26",
+   "MCC",
+   464
+  ],
+  [
+   "3.27",
+   "Prises doubles 15 A-120 V – USB",
+   6389
+  ],
+  [
+   "3.28",
+   "Prises doubles 15 A-120 V",
+   15118
+  ],
+  [
+   "3.29",
+   "Prises doubles 15 A-120 V MALT isolées",
+   4861
+  ],
+  [
+   "3.30",
+   "Prises doubles 15 A-120 V GFI",
+   220
+  ],
+  [
+   "3.31",
+   "Percements, conduit, filage et boîtes de jonction",
+   47386
+  ],
+  [
+   "3.32",
+   "Scan dalle béton",
+   1768
+  ],
+  [
+   "3.33",
+   "Sorties informatique/réseau",
+   18110
+  ],
+  [
+   "3.34",
+   "Monument plancher",
+   4684
+  ],
+  [
+   "3.35",
+   "Appareils de contrôle + appareils d'éclairage",
+   35995
+  ],
+  [
+   "3.36",
+   "Détecteur de fumée",
+   1957
+  ],
+  [
+   "3.37",
+   "Panneau alarme incendie : déplacement annonciateur",
+   2135
+  ],
+  [
+   "3.38",
+   "Panneau alarme incendie : mise en marche et certification",
+   10059
+  ],
+  [
+   "5.19",
+   "Démolition des systèmes électriques",
+   4099
+  ]
+ ],
+ "travaux": [
+  "Démantèlement, relocalisation et conservation des équipements selon les étiquettes E.A.E, E.A.R et E.A.C des plans E-101, E-102, E-201 et E-202; retrait et réinstallation temporaire des luminaires du FabLab 210; maintien de la continuité de service;",
+  "Remplacement du panneau PP-3 par un panneau NF 225 A, 347/600 V, 42 circuits, 14 kA, transfert des circuits existants et disjoncteurs neufs selon E-502; mise à jour des fiches et identification des neuf panneaux (devis 12.3);",
+  "Raccordement électrique de l'UTA-01, du VE-02N, des chaudières CH-01 et CH-02 (réutilisation des tiroirs CCM-1 selon leur état) et des humidificateurs HUM-1 à HUM-3, avec conduits, conducteurs et raccords flexibles;",
+  "Services du rez-de-chaussée et de l'étage : postes de travail intégrés au mobilier, tables avec boîtes d'électrification et prises USB, cabines, écrans, kiosque, prises murales, 22 prises MALT isolées, prise DDFT de la fontaine, monuments de plancher Hubbell, sorties informatiques (boîte, conduit et plaque), 4 sorties TV, boîtes et conduits vides pour boutons d'appel et de panique, 7 portes à contrôle d'accès (lecteur de carte et gâche), 6 thermostats et barrière antivol;",
+  "Vingt-trois percements de dalle carottés avec coupe-feu CAN/ULC-S115 et scan GPR préalable; conduits EMT et conducteurs RW90 sous dalle et dans l'entreplafond;",
+  "Éclairage du rez-de-chaussée selon le tableau E-008 : 11 luminaires A1, 12 C1, 6 C1_1, 15 C1_3 en rangées suspendues, 3 luminaires E, 3 enseignes de sortie Z6; suspensions, chaînes de retenue à la dalle (devis 16.5), raccordement aux circuits existants réutilisés et 5 interrupteurs neufs;",
+  "Alarme incendie : installation de 2 détecteurs de fumée adressables fournis par Johnson Controls, boucle, relocalisation de l'annonciateur, protection des dispositifs existants, assistance à la programmation du panneau Simplex 4007ES et vérification partielle CAN/ULC-S537; services Johnson Controls inclus;",
+  "Mobilisation, plateforme roulante, coordination avec l'entrepreneur général et les autres corps de métier, dessins d'atelier, plans tels que construits, essais, mise en service, étiquetage, nettoyage et gestion des déchets électriques."
+ ],
+ "prix_separes": [
+  [
+   "PS-1",
+   "Conception parasismique des systèmes électriques par ingénieur (OIQ) et certificat de conformité (devis 16.2 à 16.6), incluant les ancrages additionnels",
+   "8 058,00 $"
+  ],
+  [
+   "PS-2",
+   "Câblage structuré Cat6 jusqu'à la salle des serveurs (devis 36.1); la soumission de base comprend les boîtes, conduits, cordes de tirage et plaques",
+   "Sur demande"
+  ],
+  [
+   "PS-3",
+   "Vérification par Johnson Controls des dispositifs d'alarme existants retirés et réinstallés dans les zones de plafonds touchés",
+   "Sur demande"
+  ],
+  [
+   "PS-4",
+   "Travaux hors des heures normales (devis 1.17)",
+   "Majoration du taux horaire à convenir"
+  ],
+  [
+   "PS-5",
+   "Alimentation des postes de travail temporaires et de la chute à livres temporaire (A-102), non montrés aux plans E",
+   "Sur demande"
+  ]
+ ],
+ "exclusions": [
+  "Câblage structuré Cat6 et sa certification (PS-2); conception parasismique et certificat (PS-1); travaux hors des heures normales (PS-4); installations temporaires A-102 (PS-5);",
+  "Fourniture et raccordement par d'autres : systèmes de contrôle d'accès et lecteurs de carte, boutons d'appel et de panique, barrière antivol RFID, thermostats et contrôles mécaniques, équipements mécaniques et leurs sectionneurs d'usine, câblage informatique;",
+  "Permis, frais municipaux et taxes (TPS et TVQ en sus); réparation des finis, peinture, plafonds, cloisons et planchers; démolition et évacuation non électriques; échafaudage fixe; percements structuraux autres que les carottages indiqués;",
+  "Remplacement du matériel existant trouvé défectueux lors des essais (la vérification des prises existantes de la note 3 est incluse; les réparations sont en sus, sur approbation);",
+  "Les longueurs de conduits et de conducteurs sont établies sur hypothèses de tracé (note 5, E-104); le tracé exact sera validé dans l'entreplafond du niveau inférieur sans changement de prix, sauf obstacle imprévu;",
+  "Aucun addenda n'a été reçu à la date de la présente; tout addenda émis après cette date fera l'objet d'un ajustement."
+ ],
+ "validite": "30 jours",
+ "signataire": [
+  "Francis Végiard",
+  "Chargé de projets et estimateur électrique",
+  "Le Groupe DR Électrique inc.",
+  "fvegiard@drelectrique.com  |  450 922-4000"
+ ]
+}
