@@ -1,0 +1,17 @@
+{
+  "commande": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests",
+    "-q",
+    "--tb=short",
+    "-ra",
+    "--basetemp=travail-mcp/pytest-mission-definitif",
+    "--junitxml=docs/validation-mcp-2026-10-20/pytest.xml"
+  ],
+  "debut": "2026-10-20T06:43:52.049Z",
+  "fin": "2026-10-20T06:56:49.881Z",
+  "exit_code": 0,
+  "signal": null
+}

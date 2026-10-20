@@ -1,0 +1,15 @@
+{
+  "commande": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_etiquetage_mcp.py",
+    "tests/test_mcp_livrables.py::test_bom_union_multiplicateurs_et_mo_sans_heures_inventees",
+    "-q",
+    "--tb=short",
+    "--basetemp=travail-mcp/pytest-mission-retouches",
+    "--junitxml=docs/validation-mcp-2026-10-20/pytest-retouches.xml"
+  ],
+  "exit_code": 0,
+  "duree_s": 329.202
+}

@@ -1,0 +1,53 @@
+{
+  "base": "413ccceba4782f60d144f360ec67f2d8cffcf834",
+  "fichiers": [
+    {
+      "chemin": "outils/mesurer_demarrage_mcp.py",
+      "sha256": "257adc2f8d43b4f7d8f8a11ff2898e10fa9bb2d2654df6a526c2abefb39ce679"
+    },
+    {
+      "chemin": "serveur_mcp/livrables.py",
+      "sha256": "df03f9d309bc4c39500345ae60e2477588db251d1865c056cd2d66966826173c"
+    },
+    {
+      "chemin": "serveur_mcp/sources.py",
+      "sha256": "0227cbc09571d2185ce74bc2943c53bcc1de6dc9970adffa2dc106b6b6759293"
+    },
+    {
+      "chemin": "tests/test_blocs_provenance.py",
+      "sha256": "3b4dffd40d8139866c9db892c7305b842a3481e36e6d359fc2071a2cda89fe6f"
+    },
+    {
+      "chemin": "tests/test_demarrage_mcp.py",
+      "sha256": "963e9129c0371c861fc8a9ebc7f72a14bb0b40922c36db742fbc4389a94b0bef"
+    },
+    {
+      "chemin": "tests/test_mcp_livrables.py",
+      "sha256": "40b926b080553aac1cb679e3ac6e09a46f5517af68720a8c6903490df2c32627"
+    },
+    {
+      "chemin": "tests/test_sources_mcp.py",
+      "sha256": "14bf63baf033ae755b7083a22ddbf87e19af29e128712181bd91eae0f0386320"
+    },
+    {
+      "chemin": "releve/blocs_vers_releve.py",
+      "sha256": "c39437364c71dfb38a7bf436988f0b59ea1e3a55b32e06dec5eb308258277e6a"
+    },
+    {
+      "chemin": "serveur_mcp/serveur.py",
+      "sha256": "01828bcf0a4917f3c7d8563a14e855bf96e30e260f13e9fe0284609fa203d08b"
+    },
+    {
+      "chemin": "tests/test_etiquetage_mcp.py",
+      "sha256": "7d6960c0e080ef1f6179a88e1257991766f3f6d00ce40aa2e0fbde356ce5a371"
+    },
+    {
+      "chemin": "tests/test_multiplicateurs.py",
+      "sha256": "83a0c95b8102739f767eaf055cd63784144f5207c0f74839e28a6f95ce57a451"
+    },
+    {
+      "chemin": "tests/test_serveur_mcp.py",
+      "sha256": "5dab0dd849c2b517090a9f5393bc9a3365a90e33fadc4dcec13e7a09c8bf276f"
+    }
+  ]
+}

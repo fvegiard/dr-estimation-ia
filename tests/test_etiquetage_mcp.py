@@ -10,14 +10,14 @@ import pymupdf
 import pytest
 
 pytest.importorskip("mcp")
-from mcp import Client  # noqa: E402
+from mcp import Client
 
-from serveur_mcp import serveur  # noqa: E402
-from tests.test_serveur_mcp import _texte  # noqa: E402
+from serveur_mcp import serveur
+from tests.test_serveur_mcp import _texte
 
 
 def _plan_inconnu() -> bytes:
-    """Plan vectoriel : 5 boîtiers « croix dans un carré » (bloc absent de la bibliothèque) + 4 losanges (non-appareils)."""
+    """Cinq boîtiers, quatre losanges et une forme unique à vérifier explicitement."""
     doc = pymupdf.open()
     p = doc.new_page(width=1224, height=792)
     p.insert_text((60, 60), "PLAN ELECTRIQUE NIVEAU 1", fontsize=14)
@@ -29,11 +29,18 @@ def _plan_inconnu() -> bytes:
     for i in range(4):
         x, y = 250 + 150 * i, 550
         p.draw_polyline([(x, y - 9), (x + 9, y), (x, y + 9), (x - 9, y), (x, y - 9)], color=(0, 0, 0), width=0.5)
+    p.draw_polyline([(950, 600), (970, 600), (955, 613), (950, 600)],
+                    color=(0, 0, 0), width=0.9)
     return doc.tobytes()
 
 
+def _lire_csv(chemin):
+    with open(chemin, encoding="utf-8") as fichier:
+        return list(csv.DictReader(fichier))
+
+
 def _sig_de(base, dossier: str, n: int) -> list[str]:
-    idx = list(csv.DictReader(open(base / dossier / "travail" / "blocs-index.csv", encoding="utf-8")))
+    idx = _lire_csv(base / dossier / "travail" / "blocs-index.csv")
     return [r["sig_id"] for r in idx if int(r["n_plans"]) == n]
 
 
@@ -48,23 +55,32 @@ async def _parcours(tmp_path):
 
         croix, losange = _sig_de(tmp_path, "NOUVEAU", 5), _sig_de(tmp_path, "NOUVEAU", 4)
         assert croix and losange
+        rare = _sig_de(tmp_path, "NOUVEAU", 1)
+        assert len(rare) == 1
+        assert rare[0] in {s["sig_id"] for s in r["a_etiqueter"]["inconnues"]}
         e = _texte(await c.call_tool("etiqueter_signatures", {"dossier": "NOUVEAU", "etiquettes": [
             {"sig_id": croix[0], "label": "BOITE DE JONCTION", "famille": "commande", "forme": "carre",
              "materiel": "BOITE DE JONCTION 4x4"},
             {"sig_id": "S999", "label": "X"},
-            {"sig_id": losange[0], "label": "IGNORER"}]}))
-        assert e["ajoutees"] == 2 and e["refusees"][0]["sig_id"] == "S999"
+            {"sig_id": losange[0], "label": "IGNORER"},
+            {"sig_id": rare[0], "label": "IGNORER"}]}))
+        assert e["ajoutees"] == 3 and e["refusees"][0]["sig_id"] == "S999"
         assert croix[0] in e["appris_bibliotheque"] and e["non_appris"] == []
 
         r = _texte(await c.call_tool("relever_automatique", {"dossier": "NOUVEAU", "reprendre": True,
                                                              "verification_vision": False}))
         assert r["produit"] is True and r["reperes"] == 5 and r["zip"].endswith("-LIVRABLES-PNG.zip")
-        bom = list(csv.DictReader(open(tmp_path / "NOUVEAU" / "sortie" / "png" / "NOUVEAU-BOM.csv", encoding="utf-8")))
+        assert r["quantites"]["represente"] == r["quantites"]["total"] == 5
+        assert r["estimation_mo"]["complet"] is False
+        assert r["estimation_mo"]["cout_mo_total"] is None
+        bom = await asyncio.to_thread(
+            _lire_csv, tmp_path / "NOUVEAU" / "sortie" / "png" / "NOUVEAU-BOM.csv")
         assert {x["code"] for x in bom} == {"BJ"} and len(bom) == 5   # code du vocabulaire ; IGNORER jamais compté
 
         # même bureau d'ingénieurs : rien à étiqueter, la bibliothèque a appris
         r = _texte(await c.call_tool("relever_automatique", {"dossier": "SUIVANT", "verification_vision": False}))
         assert r["produit"] is True and r["reperes"] == 5 and r["a_etiqueter"]["inconnues"] == []
+        assert r["quantites"]["represente"] == r["quantites"]["total"] == 5
 
 
 def test_etiquetage_llm_puis_bibliotheque(tmp_path, monkeypatch):
@@ -95,5 +111,5 @@ def test_correction_garde_les_autres_plages_de_diametre(tmp_path):
                     "diam_max": "6.5", "origine": "auto"})
     serveur._ajouter_etiquettes(tmp_path, [{"sig_id": "S002", "label": "DP1", "materiel": "DP1", "diam_min": 12,
                                             "diam_max": 20}], "llm-mcp", "")
-    rows = list(csv.DictReader(open(tmp_path / "blocs-familles.csv", encoding="utf-8")))
+    rows = _lire_csv(tmp_path / "blocs-familles.csv")
     assert [r["label"] for r in rows] == ["SORTIE DATA", "DP1"]

@@ -75,6 +75,10 @@ async def _chaine(tmp_path):
         assert liv["produit"], liv
         assert liv["reperes"] == 9
         assert {"ESSAI-RELEVE.pdf", "ESSAI.qpl"} <= set(liv["fichiers"])
+        assert len(liv["planches_controle"]) == 1
+        assert (tmp_path / "ESSAI" / liv["planches_controle"][0]).is_file()
+        assert liv["quantites"]["represente"] == 9
+        assert liv["estimation_mo"]["complet"] is False
         assert liv["a_verifier"] == [], "l'encadré doit tenir dans l'espace libre sur ce plan synthétique"
         page = await c.call_tool("voir_image", {"dossier": "ESSAI", "chemin": "sortie/ESSAI-RELEVE.pdf#1", "largeur_max": 800})
         assert page.content[0].type == "image"

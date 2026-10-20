@@ -1,0 +1,22 @@
+{
+  "taux_horaire": 124,
+  "devise": "CAD",
+  "complet": false,
+  "reserve_portee": "Calcul sur les quantités agrégées, sans distinction INSTALLER / CONSERVER / ENLEVER / RELOCALISER. Ventiler les travaux et les heures par portée avant soumission.",
+  "cout_mo_total": null,
+  "sous_total_postes_chiffres": 0,
+  "postes": [
+    {
+      "label": "BOITE DE JONCTION",
+      "code": "BJ",
+      "famille": "commande",
+      "represente": 5,
+      "total": 5,
+      "heures_unitaires": null,
+      "source_heures": "",
+      "heures": null,
+      "cout_mo": null,
+      "reserve": "Heures unitaires sourcées manquantes : poste non chiffrable."
+    }
+  ]
+}

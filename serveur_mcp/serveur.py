@@ -165,15 +165,25 @@ def preparer_dossier(dossier: str, chemin_source: str = "") -> dict:
     aperçus et MANIFESTE.md. chemin_source (facultatif, serveur local seulement) : dossier ou PDF à copier dans
     entree/ avant la préparation."""
     d = dossier_de(dossier, creer=True)
+    from .sources import motif_reference
+
     if chemin_source:
         src = Path(chemin_source).expanduser().resolve()
         pdfs = [src] if src.is_file() else sorted(src.glob("*.pdf"))
         if not pdfs:
             raise ToolError(f"aucun PDF dans {src}")
         for p in pdfs:
+            if motif := motif_reference(p):
+                raise ToolError(f"Source refusée ({p.name}) : {motif}. Fournir le plan original non annoté; "
+                                "le relevé appartient à reference/.")
+        for p in pdfs:
             (d / "entree" / p.name).write_bytes(p.read_bytes())
     if not list((d / "entree").glob("*.pdf")):
         raise ToolError("entree/ ne contient aucun PDF")
+    for p in (d / "entree").glob("*.pdf"):
+        if motif := motif_reference(p):
+            raise ToolError(f"Source refusée ({p.name}) : {motif}. Fournir le plan original non annoté; "
+                            "le relevé appartient à reference/.")
     log = lancer("prepare.py", str(d / "entree"), str(d / "travail"))
     feuilles = lire_csv(d / "travail" / "feuilles.csv")
     return {"feuilles": [{k: f.get(k) for k in ("feuille", "fichier", "page", "titre", "nb_mots")} for f in feuilles],
@@ -414,8 +424,8 @@ def controle_multiplicateurs(travail: Path, classement: list[dict]) -> tuple[lis
         if c.get("type") == "plan" and TYPIQUE_RE.search(c.get("note", "")) and c["feuille"] not in avec:
             msg = (f"feuille {c['feuille']} : unités types (« {c.get('note', '')[:80]} ») sans "
                    "multiplicateur — ajouter une ligne dans multiplicateurs.csv (facteur 1 si justifié)")
-            # route automatique : la note est un extrait brut du cartouche (« Type D3-N » d'un appareil) → à vérifier
-            (alertes if c.get("note", "").startswith("cartouche=") else erreurs).append(msg)
+            # Route automatique : extrait brut du titre (« Type D3-N » d'un appareil), à vérifier.
+            (alertes if c.get("note", "").startswith(("cartouche=", "feuille=")) else erreurs).append(msg)
     return erreurs, alertes
 
 
@@ -433,7 +443,7 @@ def quantites(dossier: str) -> dict:
     vus = set()
     for nom in ("occurrences-texte.csv", "occurrences-visuel.csv"):
         for o in lire_csv(t / nom):
-            if o.get("exclure") == "1" or o.get("feuille") not in plans:
+            if (o.get("exclure") or "").lower() in ("1", "oui", "x", "true") or o.get("feuille") not in plans:
                 continue
             try:
                 x, y = float(o["x_pt"]), float(o["y_pt"])
@@ -502,7 +512,7 @@ def controler(travail: Path) -> dict:
     occ = []
     for nom in ("occurrences-texte.csv", "occurrences-visuel.csv"):
         for i, o in enumerate(lire_csv(travail / nom), start=2):
-            if o.get("exclure") == "1":
+            if (o.get("exclure") or "").lower() in ("1", "oui", "x", "true"):
                 continue
             o["_fichier"], o["_ligne"] = nom, i
             occ.append(o)
@@ -769,7 +779,8 @@ def _empaqueter_zip_png(travail: Path, sortie: Path, nom: str, rapport: dict) ->
     """Exporte chaque feuille et bordereau en PNG (<F>_annote.png, <F>_calque.png, <F>_bordereau_NN.png) + BOM (.csv, .xlsx)
     et empaquette le tout dans sortie/<nom>-LIVRABLES-PNG.zip."""
     png_dir = sortie / "png"
-    shutil.rmtree(png_dir, ignore_errors=True)
+    if png_dir.exists():
+        shutil.rmtree(png_dir)
     png_dir.mkdir(parents=True, exist_ok=True)
     annote_pdf = sortie / f"{nom}-Plans-annotes.pdf"
     sheets = rapport.get("sheets") or []
@@ -780,31 +791,32 @@ def _empaqueter_zip_png(travail: Path, sortie: Path, nom: str, rapport: dict) ->
         p_suiv = int(sheets[idx + 1]["plan_page"]) if idx + 1 < len(sheets) else (total_pages + 1)
         nb_bord = max(0, p_suiv - p_plan - 1)
         lancer("calque_png.py", str(annote_pdf), str(png_dir), "--page", str(p_plan), "--nom", f_nom, "--bordereaux", str(nb_bord))
-    # Export BOM CSV + XLSX
-    bom_csv = sortie / "vecteur" / "bordereau.csv"
-    if bom_csv.exists():
-        shutil.copyfile(bom_csv, png_dir / f"{nom}-BOM.csv")
-    try:
-        from src.releve.xlsx_export import main as xlsx_main
-        occ_files = [travail / f for f in ("occurrences-visuel.csv", "occurrences-texte.csv") if (travail / f).exists() and (travail / f).stat().st_size > 35]
-        if occ_files:
-            xlsx_main([str(occ_files[0]), "--sortie", str(png_dir / f"{nom}-BOM.xlsx"), "--nomenclature", str(travail / "nomenclature.csv")])
-    except Exception:
-        pass
+    # Même calcul contrôlé pour les deux sources d'occurrences et les unités types.
+    from serveur_mcp.livrables import exporter_bom
+    quantite = quantites(travail.parent.name)
+    estimation = exporter_bom(travail, png_dir, nom, quantite)
+    # Le bordereau historique conserve une ligne par repère et ses références de plan.
+    shutil.copyfile(sortie / "vecteur" / "bordereau.csv", png_dir / f"{nom}-BOM.csv")
     zip_path = sortie / f"{nom}-LIVRABLES-PNG.zip"
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for p in sorted(png_dir.glob("*")):
             if p.is_file():
                 zf.write(p, arcname=p.name)
-        for extra in ("nomenclature.csv", "occurrences-visuel.csv", "occurrences-texte.csv", "reserves.md"):
+        for extra in ("nomenclature.csv", "occurrences-visuel.csv", "occurrences-texte.csv",
+                      "multiplicateurs.csv", "reserves.md"):
             ep = travail / extra
             if ep.exists():
                 zf.write(ep, arcname=f"releve/{extra}")
+        zf.write(sortie / "quantites.csv", arcname="quantites.csv")
+        for planche in sorted((sortie / "controle").glob("*.png")):
+            zf.write(planche, arcname=f"controle/{planche.name}")
     return {
         "zip": f"sortie/{zip_path.name}",
         "zip_chemin_absolu": str(zip_path.resolve()),
         "png_fichiers": sorted(p.name for p in png_dir.glob("*.png")),
-        "bom_fichiers": sorted(p.name for p in png_dir.glob("*-BOM.*")),
+        "bom_fichiers": sorted(p.name for p in png_dir.glob("*-BOM*.*")),
+        "quantites": quantite,
+        "estimation_mo": estimation,
     }
 
 
@@ -896,6 +908,12 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
         preparer_dossier(dossier, chemin_source=chemin_source)
     elif not (d / "travail" / "blocs-index.csv").exists():
         raise ToolError("rien à reprendre : lancer relever_automatique sans reprendre d'abord")
+    if reprendre:
+        from .sources import motif_reference
+
+        for p in (d / "entree").glob("*.pdf"):
+            if motif := motif_reference(p):
+                raise ToolError(f"Source refusée ({p.name}) : {motif}. La reprise exige le plan original non annoté.")
     travail = d / "travail"
     sortie = d / "sortie"
     pdfs = sorted((d / "entree").glob("*.pdf"))
@@ -916,10 +934,10 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
     if not reprendre:
         lancer("blocs_vectoriels.py", str(travail), str(pdf_princ))
         lancer("blocs_vignettes.py", str(travail), str(pdf_princ), str(sig_dir), "--min", "1")
-    lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
+    lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE), "--min", "1")
     vision = _etiqueter_signatures_vision(travail, sig_dir) if verification_vision else 0
     if vision:   # nouvelles règles : les inconnues restantes sont recalculées
-        lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE))
+        lancer("blocs_familles_auto.py", str(travail), "--bibliotheque", str(BIBLIOTHEQUE), "--min", "1")
     lancer("blocs_vers_releve.py", str(travail), str(pdf_princ), "--modele", "automatique-mcp")
     a_etiqueter = _signatures_a_etiqueter(d)
     liv = produire_livrables(dossier, nom=dossier)
@@ -948,7 +966,9 @@ def relever_automatique(dossier: str, url_source: str = "", chemin_source: str =
 def produire_livrables(dossier: str, nom: str = "") -> dict:
     """Produit les livrables dans sortie/ : <S>-RELEVE.pdf au format de l'exemplaire (plans annotés + bordereau
     matériel + réserves), <S>.qpl (projet Plan Expert), Plans-annotes.pdf, Rapport-de-metre.pdf/.md,
-    Dossier-complet.pdf. Refuse si verifier_releve n'est pas « pret ». `produit: true` signifie que les
+    Dossier-complet.pdf, BOM, quantités multipliées et estimation MO à 124 $ CAD/h. Les heures exigent
+    heures_unitaires + source_heures dans nomenclature.csv; sinon le coût reste non chiffrable.
+    Refuse si verifier_releve n'est pas « pret ». `produit: true` signifie que les
     fichiers existent, PAS qu'ils sont validés visuellement — voir `a_verifier` et `controle`."""
     d = dossier_de(dossier)
     nom = nom or dossier
@@ -967,8 +987,17 @@ def produire_livrables(dossier: str, nom: str = "") -> dict:
     rapport = json.loads((sortie / f"{nom}-rendu-rapport.json").read_text(encoding="utf-8"))
     releve_pdf = sortie / f"{nom}-RELEVE.pdf"
     shutil.copyfile(sortie / f"{nom}-Plans-annotes.pdf", releve_pdf)
+    controle_dir = sortie / "controle"
+    if controle_dir.exists():
+        shutil.rmtree(controle_dir)
+    journal.append(lancer("planche_controle.py", str(releve_pdf), str(sortie / "vecteur" / "estimate.json"),
+                          str(controle_dir), "--rapport", str(sortie / f"{nom}-rendu-rapport.json")))
+    planches = sorted(f"sortie/controle/{p.name}" for p in controle_dir.glob("*.png"))
+    if rapport["reperes"] and not planches:
+        raise ToolError("Aucune planche de contrôle produite malgré les repères présents.")
     a_verifier = rapport.get("conformite", {}).get("encadre_hors_espace_libre") or []
-    controle = "Regarder chaque page de plan avec voir_image('sortie/<S>-RELEVE.pdf#<page>')."
+    controle = ("Ouvrir chaque planche de sortie/controle/ avec voir_image et noter le score visuel; "
+                "regarder aussi chaque page de plan avec voir_image('sortie/<S>-RELEVE.pdf#<page>').")
     if a_verifier:
         controle += (f" ATTENTION : encadré RELEVE-MATERIEL hors de l'espace libre du plan sur "
                      f"{', '.join(a_verifier)} — valider visuellement avant de considérer ce relevé terminé.")
@@ -978,6 +1007,7 @@ def produire_livrables(dossier: str, nom: str = "") -> dict:
             "feuilles": [{k: s[k] for k in ("sheet", "plan_page", "reperes", "familles", "res", "box_in_free_space")}
                          for s in rapport["sheets"]],
             "a_verifier": a_verifier,
+            "planches_controle": planches,
             "fichiers": sorted(p.name for p in sortie.iterdir() if p.is_file()),
             "journal": "\n".join(journal)[-2000:],
             "controle": controle}

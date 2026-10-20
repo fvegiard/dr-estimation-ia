@@ -1,0 +1,68 @@
+{
+  "python": "D:\\github\\dr-estimation-ia\\.venv\\Scripts\\python.exe",
+  "commande": [
+    "D:\\github\\dr-estimation-ia\\.venv\\Scripts\\python.exe",
+    "-m",
+    "serveur_mcp"
+  ],
+  "limite_s": 0.2,
+  "mesure": "Création du processus jusqu'à réception de la réponse initialize complète.",
+  "caches": "Non vidés : premier essai distinct, suivants à caches potentiellement chauds.",
+  "essais": [
+    {
+      "initialize_s": 1.001683,
+      "catalogues_s": 1.005732,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 1.011535,
+      "catalogues_s": 1.015517,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 0.943508,
+      "catalogues_s": 0.947807,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 0.929782,
+      "catalogues_s": 0.93361,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 1.289802,
+      "catalogues_s": 1.295681,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "premier_s": 1.001683,
+  "minimum_s": 0.929782,
+  "mediane_s": 1.001683,
+  "maximum_s": 1.289802,
+  "conforme": false
+}

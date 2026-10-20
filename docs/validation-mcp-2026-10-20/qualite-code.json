@@ -1,0 +1,395 @@
+{
+  "date": "2026-10-20T06:46:54.447Z",
+  "portee": "Neuf fichiers ciblés; sept fichiers MCP sans diagnostic, provenance contrôlée avec comparaison explicite au HEAD. Ne certifie pas le dépôt complet.",
+  "fichiers": [
+    {
+      "chemin": "outils/mesurer_demarrage_mcp.py",
+      "diagnostics": [],
+      "sha256": "257adc2f8d43b4f7d8f8a11ff2898e10fa9bb2d2654df6a526c2abefb39ce679"
+    },
+    {
+      "chemin": "tests/test_demarrage_mcp.py",
+      "diagnostics": [],
+      "sha256": "963e9129c0371c861fc8a9ebc7f72a14bb0b40922c36db742fbc4389a94b0bef"
+    },
+    {
+      "chemin": "serveur_mcp/sources.py",
+      "diagnostics": [],
+      "sha256": "0227cbc09571d2185ce74bc2943c53bcc1de6dc9970adffa2dc106b6b6759293"
+    },
+    {
+      "chemin": "tests/test_sources_mcp.py",
+      "diagnostics": [],
+      "sha256": "14bf63baf033ae755b7083a22ddbf87e19af29e128712181bd91eae0f0386320"
+    },
+    {
+      "chemin": "serveur_mcp/livrables.py",
+      "diagnostics": [],
+      "sha256": "df03f9d309bc4c39500345ae60e2477588db251d1865c056cd2d66966826173c"
+    },
+    {
+      "chemin": "tests/test_mcp_livrables.py",
+      "diagnostics": [],
+      "sha256": "40b926b080553aac1cb679e3ac6e09a46f5517af68720a8c6903490df2c32627"
+    },
+    {
+      "chemin": "tests/test_etiquetage_mcp.py",
+      "diagnostics": [],
+      "sha256": "7d6960c0e080ef1f6179a88e1257991766f3f6d00ce40aa2e0fbde356ce5a371"
+    },
+    {
+      "chemin": "releve/blocs_vers_releve.py",
+      "diagnostics": [
+        {
+          "range": {
+            "start": {
+              "line": 86,
+              "character": 27
+            },
+            "end": {
+              "line": 86,
+              "character": 31
+            }
+          },
+          "message": "\"None\" is not iterable\n  \"__iter__\" method not defined",
+          "severity": 1,
+          "code": "reportGeneralTypeIssues",
+          "source": "Pyright",
+          "codeDescription": {
+            "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportGeneralTypeIssues"
+          }
+        },
+        {
+          "range": {
+            "start": {
+              "line": 96,
+              "character": 54
+            },
+            "end": {
+              "line": 96,
+              "character": 65
+            }
+          },
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown",
+          "severity": 1,
+          "code": "reportAttributeAccessIssue",
+          "source": "Pyright",
+          "codeDescription": {
+            "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+          }
+        },
+        {
+          "range": {
+            "start": {
+              "line": 97,
+              "character": 54
+            },
+            "end": {
+              "line": 97,
+              "character": 65
+            }
+          },
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown",
+          "severity": 1,
+          "code": "reportAttributeAccessIssue",
+          "source": "Pyright",
+          "codeDescription": {
+            "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+          }
+        },
+        {
+          "range": {
+            "start": {
+              "line": 98,
+              "character": 54
+            },
+            "end": {
+              "line": 98,
+              "character": 65
+            }
+          },
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown",
+          "severity": 1,
+          "code": "reportAttributeAccessIssue",
+          "source": "Pyright",
+          "codeDescription": {
+            "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+          }
+        },
+        {
+          "range": {
+            "start": {
+              "line": 99,
+              "character": 54
+            },
+            "end": {
+              "line": 99,
+              "character": 65
+            }
+          },
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown",
+          "severity": 1,
+          "code": "reportAttributeAccessIssue",
+          "source": "Pyright",
+          "codeDescription": {
+            "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+          }
+        }
+      ],
+      "sha256": "c39437364c71dfb38a7bf436988f0b59ea1e3a55b32e06dec5eb308258277e6a"
+    },
+    {
+      "chemin": "tests/test_blocs_provenance.py",
+      "diagnostics": [],
+      "sha256": "3b4dffd40d8139866c9db892c7305b842a3481e36e6d359fc2071a2cda89fe6f"
+    }
+  ],
+  "ruff": {
+    "version": "ruff 0.17.1",
+    "nouveaux_fichiers": {
+      "commande": [
+        "uv",
+        "tool",
+        "run",
+        "ruff",
+        "check",
+        "--output-format",
+        "json",
+        "outils/mesurer_demarrage_mcp.py",
+        "tests/test_demarrage_mcp.py",
+        "serveur_mcp/sources.py",
+        "tests/test_sources_mcp.py",
+        "serveur_mcp/livrables.py",
+        "tests/test_mcp_livrables.py"
+      ],
+      "exit_code": 0,
+      "diagnostics": []
+    },
+    "sept_fichiers": {
+      "commande": [
+        "uv",
+        "tool",
+        "run",
+        "ruff",
+        "check",
+        "--output-format",
+        "json",
+        "outils/mesurer_demarrage_mcp.py",
+        "tests/test_demarrage_mcp.py",
+        "serveur_mcp/sources.py",
+        "tests/test_sources_mcp.py",
+        "serveur_mcp/livrables.py",
+        "tests/test_mcp_livrables.py",
+        "tests/test_etiquetage_mcp.py"
+      ],
+      "exit_code": 0,
+      "diagnostics": []
+    },
+    "reference": {
+      "commit": "413ccceba4782f60d144f360ec67f2d8cffcf834",
+      "source": "git show HEAD:tests/test_etiquetage_mcp.py",
+      "exit_code": 1,
+      "diagnostics": 7
+    },
+    "nouveaux_diagnostics": 0,
+    "diagnostics_historiques_corriges": 7
+  },
+  "lsp": {
+    "serveur": "pyright-langserver 1.1.414",
+    "commande": [
+      "uv",
+      "tool",
+      "run",
+      "--from",
+      "pyright",
+      "pyright-langserver",
+      "--stdio"
+    ],
+    "python": ".venv/Scripts/python.exe",
+    "mode": "basic",
+    "protocole": "initialize, initialized, didChangeConfiguration, didOpen; attente pyright/endProgress; shutdown, exit",
+    "exit_code": 0,
+    "harnais_exit_code": 0,
+    "stderr": "",
+    "diagnostics": 0,
+    "portee": "Les sept fichiers MCP de la première passe, sans les deux fichiers provenance détaillés ci-dessous."
+  },
+  "corrections_verifiees": [
+    "Le diagnostic de type union openpyxl dans le test de réserve de portée est résolu par une assertion isinstance(str).",
+    "Les sept diagnostics Ruff historiques du test étiquetage sont corrigés : directives noqa inutiles supprimées, lecture CSV avec with, délégation de lecture bloquante par asyncio.to_thread."
+  ],
+  "provenance": {
+    "fichiers": [
+      "releve/blocs_vers_releve.py",
+      "tests/test_blocs_provenance.py"
+    ],
+    "reference_commit": "413ccceba4782f60d144f360ec67f2d8cffcf834",
+    "ruff": {
+      "exit_code": 1,
+      "diagnostics": [
+        {
+          "code": "I001",
+          "ligne": 20,
+          "ligne_HEAD": 20,
+          "message": "Import block is un-sorted or un-formatted"
+        },
+        {
+          "code": "F401",
+          "ligne": 24,
+          "ligne_HEAD": 24,
+          "message": "`pymupdf` imported but unused"
+        },
+        {
+          "code": "I001",
+          "ligne": 27,
+          "ligne_HEAD": 27,
+          "message": "Import block is un-sorted or un-formatted"
+        },
+        {
+          "code": "RUF100",
+          "ligne": 27,
+          "ligne_HEAD": 27,
+          "message": "Unused `noqa` directive (non-enabled: `E402`)"
+        },
+        {
+          "code": "RUF100",
+          "ligne": 28,
+          "ligne_HEAD": 28,
+          "message": "Unused `noqa` directive (non-enabled: `E402`)"
+        },
+        {
+          "code": "RUF100",
+          "ligne": 29,
+          "ligne_HEAD": 29,
+          "message": "Unused `noqa` directive (non-enabled: `E402`)"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 105,
+          "ligne_HEAD": 80,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 106,
+          "ligne_HEAD": 81,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 107,
+          "ligne_HEAD": 82,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 120,
+          "ligne_HEAD": 95,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "RUF100",
+          "ligne": 166,
+          "ligne_HEAD": 141,
+          "message": "Unused `noqa` directive (non-enabled: `E501`)"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 274,
+          "ligne_HEAD": 249,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "PERF102",
+          "ligne": 284,
+          "ligne_HEAD": 259,
+          "message": "When using only the values of a dict use the `values()` method"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 319,
+          "ligne_HEAD": 294,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 378,
+          "ligne_HEAD": 350,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 456,
+          "ligne_HEAD": 419,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 457,
+          "ligne_HEAD": 420,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 485,
+          "ligne_HEAD": 446,
+          "message": "Use a context manager for opening files"
+        },
+        {
+          "code": "SIM115",
+          "ligne": 493,
+          "ligne_HEAD": 453,
+          "message": "Use a context manager for opening files"
+        }
+      ],
+      "diagnostics_HEAD": 27,
+      "nouveaux_diagnostics": 0,
+      "test_diagnostics": 0
+    },
+    "lsp": {
+      "serveur_exit_code": 0,
+      "harnais_exit_code": 1,
+      "stderr": "",
+      "diagnostics": [
+        {
+          "code": "reportGeneralTypeIssues",
+          "ligne": 87,
+          "ligne_HEAD": 62,
+          "message": "\"None\" is not iterable\n  \"__iter__\" method not defined"
+        },
+        {
+          "code": "reportAttributeAccessIssue",
+          "ligne": 97,
+          "ligne_HEAD": 72,
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown"
+        },
+        {
+          "code": "reportAttributeAccessIssue",
+          "ligne": 98,
+          "ligne_HEAD": 73,
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown"
+        },
+        {
+          "code": "reportAttributeAccessIssue",
+          "ligne": 99,
+          "ligne_HEAD": 72,
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown"
+        },
+        {
+          "code": "reportAttributeAccessIssue",
+          "ligne": 100,
+          "ligne_HEAD": 73,
+          "message": "Cannot access attribute \"reconfigure\" for class \"TextIO\"\n  Attribute \"reconfigure\" is unknown"
+        }
+      ],
+      "baseline_serveur_exit_code": 0,
+      "baseline_harnais_exit_code": 1,
+      "diagnostics_HEAD": 5,
+      "nouveaux_diagnostics": 0,
+      "test_diagnostics": 0
+    },
+    "corrections": "Quatre diagnostics nouveaux corrigés : un ordre des imports du test et trois parenthèses autour de chaînes multilignes. Aucun changement de comportement par ces corrections de style.",
+    "limites": "Le module conserve 19 diagnostics Ruff et 5 diagnostics LSP préexistants; les outils retournent exit 1. Comparaison code, message et ligne de source contre le HEAD.",
+    "derniere_passe": "Après filtrage des passes automatiques par classer_feuille, réserves alignées et tests paramétrés des non-plans."
+  }
+}

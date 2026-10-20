@@ -27,6 +27,22 @@ def test_facteur_de_zone_la_plus_petite_puis_feuille():
     assert serveur.facteur_de(regles, "F2", 150, 150) == 1.0   # autre feuille -> 1
 
 
+@pytest.mark.parametrize(("note", "bloquant"), [
+    ("cartouche=E101 · APPAREIL TYPE D3-N", False),
+    ("feuille=E101 · APPAREIL TYPE D3-N", False),
+    ("LOGEMENT TYPE A (RDC ET 2E ETAGE)", True),
+])
+def test_controle_multiplicateurs_titre_automatique_ou_note_confirmee(tmp_path, note, bloquant):
+    classement = [{"feuille": "E101", "type": "plan", "note": note}]
+    erreurs, alertes = serveur.controle_multiplicateurs(tmp_path, classement)
+    assert len(erreurs) == int(bloquant)
+    assert len(alertes) == int(not bloquant)
+    assert "sans multiplicateur" in (erreurs or alertes)[0]
+    (tmp_path / "multiplicateurs.csv").write_text(
+        "feuille,facteur,source\nE101,1,Une unité confirmée sur le plan\n", encoding="utf-8")
+    assert serveur.controle_multiplicateurs(tmp_path, classement) == ([], [])
+
+
 async def _chaine(tmp_path):
     async with Client(serveur.mcp) as c:
         assert "quantites" in {t.name for t in (await c.list_tools()).tools}

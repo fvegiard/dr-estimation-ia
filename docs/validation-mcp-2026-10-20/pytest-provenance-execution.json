@@ -1,0 +1,15 @@
+{
+  "commande": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_blocs_provenance.py",
+    "tests/test_blocs_vectoriels.py",
+    "tests/test_multiplicateurs.py",
+    "-q",
+    "--tb=short",
+    "--basetemp=travail-mcp/pytest-provenance-parent",
+    "--junitxml=docs/validation-mcp-2026-10-20/pytest-provenance.xml"
+  ],
+  "exit_code": 0
+}

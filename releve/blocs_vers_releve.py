@@ -33,6 +33,31 @@ TYPES_LUM = re.compile(r"^(A\d|B\d|C\d(_\d)?|D\d|E|G\d|Z\d)$")   # pas « F » s
 CIRCUIT = re.compile(r"^(P{1,2}-?U?\d+|PR-\d+|\(?[A-Za-z]{1,2}(,[A-Za-z]{1,2})?\)?|\(M[a-z]\)|\d{1,2})$")
 
 
+def source_feuille(feuille, feuilles):
+    """Provenance issue de l'inventaire, sans supposer un cartouche ou une légende."""
+    entree = feuilles.get(feuille, {})
+    fichier = entree.get("fichier") or "fichier non renseigné"
+    page = entree.get("page") or "non renseignée"
+    return f"{fichier}, page {page}, feuille {feuille}"
+
+
+def classer_feuille(feuille):
+    """Le rôle et le titre priment sur le nom interne attribué au PDF."""
+    role = (feuille.get("role") or "").strip().lower()
+    if role in {"legende", "devis", "tableau", "schema", "detail"}:
+        return role
+    titre = (feuille.get("titre") or "").strip().upper().replace("É", "E")
+    for motif, type_feuille in (
+        (r"\bLEGENDES?\b", "legende"),
+        (r"\b(TABLEAUX?|PANNEAUX?)\b", "tableau"),
+        (r"\bSCHEMAS?\b", "schema"),
+        (r"\bDETAILS?\b", "detail"),
+    ):
+        if re.match(motif, titre):
+            return type_feuille
+    return "plan" if role == "plan" else "detail"
+
+
 def rect_minimal(pts):
     """Rectangle minimal (centre, w, h, angle°) d'un nuage de points : rotation par les arêtes de l'enveloppe convexe."""
     P = np.unique(np.round(np.array(pts, dtype=float), 3), axis=0)
@@ -87,7 +112,7 @@ def main():
     pages = PagesFeuilles(work, a.pdf)      # chaque feuille dans SON document source (revue Codex PR #28)
     occ, nom, portees = [], {}, defaultdict(Counter)
     for f, fr in feuilles.items():
-        if fr.get("role") != "plan":
+        if classer_feuille(fr) != "plan":
             continue
         p = os.path.join(work, "blocs", f + ".csv")
         if not os.path.exists(p):
@@ -160,7 +185,7 @@ def main():
             portees[label][portee] += 1
             if label not in nom:
                 nom[label] = {"label": label, "famille": regle["famille"], "forme": forme, "rgb": "", "jeton_regex": "",
-                              "description": meta["materiel"] + (f" — type {typ}" if typ else ""), "source": f"E-001 légende ; bloc {regle['sig_id']}",
+                              "description": meta["materiel"] + (f" — type {typ}" if typ else ""), "source": f"{source_feuille(f, feuilles)} ; bloc {regle['sig_id']}",
                               "code": (typ.replace("_", "") if typ else meta["code"]), "materiel": meta["materiel"] + (f" TYPE {typ}" if typ else ""),
                               "portee": "", "modele": typ, "prescription": "", "discipline": "electricite", "legende": meta["legende"]}
     # 1) dédoublonnage : deux blocs superposés (barre + son contour, deux signatures) = un seul appareil
@@ -177,7 +202,7 @@ def main():
     #     signature unique (même épaisseur de trait) ; le CERCLE, lui, reste une partie identifiable. Classement par
     #     ce que le cercle contient : partie remplie → PRISE DDFT (demi-cercle plein), ≥ 1 trait → PRISE DOUBLE 15A.
     for f, fr in feuilles.items():
-        if fr.get("role") != "plan" or not re.match(r"E1\d\d", f):
+        if classer_feuille(fr) != "plan" or not re.match(r"E1\d\d", f):
             continue
         page = pages.page(fr)
         texte_page = page.get_text().upper()
@@ -228,14 +253,14 @@ def main():
                         "portee": portee, "modele": "", "reserve": "", "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": f"{max(r.width, r.height) / 2 + 0.8:.1f}"})
             deja.append((cx, cy, max(r.width, r.height) / 2 + 1.1))
             if label not in nom:
-                nom[label] = {"label": label, "famille": "prise", "forme": "cercle", "rgb": "", "jeton_regex": "", "description": mat, "source": "E-001 légende ; cercles vectoriels",
+                nom[label] = {"label": label, "famille": "prise", "forme": "cercle", "rgb": "", "jeton_regex": "", "description": mat, "source": f"{source_feuille(f, feuilles)} ; cercles vectoriels",
                               "code": code, "materiel": mat, "portee": portee, "modele": "", "prescription": "", "discipline": "electricite", "legende": leg}
     sans_bloc, sur_mot = [], []
     # 2) luminaires typés sur feuille NOUVEAU : l'ÉTIQUETTE est l'unité (une rangée linéaire « C1 + C1_1 » = 2 modules ;
     #    E-203 : mots C1 x12, C1_1 x6, C1_3 x15 = tableau E-008). On remplace les occurrences de blocs typés par une
     #    occurrence par étiquette, posée sur le bloc le plus proche (boîte du bloc si ce bloc n'a qu'une étiquette).
     for f, fr in feuilles.items():
-        if fr.get("role") != "plan":
+        if classer_feuille(fr) != "plan":
             continue
         page = pages.page(fr)
         texte_page = page.get_text().upper()
@@ -286,8 +311,8 @@ def main():
                 occ.append(o)
                 # fiche de famille normalisée pour TOUS les types (même si le passage par blocs l'avait déjà créée)
                 nom[o["label"]] = {"label": o["label"], "famille": "eclairage", "forme": nom.get(o["label"], {}).get("forme") or ("cercle" if not o["x0_pt"] else "carre"),
-                                   "rgb": "", "jeton_regex": "", "description": f"Luminaire type {typ} (tableau E-008)", "source": f"{f} étiquettes", "code": typ.replace("_", ""),
-                                   "materiel": f"APPAREIL D'ÉCLAIRAGE TYPE {typ}", "portee": "INSTALLER", "modele": typ, "prescription": "", "discipline": "electricite", "legende": "E-008"}
+                                   "rgb": "", "jeton_regex": "", "description": f"Luminaire type {typ}", "source": f"{source_feuille(f, feuilles)} ; étiquettes", "code": typ.replace("_", ""),
+                                   "materiel": f"APPAREIL D'ÉCLAIRAGE TYPE {typ}", "portee": "INSTALLER", "modele": typ, "prescription": "", "discipline": "electricite", "legende": "ETIQUETTES PLAN"}
     # 3) instances posées à la main (pictogrammes aux signatures uniques : enseignes, détecteurs, encastrés d'urgence)
     p_inst = os.path.join(work, "blocs-instances.csv")
     if os.path.exists(p_inst):
@@ -297,14 +322,14 @@ def main():
                         "x0_pt": "", "y0_pt": "", "x1_pt": "", "y1_pt": "", "angle_deg": "", "rayon_pt": r["rayon_pt"]})
             if r["label"] not in nom:
                 nom[r["label"]] = {"label": r["label"], "famille": r["famille"], "forme": r["forme"], "rgb": "", "jeton_regex": "",
-                                   "description": r["materiel"], "source": "E-001 légende ; instances manuelles", "code": r["code"],
+                                   "description": r["materiel"], "source": f"{source_feuille(r['feuille'], feuilles)} ; instances manuelles", "code": r["code"],
                                    "materiel": r["materiel"], "portee": r["portee"], "modele": "", "prescription": "", "discipline": "electricite", "legende": r["legende_no"]}
     # Pages tournées (Rotate 90/270) : blocs, tracés et mots sont dans le repère NON tourné ; le relevé, les rasters de
     # prepare.py et le rendu sont dans le repère AFFICHÉ → conversion de chaque occurrence issue des blocs (centre, boîte
     # tournée recalculée sur ses 4 coins) ; les instances manuelles (`blocs-instances.csv`) sont déjà saisies sur les
     # planches, donc dans le repère affiché (revue Codex PR #28)
     for f, fr in feuilles.items():
-        if fr.get("role") != "plan" or not any(o["feuille"] == f for o in occ):
+        if classer_feuille(fr) != "plan" or not any(o["feuille"] == f for o in occ):
             continue
         page = pages.page(fr)
         if not page.rotation:
@@ -334,9 +359,12 @@ def main():
     nom = {k: v for k, v in nom.items() if k in portees}
     for label, n in nom.items():
         n["portee"] = portees[label].most_common(1)[0][0]
+        preuves = sorted({f"{source_feuille(o['feuille'], feuilles)} ; {o['note']}"
+                          for o in occ if o["label"] == label})
+        n["source"] = " / ".join(preuves)
     # 4) legende.csv depuis les blocs de la feuille de légende (description lue à droite du glyphe), sections par zone
     leg_rows = []
-    f_leg = next((f for f, fr in feuilles.items() if fr.get("role") == "legende"), None)
+    f_leg = next((f for f, fr in feuilles.items() if classer_feuille(fr) == "legende"), None)
     if f_leg and os.path.exists(os.path.join(work, "blocs", f_leg + ".csv")):
         page_l = pages.page(feuilles[f_leg])
         heads = [(b[0], b[1], b[4].strip().split("\n")[0].upper()) for b in page_l.get_text("blocks")
@@ -377,11 +405,12 @@ def main():
             cands = exact or [r for r in leg_rows if len(norm(r["description"])) >= 6 and cible.startswith(norm(r["description"]))] \
                 or [r for r in leg_rows if norm(r["description"]) == base] \
                 or [r for r in leg_rows if len(norm(r["description"])) >= 6 and base.startswith(norm(r["description"]))]
-            hit = max(cands, key=lambda r: len(norm(r["description"]))) if cands and n["legende"] != "E-008" else None
+            hit = max(cands, key=lambda r: len(norm(r["description"]))) if cands and n["legende"] != "ETIQUETTES PLAN" else None
             if hit:
                 n["legende"] = hit["no"]; hit["statut"] = "compte"; hit["qte"] = int(hit["qte"]) + sum(portees[label].values())
                 hit["preuve"] = f"famille {label} : {sum(portees[label].values())} occurrences (blocs vectoriels)"
-            elif n["legende"] == "E-008":
+                n["source"] += f" ; légende {source_feuille(f_leg, feuilles)}, ligne {hit['no']}"
+            elif n["legende"] == "ETIQUETTES PLAN":
                 pass
             else:
                 n["legende"] = "HORS LEGENDE"
@@ -389,11 +418,12 @@ def main():
             pris = {m["code"] for l2, m in nom.items() if l2 != label}
             if attendu and attendu not in pris:
                 n["code"] = attendu          # sinon on garde le code de la règle (ex. USB « PU » ≠ prises « PC ») : le bordereau groupe par code
-        # luminaires typés : leur « légende » est le tableau des appareils E-008 (une ligne par type)
+        # Types réellement lus sur les plans : ne pas inventer une référence de tableau.
         for label, n in nom.items():
-            if n["legende"] == "E-008":
-                no = f"E008-{n['modele'].replace('_', '')}"
-                leg_rows.append({"feuille": f_leg, "section": "TABLEAU E-008", "no": no, "symbole": f"étiquette {n['modele']}", "description": n["materiel"],
+            if n["legende"] == "ETIQUETTES PLAN":
+                no = f"TYPE-{n['modele'].replace('_', '')}"
+                feuilles_type = sorted({o["feuille"] for o in occ if o["label"] == label})
+                leg_rows.append({"feuille": feuilles_type[0], "section": "TYPES LUS SUR PLANS", "no": no, "symbole": f"étiquette {n['modele']}", "description": n["materiel"],
                                  "code": n["code"], "statut": "compte", "qte": sum(portees[label].values()), "preuve": f"étiquettes {n['modele']} sur les feuilles NOUVEAU",
                                  "feuille_legende": "", "x_pt": "", "y_pt": "", "taille_pt": ""})
                 n["legende"] = no
@@ -401,18 +431,25 @@ def main():
             w = csv.DictWriter(fh, fieldnames=["feuille", "section", "no", "symbole", "description", "code", "statut", "qte", "preuve", "feuille_legende", "x_pt", "y_pt", "taille_pt"])
             w.writeheader(); w.writerows(leg_rows)
     # 5) réserves et rapport
-    def no_de(label):
-        return (nom.get(label) or {}).get("legende") or "HORS LEGENDE"
+    feuilles_comptees = sorted({o["feuille"] for o in occ})
+    sources = [source_feuille(f, feuilles) for f in feuilles]
     R = ["# Réserves — relevé par blocs vectoriels (blocs_vectoriels.py → blocs_vers_releve.py)", "",
-         "## R-001 — Méthode", "Chaque symbole est un bloc CAO ; les blocs de même signature (invariante à la position, la rotation et l'échelle, "
-         "lettre contenue incluse) sont étiquetés une fois (`blocs-familles.csv`, planches `signatures-NN.png`), puis chaque instance devient une "
-         "occurrence au centre exact du bloc, avec sa boîte tournée. Validé sur E-201 contre le relevé vérifié TEST-E201 : 116/121 repères "
-         "retrouvés à ≤ 5 pt, précision par signature 34/34, 17/17, 11/11.", "",
-         "## R-002 — Portée", "E.A.E → ENLEVER, E.A.R → RELOCALISER, E.A.C → CONSERVER lus à ≤ 14 pt du bloc ; sans étiquette : CONSERVER sur une feuille "
-         "EXISTANT/DÉMOLITION, INSTALLER sur une feuille NOUVEAU — sauf luminaire sans lettre de type sur feuille NOUVEAU (existant dessiné pour contexte → CONSERVER). "
-         "À confirmer famille par famille sur les planches de contrôle.", "",
-         "## R-003 — Luminaires typés (E-203/E-204)", "L'unité est l'ÉTIQUETTE (A1, C1, C1_1, C1_3, E) : une rangée linéaire « C1 + C1_1 » = 2 modules. "
-         "E-203 : A1 11, C1 12, C1_1 6, C1_3 15 = tableau E-008 et relevé d'éclairage du 2026-10-07. LUMINAIRE E : 3 étiquettes sur bloc (l'estimation en compte 4) — à trancher au zoom.", ""]
+         "## R-001 — Méthode et provenance",
+         ("Les signatures sont classées dans `blocs-familles.csv`; les occurrences retenues sont détaillées dans "
+         "`occurrences-visuel.csv`. L'identité et l'ancrage de chaque symbole restent à contrôler sur les planches. "
+         "Aucun résultat de validation d'un autre dossier ne certifie ce relevé."),
+         "Feuilles comptées : " + (", ".join(feuilles_comptees) or "aucune") + ".", "",
+         "## R-002 — Portées calculées à confirmer",
+         ("Règles appliquées : E.A.E/E.A.D → ENLEVER, E.A.R → RELOCALISER, E.A.C → CONSERVER à proximité du bloc. "
+         "Sans étiquette, le programme utilise INSTALLER lorsque NOUVEAU est reconnu sans EXISTANT/DÉMOLITION; "
+         "sinon CONSERVER. Les règles de bibliothèque et les luminaires sans type peuvent aussi imposer CONSERVER. "
+         "Ce sont des hypothèses du moteur à confirmer sur les sources, pas des prescriptions universelles."), ""]
+    types_lus = Counter(o["modele"] for o in occ if o.get("modele"))
+    if types_lus:
+        R += ["## R-003 — Types lus sur les plans",
+              ("Le moteur compte les étiquettes de type associées aux luminaires. Confirmer au zoom que chaque étiquette "
+              "désigne un appareil distinct; aucune concordance avec un tableau d'appareils n'est présumée."),
+              ", ".join(f"{typ} : {nombre}" for typ, nombre in sorted(types_lus.items())), ""]
     # R-008 — comptage incomplet : signatures non étiquetées / ambiguës (blocs_familles_auto.py) et feuilles sans tracés
     # vectoriels (run.py) — chaque ligne nomme ses feuilles pour tomber dans leur bloc RÉSERVES du PDF (revue Copilot PR #28)
     p_inc = os.path.join(work, "blocs-a-etiqueter.json"); p_nr = os.path.join(work, "blocs-non-relevees.json")
@@ -428,24 +465,27 @@ def main():
         R += ["## R-004b — Occurrences posées sur l'ÉTIQUETTE (réserve * : symbole non ancré)", ""] + [f"- {f} : « {t} » à ({x}, {y})" for f, t, x, y in sur_mot] + [""]
     if sans_bloc:
         R += ["## R-004 — Étiquettes de type sans bloc à ≤ 12 pt (écartées, cartouche/notes probables)", ""] + [f"- {f} : « {t} » à ({x}, {y})" for f, t, x, y in sans_bloc] + [""]
-    R += ["## R-005 — Pictogrammes (instances manuelles, `blocs-instances.csv`)", "Enseignes Z6 (3, tracé pointillé : confirmer neuf — E-008 en liste 3), détecteurs de fumée (3 existants pointillés + neufs pleins), "
-          "encastrés sur circuit d'urgence PP-U1 (quart noir). Les pictogrammes ont des signatures uniques (courbes, remplissages), ils ne se regroupent pas automatiquement.", "",
-          "## Q12 — familles par type sur une même ligne de légende (justification)",
-          f"{no_de('ENCASTRE')} (encastré) → ENCASTRE (existant), ENCASTRE URGENCE (quart noir, circuit PP-U1) et LUMINAIRE E (type E du tableau E-008) ; "
-          f"{no_de('LED 1X4')} ('x4) → LED 1X4 (existant) et LUMINAIRE A1 (type A1 neuf) ; {no_de('PRISE DOUBLE 15A')} (prise double 15 A) → PRISE DOUBLE 15A, "
-          f"{no_de('PRISE USB')} (symbole « USB ») → PRISE USB. "
-          "Une famille par type de luminaire est voulue : le chiffrage est par type (E-008), pas par symbole (règle R7 : nommer comme la légende/le tableau).", "",
-          "## R-007 — Prises (cercles vectoriels, feuilles E-10x)", "Détectées au niveau de la partie (cercle fermé 3,3–5 pt, trait ≥ 0,35 pt) parce que deux prises côte à côte ou une prise collée "
-          "à une sortie data fusionnent en un seul bloc. PRISE DDFT = cercle contenant une partie remplie (légende : demi-cercle plein = DDFT ; barre pleine = M.A.L.T. isolée — "
-          "les deux variantes tombent ici dans PRISE DDFT, à départager au zoom) ; PRISE DOUBLE 15A = cercle traversé d'au moins un trait (15 A et 20 A non distingués : "
-          "le crochet 20 A est un petit trait à côté du cercle, à vérifier sur les planches). Comptoir/standard non distingués (même cercle, trait de comptoir à côté).", "",
-          "## Q14 — code PU (PRISE USB)", f"`code_attendu` donne PC pour la description « PRISE DE COURANT DOUBLE 15A- 120V TYPE Leviton Decora USB » ({no_de('PRISE USB')}), déjà pris par PRISE DOUBLE 15A ({no_de('PRISE DOUBLE 15A')}) ; "
-          "le bordereau groupant par (code, portée), PU est conservé pour ne pas fondre 20 USB et 23 prises ordinaires en une ligne.", "",
-          "## R-006 — Hors relevé", "Sorties data : triangle plein ≤ 6,5 pt seulement (les grandes flèches sont des renvois de circuit). Cercles nus, bulles d'axes, numéros de locaux, mobilier : ignorés. "
-          "Longueurs de conduits/filage : hors relevé (estimation du 2026-10-08). Panneaux E-501/E-502, schémas E-006/E-007 : non relevés (tableaux).", ""]
+    manuelles = Counter(o["feuille"] for o in occ if o["note"].startswith("instance manuelle"))
+    if manuelles:
+        R += ["## R-005 — Instances manuelles",
+              "Occurrences issues de `blocs-instances.csv`, à vérifier sur leurs feuilles : "
+              + ", ".join(f"{f} : {nombre}" for f, nombre in sorted(manuelles.items())) + ".", ""]
+    cercles = sorted({o["feuille"] for o in occ if o["note"].startswith("cercle ø")})
+    if cercles:
+        R += ["## R-007 — Classement des cercles vectoriels à confirmer",
+              "Feuilles : " + ", ".join(cercles) + ". Le classement automatique des prises selon les traits et remplissages "
+              "ne distingue pas toutes les variantes (DDFT/M.A.L.T. isolée, 15 A/20 A, comptoir/standard). "
+              "Confirmer chaque variante avec la légende du dossier et les planches de contrôle.", ""]
+    hors_plans = [f"{f} ({classer_feuille(fr)})" for f, fr in feuilles.items() if classer_feuille(fr) != "plan"]
+    R += ["## R-006 — Limites de couverture",
+          "Ce relevé décompte les symboles retenus; il ne mesure pas les longueurs de conduits ou de filage.",
+          "Feuilles exclues des plans : " + (", ".join(hors_plans) or "aucune") + ". "
+          "Les règles IGNORER et les plages de diamètre/feuille de `blocs-familles.csv` limitent les blocs comptés; "
+          "leur pertinence doit être confirmée sur les sources.", ""]
     open(os.path.join(work, "reserves.md"), "w", encoding="utf-8").write("\n".join(R))
-    T = ["# Rapport de relevé — S-1902 Bibliothèque Georgette-Lepage (SP-GTER-26-0080, HF experts-conseils 26-29)", "",
-         f"Entrée : P-D Électricité_2026-09-22.pdf, 21 feuilles A1 vectorielles. Méthode : blocs vectoriels (R-001). {len(occ)} occurrences, {len(nom)} familles.", "",
+    T = ["# Rapport de relevé — blocs vectoriels", "",
+         f"Inventaire : {len(feuilles)} feuille(s). Méthode : blocs vectoriels (R-001). {len(occ)} occurrences, {len(nom)} familles.",
+         "", "Sources de l'inventaire :", *[f"- {source}" for source in sources], "",
          "| feuille | occurrences |", "|---|--:|"] + [f"| {f} | {n} |" for f, n in sorted(Counter(o["feuille"] for o in occ).items())] + ["", "| famille | total | portées |", "|---|--:|---|"] \
         + [f"| {label} | {sum(c.values())} | {', '.join(f'{k} {v}' for k, v in c.most_common())} |" for label, c in sorted(portees.items())] \
         + ["", f"Étiquetage des signatures : {a.modele or 'non renseigné (--modele / RELEVE_MODELE_OBSERVE)'}. Outils déterministes : prepare.py, blocs_vectoriels.py, blocs_vignettes.py, blocs_vers_releve.py, controle_qualite.py.", "",
@@ -464,11 +504,9 @@ def main():
         w = csv.DictWriter(fh, fieldnames=["feuille", "type", "echelle", "note", "bordereau"]); w.writeheader()
         for f, fr in feuilles.items():
             t = (fr.get("titre") or "")
-            role = fr.get("role")
-            typ = "plan" if role == "plan" and re.match(r"E[12]0\d", f) else ("legende" if role == "legende" else "devis" if role == "devis" else
-                  "schema" if "SCHÉMA" in t.upper() else "tableau" if "TABLEAU" in t.upper() or "PANNEAUX" in t.upper() else "detail")
+            typ = classer_feuille(fr)
             ech = "100" if "1:100" in t else ""
-            w.writerow({"feuille": f, "type": typ, "echelle": ech, "note": f"cartouche={f[:1]}-{f[1:]} · {t[:70]}", "bordereau": ""})
+            w.writerow({"feuille": f, "type": typ, "echelle": ech, "note": f"feuille={f} · {t[:70]}", "bordereau": ""})
     par_f = Counter(o["feuille"] for o in occ)
     print(f"{len(occ)} occurrences, {len(nom)} familles → nomenclature.csv / occurrences-visuel.csv ; par feuille : {dict(sorted(par_f.items()))}")
     for label, c in sorted(portees.items()):

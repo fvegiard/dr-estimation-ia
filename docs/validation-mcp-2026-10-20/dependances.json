@@ -1,0 +1,11 @@
+{
+  "commande": [
+    "uv",
+    "pip",
+    "check",
+    "--python",
+    ".venv/Scripts/python.exe"
+  ],
+  "exit_code": 0,
+  "sortie": "Checked 60 packages in 4ms\nAll installed packages are compatible\n"
+}

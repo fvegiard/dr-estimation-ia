@@ -1,0 +1,16 @@
+{
+  "commande": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_blocs_provenance.py",
+    "-q",
+    "--tb=short",
+    "--basetemp=travail-mcp/pytest-classement-final-parent",
+    "--junitxml=docs/validation-mcp-2026-10-20/pytest-classement-final.xml"
+  ],
+  "debut": "2026-10-20T06:46:57.357Z",
+  "fin": "2026-10-20T06:47:22.792Z",
+  "exit_code": 0,
+  "signal": null
+}

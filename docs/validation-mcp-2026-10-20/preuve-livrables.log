@@ -1,0 +1,22 @@
+{
+  "origine": "travail-mcp\\pytest-mission-definitif\\test_etiquetage_llm_puis_bibli0\\SUIVANT\\sortie",
+  "represente": 5,
+  "quantite": 5,
+  "mo_chiffrable": false,
+  "provenance_pdf_verifiee": "plans.pdf",
+  "sha256": {
+    "apercu.png": "2a0c93f12cba98ccb3f5fb7982c57c9edbc45120fdc44cae8140cae334194afd",
+    "bordereau.png": "2a1cfb34c435266b5f36f6d23f6842c29bcd62ff3267733f11571152f620b4d0",
+    "controle\\plans-p01-planche-01.png": "fc148988fbd85833832b27ba81e8ade532b50c1b6df89bcbd9ec38f33476827c",
+    "plans-p01.png": "d2d6addeda51a1ced569915f52bac0019a6b80370367ecc57020f0152b52bf4f",
+    "quantites.csv": "0d8cbd84d6785cd538b978dd9c3e00d4e4c6e2b009da93a71f2436493967ad31",
+    "SUIVANT-BOM-QUANTITES.csv": "770bd1cf7a980349044b34da9c6532a26ee1993d7199d7eb61ee2cd9f60eef4a",
+    "SUIVANT-BOM.csv": "91c47ed8e13f672eb7042cf14f63eb16759ebf04a190176f5700454e77a9c9fc",
+    "SUIVANT-BOM.xlsx": "dc5c6364f160ac7bcd0f4767e561a198e01c2058525554f0d4c75b919c2148f1",
+    "SUIVANT-ESTIMATION-MO.json": "4026bdfadc5157a23e048ca3a5dec9251c568d954270f68d32e30fa63516f6e0",
+    "SUIVANT-ESTIMATION-MO.md": "4980ec008b8c5edcc9413ae42a12e2beeb3eb2e77ba8dd30ab90f4f9df7725e1",
+    "SUIVANT-RELEVE.pdf": "d637b5796277ec7a476f3277ba3ab3e066c8d23b9fc18860bc7529ad0da86aa6",
+    "SUIVANT-rendu-rapport.json": "7e7eb432a0f9471a7e0d12ce03bfd30fc6cbb9b6ae5ad907c3a2908659ca3165",
+    "SUIVANT.qpl": "2ef4eaaef3f55743f6f1429d8580b1d56df84735bfe0b064599ca3ba478f2e8b"
+  }
+}

@@ -1,0 +1,38 @@
+{
+ "pages": 2,
+ "sheets": [
+  {
+   "sheet": "plans-p01",
+   "format": "agrege",
+   "plan_page": 1,
+   "bordereau_pages": [
+    2
+   ],
+   "reperes": 5,
+   "familles": 1,
+   "res": 5,
+   "box": [
+    120.0,
+    315.0,
+    355.0,
+    522.0
+   ],
+   "box_layout": [
+    1,
+    211.0,
+    32.045
+   ],
+   "box_in_free_space": true,
+   "bordereau_troncatures": 0,
+   "encadre": "v6",
+   "calques": 2,
+   "signet": "SUIVANT-plans-p01-annote-v1",
+   "signets_origine": 0
+  }
+ ],
+ "reperes": 5,
+ "conformite": {
+  "encadre_hors_espace_libre": [],
+  "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+ }
+}

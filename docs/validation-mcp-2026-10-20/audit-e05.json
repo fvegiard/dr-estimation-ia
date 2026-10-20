@@ -1,0 +1,22 @@
+{
+  "source": "travail-mcp\\TEST-PLAN-RAW\\entree\\E05-Electricite.pdf",
+  "reference": "dossiers\\HR26-14-essai\\E05\\HR26-14-E05-releve-1page.pdf",
+  "sha256_source": "24e22753712a84ff3522e898586824eba08afd4df1447af28c2c45dace4efcb8",
+  "sha256_reference": "24e22753712a84ff3522e898586824eba08afd4df1447af28c2c45dace4efcb8",
+  "copie_exacte_reference": true,
+  "raster_px": [
+    5694,
+    3796
+  ],
+  "tuiles": 12,
+  "signatures_distinctes": 249,
+  "signatures_au_moins_trois_instances": 106,
+  "blocs_candidats": 4824,
+  "occurrences_reconnues": 0,
+  "verification_quantites": "INCOMPLETE : source déjà annotée, pas de relevé brut validé",
+  "refus_source_corrige": "Source refusée (E05-Electricite.pdf) : page 1 : encadré de relevé et décompte de repères déjà présents. Fournir le plan original non annoté; le relevé appartient à reference/.",
+  "inspection_signatures_01": {
+    "cases": 30,
+    "constat": "Nombreux glyphes de texte et pastilles du relevé; aucun étiquetage appris depuis cette source."
+  }
+}

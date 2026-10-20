@@ -1,0 +1,12 @@
+{
+  "commande": [
+    ".venv/Scripts/python.exe",
+    "outils/mesurer_demarrage_mcp.py",
+    "--essais",
+    "5",
+    "--rapport",
+    "docs/validation-mcp-2026-10-20/demarrage-mcp.json"
+  ],
+  "exit_code": 1,
+  "contexte": "Aucun agent ni test de cette mission en parallèle; applications utilisateur laissées ouvertes."
+}

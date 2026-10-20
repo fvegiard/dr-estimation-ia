@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="SUIVANT">
+		<Description/>
+		<ContactName/>
+		<ContactInfo/>
+		<JobNumber/>
+		<Comment/>
+		<CreationDate>2026/10/20</CreationDate>
+		<LastModified>2026/10/20</LastModified>
+		<DisplayResultsForAllPlans>True</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+		<ActivePlan Name="plans-p01"/>
+		<RecentPlans>
+			<Plan Name="plans-p01"/>
+		</RecentPlans>
+	</Workspace>
+	<Plans>
+		<Plan Name="plans-p01" FileName="plans-p01.png">
+			<Thumbnail FileName="9aa3c763-f8db-4f60-aaad-c46024205b59"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1238" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="BOITE DE JONCTION" GroupID="1" Shape="1" DefaultSize="26" Text="1" Color="-13290019" PenWidth="2" PenType="Generic" FillColor="-13290019" ShowMeasure="True" Visible="True">&#13;
+						<Element X="917" Y="1383" Width="26" Height="26"/>&#13;
+						<Element X="1615" Y="1383" Width="26" Height="26"/>&#13;
+						<Element X="2313" Y="1383" Width="26" Height="26"/>&#13;
+						<Element X="3011" Y="1383" Width="26" Height="26"/>&#13;
+						<Element X="3709" Y="1383" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+		<Price Key="1;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="1" Precision="0">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>
