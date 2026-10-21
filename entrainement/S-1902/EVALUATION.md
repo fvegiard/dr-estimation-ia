@@ -16,6 +16,7 @@ produits (`chiffrage.py`, diagnostic statique pyright 1.1.414). Prix : `platform
 | sonnet-4 | Sonnet 5.5 | 8 min 49 s | 234 083 | 25 | 176 000 $ | −9,3 % |
 | sonnet-5 | Sonnet 5.5 | 10 min 43 s | 289 409 | 25 | 180 000 $ | −7,2 % |
 | essaim-1 | Opus 5.5 (seul, 5 lots) | 11 min 19 s | 256 885 | 39 | 170 000 $ | −12,4 % |
+| essaim-2 | Fable → 2 Opus → 6 Sonnet → 18 Haiku | **1 h 41 min** (mur d'horloge, 08:13 → 09:55) | ≥ 2,07 M mesurés (Fable 516 006, Opus A 439 441, Opus B 815 851, chef B3 168 685 pour sa seule 2e passe ; les 5 autres chefs et les 18 Haiku ≈ 1,2 M + 1,1 M estimés) | ≥ 94 (4 agents de tête) | 175 000 $ | −9,8 % |
 
 Moyennes : Opus solo 8 min 13 s / 243 k jetons ; Sonnet solo 9 min 02 s / 251 k jetons. **Même temps, mêmes jetons, même précision** :
 Sonnet n'est ni plus vite ni moins bon qu'Opus sur cette tâche.
@@ -29,7 +30,8 @@ Coût (tarif de base, hors cache ; les jetons rapportés ne séparent pas entré
 | Haiku 5.5 (≤100 k) | 0,10 $/MTok | 0,50 $/MTok | ≈ 0,04 $ |
 | Fable 5.1 | 10 $/MTok | 50 $/MTok | ≈ 3,9 $ |
 
-Banc de 8 solos ≈ 8,6 $. Avec cache (0,05× sur Opus/Sonnet 5.5 pour les lectures), le kit relu 8 fois coûterait une fraction.
+Banc de 8 solos ≈ 8,6 $. **Essaim 2 ≈ 20 $ à lui seul** (Fable 8,3 $ + Opus 8,0 $ + Sonnet ≈ 3,8 $ + Haiku ≈ 0,2 $) pour le même
+175 000 $ que sonnet-2 (0,78 $) : 25× le coût, 11× le temps, zéro gain de précision. Avec cache (0,05× sur Opus/Sonnet 5.5 pour les lectures), le kit relu 8 fois coûterait une fraction.
 
 ## 2. Canaux de communication entre modèles
 
@@ -39,6 +41,11 @@ Banc de 8 solos ≈ 8,6 $. Avec cache (0,05× sur Opus/Sonnet 5.5 pour les lectu
 - Essaim 2 (Fable → 2 Opus → 6 Sonnet → 18 Haiku) : converti en **relais par fichiers** : chaque niveau écrit les prompts et l'effort
   de ses subalternes dans `prompts/`, la session principale lance les agents, les sorties remontent par `lots/`. Le canal est
   donc : prompt écrit → fichier → agent → fichier JSON → niveau supérieur. Pas de dialogue aller-retour ; une seule passe par niveau.
+- Essaim 2, mesuré : 27 agents, ~45 lancements (chaque chef et directeur est relancé une fois pour consolider), 4 niveaux
+  de prompts réécrits (ARCHITECTURE.md → directeur → chef → releveur, règles d'aveugle recopiées 27 fois). Ce que le relais a
+  donné : contrôles 5/5 à chaque niveau, une table d'articles de bordereau (B3) et 44 doubles comptes documentés — de la
+  **traçabilité**, pas de la **précision** : le prix final (175 000 $) tombe sur les mêmes trois décisions manquantes que les
+  solos (postes composites, monuments, E.A.E/conduits). Un niveau de plus ne crée pas la règle que METHODE.md ne contient pas.
 - Conséquence : dans Claude Code, la profondeur de délégation est 1 (session → sous-agents). Une pyramide à la oh-my-pi exige un
   orchestrateur externe (OMC `omc team`, ou un script Agent SDK) qui lance chaque niveau lui-même. À tester dans la nuit.
 
@@ -63,7 +70,8 @@ Banc de 8 solos ≈ 8,6 $. Avec cache (0,05× sur Opus/Sonnet 5.5 pour les lectu
 
 ## 5. Erreurs de code — et ce qu'un agent-lsp aurait changé
 
-Exécution : 3 tracebacks en tout (opus-2 ×1, sonnet-5 ×2 avec 4 KeyError), 1 erreur d'outil (sonnet-5). Les agents ont corrigé
+Exécution, solos : 3 tracebacks en tout (opus-2 ×1, sonnet-5 ×2 avec 4 KeyError), 1 erreur d'outil (sonnet-5). Essaim 2 : 3 tracebacks
+chez Fable (étape 2) et 1 chez le directeur B, 0 chez le chef B3 — corrigés en une itération chacun. Les agents ont corrigé
 eux-mêmes en 1 à 2 itérations ; aucun script final ne plante.
 
 Diagnostic statique pyright sur les scripts **finaux** (ceux qui tournent) :
@@ -79,6 +87,7 @@ Diagnostic statique pyright sur les scripts **finaux** (ceux qui tournent) :
 | sonnet-4 | 4 | |
 | sonnet-5 | 4 | reportArgumentType ×4 (valeur de cellule → int) |
 | essaim-1 | 10 | reportPossiblyUnboundVariable ×4, Optional ×4, ArgumentType ×2 |
+| essaim-2 (Fable) | **0** | — (18 Ko, lit lots/*.json + kit, 47 libellés revérifiés au catalogue par le script lui-même) |
 
 Lecture : 38 défauts de typage latents dans 9 scripts qui « marchent ». Ce sont exactement les cas qui plantent au prochain
 dossier (cellule vide → None, variable non définie dans une branche). **Un agent-lsp branché (pyright via `agent-lsp`) les aurait
@@ -98,12 +107,13 @@ Ce que l'agent aurait eu besoin d'avoir installé, liste exacte :
 
 | Critère | Solo Opus | Solo Sonnet | Essaim 1 | Essaim 2 |
 |---|---|---|---|---|
-| Précision (écart prix) | −7 à −13 % | −7 à −13 % | −12 % | en cours |
-| Temps | 8 min | 9 min | 11 min | en cours |
-| Coût | ≈ 1,6 $ | ≈ 0,8 $ | ≈ 1,6 $ | en cours |
-| Reproductibilité du script | oui (9/9) | oui | oui | |
-| Indépendance de vérification | aucune | aucune | aucune (même instance) | par niveaux |
+| Précision (écart prix) | −7 à −13 % | −7 à −13 % | −12,4 % | −9,8 % |
+| Temps | 8 min | 9 min | 11 min | 1 h 41 |
+| Coût | ≈ 1,6 $ | ≈ 0,8 $ | ≈ 1,6 $ | ≈ 20 $ |
+| Reproductibilité du script | oui (9/9) | oui | oui | oui (pyright 0 erreur) |
+| Indépendance de vérification | aucune | aucune | aucune (même instance) | réelle (5/5 à 3 niveaux, 44 doubles comptes tracés) |
 
-Sur cette tâche, **Sonnet 5.5 solo = Opus 5.5 solo à la moitié du prix**. Ce qui ferait gagner les derniers pourcentages n'est ni
+Sur cette tâche, **Sonnet 5.5 solo = Opus 5.5 solo à la moitié du prix**, et **l'essaim 2 = sonnet-2 à 25× le prix**. La pyramide
+vaut pour ce qu'elle produit en plus (traçabilité, table d'articles, doubles comptes arbitrés par écrit) — pas pour le chiffre final. Ce qui ferait gagner les derniers pourcentages n'est ni
 le modèle ni l'essaim : ce sont les 5 règles à trancher (SYNTHESE.md), un comparateur ligne à ligne avec codes imposés, et un LSP
 branché pour que les scripts survivent au dossier suivant.

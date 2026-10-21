@@ -1,0 +1,289 @@
+<title>Banc S-1902 Dupuis</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap">
+<style>
+/* Layout : rapport technique en colonnes de 65 car., bande d'état en haut, tuiles KPI, graphes Mermaid par test, kanban, glossaire. */
+:root{
+  --bg:#f7f5f1; --surface:#ffffff; --fg:#1f1d1a; --muted:#5f5a52; --line:#d9d3c8;
+  --accent:#6b1a1a; --accent-ink:#ffffff; --ok:#1f6f3d; --warn:#704800; --bad:#a3261f; --info:#1e4f8a;
+  --ok-bg:#e3f1e8; --warn-bg:#fbefd6; --bad-bg:#f8e1df; --info-bg:#e1ebf7;
+  --font-display:"Fraunces",Georgia,serif; --font-body:"IBM Plex Sans",system-ui,sans-serif; --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17161a; --surface:#201f24; --fg:#ece8e1; --muted:#aaa49a; --line:#3a383f;
+  --accent:#d98b8b; --accent-ink:#1b0c0c; --ok:#7fd49a; --warn:#f0c060; --bad:#f09088; --info:#8fb8ef;
+  --ok-bg:#1d3a28; --warn-bg:#3f3214; --bad-bg:#45201c; --info-bg:#1c2f49; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17161a; --surface:#201f24; --fg:#ece8e1; --muted:#aaa49a; --line:#3a383f;
+  --accent:#d98b8b; --accent-ink:#1b0c0c; --ok:#7fd49a; --warn:#f0c060; --bad:#f09088; --info:#8fb8ef;
+  --ok-bg:#1d3a28; --warn-bg:#3f3214; --bad-bg:#45201c; --info-bg:#1c2f49; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-block:12px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline}
+html{scroll-padding-top:72px}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,3.2vw,30px);margin:0;text-wrap:balance}
+h2{font-family:var(--font-display);font-weight:600;font-size:22px;margin:40px 0 12px;text-wrap:balance}
+h3{font-size:15px;margin:18px 0 8px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+p{max-width:70ch;margin:8px 0}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.wrap{max-width:1180px;margin:0 auto}
+section{content-visibility:auto;contain-intrinsic-size:auto 600px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0;container-type:inline-size}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-height:98px;contain:layout paint}
+.kpi .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kpi .v{font-family:var(--font-display);font-size:clamp(24px,6cqi,34px);font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1;margin-top:4px}
+.kpi .d{font-size:13px;margin-top:4px;display:flex;gap:6px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:500;border:1px solid transparent;min-height:24px}
+.ok{background:var(--ok-bg);color:var(--ok)} .warn{background:var(--warn-bg);color:var(--warn)} .bad{background:var(--bad-bg);color:var(--bad)} .info{background:var(--info-bg);color:var(--info)}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td.num,th.num{text-align:right}
+tr:last-child td{border-bottom:0}
+.bar{height:10px;background:var(--line);border-radius:2px;position:relative;min-width:120px}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--bad);border-radius:2px}
+.bar b{position:absolute;top:-4px;width:2px;height:18px;background:var(--fg)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;min-width:0}
+.card h3{margin-top:0}
+pre.mermaid{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px;overflow-x:auto;margin:8px 0}
+.kanban{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px;min-width:0}
+.col h3{margin:4px 0 10px}
+.tick{border:1px solid var(--line);border-left:4px solid var(--info);border-radius:4px;padding:8px 10px;margin:8px 0;font-size:14px;background:var(--bg)}
+.tick.done{border-left-color:var(--ok)} .tick.todo{border-left-color:var(--warn)} .tick.block{border-left-color:var(--bad)}
+.tick small{display:block;color:var(--muted);font-family:var(--font-mono);font-size:12px;margin-top:2px}
+dl.dsl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;max-width:900px}
+dl.dsl dt{font-family:var(--font-mono);font-size:13px;color:var(--accent);font-weight:500}
+dl.dsl dd{margin:0}
+code{font-family:var(--font-mono);font-size:.92em;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:0 4px}
+.src{font-size:12px;color:var(--muted);font-family:var(--font-mono)}
+a{color:var(--info)} a:focus-visible,button:focus-visible{outline:3px solid var(--info);outline-offset:2px}
+.verdict{border-left:4px solid var(--accent);padding:10px 14px;background:var(--surface);border-radius:0 6px 6px 0;max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (forced-colors:active){.kpi,.card,.col,.tick,.tbl,pre.mermaid{border:1px solid CanvasText}.pill{border-color:CanvasText}}
+@media (max-width:560px){dl.dsl{grid-template-columns:1fr}dl.dsl dt{margin-top:8px}}
+</style>
+
+<div class="wrap" lang="fr">
+<header class="top">
+  <div>
+    <div class="eyebrow">DR Électrique · dr-estimation-ia · entraînement à l'aveugle</div>
+    <h1>Banc S-1902 — méthode Dupuis, 10 runs, 2 essaims</h1>
+  </div>
+  <div class="pill bad" role="status">■ 0 run sur 10 dans ±1 % de la référence</div>
+</header>
+
+<section id="resume">
+  <div class="kpis">
+    <div class="kpi"><div class="l">Référence gelée</div><div class="v">194 000 $</div><div class="d"><span class="pill info">● S-1902 · 1 050 h · ACCEO 155 899 $</span></div></div>
+    <div class="kpi"><div class="l">Fourchette des runs</div><div class="v">168–180 k$</div><div class="d"><span class="pill bad">▼ −7,2 % à −13,4 %</span></div></div>
+    <div class="kpi"><div class="l">Opus 5.5 solo (3)</div><div class="v">8 min</div><div class="d"><span class="pill warn">≈ 243 k jetons · ≈ 1,57 $</span></div></div>
+    <div class="kpi"><div class="l">Sonnet 5.5 solo (5)</div><div class="v">9 min</div><div class="d"><span class="pill ok">✓ même précision · ≈ 0,78 $</span></div></div>
+    <div class="kpi"><div class="l">Défauts pyright latents</div><div class="v">38</div><div class="d"><span class="pill warn">▲ 9 scripts « qui marchent »</span></div></div>
+    <div class="kpi"><div class="l">Essaim 2 (27 agents)</div><div class="v">1 h 41</div><div class="d"><span class="pill bad">▼ 175 k$ = sonnet-2 · ≈ 20 $ · 25× le coût</span></div></div>
+    <div class="kpi"><div class="l">Fuites du kit</div><div class="v">0</div><div class="d"><span class="pill ok">✓ 11/11 à l'aveugle</span></div></div>
+  </div>
+  <div class="verdict"><strong>Verdict.</strong> L'écart est systématique, pas aléatoire : tous les modèles, seuls ou en essaim, tranchent de la même façon sur trois décisions de portée que la méthode écrite ne fixe pas (postes de travail composites, prix des monuments, démantèlement et conduits). Le modèle n'est pas la variable ; la règle écrite l'est. L'essaim 2 le confirme par l'absurde : 27 agents sur 4 niveaux, des contrôles 5/5 partout, 44 doubles comptes arbitrés par écrit, un script sans défaut pyright — et le même 175 000 $ qu'un Sonnet seul en 9 minutes.</div>
+</section>
+
+<section id="resultats">
+  <h2>Résultats par run</h2>
+  <div class="tbl" tabindex="0" role="region" aria-label="Tableau défilant"><table>
+    <thead><tr><th>Run</th><th>Modèle</th><th class="num">Prix de vente</th><th class="num">Écart</th><th>Écart (barre, 0 → −15 %)</th><th class="num">Durée</th><th class="num">Jetons</th><th class="num">Outils</th><th>État</th></tr></thead>
+    <tbody>
+      <tr><td>opus-1</td><td>Opus 5.5</td><td class="num">168 000 $</td><td class="num">−13,4 %</td><td><div class="bar"><i style="width:89%"></i></div></td><td class="num">8 m 42 s</td><td class="num">255 313</td><td class="num">22</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>opus-2</td><td>Opus 5.5</td><td class="num">168 000 $</td><td class="num">−13,4 %</td><td><div class="bar"><i style="width:89%"></i></div></td><td class="num">7 m 42 s</td><td class="num">232 968</td><td class="num">25</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>opus-3</td><td>Opus 5.5</td><td class="num">180 000 $</td><td class="num">−7,2 %</td><td><div class="bar"><i style="width:48%"></i></div></td><td class="num">8 m 15 s</td><td class="num">241 739</td><td class="num">19</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>sonnet-1</td><td>Sonnet 5.5</td><td class="num">170 000 $</td><td class="num">−12,4 %</td><td><div class="bar"><i style="width:83%"></i></div></td><td class="num">8 m 49 s</td><td class="num">253 111</td><td class="num">22</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>sonnet-2</td><td>Sonnet 5.5</td><td class="num">175 000 $</td><td class="num">−9,8 %</td><td><div class="bar"><i style="width:65%"></i></div></td><td class="num">8 m 53 s</td><td class="num">236 837</td><td class="num">26</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>sonnet-3</td><td>Sonnet 5.5</td><td class="num">169 000 $</td><td class="num">−12,9 %</td><td><div class="bar"><i style="width:86%"></i></div></td><td class="num">7 m 57 s</td><td class="num">241 402</td><td class="num">21</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>sonnet-4</td><td>Sonnet 5.5</td><td class="num">176 000 $</td><td class="num">−9,3 %</td><td><div class="bar"><i style="width:62%"></i></div></td><td class="num">8 m 49 s</td><td class="num">234 083</td><td class="num">25</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>sonnet-5</td><td>Sonnet 5.5</td><td class="num">180 000 $</td><td class="num">−7,2 %</td><td><div class="bar"><i style="width:48%"></i></div></td><td class="num">10 m 43 s</td><td class="num">289 409</td><td class="num">25</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>essaim-1</td><td>Opus chef (seul, 5 lots)</td><td class="num">170 000 $</td><td class="num">−12,4 %</td><td><div class="bar"><i style="width:83%"></i></div></td><td class="num">11 m 19 s</td><td class="num">256 885</td><td class="num">39</td><td><span class="pill bad">■ écart</span></td></tr>
+      <tr><td>essaim-2</td><td>Fable chef → 2 Opus → 6 Sonnet → 18 Haiku (27 agents, relais)</td><td class="num">175 000 $</td><td class="num">−9,8 %</td><td><div class="bar"><i style="width:65%"></i></div></td><td class="num">1 h 41</td><td class="num">≥ 2,07 M mesurés (≈ 4,3 M est.)</td><td class="num">≥ 94</td><td><span class="pill bad">■ écart · ≈ 20 $</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">Sources : entrainement/S-1902/runs/*/rapport.json · transcriptions des agents (durée, jetons rapportés, appels d'outils) · prix de base platform.claude.com/docs/en/about-claude/pricing (2026-10-21).</p>
+
+  <h3>D'où vient l'écart (par article du bordereau, moyenne des 8 solos)</h3>
+  <div class="tbl" tabindex="0" role="region" aria-label="Tableau défilant"><table>
+    <thead><tr><th>Article</th><th class="num">Δ moyen</th><th>Stable sur 8 runs ?</th><th>Cause</th><th>Nature</th></tr></thead>
+    <tbody>
+      <tr><td>3.28 prises 15 A</td><td class="num">−7 986 $</td><td><span class="pill warn">● oui (−7 993 à −7 967)</span></td><td>Postes de travail composites D-01 ×18, E-01, D-03…D-06 : la référence les compte en plus du relevé ; les runs les écartent comme double compte.</td><td><span class="pill bad">■ décision</span></td></tr>
+      <tr><td>3.27 USB</td><td class="num">−1 653 $</td><td><span class="pill warn">● oui</span></td><td>D-02 tables avec boîte d'électrification (5 × 439,42 $ / 6,85 h) écartées.</td><td><span class="pill bad">■ décision</span></td></tr>
+      <tr><td>3.34 monuments</td><td class="num">−2 758 $</td><td><span class="pill warn">● oui</span></td><td>Référence au prix Lumen 1 461,22 $ ; runs au prix Dupuis 250 $.</td><td><span class="pill bad">■ décision</span></td></tr>
+      <tr><td>3.22 démontage</td><td class="num">−2 947 $</td><td><span class="pill info">○ non (−6 227 à +359)</span></td><td>A-01…A-06 (E.A.E) sautées par certains runs.</td><td><span class="pill warn">▲ règle</span></td></tr>
+      <tr><td>3.33 / 3.31 conduits</td><td class="num">−3 574 / −2 044 $</td><td><span class="pill info">○ non</span></td><td>Pas de colonne TEMPSEC ; familles 03C12 vs 05C12 ; longueurs hypothétiques.</td><td><span class="pill warn">▲ règle</span></td></tr>
+      <tr><td>3.24 / 3.25 · 6.1</td><td class="num">−3 656 / +2 846 · +6 219 $</td><td><span class="pill warn">● oui</span></td><td>Lot distribution et nacelle placés dans un autre article. Net ≈ 0.</td><td><span class="pill ok">✓ allocation</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>Incohérence dans la référence officielle, signalée par 10 runs sur 10 : le lot éclairage est inscrit à 11 893 $ et son détail totalise 13 034,80 $ (écart 1 141,80 $).</p>
+</section>
+
+<section id="architecture">
+  <h2>Architecture du banc et des trois tests</h2>
+  <div class="grid2">
+    <div class="card"><h3>Banc à l'aveugle</h3>
+<pre class="mermaid" tabindex="0" aria-label="Diagramme">
+flowchart LR
+  K[Kit S-1902<br/>relevé · Détail · Lumen · bordereau<br/>catalogue Dupuis · METHODE sans résultat] --> W[Dossier isolé par run<br/>hors dépôt]
+  W --> A[Agent<br/>chiffrage.py → chiffrage.json]
+  A --> C[comparer.py<br/>totaux · par article · par ligne]
+  R[(Référence gelée<br/>dossiers/S-1902/soumission)] --> C
+  C --> V{±1 % ?}
+  V -- non --> S[SYNTHESE.md<br/>décisions à trancher]
+  V -- oui --> OK[run validé]
+  S --> M[METHODE.md<br/>règle écrite] --> K
+  C --> G[(git main<br/>runs/ · rapports)]
+</pre></div>
+    <div class="card"><h3>Test 1 — solos (8)</h3>
+<pre class="mermaid" tabindex="0" aria-label="Diagramme">
+flowchart TB
+  M[Session principale] --> O1[Opus 5.5 ×3]
+  M --> S1[Sonnet 5.5 ×5]
+  O1 --> C[comparer.py]
+  S1 --> C
+  C --> R[168–180 k$<br/>−7 à −13 %]
+</pre></div>
+    <div class="card"><h3>Test 2 — essaim 1 (prévu vs réel)</h3>
+<pre class="mermaid" tabindex="0" aria-label="Diagramme">
+flowchart TB
+  subgraph prevu[Prévu]
+    O[Opus chef] --> s1[Sonnet lot 1] & s2[Sonnet lot 2] & s3[Sonnet lot 3] & s4[Sonnet lot 4] --> s5[Sonnet vérif]
+  end
+  subgraph reel[Réel : pas d'outil Agent au niveau sous-agent]
+    O2[Opus seul] --> L[5 lots en séquence<br/>vérif = lui-même] --> R2[170 k$ · −12,4 %]
+  end
+</pre></div>
+    <div class="card"><h3>Test 3 — essaim 2, relais par fichiers</h3>
+<pre class="mermaid" tabindex="0" aria-label="Diagramme">
+flowchart TB
+  F[Fable 5.1 chef · effort high<br/>réécrit l'idée → ARCHITECTURE.md] -->|prompts/directeur-A.md · high| A[Opus A · quantités]
+  F -->|prompts/directeur-B.md · xhigh| B[Opus B · prix et temps]
+  A -->|prompts/directeur-A/chef-n.md| SA[3 Sonnet]
+  B -->|prompts/directeur-B/chef-n.md| SB[3 Sonnet]
+  SA -->|releveur-m.md| HA[9 Haiku]
+  SB -->|releveur-m.md| HB[9 Haiku]
+  HA -. lots/releveur-*.json .-> SA
+  HB -. lots/ .-> SB
+  SA -. lots/chef-*.json .-> A
+  SB -. lots/ .-> B
+  A -. lots/directeur-A.json .-> F
+  B -. lots/directeur-B.json .-> F
+  F --> X[chiffrage.py · chiffrage.json · NOTES.md<br/>175 k$ · −9,8 % · 1 h 41 · ≈ 20 $]
+  D[Session principale = relais :<br/>lance chaque niveau avec le prompt et l'effort écrits par le niveau au-dessus]:::note
+  classDef note fill:none,stroke-dasharray:4 3
+</pre></div>
+  </div>
+</section>
+
+<section id="kanban">
+  <h2>Kanban</h2>
+  <div class="kanban">
+    <div class="col"><h3>Fait</h3>
+      <div class="tick done">Kit sans réponse + comparateur (testé OK sur la référence)<small>185b9a5</small></div>
+      <div class="tick done">8 solos commités, 0 fuite<small>runs/opus-* · runs/sonnet-*</small></div>
+      <div class="tick done">Essaim 1 commité<small>runs/swarm-1</small></div>
+      <div class="tick done">SYNTHESE.md · EVALUATION.md<small>temps, jetons, coût, pyright</small></div>
+      <div class="tick done">Essaim 2 commité : 175 000 $, 0 fuite, pyright 0 erreur<small>runs/swarm-2 · 195a74d</small></div>
+    </div>
+    <div class="col"><h3>En cours</h3>
+      <div class="tick">Canvas ouvert dans Chromium CDP, flags dev, correction par le navigateur<small>voir § Navigateur</small></div>
+    </div>
+    <div class="col"><h3>À trancher (Francis)</h3>
+      <div class="tick block">Postes composites D-01/D-02/E-01 : en plus du relevé, ou couverts ?<small>−9 600 $ ACCEO</small></div>
+      <div class="tick block">Monuments : Lumen 1 461,22 $ ou Dupuis 250 $ ?<small>−2 758 $</small></div>
+      <div class="tick block">Lot éclairage : 11 893 $ ou 13 034,80 $ ?<small>+1 141,80 $</small></div>
+      <div class="tick block">Règle E.A.E hors plan ; formule conduits sans TEMPSEC<small>3.22 · 3.33 · 3.31</small></div>
+    </div>
+    <div class="col"><h3>Suivant</h3>
+      <div class="tick todo">Écrire les 5 règles dans METHODE.md, relancer 8 runs, cible 8/8 à ±1 %</div>
+      <div class="tick todo">Dossier suivant avec sommaire Dupuis : S-1844, S-1811, S-1769, S-1715, S-1714</div>
+      <div class="tick todo">Codes de ligne imposés + bibliothèques listées dans CONSIGNES.md</div>
+      <div class="tick todo">agent-lsp + pyright branchés dans le profil estimation</div>
+    </div>
+  </div>
+</section>
+
+<section id="langage">
+  <h2>Python ou TypeScript pour les scripts de chiffrage ?</h2>
+  <div class="grid2">
+    <div class="card"><h3>Ce qui s'est passé en Python</h3>
+      <p>9 scripts de 225 à 479 lignes, tous déterministes et exécutables (code 0). 3 tracebacks pendant le travail, corrigés par les agents. 38 défauts de typage latents (cellule vide → <code>None</code>, variable non définie dans une branche) que pyright voit et que Python laisse passer jusqu'au prochain dossier.</p>
+      <p>2 <code>ModuleNotFoundError</code> par run (9/9) : import à tâtons d'une bibliothèque absente.</p></div>
+    <div class="card"><h3>Ce que TypeScript aurait changé</h3>
+      <p><strong>Pour :</strong> <code>strict</code> + <code>noUncheckedIndexedAccess</code> auraient refusé à la compilation la plupart des 38 défauts, avant toute exécution. Le résultat serait le même JSON, mais des scripts qui survivent au dossier suivant.</p>
+      <p><strong>Contre :</strong> la chaîne existante est Python (openpyxl, ReportLab pour le PDF DR, uv, plan-tools de Jo, recalcul LibreOffice). Lire un .xlsx en TS (exceljs) est plus verbeux, et ReportLab n'a pas d'équivalent fidèle en JS pour le gabarit DR. Deux langages dans un même dossier, c'est deux chaînes d'outils à onboarder pour chaque estimateur.</p></div>
+  </div>
+  <div class="verdict"><strong>Recommandation.</strong> Rester en Python pour le chiffrage et la soumission, mais prendre à TypeScript ce qui compte : le typage strict avant exécution. Concrètement : <code>pyright --strict</code> via agent-lsp dans le profil estimation, annotations de type dans <code>chiffrage.py</code>, et un gabarit de script fourni dans le kit. TS/TSX reste le bon choix pour les canvas et tableaux de bord comme celui-ci, pas pour la chaîne d'estimation.</div>
+</section>
+
+<section id="dsl">
+  <h2>DSL du vocabulaire (ce que chaque mot veut dire ici)</h2>
+  <dl class="dsl">
+    <dt>dossier S-xxxx</dt><dd>Un appel d'offres DR, un numéro de soumission ; ici S-1902 (Bibliothèque Georgette-Lepage, Brossard).</dd>
+    <dt>référence gelée</dt><dd>Le chiffrage officiel commité dans <code>dossiers/S-1902/soumission/</code> (194 000 $). Personne dans un run ne la voit.</dd>
+    <dt>kit</dt><dd>Les seules entrées d'un run : relevé, Détail, Lumen, bordereau, catalogue Dupuis, METHODE sans le résultat.</dd>
+    <dt>run</dt><dd>Une exécution d'un modèle sur le kit, dans un dossier isolé, produisant <code>chiffrage.py</code> + <code>chiffrage.json</code> + <code>NOTES.md</code>.</dd>
+    <dt>à l'aveugle</dt><dd>Rien lu hors du kit ; vérifié après coup par les sources citées (0 fuite sur 10).</dd>
+    <dt>écart</dt><dd>Différence run − référence, sur les 5 totaux, par article du bordereau et par ligne (codes communs).</dd>
+    <dt>portée I / E / R</dt><dd>Installer, Enlever, Relocaliser : ce qu'on fait d'un appareil relevé sur plan. Conserver = aucun travail.</dd>
+    <dt>E.A.E / E.A.R</dt><dd>Existant à enlever / existant à relocaliser : hors plan, compté depuis la feuille Détail.</dd>
+    <dt>catalogue Dupuis</dt><dd>4 629 lignes transcrites de 27 sommaires ACCEO ; colonnes « À UTILISER » = dernière valeur, jamais la médiane.</dd>
+    <dt>lot fournisseur</dt><dd>Montant global confirmé (éclairage, distribution, JCI, détecteurs, GPR) ; l'appareil est à 0 $ en ligne.</dd>
+    <dt>heures chargées</dt><dd>Heures relevées arrondies vers le haut au multiple de 10 ; × taux (85 $/h) = main-d'œuvre.</dd>
+    <dt>total ACCEO</dt><dd>Matériel + main-d'œuvre ; × facteur 1,244 et arrondi au millier = prix de vente.</dd>
+    <dt>essaim</dt><dd>Plusieurs agents sur un run ; chef → directeurs → chefs de lot → releveurs. Dans Claude Code, la délégation s'arrête au niveau 1.</dd>
+    <dt>relais</dt><dd>Mécanique de l'essaim 2 : chaque niveau écrit les prompts et l'effort de ses subalternes dans <code>prompts/</code>, la session principale les lance tels quels.</dd>
+    <dt>effort</dt><dd>Niveau de réflexion demandé à un modèle : low, medium, high, xhigh, max. Choisi par le niveau au-dessus.</dd>
+    <dt>cache (backtest)</dt><dd>Les runs commités avec leur écart : la série qui montre où un modèle dévie de Dupuis, et dont chaque correction devient une règle écrite.</dd>
+    <dt>règle écrite</dt><dd>Une décision d'estimateur mise noir sur blanc dans METHODE.md ; c'est ce qui fait gagner les derniers pourcentages.</dd>
+  </dl>
+</section>
+
+<section id="navigateur">
+  <h2>Ouvert dans Chromium avec CDP et flags de dev</h2>
+  <p>Avant remise, cette page a été chargée dans un Chromium piloté par Playwright, port CDP ouvert, aux deux largeurs (1280 et 400 px) et dans les deux thèmes. Le navigateur a rapporté la console, les requêtes bloquées, les débordements horizontaux, les métriques de rendu, et un audit d'accessibilité axe-core. Les corrections sont dans la page que tu lis.</p>
+  <div class="grid2">
+    <div class="card"><h3>Flags utilisés pour l'audit (conteneur sans GPU)</h3>
+      <p><code>--remote-debugging-port=9222</code> · <code>--enable-logging=stderr --v=1</code> · <code>--force-color-profile=srgb</code> · <code>--disable-dev-shm-usage</code> · <code>--enable-features=NetworkService</code> · <code>--font-render-hinting=none</code></p></div>
+    <div class="card"><h3>Flags à essayer sur ton poste (GPU NVIDIA) — suggestions, à valider en <code>chrome://gpu</code></h3>
+      <p><code>--ignore-gpu-blocklist</code> · <code>--enable-gpu-rasterization</code> · <code>--enable-zero-copy</code> · <code>--enable-features=Vulkan,CanvasOopRasterization</code> · <code>--enable-unsafe-webgpu</code> (WebGPU, Claude Desktop = Electron/Chromium) · <code>--use-angle=d3d11</code> sur Windows. Mesurer avant/après avec <code>chrome://gpu</code> et l'onglet Performance ; un flag qui ne change rien se retire.</p></div>
+  </div>
+  <div id="audit" class="card" style="margin-top:12px"><h3>Résultat de l'audit navigateur</h3><div class="tbl" tabindex="0" role="region" aria-label="Résultat de l'audit"><table>
+<thead><tr><th>Cas</th><th class="num">Chargement</th><th class="num">Débordement</th><th class="num">Cibles &lt; 24 px</th><th>axe-core (WCAG 2.2 AA)</th><th>Console</th><th>Requêtes bloquées</th></tr></thead>
+<tbody>
+<tr><td>clair · 1280 px</td><td class="num">1,7 s</td><td class="num">0 px</td><td class="num">0</td><td><span class="pill ok">✓ 0 (après correction)</span></td><td>0</td><td>0</td></tr>
+<tr><td>clair · 400 px</td><td class="num">1,1 s</td><td class="num">0 px</td><td class="num">0</td><td><span class="pill ok">✓ 0</span></td><td>0</td><td>0</td></tr>
+<tr><td>sombre · 1280 px</td><td class="num">1,1 s</td><td class="num">0 px</td><td class="num">0</td><td><span class="pill ok">✓ 0</span></td><td>0</td><td>0</td></tr>
+<tr><td>sombre · 400 px</td><td class="num">1,1 s</td><td class="num">0 px</td><td class="num">0</td><td><span class="pill ok">✓ 0</span></td><td>0</td><td>0</td></tr>
+</tbody></table></div>
+<p class="src">Ce que le navigateur a corrigé : pastilles « warn » à 4,42:1 en thème clair → 7:1 ; 7 régions défilantes sans accès clavier → tabindex ; conteneur de langue fr. Reste hors de la page : l'attribut lang de l'enveloppe du visualiseur. Outils : Playwright 1.56.1, Chromium 1194, axe-core 4.10.3.</p></div>
+</section>
+
+<section id="suggestion">
+  <h2>Suggestion d'architecture (auto)</h2>
+  <div class="grid2">
+    <div class="card"><h3>Ce que les données disent</h3>
+      <p>1. Le solo Sonnet égale le solo Opus. 2. L'essaim, à un niveau (essaim 1) comme à quatre (essaim 2), n'apporte rien au chiffre tant que la méthode a des trous — il apporte de la traçabilité (table d'articles, doubles comptes écrits), à 25× le coût. 3. La variance entre runs (168 → 180 k$) mesure exactement ce qui manque au brief. 4. Les scripts cassent au prochain dossier sans typage strict.</p></div>
+    <div class="card"><h3>Architecture proposée</h3>
+<pre class="mermaid" tabindex="0" aria-label="Diagramme">
+flowchart LR
+  R[Règles écrites<br/>METHODE.md versionnée] --> B[Brief unique<br/>codes imposés · bibliothèques listées]
+  B --> S[3 Sonnet 5.5 en parallèle<br/>effort high]
+  S --> C[comparer.py<br/>écart ligne à ligne]
+  C --> J{3/3 à ±1 % ?}
+  J -- oui --> G[gel + commit + dossier suivant]
+  J -- non --> D[Opus 5.5 arbitre<br/>écrit la règle manquante] --> R
+  L[agent-lsp + pyright strict] -.-> S
+</pre>
+      <p>Trois Sonnet en parallèle comme détecteur de variance, un Opus seulement quand ils divergent, et chaque divergence qui finit en règle écrite. Coût par dossier ≈ 2,5 $ au lieu de 8,6 $, et la méthode se densifie à chaque dossier.</p></div>
+  </div>
+</section>
+</div>

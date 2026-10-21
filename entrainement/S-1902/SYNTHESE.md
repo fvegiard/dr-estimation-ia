@@ -15,8 +15,11 @@ Kit identique pour tous les runs (`kit/`, sans la réponse) ; aucune fuite déte
 | sonnet-3 | Sonnet 5.5 | 169 000 $ | −12,9 % | −13,8 % | −13,0 % | 83 |
 | sonnet-4 | Sonnet 5.5 | 176 000 $ | −9,3 % | −12,3 % | −6,5 % | 85 |
 | sonnet-5 | Sonnet 5.5 | 180 000 $ | -7.2 % | -10.3 % | -4.7 % | 89 |
+| essaim-1 | Opus 5.5 seul (5 lots en séquence) | 170 000 $ | −12,4 % | −13,0 % | −11,3 % | 73 |
+| essaim-2 | Fable 5.1 → 2 Opus → 6 Sonnet → 18 Haiku (relais par fichiers) | 175 000 $ | −9,8 % | −12,2 % | −7,6 % | 82 |
 
-Aucun run dans la tolérance (±1 %). Tous sortent **sous** la référence, de −7 % à −13 %. Opus et Sonnet font les mêmes choix ; l'écart
+Aucun run dans la tolérance (±1 %), essaims compris : 27 agents en pyramide (essaim 2) donnent exactement le résultat de sonnet-2 seul
+(175 000 $), pour ≈ 25× le coût et 1 h 41 au lieu de 9 min. Tous sortent **sous** la référence, de −7 % à −13 %. Opus et Sonnet font les mêmes choix ; l'écart
 n'est pas aléatoire, il est **systématique** : ce sont des règles de portée qui manquent à `METHODE.md`, pas des erreurs de calcul.
 
 ## D'où vient l'écart (par article du bordereau, moyenne des 8 runs)
