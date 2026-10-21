@@ -1,0 +1,705 @@
+{
+ "dossier": "S-1902",
+ "run": "sonnet-1",
+ "totaux": {
+  "materiel": {
+   "ref": 66649.07,
+   "run": 57975.33,
+   "delta": -8673.74,
+   "pct": -13.01
+  },
+  "heures_relevees": {
+   "ref": 1045.845,
+   "run": 927.18,
+   "delta": -118.67,
+   "pct": -11.35
+  },
+  "heures_chargees": {
+   "ref": 1050,
+   "run": 930,
+   "delta": -120,
+   "pct": -11.43
+  },
+  "total_acceo": {
+   "ref": 155899.07,
+   "run": 137025.33,
+   "delta": -18873.74,
+   "pct": -12.11
+  },
+  "prix_vente": {
+   "ref": 194000,
+   "run": 170000,
+   "delta": -24000,
+   "pct": -12.37
+  }
+ },
+ "par_article": {
+  "3.22": {
+   "ref_h": 108.35,
+   "run_h": 79.99,
+   "ref_mat": 0.0,
+   "run_mat": 150.0,
+   "delta_total": -2297.19
+  },
+  "3.23": {
+   "ref_h": 53.66,
+   "run_h": 49.57,
+   "ref_mat": 2799.08,
+   "run_mat": 2714.41,
+   "delta_total": -450.3
+  },
+  "3.24": {
+   "ref_h": 27.5,
+   "run_h": 23.07,
+   "ref_mat": 6335.0,
+   "run_mat": 3400.0,
+   "delta_total": -3320.84
+  },
+  "3.25": {
+   "ref_h": 7.6,
+   "run_h": 6.82,
+   "ref_mat": 0.0,
+   "run_mat": 2800.0,
+   "delta_total": 2731.13
+  },
+  "3.26": {
+   "ref_h": 4.0,
+   "run_h": 1.5,
+   "ref_mat": 30.0,
+   "run_mat": 50.0,
+   "delta_total": -193.85
+  },
+  "3.27": {
+   "ref_h": 34.25,
+   "run_h": 22.57,
+   "ref_mat": 2197.1,
+   "run_mat": 1549.0,
+   "delta_total": -1652.47
+  },
+  "3.28": {
+   "ref_h": 92.0,
+   "run_h": 29.46,
+   "ref_mat": 4259.79,
+   "run_mat": 1620.25,
+   "delta_total": -7986.08
+  },
+  "3.29": {
+   "ref_h": 25.85,
+   "run_h": null,
+   "ref_mat": 1689.82,
+   "run_mat": null,
+   "delta_total": -3895.8
+  },
+  "3.30": {
+   "ref_h": 1.3,
+   "run_h": 28.69,
+   "ref_mat": 65.38,
+   "run_mat": 1438.36,
+   "delta_total": 3700.69
+  },
+  "3.31": {
+   "ref_h": 299.65,
+   "run_h": 301.26,
+   "ref_mat": 14431.68,
+   "run_mat": 14460.08,
+   "delta_total": 63.67
+  },
+  "3.32": {
+   "ref_h": 2.0,
+   "run_h": 2.01,
+   "ref_mat": 1250.0,
+   "run_mat": 1250.0,
+   "delta_total": 0.17
+  },
+  "3.33": {
+   "ref_h": 131.27,
+   "run_h": 58.03,
+   "ref_mat": 3310.75,
+   "run_mat": 1450.8,
+   "delta_total": -8129.86
+  },
+  "3.34": {
+   "ref_h": 4.0,
+   "run_h": 3.01,
+   "ref_mat": 3422.44,
+   "run_mat": 750.0,
+   "delta_total": -2757.94
+  },
+  "3.35": {
+   "ref_h": 178.75,
+   "run_h": 178.79,
+   "ref_mat": 18678.93,
+   "run_mat": 16640.9,
+   "delta_total": -2094.75
+  },
+  "3.36": {
+   "ref_h": 9.27,
+   "run_h": 17.2,
+   "ref_mat": 779.1,
+   "run_mat": 1051.53,
+   "delta_total": 943.54
+  },
+  "3.37": {
+   "ref_h": 20.0,
+   "run_h": 8.02,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -1025.05
+  },
+  "3.38": {
+   "ref_h": 8.0,
+   "run_h": 20.06,
+   "ref_mat": 7400.0,
+   "run_mat": 7400.0,
+   "delta_total": 1022.4
+  },
+  "5.19": {
+   "ref_h": 38.4,
+   "run_h": 43.78,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": 444.33
+  },
+  "6.1": {
+   "ref_h": null,
+   "run_h": 56.17,
+   "ref_mat": null,
+   "run_mat": 1250.0,
+   "delta_total": 6024.45
+  }
+ },
+ "lignes": {
+  "ref": 73,
+  "run": 83,
+  "codes_communs": 48,
+  "manquantes": [
+   "B-10",
+   "B-LOT",
+   "C-01b",
+   "C-08",
+   "D-01",
+   "D-02",
+   "D-03",
+   "D-04",
+   "D-05",
+   "D-06",
+   "D-07",
+   "D-08",
+   "D-12b",
+   "D-19",
+   "D-20",
+   "D-21",
+   "D-22",
+   "E-01",
+   "E-02",
+   "E-03",
+   "E-04",
+   "E-05",
+   "F-LOT",
+   "G-01b",
+   "G-07"
+  ],
+  "en_plus": [
+   "A-02b",
+   "A-03b",
+   "A-03c",
+   "A-04b",
+   "A-06b",
+   "A-10b",
+   "B-05",
+   "B-06",
+   "B-07",
+   "B-08",
+   "C-05",
+   "C-07b",
+   "C-09",
+   "C-10",
+   "D-15",
+   "E-06",
+   "E-07",
+   "E-08",
+   "E-09",
+   "E-10",
+   "E-11",
+   "F-03",
+   "F-04",
+   "F-12",
+   "G-03",
+   "P-01",
+   "P-02",
+   "P-03",
+   "P-04",
+   "P-05",
+   "P-06",
+   "P-07",
+   "P-08",
+   "P-08b",
+   "P-09"
+  ],
+  "ecarts": [
+   {
+    "code": "A-01",
+    "ref": {
+     "q": 39,
+     "p": 0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 26,
+     "p": 0.0,
+     "h": 0.35
+    },
+    "src_run": "Catalogue Dupuis « ENLEVER FIXTURE ENCAST » (Vu 1 seul projet, dernier 2026-08-26, prix 0.0 $ / temps 0.35 h)"
+   },
+   {
+    "code": "A-02",
+    "ref": {
+     "q": 7,
+     "p": 0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 8,
+     "p": 0.0,
+     "h": 0.35
+    },
+    "src_run": "Catalogue Dupuis « ENLEVER FIXTURE 2X2 » (Vu 1 seul projet, dernier 2026-08-26, prix 0.0 $ / temps 0.35 h)"
+   },
+   {
+    "code": "A-03",
+    "ref": {
+     "q": 34,
+     "p": 0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 11,
+     "p": 0.0,
+     "h": 0.35
+    },
+    "src_run": "Catalogue Dupuis « ENLEVER PRISE » (Vu 1 seul projet, dernier 2026-08-26, prix 0.0 $ / temps 0.35 h)"
+   },
+   {
+    "code": "A-04",
+    "ref": {
+     "q": 10,
+     "p": 0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 0.35
+    },
+    "src_run": "Catalogue Dupuis « ENLEVER INTERRUPTEUR » (Vu 1 seul projet, dernier 2026-08-26, prix 0.0 $ / temps 0.35 h)"
+   },
+   {
+    "code": "A-05",
+    "ref": {
+     "q": 13,
+     "p": 0,
+     "h": 1.5
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 1.5
+    },
+    "src_run": "Catalogue Dupuis « RELO PRISE » (Variable (à valider), dernier 2026-05-05, prix 0.0 $ / temps 1.5 h) — RELO PRISE retenu aussi pour les 3 sorties data"
+   },
+   {
+    "code": "A-06",
+    "ref": {
+     "q": 7,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 4,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « RELO ENCASTRE » (Vu 1 seul projet, dernier 2026-06-02, prix 0.0 $ / temps 1.0 h)"
+   },
+   {
+    "code": "A-08",
+    "ref": {
+     "q": 21,
+     "p": 0,
+     "h": 0.85
+    },
+    "run": {
+     "q": 21,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « RELO FIXTURE TYPE S7 » (Vu 1 seul projet, dernier 2026-06-02, prix 0.0 $ / temps 1.0 h) — libellé « RELO fixture » retenu pour un retrait + réinstallation"
+   },
+   {
+    "code": "A-09",
+    "ref": {
+     "q": 24,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 24,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « RELO ENCASTRE » (Vu 1 seul projet, dernier 2026-06-02, prix 0.0 $ / temps 1.0 h)"
+   },
+   {
+    "code": "A-10",
+    "ref": {
+     "q": 6,
+     "p": 0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 6,
+     "p": 0.0,
+     "h": 0.25
+    },
+    "src_run": "Catalogue Dupuis « ENLEVER MOTEUR 1/2 HP 6 » (Standard (stable), dernier 2026-03-09, prix 0.0 $ / temps 0.25 h)"
+   },
+   {
+    "code": "B-01",
+    "ref": {
+     "q": 1,
+     "p": 0,
+     "h": 8.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 10.0
+    },
+    "src_run": "Catalogue Dupuis « PANN PS2 225A 120/208V 3F » (Standard (stable), dernier 2026-09-25, prix 0.0 $ / temps 10.0 h)"
+   },
+   {
+    "code": "B-01b",
+    "ref": {
+     "q": 14,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 4.0
+    },
+    "src_run": "Catalogue Dupuis « ENL PANN 42CCT 120/208V » (Standard (stable), dernier 2026-03-09, prix 0.0 $ / temps 4.0 h)"
+   },
+   {
+    "code": "B-02",
+    "ref": {
+     "q": 17,
+     "p": 0,
+     "h": 0.2
+    },
+    "run": {
+     "q": 14,
+     "p": 0.0,
+     "h": 0.2
+    },
+    "src_run": "Catalogue Dupuis « DISJ15A1P » (Standard (stable), dernier 2026-03-09, prix 0.0 $ / temps 0.2 h)"
+   },
+   {
+    "code": "B-03",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (Vu 1 seul projet, dernier 2026-06-02, prix 719.6 $ / temps 1.0 h) — prix ramené à 0.0 $ : temps 3P seulement (1,0 h); matériel déjà dans le lot distribution (EJB 3P 300 $ x3)"
+   },
+   {
+    "code": "B-04",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 0.4
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (Vu 1 seul projet, dernier 2026-06-02, prix 719.6 $ / temps 1.0 h) — prix ramené à 0.0 $ : temps 3P seulement (1,0 h); matériel déjà dans le lot distribution (EJB 3P 300 $ x3)"
+   },
+   {
+    "code": "B-09",
+    "ref": {
+     "q": 9,
+     "p": 15.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 9,
+     "p": 0.0,
+     "h": 1
+    },
+    "src_run": "jugement (Estimation_2) Détail B-09 : 1 h/u, à valider"
+   },
+   {
+    "code": "C-02",
+    "ref": {
+     "q": 1,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 1,
+     "p": 25.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « MOTEUR VE-2 120V » (Vu 1 seul projet, dernier 2026-10-07, prix 25.0 $ / temps 1.0 h)"
+   },
+   {
+    "code": "C-03",
+    "ref": {
+     "q": 2,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 2,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « MOTEUR » (Variable (à valider), dernier 2026-02-19, prix 25.0 $ / temps 0.75 h)"
+   },
+   {
+    "code": "C-04b",
+    "ref": {
+     "q": 3,
+     "p": 133.49,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 165.61,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « SECTIONNEUR POR ENTRETIEN HUBHBL13R22 » (Vu 1 seul projet, dernier 2026-09-23, prix 165.61 $ / temps 0.75 h) — Hubbell, plus proche équivalent du HBL1372 de la liste Lumen"
+   },
+   {
+    "code": "C-07",
+    "ref": {
+     "q": 262.4672,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 114.8,
+     "p": 2.8997,
+     "h": 0.076
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT 3/4 04C12 » (Standard (stable), dernier 2026-09-25, prix 2.8997 $ / temps 0.076 h) — longueur 35 m = Détail C-05/C-06 (hypothèse)"
+   },
+   {
+    "code": "D-09",
+    "ref": {
+     "q": 1,
+     "p": 60.0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 6
+    },
+    "src_run": "jugement (Estimation_2) Détail D-09 : 6 h"
+   },
+   {
+    "code": "D-10",
+    "ref": {
+     "q": 1,
+     "p": 17.43,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 2
+    },
+    "src_run": "jugement (Estimation_2) Détail D-10 : 2 h"
+   },
+   {
+    "code": "D-11",
+    "ref": {
+     "q": 4,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 1,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "src_run": "Catalogue Dupuis « BOUTON HANDICAPE » (Standard (stable), dernier 2026-04-02, prix 15.0 $ / temps 0.5 h)"
+   },
+   {
+    "code": "D-12",
+    "ref": {
+     "q": 23,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 16,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « PERCEMENT PLANCHER » (Jugement / forfait, dernier 2026-10-07, prix 150.0 $ / temps 1.0 h)"
+   },
+   {
+    "code": "D-13",
+    "ref": {
+     "q": 2148.9501999999998,
+     "p": 4.1197,
+     "h": 0.091
+    },
+    "run": {
+     "q": 1574.8,
+     "p": 1.8378,
+     "h": 0.05
+    },
+    "src_run": "Catalogue Dupuis « COND TME 1PO » (Standard (stable), dernier 2026-10-07, prix 1.8378 $ / temps 0.05 h)"
+   },
+   {
+    "code": "D-14",
+    "ref": {
+     "q": 1656.8242,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "run": {
+     "q": 1082.7,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT VIDE 3/4 » (Standard (stable), dernier 2026-08-19, prix 1.4097 $ / temps 0.056 h)"
+   },
+   {
+    "code": "D-16",
+    "ref": {
+     "q": 23,
+     "p": 9.26,
+     "h": 0.25
+    },
+    "run": {
+     "q": 32,
+     "p": 9.2625,
+     "h": 0.25
+    },
+    "src_run": "Lumen IBE72171K (6.0543 $) + IBE72C1 (3.2082 $), famille absente du catalogue; temps par jugement 0,25 h/u (= Détail D-16 : 8 h / 32 boîtes)"
+   },
+   {
+    "code": "D-17",
+    "ref": {
+     "q": 22,
+     "p": 76.81,
+     "h": 1.175
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 2.0
+    },
+    "src_run": "Catalogue Dupuis « SCAN DALLE BETON » (Standard (stable), dernier 2026-03-09, prix 1250.0 $ / temps 2.0 h) — prix ramené à 0.0 $ : le prix 1 250 $ du catalogue = lot GPR confirmé de METHODE.md, compté une seule fois dans les lots"
+   },
+   {
+    "code": "F-02",
+    "ref": {
+     "q": 33,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « FIXTURE TYPE C1 » (Standard (stable), dernier 2026-07-14, prix 0.0 $ / temps 0.75 h)"
+   },
+   {
+    "code": "F-05",
+    "ref": {
+     "q": 20,
+     "p": 50.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 20,
+     "p": 0.0,
+     "h": 1
+    },
+    "src_run": "jugement (Estimation_2) Détail F-05 : 1 h/rangée; trousses de suspension dans le lot éclairage (1 500 $)"
+   },
+   {
+    "code": "F-08",
+    "ref": {
+     "q": 918.6351999999999,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 918.6,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT 3/4 03C12 » (Variable (à valider), dernier 2026-09-25, prix 4.2441 $ / temps 0.1128 h)"
+   },
+   {
+    "code": "F-10",
+    "ref": {
+     "q": 46,
+     "p": 8.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 35,
+     "p": 7.963,
+     "h": 0.2
+    },
+    "src_run": "Catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » (Standard (stable), dernier 2026-10-07, prix 7.963 $ / temps 0.2 h) — 35 points = Détail F-08 (280 m / 8 m); remplace le forfait 8 h"
+   },
+   {
+    "code": "F-11",
+    "ref": {
+     "q": 5,
+     "p": 75.47,
+     "h": 1.075
+    },
+    "run": {
+     "q": 200,
+     "p": 0.6435,
+     "h": 0.02
+    },
+    "src_run": "Catalogue Dupuis « TIGE FILETE 3/8PO » (Variable (à valider), dernier 2026-10-07, prix 0.6435 $ / temps 0.02 h)"
+   },
+   {
+    "code": "G-02",
+    "ref": {
+     "q": 98.4252,
+     "p": 1.8196999999999999,
+     "h": 0.084
+    },
+    "run": {
+     "q": 98.4,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT VIDE 3/4 » (Standard (stable), dernier 2026-08-19, prix 1.4097 $ / temps 0.056 h)"
+   }
+  ]
+ },
+ "verdict": "ÉCART"
+}

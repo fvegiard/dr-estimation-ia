@@ -1,0 +1,647 @@
+{
+ "dossier": "S-1902",
+ "run": "sonnet-2",
+ "totaux": {
+  "materiel": {
+   "ref": 66649.07,
+   "run": 59569.54,
+   "delta": -7079.53,
+   "pct": -10.62
+  },
+  "heures_relevees": {
+   "ref": 1045.845,
+   "run": 948.69,
+   "delta": -97.15,
+   "pct": -9.29
+  },
+  "heures_chargees": {
+   "ref": 1050,
+   "run": 950,
+   "delta": -100,
+   "pct": -9.52
+  },
+  "total_acceo": {
+   "ref": 155899.07,
+   "run": 140319.54,
+   "delta": -15579.53,
+   "pct": -9.99
+  },
+  "prix_vente": {
+   "ref": 194000,
+   "run": 175000,
+   "delta": -19000,
+   "pct": -9.79
+  }
+ },
+ "par_article": {
+  "3.22": {
+   "ref_h": 108.35,
+   "run_h": 75.15,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -2858.59
+  },
+  "3.23": {
+   "ref_h": 53.66,
+   "run_h": 56.11,
+   "ref_mat": 2799.08,
+   "run_mat": 2842.88,
+   "delta_total": 234.07
+  },
+  "3.24": {
+   "ref_h": 27.5,
+   "run_h": 17.0,
+   "ref_mat": 6335.0,
+   "run_mat": 3400.0,
+   "delta_total": -3836.79
+  },
+  "3.25": {
+   "ref_h": 7.6,
+   "run_h": 6.8,
+   "ref_mat": 0.0,
+   "run_mat": 2800.0,
+   "delta_total": 2729.43
+  },
+  "3.26": {
+   "ref_h": 4.0,
+   "run_h": 1.5,
+   "ref_mat": 30.0,
+   "run_mat": 50.0,
+   "delta_total": -193.85
+  },
+  "3.27": {
+   "ref_h": 34.25,
+   "run_h": 22.5,
+   "ref_mat": 2197.1,
+   "run_mat": 1549.0,
+   "delta_total": -1658.42
+  },
+  "3.28": {
+   "ref_h": 92.0,
+   "run_h": 29.38,
+   "ref_mat": 4259.79,
+   "run_mat": 1620.25,
+   "delta_total": -7992.88
+  },
+  "3.29": {
+   "ref_h": 25.85,
+   "run_h": 0.0,
+   "ref_mat": 1689.82,
+   "run_mat": 0.0,
+   "delta_total": -3895.8
+  },
+  "3.30": {
+   "ref_h": 1.3,
+   "run_h": 28.6,
+   "ref_mat": 65.38,
+   "run_mat": 1438.36,
+   "delta_total": 3693.04
+  },
+  "3.31": {
+   "ref_h": 299.65,
+   "run_h": 262.25,
+   "ref_mat": 14431.68,
+   "run_mat": 13814.82,
+   "delta_total": -3897.44
+  },
+  "3.32": {
+   "ref_h": 2.0,
+   "run_h": 2.0,
+   "ref_mat": 1250.0,
+   "run_mat": 1250.0,
+   "delta_total": -0.68
+  },
+  "3.33": {
+   "ref_h": 131.27,
+   "run_h": 136.34,
+   "ref_mat": 3310.75,
+   "run_mat": 3326.88,
+   "delta_total": 402.57
+  },
+  "3.34": {
+   "ref_h": 4.0,
+   "run_h": 3.0,
+   "ref_mat": 3422.44,
+   "run_mat": 750.0,
+   "delta_total": -2758.79
+  },
+  "3.35": {
+   "ref_h": 178.75,
+   "run_h": 178.29,
+   "ref_mat": 18678.93,
+   "run_mat": 17254.51,
+   "delta_total": -1523.64
+  },
+  "3.36": {
+   "ref_h": 9.27,
+   "run_h": 8.03,
+   "ref_mat": 779.1,
+   "run_mat": 822.84,
+   "delta_total": -64.6
+  },
+  "3.37": {
+   "ref_h": 20.0,
+   "run_h": 8.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -1026.75
+  },
+  "3.38": {
+   "ref_h": 8.0,
+   "run_h": 8.0,
+   "ref_mat": 7400.0,
+   "run_mat": 7400.0,
+   "delta_total": -2.7
+  },
+  "5.19": {
+   "ref_h": 38.4,
+   "run_h": 49.75,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": 951.78
+  },
+  "6.1": {
+   "ref_h": null,
+   "run_h": 56.0,
+   "ref_mat": null,
+   "run_mat": 1250.0,
+   "delta_total": 6010.0
+  }
+ },
+ "lignes": {
+  "ref": 73,
+  "run": 89,
+  "codes_communs": 45,
+  "manquantes": [
+   "A-02",
+   "A-04",
+   "B-01b",
+   "B-10",
+   "B-LOT",
+   "C-01b",
+   "C-04b",
+   "D-01",
+   "D-02",
+   "D-03",
+   "D-04",
+   "D-05",
+   "D-06",
+   "D-07",
+   "D-12b",
+   "D-17",
+   "D-19",
+   "D-20",
+   "D-21",
+   "D-22",
+   "E-01",
+   "E-03",
+   "E-04",
+   "E-05",
+   "F-11",
+   "F-LOT",
+   "G-01b",
+   "G-07"
+  ],
+  "en_plus": [
+   "A-08.2",
+   "A-09.2",
+   "A-10.2",
+   "B-05",
+   "B-06",
+   "B-07",
+   "B-08",
+   "C-04.2",
+   "C-05",
+   "D-12.2",
+   "D-15",
+   "E-06",
+   "E-08",
+   "E-09",
+   "E-10",
+   "F-03",
+   "F-04",
+   "F-05.2",
+   "F-05.3",
+   "F-08.2",
+   "F-08.3",
+   "G-03",
+   "LOT-DIST-1",
+   "LOT-DIST-2",
+   "LOT-ECL",
+   "LOT-GPR",
+   "LOT-JCI",
+   "LOT-JCI-DET",
+   "R-01",
+   "R-02",
+   "R-03",
+   "R-03.2",
+   "R-04",
+   "R-05",
+   "R-06",
+   "R-07",
+   "R-08",
+   "R-09",
+   "R-10",
+   "R-11",
+   "R-11.2",
+   "R-12",
+   "R-13",
+   "R-14"
+  ],
+  "ecarts": [
+   {
+    "code": "A-01",
+    "ref": {
+     "q": 39,
+     "p": 0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 40,
+     "p": 0.0,
+     "h": 0.5
+    },
+    "src_run": "catalogue Dupuis « EQUIPEMENT A ENLEVER » (dernier 2026-05-05 : 0.0 $ / 0.5 h par U); luminaires existants à enlever (relevé : ENCASTRE 26 + LED 1X4 6 + LED 2X2 8, portée ENLEVER) à 0,5 h (METHODE : luminaire enlevé 0,5 h); A-01/A-02 de l'Estimation_2 (39+7) fusionnés, répartition RDC/2e non récupérable du relevé"
+   },
+   {
+    "code": "A-03",
+    "ref": {
+     "q": 34,
+     "p": 0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 28,
+     "p": 0.0,
+     "h": 0.35
+    },
+    "src_run": "catalogue Dupuis « ENLEVER PRISE » (dernier 2026-08-26 : 0.0 $ / 0.35 h par U); prises DDFT 4 + doubles 7 + sorties data 17 (portée ENLEVER) ; A-03/A-04 fusionnés"
+   },
+   {
+    "code": "A-05",
+    "ref": {
+     "q": 13,
+     "p": 0,
+     "h": 1.5
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 1.5
+    },
+    "src_run": "catalogue Dupuis « RELO PRISE » (dernier 2026-05-05 : 0.0 $ / 1.5 h par U); prises doubles 8 + DDFT 1 + sorties data 3 (portée RELOCALISER); Estimation_2 comptait 13"
+   },
+   {
+    "code": "A-06",
+    "ref": {
+     "q": 7,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 4,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « RELO ENCASTRE » (dernier 2026-06-02 : 0.0 $ / 1.0 h par U); encastrés (portée RELOCALISER); Estimation_2 comptait 7 (dont 4 salle 227)"
+   },
+   {
+    "code": "A-08",
+    "ref": {
+     "q": 21,
+     "p": 0,
+     "h": 0.85
+    },
+    "run": {
+     "q": 21,
+     "p": 0.0,
+     "h": 0.5
+    },
+    "src_run": "catalogue Dupuis « EQUIPEMENT A ENLEVER » (dernier 2026-05-05 : 0.0 $ / 0.5 h par U); FabLab 210 : retrait temporaire des luminaires linéaires existants (qté Estimation_2 A-08, comptée sur plan)"
+   },
+   {
+    "code": "A-09",
+    "ref": {
+     "q": 24,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 24,
+     "p": 0.0,
+     "h": 0.5
+    },
+    "src_run": "catalogue Dupuis « EQUIPEMENT A ENLEVER » (dernier 2026-05-05 : 0.0 $ / 0.5 h par U); FabLab 210 : retrait temporaire des encastrés existants (qté Estimation_2 A-09, ±2)"
+   },
+   {
+    "code": "A-10",
+    "ref": {
+     "q": 6,
+     "p": 0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 6,
+     "p": 0.0,
+     "h": 0.4
+    },
+    "src_run": "catalogue Dupuis « DEBRANCHEMENT APPAREILAGE MECANIQUE » (dernier 2026-09-23 : 0.0 $ / 0.4 h par U); toit E-103 : débrancher équipements de ventilation à relocaliser (relevé MOTEUR MONOPHASE RELOCALISER 6)"
+   },
+   {
+    "code": "B-02",
+    "ref": {
+     "q": 17,
+     "p": 0,
+     "h": 0.2
+    },
+    "run": {
+     "q": 14,
+     "p": 0.0,
+     "h": 0.2
+    },
+    "src_run": "catalogue Dupuis « DISJ15A1P » (dernier 2026-03-09 : 0.0 $ / 0.2 h par U); disjoncteurs 1P (qté Estimation_2 B-02); fournis par le lot distribution (EDB 1P)"
+   },
+   {
+    "code": "B-03",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (dernier 2026-06-02 : 719.6 $ / 1.0 h par U); disjoncteur 3P 1 h (METHODE : disjoncteur 3P 1 h) (qté Estimation_2 B-03); fourni par le lot distribution (EJB 3P); prix en ligne forcé à 0.0 $ (disjoncteurs fournis par le lot distribution (EJB 3P 300 $))"
+   },
+   {
+    "code": "B-04",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 0.4
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (dernier 2026-06-02 : 719.6 $ / 1.0 h par U); disjoncteur 3P 1 h (METHODE : disjoncteur 3P 1 h) (qté Estimation_2 B-04); fourni par le lot distribution (EJB 3P); prix en ligne forcé à 0.0 $ (disjoncteurs fournis par le lot distribution (EJB 3P 300 $))"
+   },
+   {
+    "code": "B-09",
+    "ref": {
+     "q": 9,
+     "p": 15.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 9,
+     "p": 0.0,
+     "h": 1
+    },
+    "src_run": "jugement (Estimation_2) B-09 : 1 h/u « à valider »; famille absente du catalogue"
+   },
+   {
+    "code": "C-03",
+    "ref": {
+     "q": 2,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 2,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "catalogue Dupuis « MOTEUR » (dernier 2026-02-19 : 25.0 $ / 0.75 h par U); chaudières CH-01/CH-02, tiroirs CCM-1 réutilisés (moteur 0,75 h)"
+   },
+   {
+    "code": "C-04",
+    "ref": {
+     "q": 3,
+     "p": 15.0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 3,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "catalogue Dupuis « MOTEUR » (dernier 2026-02-19 : 25.0 $ / 0.75 h par U); humidificateurs HUM-1/2/3 (relevé MOTEUR MONOPHASE INSTALLER 3)"
+   },
+   {
+    "code": "C-07",
+    "ref": {
+     "q": 262.4672,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 115,
+     "p": 2.8997,
+     "h": 0.076
+    },
+    "src_run": "catalogue Dupuis « CONDUIT 3/4 04C12 » (dernier 2026-09-25 : 2.8997 $ / 0.076 h par P); alimentation VE-02N : EMT 3/4\" + 4 #12, 35 m (part de C-07/C-08 Estimation_2)"
+   },
+   {
+    "code": "C-08",
+    "ref": {
+     "q": 7,
+     "p": 40.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 148,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "catalogue Dupuis « CONDUIT 3/4 03C12 » (dernier 2026-09-25 : 4.2441 $ / 0.1128 h par P); humidificateurs : EMT 3/4\" + 3 #12, 3 x 15 m (part de C-07/C-08 Estimation_2)"
+   },
+   {
+    "code": "D-08",
+    "ref": {
+     "q": 41,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "run": {
+     "q": 10,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "src_run": "catalogue Dupuis « TEL/DATA 3/4 » (dernier 2026-09-23 : 22.32 $ / 0.89 h par U); sorties data murales/colonne avec conduit 3/4\" (qté Estimation_2 D-08), prélevées sur les 65 sorties INSTALLER"
+   },
+   {
+    "code": "D-09",
+    "ref": {
+     "q": 1,
+     "p": 60.0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 1,
+     "p": 15.3526,
+     "h": 6
+    },
+    "src_run": "jugement (Estimation_2) D-09 : 6 h/lot « à valider »; hors plan; prix = 2 x (BOITE CARRE 2-1/8PO KO 1 + COUV CARRE 4PO VIERGE) catalogue Dupuis"
+   },
+   {
+    "code": "D-10",
+    "ref": {
+     "q": 1,
+     "p": 17.43,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 7.6763,
+     "h": 2
+    },
+    "src_run": "jugement (Estimation_2) D-10 : 2 h/u « à valider »; hors plan; prix = BOITE CARRE 2-1/8PO KO 1 + COUV CARRE 4PO VIERGE catalogue Dupuis"
+   },
+   {
+    "code": "D-11",
+    "ref": {
+     "q": 4,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 1,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "src_run": "catalogue Dupuis « BOUTON HANDICAPE » (dernier 2026-04-02 : 15.0 $ / 0.5 h par U); bouton d'appel (système fourni par d'autres), qté Estimation_2 D-11"
+   },
+   {
+    "code": "D-13",
+    "ref": {
+     "q": 2148.9501999999998,
+     "p": 4.1197,
+     "h": 0.091
+    },
+    "run": {
+     "q": 1575,
+     "p": 2.4307,
+     "h": 0.07
+    },
+    "src_run": "catalogue Dupuis « CONDUIT VIDE 1 » (dernier 2026-06-02 : 2.4307 $ / 0.07 h par P); EMT 1\" sous dalle vers P-2/P-3 (480 m en pi, hyp. Estimation_2 30 m/course)"
+   },
+   {
+    "code": "D-14",
+    "ref": {
+     "q": 1656.8242,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "run": {
+     "q": 1083,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "catalogue Dupuis « CONDUIT VIDE 3/4 » (dernier 2026-08-19 : 1.4097 $ / 0.056 h par P); EMT 3/4\" data sous dalle RDC (330 m en pi) (METHODE : conduit vide 3/4)"
+   },
+   {
+    "code": "D-16",
+    "ref": {
+     "q": 23,
+     "p": 9.26,
+     "h": 0.25
+    },
+    "run": {
+     "q": 1,
+     "p": 426.075,
+     "h": 12
+    },
+    "src_run": "Lumen IBE72171K 6.0543 $ + IBE72C1 3.2082 $ x 46 (23 courses x 2); temps = jugement (Estimation_2) D-16 8 h + E-11 4 h « à valider » (famille absente du catalogue); E-11 fusionné"
+   },
+   {
+    "code": "E-02",
+    "ref": {
+     "q": 2,
+     "p": 1461.22,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 250.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « MONUMENT PLANCHER » (dernier 2026-02-19 : 250.0 $ / 1.0 h par U); monuments de plancher (portée INSTALLER 3; Estimation_2 : 2 + E-03 2 'à confirmer', fusionnés)"
+   },
+   {
+    "code": "F-02",
+    "ref": {
+     "q": 33,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 0.75
+    },
+    "src_run": "catalogue Dupuis « FIXTURE TYPE C1 » (dernier 2026-07-14 : 0.0 $ / 0.75 h par U); luminaires C1 Axis 4' (INSTALLER 12); lot éclairage"
+   },
+   {
+    "code": "F-05",
+    "ref": {
+     "q": 20,
+     "p": 50.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 20,
+     "p": 0.0,
+     "h": 1
+    },
+    "src_run": "jugement (Estimation_2) F-05 : 1 h/rangée « à valider »; trousses de suspension dans le lot éclairage (1 500 $); hors plan, famille absente du catalogue"
+   },
+   {
+    "code": "F-08",
+    "ref": {
+     "q": 918.6351999999999,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 919,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "catalogue Dupuis « CONDUIT 3/4 03C12 » (dernier 2026-09-25 : 4.2441 $ / 0.1128 h par P); raccordement luminaires sur circuits existants (280 m en pi); F-09 (RW90 #12 3 cond.) compris dans l'assemblage 03C12"
+   },
+   {
+    "code": "F-10",
+    "ref": {
+     "q": 46,
+     "p": 8.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 35,
+     "p": 7.963,
+     "h": 0.2
+    },
+    "src_run": "catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » (dernier 2026-10-07 : 7.963 $ / 0.2 h par U); boîtes de jonction éclairage (35 points, liste Lumen); F-10 Estimation_2 : 8 h ~ 35 x 0,2 h"
+   },
+   {
+    "code": "G-02",
+    "ref": {
+     "q": 98.4252,
+     "p": 1.8196999999999999,
+     "h": 0.084
+    },
+    "run": {
+     "q": 98,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "catalogue Dupuis « CONDUIT VIDE 3/4 » (dernier 2026-08-19 : 1.4097 $ / 0.056 h par P); boucle AI : EMT 3/4\" (30 m en pi)"
+   }
+  ]
+ },
+ "verdict": "ÉCART"
+}

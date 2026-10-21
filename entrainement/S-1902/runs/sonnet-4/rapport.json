@@ -1,0 +1,811 @@
+{
+ "dossier": "S-1902",
+ "run": "sonnet-4",
+ "totaux": {
+  "materiel": {
+   "ref": 66649.07,
+   "run": 58473.25,
+   "delta": -8175.82,
+   "pct": -12.27
+  },
+  "heures_relevees": {
+   "ref": 1045.845,
+   "run": 978.19,
+   "delta": -67.65,
+   "pct": -6.47
+  },
+  "heures_chargees": {
+   "ref": 1050,
+   "run": 980,
+   "delta": -70,
+   "pct": -6.67
+  },
+  "total_acceo": {
+   "ref": 155899.07,
+   "run": 141773.25,
+   "delta": -14125.82,
+   "pct": -9.06
+  },
+  "prix_vente": {
+   "ref": 194000,
+   "run": 176000,
+   "delta": -18000,
+   "pct": -9.28
+  }
+ },
+ "par_article": {
+  "3.22": {
+   "ref_h": 108.35,
+   "run_h": 113.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": 358.66
+  },
+  "3.23": {
+   "ref_h": 53.66,
+   "run_h": 41.31,
+   "ref_mat": 2799.08,
+   "run_mat": 2023.81,
+   "delta_total": -1843.0
+  },
+  "3.24": {
+   "ref_h": 27.5,
+   "run_h": 17.0,
+   "ref_mat": 6335.0,
+   "run_mat": 3400.0,
+   "delta_total": -3836.79
+  },
+  "3.25": {
+   "ref_h": 7.6,
+   "run_h": 6.8,
+   "ref_mat": 0.0,
+   "run_mat": 2800.0,
+   "delta_total": 2729.43
+  },
+  "3.26": {
+   "ref_h": 4.0,
+   "run_h": 1.5,
+   "ref_mat": 30.0,
+   "run_mat": 50.0,
+   "delta_total": -193.85
+  },
+  "3.27": {
+   "ref_h": 34.25,
+   "run_h": 22.5,
+   "ref_mat": 2197.1,
+   "run_mat": 1549.0,
+   "delta_total": -1658.42
+  },
+  "3.28": {
+   "ref_h": 92.0,
+   "run_h": 29.38,
+   "ref_mat": 4259.79,
+   "run_mat": 1620.25,
+   "delta_total": -7992.88
+  },
+  "3.29": {
+   "ref_h": 25.85,
+   "run_h": null,
+   "ref_mat": 1689.82,
+   "run_mat": null,
+   "delta_total": -3895.8
+  },
+  "3.30": {
+   "ref_h": 1.3,
+   "run_h": 28.6,
+   "ref_mat": 65.38,
+   "run_mat": 1438.36,
+   "delta_total": 3693.04
+  },
+  "3.31": {
+   "ref_h": 299.65,
+   "run_h": 275.18,
+   "ref_mat": 14431.68,
+   "run_mat": 14339.91,
+   "delta_total": -2273.3
+  },
+  "3.32": {
+   "ref_h": 2.0,
+   "run_h": 2.0,
+   "ref_mat": 1250.0,
+   "run_mat": 1250.0,
+   "delta_total": -0.68
+  },
+  "3.33": {
+   "ref_h": 131.27,
+   "run_h": 136.4,
+   "ref_mat": 3310.75,
+   "run_mat": 3328.28,
+   "delta_total": 409.07
+  },
+  "3.34": {
+   "ref_h": 4.0,
+   "run_h": 3.0,
+   "ref_mat": 3422.44,
+   "run_mat": 750.0,
+   "delta_total": -2758.79
+  },
+  "3.35": {
+   "ref_h": 178.75,
+   "run_h": 174.29,
+   "ref_mat": 18678.93,
+   "run_mat": 16449.38,
+   "delta_total": -2668.77
+  },
+  "3.36": {
+   "ref_h": 9.27,
+   "run_h": 20.08,
+   "ref_mat": 779.1,
+   "run_mat": 824.25,
+   "delta_total": 961.06
+  },
+  "3.37": {
+   "ref_h": 20.0,
+   "run_h": 8.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -1026.75
+  },
+  "3.38": {
+   "ref_h": 8.0,
+   "run_h": 8.0,
+   "ref_mat": 7400.0,
+   "run_mat": 7400.0,
+   "delta_total": -2.7
+  },
+  "5.19": {
+   "ref_h": 38.4,
+   "run_h": 35.15,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -289.22
+  },
+  "6.1": {
+   "ref_h": null,
+   "run_h": 56.0,
+   "ref_mat": null,
+   "run_mat": 1250.0,
+   "delta_total": 6010.0
+  }
+ },
+ "lignes": {
+  "ref": 73,
+  "run": 85,
+  "codes_communs": 59,
+  "manquantes": [
+   "A-02",
+   "A-04",
+   "B-01b",
+   "B-10",
+   "B-LOT",
+   "C-01b",
+   "D-04",
+   "D-05",
+   "D-12b",
+   "D-22",
+   "E-03",
+   "E-05",
+   "F-11",
+   "F-LOT"
+  ],
+  "en_plus": [
+   "A-12",
+   "A-13",
+   "B-05",
+   "B-06",
+   "B-07",
+   "B-08",
+   "C-05",
+   "C-06",
+   "D-09b",
+   "D-10b",
+   "D-11b",
+   "D-15",
+   "D-16b",
+   "D-16c",
+   "D-16d",
+   "D-18",
+   "E-07",
+   "E-08",
+   "E-09",
+   "E-10",
+   "E-11",
+   "E-11b",
+   "E-11c",
+   "F-03",
+   "F-04",
+   "G-03"
+  ],
+  "ecarts": [
+   {
+    "code": "A-01",
+    "ref": {
+     "q": 39,
+     "p": 0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 40,
+     "p": 0.0,
+     "h": 0.5
+    },
+    "src_run": "METHODE.md §3 « luminaire enlevé 0,5 h » (libellé absent du catalogue; voisins ENLEVER FIXTURE ENCAST/2X2/1X4 = 0,35 h); quantité releve.xlsx/rapport (portée ENLEVER)"
+   },
+   {
+    "code": "A-03",
+    "ref": {
+     "q": 34,
+     "p": 0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 28,
+     "p": 0.0,
+     "h": 0.35
+    },
+    "src_run": "catalogue Dupuis « ENLEVER PRISE » (PRIX/TEMPS À UTILISER, dernier 2026-08-26)"
+   },
+   {
+    "code": "A-05",
+    "ref": {
+     "q": 13,
+     "p": 0,
+     "h": 1.5
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 1.5
+    },
+    "src_run": "catalogue Dupuis « RELO PRISE » (PRIX/TEMPS À UTILISER, dernier 2026-05-05)"
+   },
+   {
+    "code": "A-06",
+    "ref": {
+     "q": 7,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 4,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « RELO ENCASTRE » (PRIX/TEMPS À UTILISER, dernier 2026-06-02)"
+   },
+   {
+    "code": "A-08",
+    "ref": {
+     "q": 21,
+     "p": 0,
+     "h": 0.85
+    },
+    "run": {
+     "q": 21,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « RELO ENCASTRE » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); quantité Détail A-08 (comptée sur plan E-202); libellé voisin pour retrait + repose"
+   },
+   {
+    "code": "A-09",
+    "ref": {
+     "q": 24,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 24,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « RELO ENCASTRE » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); quantité Détail A-09 (comptée sur plan E-202, ±2)"
+   },
+   {
+    "code": "B-02",
+    "ref": {
+     "q": 17,
+     "p": 0,
+     "h": 0.2
+    },
+    "run": {
+     "q": 14,
+     "p": 0.0,
+     "h": 0.2
+    },
+    "src_run": "catalogue Dupuis « DISJ15A1P » (PRIX/TEMPS À UTILISER, dernier 2026-03-09); disjoncteur 1P fourni par lot distribution"
+   },
+   {
+    "code": "B-03",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); prix mis à 0 $ en ligne (inclus dans le lot fournisseur); temps 3P = 1 h (METHODE §3), fourni par lot distribution"
+   },
+   {
+    "code": "B-04",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 0.4
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); prix mis à 0 $ en ligne (inclus dans le lot fournisseur); temps 3P = 1 h (METHODE §3), fourni par lot distribution"
+   },
+   {
+    "code": "B-09",
+    "ref": {
+     "q": 9,
+     "p": 15.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 9,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "jugement (Estimation_2) — Détail B-09, 1 h/u à valider"
+   },
+   {
+    "code": "C-03",
+    "ref": {
+     "q": 2,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 2,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "catalogue Dupuis « MOTEUR » (PRIX/TEMPS À UTILISER, dernier 2026-02-19); releve MOTEUR TRIPHASE INSTALLER"
+   },
+   {
+    "code": "C-04",
+    "ref": {
+     "q": 3,
+     "p": 15.0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 3,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "catalogue Dupuis « MOTEUR » (PRIX/TEMPS À UTILISER, dernier 2026-02-19); releve MOTEUR MONOPHASE INSTALLER"
+   },
+   {
+    "code": "C-04b",
+    "ref": {
+     "q": 3,
+     "p": 133.49,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 117.84,
+     "h": 2.0
+    },
+    "src_run": "prix Lumen HUBHBL1372 « HUBBELL HBL1372 SECTIONNEUR 30A 2P » (réguliers 2026-10-07, prix catalogue = 0 $); temps catalogue Dupuis « SECTIONNEURS SANS FUSIBLES 30A » (dernier 2026-09-23)"
+   },
+   {
+    "code": "C-07",
+    "ref": {
+     "q": 262.4672,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 263,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "catalogue Dupuis « CONDUIT VIDE 3/4 » (PRIX/TEMPS À UTILISER, dernier 2026-08-19); longueur Détail C-07"
+   },
+   {
+    "code": "C-08",
+    "ref": {
+     "q": 7,
+     "p": 40.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 903,
+     "p": 0.3896,
+     "h": 0.005
+    },
+    "src_run": "catalogue Dupuis « 12AWG SOLIDE RW90 600V » (PRIX/TEMPS À UTILISER, dernier 2026-09-10); longueur Détail C-08"
+   },
+   {
+    "code": "D-01",
+    "ref": {
+     "q": 18,
+     "p": 156.39000000000001,
+     "h": 3.5300000000000002
+    },
+    "run": {
+     "q": 18,
+     "p": 35.43,
+     "h": 0.9
+    },
+    "src_run": "catalogue Dupuis « DROP DE PRISE » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); quantité Détail D-01 (18 postes, hors plan)"
+   },
+   {
+    "code": "D-02",
+    "ref": {
+     "q": 5,
+     "p": 439.42,
+     "h": 6.85
+    },
+    "run": {
+     "q": 20,
+     "p": 77.45,
+     "h": 1.125
+    },
+    "src_run": "catalogue Dupuis « PRISE USB 125V 15 AMP » (PRIX/TEMPS À UTILISER, dernier 2026-09-10)"
+   },
+   {
+    "code": "D-03",
+    "ref": {
+     "q": 2,
+     "p": 64.81,
+     "h": 1.175
+    },
+    "run": {
+     "q": 2,
+     "p": 35.43,
+     "h": 0.9
+    },
+    "src_run": "catalogue Dupuis « DROP DE PRISE » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); quantité Détail D-03"
+   },
+   {
+    "code": "D-06",
+    "ref": {
+     "q": 8,
+     "p": 64.81,
+     "h": 1.175
+    },
+    "run": {
+     "q": 25,
+     "p": 64.81,
+     "h": 1.175
+    },
+    "src_run": "catalogue Dupuis « PRISE DUPLEX 15A 120V » (PRIX/TEMPS À UTILISER, dernier 2026-09-25)"
+   },
+   {
+    "code": "D-07",
+    "ref": {
+     "q": 1,
+     "p": 65.38,
+     "h": 1.3
+    },
+    "run": {
+     "q": 22,
+     "p": 65.38,
+     "h": 1.3
+    },
+    "src_run": "catalogue Dupuis « PRISE DUPLEX 20A 125V GFI » (PRIX/TEMPS À UTILISER, dernier 2026-10-07); DDFT 65,38 $ / 1,3 h (METHODE §1/§3)"
+   },
+   {
+    "code": "D-08",
+    "ref": {
+     "q": 41,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "run": {
+     "q": 10,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "src_run": "catalogue Dupuis « TEL/DATA 3/4 » (PRIX/TEMPS À UTILISER, dernier 2026-09-23); quantité Détail D-08, comprise dans les 65 sorties data INSTALLER du relevé"
+   },
+   {
+    "code": "D-09",
+    "ref": {
+     "q": 1,
+     "p": 60.0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 6.0
+    },
+    "src_run": "jugement (Estimation_2) — Détail D-09, 6 h/u à valider; 2 boîtes de jonction chiffrées en D-09b"
+   },
+   {
+    "code": "D-10",
+    "ref": {
+     "q": 1,
+     "p": 17.43,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 2.0
+    },
+    "src_run": "jugement (Estimation_2) — Détail D-10, 2 h/u à valider; 1 boîte de jonction chiffrée en D-10b"
+   },
+   {
+    "code": "D-11",
+    "ref": {
+     "q": 4,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 4,
+     "p": 7.68,
+     "h": 0.0
+    },
+    "src_run": "catalogue Dupuis « BOITE CARREES 4 PO » (PRIX/TEMPS À UTILISER, dernier 2026-09-23); temps ajusté; D-11 (1) + E-06 (3); temps en D-11b"
+   },
+   {
+    "code": "D-12",
+    "ref": {
+     "q": 23,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 16,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « PERCEMENT PLANCHER » (PRIX/TEMPS À UTILISER, dernier 2026-10-07); quantité Détail D-12"
+   },
+   {
+    "code": "D-13",
+    "ref": {
+     "q": 2148.9501999999998,
+     "p": 4.1197,
+     "h": 0.091
+    },
+    "run": {
+     "q": 1575,
+     "p": 2.4307,
+     "h": 0.07
+    },
+    "src_run": "catalogue Dupuis « CONDUIT VIDE 1 » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); longueur Détail D-13 (hypothèse 30 m/course)"
+   },
+   {
+    "code": "D-14",
+    "ref": {
+     "q": 1656.8242,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "run": {
+     "q": 1083,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "catalogue Dupuis « CONDUIT VIDE 3/4 » (PRIX/TEMPS À UTILISER, dernier 2026-08-19); longueur Détail D-14 (hypothèse)"
+   },
+   {
+    "code": "D-16",
+    "ref": {
+     "q": 23,
+     "p": 9.26,
+     "h": 0.25
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 8.0
+    },
+    "src_run": "jugement (Estimation_2) — Détail D-16, 8 h/u à valider"
+   },
+   {
+    "code": "D-17",
+    "ref": {
+     "q": 22,
+     "p": 76.81,
+     "h": 1.175
+    },
+    "run": {
+     "q": 55,
+     "p": 13.96,
+     "h": 0.63
+    },
+    "src_run": "catalogue Dupuis « TEL/DATA » (PRIX/TEMPS À UTILISER, dernier 2026-09-25)"
+   },
+   {
+    "code": "D-19",
+    "ref": {
+     "q": 1,
+     "p": 1250.0,
+     "h": 2.0
+    },
+    "run": {
+     "q": 2,
+     "p": 35.0,
+     "h": 0.4
+    },
+    "src_run": "catalogue Dupuis « THERMOSTAT » (PRIX/TEMPS À UTILISER, dernier 2026-06-03); thermostat 35 $ (METHODE §1)"
+   },
+   {
+    "code": "D-20",
+    "ref": {
+     "q": 7,
+     "p": 30.0,
+     "h": 0.85
+    },
+    "run": {
+     "q": 2,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "src_run": "catalogue Dupuis « LECTEUR DE CARTE » (PRIX/TEMPS À UTILISER, dernier 2026-04-02); lecteur 15 $ (METHODE §1)"
+   },
+   {
+    "code": "D-21",
+    "ref": {
+     "q": 6,
+     "p": 35.0,
+     "h": 0.4
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 2.0
+    },
+    "src_run": "catalogue Dupuis « SCAN DALLE BETON » (PRIX/TEMPS À UTILISER, dernier 2026-03-09); prix mis à 0 $ en ligne (inclus dans le lot fournisseur)"
+   },
+   {
+    "code": "E-01",
+    "ref": {
+     "q": 2,
+     "p": 143.58,
+     "h": 2.98
+    },
+    "run": {
+     "q": 2,
+     "p": 35.43,
+     "h": 0.9
+    },
+    "src_run": "catalogue Dupuis « DROP DE PRISE » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); quantité Détail E-01"
+   },
+   {
+    "code": "E-02",
+    "ref": {
+     "q": 2,
+     "p": 1461.22,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 250.0,
+     "h": 1.0
+    },
+    "src_run": "catalogue Dupuis « MONUMENT PLANCHER » (PRIX/TEMPS À UTILISER, dernier 2026-02-19); monument 250 $ (METHODE §1); remplace E-02 (2) + E-03 (2) du Détail"
+   },
+   {
+    "code": "E-04",
+    "ref": {
+     "q": 3,
+     "p": 64.81,
+     "h": 1.175
+    },
+    "run": {
+     "q": 3,
+     "p": 35.43,
+     "h": 0.9
+    },
+    "src_run": "catalogue Dupuis « DROP DE PRISE » (PRIX/TEMPS À UTILISER, dernier 2026-06-02); quantité Détail E-04"
+   },
+   {
+    "code": "F-02",
+    "ref": {
+     "q": 33,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 0.75
+    },
+    "src_run": "catalogue Dupuis « FIXTURE TYPE C1 » (PRIX/TEMPS À UTILISER, dernier 2026-07-14); 0 $ en ligne + lot éclairage"
+   },
+   {
+    "code": "F-05",
+    "ref": {
+     "q": 20,
+     "p": 50.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 20,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "jugement (Estimation_2) — Détail F-05, 1 h/u à valider; trousses de suspension dans le lot éclairage"
+   },
+   {
+    "code": "F-08",
+    "ref": {
+     "q": 918.6351999999999,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 919,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "catalogue Dupuis « CONDUIT 3/4 03C12 » (PRIX/TEMPS À UTILISER, dernier 2026-09-25); longueur Détail F-08; assemblage 03C12 inclut les 3 conducteurs #12 (F-09)"
+   },
+   {
+    "code": "F-10",
+    "ref": {
+     "q": 46,
+     "p": 8.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 35,
+     "p": 7.963,
+     "h": 0.2
+    },
+    "src_run": "catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » (PRIX/TEMPS À UTILISER, dernier 2026-10-07); 35 points = base Lumen/Détail F-08"
+   },
+   {
+    "code": "G-01b",
+    "ref": {
+     "q": 2,
+     "p": 300.0,
+     "h": 0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 0.75
+    },
+    "src_run": "catalogue Dupuis « RELO DETECTEUR A FUME » (PRIX/TEMPS À UTILISER, dernier 2026-10-07)"
+   },
+   {
+    "code": "G-02",
+    "ref": {
+     "q": 98.4252,
+     "p": 1.8196999999999999,
+     "h": 0.084
+    },
+    "run": {
+     "q": 99,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "catalogue Dupuis « CONDUIT VIDE 3/4 » (PRIX/TEMPS À UTILISER, dernier 2026-08-19); longueur Détail G-02"
+   },
+   {
+    "code": "G-07",
+    "ref": {
+     "q": 1,
+     "p": 7400.0,
+     "h": 0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 0.0
+    },
+    "src_run": "jugement (Estimation_2) — Détail G-07, 0 h/u à valider"
+   }
+  ]
+ },
+ "verdict": "ÉCART"
+}
