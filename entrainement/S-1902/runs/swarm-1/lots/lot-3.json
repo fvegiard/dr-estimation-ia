@@ -1,0 +1,255 @@
+{
+ "lot": 3,
+ "titre": "Distribution, panneaux, disjoncteurs, raccordements mécaniques, frais de chantier",
+ "equipier": "Claude Opus 5.5 (chef d'équipe — aucun outil Agent disponible dans cette session, lot rédigé par le chef)",
+ "lignes": [
+  {
+   "code": "B-01",
+   "desc": "Panneau PP-3 neuf 225A 347/600V 3Ø 4F 42 cct NF — installation (prix au lot distribution)",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 8.0,
+   "art": "3.24",
+   "src": "Dupuis-temps[PANNEAU 225A 120/208V 3F] — panneau 0 $ en ligne (règle 2), 8 h"
+  },
+  {
+   "code": "B-01-ENL",
+   "desc": "Démantèlement de l'ancien PP-3 (42 cct) + transfert des charges",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 4.0,
+   "art": "3.24",
+   "src": "Dupuis[ENL PANN 42CCT 120/208V] — Détail B-01 (incl. démantèlement ancien PP-3)"
+  },
+  {
+   "code": "B-02",
+   "desc": "Disjoncteurs NF 1P-15A — circuits existants transférés dans PP-3",
+   "q": 14,
+   "u": "u",
+   "p": 0.0,
+   "h": 0.2,
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ15A1P] — qté Détail B-02 ; prix au lot distribution"
+  },
+  {
+   "code": "B-03",
+   "desc": "Disjoncteur NF 3P-20A aérotherme (transféré)",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 1.0,
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — disjoncteur 3P 1 h ; prix au lot"
+  },
+  {
+   "code": "B-04",
+   "desc": "Disjoncteur NF 3P-40A UTA-1 (nouveau)",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 1.0,
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — prix au lot"
+  },
+  {
+   "code": "B-05",
+   "desc": "Disjoncteur NF 3P-15A VE-2N (nouveau)",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 1.0,
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — prix au lot"
+  },
+  {
+   "code": "B-06",
+   "desc": "Disjoncteur 1P-15A DDFT — fontaine P2-61",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 0.2,
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ15A1P] — prix au lot"
+  },
+  {
+   "code": "B-07",
+   "desc": "Disjoncteurs 1P-15A — P2-63, P2-64",
+   "q": 2,
+   "u": "u",
+   "p": 0.0,
+   "h": 0.2,
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ15A1P] — prix au lot"
+  },
+  {
+   "code": "B-08",
+   "desc": "Disjoncteurs 1P-20A — P3-17/19 machine de tri",
+   "q": 2,
+   "u": "u",
+   "p": 0.0,
+   "h": 0.2,
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 20A 1P 120V 10KA] — prix au lot"
+  },
+  {
+   "code": "B-09",
+   "desc": "Mise à jour fiches dactylographiées + identification (9 panneaux)",
+   "q": 9,
+   "u": "u",
+   "p": 0.0,
+   "h": 1.0,
+   "art": "3.24",
+   "src": "jugement (Estimation_2) B-09"
+  },
+  {
+   "code": "C-01",
+   "desc": "Raccordement UTA-01 York 575V/3Ø au toit (sectionneur d'usine, raccord LFMC)",
+   "q": 1,
+   "u": "u",
+   "p": 25.0,
+   "h": 1.0,
+   "art": "3.23",
+   "src": "Dupuis[MOTEUR UAF-1] — releve MOTEUR TRIPHASE INSTALLER (E-106) ; Détail C-01"
+  },
+  {
+   "code": "C-05",
+   "desc": "Conduit 1\" + 4 #8 (3 + MALT) alimentation UTA-01 — 35 m (inclut C-06)",
+   "q": 115,
+   "u": "pi",
+   "p": 6.1399,
+   "h": 0.098,
+   "art": "3.23",
+   "src": "Dupuis[CONDUIT 1 04C08] — Détail C-05 35 m + C-06"
+  },
+  {
+   "code": "C-02",
+   "desc": "Raccordement VE-02N Plymovent 575V/3Ø c/a VFD (sectionneur d'usine)",
+   "q": 1,
+   "u": "u",
+   "p": 25.0,
+   "h": 0.75,
+   "art": "3.23",
+   "src": "Dupuis[MOTEUR] — releve MOTEUR TRIPHASE INSTALLER (E-106) ; Détail C-02"
+  },
+  {
+   "code": "C-07a",
+   "desc": "Conduit 3/4 + 4 #12 alimentation VE-02N — 35 m (inclut C-08)",
+   "q": 115,
+   "u": "pi",
+   "p": 2.8997,
+   "h": 0.076,
+   "art": "3.23",
+   "src": "Dupuis[CONDUIT 3/4 04C12] — Détail C-07 (35 m VE-02N) + C-08"
+  },
+  {
+   "code": "C-03",
+   "desc": "Raccordement chaudières CH-01/CH-02 600V/3Ø (tiroirs CCM-1 et câbles réutilisés, raccord final)",
+   "q": 2,
+   "u": "u",
+   "p": 25.0,
+   "h": 0.75,
+   "art": "3.26",
+   "src": "Dupuis[MOTEUR] — releve MOTEUR TRIPHASE INSTALLER (E-105 2) ; Détail C-03"
+  },
+  {
+   "code": "C-04",
+   "desc": "Raccordement humidificateurs HUM-1/2/3 Carel 120V",
+   "q": 3,
+   "u": "u",
+   "p": 15.0,
+   "h": 0.35,
+   "art": "3.23",
+   "src": "Dupuis[HUMIDIFICATEUR] — releve MOTEUR MONOPHASE INSTALLER 3 (E-105) ; Détail C-04"
+  },
+  {
+   "code": "C-04-SS",
+   "desc": "Sectionneur sans fusible 30A (HUM-1/2/3)",
+   "q": 3,
+   "u": "u",
+   "p": 117.84,
+   "h": 0.5,
+   "art": "3.23",
+   "src": "Dupuis[INTERR 30A 2P 600V CEMA1] — = Lumen HUBHBL1372 117,84 $ ; Détail C-04"
+  },
+  {
+   "code": "C-07b",
+   "desc": "Conduit 3/4 + 3 #12 humidificateurs — 3 × 15 m (inclut C-08)",
+   "q": 148,
+   "u": "pi",
+   "p": 4.2441,
+   "h": 0.1128,
+   "art": "3.23",
+   "src": "Dupuis[CONDUIT 3/4 03C12] — Détail C-07 (3 × 15 m) + C-08"
+  },
+  {
+   "code": "H-01",
+   "desc": "Nacelle / plateforme (mobilisation, outillage, travail en hauteur)",
+   "q": 1,
+   "u": "u",
+   "p": 1250.0,
+   "h": 16.0,
+   "art": "6.1",
+   "src": "Dupuis[NACELLE] — remplace Détail H-01 (16 h jugement, même nombre d'heures)"
+  },
+  {
+   "code": "H-02",
+   "desc": "Coordination EG / multi-corps, dessins d'atelier, plans tel que construit",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 20.0,
+   "art": "6.1",
+   "src": "jugement (Estimation_2) H-02"
+  },
+  {
+   "code": "H-03",
+   "desc": "Essais, mise en service, vérification prises existantes, étiquetage",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 12.0,
+   "art": "6.1",
+   "src": "jugement (Estimation_2) H-03"
+  },
+  {
+   "code": "H-04",
+   "desc": "Nettoyage, gestion des déchets",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 8.0,
+   "art": "6.1",
+   "src": "jugement (Estimation_2) H-04"
+  },
+  {
+   "code": "LOT-DIST-PAN",
+   "desc": "Lot distribution — panneau NF 225A 42 cct",
+   "q": 1,
+   "u": "lot",
+   "p": 3400.0,
+   "h": 0.0,
+   "art": "3.24",
+   "src": "lot confirmé (METHODE.md, Francis 2026-10-20) — part panneau du lot distribution 6 200 $"
+  },
+  {
+   "code": "LOT-DIST-DISJ",
+   "desc": "Lot distribution — disjoncteurs EDB 1P 95 $ ×20 + EJB 3P 300 $ ×3",
+   "q": 1,
+   "u": "lot",
+   "p": 2800.0,
+   "h": 0.0,
+   "art": "3.25",
+   "src": "lot confirmé (METHODE.md) — part disjoncteurs du lot distribution 6 200 $"
+  }
+ ],
+ "notes": [
+  "Lot distribution 6 200 $ ventilé 3 400 $ (3.24) + 2 800 $ (3.25), conforme à la décomposition de METHODE.md.",
+  "Disjoncteurs : 19 × 1P au Détail (B-02 14 + B-06 1 + B-07 2 + B-08 2) vs 20 EDB au lot : le lot fait foi pour le prix, le Détail pour les heures.",
+  "Panneau : libellé 'PANNEAU 225A 347/600V 3' existe mais porte 0 h ; retenu 'PANNEAU 225A 120/208V 3F' pour son temps (8 h, = METHODE 'panneau 8 h'), prix forcé à 0 (règle 2).",
+  "C-03 : heures jugement 6 h/chaudière remplacées par le temps Dupuis MOTEUR 0,75 h (câbles et tiroirs CCM réutilisés).",
+  "UTA-1 : MOCP 35 A (E-009) vs disjoncteur 40 A (E-502) — contradiction à clarifier avec l'ingénieur (Sommaire note 6), sans effet sur le chiffrage.",
+  "Frais H- ventilés à l'article 6.1 (conditions de mise en œuvre)."
+ ]
+}

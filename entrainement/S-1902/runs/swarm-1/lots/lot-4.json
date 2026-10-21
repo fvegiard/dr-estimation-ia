@@ -1,0 +1,162 @@
+{
+ "lot": 4,
+ "titre": "Alarme incendie, éclairage d'urgence, data, lots fournisseur",
+ "equipier": "Claude Opus 5.5 (chef d'équipe — aucun outil Agent disponible dans cette session, lot rédigé par le chef)",
+ "lignes": [
+  {
+   "code": "RL-40",
+   "desc": "Sortie data neuve aux postes/mobilier/tables (plaque, câble réutilisé)",
+   "q": 55,
+   "u": "u",
+   "p": 13.96,
+   "h": 0.63,
+   "art": "3.33",
+   "src": "Dupuis[TEL/DATA] — releve SORTIE DATA INSTALLER 65 moins 10 murales (D-08)"
+  },
+  {
+   "code": "D-08",
+   "desc": "Sortie data murale/colonne : boîte + conduit 3/4 vers entreplafond + corde",
+   "q": 10,
+   "u": "u",
+   "p": 22.32,
+   "h": 0.89,
+   "art": "3.33",
+   "src": "Dupuis[TEL/DATA 3/4] — qté Détail D-08 (incluse dans les 65 INSTALLER du relevé)"
+  },
+  {
+   "code": "F-07",
+   "desc": "Enseigne de sortie Z6 Stanpro RMSOWH-UDC (temps seulement — lot éclairage)",
+   "q": 3,
+   "u": "u",
+   "p": 0.0,
+   "h": 1.0,
+   "art": "3.35",
+   "src": "Dupuis-temps[ENSEIGNE SORTIE Z6] — releve ENSEIGNE SORTIE Z6 INSTALLER 3"
+  },
+  {
+   "code": "G-01",
+   "desc": "Détecteur de fumée adressable Simplex 4007ES + base (fourni JCI, installé DR)",
+   "q": 2,
+   "u": "u",
+   "p": 0.0,
+   "h": 0.5,
+   "art": "3.36",
+   "src": "Dupuis-temps[DETECTEUR FUMEE] — releve DETECTEUR FUMEE INSTALLER 2 = Détail G-01 ; prix au lot AI"
+  },
+  {
+   "code": "RL-41",
+   "desc": "Relocaliser détecteur de fumée existant",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 0.75,
+   "art": "3.36",
+   "src": "Dupuis[RELO DETECTEUR A FUME] — releve DETECTEUR FUMEE RELOCALISER 1"
+  },
+  {
+   "code": "RL-42",
+   "desc": "Enlever dispositifs AI existants (détecteur 1, boîtier « C » 2, haut-parleur 1)",
+   "q": 4,
+   "u": "u",
+   "p": 0.0,
+   "h": 0.5,
+   "art": "5.19",
+   "src": "Dupuis[EQUIPEMENT A ENLEVER] — releve DETECTEUR FUMEE ENLEVER 1 + BOITIER C ENLEVER 2 + HP ENCASTRE PLAFOND ENLEVER 1"
+  },
+  {
+   "code": "G-02",
+   "desc": "Conduit vide 3/4 boucle AI — 30 m",
+   "q": 98,
+   "u": "pi",
+   "p": 1.4097,
+   "h": 0.056,
+   "art": "3.36",
+   "src": "Dupuis[CONDUIT VIDE 3/4] — Détail G-02 30 m"
+  },
+  {
+   "code": "G-03",
+   "desc": "Câble AI FT4 #16 (boucle adressable) — 60 m",
+   "q": 197,
+   "u": "pi",
+   "p": 1.5887,
+   "h": 0.054,
+   "art": "3.36",
+   "src": "Dupuis[COND ALARME 3/16 FT4] — Détail G-03 60 m"
+  },
+  {
+   "code": "G-04",
+   "desc": "Relocalisation panneau annonciateur Simplex (réutiliser câbles, rallonger)",
+   "q": 1,
+   "u": "u",
+   "p": 550.0,
+   "h": 8.0,
+   "art": "3.37",
+   "src": "Dupuis[RELO PANNEAU ANNONCIA] — releve PANNEAU ANNONCIATEUR INSTALLER 1 (E-203) = Détail G-04"
+  },
+  {
+   "code": "G-05",
+   "desc": "Démontage/protection/réinstallation dispositifs AI existants dans zones touchées",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 12.0,
+   "art": "3.36",
+   "src": "jugement (Estimation_2) G-05"
+  },
+  {
+   "code": "G-06",
+   "desc": "Assistance électricien — programmation / vérification ULC-S537",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 8.0,
+   "art": "3.38",
+   "src": "jugement (Estimation_2) G-06"
+  },
+  {
+   "code": "G-07",
+   "desc": "Sous-traitance JCI/Simplex : bypass, programmation 4007ES, vérification CAN/ULC-S537, certificat",
+   "q": 1,
+   "u": "lot",
+   "p": 7400.0,
+   "h": 0.0,
+   "art": "3.38",
+   "src": "lot confirmé (METHODE.md, Francis 2026-10-20) — JCI 7 400 $"
+  },
+  {
+   "code": "LOT-AI-DET",
+   "desc": "Détecteurs de fumée adressables (2) — fourniture JCI",
+   "q": 1,
+   "u": "lot",
+   "p": 600.0,
+   "h": 0.0,
+   "art": "3.36",
+   "src": "lot confirmé (METHODE.md) — « 2 détecteurs 600 $ » lu comme 600 $ pour les deux"
+  },
+  {
+   "code": "LOT-ECL",
+   "desc": "Lot éclairage (A1, Axis SL1 4'/3'/1', trousses, E, Z6)",
+   "q": 1,
+   "u": "lot",
+   "p": 11893.0,
+   "h": 0.0,
+   "art": "3.35",
+   "src": "lot confirmé (METHODE.md, Francis 2026-10-20) — 11 893 $"
+  },
+  {
+   "code": "GPR",
+   "desc": "Scan de dalle béton (GPR) avant carottage",
+   "q": 1,
+   "u": "u",
+   "p": 1250.0,
+   "h": 2.0,
+   "art": "3.32",
+   "src": "Dupuis[SCAN DALLE BETON] — = lot GPR 1 250 $ confirmé (METHODE.md), compté une seule fois"
+  }
+ ],
+ "notes": [
+  "Lot éclairage : le montant confirmé (11 893 $) ne correspond pas à la somme de sa décomposition (2 035 + 3 480 + 3 450 + 660 + 1 500 + 1 425 + 484,80 = 13 034,80 $) : le montant confirmé est retenu, écart de 1 141,80 $ signalé.",
+  "OPT-1 (câblage Cat6 vs câble existant réutilisé), OPT-2 (parasismique), OPT-3 (hors heures), OPT-4 (temporaires) : hors total comme au Détail.",
+  "Schéma AI E-007 (2 détecteurs neufs à l'étage) vs plans (2 neufs au RDC) : les plans prévalent (relevé E-203)."
+ ]
+}

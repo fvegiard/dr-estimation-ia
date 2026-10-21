@@ -1,0 +1,577 @@
+{
+ "dossier": "S-1902",
+ "run": "swarm-1",
+ "totaux": {
+  "materiel": {
+   "ref": 66649.07,
+   "run": 57584.46,
+   "delta": -9064.61,
+   "pct": -13.6
+  },
+  "heures_relevees": {
+   "ref": 1045.845,
+   "run": 929.15,
+   "delta": -116.7,
+   "pct": -11.16
+  },
+  "heures_chargees": {
+   "ref": 1050,
+   "run": 930,
+   "delta": -120,
+   "pct": -11.43
+  },
+  "total_acceo": {
+   "ref": 155899.07,
+   "run": 136634.46,
+   "delta": -19264.61,
+   "pct": -12.36
+  },
+  "prix_vente": {
+   "ref": 194000,
+   "run": 170000,
+   "delta": -24000,
+   "pct": -12.37
+  }
+ },
+ "par_article": {
+  "3.22": {
+   "ref_h": 108.35,
+   "run_h": 92.6,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -1368.18
+  },
+  "3.23": {
+   "ref_h": 53.66,
+   "run_h": 41.8,
+   "ref_mat": 2799.08,
+   "run_mat": 2186.2,
+   "delta_total": -1635.35
+  },
+  "3.24": {
+   "ref_h": 27.5,
+   "run_h": 21.0,
+   "ref_mat": 6335.0,
+   "run_mat": 3400.0,
+   "delta_total": -3495.17
+  },
+  "3.25": {
+   "ref_h": 7.6,
+   "run_h": 6.8,
+   "ref_mat": 0.0,
+   "run_mat": 2800.0,
+   "delta_total": 2729.96
+  },
+  "3.26": {
+   "ref_h": 4.0,
+   "run_h": 1.5,
+   "ref_mat": 30.0,
+   "run_mat": 50.0,
+   "delta_total": -193.73
+  },
+  "3.27": {
+   "ref_h": 34.25,
+   "run_h": 22.5,
+   "ref_mat": 2197.1,
+   "run_mat": 1549.0,
+   "delta_total": -1656.68
+  },
+  "3.28": {
+   "ref_h": 92.0,
+   "run_h": 29.38,
+   "ref_mat": 4259.79,
+   "run_mat": 1620.25,
+   "delta_total": -7991.03
+  },
+  "3.29": {
+   "ref_h": 25.85,
+   "run_h": null,
+   "ref_mat": 1689.82,
+   "run_mat": null,
+   "delta_total": -3895.8
+  },
+  "3.30": {
+   "ref_h": 1.3,
+   "run_h": 28.6,
+   "ref_mat": 65.38,
+   "run_mat": 1438.36,
+   "delta_total": 3695.25
+  },
+  "3.31": {
+   "ref_h": 299.65,
+   "run_h": 327.26,
+   "ref_mat": 14431.68,
+   "run_mat": 14044.01,
+   "delta_total": 1882.99
+  },
+  "3.32": {
+   "ref_h": 2.0,
+   "run_h": 2.0,
+   "ref_mat": 1250.0,
+   "run_mat": 1250.0,
+   "delta_total": -0.53
+  },
+  "3.33": {
+   "ref_h": 131.27,
+   "run_h": 43.55,
+   "ref_mat": 3310.75,
+   "run_mat": 991.0,
+   "delta_total": -9817.09
+  },
+  "3.34": {
+   "ref_h": 4.0,
+   "run_h": 3.0,
+   "ref_mat": 3422.44,
+   "run_mat": 750.0,
+   "delta_total": -2758.56
+  },
+  "3.35": {
+   "ref_h": 178.75,
+   "run_h": 178.29,
+   "ref_mat": 18678.93,
+   "run_mat": 17254.51,
+   "delta_total": -1510.0
+  },
+  "3.36": {
+   "ref_h": 9.27,
+   "run_h": 29.88,
+   "ref_mat": 779.1,
+   "run_mat": 1051.12,
+   "delta_total": 2022.91
+  },
+  "3.37": {
+   "ref_h": 20.0,
+   "run_h": 8.0,
+   "ref_mat": 0.0,
+   "run_mat": 550.0,
+   "delta_total": -476.13
+  },
+  "3.38": {
+   "ref_h": 8.0,
+   "run_h": 8.0,
+   "ref_mat": 7400.0,
+   "run_mat": 7400.0,
+   "delta_total": -2.08
+  },
+  "5.19": {
+   "ref_h": 38.4,
+   "run_h": 29.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -809.73
+  },
+  "6.1": {
+   "ref_h": null,
+   "run_h": 56.0,
+   "ref_mat": null,
+   "run_mat": 1250.0,
+   "delta_total": 6014.33
+  }
+ },
+ "lignes": {
+  "ref": 73,
+  "run": 93,
+  "codes_communs": 40,
+  "manquantes": [
+   "A-01",
+   "A-02",
+   "A-03",
+   "A-04",
+   "A-05",
+   "A-06",
+   "B-01b",
+   "B-10",
+   "B-LOT",
+   "C-01b",
+   "C-04b",
+   "C-07",
+   "C-08",
+   "D-01",
+   "D-02",
+   "D-03",
+   "D-04",
+   "D-05",
+   "D-06",
+   "D-07",
+   "D-12b",
+   "D-17",
+   "D-19",
+   "D-20",
+   "D-21",
+   "D-22",
+   "E-01",
+   "E-03",
+   "E-04",
+   "E-05",
+   "F-11",
+   "F-LOT",
+   "G-01b"
+  ],
+  "en_plus": [
+   "B-01-ENL",
+   "B-05",
+   "B-06",
+   "B-07",
+   "B-08",
+   "C-04-SS",
+   "C-05",
+   "C-07a",
+   "C-07b",
+   "D-12-CF",
+   "D-16-MO",
+   "E-06",
+   "E-07",
+   "E-08",
+   "E-09",
+   "E-11",
+   "E-11-MO",
+   "F-03",
+   "F-04",
+   "F-08-CX",
+   "F-08-FX",
+   "F-10-AN",
+   "F-10-TF",
+   "G-03",
+   "GPR",
+   "GRE430",
+   "LOT-AI-DET",
+   "LOT-DIST-DISJ",
+   "LOT-DIST-PAN",
+   "LOT-ECL",
+   "RL-01",
+   "RL-02",
+   "RL-03",
+   "RL-04",
+   "RL-05",
+   "RL-06",
+   "RL-10",
+   "RL-11",
+   "RL-12",
+   "RL-13",
+   "RL-14",
+   "RL-15",
+   "RL-16",
+   "RL-17",
+   "RL-18",
+   "RL-20",
+   "RL-21",
+   "RL-22",
+   "RL-30",
+   "RL-31",
+   "RL-40",
+   "RL-41",
+   "RL-42"
+  ],
+  "ecarts": [
+   {
+    "code": "A-08",
+    "ref": {
+     "q": 21,
+     "p": 0,
+     "h": 0.85
+    },
+    "run": {
+     "q": 21,
+     "p": 0.0,
+     "h": 0.6
+    },
+    "src_run": "jugement (Estimation_2) A-08 — luminaires CONSERVER au relevé, pas de double compte"
+   },
+   {
+    "code": "A-09",
+    "ref": {
+     "q": 24,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 24,
+     "p": 0.0,
+     "h": 0.5
+    },
+    "src_run": "jugement (Estimation_2) A-09"
+   },
+   {
+    "code": "B-02",
+    "ref": {
+     "q": 17,
+     "p": 0,
+     "h": 0.2
+    },
+    "run": {
+     "q": 14,
+     "p": 0.0,
+     "h": 0.2
+    },
+    "src_run": "Dupuis-temps[DISJ15A1P] — qté Détail B-02 ; prix au lot distribution"
+   },
+   {
+    "code": "B-03",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — disjoncteur 3P 1 h ; prix au lot"
+   },
+   {
+    "code": "B-04",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 0.4
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — prix au lot"
+   },
+   {
+    "code": "B-09",
+    "ref": {
+     "q": 9,
+     "p": 15.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 9,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "jugement (Estimation_2) B-09"
+   },
+   {
+    "code": "C-03",
+    "ref": {
+     "q": 2,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 2,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "Dupuis[MOTEUR] — releve MOTEUR TRIPHASE INSTALLER (E-105 2) ; Détail C-03"
+   },
+   {
+    "code": "D-08",
+    "ref": {
+     "q": 41,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "run": {
+     "q": 10,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "src_run": "Dupuis[TEL/DATA 3/4] — qté Détail D-08 (incluse dans les 65 INSTALLER du relevé)"
+   },
+   {
+    "code": "D-09",
+    "ref": {
+     "q": 1,
+     "p": 60.0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 6.0
+    },
+    "src_run": "jugement (Estimation_2) D-09"
+   },
+   {
+    "code": "D-10",
+    "ref": {
+     "q": 1,
+     "p": 17.43,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 2.0
+    },
+    "src_run": "jugement (Estimation_2) D-10"
+   },
+   {
+    "code": "D-11",
+    "ref": {
+     "q": 4,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 1,
+     "p": 9.3069,
+     "h": 1.0
+    },
+    "src_run": "Lumen[IBE52151K+IBE52C13] + jugement (Estimation_2) D-11 — famille absente"
+   },
+   {
+    "code": "D-12",
+    "ref": {
+     "q": 23,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 16,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "src_run": "Dupuis[PERCEMENT PLANCHER] — qté Détail D-12"
+   },
+   {
+    "code": "D-13",
+    "ref": {
+     "q": 2148.9501999999998,
+     "p": 4.1197,
+     "h": 0.091
+    },
+    "run": {
+     "q": 1575,
+     "p": 3.4197,
+     "h": 0.081
+    },
+    "src_run": "Dupuis[CONDUIT 3/4 05C12] — Détail D-13 480 m + D-15 (5 cond./course) ; 1 m = 3,28084 pi"
+   },
+   {
+    "code": "D-14",
+    "ref": {
+     "q": 1656.8242,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "run": {
+     "q": 1083,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "Dupuis[CONDUIT VIDE 3/4] — Détail D-14 330 m"
+   },
+   {
+    "code": "D-16",
+    "ref": {
+     "q": 23,
+     "p": 9.26,
+     "h": 0.25
+    },
+    "run": {
+     "q": 32,
+     "p": 9.2625,
+     "h": 0.0
+    },
+    "src_run": "Lumen[IBE72171K+IBE72C1] — famille 4-11/16 absente du catalogue ; base Lumen 2 boîtes/course"
+   },
+   {
+    "code": "E-02",
+    "ref": {
+     "q": 2,
+     "p": 1461.22,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 250.0,
+     "h": 1.0
+    },
+    "src_run": "Dupuis[MONUMENT PLANCHER] — releve MONUMENT PLANCHER INSTALLER 3 (Détail E-02 en compte 2 + E-03 2 boîtes refaites : le relevé fait foi)"
+   },
+   {
+    "code": "F-02",
+    "ref": {
+     "q": 33,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 0.75
+    },
+    "src_run": "Dupuis-temps[FIXTURE TYPE C1] — releve LUMINAIRE C1 INSTALLER 12"
+   },
+   {
+    "code": "F-05",
+    "ref": {
+     "q": 20,
+     "p": 50.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 20,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "jugement (Estimation_2) F-05 — famille absente du catalogue Dupuis"
+   },
+   {
+    "code": "F-08",
+    "ref": {
+     "q": 918.6351999999999,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 919,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "Dupuis[CONDUIT 3/4 03C12] — Détail F-08 280 m + F-09 (3 cond.)"
+   },
+   {
+    "code": "F-10",
+    "ref": {
+     "q": 46,
+     "p": 8.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 35,
+     "p": 7.963,
+     "h": 0.2
+    },
+    "src_run": "Dupuis[BOITE OCTOG 1-1/2PO KO 1] — base Lumen IBE54151L ×35 ; remplace les heures jugement F-10"
+   },
+   {
+    "code": "G-02",
+    "ref": {
+     "q": 98.4252,
+     "p": 1.8196999999999999,
+     "h": 0.084
+    },
+    "run": {
+     "q": 98,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "Dupuis[CONDUIT VIDE 3/4] — Détail G-02 30 m"
+   },
+   {
+    "code": "G-04",
+    "ref": {
+     "q": 1,
+     "p": 0,
+     "h": 8.0
+    },
+    "run": {
+     "q": 1,
+     "p": 550.0,
+     "h": 8.0
+    },
+    "src_run": "Dupuis[RELO PANNEAU ANNONCIA] — releve PANNEAU ANNONCIATEUR INSTALLER 1 (E-203) = Détail G-04"
+   }
+  ]
+ },
+ "verdict": "ÉCART"
+}

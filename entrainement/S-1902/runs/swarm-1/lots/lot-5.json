@@ -1,0 +1,113 @@
+{
+ "lot": 5,
+ "titre": "Vérification croisée des lots 1-4 + ventilation par article",
+ "equipier": "Claude Opus 5.5 (chef d'équipe — aucun outil Agent disponible, vérification faite par le chef)",
+ "lignes": [],
+ "remarques": [
+  {
+   "id": "V-01",
+   "lignes": "RL-02",
+   "constat": "PRISE DDFT (22) regroupe DDFT et M.A.L.T. isolée (R-007) ; tout chiffré en GFI → article 3.29 (MALT isolées) à 0 $ alors que le bordereau exige un montant à chaque item.",
+   "proposition": "Garder GFI (prix le plus élevé des deux variantes) ; signaler 3.29 à départager au zoom sur E-104 avant dépôt."
+  },
+  {
+   "id": "V-02",
+   "lignes": "RL-01..RL-03, RL-40, D-08",
+   "constat": "Le relevé compte 67 prises neuves et 65 sorties data ; le Détail D-01..D-07, E-01, E-04, E-05 (postes/tables/cabines) impliquerait ≈ 78 prises et ≈ 34 boîtes data. Ces lignes du Détail ne sont pas reprises.",
+   "proposition": "Pas de double compte : garder les comptes du relevé (plan) et ne pas reprendre D-01..D-07/E-01/E-04/E-05 (mêmes appareils regroupés en postes). Signaler l'écart."
+  },
+  {
+   "id": "V-03",
+   "lignes": "F-05 vs F-01..F-04",
+   "constat": "20 h de suspension de rangées en plus de 0,75 h par module : chevauchement possible.",
+   "proposition": "Garder : la suspension à la dalle (devis 16.5) et les rangées continues ne sont pas dans le temps unitaire d'un luminaire encastré."
+  },
+  {
+   "id": "V-04",
+   "lignes": "RL-30/RL-31 vs D-09/D-10",
+   "constat": "Les 3 JB du relevé sont celles de D-09 (2) et D-10 (1) : 0,9 h de boîte en plus des heures de raccord jugées.",
+   "proposition": "Garder les deux : boîte au catalogue, raccordement au jugement du Détail ; recouvrement ≤ 0,9 h signalé."
+  },
+  {
+   "id": "V-05",
+   "lignes": "D-12-CF",
+   "constat": "Coupe-feu chiffré à part alors que PERCEMENT PLANCHER (150 $) est un prix d'assemblage.",
+   "proposition": "Garder : coupe-feu exigé au devis (CP-506) et Dupuis le chiffre comme ligne distincte (COUPE FEU TUBE au catalogue)."
+  },
+  {
+   "id": "V-06",
+   "lignes": "LOT-ECL",
+   "constat": "Lot éclairage confirmé 11 893 $ ≠ somme de sa décomposition 13 034,80 $.",
+   "proposition": "Retenir le montant confirmé par Francis ; écart de 1 141,80 $ à faire confirmer."
+  },
+  {
+   "id": "V-07",
+   "lignes": "LOT-AI-DET",
+   "constat": "« 2 détecteurs 600 $ » ambigu (600 $ total ou 600 $ chacun).",
+   "proposition": "Lire 600 $ pour les deux (même tournure que « JCI 7 400 $ ») ; la lecture « chacun » ajouterait 600 $."
+  },
+  {
+   "id": "V-08",
+   "lignes": "E-02",
+   "constat": "Monument : Lumen Hubbell S1R6PT 1 461,22 $ vs Dupuis MONUMENT PLANCHER 250 $.",
+   "proposition": "Dupuis (famille présente au catalogue : règle de priorité)."
+  },
+  {
+   "id": "V-09",
+   "lignes": "RL-10..RL-12",
+   "constat": "METHODE cite « luminaire enlevé 0,5 h » ; le catalogue donne ENLEVER FIXTURE * = 0,35 h.",
+   "proposition": "Catalogue (dernière valeur) ; écart de 0,15 h × 40 = 6 h signalé."
+  },
+  {
+   "id": "V-10",
+   "lignes": "H-01..H-04",
+   "constat": "Frais de chantier ventilés à l'article 6.1 (général) plutôt que répartis sur les articles électriques.",
+   "proposition": "Proposition alternative : répartir au prorata des articles 3.22–3.38/5.19."
+  },
+  {
+   "id": "V-11",
+   "lignes": "D-13, E-08",
+   "constat": "EMT 1\" au Détail chiffré avec un libellé 3/4 05C12 (pas de libellé 1\" à 5 #12).",
+   "proposition": "Accepter : conductance identique, seul libellé Dupuis à 5 conducteurs ; signaler."
+  },
+  {
+   "id": "V-12",
+   "lignes": "A-10",
+   "constat": "Releve MOTEUR MONOPHASE RELOCALISER 6 (E-103) et Détail A-10 (6 E.A.R au toit) sont les mêmes équipements.",
+   "proposition": "Compter une seule fois (A-10) — vérifié : aucune ligne du relevé pour ces 6."
+  },
+  {
+   "id": "V-13",
+   "lignes": "taux",
+   "constat": "Estimation_2 indique 124 $/h (référence Jo) ; METHODE donne 85 $/h pour les dossiers Dupuis d'août à octobre 2026.",
+   "proposition": "Méthode Dupuis : 85 $/h."
+  }
+ ],
+ "ventilation_proposee": {
+  "3.22": "Démontage, relocalisations, maintien de service (RELO, A-07..A-11)",
+  "3.23": "Raccordements mécaniques (C-01, C-02, C-04, C-05, C-07, thermostats)",
+  "3.24": "Panneau PP-3 + fiches (B-01, B-09, part panneau du lot distribution)",
+  "3.25": "Disjoncteurs (B-02..B-08, part disjoncteurs du lot distribution)",
+  "3.26": "MCC — chaudières sur tiroirs CCM-1 (C-03)",
+  "3.27": "Prises USB",
+  "3.28": "Prises doubles 15A",
+  "3.29": "Prises MALT isolées — 0 (non départagées, V-01)",
+  "3.30": "Prises GFI/DDFT",
+  "3.31": "Percements, coupe-feu, conduits sous dalle, boîtes, JB, boutons, lecteurs",
+  "3.32": "Scan dalle (GPR)",
+  "3.33": "Sorties data",
+  "3.34": "Monuments plancher",
+  "3.35": "Luminaires + lot éclairage + Z6 + interrupteurs + conduits/boîtes d'éclairage",
+  "3.36": "Détecteurs, boucle AI, démontage AI",
+  "3.37": "Relocalisation annonciateur",
+  "3.38": "JCI + assistance vérification",
+  "5.19": "Enlèvements (ENLEVER)",
+  "6.1": "Frais de chantier H-"
+ },
+ "controles": [
+  "93 lignes, 0 code en double",
+  "Toutes les lignes Dupuis : p et h identiques aux colonnes PRIX/TEMPS À UTILISER",
+  "Codes Détail non repris : D-01..D-07, E-01, E-04, E-05 (couverts par le relevé, V-02)",
+  "Chaque famille × portée non CONSERVER du relevé est citée par une ligne (A-10 couvre MOTEUR MONOPHASE RELOCALISER ; RL-30/31 couvrent BOITE JONCTION INSTALLER) — contrôle automatisé dans chiffrage.py"
+ ]
+}

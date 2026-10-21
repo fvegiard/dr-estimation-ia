@@ -1,0 +1,254 @@
+{
+ "lot": 2,
+ "titre": "Conduits, filage, percements, boîtes",
+ "equipier": "Claude Opus 5.5 (chef d'équipe — aucun outil Agent disponible dans cette session, lot rédigé par le chef)",
+ "lignes": [
+  {
+   "code": "D-12",
+   "desc": "Percement de dalle carotté — conduits sous dalle RDC (note 5 E-104)",
+   "q": 16,
+   "u": "u",
+   "p": 150.0,
+   "h": 1.0,
+   "art": "3.31",
+   "src": "Dupuis[PERCEMENT PLANCHER] — qté Détail D-12"
+  },
+  {
+   "code": "E-07",
+   "desc": "Percement de dalle carotté — étage (7 courses)",
+   "q": 7,
+   "u": "u",
+   "p": 150.0,
+   "h": 1.0,
+   "art": "3.31",
+   "src": "Dupuis[PERCEMENT PLANCHER] — qté Détail E-07"
+  },
+  {
+   "code": "D-12-CF",
+   "desc": "Coupe-feu des percements (CAN/ULC-S115) — 1 tube par percement",
+   "q": 23,
+   "u": "u",
+   "p": 13.53,
+   "h": 0.5,
+   "art": "3.31",
+   "src": "Dupuis[COUPE FEU TUBE 10.1 FL O] — 16 (D-12) + 7 (E-07)"
+  },
+  {
+   "code": "D-13",
+   "desc": "Conduit EMT + 5 cond. #12 (2 circuits + MALT) sous dalle RDC vers P-2/P-3 — 480 m (inclut D-15)",
+   "q": 1575,
+   "u": "pi",
+   "p": 3.4197,
+   "h": 0.081,
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT 3/4 05C12] — Détail D-13 480 m + D-15 (5 cond./course) ; 1 m = 3,28084 pi"
+  },
+  {
+   "code": "D-14",
+   "desc": "Conduit vide 3/4 data sous dalle RDC — 330 m",
+   "q": 1083,
+   "u": "pi",
+   "p": 1.4097,
+   "h": 0.056,
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT VIDE 3/4] — Détail D-14 330 m"
+  },
+  {
+   "code": "D-16",
+   "desc": "Boîtes de tirage 4-11/16 sous dalle RDC (16 courses × 2)",
+   "q": 32,
+   "u": "u",
+   "p": 9.2625,
+   "h": 0.0,
+   "art": "3.31",
+   "src": "Lumen[IBE72171K+IBE72C1] — famille 4-11/16 absente du catalogue ; base Lumen 2 boîtes/course"
+  },
+  {
+   "code": "D-16-MO",
+   "desc": "Boîtes de tirage, connecteurs, supports, corde — main-d'œuvre RDC",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 8.0,
+   "art": "3.31",
+   "src": "jugement (Estimation_2) D-16"
+  },
+  {
+   "code": "E-08",
+   "desc": "Conduit EMT + 5 cond. #12 sous dalle étage vers P-4/P-6 — 175 m (inclut E-10)",
+   "q": 574,
+   "u": "pi",
+   "p": 3.4197,
+   "h": 0.081,
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT 3/4 05C12] — Détail E-08 175 m + E-10"
+  },
+  {
+   "code": "E-09",
+   "desc": "Conduit vide 3/4 data sous dalle étage — 175 m",
+   "q": 574,
+   "u": "pi",
+   "p": 1.4097,
+   "h": 0.056,
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT VIDE 3/4] — Détail E-09 175 m"
+  },
+  {
+   "code": "E-11",
+   "desc": "Boîtes de tirage 4-11/16 étage (7 courses × 2)",
+   "q": 14,
+   "u": "u",
+   "p": 9.2625,
+   "h": 0.0,
+   "art": "3.31",
+   "src": "Lumen[IBE72171K+IBE72C1] — famille absente du catalogue"
+  },
+  {
+   "code": "E-11-MO",
+   "desc": "Boîtes, connecteurs, supports — main-d'œuvre étage",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 4.0,
+   "art": "3.31",
+   "src": "jugement (Estimation_2) E-11"
+  },
+  {
+   "code": "GRE430",
+   "desc": "Corde de tirage Poly Line 430 (conduits vides, devis 35.10)",
+   "q": 1,
+   "u": "ch",
+   "p": 81.68,
+   "h": 0.0,
+   "art": "3.31",
+   "src": "Lumen[GRE430] — famille absente du catalogue"
+  },
+  {
+   "code": "RL-30",
+   "desc": "Boîte de jonction neuve (BOITE JONCTION INSTALLER, E-104) — boîte carrée",
+   "q": 3,
+   "u": "u",
+   "p": 6.1778,
+   "h": 0.25,
+   "art": "3.31",
+   "src": "Dupuis[BOITE CARRE 2-1/8PO KO 1] — releve BOITE JONCTION INSTALLER 3"
+  },
+  {
+   "code": "RL-31",
+   "desc": "Couvercle de boîte de jonction",
+   "q": 3,
+   "u": "u",
+   "p": 1.4985,
+   "h": 0.05,
+   "art": "3.31",
+   "src": "Dupuis[COUV CARRE 4PO VIERGE] — releve BOITE JONCTION INSTALLER 3"
+  },
+  {
+   "code": "D-09",
+   "desc": "Barrière anti-vol : raccord des 2 boîtes de jonction au panneau de contrôle (PU-1 23)",
+   "q": 1,
+   "u": "lot",
+   "p": 0.0,
+   "h": 6.0,
+   "art": "3.31",
+   "src": "jugement (Estimation_2) D-09"
+  },
+  {
+   "code": "D-10",
+   "desc": "Bornes de prêts / fontaine hall (P2-63) — JB dans mur adjacent, raccord",
+   "q": 1,
+   "u": "u",
+   "p": 0.0,
+   "h": 2.0,
+   "art": "3.31",
+   "src": "jugement (Estimation_2) D-10"
+  },
+  {
+   "code": "D-11",
+   "desc": "Bouton d'appel (aide au lecteur 116) — boîte + conduit vide",
+   "q": 1,
+   "u": "u",
+   "p": 9.3069,
+   "h": 1.0,
+   "art": "3.31",
+   "src": "Lumen[IBE52151K+IBE52C13] + jugement (Estimation_2) D-11 — famille absente"
+  },
+  {
+   "code": "E-06",
+   "desc": "Boutons d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+   "q": 3,
+   "u": "u",
+   "p": 9.3069,
+   "h": 1.0,
+   "art": "3.31",
+   "src": "Lumen[IBE52151K+IBE52C13] + jugement (Estimation_2) E-06 — famille absente"
+  },
+  {
+   "code": "F-08",
+   "desc": "Conduit EMT 3/4 + 3 cond. #12 — raccordement luminaires sur circuits existants, 280 m (inclut F-09)",
+   "q": 919,
+   "u": "pi",
+   "p": 4.2441,
+   "h": 0.1128,
+   "art": "3.35",
+   "src": "Dupuis[CONDUIT 3/4 03C12] — Détail F-08 280 m + F-09 (3 cond.)"
+  },
+  {
+   "code": "F-08-FX",
+   "desc": "Conduit flexible 3/8 alu — descentes de luminaires (35 points × 1,8 m)",
+   "q": 63,
+   "u": "m",
+   "p": 7.714,
+   "h": 0.0,
+   "art": "3.35",
+   "src": "Lumen[THOABRH03830] — famille 3/8 absente du catalogue ; temps compris dans le luminaire"
+  },
+  {
+   "code": "F-08-CX",
+   "desc": "Connecteur BX 3/8 90° — descentes de luminaires",
+   "q": 70,
+   "u": "ch",
+   "p": 1.799,
+   "h": 0.0,
+   "art": "3.35",
+   "src": "Lumen[IBE2210] — famille absente du catalogue"
+  },
+  {
+   "code": "F-10",
+   "desc": "Boîtes de jonction octogonales éclairage (35 points)",
+   "q": 35,
+   "u": "u",
+   "p": 7.963,
+   "h": 0.2,
+   "art": "3.35",
+   "src": "Dupuis[BOITE OCTOG 1-1/2PO KO 1] — base Lumen IBE54151L ×35 ; remplace les heures jugement F-10"
+  },
+  {
+   "code": "F-10-TF",
+   "desc": "Tige filetée 3/8 — suspension luminaires à la dalle (devis 16.5)",
+   "q": 200,
+   "u": "pi",
+   "p": 0.6435,
+   "h": 0.02,
+   "art": "3.35",
+   "src": "Dupuis[TIGE FILETE 3/8PO] — qté Lumen VISTF3/8 200 pi"
+  },
+  {
+   "code": "F-10-AN",
+   "desc": "Ancrages drop-in 3/8-16 (paquet de 50)",
+   "q": 2,
+   "u": "pk",
+   "p": 32.26,
+   "h": 0.0,
+   "art": "3.35",
+   "src": "Lumen[VISDIA3/816BX50] — famille absente du catalogue"
+  }
+ ],
+ "notes": [
+  "Conduits : le catalogue n'a pas de colonne TEMPSEC → temps/pi (règle 3). Les libellés CONDUIT xxCyy incluent les conducteurs : D-15, E-10, F-09, C-06, C-08 ne sont pas comptés à part.",
+  "D-13/E-08 (EMT 1\" au Détail, 5 cond. #12) chiffrés avec CONDUIT 3/4 05C12 : seul libellé Dupuis à 5 #12 ; aucun libellé 1\" 05C12.",
+  "Longueurs = hypothèses de l'Estimation_2 (30 m/course RDC, 25 m/course étage, 8 m/point éclairage) — à valider dans l'entreplafond.",
+  "BOITE JONCTION INSTALLER 3 (relevé) = 2 JB barrière anti-vol (D-09) + 1 JB bornes (D-10) : boîte au catalogue, raccord au jugement Détail.",
+  "F-10 : heures jugement (8 h) remplacées par boîtes octo + tige filetée du catalogue (7,0 + 4,0 h)."
+ ]
+}
