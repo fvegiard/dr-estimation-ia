@@ -1,0 +1,244 @@
+{
+  "niveau": "releveur",
+  "nom": "B1-3",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "BJ-I",
+      "desc": "Boîte de jonction neuve",
+      "q": null,
+      "u": "U",
+      "p": 6.1778,
+      "h": 0.25,
+      "art": "3.31",
+      "src": "catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) ; aucun libellé « BOITE DE JONCTION » au catalogue : règle 3 (nb_projets), boîte carrée"
+    },
+    {
+      "code": "BJ-E",
+      "desc": "Boîte de jonction enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; analogue : aucun libellé « ENLEVER BOITE » ; boîte murale ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "BJ-R",
+      "desc": "Boîte de jonction relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3) ; analogue : aucun libellé « RELO BOITE » ; boîte murale ≈ prise relocalisée (repère METHODE 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "MP-I",
+      "desc": "Monument de plancher neuf (poke-through)",
+      "q": null,
+      "u": "U",
+      "p": 250.0,
+      "h": 1.0,
+      "art": "3.34",
+      "src": "catalogue Dupuis « MONUMENT PLANCHER 1TE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; repère METHODE monument 250 $ (règle 1)"
+    },
+    {
+      "code": "MP-E",
+      "desc": "Monument de plancher enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; analogue : aucun libellé « ENLEVER MONUMENT » ; monument = prise/data en boîtier de plancher ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "MP-R",
+      "desc": "Monument de plancher relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3) ; analogue : aucun libellé « RELO MONUMENT » ; ≈ prise relocalisée (repère METHODE 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "BC-I",
+      "desc": "Boîtier « C » neuf (hors légende)",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.36",
+      "src": "catalogue Dupuis « CONTACT PORTE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 3) ; analogue : « BOITIER C » non défini par la légende ; hypothèse contact de porte NON CONFIRMÉE (indice « voisin du lecteur et de la gâche » valable seulement d'une feuille à l'autre, voir notes) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "BC-E",
+      "desc": "Boîtier « C » enlevé (hors légende)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTACT DE PORTE ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue : « BOITIER C » ≈ contact de porte (hypothèse non confirmée, voir notes) ; famille ENL du projet S-1659 (0,5 h)"
+    },
+    {
+      "code": "BC-R",
+      "desc": "Boîtier « C » relocalisé (hors légende)",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTAC PORTE RELO » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue : « BOITIER C » ≈ contact de porte (hypothèse non confirmée, voir notes) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "D-09",
+      "desc": "Barrière anti-vol : 2 boîtes de jonction + raccord panneau de contrôle (PU-1 23)",
+      "q": null,
+      "u": "LOT",
+      "p": 37.3556,
+      "h": 1.0,
+      "art": "3.31",
+      "src": "2 × catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) + 1 × catalogue Dupuis « RACCORD DIRECT » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 5) ; composition : p = 2 × p(boîte) + p(raccord) = 37.3556 ; h = 2 × h(boîte) + h(raccord) = 1.0 (calcul par script, arrondi à 4 décimales)"
+    },
+    {
+      "code": "D-10",
+      "desc": "Bornes de prêts / fontaine hall — JB dans mur adjacent",
+      "q": null,
+      "u": "U",
+      "p": 6.1778,
+      "h": 0.25,
+      "art": "3.31",
+      "src": "catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) ; une seule JB dans mur adjacent (Détail D-10 : aucun raccordement dit)"
+    },
+    {
+      "code": "D-11",
+      "desc": "Bouton d'appel — boîte + conduit vide (système fourni par d'autres)",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.33",
+      "src": "catalogue Dupuis « DECLENCHEUR APPEL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; règle 2 (seul libellé « appel ») ; convention Dupuis dispositif posé par DR, fourni par d'autres (15 $ + 0,35 h) : à trancher, voir notes"
+    },
+    {
+      "code": "E-03",
+      "desc": "Boîte de plancher refaite (salle 208, ancien mobilier)",
+      "q": null,
+      "u": "U",
+      "p": 250.0,
+      "h": 1.0,
+      "art": "3.34",
+      "src": "catalogue Dupuis « MONUMENT PLANCHER 1TE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; analogue Dupuis : boîte de plancher ≈ monument de plancher (repère METHODE monument 250 $, règle 1)"
+    },
+    {
+      "code": "E-06",
+      "desc": "Bouton d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.33",
+      "src": "catalogue Dupuis « DECLENCHEUR APPEL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; même arbitrage que D-11 (bouton de panique = déclencheur d'appel)"
+    }
+  ],
+  "notes": [
+    "GLOBAL — modèle : Claude Haiku 5.5 (claude-haiku-5-5), releveur B1-3 ; effort demandé xhigh.",
+    "GLOBAL — lu : catalogue (2068 lignes, contrôle OK), Estimation_2 (Détail A-01 à H-04 et OPT ; Matériel Lumen), releve.xlsx (Par libellé, Marques, Par feuille, Réserves), rapport-releve.md, reserves.md, CONSIGNES.md, METHODE.md, titres du Bordereau (3.22 à 3.38). Non ouverts, volontairement : entree/reference-Releve_Alarme_Incendie.xlsx et entree/reference-Releve_Eclairage_Urgence.xlsx (relevés de référence ; je ne lis pas de réponse de référence) ; tout fichier de lots/ ; le web.",
+    "GLOBAL — recherches catalogue sans résultat (motifs) : « JB », « JONCTION », « BOITIER C », « BOI.*ENL » / « ENL.*BOI », « ENL.*MONUM » / « RELO.*MONUM », « PLANCHER.*BOI », « POKE », « HUBB », « S1PT », « S1R6 », « PANIQ », « PANIC » : 0 résultat chacun. « RELO.*BOI » : seul « BOITIER LUMONEUX RELO ». « APPEL » : 1 seul (DECLENCHEUR APPEL). « RELO INT » : 1 (interrupteur). « RACC » : 14 lignes, « RACCORD DIRECT » seul à nb_projets 5.",
+    "GLOBAL — rappel : taux 85 $/h et facteur de prix de vente 1,244 : non appliqués (METHODE.md §5/§7).",
+    "GLOBAL — désaccords avec l'arbitrage du chef de lot (détail par code) : (1) BC-I, BC-E, BC-R : hypothèse « contact de porte » non confirmée, et l'indice de proximité est un artefact inter-feuilles ; (2) MP-I : « MONUMENT PLANCHER SU » (SURFACE probable) écarté par la règle 1, écart de 393.75 $ pour 3 u, à trancher ; (3) E-03 : la boîte FS (boîte de plancher nue) est plus proche de l'objet, écartée par l'ordre des règles, à trancher ; (4) art 3.33 (D-11, E-06) et 3.36 (BC-I) : les titres du bordereau (« Sorties informatique/réseau », « Détecteur de fumée ») ne décrivent pas un bouton d'appel ni un boîtier C : à revoir par B3. Les autres choix du chef sont confirmés après relecture du catalogue.",
+    "BJ-I — retenu « BOITE CARRE 2-1/8PO KO 1 » (p 6.1778, h 0.25, nb 22, 2026-10-07) : CONFIRMÉ. Règle 1 sans repère (aucun repère METHODE pour une boîte) ; règle 2 sans départage (toutes des boîtes à installer) ; règle 3 : nb 22, le plus élevé de tous les libellés « BOITE… » um U. Le plan n'identifie pas la forme de la boîte : choix par le nombre de projets, à dire. Écartés : écarté « BOITE OCTOG 1-1/2PO KO 1 » um=U p=7.963 h=0.2 nb_projets=21 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE D 8X8X4PO CEMA1 » um=U p=19.8 h=0.6 nb_projets=20 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE D 12X12X4PO CEMA1 » um=U p=27.42 h=1.0 nb_projets=14 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE RECT 2-1/2PO OREILI » um=U p=6.975 h=0.2 nb_projets=11 dernier 2026-09-25 (S-1857 - Maison St-Michel); écarté « BOITE RECT 2-1/2PO OREIL » um=U p=6.9744 h=0.2 nb_projets=5 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE D 24X24X6PO CEMA1 » um=U p=196.37 h=2.5 nb_projets=4 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE CARRE 1-1/2PO KO 1 » um=U p=17.164 h=0.3 nb_projets=4 dernier 2026-06-26 (S-1795 Lanthier Arthesa); écarté « BOITE RECT 1-7/8PO KO 1/2 » um=U p=4.1072 h=0.2 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption); écarté « BOITE CARREES 4 PO » um=U p=7.68 h=0.15 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable); écarté « BOITE CARRE 2-1/8PO KO 1/2-3/4PO (AI) » um=U p=6.1778 h=0.25 nb_projets=1 dernier 2026-02-02 (S-1645 ANNEXE-BOURASSA).",
+    "BJ-I — « BOITE OCTOG 1-1/2PO KO 1 » est une boîte d'éclairage (Lumen IBE54151L « JB éclairage », 2.5048 $/ch) : objet différent, écarté. Lumen IBE52151K « ABB BC52151-K BOÎTE CARRÉE 4 PO 1-1/2PO » 5.2196 $/ch (Matériel Lumen) relu : point de comparaison seulement, non utilisé (Dupuis a un analogue).",
+    "BJ-I — non vérifiable : releve.xlsx compte 10 BOITE JONCTION par feuille (E101 4, E102 1, E104 3, E201 2) mais ne donne aucune portée par feuille ; « 3 INSTALLER toutes sur E104 » (chef) est une inférence par le nombre, pas une lecture. Couples [E-04, BJ-I] et [E-01, BJ-I] jugés non réels : E-04 et E-01 sont sur E-105, où Marques ne place aucune BOITE JONCTION (pas de double compte possible ; omission possible du relevé sur E-105, à vérifier par l'équipe A). Couples probables ou possibles : voir doubles_comptes.",
+    "BJ-E — retenu « ENLEVER PRISE » (p 0.0, h 0.35, nb 1, 2026-08-26, s-1835) : règle 1 (h 0.35 = repère METHODE « prise enlevée 0,35 h ») ; analogue de la politique (boîte murale ≈ dispositif mural). Aucun « ENLEVER » avec « BOI » au catalogue (0). Écartés : écarté « EQUIPEMENT A ENLEVER » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption); écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur); écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). CONFIRMÉ.",
+    "BJ-E — ENLEVER INTERRUPTEUR a exactement les mêmes chiffres (p 0.0, h 0.35, même projet) : prise ou interrupteur n'a aucun effet numérique. Les ENLEVER FIXTURE du même projet (1X4, 2X2, 2X4, ENCAST, MURAL ; h 0.35) sont des luminaires : écartés. Jugement (Estimation_2) Détail A-03 « boîtes mobilier » h/unité 0.4 : non retenu (analogue Dupuis prime).",
+    "BJ-R — retenu « RELO PRISE » (p 0.0, h 1.5, nb 3, 2026-05-05, s-1753) : analogue (boîte murale ≈ prise relocalisée, repère METHODE 1,5 h). Portée absente du relevé (BOITE JONCTION : INSTALLER 3, CONSERVER 5, ENLEVER 2, aucune RELOCALISER) : précaution, la quantité reste à l'équipe A. Écartés : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption); écarté « BOITIER LUMONEUX RELO » um=U p=15.0 h=1.0 nb_projets=1 dernier 2026-07-13 (s-1807 groupe maurice lanthier) (boîtier lumineux d'un autre projet : objet différent). Jugement A-05 (relocalisation services, h/unité 1.0) : non retenu.",
+    "BJ-R — art 3.22 (règle provisoire pour un -R) = « Démontage des éléments électriques » au bordereau : aucun article « relocalisation » au bordereau ; à arbitrer par B3.",
+    "MP-I — retenu « MONUMENT PLANCHER 1TE » (p 250.0, h 1.0, nb 1, 2026-06-02, s-1783) : règle 1 (repère METHODE monument 250 $) donne deux candidats ; règle 2 égalité ; règle 3 égalité (nb 1 et 1) ; règle 4 : date la plus récente → 1TE. 1TE et « MONUMENT PLANCHER » ont les mêmes p et h : aucun effet numérique. Écartés : écarté « MONUMENT PLANCHER » um=U p=250.0 h=1.0 nb_projets=1 dernier 2026-02-19 (S-1676 ARC'TERTX); écarté « MONUMENT PLANCHER SU » um=U p=118.75 h=1.0 nb_projets=1 dernier 2026-09-10 (s-1854 sollio st hubert lanthier); écarté « MONUMENT PLANCHER EN » um=U p=735.29 h=1.0 nb_projets=1 dernier 2026-09-10 (s-1854 sollio st hubert lanthier); écarté « MONUMENT PLANCHER PR » um=U p=65.0 h=1.0 nb_projets=1 dernier 2026-09-25 (S-1857 - Maison St-Michel).",
+    "MP-I — DÉSACCORD PARTIEL à trancher : le relevé décrit « MONUMENT PLANCHER SURFACE » ; « MONUMENT PLANCHER SU » (SU = SURFACE probable, p 118.75, h 1.0) est l'objet le plus proche (règle 2), mais la règle 1 l'écarte (p différent de 250). Je suis la règle ; l'écart est de 3 × (250 − 118.75) = 393.75 $ en matériel pour 3 u.",
+    "MP-I — Lumen HUBS1R6PTDEHBLK « HUBBELL S1R6PTDEHBLK POKE-THROUGH 6 PO (plan : S1R6PTFIT) » 1461.22 $/u (Matériel Lumen, 2026-10-07) : non utilisé, Dupuis 250 $ prévaut ; écart noté : 1211.22 $ par unité. Détail E-02 (Hubbell S1R6PTFIT, 2 u) contre 3 INSTALLER au relevé : voir doubles_comptes [E-02, MP-I]. Marques : deux monuments identiques ou à 1.9 pt entre E102 et E105 : voir doubles_comptes [MP-I, MP-E].",
+    "MP-E — retenu « ENLEVER PRISE » (p 0.0, h 0.35, nb 1, 2026-08-26) : règle 1 (repère METHODE prise enlevée 0,35 h) ; analogue de la politique (monument = prise/data en boîtier de plancher). Aucun « ENLEVER MONUMENT » (0). Écartés : écarté « EQUIPEMENT A ENLEVER » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption); écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur); écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Jugement A-03 « câbles sortant du plancher » h/unité 0.4 : non retenu (analogue Dupuis prime). CONFIRMÉ.",
+    "MP-E — non vérifiable : releve.xlsx ne donne pas la portée par feuille ; « 3 ENLEVER sur E102 » (chef) est une inférence par le nombre (Marques : E102 3 monuments, E105 3, E101 1). Voir doubles_comptes [E-03, MP-E] et [MP-I, MP-E].",
+    "MP-R — retenu « RELO PRISE » (p 0.0, h 1.5, nb 3, 2026-05-05) : analogue (monument ≈ prise relocalisée, repère METHODE 1,5 h) ; aucun « RELO MONUMENT » au catalogue (0). Portée absente (MONUMENT PLANCHER : ENLEVER 3, INSTALLER 3, CONSERVER 1, aucune RELOCALISER) : précaution. Écarté : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption) (même h, objet interrupteur). Jugement A-05 h/unité 1.0 : non retenu.",
+    "BC-I — retenu « CONTACT PORTE » (p 15.0, h 0.35, nb 3, 2026-06-02, s-1783) : règle 3 égalité avec « CONTACT DE PORTE » (nb 3), règle 4 (date) → CONTACT PORTE. Gardé comme PRÉCAUTION DE PRIX, pas comme identification (voir l'entrée suivante). Écartés : écarté « CONTACT DE PORTE » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOITE ALMENTATION » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOITIER ALIMENTATION » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil); écarté « ALARME SONORE » um=U p=15.0 h=0.35 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture); écarté « MODULE INTERFACE » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-08-19 (S-1797 - École Chambly); écarté « MODULE ADRESSABLE » um=U p=0.0 h=0.5 nb_projets=3 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil).",
+    "BC-I — DÉSACCORD avec l'hypothèse « contact de porte » : (a) famille : releve.xlsx classe BOITIER C en « alarme » (avec DETECTEUR FUMEE, HP, STATION MANUELLE, PANNEAU ANNONCIATEUR), alors que LECTEUR CARTE et GACHE sont en « intrusion » ; un contact de porte serait en intrusion. (b) indice de proximité non probant : les coordonnées de Marques ne se comparent qu'à l'intérieur d'une même feuille. Sur E201 (3 BOITIER C) il n'y a ni LECTEUR CARTE ni GACHE ; sur E101 (1 BOITIER C à x 1008.9 / y 542.5), le lecteur le plus proche est à 198 pt et la gâche à 203 pt. Les 8 à 14 pt du chef viennent de comparaisons E201 ↔ E101/E104 (feuilles différentes). (c) source contradictoire : Par libellé dit « E-001 légende ; bloc S218 », la description dit « hors légende — R-006 TEST-E201 » ; reserves.md n'a aucune réserve sur BOITIER C (R-006 traite des éléments hors relevé : sorties data, cercles nus). Conclusion : identité non prouvée ; 15 $ / 0.35 h gardés comme précaution, à trancher sur le plan. Si le dispositif est un appareil AI fourni par JCI, p serait 0 par lot : non vérifiable ici.",
+    "BC-E — retenu « CONTACT DE PORTE ENL » (p 0.0, h 0.5, nb 1, 2026-02-09, s1659) : analogue (boîtier C ≈ dispositif de porte, hypothèse non confirmée), famille ENL du projet S-1659. Aucun « ENLEVER BOITIER » (0). Écartés : écarté « OPERATEUR PORTE ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « STATION ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « IC ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur).",
+    "BC-E — relevé ENLEVER 2 (quantité relevée, pas de précaution). h 0.5 coïncide avec le repère METHODE « luminaire enlevé 0,5 h » : coïncidence numérique (ce repère vise les luminaires) ; le choix repose sur l'objet, règle 2.",
+    "BC-R — retenu « CONTAC PORTE RELO » (p 15.0, h 0.5, nb 1, 2026-02-09, s1659) : seul libellé RELO du même objet (contact de porte, hypothèse non confirmée). Précaution : portée absente. Écartés : écarté « LECTEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « GACHE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « BOUTON DE PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « OPERATEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « DRS RELO » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie) (sigle DRS non identifié).",
+    "BC-R — aucune portée R pour BOITIER C au relevé (ENLEVER 2, CONSERVER 2) : la quantité reste à l'équipe A. Même réserve d'identité que BC-I.",
+    "D-09 — retenu : composition d'analogues Dupuis, 2 × « BOITE CARRE 2-1/8PO KO 1 » (même libellé que BJ-I, p 6.1778, h 0.25) + 1 × « RACCORD DIRECT » (p 25.0, h 0.5, nb 5, 2026-09-10, s-1854) : p = 37.3556, h = 1.0 (script, 4 décimales). CONFIRMÉ. Écartés : écarté « RACCORD PARTITION » um=U p=25.0 h=0.5 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture); écarté « RACCORD RCFF » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-02 (S-1645 ANNEXE-BOURASSA); écarté « RACCORD DIRECT BAIN THI » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-06-26 (S-1795 Lanthier Arthesa).",
+    "D-09 — jugement (Estimation_2) : 6 h pour 1 lot, non retenu (analogue Dupuis prime), mais la composition ne donne que 1.0 h : écart de 5 h à trancher. La composition ne compte ni conduit ni filage entre les boîtes (non compris dans cette ligne). u = LOT ; q laissé null. DOUBLE COMPTE PROBABLE avec BJ-I : voir doubles_comptes.",
+    "D-10 — retenu « BOITE CARRE 2-1/8PO KO 1 » (p 6.1778, h 0.25, nb 22) : une JB dans mur adjacent, comme BJ-I ; le Détail ne dit aucun raccordement, donc rien d'ajouté. Écarté : écarté « RACCORD DIRECT » um=U p=25.0 h=0.5 nb_projets=5 dernier 2026-09-10 (s-1854 sollio st hubert lanthier) (alternative si DR raccorde les bornes : boîte + raccord = 31.1778 $ et 0.75 h, non justifié par le Détail). Jugement Détail 2 h/u : non retenu.",
+    "D-10 — DOUBLE COMPTE PROBABLE avec BJ-I : D-09 (2) + D-10 (1) = 3 = nombre de BOITE JONCTION sur E104 (Marques). Signalé dans doubles_comptes, non résolu.",
+    "D-11 — retenu « DECLENCHEUR APPEL » (p 15.0, h 0.35, nb 1, 2026-06-02, s-1783) : règle 2 (seul libellé « appel ») ; la règle 3 aurait donné « BOUTON HANDICAPE » (nb 2) : la règle 2 prime. Harmonisé avec E-06. Écartés : écarté « BOUTON HANDICAPE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOUTON OUVERTURE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-03-09 (25-066G_Canderel Lobby 2000 McGill College (S-1665)); écarté « BOTON HANDICAPE » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-06-03 (s-1775 clinique mieux etre); écarté « BOTON RELACHE » um=U p=15.0 h=0.35 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture) (bouton de relâche : même p et h que la ligne retenue, objet différent).",
+    "D-11 — point à trancher : le Détail dit « système fourni par d'autres ». La convention Dupuis « posé par DR, fourni par d'autres » (15 $ + 0.35 h, selon le chef) suppose que le 15 $ paie la pose et non l'appareil : à confirmer. Alternative fidèle au texte « boîte + conduit vide » : boîte seule (BOITE CARRE 2-1/8PO KO 1, 6.1778 $, 0.25 h). Conduit vide non chiffré dans cette ligne (longueur absente du kit) : ne pas inventer.",
+    "D-11 — art 3.33 = « Sorties informatique/réseau » au bordereau : ne décrit pas un bouton d'appel ; l'article alarme le plus proche est 3.36 (« Détecteur de fumée »). Art imposé par la règle provisoire : à revoir par B3.",
+    "E-03 — retenu « MONUMENT PLANCHER 1TE » (p 250.0, h 1.0, nb 1, 2026-06-02) : règle 1 (repère 250 $) ; le rattachement « boîte de plancher ≈ monument » est un jugement de rattachement, signalé. Écartés : écarté « MONUMENT PLANCHER » um=U p=250.0 h=1.0 nb_projets=1 dernier 2026-02-19 (S-1676 ARC'TERTX); écarté « MONUMENT PLANCHER PR » um=U p=65.0 h=1.0 nb_projets=1 dernier 2026-09-25 (S-1857 - Maison St-Michel); écarté « MONUMENT PLANCHER SU » um=U p=118.75 h=1.0 nb_projets=1 dernier 2026-09-10 (s-1854 sollio st hubert lanthier).",
+    "E-03 — alternative non retenue : « BOITE FS 1G 1/2PO METAL » (p 67.87, h 0.3, nb 1, 2026-06-02, s-1783) et « BOITE FS 1G 3/4PO ALUM » (p 21.49, h 0.4, nb 2, 2026-09-23, s-1866) : une boîte FS est une boîte de plancher nue, plus proche du texte du Détail que le monument ; écartées parce que la règle 1 passe avant la règle 2. Écart matériel pour 2 u : de 2 × (250 − 67.87) = 364.26 $ à 2 × (250 − 21.49) = 457.02 $ : à trancher. Jugement Détail 2.5 h/u : non retenu.",
+    "E-03 — quantité 2 « à confirmer » au Détail (P-6 25 / P-6 38). DOUBLES COMPTES PROBABLES avec MP-E et MP-I (salle 208, monuments E102/E105) : voir doubles_comptes.",
+    "E-06 — retenu « DECLENCHEUR APPEL » (p 15.0, h 0.35, nb 1, 2026-06-02) : même arbitrage que D-11 (bouton de panique = déclencheur d'appel), harmonisé. Écartés : écarté « BOUTON HANDICAPE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOUTON OUVERTURE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-03-09 (25-066G_Canderel Lobby 2000 McGill College (S-1665)); écarté « BOTON RELACHE » um=U p=15.0 h=0.35 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture).",
+    "E-06 — 3 u au Détail (2 boutons d'appel + 1 bouton de panique) : p et h par unité, q null. Mêmes points que D-11 : conduit vide non chiffré, art 3.33 à revoir par B3. Le Détail E-06 ne dit pas « système fourni par d'autres » : le même 15 $ est appliqué par harmonisation seulement."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "D-09",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE, non résolu : le Détail recompte 2 boîtes de jonction sur E-104 ; le relevé compte 3 BOITE JONCTION sur E104 (Marques) et 3 en INSTALLER au total, sans portée par feuille. Si les 3 BJ-I sont celles de E-104, les 2 boîtes de D-09 sont payées deux fois."
+    },
+    {
+      "codes": [
+        "D-10",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE : D-09 (2) + D-10 (1) = 3 = BOITE JONCTION sur E104 (Marques) ; même question pour la boîte de D-10."
+    },
+    {
+      "codes": [
+        "D-01",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — POSSIBLE, non tranché : D-01 compte une boîte de jonction par poste (18 postes, tous sur E-104) pour 3 BOITE JONCTION sur E104 au relevé ; la boîte peut être incluse dans le prix d'assemblage du poste."
+    },
+    {
+      "codes": [
+        "D-03",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — POSSIBLE : « cabine/isoloir : prise double alimentée par JB dans mur » (2 u, E-104) ; l'une des 3 JB de E104 au relevé."
+    },
+    {
+      "codes": [
+        "E-03",
+        "MP-E"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE, à vérifier : E-03 (boîtes de plancher refaites, salle 208, E-102/E-105) et MP-E (3 monuments ENLEVER ; Marques : 3 monuments sur E102 et 3 sur E105) touchent les mêmes feuilles ; releve.xlsx ne donne pas la portée par feuille."
+    },
+    {
+      "codes": [
+        "E-03",
+        "MP-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — POSSIBLE : même question avec les 3 monuments INSTALLER (Marques : 3 sur E105)."
+    },
+    {
+      "codes": [
+        "E-02",
+        "MP-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE : E-02 compte 2 monuments Hubbell S1R6PTFIT (E-104 note 3 / E-105, P-4 17, P4-15) ; le relevé compte 3 MONUMENT PLANCHER INSTALLER de type « HUBBELL S1PT / POKE THROUGH » : même type, quantités différentes (2 contre 3)."
+    },
+    {
+      "codes": [
+        "MP-I",
+        "MP-E"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — À VÉRIFIER, doublon interne au relevé (pas plan/Détail) : Marques place un monument sur E102 et un sur E105 au même point (1272.2 ; 903.7 pt, écart 0.0) et un autre à 1.9 pt près (593.3 ; 383.0 sur E102 / 592.7 ; 381.2 sur E105). Si les deux paires sont confirmées, les 7 lignes MONUMENT PLANCHER du relevé font 5 monuments distincts."
+    }
+  ]
+}

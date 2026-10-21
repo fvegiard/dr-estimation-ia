@@ -1,0 +1,782 @@
+{
+  "niveau": "chef",
+  "nom": "B1",
+  "modele_demande": "sonnet",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "PC-I",
+      "desc": "Prise double 15 A 120 V neuve",
+      "q": null,
+      "u": "U",
+      "p": 64.81,
+      "h": 1.175,
+      "art": "3.28",
+      "src": "catalogue Dupuis « PRISE DUPLEX 15A 120V » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "PC-E",
+      "desc": "Prise double 15 A enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1)"
+    },
+    {
+      "code": "PC-R",
+      "desc": "Prise double 15 A relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3)"
+    },
+    {
+      "code": "PU-I",
+      "desc": "Prise double 15 A USB neuve (Leviton Decora USB)",
+      "q": null,
+      "u": "U",
+      "p": 77.45,
+      "h": 1.125,
+      "art": "3.27",
+      "src": "catalogue Dupuis « PRISE USB 125V 15 AMP » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 6)"
+    },
+    {
+      "code": "PU-E",
+      "desc": "Prise USB enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : une prise USB enlevée se démonte comme une prise ordinaire (repère METHODE prise enlevée 0,35 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "PU-R",
+      "desc": "Prise USB relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : une prise USB relocalisée se déplace comme une prise ordinaire (repère METHODE relocalisation de prise 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "PG-I",
+      "desc": "Prise double 15 A DDFT (GFI) neuve",
+      "q": null,
+      "u": "U",
+      "p": 65.38,
+      "h": 1.3,
+      "art": "3.30",
+      "src": "catalogue Dupuis « PRISE DUPLEX 20A 125V GFI » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 16)"
+    },
+    {
+      "code": "PG-E",
+      "desc": "Prise DDFT enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1)"
+    },
+    {
+      "code": "PG-R",
+      "desc": "Prise DDFT relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3)"
+    },
+    {
+      "code": "SD-I",
+      "desc": "Sortie data (informatique/audio) neuve",
+      "q": null,
+      "u": "U",
+      "p": 22.32,
+      "h": 0.89,
+      "art": "3.33",
+      "src": "catalogue Dupuis « TEL/DATA 3/4 » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1)"
+    },
+    {
+      "code": "SD-E",
+      "desc": "Sortie data enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER DATA » ; sortie data = dispositif mural ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "SD-R",
+      "desc": "Sortie data relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : aucun libellé « RELO DATA » ; sortie data ≈ prise relocalisée (repère METHODE 1,5 h)"
+    },
+    {
+      "code": "TV-I",
+      "desc": "Sortie TV (câblodistribution) neuve",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.33",
+      "src": "catalogue Dupuis « SORTIE TV » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 5); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TV-E",
+      "desc": "Sortie TV enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER TV » ; sortie TV murale ≈ prise enlevée (repère METHODE 0,35 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TV-R",
+      "desc": "Sortie TV relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : aucun libellé « RELO TV » ; sortie TV murale ≈ prise relocalisée (repère METHODE 1,5 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "INT-I",
+      "desc": "Interrupteur simple 15 A 120 V neuf",
+      "q": null,
+      "u": "U",
+      "p": 75.47,
+      "h": 1.075,
+      "art": "3.35",
+      "src": "catalogue Dupuis « INTERRUPTEUR 15A 120V » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 13)"
+    },
+    {
+      "code": "INT-E",
+      "desc": "Interrupteur enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER INTERRUPTEUR » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); arbitrage tranché par le chef de lot B1 : h = 0,35 = repère METHODE « prise enlevée 0,35 h » (même famille « ENLEVER … » du projet S-1835 que ENLEVER PRISE) ; « INTERRUPTEUR A DEMANTELER » (0,1 h) aurait gagné par la règle 4 (date) mais n'égale aucun repère et romprait la cohérence avec PC-E, TH-E, DM-E (voir notes)"
+    },
+    {
+      "code": "INT-R",
+      "desc": "Interrupteur relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO INT » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TH-I",
+      "desc": "Thermostat neuf",
+      "q": null,
+      "u": "U",
+      "p": 35.0,
+      "h": 0.4,
+      "art": "3.23",
+      "src": "catalogue Dupuis « THERMOSTAT » um=U (dernier 2026-06-03, s-1775 clinique mieux etre, nb_projets 4)"
+    },
+    {
+      "code": "TH-E",
+      "desc": "Thermostat enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER THERMOSTAT » ; dispositif mural ≈ prise enlevée (repère METHODE 0,35 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TH-R",
+      "desc": "Thermostat relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : aucun libellé « RELO THERMOSTAT » ; dispositif mural ≈ prise relocalisée (repère METHODE 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "BJ-I",
+      "desc": "Boîte de jonction neuve",
+      "q": null,
+      "u": "U",
+      "p": 6.1778,
+      "h": 0.25,
+      "art": "3.31",
+      "src": "catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) ; aucun libellé « BOITE DE JONCTION » au catalogue : règle 3 (nb_projets), boîte carrée"
+    },
+    {
+      "code": "BJ-E",
+      "desc": "Boîte de jonction enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; analogue : aucun libellé « ENLEVER BOITE » ; boîte murale ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "BJ-R",
+      "desc": "Boîte de jonction relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3) ; analogue : aucun libellé « RELO BOITE » ; boîte murale ≈ prise relocalisée (repère METHODE 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "MP-I",
+      "desc": "Monument de plancher neuf (poke-through)",
+      "q": null,
+      "u": "U",
+      "p": 250.0,
+      "h": 1.0,
+      "art": "3.34",
+      "src": "catalogue Dupuis « MONUMENT PLANCHER 1TE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; repère METHODE monument 250 $ (règle 1)"
+    },
+    {
+      "code": "MP-E",
+      "desc": "Monument de plancher enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; analogue : aucun libellé « ENLEVER MONUMENT » ; monument = prise/data en boîtier de plancher ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "MP-R",
+      "desc": "Monument de plancher relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3) ; analogue : aucun libellé « RELO MONUMENT » ; ≈ prise relocalisée (repère METHODE 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LC-I",
+      "desc": "Lecteur de carte neuf",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.33",
+      "src": "catalogue Dupuis « LECTEUR DE CARTE » um=U (dernier 2026-04-02, S-1692_École Primaire St-Marc Candiac, nb_projets 5)"
+    },
+    {
+      "code": "LC-E",
+      "desc": "Lecteur de carte enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTACT DE PORTE ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); analogue : aucun libellé « LECTEUR ENL » ; famille ENL du projet S-1659 (dispositifs d'accès/alarme enlevés, 0,5 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LC-R",
+      "desc": "Lecteur de carte relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « LECTEUR RELO » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "GA-I",
+      "desc": "Gâche électrique neuve",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.33",
+      "src": "catalogue Dupuis « GACHE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 3); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "GA-E",
+      "desc": "Gâche électrique enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTACT DE PORTE ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); analogue : aucun libellé « GACHE ENL » ; famille ENL du projet S-1659 (dispositifs d'accès enlevés, 0,5 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "GA-R",
+      "desc": "Gâche électrique relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « GACHE RELO » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "DM-I",
+      "desc": "Détecteur de mouvement neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.35",
+      "src": "catalogue Dupuis « DETECTEUR MOUVEMENT » um=U (dernier 2026-03-31, S-1693_Ecole Primaire Beloeil, nb_projets 3); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "DM-E",
+      "desc": "Détecteur de mouvement enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER DETECTEUR » ; dispositif mural/plafond léger ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "DM-R",
+      "desc": "Détecteur de mouvement relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO DETECTEUR A FUME » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 3); analogue : aucun libellé « RELO DETECTEUR MOUVEMENT » ; objet voisin = détecteur (installation 0,5 h comme le détecteur de fumée); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "BC-I",
+      "desc": "Boîtier « C » neuf (hors légende)",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.36",
+      "src": "catalogue Dupuis « CONTACT PORTE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 3) ; analogue : « BOITIER C » non défini par la légende ; hypothèse NON PROUVÉE : dispositif d'accès de porte (contact de porte) — 2 des 3 BOITIER C de E201 sont à moins de 9 pt d'un lecteur de carte de E101/E104 (même repère de coordonnées) ; 15 $ = convention Dupuis des dispositifs d'accès (voir notes) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "BC-E",
+      "desc": "Boîtier « C » enlevé (hors légende)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTACT DE PORTE ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue : « BOITIER C » ≈ contact de porte (hypothèse non prouvée : dispositif d'accès de porte, voir notes) ; famille ENL du projet S-1659 (0,5 h)"
+    },
+    {
+      "code": "BC-R",
+      "desc": "Boîtier « C » relocalisé (hors légende)",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTAC PORTE RELO » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue : « BOITIER C » ≈ contact de porte (hypothèse non prouvée : dispositif d'accès de porte, voir notes) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "D-09",
+      "desc": "Barrière anti-vol : 2 boîtes de jonction + raccord panneau de contrôle (PU-1 23)",
+      "q": null,
+      "u": "LOT",
+      "p": 37.3556,
+      "h": 1.0,
+      "art": "3.31",
+      "src": "2 × catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) + 1 × catalogue Dupuis « RACCORD DIRECT » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 5) ; composition : p = 2 × p(boîte) + p(raccord) = 37.3556 ; h = 2 × h(boîte) + h(raccord) = 1.0 (calcul par script, arrondi à 4 décimales)"
+    },
+    {
+      "code": "D-10",
+      "desc": "Bornes de prêts / fontaine hall — JB dans mur adjacent",
+      "q": null,
+      "u": "U",
+      "p": 6.1778,
+      "h": 0.25,
+      "art": "3.31",
+      "src": "catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) ; une seule JB dans mur adjacent (Détail D-10 : aucun raccordement dit)"
+    },
+    {
+      "code": "D-11",
+      "desc": "Bouton d'appel — boîte + conduit vide (système fourni par d'autres)",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.33",
+      "src": "catalogue Dupuis « DECLENCHEUR APPEL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; règle 2 (seul libellé « appel ») ; convention Dupuis : dispositif posé par DR et fourni par d'autres (15 $) ; décision du chef de lot B1 : retenu ; conduit vide non chiffré dans cette ligne (longueur absente du kit)"
+    },
+    {
+      "code": "E-03",
+      "desc": "Boîte de plancher refaite (salle 208, ancien mobilier)",
+      "q": null,
+      "u": "U",
+      "p": 250.0,
+      "h": 1.0,
+      "art": "3.34",
+      "src": "catalogue Dupuis « MONUMENT PLANCHER 1TE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; analogue Dupuis : boîte de plancher ≈ monument de plancher (repère METHODE monument 250 $, règle 1)"
+    },
+    {
+      "code": "E-06",
+      "desc": "Bouton d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.33",
+      "src": "catalogue Dupuis « DECLENCHEUR APPEL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; même arbitrage que D-11 (bouton de panique = déclencheur d'appel) ; conduit vide non chiffré dans cette ligne (longueur absente du kit)"
+    }
+  ],
+  "notes": [
+    "DÉCOUPAGE (3 sous-lots disjoints, 44 codes couverts, chacun une seule fois) : B1-1 « prises, interrupteurs, thermostats » (15 codes) = PC-I PC-E PC-R PU-I PU-E PU-R PG-I PG-E PG-R INT-I INT-E INT-R TH-I TH-E TH-R ; B1-2 « télécom, détecteur de mouvement, contrôle d'accès » (15 codes) = SD-I SD-E SD-R TV-I TV-E TV-R DM-I DM-E DM-R LC-I LC-E LC-R GA-I GA-E GA-R ; B1-3 « boîtes, monuments de plancher, boîtier C, lignes hors plan » (14 codes) = BJ-I BJ-E BJ-R MP-I MP-E MP-R BC-I BC-E BC-R D-09 D-10 D-11 E-03 E-06. Écart volontaire à la suggestion 9/15/20 pour équilibrer la charge et garder ensemble les codes qui partagent les mêmes analogues.",
+    "EFFORT DES RELEVEURS (tous haiku, tous xhigh ; justification d'une ligne chacun) : B1-1 xhigh — PC-I (25), PU-I (20) et PG-I (22) sont les plus grosses lignes de matériel des prises : une erreur de libellé ou une médiane glissée passe telle quelle dans le chiffrage ; B1-2 xhigh — SD-I (65 sorties) dépend du choix « TEL/DATA 3/4 » contre « TEL/DATA » (nb_projets 17) et SD-E/SD-R n'ont aucun libellé direct ; B1-3 xhigh — sous-lot le plus arbitré (MP-I 250 $ contre le poke-through Lumen 1 461,22 $, BJ/MP-E/BC et 5 lignes hors plan sans libellé direct, doubles comptes plan/Détail les plus probables).",
+    "CONTRÔLE AU HASARD (catalogue rouvert avec ligne(desc, um) ; p == prix_a_utiliser et h == temps_a_utiliser du libellé cité ; échantillon tiré avec la graine 1902, au moins une ligne -E ou -R par releveur) : B1-1 5/5 (PC-I, TH-R, PG-E, PG-R, TH-I) ; B1-2 5/5 (TV-I, DM-E, SD-E, LC-E, DM-R) ; B1-3 5/5 (BC-R, MP-E, BJ-I, D-09, D-11). Aucune erreur : aucun sous-lot n'a eu à être revu pour cause d'erreur de valeur.",
+    "CONTRÔLE COMPLET en plus de l'échantillon : les 44 lignes ont été relues contre le CSV (libellé exact + um, date_dernier, projet_dernier, nb_projets cités dans src, p et h, somme pondérée pour D-09) : 44/44 conformes. Structure : les 3 JSON se chargent, 44 codes présents exactement une fois (aucun manque, aucun doublon), q = null partout, p et h numériques, ENLEVER → p = 0, aucun h = 0, articles conformes à la règle provisoire de la consigne (B3 fixe la règle définitive).",
+    "SOURCES : les 44 lignes sont des libellés Dupuis (dernière valeur, jamais la médiane) ; AUCUN repli Lumen, AUCUN jugement (Estimation_2) comme source de prix ou de temps, aucun « p = 0 forcé ». Aucune boîte/plaque/prise Lumen ajoutée à un prix d'assemblage (LEV16252W, LEV16352W, LEV80401NW, LEVT5633W, LEVGFNT1W, IBE52151K, IBE52C13, HUBS1R6PTDEHBLK non utilisés). Codes SANS libellé Dupuis direct (analogue Dupuis, dit dans src) : SD-E, SD-R, TV-E, TV-R, TH-E, TH-R, DM-E, DM-R, LC-E, GA-E, BJ-I (boîte carrée), BJ-E, BJ-R, MP-E, MP-R, BC-I, BC-E, BC-R, D-09, D-10, D-11, E-03, E-06 ; PU-E et PU-R reprennent PC-E et PC-R (prise USB = prise). Codes dont la portée est absente du relevé (précaution) : PU-E PU-R INT-R TH-E TH-R TV-I TV-E TV-R DM-I DM-R LC-E LC-R GA-I GA-E GA-R BJ-R MP-R BC-I BC-R.",
+    "POLITIQUE D'ANALOGUES (appliquée par les 3 releveurs, vérifiée dans les 44 lignes) : démontage d'un dispositif mural ou boîte → « ENLEVER PRISE » (0 $ / 0,35 h, repère METHODE prise enlevée 0,35 h) pour PC, PU, PG, SD, TV, INT, TH, BJ, MP, DM ; relocalisation → « RELO PRISE » (0 $ / 1,5 h, repère 1,5 h) pour PC, PU, PG, SD, TV, TH, BJ, MP, et « RELO INT » (même valeurs) pour INT-R ; dispositifs d'accès (lecteur, gâche, boîtier C) : démontage → « CONTACT DE PORTE ENL » (0 $ / 0,5 h, famille ENL du projet S-1659, valeurs identiques pour OPERATEUR PORTE ENL, IC ENL, STATION ENL), relocalisation → « LECTEUR RELO », « GACHE RELO », « CONTAC PORTE RELO » (15 $ / 0,5 h) ; DM-R → « RELO DETECTEUR A FUME » (0 $ / 0,75 h, objet voisin = détecteur). Alternatives écartées et leurs écarts : « PRISES A DEMANTELER » 0,2 h (écarté par la règle 1), « EQUIPEMENT A ENLEVER » 0,5 h, jugement (Estimation_2) A-03 0,4 h/u et A-05 1 h/u (un analogue Dupuis vaut mieux).",
+    "ARBITRAGE INT-E (désaccord remonté par B1-1) — TRANCHÉ : « ENLEVER INTERRUPTEUR » (0 $ / 0,35 h) retenu, contre mon arbitrage initial « INTERRUPTEUR A DEMANTELER » (0 $ / 0,1 h, règle 4 : date 2026-09-23 contre 2026-08-26). Raisons : (1) h = 0,35 égale le repère METHODE « prise enlevée 0,35 h » (règle 1, lue sur la valeur du repère) alors que 0,1 h n'égale aucun repère ; (2) cohérence : tous les autres démontages muraux (PC-E, PU-E, PG-E, SD-E, TV-E, TH-E, DM-E, BJ-E, MP-E) sont à 0,35 h, INT-E à 0,1 h serait le seul écart ; (3) le repère 0,35 h vient de la famille « ENLEVER … » du projet S-1835 (la même qui contient ENLEVER INTERRUPTEUR) : c'est le vocabulaire que Dupuis a manifestement utilisé pour S-1902. Impact : 1 unité, +0,25 h ; seul h change, p reste 0.",
+    "ARBITRAGE BC (boîtier « C ») — TRANCHÉ : analogues du dispositif d'accès de porte conservés (BC-I « CONTACT PORTE » 15 $ / 0,35 h ; BC-E « CONTACT DE PORTE ENL » 0 $ / 0,5 h ; BC-R « CONTAC PORTE RELO » 15 $ / 0,5 h) mais l'identité « C = contact de porte » est une HYPOTHÈSE NON PROUVÉE, écrite comme telle dans src. Avis de B1-3 : (a) famille « alarme » au relevé alors que lecteur et gâche sont « intrusion » — retenu comme réserve ; (b) « les coordonnées ne se comparent qu'au sein d'une même feuille » — INEXACT : relu dans Marques, des points identiques (x, y, libellé) existent entre feuilles (E201/E204 ×3, E102/E105 ×3, E201/E203 ×2), donc les feuilles partagent le même repère ; 2 des 3 BOITIER C de E201 sont à 8,4 pt et 8,9 pt d'un LECTEUR CARTE de E104 et E101 (le troisième à 35 pt) : le BOITIER C est donc posé au même endroit qu'un lecteur de carte neuf, ce qui indique un dispositif d'accès de porte (peut-être l'ancien lecteur ou son contact) sans prouver « contact » ; (c) source contradictoire (« E-001 légende ; bloc S218 » contre « hors légende — R-006 ») — retenu comme réserve. Sensibilité : tout dispositif d'accès Dupuis est à 15 $ et 0,35–0,5 h (LECTEUR DE CARTE 15 $ / 0,5 h) ; seul BC-E (2 unités relevées, 0,5 h) pèse, et il pèse 1 h. À trancher sur le plan par l'équipe A / le directeur ; si le boîtier est un appareil AI fourni par JCI, p serait 0 (lot) — non vérifiable ici.",
+    "ARBITRAGE MP-I « SU » contre « 1TE » (désaccord remonté par B1-3) — TRANCHÉ : « MONUMENT PLANCHER 1TE » (250 $ / 1 h) maintenu. La règle 1 (repère METHODE « monument 250 $ ») passe avant la règle 2 ; « MONUMENT PLANCHER SU » (118,75 $ / 1 h, s-1854) n'égale pas le repère. L'écart de 3 × (250 − 118,75) = 393,75 $ est noté, pas appliqué. « MONUMENT PLANCHER » et « … 1TE » ont les mêmes p et h (250 / 1) : le choix du libellé par la règle 4 n'a aucun effet numérique. Prix Lumen HUBS1R6PTDEHBLK (1 461,22 $/u) NON utilisé : le repère Dupuis 250 $ prévaut (écart 1 211,22 $/u noté).",
+    "ARBITRAGE E-03 « BOITE FS » (désaccord remonté par B1-3) — TRANCHÉ : « MONUMENT PLANCHER 1TE » (250 $ / 1 h) maintenu pour 'boîte de plancher refaite' (analogue Dupuis, règle 1 repère 250 $). « BOITE FS 1G 1/2PO METAL » (67,87 $ / 0,3 h) et « BOITE FS 1G 3/4PO ALUM » (21,49 $ / 0,4 h) sont écartées : les libellés FS du catalogue sont des boîtes murales 1 gang (le catalogue a « PLAQUE FS 1G INTERR ALUM »), pas des boîtes de plancher ; le releveur a inféré 'boîte de plancher nue' sans preuve au catalogue. Alternative jugement (Estimation_2) E-03 2,5 h/u non retenue (un analogue Dupuis prime). Réserve : le Détail dit « à confirmer » et les 2 boîtes refaites coïncident très probablement avec 2 paires de monuments relevées (voir doubles comptes) : la quantité sera à trancher par l'équipe A ; la ligne reste chiffrée.",
+    "ARTICLES (désaccord remonté par B1-3 sur D-11, E-06, BC-I) — règle PROVISOIRE de la consigne conservée telle quelle (D-11 et E-06 → 3.33, BC-I → 3.36, -E et -R → 3.22) ; à fixer définitivement par le chef de lot B3. Observation transmise à B3 : le titre 3.33 « Sorties informatique/réseau » ne décrit pas un bouton d'appel ; 3.31 « Percements, conduit filage et boîte de jonction » décrirait mieux « boîte + conduit vide » (D-11, E-06) ; 3.36 « Détecteur de fumée » ne décrit pas un boîtier C non identifié (BC-I n'a de toute façon aucune quantité relevée).",
+    "SENSIBILITÉ SD-I (GROSSE LIGNE, 65 sorties data) : « TEL/DATA 3/4 » (22,32 $ / 0,89 h) retenu par la règle 1 (repère METHODE : p ET h égalent le repère). L'autre libellé « TEL/DATA » (13,96 $ / 0,63 h, nb_projets 17, borne basse de la plage 0,63–0,89 h de METHODE) représenterait −8,36 $ et −0,26 h par unité, soit −543,40 $ de matériel et −16,9 h sur 65 unités. Choix maintenu ; l'écart est consigné pour le directeur.",
+    "D-09 (barrière anti-vol) : composition d'analogues Dupuis 2 × « BOITE CARRE 2-1/8PO KO 1 » + 1 × « RACCORD DIRECT » = 37,3556 $ / 1,0 h pour le LOT, contre 6 h au jugement (Estimation_2). Écart de 5 h non retenu (un analogue Dupuis vaut mieux que le jugement) mais signalé : la composition ne contient ni conduit ni filage entre les boîtes et le panneau de contrôle (PU-1 23). D-10 = 1 × BOITE CARRE 2-1/8PO KO 1 (6,1778 $ / 0,25 h), aucun raccordement n'étant dit au Détail.",
+    "PG-I et bordereau 3.29 (R-007) : le relevé range les prises M.A.L.T. isolées (barre pleine) et les DDFT dans PRISE DDFT ; B1-1 a cherché MALT, M.A.L.T, ISOL, ORANGE, \\bIG\\b, GFCI, HOSP, DDFT, GFI, DUPLEX, RECEPT : aucun libellé 'prise M.A.L.T. isolée' (les libellés MALT sont des tiges, boîtes de tige, connecteurs, barres). PG-I porte donc les deux variantes au prix DDFT (65,38 $ / 1,3 h) ; la ventilation 3.29 / 3.30 par quantité revient à l'équipe A / B3.",
+    "ALERTES DE QUANTITÉ transmises (je ne tranche pas les quantités, q = null) : (1) PU-I — 20 occurrences PRISE USB, toutes sur E104, en 5 grilles de 4 points (vérifié par le chef dans Marques : pas de 4,6 pt et de 6,6 pt) ; Détail D-02 = 5 tables × 2 USB = 10 et LEVT5633W = 10 : si 10 prises physiques, PU-I = 10 au lieu de 20, soit −774,50 $ et −11,25 h au prix Dupuis ; à vérifier au zoom sur E-104 par l'équipe A. (2) MP-I / MP-E — Marques place sur E102 (ENLEVER) et E105 (INSTALLER) des monuments au même point (1272,2 ; 903,7 : écart 0,0) et à 1,9 pt (593,3 ; 383,0 / 592,7 ; 381,2) : ce sont des REMPLACEMENTS ancien/nouveau (démonter + installer, deux travaux réels), PAS un doublon interne comme le suggérait B1-3 (qui concluait à 5 monuments distincts) ; ces 2 paires sont très probablement les 2 'boîtes de plancher refaites' de E-03 (salle 208, E-102/E-105) : double compte plan/Détail probable pour E-03. (3) BJ-I — 3 BOITE JONCTION INSTALLER, toutes sur E104 ; D-09 (2 boîtes) + D-10 (1) = 3 : double compte probable. (4) A-03/A-04/A-05 (Détail, démantèlement et relocalisation de services E.A.E/E.A.R) recoupent PC-E, PG-E, SD-E, PC-R, PG-R, SD-R. (5) D-01, D-02, D-03, D-04, D-05, D-06, D-07, D-08, E-01, E-02, E-04, E-05 recomptent des appareils relevés sur plan (PC-I, PU-I, PG-I, SD-I, MP-I, BJ-I). Tout est dans doubles_comptes ; l'arbitrage final revient à A3 et B3.",
+    "DM-I : p = 0 vient du catalogue lui-même (« DETECTEUR MOUVEMENT », 0 $ / 0,5 h, nb_projets 3) ; aucun lot ne couvre ce détecteur (LOT-DET = 2 détecteurs de fumée). Le relevé n'a aucun DM-I (DETECTEUR MOUVEMENT : CONSERVER 2, ENLEVER 1) : si une quantité d'installation apparaît, son matériel resterait à 0 $ sans décision. Le libellé « DETECTEUR DE MOUVEMENT » (10 $) est noté comme alternative (+10 $/u).",
+    "RAPPEL : taux 85 $/h (METHODE.md §5 ; le 124 $/h du Sommaire n'est pas retenu) et facteur de prix de vente 1,244 (METHODE.md §7) NON appliqués dans ce lot ; p et h sont des valeurs unitaires de catalogue. Modèle du chef de lot : Claude Sonnet 5.5 (claude-sonnet-5-5), effort xhigh ; releveurs : Claude Haiku 5.5 (claude-haiku-5-5), déclaré par chacun dans ses notes.",
+    "[releveur B1-1] PC-I — retenu « PRISE DUPLEX 15A 120V » um=U p=64.81 h=1.175 nb_projets=20 dernier 2026-09-25 (S-1857 - Maison St-Michel). Règle 1 : p ET h égalent le repère METHODE « prise duplex 15 A 64,81 $ / 1,175 h ». Accord avec l'arbitrage du chef de lot (relu dans le CSV). écarté « PRISE DUPLEX 15/20A 120V » um=U p=60.19 h=1.225 nb_projets=17 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe) ; écarté « PRISE » um=U p=45.0 h=0.6 nb_projets=2 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe) ; écarté « PRISE 15A 125V » um=U p=45.0 h=0.6 nb_projets=1 dernier 2026-03-27 (S-1714 PARTAGE DE RIVIERA) ; écarté « DROP DE PRISE » um=U p=35.43 h=0.9 nb_projets=4 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture). R-007 : le relevé ne distingue pas 15 A et 20 A ; le repère 15 A prévaut (dit ici).",
+    "[releveur B1-1] PC-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle 1 : h 0,35 = repère METHODE « prise enlevée 0,35 h ». ENLEVER → p = 0. Écarté : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) (plus récent, mais h 0,2 n'égale pas le repère : écarté par la règle 1). Accord.",
+    "[releveur B1-1] PC-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle 1 : h 1,5 = repère METHODE « relocalisation de prise 1,5 h ». RELOCALISER → p 0 $ au catalogue + temps. Alternative de même h, objet différent (interrupteur), écartée : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption). Accord.",
+    "[releveur B1-1] PU-I — retenu « PRISE USB 125V 15 AMP » um=U p=77.45 h=1.125 nb_projets=6 dernier 2026-09-10 (s-1854 sollio st hubert lanthier). Règle 1 : repère METHODE « USB 77,45 $ / 1,125 h ». Écarté : écarté « PRISE DUPLEX 15A 120V » um=U p=64.81 h=1.175 nb_projets=20 dernier 2026-09-25 (S-1857 - Maison St-Michel) (prise ordinaire, objet PC-I). Lumen LEVT5633W (48,66 $) et LEV80401NW non utilisés : le prix d'assemblage Dupuis inclut boîte, plaque et raccord. Accord. Voir la note DOUBLON PROBABLE de PU-I plus bas.",
+    "[releveur B1-1] PU-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle analogue : aucun libellé USB à enlever au catalogue ; une prise USB se démonte comme une prise ordinaire (repère 0,35 h). Portée absente du relevé — correspondance de précaution. Écarté : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable).",
+    "[releveur B1-1] PU-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle analogue : repère relocalisation de prise 1,5 h. Portée absente du relevé — correspondance de précaution. Écarté : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption).",
+    "[releveur B1-1] PG-I — retenu « PRISE DUPLEX 20A 125V GFI » um=U p=65.38 h=1.3 nb_projets=16 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe). Règle 1 : p 65,38 et h 1,3 égalent le repère METHODE « DDFT 65,38 $ / 1,3 h » (le libellé dit 20 A ; le relevé ne distingue pas 15 A et 20 A, R-007). Écartés : écarté « PRISE DUPLEX 15A 120V GFI » um=U p=55.51 h=1.225 nb_projets=2 dernier 2026-03-11 (S-1695_Hotel Playground Kahnawake) ; écarté « PRISE GFI » um=U p=55.0 h=0.6 nb_projets=2 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe) ; écarté « PRISE GFI WP » um=U p=65.5 h=1.25 nb_projets=2 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil) ; écarté « RECEPT DDFT AUTO TEST 20 A125V INVIOL BLANC » um=U p=22.54 h=0.25 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) (récepteur seul, sans boîte ni plaque : écarté). Accord.",
+    "[releveur B1-1] PG-I — R-007 M.A.L.T. : libellé distinct « prise M.A.L.T. isolée » NON trouvé. Motifs cherchés au catalogue : MALT (6 libellés), M.A.L.T (6), ISOL (7 : ISOLATEUR, SUPP ISOL, RACCORD ETANCHE ISOLE, BARRE MISE A TERRE ISOL…), ORANGE (0), \\bIG\\b (0), GFCI (0), HOSP (0), BARRE PLEINE (0), DDFT (1), GFI (5), DUPLEX (9), RECEPT (10). Les libellés MALT trouvés sont d'autres objets (tige, boîte de tige, connecteur, barre) : écarté « TIGE MALT 10PI 3/4PO CUI F » um=U p=114.2867 h=1.0 nb_projets=7 dernier 2026-09-25 (S-1857 - Maison St-Michel) ; écarté « TIGE MALT 10PI 3/4PO CUI » um=U p=96.2067 h=1.0 nb_projets=1 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil) ; écarté « BOITE TIGE MALT 10X12PO » um=U p=77.8933 h=1.0 nb_projets=1 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil) ; écarté « CONN MALT TIGE 2@10 » um=U p=25.58 h=0.4 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) ; écarté « BARRE PRINCIPALE MALT_LUMEN » um=U p=1511.7 h=1.75 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Conséquence : PG-I porte les deux variantes (DDFT et M.A.L.T. isolée) au prix DDFT ; la séparation en quantités revient à l'équipe A si le relevé la permet.",
+    "[releveur B1-1] PG-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle 1 (0,35 h). Accord. Écarté : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable).",
+    "[releveur B1-1] PG-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle 1 (1,5 h). Accord. Écarté : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption).",
+    "[releveur B1-1] INT-I — retenu « INTERRUPTEUR 15A 120V » um=U p=75.47 h=1.075 nb_projets=13 dernier 2026-09-25 (S-1857 - Maison St-Michel). Règle 1 : p 75,47 = repère METHODE « interrupteur 75,47 $ » (h 1,075 du même libellé). Écartés : écarté « INTERRUPTEUR 15A 347V » um=U p=57.24 h=1.325 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture) (347 V : le repère désigne le 120 V ; le bâtiment a du 347 V pour les luminaires, à dire) ; écarté « INTERRUPTEUR » um=U p=0.0 h=0.25 nb_projets=1 dernier 2026-02-02 (S-1645 ANNEXE-BOURASSA) ; écarté « INTERR DECO 15A 120V BLANC » um=U p=7.85 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) ; écarté « INTERRUPTEUR MAITRE » um=U p=35.0 h=0.35 nb_projets=1 dernier 2026-02-19 (S-1676 ARC'TERTX) (interrupteur maître, pas un simple). Accord.",
+    "[releveur B1-1] INT-E — DÉSACCORD avec l'arbitrage du chef de lot (règle 4, date, a retenu « INTERRUPTEUR A DEMANTELER »). Je retiens retenu « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Raisons : (a) la règle 1 passe avant les règles 2 à 4 : h 0,35 égale le repère METHODE « prise enlevée 0,35 h », alors que « INTERRUPTEUR A DEMANTELER » (h 0,1) n'égale aucun repère ; (b) la POLITIQUE D'ANALOGUES traite tout démontage d'un dispositif mural au repère 0,35 h, et le chef l'applique lui-même à TH-E (dispositif mural → ENLEVER PRISE) : 0,1 h pour INT-E et 0,35 h pour TH-E serait incohérent ; (c) le chef rejette « PRISES A DEMANTELER » (h 0,2) pour les prises, la même logique vaut pour « INTERRUPTEUR A DEMANTELER » (0,1) ; (d) « ENLEVER INTERRUPTEUR » est le même objet et la même action, de la même famille S-1835 que ENLEVER PRISE. Écarté (choix du chef, non retenu ici) : écarté « INTERRUPTEUR A DEMANTELER » um=U p=0.0 h=0.1 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Impact : 1 unité, 0,25 h d'écart. Si le directeur préfère le libellé du chef, seul h change (0,35 → 0,1) ; p reste 0.",
+    "[releveur B1-1] INT-R — retenu « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption). Règle 2 (même objet, même action : relocalisation d'un interrupteur) ; h 1,5 égale aussi le repère, sans conflit. Alternative de même p et h, objet différent, écartée par la règle 2 : écarté « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Portée absente du relevé — correspondance de précaution. Note : A-07 (Détail, « Relocalisation interrupteurs maîtres du hall », 1 lot, 6 h, E-201) est la seule autre source de relocalisation d'interrupteur dans le kit ; ce n'est pas un doublon avec INT-R (le relevé n'a aucun INT-R), mais l'équipe A doit trancher si A-07 est un INT-R ou un lot distinct.",
+    "[releveur B1-1] TH-I — retenu « THERMOSTAT » um=U p=35.0 h=0.4 nb_projets=4 dernier 2026-06-03 (s-1775 clinique mieux etre). Règle 1 : p 35,00 = repère METHODE « thermostat 35 $ » ; le repère ne donne pas de temps de thermostat, h 0,4 vient du même libellé. Écartés : écarté « THERMOSTAT B/V » um=U p=68.0 h=0.35 nb_projets=1 dernier 2026-03-11 (s-1689 pultrusion st-bruno) ; écarté « THERMOSTAT TS » um=U p=81.88 h=0.35 nb_projets=1 dernier 2026-09-25 (S-1857 - Maison St-Michel) ; écarté « THERMOSTAT ELECTRONIQUE INTEGRE » um=U p=66.0 h=0.0 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) (h = 0, travail réel : écarté) ; écarté « THERMOSTAT FDP » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-07-13 (s-1808 cpe les copain d'ABORD). Accord.",
+    "[releveur B1-1] TH-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle analogue : aucun « ENLEVER THERMOSTAT » au catalogue ; dispositif mural = repère 0,35 h. Portée absente du relevé — correspondance de précaution. Écarté (chef) : écarté « INTERRUPTEUR A DEMANTELER » um=U p=0.0 h=0.1 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Accord avec le choix analogue. Le relevé n'a aucun TH-E ; A-03 (services E.A.E, E-101) est la seule source possible d'un thermostat à enlever : à trancher par l'équipe A (voir doubles_comptes).",
+    "[releveur B1-1] TH-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle analogue : aucun « RELO THERMOSTAT » ; dispositif mural = repère 1,5 h. Portée absente du relevé — correspondance de précaution. Écarté (chef) : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption). Accord.",
+    "[releveur B1-1] DOUBLON PROBABLE dans le relevé, PU-I (non appliqué : la quantité est à l'équipe A) : les 20 occurrences « PRISE USB » de releve.xlsx (feuille Marques, toutes sur E104) forment 5 groupes de 4 points en grille 2 × 2 ; dans un groupe, deux points sont distants de 4,6 pt (deux prises côte à côte), et chaque point est doublé à 6,6 pt. Hypothèse : 10 prises USB physiques, chacune détectée deux fois. Cela concorde avec D-02 (5 tables × 2 prises USB Decora = 10) et avec LEVT5633W « tables note 4 (2/table) » = 10. Si 10 est juste : PU-I = 10 au lieu de 20, soit −774,50 $ de matériel et −11,25 h au prix et au temps Dupuis. À vérifier au zoom sur E-104 avant de figer PU-I. Pour contraste, PC-I et PG-I n'ont que 4 et 7 paires à moins de 7,5 pt, sans motif en grille.",
+    "[releveur B1-1] NON RETENU comme doublon démontré : E-01 (2 postes aide-lecteur 227, 2 prises chacun, E-105) et E-04 (3 cabines, JB + prise, E-105) ont des prises au Détail, mais E-105 ne compte que 2 PRISE DOUBLE 15A au relevé : aucun recoupement possible. Ce n'est donc pas un doublon démontré ; c'est peut-être une omission du relevé sur E-105 (à regarder sur la planche PC-I). Non compté ici.",
+    "[releveur B1-1] PRIX, pas quantité : aucune ligne Lumen dans mon lot. Les lignes Lumen LEV16252W (47), LEV80401NW (66), LEVT5633W (10) et LEVGFNT1W (1) recouvrent les mêmes appareils que PC-I, PU-I et PG-I : elles ne s'ajoutent jamais au prix d'assemblage Dupuis (voir doubles_comptes).",
+    "[releveur B1-1] Recherches sans résultat : ENLEVER THERMOSTAT et RELO THERMOSTAT (aucun ; le motif ENLEV ne retourne aucun thermostat) ; ENLEVER ou RELO d'une prise USB ou DDFT (aucun ; seuls PRISES A DEMANTELER et ENLEVER PRISE existent) ; RELOC (0), ENL (7, aucun thermostat ni prise), DEMANT (3), ENLEV (17), RELO (41), INTERR (42), INT (15), THERM (20), USB (1 : une seule, PRISE USB 125V 15 AMP), DDFT (1 : une seule, récepteur écarté).",
+    "[releveur B1-1] Taux 85 $/h et facteur de prix de vente 1,244 : rappelés, NON appliqués ici (METHODE.md §5 et §7 ; le 124 $/h du Sommaire n'est pas retenu).",
+    "[releveur B1-1] p et h recopiés depuis les colonnes prix_a_utiliser et temps_a_utiliser (dernière valeur de Dupuis), jamais la médiane ; chaque ligne relue avec la fonction de recherche exacte avant écriture.",
+    "[releveur B1-1] Modèle : Claude Haiku 5.5 (claude-haiku-5-5), releveur B1-1, effort xhigh.",
+    "[releveur B1-2] GÉNÉRAL — Catalogue relu avec ligne(desc, um) (2 068 lignes, assert OK) ; p et h = prix_a_utiliser / temps_a_utiliser recopiés tels quels, jamais la médiane. Aucun repli Lumen ni jugement comme source de prix dans ce lot : « jugement (Estimation_2) » n'est cité que pour des candidats écartés (Détail A-03 h/u 0,4 ; A-05 h/u 1, relus). q = null partout. Aucun désaccord avec les 15 libellés retenus par le chef de lot : je les confirme tous après relecture du CSV.",
+    "[releveur B1-2] ALERTE 1 (DM-I) — p = 0 du catalogue, p n'est pas forcé : aucun lot ne couvre un détecteur de mouvement (LOT-DET = 2 détecteurs de fumée, 600 $). Le relevé n'a aucun DM-I (DETECTEUR MOUVEMENT = CONSERVER 2, ENLEVER 1) : si un DM-I réel est ajouté, son matériel reste à 0 $ tant qu'il n'y a pas de décision (prix Dupuis non nul ou prix de lot). Détecteurs de présence au catalogue, objet voisin non retenu : écarté « DETECTEUR WATTSTOPER » um=U p=236.0 h=0.5 nb_projets=1 dernier 2026-03-11; écarté « DETECTEUR PRESENCE PL » um=U p=250.0 h=0.5 nb_projets=1 dernier 2026-06-26.",
+    "[releveur B1-2] ALERTE 2 (SD-I) — deux libellés TEL/DATA : écart par unité 22,32 − 13,96 = 8,36 $ et 0,89 − 0,63 = 0,26 h ; sur 65 unités : 543,40 $ de matériel et 16,9 h. Le choix relève de Francis/Jo, pas du releveur.",
+    "[releveur B1-2] SD-I — retenu « TEL/DATA 3/4 » : règle 1 (repère METHODE « tel/data 3/4 22,32 $ / 0,89 h » : p ET h égalent le repère). CONFIRMÉ. Hésitation consignée : « TEL/DATA » n'égale le repère que par h = 0,63, borne basse de la plage METHODE (0,63–0,89 h), jamais par p ; sa classe Dupuis est « Standard (stable) » et il a 17 projets (les autres candidats sont « Vu 1 seul projet »). Recherches : TEL, DATA, SORTIE, RESEAU, INFORM, AUDIO, RJ45, CAT6 — aucun libellé informatique, RJ45 ou CAT6. Écartés : écarté « TEL/DATA » um=U p=13.96 h=0.63 nb_projets=17 dernier 2026-09-25; écarté « SORTIE DATA » um=U p=20.0 h=0.25 nb_projets=1 dernier 2026-06-02; écarté « SORTIE AV » um=U p=20.0 h=0.25 nb_projets=1 dernier 2026-06-02; écarté « SORTIE RESEAU » um=U p=15.4 h=0.63 nb_projets=1 dernier 2026-06-03; écarté « SORTIE TEL » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-10-07; écarté « TEL » um=U p=0.0 h=0.25 nb_projets=1 dernier 2026-02-02 (libellé trop court, p 0).",
+    "[releveur B1-2] SD-E — retenu « ENLEVER PRISE » (analogue : aucun « ENLEVER DATA » ; repère METHODE « prise enlevée 0,35 h »). CONFIRMÉ. Jugement A-03 (h/u 0,4, relu) non retenu : Dupuis a un analogue ; écart 0,05 h/u × 17 = 0,85 h. Écartés : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23; écarté « INTERRUPTEUR A DEMANTELER » um=U p=0.0 h=0.1 nb_projets=1 dernier 2026-09-23; écarté « DEBRANCHEMENT APPAREILAGE MECANIQUE » um=U p=0.0 h=0.4 nb_projets=1 dernier 2026-09-23 (débrancher, pas enlever : action différente); écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (même valeur, objet voisin); écarté « ENLEVER CONDUIT ET FILA » um=U p=0.0 h=0.0 nb_projets=2 dernier 2026-08-26 (temps nul).",
+    "[releveur B1-2] SD-R — retenu « RELO PRISE » (analogue : aucun « RELO DATA » ; repère METHODE « relocalisation de prise 1,5 h »). CONFIRMÉ. Jugement A-05 (h/u 1, relu) non retenu : écart −0,5 h/u × 3 = −1,5 h. Écartés : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (même h mais interrupteur : objet voisin, nb 1 < 3); écarté « RELO ENCASTRE » um=U p=0.0 h=1.0 nb_projets=1 dernier 2026-06-02 (encastré : objet voisin, h 1,0).",
+    "[releveur B1-2] TV-I — retenu « SORTIE TV » : règle 1 (repère METHODE « sortie TV 15 $ », p égale), règle 2 (même objet). CONFIRMÉ. Portée absente du relevé (CONSERVER 4 seulement) : quantité 0 au relevé, code de précaution. Écartés : écarté « SORTIE TEL » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-10-07 (p 15 comme le repère mais objet télécom : règle 2); écarté « SORTIE WIFI » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-10-07; écarté « TV » um=U p=4.25 h=0.63 nb_projets=1 dernier 2026-03-31 (p 4,25); écarté « BOITIER TV » um=U p=0.0 h=0.0 nb_projets=1 dernier 2026-09-10 (temps nul); écarté « ENS BOITIER TV ENCASTRE » um=U p=38.7139 h=1.0 nb_projets=1 dernier 2026-09-10 (ensemble boîtier : objet plus large). D-05 « Kiosque TV (P-2 6) — prise + data » n'est pas un symbole SORTIE TV au relevé : TV-I n'en est pas déduit.",
+    "[releveur B1-2] TV-E — retenu « ENLEVER PRISE » (analogue : aucun « ENLEVER TV » ; sortie TV murale ≈ prise, repère 0,35 h). CONFIRMÉ. Portée absente (CONSERVER 4 seulement). Écartés : écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (même valeur, interrupteur); écarté « BOITIER TV » um=U p=0.0 h=0.0 nb_projets=1 dernier 2026-09-10 (temps nul).",
+    "[releveur B1-2] TV-R — retenu « RELO PRISE » (analogue : aucun « RELO TV » ; repère 1,5 h). CONFIRMÉ. Portée absente (précaution). Écartés : écarté « RELO STATION MANUEL » um=U p=0.0 h=0.75 nb_projets=3 dernier 2026-10-07 (station : objet voisin); écarté « RELO ENCASTRE » um=U p=0.0 h=1.0 nb_projets=1 dernier 2026-06-02 (encastré, h 1,0).",
+    "[releveur B1-2] DM-I — retenu « DETECTEUR MOUVEMENT » : règle 1 (h = 0,5 = repère « détecteur 0,5 h », égal à plusieurs candidats), règle 2 (même objet), règle 3 (nb_projets 3, le plus grand). CONFIRMÉ, avec l'ALERTE 1. p = 0 du catalogue, non forcé. Portée absente du relevé (précaution). Recherches : DETECT, MOUV, MOUVEMENT, PRESENCE, INT MOUVEMENT. Écartés : écarté « DETECTEUR DE MOUVEMENT » um=U p=10.0 h=0.5 nb_projets=1 dernier 2026-02-02 (libellé identique à celui du relevé, mais nb 1 : règle 3 ; si le chef le retient, +10 $/u de matériel); écarté « DETECTEUR DE MOUVEMEI » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-04-02 (libellé tronqué, nb 1); écarté « DETECTEUR MOUVEMENT : » um=U p=235.0 h=0.35 nb_projets=1 dernier 2026-03-11 (h 0,35 ≠ repère, nb 1); écarté « INT MOUVEMENT » um=U p=85.0 h=0.35 nb_projets=1 dernier 2026-02-19 (interrupteur : objet voisin); écarté « DETECTEUR MOUV 360 OS » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-30 (p 0, nb 1); écarté « DETECTEUR MOUVEMENT F » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-07-13 (p 0, nb 1); écarté « GARDE DETECTEUR MOUV » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (garde : autre objet).",
+    "[releveur B1-2] DM-E — retenu « ENLEVER PRISE » (analogue : aucun « ENLEVER DETECTEUR » ; dispositif mural/plafond léger ≈ prise, repère 0,35 h). CONFIRMÉ. Relevé : ENLEVER 1 (E-201). Écartés : écarté « STATION ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (h 0,5 : dispositif d’alarme ; si retenu, +0,15 h); écarté « EQUIPEMENT A ENLEVER » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-05-05 (h 0,5, générique ; si retenu, +0,15 h); écarté « DETECTEUR » um=U p=0.0 h=0.25 nb_projets=1 dernier 2026-02-02 (libellé sans action d’enlèvement).",
+    "[releveur B1-2] DM-R — retenu « RELO DETECTEUR A FUME » (règle 2 : même objet détecteur, même action relocaliser ; règle 3 : nb 3). CONFIRMÉ. Aucun « RELO DETECTEUR MOUVEMENT » trouvé. Portée absente (précaution). Écartés : écarté « RELO STATION MANUEL » um=U p=0.0 h=0.75 nb_projets=3 dernier 2026-10-07 (station : objet voisin); écarté « RELO DETECTEUR FUME » um=U p=0.0 h=1.0 nb_projets=2 dernier 2026-03-09 (h 1,0 ; nb 2 < 3); écarté « RELO DETECTEUR A FUMEI » um=U p=0.0 h=0.75 nb_projets=1 dernier 2026-06-26 (libellé tronqué, nb 1); écarté « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (alternative 1,5 h, autre objet, en note comme demandé).",
+    "[releveur B1-2] LC-I — retenu « LECTEUR DE CARTE » : règle 1 (repère METHODE « lecteur de carte 15 $ », p égale), règle 2 (même objet), règle 3 (nb 5). CONFIRMÉ. Relevé : INSTALLER 2 (CONSERVER 3). Écartés : écarté « LECTEUR CARTE » um=U p=15.0 h=0.35 nb_projets=2 dernier 2026-06-02 (même objet, nb 2 < 5 ; h 0,35 : −0,15 h/u); écarté « OPERATEUR DE PORTE » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-04-02 (p 15, autre objet); écarté « CONTACT DE PORTE » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-04-02 (p 15, autre objet); écarté « GARDE LECTEUR » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (p 0, autre objet); écarté « LECTREUR DE CARTE » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (même objet mal orthographié mais p 0 : écarté).",
+    "[releveur B1-2] LC-E — retenu « CONTACT DE PORTE ENL » (analogue : aucun « LECTEUR ENL » ; famille ENL de S-1659, dispositifs d’accès enlevés, 0,5 h). CONFIRMÉ. Portée absente (précaution). Les trois autres ENL de S-1659 ont les mêmes valeurs (0 $ / 0,5 h) : choix sans effet sur p et h. Écartés : écarté « OPERATEUR PORTE ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « IC ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « STATION ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (dispositif mural, h 0,35 : −0,15 h/u si retenu).",
+    "[releveur B1-2] LC-R — retenu « LECTEUR RELO » (règle 2 : même objet, même action). CONFIRMÉ. p = 15 du catalogue pour une relocalisation, gardé (RELOCALISER = prix catalogue). Portée absente (précaution). Écartés (même projet S-1659, mêmes valeurs) : écarté « OPERATEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « CONTAC PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « BOUTON DE PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09.",
+    "[releveur B1-2] GA-I — retenu « GACHE » : règle 1 (repère METHODE « gâche 15 $ », p égale ; « GACHE ELECTRIQUE » à 10 $ ne l’égale pas), règle 3 (nb 3 parmi les candidats à 15 $). CONFIRMÉ. Relevé : CONSERVER 3 seulement (précaution, quantité 0). Écartés : écarté « GACHE ELECTRIQUE » um=U p=10.0 h=0.5 nb_projets=1 dernier 2026-02-02 (libellé identique à « GÂCHE ÉLECTRIQUE » du relevé ; p 10 ≠ repère : si retenu, −5 $/u et +0,15 h/u); écarté « GACHE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (relocalisation : action différente); écarté « BOUTON GACHE » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (bouton, p 0); écarté « VERROU ELECTRIQUE » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-04-02 (objet voisin, même p 15, nb 1).",
+    "[releveur B1-2] GA-E — retenu « CONTACT DE PORTE ENL » (analogue : aucun « GACHE ENL » ; même analogue que LC-E). CONFIRMÉ. Portée absente (précaution). Écartés : écarté « OPERATEUR PORTE ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (dispositif mural).",
+    "[releveur B1-2] GA-R — retenu « GACHE RELO » (règle 2 : même objet, même action). CONFIRMÉ. Portée absente (précaution). Écartés : écarté « GACHE » um=U p=15.0 h=0.35 nb_projets=3 dernier 2026-06-02 (action installer, pas relocaliser); écarté « CONTAC PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (objet voisin); écarté « BOUTON DE PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (objet voisin); écarté « LECTEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (objet voisin).",
+    "[releveur B1-2] TAUX ET FACTEUR — rappel, non appliqués dans p ni h : taux 85 $/h et facteur de prix de vente 1,244 (METHODE §5 et §7). Le 124 $/h du Sommaire n’est pas retenu.",
+    "[releveur B1-2] RECHERCHES SANS RÉSULTAT (motifs, sans casse) : ENL, ENLEV, DEMANT, DEPOS, DEBRAN, RETIR, DEMONT, RELO, RELOC, PRISE, TEL, DATA, SORTIE, RESEAU, INFORM, AUDIO, RJ45, CAT6, DONN, LAN, VDV, INFO, CABL, CATV, TV, DISTRIB, LECT, CARTE, ACCES, CONTR, CONTA, OPERAT, PORTE, BOUTON, GACH, DETECT, MOUV, PRESENCE. Absents du catalogue : « ENLEVER DATA », « RELO DATA », « ENLEVER TV », « RELO TV », « ENLEVER DETECTEUR », « RELO DETECTEUR MOUVEMENT », « LECTEUR ENL », « GACHE ENL », « INFORMATIQUE », « RJ45 », « CAT6 ».",
+    "[releveur B1-2] DOUBLES — voir doubles_comptes (judgés réels ou probables). Non jugés doubles : E-02 (monument plancher « prise 20A + 2 RJ45 ») : les 2 RJ45 sont à l’intérieur d’un seul monument (un symbole MP sur le plan), pas une sortie data séparée à retirer de SD-I ; à vérifier sur E-104/E-105. E-01 « aide au lecteur 227 » et D-11 « Aide au lecteur 116 » : « lecteur » est un nom de local de la bibliothèque, pas un lecteur de carte : aucun couple avec LC-I. A-01 (39 E.A.E de E-201) : luminaires seulement, pas le détecteur DM-E : pas de couple.",
+    "[releveur B1-2] CONDUITS ET CÂBLE HORS PRIX D’ASSEMBLAGE — le prix TEL/DATA 3/4 inclut boîte, plaque et raccord (METHODE §2), mais ni le conduit ni le câble : le conduit 3/4 data (D-14, E-09), le conduit de D-08 et le câble data (OPT-1, devis 36.1) ne sont pas dans SD-I et ne doivent pas être recomptés dans SD-I.",
+    "[releveur B1-2] RELEVÉ — releve.xlsx « Par feuille » ne donne pas la portée par feuille : les doubles A-03/A-04/A-05 sont « probables » et restent à trancher sur le plan par l’équipe A.",
+    "[releveur B1-2] MODÈLE — Claude Haiku 5.5 (claude-haiku-5-5), releveur B1-2.",
+    "[releveur B1-3] GLOBAL — modèle : Claude Haiku 5.5 (claude-haiku-5-5), releveur B1-3 ; effort demandé xhigh.",
+    "[releveur B1-3] GLOBAL — lu : catalogue (2068 lignes, contrôle OK), Estimation_2 (Détail A-01 à H-04 et OPT ; Matériel Lumen), releve.xlsx (Par libellé, Marques, Par feuille, Réserves), rapport-releve.md, reserves.md, CONSIGNES.md, METHODE.md, titres du Bordereau (3.22 à 3.38). Non ouverts, volontairement : entree/reference-Releve_Alarme_Incendie.xlsx et entree/reference-Releve_Eclairage_Urgence.xlsx (relevés de référence ; je ne lis pas de réponse de référence) ; tout fichier de lots/ ; le web.",
+    "[releveur B1-3] GLOBAL — recherches catalogue sans résultat (motifs) : « JB », « JONCTION », « BOITIER C », « BOI.*ENL » / « ENL.*BOI », « ENL.*MONUM » / « RELO.*MONUM », « PLANCHER.*BOI », « POKE », « HUBB », « S1PT », « S1R6 », « PANIQ », « PANIC » : 0 résultat chacun. « RELO.*BOI » : seul « BOITIER LUMONEUX RELO ». « APPEL » : 1 seul (DECLENCHEUR APPEL). « RELO INT » : 1 (interrupteur). « RACC » : 14 lignes, « RACCORD DIRECT » seul à nb_projets 5.",
+    "[releveur B1-3] GLOBAL — rappel : taux 85 $/h et facteur de prix de vente 1,244 : non appliqués (METHODE.md §5/§7).",
+    "[releveur B1-3] GLOBAL — désaccords avec l'arbitrage du chef de lot (détail par code) : (1) BC-I, BC-E, BC-R : hypothèse « contact de porte » non confirmée, et l'indice de proximité est un artefact inter-feuilles ; (2) MP-I : « MONUMENT PLANCHER SU » (SURFACE probable) écarté par la règle 1, écart de 393.75 $ pour 3 u, à trancher ; (3) E-03 : la boîte FS (boîte de plancher nue) est plus proche de l'objet, écartée par l'ordre des règles, à trancher ; (4) art 3.33 (D-11, E-06) et 3.36 (BC-I) : les titres du bordereau (« Sorties informatique/réseau », « Détecteur de fumée ») ne décrivent pas un bouton d'appel ni un boîtier C : à revoir par B3. Les autres choix du chef sont confirmés après relecture du catalogue.",
+    "[releveur B1-3] BJ-I — retenu « BOITE CARRE 2-1/8PO KO 1 » (p 6.1778, h 0.25, nb 22, 2026-10-07) : CONFIRMÉ. Règle 1 sans repère (aucun repère METHODE pour une boîte) ; règle 2 sans départage (toutes des boîtes à installer) ; règle 3 : nb 22, le plus élevé de tous les libellés « BOITE… » um U. Le plan n'identifie pas la forme de la boîte : choix par le nombre de projets, à dire. Écartés : écarté « BOITE OCTOG 1-1/2PO KO 1 » um=U p=7.963 h=0.2 nb_projets=21 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE D 8X8X4PO CEMA1 » um=U p=19.8 h=0.6 nb_projets=20 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE D 12X12X4PO CEMA1 » um=U p=27.42 h=1.0 nb_projets=14 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE RECT 2-1/2PO OREILI » um=U p=6.975 h=0.2 nb_projets=11 dernier 2026-09-25 (S-1857 - Maison St-Michel); écarté « BOITE RECT 2-1/2PO OREIL » um=U p=6.9744 h=0.2 nb_projets=5 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE D 24X24X6PO CEMA1 » um=U p=196.37 h=2.5 nb_projets=4 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe); écarté « BOITE CARRE 1-1/2PO KO 1 » um=U p=17.164 h=0.3 nb_projets=4 dernier 2026-06-26 (S-1795 Lanthier Arthesa); écarté « BOITE RECT 1-7/8PO KO 1/2 » um=U p=4.1072 h=0.2 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption); écarté « BOITE CARREES 4 PO » um=U p=7.68 h=0.15 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable); écarté « BOITE CARRE 2-1/8PO KO 1/2-3/4PO (AI) » um=U p=6.1778 h=0.25 nb_projets=1 dernier 2026-02-02 (S-1645 ANNEXE-BOURASSA).",
+    "[releveur B1-3] BJ-I — « BOITE OCTOG 1-1/2PO KO 1 » est une boîte d'éclairage (Lumen IBE54151L « JB éclairage », 2.5048 $/ch) : objet différent, écarté. Lumen IBE52151K « ABB BC52151-K BOÎTE CARRÉE 4 PO 1-1/2PO » 5.2196 $/ch (Matériel Lumen) relu : point de comparaison seulement, non utilisé (Dupuis a un analogue).",
+    "[releveur B1-3] BJ-I — non vérifiable : releve.xlsx compte 10 BOITE JONCTION par feuille (E101 4, E102 1, E104 3, E201 2) mais ne donne aucune portée par feuille ; « 3 INSTALLER toutes sur E104 » (chef) est une inférence par le nombre, pas une lecture. Couples [E-04, BJ-I] et [E-01, BJ-I] jugés non réels : E-04 et E-01 sont sur E-105, où Marques ne place aucune BOITE JONCTION (pas de double compte possible ; omission possible du relevé sur E-105, à vérifier par l'équipe A). Couples probables ou possibles : voir doubles_comptes.",
+    "[releveur B1-3] BJ-E — retenu « ENLEVER PRISE » (p 0.0, h 0.35, nb 1, 2026-08-26, s-1835) : règle 1 (h 0.35 = repère METHODE « prise enlevée 0,35 h ») ; analogue de la politique (boîte murale ≈ dispositif mural). Aucun « ENLEVER » avec « BOI » au catalogue (0). Écartés : écarté « EQUIPEMENT A ENLEVER » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption); écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur); écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). CONFIRMÉ.",
+    "[releveur B1-3] BJ-E — ENLEVER INTERRUPTEUR a exactement les mêmes chiffres (p 0.0, h 0.35, même projet) : prise ou interrupteur n'a aucun effet numérique. Les ENLEVER FIXTURE du même projet (1X4, 2X2, 2X4, ENCAST, MURAL ; h 0.35) sont des luminaires : écartés. Jugement (Estimation_2) Détail A-03 « boîtes mobilier » h/unité 0.4 : non retenu (analogue Dupuis prime).",
+    "[releveur B1-3] BJ-R — retenu « RELO PRISE » (p 0.0, h 1.5, nb 3, 2026-05-05, s-1753) : analogue (boîte murale ≈ prise relocalisée, repère METHODE 1,5 h). Portée absente du relevé (BOITE JONCTION : INSTALLER 3, CONSERVER 5, ENLEVER 2, aucune RELOCALISER) : précaution, la quantité reste à l'équipe A. Écartés : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption); écarté « BOITIER LUMONEUX RELO » um=U p=15.0 h=1.0 nb_projets=1 dernier 2026-07-13 (s-1807 groupe maurice lanthier) (boîtier lumineux d'un autre projet : objet différent). Jugement A-05 (relocalisation services, h/unité 1.0) : non retenu.",
+    "[releveur B1-3] BJ-R — art 3.22 (règle provisoire pour un -R) = « Démontage des éléments électriques » au bordereau : aucun article « relocalisation » au bordereau ; à arbitrer par B3.",
+    "[releveur B1-3] MP-I — retenu « MONUMENT PLANCHER 1TE » (p 250.0, h 1.0, nb 1, 2026-06-02, s-1783) : règle 1 (repère METHODE monument 250 $) donne deux candidats ; règle 2 égalité ; règle 3 égalité (nb 1 et 1) ; règle 4 : date la plus récente → 1TE. 1TE et « MONUMENT PLANCHER » ont les mêmes p et h : aucun effet numérique. Écartés : écarté « MONUMENT PLANCHER » um=U p=250.0 h=1.0 nb_projets=1 dernier 2026-02-19 (S-1676 ARC'TERTX); écarté « MONUMENT PLANCHER SU » um=U p=118.75 h=1.0 nb_projets=1 dernier 2026-09-10 (s-1854 sollio st hubert lanthier); écarté « MONUMENT PLANCHER EN » um=U p=735.29 h=1.0 nb_projets=1 dernier 2026-09-10 (s-1854 sollio st hubert lanthier); écarté « MONUMENT PLANCHER PR » um=U p=65.0 h=1.0 nb_projets=1 dernier 2026-09-25 (S-1857 - Maison St-Michel).",
+    "[releveur B1-3] MP-I — DÉSACCORD PARTIEL à trancher : le relevé décrit « MONUMENT PLANCHER SURFACE » ; « MONUMENT PLANCHER SU » (SU = SURFACE probable, p 118.75, h 1.0) est l'objet le plus proche (règle 2), mais la règle 1 l'écarte (p différent de 250). Je suis la règle ; l'écart est de 3 × (250 − 118.75) = 393.75 $ en matériel pour 3 u.",
+    "[releveur B1-3] MP-I — Lumen HUBS1R6PTDEHBLK « HUBBELL S1R6PTDEHBLK POKE-THROUGH 6 PO (plan : S1R6PTFIT) » 1461.22 $/u (Matériel Lumen, 2026-10-07) : non utilisé, Dupuis 250 $ prévaut ; écart noté : 1211.22 $ par unité. Détail E-02 (Hubbell S1R6PTFIT, 2 u) contre 3 INSTALLER au relevé : voir doubles_comptes [E-02, MP-I]. Marques : deux monuments identiques ou à 1.9 pt entre E102 et E105 : voir doubles_comptes [MP-I, MP-E].",
+    "[releveur B1-3] MP-E — retenu « ENLEVER PRISE » (p 0.0, h 0.35, nb 1, 2026-08-26) : règle 1 (repère METHODE prise enlevée 0,35 h) ; analogue de la politique (monument = prise/data en boîtier de plancher). Aucun « ENLEVER MONUMENT » (0). Écartés : écarté « EQUIPEMENT A ENLEVER » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption); écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur); écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Jugement A-03 « câbles sortant du plancher » h/unité 0.4 : non retenu (analogue Dupuis prime). CONFIRMÉ.",
+    "[releveur B1-3] MP-E — non vérifiable : releve.xlsx ne donne pas la portée par feuille ; « 3 ENLEVER sur E102 » (chef) est une inférence par le nombre (Marques : E102 3 monuments, E105 3, E101 1). Voir doubles_comptes [E-03, MP-E] et [MP-I, MP-E].",
+    "[releveur B1-3] MP-R — retenu « RELO PRISE » (p 0.0, h 1.5, nb 3, 2026-05-05) : analogue (monument ≈ prise relocalisée, repère METHODE 1,5 h) ; aucun « RELO MONUMENT » au catalogue (0). Portée absente (MONUMENT PLANCHER : ENLEVER 3, INSTALLER 3, CONSERVER 1, aucune RELOCALISER) : précaution. Écarté : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption) (même h, objet interrupteur). Jugement A-05 h/unité 1.0 : non retenu.",
+    "[releveur B1-3] BC-I — retenu « CONTACT PORTE » (p 15.0, h 0.35, nb 3, 2026-06-02, s-1783) : règle 3 égalité avec « CONTACT DE PORTE » (nb 3), règle 4 (date) → CONTACT PORTE. Gardé comme PRÉCAUTION DE PRIX, pas comme identification (voir l'entrée suivante). Écartés : écarté « CONTACT DE PORTE » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOITE ALMENTATION » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOITIER ALIMENTATION » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil); écarté « ALARME SONORE » um=U p=15.0 h=0.35 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture); écarté « MODULE INTERFACE » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-08-19 (S-1797 - École Chambly); écarté « MODULE ADRESSABLE » um=U p=0.0 h=0.5 nb_projets=3 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil).",
+    "[releveur B1-3] BC-I — DÉSACCORD avec l'hypothèse « contact de porte » : (a) famille : releve.xlsx classe BOITIER C en « alarme » (avec DETECTEUR FUMEE, HP, STATION MANUELLE, PANNEAU ANNONCIATEUR), alors que LECTEUR CARTE et GACHE sont en « intrusion » ; un contact de porte serait en intrusion. (b) indice de proximité non probant : les coordonnées de Marques ne se comparent qu'à l'intérieur d'une même feuille. Sur E201 (3 BOITIER C) il n'y a ni LECTEUR CARTE ni GACHE ; sur E101 (1 BOITIER C à x 1008.9 / y 542.5), le lecteur le plus proche est à 198 pt et la gâche à 203 pt. Les 8 à 14 pt du chef viennent de comparaisons E201 ↔ E101/E104 (feuilles différentes). (c) source contradictoire : Par libellé dit « E-001 légende ; bloc S218 », la description dit « hors légende — R-006 TEST-E201 » ; reserves.md n'a aucune réserve sur BOITIER C (R-006 traite des éléments hors relevé : sorties data, cercles nus). Conclusion : identité non prouvée ; 15 $ / 0.35 h gardés comme précaution, à trancher sur le plan. Si le dispositif est un appareil AI fourni par JCI, p serait 0 par lot : non vérifiable ici.",
+    "[releveur B1-3] BC-E — retenu « CONTACT DE PORTE ENL » (p 0.0, h 0.5, nb 1, 2026-02-09, s1659) : analogue (boîtier C ≈ dispositif de porte, hypothèse non confirmée), famille ENL du projet S-1659. Aucun « ENLEVER BOITIER » (0). Écartés : écarté « OPERATEUR PORTE ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « STATION ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « IC ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur).",
+    "[releveur B1-3] BC-E — relevé ENLEVER 2 (quantité relevée, pas de précaution). h 0.5 coïncide avec le repère METHODE « luminaire enlevé 0,5 h » : coïncidence numérique (ce repère vise les luminaires) ; le choix repose sur l'objet, règle 2.",
+    "[releveur B1-3] BC-R — retenu « CONTAC PORTE RELO » (p 15.0, h 0.5, nb 1, 2026-02-09, s1659) : seul libellé RELO du même objet (contact de porte, hypothèse non confirmée). Précaution : portée absente. Écartés : écarté « LECTEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « GACHE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « BOUTON DE PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « OPERATEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie); écarté « DRS RELO » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (s1659 ecole arc en ciel ste julie) (sigle DRS non identifié).",
+    "[releveur B1-3] BC-R — aucune portée R pour BOITIER C au relevé (ENLEVER 2, CONSERVER 2) : la quantité reste à l'équipe A. Même réserve d'identité que BC-I.",
+    "[releveur B1-3] D-09 — retenu : composition d'analogues Dupuis, 2 × « BOITE CARRE 2-1/8PO KO 1 » (même libellé que BJ-I, p 6.1778, h 0.25) + 1 × « RACCORD DIRECT » (p 25.0, h 0.5, nb 5, 2026-09-10, s-1854) : p = 37.3556, h = 1.0 (script, 4 décimales). CONFIRMÉ. Écartés : écarté « RACCORD PARTITION » um=U p=25.0 h=0.5 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture); écarté « RACCORD RCFF » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-02 (S-1645 ANNEXE-BOURASSA); écarté « RACCORD DIRECT BAIN THI » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-06-26 (S-1795 Lanthier Arthesa).",
+    "[releveur B1-3] D-09 — jugement (Estimation_2) : 6 h pour 1 lot, non retenu (analogue Dupuis prime), mais la composition ne donne que 1.0 h : écart de 5 h à trancher. La composition ne compte ni conduit ni filage entre les boîtes (non compris dans cette ligne). u = LOT ; q laissé null. DOUBLE COMPTE PROBABLE avec BJ-I : voir doubles_comptes.",
+    "[releveur B1-3] D-10 — retenu « BOITE CARRE 2-1/8PO KO 1 » (p 6.1778, h 0.25, nb 22) : une JB dans mur adjacent, comme BJ-I ; le Détail ne dit aucun raccordement, donc rien d'ajouté. Écarté : écarté « RACCORD DIRECT » um=U p=25.0 h=0.5 nb_projets=5 dernier 2026-09-10 (s-1854 sollio st hubert lanthier) (alternative si DR raccorde les bornes : boîte + raccord = 31.1778 $ et 0.75 h, non justifié par le Détail). Jugement Détail 2 h/u : non retenu.",
+    "[releveur B1-3] D-10 — DOUBLE COMPTE PROBABLE avec BJ-I : D-09 (2) + D-10 (1) = 3 = nombre de BOITE JONCTION sur E104 (Marques). Signalé dans doubles_comptes, non résolu.",
+    "[releveur B1-3] D-11 — retenu « DECLENCHEUR APPEL » (p 15.0, h 0.35, nb 1, 2026-06-02, s-1783) : règle 2 (seul libellé « appel ») ; la règle 3 aurait donné « BOUTON HANDICAPE » (nb 2) : la règle 2 prime. Harmonisé avec E-06. Écartés : écarté « BOUTON HANDICAPE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOUTON OUVERTURE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-03-09 (25-066G_Canderel Lobby 2000 McGill College (S-1665)); écarté « BOTON HANDICAPE » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-06-03 (s-1775 clinique mieux etre); écarté « BOTON RELACHE » um=U p=15.0 h=0.35 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture) (bouton de relâche : même p et h que la ligne retenue, objet différent).",
+    "[releveur B1-3] D-11 — point à trancher : le Détail dit « système fourni par d'autres ». La convention Dupuis « posé par DR, fourni par d'autres » (15 $ + 0.35 h, selon le chef) suppose que le 15 $ paie la pose et non l'appareil : à confirmer. Alternative fidèle au texte « boîte + conduit vide » : boîte seule (BOITE CARRE 2-1/8PO KO 1, 6.1778 $, 0.25 h). Conduit vide non chiffré dans cette ligne (longueur absente du kit) : ne pas inventer.",
+    "[releveur B1-3] D-11 — art 3.33 = « Sorties informatique/réseau » au bordereau : ne décrit pas un bouton d'appel ; l'article alarme le plus proche est 3.36 (« Détecteur de fumée »). Art imposé par la règle provisoire : à revoir par B3.",
+    "[releveur B1-3] E-03 — retenu « MONUMENT PLANCHER 1TE » (p 250.0, h 1.0, nb 1, 2026-06-02) : règle 1 (repère 250 $) ; le rattachement « boîte de plancher ≈ monument » est un jugement de rattachement, signalé. Écartés : écarté « MONUMENT PLANCHER » um=U p=250.0 h=1.0 nb_projets=1 dernier 2026-02-19 (S-1676 ARC'TERTX); écarté « MONUMENT PLANCHER PR » um=U p=65.0 h=1.0 nb_projets=1 dernier 2026-09-25 (S-1857 - Maison St-Michel); écarté « MONUMENT PLANCHER SU » um=U p=118.75 h=1.0 nb_projets=1 dernier 2026-09-10 (s-1854 sollio st hubert lanthier).",
+    "[releveur B1-3] E-03 — alternative non retenue : « BOITE FS 1G 1/2PO METAL » (p 67.87, h 0.3, nb 1, 2026-06-02, s-1783) et « BOITE FS 1G 3/4PO ALUM » (p 21.49, h 0.4, nb 2, 2026-09-23, s-1866) : une boîte FS est une boîte de plancher nue, plus proche du texte du Détail que le monument ; écartées parce que la règle 1 passe avant la règle 2. Écart matériel pour 2 u : de 2 × (250 − 67.87) = 364.26 $ à 2 × (250 − 21.49) = 457.02 $ : à trancher. Jugement Détail 2.5 h/u : non retenu.",
+    "[releveur B1-3] E-03 — quantité 2 « à confirmer » au Détail (P-6 25 / P-6 38). DOUBLES COMPTES PROBABLES avec MP-E et MP-I (salle 208, monuments E102/E105) : voir doubles_comptes.",
+    "[releveur B1-3] E-06 — retenu « DECLENCHEUR APPEL » (p 15.0, h 0.35, nb 1, 2026-06-02) : même arbitrage que D-11 (bouton de panique = déclencheur d'appel), harmonisé. Écartés : écarté « BOUTON HANDICAPE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-04-02 (S-1692_École Primaire St-Marc Candiac); écarté « BOUTON OUVERTURE » um=U p=15.0 h=0.5 nb_projets=2 dernier 2026-03-09 (25-066G_Canderel Lobby 2000 McGill College (S-1665)); écarté « BOTON RELACHE » um=U p=15.0 h=0.35 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture).",
+    "[releveur B1-3] E-06 — 3 u au Détail (2 boutons d'appel + 1 bouton de panique) : p et h par unité, q null. Mêmes points que D-11 : conduit vide non chiffré, art 3.33 à revoir par B3. Le Détail E-06 ne dit pas « système fourni par d'autres » : le même 15 $ est appliqué par harmonisation seulement."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "D-02",
+        "PU-I"
+      ],
+      "regle": "RÉEL : D-02 = 5 tables × 2 prises USB Decora (Détail, E-104) ; PU-I = 20 occurrences PRISE USB, toutes sur E-104 (releve.xlsx). Le plan gagne ; un objet physique n'est payé qu'une fois : D-02 ne s'ajoute pas à PU-I. Voir la note de doublon interne de PU-I (10 prises physiques probables, pas 20)."
+    },
+    {
+      "codes": [
+        "D-06",
+        "PC-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — RÉEL (probable) : D-06 = 8 prises doubles murales/colonne neuves (E-104 ; locaux P-3 2, 3, 10, 12, 34 ×2, 35 et P-2 11) ; PC-I inclut les prises 15 A du plan E-104 (23 occurrences). Ne compter D-06 que pour les prises absentes du plan E-104 ; le recoupement exact exige les positions des locaux, absentes du kit."
+    },
+    {
+      "codes": [
+        "D-01",
+        "PC-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — RÉEL (probable) : D-01 = 18 postes de travail, chacun 1 prise double 15 A (+ 1 prise 20 A Decora) sur E-104 ; PC-I inclut les prises du plan E-104. Ne compter D-01 que pour les prises absentes du plan."
+    },
+    {
+      "codes": [
+        "D-03",
+        "PC-I"
+      ],
+      "regle": "RÉEL (probable) : D-03 = 2 prises doubles de cabine/isoloir alimentées par JB (E-104, P-2 20) ; même objet que PC-I sur E-104. Le plan gagne."
+    },
+    {
+      "codes": [
+        "D-07",
+        "PG-I"
+      ],
+      "regle": "RÉEL (probable) : D-07 = 1 prise DDFT 15 A de la fontaine (E-104, P2-61) ; la fontaine est probablement une des 20 occurrences PRISE DDFT du plan E-104 (PG-I). Le plan gagne : ne pas ajouter D-07 si la fontaine est relevée. LEVGFNT1W (Lumen) non ajouté : prix d'assemblage."
+    },
+    {
+      "codes": [
+        "LEVT5633W",
+        "PU-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — RÉEL (double de prix) : LEVT5633W (10 prises + chargeur USB, « tables note 4 (2/table) ») couvre les USB des tables de D-02, déjà chiffrées dans PU-I au prix d'assemblage Dupuis (77,45 $). Ne pas ajouter."
+    },
+    {
+      "codes": [
+        "LEVGFNT1W",
+        "PG-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — RÉEL (double de prix) : LEVGFNT1W (Lumen, DDFT 15 A, fontaine) est le même appareil que la DDFT de PG-I / D-07 : prix d'assemblage Dupuis seul."
+    },
+    {
+      "codes": [
+        "LEV16252W",
+        "PC-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — RÉEL (double de prix) : LEV16252W (47 prises Decora 15 A, dont 20 postes et 8 murales) = les prises déjà chiffrées en PC-I au prix d'assemblage Dupuis (64,81 $, boîte, plaque et raccord inclus). Ne pas ajouter."
+    },
+    {
+      "codes": [
+        "LEV80401NW",
+        "PC-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — RÉEL (double de prix) : LEV80401NW (66 plaques Decora) = plaques déjà incluses dans le prix d'assemblage PC-I (Dupuis). Ne pas ajouter."
+    },
+    {
+      "codes": [
+        "A-03",
+        "PC-E"
+      ],
+      "regle": "RÉEL (probable) : A-03 = 34 démantèlements E.A.E de services RDC sur E-101 (prises, boîtes, câbles) ; le relevé compte des prises à enlever (PC-E = 7) sur le même plan E-101 (la portée n'est pas ventilée par feuille dans Marques). Le plan gagne : A-03 ne s'ajoute pas aux démontages relevés sur le plan."
+    },
+    {
+      "codes": [
+        "A-03",
+        "PG-E"
+      ],
+      "regle": "RÉEL (probable) : même logique que A-03 / PC-E : PG-E = 4 DDFT à enlever relevées, sur E-101 pour une part ; le plan gagne."
+    },
+    {
+      "codes": [
+        "A-04",
+        "PC-E"
+      ],
+      "regle": "RÉEL (probable) : A-04 = 10 démantèlements E.A.E de services 2e (E-102) ; PC-E recouvre probablement les mêmes prises sur E-102. Le plan gagne."
+    },
+    {
+      "codes": [
+        "A-04",
+        "PG-E"
+      ],
+      "regle": "RÉEL (probable) : même logique que A-04 / PC-E pour les DDFT de E-102 (4 PRISE DDFT sur E102 au relevé) ; le plan gagne."
+    },
+    {
+      "codes": [
+        "A-05",
+        "PC-R"
+      ],
+      "regle": "RÉEL (probable) : A-05 = 13 relocalisations E.A.R de services (6 RDC + 7 2e, E-101/E-102) ; PC-R = 8 prises à relocaliser au relevé, mêmes objets. Le plan gagne. A-05 (1 h par unité) et RELO PRISE (1,5 h) se recouvrent : retenir une seule des deux."
+    },
+    {
+      "codes": [
+        "A-05",
+        "PG-R"
+      ],
+      "regle": "RÉEL (probable) : PG-R = 1 DDFT à relocaliser, mêmes objets que A-05 (E-101/E-102) ; le plan gagne."
+    },
+    {
+      "codes": [
+        "D-08",
+        "SD-I"
+      ],
+      "regle": "RÉEL (probable, hors sous-lot) : D-08 = 10 sorties data murales/colonne neuves (E-104) ; SD-I = sorties data à installer dont des sorties de E-104 (45 occurrences SORTIE DATA sur E104). Le plan gagne ; à trancher par le lot SD."
+    },
+    {
+      "codes": [
+        "E-02",
+        "MP-I"
+      ],
+      "regle": "RÉEL (probable, hors sous-lot) : E-02 = 2 monuments de plancher Hubbell (prise 20 A + 2 RJ45, P-4) ; MP-I = 3 monuments à installer au relevé (MONUMENT PLANCHER : 7 occurrences au total). Le plan gagne ; à trancher par le lot MP."
+    },
+    {
+      "codes": [
+        "D-01",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; la boîte data 2 RJ45 de chaque poste (D-01, 18 postes, E-104) est la sortie data relevée sur le plan : un objet physique n’est payé qu’une fois (SD-I paie la sortie, boîte, plaque et raccord inclus dans TEL/DATA 3/4) — retirer la part « boîte data 2 RJ45 » de D-01"
+    },
+    {
+      "codes": [
+        "D-04",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « données » de l’écran mur/colonne (D-04, E-104) = une sortie data déjà relevée (SD-I) ; compter une fois"
+    },
+    {
+      "codes": [
+        "D-05",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « data » du kiosque TV (D-05, E-104) = une sortie data déjà relevée (SD-I) ; la prise (PC-I) reste à part, hors de mon lot"
+    },
+    {
+      "codes": [
+        "E-01",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « data 2 RJ45 » des 2 postes (E-01, E-105) = sorties data déjà relevées sur E-105 (SD-I) ; compter une fois"
+    },
+    {
+      "codes": [
+        "E-05",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « données » de l’écran sur colonne P-6 12 (E-05, E-105) = une sortie data déjà relevée (SD-I) ; compter une fois"
+    },
+    {
+      "codes": [
+        "A-03",
+        "SD-E"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — probable, à trancher sur E-101 : A-03 compte les services E.A.E de E-101 (prises, boîtes, câbles sortant du plancher) ; les sorties data enlevées de E-101 sont aussi comptées dans SD-E (17 au total) — un même objet ne se compte qu’une fois"
+    },
+    {
+      "codes": [
+        "A-04",
+        "SD-E"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — probable, à trancher sur E-102 : A-04 compte les services E.A.E de E-102 ; les sorties data enlevées de E-102 sont aussi comptées dans SD-E — compter une fois"
+    },
+    {
+      "codes": [
+        "A-05",
+        "SD-R"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — probable, à trancher sur E-101/E-102 : A-05 compte les équipements services relocalisés (E.A.R) ; les 3 sorties data relocalisées (SD-R) en font partie — compter une fois"
+    },
+    {
+      "codes": [
+        "D-09",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE, non résolu : le Détail recompte 2 boîtes de jonction sur E-104 ; le relevé compte 3 BOITE JONCTION sur E104 (Marques) et 3 en INSTALLER au total, sans portée par feuille. Si les 3 BJ-I sont celles de E-104, les 2 boîtes de D-09 sont payées deux fois."
+    },
+    {
+      "codes": [
+        "D-10",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE : D-09 (2) + D-10 (1) = 3 = BOITE JONCTION sur E104 (Marques) ; même question pour la boîte de D-10."
+    },
+    {
+      "codes": [
+        "D-01",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — POSSIBLE, non tranché : D-01 compte une boîte de jonction par poste (18 postes, tous sur E-104) pour 3 BOITE JONCTION sur E104 au relevé ; la boîte peut être incluse dans le prix d'assemblage du poste."
+    },
+    {
+      "codes": [
+        "D-03",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — POSSIBLE : « cabine/isoloir : prise double alimentée par JB dans mur » (2 u, E-104) ; l'une des 3 JB de E104 au relevé."
+    },
+    {
+      "codes": [
+        "E-03",
+        "MP-E"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE (chef B1) : Marques place sur E102 (ENLEVER) et E105 (INSTALLER) 2 paires de monuments au même point (1272,2 ; 903,7 et 593,3 ; 383,0 / 592,7 ; 381,2) = remplacement d'un ancien monument par un neuf ; ce sont très probablement les 2 'boîtes de plancher refaites' de E-03 (salle 208, E-102/E-105) : payer E-03 en plus de MP-E + MP-I paierait deux fois ces 2 emplacements. À trancher sur le plan par A3/B3."
+    },
+    {
+      "codes": [
+        "E-03",
+        "MP-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — PROBABLE (chef B1) : voir [E-03, MP-E] ; les 2 monuments neufs de ces paires sont des MP-I (3 INSTALLER sur E105) ; E-03 ne s'ajoute pas si ces 2 emplacements sont relevés."
+    },
+    {
+      "codes": [
+        "MP-I",
+        "MP-E"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — NON un doublon (chef B1) : les monuments au même point sur E102 (ENLEVER) et E105 (INSTALLER) sont des REMPLACEMENTS (démonter l'ancien + installer le neuf = deux travaux réels) ; ne pas réduire les 7 monuments à 5. Le seul recoupement possible est avec E-03 (voir [E-03, MP-E])."
+    },
+    {
+      "codes": [
+        "PU-I"
+      ],
+      "regle": "le plan gagne ; un objet physique n'est payé qu'une fois — DOUBLON INTERNE PROBABLE du relevé (vérifié par le chef dans Marques) : 20 PRISE USB sur E104 en 5 grilles de 4 points (pas 4,6 et 6,6 pt) ; Détail D-02 (5 tables × 2 USB) et LEVT5633W (10) donnent 10 prises physiques ; si 10 : PU-I = 10, soit −774,50 $ et −11,25 h ; à vérifier au zoom par l'équipe A (la quantité n'est pas de ce lot)."
+    }
+  ]
+}

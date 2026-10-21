@@ -1,0 +1,102 @@
+{
+  "niveau": "releveur",
+  "nom": "A3-1",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "C-05",
+      "desc": "Conduit EMT 1\" + 4 #8 RW90 (UTA-01) — assemblage 04C8",
+      "q": 115,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.23",
+      "src": "Estimation_2 Détail C-05 (ligne 38) : Qté lue 35 m × 3,2808 = 114,83 → 115 pi ; L lue « Hypothèse longueur » ; C-06 140 m inclus (4 #8 × 35 m)"
+    },
+    {
+      "code": "C-07",
+      "desc": "Conduit EMT 3/4\" + 3-4 #12 RW90 (VE-02N 35 m 04C12 ; HUM 3 × 15 m 03C12)",
+      "q": 262,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.23",
+      "src": "Estimation_2 Détail C-07 (ligne 40) : Qté lue 80 m × 3,2808 = 262,46 → 262 pi ; L lue « 35 m + 3 x 15 m » ; C-08 275 m inclus (mixte 4 × 35 m + 3 × 3 × 15 m)"
+    },
+    {
+      "code": "D-13",
+      "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle RDC (16 courses) — assemblage 05C12",
+      "q": 1575,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail D-13 (ligne 57) : Qté lue 480 m × 3,2808 = 1574,78 → 1575 pi ; L lue « Hyp. 30 m/course » ; D-15 2400 m inclus (5 cond./course)"
+    },
+    {
+      "code": "E-08",
+      "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle étage (7 courses) — assemblage 05C12",
+      "q": 574,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail E-08 (ligne 71) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; E-10 875 m inclus (5 cond./course)"
+    },
+    {
+      "code": "D-14",
+      "desc": "Conduit vide EMT 3/4\" data + corde de tirage (11 courses)",
+      "q": 1083,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.33",
+      "src": "Estimation_2 Détail D-14 (ligne 58) : Qté lue 330 m × 3,2808 = 1082,66 → 1083 pi ; L lue « Hyp. 30 m/course » ; conduit vide, aucun fil apparié"
+    },
+    {
+      "code": "E-09",
+      "desc": "Conduit vide EMT 3/4\" data (7 courses)",
+      "q": 574,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.33",
+      "src": "Estimation_2 Détail E-09 (ligne 72) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; conduit vide, aucun fil apparié"
+    }
+  ],
+  "notes": [
+    "Hypothèses de longueur reprises de Détail colonne L, sans modification : C-05 « Hypothèse longueur » (35 m) ; D-13 et D-14 « Hyp. 30 m/course » (16 et 11 courses) ; E-08 et E-09 « Hyp. 25 m/course » (7 courses). Sommaire note 2 : longueurs = hypothèses, tracé à valider dans l'entreplafond du niveau inférieur (réf. plan : D-13 et D-14 = E-104 note 5 ; E-08 et E-09 = E-105 note 3).",
+    "Contrôle mixte C-07 / C-08 : conduit C-07 80 m = 35 + 3 × 15 = 80 m, OK. Fil #12 C-08 275 m = 4 × 35 + 3 × (3 × 15) = 140 + 135 = 275 m, OK.",
+    "Contrôle #8 C-05 / C-06 : fil #8 C-06 140 m = 4 × 35 m, OK. Contrôle Lumen : CAB8RW90BLK 105 m (3 phases × 35 m) + CAB8RW90GRE 35 m (MALT UTA-01) = 140 m, OK.",
+    "Contrôle Lumen CONEMT1 (conduit 1 po) : base « 690 m (C-05 35 + D-13 480 + E-08 175) » : 35 + 480 + 175 = 690, OK. 690 m × 3,2808 = 2263,75 pi contre Qté Lumen 2270 pi (écart +6,25 pi, ordre de grandeur cohérent ; marges ou longueurs de rouleaux Lumen, rien corrigé). Mes trois lignes 1 po (C-05 + D-13 + E-08) = 2264 pi.",
+    "Contrôle Lumen CONEMT3/4 (conduit 3/4 po) : base « 895 m (C-07 80 + D-14 330 + E-09 175 + F-08 280 + G-02 30) » : somme des cinq = 895, OK. Ma part (C-07 + D-14 + E-09) = 585 m = 1919 pi ; F-08 (280 m) et G-02 (30 m) sont au lot A3-2, non relevés ici. Qté Lumen 2940 pi contre 895 m × 3,2808 = 2936,32 pi.",
+    "Contrôle Lumen fils #12 (unité m, pas pi) : BLK 1500 + WHI 1200 + GRE 900 + ROUGE 790 = 4390 m, égal à la base « 4 390 m (C-08 275 + D-15 2400 + E-10 875 + F-09 840) », OK. Ma part (C-08 + D-15 + E-10) = 3550 m ; F-09 (840 m) est au lot A3-2.",
+    "Libellé Détail D-13 : « sous dalle / entreplafond sous-sol vers panneaux P-2/P-3 (16 courses) ». Le desc prescrit et la section D du Sommaire (« REZ-DE-CHAUSSÉE ») disent RDC. Desc prescrit conservé ; le niveau (sous-sol ou RDC) est à confirmer sur E-104 note 5 avant de figer la ligne.",
+    "Articles vérifiés dans entree/reference-Bordereau_de_prix.xlsx (colonne A) : 3.23 « Raccordement des équipements mécaniques », 3.31 « Percements, conduit filage et boîte de jonction », 3.33 « Sorties informatique/réseau ». D-14 et E-09 : 3.33 retenu ; alternative 3.31 à trancher par le directeur (conduit vide).",
+    "D-15 (libellé Détail) : « prévoir #10 si chute > 3 % ». Si la chute l'exige, le calibre du fil apparié à D-13 change (conducteur #10 à chiffrer séparément) : non chiffré ici, aucune quantité ajoutée.",
+    "Réserve reserves.md ligne 30 : « Longueurs de conduits/filage : hors relevé (estimation du 2026-10-08) ». Elle touche ces conduits ; je n'en tire aucune quantité nouvelle. rapport-releve.md ne mentionne pas ces conduits.",
+    "Sommaire note 6 : câblage data « devis 36.1 » vs « réutiliser câble existant » (E-104). Conflit non tranché, cité pour le directeur ; aucune quantité de conduit data (D-14, E-09) modifiée.",
+    "Lumen GRE430 « Corde de tirage Poly Line 430 - 6500 pi », 1 ch, « Conduits vides » : cité pour le desc de D-14 et E-09 ; la corde n'est pas une quantité de ce lot.",
+    "Conversions calculées avec python3 : q = round(m × 3,2808) sur la Qté lue, décimales à 2 chiffres dans src. Aucune valeur du brief recopiée."
+  ],
+  "exclusions": [
+    {
+      "code": "C-06",
+      "raison": "incluse dans l'assemblage du conduit apparié C-05 (EMT 1\" UTA-01, repris à 115 pi) : fil RW90 #8 Cu UTA-01 140 m (459 pi)"
+    },
+    {
+      "code": "C-08",
+      "raison": "incluse dans l'assemblage du conduit apparié C-07 (EMT 3/4\" VE-02N + HUM, repris à 262 pi) : fil RW90 #12 Cu VE-02N + HUM 275 m (902 pi)"
+    },
+    {
+      "code": "D-15",
+      "raison": "incluse dans l'assemblage du conduit apparié D-13 (EMT 1\" sous dalle, repris à 1575 pi) : fil RW90 #12 Cu 2400 m (7874 pi)"
+    },
+    {
+      "code": "E-10",
+      "raison": "incluse dans l'assemblage du conduit apparié E-08 (EMT 1\" sous dalle étage, repris à 574 pi) : fil RW90 #12 Cu 875 m (2871 pi)"
+    }
+  ],
+  "lots": {}
+}

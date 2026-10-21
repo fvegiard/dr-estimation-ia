@@ -1,0 +1,304 @@
+{
+  "niveau": "releveur",
+  "nom": "B1-1",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "PC-I",
+      "desc": "Prise double 15 A 120 V neuve",
+      "q": null,
+      "u": "U",
+      "p": 64.81,
+      "h": 1.175,
+      "art": "3.28",
+      "src": "catalogue Dupuis « PRISE DUPLEX 15A 120V » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "PC-E",
+      "desc": "Prise double 15 A enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1)"
+    },
+    {
+      "code": "PC-R",
+      "desc": "Prise double 15 A relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3)"
+    },
+    {
+      "code": "PU-I",
+      "desc": "Prise double 15 A USB neuve (Leviton Decora USB)",
+      "q": null,
+      "u": "U",
+      "p": 77.45,
+      "h": 1.125,
+      "art": "3.27",
+      "src": "catalogue Dupuis « PRISE USB 125V 15 AMP » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 6)"
+    },
+    {
+      "code": "PU-E",
+      "desc": "Prise USB enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : une prise USB enlevée se démonte comme une prise ordinaire (repère METHODE prise enlevée 0,35 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "PU-R",
+      "desc": "Prise USB relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : une prise USB relocalisée se déplace comme une prise ordinaire (repère METHODE relocalisation de prise 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "PG-I",
+      "desc": "Prise double 15 A DDFT (GFI) neuve",
+      "q": null,
+      "u": "U",
+      "p": 65.38,
+      "h": 1.3,
+      "art": "3.30",
+      "src": "catalogue Dupuis « PRISE DUPLEX 20A 125V GFI » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 16)"
+    },
+    {
+      "code": "PG-E",
+      "desc": "Prise DDFT enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1)"
+    },
+    {
+      "code": "PG-R",
+      "desc": "Prise DDFT relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3)"
+    },
+    {
+      "code": "INT-I",
+      "desc": "Interrupteur simple 15 A 120 V neuf",
+      "q": null,
+      "u": "U",
+      "p": 75.47,
+      "h": 1.075,
+      "art": "3.35",
+      "src": "catalogue Dupuis « INTERRUPTEUR 15A 120V » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 13)"
+    },
+    {
+      "code": "INT-E",
+      "desc": "Interrupteur enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER INTERRUPTEUR » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); choix du releveur B1-1 (écart à l'arbitrage du chef de lot, voir notes) : démontage d'un dispositif mural = repère METHODE prise enlevée 0,35 h, règle 1"
+    },
+    {
+      "code": "INT-R",
+      "desc": "Interrupteur relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO INT » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TH-I",
+      "desc": "Thermostat neuf",
+      "q": null,
+      "u": "U",
+      "p": 35.0,
+      "h": 0.4,
+      "art": "3.23",
+      "src": "catalogue Dupuis « THERMOSTAT » um=U (dernier 2026-06-03, s-1775 clinique mieux etre, nb_projets 4)"
+    },
+    {
+      "code": "TH-E",
+      "desc": "Thermostat enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER THERMOSTAT » ; dispositif mural ≈ prise enlevée (repère METHODE 0,35 h) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TH-R",
+      "desc": "Thermostat relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : aucun libellé « RELO THERMOSTAT » ; dispositif mural ≈ prise relocalisée (repère METHODE 1,5 h) ; portée absente du relevé — correspondance de précaution"
+    }
+  ],
+  "notes": [
+    "PC-I — retenu « PRISE DUPLEX 15A 120V » um=U p=64.81 h=1.175 nb_projets=20 dernier 2026-09-25 (S-1857 - Maison St-Michel). Règle 1 : p ET h égalent le repère METHODE « prise duplex 15 A 64,81 $ / 1,175 h ». Accord avec l'arbitrage du chef de lot (relu dans le CSV). écarté « PRISE DUPLEX 15/20A 120V » um=U p=60.19 h=1.225 nb_projets=17 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe) ; écarté « PRISE » um=U p=45.0 h=0.6 nb_projets=2 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe) ; écarté « PRISE 15A 125V » um=U p=45.0 h=0.6 nb_projets=1 dernier 2026-03-27 (S-1714 PARTAGE DE RIVIERA) ; écarté « DROP DE PRISE » um=U p=35.43 h=0.9 nb_projets=4 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture). R-007 : le relevé ne distingue pas 15 A et 20 A ; le repère 15 A prévaut (dit ici).",
+    "PC-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle 1 : h 0,35 = repère METHODE « prise enlevée 0,35 h ». ENLEVER → p = 0. Écarté : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) (plus récent, mais h 0,2 n'égale pas le repère : écarté par la règle 1). Accord.",
+    "PC-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle 1 : h 1,5 = repère METHODE « relocalisation de prise 1,5 h ». RELOCALISER → p 0 $ au catalogue + temps. Alternative de même h, objet différent (interrupteur), écartée : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption). Accord.",
+    "PU-I — retenu « PRISE USB 125V 15 AMP » um=U p=77.45 h=1.125 nb_projets=6 dernier 2026-09-10 (s-1854 sollio st hubert lanthier). Règle 1 : repère METHODE « USB 77,45 $ / 1,125 h ». Écarté : écarté « PRISE DUPLEX 15A 120V » um=U p=64.81 h=1.175 nb_projets=20 dernier 2026-09-25 (S-1857 - Maison St-Michel) (prise ordinaire, objet PC-I). Lumen LEVT5633W (48,66 $) et LEV80401NW non utilisés : le prix d'assemblage Dupuis inclut boîte, plaque et raccord. Accord. Voir la note DOUBLON PROBABLE de PU-I plus bas.",
+    "PU-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle analogue : aucun libellé USB à enlever au catalogue ; une prise USB se démonte comme une prise ordinaire (repère 0,35 h). Portée absente du relevé — correspondance de précaution. Écarté : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable).",
+    "PU-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle analogue : repère relocalisation de prise 1,5 h. Portée absente du relevé — correspondance de précaution. Écarté : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption).",
+    "PG-I — retenu « PRISE DUPLEX 20A 125V GFI » um=U p=65.38 h=1.3 nb_projets=16 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe). Règle 1 : p 65,38 et h 1,3 égalent le repère METHODE « DDFT 65,38 $ / 1,3 h » (le libellé dit 20 A ; le relevé ne distingue pas 15 A et 20 A, R-007). Écartés : écarté « PRISE DUPLEX 15A 120V GFI » um=U p=55.51 h=1.225 nb_projets=2 dernier 2026-03-11 (S-1695_Hotel Playground Kahnawake) ; écarté « PRISE GFI » um=U p=55.0 h=0.6 nb_projets=2 dernier 2026-10-07 (s-1881 hotel candlewood st-hyacinthe) ; écarté « PRISE GFI WP » um=U p=65.5 h=1.25 nb_projets=2 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil) ; écarté « RECEPT DDFT AUTO TEST 20 A125V INVIOL BLANC » um=U p=22.54 h=0.25 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) (récepteur seul, sans boîte ni plaque : écarté). Accord.",
+    "PG-I — R-007 M.A.L.T. : libellé distinct « prise M.A.L.T. isolée » NON trouvé. Motifs cherchés au catalogue : MALT (6 libellés), M.A.L.T (6), ISOL (7 : ISOLATEUR, SUPP ISOL, RACCORD ETANCHE ISOLE, BARRE MISE A TERRE ISOL…), ORANGE (0), \\bIG\\b (0), GFCI (0), HOSP (0), BARRE PLEINE (0), DDFT (1), GFI (5), DUPLEX (9), RECEPT (10). Les libellés MALT trouvés sont d'autres objets (tige, boîte de tige, connecteur, barre) : écarté « TIGE MALT 10PI 3/4PO CUI F » um=U p=114.2867 h=1.0 nb_projets=7 dernier 2026-09-25 (S-1857 - Maison St-Michel) ; écarté « TIGE MALT 10PI 3/4PO CUI » um=U p=96.2067 h=1.0 nb_projets=1 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil) ; écarté « BOITE TIGE MALT 10X12PO » um=U p=77.8933 h=1.0 nb_projets=1 dernier 2026-03-31 (S-1693_Ecole Primaire Beloeil) ; écarté « CONN MALT TIGE 2@10 » um=U p=25.58 h=0.4 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) ; écarté « BARRE PRINCIPALE MALT_LUMEN » um=U p=1511.7 h=1.75 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Conséquence : PG-I porte les deux variantes (DDFT et M.A.L.T. isolée) au prix DDFT ; la séparation en quantités revient à l'équipe A si le relevé la permet.",
+    "PG-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle 1 (0,35 h). Accord. Écarté : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable).",
+    "PG-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle 1 (1,5 h). Accord. Écarté : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption).",
+    "INT-I — retenu « INTERRUPTEUR 15A 120V » um=U p=75.47 h=1.075 nb_projets=13 dernier 2026-09-25 (S-1857 - Maison St-Michel). Règle 1 : p 75,47 = repère METHODE « interrupteur 75,47 $ » (h 1,075 du même libellé). Écartés : écarté « INTERRUPTEUR 15A 347V » um=U p=57.24 h=1.325 nb_projets=1 dernier 2026-06-02 (s-1783 anjinnov mcgill 1981 accenture) (347 V : le repère désigne le 120 V ; le bâtiment a du 347 V pour les luminaires, à dire) ; écarté « INTERRUPTEUR » um=U p=0.0 h=0.25 nb_projets=1 dernier 2026-02-02 (S-1645 ANNEXE-BOURASSA) ; écarté « INTERR DECO 15A 120V BLANC » um=U p=7.85 h=0.2 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) ; écarté « INTERRUPTEUR MAITRE » um=U p=35.0 h=0.35 nb_projets=1 dernier 2026-02-19 (S-1676 ARC'TERTX) (interrupteur maître, pas un simple). Accord.",
+    "INT-E — DÉSACCORD avec l'arbitrage du chef de lot (règle 4, date, a retenu « INTERRUPTEUR A DEMANTELER »). Je retiens retenu « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Raisons : (a) la règle 1 passe avant les règles 2 à 4 : h 0,35 égale le repère METHODE « prise enlevée 0,35 h », alors que « INTERRUPTEUR A DEMANTELER » (h 0,1) n'égale aucun repère ; (b) la POLITIQUE D'ANALOGUES traite tout démontage d'un dispositif mural au repère 0,35 h, et le chef l'applique lui-même à TH-E (dispositif mural → ENLEVER PRISE) : 0,1 h pour INT-E et 0,35 h pour TH-E serait incohérent ; (c) le chef rejette « PRISES A DEMANTELER » (h 0,2) pour les prises, la même logique vaut pour « INTERRUPTEUR A DEMANTELER » (0,1) ; (d) « ENLEVER INTERRUPTEUR » est le même objet et la même action, de la même famille S-1835 que ENLEVER PRISE. Écarté (choix du chef, non retenu ici) : écarté « INTERRUPTEUR A DEMANTELER » um=U p=0.0 h=0.1 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Impact : 1 unité, 0,25 h d'écart. Si le directeur préfère le libellé du chef, seul h change (0,35 → 0,1) ; p reste 0.",
+    "INT-R — retenu « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption). Règle 2 (même objet, même action : relocalisation d'un interrupteur) ; h 1,5 égale aussi le repère, sans conflit. Alternative de même p et h, objet différent, écartée par la règle 2 : écarté « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Portée absente du relevé — correspondance de précaution. Note : A-07 (Détail, « Relocalisation interrupteurs maîtres du hall », 1 lot, 6 h, E-201) est la seule autre source de relocalisation d'interrupteur dans le kit ; ce n'est pas un doublon avec INT-R (le relevé n'a aucun INT-R), mais l'équipe A doit trancher si A-07 est un INT-R ou un lot distinct.",
+    "TH-I — retenu « THERMOSTAT » um=U p=35.0 h=0.4 nb_projets=4 dernier 2026-06-03 (s-1775 clinique mieux etre). Règle 1 : p 35,00 = repère METHODE « thermostat 35 $ » ; le repère ne donne pas de temps de thermostat, h 0,4 vient du même libellé. Écartés : écarté « THERMOSTAT B/V » um=U p=68.0 h=0.35 nb_projets=1 dernier 2026-03-11 (s-1689 pultrusion st-bruno) ; écarté « THERMOSTAT TS » um=U p=81.88 h=0.35 nb_projets=1 dernier 2026-09-25 (S-1857 - Maison St-Michel) ; écarté « THERMOSTAT ELECTRONIQUE INTEGRE » um=U p=66.0 h=0.0 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable) (h = 0, travail réel : écarté) ; écarté « THERMOSTAT FDP » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-07-13 (s-1808 cpe les copain d'ABORD). Accord.",
+    "TH-E — retenu « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (s-1835 esbg  rehabilitation inbterieur). Règle analogue : aucun « ENLEVER THERMOSTAT » au catalogue ; dispositif mural = repère 0,35 h. Portée absente du relevé — correspondance de précaution. Écarté (chef) : écarté « INTERRUPTEUR A DEMANTELER » um=U p=0.0 h=0.1 nb_projets=1 dernier 2026-09-23 (s-1866 gar mun st amable). Accord avec le choix analogue. Le relevé n'a aucun TH-E ; A-03 (services E.A.E, E-101) est la seule source possible d'un thermostat à enlever : à trancher par l'équipe A (voir doubles_comptes).",
+    "TH-R — retenu « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (s-1753 ecole asomption). Règle analogue : aucun « RELO THERMOSTAT » ; dispositif mural = repère 1,5 h. Portée absente du relevé — correspondance de précaution. Écarté (chef) : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (s-1753 ecole asomption). Accord.",
+    "DOUBLON PROBABLE dans le relevé, PU-I (non appliqué : la quantité est à l'équipe A) : les 20 occurrences « PRISE USB » de releve.xlsx (feuille Marques, toutes sur E104) forment 5 groupes de 4 points en grille 2 × 2 ; dans un groupe, deux points sont distants de 4,6 pt (deux prises côte à côte), et chaque point est doublé à 6,6 pt. Hypothèse : 10 prises USB physiques, chacune détectée deux fois. Cela concorde avec D-02 (5 tables × 2 prises USB Decora = 10) et avec LEVT5633W « tables note 4 (2/table) » = 10. Si 10 est juste : PU-I = 10 au lieu de 20, soit −774,50 $ de matériel et −11,25 h au prix et au temps Dupuis. À vérifier au zoom sur E-104 avant de figer PU-I. Pour contraste, PC-I et PG-I n'ont que 4 et 7 paires à moins de 7,5 pt, sans motif en grille.",
+    "NON RETENU comme doublon démontré : E-01 (2 postes aide-lecteur 227, 2 prises chacun, E-105) et E-04 (3 cabines, JB + prise, E-105) ont des prises au Détail, mais E-105 ne compte que 2 PRISE DOUBLE 15A au relevé : aucun recoupement possible. Ce n'est donc pas un doublon démontré ; c'est peut-être une omission du relevé sur E-105 (à regarder sur la planche PC-I). Non compté ici.",
+    "PRIX, pas quantité : aucune ligne Lumen dans mon lot. Les lignes Lumen LEV16252W (47), LEV80401NW (66), LEVT5633W (10) et LEVGFNT1W (1) recouvrent les mêmes appareils que PC-I, PU-I et PG-I : elles ne s'ajoutent jamais au prix d'assemblage Dupuis (voir doubles_comptes).",
+    "Recherches sans résultat : ENLEVER THERMOSTAT et RELO THERMOSTAT (aucun ; le motif ENLEV ne retourne aucun thermostat) ; ENLEVER ou RELO d'une prise USB ou DDFT (aucun ; seuls PRISES A DEMANTELER et ENLEVER PRISE existent) ; RELOC (0), ENL (7, aucun thermostat ni prise), DEMANT (3), ENLEV (17), RELO (41), INTERR (42), INT (15), THERM (20), USB (1 : une seule, PRISE USB 125V 15 AMP), DDFT (1 : une seule, récepteur écarté).",
+    "Taux 85 $/h et facteur de prix de vente 1,244 : rappelés, NON appliqués ici (METHODE.md §5 et §7 ; le 124 $/h du Sommaire n'est pas retenu).",
+    "p et h recopiés depuis les colonnes prix_a_utiliser et temps_a_utiliser (dernière valeur de Dupuis), jamais la médiane ; chaque ligne relue avec la fonction de recherche exacte avant écriture.",
+    "Modèle : Claude Haiku 5.5 (claude-haiku-5-5), releveur B1-1, effort xhigh."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "D-02",
+        "PU-I"
+      ],
+      "regle": "RÉEL : D-02 = 5 tables × 2 prises USB Decora (Détail, E-104) ; PU-I = 20 occurrences PRISE USB, toutes sur E-104 (releve.xlsx). Le plan gagne ; un objet physique n'est payé qu'une fois : D-02 ne s'ajoute pas à PU-I. Voir la note de doublon interne de PU-I (10 prises physiques probables, pas 20)."
+    },
+    {
+      "codes": [
+        "D-06",
+        "PC-I"
+      ],
+      "regle": "RÉEL (probable) : D-06 = 8 prises doubles murales/colonne neuves (E-104 ; locaux P-3 2, 3, 10, 12, 34 ×2, 35 et P-2 11) ; PC-I inclut les prises 15 A du plan E-104 (23 occurrences). Ne compter D-06 que pour les prises absentes du plan E-104 ; le recoupement exact exige les positions des locaux, absentes du kit."
+    },
+    {
+      "codes": [
+        "D-01",
+        "PC-I"
+      ],
+      "regle": "RÉEL (probable) : D-01 = 18 postes de travail, chacun 1 prise double 15 A (+ 1 prise 20 A Decora) sur E-104 ; PC-I inclut les prises du plan E-104. Ne compter D-01 que pour les prises absentes du plan."
+    },
+    {
+      "codes": [
+        "D-03",
+        "PC-I"
+      ],
+      "regle": "RÉEL (probable) : D-03 = 2 prises doubles de cabine/isoloir alimentées par JB (E-104, P-2 20) ; même objet que PC-I sur E-104. Le plan gagne."
+    },
+    {
+      "codes": [
+        "D-07",
+        "PG-I"
+      ],
+      "regle": "RÉEL (probable) : D-07 = 1 prise DDFT 15 A de la fontaine (E-104, P2-61) ; la fontaine est probablement une des 20 occurrences PRISE DDFT du plan E-104 (PG-I). Le plan gagne : ne pas ajouter D-07 si la fontaine est relevée. LEVGFNT1W (Lumen) non ajouté : prix d'assemblage."
+    },
+    {
+      "codes": [
+        "LEVT5633W",
+        "PU-I"
+      ],
+      "regle": "RÉEL (double de prix) : LEVT5633W (10 prises + chargeur USB, « tables note 4 (2/table) ») couvre les USB des tables de D-02, déjà chiffrées dans PU-I au prix d'assemblage Dupuis (77,45 $). Ne pas ajouter."
+    },
+    {
+      "codes": [
+        "LEVGFNT1W",
+        "PG-I"
+      ],
+      "regle": "RÉEL (double de prix) : LEVGFNT1W (Lumen, DDFT 15 A, fontaine) est le même appareil que la DDFT de PG-I / D-07 : prix d'assemblage Dupuis seul."
+    },
+    {
+      "codes": [
+        "LEV16252W",
+        "PC-I"
+      ],
+      "regle": "RÉEL (double de prix) : LEV16252W (47 prises Decora 15 A, dont 20 postes et 8 murales) = les prises déjà chiffrées en PC-I au prix d'assemblage Dupuis (64,81 $, boîte, plaque et raccord inclus). Ne pas ajouter."
+    },
+    {
+      "codes": [
+        "LEV80401NW",
+        "PC-I"
+      ],
+      "regle": "RÉEL (double de prix) : LEV80401NW (66 plaques Decora) = plaques déjà incluses dans le prix d'assemblage PC-I (Dupuis). Ne pas ajouter."
+    },
+    {
+      "codes": [
+        "A-03",
+        "PC-E"
+      ],
+      "regle": "RÉEL (probable) : A-03 = 34 démantèlements E.A.E de services RDC sur E-101 (prises, boîtes, câbles) ; le relevé compte des prises à enlever (PC-E = 7) sur le même plan E-101 (la portée n'est pas ventilée par feuille dans Marques). Le plan gagne : A-03 ne s'ajoute pas aux démontages relevés sur le plan."
+    },
+    {
+      "codes": [
+        "A-03",
+        "PG-E"
+      ],
+      "regle": "RÉEL (probable) : même logique que A-03 / PC-E : PG-E = 4 DDFT à enlever relevées, sur E-101 pour une part ; le plan gagne."
+    },
+    {
+      "codes": [
+        "A-04",
+        "PC-E"
+      ],
+      "regle": "RÉEL (probable) : A-04 = 10 démantèlements E.A.E de services 2e (E-102) ; PC-E recouvre probablement les mêmes prises sur E-102. Le plan gagne."
+    },
+    {
+      "codes": [
+        "A-04",
+        "PG-E"
+      ],
+      "regle": "RÉEL (probable) : même logique que A-04 / PC-E pour les DDFT de E-102 (4 PRISE DDFT sur E102 au relevé) ; le plan gagne."
+    },
+    {
+      "codes": [
+        "A-05",
+        "PC-R"
+      ],
+      "regle": "RÉEL (probable) : A-05 = 13 relocalisations E.A.R de services (6 RDC + 7 2e, E-101/E-102) ; PC-R = 8 prises à relocaliser au relevé, mêmes objets. Le plan gagne. A-05 (1 h par unité) et RELO PRISE (1,5 h) se recouvrent : retenir une seule des deux."
+    },
+    {
+      "codes": [
+        "A-05",
+        "PG-R"
+      ],
+      "regle": "RÉEL (probable) : PG-R = 1 DDFT à relocaliser, mêmes objets que A-05 (E-101/E-102) ; le plan gagne."
+    },
+    {
+      "codes": [
+        "D-08",
+        "SD-I"
+      ],
+      "regle": "RÉEL (probable, hors sous-lot) : D-08 = 10 sorties data murales/colonne neuves (E-104) ; SD-I = sorties data à installer dont des sorties de E-104 (45 occurrences SORTIE DATA sur E104). Le plan gagne ; à trancher par le lot SD."
+    },
+    {
+      "codes": [
+        "E-02",
+        "MP-I"
+      ],
+      "regle": "RÉEL (probable, hors sous-lot) : E-02 = 2 monuments de plancher Hubbell (prise 20 A + 2 RJ45, P-4) ; MP-I = 3 monuments à installer au relevé (MONUMENT PLANCHER : 7 occurrences au total). Le plan gagne ; à trancher par le lot MP."
+    }
+  ]
+}

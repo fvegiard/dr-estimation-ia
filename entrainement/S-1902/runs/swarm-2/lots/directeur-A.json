@@ -1,0 +1,1093 @@
+{
+ "niveau": "directeur",
+ "nom": "A",
+ "modele_demande": "opus",
+ "effort_demande": "high",
+ "lignes": [
+  {
+   "code": "PC-I",
+   "desc": "Prise double 15 A 120 V neuve",
+   "q": 25,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.28",
+   "src": "releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; rapport-releve.md PRISE DOUBLE 15A INSTALLER 25 ; releve.xlsx Par feuille E104 23 + E105 2 (feuilles nouveau) [chef A1]"
+  },
+  {
+   "code": "PC-R",
+   "desc": "Prise double 15 A 120 V relocalisée",
+   "q": 8,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.28",
+   "src": "rapport-releve.md PRISE DOUBLE 15A RELOCALISER 8 ; releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; Par feuille E101 48 + E102 22 (feuilles existant) [chef A1]"
+  },
+  {
+   "code": "PC-E",
+   "desc": "Prise double 15 A 120 V à enlever",
+   "q": 7,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "rapport-releve.md PRISE DOUBLE 15A ENLEVER 7 ; releve.xlsx Par feuille E101 48 + E102 22 (feuilles existant) [chef A1]"
+  },
+  {
+   "code": "PU-I",
+   "desc": "Prise USB 120 V neuve (Leviton Decora)",
+   "q": 20,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.27",
+   "src": "releve.xlsx Par libellé PRISE USB 20 ; rapport-releve.md PRISE USB INSTALLER 20 ; releve.xlsx Par feuille E104 20 (feuille nouveau) [chef A1]"
+  },
+  {
+   "code": "PG-I",
+   "desc": "Prise DDFT 15 A neuve",
+   "q": 22,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.30",
+   "src": "rapport-releve.md PRISE DDFT INSTALLER 22 ; releve.xlsx Par libellé PRISE DDFT 49 ; Par feuille E104 20 + E105 2 (feuilles nouveau) [chef A1]"
+  },
+  {
+   "code": "PG-E",
+   "desc": "Prise DDFT 15 A à enlever",
+   "q": 4,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "rapport-releve.md PRISE DDFT ENLEVER 4 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant) [chef A1]"
+  },
+  {
+   "code": "PG-R",
+   "desc": "Prise DDFT 15 A relocalisée",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.30",
+   "src": "rapport-releve.md PRISE DDFT RELOCALISER 1 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant) [chef A1]"
+  },
+  {
+   "code": "SD-I",
+   "desc": "Sortie informatique/réseau neuve",
+   "q": 65,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.33",
+   "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md INSTALLER 65 ; Par feuille E104 45 + E105 20 (feuilles nouveau) [chef A1]"
+  },
+  {
+   "code": "SD-E",
+   "desc": "Sortie informatique/réseau à enlever",
+   "q": 17,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md ENLEVER 17 ; Par feuille existant E101 36 + E102 19 = 55 = C+E+R [chef A1]"
+  },
+  {
+   "code": "SD-R",
+   "desc": "Sortie informatique/réseau à relocaliser",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.33",
+   "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md RELOCALISER 3 ; art de la famille SD (convention du directeur A) [chef A1]"
+  },
+  {
+   "code": "INT-I",
+   "desc": "Interrupteur simple neuf",
+   "q": 5,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé INT SIMPLE 10 ; rapport-releve.md INT SIMPLE INSTALLER 5 ; releve.xlsx Par feuille E203 INT SIMPLE 5 (feuille nouveau, R-002) [chef A1]"
+  },
+  {
+   "code": "INT-E",
+   "desc": "Interrupteur simple à enlever",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "rapport-releve.md INT SIMPLE ENLEVER 1 ; releve.xlsx Par feuille E201 INT SIMPLE 5 (feuille existant : 4 CONSERVER + 1 ENLEVER) [chef A1]"
+  },
+  {
+   "code": "TH-I",
+   "desc": "Thermostat neuf (raccordement)",
+   "q": 2,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "releve.xlsx Par libellé THERMOSTAT 9 ; rapport-releve.md THERMOSTAT INSTALLER 2 ; releve.xlsx Par feuille E104 THERMOSTAT 2 (feuille nouveau) [chef A1]"
+  },
+  {
+   "code": "BJ-I",
+   "desc": "Boîte de jonction neuve",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md INSTALLER 3 ; Par feuille E104 3 (feuille nouveau) [chef A1]"
+  },
+  {
+   "code": "BJ-E",
+   "desc": "Boîte de jonction à enlever",
+   "q": 2,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md ENLEVER 2 ; Par feuille existant E101 4 + E102 1 + E201 2 = 7 = C+E+R [chef A1]"
+  },
+  {
+   "code": "MP-I",
+   "desc": "Monument plancher neuf",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.34",
+   "src": "releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md INSTALLER 3 ; Par feuille E105 3 (feuille nouveau) [chef A1]"
+  },
+  {
+   "code": "MP-E",
+   "desc": "Monument plancher à enlever",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md ENLEVER 3 ; Par feuille existant E101 1 + E102 3 = 4 = C+E+R [chef A1]"
+  },
+  {
+   "code": "LC-I",
+   "desc": "Lecteur de carte neuf",
+   "q": 2,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "releve.xlsx Par libellé LECTEUR CARTE 5 ; rapport-releve.md LECTEUR CARTE INSTALLER 2 ; releve.xlsx Par feuille E104 LECTEUR CARTE 2 (feuille nouveau) [chef A1]"
+  },
+  {
+   "code": "DM-E",
+   "desc": "Détecteur de mouvement à enlever",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé DETECTEUR MOUVEMENT 3 ; rapport-releve.md DETECTEUR MOUVEMENT ENLEVER 1 ; releve.xlsx Par feuille E201 DETECTEUR MOUVEMENT 3 (feuille existant) [chef A1]"
+  },
+  {
+   "code": "BC-E",
+   "desc": "Boîtier « C » à enlever",
+   "q": 2,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé BOITIER C 4 ; rapport-releve.md BOITIER C ENLEVER 2 ; releve.xlsx Par feuille E101 BOITIER C 1 + E201 BOITIER C 3 (feuilles existant) [chef A1]"
+  },
+  {
+   "code": "D-09",
+   "desc": "Raccord panneau de contrôle barrière anti-vol (les 2 JB sont comptées dans BJ-I)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "entree/reference-Estimation_2.xlsx Détail D-09 Qté 1 lot ; arbitrage chef A1 [chef A1]"
+  },
+  {
+   "code": "ENC-E",
+   "desc": "Appareil d'éclairage encastré existant (E.A.E) — enlever",
+   "q": 26,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé ENCASTRE 79 ; rapport-releve.md ENLEVER 26 (CONSERVER 49, ENLEVER 26, RELOCALISER 4) ; Par feuille E201 28, E202 35, E204 16 [chef A2]"
+  },
+  {
+   "code": "ENC-R",
+   "desc": "Appareil d'éclairage encastré existant (E.A.R) — relocaliser",
+   "q": 4,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé ENCASTRE 79 ; rapport-releve.md RELOCALISER 4 (CONSERVER 49, ENLEVER 26, RELOCALISER 4) ; Par feuille E201 28, E202 35, E204 16 [chef A2]"
+  },
+  {
+   "code": "L14-E",
+   "desc": "Appareil d'éclairage LED 1x4 existant — enlever",
+   "q": 6,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé LED 1X4 33 ; rapport-releve.md ENLEVER 6 (CONSERVER 27, ENLEVER 6) ; Par feuille E102 1, E201 11, E202 21 [chef A2]"
+  },
+  {
+   "code": "L22-E",
+   "desc": "Appareil d'éclairage LED 2x2 existant — enlever",
+   "q": 8,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé LED 2X2 94 ; rapport-releve.md ENLEVER 8 (CONSERVER 86, ENLEVER 8) ; Par feuille E201 45, E204 49 [chef A2]"
+  },
+  {
+   "code": "HP-E",
+   "desc": "Haut-parleur encastré au plafond existant — enlever",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "releve.xlsx Par libellé HP ENCASTRE PLAFOND 1 ; rapport-releve.md ENLEVER 1 (ENLEVER 1) ; Par feuille E202 1 [chef A2]"
+  },
+  {
+   "code": "A-08",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation luminaires linéaires existants",
+   "q": 21,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "entree/reference-Estimation_2.xlsx Détail A-08 (ligne Excel 15 ; colonne D Qté = 21 ; Réf. plan = E-202 note 1) [chef A2]"
+  },
+  {
+   "code": "A-09",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation encastrés existants",
+   "q": 24,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "entree/reference-Estimation_2.xlsx Détail A-09 (ligne Excel 16 ; colonne D Qté = 24 ; Réf. plan = E-202 note 1) [chef A2]"
+  },
+  {
+   "code": "B-01",
+   "desc": "Panneau PP-3 NEUF 225A 347/600V 3Ø 4F 42 cct 14kA, type NF Schneider, surface — remplacement de l'existant (note 2 E-006)",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.24",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-01 (ligne Excel 22 ; colonne D Qté = 1 ; Réf. plan = E-006/E-502) [chef A2]"
+  },
+  {
+   "code": "B-02",
+   "desc": "Disjoncteurs NF 1P-15A pour circuits existants transférés dans PP-3",
+   "q": 14,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.25",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-02 (ligne Excel 23 ; colonne D Qté = 14 ; Réf. plan = E-502) [chef A2]"
+  },
+  {
+   "code": "B-03",
+   "desc": "Disjoncteur NF 3P-20A (aérotherme, cct 13-15-17) transféré",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.25",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-03 (ligne Excel 24 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2]"
+  },
+  {
+   "code": "B-04",
+   "desc": "Disjoncteur NF 3P-40A — UTA-1 (cct 18-20-22) NOUVEAU",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.25",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-04 (ligne Excel 25 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2]"
+  },
+  {
+   "code": "B-05",
+   "desc": "Disjoncteur NF 3P-15A — VE-2N (cct 19-21-23) NOUVEAU",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.25",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-05 (ligne Excel 26 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2]"
+  },
+  {
+   "code": "B-06",
+   "desc": "Disjoncteur 1P-15A DDFT — Fontaine P2-61 (note 4)",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.25",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-06 (ligne Excel 27 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2]"
+  },
+  {
+   "code": "B-07",
+   "desc": "Disjoncteurs 1P-15A — P2-63 bornes prêts hall, P2-64 prises bibliothèque (note 4)",
+   "q": 2,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.25",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-07 (ligne Excel 28 ; colonne D Qté = 2 ; Réf. plan = E-502) [chef A2]"
+  },
+  {
+   "code": "B-08",
+   "desc": "Disjoncteurs 1P-20A — P3-17/19 machine de tri (note 4)",
+   "q": 2,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.25",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-08 (ligne Excel 29 ; colonne D Qté = 2 ; Réf. plan = E-502) [chef A2]"
+  },
+  {
+   "code": "B-09",
+   "desc": "Mise à jour fiches dactylographiées + identification (PP-2, PP-3, P2, P3, P4, P6, PU-1, PPU-1, P10)",
+   "q": 9,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.24",
+   "src": "entree/reference-Estimation_2.xlsx Détail B-09 (ligne Excel 30 ; colonne D Qté = 9 ; Réf. plan = Devis 12.3) [chef A2]"
+  },
+  {
+   "code": "LA1-I",
+   "desc": "Luminaire A1 Cooper 24CGTS-NUV-MEDIUM-3500K 2'x4' encastré 347 V 50 W — neuf",
+   "q": 11,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé LUMINAIRE A1 11 ; rapport-releve.md INSTALLER 11 ; Par feuille E203 11 ; Marques 11 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 9 = 11 [chef A2]"
+  },
+  {
+   "code": "LC1-I",
+   "desc": "Luminaire C1 Axis AXIS-SL1-4 (module 4') 120-277 V — neuf",
+   "q": 12,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé LUMINAIRE C1 12 ; rapport-releve.md INSTALLER 12 ; Par feuille E203 12 ; Marques 12 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 10 = 12 [chef A2]"
+  },
+  {
+   "code": "LC11-I",
+   "desc": "Luminaire C1_1 Axis AXIS-SL1-1 (module 1') — neuf",
+   "q": 6,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé LUMINAIRE C1_1 6 ; rapport-releve.md INSTALLER 6 ; Par feuille E203 6 ; Marques 6 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 11 = 6 [chef A2]"
+  },
+  {
+   "code": "LC13-I",
+   "desc": "Luminaire C1_3 Axis AXIS-SL1-3 (module 3') — neuf",
+   "q": 15,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé LUMINAIRE C1_3 15 ; rapport-releve.md INSTALLER 15 ; Par feuille E203 15 ; Marques 15 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 12 = 15 [chef A2]"
+  },
+  {
+   "code": "LE-I",
+   "desc": "Luminaire E GreenCreative PXCYL-8-PM-LE05-90-35 cylindre suspendu — neuf",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé LUMINAIRE E 3 ; rapport-releve.md INSTALLER 3 ; Par feuille E203 3 ; Marques 3 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 14 = 4 (écart avec le plan, voir notes) [chef A2]"
+  },
+  {
+   "code": "Z6-I",
+   "desc": "Enseigne de sortie Z6 Stanpro RMSOWH-UDC pictogramme LED — neuve",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "releve.xlsx Par libellé ENSEIGNE SORTIE Z6 3 ; rapport-releve.md INSTALLER 3 ; Par feuille E203 2 + E204 1 ; Marques 3 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 16 = 3 [chef A2]"
+  },
+  {
+   "code": "F-05",
+   "desc": "Rangées linéaires Axis : suspension aux tiges/câbles fixés à la dalle (devis 16.5), alimentation de rangée",
+   "q": 20,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "entree/reference-Estimation_2.xlsx Détail F-05 (ligne Excel 82 ; colonne D Qté = 20 ; Unité = rangée ; Réf. plan = E-203 / devis 16.5 ; Notes = ≈20 rangées continues) ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 13 C-SUSP = 20 [chef A2]"
+  },
+  {
+   "code": "F-10",
+   "desc": "Boîtes de jonction éclairage, chaînes de retenue à la dalle (devis 16.5), quincaillerie",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "entree/reference-Estimation_2.xlsx Détail F-10 (ligne Excel 87 ; colonne D Qté = 1 ; Unité = lot ; Réf. plan = E-005) [chef A2]"
+  },
+  {
+   "code": "DF-I",
+   "desc": "Détecteur de fumée adressable neuf (RDC E-203 : salle de tri 110 + secteur commis 110.8) — pose ; fourniture = LOT-DET",
+   "q": 2,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "rapport-releve.md DETECTEUR FUMEE INSTALLER 2 (CONSERVER 6, RELOCALISER 1, ENLEVER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E203 5 ; Marques E203 « instance manuelle : neuf (tracé plein) » P23 ; relevé alarme AI-01 Qté 2 u E-203 (ligne Excel 9) ; concordant avec entree/reference-Estimation_2.xlsx Détail G-01 (ligne Excel 91 ; colonne D Qté = 2 ; Unité = u) [chef A2]"
+  },
+  {
+   "code": "DF-R",
+   "desc": "Détecteur de fumée existant — relocaliser",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "rapport-releve.md DETECTEUR FUMEE RELOCALISER 1 (CONSERVER 6, INSTALLER 2, ENLEVER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E201 5, E203 5 ; portée non attribuée par feuille ni par marque dans le kit (voir notes) [chef A2]"
+  },
+  {
+   "code": "DF-E",
+   "desc": "Détecteur de fumée existant — enlever",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.22",
+   "src": "rapport-releve.md DETECTEUR FUMEE ENLEVER 1 (CONSERVER 6, INSTALLER 2, RELOCALISER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E201 5, E203 5 ; portée non attribuée par feuille ni par marque dans le kit (voir notes) [chef A2]"
+  },
+  {
+   "code": "PA-R",
+   "desc": "Panneau annonciateur Simplex existant — relocaliser au nouvel emplacement (E203)",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.37",
+   "src": "rapport-releve.md PANNEAU ANNONCIATEUR INSTALLER 1 (arbitré en PA-R, voir notes) ; releve.xlsx Par libellé PANNEAU ANNONCIATEUR 1 (E-001 légende ; bloc S328) ; Par feuille E203 1 ; Marques E203 « bloc S328 » (891.9/733.5) ; entree/reference-Estimation_2.xlsx Détail G-04 (ligne Excel 94 ; colonne D Qté = 1 ; Unité = u) (Notes : « Nouvel emplacement à confirmer ») ; relevé alarme AI-05 (ligne Excel 14) « Relocalisation annonciateur Simplex existant — reprogrammation / essais » ; bordereau 3.37 « Panneau alarme incendie : déplacement annonciateur » [chef A2]"
+  },
+  {
+   "code": "MM-R",
+   "desc": "Moteur monophasé existant de ventilation au toit (E.A.R, E-103) — débrancher, entreposer les sectionneurs, isoler/couvrir les câbles, rebrancher (reprend la description de Détail A-10)",
+   "q": 6,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "releve.xlsx Par libellé MOTEUR MONOPHASE 9 (E-001 légende ; bloc S102) ; rapport-releve.md RELOCALISER 6 (INSTALLER 3) ; Par feuille E103 6, E105 3 ; Marques E103 6 (bloc S102) ; entree/reference-Estimation_2.xlsx Détail A-10 (ligne Excel 17 ; colonne D Qté = 6 ; Unité = u) (Notes : « 6 E.A.R sur E-103 ») [chef A2]"
+  },
+  {
+   "code": "MM-I",
+   "desc": "Moteur monophasé neuf à raccorder — humidificateurs HUM-1/2/3 Carel 120 V/1Ø (E-105)",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "rapport-releve.md MOTEUR MONOPHASE INSTALLER 3 ; releve.xlsx Par libellé MOTEUR MONOPHASE 9 ; Par feuille E105 3 ; Marques E105 3 (bloc S102) ; entree/reference-Estimation_2.xlsx Détail C-04 (ligne Excel 37 ; colonne D Qté = 3 ; Unité = u) (Qté 3 humidificateurs) [chef A2]"
+  },
+  {
+   "code": "MT-I",
+   "desc": "Moteurs triphasés neufs à raccorder — UTA-01 York KE036 et VE-02N Plymovent FUA-2700 (toit E-106) + chaudières CH-01/CH-02 (E-105)",
+   "q": 4,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "rapport-releve.md MOTEUR TRIPHASE INSTALLER 4 (CONSERVER 5) ; releve.xlsx Par libellé MOTEUR TRIPHASE 9 ; Par feuille E105 2, E106 2 ; entree/reference-Estimation_2.xlsx Détail C-01 (ligne Excel 34 ; colonne D Qté = 1 ; Unité = u) + entree/reference-Estimation_2.xlsx Détail C-02 (ligne Excel 35 ; colonne D Qté = 1 ; Unité = u) + entree/reference-Estimation_2.xlsx Détail C-03 (ligne Excel 36 ; colonne D Qté = 2 ; Unité = u) (Notes C-03 : « Réutilisation selon état — à vérifier ») [chef A2]"
+  },
+  {
+   "code": "X-03",
+   "desc": "Sectionneur sans fusible 30 A — HUM-1/2/3",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "entree/reference-Estimation_2.xlsx Détail C-04 (ligne Excel 37 ; colonne D Qté = 3 ; Unité = u) « sectionneur sans fusible 30A » ×3 ; entree/reference-Estimation_2.xlsx Matériel Lumen ligne Excel 43 : HUBHBL1372 « HUBBELL HBL1372 SECTIONNEUR 30A 2P (HUM-1/2/3) », Qté 3, Unité lue « ch », Base de quantité « Devis 20 : service intensif — à valider » ; ligne hors Détail (le sectionneur n'est pas un symbole relevé) [chef A2]"
+  },
+  {
+   "code": "G-05",
+   "desc": "Démontage/protection/réinstallation dispositifs AI existants dans zones touchées (Réf. plan E-201/E-203)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "entree/reference-Estimation_2.xlsx Détail G-05 (ligne Excel 95 ; colonne D Qté = 1 ; Unité = lot) (Notes : « Allocation — à valider ») ; relevé alarme AI-07 (option, prix séparé) non repris [chef A2]"
+  },
+  {
+   "code": "G-06",
+   "desc": "Assistance électricien lors de la programmation / vérification ULC-S537 (E-007 note 3)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.38",
+   "src": "entree/reference-Estimation_2.xlsx Détail G-06 (ligne Excel 96 ; colonne D Qté = 1 ; Unité = lot) ; relevé alarme AI-06 (ligne Excel 15) classé « 2. SERVICES JCI / SIMPLEX » (voir notes) [chef A2]"
+  },
+  {
+   "code": "C-05",
+   "desc": "Conduit EMT 1\" + 4 #8 RW90 (UTA-01) — assemblage 04C8",
+   "q": 115,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "Estimation_2 Détail C-05 (ligne 38) : Qté lue 35 m × 3,2808 = 114,83 → 115 pi ; L lue « Hypothèse longueur » ; C-06 140 m inclus (4 #8 × 35 m) [chef A3]"
+  },
+  {
+   "code": "C-07",
+   "desc": "Conduit EMT 3/4\" + 3-4 #12 RW90 (VE-02N 35 m 04C12 ; HUM 3 × 15 m 03C12)",
+   "q": 262,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "Estimation_2 Détail C-07 (ligne 40) : Qté lue 80 m × 3,2808 = 262,46 → 262 pi ; L lue « 35 m + 3 x 15 m » ; C-08 275 m inclus (mixte 4 × 35 m + 3 × 3 × 15 m) [chef A3]"
+  },
+  {
+   "code": "D-13",
+   "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle RDC (16 courses) — assemblage 05C12",
+   "q": 1575,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-13 (ligne 57) : Qté lue 480 m × 3,2808 = 1574,78 → 1575 pi ; L lue « Hyp. 30 m/course » ; D-15 2400 m inclus (5 cond./course) [chef A3]"
+  },
+  {
+   "code": "E-08",
+   "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle étage (7 courses) — assemblage 05C12",
+   "q": 574,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-08 (ligne 71) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; E-10 875 m inclus (5 cond./course) [chef A3]"
+  },
+  {
+   "code": "D-14",
+   "desc": "Conduit vide EMT 3/4\" data + corde de tirage (11 courses)",
+   "q": 1083,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.33",
+   "src": "Estimation_2 Détail D-14 (ligne 58) : Qté lue 330 m × 3,2808 = 1082,66 → 1083 pi ; L lue « Hyp. 30 m/course » ; conduit vide, aucun fil apparié [chef A3]"
+  },
+  {
+   "code": "E-09",
+   "desc": "Conduit vide EMT 3/4\" data (7 courses)",
+   "q": 574,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.33",
+   "src": "Estimation_2 Détail E-09 (ligne 72) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; conduit vide, aucun fil apparié [chef A3]"
+  },
+  {
+   "code": "F-08",
+   "desc": "Conduit EMT 3/4\" + 3 #12 RW90 éclairage — assemblage 03C12",
+   "q": 919,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "Estimation_2 Détail F-08 Qté 280 m × 3,2808 = 918,62 → 919 pi ; note L : Hyp. 8 m x 35 points ; Réf. plan E-203 ; 3 cond. RW90 #12 : F-09 exclu (840 m) [chef A3]"
+  },
+  {
+   "code": "G-02",
+   "desc": "Conduit EMT 3/4\" boucle alarme incendie",
+   "q": 98,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "Estimation_2 Détail G-02 Qté 30 m × 3,2808 = 98,42 → 98 pi ; note L : Hyp. ; Réf. plan E-203 [chef A3]"
+  },
+  {
+   "code": "G-03",
+   "desc": "Câble FT4 2c #16 rouge boucle adressable (dans G-02)",
+   "q": 197,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "Estimation_2 Détail G-03 Qté 60 m × 3,2808 = 196,85 → 197 pi ; note L : Hyp. ; Réf. plan E-203 ; câble AI, reprise séparée (exception, pas un fil RW90 d'assemblage) [chef A3]"
+  },
+  {
+   "code": "D-11",
+   "desc": "Bouton d'appel — boîte + conduit vide (système fourni par d'autres)",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-11 Qté 1 u ; note L : Aide au lecteur 116 ; Réf. plan E-104 [chef A3]"
+  },
+  {
+   "code": "D-12",
+   "desc": "Percement de dalle carotté + coupe-feu (CAN/ULC-S115, Hilti CP-506) — conduits sous dalle RDC",
+   "q": 16,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-12 Qté 16 u ; note L : 1 percement par course ; Réf. plan E-104 note 5 / devis 1.5, 18 [chef A3]"
+  },
+  {
+   "code": "D-16",
+   "desc": "Boîtes de tirage/jonction, connecteurs, supports, corde de tirage — conduits sous dalle RDC",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-16 Qté 1 lot ; note L : vide ; Réf. plan E-104 [chef A3]"
+  },
+  {
+   "code": "E-06",
+   "desc": "Bouton d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-06 Qté 3 u ; note L : vide ; Réf. plan E-105 [chef A3]"
+  },
+  {
+   "code": "E-07",
+   "desc": "Percement de dalle carotté + coupe-feu — étage (7 courses)",
+   "q": 7,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-07 Qté 7 u ; note L : vide ; Réf. plan E-105 note 3 [chef A3]"
+  },
+  {
+   "code": "E-11",
+   "desc": "Boîtes, connecteurs, supports — étage",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-11 Qté 1 lot ; note L : vide ; Réf. plan E-105 [chef A3]"
+  },
+  {
+   "code": "A-11",
+   "desc": "Maintien continuité de service, recherche/traçage circuits existants, réalimentation circuits libérés",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail A-11 (ligne 18) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3]"
+  },
+  {
+   "code": "H-01",
+   "desc": "Mobilisation / démobilisation, outillage, plateforme/échafaudage roulant",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-01 (ligne 101) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3]"
+  },
+  {
+   "code": "H-02",
+   "desc": "Coordination EG / multi-corps, dessins d'atelier, plans tel que construit",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-02 (ligne 102) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3]"
+  },
+  {
+   "code": "H-03",
+   "desc": "Essais, mise en service, vérification prises existantes (note 3), étiquetage",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-03 (ligne 103) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3]"
+  },
+  {
+   "code": "H-04",
+   "desc": "Nettoyage, gestion des déchets (devis 5, 9.3)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-04 (ligne 104) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3]"
+  },
+  {
+   "code": "X-02",
+   "desc": "Nacelle (location, 16 h)",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "METHODE.md §2 point 3 : nacelle 1 250 $ / 16 h ; catalogue-prix-temps-dupuis.csv ligne 2026 « NACELLE » : prix_a_utiliser 1250.0, temps_a_utiliser 16.0 (dernier projet s-1811 cdc construction de 6 batiment, 2026-07-14) [chef A3]"
+  },
+  {
+   "code": "LOT-ECL",
+   "desc": "Lot éclairage (A1 ×11, Axis SL1 4′ ×12, 3′ ×15, 1′ ×6, trousses, E ×3, Z6 ×3)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "METHODE.md §2 point 2 : lot éclairage 11 893 $ (prix confirmé Francis 2026-10-20) [chef A3]"
+  },
+  {
+   "code": "LOT-DIST",
+   "desc": "Lot distribution (NF 225 A 42 cct + EDB 1P ×20 + EJB 3P ×3)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.24",
+   "src": "METHODE.md §2 point 2 : lot distribution 6 200 $ (prix confirmé Francis 2026-10-20) [chef A3]"
+  },
+  {
+   "code": "LOT-JCI",
+   "desc": "Sous-traitance JCI/Simplex",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.38",
+   "src": "METHODE.md §2 point 2 : JCI 7 400 $ (prix confirmé Francis 2026-10-20) [chef A3]"
+  },
+  {
+   "code": "LOT-DET",
+   "desc": "2 détecteurs de fumée (fournis JCI)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "METHODE.md §2 point 2 : 2 détecteurs 600 $ (prix confirmé Francis 2026-10-20) [chef A3]"
+  },
+  {
+   "code": "LOT-GPR",
+   "desc": "GPR (géoradar = scan de dalle avant carottage)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.32",
+   "src": "METHODE.md §2 point 2 : GPR 1 250 $ (prix confirmé Francis 2026-10-20) [chef A3]"
+  }
+ ],
+ "notes": [
+  "CONTRÔLE DU DIRECTEUR (kit rouvert : rapport-releve.md, releve.xlsx, Estimation_2 Détail + Matériel Lumen) : A1 7/7 (PC-I 25, SD-E 17, BJ-I 3, MP-E 3, PG-R 1, D-09 1, E-03 2) ; A2 7/7 (ENC-E 26, L22-E 8, LC13-I 15, MM-R 6, B-02 14, A-09 24, X-03 3 = Lumen HUBHBL1372) ; A3 7/7 (D-13 480 m → 1575 pi, F-08 280 m → 919, G-03 60 m → 197, C-07 80 m → 262, D-12 16, E-07 7, H-02 1). Aucune erreur : aucun lot revu.",
+  "COUVERTURE : aucun code deux fois (lignes, exclusions, ni entre les deux) ; les 31 familles de rapport-releve.md vérifiées : chaque portée I/E/R a sa ligne avec q = rapport (PANNEAU ANNONCIATEUR INSTALLER 1 → PA-R 1) ; familles 100 % CONSERVER sans ligne : SORTIE TV 4, GACHE 3, ENCASTRE URGENCE 10, LED 4PI 2, LUMINAIRE LINEAIRE 4, STATION MANUELLE 4 ; les 80 codes Détail (A-01…H-04, OPT-1…4) sont repris ou dans exclusions.",
+  "EFFORTS DES CHEFS : A1 high (13 familles à portées + arbitrages simples, pas de conversion) ; A2 xhigh (doubles comptes qui se propagent : C-01…C-04/MT-MM, A-10/MM-R, G-04/PA-R, F-/luminaires, B-/LOT-DIST) ; A3 high (conversion m→pi et règle d'assemblage tranchées dans le brief, travail mécanique). Découpage A1/A2/A3 affiné et disjoint : A-07, D-09, D-10, E-03 → A1 ; C-01…C-04, F-05, F-10, G-04…G-06 → A2 ; A-11 → A3.",
+  "ARBITRAGE X-02 / H-01 : les deux gardés. X-02 NACELLE q 1 (pratique Dupuis, METHODE.md point 3 et catalogue NACELLE) porte l'accès en hauteur ; H-01 q 1 LOT garde mobilisation/démobilisation/outillage — le volet « plateforme/échafaudage roulant » de H-01 ne doit pas être chiffré une 2e fois (consigne au directeur B / au chef).",
+  "ARBITRAGE G-05 / DF / PA : G-05 gardé (1 LOT) pour les dispositifs AI CONSERVER touchés par les plafonds (DF 6, SM 4) ; DF-R 1, DF-E 1, PA-R 1 sont chiffrés par leurs lignes propres et sont hors G-05. AI-07 (option JCI) non repris. ARBITRAGE G-06 / LOT-JCI : objets distincts — G-06 = heures de l'électricien DR pendant la programmation/vérification S537, LOT-JCI = sous-traitance JCI (G-07 exclue) ; les deux gardés.",
+  "ARBITRAGE JB de E-01/E-04 (5 JB sur E105 non relevées en BOITE JONCTION) : pas de ligne ajoutée — le plan gagne et le prix d'assemblage Dupuis d'une prise (boîte + plaque + raccord inclus, METHODE.md point 1) couvre la boîte du poste ; E-01/E-04 restent exclues (remplacées par PC-I/SD-I).",
+  "ARBITRAGE E-03 / MP et A-07 / INT : E-03 et A-07, reprises par A1 avec réserve, sont EXCLUES par le directeur (même objet physique que MP-E 3 + MP-I 3 au 2e, et que INT-E 1 + INT-I 5 du hall) ; raisons et condition de rétablissement dans exclusions. A1 a relevé 2 INT SIMPLE aux mêmes coordonnées sur E201 et E203 (possible existant redessiné) : quantité du rapport conservée, à vérifier sur planches.",
+  "ARBITRAGE disjoncteurs 1P 19 vs 20 : les quantités de pose restent celles de Détail (B-02 14 + B-06 1 + B-07 2 + B-08 2 = 19 ; 3P B-03…B-05 = 3) ; le 20e EDB 1P du lot distribution (6 200 $ confirmé, inchangé) est sans circuit attribué dans le kit (rechange probable) : aucune ligne ajoutée.",
+  "AUTRES DÉCISIONS DU DIRECTEUR (briefs) : fils RW90 C-06, C-08, D-15, E-10, F-09 exclus car inclus dans l'assemblage Dupuis du conduit apparié (longueurs m/pi dans exclusions pour rétablissement si B chiffre un conduit vide) ; G-03 FT4 gardé ; X-01 SCAN DALLE exclu = LOT-GPR ; PA-R au lieu de PA-I (G-04 exclue) ; MT-I 4 / MM-I 3 / MM-R 6 remplacent C-01…C-04 et A-10 ; X-03 sectionneurs HUM ×3 (pôles 1Ø vs 2P à valider) ; LE-I 3 (F-06 4).",
+  "ÉCARTS À SIGNALER AU CHEF : lot éclairage — somme des postes METHODE.md = 13 034,80 $ vs 11 893 $ confirmé (le confirmé fait foi) ; B-04 40 A vs MOCP 35 A ; A-01+A-02 46 vs 40 sur plan ; A-03+A-04 44 vs 35 ; A-05 13 vs 12 ; A-06 7 vs 4 ; D-02 10 USB vs PU-I 20 ; DDFT/M.A.L.T. isolée confondues (3.30 vs 3.29) ; toutes les longueurs de conduit sont des hypothèses de Détail. Toutes les quantités sur plan viennent d'un relevé automatique « à VÉRIFIER » (rapport-releve.md).",
+  "[chef A1] DÉCOUPAGE (disjoint et couvrant) : A1-1 = PC, PU, PG + D-01…D-08 (exclues) + A-05 (exclue) ; A1-2 = SD, TV, MP, BJ + A-03, A-04, E-01, E-02, E-04, E-05, D-10 (exclues) + D-09, E-03 (reprises) ; A1-3 = INT, TH, LC, GA, DM, BC + A-07 (reprise). 19 codes Détail du §3b : 3 repris (D-09, E-03, A-07) + 16 exclus = 19.",
+  "[chef A1] EFFORTS CHOISIS : A1-1 high (9 lignes Détail à arbitrer en double compte, contradictions USB 10 vs 20 et 13 vs 12, confusion DDFT/M.A.L.T.) ; A1-2 xhigh (sous-lot le plus chargé, contrôle BJ-I 3 = 2 + 1 qui décide de D-10, lien A-03/A-04 avec les -E des autres lots) ; A1-3 high (petit sous-lot mais beaucoup de CONSERVER à noter et chevauchement A-07/INT). Chef : sonnet, effort high.",
+  "[chef A1] VÉRIFICATION PAR LE CHEF (relecture du kit) : A1-1 5/5 (PC-I 25 et PC-R 8 / PG-I 22 / PU-I 20 / PG-E 4 : rapport-releve.md, Par libellé, Par feuille et art 3.27/3.28/3.30/3.22 relus ; notes D-01 = 3+4+2+4+2+3 = 18 et D-02 = 3+2 = 5 relues dans Détail) ; A1-2 5/5 (SD-I 65, BJ-I 3, MP-E 3, D-09 Qté 1 lot ligne 53, E-03 Qté 2 u ligne 66 + note « à confirmer », A-03 34 / A-04 10 relues ; BJ sur E105 = 0 confirmé) ; A1-3 5/5 (INT-I 5, TH-I 2, LC-I 2, DM-E 1, BC-E 2, A-07 Qté 1 lot ligne 14 ; coordonnées INT SIMPLE E201/E203 relues dans Marques). Aucune erreur trouvée : aucun sous-lot revu ligne par ligne.",
+  "[chef A1] CONTRÔLE PAR FEUILLE (recalculé par le chef pour les 13 familles) : existant (E101+E102+E103+E201+E202) = C+E+R et nouveau (E104+E105+E106+E203+E204) = I partout : PC 70 = 55+7+8 / 25 ; PU 0 / 20 ; PG 27 = 22+4+1 / 22 ; SD 55 = 35+17+3 / 65 ; TV 4 = 4 / 0 ; INT 5 = 4+1 / 5 ; TH 7 / 2 ; BJ 7 = 5+2 / 3 ; MP 4 = 1+3 / 3 ; LC 3 / 2 ; GA 3 / 0 ; DM 3 = 2+1 / 0 ; BC 4 = 2+2 / 0. Aucun écart.",
+  "[chef A1] FAMILLES 100 % CONSERVER SANS LIGNE : SORTIE TV (4, E101 1 + E102 3) et GACHE (3, E101). CONSERVER sans ligne aussi : PC 55, PG 22, SD 35, INT 4, TH 7, BJ 5, MP 1, LC 3, DM 2, BC 2 (aucun travail).",
+  "[chef A1] CONTRADICTION A-03/A-04 vs plan : Détail 34 + 10 = 44 E.A.E contre PC-E 7 + PG-E 4 + SD-E 17 + BJ-E 2 + MP-E 3 + BC-E 2 = 35 sur plan (écart 9). Le plan compte aussi INT-E 1 et DM-E 1 (et 1 détecteur de fumée ENLEVER, hors lot) : 37 en incluant INT-E et DM-E, écart 7. Le plan fait foi ; A-03 et A-04 non reprises ; l'estimation Détail semble compter plus de services à démonter, à confirmer au zoom sur E-101/E-102.",
+  "[chef A1] CONTRADICTION A-05 vs plan : Détail 13 (6 RDC + 7 2e) contre PC-R 8 + PG-R 1 + SD-R 3 = 12 sur plan (écart 1). Plan fait foi. Total des lignes R du lot = 12.",
+  "[chef A1] CONTRADICTION USB (D-02) : 5 tables x 2 USB = 10 USB au Détail contre PU-I 20 sur plan (E104 20). Plan fait foi. R-007 : les JB de poste (D-01) et les prises 20 A ne sont pas distinguées des prises 15 A sur plan ; PC-I 25 repose sur le total plan.",
+  "[chef A1] ARBITRAGES D-09 / D-10 / BJ-I : BJ-I 3, toutes sur E104 (Par feuille BOITE JONCTION E104 = 3), = 2 JB de D-09 + 1 JB de D-10 : concordance numérique seulement (le plan ne dit pas quelle JB est laquelle). D-09 reprise (LOT 1, art 3.31, raccord du panneau de contrôle de la barrière anti-vol, non relevé sur plan) ; D-10 exclue (remplacée par BJ-I).",
+  "[chef A1] POINT OUVERT E-01 / E-04 : le Détail compte 5 JB (E-01 2 postes, E-04 3 cabines) sur E105 alors que BOITE JONCTION n'a aucune marque INSTALLER sur E105 (BJ-I = 3 toutes sur E104). Exclusions maintenues (arbitrage : le plan gagne), mais ces 5 JB ne sont pas couvertes par BJ-I ; à trancher sur le plan (JB de poste non relevées comme boîtes de jonction ?).",
+  "[chef A1] POINT OUVERT E-02 / E-03 / MP : Détail E-02 2 monuments (P-4 17, P4-15) contre MP-I 3 sur plan E105 (2 vs 3, plan fait foi, E-02 exclue). E-03 reprise (2 boîtes de plancher refaites, salle 208, art 3.34) : chevauchement possible avec MP-E 3 (E102) / MP-I 3 (E105), « à confirmer » dans Détail ; risque de double compte MP non tranchable sans le plan.",
+  "[chef A1] POINT OUVERT A-07 / INT : A-07 reprise (LOT 1, art 3.35, relocalisation interrupteurs maîtres du hall, note spécifique 1 E-201) ; chevauchement possible avec INT-E 1 (E201) / INT-I 5 (E203) ; non tranchable sans le plan. Par ailleurs Marques contient deux INT SIMPLE à (1011.8, 418.3) et (1016.6, 416.3), distants de 5,2 pt, présents à l'identique sur E201 ET E203 : doublon de repère ou feuilles superposées existant/neuf, à confirmer au zoom (quantités gardées telles que le rapport).",
+  "[chef A1] PORTÉES NON-SÉPARABLES (R-007) : PG (DDFT 49) confond DDFT et M.A.L.T. isolée ; si une part est M.A.L.T., elle relève de l'article 3.29 au lieu de 3.30 (PG-I/PG-E/PG-R portées à 3.30 par convention). PC (95) ne distingue ni 15 A / 20 A ni comptoir / standard. D-07 (1 DDFT fontaine P2-61) exclue : le plan ne permet pas de confirmer qu'elle est comptée dans PG-I 22.",
+  "[chef A1] ARTICLES : convention du directeur A appliquée (-E → 3.22 ; PC-I/PC-R 3.28 ; PU 3.27 ; PG 3.30 ; SD 3.33 ; MP 3.34 ; INT 3.35 ; TH 3.23 ; BJ et LC 3.31). Aucun article « intrusion » au bordereau pour LC (ni pour GA/BC/DM) : LC-I proposé à 3.31 par convention. BC-E (boîtier C, famille alarme, description « hors légende — R-006 TEST-E201 » alors que la source dit « E-001 légende ; bloc S218 ») et DM-E vont à 3.22. Le libellé du 3.34 au bordereau est « Moinument plancher » (coquille, numéro correct).",
+  "[chef A1] CONTRAINTE : toutes les quantités sont celles du relevé automatique (rapport-releve.md « à VÉRIFIER sur les planches de contrôle ») : non revalidées sur plan. p et h = null partout. Aucune donnée de prix/temps lue ; aucun fichier hors du dossier de travail consulté.",
+  "[chef A2] DÉCOUPAGE (disjoint et couvrant, 34 lignes + 16 exclusions) : A2-1 = ENC, ENCU, L14, L22, L4, LLIN, HP + Détail A-01, A-02, A-06 (exclues), A-08, A-09 et B-01…B-09 (reprises) → 16 lignes, 3 exclusions ; A2-2 = LA1, LC1, LC11, LC13, LE, Z6 + Détail F-01…F-04, F-06, F-07 (exclues), F-05, F-10 (reprises) → 8 lignes, 6 exclusions ; A2-3 = DF, SM, PA, MM, MT + Détail G-01, G-04, A-10, C-01…C-04 (exclues), G-05, G-06, X-03 (reprises) → 10 lignes, 7 exclusions. Écart à la suggestion du directeur : B-01…B-09 confiées à A2-1 (pas à A2-3) pour alléger le sous-lot le plus délicat ; elles ne s'arbitrent avec aucune autre ligne.",
+  "[chef A2] EFFORTS CHOISIS (phase 1) : A2-1 = high (portées à lire, chevauchement A-08/A-09 avec L14/ENC de E202 à noter ; les 9 lignes B sont de la transcription) ; A2-2 = high (seul arbitrage réel : LE-I 3 vs 4, décision du directeur, plus la contradiction Z6/E204 à noter) ; A2-3 = xhigh (DF avec portées et objets vus sur deux feuilles, PA-R, correspondances MM/MT avec A-10 et C-01…C-04, X-03 : une erreur se propage à tout le chiffrage).",
+  "[chef A2] CONTRÔLE DES RELEVEURS (phase 2) — j'ai rouvert releve.xlsx (Par libellé, Par feuille, Marques), rapport-releve.md, Estimation_2 (Détail, Matériel Lumen), Releve_Eclairage_Urgence, Releve_Alarme_Incendie et Bordereau_de_prix. A2-1 : 5/5 (ENC-E, L14-E, HP-E, A-09, B-04 ; en fait les 16 lignes relues, toutes exactes). A2-2 : 5/5 (LA1-I, LE-I, Z6-I, F-05, F-10 ; les 8 lignes relues, toutes exactes, y compris les 5 comptes de Marques et les lignes 9-14, 16 du relevé éclairage). A2-3 : 5/5 (DF-I, PA-R, MM-R, MT-I, X-03 ; les 10 lignes relues, toutes exactes, y compris AI-01 L9, AI-05 L14, AI-06 L15, Lumen L43 et les distances DF recalculées : 1,12 / 0,90 / 1,03 pt). Aucune erreur trouvée : aucun sous-lot n'a été revu ligne par ligne au-delà de cette relecture. Articles 3.22 à 3.38 relus dans le Bordereau (lignes 74, 76, 78, 79, 90, 92, 93, 94) : libellés conformes.",
+  "[chef A2] VÉRIFICATIONS DE COUVERTURE : 34 codes de lignes distincts (aucun code deux fois, ni entre releveurs) ; chaque famille du §3a à portée I/E/R a sa ligne (ENC-E, ENC-R, L14-E, L22-E, HP-E, LA1-I, LC1-I, LC11-I, LC13-I, LE-I, Z6-I, DF-I, DF-R, DF-E, PA-R pour PANNEAU ANNONCIATEUR, MM-R, MM-I, MT-I) ; chaque code Détail du §3b est repris (A-08, A-09, B-01…B-09, F-05, F-10, G-05, G-06, + X-03) ou dans exclusions (A-01, A-02, A-06, F-01…F-04, F-06, F-07, G-01, G-04, A-10, C-01…C-04), aucun oublié ni dans les deux ; LE-I = 3 ; p et h = null partout ; u ∈ {U, LOT}. Les lignes Détail A-03…A-05, A-07, A-11, C-05…C-08, D-, E-, F-08, F-09, G-02, G-03, G-07, H-, OPT- ne sont pas du lot A2.",
+  "[chef A2] TRANCHÉ 1 — DF, mêmes détecteurs sur E201 et E203 : confirmé par calcul sur Marques. Les 3 marques « existant (tracé pointillé) » de E203 (P07 462/414, P08 541/378, P12 1034/390) sont à 1,12 / 0,90 / 1,03 pt de 3 des 5 détecteurs de E201 : mêmes objets physiques dessinés sur la feuille d'existant et sur la feuille de travaux. Les 2 autres marques de E203 (bloc S146 en 636,1/707,6 et P23 en 864/782) sont à ≥ 78,7 pt de tout détecteur de E201 : objets distincts. Lecture retenue : CONSERVER 6 du rapport = ces 3 paires (3 sur E201 + 3 sur E203, conformément à R-002 : feuille d'existant sans étiquette = CONSERVER) ; INSTALLER 2 = le bloc S146 non étiqueté de E203 (636,1/707,6) + le « neuf (tracé plein) » P23 (864/782), ce qui cadre avec AI-01 (2 détecteurs neufs, salle de tri 110 + secteur commis 110.8) et G-01 ; ENLEVER 1 + RELOCALISER 1 = les 2 autres détecteurs de E201 ((880,9/705,1) et (1147,5/512,5)). Les totaux par feuille concordent exactement (E201 5 = 3 + 1 + 1 ; E203 5 = 3 + 2). Conclusion : le total 10 compte 3 objets en double, MAIS uniquement en CONSERVER (aucun travail) → aucun effet sur DF-I 2, DF-R 1, DF-E 1, quantités inchangées. Réserve : la portée par marque n'est pas dans le kit, donc l'attribution E vs R aux deux détecteurs de E201 et l'attribution des 2 INSTALLER sont une inférence arithmétique, non confirmée sur plan.",
+  "[chef A2] TRANCHÉ 2 — LED 1X4 vs A-08 (et ENCASTRE vs A-09) : A-08 21 et A-09 24 sont REPRISES telles quelles (q de Détail, art 3.35) et ne font pas double compte avec L14-E 6 / ENC-E 26 / ENC-R 4 : un appareil enlevé ou relocalisé n'est pas « réinstallé en place », donc A-08/A-09 (retrait temporaire + réinstallation d'appareils CONSERVER du FabLab 210, E-202 note 1) portent sur d'autres appareils que les -E/-R par définition. Observations qui le corroborent : LED 1X4 sur E202 = 21 = q de A-08 (donc les 6 L14-E sont sur E201/E102, pas sur E202 — inférence) ; ENCASTRE sur E202 = 35 = 24 (A-09, « ±2 ») + 7 (A-02 : E.A.E 2e étage) + 4 (ENC-R, A-06 : « 4 2e ») — cohérent si ces ENC-E/ENC-R sont sur E202, non prouvable (répartition ENLEVER/RELOCALISER par feuille absente du kit). Aucune quantité modifiée ; « ±2 » de A-09 conservé en note.",
+  "[chef A2] TRANCHÉ 3 — Z6 sur E204 : Z6-I = 3 conservé (Par libellé 3 = rapport INSTALLER 3 = Marques 3 [E203 P13 + P20, E204 P26] = relevé éclairage ligne 16 = 3 = tableau E-008 « 3 u » cité par la Note de P13 = lot éclairage confirmé Z6 ×3 à 161,60 $ de METHODE.md §2 = Détail F-07 3). La phrase « Aucun appareil neuf à l'étage (E-204) » du relevé éclairage (ligne 4) vise vraisemblablement les luminaires typés (A1…E, tous sur E203) ; elle contredit seulement le pictogramme P26 de E204. Risque signalé au directeur : si ce Z6 de E204 était existant, il n'y aurait que 2 enseignes neuves, ce qui contredit le lot fournisseur ×3 confirmé ; on garde 3 (la liste E-008 fonde la quantité neuve).",
+  "[chef A2] CONTRADICTIONS PLAN / DÉTAIL (le plan gagne, quantités Détail non reprises) : A-01 39 + A-02 7 = 46 (luminaires E.A.E) vs ENC-E 26 + L14-E 6 + L22-E 8 = 40 sur plan (HP-E 1 n'est pas un luminaire) ; A-06 7 (« 3 RDC + 4 2e ») vs ENC-R 4 ; F-06 4 / relevé éclairage E 4 vs LUMINAIRE E 3 étiquettes (R-003 ; une étiquette « E » à (1717, 967) écartée par R-004, listée deux fois) → LE-I 3 ; Z6 voir plus haut ; relevé éclairage E-204 « aucun appareil neuf » vs Z6 E204 ; schéma E-007 (2 détecteurs neufs à l'étage) vs plans (2 au RDC, 0 à l'étage) → plans prévalent, DF-I 2 au RDC ; B-04 disjoncteur UTA-1 40 A (E-502) vs MOCP 35 A (E-009), à clarifier par l'ingénieur, q 1 inchangée ; B-02 + B-06 + B-07 + B-08 = 19 disjoncteurs 1P vs lot distribution EDB 1P ×20 (écart de 1 à signaler au directeur, aucune quantité forcée) ; B-03 + B-04 + B-05 = 3 = EJB 3P ×3 ; F-05 « ≈20 rangées » = C-SUSP 20 du relevé éclairage (configuration à confirmer par l'agent Axis) ; X-03 : Détail C-04 « sans fusible 30A 1Ø » vs Lumen HUBHBL1372 « 30A 2P » (nombre de pôles à valider, q 3 identique).",
+  "[chef A2] FAMILLES 100 % CONSERVER, AUCUNE LIGNE (CONSERVER = aucun travail) : ENCU 10 (E203 9, E204 1) ; L4 2 (E104 1, E105 1) ; LLIN 4 (E203 2, E204 2) ; SM 4 (E201 4) ; et les CONSERVER des familles à lignes : ENC 49, L14 27, L22 86, DF 6, MT 5 (E102 5, inférence : E105 2 + E106 2 = INSTALLER 4). ENCU : Marques = 3 « anneau plein » (E203 P11, P15 ; E204 P25 « PP-U1 6 (Mq) ») + 7 « existant pointillé » ; Détail F-01 dit « Dont 3 sur circuit PP-U1 » (A1 sur E203) : lien avec les 3 anneaux pleins probable mais NON démontré (un des 3 anneaux est sur E204, les A1 sont tous sur E203) ; aucune ligne ENCU, aucune quantité modifiée.",
+  "[chef A2] OBJETS UN SEUL FOIS (pas de double compte entre lignes) : PA-R 1 = PANNEAU ANNONCIATEUR « INSTALLER 1 » de E203 (bloc S328) = relocalisation de l'annonciateur existant (Détail G-04 ; AI-05 « Relocalisation annonciateur Simplex existant » ; bordereau 3.37) → un seul objet, code PA-R et non PA-I, G-04 exclue. MM-R 6 = les 6 E.A.R de E-103 de Détail A-10 (Par feuille E103 6, Marques 6). MT-I 4 = C-01 1 + C-02 1 (E106 2) + C-03 2 (E105 2). MM-I 3 = C-04 3 (E105 3) ; son sectionneur = X-03 (3). Les 7 vérifications « vérifier » de l'A2-3 sont toutes confirmées (aucune ligne Détail réintégrée).",
+  "[chef A2] CHEVAUCHEMENTS ET FRONTIÈRES AVEC LES AUTRES LOTS (à trancher par le directeur, sans effet sur les quantités A2) : B-01 = pose seulement, matériel du panneau NF 225 A 42 cct dans LOT-DIST (A3) ; G-01 → fourniture des 2 détecteurs = LOT-DET (A3), pose dans DF-I ; G-05 (lot de démontage/protection/réinstallation des dispositifs AI) peut recouper DF-R 1 / DF-E 1 / PA-R 1 et l'option AI-07 du relevé alarme (prix séparé, non reprise) ; G-06 (assistance de l'électricien, ULC-S537) : AI-06 est classé « services JCI/Simplex » et Détail G-07 (sous-traitance JCI) couvre la programmation/vérification/certificat → frontière G-06 / LOT-JCI à trancher ; AI-02 (plaque de finition / adaptateur de base, 2 u) classé « dispositifs fournis par JCI/Simplex », non repris (fourniture, LOT-DET) ; F-05 : trousses de suspension fournies dans LOT-ECL (1 500 $), ligne F-05 = travail seulement ; F-10 Réf. plan E-005 (feuille non relevée : quantité reprise de Détail, à confirmer).",
+  "[chef A2] AUTRES RÉSERVES : les portées viennent de rapport-releve.md (étiquettes E.A.E/E.A.R/E.A.C lues à ≤ 14 pt du bloc, R-002, « à confirmer sur planches de contrôle ») ; la répartition ENLEVER/RELOCALISER par feuille n'existe pas dans le kit ; A2-1 n°3 d'origine (une note « ÉCART » sur une référence croisée du brief « LA1-I 11 ») est sans objet — aucun écart de quantité n'a été constaté sur les 34 lignes — et n'est pas reprise ci-dessous.",
+  "[chef A2] [A2-1 n°1] Valeurs lues : toutes les quantités du sous-lot égalent les valeurs attendues du brief (aucun ÉCART de quantité). Lignes plan : releve.xlsx Par libellé + Par feuille, portées dans rapport-releve.md (seule source des portées). Lignes Détail : colonne D Qté de Détail (en-têtes ligne 6).",
+  "[chef A2] [A2-1 n°2] Unité : la colonne E de Détail porte « u » pour les 11 lignes Détail reprises ; reportée en « U » (vocabulaire du JSON). Les heures de Détail ne sont pas reprises (p et h à null).",
+  "[chef A2] [A2-1 n°4] ENCU (ENCASTRE URGENCE, portée CONSERVER 10 ; Par feuille E203 9, E204 1) : aucune ligne (CONSERVER = aucun travail). marques('ENCASTRE URGENCE') = 10 marques : 7 « existant pointillé » (E203 : P09, P10, P16, P22 et 3 sans numéro) et 3 « anneau plein » (E203 P11, E203 P15, E204 P25 « anneau plein PP-U1 6 (Mq) »), conforme au brief. L'hypothèse du brief (les 3 anneaux pleins = les luminaires A1 sur PP-U1 déjà dans F-01 / ligne A2-2) n'est pas démontrée par le kit : le kit range les 10 ENCU en CONSERVER sans détail par marque. À trancher sur plan (non fait ici).",
+  "[chef A2] [A2-1 n°5] L4 (LED 4PI, CONSERVER 2 ; Par feuille E104 1, E105 1) et LLIN (LUMINAIRE LINEAIRE, CONSERVER 4 ; Par feuille E203 2, E204 2) : aucune ligne (CONSERVER). E203 porte aussi les luminaires typés LUMINAIRE A1 11, C1 12, C1_1 6, C1_3 15, E 3 (Par feuille E203 ; portée INSTALLER dans rapport-releve.md), traités par les autres releveurs : non repris ici.",
+  "[chef A2] [A2-1 n°6] ENC CONSERVER 49, L14 CONSERVER 27, L22 CONSERVER 86 : aucune ligne (CONSERVER = aucun travail). Répartition ENLEVER / RELOCALISER par feuille : non disponible dans le kit (Par feuille donne le total par libellé seulement) ; les ENLEVER par feuille ne sont donc pas vérifiés.",
+  "[chef A2] [A2-1 n°7] A-01 + A-02 vs plan : Détail 39 + 7 = 46 ; plan ENC-E 26 + L14-E 6 + L22-E 8 = 40 (écart de 6 non expliqué dans le kit). HP-E (1) n'est pas un luminaire et n'entre pas dans ce compte. Le plan gagne : A-01 et A-02 sont exclus (double compte). Les étiquettes E.A.E sont lues à ≤ 14 pt du bloc (R-002) : portées à confirmer sur planches de contrôle.",
+  "[chef A2] [A2-1 n°8] A-06 vs ENC-R : Détail 7 (colonne Notes « 3 RDC + 4 2e ») vs plan ENC-R 4 (rapport-releve.md RELOCALISER 4). Le plan gagne : A-06 est exclu.",
+  "[chef A2] [A2-1 n°9] A-08 / A-09 (FabLab 210, retrait temporaire + réinstallation d'appareils CONSERVER) : chevauchement possible, non tranché. Par feuille : LED 1X4 sur E202 = 21 = q de A-08 ; ENCASTRE sur E202 = 35 vs q de A-09 = 24 (Notes Détail « Comptés sur plan (±2) », reporté tel quel). Le retrait temporaire d'un appareil conservé n'est ni un enlèvement ni une relocalisation ; la coïncidence de 21 ne prouve pas un double compte. Aucune quantité modifiée.",
+  "[chef A2] [A2-1 n°10] B-04 : contradiction 40 A (Détail, E-502) vs MOCP 35 A (tableau mécanique E-009, citée dans Sommaire note 6) ; Détail note « à clarifier ingénieur ». Quantité 1 inchangée. B-08 (sommes) : 1P = B-02 14 + B-06 1 + B-07 2 + B-08 2 = 19 vs lot distribution EDB 1P 95 $ ×20 (METHODE.md §2) ; 3P = B-03 1 + B-04 1 + B-05 1 = 3 = EJB 3P ×3 (METHODE.md §2). Écart 1P à noter, quantités inchangées.",
+  "[chef A2] [A2-1 n°11] B-01 : ligne de pose seulement. Le panneau NF 225 A 42 cct (matériel, METHODE.md §2 : 3 400 $) appartient au lot LOT-DIST traité par le chef A3 ; non repris ici. Détail note : « Incl. démantèlement ancien PP-3 + transfert charges ».",
+  "[chef A2] [A2-1 n°12] R-002 (reserves.md) : les portées viennent de l'étiquette E.A.E / E.A.R / E.A.C lue à ≤ 14 pt du bloc ; à confirmer famille par famille sur planches de contrôle (non fait par ce releveur). R-003 et R-005 : hors de ce sous-lot sauf pictogrammes (ENCU) notés ci-dessus.",
+  "[chef A2] [A2-2 n°1] ÉCART : LUMINAIRE E — plan = 3 (releve.xlsx Par libellé LUMINAIRE E 3 ; Par feuille E203 3 ; Marques 3 étiquettes « E sur bloc S014 » aux (x, y) 940.3/622.5, 1003.8/593.9, 1056.2/569.8 ; rapport-releve.md INSTALLER 3) ; vs Détail F-06 = 4 (ligne Excel 83) ; vs relevé éclairage ligne 14 = 4 ; lot éclairage METHODE.md §2 « E ×3 à 475 $ ». R-004 de reserves.md écarte une étiquette « E » à (1717, 967), écrite deux fois (cartouche/notes probables). Retenu : LE-I = 3 (décision du directeur) ; F-06 exclue.",
+  "[chef A2] [A2-2 n°2] Unité = ÉTIQUETTE (R-003). Marques E203 lues : LUMINAIRE A1 11 (bloc S035 7 + bloc S343 4) ; LUMINAIRE C1 12 ; LUMINAIRE C1_1 6 ; LUMINAIRE C1_3 15. Chaque total retrouve exactement Par libellé (11 / 12 / 6 / 15) et le INSTALLER du rapport. Les mentions « 2 / 3 / 4 modules sur la rangée » lues dans les Notes des marques ne multiplient rien : une étiquette = une ligne. Étiquettes sur barre non étiquetée comptées comme étiquettes lues : C1 5 (ø44.4 pt), C1_3 5 (ø26.0 pt).",
+  "[chef A2] [A2-2 n°3] ÉCART : ENSEIGNE SORTIE Z6 — relevé éclairage ligne 4 dit « Aucun appareil neuf à l'étage (E-204) », alors que Par feuille relève E204 = 1 (Marques E204 (1176, 611), P26) et E203 = 2 (P13 (1204, 379) « tracé pointillé : confirmer neuf » ; P20 (826, 886)). Retenu Z6-I 3 : Par libellé 3 = rapport INSTALLER 3 = Marques 3 = relevé éclairage ligne 16 = 3 (E-008 liste 3 u). Détail F-07 : « Symboles noirs (neufs) » ; R-005 : « tracé pointillé : confirmer neuf — E-008 en liste 3 » ; lot METHODE.md §2 « Z6 ×3 à 161,60 $ ». Le tracé pointillé de P13 n'est pas tranché par le relevé : la liste E-008 fonde la quantité neuve.",
+  "[chef A2] [A2-2 n°4] F-05 : Détail Qté 20 (unité « rangée », Notes « ≈20 rangées continues », ligne Excel 82) recoupe C-SUSP 20 rangées du relevé éclairage (ligne 13 : « ≈20 rangées (combinaisons 3', 4'+1', 3'+4') — agent à confirmer config. »). Ligne traitée comme travail de suspension et d'alimentation par rangée, distinct des modules LC1 / LC11 / LC13 (étiquettes comptées). Les trousses de suspension (matériel) sont dans le lot fournisseur éclairage « trousses 1 500 $ » (METHODE.md §2) et ne sont pas reprises ici. Configuration des rangées non lue sur plan : à confirmer.",
+  "[chef A2] [A2-2 n°5] F-10 : 1 LOT repris du Détail (ligne Excel 87, Réf. plan E-005). E-005 n'est pas une feuille relevée (rapport-releve.md : feuilles E101 à E204) : la quantité ne vient donc pas d'une lecture de plan ; reprise telle quelle du Détail, à confirmer.",
+  "[chef A2] [A2-2 n°6] F-01 (Détail ligne Excel 78, colonne L) : « Dont 3 sur circuit PP-U1 ». Ces 3 luminaires A1 sont compris dans LA1-I 11 ; aucune quantité modifiée. Marques « anneau plein » au relevé : 3 instances, familles ENCASTRE URGENCE, feuilles E203, E204 ; la note de G643 cite « anneau plein PP-U1 ». Recoupement possible avec ENCASTRE URGENCE (10 au relevé, aucune ligne dans mon sous-lot) : hypothèse non vérifiée, à traiter par le releveur A2-1.",
+  "[chef A2] [A2-2 n°7] Exclusions F-01 à F-04, F-06, F-07 : les quantités Détail (11, 12, 6, 15, 4, 3) sont remplacées par les lignes plan LA1-I 11, LC1-I 12, LC11-I 6, LC13-I 15, LE-I 3, Z6-I 3 : le plan gagne sur Détail pour les quantités.",
+  "[chef A2] [A2-2 n°8] Descriptions des lignes plan : modèles lus au Détail (F-01 Cooper 24CGTS-NUV-MEDIUM-3500K 347 V 50 W ; F-02 AXIS-SL1-4 ; F-03 AXIS-SL1-1 ; F-04 AXIS-SL1-3 ; F-06 PXCYL-8-PM-LE05-90-35 ; F-07 RMSOWH-UDC). Les références Axis complètes du relevé éclairage (lignes 10 à 12) portent des options « xxx » non arrêtées (« compléter options (xxx) avec agent Axis ») : la désignation reprend donc la famille de modèle. Câble de suspension du type E « longueur à confirmer » (relevé éclairage ligne 14) : hors quantité.",
+  "[chef A2] [A2-2 n°9] F-05 : unité Détail « rangée » ; u = U, le mot « rangée » figure dans la désignation (travail de rangée).",
+  "[chef A2] [A2-2 n°10] Article 3.35 pour les 8 lignes (convention du directeur A) ; libellé lu dans entree/reference-Bordereau_de_prix.xlsx, feuille « Bordereau de prix » : 3.35 « Appareil de contrôle + appareils d'éclairage ».",
+  "[chef A2] [A2-2 n°11] Hors de mon sous-lot, non repris : LUMINAIRE LINEAIRE (4 au relevé ; Par feuille E203 2, E204 2) et ENCASTRE URGENCE (10 au relevé).",
+  "[chef A2] [A2-2 n°12] Contrôle des valeurs attendues du brief : toutes les quantités lues sont conformes (LA1-I 11, LC1-I 12, LC11-I 6, LC13-I 15, LE-I 3 retenu, Z6-I 3, F-05 20, F-10 1). Les deux écarts de lecture sont ceux notés ci-dessus (LE : 3 vs 4 ; Z6 : relevé éclairage ligne 4 contredit par Par feuille E204).",
+  "[chef A2] [A2-3 n°1] SM (STATION MANUELLE) : aucune ligne, CONSERVER 4 (rapport-releve.md). Lu : Par libellé 4 (E-001 légende ; bloc S319) ; Par feuille E201 4 ; Marques : 2 « bloc S320 », 2 « bloc S319 ».",
+  "[chef A2] [A2-3 n°2] MOTEUR TRIPHASE, CONSERVER 5 (rapport-releve.md) : aucune ligne. Par feuille E102 = 5 (marques E102 : 5, bloc S104). L'attribution « CONSERVER = E102 » est une INFÉRENCE (portée par feuille absente du kit), cohérente avec INSTALLER 4 = E105 2 + E106 2.",
+  "[chef A2] [A2-3 n°3] DETECTEUR FUMEE, recoupement des sources : Marques = 10 ; E201 : (462.2/412.9) ; (541/377.1) ; (1033.5/389.1) ; (880.9/705.1) ; (1147.5/512.5) (« bloc S146 ») ; E203 : (636.1/707.6) bloc S146 ; (462/414) instance manuelle : existant (tracé pointillé) — P07 ; (541/378) instance manuelle : existant (tracé pointillé) — P08 ; (1034/390) instance manuelle : existant (tracé pointillé) — P12 ; (864/782) instance manuelle : neuf (tracé plein) — P23 ; relevé alarme AI-01. Rapport : CONSERVER 6, INSTALLER 2, RELOCALISER 1, ENLEVER 1 : le rapport fait foi (DF-I 2, DF-R 1, DF-E 1). Écart entre sources (aucune valeur attendue contredite) : Marques ne montre qu'UN « neuf (tracé plein) » (P23) alors que le rapport dit INSTALLER 2, que AI-01 = 2 et que G-01 = 2. La portée par marque n'est pas dans le kit.",
+  "[chef A2] [A2-3 n°4] DETECTEUR FUMEE, mêmes coordonnées sur deux feuilles (distance calculée) : P07 (462/414) vs E201 (462.2/412.9) = 1,12 pt ; P08 (541/378) vs E201 (541/377.1) = 0,90 pt ; P12 (1034/390) vs E201 (1033.5/389.1) = 1,03 pt. Ces 3 marques existantes pointillées de E203 sont à au plus 1,12 pt des détecteurs de E201 : même objet dessiné sur la feuille d'existant et sur celle de travaux ; le total 10 peut surcompter 3 objets. Les 2 autres marques de E203 ((636.1/707.6) ; (864/782)) sont à au moins 78,74 pt de tout détecteur E201 : objets distincts. Aucune quantité modifiée. INFÉRENCE non utilisée : si les 3 objets coïncidents sont CONSERVER, les 2 autres marques de E201 ((880.9/705.1) ; (1147.5/512.5)) seraient ENLEVER 1 + RELOCALISER 1, et INSTALLER 2 = bloc S146 de E203 + P23 (cohérent avec R-005, « neufs pleins », et AI-01).",
+  "[chef A2] [A2-3 n°5] DETECTEUR FUMEE, neufs RDC vs étage : Sommaire note 6 (ligne Excel 35) et relevé alarme ligne 21 disent que le schéma E-007 montre 2 neufs à l'étage, alors que les plans E-203/E-204 en montrent 2 au RDC et aucun à l'étage. Lecture du kit : Par feuille DETECTEUR FUMEE = E201 5, E203 5 ; aucune marque sur E204. Les plans prévalent : DF-I 2 au RDC (E-203), aucune quantité à l'étage.",
+  "[chef A2] [A2-3 n°6] PANNEAU ANNONCIATEUR, arbitrage PA-R (décision du directeur A, appuyée sur le kit) : le « INSTALLER 1 » du rapport (Par feuille E203 = 1 ; Marques E203 « bloc S328 » (891.9/733.5)) est le nouvel emplacement de l'annonciateur Simplex EXISTANT. Preuves : Détail G-04 « Relocalisation panneau annonciateur Simplex — réutiliser câbles, rallonger au besoin (note 1 E-007) » (Notes : « Nouvel emplacement à confirmer ») ; relevé alarme AI-05 « Relocalisation annonciateur Simplex existant — reprogrammation / essais » (Notes : « Travaux physiques par DR; nouvel emplacement à confirmer ») ; bordereau 3.37 « Panneau alarme incendie : déplacement annonciateur ». Un seul objet physique : PA-R et non PA-I, q 1 inchangé, art 3.37 ; G-04 exclue au profit de PA-R.",
+  "[chef A2] [A2-3 n°7] MOTEUR MONOPHASE / TRIPHASE, vérifications « vérifier » faites : (a) A-10 (Qté 6) ↔ MM-R : Par feuille E103 = 6, marques E103 = 6 : OK ; (b) C-01 + C-02 ↔ MT E106 : 1 + 1 = 2, marques E106 = 2 : OK ; (c) C-03 (Qté 2) ↔ MT E105 : Par feuille = 2, marques E105 = 2 : OK ; (d) C-04 (Qté 3) ↔ MM E105 : Par feuille = 3, marques E105 = 3 : OK. Sommes : MT-I = 4 ; MM = 6 + 3 = 9 ; MT = 4 + 5 = 9. Aucune contradiction.",
+  "[chef A2] [A2-3 n°8] B-04 (hors de mon sous-lot, traité par A2-1) : Disjoncteur NF 3P-40A — UTA-1 (cct 18-20-22) NOUVEAU — « Note : tableau méca indique MOCP 35A — à clarifier ingénieur ». Contradiction de Sommaire note 6 (ligne Excel 35) : UTA-1 40 A (E-502) vs MOCP 35 A (E-009). Renvoi seulement, aucune ligne ici.",
+  "[chef A2] [A2-3 n°9] G-05 (LOT, art 3.36) : Détail « Allocation — à valider ». Chevauchements à trancher : DF-R 1, DF-E 1, PA-R 1 et AI-07 du relevé alarme (option « Option : vérification des dispositifs existants retirés/réinstallés dans zones de plafonds touchés », prix séparé, non repris). G-06 (LOT, art 3.38) : assistance de l'électricien à la programmation/vérification ULC-S537 (E-007 note 3). AI-06 est classé dans la section « 2. SERVICES JCI / SIMPLEX » et G-07 (sous-traitance JCI, vérification partielle) couvre le même travail : frontière G-06 / JCI à trancher par le chef A3. X-03 (U, art 3.23) ne double aucun symbole relevé (le sectionneur n'est pas dans Marques).",
+  "[chef A2] [A2-3 n°10] X-03, pôles : Détail C-04 écrit « sectionneur sans fusible 30A 1Ø » ; Matériel Lumen HUBHBL1372 (ligne Excel 43) est « HUBBELL HBL1372 SECTIONNEUR 30A 2P (HUM-1/2/3) ». Quantité 3 lue dans les deux sources (retenue) ; nombre de pôles (1Ø ou 2P) à valider. Unité lue dans Matériel Lumen : « ch » (sortie en U). Base de quantité : « Devis 20 : service intensif — à valider ».",
+  "[chef A2] [A2-3 n°11] Relevé alarme AI-02 « Plaque de finition / adaptateur de base si requis » (2 u, E-203) : classé dans la section « 1. DISPOSITIFS (fournis par JCI/Simplex) » ; non repris ici (fourniture), signalé au chef A3 pour LOT-DET.",
+  "[chef A3] DÉCOUPAGE (disjoint, couvrant, 37 codes) : A3-1 = C-05, C-06, C-07, C-08, D-13, D-14, D-15, E-08, E-09, E-10 (conversion + assemblage) ; A3-2 = F-08, F-09, G-02, G-03, D-11, D-12, D-16, E-06, E-07, E-11 ; A3-3 = A-11, H-01 à H-04, G-07, OPT-1 à OPT-4, LOT-ECL, LOT-DIST, LOT-JCI, LOT-DET, LOT-GPR, X-01, X-02. Résultat : 26 lignes reprises, 11 exclusions (C-06, C-08, D-15, E-10, F-09, G-07, OPT-1 à OPT-4, X-01).",
+  "[chef A3] EFFORTS CHOISIS : A3-1 xhigh (conduits sous dalle, plus grosse quantité du lot, mixte C-07 à arbitrer : une erreur se propage à tout le chiffrage) ; A3-2 high (exception G-03 FT4 séparé, contrôles croisés relevé AI-08/AI-09) ; A3-3 high (arbitrage de portées GPR/JCI/X-02, contrôles arithmétiques des lots).",
+  "[chef A3] VÉRIFICATION CHEF (cellules D/E/L de Détail rouvertes dans entree/reference-Estimation_2.xlsx, conversion refaite par python3) : A3-1 : 5/5 minimum — vérifié 6/6 lignes reprises (C-05 35 m→115, C-07 80 m→262, D-13 480 m→1575, E-08 175 m→574, D-14 330 m→1083, E-09 175 m→574) + 4/4 exclusions avec m et pi corrects (C-06 140 m=459 pi, C-08 275 m=902, D-15 2400 m=7874, E-10 875 m=2871). A3-2 : 5/5 minimum — vérifié 9/9 lignes (F-08 280 m→919, G-02 30 m→98, G-03 60 m→197, D-11 1 U, D-12 16 U, D-16 1 LOT, E-06 3 U, E-07 7 U, E-11 1 LOT) + exclusion F-09 840 m = 2756 pi. A3-3 : 5/5 minimum — vérifié A-11, H-01, H-02, H-03, H-04 (1 lot chacun, note L « Hypothèse »), G-07 (ligne 97), OPT-1 à OPT-4 (lignes 108-111), montants des 5 lots relus dans METHODE.md §2 (11 893 / 6 200 / 7 400 / 600 / 1 250), X-02 et X-01 relus dans catalogue-prix-temps-dupuis.csv (NACELLE ligne 2026 : 1250 $ / 16 h ; SCAN DALLE BETON ligne 237 : 1250 $ / 2 h). Aucune erreur trouvée : aucun sous-lot n'a eu à être revu ligne par ligne. Scores : A3-1 5/5, A3-2 5/5, A3-3 5/5.",
+  "[chef A3] CONTRÔLES CROISÉS LUMEN (relus par le chef) : CONEMT1 base « 690 m (C-05 35 + D-13 480 + E-08 175) » = 690 m ; 690 m × 3,2808 = 2 263,75 pi vs Qté Lumen 2 270 pi (marge de bout de rouleau/10 pi). CONEMT3/4 base « 895 m (C-07 80 + D-14 330 + E-09 175 + F-08 280 + G-02 30) » = 895 m ; 895 × 3,2808 = 2 936 pi vs Lumen 2 940 pi. Fils #12 : 275 + 2 400 + 875 + 840 = 4 390 m = total des bobines Lumen (1 500 + 1 200 + 900 + 790). C-08 : 275 m = 4 × 35 + 3 × (3 × 15) = 140 + 135. Relevé alarme incendie : AI-08 câble FT4 60 m et AI-09 EMT 3/4\" 30 m confirment G-03 et G-02 (deux marqués « Longueur estimée » : cohérence, pas mesure indépendante).",
+  "[chef A3] ÉCART ARITHMÉTIQUE LOT ÉCLAIRAGE : 11 × 185 + 12 × 290 + 15 × 230 + 6 × 110 + 1 500 + 3 × 475 + 3 × 161,60 = 13 034,80 $ vs montant confirmé 11 893 $ (écart +1 141,80 $). Le montant confirmé fait foi, rien corrigé (à faire valider par Francis/directeur B). Lot distribution : 3 400 + 20 × 95 + 3 × 300 = 6 200 $, écart nul ; ventilation 3 400 $ → 3.24, 1 900 + 900 $ → 3.25 laissée au directeur B. JCI 7 400 + détecteurs 600 = 8 000 $.",
+  "[chef A3] CHEVAUCHEMENT X-02 / H-01 : H-01 (« plateforme/échafaudage roulant », lot, hypothèse) et X-02 (nacelle 1 250 $ / 16 h, METHODE.md §2 point 3, confirmée au catalogue) sont toutes deux reprises ; chevauchement possible sur l'accès en hauteur, A TRANCHER par le directeur A (X-02 est un forfait de location distinct de la mobilisation/outillage de H-01 ; ne pas compter deux fois le même moyen d'accès).",
+  "[chef A3] SOURCE X-02 : METHODE.md n'a que la section « 2 » numérotée en points 1 à 7 (pas de §2.3, §1 ni §3) ; la nacelle est au point 3 (Heures).",
+  "[chef A3] GPR / X-01 : le kit ne définit pas le sigle GPR ; aucune occurrence ne lui donne un autre sens (METHODE.md §2 point 2 ; ARCHITECTURE.md « GPR 1 250 $ »). Équivalence géoradar = scan de dalle (art 3.32) tient de la décision du directeur A et du montant identique du catalogue SCAN DALLE BETON (1 250 $, 2 h). X-01 reste exclu ; LOT-GPR porte le scan.",
+  "[chef A3] ARTICLES À TRANCHER (alternatives) : D-14 / E-09 conduit vide : 3.33 retenu, alternative 3.31 ; D-12 / E-07 percements : 3.31 retenu, alternative 5.11 « Percement du plancher » ; G-02 / G-03 sont en 3.36 « Détecteur de fumée » selon la règle du directeur A, mais ce libellé ne décrit ni un conduit ni un câble : 3.31 à considérer ; F-08 (conduit éclairage) : 3.35 retenu, alternative 3.31 ; LOT-DIST : 3.24 / 3.25 à ventiler.",
+  "[chef A3] ASSEMBLAGES : les fils C-06 (4 #8), C-08 (3-4 #12), D-15 (5 #12), E-10 (5 #12), F-09 (3 #12) sont EXCLUS, inclus dans l'assemblage Dupuis du conduit apparié ; leurs longueurs en m et en pi sont dans `exclusions` pour rétablissement éventuel si le directeur B chiffrait un conduit vide. D-14 et E-09 sont des conduits vides (aucun fil apparié). G-03 (FT4) repris séparément. D-15 : « prévoir #10 si chute > 3 % » : non chiffré, le calibre de l'assemblage D-13 pourrait changer.",
+  "[chef A3] RÉSERVES À TRANSMETTRE : Détail D-13 est libellé « sous dalle / entreplafond sous-sol vers panneaux P-2/P-3 » alors que la section D du Sommaire dit RDC (niveau à confirmer sur E-104 note 5) ; toutes les longueurs de conduit (C-05 « Hypothèse longueur », D-13/D-14 30 m/course, E-08/E-09 25 m/course, F-08 8 m × 35 points, G-02/G-03 « Hyp. ») sont des HYPOTHÈSES du Détail, tracé à valider ; reserves.md : « Longueurs de conduits/filage : hors relevé » ; R-003 : relevé automatique = 44 luminaires typés sur E-203 contre 35 points de l'hypothèse F-08 (écart à revérifier au plan, F-08 non modifié) ; A-11 et H-01 à H-04 sont des forfaits « Hypothèse » sans relevé sur plan ; OPT-1 contradiction câblage data devis 36.1 vs « réutiliser câble existant » (non tranchée, hors total).",
+  "[chef A3] ACCESSOIRES LUMEN non repris en lignes A (inclus dans les assemblages Dupuis ou relevant du directeur B) : liste de 20 codes dans le JSON de A3-3 (accouplements, connecteurs, courroies, boîtes, coupe-feu, tiges, marrettes, flexibles, corde GRE430).",
+  "[chef A3] ÉCRITURE : les lignes (q, u, art, src) des trois releveurs sont reprises telles quelles après vérification ; p et h = null partout ; la section `lots` regroupe les 5 montants (informatifs, pas des prix)."
+ ],
+ "exclusions": [
+  {
+   "code": "A-05",
+   "raison": "Détail A-05 Qté 13 (relocalisation services E.A.R, notes 6 RDC + 7 2e) : remplacé par PC-R 8 + PG-R 1 + SD-R 3 = 12 sur plan (SD-R de rapport-releve.md, lot d'un autre releveur). Écart de 1 noté, le plan fait foi."
+  },
+  {
+   "code": "D-01",
+   "raison": "Détail D-01 Qté 18 postes (boîte de jonction, prise 15 A, prise 20 A Decora, boîte data 2 RJ45 ; notes 3 + 4 + 2 + 4 + 2 + 3 = 18) : double compte avec PC-I (plan) et SD-I (plan). Les JB de poste et les prises 20 A ne sont pas distinguées sur plan (R-007)."
+  },
+  {
+   "code": "D-02",
+   "raison": "Détail D-02 Qté 5 tables (2 prises doubles + 2 USB chacune, soit 10 USB au Détail ; notes 3 + 2 = 5) : double compte avec PC-I et PU-I (plan PU-I 20). Écart 10 contre 20 noté, le plan fait foi."
+  },
+  {
+   "code": "D-03",
+   "raison": "Détail D-03 Qté 2 (cabines/isoloirs : prise double alimentée par JB) : double compte avec PC-I (plan)."
+  },
+  {
+   "code": "D-04",
+   "raison": "Détail D-04 Qté 2 écrans (courant + données) : double compte avec PC-I et SD-I (plan)."
+  },
+  {
+   "code": "D-05",
+   "raison": "Détail D-05 Qté 1 kiosque TV (prise + data) : double compte avec PC-I et SD-I (plan)."
+  },
+  {
+   "code": "D-06",
+   "raison": "Détail D-06 Qté 8 prises murales/colonnes neuves : double compte avec PC-I (plan)."
+  },
+  {
+   "code": "D-07",
+   "raison": "Détail D-07 Qté 1 DDFT fontaine (P2-61) : remplacé par PG-I (plan, 22). Le plan ne permet pas de confirmer que P2-61 y est compté ; à vérifier au zoom."
+  },
+  {
+   "code": "D-08",
+   "raison": "Détail D-08 Qté 10 sorties data murales/colonnes : double compte avec SD-I (plan, lot d'un autre releveur)."
+  },
+  {
+   "code": "A-03",
+   "raison": "Détail A-03 Qté 34 u (note « Compte E.A.E E-101 ») : double compte avec les lignes -E du plan services PC-E 7, PG-E 4, SD-E 17, BJ-E 2, MP-E 3, BC-E 2 (total 35), remplacée par ces lignes ; écart 44 vs 35 en note"
+  },
+  {
+   "code": "A-04",
+   "raison": "Détail A-04 Qté 10 u (note « Compte E.A.E E-102 ») : même double compte que A-03, remplacée par PC-E, PG-E, SD-E, BJ-E, MP-E, BC-E ; écart 44 vs 35 en note"
+  },
+  {
+   "code": "E-01",
+   "raison": "Détail E-01 Qté 2 postes (JB, 2 prises, data 2 RJ45) : double compte, remplacée par PC-I et SD-I (plan) ; ses 2 JB ne figurent pas en BJ-I sur E105 (voir notes)"
+  },
+  {
+   "code": "E-02",
+   "raison": "Détail E-02 Qté 2 u (monuments de plancher, prise 20A + 2 RJ45) : double compte, remplacée par MP-I (3 sur plan E105) ; écart 2 vs 3 en note"
+  },
+  {
+   "code": "E-04",
+   "raison": "Détail E-04 Qté 3 u (cabines/salles : JB + prise) : double compte, remplacée par PC-I (et BJ-I si pertinent ; BJ-I vaut 0 sur E105, voir notes)"
+  },
+  {
+   "code": "E-05",
+   "raison": "Détail E-05 Qté 1 u (écran sur colonne : courant + données) : double compte, remplacée par PC-I et SD-I (plan)"
+  },
+  {
+   "code": "D-10",
+   "raison": "Détail D-10 Qté 1 u (bornes de prêts / fontaine, JB dans mur adjacent) : double compte, remplacée par la 3e BJ-I sur E104 ; contrôle BJ-I 3 = 2 (D-09) + 1 (D-10) tenu numériquement"
+  },
+  {
+   "code": "A-01",
+   "raison": "double compte : luminaires existants E.A.E déjà relevés sur plan (E-201) — remplacée par ENC-E 26, L14-E 6, L22-E 8"
+  },
+  {
+   "code": "A-02",
+   "raison": "double compte : luminaires existants E.A.E déjà relevés sur plan (E-202) — remplacée par ENC-E 26, L14-E 6, L22-E 8"
+  },
+  {
+   "code": "A-06",
+   "raison": "double compte : relocalisations E.A.R déjà relevées sur plan — remplacée par ENC-R 4 (Détail 7 vs plan 4, le plan gagne)"
+  },
+  {
+   "code": "F-01",
+   "raison": "double compte : 11 luminaires A1 déjà relevés sur plan (E203, étiquettes A1) — remplacée par LA1-I 11 ; Détail « Dont 3 sur circuit PP-U1 » noté"
+  },
+  {
+   "code": "F-02",
+   "raison": "double compte : 12 C1 déjà relevés sur plan (E203, étiquettes C1) — remplacée par LC1-I 12"
+  },
+  {
+   "code": "F-03",
+   "raison": "double compte : 6 C1_1 déjà relevés sur plan (E203) — remplacée par LC11-I 6"
+  },
+  {
+   "code": "F-04",
+   "raison": "double compte : 15 C1_3 déjà relevés sur plan (E203) — remplacée par LC13-I 15"
+  },
+  {
+   "code": "F-06",
+   "raison": "double compte : 4 luminaires E au Détail contre 3 étiquettes E sur plan — remplacée par LE-I 3 (décision du directeur, R-003) ; écart 4 vs 3 en notes"
+  },
+  {
+   "code": "F-07",
+   "raison": "double compte : 3 enseignes Z6 (« Symboles noirs (neufs) ») déjà relevées sur plan (Par libellé ENSEIGNE SORTIE Z6 = 3) — remplacée par Z6-I 3"
+  },
+  {
+   "code": "G-01",
+   "raison": "double compte : 2 détecteurs neufs relevés sur plan E-203 (P23 + bloc S146) = DF-I 2 ; fourniture = lot LOT-DET (METHODE.md §2 : 2 détecteurs 600 $), pose seule dans DF-I"
+  },
+  {
+   "code": "G-04",
+   "raison": "même objet physique que le panneau annonciateur relevé sur plan E203 (« bloc S328 ») : remplacée par PA-R 1 (relocalisation de l'annonciateur existant, AI-05, art. 3.37)"
+  },
+  {
+   "code": "A-10",
+   "raison": "double compte : 6 moteurs monophasés E.A.R du toit relevés sur plan E-103 (Par feuille E103 = 6) : remplacée par MM-R 6"
+  },
+  {
+   "code": "C-01",
+   "raison": "double compte : UTA-01 relevée sur plan E-106 (Par feuille MOTEUR TRIPHASE E106 = 2) : remplacée par MT-I 4 (1 des 4)"
+  },
+  {
+   "code": "C-02",
+   "raison": "double compte : VE-02N relevé sur plan E-106 (même E106 = 2) : remplacée par MT-I 4 (1 des 4)"
+  },
+  {
+   "code": "C-03",
+   "raison": "double compte : 2 chaudières CH-01/CH-02 relevées sur plan E-105 (Par feuille MOTEUR TRIPHASE E105 = 2) : remplacée par MT-I 4 (2 des 4)"
+  },
+  {
+   "code": "C-04",
+   "raison": "double compte : 3 humidificateurs relevés sur plan E-105 (Par feuille MOTEUR MONOPHASE E105 = 3) : remplacée par MM-I 3 ; son sectionneur devient X-03"
+  },
+  {
+   "code": "C-06",
+   "raison": "incluse dans l'assemblage du conduit apparié C-05 (EMT 1\" UTA-01, repris à 115 pi) : fil RW90 #8 Cu UTA-01 140 m (459 pi)"
+  },
+  {
+   "code": "C-08",
+   "raison": "incluse dans l'assemblage du conduit apparié C-07 (EMT 3/4\" VE-02N + HUM, repris à 262 pi) : fil RW90 #12 Cu VE-02N + HUM 275 m (902 pi)"
+  },
+  {
+   "code": "D-15",
+   "raison": "incluse dans l'assemblage du conduit apparié D-13 (EMT 1\" sous dalle, repris à 1575 pi) : fil RW90 #12 Cu 2400 m (7874 pi)"
+  },
+  {
+   "code": "E-10",
+   "raison": "incluse dans l'assemblage du conduit apparié E-08 (EMT 1\" sous dalle étage, repris à 574 pi) : fil RW90 #12 Cu 875 m (2871 pi)"
+  },
+  {
+   "code": "F-09",
+   "raison": "incluse dans l'assemblage 03C12 de F-08 (3 cond. = 840 / 280) ; fil RW90 #12 éclairage 840 m = 2756 pi (840 × 3,2808 = 2755,87 → 2756 pi) ; à rétablir si le directeur B chiffre un conduit vide"
+  },
+  {
+   "code": "G-07",
+   "raison": "double compte : remplacée par LOT-JCI (Estimation_2 Détail G-07 (ligne 97) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « PRIX À OBTENIR DE JCI — inscrire en matériel/s-t »)"
+  },
+  {
+   "code": "OPT-1",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : câblage data Cat6 jusqu'à la salle des serveurs (devis 36.1), contradiction avec « réutiliser câble data existant » (Détail ligne 108)"
+  },
+  {
+   "code": "OPT-2",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : conception parasismique par firme spécialisée + certificat (devis 16.2-16.6) (Détail ligne 109)"
+  },
+  {
+   "code": "OPT-3",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : prime travaux hors heures normales (devis 1.17) (Détail ligne 110)"
+  },
+  {
+   "code": "OPT-4",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : postes de travail temporaires (A-102) + chute à livres temporaire (Détail ligne 111)"
+  },
+  {
+   "code": "X-01",
+   "raison": "GPR (géoradar) = scan de dalle béton : un seul objet, porté par LOT-GPR (1 250 $, art 3.32) ; catalogue-prix-temps-dupuis.csv ligne 237 « SCAN DALLE BETON » : U, prix_a_utiliser 1250.0, temps_a_utiliser 2.0, aussi 1 250 $"
+  },
+  {
+   "code": "E-03",
+   "raison": "double compte (arbitrage directeur A) : boîte de plancher refaite salle 208 (Détail E-03, 2 u, « à confirmer », réf. E-102/E-105) = mêmes objets que les monuments de plancher relevés sur le plan du 2e : MP-E 3 (E102) + MP-I 3 (E105) ; Détail E-02 2 + E-03 2 = 4 neufs vs MP-I 3 sur plan → le plan gagne. Remplacée par MP-E / MP-I ; à rétablir (q 2, art 3.34) seulement si le plan montre que les boîtes de la salle 208 ne sont pas parmi les MP."
+  },
+  {
+   "code": "A-07",
+   "raison": "double compte (arbitrage directeur A) : relocalisation des interrupteurs maîtres du hall (Détail A-07, 1 lot, « Hypothèse 6 h ») = les interrupteurs relevés sur plan : INT-E 1 (E201) + INT-I 5 (E203, nouvel emplacement). Remplacée par INT-E / INT-I ; à rétablir (q 1 LOT, art 3.35) seulement si le plan montre que les INT-I de E203 ne sont pas les interrupteurs du hall."
+  }
+ ],
+ "lots": {
+  "LOT-ECL": 11893,
+  "LOT-DIST": 6200,
+  "LOT-JCI": 7400,
+  "LOT-DET": 600,
+  "LOT-GPR": 1250
+ }
+}

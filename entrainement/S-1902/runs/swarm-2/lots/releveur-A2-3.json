@@ -1,0 +1,151 @@
+{
+  "niveau": "releveur",
+  "nom": "A2-3",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "DF-I",
+      "desc": "Détecteur de fumée adressable neuf (RDC E-203 : salle de tri 110 + secteur commis 110.8) — pose ; fourniture = LOT-DET",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.36",
+      "src": "rapport-releve.md DETECTEUR FUMEE INSTALLER 2 (CONSERVER 6, RELOCALISER 1, ENLEVER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E203 5 ; Marques E203 « instance manuelle : neuf (tracé plein) » P23 ; relevé alarme AI-01 Qté 2 u E-203 (ligne Excel 9) ; concordant avec entree/reference-Estimation_2.xlsx Détail G-01 (ligne Excel 91 ; colonne D Qté = 2 ; Unité = u)"
+    },
+    {
+      "code": "DF-R",
+      "desc": "Détecteur de fumée existant — relocaliser",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.36",
+      "src": "rapport-releve.md DETECTEUR FUMEE RELOCALISER 1 (CONSERVER 6, INSTALLER 2, ENLEVER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E201 5, E203 5 ; portée non attribuée par feuille ni par marque dans le kit (voir notes)"
+    },
+    {
+      "code": "DF-E",
+      "desc": "Détecteur de fumée existant — enlever",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "rapport-releve.md DETECTEUR FUMEE ENLEVER 1 (CONSERVER 6, INSTALLER 2, RELOCALISER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E201 5, E203 5 ; portée non attribuée par feuille ni par marque dans le kit (voir notes)"
+    },
+    {
+      "code": "PA-R",
+      "desc": "Panneau annonciateur Simplex existant — relocaliser au nouvel emplacement (E203)",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.37",
+      "src": "rapport-releve.md PANNEAU ANNONCIATEUR INSTALLER 1 (arbitré en PA-R, voir notes) ; releve.xlsx Par libellé PANNEAU ANNONCIATEUR 1 (E-001 légende ; bloc S328) ; Par feuille E203 1 ; Marques E203 « bloc S328 » (891.9/733.5) ; entree/reference-Estimation_2.xlsx Détail G-04 (ligne Excel 94 ; colonne D Qté = 1 ; Unité = u) (Notes : « Nouvel emplacement à confirmer ») ; relevé alarme AI-05 (ligne Excel 14) « Relocalisation annonciateur Simplex existant — reprogrammation / essais » ; bordereau 3.37 « Panneau alarme incendie : déplacement annonciateur »"
+    },
+    {
+      "code": "MM-R",
+      "desc": "Moteur monophasé existant de ventilation au toit (E.A.R, E-103) — Toit : débrancher, entreposer sectionneurs, isoler/couvrir câbles, rebrancher équipements de ventilation (E.A.R)",
+      "q": 6,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.23",
+      "src": "releve.xlsx Par libellé MOTEUR MONOPHASE 9 (E-001 légende ; bloc S102) ; rapport-releve.md RELOCALISER 6 (INSTALLER 3) ; Par feuille E103 6, E105 3 ; Marques E103 6 (bloc S102) ; entree/reference-Estimation_2.xlsx Détail A-10 (ligne Excel 17 ; colonne D Qté = 6 ; Unité = u) (Notes : « 6 E.A.R sur E-103 »)"
+    },
+    {
+      "code": "MM-I",
+      "desc": "Moteur monophasé neuf à raccorder — humidificateurs HUM-1/2/3 Carel 120 V/1Ø (E-105)",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.23",
+      "src": "rapport-releve.md MOTEUR MONOPHASE INSTALLER 3 ; releve.xlsx Par libellé MOTEUR MONOPHASE 9 ; Par feuille E105 3 ; Marques E105 3 (bloc S102) ; entree/reference-Estimation_2.xlsx Détail C-04 (ligne Excel 37 ; colonne D Qté = 3 ; Unité = u) (Qté 3 humidificateurs)"
+    },
+    {
+      "code": "MT-I",
+      "desc": "Moteurs triphasés neufs à raccorder — UTA-01 York KE036 et VE-02N Plymovent FUA-2700 (toit E-106) + chaudières CH-01/CH-02 (E-105)",
+      "q": 4,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.23",
+      "src": "rapport-releve.md MOTEUR TRIPHASE INSTALLER 4 (CONSERVER 5) ; releve.xlsx Par libellé MOTEUR TRIPHASE 9 ; Par feuille E105 2, E106 2 ; entree/reference-Estimation_2.xlsx Détail C-01 (ligne Excel 34 ; colonne D Qté = 1 ; Unité = u) + entree/reference-Estimation_2.xlsx Détail C-02 (ligne Excel 35 ; colonne D Qté = 1 ; Unité = u) + entree/reference-Estimation_2.xlsx Détail C-03 (ligne Excel 36 ; colonne D Qté = 2 ; Unité = u) (Notes C-03 : « Réutilisation selon état — à vérifier »)"
+    },
+    {
+      "code": "X-03",
+      "desc": "Sectionneur sans fusible 30 A — HUM-1/2/3",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.23",
+      "src": "entree/reference-Estimation_2.xlsx Détail C-04 (ligne Excel 37 ; colonne D Qté = 3 ; Unité = u) « sectionneur sans fusible 30A » ×3 ; entree/reference-Estimation_2.xlsx Matériel Lumen ligne Excel 43 : HUBHBL1372 « HUBBELL HBL1372 SECTIONNEUR 30A 2P (HUM-1/2/3) », Qté 3, Unité lue « ch », Base de quantité « Devis 20 : service intensif — à valider » ; ligne hors Détail (le sectionneur n'est pas un symbole relevé)"
+    },
+    {
+      "code": "G-05",
+      "desc": "Démontage/protection/réinstallation dispositifs AI existants dans zones touchées (Réf. plan E-201/E-203)",
+      "q": 1,
+      "u": "LOT",
+      "p": null,
+      "h": null,
+      "art": "3.36",
+      "src": "entree/reference-Estimation_2.xlsx Détail G-05 (ligne Excel 95 ; colonne D Qté = 1 ; Unité = lot) (Notes : « Allocation — à valider ») ; relevé alarme AI-07 (option, prix séparé) non repris"
+    },
+    {
+      "code": "G-06",
+      "desc": "Assistance électricien lors de la programmation / vérification ULC-S537 (E-007 note 3)",
+      "q": 1,
+      "u": "LOT",
+      "p": null,
+      "h": null,
+      "art": "3.38",
+      "src": "entree/reference-Estimation_2.xlsx Détail G-06 (ligne Excel 96 ; colonne D Qté = 1 ; Unité = lot) ; relevé alarme AI-06 (ligne Excel 15) classé « 2. SERVICES JCI / SIMPLEX » (voir notes)"
+    }
+  ],
+  "notes": [
+    "SM (STATION MANUELLE) : aucune ligne, CONSERVER 4 (rapport-releve.md). Lu : Par libellé 4 (E-001 légende ; bloc S319) ; Par feuille E201 4 ; Marques : 2 « bloc S320 », 2 « bloc S319 ».",
+    "MOTEUR TRIPHASE, CONSERVER 5 (rapport-releve.md) : aucune ligne. Par feuille E102 = 5 (marques E102 : 5, bloc S104). L'attribution « CONSERVER = E102 » est une INFÉRENCE (portée par feuille absente du kit), cohérente avec INSTALLER 4 = E105 2 + E106 2.",
+    "DETECTEUR FUMEE, recoupement des sources : Marques = 10 ; E201 : (462.2/412.9) ; (541/377.1) ; (1033.5/389.1) ; (880.9/705.1) ; (1147.5/512.5) (« bloc S146 ») ; E203 : (636.1/707.6) bloc S146 ; (462/414) instance manuelle : existant (tracé pointillé) — P07 ; (541/378) instance manuelle : existant (tracé pointillé) — P08 ; (1034/390) instance manuelle : existant (tracé pointillé) — P12 ; (864/782) instance manuelle : neuf (tracé plein) — P23 ; relevé alarme AI-01. Rapport : CONSERVER 6, INSTALLER 2, RELOCALISER 1, ENLEVER 1 : le rapport fait foi (DF-I 2, DF-R 1, DF-E 1). Écart entre sources (aucune valeur attendue contredite) : Marques ne montre qu'UN « neuf (tracé plein) » (P23) alors que le rapport dit INSTALLER 2, que AI-01 = 2 et que G-01 = 2. La portée par marque n'est pas dans le kit.",
+    "DETECTEUR FUMEE, mêmes coordonnées sur deux feuilles (distance calculée) : P07 (462/414) vs E201 (462.2/412.9) = 1,12 pt ; P08 (541/378) vs E201 (541/377.1) = 0,90 pt ; P12 (1034/390) vs E201 (1033.5/389.1) = 1,03 pt. Ces 3 marques existantes pointillées de E203 sont à au plus 1,12 pt des détecteurs de E201 : même objet dessiné sur la feuille d'existant et sur celle de travaux ; le total 10 peut surcompter 3 objets. Les 2 autres marques de E203 ((636.1/707.6) ; (864/782)) sont à au moins 78,74 pt de tout détecteur E201 : objets distincts. Aucune quantité modifiée. INFÉRENCE non utilisée : si les 3 objets coïncidents sont CONSERVER, les 2 autres marques de E201 ((880.9/705.1) ; (1147.5/512.5)) seraient ENLEVER 1 + RELOCALISER 1, et INSTALLER 2 = bloc S146 de E203 + P23 (cohérent avec R-005, « neufs pleins », et AI-01).",
+    "DETECTEUR FUMEE, neufs RDC vs étage : Sommaire note 6 (ligne Excel 35) et relevé alarme ligne 21 disent que le schéma E-007 montre 2 neufs à l'étage, alors que les plans E-203/E-204 en montrent 2 au RDC et aucun à l'étage. Lecture du kit : Par feuille DETECTEUR FUMEE = E201 5, E203 5 ; aucune marque sur E204. Les plans prévalent : DF-I 2 au RDC (E-203), aucune quantité à l'étage.",
+    "PANNEAU ANNONCIATEUR, arbitrage PA-R (décision du directeur A, appuyée sur le kit) : le « INSTALLER 1 » du rapport (Par feuille E203 = 1 ; Marques E203 « bloc S328 » (891.9/733.5)) est le nouvel emplacement de l'annonciateur Simplex EXISTANT. Preuves : Détail G-04 « Relocalisation panneau annonciateur Simplex — réutiliser câbles, rallonger au besoin (note 1 E-007) » (Notes : « Nouvel emplacement à confirmer ») ; relevé alarme AI-05 « Relocalisation annonciateur Simplex existant — reprogrammation / essais » (Notes : « Travaux physiques par DR; nouvel emplacement à confirmer ») ; bordereau 3.37 « Panneau alarme incendie : déplacement annonciateur ». Un seul objet physique : PA-R et non PA-I, q 1 inchangé, art 3.37 ; G-04 exclue au profit de PA-R.",
+    "MOTEUR MONOPHASE / TRIPHASE, vérifications « vérifier » faites : (a) A-10 (Qté 6) ↔ MM-R : Par feuille E103 = 6, marques E103 = 6 : OK ; (b) C-01 + C-02 ↔ MT E106 : 1 + 1 = 2, marques E106 = 2 : OK ; (c) C-03 (Qté 2) ↔ MT E105 : Par feuille = 2, marques E105 = 2 : OK ; (d) C-04 (Qté 3) ↔ MM E105 : Par feuille = 3, marques E105 = 3 : OK. Sommes : MT-I = 4 ; MM = 6 + 3 = 9 ; MT = 4 + 5 = 9. Aucune contradiction.",
+    "B-04 (hors de mon sous-lot, traité par A2-1) : Disjoncteur NF 3P-40A — UTA-1 (cct 18-20-22) NOUVEAU — « Note : tableau méca indique MOCP 35A — à clarifier ingénieur ». Contradiction de Sommaire note 6 (ligne Excel 35) : UTA-1 40 A (E-502) vs MOCP 35 A (E-009). Renvoi seulement, aucune ligne ici.",
+    "G-05 (LOT, art 3.36) : Détail « Allocation — à valider ». Chevauchements à trancher : DF-R 1, DF-E 1, PA-R 1 et AI-07 du relevé alarme (option « Option : vérification des dispositifs existants retirés/réinstallés dans zones de plafonds touchés », prix séparé, non repris). G-06 (LOT, art 3.38) : assistance de l'électricien à la programmation/vérification ULC-S537 (E-007 note 3). AI-06 est classé dans la section « 2. SERVICES JCI / SIMPLEX » et G-07 (sous-traitance JCI, vérification partielle) couvre le même travail : frontière G-06 / JCI à trancher par le chef A3. X-03 (U, art 3.23) ne double aucun symbole relevé (le sectionneur n'est pas dans Marques).",
+    "X-03, pôles : Détail C-04 écrit « sectionneur sans fusible 30A 1Ø » ; Matériel Lumen HUBHBL1372 (ligne Excel 43) est « HUBBELL HBL1372 SECTIONNEUR 30A 2P (HUM-1/2/3) ». Quantité 3 lue dans les deux sources (retenue) ; nombre de pôles (1Ø ou 2P) à valider. Unité lue dans Matériel Lumen : « ch » (sortie en U). Base de quantité : « Devis 20 : service intensif — à valider ».",
+    "Relevé alarme AI-02 « Plaque de finition / adaptateur de base si requis » (2 u, E-203) : classé dans la section « 1. DISPOSITIFS (fournis par JCI/Simplex) » ; non repris ici (fourniture), signalé au chef A3 pour LOT-DET."
+  ],
+  "exclusions": [
+    {
+      "code": "G-01",
+      "raison": "double compte : 2 détecteurs neufs relevés sur plan E-203 (P23 + bloc S146) = DF-I 2 ; fourniture = lot LOT-DET (METHODE.md §2 : 2 détecteurs 600 $), pose seule dans DF-I"
+    },
+    {
+      "code": "G-04",
+      "raison": "même objet physique que le panneau annonciateur relevé sur plan E203 (« bloc S328 ») : remplacée par PA-R 1 (relocalisation de l'annonciateur existant, AI-05, art. 3.37)"
+    },
+    {
+      "code": "A-10",
+      "raison": "double compte : 6 moteurs monophasés E.A.R du toit relevés sur plan E-103 (Par feuille E103 = 6) : remplacée par MM-R 6"
+    },
+    {
+      "code": "C-01",
+      "raison": "double compte : UTA-01 relevée sur plan E-106 (Par feuille MOTEUR TRIPHASE E106 = 2) : remplacée par MT-I 4 (1 des 4)"
+    },
+    {
+      "code": "C-02",
+      "raison": "double compte : VE-02N relevé sur plan E-106 (même E106 = 2) : remplacée par MT-I 4 (1 des 4)"
+    },
+    {
+      "code": "C-03",
+      "raison": "double compte : 2 chaudières CH-01/CH-02 relevées sur plan E-105 (Par feuille MOTEUR TRIPHASE E105 = 2) : remplacée par MT-I 4 (2 des 4)"
+    },
+    {
+      "code": "C-04",
+      "raison": "double compte : 3 humidificateurs relevés sur plan E-105 (Par feuille MOTEUR MONOPHASE E105 = 3) : remplacée par MM-I 3 ; son sectionneur devient X-03"
+    }
+  ]
+}

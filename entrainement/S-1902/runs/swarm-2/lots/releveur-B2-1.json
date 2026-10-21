@@ -1,0 +1,344 @@
+{
+  "niveau": "releveur",
+  "nom": "B2-1",
+  "modele_demande": "haiku",
+  "effort_demande": "high",
+  "lignes": [
+    {
+      "code": "ENC-I",
+      "desc": "Luminaire encastré à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "ENC-E",
+      "desc": "Luminaire encastré existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER FIXTURE ENCAST » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1)"
+    },
+    {
+      "code": "ENC-R",
+      "desc": "Luminaire encastré existant à relocaliser",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1)"
+    },
+    {
+      "code": "ENCU-I",
+      "desc": "Luminaire encastré d'urgence à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "ENCU-E",
+      "desc": "Luminaire encastré d'urgence à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER FIXTURE ENCAST » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "ENCU-R",
+      "desc": "Luminaire encastré d'urgence à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L14-I",
+      "desc": "Luminaire LED 1x4 à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L14-E",
+      "desc": "Luminaire LED 1x4 existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER FIXTURE 1X4 » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1)"
+    },
+    {
+      "code": "L14-R",
+      "desc": "Luminaire LED 1x4 à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L22-I",
+      "desc": "Luminaire LED 2x2 à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 40.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE 2X2 NOUVE » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L22-E",
+      "desc": "Luminaire LED 2x2 existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER FIXTURE 2X2 » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1)"
+    },
+    {
+      "code": "L22-R",
+      "desc": "Luminaire LED 2x2 à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L4-I",
+      "desc": "Luminaire LED 4 pi à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L4-E",
+      "desc": "Luminaire LED 4 pi à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER FIXTURE 1X4 » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L4-R",
+      "desc": "Luminaire LED 4 pi à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LLIN-I",
+      "desc": "Luminaire linéaire à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LLIN-E",
+      "desc": "Luminaire linéaire à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER FIXTURE 1X4 » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LLIN-R",
+      "desc": "Luminaire linéaire à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LA1-I",
+      "desc": "Luminaire neuf type A1 (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE A1 » um=U (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 7) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LC1-I",
+      "desc": "Luminaire neuf type C1 module 4' (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LC11-I",
+      "desc": "Luminaire neuf type C1_1 module 1' (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LC13-I",
+      "desc": "Luminaire neuf type C1_3 module 3' (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LE-I",
+      "desc": "Luminaire neuf type E cylindre suspendu (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE E » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 7) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "Z6-I",
+      "desc": "Enseigne de sortie Z6 neuve",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.35",
+      "src": "catalogue Dupuis « ENSEIGNE SORTIE » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 10) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "Z6-E",
+      "desc": "Enseigne de sortie Z6 à enlever (précaution R-005)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER ENSEIGNE SORTI » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "Z6-R",
+      "desc": "Enseigne de sortie Z6 à relocaliser (précaution R-005)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.25,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO ENSEIGNE SORTIE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    }
+  ],
+  "notes": [
+    "Rappel (non appliqué) : taux 85 $/h (METHODE.md §5 ; le 124 $/h du Sommaire « référence Jo » n'est pas retenu) et facteur de prix de vente 1,244 (METHODE.md §7). Ce lot ne porte que p et h bruts ; ni taux ni facteur ne sont appliqués ici.",
+    "Relecture : les 26 lignes ont été relues une à une dans le CSV avec ligne() (libellé exact, um, prix_a_utiliser → p, temps_a_utiliser → h). Aucun écart entre les valeurs vues par le chef et celles relues. Aucune colonne médiane, min, max ou variation n'a été utilisée.",
+    "Aucun repli Lumen : la feuille « Matériel Lumen » exclut luminaires et enseignes (« EXCLUS de cette liste ») ; aucun code de mon sous-lot n'a donc de prix Lumen. Aucun jugement (Estimation_2) n'est utilisé : le catalogue Dupuis couvre chaque code. Les lignes Détail A-01, A-02, A-06, F-01 à F-07 sont citées seulement dans doubles_comptes.",
+    "DÉCISION 1 (enlèvements -E) — recherche faite sur ENLEV, ENL, DEMANTEL, A ENLEVER, FIXT, ENCAST, STRIP. Constat : le repère METHODE « luminaire enlevé 0,5 h » est introuvable pour un luminaire. Le seul libellé ENLEVER à 0,5 h est 'EQUIPEMENT A ENLEVER' (p 0.0, h 0.5, nb_projets 1, 2026-05-05, s-1753 ecole asomption), qui ne décrit pas un luminaire. Retenu : la série 'ENLEVER FIXTURE …' de s-1835 (2026-08-26, nb_projets 1 chacun, p 0.0, h 0.35) : ENC-E et ENCU-E → 'ENLEVER FIXTURE ENCAST' ; L14-E, L4-E, LLIN-E → 'ENLEVER FIXTURE 1X4' ; L22-E → 'ENLEVER FIXTURE 2X2'.",
+    "DÉCISION 1 — candidats écartés : 'FIXTURE ENCASTRE ENLEV' (p 0.0, h 0.25, nb_projets 2, 2026-03-09, 25-066G Canderel Lobby 2000 McGill College) ; 'STRIP STRIP ENLEVER' (p 0.0, h 0.25, nb_projets 2, 2026-03-09, même projet) ; \"APPAREIL D'ECLAIRAGE A DEMANTELER\" (p 0.0, h 0.2, nb_projets 1, 2026-09-23, s-1866 gar mun st amable) ; 'EQUIPEMENT A ENLEVER' (p 0.0, h 0.5, nb_projets 1, 2026-05-05, s-1753) ; 'ENLEVER FIXTURE 2X4' et 'ENLEVER FIXTURE MURAL' (p 0.0, h 0.35, nb_projets 1, 2026-08-26, s-1835 : non utilisés, aucune portée au relevé).",
+    "DÉCISION 1 — DÉSACCORD ARGUMENTÉ (appliqué tel quel, à trancher par le chef) : la règle 3 du kit (plus grand nb_projets) classerait 'FIXTURE ENCASTRE ENLEV' (nb_projets 2) devant 'ENLEVER FIXTURE ENCAST' (nb_projets 1) pour ENC-E, puisque les deux décrivent un encastré enlevé (même objet, même action). La décision du chef (série complète 0,35 h, cohérence avec ENLEVER PRISE 0,35 h) est appliquée ; le choix du chef n'est pas une règle écrite du kit. Impact si l'on retenait 0,25 h pour ENC-E : ENC-E 26 × (0,25 − 0,35) = −2,6 h.",
+    "DÉCISION 1 — impact chiffré (40 luminaires à enlever au relevé : ENC 26 + L14 6 + L22 8, à 0,35 h = 14.0 h) : avec 'EQUIPEMENT A ENLEVER' (0,5 h) on aurait +6.0 h ; avec 0,25 h pour ENC seulement -2.6 h. L4-E et LLIN-E ont 0 unité au relevé : aucun temps.",
+    "DÉCISION 2 (relocalisations -R) — 'RELO ENCASTRE' (p 0.0, h 1.0, nb_projets 1, 2026-06-02, s-1783) retenu pour ENC-R et ENCU-R (ENC-R : 4 au relevé, seul -R utilisé ; ENCU-R précaution). 'RELO FIXTURE 30X30' (p 0.0, h 1.0, nb_projets 1, 2026-06-02, s-1783) retenu pour L14-R, L22-R, L4-R, LLIN-R (précaution). Les deux autres libellés RELO de luminaire, écartés pour la même valeur (p 0.0, h 1.0, s-1783) : 'RELO FIXT TYPE E2' et 'RELO FIXTURE TYPE S7'. Aucun effet chiffré du choix.",
+    "DÉCISION 3 (installation de luminaires existants -I, précaution) — 'FIXTURE ENCASTRE' (p 0.0, h 0.75, nb_projets 1, 2026-02-02, S-1645 ANNEXE-BOURASSA) pour ENC-I, ENCU-I, L14-I, L4-I, LLIN-I. Écarté : 'FIXTURE ENCASTRE ENLEV' (enlèvement, h 0.25). ENCU-I : aucun libellé d'encastré d'urgence distinct au catalogue ; les 'TETE URG…' (h 0.25 à 0.5) sont des têtes d'urgence, un autre objet, donc écartées. L22-I → 'FIXTURE TYPE 2X2 NOUVE' (p 40.0, h 0.75, nb_projets 1, 2026-09-10, s-1854 sollio st hubert lanthier). p 40 $ n'est couvert par aucun lot de METHODE §2 : retenu tel quel du catalogue. Écartés : 'FIXTURE TYPE 2X2 LED NO' (mêmes valeurs p 40.0 / h 0.75, même projet, même date : aucun effet chiffré) ; 'FIXTURE TYPE 2X2' (p 0.0, h 0.25, nb 1) et 'FIXTURE TYPE 2X2 LED EX' (p 0.0, h 0.25, nb 1) : h 0.25 = luminaire existant, pas une pose neuve.",
+    "DÉCISION 3 — correspondances de précaution (aucune quantité attendue au relevé ; la portée est absente ou CONSERVER) : ENC-I, ENCU-I, ENCU-E, ENCU-R, L14-I, L14-R, L22-I, L22-R, L4-I, L4-E, L4-R, LLIN-I, LLIN-E, LLIN-R, Z6-E, Z6-R. Elles ne sont chiffrées qu'à titre de précaution, sans quantité.",
+    "DÉCISION 4 (luminaires neufs E-008 : LA1-I, LC1-I, LC11-I, LC13-I, LE-I) — p 0.0 en ligne, matériel payé par LOT-ECL (écrit dans src) ; temps seulement. Repère luminaire 0,75 h. 'FIXTURE TYPE A1' (p 0.0, h 0.75, nb_projets 7, 2026-08-19, S-1797) pour LA1-I ; 'FIXTURE TYPE C1' (p 0.0, h 0.75, nb_projets 2, 2026-07-14, s-1811) pour LC1-I, LC11-I, LC13-I ; 'FIXTURE TYPE E' (p 0.0, h 0.75, nb_projets 7, 2026-10-07, s-1881) pour LE-I.",
+    "DÉCISION 4 — candidats écartés (valeurs relues) : 'FIXTURE TYPE A' (p 0.0, h 0.75, nb 7, 2026-10-07, s-1881) : même p/h et nb égal, date plus récente ; 'FIXTURE TYPE A1' gardé par la correspondance de la lettre de type (règle 2) ; aucun effet chiffré. 'FIXTURE TYPE A2' (p 0.0, h 0.75, nb 5, 2026-08-19, S-1797). 'FIXTURE TYPE C' (p 0.0, h 0.75, nb 5, 2026-07-13, s-1808 cpe les copain d'ABORD) : la règle 3 le favoriserait sur 'FIXTURE TYPE C1' (nb 2), mais la lettre C1 est la correspondance de type ; aucun effet chiffré (même p/h). 'FIXTURE TYPE E1' et 'FIXTURE TYPE E2' (p 0.0, h 0.75, nb 4) ; 'FIXTURE TYPE E 12PI 6PO' (p 0.0, h 4.0, nb 1, s-1775) et 'FIXTURE TYPE LE' (p 0.0, h 2.0, nb 1, s-1783) : objets différents. 'FIXTURE TYPE C2', 'C3', 'C4' : lettres d'autres types. 'LUMINAIRE A1' (p 0.0, h 0.4, nb 1, 2026-09-23, s-1866) et 'LUMINAIRE C1' (p 0.0, h 1.0, nb 1, 2026-09-23, s-1866) : lettres de type d'un AUTRE projet, écartées.",
+    "DÉCISION 4 — modules 1′ (C1_1, 6 pcs) et 3′ (C1_3, 15 pcs) : gardés à 0,75 h comme le repère METHODE (l'unité est l'étiquette, reserves.md R-003). DÉSACCORD POTENTIEL (non appliqué) : la ligne Détail F-03 (C1_1, 0,5 h) et F-04 (C1_3, 0,6 h), estimés Léna AI, sont plus courtes ; les modules 1′ et 3′ sont plus petits que le 4′. Impact si l'on retenait 0,5 h et 0,6 h : 3.75 h de moins. Non retenues : le catalogue Dupuis a une valeur et les heures d'Estimation_2 ne servent qu'en dernier repli. Les trousses de suspension des rangées sont dans LOT-ECL.",
+    "DÉCISION 5 (enseigne Z6) — Z6-I → 'ENSEIGNE SORTIE' (p 0.0, h 1.0, nb_projets 10, 2026-09-25, S-1857 Maison St-Michel), p 0 forcé par LOT-ECL. Écartés : 'ENSEIGNE SORTIE COMBO' (p 0.0, h 1.0, nb 3, 2026-10-07, s-1881), 'ENSEIGNE SORTIE Z6' (p 0.0, h 1.0, nb 1, 2026-07-13, s-1808 : le Z6 d'un autre projet), 'ENSEIGNE SORTIE DOUBLE', 'ENSEIGNE SORTIE SERIE L', 'ENSEIGNE SORTIE WP Z4', 'ENSEIGNE SORTIE Z2' (h 1.0, nb 1 chacun) ; 'ENSEIGNE PICTOGR ACIER' (p 89.38, h 1.0, nb 1 : autre objet).",
+    "DÉCISION 5 — Z6-E → 'ENLEVER ENSEIGNE SORTI' (p 0.0, h 0.5, nb 1, 2026-02-09, s1659 ecole arc en ciel ste julie) ; Z6-R → 'RELO ENSEIGNE SORTIE' (p 0.0, h 1.25, nb 1, 2026-06-02, s-1783). Écarté pour Z6-R : 'ENSEIGNE RELO' (p 25.0, h 1.0, nb 1, 2026-02-09, s1659) : la règle 4 (date la plus récente, nb égal) désigne 'RELO ENSEIGNE SORTIE'. Z6-E et Z6-R = précaution (reserves.md R-005 : tracé pointillé, « confirmer neuf »).",
+    "LOT-ECL : décomposition A1 × 11 à 185 $ + SL1 4′ × 12 à 290 $ + 3′ × 15 à 230 $ + 1′ × 6 à 110 $ + trousses 1 500 $ + E × 3 à 475 $ + Z6 × 3 à 161,60 $ = 13034.80 $ ; le total confirmé 11 893 $ est le montant retenu (ligne LOT-ECL portée par B2-3, pas par moi). Les luminaires neufs et les Z6 sont à p = 0 en ligne parce que LOT-ECL les paie.",
+    "Le code F-05 (rangées linéaires Axis, 20 rangées, Détail, 2 480 $ estimé) et les OPT-1 à OPT-4 ne font pas partie de mon sous-lot : non écrits ici.",
+    "Portée de précaution (note) : les codes -I et -E/-R sans portée au relevé sont chiffrés avec precaution=True, qui écrit « portée absente du relevé — correspondance de précaution » dans src ; une correspondance inutilisée vaut mieux qu'un code sans prix."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "LA1-I",
+        "LC1-I",
+        "LC11-I",
+        "LC13-I",
+        "LE-I",
+        "Z6-I",
+        "LOT-ECL"
+      ],
+      "regle": "matériel des luminaires neufs et des 3 Z6 payé UNE fois par LOT-ECL ; les lignes à p = 0 ne portent que le temps"
+    },
+    {
+      "codes": [
+        "LA1-I",
+        "LC1-I",
+        "LC11-I",
+        "LC13-I",
+        "LE-I",
+        "Z6-I",
+        "F-01",
+        "F-02",
+        "F-03",
+        "F-04",
+        "F-06",
+        "F-07"
+      ],
+      "regle": "le plan gagne : les lignes Détail F-01…F-04, F-06, F-07 (luminaires et enseigne, heures Léna) font double emploi avec les -I du relevé"
+    },
+    {
+      "codes": [
+        "ENC-E",
+        "L14-E",
+        "L22-E",
+        "A-01",
+        "A-02"
+      ],
+      "regle": "le plan gagne : Détail A-01/A-02 (démantèlement des luminaires existants) font double emploi avec les -E du relevé"
+    },
+    {
+      "codes": [
+        "ENC-R",
+        "A-06"
+      ],
+      "regle": "le plan gagne : Détail A-06 (relocalisation de luminaires) fait double emploi avec ENC-R"
+    },
+    {
+      "codes": [
+        "Z6-I",
+        "Z6-E",
+        "Z6-R"
+      ],
+      "regle": "un seul des trois s'applique à un même signe de sortie (R-005 : confirmer neuf) ; E/R sont des précautions"
+    }
+  ]
+}

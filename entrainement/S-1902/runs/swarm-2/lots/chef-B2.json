@@ -1,0 +1,970 @@
+{
+  "niveau": "chef",
+  "nom": "B2",
+  "modele_demande": "sonnet",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "ENC-I",
+      "desc": "Luminaire encastré à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "ENC-E",
+      "desc": "Luminaire encastré existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1"
+    },
+    {
+      "code": "ENC-R",
+      "desc": "Luminaire encastré existant à relocaliser",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1)"
+    },
+    {
+      "code": "ENCU-I",
+      "desc": "Luminaire encastré d'urgence à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "ENCU-E",
+      "desc": "Luminaire encastré d'urgence à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; portée absente du relevé — correspondance de précaution ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1"
+    },
+    {
+      "code": "ENCU-R",
+      "desc": "Luminaire encastré d'urgence à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L14-I",
+      "desc": "Luminaire LED 1x4 à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L14-E",
+      "desc": "Luminaire LED 1x4 existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1"
+    },
+    {
+      "code": "L14-R",
+      "desc": "Luminaire LED 1x4 à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L22-I",
+      "desc": "Luminaire LED 2x2 à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 40.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE 2X2 NOUVE » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L22-E",
+      "desc": "Luminaire LED 2x2 existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1"
+    },
+    {
+      "code": "L22-R",
+      "desc": "Luminaire LED 2x2 à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L4-I",
+      "desc": "Luminaire LED 4 pi à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "L4-E",
+      "desc": "Luminaire LED 4 pi à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; portée absente du relevé — correspondance de précaution ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1"
+    },
+    {
+      "code": "L4-R",
+      "desc": "Luminaire LED 4 pi à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LLIN-I",
+      "desc": "Luminaire linéaire à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE ENCASTRE » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LLIN-E",
+      "desc": "Luminaire linéaire à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; portée absente du relevé — correspondance de précaution ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1"
+    },
+    {
+      "code": "LLIN-R",
+      "desc": "Luminaire linéaire à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "HP-I",
+      "desc": "Haut-parleur encastré plafond à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.36",
+      "src": "catalogue Dupuis « HAUT PARLEUR » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 10) ; portée absente du relevé — correspondance de précaution ; décision B2 n°1 : libellé direct ; notes HAUT PARLEUR PL / MURAL"
+    },
+    {
+      "code": "HP-E",
+      "desc": "Haut-parleur encastré plafond à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue Dupuis (aucun libellé ENLEVER HAUT PARLEUR) : même action d'enlèvement d'un dispositif d'alarme/sonorisation, décision B2 n°1"
+    },
+    {
+      "code": "HP-R",
+      "desc": "Haut-parleur encastré plafond à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO HAUT PARLEUR PL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LA1-I",
+      "desc": "Luminaire neuf type A1 (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE A1 » um=U (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 7) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LC1-I",
+      "desc": "Luminaire neuf type C1 module 4' (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LC11-I",
+      "desc": "Luminaire neuf type C1_1 module 1' (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LC13-I",
+      "desc": "Luminaire neuf type C1_3 module 3' (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "LE-I",
+      "desc": "Luminaire neuf type E cylindre suspendu (tableau E-008)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.35",
+      "src": "catalogue Dupuis « FIXTURE TYPE E » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 7) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "Z6-I",
+      "desc": "Enseigne de sortie Z6 neuve",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.35",
+      "src": "catalogue Dupuis « ENSEIGNE SORTIE » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 10) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0)"
+    },
+    {
+      "code": "Z6-E",
+      "desc": "Enseigne de sortie Z6 à enlever (précaution R-005)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER ENSEIGNE SORTI » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "Z6-R",
+      "desc": "Enseigne de sortie Z6 à relocaliser (précaution R-005)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.25,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO ENSEIGNE SORTIE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "DF-I",
+      "desc": "Détecteur de fumée neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.36",
+      "src": "catalogue Dupuis « DETECTEUR A FUMEE » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 9) ; p = 0 forcé : couvert par LOT-DET (catalogue p = 0.0)"
+    },
+    {
+      "code": "DF-E",
+      "desc": "Détecteur de fumée existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue Dupuis (aucun libellé direct pour détecteur enlevé), décision B2 n°2"
+    },
+    {
+      "code": "DF-R",
+      "desc": "Détecteur de fumée existant à relocaliser",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO DETECTEUR A FUME » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 3)"
+    },
+    {
+      "code": "SM-I",
+      "desc": "Station manuelle à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.36",
+      "src": "catalogue Dupuis « STATION MANUEL » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 16) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "SM-E",
+      "desc": "Station manuelle à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "SM-R",
+      "desc": "Station manuelle à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO STATION MANUEL » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 3) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "PA-I",
+      "desc": "Annonciateur Simplex : relocalisation (relevé : INSTALLER 1)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.37",
+      "src": "catalogue Dupuis « RELO PANN ANNOCIATEUR » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; relevé INSTALLER 1 traité comme relocalisation (Détail G-04 / AI-05)"
+    },
+    {
+      "code": "PA-E",
+      "desc": "Panneau annonciateur à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; portée absente du relevé — correspondance de précaution ; analogue Dupuis (aucun libellé direct pour annonciateur enlevé), décision B2 n°3"
+    },
+    {
+      "code": "PA-R",
+      "desc": "Annonciateur Simplex existant à relocaliser",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.37",
+      "src": "catalogue Dupuis « RELO PANN ANNOCIATEUR » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; portée absente du relevé — correspondance de précaution ; relocalisation de l'annonciateur existant (Détail G-04, bordereau 3.37, relevé alarme AI-05)"
+    },
+    {
+      "code": "MM-I",
+      "desc": "Moteur monophasé à raccorder (installer)",
+      "q": null,
+      "u": "U",
+      "p": 25.0,
+      "h": 0.75,
+      "art": "3.23",
+      "src": "catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2)"
+    },
+    {
+      "code": "MM-E",
+      "desc": "Moteur monophasé à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.25,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER MOTEUR 1/2 HP 6 » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "MM-R",
+      "desc": "Moteur monophasé à relocaliser (débrancher, relocaliser, rebrancher)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.23",
+      "src": "catalogue Dupuis « RELO PLINTHE 2000W » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 1) ; analogue Dupuis (aucun RELO MOTEUR au catalogue) : même action RELO sur équipement alimenté fixe, décision B2 n°4"
+    },
+    {
+      "code": "MT-I",
+      "desc": "Moteur triphasé à raccorder (installer)",
+      "q": null,
+      "u": "U",
+      "p": 25.0,
+      "h": 0.75,
+      "art": "3.23",
+      "src": "catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2)"
+    },
+    {
+      "code": "MT-E",
+      "desc": "Moteur triphasé à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.25,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER MOTEUR 1/2 HP 6 » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "MT-R",
+      "desc": "Moteur triphasé à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.23",
+      "src": "catalogue Dupuis « RELO PLINTHE 2000W » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 1) ; portée absente du relevé — correspondance de précaution ; analogue Dupuis (aucun RELO MOTEUR au catalogue), décision B2 n°4"
+    },
+    {
+      "code": "B-01",
+      "desc": "Panneau PP-3 neuf 225 A 347/600 V 42 cct NF (remplacement de l'existant)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.24",
+      "src": "catalogue Dupuis « PANN PD 400A 347/600V 42CCT 35KA C/A » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-02",
+      "desc": "Disjoncteurs 1P-15A transférés dans PP-3 (14)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-03",
+      "desc": "Disjoncteur 3P-20A (aérotherme) transféré",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6)"
+    },
+    {
+      "code": "B-04",
+      "desc": "Disjoncteur 3P-40A UTA-1 neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6)"
+    },
+    {
+      "code": "B-05",
+      "desc": "Disjoncteur 3P-15A VE-2N neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6)"
+    },
+    {
+      "code": "B-06",
+      "desc": "Disjoncteur 1P-15A DDFT fontaine P2-61",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-07",
+      "desc": "Disjoncteurs 1P-15A P2-63 / P2-64 (2)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-08",
+      "desc": "Disjoncteurs 1P-20A P3-17 / P3-19 (2)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 20A 1P 120V 10KA » um=U (dernier 2026-06-26, S-1795 Lanthier Arthesa, nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 10.17)"
+    },
+    {
+      "code": "B-09",
+      "desc": "Mise à jour des fiches dactylographiées + identification des circuits (9 panneaux)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 3.0,
+      "art": "3.24",
+      "src": "catalogue Dupuis « IDENTIFIER LES CIRCUITS EXISTANTS A » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1)"
+    },
+    {
+      "code": "X-01",
+      "desc": "Scan de dalle béton (géoradar)",
+      "q": null,
+      "u": "U",
+      "p": 1250.0,
+      "h": 2.0,
+      "art": "3.32",
+      "src": "catalogue Dupuis « SCAN DALLE BETON » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2)"
+    },
+    {
+      "code": "X-02",
+      "desc": "Nacelle",
+      "q": null,
+      "u": "U",
+      "p": 1250.0,
+      "h": 16.0,
+      "art": "6.1",
+      "src": "catalogue Dupuis « NACELLE » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2)"
+    },
+    {
+      "code": "D-12",
+      "desc": "Percement de dalle carotté RDC (16 percements), coupe-feu non ajouté",
+      "q": null,
+      "u": "U",
+      "p": 150.0,
+      "h": 1.0,
+      "art": "3.31",
+      "src": "catalogue Dupuis « PERCEMENT PLANCHER » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 8)"
+    },
+    {
+      "code": "E-07",
+      "desc": "Percement de dalle carotté étage (7 percements), coupe-feu non ajouté",
+      "q": null,
+      "u": "U",
+      "p": 150.0,
+      "h": 1.0,
+      "art": "3.31",
+      "src": "catalogue Dupuis « PERCEMENT PLANCHER » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 8)"
+    },
+    {
+      "code": "C-05",
+      "desc": "Conduit EMT 1\" alimentation UTA-01 (assemblage avec 4 #8)",
+      "q": null,
+      "u": "PI",
+      "p": 6.1399,
+      "h": 0.098,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 1 04C08 » um=P (dernier 2026-03-31, S-1693_Ecole Primaire Beloeil, nb_projets 1)"
+    },
+    {
+      "code": "C-06",
+      "desc": "Conducteur RW90 #8 UTA-01 (inclus dans C-05)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 1 04C08 » du code C-05"
+    },
+    {
+      "code": "C-07",
+      "desc": "Conduit EMT 3/4\" VE-02N + HUM (assemblage avec fil #12)",
+      "q": null,
+      "u": "PI",
+      "p": 4.2441,
+      "h": 0.1128,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "C-08",
+      "desc": "Conducteur RW90 #12 VE-02N + HUM (inclus dans C-07)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 3/4 03C12 » du code C-07"
+    },
+    {
+      "code": "D-13",
+      "desc": "Conduit EMT 1\" sous dalle RDC (vide ; les 5 #12 par course sont facturés au code D-15)",
+      "q": null,
+      "u": "PI",
+      "p": 2.4307,
+      "h": 0.07,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 1 » um=P (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 3) ; aucun « CONDUIT 1 05C12 » au catalogue : décomposition par libellés exacts (conduit vide 1 po + fil à part, ligne D-15) ; arbitrage du chef B2 en PHASE 2, remplace l'analogue « CONDUIT 3/4 03C12 » du releveur B2-3"
+    },
+    {
+      "code": "D-14",
+      "desc": "Conduit EMT 3/4\" data sous dalle RDC (vide)",
+      "q": null,
+      "u": "PI",
+      "p": 1.4097,
+      "h": 0.056,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12)"
+    },
+    {
+      "code": "D-15",
+      "desc": "Conducteur RW90 #12 sous dalle RDC (facturé au pied de conducteur : conduit D-13 vide)",
+      "q": null,
+      "u": "PI",
+      "p": 0.3896,
+      "h": 0.005,
+      "art": "3.31",
+      "src": "catalogue Dupuis « 12AWG SOLIDE RW90 600V » um=P (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 3) ; fil facturé à part car le conduit D-13/E-08 est « vide » (pas d'assemblage 1 po 5C12) ; quantité = longueur de CONDUCTEUR (5 × longueur du conduit, comme au Détail) ; arbitrage du chef B2 en PHASE 2, remplace la ligne « inclus » du releveur B2-3"
+    },
+    {
+      "code": "E-08",
+      "desc": "Conduit EMT 1\" sous dalle étage (vide ; les 5 #12 par course sont facturés au code E-10)",
+      "q": null,
+      "u": "PI",
+      "p": 2.4307,
+      "h": 0.07,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 1 » um=P (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 3) ; aucun « CONDUIT 1 05C12 » au catalogue : décomposition par libellés exacts (conduit vide 1 po + fil à part, ligne E-10) ; arbitrage du chef B2 en PHASE 2, remplace l'analogue « CONDUIT 3/4 03C12 » du releveur B2-3"
+    },
+    {
+      "code": "E-09",
+      "desc": "Conduit EMT 3/4\" data sous dalle étage (vide)",
+      "q": null,
+      "u": "PI",
+      "p": 1.4097,
+      "h": 0.056,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12)"
+    },
+    {
+      "code": "E-10",
+      "desc": "Conducteur RW90 #12 étage (facturé au pied de conducteur : conduit E-08 vide)",
+      "q": null,
+      "u": "PI",
+      "p": 0.3896,
+      "h": 0.005,
+      "art": "3.31",
+      "src": "catalogue Dupuis « 12AWG SOLIDE RW90 600V » um=P (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 3) ; fil facturé à part car le conduit D-13/E-08 est « vide » (pas d'assemblage 1 po 5C12) ; quantité = longueur de CONDUCTEUR (5 × longueur du conduit, comme au Détail) ; arbitrage du chef B2 en PHASE 2, remplace la ligne « inclus » du releveur B2-3"
+    },
+    {
+      "code": "F-08",
+      "desc": "Conduit EMT 3/4\" + flexible, raccordement luminaires (assemblage 3 #12)",
+      "q": null,
+      "u": "PI",
+      "p": 4.2441,
+      "h": 0.1128,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "F-09",
+      "desc": "Conducteur RW90 #12 éclairage 3 cond. (inclus dans F-08)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 3/4 03C12 » du code F-08"
+    },
+    {
+      "code": "G-02",
+      "desc": "Conduit EMT 3/4\" boucle alarme incendie (vide)",
+      "q": null,
+      "u": "PI",
+      "p": 1.4097,
+      "h": 0.056,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12)"
+    },
+    {
+      "code": "G-03",
+      "desc": "Câble alarme incendie FT4 2 cond. #16 (boucle adressable, 1 paire)",
+      "q": null,
+      "u": "PI",
+      "p": 0.4299,
+      "h": 0.004,
+      "art": "3.31",
+      "src": "catalogue Dupuis « 16AWG 1PR PVC FT4 600V  » um=P (dernier 2026-04-02, S-1692_École Primaire St-Marc Candiac, nb_projets 1)"
+    },
+    {
+      "code": "LOT-ECL",
+      "desc": "Lot fournisseur éclairage et urgence (A1, Axis SL1, trousses, E, Z6)",
+      "q": null,
+      "u": "LOT",
+      "p": 11893.0,
+      "h": 0.0,
+      "art": "3.35",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-DIST",
+      "desc": "Lot fournisseur distribution (panneau PP-3 225 A NF + disjoncteurs NF)",
+      "q": null,
+      "u": "LOT",
+      "p": 6200.0,
+      "h": 0.0,
+      "art": "3.24",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-JCI",
+      "desc": "Lot fournisseur JCI/Simplex (bypass, programmation, annonciateur AI-05, vérification ULC-S537)",
+      "q": null,
+      "u": "LOT",
+      "p": 7400.0,
+      "h": 0.0,
+      "art": "3.38",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-DET",
+      "desc": "Lot fournisseur 2 détecteurs de fumée adressables (DF-I, AI-01)",
+      "q": null,
+      "u": "LOT",
+      "p": 600.0,
+      "h": 0.0,
+      "art": "3.36",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-GPR",
+      "desc": "Lot fournisseur géoradar (GPR), même objet que le scan de dalle X-01",
+      "q": null,
+      "u": "LOT",
+      "p": 1250.0,
+      "h": 0.0,
+      "art": "3.32",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    }
+  ],
+  "lots": {
+    "LOT-ECL": 11893,
+    "LOT-DIST": 6200,
+    "LOT-JCI": 7400,
+    "LOT-DET": 600,
+    "LOT-GPR": 1250
+  },
+  "notes": [
+    "RAPPEL (non appliqué) : taux de main-d'œuvre 85 $/h (METHODE.md §5, dossiers août–octobre 2026 ; le 124 $/h du Sommaire « référence Jo » n'est pas retenu) et facteur de prix de vente 1,244 (METHODE.md §7). Ce fichier ne porte que p et h bruts (q = null partout) ; ni le taux, ni le facteur, ni l'arrondi des heures au multiple de 10 ne sont appliqués ici.",
+    "COUVERTURE : 76 codes, chacun UNE seule fois, q = null partout, vérifiés par script contre la liste exacte du prompt (aucun manque, aucun doublon, aucun code étranger). Les 3 fichiers des releveurs (lots/releveur-B2-1.json, -2.json, -3.json) se chargent en JSON ; 26 + 28 + 22 = 76 lignes. `lots` contient exactement les 5 lots confirmés : LOT-ECL 11 893 $, LOT-DIST 6 200 $, LOT-JCI 7 400 $, LOT-DET 600 $, LOT-GPR 1 250 $ (identiques à METHODE.md §2, prix confirmés par Francis le 2026-10-20).",
+    "DÉCOUPAGE EN 3 SOUS-LOTS (disjoints, couvrants). B2-1 (26 codes, luminaires et enseigne Z6) : ENC-I ENC-E ENC-R ENCU-I ENCU-E ENCU-R L14-I L14-E L14-R L22-I L22-E L22-R L4-I L4-E L4-R LLIN-I LLIN-E LLIN-R LA1-I LC1-I LC11-I LC13-I LE-I Z6-I Z6-E Z6-R. B2-2 (28 codes, haut-parleur, alarme incendie, mécanique, distribution, nacelle) : HP-I HP-E HP-R DF-I DF-E DF-R SM-I SM-E SM-R PA-I PA-E PA-R MM-I MM-E MM-R MT-I MT-E MT-R B-01 B-02 B-03 B-04 B-05 B-06 B-07 B-08 B-09 X-02. B2-3 (22 codes, conduits, filage, percements, scan, lots) : C-05 C-06 C-07 C-08 D-13 D-14 D-15 E-08 E-09 E-10 F-08 F-09 G-02 G-03 D-12 E-07 X-01 LOT-ECL LOT-DIST LOT-JCI LOT-DET LOT-GPR.",
+    "EFFORT DES RELEVEURS (modèle haiku pour les trois). B2-1 = high : 26 codes de luminaires et d'enseigne dont les arbitrages étaient déjà tranchés dans le prompt ; reste la relecture du catalogue et l'harmonisation des 6 familles. B2-2 = xhigh : couverture des panneaux et disjoncteurs par LOT-DIST, annonciateur à 0 $ ou 550 $, analogues pour les moteurs relocalisés ; une erreur se propage au chiffrage. B2-3 = xhigh : environ 2 149 pi de conduit 1 po sans assemblage exact, risque de double paiement du fil inclus, lots fournisseur.",
+    "CONTRÔLE DES VALEURS (PHASE 2, ligne par ligne contre catalogue-prix-temps-dupuis.csv avec ligne(desc, um), colonnes prix_a_utiliser et temps_a_utiliser seulement). Échantillon au hasard (graine 1902) : B2-1 = 5/5 (LLIN-I, L14-I, ENCU-I, LC11-I [p = 0 forcé, catalogue p 0.0], LLIN-R) ; B2-2 = 5/5 (MT-R, PA-I, HP-I, B-02 [p = 0 forcé], HP-E) ; B2-3 = 5/5 (E-07, G-03 [libellé à espace finale], D-14 [conduit vide, u = PI], X-01, E-08 [conduit assemblage, u = PI]). Contrôle complet en plus de l'échantillon : les 66 lignes qui citent un libellé du catalogue (76 moins 5 lignes « inclus » et 5 lots) ont p et h identiques au catalogue (p = 0 forcé vérifié avec le « catalogue p = … » écrit dans src), 0 erreur : aucun sous-lot n'a donc eu à être repris ligne par ligne pour cause d'erreur de valeur. Les 5 lots sont identiques à METHODE.md §2. Les corrections ci-dessous sont des arbitrages du chef, pas des erreurs de recopie.",
+    "ARBITRAGE 1 — LUMINAIRE ENLEVÉ : 0,5 h (repère METHODE) et non 0,35 h. Le releveur B2-1 avait appliqué ma décision de PHASE 1 (série « ENLEVER FIXTURE … », 0,35 h, s-1835). Relecture de la règle : la règle 1 place le repère METHODE (« luminaire enlevé 0,5 h ») avant « même objet / même action », et le contrôle de PHASE 2 exige « repère METHODE respecté quand il existe ». Recherche refaite dans le catalogue (ENLEV, ENL, DEMANTEL, DEPOS, FIXT, ENCAST, STRIP, LUM) : aucun libellé de luminaire n'est à 0,5 h ; le seul libellé ENLEVER générique à 0,5 h est « EQUIPEMENT A ENLEVER » (p 0.0, h 0.5, nb_projets 1, 2026-05-05, s-1753 ecole asomption) ; même temps que les autres enlèvements de dispositifs du lot (« ENLEVER ENSEIGNE SORTI », « STATION ENL », 0,5 h). Retenu pour ENC-E, ENCU-E, L14-E, L22-E, L4-E, LLIN-E. Candidats écartés (valeurs relues) : « ENLEVER FIXTURE ENCAST », « ENLEVER FIXTURE 1X4 », « ENLEVER FIXTURE 2X2 », « ENLEVER FIXTURE 2X4 », « ENLEVER FIXTURE MURAL » (p 0.0, h 0.35, nb 1, 2026-08-26, s-1835 esbg rehabilitation inbterieur) ; « FIXTURE ENCASTRE ENLEV » et « STRIP STRIP ENLEVER » (p 0.0, h 0.25, nb 2, 2026-03-09, Canderel) ; « APPAREIL D'ECLAIRAGE A DEMANTELER » (p 0.0, h 0.2, nb 1, 2026-09-23, s-1866). Impact : 40 luminaires à enlever au relevé (ENC 26 + L14 6 + L22 8) × (0,5 − 0,35) = +6,0 h par rapport à la série 0,35 h ; +6,5 h par rapport à 0,25 h (« FIXTURE ENCASTRE ENLEV ») sur les 26 ENC ; L4-E et LLIN-E (précautions) = 0 unité.",
+    "ARBITRAGE 2 — ANNONCIATEUR (PA-I, PA-R) : 0 $ en ligne, 8 h. « RELO PANN ANNOCIATEUR » (p 0.0, h 8.0, nb_projets 2, 2026-03-09, 25-066G Canderel Lobby) retenu : repère METHODE « annonciateur relocalisé 8 h », règle 3 (nb 2 contre 1) et principe METHODE §2 (panneaux : 0 $ en ligne + lot ; l'annonciateur AI-05 est dans LOT-JCI 7 400 $). Option écartée : « RELO PANNEAU ANNONCIA » (p 550.0, h 8.0, nb 1, 2026-06-26, S-1795 Lanthier Arthesa) = +550 $, qui double le lot JCI. Écartés aussi : « PANNEAU ANNONCIATEUR » (p 0.0, h 8.0, nb 4, 2026-08-19, S-1797) = installation et non relocalisation ; « REINSTALLER PANN ANNO » (24 h, nb 2) ; « RELO PANN ANNONCIATEU » (h 0) ; « PANNEAU ALARME » (16 h, objet différent). PA-I (relevé INSTALLER 1) et PA-R désignent le MÊME annonciateur physique (relevé = Détail G-04 = bordereau 3.37 = AI-05) : une seule des deux lignes doit recevoir une quantité (PA-I = 1, PA-R = 0 ; PA-E, PA-R sont des précautions) sinon 16 h au lieu de 8 h.",
+    "ARBITRAGE 3 — PANNEAUX ET DISJONCTEURS COUVERTS PAR LOT-DIST : B-01 à B-08 à p = 0 (temps seulement). LOT-DIST 6 200 $ = panneau NF 225 A 42 cct 3 400 $ + EDB 1P 20 × 95 $ (1 900 $) + EJB 3P 3 × 300 $ (900 $) : vérifié. Décompte des disjoncteurs 1P : B-02 (14) + B-06 (1) + B-07 (2) + B-08 (2) = 19 ≤ 20 EDB : B-06, B-07, B-08 sont donc couverts (il reste 1 EDB) ; 3P : B-03 + B-04 + B-05 = 3 = 3 EJB : couverts. Si on ne les couvrait pas : +184,80 $ en 1P (B-06/B-07 à 54,82 $ ×3 et B-08 à 10,17 $ ×2) + 2 158,80 $ en 3P (3 × 719,60 $) ; non retenu. Écarts de calibre notés : B-01 libellé Dupuis 400 A / 35 kA alors que le Détail décrit un PP-3 225 A (seul libellé à 8 h avec 42 cct et 347/600 V) ; B-03 à B-05 libellé 100 A 3P 120/240 V alors que le Détail décrit 20 A, 40 A, 15 A (seul 3P à 1 h, repère disjoncteur 3P 1 h). Le p du catalogue (719,60 $ ; 10,17 $) est écrit dans src. Ventilation du lot pour B3 : panneau 3 400 $ (art. 3.24) ; disjoncteurs 1 900 $ + 900 $ = 2 800 $ (art. 3.25). NON AJOUTÉ (à trancher par B3/directeur) : le démantèlement de l'ancien PP-3, que le Détail B-01 inclut (24 h Léna) ; options Dupuis : « ENL PANN 42CCT 120/208V » (p 0.0, h 4.0, nb 2, 2026-03-09) = +4 h, ou « PANNEAU A CHANGER » (p 0.0, h 16.0, nb 1, 2026-08-19, S-1797) = +16 h ; aucun code du sous-lot ne le porte.",
+    "ARBITRAGE 4 — CONDUITS : fil inclus ou non. Preuve faite sur le catalogue (um P) : pour tous les assemblages « CONDUIT <diam> nnC<calibre> » le temps = conduit vide + n × fil, exactement (« CONDUIT 3/4 04C12 » 0,076 = 0,056 + 4 × 0,005 ; « CONDUIT 3/4 05C12 » 0,081 ; « CONDUIT 1 04C08 » 0,098 = 0,07 + 4 × 0,007 ; « CONDUIT 1 11C12 » 0,125) et le prix suit à ±3 % (04C08 : 6,1399 contre 6,1031 ; 04C12 : −2,3 % ; 05C12 : +1,8 %) ; « CONDUIT 3/4 03C12 » (4,2441 $/pi ; 0,1128 h/pi ; repère METHODE) est plus élevé que la décomposition (2,5785 ; 0,071 : accessoires inclus) ; l'assemblage CONTIENT donc les conducteurs. Décision : fil INCLUS (ligne à 0 $ / 0 h, u = PI, aucun double paiement) pour C-06 (assemblage « CONDUIT 1 04C08 »), C-08 et F-09 (assemblage « CONDUIT 3/4 03C12 »). Les conduits « vides » (D-14, E-09, G-02 : « CONDUIT VIDE 3/4 », p 1.4097, h 0.056, nb 12, 2026-08-19, S-1797) n'ont pas de fil : G-03 (câble FT4) est payé à part.",
+    "ARBITRAGE 5 — CONDUIT 1 po À 5 #12 (D-13 480 m + E-08 175 m = 2 148,9 pi), assemblage « CONDUIT 1 05C12 » ABSENT du catalogue (10 libellés « CONDUIT 1 … » relus : 03C06, 03C08, 04C06, 04C08, 07C10, 08C10, 11C12, 13C12, 15C12, PVC VIDE). Le releveur B2-3 avait appliqué mon choix de PHASE 1 : « CONDUIT 3/4 03C12 » comme analogue (4,2441 $/pi ; 0,1128 h/pi, −3,1 % en prix de la décomposition mais +18,7 % en temps, mauvais diamètre). La preuve de l'ARBITRAGE 4 montre que Dupuis valorise un assemblage comme conduit vide + fils ; l'objet exact se compose donc de deux libellés exacts : D-13 et E-08 = « CONDUIT VIDE 1 » (um P, p 2.4307, h 0.07, nb_projets 3, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) ; D-15 et E-10 = « 12AWG SOLIDE RW90 600V » (um P, p 0.3896, h 0.005, nb 3, 2026-09-10, s-1854 sollio st hubert lanthier ; seule option 12 AWG simple à nb 3), facturés au pied de CONDUCTEUR (quantité = 5 × longueur de conduit, comme au Détail : 2 400 m et 875 m) ; aucun double paiement puisque le conduit est vide. Impact face à l'analogue 03C12 : 9 409,49 $ / 204,15 h contre 9 120,25 $ / 242,40 h, soit +289,25 $ et −38,25 h. Autres candidats écartés : « CONDUIT 3/4 05C12 » (p 3.4197, h 0.081, nb 10, 2026-10-07, s-1881) : bon nombre de fils mais 3/4 po (−2 060,82 $, −30,08 h par rapport au retenu) ; « CONDUIT 1 11C12 » (p 6.1407, h 0.125, nb 7, 2026-08-19, S-1797) : 11 conducteurs (+3 786,40 $, +64,47 h par rapport au retenu) ; « 12AWG 7 BRINS RW90 600V 90C NOIR » (p 0.3687, h 0.0051, nb 1) : nb 1. Les quantités sont les hypothèses du Détail (30 m par course RDC, 25 m par course étage) ; elles restent à l'équipe A.",
+    "AUTRES CHOIX CONFIRMÉS (sans changement). C-05/C-06 : « CONDUIT 1 04C08 » (4 #8 dans 1 po, objet exact) ; écartés « CONDUIT 1 03C08 » (p 6.5707, h 0.091, nb 3, 2026-10-07 : 3 conducteurs) et la décomposition « CONDUIT VIDE 1 » + 4 × « 8AWG 7 BRINS RW90 600V » (−0,6 %). C-07 (80 m dont 35 m à 4 #12 et 45 m à 3 #12) et F-08 (3 #12 par point) : « CONDUIT 3/4 03C12 » (repère METHODE, règle 1) ; variante mixte écartée : 35 m en « CONDUIT 3/4 04C12 » (p 2.8997, h 0.076, nb 5) = −154,37 $ et −4,23 h. G-03 : « 16AWG 1PR PVC FT4 600V » (une paire = 2 conducteurs #16) ; écartés « COND ALARME 3/16 FT4 » (1.5887 $/pi, 0,054 h/pi, nb 16 : le « 3/16 » n'est pas confirmé par le libellé ; +228,11 $ et +9,84 h sur 60 m), « 16AWG 3C PVC FT4 600V G » et « 16AWG 3C ALARME ARME 3 » ; Lumen « CAB16/2FAFT4300 » (0,4097 $/pi) confirme l'ordre de grandeur. Percements D-12 et E-07 : « PERCEMENT PLANCHER » (p 150, h 1.0, nb 8, 2026-10-07 : repère METHODE) ; coupe-feu non ajouté (« COUPE FEU TUBE 10.1 FL O » 13,53 $ / 0,5 h noté, non utilisé). X-01 : « SCAN DALLE BETON » (p 1 250, h 2.0, nb 2) repère METHODE. Luminaires neufs LA1-I, LC1-I, LC11-I, LC13-I, LE-I : 0,75 h (repère METHODE), p = 0 forcé (LOT-ECL) ; les modules 1′ et 3′ restent à 0,75 h (l'unité est l'étiquette, reserves.md R-003 ; les 0,5 h et 0,6 h du Détail F-03/F-04 écartés : écart de 3,75 h). Z6-I : « ENSEIGNE SORTIE » (nb 10, repère 1 h) à p = 0 forcé ; Z6-E « ENLEVER ENSEIGNE SORTI » 0,5 h ; Z6-R « RELO ENSEIGNE SORTIE » 1,25 h (R-005 : précautions). Détecteurs : DF-I « DETECTEUR A FUMEE » (nb 9, p = 0 forcé, LOT-DET) ; DF-R « RELO DETECTEUR A FUME » 0,75 h. MM-I/MT-I « MOTEUR » (p 25, h 0,75, repère moteur). B-09 : « IDENTIFIER LES CIRCUITS EXISTANTS A » (3,0 h × 9 panneaux = 27 h ; le Détail jugement donne 1 h par panneau = 9 h ; Dupuis analogue retenu, incertain). X-02 : « NACELLE » (1 250 $ / 16 h, repère METHODE).",
+    "CODES SANS CORRESPONDANCE DUPUIS DIRECTE (analogue ou décomposition ; aucun repli Lumen ni jugement Estimation_2 n'est entré dans un p ou un h) : (a) -E de luminaires ENC-E, ENCU-E, L14-E, L22-E, L4-E, LLIN-E : aucun libellé de luminaire à 0,5 h ; générique « EQUIPEMENT A ENLEVER » (repère METHODE, arbitrage 1). (b) HP-E, DF-E, PA-E : aucun libellé ENLEVER haut-parleur / détecteur / annonciateur ; analogue « STATION ENL » (p 0.0, h 0.5, nb 1, 2026-02-09, s1659 ecole arc en ciel ste julie) ; alternatives notées : « IC ENL » (0,5 h), « FIXTURE ENCASTRE ENLEV » (0,25 h, nb 2 : écarté, objet plus proche mais temps inférieur au repère des enlèvements de dispositifs), « ENL PANN 42CCT 120/208V » (4 h) pour PA-E. (c) MM-R et MT-R : aucun « RELO MOTEUR » ; analogue « RELO PLINTHE 2000W » (p 0.0, h 1.0, nb 1, 2026-10-07, s-1881) ; options chiffrées sur les 6 MM-R : « DISCONNECTER ET RECON » (8 h, nb 2, 2026-03-09 : 48 h au total), jugement Détail A-10 (4 h par unité : 24 h), « DEBRANCHEMENT APPAREILAGE MECANIQUE » 0,4 h + « MOTEUR » 0,75 h (6,9 h) ; retenu 1,0 h (6 h), proche de la combinaison Dupuis objet-exact 1,15 h ; risque de sous-estimation signalé. (d) B-01, B-03, B-04, B-05 : libellés de calibre différent (voir arbitrage 3) ; p = 0 forcé. (e) B-09 : analogue « IDENTIFIER LES CIRCUITS EXISTANTS A ». (f) PA-I : relocalisation (« RELO PANN ANNOCIATEUR ») pour un relevé « INSTALLER 1 ». (g) D-13/E-08 : décomposition conduit vide 1 po + fil (arbitrage 5). Directs (même objet, même action) : SM-E « STATION ENL », MM-E et MT-E « ENLEVER MOTEUR 1/2 HP 6 » (p 0.0, h 0.25, nb 2, 2026-03-09).",
+    "REPLIS LUMEN / JUGEMENT : aucun. La feuille « Matériel Lumen » exclut luminaires, enseignes, panneaux et disjoncteurs P2/P3 (marque à confirmer) ; elle n'a servi que de contrôle d'ordre de grandeur pour conduits, fils et boîtes (CONEMT3/4 1,0494 $/pi, CONEMT1 1,8378 $/pi, CAB12/1RW90 1,3357 $/m, CAB16/2FAFT4300 1,344 $/m, TROCP25WB+10.1OZ 26,22 $/ch) : Dupuis a l'assemblage (boîte, plaque, raccord inclus), donc Lumen non ajouté. Le jugement (Estimation_2, Détail) n'est cité qu'en comparaison de temps (B-02 0,5 h contre 0,2 h ; B-09 1 h contre 3 h ; MM-R A-10 4 h contre 1 h ; F-03/F-04 0,5 h et 0,6 h contre 0,75 h).",
+    "ÉCART LOT-ECL : la décomposition METHODE §2 = A1 11 × 185 + SL1 4′ 12 × 290 + 3′ 15 × 230 + 1′ 6 × 110 + trousses 1 500 + E 3 × 475 + Z6 3 × 161,60 = 2 035 + 3 480 + 3 450 + 660 + 1 500 + 1 425 + 484,80 = 13 034,80 $, contre 11 893 $ confirmé par Francis le 2026-10-20 : écart de 1 141,80 $. Le montant retenu est 11 893 $ (le confirmé) ; l'écart est signalé, non corrigé. LOT-DIST (3 400 + 20 × 95 + 3 × 300 = 6 200 $) : vérifié, aucun écart.",
+    "CORRECTIONS DU CHEF EN PHASE 2 (écart avec les fichiers des releveurs, qui restent intacts) : ENC-E, ENCU-E, L14-E, L22-E, L4-E, LLIN-E : « ENLEVER FIXTURE … » (0.0 $ / 0.35 h) remplacé par « EQUIPEMENT A ENLEVER » (0.0 $ / 0.5 h) ; D-13 et E-08 : « CONDUIT 3/4 03C12 » (4.2441 $ / 0.1128 h par pi) remplacé par « CONDUIT VIDE 1 » (2.4307 $ / 0.07 h par pi) ; D-15 et E-10 : ligne « inclus » (0 / 0) remplacée par « 12AWG SOLIDE RW90 600V » (0.3896 $ / 0.005 h par pi de conducteur). Les 66 autres lignes à libellé et les 5 lots sont repris tels quels des releveurs. Chaque ligne corrigée porte « arbitrage du chef B2 en PHASE 2 » dans src.",
+    "RÈGLES TENUES : p et h = prix_a_utiliser / temps_a_utiliser (dernière valeur Dupuis, jamais médiane, min, max) ; p = 0 pour tout ce qui est dans un lot (LA1-I, LC1-I, LC11-I, LC13-I, LE-I, Z6-I dans LOT-ECL ; DF-I dans LOT-DET ; B-01 à B-08 dans LOT-DIST) avec le « catalogue p = … » écrit dans src ; conduits et fils en u = PI (um P au catalogue, 1 m = 3,2808 pi ; aucune conversion faite ici) ; aucun h = 0 pour un vrai travail (les h = 0 sont les 3 fils « inclus » et les 5 lots) ; q = null partout ; art provisoires : −E et −R 3.22 (PA-R 3.37 ; MM-R et MT-R 3.23), luminaires et Z6 −I 3.35, DF/SM/HP −I 3.36, PA-I 3.37, MM/MT −I 3.23, B-01 et B-09 3.24, B-02 à B-08 3.25, conduits, fils et percements 3.31, X-01 3.32, X-02 6.1, LOT-ECL 3.35, LOT-DIST 3.24, LOT-JCI 3.38, LOT-DET 3.36, LOT-GPR 3.32."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "LA1-I",
+        "LC1-I",
+        "LC11-I",
+        "LC13-I",
+        "LE-I",
+        "Z6-I",
+        "LOT-ECL"
+      ],
+      "regle": "matériel des luminaires neufs du tableau E-008 et des 3 Z6 payé UNE fois par LOT-ECL ; les lignes à p = 0 ne portent que le temps"
+    },
+    {
+      "codes": [
+        "LA1-I",
+        "LC1-I",
+        "LC11-I",
+        "LC13-I",
+        "LE-I",
+        "Z6-I",
+        "F-01",
+        "F-02",
+        "F-03",
+        "F-04",
+        "F-06",
+        "F-07"
+      ],
+      "regle": "le plan gagne : les lignes Détail F-01…F-04, F-06, F-07 (luminaires et enseigne, heures Léna) font double emploi avec les -I du relevé"
+    },
+    {
+      "codes": [
+        "ENC-E",
+        "L14-E",
+        "L22-E",
+        "A-01",
+        "A-02"
+      ],
+      "regle": "le plan gagne : Détail A-01/A-02 (démantèlement des luminaires existants) font double emploi avec les -E du relevé"
+    },
+    {
+      "codes": [
+        "ENC-R",
+        "A-06"
+      ],
+      "regle": "le plan gagne : Détail A-06 (relocalisation de luminaires) fait double emploi avec ENC-R"
+    },
+    {
+      "codes": [
+        "Z6-I",
+        "Z6-E",
+        "Z6-R"
+      ],
+      "regle": "un seul des trois s'applique à un même signe de sortie (R-005 : confirmer neuf) ; Z6-E et Z6-R sont des précautions (q attendu 0)"
+    },
+    {
+      "codes": [
+        "B-01",
+        "B-02",
+        "B-03",
+        "B-04",
+        "B-05",
+        "B-06",
+        "B-07",
+        "B-08",
+        "LOT-DIST"
+      ],
+      "regle": "panneau et disjoncteurs 1P/3P payés UNE fois par LOT-DIST ; les lignes B-0x sont à p = 0 et ne portent que le temps (EDB : 19 ≤ 20 ; EJB : 3 ≤ 3)"
+    },
+    {
+      "codes": [
+        "PA-I",
+        "PA-R",
+        "G-04",
+        "AI-05",
+        "LOT-JCI"
+      ],
+      "regle": "un seul annonciateur physique (relevé INSTALLER 1 = Détail G-04 = bordereau 3.37 = AI-05) : q sur PA-I OU PA-R, jamais les deux (8 h une fois, pas 16 h) ; 0 $ en ligne car l'annonciateur AI-05 est dans LOT-JCI"
+    },
+    {
+      "codes": [
+        "X-02",
+        "H-01"
+      ],
+      "regle": "la nacelle (1 250 $ / 16 h) et la mobilisation / plateforme roulante du Détail H-01 (16 h, jugement) peuvent se recouvrir : à trancher par le chef B3"
+    },
+    {
+      "codes": [
+        "DF-I",
+        "G-01",
+        "LOT-DET"
+      ],
+      "regle": "les 2 détecteurs neufs du relevé = Détail G-01 = AI-01 ; matériel payé par LOT-DET (600 $), seul le temps de DF-I compte"
+    },
+    {
+      "codes": [
+        "MM-I",
+        "MT-I",
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04"
+      ],
+      "regle": "les raccordements mécaniques C-01…C-04 du Détail (UTA, VE-02N, chaudières, humidificateurs) peuvent recouvrir les moteurs MM-I/MT-I du relevé : à trancher"
+    },
+    {
+      "codes": [
+        "MM-R",
+        "A-10"
+      ],
+      "regle": "les 6 équipements E.A.R du toit (Détail A-10) sont les 6 MM-R du relevé : un seul des deux est payé"
+    },
+    {
+      "codes": [
+        "X-01",
+        "LOT-GPR"
+      ],
+      "regle": "le scan de dalle et le géoradar sont le MÊME objet à 1 250 $ : un seul des deux est payé (garder le temps de 2,0 h de X-01) ; à trancher par le chef B3"
+    },
+    {
+      "codes": [
+        "C-05",
+        "C-06"
+      ],
+      "regle": "fil inclus dans l'assemblage « CONDUIT 1 04C08 » : C-06 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "C-07",
+        "C-08"
+      ],
+      "regle": "fil inclus dans l'assemblage « CONDUIT 3/4 03C12 » : C-08 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "F-08",
+        "F-09"
+      ],
+      "regle": "fil inclus dans l'assemblage « CONDUIT 3/4 03C12 » : F-09 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "D-13",
+        "D-15",
+        "E-08",
+        "E-10"
+      ],
+      "regle": "PAS de fil inclus ici : le conduit 1 po (D-13, E-08) est « CONDUIT VIDE 1 » (aucun assemblage 1 05C12 au catalogue) et les 5 #12 sont payés par D-15 et E-10 au pied de conducteur ; aucun double paiement (le conduit vide ne contient pas de fil)"
+    },
+    {
+      "codes": [
+        "C-05",
+        "C-07",
+        "D-13",
+        "D-14",
+        "E-08",
+        "E-09",
+        "F-08",
+        "G-02",
+        "G-03"
+      ],
+      "regle": "conduits, fils et boîtes de la feuille Matériel Lumen (CONEMT…, CAB12…, IBE…) contre assemblages Dupuis (boîte, plaque et raccord inclus) : Lumen vérifié, non utilisé"
+    },
+    {
+      "codes": [
+        "D-12",
+        "E-07"
+      ],
+      "regle": "le percement Dupuis (150 $ / 1 h) ne reçoit pas le coupe-feu en plus"
+    },
+    {
+      "codes": [
+        "B-01"
+      ],
+      "regle": "le démantèlement de l'ancien PP-3 (Détail B-01, 24 h) n'est porté par aucun des 76 codes : option +4 h (ENL PANN 42CCT 120/208V) ou +16 h (PANNEAU A CHANGER), à trancher par B3 / le directeur"
+    }
+  ]
+}

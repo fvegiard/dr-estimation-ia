@@ -1,0 +1,53 @@
+{
+  "niveau": "releveur",
+  "nom": "A1-2",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {"code": "SD-I", "desc": "Sortie informatique/réseau neuve", "q": 65, "u": "U", "p": null, "h": null,
+     "art": "3.33", "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md INSTALLER 65 ; Par feuille E104 45 + E105 20 (feuilles nouveau)"},
+    {"code": "SD-E", "desc": "Sortie informatique/réseau à enlever", "q": 17, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md ENLEVER 17 ; Par feuille existant E101 36 + E102 19 = 55 = C+E+R"},
+    {"code": "SD-R", "desc": "Sortie informatique/réseau à relocaliser", "q": 3, "u": "U", "p": null, "h": null,
+     "art": "3.33", "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md RELOCALISER 3 ; art de la famille SD (convention du directeur A)"},
+    {"code": "BJ-I", "desc": "Boîte de jonction neuve", "q": 3, "u": "U", "p": null, "h": null,
+     "art": "3.31", "src": "releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md INSTALLER 3 ; Par feuille E104 3 (feuille nouveau)"},
+    {"code": "BJ-E", "desc": "Boîte de jonction à enlever", "q": 2, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md ENLEVER 2 ; Par feuille existant E101 4 + E102 1 + E201 2 = 7 = C+E+R"},
+    {"code": "MP-I", "desc": "Monument plancher neuf", "q": 3, "u": "U", "p": null, "h": null,
+     "art": "3.34", "src": "releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md INSTALLER 3 ; Par feuille E105 3 (feuille nouveau)"},
+    {"code": "MP-E", "desc": "Monument plancher à enlever", "q": 3, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md ENLEVER 3 ; Par feuille existant E101 1 + E102 3 = 4 = C+E+R"},
+    {"code": "D-09", "desc": "Raccord panneau de contrôle barrière anti-vol (les 2 JB sont comptées dans BJ-I)", "q": 1, "u": "LOT", "p": null, "h": null,
+     "art": "3.31", "src": "entree/reference-Estimation_2.xlsx Détail D-09 Qté 1 lot ; arbitrage chef A1"},
+    {"code": "E-03", "desc": "Boîte de plancher refaite salle 208 (à confirmer)", "q": 2, "u": "U", "p": null, "h": null,
+     "art": "3.34", "src": "entree/reference-Estimation_2.xlsx Détail E-03 Qté 2 u ; arbitrage chef A1"}
+  ],
+  "notes": [
+    "Périmètre : familles SD, TV, BJ, MP seulement. Quantités lues dans rapport-releve.md (portées) et releve.xlsx (Par libellé : SORTIE DATA 120, SORTIE TV 4, BOITE JONCTION 10, MONUMENT PLANCHER 7). Totaux Par feuille concordants : SD 36+19+45+20 = 120 ; TV 1+3 = 4 ; BJ 4+1+3+2 = 10 ; MP 1+3+3 = 7. p et h à null partout (hors lot).",
+    "CONSERVER, aucune ligne (note seulement) : SD 35, BJ 5, MP 1, TV 4. TV est 100 % CONSERVER, donc aucune ligne TV.",
+    "Contrôle par feuille SD : EXISTANT E101 36 + E102 19 (E103, E201, E202 : 0) = 55 vs C+E+R 35+17+3 = 55 OK ; NOUVEAU E104 45 + E105 20 (E106, E203, E204 : 0) = 65 vs I 65 OK.",
+    "Contrôle par feuille TV : EXISTANT E101 1 + E102 3 = 4 vs C 4 OK ; NOUVEAU 0 vs I 0 OK.",
+    "Contrôle par feuille BJ : EXISTANT E101 4 + E102 1 + E201 2 = 7 vs C+E+R 5+2 = 7 OK ; NOUVEAU E104 3 vs I 3 OK.",
+    "Contrôle par feuille MP : EXISTANT E101 1 + E102 3 = 4 vs C+E+R 1+3 = 4 OK ; NOUVEAU E105 3 vs I 3 OK.",
+    "Réserve R-002 : les portées SD, BJ et MP viennent du rapport, sans revérification sur plan (le plan n'est pas dans le dossier swarm-2). À confirmer sur les planches de contrôle.",
+    "Services E.A.E, A-03 et A-04 : Détail 34 + 10 = 44 (notes « Compte E.A.E E-101 » et « E-102 ») contre les lignes -E du plan services PC-E 7 + PG-E 4 + SD-E 17 + BJ-E 2 + MP-E 3 + BC-E 2 = 35 (PC-E, PG-E et BC-E lus dans rapport-releve.md, lots d'autres releveurs). Écart de 9 non expliqué par le plan, non repris. Le plan compte aussi DM-E 1, INT-E 1 et DF-E 1 (DETECTEUR FUMEE ENLEVER 1), hors de ce lot.",
+    "E-01 et E-04 : 5 boîtes de jonction au Détail (E-01 2 postes à JB, E-04 3 cabines à JB), toutes sur E105. La famille BOITE JONCTION du plan n'a aucune ligne sur E105 (BJ-I toutes sur E104, BJ-E sur E101, E102 et E201). Les exclusions sont tenues (arbitrage), mais ces 5 JB ne sont pas couvertes par BJ au plan : contradiction à trancher sur le plan, aucune reprise dans ce lot.",
+    "E-02 : Détail 2 monuments de plancher (P-4 17, P4-15) contre MP-I 3 sur E105 au plan. Écart 2 vs 3, noté ; exclusion conservée, MP-I reste à 3.",
+    "E-03 : 2 boîtes de plancher refaites (salle 208) reprises en U, article 3.34. Chevauchement possible avec MP-E 3 (existants E102) et MP-I 3 (E105) ; la note du Détail dit « à confirmer ». Non tranchable sans le plan : risque de double compte MP à vérifier.",
+    "D-09, D-10 et BJ-I : BJ-I 3 sur E104 = 2 JB de D-09 + 1 JB de D-10 (les deux lignes Détail sont sur E104). Concordance numérique seulement : le plan ne dit pas quelle JB est laquelle. D-09 est reprise en LOT 1 pour le raccord panneau de contrôle (non relevé au plan, aucune famille barrière dans rapport-releve.md). D-10 est exclue, le contrôle tenant numériquement.",
+    "E-01, E-04 et E-05 : les lignes remplaçantes PC-I et SD-I appartiennent à d'autres releveurs ; leurs valeurs ne sont pas revérifiées ici.",
+    "R-006 : sorties data = triangle plein ≤ 6,5 pt seulement. Les quantités SD sont celles du rapport, non recomptées dans ce lot.",
+    "Bordereau : 3.34 est libellé « Moinument plancher » dans entree/reference-Bordereau_de_prix.xlsx (coquille du libellé ; le numéro 3.34 est correct). Articles appliqués selon la convention : SD-R 3.33 ; SD-E, BJ-E, MP-E 3.22 ; BJ-I 3.31 ; MP-I et E-03 3.34 ; SD-I 3.33 ; D-09 3.31.",
+    "Unités : U partout sauf D-09 (LOT)."
+  ],
+  "exclusions": [
+    {"code": "A-03", "raison": "Détail A-03 Qté 34 u (note « Compte E.A.E E-101 ») : double compte avec les lignes -E du plan services PC-E 7, PG-E 4, SD-E 17, BJ-E 2, MP-E 3, BC-E 2 (total 35), remplacée par ces lignes ; écart 44 vs 35 en note"},
+    {"code": "A-04", "raison": "Détail A-04 Qté 10 u (note « Compte E.A.E E-102 ») : même double compte que A-03, remplacée par PC-E, PG-E, SD-E, BJ-E, MP-E, BC-E ; écart 44 vs 35 en note"},
+    {"code": "E-01", "raison": "Détail E-01 Qté 2 postes (JB, 2 prises, data 2 RJ45) : double compte, remplacée par PC-I et SD-I (plan) ; ses 2 JB ne figurent pas en BJ-I sur E105 (voir notes)"},
+    {"code": "E-02", "raison": "Détail E-02 Qté 2 u (monuments de plancher, prise 20A + 2 RJ45) : double compte, remplacée par MP-I (3 sur plan E105) ; écart 2 vs 3 en note"},
+    {"code": "E-04", "raison": "Détail E-04 Qté 3 u (cabines/salles : JB + prise) : double compte, remplacée par PC-I (et BJ-I si pertinent ; BJ-I vaut 0 sur E105, voir notes)"},
+    {"code": "E-05", "raison": "Détail E-05 Qté 1 u (écran sur colonne : courant + données) : double compte, remplacée par PC-I et SD-I (plan)"},
+    {"code": "D-10", "raison": "Détail D-10 Qté 1 u (bornes de prêts / fontaine, JB dans mur adjacent) : double compte, remplacée par la 3e BJ-I sur E104 ; contrôle BJ-I 3 = 2 (D-09) + 1 (D-10) tenu numériquement"}
+  ]
+}

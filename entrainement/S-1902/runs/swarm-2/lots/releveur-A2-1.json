@@ -1,0 +1,196 @@
+{
+  "niveau": "releveur",
+  "nom": "A2-1",
+  "modele_demande": "haiku",
+  "effort_demande": "high",
+  "lignes": [
+    {
+      "code": "ENC-E",
+      "desc": "Appareil d'éclairage encastré existant (E.A.E) — enlever",
+      "q": 26,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé ENCASTRE 79 ; rapport-releve.md ENLEVER 26 (CONSERVER 49, ENLEVER 26, RELOCALISER 4) ; Par feuille E201 28, E202 35, E204 16"
+    },
+    {
+      "code": "ENC-R",
+      "desc": "Appareil d'éclairage encastré existant (E.A.R) — relocaliser",
+      "q": 4,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé ENCASTRE 79 ; rapport-releve.md RELOCALISER 4 (CONSERVER 49, ENLEVER 26, RELOCALISER 4) ; Par feuille E201 28, E202 35, E204 16"
+    },
+    {
+      "code": "L14-E",
+      "desc": "Appareil d'éclairage LED 1x4 existant — enlever",
+      "q": 6,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé LED 1X4 33 ; rapport-releve.md ENLEVER 6 (CONSERVER 27, ENLEVER 6) ; Par feuille E102 1, E201 11, E202 21"
+    },
+    {
+      "code": "L22-E",
+      "desc": "Appareil d'éclairage LED 2x2 existant — enlever",
+      "q": 8,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé LED 2X2 94 ; rapport-releve.md ENLEVER 8 (CONSERVER 86, ENLEVER 8) ; Par feuille E201 45, E204 49"
+    },
+    {
+      "code": "HP-E",
+      "desc": "Haut-parleur encastré au plafond existant — enlever",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé HP ENCASTRE PLAFOND 1 ; rapport-releve.md ENLEVER 1 (ENLEVER 1) ; Par feuille E202 1"
+    },
+    {
+      "code": "A-08",
+      "desc": "FabLab 210 : retrait temporaire + réinstallation luminaires linéaires existants",
+      "q": 21,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "entree/reference-Estimation_2.xlsx Détail A-08 (ligne Excel 15 ; colonne D Qté = 21 ; Réf. plan = E-202 note 1)"
+    },
+    {
+      "code": "A-09",
+      "desc": "FabLab 210 : retrait temporaire + réinstallation encastrés existants",
+      "q": 24,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "entree/reference-Estimation_2.xlsx Détail A-09 (ligne Excel 16 ; colonne D Qté = 24 ; Réf. plan = E-202 note 1)"
+    },
+    {
+      "code": "B-01",
+      "desc": "Panneau PP-3 NEUF 225A 347/600V 3Ø 4F 42 cct 14kA, type NF Schneider, surface — remplacement de l'existant (note 2 E-006)",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.24",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-01 (ligne Excel 22 ; colonne D Qté = 1 ; Réf. plan = E-006/E-502)"
+    },
+    {
+      "code": "B-02",
+      "desc": "Disjoncteurs NF 1P-15A pour circuits existants transférés dans PP-3",
+      "q": 14,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.25",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-02 (ligne Excel 23 ; colonne D Qté = 14 ; Réf. plan = E-502)"
+    },
+    {
+      "code": "B-03",
+      "desc": "Disjoncteur NF 3P-20A (aérotherme, cct 13-15-17) transféré",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.25",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-03 (ligne Excel 24 ; colonne D Qté = 1 ; Réf. plan = E-502)"
+    },
+    {
+      "code": "B-04",
+      "desc": "Disjoncteur NF 3P-40A — UTA-1 (cct 18-20-22) NOUVEAU",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.25",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-04 (ligne Excel 25 ; colonne D Qté = 1 ; Réf. plan = E-502)"
+    },
+    {
+      "code": "B-05",
+      "desc": "Disjoncteur NF 3P-15A — VE-2N (cct 19-21-23) NOUVEAU",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.25",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-05 (ligne Excel 26 ; colonne D Qté = 1 ; Réf. plan = E-502)"
+    },
+    {
+      "code": "B-06",
+      "desc": "Disjoncteur 1P-15A DDFT — Fontaine P2-61 (note 4)",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.25",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-06 (ligne Excel 27 ; colonne D Qté = 1 ; Réf. plan = E-502)"
+    },
+    {
+      "code": "B-07",
+      "desc": "Disjoncteurs 1P-15A — P2-63 bornes prêts hall, P2-64 prises bibliothèque (note 4)",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.25",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-07 (ligne Excel 28 ; colonne D Qté = 2 ; Réf. plan = E-502)"
+    },
+    {
+      "code": "B-08",
+      "desc": "Disjoncteurs 1P-20A — P3-17/19 machine de tri (note 4)",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.25",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-08 (ligne Excel 29 ; colonne D Qté = 2 ; Réf. plan = E-502)"
+    },
+    {
+      "code": "B-09",
+      "desc": "Mise à jour fiches dactylographiées + identification (PP-2, PP-3, P2, P3, P4, P6, PU-1, PPU-1, P10)",
+      "q": 9,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.24",
+      "src": "entree/reference-Estimation_2.xlsx Détail B-09 (ligne Excel 30 ; colonne D Qté = 9 ; Réf. plan = Devis 12.3)"
+    }
+  ],
+  "notes": [
+    "Valeurs lues : toutes les quantités du sous-lot égalent les valeurs attendues du brief (aucun ÉCART de quantité). Lignes plan : releve.xlsx Par libellé + Par feuille, portées dans rapport-releve.md (seule source des portées). Lignes Détail : colonne D Qté de Détail (en-têtes ligne 6).",
+    "Unité : la colonne E de Détail porte « u » pour les 11 lignes Détail reprises ; reportée en « U » (vocabulaire du JSON). Les heures de Détail ne sont pas reprises (p et h à null).",
+    "ÉCART : valeur attendue « LA1-I 11 » (brief §2d.1, code d'une ligne traitée par A2-2) ; valeur lue : aucun code LA1-I dans Détail ; la ligne Détail portant Luminaire A1 q 11 est F-01 (ligne Excel 78, Réf. plan E-203/E-008, note « Dont 3 sur circuit PP-U1 »). Correspondance à confirmer par le chef de lot. Aucune quantité modifiée ici.",
+    "ENCU (ENCASTRE URGENCE, portée CONSERVER 10 ; Par feuille E203 9, E204 1) : aucune ligne (CONSERVER = aucun travail). marques('ENCASTRE URGENCE') = 10 marques : 7 « existant pointillé » (E203 : P09, P10, P16, P22 et 3 sans numéro) et 3 « anneau plein » (E203 P11, E203 P15, E204 P25 « anneau plein PP-U1 6 (Mq) »), conforme au brief. L'hypothèse du brief (les 3 anneaux pleins = les luminaires A1 sur PP-U1 déjà dans F-01 / ligne A2-2) n'est pas démontrée par le kit : le kit range les 10 ENCU en CONSERVER sans détail par marque. À trancher sur plan (non fait ici).",
+    "L4 (LED 4PI, CONSERVER 2 ; Par feuille E104 1, E105 1) et LLIN (LUMINAIRE LINEAIRE, CONSERVER 4 ; Par feuille E203 2, E204 2) : aucune ligne (CONSERVER). E203 porte aussi les luminaires typés LUMINAIRE A1 11, C1 12, C1_1 6, C1_3 15, E 3 (Par feuille E203 ; portée INSTALLER dans rapport-releve.md), traités par les autres releveurs : non repris ici.",
+    "ENC CONSERVER 49, L14 CONSERVER 27, L22 CONSERVER 86 : aucune ligne (CONSERVER = aucun travail). Répartition ENLEVER / RELOCALISER par feuille : non disponible dans le kit (Par feuille donne le total par libellé seulement) ; les ENLEVER par feuille ne sont donc pas vérifiés.",
+    "A-01 + A-02 vs plan : Détail 39 + 7 = 46 ; plan ENC-E 26 + L14-E 6 + L22-E 8 = 40 (écart de 6 non expliqué dans le kit). HP-E (1) n'est pas un luminaire et n'entre pas dans ce compte. Le plan gagne : A-01 et A-02 sont exclus (double compte). Les étiquettes E.A.E sont lues à ≤ 14 pt du bloc (R-002) : portées à confirmer sur planches de contrôle.",
+    "A-06 vs ENC-R : Détail 7 (colonne Notes « 3 RDC + 4 2e ») vs plan ENC-R 4 (rapport-releve.md RELOCALISER 4). Le plan gagne : A-06 est exclu.",
+    "A-08 / A-09 (FabLab 210, retrait temporaire + réinstallation d'appareils CONSERVER) : chevauchement possible, non tranché. Par feuille : LED 1X4 sur E202 = 21 = q de A-08 ; ENCASTRE sur E202 = 35 vs q de A-09 = 24 (Notes Détail « Comptés sur plan (±2) », reporté tel quel). Le retrait temporaire d'un appareil conservé n'est ni un enlèvement ni une relocalisation ; la coïncidence de 21 ne prouve pas un double compte. Aucune quantité modifiée.",
+    "B-04 : contradiction 40 A (Détail, E-502) vs MOCP 35 A (tableau mécanique E-009, citée dans Sommaire note 6) ; Détail note « à clarifier ingénieur ». Quantité 1 inchangée. B-08 (sommes) : 1P = B-02 14 + B-06 1 + B-07 2 + B-08 2 = 19 vs lot distribution EDB 1P 95 $ ×20 (METHODE.md §2) ; 3P = B-03 1 + B-04 1 + B-05 1 = 3 = EJB 3P ×3 (METHODE.md §2). Écart 1P à noter, quantités inchangées.",
+    "B-01 : ligne de pose seulement. Le panneau NF 225 A 42 cct (matériel, METHODE.md §2 : 3 400 $) appartient au lot LOT-DIST traité par le chef A3 ; non repris ici. Détail note : « Incl. démantèlement ancien PP-3 + transfert charges ».",
+    "R-002 (reserves.md) : les portées viennent de l'étiquette E.A.E / E.A.R / E.A.C lue à ≤ 14 pt du bloc ; à confirmer famille par famille sur planches de contrôle (non fait par ce releveur). R-003 et R-005 : hors de ce sous-lot sauf pictogrammes (ENCU) notés ci-dessus."
+  ],
+  "exclusions": [
+    {
+      "code": "A-01",
+      "raison": "double compte : luminaires existants E.A.E déjà relevés sur plan (E-201) — remplacée par ENC-E 26, L14-E 6, L22-E 8"
+    },
+    {
+      "code": "A-02",
+      "raison": "double compte : luminaires existants E.A.E déjà relevés sur plan (E-202) — remplacée par ENC-E 26, L14-E 6, L22-E 8"
+    },
+    {
+      "code": "A-06",
+      "raison": "double compte : relocalisations E.A.R déjà relevées sur plan — remplacée par ENC-R 4 (Détail 7 vs plan 4, le plan gagne)"
+    }
+  ]
+}

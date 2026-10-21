@@ -1,0 +1,336 @@
+{
+ "niveau": "chef",
+ "nom": "A3",
+ "modele_demande": "sonnet",
+ "effort_demande": "high",
+ "lignes": [
+  {
+   "code": "C-05",
+   "desc": "Conduit EMT 1\" + 4 #8 RW90 (UTA-01) — assemblage 04C8",
+   "q": 115,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "Estimation_2 Détail C-05 (ligne 38) : Qté lue 35 m × 3,2808 = 114,83 → 115 pi ; L lue « Hypothèse longueur » ; C-06 140 m inclus (4 #8 × 35 m)"
+  },
+  {
+   "code": "C-07",
+   "desc": "Conduit EMT 3/4\" + 3-4 #12 RW90 (VE-02N 35 m 04C12 ; HUM 3 × 15 m 03C12)",
+   "q": 262,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.23",
+   "src": "Estimation_2 Détail C-07 (ligne 40) : Qté lue 80 m × 3,2808 = 262,46 → 262 pi ; L lue « 35 m + 3 x 15 m » ; C-08 275 m inclus (mixte 4 × 35 m + 3 × 3 × 15 m)"
+  },
+  {
+   "code": "D-13",
+   "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle RDC (16 courses) — assemblage 05C12",
+   "q": 1575,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-13 (ligne 57) : Qté lue 480 m × 3,2808 = 1574,78 → 1575 pi ; L lue « Hyp. 30 m/course » ; D-15 2400 m inclus (5 cond./course)"
+  },
+  {
+   "code": "E-08",
+   "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle étage (7 courses) — assemblage 05C12",
+   "q": 574,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-08 (ligne 71) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; E-10 875 m inclus (5 cond./course)"
+  },
+  {
+   "code": "D-14",
+   "desc": "Conduit vide EMT 3/4\" data + corde de tirage (11 courses)",
+   "q": 1083,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.33",
+   "src": "Estimation_2 Détail D-14 (ligne 58) : Qté lue 330 m × 3,2808 = 1082,66 → 1083 pi ; L lue « Hyp. 30 m/course » ; conduit vide, aucun fil apparié"
+  },
+  {
+   "code": "E-09",
+   "desc": "Conduit vide EMT 3/4\" data (7 courses)",
+   "q": 574,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.33",
+   "src": "Estimation_2 Détail E-09 (ligne 72) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; conduit vide, aucun fil apparié"
+  },
+  {
+   "code": "F-08",
+   "desc": "Conduit EMT 3/4\" + 3 #12 RW90 éclairage — assemblage 03C12",
+   "q": 919,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "Estimation_2 Détail F-08 Qté 280 m × 3,2808 = 918,62 → 919 pi ; note L : Hyp. 8 m x 35 points ; Réf. plan E-203 ; 3 cond. RW90 #12 : F-09 exclu (840 m)"
+  },
+  {
+   "code": "G-02",
+   "desc": "Conduit EMT 3/4\" boucle alarme incendie",
+   "q": 98,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "Estimation_2 Détail G-02 Qté 30 m × 3,2808 = 98,42 → 98 pi ; note L : Hyp. ; Réf. plan E-203"
+  },
+  {
+   "code": "G-03",
+   "desc": "Câble FT4 2c #16 rouge boucle adressable (dans G-02)",
+   "q": 197,
+   "u": "PI",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "Estimation_2 Détail G-03 Qté 60 m × 3,2808 = 196,85 → 197 pi ; note L : Hyp. ; Réf. plan E-203 ; câble AI, reprise séparée (exception, pas un fil RW90 d'assemblage)"
+  },
+  {
+   "code": "D-11",
+   "desc": "Bouton d'appel — boîte + conduit vide (système fourni par d'autres)",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-11 Qté 1 u ; note L : Aide au lecteur 116 ; Réf. plan E-104"
+  },
+  {
+   "code": "D-12",
+   "desc": "Percement de dalle carotté + coupe-feu (CAN/ULC-S115, Hilti CP-506) — conduits sous dalle RDC",
+   "q": 16,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-12 Qté 16 u ; note L : 1 percement par course ; Réf. plan E-104 note 5 / devis 1.5, 18"
+  },
+  {
+   "code": "D-16",
+   "desc": "Boîtes de tirage/jonction, connecteurs, supports, corde de tirage — conduits sous dalle RDC",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail D-16 Qté 1 lot ; note L : vide ; Réf. plan E-104"
+  },
+  {
+   "code": "E-06",
+   "desc": "Bouton d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+   "q": 3,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-06 Qté 3 u ; note L : vide ; Réf. plan E-105"
+  },
+  {
+   "code": "E-07",
+   "desc": "Percement de dalle carotté + coupe-feu — étage (7 courses)",
+   "q": 7,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-07 Qté 7 u ; note L : vide ; Réf. plan E-105 note 3"
+  },
+  {
+   "code": "E-11",
+   "desc": "Boîtes, connecteurs, supports — étage",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.31",
+   "src": "Estimation_2 Détail E-11 Qté 1 lot ; note L : vide ; Réf. plan E-105"
+  },
+  {
+   "code": "A-11",
+   "desc": "Maintien continuité de service, recherche/traçage circuits existants, réalimentation circuits libérés",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail A-11 (ligne 18) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse »"
+  },
+  {
+   "code": "H-01",
+   "desc": "Mobilisation / démobilisation, outillage, plateforme/échafaudage roulant",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-01 (ligne 101) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse »"
+  },
+  {
+   "code": "H-02",
+   "desc": "Coordination EG / multi-corps, dessins d'atelier, plans tel que construit",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-02 (ligne 102) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse »"
+  },
+  {
+   "code": "H-03",
+   "desc": "Essais, mise en service, vérification prises existantes (note 3), étiquetage",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-03 (ligne 103) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse »"
+  },
+  {
+   "code": "H-04",
+   "desc": "Nettoyage, gestion des déchets (devis 5, 9.3)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "Estimation_2 Détail H-04 (ligne 104) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse »"
+  },
+  {
+   "code": "X-02",
+   "desc": "Nacelle (location, 16 h)",
+   "q": 1,
+   "u": "U",
+   "p": null,
+   "h": null,
+   "art": "6.1",
+   "src": "METHODE.md §2 point 3 : nacelle 1 250 $ / 16 h ; catalogue-prix-temps-dupuis.csv ligne 2026 « NACELLE » : prix_a_utiliser 1250.0, temps_a_utiliser 16.0 (dernier projet s-1811 cdc construction de 6 batiment, 2026-07-14)"
+  },
+  {
+   "code": "LOT-ECL",
+   "desc": "Lot éclairage (A1 ×11, Axis SL1 4′ ×12, 3′ ×15, 1′ ×6, trousses, E ×3, Z6 ×3)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.35",
+   "src": "METHODE.md §2 point 2 : lot éclairage 11 893 $ (prix confirmé Francis 2026-10-20)"
+  },
+  {
+   "code": "LOT-DIST",
+   "desc": "Lot distribution (NF 225 A 42 cct + EDB 1P ×20 + EJB 3P ×3)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.24",
+   "src": "METHODE.md §2 point 2 : lot distribution 6 200 $ (prix confirmé Francis 2026-10-20)"
+  },
+  {
+   "code": "LOT-JCI",
+   "desc": "Sous-traitance JCI/Simplex",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.38",
+   "src": "METHODE.md §2 point 2 : JCI 7 400 $ (prix confirmé Francis 2026-10-20)"
+  },
+  {
+   "code": "LOT-DET",
+   "desc": "2 détecteurs de fumée (fournis JCI)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.36",
+   "src": "METHODE.md §2 point 2 : 2 détecteurs 600 $ (prix confirmé Francis 2026-10-20)"
+  },
+  {
+   "code": "LOT-GPR",
+   "desc": "GPR (géoradar = scan de dalle avant carottage)",
+   "q": 1,
+   "u": "LOT",
+   "p": null,
+   "h": null,
+   "art": "3.32",
+   "src": "METHODE.md §2 point 2 : GPR 1 250 $ (prix confirmé Francis 2026-10-20)"
+  }
+ ],
+ "notes": [
+  "DÉCOUPAGE (disjoint, couvrant, 37 codes) : A3-1 = C-05, C-06, C-07, C-08, D-13, D-14, D-15, E-08, E-09, E-10 (conversion + assemblage) ; A3-2 = F-08, F-09, G-02, G-03, D-11, D-12, D-16, E-06, E-07, E-11 ; A3-3 = A-11, H-01 à H-04, G-07, OPT-1 à OPT-4, LOT-ECL, LOT-DIST, LOT-JCI, LOT-DET, LOT-GPR, X-01, X-02. Résultat : 26 lignes reprises, 11 exclusions (C-06, C-08, D-15, E-10, F-09, G-07, OPT-1 à OPT-4, X-01).",
+  "EFFORTS CHOISIS : A3-1 xhigh (conduits sous dalle, plus grosse quantité du lot, mixte C-07 à arbitrer : une erreur se propage à tout le chiffrage) ; A3-2 high (exception G-03 FT4 séparé, contrôles croisés relevé AI-08/AI-09) ; A3-3 high (arbitrage de portées GPR/JCI/X-02, contrôles arithmétiques des lots).",
+  "VÉRIFICATION CHEF (cellules D/E/L de Détail rouvertes dans entree/reference-Estimation_2.xlsx, conversion refaite par python3) : A3-1 : 5/5 minimum — vérifié 6/6 lignes reprises (C-05 35 m→115, C-07 80 m→262, D-13 480 m→1575, E-08 175 m→574, D-14 330 m→1083, E-09 175 m→574) + 4/4 exclusions avec m et pi corrects (C-06 140 m=459 pi, C-08 275 m=902, D-15 2400 m=7874, E-10 875 m=2871). A3-2 : 5/5 minimum — vérifié 9/9 lignes (F-08 280 m→919, G-02 30 m→98, G-03 60 m→197, D-11 1 U, D-12 16 U, D-16 1 LOT, E-06 3 U, E-07 7 U, E-11 1 LOT) + exclusion F-09 840 m = 2756 pi. A3-3 : 5/5 minimum — vérifié A-11, H-01, H-02, H-03, H-04 (1 lot chacun, note L « Hypothèse »), G-07 (ligne 97), OPT-1 à OPT-4 (lignes 108-111), montants des 5 lots relus dans METHODE.md §2 (11 893 / 6 200 / 7 400 / 600 / 1 250), X-02 et X-01 relus dans catalogue-prix-temps-dupuis.csv (NACELLE ligne 2026 : 1250 $ / 16 h ; SCAN DALLE BETON ligne 237 : 1250 $ / 2 h). Aucune erreur trouvée : aucun sous-lot n'a eu à être revu ligne par ligne. Scores : A3-1 5/5, A3-2 5/5, A3-3 5/5.",
+  "CONTRÔLES CROISÉS LUMEN (relus par le chef) : CONEMT1 base « 690 m (C-05 35 + D-13 480 + E-08 175) » = 690 m ; 690 m × 3,2808 = 2 263,75 pi vs Qté Lumen 2 270 pi (marge de bout de rouleau/10 pi). CONEMT3/4 base « 895 m (C-07 80 + D-14 330 + E-09 175 + F-08 280 + G-02 30) » = 895 m ; 895 × 3,2808 = 2 936 pi vs Lumen 2 940 pi. Fils #12 : 275 + 2 400 + 875 + 840 = 4 390 m = total des bobines Lumen (1 500 + 1 200 + 900 + 790). C-08 : 275 m = 4 × 35 + 3 × (3 × 15) = 140 + 135. Relevé alarme incendie : AI-08 câble FT4 60 m et AI-09 EMT 3/4\" 30 m confirment G-03 et G-02 (deux marqués « Longueur estimée » : cohérence, pas mesure indépendante).",
+  "ÉCART ARITHMÉTIQUE LOT ÉCLAIRAGE : 11 × 185 + 12 × 290 + 15 × 230 + 6 × 110 + 1 500 + 3 × 475 + 3 × 161,60 = 13 034,80 $ vs montant confirmé 11 893 $ (écart +1 141,80 $). Le montant confirmé fait foi, rien corrigé (à faire valider par Francis/directeur B). Lot distribution : 3 400 + 20 × 95 + 3 × 300 = 6 200 $, écart nul ; ventilation 3 400 $ → 3.24, 1 900 + 900 $ → 3.25 laissée au directeur B. JCI 7 400 + détecteurs 600 = 8 000 $.",
+  "CHEVAUCHEMENT X-02 / H-01 : H-01 (« plateforme/échafaudage roulant », lot, hypothèse) et X-02 (nacelle 1 250 $ / 16 h, METHODE.md §2 point 3, confirmée au catalogue) sont toutes deux reprises ; chevauchement possible sur l'accès en hauteur, A TRANCHER par le directeur A (X-02 est un forfait de location distinct de la mobilisation/outillage de H-01 ; ne pas compter deux fois le même moyen d'accès).",
+  "SOURCE X-02 : METHODE.md n'a que la section « 2 » numérotée en points 1 à 7 (pas de §2.3, §1 ni §3) ; la nacelle est au point 3 (Heures).",
+  "GPR / X-01 : le kit ne définit pas le sigle GPR ; aucune occurrence ne lui donne un autre sens (METHODE.md §2 point 2 ; ARCHITECTURE.md « GPR 1 250 $ »). Équivalence géoradar = scan de dalle (art 3.32) tient de la décision du directeur A et du montant identique du catalogue SCAN DALLE BETON (1 250 $, 2 h). X-01 reste exclu ; LOT-GPR porte le scan.",
+  "ARTICLES À TRANCHER (alternatives) : D-14 / E-09 conduit vide : 3.33 retenu, alternative 3.31 ; D-12 / E-07 percements : 3.31 retenu, alternative 5.11 « Percement du plancher » ; G-02 / G-03 sont en 3.36 « Détecteur de fumée » selon la règle du directeur A, mais ce libellé ne décrit ni un conduit ni un câble : 3.31 à considérer ; F-08 (conduit éclairage) : 3.35 retenu, alternative 3.31 ; LOT-DIST : 3.24 / 3.25 à ventiler.",
+  "ASSEMBLAGES : les fils C-06 (4 #8), C-08 (3-4 #12), D-15 (5 #12), E-10 (5 #12), F-09 (3 #12) sont EXCLUS, inclus dans l'assemblage Dupuis du conduit apparié ; leurs longueurs en m et en pi sont dans `exclusions` pour rétablissement éventuel si le directeur B chiffrait un conduit vide. D-14 et E-09 sont des conduits vides (aucun fil apparié). G-03 (FT4) repris séparément. D-15 : « prévoir #10 si chute > 3 % » : non chiffré, le calibre de l'assemblage D-13 pourrait changer.",
+  "RÉSERVES À TRANSMETTRE : Détail D-13 est libellé « sous dalle / entreplafond sous-sol vers panneaux P-2/P-3 » alors que la section D du Sommaire dit RDC (niveau à confirmer sur E-104 note 5) ; toutes les longueurs de conduit (C-05 « Hypothèse longueur », D-13/D-14 30 m/course, E-08/E-09 25 m/course, F-08 8 m × 35 points, G-02/G-03 « Hyp. ») sont des HYPOTHÈSES du Détail, tracé à valider ; reserves.md : « Longueurs de conduits/filage : hors relevé » ; R-003 : relevé automatique = 44 luminaires typés sur E-203 contre 35 points de l'hypothèse F-08 (écart à revérifier au plan, F-08 non modifié) ; A-11 et H-01 à H-04 sont des forfaits « Hypothèse » sans relevé sur plan ; OPT-1 contradiction câblage data devis 36.1 vs « réutiliser câble existant » (non tranchée, hors total).",
+  "ACCESSOIRES LUMEN non repris en lignes A (inclus dans les assemblages Dupuis ou relevant du directeur B) : liste de 20 codes dans le JSON de A3-3 (accouplements, connecteurs, courroies, boîtes, coupe-feu, tiges, marrettes, flexibles, corde GRE430).",
+  "ÉCRITURE : les lignes (q, u, art, src) des trois releveurs sont reprises telles quelles après vérification ; p et h = null partout ; la section `lots` regroupe les 5 montants (informatifs, pas des prix)."
+ ],
+ "exclusions": [
+  {
+   "code": "C-06",
+   "raison": "incluse dans l'assemblage du conduit apparié C-05 (EMT 1\" UTA-01, repris à 115 pi) : fil RW90 #8 Cu UTA-01 140 m (459 pi)"
+  },
+  {
+   "code": "C-08",
+   "raison": "incluse dans l'assemblage du conduit apparié C-07 (EMT 3/4\" VE-02N + HUM, repris à 262 pi) : fil RW90 #12 Cu VE-02N + HUM 275 m (902 pi)"
+  },
+  {
+   "code": "D-15",
+   "raison": "incluse dans l'assemblage du conduit apparié D-13 (EMT 1\" sous dalle, repris à 1575 pi) : fil RW90 #12 Cu 2400 m (7874 pi)"
+  },
+  {
+   "code": "E-10",
+   "raison": "incluse dans l'assemblage du conduit apparié E-08 (EMT 1\" sous dalle étage, repris à 574 pi) : fil RW90 #12 Cu 875 m (2871 pi)"
+  },
+  {
+   "code": "F-09",
+   "raison": "incluse dans l'assemblage 03C12 de F-08 (3 cond. = 840 / 280) ; fil RW90 #12 éclairage 840 m = 2756 pi (840 × 3,2808 = 2755,87 → 2756 pi) ; à rétablir si le directeur B chiffre un conduit vide"
+  },
+  {
+   "code": "G-07",
+   "raison": "double compte : remplacée par LOT-JCI (Estimation_2 Détail G-07 (ligne 97) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « PRIX À OBTENIR DE JCI — inscrire en matériel/s-t »)"
+  },
+  {
+   "code": "OPT-1",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : câblage data Cat6 jusqu'à la salle des serveurs (devis 36.1), contradiction avec « réutiliser câble data existant » (Détail ligne 108)"
+  },
+  {
+   "code": "OPT-2",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : conception parasismique par firme spécialisée + certificat (devis 16.2-16.6) (Détail ligne 109)"
+  },
+  {
+   "code": "OPT-3",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : prime travaux hors heures normales (devis 1.17) (Détail ligne 110)"
+  },
+  {
+   "code": "OPT-4",
+   "raison": "OPTIONS / À CLARIFIER (hors total) dans Détail : postes de travail temporaires (A-102) + chute à livres temporaire (Détail ligne 111)"
+  },
+  {
+   "code": "X-01",
+   "raison": "GPR (géoradar) = scan de dalle béton : un seul objet, porté par LOT-GPR (1 250 $, art 3.32) ; catalogue-prix-temps-dupuis.csv ligne 237 « SCAN DALLE BETON » : U, prix_a_utiliser 1250.0, temps_a_utiliser 2.0, aussi 1 250 $"
+  }
+ ],
+ "lots": {
+  "LOT-ECL": 11893,
+  "LOT-DIST": 6200,
+  "LOT-JCI": 7400,
+  "LOT-DET": 600,
+  "LOT-GPR": 1250
+ }
+}

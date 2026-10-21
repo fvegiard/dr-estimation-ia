@@ -1,0 +1,331 @@
+{
+  "niveau": "releveur",
+  "nom": "B2-3",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "C-05",
+      "desc": "Conduit EMT 1\" alimentation UTA-01 (assemblage avec 4 #8)",
+      "q": null,
+      "u": "PI",
+      "p": 6.1399,
+      "h": 0.098,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 1 04C08 » um=P (dernier 2026-03-31, S-1693_Ecole Primaire Beloeil, nb_projets 1)"
+    },
+    {
+      "code": "C-06",
+      "desc": "Conducteur RW90 #8 UTA-01 (inclus dans C-05)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 1 04C08 » du code C-05"
+    },
+    {
+      "code": "C-07",
+      "desc": "Conduit EMT 3/4\" VE-02N + HUM (assemblage avec fil #12)",
+      "q": null,
+      "u": "PI",
+      "p": 4.2441,
+      "h": 0.1128,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "C-08",
+      "desc": "Conducteur RW90 #12 VE-02N + HUM (inclus dans C-07)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 3/4 03C12 » du code C-07"
+    },
+    {
+      "code": "D-13",
+      "desc": "Conduit EMT 1\" sous dalle RDC, 5 #12 par course (assemblage)",
+      "q": null,
+      "u": "PI",
+      "p": 4.2441,
+      "h": 0.1128,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "D-14",
+      "desc": "Conduit EMT 3/4\" data sous dalle RDC (vide)",
+      "q": null,
+      "u": "PI",
+      "p": 1.4097,
+      "h": 0.056,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12)"
+    },
+    {
+      "code": "D-15",
+      "desc": "Conducteur RW90 #12 sous dalle RDC (inclus dans D-13)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 3/4 03C12 » du code D-13"
+    },
+    {
+      "code": "E-08",
+      "desc": "Conduit EMT 1\" sous dalle étage, 5 #12 par course (assemblage)",
+      "q": null,
+      "u": "PI",
+      "p": 4.2441,
+      "h": 0.1128,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "E-09",
+      "desc": "Conduit EMT 3/4\" data sous dalle étage (vide)",
+      "q": null,
+      "u": "PI",
+      "p": 1.4097,
+      "h": 0.056,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12)"
+    },
+    {
+      "code": "E-10",
+      "desc": "Conducteur RW90 #12 étage (inclus dans E-08)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 3/4 03C12 » du code E-08"
+    },
+    {
+      "code": "F-08",
+      "desc": "Conduit EMT 3/4\" + flexible, raccordement luminaires (assemblage 3 #12)",
+      "q": null,
+      "u": "PI",
+      "p": 4.2441,
+      "h": 0.1128,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20)"
+    },
+    {
+      "code": "F-09",
+      "desc": "Conducteur RW90 #12 éclairage 3 cond. (inclus dans F-08)",
+      "q": null,
+      "u": "PI",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.31",
+      "src": "inclus dans l'assemblage « CONDUIT 3/4 03C12 » du code F-08"
+    },
+    {
+      "code": "G-02",
+      "desc": "Conduit EMT 3/4\" boucle alarme incendie (vide)",
+      "q": null,
+      "u": "PI",
+      "p": 1.4097,
+      "h": 0.056,
+      "art": "3.31",
+      "src": "catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12)"
+    },
+    {
+      "code": "G-03",
+      "desc": "Câble alarme incendie FT4 2 cond. #16 (boucle adressable, 1 paire)",
+      "q": null,
+      "u": "PI",
+      "p": 0.4299,
+      "h": 0.004,
+      "art": "3.31",
+      "src": "catalogue Dupuis « 16AWG 1PR PVC FT4 600V  » um=P (dernier 2026-04-02, S-1692_École Primaire St-Marc Candiac, nb_projets 1)"
+    },
+    {
+      "code": "D-12",
+      "desc": "Percement de dalle carotté RDC (16 percements), coupe-feu non ajouté",
+      "q": null,
+      "u": "U",
+      "p": 150.0,
+      "h": 1.0,
+      "art": "3.31",
+      "src": "catalogue Dupuis « PERCEMENT PLANCHER » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 8)"
+    },
+    {
+      "code": "E-07",
+      "desc": "Percement de dalle carotté étage (7 percements), coupe-feu non ajouté",
+      "q": null,
+      "u": "U",
+      "p": 150.0,
+      "h": 1.0,
+      "art": "3.31",
+      "src": "catalogue Dupuis « PERCEMENT PLANCHER » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 8)"
+    },
+    {
+      "code": "X-01",
+      "desc": "Scan de dalle béton (géoradar)",
+      "q": null,
+      "u": "U",
+      "p": 1250.0,
+      "h": 2.0,
+      "art": "3.32",
+      "src": "catalogue Dupuis « SCAN DALLE BETON » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2)"
+    },
+    {
+      "code": "LOT-ECL",
+      "desc": "Lot fournisseur éclairage et urgence (A1, Axis SL1, trousses, E, Z6)",
+      "q": null,
+      "u": "LOT",
+      "p": 11893.0,
+      "h": 0.0,
+      "art": "3.35",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-DIST",
+      "desc": "Lot fournisseur distribution (panneau PP-3 225 A NF + disjoncteurs NF)",
+      "q": null,
+      "u": "LOT",
+      "p": 6200.0,
+      "h": 0.0,
+      "art": "3.24",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-JCI",
+      "desc": "Lot fournisseur JCI/Simplex (bypass, programmation, annonciateur AI-05, vérification ULC-S537)",
+      "q": null,
+      "u": "LOT",
+      "p": 7400.0,
+      "h": 0.0,
+      "art": "3.38",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-DET",
+      "desc": "Lot fournisseur 2 détecteurs de fumée adressables (DF-I, AI-01)",
+      "q": null,
+      "u": "LOT",
+      "p": 600.0,
+      "h": 0.0,
+      "art": "3.36",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    },
+    {
+      "code": "LOT-GPR",
+      "desc": "Lot fournisseur géoradar (GPR), même objet que le scan de dalle X-01",
+      "q": null,
+      "u": "LOT",
+      "p": 1250.0,
+      "h": 0.0,
+      "art": "3.32",
+      "src": "METHODE.md §2, prix confirmé par Francis le 2026-10-20"
+    }
+  ],
+  "notes": [
+    "RAPPEL (non appliqué) : taux 85 $/h (METHODE.md §5 ; le 124 $/h du Sommaire « référence Jo » n'est pas retenu) et facteur de prix de vente 1,244 : à rappeler, à ne PAS appliquer dans ce lot.",
+    "PRINCIPE CONDUITS ET FILS : u = PI pour tout conduit et tout fil (um = P au catalogue). Aucune quantité, aucune conversion : l'équipe A convertit les mètres du Détail (1 m = 3,2808 pi). Les longueurs du Détail sont des hypothèses (Sommaire, note 2 : 30 m par course RDC, 25 m par course étage, 8 m par point éclairage ; G-02 et G-03 marqués « Hyp. »). Un fil dont l'assemblage contient déjà les conducteurs est une ligne « inclus » à 0 $ / 0 h.",
+    "VÉRIFICATION DES VALEURS DU CHEF : toutes les lignes ont été relues avec ligne() dans le CSV ; p = prix_a_utiliser, h = temps_a_utiliser, aucune médiane. Aucun écart avec les valeurs vues par le chef : C-05 6,1399 / 0,098 ; C-07, D-13, E-08, F-08 4,2441 / 0,1128 ; D-14, E-09, G-02 1,4097 / 0,056 ; G-03 0,4299 / 0,004 ; D-12, E-07 150 / 1,0 ; X-01 1 250 / 2,0 ; lots au montant METHODE. Les deux libellés à espace finale (« 16AWG 1PR PVC FT4 600V » et « 8AWG 7 BRINS RW90 600V ») ont été copiés par repr. Aucune ligne « jugement (Estimation_2) » : le catalogue Dupuis couvre tous les codes du sous-lot.",
+    "DÉCISION 1 — C-05 / C-06 (35 m de conduit 1 po, 140 m de #8 = 4 × 35 m) : retenu « CONDUIT 1 04C08 » (um P, p 6,1399, h 0,098, nb_projets 1, 2026-03-31, S-1693_Ecole Primaire Beloeil) : 4 × #8 dans 1 po, même objet que C-05 + C-06 (règle 2). C-06 = inclus (0 $ / 0 h). Écarté : « CONDUIT 1 03C08 » (um P, p 6,5707, h 0,091, nb 3, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) : 3 conducteurs seulement, donc un autre objet que les 4 #8 de C-06. Remarque : 04C08 (6,1399 $/pi) est moins cher que 03C08 (6,5707 $/pi) ; données Dupuis non modifiées. Option décomposée, non retenue : « CONDUIT VIDE 1 » (um P, p 2,4307, h 0,07, nb 3, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) + 4 × « 8AWG 7 BRINS RW90 600V » avec espace finale (p 0,9181, h 0,007, nb 3, 2026-08-19, S-1797 - École Chambly) = 6,1031 $/pi et 0,098 h/pi, soit 0,6 % sous 04C08 (sur 35 m : 700,81 $ contre 705,03 $ ; 11,25 h dans les deux cas). Écarté : « 8AWG 7 BRINS RW90 600V » sans espace finale (p 1,0625, h 0,007, nb 1, 2026-09-10, s-1854 sollio st hubert lanthier) : nb 1 contre 3 (règle 3).",
+    "DÉCISION 1 — C-07 / C-08 (80 m de conduit 3/4 : 35 m à 4 #12 + 45 m à 3 #12 ; 275 m de fil) : retenu « CONDUIT 3/4 03C12 » (um P, p 4,2441, h 0,1128, nb 20, 2026-09-25, S-1857 - Maison St-Michel) : repère METHODE (règle 1), la majorité de la longueur est à 3 conducteurs. C-08 = inclus (0 $ / 0 h). Écarté : « CONDUIT 3/4 04C12 » (um P, p 2,8997, h 0,076, nb 5, 2026-09-25, S-1857) : ne couvre que les 35 m à 4 conducteurs. Variante mixte, non appliquée, à arbitrer : 35 m en 04C12 + 45 m en 03C12 = 959,55 $ / 25,38 h, contre 1 113,92 $ / 29,61 h pour 80 m en 03C12 (−154,37 $, −4,23 h). Option « conduit vide + fil au pied », non appliquée : « CONDUIT VIDE 3/4 » (p 1,4097, h 0,056) sur 80 m + « 12AWG SOLIDE RW90 600V » (p 0,3896, h 0,005, nb 3, 2026-09-10, s-1854 sollio st hubert lanthier) sur 275 m (902,2 pi) = 721,50 $ / 19,21 h. Voir le POINT À ARBITRER de F-08 / F-09.",
+    "DÉCISION 1 — D-13 / D-15 et E-08 / E-10 (conduit 1 po, 5 #12 par course ; D-13 480 m + E-08 175 m = 2 148,9 pi ; fil D-15 2 400 m et E-10 875 m) : aucun « CONDUIT 1 05C12 » dans le catalogue (66 lignes CONDUIT relues, dont les 1 po et 1 1/4 po : aucun 05C12 en 1 po). Décision retenue, la même pour D-13 et E-08 : « CONDUIT 3/4 03C12 » (repère METHODE, règle 1). Justification : son prix/pi est le plus proche de l'option physique « CONDUIT VIDE 1 » (2,4307) + 5 × « 12AWG SOLIDE RW90 600V » (0,3896) = 4,3787 $/pi et 0,095 h/pi : 4,2441 contre 4,3787, soit −3,1 %. Autres candidats écartés : « CONDUIT 3/4 05C12 » (p 3,4197, h 0,081, nb 10, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) : bon nombre de conducteurs mais diamètre 3/4, sous-évalue le 1 po ; « CONDUIT 1 11C12 » (p 6,1407, h 0,125, nb 7, 2026-08-19, S-1797 - École Chambly) : bon diamètre mais 11 conducteurs, surévalue. D-15 et E-10 = inclus (dans D-13 et E-08). Impact, ordre de grandeur sur 2 148,9 pi (base retenue : 9 120,25 $ / 242,40 h) : « CONDUIT 3/4 05C12 » −1 771,57 $ et −68,34 h ; « CONDUIT 1 11C12 » +4 075,65 $ et +26,22 h ; décomposition « VIDE 1 + 5 × fil » +289,25 $ et −38,25 h. L'équipe A fixera les vraies quantités.",
+    "DÉCISION 1 — D-14, E-09, G-02 (conduits EMT 3/4 vides, 330 m, 175 m, 30 m) : « CONDUIT VIDE 3/4 » (um P, p 1,4097, h 0,056, nb 12, 2026-08-19, S-1797 - École Chambly). Écartés : « CONDUIT VIDE 1 » (p 2,4307, h 0,07, nb 3, 2026-06-02) : 1 po, autre diamètre ; « CONDUIT PVC 3/4 VIDE » (p 2,4417, h 0,074, nb 1, 2026-03-31, S-1693_Ecole Primaire Beloeil) : PVC, alors que le Détail demande de l'EMT (règle 2).",
+    "DÉCISION 1 — F-08 / F-09 (conduit EMT 3/4, 280 m, 3 × #12 par point ; 840 m de fil = 3 × 280 m) : « CONDUIT 3/4 03C12 » (repère METHODE, règle 1). F-09 = inclus (0 $ / 0 h). POINT À ARBITRER, non appliqué : l'option « CONDUIT VIDE 3/4 » (1,4097 $/pi, 0,056 h) + 3 × « 12AWG SOLIDE RW90 600V » (0,3896 $/pi, 0,005 h) = 2,5785 $/pi et 0,071 h/pi. Sur 918,6 pi, elle donne 2 368,67 $ / 65,22 h, contre 3 898,73 $ / 103,62 h pour 03C12 : soit −1 530,06 $ et −38,40 h. Le même écart apparaît sur C-07 / C-08 (721,50 $ contre 1 113,92 $). Il est bien plus grand qu'en 1 po (D-13 / E-08, où le point 4,3787 $/pi est proche de 4,2441) : à trancher par le chef, en vérifiant ce que contient réellement l'assemblage 03C12.",
+    "DÉCISION 1 — G-03 (câble alarme FT4 2 cond. #16, 60 m = 196,85 pi) : retenu « 16AWG 1PR PVC FT4 600V » avec espace finale (um P, p 0,4299, h 0,004, nb 1, 2026-04-02, S-1692_École Primaire St-Marc Candiac) : une paire = 2 conducteurs #16 FT4, même objet (règle 2). Candidats écartés : « COND ALARME 3/16 FT4 » (um P, p 1,5887, h 0,054, nb 16, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) : le plus utilisé, mais le chef interprète « 3/16 » comme 3 conducteurs #16, ce que le libellé seul ne confirme pas ; impact sur 60 m : +228,11 $ et +9,84 h. « 16AWG 3C PVC FT4 600V G » (um P, p 0,6803, h 0,008, nb 1, 2026-03-31, S-1693_Ecole Primaire Beloeil) : 3 conducteurs, +49,29 $ et +0,79 h. « 16AWG 3C ALARME ARME 3 » (um P, p 1,3262, h 0,028, nb 15, 2026-10-07, s-1881 hotel candlewood st-hyacinthe ; non cité par le chef, relevé ici) : 3 conducteurs armés, +176,43 $ et +4,72 h. Lumen « CAB16/2FAFT4300 » (1,344 $/m, soit 0,4097 $/pi) confirme l'ordre de grandeur de 0,4299 $/pi : vérifié, non utilisé.",
+    "DÉCISION 2 — percements D-12 (16) et E-07 (7) : retenu « PERCEMENT PLANCHER » (um U, p 150, h 1,0, nb 8, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) : seul libellé au repère METHODE (150 $ / 1 h, règle 1). Écartés (aucun repère, règle 1 ; nb plus faible, règle 3) : « PERCEMENT DALLE » (p 75, h 2,0, nb 2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) ; « PERCEMENTPLANCHER » (p 75, h 1,0, nb 1, 2026-09-10, s-1854 sollio st hubert lanthier) ; « PERCEMENT PLANCHER PC » (p 75, h 1,0, nb 3, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture). Autres variantes relues, toutes à 75 $ ou moins et à nb 1 ou 2 : « PERCEMENT PLANCHER LE » (75 / 1,5), « PERCEMENT PLANCHER 2P » (75 / 2,0), « PERCEMENT PLANCHER EC » (75 / 2,0), « PERCEMENT PLANCHER E » (75 / 2,0), « PERCEMENT PLANCHER P » (75 / 1,5), « PERCEMENT PLANCHER SC » (75 / 1,0), « PERCEMENT ET SCELLEMENT » (50 / 0,5), « PERCEMENT MUR » (10 / 0,5).",
+    "COUPE-FEU NON AJOUTÉ (noté, vérifié, non utilisé) : Dupuis « COUPE FEU TUBE 10.1 FL O » (um U, p 13,53, h 0,5, nb 2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College) ; Lumen « TROCP25WB+10.1OZ » (3M CP25WB+, 26,22 $/ch). Écarté aussi : « 3M 7100006311 COUPE FEU » (um U, p 736,47, h 40, nb 2, 2026-04-02, S-1692 École Primaire St-Marc Candiac) : autre dispositif. Le percement Dupuis (150 $ / 1 h) ne reçoit pas de coupe-feu en plus.",
+    "DÉCISION 3 — X-01 scan de dalle : retenu « SCAN DALLE BETON » (um U, p 1 250, h 2,0, nb 2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) ; repère scan de dalle 1 250 $. Écartés (règle 1, aucun repère) : « SCAN DALLE » (um U, p 750, h 1,0, nb 2, 2026-03-09, Canderel) ; « SCAN » (p 750, h 4,0, nb 4, 2026-09-25, S-1857 - Maison St-Michel) ; « SCAN BETON » (p 750, h 4,0, nb 1, 2026-02-02, S-1645 ANNEXE-BOURASSA) ; « SCANN DALLE » (p 950, h 8,0, nb 1, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture). Le code X-01 n'est pas dans la feuille Détail (code hors plan du kit) : la quantité reste à l'équipe A. LOT-GPR (1 250 $) est le même objet (géoradar) : un seul des deux est payé.",
+    "DÉCISION 4 — lots fournisseur (METHODE.md §2, prix confirmé par Francis le 2026-10-20) : 5 lignes LOT-…, u = LOT, h = 0, p = montant ; chaque montant est à ne compter qu'une fois (même montant que le dict « lots », à ne compter qu'une fois). Articles : LOT-ECL 3.35 ; LOT-DIST 3.24 ; LOT-JCI 3.38 ; LOT-DET 3.36 ; LOT-GPR 3.32. LOT-ECL : recalcul de la décomposition = A1 11 × 185 = 2 035 ; SL1 4′ 12 × 290 = 3 480 ; 3′ 15 × 230 = 3 450 ; 1′ 6 × 110 = 660 ; trousses 1 500 ; E 3 × 475 = 1 425 ; Z6 3 × 161,60 = 484,80 ; total 13 034,80 $, contre 11 893 $ confirmé : écart 1 141,80 $. Je garde 11 893 $ et signale l'écart. LOT-DIST : 3 400 + 20 × 95 + 3 × 300 = 6 200 $ (vérifié) ; ventilation : panneau NF 3 400 $ (art. 3.24) ; disjoncteurs 1 900 + 900 = 2 800 $ (art. 3.25, à ventiler par le chef B3). LOT-JCI 7 400 $ : bypass, programmation 4007ES, annonciateur AI-05, vérification ULC-S537. LOT-DET 600 $ : 2 détecteurs (DF-I, AI-01). LOT-GPR 1 250 $ : géoradar, même objet que X-01.",
+    "CONTRÔLE LUMEN — vérifié, non utilisé (Dupuis a l'assemblage, boîte, plaque et raccord inclus). Prix réguliers Lumen du 2026-10-07, relus dans la feuille « Matériel Lumen » : CONEMT1 1,8378 $/pi ; CONEMT3/4 1,0494 $/pi ; APPTWC100S 1,3118 $/ch ; APPTWC75S 0,8047 $/ch ; APPTW100S 1,4344 $/ch ; APPTW75S 0,9097 $/ch ; APPTWCL100 0,5813 $/ch ; APPTWCL75 0,2732 $/ch ; CONCONSEAL3/4 12,4001 $/m ; THO5333 15,1394 $/ch ; THOABRH03830 7,714 $/m ; IBE2210 1,799 $/ch ; GRE430 81,68 $/ch ; boîtes IBE52151K 5,2196 $/ch, IBE52C13 4,0873 $/ch, IBE72171K 6,0543 $/ch, IBE72C1 3,2082 $/ch, IBE54151L 2,5048 $/ch ; fils CAB12/1RW90BLK300 1,3357 $/m, CAB12/1RW90WHI300 1,3357 $/m, CAB12/1RW90GRE300 1,3357 $/m, CAB12/1RW90 ROUGE 1,3357 $/m, CAB8RW90BLK 4,5914 $/m, CAB8RW90GRE 4,5914 $/m, CAB12TECK3C600V 9,1875 $/m ; IBETEK75120 42,2247 $/ch ; CAB16/2FAFT4300 1,344 $/m ; coupe-feu TROCP25WB+10.1OZ 26,22 $/ch. Aucune ligne de ce JSON ne cite Lumen : chaque code a un libellé Dupuis.",
+    "POINTS NON VÉRIFIABLES DANS LE KIT : la nature exacte de « 3/16 » (COND ALARME 3/16 FT4) ; la composition réelle des assemblages 03C12 (fils inclus ou non, ce qui pèse sur le point à arbitrer de F-08 / F-09) ; les longueurs réelles (hypothèses du Détail). Rien n'a été inventé : chaque ligne cite un libellé du catalogue lu."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "X-01",
+        "LOT-GPR"
+      ],
+      "regle": "scan de dalle = géoradar : un seul des deux est payé"
+    },
+    {
+      "codes": [
+        "C-05",
+        "C-06"
+      ],
+      "regle": "fil inclus dans l'assemblage CONDUIT 1 04C08 : C-06 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "C-07",
+        "C-08"
+      ],
+      "regle": "fil inclus dans l'assemblage CONDUIT 3/4 03C12 : C-08 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "D-13",
+        "D-15"
+      ],
+      "regle": "fil inclus dans l'assemblage CONDUIT 3/4 03C12 : D-15 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "E-08",
+        "E-10"
+      ],
+      "regle": "fil inclus dans l'assemblage CONDUIT 3/4 03C12 : E-10 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "F-08",
+        "F-09"
+      ],
+      "regle": "fil inclus dans l'assemblage CONDUIT 3/4 03C12 : F-09 à 0 $ / 0 h"
+    },
+    {
+      "codes": [
+        "C-05",
+        "C-07",
+        "D-13",
+        "D-14",
+        "E-08",
+        "E-09",
+        "F-08",
+        "G-02",
+        "G-03"
+      ],
+      "regle": "conduits/fils/boîtes de la feuille Matériel Lumen (CONEMT…, CAB12…, IBE…) contre assemblages Dupuis (boîte, plaque et raccord inclus) : Lumen vérifié, non utilisé"
+    },
+    {
+      "codes": [
+        "D-12",
+        "E-07"
+      ],
+      "regle": "le percement Dupuis (150 $ / 1 h) ne reçoit pas le coupe-feu en plus (Dupuis COUPE FEU TUBE 10.1 FL O / Lumen TROCP25WB+10.1OZ non ajoutés)"
+    },
+    {
+      "codes": [
+        "LOT-DIST",
+        "B-01",
+        "B-02",
+        "B-03",
+        "B-04",
+        "B-05",
+        "B-06",
+        "B-07",
+        "B-08"
+      ],
+      "regle": "le lot distribution paie le panneau et les disjoncteurs ; les lignes B-0x sont à p = 0 (codes de B2-2)"
+    }
+  ],
+  "lots": {
+    "LOT-ECL": 11893,
+    "LOT-DIST": 6200,
+    "LOT-JCI": 7400,
+    "LOT-DET": 600,
+    "LOT-GPR": 1250
+  }
+}

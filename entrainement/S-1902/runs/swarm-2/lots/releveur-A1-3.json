@@ -1,0 +1,43 @@
+{
+  "niveau": "releveur",
+  "nom": "A1-3",
+  "modele_demande": "haiku",
+  "effort_demande": "high",
+  "lignes": [
+    {"code": "INT-I", "desc": "Interrupteur simple neuf", "q": 5, "u": "U", "p": null, "h": null,
+     "art": "3.35", "src": "releve.xlsx Par libellé INT SIMPLE 10 ; rapport-releve.md INT SIMPLE INSTALLER 5 ; releve.xlsx Par feuille E203 INT SIMPLE 5 (feuille nouveau, R-002)"},
+    {"code": "INT-E", "desc": "Interrupteur simple à enlever", "q": 1, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "rapport-releve.md INT SIMPLE ENLEVER 1 ; releve.xlsx Par feuille E201 INT SIMPLE 5 (feuille existant : 4 CONSERVER + 1 ENLEVER)"},
+    {"code": "TH-I", "desc": "Thermostat neuf (raccordement)", "q": 2, "u": "U", "p": null, "h": null,
+     "art": "3.23", "src": "releve.xlsx Par libellé THERMOSTAT 9 ; rapport-releve.md THERMOSTAT INSTALLER 2 ; releve.xlsx Par feuille E104 THERMOSTAT 2 (feuille nouveau)"},
+    {"code": "LC-I", "desc": "Lecteur de carte neuf", "q": 2, "u": "U", "p": null, "h": null,
+     "art": "3.31", "src": "releve.xlsx Par libellé LECTEUR CARTE 5 ; rapport-releve.md LECTEUR CARTE INSTALLER 2 ; releve.xlsx Par feuille E104 LECTEUR CARTE 2 (feuille nouveau)"},
+    {"code": "DM-E", "desc": "Détecteur de mouvement à enlever", "q": 1, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "releve.xlsx Par libellé DETECTEUR MOUVEMENT 3 ; rapport-releve.md DETECTEUR MOUVEMENT ENLEVER 1 ; releve.xlsx Par feuille E201 DETECTEUR MOUVEMENT 3 (feuille existant)"},
+    {"code": "BC-E", "desc": "Boîtier « C » à enlever", "q": 2, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "releve.xlsx Par libellé BOITIER C 4 ; rapport-releve.md BOITIER C ENLEVER 2 ; releve.xlsx Par feuille E101 BOITIER C 1 + E201 BOITIER C 3 (feuilles existant)"},
+    {"code": "A-07", "desc": "Relocalisation interrupteurs maîtres du hall", "q": 1, "u": "LOT", "p": null, "h": null,
+     "art": "3.35", "src": "entree/reference-Estimation_2.xlsx Détail A-07 Qté 1 lot ; arbitrage chef A1"}
+  ],
+  "notes": [
+    "Sources lues : releve.xlsx (Par libellé, Par feuille, Marques), rapport-releve.md (tableau famille | total | portées), reserves.md (R-002, R-006, Q12), entree/reference-Estimation_2.xlsx Détail (ligne 14 = A-07), entree/reference-Bordereau_de_prix.xlsx (articles 3.22, 3.23, 3.27 à 3.35, 5.19). Valeurs relues dans les fichiers, aucune recopie du prompt.",
+    "Portées du rapport-releve.md : INT SIMPLE INSTALLER 5, CONSERVER 4, ENLEVER 1 ; THERMOSTAT CONSERVER 7, INSTALLER 2 ; LECTEUR CARTE CONSERVER 3, INSTALLER 2 ; GACHE CONSERVER 3 ; DETECTEUR MOUVEMENT CONSERVER 2, ENLEVER 1 ; BOITIER C ENLEVER 2, CONSERVER 2.",
+    "CONSERVER, aucune ligne : INT 4, TH 7, LC 3, GA 3, DM 2, BC 2. GACHE est 100 % CONSERVER (3 sur E101, bloc S290) : aucune ligne GA, note seulement.",
+    "Contrôle par feuille (Par feuille, existant = E101+E102+E103+E201+E202 ; nouveau = E104+E105+E106+E203+E204) :",
+    "INT : existant E201 5 vs C 4 + E 1 + R 0 = 5 OK ; nouveau E203 5 vs I 5 OK.",
+    "TH : existant E101 7 vs C 7 OK ; nouveau E104 2 vs I 2 OK.",
+    "LC : existant E101 3 vs C 3 OK ; nouveau E104 2 vs I 2 OK.",
+    "GA : existant E101 3 vs C 3 OK ; nouveau 0 vs I 0 OK.",
+    "DM : existant E201 3 vs C 2 + E 1 = 3 OK ; nouveau 0 vs I 0 OK.",
+    "BC : existant E101 1 + E201 3 = 4 vs C 2 + E 2 = 4 OK ; nouveau 0 vs I 0 OK.",
+    "Aucun écart de feuille dans ce sous-lot ; les quantités viennent du rapport-releve.md (portée), non additionnées entre portées.",
+    "Hésitation INT (E201) : Marques donne deux INT SIMPLE à (1011.8, 418.3) et (1016.6, 416.3) sur E201, distants de 5,2 pt (doublon de repère possible). Les mêmes coordonnées se retrouvent sur E203 (INT neuf). Soit feuilles superposées existant/neuf, soit doublon : non tranchable sans le plan au zoom. Quantités gardées telles que le rapport (INT-I 5, INT-E 1), non modifiées.",
+    "Contradiction BOITIER C : releve.xlsx Par libellé donne la source « E-001 légende ; bloc S218 », mais la description dit « hors légende — R-006 TEST-E201 ». Famille alarme. Quantité 4 (E101 1 + E201 3) gardée ; l'origine légende reste à confirmer sur le plan.",
+    "Pas d'article « intrusion » au bordereau : LC-I et GA (aucune ligne) et BC-E (3.22 par convention -E) sont des familles intrusion/alarme. LC-I est proposé à 3.31 (convention LC) ; à noter pour le chiffrage.",
+    "DM-E et BC-E : seules les lignes -E existent au bordereau (3.22, démontage). Pas d'article dédié détecteur de mouvement ni boîtier « C ».",
+    "A-07 : Qté 1 lot relu dans Détail (ligne 14), unité lot, art 3.35 selon l'arbitrage. Note Détail « Hypothèse 6 h — à valider » : heures ignorées (hors chiffrage A1). Chevauchement possible avec INT-E 1 (E201) et INT-I 5 (E203) : non tranchable sans le plan (quel interrupteur est le maître du hall).",
+    "Balayage des autres lignes Détail (mots-clés interr., thermo, lecteur, gâche, boîtier, détecteur, mouvement, intrus., alarme, hall) : aucune autre ligne ne recompte les familles INT, TH, LC, GA, DM, BC. Lignes voisines hors de ce sous-lot (B-07, D-09, D-10, D-11, E-01, E-06, G-01) : non reprises, pas de double compte avec ces familles.",
+    "Le relevé plan (rapport-releve.md) est marqué « à VÉRIFIER sur les planches de contrôle » : les quantités de ce lot sont celles du relevé automatique, non encore validées par planche."
+  ],
+  "exclusions": []
+}

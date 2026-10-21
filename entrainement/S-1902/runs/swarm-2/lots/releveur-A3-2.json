@@ -1,0 +1,121 @@
+{
+  "niveau": "releveur",
+  "nom": "A3-2",
+  "modele_demande": "haiku",
+  "effort_demande": "high",
+  "lignes": [
+    {
+      "code": "F-08",
+      "desc": "Conduit EMT 3/4\" + 3 #12 RW90 éclairage — assemblage 03C12",
+      "q": 919,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "Estimation_2 Détail F-08 Qté 280 m × 3,2808 = 918,62 → 919 pi ; note L : Hyp. 8 m x 35 points ; Réf. plan E-203 ; 3 cond. RW90 #12 : F-09 exclu (840 m)"
+    },
+    {
+      "code": "G-02",
+      "desc": "Conduit EMT 3/4\" boucle alarme incendie",
+      "q": 98,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.36",
+      "src": "Estimation_2 Détail G-02 Qté 30 m × 3,2808 = 98,42 → 98 pi ; note L : Hyp. ; Réf. plan E-203"
+    },
+    {
+      "code": "G-03",
+      "desc": "Câble FT4 2c #16 rouge boucle adressable (dans G-02)",
+      "q": 197,
+      "u": "PI",
+      "p": null,
+      "h": null,
+      "art": "3.36",
+      "src": "Estimation_2 Détail G-03 Qté 60 m × 3,2808 = 196,85 → 197 pi ; note L : Hyp. ; Réf. plan E-203 ; câble AI, reprise séparée (exception, pas un fil RW90 d'assemblage)"
+    },
+    {
+      "code": "D-11",
+      "desc": "Bouton d'appel — boîte + conduit vide (système fourni par d'autres)",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail D-11 Qté 1 u ; note L : Aide au lecteur 116 ; Réf. plan E-104"
+    },
+    {
+      "code": "D-12",
+      "desc": "Percement de dalle carotté + coupe-feu (CAN/ULC-S115, Hilti CP-506) — conduits sous dalle RDC",
+      "q": 16,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail D-12 Qté 16 u ; note L : 1 percement par course ; Réf. plan E-104 note 5 / devis 1.5, 18"
+    },
+    {
+      "code": "D-16",
+      "desc": "Boîtes de tirage/jonction, connecteurs, supports, corde de tirage — conduits sous dalle RDC",
+      "q": 1,
+      "u": "LOT",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail D-16 Qté 1 lot ; note L : vide ; Réf. plan E-104"
+    },
+    {
+      "code": "E-06",
+      "desc": "Bouton d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail E-06 Qté 3 u ; note L : vide ; Réf. plan E-105"
+    },
+    {
+      "code": "E-07",
+      "desc": "Percement de dalle carotté + coupe-feu — étage (7 courses)",
+      "q": 7,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail E-07 Qté 7 u ; note L : vide ; Réf. plan E-105 note 3"
+    },
+    {
+      "code": "E-11",
+      "desc": "Boîtes, connecteurs, supports — étage",
+      "q": 1,
+      "u": "LOT",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "Estimation_2 Détail E-11 Qté 1 lot ; note L : vide ; Réf. plan E-105"
+    }
+  ],
+  "notes": [
+    "p et h sont null partout (prix et temps réservés à l'autre directeur) ; les lignes heures de Détail (estimé Léna AI) ne sont pas utilisées ; longueurs de Détail en mètres converties en pieds (× 3,2808, arrondi à l'entier).",
+    "Contrôle croisé Lumen CONEMT3/4 : base « 895 m (C-07 80 + D-14 330 + E-09 175 + F-08 280 + G-02 30) » = 895 m, vérifié. Part de ce sous-lot : F-08 280 + G-02 30 = 310 m ; les 585 m restants (C-07, D-14, E-09) sont à A3-1. Lumen 2940 pi = arrondi à la boîte de 10 pi (895 m = 2936 pi).",
+    "Contrôle croisé Lumen #12 : 275 + 2400 + 875 + 840 = 4390 m, vérifié ; Qté Lumen des bobines (1500 + 1200 + 900 + 790) = 4390 m. Part de ce sous-lot : F-09 840 m, exclu (incluse dans l'assemblage 03C12 de F-08).",
+    "Hypothèse F-08 « Hyp. 8 m x 35 points » : 8 × 35 = 280 m, vérifié ; cohérent avec le Sommaire note 2 (8 m/point éclairage). Le flexible Lumen THOABRH03830 (63 m = 35 points × 1,8 m) confirme les 35 points comme base de calcul.",
+    "Réserve R-003 (reserves.md) : le relevé automatique compte 44 luminaires typés sur E-203 (A1 11, C1 12, C1_1 6, C1_3 15) plus 3 étiquettes E sur bloc (estimation en compte 4). Ce comptage ne concorde pas avec les 35 points de l'hypothèse F-08 : à revérifier au plan. Quantité F-08 non modifiée, écart signalé.",
+    "Alarme incendie (reference-Releve_Alarme_Incendie.xlsx, feuille Relevé) : AI-08 câble AI FT4 2c #16 = 60 m, confirme G-03 (60 m) ; AI-09 conduit EMT 3/4\" + boîtes = 30 m, confirme G-02 (30 m). Les deux lignes AI sont marquées « longueur estimée » : cohérence, pas mesure indépendante au plan.",
+    "Bordereau (reference-Bordereau_de_prix.xlsx, feuille Bordereau de prix) : libellés exacts vérifiés : 3.31 « Percements, conduit filage et boîte de jonction » ; 3.35 « Appareil de contrôle + appareils d'éclairage » ; 3.36 « Détecteur de fumée » ; 5.11 « Percement du plancher ».",
+    "Alternatives d'article à trancher : F-08 (conduit d'éclairage) pourrait relever de 3.31 « conduit filage » plutôt que 3.35. G-02 et G-03 (conduit et câble de boucle AI) sont portés en 3.36 « Détecteur de fumée » selon le brief : ce libellé ne décrit pas un conduit ni un câble ; 3.31 est à considérer.",
+    "Percements : alternative 5.11 « Percement du plancher » notée pour D-12 (16) et E-07 (7), non retenue (3.31 conservé selon le brief). Cohérence : D-12 = 16 percements RDC = 16 courses de D-13 (« 16 courses ») ; E-07 = 7 percements étage = 7 courses de E-08 (« 7 courses ») ; total 23 courses = Lumen IBE72171K « Tirage : 23 courses sous dalle » et TROCP25WB « 23 percements + extras ». Aucune quantité changée.",
+    "Lots D-16 et E-11 (Qté 1, unité lot, sans décompte unitaire dans Détail) : quantité et unité lues telles quelles ; le contenu Lumen (boîtes, connecteurs, corde GRE430 « conduits vides ») n'est pas décompté ici ; article 3.31 et unité LOT à valider.",
+    "D-11 : Qté 1 u ; la note L « Aide au lecteur 116 » est une référence de page, pas une justification de quantité ; système fourni par d'autres, boîte + conduit vide seulement.",
+    "Longueurs de conduit du sous-lot (F-08 280 m, G-02 30 m) sont des hypothèses du Sommaire note 2 (8 m/point éclairage) ; G-02 et G-03 n'ont que la mention « Hyp. » dans Détail. À valider sur plan.",
+    "Exclusion F-09 réversible : si le directeur B chiffre un conduit vide, rétablir F-09 = 840 m = 2756 pi ; G-03 (câble FT4) est repris séparément, sa description « (dans G-02) » indique seulement le cheminement dans le conduit G-02, sans recalcul du conduit.",
+    "Aucune réserve de reserves.md ne touche directement les lignes D-11 à E-11 ; R-005 (pictogrammes détecteurs de fumée) concerne les dispositifs AI fournis par JCI, hors de ce sous-lot."
+  ],
+  "exclusions": [
+    {
+      "code": "F-09",
+      "raison": "incluse dans l'assemblage 03C12 de F-08 (3 cond. = 840 / 280) ; fil RW90 #12 éclairage 840 m = 2756 pi (840 × 3,2808 = 2755,87 → 2756 pi) ; à rétablir si le directeur B chiffre un conduit vide"
+    }
+  ],
+  "lots": {}
+}

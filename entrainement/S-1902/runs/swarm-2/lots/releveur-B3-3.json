@@ -1,0 +1,626 @@
+{
+  "niveau": "releveur",
+  "nom": "B3-3",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [],
+  "articles": {},
+  "regles_articles": [],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "A-01",
+        "A-02",
+        "ENC-E",
+        "L14-E",
+        "L22-E"
+      ],
+      "regle": "le plan gagne : A-01 et A-02 sont EXCLUES (ni p ni h) ; seuls ENC-E, L14-E, L22-E sont chiffrés (enlèvement, portée ENLEVER)",
+      "quantites": "Détail A-01 Qté 39 (D8, E-201) + A-02 Qté 7 (D9, E-202) = 46 ; rapport-releve.md ENCASTRE ENLEVER 26 + LED 1X4 ENLEVER 6 + LED 2X2 ENLEVER 8 = 40 ; écart 6. Portées non lues par feuille : écart non réparti. CONTRADICTION POSSIBLE, voir notes."
+    },
+    {
+      "codes": [
+        "A-03",
+        "A-04",
+        "PC-E",
+        "PG-E",
+        "SD-E",
+        "INT-E",
+        "BJ-E",
+        "MP-E",
+        "DM-E",
+        "BC-E",
+        "DF-E",
+        "HP-E"
+      ],
+      "regle": "le plan gagne : A-03 et A-04 sont EXCLUES ; seuls PC-E, PG-E, SD-E, INT-E, BJ-E, MP-E, DM-E, BC-E, DF-E, HP-E sont chiffrés (enlèvement)",
+      "quantites": "Détail A-03 Qté 34 (D10, E-101) + A-04 Qté 10 (D11, E-102) = 44 ; rapport-releve.md ENLEVER hors luminaires : PRISE DOUBLE 15A 7 (PC-E) + PRISE DDFT 4 (PG-E) + SORTIE DATA 17 (SD-E) + INT SIMPLE 1 (INT-E) + BOITE JONCTION 2 (BJ-E) + MONUMENT PLANCHER 3 (MP-E) + DETECTEUR MOUVEMENT 1 (DM-E) + BOITIER C 2 (BC-E) + DETECTEUR FUMEE 1 (DF-E) + HP ENCASTRE PLAFOND 1 (HP-E) = 39 ; écart 5."
+    },
+    {
+      "codes": [
+        "A-05",
+        "PC-R",
+        "PG-R",
+        "SD-R",
+        "DF-R"
+      ],
+      "regle": "le plan gagne : A-05 est EXCLUE ; seuls PC-R, PG-R, SD-R, DF-R sont chiffrés (relocalisation). Mêmes objets.",
+      "quantites": "Détail A-05 Qté 13 (D12 : 6 RDC + 7 2e) = rapport-releve.md RELOCALISER : PRISE DOUBLE 15A 8 (PC-R) + PRISE DDFT 1 (PG-R) + SORTIE DATA 3 (SD-R) + DETECTEUR FUMEE 1 (DF-R) = 13 ; écart 0."
+    },
+    {
+      "codes": [
+        "A-06",
+        "ENC-R"
+      ],
+      "regle": "le plan gagne : A-06 est EXCLUE ; seul ENC-R est chiffré (relocalisation)",
+      "quantites": "Détail A-06 Qté 7 (D13 : 3 RDC + 4 2e, incl. 4 appareils salle 227) ; rapport-releve.md ENCASTRE RELOCALISER 4 (ENC-R) ; écart 3 : les 3 luminaires RDC n'ont pas de ligne RELOCALISER au relevé. Non réparti par type."
+    },
+    {
+      "codes": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "D-04",
+        "D-05",
+        "D-06",
+        "D-07",
+        "D-08",
+        "PC-I",
+        "PU-I",
+        "PG-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne : D-01 à D-08 sont EXCLUES (ni p ni h) ; seuls PC-I, PU-I, PG-I, SD-I, BJ-I sont chiffrés (services neufs au plan)",
+      "quantites": "Détail D-01 Qté 18 postes (D45) ; D-02 Qté 5 tables = 10 PC + 10 USB (D46) ; D-03 Qté 2 (D47) ; D-04 Qté 2 (D48) ; D-05 Qté 1 (D49) ; D-06 Qté 8 (D50) ; D-07 Qté 1 (D51, PG) ; D-08 Qté 10 (D52, SD). rapport-releve.md INSTALLER : PRISE DOUBLE 15A 25 (PC-I) ; PRISE USB 20 (PU-I) ; PRISE DDFT 22 (PG-I) ; SORTIE DATA 65 (SD-I) ; BOITE JONCTION 3 (BJ-I). Écarts : PC 15 A hors D-01 = 47 contre 25 ; PU 10 contre 20 ; SD 10 + boîtes data (2 RJ45 x 18, nombre de sorties non lisible) contre 65 ; PG 1 contre 22."
+    },
+    {
+      "codes": [
+        "E-01",
+        "E-04",
+        "E-05",
+        "PC-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "regle": "le plan gagne : E-01, E-04, E-05 sont EXCLUES ; seuls PC-I, SD-I, BJ-I sont chiffrés",
+      "quantites": "Détail E-01 Qté 2 postes (D64 : JB, 2 prises, data 2 RJ45 chacun) ; E-04 Qté 3 (D67 : JB + prise) ; E-05 Qté 1 (D68 : écran courant + données). Relevé E105 (Par feuille) : PRISE DOUBLE 15A 2, SORTIE DATA 20, MONUMENT PLANCHER 3. BJ-I 3 déjà couvert par D-09 + D-10 (entrée 8) : E-01 et E-04 (JB) ne sont pas au relevé BJ-I. CONTRADICTION POSSIBLE, voir notes."
+    },
+    {
+      "codes": [
+        "E-02",
+        "E-03",
+        "MP-I"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : E-02 est EXCLUE (le plan gagne : MP-I INSTALLER 3 chiffré au relevé) ; E-03 (2 boîtes de plancher refaites, salle 208) n'est pas exclue. Option 1 : E-03 chiffré en plus (2 x 2,5 h). Option 2 : E-03 = 2 des 3 MP-I, à 0 en ligne. Valeur par défaut recommandée : option 2 (évite de payer deux fois deux monuments de plancher).",
+      "quantites": "Détail E-02 Qté 2 (D65, monuments Hubbell neufs) ; E-03 Qté 2 (D66, « refaite », 2,5 h chacun) ; rapport-releve.md MONUMENT PLANCHER : ENLEVER 3, INSTALLER 3, CONSERVER 1 (MP-I 3). Écart 1 à situer (2 + 2 = 4 contre 3)."
+    },
+    {
+      "codes": [
+        "D-09",
+        "D-10",
+        "BJ-I"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : BJ-I (relevé INSTALLER 3) = D-09 (2 boîtes de jonction) + D-10 (1 JB dans le mur). Option 1 : BJ-I chiffré au plan (3), D-09 et D-10 à 0. Option 2 : D-09 et D-10 chiffrés au Détail, BJ-I à 0. Valeur par défaut recommandée : option 1 (le plan gagne).",
+      "quantites": "Détail D-09 Qté 1 lot (D53 : 2 boîtes de jonction + raccord panneau PU-1 23, 6 h) ; D-10 Qté 1 (D54 : JB dans mur adjacent, 2 h) ; rapport-releve.md BOITE JONCTION INSTALLER 3 (BJ-I). Égalité : 2 + 1 = 3."
+    },
+    {
+      "codes": [
+        "D-11",
+        "E-06",
+        "BJ-I"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : D-11 (bouton d'appel, boîte + conduit vide, système fourni par d'autres) et E-06 (bouton d'appel 2 + bouton de panique 1, boîte + conduit vide) sont des boîtes qui ne figurent à aucune famille du relevé. Option 1 : pas de double, D-11 et E-06 gardés au Détail. Option 2 : les 4 boîtes comptées dans BJ-I (BJ-I passerait à 4). Valeur par défaut recommandée : option 1 (aucun bouton au relevé).",
+      "quantites": "Détail D-11 Qté 1 (D55, 1 h) ; E-06 Qté 3 (D69, 1 h unitaire) ; relevé : aucune famille bouton. Si option 2 : 4 x 1 h = 4 h à retirer du Détail, rien à ajouter au plan."
+    },
+    {
+      "codes": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "MT-I",
+        "MM-I"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : même objets (UTA-01, VE-02N, chaudières CH-01/CH-02, humidificateurs HUM-1/2/3) pris en ligne Détail ET en moteurs du relevé. Option 1 : moteurs au plan (MT-I 4 = 1 + 1 + 2 ; MM-I 3) au repère 0,75 h (UTA 1 h), et C-01 à C-04 réduits au raccordement et sectionneur. Option 2 : C-01 à C-04 au Détail, MT-I et MM-I à 0. Valeur par défaut recommandée : option 1 (quantités concordantes).",
+      "quantites": "Détail C-01 Qté 1 (D34, 16 h) ; C-02 Qté 1 (D35, 10 h) ; C-03 Qté 2 (D36, 12 h) ; C-04 Qté 3 (D37, 12 h). rapport-releve.md MOTEUR TRIPHASE INSTALLER 4 (Par feuille E105 2 + E106 2) ; MOTEUR MONOPHASE INSTALLER 3 (Par feuille E105 3). Contrôle : 1 + 1 + 2 = 4 et 3 = 3. Écart d'heures : Détail 50 h contre repères METHODE (UTA 1 h + 3 moteurs triphasés 0,75 h + 3 monophasés 0,75 h = 5,5 h), soit 44,5 h, dont une part est le tirage déjà compté en entrées 11 et 12."
+    },
+    {
+      "codes": [
+        "C-01",
+        "C-05",
+        "C-06"
+      ],
+      "regle": "payé une fois par assemblage Dupuis « CONDUIT 1 04C08 » um=P (conduit 1 po, 4 conducteurs #8) : C-05 (conduit) et C-06 (fil) sont couverts ; C-01 ne garde que raccord, pénétration et sectionneur. À TRANCHER si l'assemblage n'est pas retenu : option 2 = conduit 1 po au prix/pi + fil à part.",
+      "quantites": "C-05 Qté 35 m = 114,83 pi (D38, « Hypothèse longueur ») ; C-06 Qté 140 m = 459,31 pi (D39, 4 x 35 m) ; C-01 Qté 1 (D34, « Longueur estimée 35 m (C-05/C-06) »). Assemblage « CONDUIT 1 04C08 » : p 6,1399, h 0,098, nb_projets 1 (S-1693_Ecole Primaire Beloeil). Un seul projet au catalogue."
+    },
+    {
+      "codes": [
+        "C-02",
+        "C-04",
+        "C-07",
+        "C-08"
+      ],
+      "regle": "payé une fois par assemblages Dupuis « CONDUIT 3/4 04C12 » um=P (VE-02N, 4 conducteurs #12) et « CONDUIT 3/4 03C12 » um=P (HUM, 3 conducteurs #12) : C-07 (conduit) et C-08 (fil) sont couverts ; C-02 et C-04 gardent seulement raccord LFMC et sectionneur, le tirage n'est pas repayé.",
+      "quantites": "C-07 Qté 80 m = 262,46 pi (D40 : 35 m VE + 3 x 15 m HUM) ; C-08 Qté 275 m = 902,22 pi (D41 : 4 x 35 m + 3 x 3 x 15 m) ; C-02 Qté 1 (D35, 10 h) ; C-04 Qté 3 (D37, 12 h). « CONDUIT 3/4 03C12 » : p 4,2441, h 0,1128, nb 20 ; « CONDUIT 3/4 04C12 » : p 2,8997, h 0,076, nb 5 (prix plus bas que 03C12, à vérifier)."
+    },
+    {
+      "codes": [
+        "D-13",
+        "D-15",
+        "E-08",
+        "E-10"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : aucun assemblage « CONDUIT 1 05C12 » ni « CONDUIT 3/4 05C12 » au catalogue. Le fil #12 à 5 conducteurs par course (D-15, E-10) n'entre dans aucun assemblage CONDUIT existant. Option 1 : conduit 1 po au prix/pi (D-13, E-08) + conducteurs à part (D-15, E-10). Option 2 : « CONDUIT 1 13C12 » (13 conducteurs, surdimensionné). Valeur par défaut recommandée : option 1.",
+      "quantites": "D-13 Qté 480 m = 1 574,78 pi (D57, 16 courses x 30 m) ; D-15 Qté 2 400 m (D59, 16 x 30 m x 5 conducteurs) ; E-08 Qté 175 m = 574,14 pi (D71, 7 x 25 m) ; E-10 Qté 875 m (D73, 7 x 25 m x 5). Égalités vérifiées par script."
+    },
+    {
+      "codes": [
+        "D-16",
+        "E-11"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : D-16 (boîtes de tirage, connecteurs, supports, corde, 1 lot) et E-11 (boîtes, connecteurs, supports, 1 lot) recouvrent peut-être les connecteurs et supports inclus dans les assemblages « CONDUIT ... » au pied. Aucun libellé CONDUIT ne le précise. Valeur par défaut recommandée : garder D-16 et E-11 (pas de preuve de recouvrement).",
+      "quantites": "D-16 Qté 1 lot = 8 h (D60) ; E-11 Qté 1 lot = 4 h (D74). Aucune quantité de connecteurs au Détail. Corde de tirage et coupe-feu : relevent de B3-1."
+    },
+    {
+      "codes": [
+        "F-08",
+        "F-09"
+      ],
+      "regle": "payé une fois par assemblage Dupuis « CONDUIT 3/4 03C12 » um=P (3 conducteurs #12) : F-09 (fil, 3 conducteurs) est couvert ; F-08 (tirage) reste en temps/pi. À TRANCHER : F-08 indique EMT 3/4 + flexible, l'assemblage est EMT ; option 1 : assemblage pour F-08 ; option 2 : flexible hors catalogue, non chiffré.",
+      "quantites": "F-08 Qté 280 m = 918,62 pi (D85, 35 points x 8 m) ; F-09 Qté 840 m (D86 = 3 x 280 m, vérifié). Assemblage « CONDUIT 3/4 03C12 » : p 4,2441, h 0,1128."
+    },
+    {
+      "codes": [
+        "F-01",
+        "F-02",
+        "F-03",
+        "F-04",
+        "F-06",
+        "F-07",
+        "LA1-I",
+        "LC1-I",
+        "LC11-I",
+        "LC13-I",
+        "LE-I",
+        "Z6-I",
+        "LOT-ECL"
+      ],
+      "regle": "le plan gagne : F-01, F-02, F-03, F-04, F-06, F-07 sont EXCLUES (ni p ni h) ; seuls LA1-I, LC1-I, LC11-I, LC13-I, LE-I, Z6-I sont chiffrés en ligne (0 $ + temps) et la matière est au lot. 0 $ en ligne + lot : LOT-ECL couvre le matériel.",
+      "quantites": "F-01 Qté 11 (D78) = LA1 11 = lot A1 x11 ; F-02 Qté 12 (D79) = LC1 12 = lot Axis 4' x12 ; F-03 Qté 6 (D80) = LC11 6 = lot Axis 1' x6 ; F-04 Qté 15 (D81) = LC13 15 = lot Axis 3' x15 ; F-06 Qté 4 (D83) contre LE 3 (rapport-releve.md LUMINAIRE E 3, lot E x3) et relevé d'éclairage E 4 : écart 1, à trancher au zoom (R-003) ; si 4, +475 $ sur la composante E du lot ; F-07 Qté 3 (D84) = Z6 3 = lot Z6 x3."
+    },
+    {
+      "codes": [
+        "F-05",
+        "F-10",
+        "LOT-ECL"
+      ],
+      "regle": "0 $ en ligne + lot : F-05 (suspension des rangées, 20) relève de la composante « trousses 1 500 $ » de LOT-ECL en matériel ; F-05 et F-10 gardent leur temps seulement. À TRANCHER : le temps de F-05 (1 h x 20) et de F-10 (8 h) recouvre peut-être le temps des luminaires neufs (repère 0,75 h). Valeur par défaut recommandée : garder F-05 et F-10 en temps.",
+      "quantites": "F-05 Qté 20 rangées (D82 = C-SUSP 20 au relevé d'éclairage) ; F-10 Qté 1 lot (D87, 8 h, chaînes de retenue et quincaillerie, non couvert par LOT-ECL). Si le temps des luminaires inclut la suspension : au plus 20 h + 8 h = 28 h à retirer."
+    },
+    {
+      "codes": [
+        "G-01",
+        "AI-01",
+        "AI-02",
+        "DF-I",
+        "LOT-DET"
+      ],
+      "regle": "le plan gagne : G-01 est EXCLUE (ni p ni h) ; DF-I (relevé INSTALLER 2) est chiffré à 0 $ en ligne + temps ; 0 $ en ligne + lot : LOT-DET 600 $ couvre les 2 détecteurs fournis par JCI. AI-02 (plaque/adaptateur de base, « si requis ») fait partie du même objet que « + base » de G-01.",
+      "quantites": "G-01 Qté 2 (D91, « + base ») ; AI-01 Qté 2 (relevé alarme) ; AI-02 Qté 2 (si requis) ; DF-I INSTALLER 2 (rapport-releve.md DETECTEUR FUMEE). LOT-DET 600 $ = 2 x 300 $. Écart 0 sur les 2 détecteurs."
+    },
+    {
+      "codes": [
+        "G-04",
+        "PA-I",
+        "AI-05"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : même objet (annonciateur Simplex) pris en G-04 (relocalisation physique DR, 6 h) et en PA-I (relevé INSTALLER 1, repère METHODE « annonciateur relocalisé 8 h »). AI-05 (reprogrammation et essais) est du JCI. Option 1 : G-04 gardé (6 h), PA-I à 0 h. Option 2 : PA-I au repère 8 h, G-04 à 0 h. Valeur par défaut recommandée : option 2 (repère Dupuis « PANNEAU ANNONCIATEUR » 8 h).",
+      "quantites": "G-04 Qté 1 (D94, 6 h) ; PA-I INSTALLER 1 (rapport-releve.md PANNEAU ANNONCIATEUR, E-203) ; AI-05 Qté 1 lot. Catalogue « PANNEAU ANNONCIATEUR » um=U p=0 h=8,0 (nb 4, 2026-08-19). Écart 2 h."
+    },
+    {
+      "codes": [
+        "G-05",
+        "AI-07"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : G-05 (démontage, protection et réinstallation des dispositifs AI existants, 12 h, DR) et AI-07 (option de vérification des dispositifs existants, prix séparé, JCI) portent sur le même travail. Option 1 : G-05 seul, AI-07 hors total. Option 2 : AI-07 chiffré, G-05 réduit de sa part vérification. Valeur par défaut recommandée : option 1.",
+      "quantites": "G-05 Qté 1 lot (D95, 12 h, « Allocation — à valider ») ; AI-07 Qté 1 lot (option, prix séparé, aucun montant au kit)."
+    },
+    {
+      "codes": [
+        "G-07",
+        "AI-03",
+        "AI-04",
+        "AI-06",
+        "LOT-JCI"
+      ],
+      "regle": "0 $ en ligne + lot : LOT-JCI 7 400 $ couvre AI-03 (bypass), AI-04 (programmation 4007ES) et AI-06 (vérification partielle CAN/ULC-S537 + certificat). G-07 (0 $, 0 h au Détail) est la même sous-traitance et reste à 0 $ : la mention « PRIX À OBTENIR DE JCI » est remplacée par LOT-JCI. AI-05 traité à l'entrée 19.",
+      "quantites": "G-07 Qté 1 lot (D97, 0 $, 0 h) ; AI-03 Qté 1 lot ; AI-04 Qté 1 lot ; AI-06 Qté 1 lot ; LOT-JCI 7 400 $ (METHODE.md §2, aucune composante chiffrée : pas de contrôle par script possible)."
+    },
+    {
+      "codes": [
+        "G-06",
+        "H-03"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : G-06 (assistance de l'électricien à la programmation et à la vérification ULC-S537, 8 h) et H-03 (essais, mise en service, vérification des prises existantes, 12 h) portent sur la vérification. Valeur par défaut recommandée : option 2, garder les deux (actions distinctes : aide au JCI contre essais DR).",
+      "quantites": "G-06 Qté 1 lot (D96, 8 h) ; H-03 Qté 1 lot (D103, 12 h) ; total 20 h. Aucun repère METHODE pour ces actions : pas de chiffrage par script."
+    },
+    {
+      "codes": [
+        "G-02",
+        "G-03",
+        "AI-08",
+        "AI-09"
+      ],
+      "regle": "payé une fois par G-02 et G-03 : AI-09 (conduit EMT 3/4 + boîtes, « pour info ») et AI-08 (câble FT4 2c #16, « pour info ») sont les mêmes objets. Une seule source est chiffrée : valeur par défaut recommandée, G-02 et G-03 au Détail, AI-08 et AI-09 à 0 $ en ligne.",
+      "quantites": "G-02 Qté 30 m (D92) = AI-09 Qté 30 m ; G-03 Qté 60 m (D93) = AI-08 Qté 60 m ; égalité exacte. Matériel associé relevant de B3-1."
+    },
+    {
+      "codes": [
+        "X-01",
+        "LOT-GPR"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : X-01 « SCAN DALLE BETON » n'existe PAS dans la feuille Détail (codes A-01 à H-04 seulement). Option 1 : LOT-GPR 1 250 $ seul, X-01 non créé. Option 2 : X-01 créé avec p 1250 et h 2,0. Valeur par défaut recommandée : option 1 (lot confirmé, aucune ligne Détail à exclure).",
+      "quantites": "LOT-GPR 1 250 $ (METHODE.md §2) ; catalogue « SCAN DALLE BETON » um=U p=1250,0 h=2,0 (nb 2, 2026-03-09) ; libellés « SCAN DALLE » p 750,0 et « SCAN » p 750,0 non retenus (prix différents). X-01 absent de la source."
+    },
+    {
+      "codes": [
+        "H-01",
+        "X-02"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : H-01 (mobilisation, plateforme ou échafaudage roulant, 16 h) et X-02 (nacelle, repère METHODE 1 250 $ / 16 h) pourraient être le même moyen d'accès. X-02 n'est PAS dans la feuille Détail. Valeur par défaut recommandée : option 1, H-01 seul (un seul moyen d'accès ; X-02 non ligne de la source). Écart si option 2 : 1 250 $.",
+      "quantites": "H-01 Qté 1 lot (D101, 16 h, « Hypothèse ») ; X-02 absent de Détail ; repère METHODE nacelle 1 250 $ / 16 h. Écart chiffré : 1 250 $ et 0 h."
+    },
+    {
+      "codes": [
+        "A-07",
+        "INT-E",
+        "INT-R"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : A-07 (relocalisation des interrupteurs maîtres du hall, 6 h) n'a pas de relocalisation d'interrupteur au relevé (INT-R 0). INT-E 1 (interrupteur enlevé) est un autre objet a priori. Valeur par défaut recommandée : option 1, A-07 et INT-E chiffrés tous deux ; à confirmer au zoom E-201.",
+      "quantites": "A-07 Qté 1 lot (D14, 6 h, « Hypothèse 6 h — à valider ») ; rapport-releve.md INT SIMPLE : INSTALLER 5, CONSERVER 4, ENLEVER 1 (INT-E 1), aucune RELOCALISER."
+    },
+    {
+      "codes": [
+        "A-11",
+        "B-09"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : A-11 (recherche et traçage des circuits existants, réalimentation, 16 h) et B-09 (fiches dactylographiées et identification, 9 u x 1 h) portent sur l'identification des circuits. Valeur par défaut recommandée : option 1, garder les deux (traçage terrain distinct des fiches).",
+      "quantites": "A-11 Qté 1 lot (D18, 16 h, « Hypothèse ») ; B-09 Qté 9 u (D30, 1 h, « PP-2, PP-3, P2, P3, P4, P6, PU-1, PPU-1, P10 »). Total 25 h."
+    },
+    {
+      "codes": [
+        "A-10",
+        "MM-R"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : A-10 (toit, 6 E.A.R, 4 h chacun) et MM-R (MOTEUR MONOPHASE RELOCALISER 6) recouvrent la même relocalisation des 6 moteurs. Option 1 : MM-R au repère moteur 0,75 h, A-10 réduit à la part non moteur (débrancher, entreposer sectionneurs, isoler câbles). Option 2 : A-10 seul à 4 h par unité, MM-R à 0 h. Valeur par défaut recommandée : option 1. Écart : 6 x (4 - 0,75) = 19,5 h.",
+      "quantites": "A-10 Qté 6 u (D17, 4 h/u = 24 h, « 6 E.A.R sur E-103 ») ; rapport-releve.md MOTEUR MONOPHASE RELOCALISER 6 ; Par feuille E103 MOTEUR MONOPHASE 6."
+    },
+    {
+      "codes": [
+        "A-08",
+        "A-09",
+        "ENC-E"
+      ],
+      "regle": "À TRANCHER PAR LE DIRECTEUR B : A-08 (FabLab, retrait temporaire et réinstallation de 21 linéaires) et A-09 (FabLab, retrait temporaire et réinstallation de 24 encastrés) sont des retraits TEMPORAIRES, pas des enlèvements. Pas de double prouvé pour A-08 : les 21 LED 1X4 de E202 sont en portée CONSERVER au relevé. A-09 pourrait être dans ENC-E (26, ENLEVER) si les encastrés FabLab y sont. Valeur par défaut recommandée : option 1, A-08 et A-09 chiffrés, ENC-E inchangé.",
+      "quantites": "A-08 Qté 21 (D15, 0,6 h/u) ; A-09 Qté 24 (D16, 0,5 h/u, « ±2 ») ; Par feuille E202 LED 1X4 21 (portée non lue par feuille) ; E202 ENCASTRE 35 ; ENC-E 26 au total ENLEVER (non réparti par feuille)."
+    },
+    {
+      "codes": [
+        "B-01",
+        "B-02",
+        "B-03",
+        "B-04",
+        "B-05",
+        "B-06",
+        "B-07",
+        "B-08",
+        "LOT-DIST"
+      ],
+      "regle": "0 $ en ligne + lot : LOT-DIST 6 200 $ couvre le panneau NF 225 A (B-01, payé une fois dans le lot) et les disjoncteurs EDB 1P x20 et EJB 3P x3 (B-02 à B-08) ; ces lignes gardent le temps seulement. À TRANCHER : B-02 (14) et B-03 (1) sont des disjoncteurs existants transférés, pas des neufs ; le prix du lot ne doit pas les repayer. Valeur par défaut recommandée : option 1, lot tel quel (6 200 $, aucun montant modifié).",
+      "quantites": "B-01 Qté 1 (D22, NF 225 A) = NF 225 A 42 cct 3 400 $ ; 1P : B-02 14 (D23) + B-06 1 (D27) + B-07 2 (D28) + B-08 2 (D29) = 19 contre EDB 1P x20 (écart 1, 95 $) ; 3P : B-03 1 (D24) + B-04 1 (D25) + B-05 1 (D26) = 3 = EJB 3P x3. Contrôle : 3 400 + 1 900 + 900 = 6 200 $ = METHODE (écart 0). B-09 n'est pas couvert par le lot."
+    }
+  ],
+  "exclusions": [
+    {
+      "code": "A-01",
+      "remplace_par": [
+        "ENC-E",
+        "L14-E",
+        "L22-E"
+      ],
+      "raison": "E.A.E E-201 Qté 39 (D8) ; avec A-02 = 46 contre 40 luminaires ENLEVER au relevé (ENCASTRE 26 + LED 1X4 6 + LED 2X2 8) : le plan gagne"
+    },
+    {
+      "code": "A-02",
+      "remplace_par": [
+        "ENC-E",
+        "L14-E",
+        "L22-E"
+      ],
+      "raison": "E.A.E E-202 Qté 7 (D9) ; voir A-01 (46 contre 40) : le plan gagne"
+    },
+    {
+      "code": "A-03",
+      "remplace_par": [
+        "PC-E",
+        "PG-E",
+        "SD-E",
+        "INT-E",
+        "BJ-E",
+        "MP-E",
+        "DM-E",
+        "BC-E",
+        "DF-E",
+        "HP-E"
+      ],
+      "raison": "E.A.E E-101 Qté 34 (D10) ; avec A-04 = 44 contre 39 services ENLEVER au relevé (voir entrée 2) : le plan gagne"
+    },
+    {
+      "code": "A-04",
+      "remplace_par": [
+        "PC-E",
+        "PG-E",
+        "SD-E",
+        "INT-E",
+        "BJ-E",
+        "MP-E",
+        "DM-E",
+        "BC-E",
+        "DF-E",
+        "HP-E"
+      ],
+      "raison": "E.A.E E-102 Qté 10 (D11) ; voir A-03 : le plan gagne"
+    },
+    {
+      "code": "A-05",
+      "remplace_par": [
+        "PC-R",
+        "PG-R",
+        "SD-R",
+        "DF-R"
+      ],
+      "raison": "E.A.R Qté 13 (D12) = relevé RELOCALISER 8 + 1 + 3 + 1 = 13 : mêmes objets"
+    },
+    {
+      "code": "A-06",
+      "remplace_par": [
+        "ENC-R"
+      ],
+      "raison": "E.A.R Qté 7 (D13) contre ENC-R 4 au relevé : écart 3 (voir notes)"
+    },
+    {
+      "code": "D-01",
+      "remplace_par": [
+        "PC-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "raison": "Poste intégré mobilier Qté 18 (D45) : services neufs au plan"
+    },
+    {
+      "code": "D-02",
+      "remplace_par": [
+        "PC-I",
+        "PU-I"
+      ],
+      "raison": "Table Qté 5 (D46) = 10 PC + 10 USB ; relevé PU-I 20 : le plan gagne"
+    },
+    {
+      "code": "D-03",
+      "remplace_par": [
+        "PC-I",
+        "BJ-I"
+      ],
+      "raison": "Cabine Qté 2 (D47) : JB + prise"
+    },
+    {
+      "code": "D-04",
+      "remplace_par": [
+        "PC-I",
+        "SD-I"
+      ],
+      "raison": "Écran sur mur, boîte courant + données Qté 2 (D48)"
+    },
+    {
+      "code": "D-05",
+      "remplace_par": [
+        "PC-I",
+        "SD-I"
+      ],
+      "raison": "Kiosque TV Qté 1 (D49) : prise + data"
+    },
+    {
+      "code": "D-06",
+      "remplace_par": [
+        "PC-I"
+      ],
+      "raison": "Prise double murale neuve Qté 8 (D50) ; PC-I 25 au relevé (voir notes)"
+    },
+    {
+      "code": "D-07",
+      "remplace_par": [
+        "PG-I"
+      ],
+      "raison": "Prise DDFT fontaine Qté 1 (D51) ; PG-I 22 au relevé (fontaine non localisée)"
+    },
+    {
+      "code": "D-08",
+      "remplace_par": [
+        "SD-I"
+      ],
+      "raison": "Sortie data Qté 10 (D52) ; SD-I 65 au relevé"
+    },
+    {
+      "code": "E-01",
+      "remplace_par": [
+        "PC-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "raison": "Poste aide au lecteur 227 Qté 2 (D64) : JB, 2 prises, data 2 RJ45"
+    },
+    {
+      "code": "E-02",
+      "remplace_par": [
+        "MP-I"
+      ],
+      "raison": "Monuments Hubbell Qté 2 (D65) ; MP-I INSTALLER 3 au relevé ; E-03 à situer (entrée 7)"
+    },
+    {
+      "code": "E-04",
+      "remplace_par": [
+        "BJ-I",
+        "PC-I"
+      ],
+      "raison": "Cabines JB + prise Qté 3 (D67)"
+    },
+    {
+      "code": "E-05",
+      "remplace_par": [
+        "PC-I",
+        "SD-I"
+      ],
+      "raison": "Écran sur colonne, courant + données Qté 1 (D68)"
+    },
+    {
+      "code": "F-01",
+      "remplace_par": [
+        "LA1-I"
+      ],
+      "raison": "Luminaire A1 Qté 11 (D78) = LA1-I 11 = lot A1 x11"
+    },
+    {
+      "code": "F-02",
+      "remplace_par": [
+        "LC1-I"
+      ],
+      "raison": "Axis 4' Qté 12 (D79) = LC1-I 12 = lot Axis 4' x12"
+    },
+    {
+      "code": "F-03",
+      "remplace_par": [
+        "LC11-I"
+      ],
+      "raison": "Axis 1' Qté 6 (D80) = LC11-I 6 = lot Axis 1' x6"
+    },
+    {
+      "code": "F-04",
+      "remplace_par": [
+        "LC13-I"
+      ],
+      "raison": "Axis 3' Qté 15 (D81) = LC13-I 15 = lot Axis 3' x15"
+    },
+    {
+      "code": "F-06",
+      "remplace_par": [
+        "LE-I"
+      ],
+      "raison": "Luminaire E Qté 4 (D83) ; LE-I 3 au plan et lot E x3 ; relevé d'éclairage 4 : écart 1 à trancher"
+    },
+    {
+      "code": "F-07",
+      "remplace_par": [
+        "Z6-I"
+      ],
+      "raison": "Enseigne Z6 Qté 3 (D84) = Z6-I 3 = lot Z6 x3"
+    },
+    {
+      "code": "G-01",
+      "remplace_par": [
+        "DF-I"
+      ],
+      "raison": "Détecteurs Qté 2 (D91) = DF-I 2 = AI-01 2 = LOT-DET 600 $ (fournis JCI)"
+    }
+  ],
+  "notes": [
+    "DÉTAIL A-01 → EXCLUE (remplacée par ENC-E, L14-E, L22-E) | DOUBLE (entrée n° 1)",
+    "DÉTAIL A-02 → EXCLUE (remplacée par ENC-E, L14-E, L22-E) | DOUBLE (entrée n° 1)",
+    "DÉTAIL A-03 → EXCLUE (remplacée par PC-E, PG-E, SD-E, INT-E, BJ-E, MP-E, DM-E, BC-E, DF-E, HP-E) | DOUBLE (entrée n° 2)",
+    "DÉTAIL A-04 → EXCLUE (remplacée par PC-E, PG-E, SD-E, INT-E, BJ-E, MP-E, DM-E, BC-E, DF-E, HP-E) | DOUBLE (entrée n° 2)",
+    "DÉTAIL A-05 → EXCLUE (remplacée par PC-R, PG-R, SD-R, DF-R) | DOUBLE (entrée n° 3)",
+    "DÉTAIL A-06 → EXCLUE (remplacée par ENC-R) | DOUBLE (entrée n° 4)",
+    "DÉTAIL A-07 → DOUBLE (entrée n° 26)",
+    "DÉTAIL A-08 → DOUBLE (entrée n° 29)",
+    "DÉTAIL A-09 → DOUBLE (entrée n° 29)",
+    "DÉTAIL A-10 → DOUBLE (entrée n° 28)",
+    "DÉTAIL A-11 → DOUBLE (entrée n° 27)",
+    "DÉTAIL B-01 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-02 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-03 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-04 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-05 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-06 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-07 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-08 → DOUBLE (entrée n° 30)",
+    "DÉTAIL B-09 → DOUBLE (entrée n° 27)",
+    "DÉTAIL C-01 → DOUBLE (entrée n° 10) | DOUBLE (entrée n° 11)",
+    "DÉTAIL C-02 → DOUBLE (entrée n° 10) | DOUBLE (entrée n° 12)",
+    "DÉTAIL C-03 → DOUBLE (entrée n° 10)",
+    "DÉTAIL C-04 → DOUBLE (entrée n° 10) | DOUBLE (entrée n° 12)",
+    "DÉTAIL C-05 → DOUBLE (entrée n° 11)",
+    "DÉTAIL C-06 → DOUBLE (entrée n° 11)",
+    "DÉTAIL C-07 → DOUBLE (entrée n° 12)",
+    "DÉTAIL C-08 → DOUBLE (entrée n° 12)",
+    "DÉTAIL D-01 → EXCLUE (remplacée par PC-I, SD-I, BJ-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-02 → EXCLUE (remplacée par PC-I, PU-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-03 → EXCLUE (remplacée par PC-I, BJ-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-04 → EXCLUE (remplacée par PC-I, SD-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-05 → EXCLUE (remplacée par PC-I, SD-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-06 → EXCLUE (remplacée par PC-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-07 → EXCLUE (remplacée par PG-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-08 → EXCLUE (remplacée par SD-I) | DOUBLE (entrée n° 5)",
+    "DÉTAIL D-09 → DOUBLE (entrée n° 8)",
+    "DÉTAIL D-10 → DOUBLE (entrée n° 8)",
+    "DÉTAIL D-11 → DOUBLE (entrée n° 9)",
+    "DÉTAIL D-12 → INDÉPENDANTE (1 percement par course : 16 percements = 16 courses de D-13, pas de ligne plan ; coupe-feu relevant de B3-1)",
+    "DÉTAIL D-13 → DOUBLE (entrée n° 13)",
+    "DÉTAIL D-14 → INDÉPENDANTE (conduit data 3/4 sans conducteur, aucune famille du relevé ; recouvrement matériel avec une ligne Lumen relevant de B3-1)",
+    "DÉTAIL D-15 → DOUBLE (entrée n° 13)",
+    "DÉTAIL D-16 → DOUBLE (entrée n° 14)",
+    "DÉTAIL E-01 → EXCLUE (remplacée par PC-I, SD-I, BJ-I) | DOUBLE (entrée n° 6)",
+    "DÉTAIL E-02 → EXCLUE (remplacée par MP-I) | DOUBLE (entrée n° 7)",
+    "DÉTAIL E-03 → DOUBLE (entrée n° 7)",
+    "DÉTAIL E-04 → EXCLUE (remplacée par BJ-I, PC-I) | DOUBLE (entrée n° 6)",
+    "DÉTAIL E-05 → EXCLUE (remplacée par PC-I, SD-I) | DOUBLE (entrée n° 6)",
+    "DÉTAIL E-06 → DOUBLE (entrée n° 9)",
+    "DÉTAIL E-07 → INDÉPENDANTE (7 percements = 7 courses de E-08, pas de ligne plan ; coupe-feu relevant de B3-1)",
+    "DÉTAIL E-08 → DOUBLE (entrée n° 13)",
+    "DÉTAIL E-09 → INDÉPENDANTE (conduit data 3/4 sans conducteur, aucune famille du relevé ; recouvrement matériel avec une ligne Lumen relevant de B3-1)",
+    "DÉTAIL E-10 → DOUBLE (entrée n° 13)",
+    "DÉTAIL E-11 → DOUBLE (entrée n° 14)",
+    "DÉTAIL F-01 → EXCLUE (remplacée par LA1-I) | DOUBLE (entrée n° 16)",
+    "DÉTAIL F-02 → EXCLUE (remplacée par LC1-I) | DOUBLE (entrée n° 16)",
+    "DÉTAIL F-03 → EXCLUE (remplacée par LC11-I) | DOUBLE (entrée n° 16)",
+    "DÉTAIL F-04 → EXCLUE (remplacée par LC13-I) | DOUBLE (entrée n° 16)",
+    "DÉTAIL F-05 → DOUBLE (entrée n° 17)",
+    "DÉTAIL F-06 → EXCLUE (remplacée par LE-I) | DOUBLE (entrée n° 16)",
+    "DÉTAIL F-07 → EXCLUE (remplacée par Z6-I) | DOUBLE (entrée n° 16)",
+    "DÉTAIL F-08 → DOUBLE (entrée n° 15)",
+    "DÉTAIL F-09 → DOUBLE (entrée n° 15)",
+    "DÉTAIL F-10 → DOUBLE (entrée n° 17)",
+    "DÉTAIL G-01 → EXCLUE (remplacée par DF-I) | DOUBLE (entrée n° 18)",
+    "DÉTAIL G-02 → DOUBLE (entrée n° 23)",
+    "DÉTAIL G-03 → DOUBLE (entrée n° 23)",
+    "DÉTAIL G-04 → DOUBLE (entrée n° 19)",
+    "DÉTAIL G-05 → DOUBLE (entrée n° 20)",
+    "DÉTAIL G-06 → DOUBLE (entrée n° 22)",
+    "DÉTAIL G-07 → DOUBLE (entrée n° 21)",
+    "DÉTAIL H-01 → DOUBLE (entrée n° 25)",
+    "DÉTAIL H-02 → INDÉPENDANTE (coordination, dessins d'atelier, plans tel que construit : temps pur, aucune ligne plan ni lot)",
+    "DÉTAIL H-03 → DOUBLE (entrée n° 22)",
+    "DÉTAIL H-04 → INDÉPENDANTE (nettoyage et gestion des déchets : temps pur, aucune ligne plan ni lot)",
+    "OPT-1 à OPT-4 (Détail) : hors total, jamais chiffrés. OPT-1 câblage data Cat6 contre réutilisation : CONTRADICTION à clarifier ; OPT-2 parasismique ; OPT-3 prime hors heures ; OPT-4 postes temporaires A-102.",
+    "CONTRÔLE LOT-ECL : composantes 11 x 185 (2 035) + 12 x 290 (3 480) + 15 x 230 (3 450) + 6 x 110 (660) + trousses 1 500 + 3 x 475 (1 425) + 3 x 161,60 (484,80) = 13 034,80 $ ; METHODE.md 11 893 $ ; écart 1 141,80 $. Aucun montant modifié. Quantités : A1 11 = F-01 11 ; Axis 4' 12 = F-02 12 ; Axis 3' 15 = F-04 15 ; Axis 1' 6 = F-03 6 ; trousses = C-SUSP 20 (F-05 20) ; E 3 au plan et au tableau E-008 contre 4 au relevé d'éclairage et F-06 4 ; Z6 3 = F-07 3. Lignes non couvertes par LOT-ECL : F-08, F-09 (tirage et fil), F-10 (quincaillerie).",
+    "CONTRÔLE LOT-DIST : 3 400 + 20 x 95 (1 900) + 3 x 300 (900) = 6 200 $ = METHODE.md (écart 0). Disjoncteurs 1P : 19 contre 20 (écart 1). Disjoncteurs 3P : 3 = 3. B-09 non couvert.",
+    "CONTRÔLE LOT-DET : 2 x 300 = 600 $ ; AI-01 2 = G-01 2 = DF-I 2 (rapport INSTALLER 2) : écart 0.",
+    "CONTRÔLE LOT-JCI : 7 400 $ sans composante chiffrée dans METHODE.md : pas de contrôle par script possible. AI-07 est une option hors total.",
+    "CONTRÔLE LOT-GPR : 1 250 $ = catalogue « SCAN DALLE BETON » p 1250 ; X-01 absent de la feuille Détail (écart de source, pas de montant).",
+    "PISTES DU CHEF VÉRIFIÉES : P1 13 = 13 (égalité). P2 46 contre 40 (écart 6). P3 44 contre 39 (écart 5). P4 7 contre 4 (écart 3). P5 F-01 à F-04 = 11/12/6/15 égalité ; F-06 4 contre 3 ; F-07 3 = 3 ; F-05 20 = C-SUSP 20. P6 G-01 = DF-I = AI-01 = 2. P7 MT 1 + 1 + 2 = 4 et MM 3 = 3. P8 A-10 6 = MM-R 6. P9 1P 19 contre 20 ; 3P 3 = 3 ; B-09 hors lot. P10 BJ-I 3 = D-09 2 + D-10 1. P11 MP-I 3 contre E-02 2 + E-03 2 (à situer). P12 A-08 21 = E202 LED 1X4 21 (CONSERVER, pas de double) ; A-09 24 contre E202 ENCASTRE 35 ; A-07 sans relocalisation d'interrupteur au relevé. P13 services neufs : écarts en entrée 5 et 6 ; plan gagne. P14 LOT-ECL 13 034,80 contre 11 893 (écart 1 141,80, signalé) ; LOT-DIST 6 200 = 6 200. P15 assemblages : C-05/C-06 ↔ « CONDUIT 1 04C08 » ; C-07 VE (35 m) ↔ « CONDUIT 3/4 04C12 » (4 #12) et C-07 HUM (45 m) ↔ « CONDUIT 3/4 03C12 » (3 #12) ; D-13/D-15 et E-08/E-10 : 5 conducteurs #12 par course, aucun assemblage 1 po ou 3/4 à 5 conducteurs, donc non couverts ; F-08/F-09 ↔ « CONDUIT 3/4 03C12 » (840 = 3 x 280).",
+    "RECOUVREMENTS AVEC LUMEN (hors de mon périmètre, laissés à B3-1, non portés dans doubles_comptes) : les lignes Lumen de conduits, fils et coupe-feu couvrent C-05 à C-08, D-13 à D-15, E-08 à E-10, F-08, F-09, G-02, G-03 (tirage et fil), D-12 et E-07 (coupe-feu), D-02 et D-07 (prises), F-05 (tiges, ancrages), H-01 (plateforme) et les boîtes de jonction. Ce sont des recouvrements à confirmer par B3-1.",
+    "CONTRADICTION POSSIBLE : A-01 et A-02 (46 contre 40 au relevé, voir entrée 1) ; A-03 et A-04 (44 contre 39, entrée 2) ; A-06 (7 contre 4, entrée 4 : 3 luminaires RDC sans ligne au relevé) ; E-01 et E-04 (JB non couverts par BJ-I 3, qui ne compte que D-09 et D-10) ; D-03 (JB) ; D-06 (PC 15 A hors D-01 = 47 contre 25 PC-I) ; D-02 (USB 10 contre 20) ; D-07 (fontaine non localisée parmi 22 PG-I) ; D-08 et D-01 (SD 10 + 2 RJ45 x 18 contre 65). Les 25 lignes restent dans exclusions, conformément à la règle.",
+    "ÉCARTS INTERNES AU RELEVÉ (qui touchent aux prix ou aux quantités, pas des doubles) : PU et PC (reserves.md Q14) ; PG et M.A.L.T. (R-007) ; 15 A et 20 A non distingués (R-007, D-01 et D-02) ; comptoir et standard non distingués (R-007) ; LE 3 contre 4 (R-003) ; portées non lisibles par feuille (R-002).",
+    "CATALOGUE : « CONDUIT 3/4 04C12 » p 2,8997 $/pi est plus bas que « CONDUIT 3/4 03C12 » p 4,2441 $/pi : prix non monotone, à vérifier avant usage. « CONDUIT 1 04C08 » : un seul projet (nb_projets 1). « CONDUIT 1 05C12 » et « CONDUIT 3/4 05C12 » absents du catalogue.",
+    "DOUTES : (1) X-01 et X-02 cités par le chef sont absents de la feuille Détail ; (2) portées par feuille absentes, aucune attribution par feuille affirmée ; (3) B-02 et B-03 transférés contre prix neuf du lot ; (4) aucun montant de lot modifié (prix confirmés 2026-10-20) ; (5) effort xhigh justifié : une erreur de double compte se propage à tout le total."
+  ]
+}

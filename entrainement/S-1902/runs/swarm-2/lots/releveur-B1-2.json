@@ -1,0 +1,249 @@
+{
+  "niveau": "releveur",
+  "nom": "B1-2",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "SD-I",
+      "desc": "Sortie data (informatique/audio) neuve",
+      "q": null,
+      "u": "U",
+      "p": 22.32,
+      "h": 0.89,
+      "art": "3.33",
+      "src": "catalogue Dupuis « TEL/DATA 3/4 » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1)"
+    },
+    {
+      "code": "SD-E",
+      "desc": "Sortie data enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER DATA » ; sortie data = dispositif mural ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "SD-R",
+      "desc": "Sortie data relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : aucun libellé « RELO DATA » ; sortie data ≈ prise relocalisée (repère METHODE 1,5 h)"
+    },
+    {
+      "code": "TV-I",
+      "desc": "Sortie TV (câblodistribution) neuve",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.33",
+      "src": "catalogue Dupuis « SORTIE TV » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 5); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TV-E",
+      "desc": "Sortie TV enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER TV » ; sortie TV murale ≈ prise enlevée (repère METHODE 0,35 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "TV-R",
+      "desc": "Sortie TV relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : aucun libellé « RELO TV » ; sortie TV murale ≈ prise relocalisée (repère METHODE 1,5 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "DM-I",
+      "desc": "Détecteur de mouvement neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.35",
+      "src": "catalogue Dupuis « DETECTEUR MOUVEMENT » um=U (dernier 2026-03-31, S-1693_Ecole Primaire Beloeil, nb_projets 3); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "DM-E",
+      "desc": "Détecteur de mouvement enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.35,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER DETECTEUR » ; dispositif mural/plafond léger ≈ prise enlevée (repère METHODE 0,35 h)"
+    },
+    {
+      "code": "DM-R",
+      "desc": "Détecteur de mouvement relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO DETECTEUR A FUME » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 3); analogue : aucun libellé « RELO DETECTEUR MOUVEMENT » ; objet voisin = détecteur (installation 0,5 h comme le détecteur de fumée); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LC-I",
+      "desc": "Lecteur de carte neuf",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.33",
+      "src": "catalogue Dupuis « LECTEUR DE CARTE » um=U (dernier 2026-04-02, S-1692_École Primaire St-Marc Candiac, nb_projets 5)"
+    },
+    {
+      "code": "LC-E",
+      "desc": "Lecteur de carte enlevé",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTACT DE PORTE ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); analogue : aucun libellé « LECTEUR ENL » ; famille ENL du projet S-1659 (dispositifs d'accès/alarme enlevés, 0,5 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "LC-R",
+      "desc": "Lecteur de carte relocalisé",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « LECTEUR RELO » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "GA-I",
+      "desc": "Gâche électrique neuve",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.35,
+      "art": "3.33",
+      "src": "catalogue Dupuis « GACHE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 3); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "GA-E",
+      "desc": "Gâche électrique enlevée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « CONTACT DE PORTE ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); analogue : aucun libellé « GACHE ENL » ; famille ENL du projet S-1659 (dispositifs d'accès enlevés, 0,5 h); portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "GA-R",
+      "desc": "Gâche électrique relocalisée",
+      "q": null,
+      "u": "U",
+      "p": 15.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « GACHE RELO » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1); portée absente du relevé — correspondance de précaution"
+    }
+  ],
+  "notes": [
+    "GÉNÉRAL — Catalogue relu avec ligne(desc, um) (2 068 lignes, assert OK) ; p et h = prix_a_utiliser / temps_a_utiliser recopiés tels quels, jamais la médiane. Aucun repli Lumen ni jugement comme source de prix dans ce lot : « jugement (Estimation_2) » n'est cité que pour des candidats écartés (Détail A-03 h/u 0,4 ; A-05 h/u 1, relus). q = null partout. Aucun désaccord avec les 15 libellés retenus par le chef de lot : je les confirme tous après relecture du CSV.",
+    "ALERTE 1 (DM-I) — p = 0 du catalogue, p n'est pas forcé : aucun lot ne couvre un détecteur de mouvement (LOT-DET = 2 détecteurs de fumée, 600 $). Le relevé n'a aucun DM-I (DETECTEUR MOUVEMENT = CONSERVER 2, ENLEVER 1) : si un DM-I réel est ajouté, son matériel reste à 0 $ tant qu'il n'y a pas de décision (prix Dupuis non nul ou prix de lot). Détecteurs de présence au catalogue, objet voisin non retenu : écarté « DETECTEUR WATTSTOPER » um=U p=236.0 h=0.5 nb_projets=1 dernier 2026-03-11; écarté « DETECTEUR PRESENCE PL » um=U p=250.0 h=0.5 nb_projets=1 dernier 2026-06-26.",
+    "ALERTE 2 (SD-I) — deux libellés TEL/DATA : écart par unité 22,32 − 13,96 = 8,36 $ et 0,89 − 0,63 = 0,26 h ; sur 65 unités : 543,40 $ de matériel et 16,9 h. Le choix relève de Francis/Jo, pas du releveur.",
+    "SD-I — retenu « TEL/DATA 3/4 » : règle 1 (repère METHODE « tel/data 3/4 22,32 $ / 0,89 h » : p ET h égalent le repère). CONFIRMÉ. Hésitation consignée : « TEL/DATA » n'égale le repère que par h = 0,63, borne basse de la plage METHODE (0,63–0,89 h), jamais par p ; sa classe Dupuis est « Standard (stable) » et il a 17 projets (les autres candidats sont « Vu 1 seul projet »). Recherches : TEL, DATA, SORTIE, RESEAU, INFORM, AUDIO, RJ45, CAT6 — aucun libellé informatique, RJ45 ou CAT6. Écartés : écarté « TEL/DATA » um=U p=13.96 h=0.63 nb_projets=17 dernier 2026-09-25; écarté « SORTIE DATA » um=U p=20.0 h=0.25 nb_projets=1 dernier 2026-06-02; écarté « SORTIE AV » um=U p=20.0 h=0.25 nb_projets=1 dernier 2026-06-02; écarté « SORTIE RESEAU » um=U p=15.4 h=0.63 nb_projets=1 dernier 2026-06-03; écarté « SORTIE TEL » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-10-07; écarté « TEL » um=U p=0.0 h=0.25 nb_projets=1 dernier 2026-02-02 (libellé trop court, p 0).",
+    "SD-E — retenu « ENLEVER PRISE » (analogue : aucun « ENLEVER DATA » ; repère METHODE « prise enlevée 0,35 h »). CONFIRMÉ. Jugement A-03 (h/u 0,4, relu) non retenu : Dupuis a un analogue ; écart 0,05 h/u × 17 = 0,85 h. Écartés : écarté « PRISES A DEMANTELER » um=U p=0.0 h=0.2 nb_projets=1 dernier 2026-09-23; écarté « INTERRUPTEUR A DEMANTELER » um=U p=0.0 h=0.1 nb_projets=1 dernier 2026-09-23; écarté « DEBRANCHEMENT APPAREILAGE MECANIQUE » um=U p=0.0 h=0.4 nb_projets=1 dernier 2026-09-23 (débrancher, pas enlever : action différente); écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (même valeur, objet voisin); écarté « ENLEVER CONDUIT ET FILA » um=U p=0.0 h=0.0 nb_projets=2 dernier 2026-08-26 (temps nul).",
+    "SD-R — retenu « RELO PRISE » (analogue : aucun « RELO DATA » ; repère METHODE « relocalisation de prise 1,5 h »). CONFIRMÉ. Jugement A-05 (h/u 1, relu) non retenu : écart −0,5 h/u × 3 = −1,5 h. Écartés : écarté « RELO INT » um=U p=0.0 h=1.5 nb_projets=1 dernier 2026-05-05 (même h mais interrupteur : objet voisin, nb 1 < 3); écarté « RELO ENCASTRE » um=U p=0.0 h=1.0 nb_projets=1 dernier 2026-06-02 (encastré : objet voisin, h 1,0).",
+    "TV-I — retenu « SORTIE TV » : règle 1 (repère METHODE « sortie TV 15 $ », p égale), règle 2 (même objet). CONFIRMÉ. Portée absente du relevé (CONSERVER 4 seulement) : quantité 0 au relevé, code de précaution. Écartés : écarté « SORTIE TEL » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-10-07 (p 15 comme le repère mais objet télécom : règle 2); écarté « SORTIE WIFI » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-10-07; écarté « TV » um=U p=4.25 h=0.63 nb_projets=1 dernier 2026-03-31 (p 4,25); écarté « BOITIER TV » um=U p=0.0 h=0.0 nb_projets=1 dernier 2026-09-10 (temps nul); écarté « ENS BOITIER TV ENCASTRE » um=U p=38.7139 h=1.0 nb_projets=1 dernier 2026-09-10 (ensemble boîtier : objet plus large). D-05 « Kiosque TV (P-2 6) — prise + data » n'est pas un symbole SORTIE TV au relevé : TV-I n'en est pas déduit.",
+    "TV-E — retenu « ENLEVER PRISE » (analogue : aucun « ENLEVER TV » ; sortie TV murale ≈ prise, repère 0,35 h). CONFIRMÉ. Portée absente (CONSERVER 4 seulement). Écartés : écarté « ENLEVER INTERRUPTEUR » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (même valeur, interrupteur); écarté « BOITIER TV » um=U p=0.0 h=0.0 nb_projets=1 dernier 2026-09-10 (temps nul).",
+    "TV-R — retenu « RELO PRISE » (analogue : aucun « RELO TV » ; repère 1,5 h). CONFIRMÉ. Portée absente (précaution). Écartés : écarté « RELO STATION MANUEL » um=U p=0.0 h=0.75 nb_projets=3 dernier 2026-10-07 (station : objet voisin); écarté « RELO ENCASTRE » um=U p=0.0 h=1.0 nb_projets=1 dernier 2026-06-02 (encastré, h 1,0).",
+    "DM-I — retenu « DETECTEUR MOUVEMENT » : règle 1 (h = 0,5 = repère « détecteur 0,5 h », égal à plusieurs candidats), règle 2 (même objet), règle 3 (nb_projets 3, le plus grand). CONFIRMÉ, avec l'ALERTE 1. p = 0 du catalogue, non forcé. Portée absente du relevé (précaution). Recherches : DETECT, MOUV, MOUVEMENT, PRESENCE, INT MOUVEMENT. Écartés : écarté « DETECTEUR DE MOUVEMENT » um=U p=10.0 h=0.5 nb_projets=1 dernier 2026-02-02 (libellé identique à celui du relevé, mais nb 1 : règle 3 ; si le chef le retient, +10 $/u de matériel); écarté « DETECTEUR DE MOUVEMEI » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-04-02 (libellé tronqué, nb 1); écarté « DETECTEUR MOUVEMENT : » um=U p=235.0 h=0.35 nb_projets=1 dernier 2026-03-11 (h 0,35 ≠ repère, nb 1); écarté « INT MOUVEMENT » um=U p=85.0 h=0.35 nb_projets=1 dernier 2026-02-19 (interrupteur : objet voisin); écarté « DETECTEUR MOUV 360 OS » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-30 (p 0, nb 1); écarté « DETECTEUR MOUVEMENT F » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-07-13 (p 0, nb 1); écarté « GARDE DETECTEUR MOUV » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (garde : autre objet).",
+    "DM-E — retenu « ENLEVER PRISE » (analogue : aucun « ENLEVER DETECTEUR » ; dispositif mural/plafond léger ≈ prise, repère 0,35 h). CONFIRMÉ. Relevé : ENLEVER 1 (E-201). Écartés : écarté « STATION ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09 (h 0,5 : dispositif d’alarme ; si retenu, +0,15 h); écarté « EQUIPEMENT A ENLEVER » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-05-05 (h 0,5, générique ; si retenu, +0,15 h); écarté « DETECTEUR » um=U p=0.0 h=0.25 nb_projets=1 dernier 2026-02-02 (libellé sans action d’enlèvement).",
+    "DM-R — retenu « RELO DETECTEUR A FUME » (règle 2 : même objet détecteur, même action relocaliser ; règle 3 : nb 3). CONFIRMÉ. Aucun « RELO DETECTEUR MOUVEMENT » trouvé. Portée absente (précaution). Écartés : écarté « RELO STATION MANUEL » um=U p=0.0 h=0.75 nb_projets=3 dernier 2026-10-07 (station : objet voisin); écarté « RELO DETECTEUR FUME » um=U p=0.0 h=1.0 nb_projets=2 dernier 2026-03-09 (h 1,0 ; nb 2 < 3); écarté « RELO DETECTEUR A FUMEI » um=U p=0.0 h=0.75 nb_projets=1 dernier 2026-06-26 (libellé tronqué, nb 1); écarté « RELO PRISE » um=U p=0.0 h=1.5 nb_projets=3 dernier 2026-05-05 (alternative 1,5 h, autre objet, en note comme demandé).",
+    "LC-I — retenu « LECTEUR DE CARTE » : règle 1 (repère METHODE « lecteur de carte 15 $ », p égale), règle 2 (même objet), règle 3 (nb 5). CONFIRMÉ. Relevé : INSTALLER 2 (CONSERVER 3). Écartés : écarté « LECTEUR CARTE » um=U p=15.0 h=0.35 nb_projets=2 dernier 2026-06-02 (même objet, nb 2 < 5 ; h 0,35 : −0,15 h/u); écarté « OPERATEUR DE PORTE » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-04-02 (p 15, autre objet); écarté « CONTACT DE PORTE » um=U p=15.0 h=0.5 nb_projets=3 dernier 2026-04-02 (p 15, autre objet); écarté « GARDE LECTEUR » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (p 0, autre objet); écarté « LECTREUR DE CARTE » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (même objet mal orthographié mais p 0 : écarté).",
+    "LC-E — retenu « CONTACT DE PORTE ENL » (analogue : aucun « LECTEUR ENL » ; famille ENL de S-1659, dispositifs d’accès enlevés, 0,5 h). CONFIRMÉ. Portée absente (précaution). Les trois autres ENL de S-1659 ont les mêmes valeurs (0 $ / 0,5 h) : choix sans effet sur p et h. Écartés : écarté « OPERATEUR PORTE ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « IC ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « STATION ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (dispositif mural, h 0,35 : −0,15 h/u si retenu).",
+    "LC-R — retenu « LECTEUR RELO » (règle 2 : même objet, même action). CONFIRMÉ. p = 15 du catalogue pour une relocalisation, gardé (RELOCALISER = prix catalogue). Portée absente (précaution). Écartés (même projet S-1659, mêmes valeurs) : écarté « OPERATEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « CONTAC PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « BOUTON DE PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09.",
+    "GA-I — retenu « GACHE » : règle 1 (repère METHODE « gâche 15 $ », p égale ; « GACHE ELECTRIQUE » à 10 $ ne l’égale pas), règle 3 (nb 3 parmi les candidats à 15 $). CONFIRMÉ. Relevé : CONSERVER 3 seulement (précaution, quantité 0). Écartés : écarté « GACHE ELECTRIQUE » um=U p=10.0 h=0.5 nb_projets=1 dernier 2026-02-02 (libellé identique à « GÂCHE ÉLECTRIQUE » du relevé ; p 10 ≠ repère : si retenu, −5 $/u et +0,15 h/u); écarté « GACHE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (relocalisation : action différente); écarté « BOUTON GACHE » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-03-31 (bouton, p 0); écarté « VERROU ELECTRIQUE » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-04-02 (objet voisin, même p 15, nb 1).",
+    "GA-E — retenu « CONTACT DE PORTE ENL » (analogue : aucun « GACHE ENL » ; même analogue que LC-E). CONFIRMÉ. Portée absente (précaution). Écartés : écarté « OPERATEUR PORTE ENL » um=U p=0.0 h=0.5 nb_projets=1 dernier 2026-02-09; écarté « ENLEVER PRISE » um=U p=0.0 h=0.35 nb_projets=1 dernier 2026-08-26 (dispositif mural).",
+    "GA-R — retenu « GACHE RELO » (règle 2 : même objet, même action). CONFIRMÉ. Portée absente (précaution). Écartés : écarté « GACHE » um=U p=15.0 h=0.35 nb_projets=3 dernier 2026-06-02 (action installer, pas relocaliser); écarté « CONTAC PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (objet voisin); écarté « BOUTON DE PORTE RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (objet voisin); écarté « LECTEUR RELO » um=U p=15.0 h=0.5 nb_projets=1 dernier 2026-02-09 (objet voisin).",
+    "TAUX ET FACTEUR — rappel, non appliqués dans p ni h : taux 85 $/h et facteur de prix de vente 1,244 (METHODE §5 et §7). Le 124 $/h du Sommaire n’est pas retenu.",
+    "RECHERCHES SANS RÉSULTAT (motifs, sans casse) : ENL, ENLEV, DEMANT, DEPOS, DEBRAN, RETIR, DEMONT, RELO, RELOC, PRISE, TEL, DATA, SORTIE, RESEAU, INFORM, AUDIO, RJ45, CAT6, DONN, LAN, VDV, INFO, CABL, CATV, TV, DISTRIB, LECT, CARTE, ACCES, CONTR, CONTA, OPERAT, PORTE, BOUTON, GACH, DETECT, MOUV, PRESENCE. Absents du catalogue : « ENLEVER DATA », « RELO DATA », « ENLEVER TV », « RELO TV », « ENLEVER DETECTEUR », « RELO DETECTEUR MOUVEMENT », « LECTEUR ENL », « GACHE ENL », « INFORMATIQUE », « RJ45 », « CAT6 ».",
+    "DOUBLES — voir doubles_comptes (judgés réels ou probables). Non jugés doubles : E-02 (monument plancher « prise 20A + 2 RJ45 ») : les 2 RJ45 sont à l’intérieur d’un seul monument (un symbole MP sur le plan), pas une sortie data séparée à retirer de SD-I ; à vérifier sur E-104/E-105. E-01 « aide au lecteur 227 » et D-11 « Aide au lecteur 116 » : « lecteur » est un nom de local de la bibliothèque, pas un lecteur de carte : aucun couple avec LC-I. A-01 (39 E.A.E de E-201) : luminaires seulement, pas le détecteur DM-E : pas de couple.",
+    "CONDUITS ET CÂBLE HORS PRIX D’ASSEMBLAGE — le prix TEL/DATA 3/4 inclut boîte, plaque et raccord (METHODE §2), mais ni le conduit ni le câble : le conduit 3/4 data (D-14, E-09), le conduit de D-08 et le câble data (OPT-1, devis 36.1) ne sont pas dans SD-I et ne doivent pas être recomptés dans SD-I.",
+    "RELEVÉ — releve.xlsx « Par feuille » ne donne pas la portée par feuille : les doubles A-03/A-04/A-05 sont « probables » et restent à trancher sur le plan par l’équipe A.",
+    "MODÈLE — Claude Haiku 5.5 (claude-haiku-5-5), releveur B1-2."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "D-01",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; la boîte data 2 RJ45 de chaque poste (D-01, 18 postes, E-104) est la sortie data relevée sur le plan : un objet physique n’est payé qu’une fois (SD-I paie la sortie, boîte, plaque et raccord inclus dans TEL/DATA 3/4) — retirer la part « boîte data 2 RJ45 » de D-01"
+    },
+    {
+      "codes": [
+        "D-04",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « données » de l’écran mur/colonne (D-04, E-104) = une sortie data déjà relevée (SD-I) ; compter une fois"
+    },
+    {
+      "codes": [
+        "D-05",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « data » du kiosque TV (D-05, E-104) = une sortie data déjà relevée (SD-I) ; la prise (PC-I) reste à part, hors de mon lot"
+    },
+    {
+      "codes": [
+        "D-08",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; la boîte de la sortie data murale/colonne (D-08, 10 u, E-104) est incluse dans TEL/DATA 3/4 (SD-I) ; seuls le conduit 3/4 vers entreplafond et la corde restent hors SD-I"
+    },
+    {
+      "codes": [
+        "E-01",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « data 2 RJ45 » des 2 postes (E-01, E-105) = sorties data déjà relevées sur E-105 (SD-I) ; compter une fois"
+    },
+    {
+      "codes": [
+        "E-05",
+        "SD-I"
+      ],
+      "regle": "le plan gagne ; « données » de l’écran sur colonne P-6 12 (E-05, E-105) = une sortie data déjà relevée (SD-I) ; compter une fois"
+    },
+    {
+      "codes": [
+        "A-03",
+        "SD-E"
+      ],
+      "regle": "probable, à trancher sur E-101 : A-03 compte les services E.A.E de E-101 (prises, boîtes, câbles sortant du plancher) ; les sorties data enlevées de E-101 sont aussi comptées dans SD-E (17 au total) — un même objet ne se compte qu’une fois"
+    },
+    {
+      "codes": [
+        "A-04",
+        "SD-E"
+      ],
+      "regle": "probable, à trancher sur E-102 : A-04 compte les services E.A.E de E-102 ; les sorties data enlevées de E-102 sont aussi comptées dans SD-E — compter une fois"
+    },
+    {
+      "codes": [
+        "A-05",
+        "SD-R"
+      ],
+      "regle": "probable, à trancher sur E-101/E-102 : A-05 compte les équipements services relocalisés (E.A.R) ; les 3 sorties data relocalisées (SD-R) en font partie — compter une fois"
+    }
+  ]
+}

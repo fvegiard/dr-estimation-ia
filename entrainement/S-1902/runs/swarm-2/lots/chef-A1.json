@@ -1,0 +1,321 @@
+{
+  "niveau": "chef",
+  "nom": "A1",
+  "modele_demande": "sonnet",
+  "effort_demande": "high",
+  "lignes": [
+    {
+      "code": "PC-I",
+      "desc": "Prise double 15 A 120 V neuve",
+      "q": 25,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.28",
+      "src": "releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; rapport-releve.md PRISE DOUBLE 15A INSTALLER 25 ; releve.xlsx Par feuille E104 23 + E105 2 (feuilles nouveau)"
+    },
+    {
+      "code": "PC-R",
+      "desc": "Prise double 15 A 120 V relocalisée",
+      "q": 8,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.28",
+      "src": "rapport-releve.md PRISE DOUBLE 15A RELOCALISER 8 ; releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; Par feuille E101 48 + E102 22 (feuilles existant)"
+    },
+    {
+      "code": "PC-E",
+      "desc": "Prise double 15 A 120 V à enlever",
+      "q": 7,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "rapport-releve.md PRISE DOUBLE 15A ENLEVER 7 ; releve.xlsx Par feuille E101 48 + E102 22 (feuilles existant)"
+    },
+    {
+      "code": "PU-I",
+      "desc": "Prise USB 120 V neuve (Leviton Decora)",
+      "q": 20,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.27",
+      "src": "releve.xlsx Par libellé PRISE USB 20 ; rapport-releve.md PRISE USB INSTALLER 20 ; releve.xlsx Par feuille E104 20 (feuille nouveau)"
+    },
+    {
+      "code": "PG-I",
+      "desc": "Prise DDFT 15 A neuve",
+      "q": 22,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.30",
+      "src": "rapport-releve.md PRISE DDFT INSTALLER 22 ; releve.xlsx Par libellé PRISE DDFT 49 ; Par feuille E104 20 + E105 2 (feuilles nouveau)"
+    },
+    {
+      "code": "PG-E",
+      "desc": "Prise DDFT 15 A à enlever",
+      "q": 4,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "rapport-releve.md PRISE DDFT ENLEVER 4 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant)"
+    },
+    {
+      "code": "PG-R",
+      "desc": "Prise DDFT 15 A relocalisée",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.30",
+      "src": "rapport-releve.md PRISE DDFT RELOCALISER 1 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant)"
+    },
+    {
+      "code": "SD-I",
+      "desc": "Sortie informatique/réseau neuve",
+      "q": 65,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.33",
+      "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md INSTALLER 65 ; Par feuille E104 45 + E105 20 (feuilles nouveau)"
+    },
+    {
+      "code": "SD-E",
+      "desc": "Sortie informatique/réseau à enlever",
+      "q": 17,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md ENLEVER 17 ; Par feuille existant E101 36 + E102 19 = 55 = C+E+R"
+    },
+    {
+      "code": "SD-R",
+      "desc": "Sortie informatique/réseau à relocaliser",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.33",
+      "src": "releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md RELOCALISER 3 ; art de la famille SD (convention du directeur A)"
+    },
+    {
+      "code": "INT-I",
+      "desc": "Interrupteur simple neuf",
+      "q": 5,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé INT SIMPLE 10 ; rapport-releve.md INT SIMPLE INSTALLER 5 ; releve.xlsx Par feuille E203 INT SIMPLE 5 (feuille nouveau, R-002)"
+    },
+    {
+      "code": "INT-E",
+      "desc": "Interrupteur simple à enlever",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "rapport-releve.md INT SIMPLE ENLEVER 1 ; releve.xlsx Par feuille E201 INT SIMPLE 5 (feuille existant : 4 CONSERVER + 1 ENLEVER)"
+    },
+    {
+      "code": "TH-I",
+      "desc": "Thermostat neuf (raccordement)",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.23",
+      "src": "releve.xlsx Par libellé THERMOSTAT 9 ; rapport-releve.md THERMOSTAT INSTALLER 2 ; releve.xlsx Par feuille E104 THERMOSTAT 2 (feuille nouveau)"
+    },
+    {
+      "code": "BJ-I",
+      "desc": "Boîte de jonction neuve",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md INSTALLER 3 ; Par feuille E104 3 (feuille nouveau)"
+    },
+    {
+      "code": "BJ-E",
+      "desc": "Boîte de jonction à enlever",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md ENLEVER 2 ; Par feuille existant E101 4 + E102 1 + E201 2 = 7 = C+E+R"
+    },
+    {
+      "code": "MP-I",
+      "desc": "Monument plancher neuf",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.34",
+      "src": "releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md INSTALLER 3 ; Par feuille E105 3 (feuille nouveau)"
+    },
+    {
+      "code": "MP-E",
+      "desc": "Monument plancher à enlever",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md ENLEVER 3 ; Par feuille existant E101 1 + E102 3 = 4 = C+E+R"
+    },
+    {
+      "code": "LC-I",
+      "desc": "Lecteur de carte neuf",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "releve.xlsx Par libellé LECTEUR CARTE 5 ; rapport-releve.md LECTEUR CARTE INSTALLER 2 ; releve.xlsx Par feuille E104 LECTEUR CARTE 2 (feuille nouveau)"
+    },
+    {
+      "code": "DM-E",
+      "desc": "Détecteur de mouvement à enlever",
+      "q": 1,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé DETECTEUR MOUVEMENT 3 ; rapport-releve.md DETECTEUR MOUVEMENT ENLEVER 1 ; releve.xlsx Par feuille E201 DETECTEUR MOUVEMENT 3 (feuille existant)"
+    },
+    {
+      "code": "BC-E",
+      "desc": "Boîtier « C » à enlever",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.22",
+      "src": "releve.xlsx Par libellé BOITIER C 4 ; rapport-releve.md BOITIER C ENLEVER 2 ; releve.xlsx Par feuille E101 BOITIER C 1 + E201 BOITIER C 3 (feuilles existant)"
+    },
+    {
+      "code": "D-09",
+      "desc": "Raccord panneau de contrôle barrière anti-vol (les 2 JB sont comptées dans BJ-I)",
+      "q": 1,
+      "u": "LOT",
+      "p": null,
+      "h": null,
+      "art": "3.31",
+      "src": "entree/reference-Estimation_2.xlsx Détail D-09 Qté 1 lot ; arbitrage chef A1"
+    },
+    {
+      "code": "E-03",
+      "desc": "Boîte de plancher refaite salle 208 (à confirmer)",
+      "q": 2,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.34",
+      "src": "entree/reference-Estimation_2.xlsx Détail E-03 Qté 2 u ; arbitrage chef A1"
+    },
+    {
+      "code": "A-07",
+      "desc": "Relocalisation interrupteurs maîtres du hall",
+      "q": 1,
+      "u": "LOT",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "entree/reference-Estimation_2.xlsx Détail A-07 Qté 1 lot ; arbitrage chef A1"
+    }
+  ],
+  "notes": [
+    "DÉCOUPAGE (disjoint et couvrant) : A1-1 = PC, PU, PG + D-01…D-08 (exclues) + A-05 (exclue) ; A1-2 = SD, TV, MP, BJ + A-03, A-04, E-01, E-02, E-04, E-05, D-10 (exclues) + D-09, E-03 (reprises) ; A1-3 = INT, TH, LC, GA, DM, BC + A-07 (reprise). 19 codes Détail du §3b : 3 repris (D-09, E-03, A-07) + 16 exclus = 19.",
+    "EFFORTS CHOISIS : A1-1 high (9 lignes Détail à arbitrer en double compte, contradictions USB 10 vs 20 et 13 vs 12, confusion DDFT/M.A.L.T.) ; A1-2 xhigh (sous-lot le plus chargé, contrôle BJ-I 3 = 2 + 1 qui décide de D-10, lien A-03/A-04 avec les -E des autres lots) ; A1-3 high (petit sous-lot mais beaucoup de CONSERVER à noter et chevauchement A-07/INT). Chef : sonnet, effort high.",
+    "VÉRIFICATION PAR LE CHEF (relecture du kit) : A1-1 5/5 (PC-I 25 et PC-R 8 / PG-I 22 / PU-I 20 / PG-E 4 : rapport-releve.md, Par libellé, Par feuille et art 3.27/3.28/3.30/3.22 relus ; notes D-01 = 3+4+2+4+2+3 = 18 et D-02 = 3+2 = 5 relues dans Détail) ; A1-2 5/5 (SD-I 65, BJ-I 3, MP-E 3, D-09 Qté 1 lot ligne 53, E-03 Qté 2 u ligne 66 + note « à confirmer », A-03 34 / A-04 10 relues ; BJ sur E105 = 0 confirmé) ; A1-3 5/5 (INT-I 5, TH-I 2, LC-I 2, DM-E 1, BC-E 2, A-07 Qté 1 lot ligne 14 ; coordonnées INT SIMPLE E201/E203 relues dans Marques). Aucune erreur trouvée : aucun sous-lot revu ligne par ligne.",
+    "CONTRÔLE PAR FEUILLE (recalculé par le chef pour les 13 familles) : existant (E101+E102+E103+E201+E202) = C+E+R et nouveau (E104+E105+E106+E203+E204) = I partout : PC 70 = 55+7+8 / 25 ; PU 0 / 20 ; PG 27 = 22+4+1 / 22 ; SD 55 = 35+17+3 / 65 ; TV 4 = 4 / 0 ; INT 5 = 4+1 / 5 ; TH 7 / 2 ; BJ 7 = 5+2 / 3 ; MP 4 = 1+3 / 3 ; LC 3 / 2 ; GA 3 / 0 ; DM 3 = 2+1 / 0 ; BC 4 = 2+2 / 0. Aucun écart.",
+    "FAMILLES 100 % CONSERVER SANS LIGNE : SORTIE TV (4, E101 1 + E102 3) et GACHE (3, E101). CONSERVER sans ligne aussi : PC 55, PG 22, SD 35, INT 4, TH 7, BJ 5, MP 1, LC 3, DM 2, BC 2 (aucun travail).",
+    "CONTRADICTION A-03/A-04 vs plan : Détail 34 + 10 = 44 E.A.E contre PC-E 7 + PG-E 4 + SD-E 17 + BJ-E 2 + MP-E 3 + BC-E 2 = 35 sur plan (écart 9). Le plan compte aussi INT-E 1 et DM-E 1 (et 1 détecteur de fumée ENLEVER, hors lot) : 37 en incluant INT-E et DM-E, écart 7. Le plan fait foi ; A-03 et A-04 non reprises ; l'estimation Détail semble compter plus de services à démonter, à confirmer au zoom sur E-101/E-102.",
+    "CONTRADICTION A-05 vs plan : Détail 13 (6 RDC + 7 2e) contre PC-R 8 + PG-R 1 + SD-R 3 = 12 sur plan (écart 1). Plan fait foi. Total des lignes R du lot = 12.",
+    "CONTRADICTION USB (D-02) : 5 tables x 2 USB = 10 USB au Détail contre PU-I 20 sur plan (E104 20). Plan fait foi. R-007 : les JB de poste (D-01) et les prises 20 A ne sont pas distinguées des prises 15 A sur plan ; PC-I 25 repose sur le total plan.",
+    "ARBITRAGES D-09 / D-10 / BJ-I : BJ-I 3, toutes sur E104 (Par feuille BOITE JONCTION E104 = 3), = 2 JB de D-09 + 1 JB de D-10 : concordance numérique seulement (le plan ne dit pas quelle JB est laquelle). D-09 reprise (LOT 1, art 3.31, raccord du panneau de contrôle de la barrière anti-vol, non relevé sur plan) ; D-10 exclue (remplacée par BJ-I).",
+    "POINT OUVERT E-01 / E-04 : le Détail compte 5 JB (E-01 2 postes, E-04 3 cabines) sur E105 alors que BOITE JONCTION n'a aucune marque INSTALLER sur E105 (BJ-I = 3 toutes sur E104). Exclusions maintenues (arbitrage : le plan gagne), mais ces 5 JB ne sont pas couvertes par BJ-I ; à trancher sur le plan (JB de poste non relevées comme boîtes de jonction ?).",
+    "POINT OUVERT E-02 / E-03 / MP : Détail E-02 2 monuments (P-4 17, P4-15) contre MP-I 3 sur plan E105 (2 vs 3, plan fait foi, E-02 exclue). E-03 reprise (2 boîtes de plancher refaites, salle 208, art 3.34) : chevauchement possible avec MP-E 3 (E102) / MP-I 3 (E105), « à confirmer » dans Détail ; risque de double compte MP non tranchable sans le plan.",
+    "POINT OUVERT A-07 / INT : A-07 reprise (LOT 1, art 3.35, relocalisation interrupteurs maîtres du hall, note spécifique 1 E-201) ; chevauchement possible avec INT-E 1 (E201) / INT-I 5 (E203) ; non tranchable sans le plan. Par ailleurs Marques contient deux INT SIMPLE à (1011.8, 418.3) et (1016.6, 416.3), distants de 5,2 pt, présents à l'identique sur E201 ET E203 : doublon de repère ou feuilles superposées existant/neuf, à confirmer au zoom (quantités gardées telles que le rapport).",
+    "PORTÉES NON-SÉPARABLES (R-007) : PG (DDFT 49) confond DDFT et M.A.L.T. isolée ; si une part est M.A.L.T., elle relève de l'article 3.29 au lieu de 3.30 (PG-I/PG-E/PG-R portées à 3.30 par convention). PC (95) ne distingue ni 15 A / 20 A ni comptoir / standard. D-07 (1 DDFT fontaine P2-61) exclue : le plan ne permet pas de confirmer qu'elle est comptée dans PG-I 22.",
+    "ARTICLES : convention du directeur A appliquée (-E → 3.22 ; PC-I/PC-R 3.28 ; PU 3.27 ; PG 3.30 ; SD 3.33 ; MP 3.34 ; INT 3.35 ; TH 3.23 ; BJ et LC 3.31). Aucun article « intrusion » au bordereau pour LC (ni pour GA/BC/DM) : LC-I proposé à 3.31 par convention. BC-E (boîtier C, famille alarme, description « hors légende — R-006 TEST-E201 » alors que la source dit « E-001 légende ; bloc S218 ») et DM-E vont à 3.22. Le libellé du 3.34 au bordereau est « Moinument plancher » (coquille, numéro correct).",
+    "CONTRAINTE : toutes les quantités sont celles du relevé automatique (rapport-releve.md « à VÉRIFIER sur les planches de contrôle ») : non revalidées sur plan. p et h = null partout. Aucune donnée de prix/temps lue ; aucun fichier hors du dossier de travail consulté."
+  ],
+  "exclusions": [
+    {
+      "code": "A-05",
+      "raison": "Détail A-05 Qté 13 (relocalisation services E.A.R, notes 6 RDC + 7 2e) : remplacé par PC-R 8 + PG-R 1 + SD-R 3 = 12 sur plan (SD-R de rapport-releve.md, lot d'un autre releveur). Écart de 1 noté, le plan fait foi."
+    },
+    {
+      "code": "D-01",
+      "raison": "Détail D-01 Qté 18 postes (boîte de jonction, prise 15 A, prise 20 A Decora, boîte data 2 RJ45 ; notes 3 + 4 + 2 + 4 + 2 + 3 = 18) : double compte avec PC-I (plan) et SD-I (plan). Les JB de poste et les prises 20 A ne sont pas distinguées sur plan (R-007)."
+    },
+    {
+      "code": "D-02",
+      "raison": "Détail D-02 Qté 5 tables (2 prises doubles + 2 USB chacune, soit 10 USB au Détail ; notes 3 + 2 = 5) : double compte avec PC-I et PU-I (plan PU-I 20). Écart 10 contre 20 noté, le plan fait foi."
+    },
+    {
+      "code": "D-03",
+      "raison": "Détail D-03 Qté 2 (cabines/isoloirs : prise double alimentée par JB) : double compte avec PC-I (plan)."
+    },
+    {
+      "code": "D-04",
+      "raison": "Détail D-04 Qté 2 écrans (courant + données) : double compte avec PC-I et SD-I (plan)."
+    },
+    {
+      "code": "D-05",
+      "raison": "Détail D-05 Qté 1 kiosque TV (prise + data) : double compte avec PC-I et SD-I (plan)."
+    },
+    {
+      "code": "D-06",
+      "raison": "Détail D-06 Qté 8 prises murales/colonnes neuves : double compte avec PC-I (plan)."
+    },
+    {
+      "code": "D-07",
+      "raison": "Détail D-07 Qté 1 DDFT fontaine (P2-61) : remplacé par PG-I (plan, 22). Le plan ne permet pas de confirmer que P2-61 y est compté ; à vérifier au zoom."
+    },
+    {
+      "code": "D-08",
+      "raison": "Détail D-08 Qté 10 sorties data murales/colonnes : double compte avec SD-I (plan, lot d'un autre releveur)."
+    },
+    {
+      "code": "A-03",
+      "raison": "Détail A-03 Qté 34 u (note « Compte E.A.E E-101 ») : double compte avec les lignes -E du plan services PC-E 7, PG-E 4, SD-E 17, BJ-E 2, MP-E 3, BC-E 2 (total 35), remplacée par ces lignes ; écart 44 vs 35 en note"
+    },
+    {
+      "code": "A-04",
+      "raison": "Détail A-04 Qté 10 u (note « Compte E.A.E E-102 ») : même double compte que A-03, remplacée par PC-E, PG-E, SD-E, BJ-E, MP-E, BC-E ; écart 44 vs 35 en note"
+    },
+    {
+      "code": "E-01",
+      "raison": "Détail E-01 Qté 2 postes (JB, 2 prises, data 2 RJ45) : double compte, remplacée par PC-I et SD-I (plan) ; ses 2 JB ne figurent pas en BJ-I sur E105 (voir notes)"
+    },
+    {
+      "code": "E-02",
+      "raison": "Détail E-02 Qté 2 u (monuments de plancher, prise 20A + 2 RJ45) : double compte, remplacée par MP-I (3 sur plan E105) ; écart 2 vs 3 en note"
+    },
+    {
+      "code": "E-04",
+      "raison": "Détail E-04 Qté 3 u (cabines/salles : JB + prise) : double compte, remplacée par PC-I (et BJ-I si pertinent ; BJ-I vaut 0 sur E105, voir notes)"
+    },
+    {
+      "code": "E-05",
+      "raison": "Détail E-05 Qté 1 u (écran sur colonne : courant + données) : double compte, remplacée par PC-I et SD-I (plan)"
+    },
+    {
+      "code": "D-10",
+      "raison": "Détail D-10 Qté 1 u (bornes de prêts / fontaine, JB dans mur adjacent) : double compte, remplacée par la 3e BJ-I sur E104 ; contrôle BJ-I 3 = 2 (D-09) + 1 (D-10) tenu numériquement"
+    }
+  ]
+}

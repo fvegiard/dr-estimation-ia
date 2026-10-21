@@ -1,0 +1,49 @@
+{
+  "niveau": "releveur",
+  "nom": "A1-1",
+  "modele_demande": "haiku",
+  "effort_demande": "high",
+  "lignes": [
+    {"code": "PC-I", "desc": "Prise double 15 A 120 V neuve", "q": 25, "u": "U", "p": null, "h": null,
+     "art": "3.28", "src": "releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; rapport-releve.md PRISE DOUBLE 15A INSTALLER 25 ; releve.xlsx Par feuille E104 23 + E105 2 (feuilles nouveau)"},
+    {"code": "PC-R", "desc": "Prise double 15 A 120 V relocalisée", "q": 8, "u": "U", "p": null, "h": null,
+     "art": "3.28", "src": "rapport-releve.md PRISE DOUBLE 15A RELOCALISER 8 ; releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; Par feuille E101 48 + E102 22 (feuilles existant)"},
+    {"code": "PC-E", "desc": "Prise double 15 A 120 V à enlever", "q": 7, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "rapport-releve.md PRISE DOUBLE 15A ENLEVER 7 ; releve.xlsx Par feuille E101 48 + E102 22 (feuilles existant)"},
+    {"code": "PU-I", "desc": "Prise USB 120 V neuve (Leviton Decora)", "q": 20, "u": "U", "p": null, "h": null,
+     "art": "3.27", "src": "releve.xlsx Par libellé PRISE USB 20 ; rapport-releve.md PRISE USB INSTALLER 20 ; releve.xlsx Par feuille E104 20 (feuille nouveau)"},
+    {"code": "PG-I", "desc": "Prise DDFT 15 A neuve", "q": 22, "u": "U", "p": null, "h": null,
+     "art": "3.30", "src": "rapport-releve.md PRISE DDFT INSTALLER 22 ; releve.xlsx Par libellé PRISE DDFT 49 ; Par feuille E104 20 + E105 2 (feuilles nouveau)"},
+    {"code": "PG-E", "desc": "Prise DDFT 15 A à enlever", "q": 4, "u": "U", "p": null, "h": null,
+     "art": "3.22", "src": "rapport-releve.md PRISE DDFT ENLEVER 4 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant)"},
+    {"code": "PG-R", "desc": "Prise DDFT 15 A relocalisée", "q": 1, "u": "U", "p": null, "h": null,
+     "art": "3.30", "src": "rapport-releve.md PRISE DDFT RELOCALISER 1 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant)"}
+  ],
+  "notes": [
+    "Sources lues directement : releve.xlsx (Par libellé, Par feuille), rapport-releve.md (portées), entree/reference-Estimation_2.xlsx feuille Détail (colonnes Qté et Notes seulement ; heures ignorées), entree/reference-Bordereau_de_prix.xlsx (articles 3.22, 3.27, 3.28, 3.30 vérifiés). p et h = null partout.",
+    "Totaux vérifiés : PC 95 = 48 + 22 + 23 + 2 ; PG 49 = 23 + 4 + 20 + 2 ; PU 20 = E104 20. Portées PC 55 + 25 + 8 + 7 = 95 ; PG 22 + 22 + 4 + 1 = 49 ; PU 20 = INSTALLER 20.",
+    "CONSERVER sans ligne (aucun travail) : PC 55 et PG 22 ne donnent aucune ligne, conformément à la règle.",
+    "Contrôle par feuille PC : existant E101 + E102 = 48 + 22 = 70 vs C + E + R = 55 + 7 + 8 = 70 OK ; nouveau E104 + E105 = 23 + 2 = 25 vs I 25 OK.",
+    "Contrôle par feuille PU : existant 0 (aucune feuille existant) vs C + E + R = 0 OK ; nouveau E104 = 20 vs I 20 OK.",
+    "Contrôle par feuille PG : existant E101 + E102 = 23 + 4 = 27 vs C + E + R = 22 + 4 + 1 = 27 OK ; nouveau E104 + E105 = 20 + 2 = 22 vs I 22 OK.",
+    "R-007 PC : 15 A et 20 A non distingués sur plan, comptoir et standard non distingués. La prise 20 A et la JB de poste du Détail D-01 ne se séparent pas du plan ; PC-I 25 repose sur le total plan, D-01 n'est pas repris.",
+    "R-007 PG : DDFT (demi-cercle plein) et M.A.L.T. isolée (barre pleine) sont confondues dans PRISE DDFT 49. La part M.A.L.T. (article 3.29 possible) reste à départager au zoom ; PG-I, PG-E et PG-R sont portés à 3.30 par convention, à revérifier.",
+    "Q14 PU : code PU conservé (et non PC) pour ne pas fondre 20 prises USB et 23 prises ordinaires ; la source de la ligne PRISE USB est le bloc S051 (Par libellé, Source légende).",
+    "PU : Détail D-02 donne 5 tables x 2 USB = 10 USB au Détail ; le plan (PU-I 20, Par feuille E104 20) fait foi. Écart de 10 noté, non repris.",
+    "A-05 : Détail Qté 13 (6 RDC + 7 2e, relocalisation E.A.R) contre PC-R 8 + PG-R 1 + SD-R 3 = 12 sur plan (SD-R = rapport-releve.md SORTIE DATA RELOCALISER 3, lot d'un autre releveur). Écart de 1 noté ; le plan fait foi.",
+    "D-07 (1 DDFT fontaine P2-61) : PG-I 22 ne permet pas de dire si P2-61 est compté dans les 20 prises E104 ; D-07 est exclu car le plan fait foi, à vérifier au zoom.",
+    "Articles appliqués : -E vers 3.22 ; -R vers l'article de la famille (PC-R 3.28, PG-R 3.30) ; PC-I 3.28 ; PU-I 3.27 ; PG-I 3.30. Aucun article intrusion dans ce sous-lot (LC absent), rien à proposer.",
+    "Contrôle de l'aveugle : aucune donnée de prix ni de temps lue ; catalogue Dupuis non utilisé ; aucun fichier hors du dossier de travail consulté."
+  ],
+  "exclusions": [
+    {"code": "A-05", "raison": "Détail A-05 Qté 13 (relocalisation services E.A.R, notes 6 RDC + 7 2e) : remplacé par PC-R 8 + PG-R 1 + SD-R 3 = 12 sur plan (SD-R de rapport-releve.md, lot d'un autre releveur). Écart de 1 noté, le plan fait foi."},
+    {"code": "D-01", "raison": "Détail D-01 Qté 18 postes (boîte de jonction, prise 15 A, prise 20 A Decora, boîte data 2 RJ45 ; notes 3 + 4 + 2 + 4 + 2 + 3 = 18) : double compte avec PC-I (plan) et SD-I (plan). Les JB de poste et les prises 20 A ne sont pas distinguées sur plan (R-007)."},
+    {"code": "D-02", "raison": "Détail D-02 Qté 5 tables (2 prises doubles + 2 USB chacune, soit 10 USB au Détail ; notes 3 + 2 = 5) : double compte avec PC-I et PU-I (plan PU-I 20). Écart 10 contre 20 noté, le plan fait foi."},
+    {"code": "D-03", "raison": "Détail D-03 Qté 2 (cabines/isoloirs : prise double alimentée par JB) : double compte avec PC-I (plan)."},
+    {"code": "D-04", "raison": "Détail D-04 Qté 2 écrans (courant + données) : double compte avec PC-I et SD-I (plan)."},
+    {"code": "D-05", "raison": "Détail D-05 Qté 1 kiosque TV (prise + data) : double compte avec PC-I et SD-I (plan)."},
+    {"code": "D-06", "raison": "Détail D-06 Qté 8 prises murales/colonnes neuves : double compte avec PC-I (plan)."},
+    {"code": "D-07", "raison": "Détail D-07 Qté 1 DDFT fontaine (P2-61) : remplacé par PG-I (plan, 22). Le plan ne permet pas de confirmer que P2-61 y est compté ; à vérifier au zoom."},
+    {"code": "D-08", "raison": "Détail D-08 Qté 10 sorties data murales/colonnes : double compte avec SD-I (plan, lot d'un autre releveur)."}
+  ]
+}

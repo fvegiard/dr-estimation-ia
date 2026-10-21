@@ -1,0 +1,128 @@
+{
+  "niveau": "releveur",
+  "nom": "A2-2",
+  "modele_demande": "haiku",
+  "effort_demande": "high",
+  "lignes": [
+    {
+      "code": "LA1-I",
+      "desc": "Luminaire A1 Cooper 24CGTS-NUV-MEDIUM-3500K 2'x4' encastré 347 V 50 W — neuf",
+      "q": 11,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé LUMINAIRE A1 11 ; rapport-releve.md INSTALLER 11 ; Par feuille E203 11 ; Marques 11 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 9 = 11"
+    },
+    {
+      "code": "LC1-I",
+      "desc": "Luminaire C1 Axis AXIS-SL1-4 (module 4') 120-277 V — neuf",
+      "q": 12,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé LUMINAIRE C1 12 ; rapport-releve.md INSTALLER 12 ; Par feuille E203 12 ; Marques 12 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 10 = 12"
+    },
+    {
+      "code": "LC11-I",
+      "desc": "Luminaire C1_1 Axis AXIS-SL1-1 (module 1') — neuf",
+      "q": 6,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé LUMINAIRE C1_1 6 ; rapport-releve.md INSTALLER 6 ; Par feuille E203 6 ; Marques 6 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 11 = 6"
+    },
+    {
+      "code": "LC13-I",
+      "desc": "Luminaire C1_3 Axis AXIS-SL1-3 (module 3') — neuf",
+      "q": 15,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé LUMINAIRE C1_3 15 ; rapport-releve.md INSTALLER 15 ; Par feuille E203 15 ; Marques 15 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 12 = 15"
+    },
+    {
+      "code": "LE-I",
+      "desc": "Luminaire E GreenCreative PXCYL-8-PM-LE05-90-35 cylindre suspendu — neuf",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé LUMINAIRE E 3 ; rapport-releve.md INSTALLER 3 ; Par feuille E203 3 ; Marques 3 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 14 = 4 (écart avec le plan, voir notes)"
+    },
+    {
+      "code": "Z6-I",
+      "desc": "Enseigne de sortie Z6 Stanpro RMSOWH-UDC pictogramme LED — neuve",
+      "q": 3,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "releve.xlsx Par libellé ENSEIGNE SORTIE Z6 3 ; rapport-releve.md INSTALLER 3 ; Par feuille E203 2 + E204 1 ; Marques 3 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 16 = 3"
+    },
+    {
+      "code": "F-05",
+      "desc": "Rangées linéaires Axis : suspension aux tiges/câbles fixés à la dalle (devis 16.5), alimentation de rangée",
+      "q": 20,
+      "u": "U",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "entree/reference-Estimation_2.xlsx Détail F-05 (ligne Excel 82 ; colonne D Qté = 20 ; Unité = rangée ; Réf. plan = E-203 / devis 16.5 ; Notes = ≈20 rangées continues) ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 13 C-SUSP = 20"
+    },
+    {
+      "code": "F-10",
+      "desc": "Boîtes de jonction éclairage, chaînes de retenue à la dalle (devis 16.5), quincaillerie",
+      "q": 1,
+      "u": "LOT",
+      "p": null,
+      "h": null,
+      "art": "3.35",
+      "src": "entree/reference-Estimation_2.xlsx Détail F-10 (ligne Excel 87 ; colonne D Qté = 1 ; Unité = lot ; Réf. plan = E-005)"
+    }
+  ],
+  "notes": [
+    "ÉCART : LUMINAIRE E — plan = 3 (releve.xlsx Par libellé LUMINAIRE E 3 ; Par feuille E203 3 ; Marques 3 étiquettes « E sur bloc S014 » aux (x, y) 940.3/622.5, 1003.8/593.9, 1056.2/569.8 ; rapport-releve.md INSTALLER 3) ; vs Détail F-06 = 4 (ligne Excel 83) ; vs relevé éclairage ligne 14 = 4 ; lot éclairage METHODE.md §2 « E ×3 à 475 $ ». R-004 de reserves.md écarte une étiquette « E » à (1717, 967), écrite deux fois (cartouche/notes probables). Retenu : LE-I = 3 (décision du directeur) ; F-06 exclue.",
+    "Unité = ÉTIQUETTE (R-003). Marques E203 lues : LUMINAIRE A1 11 (bloc S035 7 + bloc S343 4) ; LUMINAIRE C1 12 ; LUMINAIRE C1_1 6 ; LUMINAIRE C1_3 15. Chaque total retrouve exactement Par libellé (11 / 12 / 6 / 15) et le INSTALLER du rapport. Les mentions « 2 / 3 / 4 modules sur la rangée » lues dans les Notes des marques ne multiplient rien : une étiquette = une ligne. Étiquettes sur barre non étiquetée comptées comme étiquettes lues : C1 5 (ø44.4 pt), C1_3 5 (ø26.0 pt).",
+    "ÉCART : ENSEIGNE SORTIE Z6 — relevé éclairage ligne 4 dit « Aucun appareil neuf à l'étage (E-204) », alors que Par feuille relève E204 = 1 (Marques E204 (1176, 611), P26) et E203 = 2 (P13 (1204, 379) « tracé pointillé : confirmer neuf » ; P20 (826, 886)). Retenu Z6-I 3 : Par libellé 3 = rapport INSTALLER 3 = Marques 3 = relevé éclairage ligne 16 = 3 (E-008 liste 3 u). Détail F-07 : « Symboles noirs (neufs) » ; R-005 : « tracé pointillé : confirmer neuf — E-008 en liste 3 » ; lot METHODE.md §2 « Z6 ×3 à 161,60 $ ». Le tracé pointillé de P13 n'est pas tranché par le relevé : la liste E-008 fonde la quantité neuve.",
+    "F-05 : Détail Qté 20 (unité « rangée », Notes « ≈20 rangées continues », ligne Excel 82) recoupe C-SUSP 20 rangées du relevé éclairage (ligne 13 : « ≈20 rangées (combinaisons 3', 4'+1', 3'+4') — agent à confirmer config. »). Ligne traitée comme travail de suspension et d'alimentation par rangée, distinct des modules LC1 / LC11 / LC13 (étiquettes comptées). Les trousses de suspension (matériel) sont dans le lot fournisseur éclairage « trousses 1 500 $ » (METHODE.md §2) et ne sont pas reprises ici. Configuration des rangées non lue sur plan : à confirmer.",
+    "F-10 : 1 LOT repris du Détail (ligne Excel 87, Réf. plan E-005). E-005 n'est pas une feuille relevée (rapport-releve.md : feuilles E101 à E204) : la quantité ne vient donc pas d'une lecture de plan ; reprise telle quelle du Détail, à confirmer.",
+    "F-01 (Détail ligne Excel 78, colonne L) : « Dont 3 sur circuit PP-U1 ». Ces 3 luminaires A1 sont compris dans LA1-I 11 ; aucune quantité modifiée. Marques « anneau plein » au relevé : 3 instances, familles ENCASTRE URGENCE, feuilles E203, E204 ; la note de G643 cite « anneau plein PP-U1 ». Recoupement possible avec ENCASTRE URGENCE (10 au relevé, aucune ligne dans mon sous-lot) : hypothèse non vérifiée, à traiter par le releveur A2-1.",
+    "Exclusions F-01 à F-04, F-06, F-07 : les quantités Détail (11, 12, 6, 15, 4, 3) sont remplacées par les lignes plan LA1-I 11, LC1-I 12, LC11-I 6, LC13-I 15, LE-I 3, Z6-I 3 : le plan gagne sur Détail pour les quantités.",
+    "Descriptions des lignes plan : modèles lus au Détail (F-01 Cooper 24CGTS-NUV-MEDIUM-3500K 347 V 50 W ; F-02 AXIS-SL1-4 ; F-03 AXIS-SL1-1 ; F-04 AXIS-SL1-3 ; F-06 PXCYL-8-PM-LE05-90-35 ; F-07 RMSOWH-UDC). Les références Axis complètes du relevé éclairage (lignes 10 à 12) portent des options « xxx » non arrêtées (« compléter options (xxx) avec agent Axis ») : la désignation reprend donc la famille de modèle. Câble de suspension du type E « longueur à confirmer » (relevé éclairage ligne 14) : hors quantité.",
+    "F-05 : unité Détail « rangée » ; u = U, le mot « rangée » figure dans la désignation (travail de rangée).",
+    "Article 3.35 pour les 8 lignes (convention du directeur A) ; libellé lu dans entree/reference-Bordereau_de_prix.xlsx, feuille « Bordereau de prix » : 3.35 « Appareil de contrôle + appareils d'éclairage ».",
+    "Hors de mon sous-lot, non repris : LUMINAIRE LINEAIRE (4 au relevé ; Par feuille E203 2, E204 2) et ENCASTRE URGENCE (10 au relevé).",
+    "Contrôle des valeurs attendues du brief : toutes les quantités lues sont conformes (LA1-I 11, LC1-I 12, LC11-I 6, LC13-I 15, LE-I 3 retenu, Z6-I 3, F-05 20, F-10 1). Les deux écarts de lecture sont ceux notés ci-dessus (LE : 3 vs 4 ; Z6 : relevé éclairage ligne 4 contredit par Par feuille E204)."
+  ],
+  "exclusions": [
+    {
+      "code": "F-01",
+      "raison": "double compte : 11 luminaires A1 déjà relevés sur plan (E203, étiquettes A1) — remplacée par LA1-I 11 ; Détail « Dont 3 sur circuit PP-U1 » noté"
+    },
+    {
+      "code": "F-02",
+      "raison": "double compte : 12 C1 déjà relevés sur plan (E203, étiquettes C1) — remplacée par LC1-I 12"
+    },
+    {
+      "code": "F-03",
+      "raison": "double compte : 6 C1_1 déjà relevés sur plan (E203) — remplacée par LC11-I 6"
+    },
+    {
+      "code": "F-04",
+      "raison": "double compte : 15 C1_3 déjà relevés sur plan (E203) — remplacée par LC13-I 15"
+    },
+    {
+      "code": "F-06",
+      "raison": "double compte : 4 luminaires E au Détail contre 3 étiquettes E sur plan — remplacée par LE-I 3 (décision du directeur, R-003) ; écart 4 vs 3 en notes"
+    },
+    {
+      "code": "F-07",
+      "raison": "double compte : 3 enseignes Z6 (« Symboles noirs (neufs) ») déjà relevées sur plan (Par libellé ENSEIGNE SORTIE Z6 = 3) — remplacée par Z6-I 3"
+    }
+  ]
+}

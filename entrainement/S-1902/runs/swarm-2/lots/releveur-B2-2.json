@@ -1,0 +1,373 @@
+{
+  "niveau": "releveur",
+  "nom": "B2-2",
+  "modele_demande": "haiku",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "HP-I",
+      "desc": "Haut-parleur encastré plafond à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.36",
+      "src": "catalogue Dupuis « HAUT PARLEUR » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 10) ; portée absente du relevé — correspondance de précaution ; décision B2 n°1 : libellé direct ; notes HAUT PARLEUR PL / MURAL"
+    },
+    {
+      "code": "HP-E",
+      "desc": "Haut-parleur encastré plafond à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue Dupuis (aucun libellé ENLEVER HAUT PARLEUR) : même action d'enlèvement d'un dispositif d'alarme/sonorisation, décision B2 n°1"
+    },
+    {
+      "code": "HP-R",
+      "desc": "Haut-parleur encastré plafond à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO HAUT PARLEUR PL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "DF-I",
+      "desc": "Détecteur de fumée neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.36",
+      "src": "catalogue Dupuis « DETECTEUR A FUMEE » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 9) ; p = 0 forcé : couvert par LOT-DET (catalogue p = 0.0)"
+    },
+    {
+      "code": "DF-E",
+      "desc": "Détecteur de fumée existant à enlever",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue Dupuis (aucun libellé direct pour détecteur enlevé), décision B2 n°2"
+    },
+    {
+      "code": "DF-R",
+      "desc": "Détecteur de fumée existant à relocaliser",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO DETECTEUR A FUME » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 3)"
+    },
+    {
+      "code": "SM-I",
+      "desc": "Station manuelle à installer (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.36",
+      "src": "catalogue Dupuis « STATION MANUEL » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 16) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "SM-E",
+      "desc": "Station manuelle à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "SM-R",
+      "desc": "Station manuelle à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.75,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO STATION MANUEL » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 3) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "PA-I",
+      "desc": "Annonciateur Simplex : relocalisation (relevé : INSTALLER 1)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.37",
+      "src": "catalogue Dupuis « RELO PANN ANNOCIATEUR » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; relevé INSTALLER 1 traité comme relocalisation (Détail G-04 / AI-05)"
+    },
+    {
+      "code": "PA-E",
+      "desc": "Panneau annonciateur à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.5,
+      "art": "3.22",
+      "src": "catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; portée absente du relevé — correspondance de précaution ; analogue Dupuis (aucun libellé direct pour annonciateur enlevé), décision B2 n°3"
+    },
+    {
+      "code": "PA-R",
+      "desc": "Annonciateur Simplex existant à relocaliser",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.37",
+      "src": "catalogue Dupuis « RELO PANN ANNOCIATEUR » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; portée absente du relevé — correspondance de précaution ; relocalisation de l'annonciateur existant (Détail G-04, bordereau 3.37, relevé alarme AI-05)"
+    },
+    {
+      "code": "MM-I",
+      "desc": "Moteur monophasé à raccorder (installer)",
+      "q": null,
+      "u": "U",
+      "p": 25.0,
+      "h": 0.75,
+      "art": "3.23",
+      "src": "catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2)"
+    },
+    {
+      "code": "MM-E",
+      "desc": "Moteur monophasé à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.25,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER MOTEUR 1/2 HP 6 » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "MM-R",
+      "desc": "Moteur monophasé à relocaliser (débrancher, relocaliser, rebrancher)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.23",
+      "src": "catalogue Dupuis « RELO PLINTHE 2000W » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 1) ; analogue Dupuis (aucun RELO MOTEUR au catalogue) : même action RELO sur équipement alimenté fixe, décision B2 n°4"
+    },
+    {
+      "code": "MT-I",
+      "desc": "Moteur triphasé à raccorder (installer)",
+      "q": null,
+      "u": "U",
+      "p": 25.0,
+      "h": 0.75,
+      "art": "3.23",
+      "src": "catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2)"
+    },
+    {
+      "code": "MT-E",
+      "desc": "Moteur triphasé à enlever (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.25,
+      "art": "3.22",
+      "src": "catalogue Dupuis « ENLEVER MOTEUR 1/2 HP 6 » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; portée absente du relevé — correspondance de précaution"
+    },
+    {
+      "code": "MT-R",
+      "desc": "Moteur triphasé à relocaliser (précaution)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.23",
+      "src": "catalogue Dupuis « RELO PLINTHE 2000W » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 1) ; portée absente du relevé — correspondance de précaution ; analogue Dupuis (aucun RELO MOTEUR au catalogue), décision B2 n°4"
+    },
+    {
+      "code": "B-01",
+      "desc": "Panneau PP-3 neuf 225 A 347/600 V 42 cct NF (remplacement de l'existant)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.24",
+      "src": "catalogue Dupuis « PANN PD 400A 347/600V 42CCT 35KA C/A » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-02",
+      "desc": "Disjoncteurs 1P-15A transférés dans PP-3 (14)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-03",
+      "desc": "Disjoncteur 3P-20A (aérotherme) transféré",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6)"
+    },
+    {
+      "code": "B-04",
+      "desc": "Disjoncteur 3P-40A UTA-1 neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6)"
+    },
+    {
+      "code": "B-05",
+      "desc": "Disjoncteur 3P-15A VE-2N neuf",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6)"
+    },
+    {
+      "code": "B-06",
+      "desc": "Disjoncteur 1P-15A DDFT fontaine P2-61",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-07",
+      "desc": "Disjoncteurs 1P-15A P2-63 / P2-64 (2)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0)"
+    },
+    {
+      "code": "B-08",
+      "desc": "Disjoncteurs 1P-20A P3-17 / P3-19 (2)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.25",
+      "src": "catalogue Dupuis « DISJ 20A 1P 120V 10KA » um=U (dernier 2026-06-26, S-1795 Lanthier Arthesa, nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 10.17)"
+    },
+    {
+      "code": "B-09",
+      "desc": "Mise à jour des fiches dactylographiées + identification des circuits (9 panneaux)",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 3.0,
+      "art": "3.24",
+      "src": "catalogue Dupuis « IDENTIFIER LES CIRCUITS EXISTANTS A » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1)"
+    },
+    {
+      "code": "X-02",
+      "desc": "Nacelle",
+      "q": null,
+      "u": "U",
+      "p": 1250.0,
+      "h": 16.0,
+      "art": "6.1",
+      "src": "catalogue Dupuis « NACELLE » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2)"
+    }
+  ],
+  "notes": [
+    "RAPPEL (à ne PAS appliquer dans le lot B) : taux 85 $/h (METHODE.md §5, dossiers août–octobre 2026 ; le 124 $/h du Sommaire n'est pas retenu) et facteur de prix de vente 1,244.",
+    "CONTRÔLE : les 28 lignes sont relues une à une dans catalogue-prix-temps-dupuis.csv avec ligne() ; p = prix_a_utiliser et h = temps_a_utiliser, recopiés sans arrondi. Les libellés, p, h, nb_projets et date_dernier vus par le chef sont tous confirmés : aucun écart. Aucune médiane lue ni utilisée. Aucun repli Lumen ni jugement en p ou h : Dupuis couvre les 28 codes (le jugement Estimation_2 n'est cité qu'en comparaison de temps).",
+    "DÉCISION 1 — HAUT-PARLEUR. HP-I : « HAUT PARLEUR » (p 0.0, h 0.5, nb 10, 2026-08-26, s-1835 esbg rehabilitation inbterieur) retenu, nb le plus élevé. Écartés : « HAUT PARLEUR PL » et « HAUT PARLEUR MURAL » (p 0.0, h 1.0, nb 1, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) : temps double, nb 1 ; « GRILLE HAUT PARLEUR » (p 0.0, h 0.0, nb 2, 2026-03-31, S-1693) : temps 0, objet différent ; « REINSTALLER HAUT PARLE » (p 0.0, h 0.0, nb 1, 2026-08-26) : temps 0, réinstallation.",
+    "HP-R : « RELO HAUT PARLEUR PL » (p 0.0, h 1.0, nb 1, 2026-06-02, s-1783) retenu (plafond = objet du plan). Écartés : « RELO HAUPARLEUR MURAL » (p 0.0, h 1.0, nb 1, 2026-06-02, s-1783 : mêmes valeurs, emplacement mural) ; « RELO HAUT PARLEUR » (p 0.0, h 0.0, nb 2, 2026-03-09, 25-066G Canderel Lobby 2000 McGill College) : temps 0 pour un travail réel, écarté.",
+    "HP-E (ANALOGUE, pas de libellé direct) : « STATION ENL » (p 0.0, h 0.5, nb 1, 2026-02-09, s1659 école arc en ciel ste julie) retenu, décision du chef. Autres analogues notés : « IC ENL » (p 0.0, h 0.5, nb 1, 2026-02-09, s1659) ; « ENLEVER FIXTURE ENCAST » (p 0.0, h 0.35, nb 1, 2026-08-26, s-1835) ; « EQUIPEMENT A ENLEVER » (p 0.0, h 0.5, nb 1, 2026-05-05, s-1753 ecole asomption). DÉSACCORD NOTÉ, à trancher : « FIXTURE ENCASTRE ENLEV » (p 0.0, h 0.25, nb 2, 2026-03-09, 25-066G Canderel Lobby 2000 McGill College) est plus proche par l'objet (appareil encastré au plafond) et a plus de projets (nb 2 contre 1) que « STATION ENL ». Écart : 0,25 h pour 1 unité. J'applique 0,5 h comme décidé.",
+    "DÉCISION 2 — DÉTECTEURS ET STATIONS. DF-I : « DETECTEUR A FUMEE » (p 0.0 — forcé à 0 par LOT-DET, catalogue p 0.0 ; h 0.5 ; nb 9 ; 2026-09-25 ; S-1857 Maison St-Michel) retenu. Écartés : « DETECTEUR FUMEE » (p 0.0, h 0.5, nb 5, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) et « DETECTEUR A FUME » (p 0.0, h 0.5, nb 3, 2026-09-10, s-1854 sollio st hubert lanthier) : mêmes valeurs, moins de projets ; « DETECTEUR A FUMER » (p 0.0, h 0.5, nb 4, 2026-03-30, s-1715) : moins de projets ; « DETECTEUR FUMER » (p 25.0, h 0.5, nb 2, 2026-10-07, s-1881) : p non nul, moins de projets ; « DETECTEUR FUME/MONOX » (p 90.0, h 0.5, nb 1, 2026-03-27, S-1714) : détecteur combiné fumée/monoxyde ; « DETECTEUR DE GAINE » (p 0.0, h 2.5, nb 7, 2026-09-25, S-1857) : détecteur de gaine, objet différent.",
+    "DF-R : « RELO DETECTEUR A FUME » (p 0.0, h 0.75, nb 3, 2026-10-07, s-1881) retenu (règle 3). Écartés : « RELO DETECTEUR FUME » (p 0.0, h 1.0, nb 2, 2026-03-09, 25-066G Canderel) ; « RELO DETECTEUR A FUMEI » (p 0.0, h 0.75, nb 1, 2026-06-26, S-1795 Lanthier Arthesa) : moins de projets. DF-E (ANALOGUE) : « STATION ENL » (p 0.0, h 0.5, nb 1, 2026-02-09) retenu ; alternative « IC ENL » (p 0.0, h 0.5, nb 1, 2026-02-09, s1659), mêmes valeurs.",
+    "SM-I : « STATION MANUEL » (p 0.0, h 0.5, nb 16, 2026-10-07, s-1881) retenu. Écarté : « STATION » (p 0.0, h 0.25, nb 1, 2026-02-02, S-1645 ANNEXE-BOURASSA) : libellé trop court, objet non précisé, moins de projets. SM-E : « STATION ENL » (p 0.0, h 0.5, nb 1, 2026-02-09). SM-R : « RELO STATION MANUEL » (p 0.0, h 0.75, nb 3, 2026-10-07, s-1881) retenu. Les 3 SM sont des précautions : portée absente du relevé (CONSERVER 4).",
+    "DÉCISION 3 — ANNONCIATEUR (PA-I et PA-R). Repère annonciateur relocalisé 8 h : « RELO PANN ANNOCIATEUR » (p 0.0, h 8.0, nb 2, 2026-03-09, 25-066G Canderel Lobby 2000 McGill College) retenu ; le prix est tranché par la règle 3 entre les libellés RELO … ANNONCIATEUR. Option non retenue : « RELO PANNEAU ANNONCIA » (p 550.0, h 8.0, nb 1, 2026-06-26, S-1795 Lanthier Arthesa) : +550 $ si on la prend. Écartés : « PANNEAU ANNONCIATEUR » (p 0.0, h 8.0, nb 4, 2026-08-19, S-1797 École Chambly) : même temps et plus de projets, mais c'est l'installation et non la relocalisation (action différente) ; « REINSTALLER PANN ANNO » (p 0.0, h 24.0, nb 2, 2026-03-09) : 24 h, pas le repère 8 h ; « RELO PANN ANNONCIATEU » (p 0.0, h 0.0, nb 2, 2026-03-09) : temps 0 ; « PANNEAU ALARME » (p 0.0, h 16.0, nb 8, 2026-08-19, S-1797) : panneau d'alarme, repère 16 h, pas 8 h.",
+    "PA-E (ANALOGUE, précaution) : « STATION ENL » (p 0.0, h 0.5, nb 1, 2026-02-09) retenu, décision du chef ; c'est bas pour un annonciateur. Option chiffrée non retenue : « ENL PANN 42CCT 120/208V » (p 0.0, h 4.0, nb 2, 2026-03-09, 25-066G Canderel) : +3,5 h si retenue.",
+    "POINT À TRANCHER SUR LE DOUBLE COMPTE PA : PA-I et PA-R désignent le même annonciateur physique (relevé INSTALLER 1 = Détail G-04 = bordereau 3.37 = AI-05). Les deux lignes sont écrites à 8 h chacune, comme décidé, soit 16 h. Si un seul est payé, c'est 8 h. Le prix est 0 $ dans les deux cas. Je n'ai pas modifié les lignes : le chef tranchera.",
+    "DÉCISION 4 — MOTEURS. MM-I et MT-I : « MOTEUR » (p 25.0, h 0.75, nb 2, 2026-02-19, S-1676 ARC'TERTX) retenu : repère moteur 0,75 h, nb le plus élevé du repère. Écartés : « MOTEUR UAF-1 » et « MOTEUR VE-2 120V » (p 25.0, h 1.0, nb 1, 2026-10-07, s-1881) : 1,0 h = repère UTA ; UTA-01 et VE-02N sont les lignes C-01 et C-02 du Détail, hors de mon sous-lot. « MOTEUR HUM » (p 15.0, h 0.35, nb 1, 2026-07-14, s-1811) et « HUMIDIFICATEUR » (p 15.0, h 0.35, nb 1, 2026-07-13, s-1808) : le repère moteur 0,75 h prime. « CHAUDIERE » (p 15.0, h 0.5, nb 1, 2026-02-02, S-1645) : objet différent. « MOTEUR 40HP » (p 0.0, h 0.75, nb 1, 2026-04-02, S-1692) et « MOTEUR PMP-003 7.5HP » (p 0.0, h 0.75, nb 1, 2026-03-31, S-1693) : même temps, moins de projets, objet différent.",
+    "MM-E et MT-E (précautions, portée absente) : « ENLEVER MOTEUR 1/2 HP 6 » (p 0.0, h 0.25, nb 2, 2026-03-09, 25-066G Canderel) : même objet et même action.",
+    "MM-R (6 au relevé) et MT-R (précaution) : aucun « RELO MOTEUR » au catalogue. Analogue retenu : « RELO PLINTHE 2000W » (p 0.0, h 1.0, nb 1, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) : même action RELO sur un équipement alimenté fixe, objet voisin (appareil de chauffage), 1,0 h par unité, soit 6 h pour 6 unités. Options chiffrées NON retenues, avec impact sur 6 unités : « DISCONNECTER ET RECON » (p 0.0, h 8.0, nb 2, 2026-03-09, 25-066G Canderel) : 48 h ; jugement Estimation_2 Détail A-10 (h/unité 4, total Détail 24 h) : 24 h ; « DEBRANCHEMENT APPAREILAGE MECANIQUE » (p 0.0, h 0.4, nb 1, 2026-09-23, s-1866) plus « MOTEUR » (0,75 h) en cumul d'information : 1,15 h par unité, soit 6,9 h.",
+    "DÉSACCORD NOTÉ, à trancher par le chef : « DISCONNECTER ET RECON » est l'analogue de MÊME action (débrancher puis rebrancher) et il a plus de projets (nb 2) que « RELO PLINTHE 2000W » (nb 1) : selon la règle 3 il l'emporterait. Son objet (équipement débranché et rebranché) est aussi proche du travail A-10 que celui d'une plinthe chauffante. Le 1,0 h par unité décidé donne 6 h pour 6 unités, soit le plus bas des trois scénarios (6 h, 24 h, 48 h) : sous-estimation probable si le travail réel ressemble à A-10. J'applique 1,0 h comme décidé.",
+    "DÉCISION 5 — DISTRIBUTION (hors relevé, couverte par LOT-DIST). B-01 : « PANN PD 400A 347/600V 42CCT 35KA C/A » (p 0.0 forcé à 0 par LOT-DIST, catalogue p 0.0 ; h 8.0 ; nb 1 ; 2026-02-02 ; S-1645 ANNEXE-BOURASSA) retenu : seul libellé à 8 h avec 42 cct ET 347/600 V. ÉCART DE CALIBRE À NOTER : le Détail B-01 décrit un PP-3 NEUF 225 A ; le libellé Dupuis est 400 A, 35 kA. Autres libellés à 8 h en 347/600 V, non retenus (aucun ne porte 42 cct) : « PANN 400A 347/600V 3PH 4 » (p 0.0, nb 1, 2026-09-10, s-1854 sollio) ; « PANNEAU 100A 347/600V 3F » (p 0.0, nb 1, 2026-03-11, s-1689 pultrusion st-bruno) ; « PANN UE 200A 347/600V 3PI » (p 0.0, nb 1, 2026-03-27, S-1714 PARTAGE DE RIVIERA) ; « PANN S 347/600V 3PH 4F 60 » (p 0.0, nb 1, 2026-03-27, S-1714) ; « PANN 600A 347/600V 3PH 4 » (p 0.0, nb 1, 2026-03-30, s-1715) ; « PANN PS 400A 347/600V 66 » (p 0.0, nb 1, 2026-07-13, s-1808). Écarté : « PANNEAU 225A 347/600V 3 » (p 0.0, h 0.0, nb 1, 2026-09-10, s-1854) : temps 0 pour un travail réel.",
+    "B-01, démantèlement de l'ancien PP-3 : le Détail B-01 donne 24 h (Léna). Options NON ajoutées : « PANNEAU A CHANGER » (p 0.0, h 16.0, nb 1, 2026-08-19, S-1797 École Chambly) et « ENL PANN 42CCT 120/208V » (p 0.0, h 4.0, nb 2, 2026-03-09, Canderel). 8 h + 16 h = 24 h reconstitue exactement le total Détail ; 8 h + 4 h = 12 h. À trancher.",
+    "B-02 : « DISJ15A1P » (p 0.0 forcé à 0 par LOT-DIST, catalogue p 0.0 ; h 0.2 ; nb 2 ; 2026-03-09 ; 25-066G Canderel) retenu, repère disjoncteur 1P 0,2 h. Concurrents 1P écartés : « DISJ 15A 1P 120V 10KA » (p 54.82, h 0.2, nb 1, 2026-06-03, s-1775 clinique mieux etre) ; « DISJ 15A 1P 120V 10KA (AI) » (p 10.17, h 0.2, nb 1, 2026-06-26, S-1795) ; « DISJ 40A1P » (p 0.0, h 0.4, nb 2, 2026-03-09) : calibre 40 A, objet différent. Le Détail B-02 donne 0,5 h par unité (jugement, 7 h) : écart de 4,2 h sur 14 unités, Dupuis retenu.",
+    "B-03, B-04, B-05 (3P) : « DISJ 100A 3P 120/240V 22 K » (p 719.6 forcé à 0 par LOT-DIST, catalogue p 719.6 ; h 1.0 ; nb 1 ; 2026-06-02 ; s-1783 anjinnov mcgill 1981 accenture) : seul 3P à 1 h. ÉCART DE CALIBRE À NOTER : 100 A alors que le Détail décrit 20 A, 40 A et 15 A. Écartés : « DISJ 125A 3P 600V 18KA » (p 2657.38, h 4.0, nb 1, 2026-03-11, S-1695) : 4 h, 600 V ; « DISJONCTEUR 400A3P 50KA HCP » (p 7500.0, h 4.0, nb 1, 2026-10-07, s-1881) : 400 A ; « DISJ 20A 2P 347/600V 10K A » (p 244.82, h 0.4, nb 1, 2026-06-03, s-1775) : 2P, non 3P.",
+    "B-06 et B-07 : « DISJ15A1P » (même libellé que B-02, p 0.0 forcé à 0 par LOT-DIST). B-08 : « DISJ 20A 1P 120V 10KA » (catalogue p 10.17 forcé à 0 par LOT-DIST ; h 0.2 ; nb 2 ; 2026-06-26 ; S-1795 Lanthier Arthesa) ; la valeur catalogue 10,17 $ est écrite dans src.",
+    "COUVERTURE LOT-DIST (6 200 $ = 3 400 + 20 × 95 + 3 × 300, vérifié). EDB 1P : B-02 (14) + B-06 (1) + B-07 (2) + B-08 (2) = 19 ≤ 20 : DÉCISION, tous couverts, p = 0 ; il reste 1 EDB. EJB 3P : B-03 + B-04 + B-05 = 3 ≤ 3 : couverts. Option si NON couverts (non appliquée) : B-06 et B-07 (3) à « DISJ 15A 1P 120V 10KA » 54,82 $ = 164,46 $ ; B-08 (2) à « DISJ 20A 1P 120V 10KA » 10,17 $ = 20,34 $ ; soit 184,80 $ en 1P ; 3P non couverts : 3 × 719,60 $ = 2 158,80 $. Doute : la feuille Matériel Lumen de reference-Estimation_2.xlsx exclut les disjoncteurs P2/P3 (marque à confirmer) et le panneau PP-3 avec ses disjoncteurs NF Schneider ; c'est la raison du doute, tranchée par le décompte 19 ≤ 20.",
+    "B-09 : « IDENTIFIER LES CIRCUITS EXISTANTS A » (p 0.0, h 3.0, nb 1, 2026-09-23, s-1866 gar mun st amable) : analogue Dupuis, même action (identification des circuits existants). Jugement Estimation_2 Détail B-09 : 1,0 h par unité, soit 9 h pour 9 panneaux, contre 27 h avec Dupuis. C'est l'arbitrage le plus incertain de mon sous-lot : à signaler au chef. Dupuis retenu, sous réserve.",
+    "X-02 : « NACELLE » (p 1250.0, h 16.0, nb 2, 2026-07-14, s-1811 cdc construction de 6 batiment) : repère nacelle 1 250 $ / 16 h confirmé. Recouvrement possible avec le Détail H-01 (mobilisation / démobilisation, outillage, plateforme ou échafaudage roulant, 16 h, jugement) : doublon à trancher au chef B3.",
+    "CODES « PRÉCAUTION » (portée absente du relevé, annotée dans src) : HP-I, HP-R, SM-I, SM-E, SM-R, PA-E, PA-R, MM-E, MT-E, MT-R. Sans précaution : HP-E (ENLEVER 1), DF-I, DF-E, DF-R (portées au relevé), PA-I (INSTALLER 1 traité en relocalisation), MM-I, MM-R, MT-I, B-01 à B-09, X-02 (hors relevé).",
+    "ANALOGUES (aucun libellé direct) : HP-E, DF-E, PA-E (« STATION ENL », alternatives notées ci-dessus), MM-R et MT-R (« RELO PLINTHE 2000W »). Directs au même objet et à la même action : SM-E (« STATION ENL »), MM-E et MT-E (« ENLEVER MOTEUR 1/2 HP 6 »).",
+    "LOTS FOURNISSEUR : p = 0 forcé et écrit dans src pour DF-I (LOT-DET 600 $ = 2 détecteurs) et B-01 à B-08 (LOT-DIST). Sans lot : B-09, X-02, PA-I, PA-R, MM-I, MT-I (p 25.0, prix d'assemblage Dupuis « MOTEUR »)."
+  ],
+  "doubles_comptes": [
+    {
+      "codes": [
+        "B-01",
+        "B-02",
+        "B-03",
+        "B-04",
+        "B-05",
+        "B-06",
+        "B-07",
+        "B-08",
+        "LOT-DIST"
+      ],
+      "regle": "panneau, disjoncteurs 1P et 3P payés UNE fois par LOT-DIST ; les lignes à p = 0 ne portent que le temps"
+    },
+    {
+      "codes": [
+        "PA-I",
+        "PA-R",
+        "G-04"
+      ],
+      "regle": "un seul annonciateur physique : relevé INSTALLER 1 = relocalisation Détail G-04 = bordereau 3.37 = AI-05 ; ne le payer qu'une fois"
+    },
+    {
+      "codes": [
+        "X-02",
+        "H-01"
+      ],
+      "regle": "nacelle et plateforme roulante de mobilisation peuvent se recouvrir : à trancher au chef B3"
+    },
+    {
+      "codes": [
+        "DF-I",
+        "G-01",
+        "LOT-DET"
+      ],
+      "regle": "les 2 détecteurs neufs du relevé = Détail G-01 = AI-01 ; matériel payé par LOT-DET, seul le temps de DF-I compte"
+    },
+    {
+      "codes": [
+        "MM-I",
+        "MT-I",
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04"
+      ],
+      "regle": "les raccordements mécaniques C-01…C-04 du Détail (UTA, VE-02N, chaudières, humidificateurs) recouvrent les moteurs MM-I/MT-I du relevé : à trancher"
+    },
+    {
+      "codes": [
+        "MM-R",
+        "A-10"
+      ],
+      "regle": "les 6 équipements E.A.R du toit (Détail A-10) sont les 6 MM-R du relevé : un seul des deux est payé"
+    }
+  ]
+}

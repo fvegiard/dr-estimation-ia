@@ -1,0 +1,1435 @@
+{
+  "niveau": "chef",
+  "nom": "B3",
+  "modele_demande": "sonnet",
+  "effort_demande": "xhigh",
+  "lignes": [
+    {
+      "code": "A-07",
+      "desc": "Relocalisation interrupteurs maîtres du hall (lot)",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 6.0,
+      "art": "3.22",
+      "src": "jugement (Estimation_2) Détail A-07 h/unité 6"
+    },
+    {
+      "code": "A-08",
+      "desc": "FabLab 210 : retrait temporaire + réinstallation luminaires linéaires",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; dépose + repose en un seul temps (R2) ; p = 0, h = 1.0 par luminaire"
+    },
+    {
+      "code": "A-09",
+      "desc": "FabLab 210 : retrait temporaire + réinstallation encastrés",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 1.0,
+      "art": "3.22",
+      "src": "catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; dépose + repose en un seul temps (R2) ; p = 0, h = 1.0 par encastré"
+    },
+    {
+      "code": "A-10",
+      "desc": "Toit : débrancher, entreposer sectionneurs, isoler/couvrir, rebrancher équipements de ventilation",
+      "q": null,
+      "u": "U",
+      "p": 25.0,
+      "h": 1.65,
+      "art": "3.23",
+      "src": "catalogue Dupuis « DEBRANCHEMENT APPAREILAGE MECANIQUE » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) + catalogue Dupuis « SECTIONNEUR ENL » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) + catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2) ; opération par équipement : p = 0 + 0 + 25 = 25, h = 0.4 + 0.5 + 0.75 = 1.65 ; geste « isoler/couvrir câbles » non couvert"
+    },
+    {
+      "code": "A-11",
+      "desc": "Maintien continuité de service, recherche/traçage circuits existants, réalimentation",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 15.0,
+      "art": "6.1",
+      "src": "catalogue Dupuis « IDENTIFIER LES CIRCUITS EXISTANTS A » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) + catalogue Dupuis « NOTE 5 RETRACER DERIVA » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) + catalogue Dupuis « NOTE 6 RETRACER FILAGE » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; forfaits au lot, coefficient 1 chacun : h = 3 + 6 + 6 = 15"
+    },
+    {
+      "code": "C-01",
+      "desc": "UTA-01 York KE036 au toit : raccordement final (sectionneur d'usine)",
+      "q": null,
+      "u": "U",
+      "p": 25.0,
+      "h": 1.0,
+      "art": "3.23",
+      "src": "catalogue Dupuis « MOTEUR UAF-1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 1) ; raccordement d'unité au toit, repère « UTA 1 h » (METHODE.md §3) ; p = 25, h = 1.0"
+    },
+    {
+      "code": "C-02",
+      "desc": "VE-02N Plymovent FUA-2700 au toit : raccordement final",
+      "q": null,
+      "u": "U",
+      "p": 25.0,
+      "h": 0.75,
+      "art": "3.23",
+      "src": "catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2) ; repère moteur 0,75 h (METHODE.md §3) ; p = 25, h = 0.75"
+    },
+    {
+      "code": "C-03",
+      "desc": "Chaudières CH-01/CH-02 De Dietrich 600 V/3Ø : vérifier, réutiliser tiroirs CCM-1, raccord final",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 2.5,
+      "art": "3.26",
+      "src": "catalogue Dupuis « CHAUDIERE 200A 600V » um=U (dernier 2026-03-31, S-1693_Ecole Primaire Beloeil, nb_projets 1) ; p = 0, h = 2.5 par chaudière"
+    },
+    {
+      "code": "C-04",
+      "desc": "Humidificateurs HUM-1/2/3 Carel 120 V/1Ø : sectionneur 30 A + raccord",
+      "q": null,
+      "u": "U",
+      "p": 132.84,
+      "h": 0.85,
+      "art": "3.23",
+      "src": "catalogue Dupuis « HUMIDIFICATEUR » um=U (dernier 2026-07-13, s-1808 cpe les copain d'ABORD, nb_projets 1) + catalogue Dupuis « INTERR 30A 2P 600V CEMA1 » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) ; opération par humidificateur : p = 15 + 117.84 = 132.84, h = 0.35 + 0.5 = 0.85"
+    },
+    {
+      "code": "D-16",
+      "desc": "Boîtes de tirage/jonction, connecteurs, supports, corde de tirage (RDC sous dalle)",
+      "q": null,
+      "u": "LOT",
+      "p": 197.6896,
+      "h": 8.0,
+      "art": "3.31",
+      "src": "catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) ; opération : N = 32 × (p 6.1778 ; h 0.25) = p 197.6896, h 8.0 ; N = 16 courses sous dalle (Détail D-13 « (16 courses) ») × 2 boîtes (Matériel Lumen IBE72171K « Tirage : 23 courses sous dalle x 2 », Qté 46)"
+    },
+    {
+      "code": "E-11",
+      "desc": "Boîtes, connecteurs, supports (étage, sous dalle)",
+      "q": null,
+      "u": "LOT",
+      "p": 86.4892,
+      "h": 3.5,
+      "art": "3.31",
+      "src": "catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) ; opération : N = 14 × (p 6.1778 ; h 0.25) = p 86.4892, h 3.5 ; N = 7 courses sous dalle (Détail E-08 « (7 courses) ») × 2 boîtes (même base Lumen IBE72171K, 46 = 32 D-16 + 14 E-11)"
+    },
+    {
+      "code": "F-05",
+      "desc": "Rangées linéaires Axis : suspension aux tiges/câbles, alimentation de rangée",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 0.2,
+      "art": "3.35",
+      "src": "catalogue Dupuis « TIGE FILETE 3/8PO » um=P (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 4) ; opération : 10 pi par rangée = Matériel Lumen VISTF3/8 « ABB TIGE FILETÉE 3/8 PO » Qté 200 pi ÷ 20 rangées ; h = 10 × 0.02 = 0.2 par rangée ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.6435 $/pi)"
+    },
+    {
+      "code": "F-10",
+      "desc": "Boîtes de jonction éclairage, chaînes de retenue à la dalle, quincaillerie",
+      "q": null,
+      "u": "LOT",
+      "p": 278.705,
+      "h": 7.0,
+      "art": "3.35",
+      "src": "catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 21) ; opération : N = 35 × (p 7.963 ; h 0.2) = p 278.705, h 7.0 ; N = 35 points d'éclairage (Détail F-08 « Hyp. 8 m x 35 points » ; Matériel Lumen IBE54151L « JB éclairage » Qté 35)"
+    },
+    {
+      "code": "G-04",
+      "desc": "Relocalisation du panneau annonciateur Simplex",
+      "q": null,
+      "u": "U",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.37",
+      "src": "catalogue Dupuis « RELO PANN ANNOCIATEUR » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; relocalisation (R2) ; p = 0, h = 8 (repère « annonciateur relocalisé 8 h », METHODE.md §3)"
+    },
+    {
+      "code": "G-05",
+      "desc": "Démontage/protection/réinstallation dispositifs AI existants dans zones touchées",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 12.0,
+      "art": "3.22",
+      "src": "jugement (Estimation_2) Détail G-05 h/unité 12"
+    },
+    {
+      "code": "G-06",
+      "desc": "Assistance électricien lors programmation / vérification ULC-S537",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "3.38",
+      "src": "jugement (Estimation_2) Détail G-06 h/unité 8"
+    },
+    {
+      "code": "G-07",
+      "desc": "Sous-traitance JCI/Simplex : bypass, programmation 4007ES, vérification, certificat",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 0.0,
+      "art": "3.38",
+      "src": "couvert par LOT-JCI 7 400 $ (METHODE.md §2)"
+    },
+    {
+      "code": "H-01",
+      "desc": "Mobilisation / démobilisation, outillage, plateforme/échafaudage roulant",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 16.0,
+      "art": "6.1",
+      "src": "jugement (Estimation_2) Détail H-01 h/unité 16"
+    },
+    {
+      "code": "H-02",
+      "desc": "Coordination EG / multi-corps, dessins d'atelier, plans tel que construit",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 20.0,
+      "art": "6.1",
+      "src": "jugement (Estimation_2) Détail H-02 h/unité 20"
+    },
+    {
+      "code": "H-03",
+      "desc": "Essais, mise en service, vérification prises existantes, étiquetage",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 12.0,
+      "art": "6.1",
+      "src": "jugement (Estimation_2) Détail H-03 h/unité 12"
+    },
+    {
+      "code": "H-04",
+      "desc": "Nettoyage, gestion des déchets",
+      "q": null,
+      "u": "LOT",
+      "p": 0.0,
+      "h": 8.0,
+      "art": "6.1",
+      "src": "jugement (Estimation_2) Détail H-04 h/unité 8"
+    }
+  ],
+  "articles": {
+    "PC-I": "3.28",
+    "PC-E": "3.22",
+    "PC-R": "3.22",
+    "PU-I": "3.27",
+    "PU-E": "3.22",
+    "PU-R": "3.22",
+    "PG-I": "3.30",
+    "PG-E": "3.22",
+    "PG-R": "3.22",
+    "SD-I": "3.33",
+    "SD-E": "3.22",
+    "SD-R": "3.22",
+    "TV-I": "3.33",
+    "TV-E": "3.22",
+    "TV-R": "3.22",
+    "INT-I": "3.35",
+    "INT-E": "3.22",
+    "INT-R": "3.22",
+    "TH-I": "3.23",
+    "TH-E": "3.22",
+    "TH-R": "3.22",
+    "BJ-I": "3.31",
+    "BJ-E": "3.22",
+    "BJ-R": "3.22",
+    "MP-I": "3.34",
+    "MP-E": "3.22",
+    "MP-R": "3.22",
+    "LC-I": "3.33",
+    "LC-E": "3.22",
+    "LC-R": "3.22",
+    "GA-I": "3.33",
+    "GA-E": "3.22",
+    "GA-R": "3.22",
+    "DM-I": "3.35",
+    "DM-E": "3.22",
+    "DM-R": "3.22",
+    "BC-I": "3.36",
+    "BC-E": "3.22",
+    "BC-R": "3.22",
+    "D-09": "3.31",
+    "D-10": "3.31",
+    "D-11": "3.33",
+    "E-03": "3.34",
+    "E-06": "3.33",
+    "ENC-I": "3.35",
+    "ENC-E": "3.22",
+    "ENC-R": "3.22",
+    "ENCU-I": "3.35",
+    "ENCU-E": "3.22",
+    "ENCU-R": "3.22",
+    "L14-I": "3.35",
+    "L14-E": "3.22",
+    "L14-R": "3.22",
+    "L22-I": "3.35",
+    "L22-E": "3.22",
+    "L22-R": "3.22",
+    "L4-I": "3.35",
+    "L4-E": "3.22",
+    "L4-R": "3.22",
+    "LLIN-I": "3.35",
+    "LLIN-E": "3.22",
+    "LLIN-R": "3.22",
+    "HP-I": "3.36",
+    "HP-E": "3.22",
+    "HP-R": "3.22",
+    "LA1-I": "3.35",
+    "LC1-I": "3.35",
+    "LC11-I": "3.35",
+    "LC13-I": "3.35",
+    "LE-I": "3.35",
+    "Z6-I": "3.35",
+    "Z6-E": "3.22",
+    "Z6-R": "3.22",
+    "DF-I": "3.36",
+    "DF-E": "3.22",
+    "DF-R": "3.22",
+    "SM-I": "3.36",
+    "SM-E": "3.22",
+    "SM-R": "3.22",
+    "PA-I": "3.37",
+    "PA-E": "3.37",
+    "PA-R": "3.37",
+    "MM-I": "3.23",
+    "MM-E": "3.22",
+    "MM-R": "3.23",
+    "MT-I": "3.23",
+    "MT-E": "3.22",
+    "MT-R": "3.23",
+    "B-01": "3.24",
+    "B-02": "3.25",
+    "B-03": "3.25",
+    "B-04": "3.25",
+    "B-05": "3.25",
+    "B-06": "3.25",
+    "B-07": "3.25",
+    "B-08": "3.25",
+    "B-09": "3.24",
+    "X-01": "3.32",
+    "X-02": "6.1",
+    "D-12": "3.31",
+    "E-07": "3.31",
+    "C-05": "3.31",
+    "C-06": "3.31",
+    "C-07": "3.31",
+    "C-08": "3.31",
+    "D-13": "3.31",
+    "D-14": "3.31",
+    "D-15": "3.31",
+    "E-08": "3.31",
+    "E-09": "3.31",
+    "E-10": "3.31",
+    "F-08": "3.31",
+    "F-09": "3.31",
+    "G-02": "3.31",
+    "G-03": "3.31",
+    "LOT-ECL": "3.35",
+    "LOT-DIST": "3.24",
+    "LOT-JCI": "3.38",
+    "LOT-DET": "3.36",
+    "LOT-GPR": "3.32",
+    "A-07": "3.22",
+    "A-08": "3.22",
+    "A-09": "3.22",
+    "A-10": "3.23",
+    "A-11": "6.1",
+    "C-01": "3.23",
+    "C-02": "3.23",
+    "C-03": "3.26",
+    "C-04": "3.23",
+    "D-16": "3.31",
+    "E-11": "3.31",
+    "F-05": "3.35",
+    "F-10": "3.35",
+    "G-04": "3.37",
+    "G-05": "3.22",
+    "G-06": "3.38",
+    "G-07": "3.38",
+    "H-01": "6.1",
+    "H-02": "6.1",
+    "H-03": "6.1",
+    "H-04": "6.1"
+  },
+  "regles_articles": [
+    "P0 — Un code va à l'article du bordereau dont le libellé nomme son objet ; tout le prix électrique (matériel + main-d'œuvre) va dans la section Électricité 3.22 à 3.38, les frais de chantier en 6.1 — parce que 3.22 « Démontage des éléments électriques » et 3.31 « Percements, conduit filage et boîte de jonction » nomment déjà les mêmes objets que 5.19 « Démolition des systèmes électriques » et 5.11 « Percement du plancher », et que le bordereau a un démontage/percement par discipline dans la section 3.0 — exceptions : aucune — ce que reçoivent les autres articles : 5.11 et 5.19 reçoivent 0 $ (renvoi à 3.31 et 3.22) ; 6.2 « Frais généraux, administration et profit » reçoit 0 $ (administration et profit = 0 % chez Dupuis, METHODE.md §2 point 1) ; 3.29 « MALT isolées » reçoit 0 $ (R11).",
+    "R1 — ENLEVER : tout code -E → 3.22 — parce que la dépose d'un élément existant est un démontage — exception : PA-E → 3.37 (voir R2 : la famille PA suit l'annonciateur, objet unique que le projet déplace) — ce que reçoit 5.19 : 0 $.",
+    "R2 — RELOCALISER : tout code -R → 3.22 (la ligne catalogue « RELO … » porte dépose et repose en un seul temps ; ce n'est pas un appareil neuf, donc pas un article de famille) — exceptions : PA-R → 3.37 « déplacement annonciateur » (et PA-I, PA-E : la famille PA suit l'annonciateur) ; MM-R et MT-R → 3.23 (débranchement/rebranchement d'équipements mécaniques au toit) — ce que reçoit 3.23 : MM-R, MT-R seulement parmi les -R. CONTRADICTION POSSIBLE notée : le libellé 3.22 « Démontage » ne nomme pas la repose (23 codes -R).",
+    "R3 — INSTALLER un appareil neuf : PC-I → 3.28 ; PU-I → 3.27 ; PG-I → 3.30 (R11) ; SD-I, TV-I, LC-I, GA-I, D-11, E-06 → 3.33 ; MP-I, E-03 → 3.34 ; INT-I, DM-I, ENC-I, ENCU-I, L14-I, L22-I, L4-I, LLIN-I, LA1-I, LC1-I, LC11-I, LC13-I, LE-I, Z6-I → 3.35 ; TH-I, MM-I, MT-I → 3.23 ; BJ-I → 3.31 ; BC-I, HP-I, DF-I, SM-I → 3.36 ; PA-I → 3.37 — parce que chaque article nomme la famille (relevé, feuille Par libellé, colonne Famille : prise → 3.27/3.28/3.30 ; telecom et intrusion → 3.33 ; commande, eclairage, urgence → 3.35 ; alarme → 3.36/3.37 ; mecanique et chauffage → 3.23 ; services → 3.31/3.34) — exceptions : aucune hors R4 à R11 — ce que reçoit l'autre article : 3.33 reçoit les courants faibles (câblodistribution, contrôle d'accès, boutons d'appel) ; 3.35 reçoit contrôles d'éclairage et luminaires. CONTRADICTIONS POSSIBLES : TH-I (famille chauffage) pourrait aller à 3.35 « Appareil de contrôle » ; LC/GA (famille intrusion) n'ont aucun article propre ; BC/HP/SM → 3.36 « Détecteur de fumée » (seul article d'alarme avec 3.37/3.38).",
+    "R4 — CONDUITS, FILAGE, BOÎTES DE JONCTION/TIRAGE, CONNECTEURS, SUPPORTS, PERCEMENTS → 3.31, quel que soit le système desservi : D-09, D-10, D-12, E-07, D-16, E-11, C-05 à C-08, D-13 à D-15, E-08 à E-10, F-08, F-09, G-02, G-03 (+ BJ-I de R3) — parce que le libellé de 3.31 les nomme tous sans restreindre le système ; les articles par système ne reçoivent que les appareils, leur pose et leur raccordement — exceptions : aucune (F-10 : voir R7) — ce que reçoit 5.11 : 0 $ (D-12 et E-07 restent à 3.31) ; ce que reçoit 3.23 des conduits et fils C-05 à C-08 : rien.",
+    "R5 — RACCORDEMENTS FINAUX D'ÉQUIPEMENTS MÉCANIQUES : C-01 (UTA-01), C-02 (VE-02N), C-04 (humidificateurs) et A-10 (toit : débrancher/rebrancher les 6 équipements) → 3.23 ; C-03 (chaudières, tiroirs CCM-1 existants) → 3.26 « MCC », seule ligne du Détail qui touche un centre de commande de moteurs — parce que 3.23 nomme le raccordement des équipements mécaniques et que 3.26 « MCC » ne se rattache qu'à C-03 — exceptions : aucune — ce que reçoit 3.26 : C-03 seulement ; CONTRADICTION POSSIBLE : C-03 pourrait aller à 3.23.",
+    "R6 — DISTRIBUTION : B-01 (panneau PP-3 neuf) et B-09 (fiches dactylographiées et identification des panneaux) → 3.24 « Nouveau panneau 600V » ; B-02 à B-08 (disjoncteurs) → 3.25 « Lot disjoncteurs » ; LOT-DIST → 3.24 (un seul article par code) avec la ventilation de son montant à faire dans par_article : 3 400 $ (panneau NF 225 A 42 cct) → 3.24 ; 2 800 $ (EDB 1P 95 $ × 20 = 1 900 $ + EJB 3P 300 $ × 3 = 900 $) → 3.25 — exceptions : B-09 est une mise à jour de fiches, pas un panneau neuf (3.24 retenu parce qu'il suit B-01/PP-3) — ce que reçoit 3.25 : B-02 à B-08 et la part 2 800 $ de LOT-DIST.",
+    "R7 — ÉCLAIRAGE : LOT-ECL (luminaires neufs, Z6, trousses) → 3.35 en plus des -I de R3 ; F-05 (suspension des rangées Axis, 20) et F-10 (boîtes de jonction d'éclairage, chaînes de retenue, quincaillerie) → 3.35 (alternative écartée : 3.31 pour F-10 « boîtes de jonction ») — parce que la suspension et la retenue sont des éléments de l'appareil d'éclairage (devis 16.5) — exceptions : F-10 nomme aussi des boîtes de jonction — ce que reçoit 3.31 : rien de F-05/F-10 ; CONTRADICTION POSSIBLE notée.",
+    "R8 — ALARME INCENDIE : LOT-DET (2 détecteurs, 600 $) → 3.36 ; LOT-JCI, G-06 (assistance programmation/vérification ULC-S537), G-07 (sous-traitance JCI/Simplex) → 3.38 « mise en marche et certification » ; G-04 (relocalisation de l'annonciateur) et PA-* → 3.37 ; G-05 (démontage/protection/réinstallation des dispositifs AI existants) → 3.22 (R2) ; G-02, G-03 → 3.31 (R4) — parce que 3.36 nomme les détecteurs, 3.37 le déplacement de l'annonciateur et 3.38 la mise en marche et la certification — exceptions : aucune — ce que reçoit 3.38 : LOT-JCI, G-06, G-07.",
+    "R9 — SCAN DE DALLE : X-01 (« SCAN DALLE BETON ») et LOT-GPR (géoradar, 1 250 $) → 3.32 « Scan dalle béton » — parce que c'est le même objet : un seul des deux porte le 1 250 $ (double compte, entrée dédiée), les deux restent à 3.32 — exceptions : aucune — ce que reçoit l'autre article : rien.",
+    "R10 — FRAIS DE CHANTIER ET CONDITIONS : X-02 (nacelle), H-01 (mobilisation, outillage, plateforme), H-02 (coordination, dessins d'atelier), H-03 (essais, mise en service), H-04 (nettoyage, déchets) et A-11 (maintien de la continuité de service, traçage des circuits : devis 1.16) → 6.1 « Conditions de mise en œuvre et autres » — parce que ce sont des conditions de mise en œuvre et non des travaux posés (alternative écartée pour A-11 : 3.22) — exceptions : aucune — ce que reçoit 6.2 : 0 $ (P0).",
+    "R11 — PRISES M.A.L.T. ISOLÉES (3.29) : tout PG-I (PRISE DDFT) → 3.30 « GFI » ; 3.29 reçoit 0 $ tant que le relevé ne sépare pas les M.A.L.T. des DDFT — parce que reserves.md R-007 : les deux variantes tombent dans PRISE DDFT (à départager au zoom) et que la nomenclature n'a pas de code pour les M.A.L.T. — exceptions : aucune — ce que reçoit 3.29 : 0 $ (on ne peut pas ventiler sans lire le plan).",
+    "R12 — TRAVAUX TEMPORAIRES DE RELOCALISATION HORS PLAN : A-07 (interrupteurs maîtres du hall), A-08 et A-09 (FabLab : retrait temporaire + réinstallation) → 3.22, comme tout code -R (R2) — exceptions : aucune — ce que reçoit l'article de famille (3.35) : rien (ce ne sont pas des appareils neufs).",
+    "R13 — PORTÉE ABSENTE DU RELEVÉ : un code dont la portée n'existe pas dans rapport-releve.md (ex. BC-I, TV-R, ENC-I, PA-E) reçoit quand même l'article de sa règle (correspondance de précaution) — parce que le tableau famille | portées ne couvre pas tous les codes -I/-E/-R — exceptions : aucune — la liste complète est dans notes (PORTÉE ABSENTE)."
+  ],
+  "doubles_comptes": [
+    {
+      "n": 1,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "A-01",
+        "A-02",
+        "ENC-E",
+        "L14-E",
+        "L22-E"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : les lignes Détail A-01 et A-02 sont EXCLUES (ni p ni h) ; seuls ENC-E, L14-E et L22-E sont chiffrés (0 $ + temps d'enlèvement). Risque de sous-comptage de 6 luminaires : voir notes, ÉCARTS DÉTAIL > PLAN.",
+      "quantites": "Détail A-01 Qté 39 (D8, E-201) + A-02 Qté 7 (D9, E-202) = 46 ; rapport-releve.md ENLEVER : ENCASTRE 26 + LED 1X4 6 + LED 2X2 8 = 40 ; écart 6 (Détail > plan), non réparti par feuille (portées par feuille non lisibles).",
+      "origine": "B3-3 n° 1 (relu sur rapport-releve.md et Détail)"
+    },
+    {
+      "n": 2,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "A-03",
+        "A-04",
+        "PC-E",
+        "PG-E",
+        "SD-E",
+        "INT-E",
+        "BJ-E",
+        "MP-E",
+        "DM-E",
+        "BC-E",
+        "DF-E",
+        "HP-E"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : A-03 et A-04 sont EXCLUES (ni p ni h) ; seuls PC-E, PG-E, SD-E, INT-E, BJ-E, MP-E, DM-E, BC-E, DF-E, HP-E sont chiffrés (0 $ + temps d'enlèvement). Risque de sous-comptage de 5 services : voir notes, ÉCARTS DÉTAIL > PLAN.",
+      "quantites": "Détail A-03 Qté 34 (D10, E-101) + A-04 Qté 10 (D11, E-102) = 44 ; rapport-releve.md ENLEVER : PRISE DOUBLE 15A 7 + PRISE DDFT 4 + SORTIE DATA 17 + INT SIMPLE 1 + BOITE JONCTION 2 + MONUMENT PLANCHER 3 + DETECTEUR MOUVEMENT 1 + BOITIER C 2 + DETECTEUR FUMEE 1 + HP ENCASTRE PLAFOND 1 = 39 ; écart 5 (Détail > plan).",
+      "origine": "B3-3 n° 2 (relu)"
+    },
+    {
+      "n": 3,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "A-05",
+        "PC-R",
+        "PG-R",
+        "SD-R",
+        "DF-R"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : A-05 est EXCLUE (ni p ni h) ; seuls PC-R, PG-R, SD-R, DF-R sont chiffrés (relocalisation). Mêmes objets, égalité exacte.",
+      "quantites": "Détail A-05 Qté 13 (D12 : 6 RDC + 7 étage) ; rapport-releve.md RELOCALISER : PRISE DOUBLE 15A 8 + PRISE DDFT 1 + SORTIE DATA 3 + DETECTEUR FUMEE 1 = 13 ; écart 0.",
+      "origine": "B3-3 n° 3 (relu)"
+    },
+    {
+      "n": 4,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "A-06",
+        "ENC-R"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : A-06 est EXCLUE (ni p ni h) ; seul ENC-R est chiffré (relocalisation, RELO ENCASTRE).",
+      "quantites": "Détail A-06 Qté 7 (D13 : 3 RDC + 4 étage, incl. 4 appareils salle 227) ; rapport-releve.md ENCASTRE RELOCALISER 4 ; écart 3 (Détail > plan), non réparti (portée par feuille non lisible).",
+      "origine": "B3-3 n° 4 (affirmation « les 3 luminaires RDC n'ont pas de ligne RELOCALISER » retirée : non lisible)"
+    },
+    {
+      "n": 5,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "D-04",
+        "D-05",
+        "D-06",
+        "D-07",
+        "D-08",
+        "PC-I",
+        "PU-I",
+        "PG-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : D-01 à D-08 sont EXCLUES (ni p ni h) ; seuls PC-I, PU-I, PG-I, SD-I, BJ-I sont chiffrés (services neufs du plan, feuilles E104 et E105). Les écarts de quantité par type sont réels (voir quantites) mais le plan prévaut sur le Détail ; les prises Lumen correspondantes sont dans l'entrée n° 39 et les boîtes dans l'entrée n° 40.",
+      "quantites": "Détail RDC : D-01 18 postes (1 prise 15 A + 1 prise 20 A + boîte data 2 RJ45 + JB chacun) ; D-02 5 tables = 10 prises + 10 USB ; D-03 2 ; D-04 2 ; D-05 1 ; D-06 8 ; D-07 1 DDFT ; D-08 10 sorties data (lignes D-01 à D-08 aux rangées 45 à 52 du Détail). Lumen (même base) : LEV16252W 47 (15 A), LEV16352W 20 (20 A), LEVT5633W 10 (USB), LEVGFNT1W 1 (DDFT). Relevé INSTALLER : PC-I 25 (E104 23 + E105 2), PU-I 20 (E104), PG-I 22 (E104 20 + E105 2), SD-I 65 (E104 45 + E105 20), BJ-I 3 (E104) — attributions par feuille déduites des totaux (E101 et E102 n'ont que des portées existantes : PC 48 + 22 = 70 = CONSERVER 55 + ENLEVER 7 + RELOCALISER 8, SD 36 + 19 = 55 = 35 + 17 + 3, PG 23 + 4 = 27 = 22 + 4 + 1). PU-I 20 au plan contre 10 USB au Détail ; PG-I 22 contre 1 DDFT (R-007 : DDFT et M.A.L.T. confondues, 15 A et 20 A non distinguées). Observation non exploitée : PC-I + PU-I + PG-I = 67 = LEV16252W 47 + LEV16352W 20 (même total, répartition par type différente).",
+      "origine": "B3-3 n° 5 (correction : le « 47 PC 15 A hors D-01 » était la quantité Lumen LEV16252W, pas un recomptage du Détail) ; B3-1 n° 9 (rappel)"
+    },
+    {
+      "n": 6,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "E-01",
+        "E-04",
+        "E-05",
+        "PC-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : E-01, E-04, E-05 sont EXCLUES (ni p ni h) ; seuls PC-I, SD-I (et BJ-I) sont chiffrés. CONTRADICTION POSSIBLE : l'exclusion supprime les 5 boîtes de jonction de E-01 (2) et E-04 (3), qui n'ont aucun symbole au plan (BJ-I 3 est sur E104).",
+      "quantites": "Détail étage : E-01 Qté 2 postes (D64 : JB, 2 prises, data 2 RJ45), E-04 Qté 3 (D67 : JB + prise), E-05 Qté 1 (D68 : courant + données). Relevé E105 (Par feuille) : PRISE DOUBLE 15A 2, PRISE DDFT 2, SORTIE DATA 20, aucune BOITE JONCTION ; BJ-I 3 = E104 = D-09 + D-10 (entrée n° 10). Si les 5 JB étaient chiffrées : 5 × 6,18 $ et 5 × 0,25 h (BOITE CARRE 2-1/8PO KO 1).",
+      "origine": "B3-3 n° 6 (relu et complété)"
+    },
+    {
+      "n": 7,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "E-02",
+        "E-03",
+        "MP-I",
+        "MP-E",
+        "HUBS1R6PTDEHBLK"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "le plan gagne : E-02 est EXCLUE (ni p ni h) ; MP-I (INSTALLER 3) est chiffré. E-03 (2 boîtes de plancher « refaites », salle 208, note 1 E-102) = les 2 couples de monuments ENLEVER (E102) / INSTALLER (E105) placés au même point dans Marques : (1272,2 ; 903,7) et (593,3 ; 383,0) ≈ (592,7 ; 381,2) ; E-03 est donc absorbée par MP-E 2 + MP-I 2 : à 0 en ligne (ni p ni h) ; il reste un MP-I seul (1393,7 ; 903,7) et un MP-E seul (680,8 ; 346,7). Lumen HUBS1R6PTDEHBLK : option (a) défaut = MP-I seul à 250,00 $ (« MONUMENT PLANCHER 1TE », repère METHODE monument 250 $) → 3 × 250 = 750 $, Lumen non ajouté ; option (b) = Lumen pour 2 monuments (2 × 1 461,22 = 2 922,44 $) + 1 MP-I → 3 172,44 $, soit +2 422,44 $ par rapport à (a) : plus gros risque matériel de la liste, à trancher sur la nature réelle du produit (poke-through Hubbell 6 po).",
+      "quantites": "Détail E-02 Qté 2 (D65, monuments Hubbell neufs, 2,5 h) ; E-03 Qté 2 (D66, « refaite », 2,5 h) ; rapport-releve.md MONUMENT PLANCHER : ENLEVER 3, INSTALLER 3, CONSERVER 1 ; Marques (releve.xlsx) : E102 (1272,2 ; 903,7), (680,8 ; 346,7), (593,3 ; 383,0) ; E105 (1272,2 ; 903,7), (1393,7 ; 903,7), (592,7 ; 381,2) ; E101 (899,9 ; 506,9) CONSERVER ; Lumen HUBS1R6PTDEHBLK Qté 2 à 1 461,22 $ = 2 922,44 $. Détail 2 + 2 = 4 contre MP-I 3.",
+      "origine": "fusion B3-3 n° 7 + B3-1 n° 14 (Marques lu pour l'occasion : preuve des couples ENLEVER/INSTALLER)"
+    },
+    {
+      "n": 8,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "F-01",
+        "F-02",
+        "F-03",
+        "F-04",
+        "F-06",
+        "F-07",
+        "LA1-I",
+        "LC1-I",
+        "LC11-I",
+        "LC13-I",
+        "LE-I",
+        "Z6-I",
+        "LOT-ECL"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : F-01, F-02, F-03, F-04, F-06, F-07 sont EXCLUES (ni p ni h) ; seuls LA1-I, LC1-I, LC11-I, LC13-I, LE-I, Z6-I sont chiffrés en ligne, à 0 $ + temps (0,75 h ; Z6 1 h), la matière étant dans LOT-ECL (11 893 $). F-06 : le plan et le lot comptent LE 3 ; le Détail et le relevé d'éclairage comptent E 4 (R-003 : à trancher au zoom) ; à 4, le lot reçoit une composante E de plus (+475 $) et +0,75 h.",
+      "quantites": "F-01 Qté 11 (D78) = LA1 11 = lot A1 ×11 ; F-02 Qté 12 (D79) = LC1 12 = lot Axis 4' ×12 ; F-03 Qté 6 (D80) = LC11 6 = lot Axis 1' ×6 ; F-04 Qté 15 (D81) = LC13 15 = lot Axis 3' ×15 ; F-07 Qté 3 (D84) = Z6 3 = lot Z6 ×3 ; F-06 Qté 4 (D83) contre LUMINAIRE E 3 (rapport-releve.md ; Par feuille E203 3) et relevé d'éclairage E 4 ; écart 1.",
+      "origine": "B3-3 n° 16 (relu sur le relevé d'éclairage)"
+    },
+    {
+      "n": 9,
+      "groupe": "A — ligne Détail qui recompte le plan (le plan gagne)",
+      "codes": [
+        "G-01",
+        "AI-01",
+        "AI-02",
+        "DF-I",
+        "LOT-DET"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "le plan gagne : G-01 est EXCLUE (ni p ni h) ; DF-I (INSTALLER 2) est chiffré à 0 $ + temps ; LOT-DET 600 $ couvre les 2 détecteurs fournis par JCI ; AI-02 (plaque/adaptateur de base « si requis ») est le même objet que « + base » de G-01 : non chiffré.",
+      "quantites": "G-01 Qté 2 (D91, « + base ») ; AI-01 Qté 2 (relevé alarme incendie, E-203) ; AI-02 Qté 2 ; rapport-releve.md DETECTEUR FUMEE INSTALLER 2 ; LOT-DET 600 $ = 2 × 300 $ ; écart 0.",
+      "origine": "B3-3 n° 18 (relu sur le relevé alarme incendie)"
+    },
+    {
+      "n": 10,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "D-09",
+        "D-10",
+        "BJ-I"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "même objet, deux lignes chiffrées. Défaut recommandé (le plan gagne) : BJ-I (3 boîtes de jonction INSTALLER, E104) porte les 3 boîtes ; D-10 est à 0 ; D-09 ne garde que sa part non-boîte (RACCORD DIRECT : 25,00 $, 0,50 h). Option 2 : D-09 et D-10 chiffrés tels quels (D-09 37,36 $ / 1,0 h ; D-10 6,18 $ / 0,25 h) et BJ-I à 0. Les deux options donnent le même total (43,53 $ / 1,25 h) ; payer BJ-I, D-09 et D-10 en entier ferait payer 3 boîtes deux fois (18,53 $ et 0,75 h de trop).",
+      "quantites": "Détail D-09 Qté 1 lot (D53 : 2 boîtes de jonction + raccord panneau de contrôle PU-1 23) + D-10 Qté 1 (D54 : JB dans le mur adjacent) = 3 boîtes ; rapport-releve.md BOITE JONCTION INSTALLER 3 (Par feuille E104 3) ; égalité 2 + 1 = 3. B1 : D-09 = 2 × BOITE CARRE 2-1/8PO KO 1 + RACCORD DIRECT.",
+      "origine": "B3-3 n° 8 (chiffres recalculés sur les lignes réelles de B1)"
+    },
+    {
+      "n": 11,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "D-11",
+        "E-06",
+        "BJ-I"
+      ],
+      "statut": "PAS DE DOUBLE PROUVÉ — à confirmer au zoom",
+      "regle": "les boîtes des boutons d'appel (D-11) et du bouton de panique (E-06) ne correspondent à aucune famille du relevé (aucun bouton au relevé) et BJ-I 3 est déjà pris par D-09 + D-10 : pas de double ; D-11 et E-06 restent chiffrés au Détail. Option 2 : les 4 boîtes comptées dans BJ-I (BJ-I passerait à 4).",
+      "quantites": "Détail D-11 Qté 1 (D55) ; E-06 Qté 3 (D69 : 2 boutons d'appel + 1 panique) ; relevé : aucune famille bouton ; B1 : DECLENCHEUR APPEL 15 $ / 0,35 h chacun, conduit vide non chiffré. Si option 2 : 4 × 0,35 h retirés du Détail.",
+      "origine": "B3-3 n° 9"
+    },
+    {
+      "n": 12,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "MT-I",
+        "MM-I"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "même objets (UTA-01, VE-02N, chaudières CH-01/CH-02, humidificateurs HUM-1/2/3) pris en lignes Détail ET en moteurs du relevé. Défaut recommandé (le plan gagne ; un raccordement par équipement) : MT-I 4 et MM-I 3 portent les 7 raccordements au repère moteur (25 $ / 0,75 h chacun) ; C-01, C-02, C-03 à 0 ; C-04 réduite à son sectionneur INTERR 30A 2P 600V CEMA1 (353,52 $ et 1,50 h pour 3). Option 2 : lignes Détail seules (C-01 à C-04 = 448,52 $ / 9,30 h) et MT-I, MM-I à 0. Option 1 chiffrée : 528,52 $ / 6,75 h.",
+      "quantites": "Détail C-01 Qté 1 (D34), C-02 Qté 1 (D35), C-03 Qté 2 (D36), C-04 Qté 3 (D37) = 7 équipements, 50 h au Détail ; rapport-releve.md MOTEUR TRIPHASE INSTALLER 4 (E105 2 + E106 2) et MOTEUR MONOPHASE INSTALLER 3 (E105 3) ; 1 + 1 + 2 = 4 et 3 = 3 (attribution des équipements aux feuilles déduite). Lignes retenues : MT-I/MM-I « MOTEUR » 25,0 $ / 0,75 h ; C-01 25,0 $ / 1,0 h ; C-02 25,0 $ / 0,75 h ; C-03 0,0 $ / 2,5 h ; C-04 132,84 $ / 0,85 h.",
+      "origine": "B3-3 n° 10 (chiffres recalculés sur les lignes réelles B2/B3-2)"
+    },
+    {
+      "n": 13,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "A-10",
+        "MM-R"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "même objets : les 6 équipements du toit de A-10 (E.A.R, E-103) sont les 6 MOTEUR MONOPHASE RELOCALISER du relevé. Défaut recommandé : MM-R (plan) porte les 6 relocalisations (1,0 h chacun) ; A-10 réduite à sa part non-moteur (débrancher 0,4 h + entreposer le sectionneur 0,5 h = 0,90 h par équipement, 0 $) : total 11,40 h. Option 2 : A-10 seule (1,65 h et 25,0 $ par équipement = 9,90 h et 150,00 $), MM-R à 0. Option 3 : Détail A-10 4 h par équipement = 24 h.",
+      "quantites": "Détail A-10 Qté 6 u (D17 : « 6 E.A.R sur E-103 », 4 h/u) ; rapport-releve.md MOTEUR MONOPHASE RELOCALISER 6 ; Par feuille E103 MOTEUR MONOPHASE 6 (la seule famille de cette feuille) ; lignes retenues : MM-R « RELO PLINTHE 2000W » 1,0 h (analogue) ; A-10 1,65 h et 25 $ par équipement.",
+      "origine": "B3-3 n° 28 (chiffres recalculés sur les lignes réelles : MM-R = 1,0 h et non 0,75 h)"
+    },
+    {
+      "n": 14,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "G-04",
+        "PA-I",
+        "PA-R",
+        "PA-E",
+        "AI-05"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "même objet (l'annonciateur Simplex) : G-04 (relocalisation physique par DR) et PA-I (INSTALLER 1 au relevé) portent le même travail à 8 h chacun (« RELO PANN ANNOCIATEUR », repère METHODE annonciateur relocalisé 8 h). Défaut recommandé (le plan gagne) : PA-I porte les 8 h ; G-04 à 0 (ni p ni h). Option 2 : G-04 seule, PA-I à 0 — même total. Payer les deux = 16 h pour un objet. AI-05 (reprogrammation et essais) est du JCI : couvert par LOT-JCI, non chiffré ici ; PA-E et PA-R n'ont aucune occurrence au relevé.",
+      "quantites": "G-04 Qté 1 (D94, Détail 6 h) ; PA-I INSTALLER 1 (rapport-releve.md PANNEAU ANNONCIATEUR, Par feuille E203 1) ; AI-05 Qté 1 lot ; lignes retenues : G-04 0,0 $ / 8,0 h ; PA-I 0,0 $ / 8,0 h ; PA-R 8,0 h. Double = 8 h.",
+      "origine": "B3-3 n° 19"
+    },
+    {
+      "n": 15,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "G-05",
+        "AI-07",
+        "DF-R",
+        "SM-R"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "G-05 (démontage, protection et réinstallation des dispositifs AI existants dans les zones touchées, 12 h, par DR) et AI-07 (option : vérification de ces dispositifs, prix séparé, par JCI) portent sur les mêmes dispositifs. Défaut recommandé : G-05 seul (12 h), AI-07 hors total (option JCI à prix séparé, aucun montant au kit). Si le détecteur DF-R (1 relocalisé) est l'un des dispositifs de G-05 : 0,75 h compté deux fois, négligeable.",
+      "quantites": "G-05 Qté 1 lot (D95, 12 h, « Allocation — à valider ») ; AI-07 Qté 1 lot (option, prix séparé) ; rapport-releve.md DETECTEUR FUMEE CONSERVER 6, STATION MANUELLE CONSERVER 4 (10 dispositifs conservés) ; contrôle non retenu : RELO DETECTEUR A FUME / RELO STATION MANUEL 0,75 h × 10 = 7,5 h.",
+      "origine": "B3-3 n° 20"
+    },
+    {
+      "n": 16,
+      "groupe": "C — lot fournisseur ↔ lignes",
+      "codes": [
+        "G-07",
+        "AI-03",
+        "AI-04",
+        "AI-05",
+        "AI-06",
+        "LOT-JCI"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "0 $ en ligne + lot : LOT-JCI 7 400 $ couvre AI-03 (bypass), AI-04 (programmation 4007ES), AI-05 (reprogrammation de l'annonciateur) et AI-06 (vérification partielle CAN/ULC-S537 + certificat) ; G-07 (0 $ et 0 h au Détail, « PRIX À OBTENIR DE JCI ») est la même sous-traitance et reste à 0 $ / 0 h : le prix à obtenir est LOT-JCI.",
+      "quantites": "G-07 Qté 1 lot (D97, 0 $, 0 h) ; AI-03, AI-04, AI-05, AI-06 : 1 lot chacun ; LOT-JCI 7 400 $ (METHODE.md §2, aucune composante chiffrée : pas de contrôle par script possible).",
+      "origine": "B3-3 n° 21 (AI-05 ajouté)"
+    },
+    {
+      "n": 17,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "G-06",
+        "H-03"
+      ],
+      "statut": "PAS DE DOUBLE PROUVÉ — à confirmer au zoom",
+      "regle": "G-06 (assistance de l'électricien à la programmation et à la vérification ULC-S537, 8 h) et H-03 (essais, mise en service, vérification des prises existantes, 12 h) touchent tous deux la vérification, mais ce sont deux actions distinctes (aide au JCI contre essais de DR). Défaut recommandé : garder les deux (20 h) ; risque de double : au plus 8 h si H-03 inclut déjà l'assistance à JCI.",
+      "quantites": "G-06 Qté 1 lot (D96, 8 h) ; H-03 Qté 1 lot (D103, 12 h) ; lignes retenues : jugement (Estimation_2) 8 h et 12 h (catalogue : « ALARME INCENDIE VERIFIC » à 0 h écarté). La vérification ULC-S537 elle-même est dans LOT-JCI (AI-06).",
+      "origine": "B3-3 n° 22"
+    },
+    {
+      "n": 18,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "G-02",
+        "G-03",
+        "AI-08",
+        "AI-09"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "payé une fois par G-02 et G-03 : AI-09 (conduit EMT 3/4\" + boîtes, « pour info — achat distributeur ») et AI-08 (câble FT4 2c #16, « pour info ») sont les mêmes objets que G-02 et G-03 ; ils ne sont pas chiffrés en plus. Le câble Lumen CAB16/2FAFT4300 est dans l'entrée n° 38.",
+      "quantites": "G-02 Qté 30 m (D92) = AI-09 Qté 30 m ; G-03 Qté 60 m (D93) = AI-08 Qté 60 m (relevé alarme incendie) ; égalité exacte (vérifie l'équivalence que B3-1 n'avait pas pu contrôler).",
+      "origine": "B3-3 n° 23 (relu)"
+    },
+    {
+      "n": 19,
+      "groupe": "C — lot fournisseur ↔ lignes",
+      "codes": [
+        "X-01",
+        "LOT-GPR"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "même objet : X-01 (« SCAN DALLE BETON », 1 250,00 $ et 2,0 h, B2) et LOT-GPR (géoradar, 1 250 $, confirmé 2026-10-20) sont le même scan de dalle ; payé une fois. Règle : LOT-GPR porte les 1 250 $ ; X-01 est à p = 0 (couvert par LOT-GPR) et garde son temps de 2,0 h (0 $ en ligne + lot, temps seulement). Si les deux avaient q ≥ 1 avec leur prix plein, 1 250 $ seraient payés deux fois.",
+      "quantites": "LOT-GPR 1 250 $ (METHODE.md §2) ; catalogue « SCAN DALLE BETON » um=U 1 250 $ / 2,0 h (nb 2, 2026-03-09) ; « SCAN DALLE » 750 $ et « SCAN » 750 $ non retenus ; X-01 n'existe pas dans la feuille Détail (code de nomenclature X-nn, ARCHITECTURE.md §3).",
+      "origine": "B3-3 n° 24 (règle réécrite : X-01 reste dans la nomenclature)"
+    },
+    {
+      "n": 20,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "H-01",
+        "X-02"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "même moyen d'accès : H-01 (mobilisation, outillage, plateforme/échafaudage roulant, 16 h par jugement) et X-02 (nacelle, 1 250,00 $ / 16,0 h, repère METHODE) ; un moyen d'accès n'est payé qu'une fois. Défaut recommandé : H-01 seul (0 $ + 16 h) — seule ligne rattachée à un document de S-1902, alors que NACELLE est une ligne « Jugement / forfait » d'un autre projet ; X-02 à q = 0 sauf preuve au plan d'une hauteur exigeant une nacelle. Option 2 : X-02 à la place de H-01 : +1 250 $ et 0 h. Option 3 : les deux : +1 250 $ et +16 h.",
+      "quantites": "H-01 Qté 1 lot (D101, 16 h, « Hypothèse ») ; X-02 absent de la feuille Détail ; catalogue « NACELLE » um=U 1 250 $ / 16 h (nb 2, 2026-07-14, classe Jugement / forfait).",
+      "origine": "B3-3 n° 25 (défaut maintenu, motif complété)"
+    },
+    {
+      "n": 21,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "A-07",
+        "INT-E",
+        "INT-R"
+      ],
+      "statut": "PAS DE DOUBLE PROUVÉ — à confirmer au zoom",
+      "regle": "A-07 (relocalisation des interrupteurs maîtres du hall, note spécifique 1 E-201) n'a pas de relocalisation d'interrupteur au relevé (INT-R n'a aucune occurrence) ; INT-E 1 (interrupteur enlevé) est a priori un autre objet : A-07 est additionnelle, pas un double ; à confirmer au zoom E-201.",
+      "quantites": "A-07 Qté 1 lot (D14, 6 h, « Hypothèse 6 h — à valider ») ; rapport-releve.md INT SIMPLE : INSTALLER 5, CONSERVER 4, ENLEVER 1 ; aucune portée RELOCALISER ; ligne retenue : jugement 6 h (catalogue « RELO INT » 1,5 h par interrupteur écarté faute de quantité lisible).",
+      "origine": "B3-3 n° 26"
+    },
+    {
+      "n": 22,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "A-11",
+        "B-09"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "A-11 (traçage des circuits existants et maintien de service, 16 h au Détail) et B-09 (fiches dactylographiées et identification de 9 panneaux) portent sur l'identification des circuits ; B-09 (B2) et A-11 (B3-2) utilisent le même libellé catalogue « IDENTIFIER LES CIRCUITS EXISTANTS A » (3,0 h). Défaut recommandé : retirer cette composante de A-11 (déjà payée 9 × 3,0 h = 27 h par B-09) : A-11 = 12 h (NOTE 5 RETRACER DERIVA 6 h + NOTE 6 RETRACER FILAGE 6 h) au lieu de 15 h. Option 2 : garder les deux (traçage terrain distinct des fiches) : +3 h.",
+      "quantites": "A-11 Qté 1 lot (D18, 16 h) ; B-09 Qté 9 u (D30, 1 h/u au Détail, PP-2, PP-3, P2, P3, P4, P6, PU-1, PPU-1, P10) ; lignes retenues : A-11 15 h ; B-09 3,0 h par unité = 27 h.",
+      "origine": "B3-3 n° 27 (recouvrement de libellé catalogue trouvé en consolidation)"
+    },
+    {
+      "n": 23,
+      "groupe": "B — même objet, deux lignes chiffrées (arbitrage)",
+      "codes": [
+        "A-08",
+        "A-09",
+        "ENC-E",
+        "ENC-R",
+        "L14-E",
+        "LLIN-R"
+      ],
+      "statut": "PAS DE DOUBLE PROUVÉ — à confirmer au zoom",
+      "regle": "A-08 (FabLab 210 : retrait temporaire + réinstallation de 21 luminaires linéaires) et A-09 (24 encastrés) sont des retraits TEMPORAIRES, pas des enlèvements : pas de double prouvé avec ENC-E, L14-E (enlèvement définitif). Un double n'existe que si ces luminaires de E202 sont marqués ENLEVER ou RELOCALISER au plan (portée par feuille non lisible) : alors le plan gagne et la ligne A-08/A-09 tombe pour ces appareils. Défaut : A-08 et A-09 chiffrés, ENC-E/ENC-R/L14-E inchangés.",
+      "quantites": "A-08 Qté 21 (D15, 0,6 h/u) ; A-09 Qté 24 (D16, 0,5 h/u, « ±2 ») ; Par feuille E202 : LED 1X4 21 (= A-08) et ENCASTRE 35 (dont 24 visés par A-09) ; totaux rapport-releve.md : LED 1X4 CONSERVER 27 / ENLEVER 6 ; ENCASTRE ENLEVER 26 / RELOCALISER 4 / CONSERVER 49. Lignes retenues : RELO FIXTURE 30X30 et RELO ENCASTRE, 1,0 h chacune, 0 $.",
+      "origine": "B3-3 n° 29 (affirmation « 21 LED 1X4 de E202 en CONSERVER » retirée : non lisible)"
+    },
+    {
+      "n": 24,
+      "groupe": "C — lot fournisseur ↔ lignes",
+      "codes": [
+        "B-01",
+        "B-02",
+        "B-03",
+        "B-04",
+        "B-05",
+        "B-06",
+        "B-07",
+        "B-08",
+        "LOT-DIST"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "0 $ en ligne + lot : LOT-DIST 6 200 $ couvre le panneau NF 225 A (B-01) et les disjoncteurs EDB 1P × 20 et EJB 3P × 3 (B-02 à B-08) ; ces huit lignes gardent leur temps seulement (p = 0, déjà le cas chez B2). B-02 (14) et B-03 (1) sont des disjoncteurs de circuits transférés dans le panneau neuf : le lot les contient (19 contre 20 et 3 contre 3), aucun achat en plus. B-09 n'est pas couvert par le lot.",
+      "quantites": "B-01 Qté 1 (D22) = NF 225 A 42 cct 3 400 $ ; disjoncteurs 1P : B-02 14 (D23) + B-06 1 (D27) + B-07 2 (D28) + B-08 2 (D29) = 19 contre EDB 1P × 20 (écart 1 pièce, 95 $) ; 3P : B-03 1 + B-04 1 + B-05 1 = 3 = EJB 3P × 3 ; 3 400 + 20 × 95 + 3 × 300 = 6 200 $ = METHODE.md (écart 0).",
+      "origine": "B3-3 n° 30 (réserve sur B-02/B-03 retirée : le lot les inclut)"
+    },
+    {
+      "n": 25,
+      "groupe": "C — lot fournisseur ↔ lignes",
+      "codes": [
+        "F-05",
+        "F-10",
+        "LOT-ECL",
+        "VISTF3/8",
+        "VISDIA3/816BX50"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "0 $ en ligne + lot : F-05 (suspension des 20 rangées Axis) relève, pour le matériel, des trousses de suspension (1 500 $) de LOT-ECL ; F-05 est à p = 0 et garde son temps. Défaut recommandé : les tiges filetées Lumen VISTF3/8 (200 pi, 128,70 $) et les ancrages VISDIA3/816BX50 (2 × 50, 64,52 $) ne sont PAS ajoutés (suspension couverte par le lot) ; si les trousses ne contiennent pas la visserie, 193,22 $ seraient à ajouter. Ne jamais payer la tige Lumen, la tige Dupuis et la trousse ensemble. Temps : F-05 = 0,2 h par rangée (10 pi × 0,02 h/pi, B3-2) = 4,00 h contre 1,0 h par rangée = 20 h au Détail (écart 16 h) ; F-10 = 7 h contre 8 h ; le temps des luminaires neufs (0,75 h) couvre peut-être déjà une part de la suspension : au plus 11,00 h à retirer.",
+      "quantites": "F-05 Qté 20 rangées (D82) = C-SUSP 20 (relevé d'éclairage) ; F-10 Qté 1 lot (D87, 8 h) ; Lumen VISTF3/8 200 pi à 0,6435 $/pi = catalogue « TIGE FILETE 3/8PO » 0,6435 $/pi (prix identique) ; Lumen VISDIA3/816BX50 2 paquets de 50 à 32,26 $ (aucun ancrage au catalogue).",
+      "origine": "fusion B3-3 n° 17 + B3-1 n° 17 et 18"
+    },
+    {
+      "n": 26,
+      "groupe": "D — assemblage Dupuis qui inclut déjà le fil ou les accessoires",
+      "codes": [
+        "C-05",
+        "C-06",
+        "C-01"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "payé une fois par l'assemblage Dupuis « CONDUIT 1 04C08 » um=P (conduit 1 po + 4 conducteurs #8) : C-05 (conduit) porte le prix, C-06 (fil) est à 0 $ / 0 h — conducteurs couverts : 4 × 35 m = 140 m = C-06 (couverture complète) ; C-01 ne garde que son raccordement (voir entrée n° 12). Un seul projet au catalogue (nb 1).",
+      "quantites": "C-05 Qté 35 m = 114,83 pi (D38) ; C-06 Qté 140 m = 459,31 pi (D39, 4 × 35 m) ; assemblage « CONDUIT 1 04C08 » 6,1399 $/pi, 0,098 h/pi (nb 1, 2026-03-31, S-1693) ; B2 : C-05 chiffré, C-06 à 0.",
+      "origine": "B3-3 n° 11 (relu)"
+    },
+    {
+      "n": 27,
+      "groupe": "D — assemblage Dupuis qui inclut déjà le fil ou les accessoires",
+      "codes": [
+        "C-07",
+        "C-08",
+        "C-02",
+        "C-04"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "payé une fois par les assemblages « CONDUIT 3/4 03C12 » (3 #12) et « CONDUIT 3/4 04C12 » (4 #12). B2 a retenu 03C12 pour les 80 m : il couvre 3 × 80 = 240 m de fil sur les 275 m de C-08 ; manque 35 m, le 4e conducteur du VE-02N (4 #12). Défaut recommandé : 04C12 pour le VE-02N (35 m = 114,83 pi) et 03C12 pour les humidificateurs (45 m = 147,64 pi), C-08 reste à 0 : 959,55 $ / 25,38 h. Option 2 (ligne B2 actuelle + 4e conducteur à part) : 1 158,66 $ / 30,18 h (dont 44,74 $ / 0,57 h de fil), soit 199,11 $ et 4,80 h de plus. Prix non monotone au catalogue : 04C12 2,8997 $/pi < 03C12 4,2441 $/pi (dernière valeur de Dupuis ; non corrigé). C-02 et C-04 gardent seulement raccord LFMC et sectionneur, jamais le tirage.",
+      "quantites": "C-07 Qté 80 m = 262,46 pi (D40 : 35 m VE + 3 × 15 m HUM) ; C-08 Qté 275 m = 902,22 pi (D41 : 4 × 35 m + 3 × 3 × 15 m) ; « CONDUIT 3/4 03C12 » 4,2441 $/pi, 0,1128 h/pi (nb 20, 2026-09-25) ; « CONDUIT 3/4 04C12 » 2,8997 $/pi, 0,076 h/pi (nb 5, 2026-09-25) ; fil « 12AWG SOLIDE RW90 600V » 0,3896 $/pi, 0,005 h/pi.",
+      "origine": "B3-3 n° 12 (chiffres recalculés)"
+    },
+    {
+      "n": 28,
+      "groupe": "D — assemblage Dupuis qui inclut déjà le fil ou les accessoires",
+      "codes": [
+        "D-13",
+        "D-15",
+        "E-08",
+        "E-10"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "aucun assemblage Dupuis ne couvre un conduit 1 po avec 5 conducteurs #12 par course : « CONDUIT 1 05C12 » est absent du catalogue (« CONDUIT 1 11C12 » 6,1407 $/pi / 0,125 h/pi et « CONDUIT 1 13C12 » 7,6607 $/pi / 0,135 h/pi surdimensionnés ; « CONDUIT 3/4 05C12 » existe, 3,4197 $/pi / 0,081 h/pi, mais pour du 3/4 po). Règle : conduit « CONDUIT VIDE 1 » (D-13, E-08) + fil « 12AWG SOLIDE RW90 600V » à part (D-15, E-10, NON à 0) = 4,3787 $/pi et 0,095 h/pi par course, moins cher que 11C12 (6,1407 $/pi, 0,125 h/pi) ; ligne B2 inchangée.",
+      "quantites": "D-13 Qté 480 m = 1 574,78 pi (D57, 16 courses × 30 m) ; D-15 Qté 2 400 m (D59 = 16 × 30 × 5) ; E-08 Qté 175 m = 574,14 pi (D71, 7 × 25 m) ; E-10 Qté 875 m (D73 = 7 × 25 × 5) ; égalités vérifiées par script.",
+      "origine": "B3-3 n° 13 (correction : « CONDUIT 3/4 05C12 » existe)"
+    },
+    {
+      "n": 29,
+      "groupe": "D — assemblage Dupuis qui inclut déjà le fil ou les accessoires",
+      "codes": [
+        "F-08",
+        "F-09"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "payé une fois par l'assemblage « CONDUIT 3/4 03C12 » (3 #12) : F-09 (fil, 3 conducteurs) est à 0 $ / 0 h ; F-08 porte le prix (3 898,73 $ et 103,62 h pour 280 m). F-08 dit « EMT 3/4 + flexible » : la partie flexible (63 m) est dans les 280 m (entrée n° 34).",
+      "quantites": "F-08 Qté 280 m = 918,62 pi (D85 : 35 points × 8 m) ; F-09 Qté 840 m (D86) = 3 × 280 m ; assemblage 4,2441 $/pi, 0,1128 h/pi (nb 20) ; B2 : F-08 chiffré, F-09 à 0.",
+      "origine": "B3-3 n° 15 (relu)"
+    },
+    {
+      "n": 30,
+      "groupe": "D — assemblage Dupuis qui inclut déjà le fil ou les accessoires",
+      "codes": [
+        "D-16",
+        "E-11",
+        "D-12",
+        "E-07",
+        "IBE72171K",
+        "IBE72C1",
+        "GRE430"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "D-16 et E-11 (boîtes de tirage sous dalle, connecteurs, supports, corde) : les 46 boîtes (32 + 14 = 2 par course × 23 courses) sont chiffrées par B3-2 à 6,18 $ ; Lumen IBE72171K (46 × 6,0543 $ = 278,50 $) est la même boîte : INCLUS, non ajouté. Couvercles : Lumen IBE72C1 (46 × 3,2082 $ = 147,58 $) n'a pas d'équivalent exact ; défaut (analogue Dupuis avant Lumen) : « COUV CARRE 4PO VIERGE » 1,4985 $ / 0,05 h × 46 = 68,93 $ / 2,30 h ; Lumen non ajouté. Corde de tirage Lumen GRE430 (1 × 81,68 $) : aucun libellé catalogue, À CHIFFRER (81,68 $), D-08 et D-16 la citent sans prix. Connecteurs et supports : supposés inclus dans les assemblages « CONDUIT … » au pied — aucun libellé ne le dit ; défaut : garder D-16 et E-11 (pas de preuve de recouvrement).",
+      "quantites": "D-16 Qté 1 lot (D60, 8 h) ; E-11 Qté 1 lot (D74, 4 h) ; Lumen IBE72171K 46 = « 23 courses sous dalle × 2 », 23 = D-12 16 + E-07 7 = D-13 16 + E-08 7 ; B3-2 : D-16 32 boîtes (197,69 $, 8 h), E-11 14 boîtes (86,49 $, 3,5 h).",
+      "origine": "fusion B3-3 n° 14 + B3-1 n° 11, 12, 19"
+    },
+    {
+      "n": 31,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "CONEMT1",
+        "APPTWC100S",
+        "APPTW100S",
+        "APPTWCL100",
+        "C-05",
+        "D-13",
+        "E-08"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Conduit EMT 1 po : déjà chiffré par B2 (C-05 « CONDUIT 1 04C08 », D-13 et E-08 « CONDUIT VIDE 1 » 2,4307 $/pi) ; le prix Lumen CONEMT1 (1,8378 $/pi) égale exactement « COND TME 1PO » (1,8378 $/pi, 0,05 h/pi). Accessoires (accouplements, connecteurs, courroies) : « ACCOUPL TME 1PO VIS ZIN » 1,4693 $, « CONN TME 1PO VIS ACIER » 1,435 $ (Lumen 1,4344 $) et « COURR TME 1PO 1TROU ACIER » 0,58 $ (Lumen 0,5813 $) ; supposés inclus dans le prix d'assemblage au pied (écart « CONDUIT VIDE 1 » − « COND TME 1PO » = 0,5929 $/pi contre 0,3096 $/pi d'accessoires Lumen : la marge Dupuis les couvre). Aucune ligne Lumen ajoutée.",
+      "quantites": "Lumen CONEMT1 2 270 pi = 690 m × 3,2808 (2 263,8 pi) = C-05 35 m + D-13 480 m + E-08 175 m ; APPTWC100S 227 (1 / 10 pi) ; APPTW100S 96 (24 courses × 4) ; APPTWCL100 460 (690 m / 1,5 m) ; total accessoires 1 po 702,88 $.",
+      "origine": "B3-1 n° 1 (libellés relus dans le catalogue)"
+    },
+    {
+      "n": 32,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "CONEMT3/4",
+        "APPTWC75S",
+        "APPTW75S",
+        "APPTWCL75",
+        "C-07",
+        "D-14",
+        "E-09",
+        "F-08",
+        "G-02"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Conduit EMT 3/4 po : déjà chiffré par B2 (C-07 et F-08 « CONDUIT 3/4 03C12 », D-14, E-09 et G-02 « CONDUIT VIDE 3/4 » 1,4097 $/pi) ; Lumen CONEMT3/4 (1,0494 $/pi) est 25,6 % sous « CONDUIT VIDE 3/4 » (alternative « COND TME 3/4PO » 1,084 $/pi, −3,2 %, nb 2) ; accessoires : « ACCOUPL TME 3/4PO VIS ZI » 0,8662 $ (+7,6 %), « CONN TME 3/4PO VIS ZINC » 0,8639 $ (−5,0 %), « COURR TME 3/4PO 1TROU » 0,2627 $ (−3,8 %) ; marge Dupuis « CONDUIT VIDE 3/4 » − Lumen = 0,3603 $/pi contre 0,2229 $/pi d'accessoires Lumen. Aucune ligne Lumen ajoutée.",
+      "quantites": "Lumen CONEMT3/4 2 940 pi = 895 m (2 936 pi) = C-07 80 + D-14 330 + E-09 175 + F-08 280 + G-02 30 m ; APPTWC75S 294 (1 / 10 pi) ; APPTW75S 280 (70 courses × 4) ; APPTWCL75 600 (≈ 895 m / 1,5 m) ; total accessoires 3/4 po 655,22 $.",
+      "origine": "B3-1 n° 2"
+    },
+    {
+      "n": 33,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "CONCONSEAL3/4",
+        "THO5333",
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "MT-I",
+        "MM-I"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "INCLUS (hypothèse) : le conduit flexible étanche 3/4 po Lumen (12,4001 $/m = 3,7796 $/pi) égale « COND FLEX ETANCHE 3/4PO ACIER BOBINE STD 150M » (3,78 $/pi) et le raccord THO5333 (15,1394 $) est à −1,0 % de « CONN CONSEAL 3/4PO 90D ALLIAGE ZINC » (14,995 $) ; aucune ligne de raccordement ne les chiffre séparément, mais la ligne « MOTEUR » à 25 $ (C-01, C-02, MT-I, MM-I) équivaut à 3 pi de LFMC (3 × 3,78 = 11,34 $) + un raccord (14,995 $) = 26,34 $ : défaut recommandé, LFMC et raccords inclus dans ces 25 $, Lumen non ajouté (INCERTAIN ; écart si faux : 173,60 $ + 302,79 $ = 476,39 $).",
+      "quantites": "Lumen CONCONSEAL3/4 14 m (UTA, VE-02N, HUM × 3, CH × 2) = 45,93 pi ; THO5333 20 raccords pour 7 raccordements finaux au Détail (1 + 1 + 2 + 3) : écart de quantité à expliquer (3 par équipement ?).",
+      "origine": "B3-1 n° 3 (hypothèse des 25 $ ajoutée)"
+    },
+    {
+      "n": 34,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "THOABRH03830",
+        "IBE2210",
+        "F-08"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "À CHIFFRER sinon : aucun flexible 3/8 po ni connecteur BX 3/8 po 90° à 2 vis au catalogue (« CONN BX 3/8PO 1VIS ALLIA » 0,7806 $, droit à 1 vis, n'est pas le même type ; flexible aluminium 3/4 po : « COND FLEX 3/4PO ALUM 30M » 2,7167 $/pi). Mais les 63 m de flexible (35 points × 1,8 m) font partie des 280 m de F-08 (35 × 8 m « EMT 3/4 + flexible »). Défaut recommandé : ne pas payer la longueur deux fois — F-08 garde ses 280 m à l'assemblage 03C12 (3 898,73 $, 103,62 h), flexible et connecteurs Lumen NON ajoutés (485,98 $ + 125,93 $ = 611,91 $ en jeu). Option 2 : 63 m au prix Lumen (2,3511 $/pi) + 70 connecteurs Lumen, F-08 ramené à 217 m ; la différence se joue sur le fil des 63 m (F-09).",
+      "quantites": "Lumen THOABRH03830 63 m = 35 points × 1,8 m (7,714 $/m = 2,3511 $/pi) ; IBE2210 70 = 35 × 2 (1,799 $ pièce) ; F-08 Qté 280 m (D85).",
+      "origine": "B3-1 n° 4 (libellé BX corrigé ; défaut ajouté)"
+    },
+    {
+      "n": 35,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "CAB12TECK3C600V",
+        "IBETEK75120",
+        "C-03"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "À CHIFFRER sinon : aucune ligne TECK au catalogue (« 12AWG 3C ARME ALUM 600V 90C » 1,7433 $/pi est un autre produit). Mais C-03 dit « vérifier et réutiliser tiroirs CCM-1 et câbles existants » : un câble neuf contredit la réutilisation. Défaut recommandé : non ajouté (0 $) ; si les câbles sont neufs : 91,875 $ (10 m TECK 3C #12) + 168,90 $ (4 connecteurs Star Teck 3/4) = 260,77 $.",
+      "quantites": "Lumen CAB12TECK3C600V 10 m (9,1875 $/m) ; IBETEK75120 4 × 42,2247 $ ; C-03 Qté 2 (D36, « réutilisation selon état — à vérifier »).",
+      "origine": "B3-1 n° 5 (connecteurs Teck ajoutés au montant en jeu)"
+    },
+    {
+      "n": 36,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "CAB12/1RW90BLK300",
+        "CAB12/1RW90WHI300",
+        "CAB12/1RW90GRE300",
+        "CAB12/1RW90 ROUGE",
+        "C-08",
+        "D-15",
+        "E-10",
+        "F-09"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Conducteurs RW90 #12 : « 12AWG SOLIDE RW90 600V » um=P 0,3896 $/pi, 0,005 h/pi (nb 3, dernier 2026-09-10) est chiffré par B2 en D-15 et E-10 ; Lumen 1,3357 $/m = 0,4071 $/pi (+4,5 %), mêmes prix pour les quatre couleurs ; C-08 et F-09 sont à 0 (inclus dans les assemblages 03C12, entrées n° 27 et 29). Écartés : « 12AWG NOIR/BLANC/VERT » 1,728 $/pi (ensemble de 3 conducteurs), « 12AWG 7 BRINS RW90 » (câblé). Code Lumen « ROUGE » à confirmer.",
+      "quantites": "Lumen 1 500 + 1 200 + 900 + 790 = 4 390 m = Détail C-08 275 + D-15 2 400 + E-10 875 + F-09 840 = 4 390 m (égalité exacte).",
+      "origine": "B3-1 n° 6 (relu)"
+    },
+    {
+      "n": 37,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "CAB8RW90BLK",
+        "CAB8RW90GRE",
+        "C-06"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Conducteurs #8 de l'UTA-01 : portés par l'assemblage « CONDUIT 1 04C08 » (C-06 à 0, entrée n° 26). Risque de sous-prix noté : Lumen 4,5914 $/m = 1,3998 $/pi contre « 8AWG 7 BRINS RW90 600V » 0,9181 $/pi (+52,4 %) ; matériel du fil Lumen 140 m = 642,80 $ contre 421,70 $ au prix Dupuis (écart 221,10 $) ; la règle Dupuis gagne.",
+      "quantites": "Lumen BLK 105 m (3 phases × 35 m) + GRE 35 m (MALT) = 140 m = Détail C-06 140 m (4 × 35 m).",
+      "origine": "B3-1 n° 7"
+    },
+    {
+      "n": 38,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "CAB16/2FAFT4300",
+        "G-03",
+        "AI-08"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Câble 16/2 FT4 : G-03 est chiffré par B2 (« 16AWG 1PR PVC FT4 600V » 0,4299 $/pi, 0,004 h/pi) ; Lumen 1,344 $/m = 0,4097 $/pi (Dupuis +4,9 %) ; G-03 = AI-08 du relevé alarme incendie (vérifié, entrée n° 18). Lignes « 16AWG 3C » écartées (trois conducteurs).",
+      "quantites": "Lumen 60 m = Détail G-03 60 m = relevé alarme incendie AI-08 60 m.",
+      "origine": "B3-1 n° 8 (équivalence G-03 = AI-08 maintenant vérifiée)"
+    },
+    {
+      "n": 39,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "LEV16252W",
+        "LEV16352W",
+        "LEVT5633W",
+        "LEVGFNT1W",
+        "PC-I",
+        "PU-I",
+        "PG-I",
+        "D-01",
+        "D-07"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Le prix d'assemblage Dupuis inclut boîte, plaque et raccord (METHODE.md §2) : PC-I « PRISE DUPLEX 15A 120V » 64,81 $ / 1,175 h ; 20 A « PRISE DUPLEX 15/20A 120V » 60,19 $ / 1,225 h ; PU-I « PRISE USB 125V 15 AMP » 77,45 $ / 1,125 h ; PG-I « PRISE DUPLEX 20A 125V GFI » 65,38 $ / 1,3 h. Écarts Lumen (appareil seul) → Dupuis (assemblage) : 8,32 → 64,81 ; 8,82 → 60,19 ; 48,66 → 77,45 ; 19,95 → 65,38. Quantités : le plan gagne (entrée n° 5).",
+      "quantites": "Lumen LEV16252W 47 (postes 20, tables 10, cabines 5, écrans 3, kiosque 1, murales 8), LEV16352W 20 (postes), LEVT5633W 10 (tables, 2 par table), LEVGFNT1W 1 (fontaine) ; relevé PC-I 25, PU-I 20, PG-I 22 ; Détail D-01 18 postes, D-07 1.",
+      "origine": "B3-1 n° 9"
+    },
+    {
+      "n": 40,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "IBE52151K",
+        "IBE52C13",
+        "LEV80401NW",
+        "D-09",
+        "D-10",
+        "D-11",
+        "E-06",
+        "BJ-I"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Boîte, couvercle et plaque des appareils sont dans les assemblages PC-I, PU-I, PG-I, SD-I. Les boîtes sans assemblage (JB, boutons, barrière) sont chiffrées par B1 : BJ-I et D-09/D-10 « BOITE CARRE 2-1/8PO KO 1 » 6,1778 $ / 0,25 h (Lumen IBE52151K 5,2196 $ : Dupuis +18 %) ; D-11 et E-06 « DECLENCHEUR APPEL » 15 $ / 0,35 h. Alternatives Dupuis écartées : « BOITE CARREES 4 PO » 7,68 $ (nb 1), « COUV CARRE 4PO VIERGE » 1,4985 $, « PLAQUE 1G DEC PLAST BLANC » 0,74 $ (Lumen 1,18 $). Doubles de quantité : entrées n° 10 et 11.",
+      "quantites": "Lumen IBE52151K 66 (prises, data, JB postes, boutons, barrières), IBE52C13 66 couvercles, LEV80401NW 66 plaques ; Détail D-09 2 boîtes + raccord, D-10 1, D-11 1, E-06 3.",
+      "origine": "B3-1 n° 10"
+    },
+    {
+      "n": 41,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "IBE54151L",
+        "F-10"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "INCLUS : Lumen n'est pas ajouté (Dupuis dernier gagne sur Lumen). Boîtes octogonales de jonction d'éclairage : F-10 est chiffré par B3-2 à « BOITE OCTOG 1-1/2PO KO 1 » 7,963 $ / 0,2 h × 35 = 278,70 $ / 7 h ; Lumen IBE54151L 2,5048 $ × 35 = 87,67 $ (Dupuis 3,2 fois plus cher, écart 191,04 $ : prix d'assemblage retenu). Alternative « BOITE OCTOG 1-1/2PO KO 1/2-3/4PO » 4,0368 $ écartée (nb 1).",
+      "quantites": "Lumen IBE54151L 35 (« JB éclairage ») ; F-10 Qté 1 lot (D87, 8 h) ; F-08 « 35 points ».",
+      "origine": "B3-1 n° 13"
+    },
+    {
+      "n": 42,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "HUBHBL1372",
+        "C-04"
+      ],
+      "statut": "RÈGLE FERME",
+      "regle": "payé une fois : le sectionneur 30 A 2P 600 V des humidificateurs est chiffré par B3-2 dans C-04 (« INTERR 30A 2P 600V CEMA1 » 117,84 $ / 0,5 h) au prix exact de Lumen HUBHBL1372 (117,84 $) : une seule source reste (la ligne C-04), Lumen non ajouté. Lumen note « service intensif — à valider » : si la classe diffère, la référence est à redemander.",
+      "quantites": "Lumen HUBHBL1372 3 (Devis 20) = C-04 Qté 3 (HUM-1/2/3).",
+      "origine": "B3-1 n° 15"
+    },
+    {
+      "n": 43,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "TROCP25WB+10.1OZ",
+        "D-12",
+        "E-07"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "DOUBLE AVEC UNE LIGNE : D-12 et E-07 (« percement de dalle carotté + coupe-feu ») sont chiffrés par B2 à « PERCEMENT PLANCHER » 150 $ / 1 h sans coupe-feu. Défaut recommandé : ajouter le coupe-feu Dupuis « COUPE FEU TUBE 10.1 FL O » (13,53 $ / 0,5 h) × 23 = 311,19 $ / 11,50 h (art. 3.31) — le total 1,5 h par percement égale le 1,5 h par unité du Détail — et ne pas ajouter le tube Lumen CP25WB+ (25 × 26,22 $ = 655,50 $). Option 2 : coupe-feu supposé inclus dans les 150 $ : rien à ajouter. Ne jamais payer le tube Lumen et le tube Dupuis ensemble.",
+      "quantites": "Lumen TROCP25WB+10.1OZ 25 tubes (« 23 percements + extras ») ; Détail D-12 16 + E-07 7 = 23 percements ; catalogue « PERCEMENT PLANCHER » um=U 150 $ / 1 h (nb 8, 2026-10-07) ; « COUPE FEU TUBE 10.1 FL O » um=U 13,53 $ / 0,5 h (nb 2, 2026-03-09).",
+      "origine": "B3-1 n° 16 (défaut précisé)"
+    },
+    {
+      "n": 44,
+      "groupe": "E — prix d'assemblage Dupuis ↔ feuille Matériel Lumen (Lumen jamais ajouté en plus d'un équivalent Dupuis)",
+      "codes": [
+        "IDE30452",
+        "PC-I",
+        "PU-I",
+        "PG-I",
+        "SD-I"
+      ],
+      "statut": "À TRANCHER PAR LE DIRECTEUR B",
+      "regle": "À CHIFFRER sinon : aucune marrette au catalogue. Défaut recommandé : non ajoutée (le raccordement des fils est dans les prix d'assemblage PC-I, PU-I, PG-I, SD-I, qui incluent boîte, plaque et raccord) ; si les assemblages n'incluent pas les marrettes : 122,07 $ à ajouter.",
+      "quantites": "Lumen IDE30452 3 paquets × 40,69 $.",
+      "origine": "B3-1 n° 20"
+    }
+  ],
+  "exclusions": [
+    {
+      "code": "A-01",
+      "remplace_par": [
+        "ENC-E",
+        "L14-E",
+        "L22-E"
+      ],
+      "entree": 1,
+      "raison": "ligne Détail « Démantèlement luminaires existants RDC (E.A.E) — retirer alimentation  » Qté 39 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 1)"
+    },
+    {
+      "code": "A-02",
+      "remplace_par": [
+        "ENC-E",
+        "L14-E",
+        "L22-E"
+      ],
+      "entree": 1,
+      "raison": "ligne Détail « Démantèlement luminaires existants 2e (E.A.E) » Qté 7 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 1)"
+    },
+    {
+      "code": "A-03",
+      "remplace_par": [
+        "PC-E",
+        "PG-E",
+        "SD-E",
+        "INT-E",
+        "BJ-E",
+        "MP-E",
+        "DM-E",
+        "BC-E",
+        "DF-E",
+        "HP-E"
+      ],
+      "entree": 2,
+      "raison": "ligne Détail « Démantèlement services RDC (prises, boîtes mobilier, câbles sortant du » Qté 34 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 2)"
+    },
+    {
+      "code": "A-04",
+      "remplace_par": [
+        "PC-E",
+        "PG-E",
+        "SD-E",
+        "INT-E",
+        "BJ-E",
+        "MP-E",
+        "DM-E",
+        "BC-E",
+        "DF-E",
+        "HP-E"
+      ],
+      "entree": 2,
+      "raison": "ligne Détail « Démantèlement services 2e (E.A.E) » Qté 10 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 2)"
+    },
+    {
+      "code": "A-05",
+      "remplace_par": [
+        "PC-R",
+        "PG-R",
+        "SD-R",
+        "DF-R"
+      ],
+      "entree": 3,
+      "raison": "ligne Détail « Relocalisation équipements services (E.A.R) RDC + 2e » Qté 13 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 3)"
+    },
+    {
+      "code": "A-06",
+      "remplace_par": [
+        "ENC-R"
+      ],
+      "entree": 4,
+      "raison": "ligne Détail « Relocalisation luminaires (E.A.R) RDC + 2e (incl. 4 appareils salle 22 » Qté 7 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 4)"
+    },
+    {
+      "code": "D-01",
+      "remplace_par": [
+        "PC-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Poste de travail intégré mobilier (notes 1-2) : boîte de jonction, 1 p » Qté 18 poste : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "D-02",
+      "remplace_par": [
+        "PC-I",
+        "PU-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Table c/a boîte d'électrification (note 4) : 2 prises doubles + 2 pris » Qté 5 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "D-03",
+      "remplace_par": [
+        "PC-I",
+        "BJ-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Cabine/isoloir : prise double alimentée par JB dans mur » Qté 2 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "D-04",
+      "remplace_par": [
+        "PC-I",
+        "SD-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Écran sur mur/colonne — boîte courant + données » Qté 2 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "D-05",
+      "remplace_par": [
+        "PC-I",
+        "SD-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Kiosque TV (P-2 6) — prise + data » Qté 1 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "D-06",
+      "remplace_par": [
+        "PC-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Prise double murale/colonne NEUVE (P-3 2, 3, 10, 12, 34 x2, 35 + P-2 1 » Qté 8 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "D-07",
+      "remplace_par": [
+        "PG-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Prise DDFT 15A fontaine (P2-61) » Qté 1 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "D-08",
+      "remplace_par": [
+        "SD-I"
+      ],
+      "entree": 5,
+      "raison": "ligne Détail « Sortie data murale/colonne : boîte + conduit 3/4\" vers entreplafond +  » Qté 10 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 5)"
+    },
+    {
+      "code": "E-01",
+      "remplace_par": [
+        "PC-I",
+        "SD-I",
+        "BJ-I"
+      ],
+      "entree": 6,
+      "raison": "ligne Détail « Poste de travail aide au lecteur 227 (P-6 5 / P-4 7) : JB, 2 prises, d » Qté 2 poste : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 6)"
+    },
+    {
+      "code": "E-02",
+      "remplace_par": [
+        "MP-I"
+      ],
+      "entree": 7,
+      "raison": "ligne Détail « Monument de plancher Hubbell S1R6PTFIT (ou équiv.) : prise 20A + 2 RJ4 » Qté 2 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 7)"
+    },
+    {
+      "code": "E-04",
+      "remplace_par": [
+        "BJ-I",
+        "PC-I"
+      ],
+      "entree": 6,
+      "raison": "ligne Détail « Cabines/salles (P-4 12, 10, 10) : JB + prise » Qté 3 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 6)"
+    },
+    {
+      "code": "E-05",
+      "remplace_par": [
+        "PC-I",
+        "SD-I"
+      ],
+      "entree": 6,
+      "raison": "ligne Détail « Écran sur colonne — courant + données (P-6 12) » Qté 1 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 6)"
+    },
+    {
+      "code": "F-01",
+      "remplace_par": [
+        "LA1-I"
+      ],
+      "entree": 8,
+      "raison": "ligne Détail « Luminaire A1 — Cooper 24CGTS-NUV-MEDIUM-3500K, 2'x4' encastré, 347V, 5 » Qté 11 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 8)"
+    },
+    {
+      "code": "F-02",
+      "remplace_par": [
+        "LC1-I"
+      ],
+      "entree": 8,
+      "raison": "ligne Détail « Luminaire C1 — Axis AXIS-SL1-4-SO-500-90HE-35 (module 4'), 120-277V, s » Qté 12 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 8)"
+    },
+    {
+      "code": "F-03",
+      "remplace_par": [
+        "LC11-I"
+      ],
+      "entree": 8,
+      "raison": "ligne Détail « Luminaire C1_1 — Axis AXIS-SL1-1 (module 1') » Qté 6 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 8)"
+    },
+    {
+      "code": "F-04",
+      "remplace_par": [
+        "LC13-I"
+      ],
+      "entree": 8,
+      "raison": "ligne Détail « Luminaire C1_3 — Axis AXIS-SL1-3 (module 3') » Qté 15 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 8)"
+    },
+    {
+      "code": "F-06",
+      "remplace_par": [
+        "LE-I"
+      ],
+      "entree": 8,
+      "raison": "ligne Détail « Luminaire E — GreenCreative PXCYL-8-PM-LE05-90-35 cylindre suspendu, 5 » Qté 4 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 8)"
+    },
+    {
+      "code": "F-07",
+      "remplace_par": [
+        "Z6-I"
+      ],
+      "entree": 8,
+      "raison": "ligne Détail « Enseigne de sortie Z6 — Stanpro RMSOWH-UDC, 120-347V, 3W (pictogramme) » Qté 3 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 8)"
+    },
+    {
+      "code": "G-01",
+      "remplace_par": [
+        "DF-I"
+      ],
+      "entree": 9,
+      "raison": "ligne Détail « Détecteur de fumée adressable compatible Simplex 4007ES + base (fourni » Qté 2 u : recompte le plan ; le plan gagne ; ni p ni h (voir entrée n° 9)"
+    }
+  ],
+  "notes": [
+    "DÉCOUPAGE EN 3 SOUS-LOTS (disjoints et couvrants ; règle de partage : toute entrée de doubles comptes contenant un code Lumen va à B3-1, toute autre à B3-3). B3-1 : articles des 120 codes sur plan, conduits, fils, lots, etc. (tous les codes du lot B sauf mes 21) avec règles d'affectation écrites + doubles comptes dont un objet est une ligne de la feuille Matériel Lumen (38 lignes, 23 159,6714 $) ; B3-2 : p, h, u, art et src des 21 codes hors plan « divers » (A-07 à A-11, C-01 à C-04, D-16, E-11, F-05, F-10, G-04 à G-07, H-01 à H-04) ; B3-3 : tous les autres doubles comptes (30 entrées), les 25 exclusions Détail et la table d'exhaustivité des 76 codes Détail.",
+    "EFFORT PAR RELEVEUR (tous xhigh, modèle haiku) : B3-1 xhigh — 120 articles à garder cohérents et 38 lignes Lumen (23 159,67 $) à rapprocher du catalogue : c'est là que le double compte est le plus exposé ; B3-2 xhigh — 21 jugements contre le catalogue, une erreur de p ou de h se propage directement au total ; B3-3 xhigh — doubles comptes et exclusions : une erreur ici déplace tout le total (grille ARCHITECTURE.md §7).",
+    "SCORES DE VÉRIFICATION (phase 2). B3-1 : articles 5/5 (PC-I 3.28, PU-I 3.27, PG-I 3.30, MP-I 3.34, LOT-JCI 3.38 relus dans reference-Bordereau_de_prix.xlsx, cellules A82, A81, A84, A88 et A94) ; doubles Lumen 5/5 (entrées 1, 2, 6, 9, 11 de B3-1 : quantités recalculées sur la feuille Matériel Lumen et le Détail) ; 1 erreur de forme relevée en passant (libellé « CONN BX 3/8PO 1VIS ALLIAGE ZINC » écrit pour « CONN BX 3/8PO 1VIS ALLIA », n° 4) ⇒ revue complète faite : 120/120 articles recalculés par script depuis les règles (seul PA-E diffère de la règle provisoire : 3.37 au lieu de 3.22, retenu), 31 libellés catalogue cités relus dans le CSV (30 exacts avec p, h, um ; 1 erroné, « CONN BX 3/8PO 1VIS ALLIAGE ZINC », corrigé ici), 38/38 codes Lumen couverts une fois, sommes des classes recalculées (INCLUS 17 810,9784 $ ; À CHIFFRER 1 288,5330 $ ; DOUBLE 4 060,1600 $ ; total 23 159,6714 $). B3-2 : 5/5 sur 5 lignes tirées (A-10, C-04, D-16, F-10, G-04 : p et h relus avec ligne(desc, um)) puis 21/21 (15 lignes catalogue relues dans le CSV, 7 lignes de jugement relues dans la colonne h / unité du Détail, G-07 à 0/0), 66/66 candidats écartés cités en notes retrouvés exactement (libellé, p, h, nb_projets, date), articles 5/5 (A-10 3.23, C-03 3.26, G-04 3.37, G-06 3.38, H-01 6.1), aucune erreur. B3-3 : 3/5 sur 5 entrées tirées (n° 1, 3, 23 exactes ; n° 5 erronée : le « 47 PC 15 A hors D-01 » est la quantité Lumen LEV16252W, pas un recomptage du Détail ; n° 13 erronée : « CONDUIT 3/4 05C12 » existe au catalogue, 3,4197 $/pi, 0,081 h/pi, nb 10, 2026-10-07, alors que « CONDUIT 1 05C12 » est bien absent) ⇒ revue complète faite des 30 entrées, des 25 exclusions et des 76 lignes de la table : corrections n° 4 (« 3 luminaires RDC sans ligne RELOCALISER » non lisible, retiré), n° 7 (couples ENLEVER/INSTALLER prouvés par Marques), n° 10 et 28 (heures recalculées sur les lignes réellement retenues : MM-R = 1,0 h, C-lines), n° 13, n° 24 et 25 (X-01 et X-02 sont des codes de nomenclature : règles réécrites), n° 29 (« 21 LED 1X4 de E202 en CONSERVER » non lisible, retiré), n° 30 (le lot contient B-02 et B-03) ; la table d'exhaustivité est refaite ci-dessous sur la liste fusionnée (D-12, E-07, D-14, E-09 passent d'INDÉPENDANTE à DOUBLE : recouvrement Lumen).",
+    "FUSION DES DOUBLES COMPTES : 50 entrées (B3-1 20 + B3-3 30) ⇒ 44 entrées sans doublon ; fusions : B3-1 n° 14 + B3-3 n° 7 (monuments : entrée n° 7) ; B3-1 n° 17 + 18 + B3-3 n° 17 (suspension : n° 25) ; B3-1 n° 11 + 12 + 19 + B3-3 n° 14 (boîtes de tirage : n° 30). Chaque entrée porte « statut » (RÈGLE FERME, À TRANCHER PAR LE DIRECTEUR B avec défaut recommandé, ou PAS DE DOUBLE PROUVÉ) et « origine ». Aucun ensemble de codes n'apparaît deux fois (vérifié par script). Les quantités viennent de rapport-releve.md, de la feuille Détail (cellule citée), de la feuille Matériel Lumen ou des relevés alarme incendie / éclairage ; ce qui n'est pas lisible est dit « non lisible ».",
+    "COHÉRENCE (contrôle 3 de la phase 2) : (1) les 141 codes ont un article, chacun une fois, disjoints entre B3-1 (120) et B3-2 (21) ; (2) chaque article est recalculé par script depuis les 13 règles de regles_articles sans exception non écrite (141/141) ; (3) aucune ligne Détail exclue n'est chiffrée : les 25 exclusions ne figurent pas dans lignes ni parmi les 21 codes chiffrés ; (4) les doubles « lot ↔ ligne » mettent la ligne à 0 $ en ligne (LOT-DIST : B-01 à B-08 à p = 0 chez B2 ; LOT-ECL : LA1-I… à p = 0 ; LOT-DET : DF-I à p = 0 ; LOT-JCI : G-07 à 0/0 ; LOT-GPR : X-01 à p = 0 par la règle de l'entrée n° 19, à appliquer par le directeur) ; (5) les 21 lignes ont p et h justifiés (catalogue relu, ou jugement avec cellule) et leurs doubles comptes sont rappelés ci-dessous, ligne par ligne ; q est null partout.",
+    "DOUBLES COMPTES PAR LIGNE DE B3-2 (liste calculée : chaque code est cherché dans les 44 entrées ; les lignes gardent leur p/h, le directeur B tranche) : A-07 → n° 21 ; A-08 → n° 23 ; A-09 → n° 23 ; A-10 → n° 13 ; A-11 → n° 22 ; C-01 → n° 12, n° 26, n° 33 ; C-02 → n° 12, n° 27, n° 33 ; C-03 → n° 12, n° 33, n° 35 ; C-04 → n° 12, n° 27, n° 33, n° 42 ; D-16 → n° 30 ; E-11 → n° 30 ; F-05 → n° 25 ; F-10 → n° 25, n° 41 ; G-04 → n° 14 ; G-05 → n° 15 ; G-06 → n° 17 ; G-07 → n° 16 ; H-01 → n° 20 ; H-02 → aucun recouvrement vu ; H-03 → n° 17 ; H-04 → aucun recouvrement vu.",
+    "ARBITRAGES (en bref) : (1) le plan gagne : 25 lignes Détail exclues (liste exclusions) ; E-03 est absorbée par les couples de monuments ENLEVER/INSTALLER de Marques ; (2) un objet, une ligne : PA-I porte l'annonciateur à 8 h (G-04 à 0) ; MT-I/MM-I portent les raccordements moteurs (C-01 à C-03 à 0, C-04 réduite à son sectionneur) ; MM-R porte les 6 relocalisations du toit (A-10 réduite à 0,9 h par équipement) ; BJ-I porte les 3 boîtes (D-10 à 0, D-09 réduite à son raccord) ; (3) 0 $ en ligne + lot, temps seulement : X-01 (LOT-GPR), B-01 à B-08 (LOT-DIST), F-05 (LOT-ECL), G-07 (LOT-JCI), DF-I (LOT-DET) ; (4) Lumen jamais ajouté en plus d'un équivalent Dupuis : 26 lignes INCLUS (17 810,98 $), 4 DOUBLE (4 060,16 $), 8 À CHIFFRER (1 288,53 $) dont 2 seulement à ajouter par défaut (GRE430 81,68 $ ; couvercles 4-11/16 po à l'analogue Dupuis 68,93 $) ; (5) le plus gros risque matériel est le monument plancher (Lumen +2 422,44 $ si le 250 $ Dupuis ne couvre pas un poke-through Hubbell 6 po), suivi de LOT-ECL (voir CONTRÔLES DE LOTS).",
+    "CODES SANS CORRESPONDANCE DUPUIS DIRECTE ET LEUR REPLI : jugement (Estimation_2), h par unité du Détail, p = 0 : A-07 (6 h), G-05 (12 h), G-06 (8 h), H-01 (16 h), H-02 (20 h), H-03 (12 h), H-04 (8 h) ; G-07 : 0 $ / 0 h, couvert par LOT-JCI ; correspondance analogue ou composée du catalogue (objet voisin ou somme de libellés, citée en src) : A-08, A-09 (RELO FIXTURE 30X30, RELO ENCASTRE), A-10, A-11, C-01 à C-04, D-16, E-11, F-05, F-10, G-04. Lumen sans équivalent Dupuis (repli Lumen possible) : 8 lignes, 1 288,53 $ (table Lumen).",
+    "PORTÉE ABSENTE : PORTÉE ABSENTE DU RELEVÉ — correspondance de précaution (rapport-releve.md, lettres I=INSTALLER, E=ENLEVER, R=RELOCALISER, C=CONSERVER) : PU : portées présentes I ; codes sans portée PU-E, PU-R ; TV : portées présentes C ; codes sans portée TV-I, TV-E, TV-R ; INT : portées présentes C, E, I ; codes sans portée INT-R ; TH : portées présentes C, I ; codes sans portée TH-E, TH-R ; BJ : portées présentes C, E, I ; codes sans portée BJ-R ; MP : portées présentes C, E, I ; codes sans portée MP-R ; LC : portées présentes C, I ; codes sans portée LC-E, LC-R ; GA : portées présentes C ; codes sans portée GA-I, GA-E, GA-R ; DM : portées présentes C, E ; codes sans portée DM-I, DM-R ; BC : portées présentes C, E ; codes sans portée BC-I, BC-R ; ENC : portées présentes C, E, R ; codes sans portée ENC-I ; ENCU : portées présentes C ; codes sans portée ENCU-I, ENCU-E, ENCU-R ; L14 : portées présentes C, E ; codes sans portée L14-I, L14-R ; L22 : portées présentes C, E ; codes sans portée L22-I, L22-R ; L4 : portées présentes C ; codes sans portée L4-I, L4-E, L4-R ; LLIN : portées présentes C ; codes sans portée LLIN-I, LLIN-E, LLIN-R ; HP : portées présentes E ; codes sans portée HP-I, HP-R ; Z6 : portées présentes I ; codes sans portée Z6-E, Z6-R ; SM : portées présentes C ; codes sans portée SM-I, SM-E, SM-R ; PA : portées présentes I ; codes sans portée PA-E, PA-R ; MM : portées présentes I, R ; codes sans portée MM-E ; MT : portées présentes C, I ; codes sans portée MT-E, MT-R ; luminaires neufs LA1, LC1, LC11, LC13, LE : INSTALLER présent pour tous. ; PA-E et PA-R : portée absente (PANNEAU ANNONCIATEUR INSTALLER 1 seulement).",
+    "CONTRÔLES DE LOTS (recalculés par script). LOT-ECL : composantes 11 × 185 (2 035) + 12 × 290 (3 480) + 15 × 230 (3 450) + 6 × 110 (660) + trousses 1 500 + 3 × 475 (1 425) + 3 × 161,60 (484,80) = 13 034,80 $ contre 11 893 $ au METHODE.md §2 : écart 1 141,80 $ ; sans les trousses la somme est 11 534,80 $ et 11 893 − 11 534,80 = 358,20 $ (les trousses vaudraient 358,20 $ et non 1 500 $ — constat arithmétique, non vérifiable) ; aucun montant de lot modifié (prix confirmés par Francis le 2026-10-20) ; quantités : A1 11 = F-01 ; Axis 4' 12 = F-02 ; 3' 15 = F-04 ; 1' 6 = F-03 ; trousses 20 rangées = C-SUSP 20 = F-05 ; E 3 au plan et au lot contre 4 au relevé d'éclairage et à F-06 ; Z6 3 = F-07 ; lignes non couvertes par le lot : F-08, F-09, F-10 (sauf matériel de suspension, entrée n° 25). LOT-DIST : 3 400 + 20 × 95 (1 900) + 3 × 300 (900) = 6 200 $ = METHODE.md (écart 0) ; 1P 19 contre 20 ; 3P 3 = 3 ; B-09 non couvert. LOT-DET : 2 × 300 = 600 $ ; AI-01 2 = G-01 2 = DF-I 2. LOT-JCI : 7 400 $ sans composante chiffrée (pas de contrôle par script) ; AI-03 à AI-06 couverts, AI-07 option hors total. LOT-GPR : 1 250 $ = catalogue « SCAN DALLE BETON » 1 250 $ (même objet que X-01).",
+    "ÉCARTS DÉTAIL > PLAN (risque de sous-comptage quand le Détail est exclu au profit du plan) : A-01 + A-02 = 46 contre 40 luminaires ENLEVER (−6) ; A-03 + A-04 = 44 contre 39 services ENLEVER (−5) ; A-06 = 7 contre 4 ENC-R (−3) ; F-06 = 4 contre LE 3 (−1) ; E-01 + E-04 : 5 boîtes de jonction sans symbole au plan ; au total 15 appareils plus 5 boîtes que le plan. À l'inverse le plan donne plus que le Détail pour PU-I (20 contre 10 USB) et PG-I (22 contre 1 DDFT, avec M.A.L.T. confondues). Le plan gagne dans tous les cas (règle du chef) ; à confirmer sur les planches de contrôle par l'équipe A.",
+    "AMBIGUÏTÉS INTERNES AU RELEVÉ (ne sont pas des doubles comptes, mais expliquent des écarts) : PU et PC (reserves.md Q14) ; PG et M.A.L.T. confondues (R-007) ; 15 A et 20 A non distinguées (R-007, D-01/D-02) ; comptoir et standard non distingués (R-007) ; LE 3 contre 4 (R-003) ; portées non lisibles par feuille (R-002 ; seules des sommes cohérentes permettent de situer INSTALLER sur E104/E105).",
+    "CATALOGUE : « CONDUIT 3/4 03C12 » 4,2441 $/pi est plus cher que 04C12 (2,8997), 05C12 (3,4197), 06C12 (3,1928) et 08C12 (3,7928) : prix non monotone, conservé tel quel (dernière valeur). « CONDUIT 1 04C08 » : un seul projet (nb 1). « CONDUIT 1 05C12 » absent ; « CONDUIT 3/4 05C12 » présent.",
+    "OPT-1 à OPT-4 (Détail) : hors total, jamais chiffrés (OPT-1 câblage data Cat6 contre « réutiliser câble data existant » : contradiction à clarifier ; OPT-2 conception parasismique ; OPT-3 prime hors heures ; OPT-4 postes temporaires A-102).",
+    "TAUX ET FACTEUR (rappel, NON appliqués dans ce lot) : taux 85 $/h (METHODE.md §5 ; le 124 $/h du Sommaire n'est pas retenu), facteur de prix de vente 1,244 ; heures chargées = heures relevées arrondies vers le haut au multiple de 10. Dernière valeur de Dupuis (prix_a_utiliser / temps_a_utiliser), jamais la médiane.",
+    "DOUTES : (1) E-02/E-03/MP-I et le monument Lumen (entrée n° 7) ; (2) LOT-ECL 11 893 $ contre 13 034,80 $ de composantes ; (3) F-05 : 4 h (tige 10 pi par rangée) contre 20 h au Détail, écart 16 h ; (4) C-03 → 3.26 plutôt que 3.23 ; (5) TH-I → 3.23 plutôt que 3.35 (famille chauffage) ; (6) les attributions de portée à une feuille (E104, E105, E103) sont des déductions arithmétiques sur les totaux, pas des lectures ; (7) aucun plan n'est lu dans ce lot : les quantités viennent des fichiers du kit.",
+    "TABLE LUMEN (38 lignes ; classes : 1 INCLUS 17 810,98 $, 2 À CHIFFRER 1 288,53 $, 3 DOUBLE 4 060,16 $, total 23 159,67 $) — une note par ligne suit.",
+    "LUMEN CONEMT1 (2270 pi, 4 171,81 $) → 1 INCLUS → entrée n° 31 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CONEMT3/4 (2940 pi, 3 085,24 $) → 1 INCLUS → entrée n° 32 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN APPTWC100S (227 ch, 297,78 $) → 1 INCLUS → entrée n° 31 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN APPTWC75S (294 ch, 236,58 $) → 1 INCLUS → entrée n° 32 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN APPTW100S (96 ch, 137,70 $) → 1 INCLUS → entrée n° 31 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN APPTW75S (280 ch, 254,72 $) → 1 INCLUS → entrée n° 32 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN APPTWCL100 (460 ch, 267,40 $) → 1 INCLUS → entrée n° 31 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN APPTWCL75 (600 ch, 163,92 $) → 1 INCLUS → entrée n° 32 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CONCONSEAL3/4 (14 m, 173,60 $) → 1 INCLUS → entrée n° 33 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN THO5333 (20 ch, 302,79 $) → 1 INCLUS → entrée n° 33 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN THOABRH03830 (63 m, 485,98 $) → 2 À CHIFFRER → entrée n° 34 | défaut : non ajouté (la longueur est dans les 280 m de F-08)",
+    "LUMEN IBE2210 (70 ch, 125,93 $) → 2 À CHIFFRER → entrée n° 34 | défaut : non ajouté (inclus dans l'assemblage de F-08)",
+    "LUMEN GRE430 (1 ch, 81,68 $) → 2 À CHIFFRER → entrée n° 30 | défaut : à ajouter (aucun libellé catalogue) : 81,68 $",
+    "LUMEN IBE52151K (66 ch, 344,49 $) → 1 INCLUS → entrée n° 40 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN IBE52C13 (66 ch, 269,76 $) → 1 INCLUS → entrée n° 40 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN IBE72171K (46 ch, 278,50 $) → 1 INCLUS → entrée n° 30 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN IBE72C1 (46 ch, 147,58 $) → 2 À CHIFFRER → entrée n° 30 | défaut : remplacé par l'analogue Dupuis « COUV CARRE 4PO VIERGE » × 46 (68,93 $ / 2,30 h) ; Lumen non ajouté",
+    "LUMEN IBE54151L (35 ch, 87,67 $) → 1 INCLUS → entrée n° 41 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CAB12/1RW90BLK300 (1500 m, 2 003,55 $) → 1 INCLUS → entrée n° 36 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CAB12/1RW90WHI300 (1200 m, 1 602,84 $) → 1 INCLUS → entrée n° 36 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CAB12/1RW90GRE300 (900 m, 1 202,13 $) → 1 INCLUS → entrée n° 36 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CAB12/1RW90 ROUGE (790 m, 1 055,20 $) → 1 INCLUS → entrée n° 36 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CAB8RW90BLK (105 m, 482,10 $) → 1 INCLUS → entrée n° 37 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CAB8RW90GRE (35 m, 160,70 $) → 1 INCLUS → entrée n° 37 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN CAB12TECK3C600V (10 m, 91,88 $) → 2 À CHIFFRER → entrée n° 35 | défaut : non ajouté (câbles existants réutilisés, C-03)",
+    "LUMEN IBETEK75120 (4 ch, 168,90 $) → 2 À CHIFFRER → entrée n° 35 | défaut : non ajouté (câbles existants réutilisés, C-03)",
+    "LUMEN CAB16/2FAFT4300 (60 m, 80,64 $) → 1 INCLUS → entrée n° 38 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN LEV16252W (47 ch, 391,04 $) → 1 INCLUS → entrée n° 39 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN LEV16352W (20 ch, 176,40 $) → 1 INCLUS → entrée n° 39 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN LEVT5633W (10 ch, 486,60 $) → 1 INCLUS → entrée n° 39 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN LEVGFNT1W (1 ch, 19,95 $) → 1 INCLUS → entrée n° 39 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN LEV80401NW (66 ch, 77,88 $) → 1 INCLUS → entrée n° 40 | défaut : non ajouté (Dupuis dernier gagne)",
+    "LUMEN HUBS1R6PTDEHBLK (2 ch, 2 922,44 $) → 3 DOUBLE → entrée n° 7 | défaut : non ajouté (MP-I à 250 $) ; option Lumen +2 422,44 $",
+    "LUMEN HUBHBL1372 (3 ch, 353,52 $) → 3 DOUBLE → entrée n° 42 | défaut : non ajouté (même prix, déjà dans C-04)",
+    "LUMEN TROCP25WB+10.1OZ (25 ch, 655,50 $) → 3 DOUBLE → entrée n° 43 | défaut : non ajouté ; remplacé par l'analogue Dupuis « COUPE FEU TUBE 10.1 FL O » × 23 (311,19 $ / 11,50 h)",
+    "LUMEN VISTF3/8 (200 pi, 128,70 $) → 3 DOUBLE → entrée n° 25 | défaut : non ajouté (trousses du lot / « TIGE FILETE 3/8PO » de F-05)",
+    "LUMEN VISDIA3/816BX50 (2 pk, 64,52 $) → 2 À CHIFFRER → entrée n° 25 | défaut : non ajouté (trousses de suspension de LOT-ECL)",
+    "LUMEN IDE30452 (3 pk, 122,07 $) → 2 À CHIFFRER → entrée n° 44 | défaut : non ajouté (raccord inclus dans les assemblages)",
+    "TABLE D'EXHAUSTIVITÉ DE LA FEUILLE DÉTAIL (76 codes A-01 à H-04 : A 11, B 9, C 8, D 16, E 11, F 10, G 7, H 4) — une note par code suit ; puis OPT-1 à OPT-4 hors total.",
+    "DÉTAIL A-01 → EXCLUE (remplacée par ENC-E, L14-E, L22-E) | entrée n° 1",
+    "DÉTAIL A-02 → EXCLUE (remplacée par ENC-E, L14-E, L22-E) | entrée n° 1",
+    "DÉTAIL A-03 → EXCLUE (remplacée par PC-E, PG-E, SD-E, INT-E, BJ-E, MP-E, DM-E, BC-E, DF-E, HP-E) | entrée n° 2",
+    "DÉTAIL A-04 → EXCLUE (remplacée par PC-E, PG-E, SD-E, INT-E, BJ-E, MP-E, DM-E, BC-E, DF-E, HP-E) | entrée n° 2",
+    "DÉTAIL A-05 → EXCLUE (remplacée par PC-R, PG-R, SD-R, DF-R) | entrée n° 3",
+    "DÉTAIL A-06 → EXCLUE (remplacée par ENC-R) | entrée n° 4",
+    "DÉTAIL A-07 → DOUBLE (entrée n° 21)",
+    "DÉTAIL A-08 → DOUBLE (entrée n° 23)",
+    "DÉTAIL A-09 → DOUBLE (entrée n° 23)",
+    "DÉTAIL A-10 → DOUBLE (entrée n° 13)",
+    "DÉTAIL A-11 → DOUBLE (entrée n° 22)",
+    "DÉTAIL B-01 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-02 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-03 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-04 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-05 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-06 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-07 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-08 → DOUBLE (entrée n° 24)",
+    "DÉTAIL B-09 → DOUBLE (entrée n° 22)",
+    "DÉTAIL C-01 → DOUBLE (entrée n° 12, 26, 33)",
+    "DÉTAIL C-02 → DOUBLE (entrée n° 12, 27, 33)",
+    "DÉTAIL C-03 → DOUBLE (entrée n° 12, 33, 35)",
+    "DÉTAIL C-04 → DOUBLE (entrée n° 12, 27, 33, 42)",
+    "DÉTAIL C-05 → DOUBLE (entrée n° 26, 31)",
+    "DÉTAIL C-06 → DOUBLE (entrée n° 26, 37)",
+    "DÉTAIL C-07 → DOUBLE (entrée n° 27, 32)",
+    "DÉTAIL C-08 → DOUBLE (entrée n° 27, 36)",
+    "DÉTAIL D-01 → EXCLUE (remplacée par PC-I, SD-I, BJ-I) | entrée n° 5, 39",
+    "DÉTAIL D-02 → EXCLUE (remplacée par PC-I, PU-I) | entrée n° 5",
+    "DÉTAIL D-03 → EXCLUE (remplacée par PC-I, BJ-I) | entrée n° 5",
+    "DÉTAIL D-04 → EXCLUE (remplacée par PC-I, SD-I) | entrée n° 5",
+    "DÉTAIL D-05 → EXCLUE (remplacée par PC-I, SD-I) | entrée n° 5",
+    "DÉTAIL D-06 → EXCLUE (remplacée par PC-I) | entrée n° 5",
+    "DÉTAIL D-07 → EXCLUE (remplacée par PG-I) | entrée n° 5, 39",
+    "DÉTAIL D-08 → EXCLUE (remplacée par SD-I) | entrée n° 5",
+    "DÉTAIL D-09 → DOUBLE (entrée n° 10, 40)",
+    "DÉTAIL D-10 → DOUBLE (entrée n° 10, 40)",
+    "DÉTAIL D-11 → DOUBLE (entrée n° 11, 40)",
+    "DÉTAIL D-12 → DOUBLE (entrée n° 30, 43)",
+    "DÉTAIL D-13 → DOUBLE (entrée n° 28, 31)",
+    "DÉTAIL D-14 → DOUBLE (entrée n° 32)",
+    "DÉTAIL D-15 → DOUBLE (entrée n° 28, 36)",
+    "DÉTAIL D-16 → DOUBLE (entrée n° 30)",
+    "DÉTAIL E-01 → EXCLUE (remplacée par PC-I, SD-I, BJ-I) | entrée n° 6",
+    "DÉTAIL E-02 → EXCLUE (remplacée par MP-I) | entrée n° 7",
+    "DÉTAIL E-03 → DOUBLE (entrée n° 7)",
+    "DÉTAIL E-04 → EXCLUE (remplacée par BJ-I, PC-I) | entrée n° 6",
+    "DÉTAIL E-05 → EXCLUE (remplacée par PC-I, SD-I) | entrée n° 6",
+    "DÉTAIL E-06 → DOUBLE (entrée n° 11, 40)",
+    "DÉTAIL E-07 → DOUBLE (entrée n° 30, 43)",
+    "DÉTAIL E-08 → DOUBLE (entrée n° 28, 31)",
+    "DÉTAIL E-09 → DOUBLE (entrée n° 32)",
+    "DÉTAIL E-10 → DOUBLE (entrée n° 28, 36)",
+    "DÉTAIL E-11 → DOUBLE (entrée n° 30)",
+    "DÉTAIL F-01 → EXCLUE (remplacée par LA1-I) | entrée n° 8",
+    "DÉTAIL F-02 → EXCLUE (remplacée par LC1-I) | entrée n° 8",
+    "DÉTAIL F-03 → EXCLUE (remplacée par LC11-I) | entrée n° 8",
+    "DÉTAIL F-04 → EXCLUE (remplacée par LC13-I) | entrée n° 8",
+    "DÉTAIL F-05 → DOUBLE (entrée n° 25)",
+    "DÉTAIL F-06 → EXCLUE (remplacée par LE-I) | entrée n° 8",
+    "DÉTAIL F-07 → EXCLUE (remplacée par Z6-I) | entrée n° 8",
+    "DÉTAIL F-08 → DOUBLE (entrée n° 29, 32, 34)",
+    "DÉTAIL F-09 → DOUBLE (entrée n° 29, 36)",
+    "DÉTAIL F-10 → DOUBLE (entrée n° 25, 41)",
+    "DÉTAIL G-01 → EXCLUE (remplacée par DF-I) | entrée n° 9",
+    "DÉTAIL G-02 → DOUBLE (entrée n° 18, 32)",
+    "DÉTAIL G-03 → DOUBLE (entrée n° 18, 38)",
+    "DÉTAIL G-04 → DOUBLE (entrée n° 14)",
+    "DÉTAIL G-05 → DOUBLE (entrée n° 15)",
+    "DÉTAIL G-06 → DOUBLE (entrée n° 17)",
+    "DÉTAIL G-07 → DOUBLE (entrée n° 16)",
+    "DÉTAIL H-01 → DOUBLE (entrée n° 20)",
+    "DÉTAIL H-02 → INDÉPENDANTE (temps pur (coordination multi-corps, dessins d'atelier, plans tel que construit) : aucune ligne plan, aucun lot, aucune ligne Lumen ni assemblage ne le recouvre)",
+    "DÉTAIL H-03 → DOUBLE (entrée n° 17)",
+    "DÉTAIL H-04 → INDÉPENDANTE (temps pur (nettoyage, gestion des déchets) : aucune ligne plan, aucun lot, aucune ligne Lumen ni assemblage ne le recouvre)",
+    "OPT-1…OPT-4 : hors total, jamais chiffrés.",
+    "B3-2 A-07 — A-07 — N inconnu (rapport-releve.md : INT SIMPLE = INSTALLER 5, CONSERVER 4, ENLEVER 1, aucune relocalisation) : u=LOT, p=0, h=6 par jugement (Détail « Hypothèse 6 h »). Contrôle non utilisé : « RELO INT » (p=0.0, h=1.5, nb_projets=1, 2026-05-05, s-1753 ecole asomption) (1,5 h/interrupteur). Écarté : « INT MAITRE » (p=85.0, h=0.0, nb_projets=1, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) (installation d'un interrupteur maître, h nul). Double compte : A-07 ↔ INT-R / INT-E : aucune relocalisation d'interrupteur au relevé, A-07 additionnelle (note spécifique 1 E-201).",
+    "B3-2 A-08 — A-08 — retenu « RELO FIXTURE 30X30 » (p=0.0, h=1.0, nb_projets=1, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) : dépose + repose en un seul temps (R2), 21 × 1,0 h. Ex æquo (mêmes p et h, nb 1, même date) : « RELO FIXTURE TYPE S7 » (p=0.0, h=1.0, nb_projets=1, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture), « RELO FIXT TYPE E2 » (p=0.0, h=1.0, nb_projets=1, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) ; le total n'en dépend pas. Composition écartée : « ENLEVER FIXTURE 1X4 » (p=0.0, h=0.35, nb_projets=1, 2026-08-26, s-1835 esbg  rehabilitation inbterieur) + « FIXTURE TYPE A » (p=0.0, h=0.75, nb_projets=7, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) (pose au repère luminaire 0,75 h) = 1,10 h/u, soit 23,1 h contre 21 h. Détail 0,6 h/u (12,6 h). Aucun RELO 1X4 au catalogue (recherches 1X4, LINEAIRE, FIXT). Les « FIXTURE TYPE x » sont des lettres d'autres dossiers. Double compte : A-08 ↔ LLIN-*, L14-* : 21 LED 1X4 sur E202 (releve.xlsx Par feuille), LED 1X4 total = CONSERVER 27, ENLEVER 6 ; additionnelle sauf luminaires marqués ENLEVER/RELOCALISER au plan (le plan gagne).",
+    "B3-2 A-09 — A-09 — retenu « RELO ENCASTRE » (p=0.0, h=1.0, nb_projets=1, 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) : seule ligne RELO ENCASTRE (même objet, même action), 24 × 1,0 h. Écarté : « ENLEVER FIXTURE ENCAST » (p=0.0, h=0.35, nb_projets=1, 2026-08-26, s-1835 esbg  rehabilitation inbterieur) (dépose seule). Composition de rechange « FIXTURE ENCASTRE ENLEV » (p=0.0, h=0.25, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) + « FIXTURE ENCASTRE » (p=0.0, h=0.75, nb_projets=1, 2026-02-02, S-1645 ANNEXE-BOURASSA) = 1,00 h/u (même total). Détail 0,5 h/u (12 h). Double compte : A-09 ↔ ENC-E, ENC-R : 35 ENCASTRE sur E202, dont 24 visés par A-09 (±2) ; même réserve, le plan gagne.",
+    "B3-2 A-10 — A-10 — composition par équipement (6 E.A.R, E-103) : « DEBRANCHEMENT APPAREILAGE MECANIQUE » (p=0.0, h=0.4, nb_projets=1, 2026-09-23, s-1866 gar mun st amable) (débrancher) + « SECTIONNEUR ENL » (p=0.0, h=0.5, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) (entreposer les sectionneurs) + « MOTEUR » (p=25.0, h=0.75, nb_projets=2, 2026-02-19, S-1676 ARC'TERTX) (rebrancher : repère moteur 0,75 h, nb_projets le plus élevé à 0,75 h ; p 25 à valider, classe variable) = 1,65 h/u et p 25. Non couvert : isoler/couvrir câbles (recherches ISOL, COUV, PROTEC, ENVELOP, BOUCHON : rien d'analogue ; les « BOUCHON TYPEII » sont des bouchons de conduit). Écart Détail 4 h/u (24 h) contre 9,9 h, à trancher. Écartés : « MOTEUR 40HP » (p=0.0, h=0.75, nb_projets=1, 2026-04-02, S-1692_École Primaire St-Marc Candiac) et « MOTEUR PMP-003 7.5HP » (p=0.0, h=0.75, nb_projets=1, 2026-03-31, S-1693_Ecole Primaire Beloeil) (repère 0,75 h, objet différent) ; « ENLEVER MOTEUR 1/2 HP 6 » (p=0.0, h=0.25, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) ; « SECTIONNEUR 30A 600V 3P » (p=0.0, h=2.5, nb_projets=2, 2026-09-25, S-1857 - Maison St-Michel) (pose neuve, pas une dépose). Double compte : A-10 ↔ MM-R : 6 moteurs monophasés RELOCALISER sur E103 = les « 6 E.A.R » ; le bordereau a aussi 3.15 « Retrait et réinstallation des équipements au toit » (hors ventilation DR).",
+    "B3-2 A-11 — A-11 — composition au lot (coefficient 1) : « IDENTIFIER LES CIRCUITS EXISTANTS A » (p=0.0, h=3.0, nb_projets=1, 2026-09-23, s-1866 gar mun st amable) + « NOTE 5 RETRACER DERIVA » (p=0.0, h=6.0, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) + « NOTE 6 RETRACER FILAGE » (p=0.0, h=6.0, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) = 15 h (Détail 16 h). Écarté : « DEMOLITION ALIMENTATION TEMPORAIRE CONSOMATEURS EXISTANTS » (p=0.0, h=2.0, nb_projets=1, 2026-09-23, s-1866 gar mun st amable) (forfait : libellé de démolition, pas le maintien de service du Détail). Non couverts : maintien de la continuité de service et réalimentation des circuits libérés (1 h d'écart, à trancher). Hypothèse : les numéros NOTE 5/NOTE 6 viennent d'autres dossiers (S-1665, S-1866) ; contenu des notes 5-6 de S-1902 non lisible (plans absents). Double compte : A-11 ↔ B-09 (identification des circuits / fiches de panneaux).",
+    "B3-2 C-01 — C-01 — retenu « MOTEUR UAF-1 » (p=25.0, h=1.0, nb_projets=1, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) : repère « UTA 1 h » (METHODE.md §3), p 25 ; « UNITER UC AU TOIT » (p=25.0, h=1.0, nb_projets=1, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) donne les mêmes chiffres. Écarté : « DEMARREUR MOTEUR UAF » (p=115.0, h=1.0, nb_projets=1, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) (démarreur non décrit au Détail, qui parle d'un sectionneur d'usine ; +90 $ de matériel). Écart Détail 16 h/u contre 1 h. Conduit EMT 1\" et fil (C-05/C-06) non repayés ; pénétration toit non chiffrée séparément. Double compte : C-01 ↔ MT-I (UTA-01) : même équipement chiffré par code plan et par ligne Détail, un objet n'est payé qu'une fois ; C-01 décrit son conduit et son fil déjà en C-05/C-06.",
+    "B3-2 C-02 — C-02 — retenu « MOTEUR » (p=25.0, h=0.75, nb_projets=2, 2026-02-19, S-1676 ARC'TERTX) : repère moteur 0,75 h (METHODE.md §3), nb_projets le plus élevé ; p 25. Écartés : « MOTEUR VE-2 120V » (p=25.0, h=1.0, nb_projets=1, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) (120 V alors que le VE-02N est en 575 V/3Ø) ; « MOTEUR 40HP » (p=0.0, h=0.75, nb_projets=1, 2026-04-02, S-1692_École Primaire St-Marc Candiac) et « MOTEUR PMP-003 7.5HP » (p=0.0, h=0.75, nb_projets=1, 2026-03-31, S-1693_Ecole Primaire Beloeil) (gabarit différent) ; « VARIATEUR VITESSE » (p=0.0, h=1.0, nb_projets=3, 2026-04-02, S-1692_École Primaire St-Marc Candiac) (le VFD fait partie de l'équipement, « c/a VFD »). Écart Détail 10 h/u contre 0,75 h. Conduit 3/4 et fil (C-07/C-08) non repayés. Double compte : C-02 ↔ MT-I (VE-02N) : même équipement chiffré deux fois.",
+    "B3-2 C-03 — C-03 — retenu « CHAUDIERE 200A 600V » (p=0.0, h=2.5, nb_projets=1, 2026-03-31, S-1693_Ecole Primaire Beloeil) : seul libellé qui nomme une chaudière 600 V (même objet que la chaudière De Dietrich 600V/3Ø du Détail), p 0, h 2,5 par chaudière. CONTRADICTION POSSIBLE : le 200 A ne correspond pas au tiroir F15A existant à réutiliser (le chef tranche). Alternatives à même objet sans tension : « CHAUDIERE ELECTRQUE 1 » (p=0.0, h=1.5, nb_projets=1, 2026-09-25, S-1857 - Maison St-Michel) et « CHAUDIERE ELECTRQUE 1! » (p=0.0, h=1.5, nb_projets=1, 2026-09-25, S-1857 - Maison St-Michel) (h 1,5/u, 3 h au total) ; « CHAUDIERE ELECTRIQUE 1 » (p=15.0, h=0.5, nb_projets=1, 2026-08-19, S-1797 - École Chambly) et « CHAUDIERE » (p=15.0, h=0.5, nb_projets=1, 2026-02-02, S-1645 ANNEXE-BOURASSA) (p 15, h 0,5). Écart Détail 6 h/u. Double compte : C-03 ↔ MT-I (CH-01/CH-02) : raccordement chiffré deux fois ; C-03 ↔ Lumen CAB12TECK3C600V (10 m) et IBETEK75120 (4) : câbles existants réutilisés, ne pas ajouter. Article 3.26 (R5) ; 3.23 écarté.",
+    "B3-2 C-04 — C-04 — composition par humidificateur (3 u) : « HUMIDIFICATEUR » (p=15.0, h=0.35, nb_projets=1, 2026-07-13, s-1808 cpe les copain d'ABORD) + sectionneur « INTERR 30A 2P 600V CEMA1 » (p=117.84, h=0.5, nb_projets=1, 2026-09-23, s-1866 gar mun st amable) = p 132,84, h 0,85 par u. Sectionneur : seul des trois 30 A à matériel chiffré (les deux autres à p 0 alors qu'un sectionneur s'achète), même date que « SECTIONNEURS SANS FUSIBLES 30A » (p=0.0, h=2.0, nb_projets=1, 2026-09-23, s-1866 gar mun st amable), prix identique à Lumen HUBHBL1372 (117,84 $). Alternative : « SECTIONNEUR 30A 240V 1P » (p=0.0, h=1.2, nb_projets=1, 2026-04-02, S-1692_École Primaire St-Marc Candiac) (1P 240 V, p 0, h 1,2). CONTRADICTION POSSIBLE : Détail = 1 Ø sans fusible 30 A ; retenu = 2P 600 V (Lumen « service intensif — à valider »). Écartés : « HUMIDIFICATEUR HU-01 21I » (p=15.0, h=0.35, nb_projets=1, 2026-08-19, S-1797 - École Chambly) (mêmes p et h, date plus récente : nom générique retenu, chiffres identiques) ; « MOTEUR HUM » (p=15.0, h=0.35, nb_projets=1, 2026-07-14, s-1811 cdc construction de 6 batiment) ; « HUM-01 » (p=25.0, h=1.0, nb_projets=1, 2026-04-02, S-1692_École Primaire St-Marc Candiac). Écart Détail 4 h/u. Double compte : C-04 ↔ MM-I (HUM-1/2/3) ; C-04 ↔ Lumen HUBHBL1372 : même sectionneur, ne pas ajouter Lumen.",
+    "B3-2 D-16 — D-16 — boîtes de tirage : « BOITE CARRE 2-1/8PO KO 1 » (p=6.1778, h=0.25, nb_projets=22, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) ; N = 32 lisible (16 courses D-13 × 2 ; Lumen IBE72171K « Tirage : 23 courses sous dalle x 2 » = 46, dont 23 = 16 D-13 + 7 E-08). p = 197,6896, h = 8,0. Contrôle Lumen IBE72171K « Boîte carrée 4-11/16 PO » 6,0543 $ : même classe de prix ; CONTRADICTION POSSIBLE 2-1/8 PO contre 4-11/16 PO. Écartés : « BOITE D 8X8X4PO CEMA1 » (p=19.8, h=0.6, nb_projets=20, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) (3 fois le prix Lumen) ; « BOITE D 12X12X4PO CEMA1 » (p=27.42, h=1.0, nb_projets=14, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) ; « COUV CARRE 4PO VIERGE » (p=1.4985, h=0.05, nb_projets=23, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) (couvercles non nommés au Détail, non chiffrés : 32 couvercles = 47,95 $ / 1,6 h si retenus, à trancher) ; « QUINCAILLERIE » (p=2250.0, h=0.0, nb_projets=12, 2026-07-14, s-1811 cdc construction de 6 batiment) (forfait de projet, un par projet). Connecteurs, supports, corde : pas de N lisible ; connecteurs et supports inclus dans les assemblages « CONDUIT … nnCcc » au pied (ex. « CONDUIT 3/4 03C12 » (p=4.2441, h=0.1128, nb_projets=20, 2026-09-25, S-1857 - Maison St-Michel), à vérifier en B3-1/B3-3) ; corde Lumen GRE430 (81,68 $) aussi nommée en D-08, non chiffrée ici. Double compte : D-16 ↔ assemblages CONDUIT au pied ; D-16 ↔ Lumen IBE72171K (46 boîtes, 32 ici, 14 en E-11), IBE72C1, GRE430.",
+    "B3-2 E-11 — E-11 — même méthode que D-16 : « BOITE CARRE 2-1/8PO KO 1 » (p=6.1778, h=0.25, nb_projets=22, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) ; N = 14 (7 courses E-08 × 2). p = 86,4892, h = 3,5 (Détail 4 h). Mêmes écartés et contrôles que D-16 (« BOITE D 8X8X4PO CEMA1 » (p=19.8, h=0.6, nb_projets=20, 2026-10-07, s-1881 hotel candlewood st-hyacinthe), « COUV CARRE 4PO VIERGE » (p=1.4985, h=0.05, nb_projets=23, 2026-10-07, s-1881 hotel candlewood st-hyacinthe), « QUINCAILLERIE » (p=2250.0, h=0.0, nb_projets=12, 2026-07-14, s-1811 cdc construction de 6 batiment)). Double compte : E-11 ↔ E-08 à E-10 (conduits de l'étage) ; E-11 ↔ Lumen IBE72171K (14 des 46), IBE72C1, GRE430 ; assemblages CONDUIT au pied.",
+    "B3-2 F-05 — F-05 — retenu « TIGE FILETE 3/8PO » (p=0.6435, h=0.02, nb_projets=4, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) : 10 pi par rangée × 0,02 h/pi = 0,2 h. La longueur EST lisible (Lumen VISTF3/8 Qté 200 pi ÷ 20 rangées), contrairement à la piste du chef. p = 0 forcé : trousses dans LOT-ECL ; le Lumen VISTF3/8 (même produit, 0,6435 $/pi) n'est pas ajouté. Jugement 1 h écarté (analogue catalogue existant). Les 0,75 h des luminaires neufs couvrent leur pose, pas la suspension. Non chiffré : alimentation de rangée et joints (aucun temps catalogue) : écart 0,8 h/rangée, à trancher. Double compte : F-05 ↔ LOT-ECL (1 500 $), Lumen VISTF3/8 et VISDIA3/816BX50 (non ajoutés), temps des luminaires LA1-I à LE-I (0,75 h).",
+    "B3-2 F-10 — F-10 — « BOITE OCTOG 1-1/2PO KO 1 » (p=7.963, h=0.2, nb_projets=21, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) (nb le plus élevé parmi les octogonales 1-1/2 PO) ; N = 35 points d'éclairage lisible (Détail F-08 « Hyp. 8 m x 35 points » ; Lumen IBE54151L « JB éclairage » 35) : p = 278,705, h = 7,0 (Détail 8 h). Écartés : « BOITE OCTOG 1-1/2PO KO 1/2PO » (p=7.9631, h=0.2, nb_projets=1, 2026-02-02, S-1645 ANNEXE-BOURASSA) ; « BOITE OCTOG 1-1/2PO KO 1/2-3/4PO » (p=4.0368, h=0.15, nb_projets=1, 2026-09-23, s-1866 gar mun st amable) ; « BOITE OCTOG CPV 4X1-1/2F » (p=18.2076, h=0.4, nb_projets=1, 2026-03-30, s-1715 sprotive parc lionel groulx). Lumen IBE54151L 2,5048 $ : Dupuis trois fois plus cher (prix d'assemblage retenu, à signaler). Chaînes de retenue : aucun libellé (CHAINE, RETENUE, SUSP) : non chiffrées. « QUINCAILLERIE » (p=2250.0, h=0.0, nb_projets=12, 2026-07-14, s-1811 cdc construction de 6 batiment) écarté (forfait de projet, un par projet). CONTRADICTION POSSIBLE : R4 (« toute boîte de jonction ») contre R7 (3.35) : R7 appliquée, règle spécifique. Double compte : F-10 ↔ LOT-ECL (trousses), Lumen IBE54151L, F-08, temps des luminaires neufs.",
+    "B3-2 G-04 — G-04 — retenu « RELO PANN ANNOCIATEUR » (p=0.0, h=8.0, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) : même objet et même action (RELO), repère « annonciateur relocalisé 8 h », nb_projets 2 ; p 0, h 8 (Détail 6 h). Écartés : « RELO PANNEAU ANNONCIA » (p=550.0, h=8.0, nb_projets=1, 2026-06-26, S-1795 Lanthier Arthesa) (h 8 mais p 550 d'un autre projet, nb 1) ; « PANNEAU ANNONCIATEUR » (p=0.0, h=8.0, nb_projets=4, 2026-08-19, S-1797 - École Chambly) (installation neuve, pas une relocalisation) ; « RELO PANN ANNONCIATEU » (p=0.0, h=0.0, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) (temps 0 pour un travail réel). Double compte : G-04 ↔ PA-I / PA-R / PA-E (même annonciateur ; le relevé n'a que PANNEAU ANNONCIATEUR INSTALLER 1) ; AI-05 (reprogrammation) est dans LOT-JCI.",
+    "B3-2 G-05 — G-05 — N inconnu (10 dispositifs AI existants conservés, rapport-releve.md, mais pas lesquels sont dans les zones touchées) : u=LOT, p=0, h=12 par jugement (Détail « Allocation — à valider »). Candidats au temps par dispositif, non utilisés : « RELO DETECTEUR A FUME » (p=0.0, h=0.75, nb_projets=3, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) et « RELO STATION MANUEL » (p=0.0, h=0.75, nb_projets=3, 2026-10-07, s-1881 hotel candlewood st-hyacinthe) (0,75 h). Contrôle non utilisé : 0,75 × 10 = 7,5 h. Écarté : « RELO DETECTEUR FUME » (p=0.0, h=1.0, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) (h 1,0). Double compte : G-05 ↔ DF-R (1 détecteur relocalisé) / SM-R et AI-07 (option de vérification).",
+    "B3-2 G-06 — G-06 — « ALARME INCENDIE VERIFIC » (p=0.0, h=0.0, nb_projets=1, 2026-09-10, s-1854 sollio st hubert lanthier) : temps 0 pour un travail réel, écarté. Retenu : jugement Détail G-06 h/unité 8 (u=LOT, p=0). Autres écartés (non analogues) : « PARASURTENSEUR ULC TY » (p=0.0, h=4.0, nb_projets=1, 2026-04-02, S-1692_École Primaire St-Marc Candiac) ; « PROGRAMATION ECLAIRAGE » (p=0.0, h=4.0, nb_projets=1, 2026-09-23, s-1866 gar mun st amable). Double compte : G-06 ↔ H-03 (essais, mise en service) ; G-06 ↔ LOT-JCI (AI-06 : vérification partielle CAN/ULC-S537 par JCI).",
+    "B3-2 G-07 — G-07 — décision du chef : u=LOT, p=0, h=0, couvert par LOT-JCI 7 400 $. Entrées du relevé Alarme incendie couvertes : AI-03 (bypass), AI-04 (programmation 4007ES), AI-05 (reprogrammation annonciateur), AI-06 (vérification partielle et certificat). Double compte : G-07 ↔ LOT-JCI : même objet, p = 0 et h = 0.",
+    "B3-2 H-01 — H-01 — décision du chef : u=LOT, p=0, h=16 par jugement (Détail H-01 h/unité 16). Recherches MOBIL, OUTIL, PLATEF, ECHAF, ELEVAT, GRUE : aucun libellé. Écartés : « NACELLE » (p=1250.0, h=16.0, nb_projets=2, 2026-07-14, s-1811 cdc construction de 6 batiment) (code X-02 du chef B2) ; « CONTENEUR 20PI » (p=3500.0, h=0.0, nb_projets=1, 2026-05-18, s-1763 temporaire chemin du golf qmd) ; « TEMPORAIRE » (p=10000.0, h=40.0, nb_projets=2, 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) (forfait d'installations temporaires d'un autre projet). Double compte : H-01 ↔ X-02 (nacelle 1 250 $ / 16 h), à confirmer.",
+    "B3-2 H-02 — H-02 — décision du chef : u=LOT, p=0, h=20 par jugement (Détail H-02 h/unité 20). Recherches COORD, DESSIN, ATELIER, ETUDE : aucun libellé de coordination multi-corps ni de dessins d'atelier. Écartés : « ETUDE COORDINATION » (p=4675.0, h=0.0, nb_projets=1, 2026-04-02, S-1692_École Primaire St-Marc Candiac) (étude scellée de protections, h 0) ; « PRIX DE LOT ETUDE » (p=1176.47, h=0.0, nb_projets=1, 2026-07-13, s-1808 cpe les copain d'ABORD) (forfait d'étude, h 0). Double compte : aucun recouvrement vu (à confirmer).",
+    "B3-2 H-03 — H-03 — décision du chef : u=LOT, p=0, h=12 par jugement (Détail H-03 h/unité 12). Recherches ESSAI, MISE EN SERVICE, VERIF, TEST, PROGRAM : écartés « ALARME INCENDIE VERIFIC » (p=0.0, h=0.0, nb_projets=1, 2026-09-10, s-1854 sollio st hubert lanthier) (h 0), « RECEPT DDFT AUTO TEST 20 A125V INVIOL BLANC » (p=22.54, h=0.25, nb_projets=1, 2026-09-23, s-1866 gar mun st amable) (test d'un appareil, pas la mise en service), « PROGRAMATION ECLAIRAGE » (p=0.0, h=4.0, nb_projets=1, 2026-09-23, s-1866 gar mun st amable). Double compte : H-03 ↔ G-06 (vérification ULC-S537).",
+    "B3-2 H-04 — H-04 — décision du chef : u=LOT, p=0, h=8 par jugement (Détail H-04 h/unité 8). Recherches NETTOY, DECHET, DEBRIS, MENAGE, BENNE, CLEAN : aucun libellé. Double compte : aucun recouvrement vu (à confirmer)."
+  ]
+}

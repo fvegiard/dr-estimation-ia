@@ -1,0 +1,554 @@
+{
+ "dossier": "S-1902",
+ "run": "swarm-2",
+ "totaux": {
+  "materiel": {
+   "ref": 66649.07,
+   "run": 58511.22,
+   "delta": -8137.85,
+   "pct": -12.21
+  },
+  "heures_relevees": {
+   "ref": 1045.845,
+   "run": 960.36,
+   "delta": -85.49,
+   "pct": -8.17
+  },
+  "heures_chargees": {
+   "ref": 1050,
+   "run": 970,
+   "delta": -80,
+   "pct": -7.62
+  },
+  "total_acceo": {
+   "ref": 155899.07,
+   "run": 140961.22,
+   "delta": -14937.85,
+   "pct": -9.58
+  },
+  "prix_vente": {
+   "ref": 194000,
+   "run": 175000,
+   "delta": -19000,
+   "pct": -9.79
+  }
+ },
+ "par_article": {
+  "3.22": {
+   "ref_h": 108.35,
+   "run_h": 114.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": 443.66
+  },
+  "3.23": {
+   "ref_h": 53.66,
+   "run_h": 17.45,
+   "ref_mat": 2799.08,
+   "run_mat": 748.52,
+   "delta_total": -5146.39
+  },
+  "3.24": {
+   "ref_h": 27.5,
+   "run_h": 35.0,
+   "ref_mat": 6335.0,
+   "run_mat": 3400.0,
+   "delta_total": -2306.79
+  },
+  "3.25": {
+   "ref_h": 7.6,
+   "run_h": 6.8,
+   "ref_mat": 0.0,
+   "run_mat": 2800.0,
+   "delta_total": 2729.43
+  },
+  "3.26": {
+   "ref_h": 4.0,
+   "run_h": null,
+   "ref_mat": 30.0,
+   "run_mat": null,
+   "delta_total": -371.35
+  },
+  "3.27": {
+   "ref_h": 34.25,
+   "run_h": 22.5,
+   "ref_mat": 2197.1,
+   "run_mat": 1549.0,
+   "delta_total": -1658.42
+  },
+  "3.28": {
+   "ref_h": 92.0,
+   "run_h": 29.375,
+   "ref_mat": 4259.79,
+   "run_mat": 1620.25,
+   "delta_total": -7993.31
+  },
+  "3.29": {
+   "ref_h": 25.85,
+   "run_h": null,
+   "ref_mat": 1689.82,
+   "run_mat": null,
+   "delta_total": -3895.8
+  },
+  "3.30": {
+   "ref_h": 1.3,
+   "run_h": 28.6,
+   "ref_mat": 65.38,
+   "run_mat": 1438.36,
+   "delta_total": 3693.04
+  },
+  "3.31": {
+   "ref_h": 299.65,
+   "run_h": 485.76,
+   "ref_mat": 14431.68,
+   "run_mat": 21615.23,
+   "delta_total": 22901.32
+  },
+  "3.32": {
+   "ref_h": 2.0,
+   "run_h": 2.0,
+   "ref_mat": 1250.0,
+   "run_mat": 1250.0,
+   "delta_total": -0.68
+  },
+  "3.33": {
+   "ref_h": 131.27,
+   "run_h": 60.25,
+   "ref_mat": 3310.75,
+   "run_mat": 1540.8,
+   "delta_total": -7851.16
+  },
+  "3.34": {
+   "ref_h": 4.0,
+   "run_h": 3.0,
+   "ref_mat": 3422.44,
+   "run_mat": 750.0,
+   "delta_total": -2758.79
+  },
+  "3.35": {
+   "ref_h": 178.75,
+   "run_h": 54.625,
+   "ref_mat": 18678.93,
+   "run_mat": 12549.06,
+   "delta_total": -16740.62
+  },
+  "3.36": {
+   "ref_h": 9.27,
+   "run_h": 1.0,
+   "ref_mat": 779.1,
+   "run_mat": 600.0,
+   "delta_total": -884.99
+  },
+  "3.37": {
+   "ref_h": 20.0,
+   "run_h": 8.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -1026.75
+  },
+  "3.38": {
+   "ref_h": 8.0,
+   "run_h": 8.0,
+   "ref_mat": 7400.0,
+   "run_mat": 7400.0,
+   "delta_total": -2.7
+  },
+  "5.19": {
+   "ref_h": 38.4,
+   "run_h": null,
+   "ref_mat": 0.0,
+   "run_mat": null,
+   "delta_total": -3276.97
+  },
+  "6.1": {
+   "ref_h": null,
+   "run_h": 84.0,
+   "ref_mat": null,
+   "run_mat": 1250.0,
+   "delta_total": 8390.0
+  }
+ },
+ "lignes": {
+  "ref": 73,
+  "run": 82,
+  "codes_communs": 25,
+  "manquantes": [
+   "A-01",
+   "A-02",
+   "A-03",
+   "A-04",
+   "A-05",
+   "A-06",
+   "A-07",
+   "A-10",
+   "B-01b",
+   "B-10",
+   "B-LOT",
+   "C-01",
+   "C-01b",
+   "C-02",
+   "C-03",
+   "C-04",
+   "C-04b",
+   "C-08",
+   "D-01",
+   "D-02",
+   "D-03",
+   "D-04",
+   "D-05",
+   "D-06",
+   "D-07",
+   "D-08",
+   "D-10",
+   "D-12b",
+   "D-17",
+   "D-19",
+   "D-20",
+   "D-21",
+   "D-22",
+   "E-01",
+   "E-02",
+   "E-03",
+   "E-04",
+   "E-05",
+   "F-01",
+   "F-02",
+   "F-06",
+   "F-07",
+   "F-11",
+   "F-LOT",
+   "G-01",
+   "G-01b",
+   "G-04",
+   "G-07"
+  ],
+  "en_plus": [
+   "B-05",
+   "B-06",
+   "B-07",
+   "B-08",
+   "BC-E",
+   "BJ-E",
+   "BJ-I",
+   "C-05",
+   "DF-E",
+   "DF-I",
+   "DF-R",
+   "DM-E",
+   "E-06",
+   "E-07",
+   "E-08",
+   "E-09",
+   "E-11",
+   "ENC-E",
+   "ENC-R",
+   "G-03",
+   "HP-E",
+   "INT-E",
+   "INT-I",
+   "L14-E",
+   "L22-E",
+   "LA1-I",
+   "LC-I",
+   "LC1-I",
+   "LC11-I",
+   "LC13-I",
+   "LE-I",
+   "LOT-DET",
+   "LOT-DIST",
+   "LOT-ECL",
+   "LOT-GPR",
+   "LOT-JCI",
+   "MM-I",
+   "MM-R",
+   "MP-E",
+   "MP-I",
+   "MT-I",
+   "PA-R",
+   "PC-E",
+   "PC-I",
+   "PC-R",
+   "PG-E",
+   "PG-I",
+   "PG-R",
+   "PU-I",
+   "SD-E",
+   "SD-I",
+   "SD-R",
+   "TH-I",
+   "X-01",
+   "X-02",
+   "X-03",
+   "Z6-I"
+  ],
+  "ecarts": [
+   {
+    "code": "A-08",
+    "ref": {
+     "q": 21,
+     "p": 0,
+     "h": 0.85
+    },
+    "run": {
+     "q": 21,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail A-08 (ligne Excel 15 ; colonne D Qté = 21 ; Réf. plan = E-202 note 1) [chef A2] || p/h : catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; dépose + repose en un seul temps (R2) ; p = 0, h = 1.0 par luminaire [chef B3]"
+   },
+   {
+    "code": "A-09",
+    "ref": {
+     "q": 24,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 24,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail A-09 (ligne Excel 16 ; colonne D Qté = 24 ; Réf. plan = E-202 note 1) [chef A2] || p/h : catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; dépose + repose en un seul temps (R2) ; p = 0, h = 1.0 par encastré [chef B3]"
+   },
+   {
+    "code": "A-11",
+    "ref": {
+     "q": 1,
+     "p": 0,
+     "h": 16.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 12.0
+    },
+    "src_run": "q : Estimation_2 Détail A-11 (ligne 18) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3] || p/h : catalogue Dupuis « NOTE 5 RETRACER DERIVA » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) + catalogue Dupuis « NOTE 6 RETRACER FILAGE » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; forfaits au lot : h = 6 + 6 = 12.0 ; arbitrage directeur B (double compte B3 n° 22) : la composante « IDENTIFIER LES CIRCUITS EXISTANTS A » (3 h) est retirée, déjà payée 9 × 3 h par B-09"
+   },
+   {
+    "code": "B-02",
+    "ref": {
+     "q": 17,
+     "p": 0,
+     "h": 0.2
+    },
+    "run": {
+     "q": 14,
+     "p": 0.0,
+     "h": 0.2
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail B-02 (ligne Excel 23 ; colonne D Qté = 14 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0) [chef B2]"
+   },
+   {
+    "code": "B-03",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail B-03 (ligne Excel 24 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6) [chef B2]"
+   },
+   {
+    "code": "B-04",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 0.4
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail B-04 (ligne Excel 25 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6) [chef B2]"
+   },
+   {
+    "code": "B-09",
+    "ref": {
+     "q": 9,
+     "p": 15.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 9,
+     "p": 0.0,
+     "h": 3.0
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail B-09 (ligne Excel 30 ; colonne D Qté = 9 ; Réf. plan = Devis 12.3) [chef A2] || p/h : catalogue Dupuis « IDENTIFIER LES CIRCUITS EXISTANTS A » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) [chef B2]"
+   },
+   {
+    "code": "C-07",
+    "ref": {
+     "q": 262.4672,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 262,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "q : Estimation_2 Détail C-07 (ligne 40) : Qté lue 80 m × 3,2808 = 262,46 → 262 pi ; L lue « 35 m + 3 x 15 m » ; C-08 275 m inclus (mixte 4 × 35 m + 3 × 3 × 15 m) [chef A3] || p/h : catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20) [chef B2]"
+   },
+   {
+    "code": "D-09",
+    "ref": {
+     "q": 1,
+     "p": 60.0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 1,
+     "p": 25.0,
+     "h": 0.5
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail D-09 Qté 1 lot ; arbitrage chef A1 [chef A1] || p/h : catalogue Dupuis « RACCORD DIRECT » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 5) ; arbitrage directeur B (double compte B3 n° 10) : les 2 boîtes de la barrière sont portées par BJ-I (directeur A : « les 2 JB sont comptées dans BJ-I ») ; D-09 ne garde que le raccord au panneau de contrôle (B1 avait 2 × « BOITE CARRE 2-1/8PO KO 1 » + « RACCORD DIRECT » = 37,3556 $ / 1,0 h)"
+   },
+   {
+    "code": "D-11",
+    "ref": {
+     "q": 4,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 1,
+     "p": 15.0,
+     "h": 0.35
+    },
+    "src_run": "q : Estimation_2 Détail D-11 Qté 1 u ; note L : Aide au lecteur 116 ; Réf. plan E-104 [chef A3] || p/h : catalogue Dupuis « DECLENCHEUR APPEL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; règle 2 (seul libellé « appel ») ; convention Dupuis : dispositif posé par DR et fourni par d'autres (15 $) ; décision du chef de lot B1 : retenu ; conduit vide non chiffré dans cette ligne (longueur absente du kit) [chef B1]"
+   },
+   {
+    "code": "D-12",
+    "ref": {
+     "q": 23,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 16,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "src_run": "q : Estimation_2 Détail D-12 Qté 16 u ; note L : 1 percement par course ; Réf. plan E-104 note 5 / devis 1.5, 18 [chef A3] || p/h : catalogue Dupuis « PERCEMENT PLANCHER » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 8) [chef B2]"
+   },
+   {
+    "code": "D-13",
+    "ref": {
+     "q": 2148.9501999999998,
+     "p": 4.1197,
+     "h": 0.091
+    },
+    "run": {
+     "q": 1575,
+     "p": 4.3787,
+     "h": 0.095
+    },
+    "src_run": "q : Estimation_2 Détail D-13 (ligne 57) : Qté lue 480 m × 3,2808 = 1574,78 → 1575 pi ; L lue « Hyp. 30 m/course » ; D-15 2400 m inclus (5 cond./course) [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 1 » um=P (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) + 5 × catalogue Dupuis « 12AWG SOLIDE RW90 600V » um=P (dernier 2026-09-10, s-1854 sollio st hubert lanthier) ; composé du chef : 4.3787 $/pi, 0.095 h/pi"
+   },
+   {
+    "code": "D-14",
+    "ref": {
+     "q": 1656.8242,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "run": {
+     "q": 1083,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "q : Estimation_2 Détail D-14 (ligne 58) : Qté lue 330 m × 3,2808 = 1082,66 → 1083 pi ; L lue « Hyp. 30 m/course » ; conduit vide, aucun fil apparié [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12) [chef B2]"
+   },
+   {
+    "code": "D-16",
+    "ref": {
+     "q": 23,
+     "p": 9.26,
+     "h": 0.25
+    },
+    "run": {
+     "q": 1,
+     "p": 327.3216,
+     "h": 9.6
+    },
+    "src_run": "q : Estimation_2 Détail D-16 Qté 1 lot ; note L : vide ; Réf. plan E-104 [chef A3] || p/h : catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) + catalogue Dupuis « COUV CARRE 4PO VIERGE » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 23) ; opération : N = 32 boîtes de tirage (2 par course, Matériel Lumen IBE72171K « Tirage : 23 courses sous dalle x 2 ») × (boîte 6.1778 $ / 0.25 h + couvercle 1.4985 $ / 0.05 h) + Matériel Lumen GRE430 « Corde de tirage Poly Line 430 - 6500 pi » 81.68 $/ch × 1 (aucun libellé Dupuis ; repli Lumen) = 327.3216 $ / 9.6 h ; arbitrage directeur B (double compte B3 n° 30) : couvercles Dupuis ajoutés (Lumen IBE72C1 non ajouté), boîtes Lumen IBE72171K non ajoutées"
+   },
+   {
+    "code": "F-05",
+    "ref": {
+     "q": 20,
+     "p": 50.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 20,
+     "p": 0.0,
+     "h": 0.2
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail F-05 (ligne Excel 82 ; colonne D Qté = 20 ; Unité = rangée ; Réf. plan = E-203 / devis 16.5 ; Notes = ≈20 rangées continues) ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 13 C-SUSP = 20 [chef A2] || p/h : catalogue Dupuis « TIGE FILETE 3/8PO » um=P (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 4) ; opération : 10 pi par rangée = Matériel Lumen VISTF3/8 « ABB TIGE FILETÉE 3/8 PO » Qté 200 pi ÷ 20 rangées ; h = 10 × 0.02 = 0.2 par rangée ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.6435 $/pi) [chef B3]"
+   },
+   {
+    "code": "F-08",
+    "ref": {
+     "q": 918.6351999999999,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 919,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "q : Estimation_2 Détail F-08 Qté 280 m × 3,2808 = 918,62 → 919 pi ; note L : Hyp. 8 m x 35 points ; Réf. plan E-203 ; 3 cond. RW90 #12 : F-09 exclu (840 m) [chef A3] || p/h : catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20) [chef B2]"
+   },
+   {
+    "code": "F-10",
+    "ref": {
+     "q": 46,
+     "p": 8.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 1,
+     "p": 278.705,
+     "h": 7.0
+    },
+    "src_run": "q : entree/reference-Estimation_2.xlsx Détail F-10 (ligne Excel 87 ; colonne D Qté = 1 ; Unité = lot ; Réf. plan = E-005) [chef A2] || p/h : catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 21) ; opération : N = 35 × (p 7.963 ; h 0.2) = p 278.705, h 7.0 ; N = 35 points d'éclairage (Détail F-08 « Hyp. 8 m x 35 points » ; Matériel Lumen IBE54151L « JB éclairage » Qté 35) [chef B3]"
+   },
+   {
+    "code": "G-02",
+    "ref": {
+     "q": 98.4252,
+     "p": 1.8196999999999999,
+     "h": 0.084
+    },
+    "run": {
+     "q": 98,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "q : Estimation_2 Détail G-02 Qté 30 m × 3,2808 = 98,42 → 98 pi ; note L : Hyp. ; Réf. plan E-203 [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12) [chef B2]"
+   },
+   {
+    "code": "H-01",
+    "ref": {
+     "q": 1,
+     "p": 1250.0,
+     "h": 16.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 16.0
+    },
+    "src_run": "q : Estimation_2 Détail H-01 (ligne 101) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3] || p/h : jugement (Estimation_2) Détail H-01 h/unité 16 [chef B3]"
+   }
+  ]
+ },
+ "verdict": "ÉCART"
+}
