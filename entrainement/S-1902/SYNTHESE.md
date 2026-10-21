@@ -14,12 +14,12 @@ Kit identique pour tous les runs (`kit/`, sans la réponse) ; aucune fuite déte
 | sonnet-2 | Sonnet 5.5 | 175 000 $ | −9,8 % | −10,6 % | −9,3 % | 89 |
 | sonnet-3 | Sonnet 5.5 | 169 000 $ | −12,9 % | −13,8 % | −13,0 % | 83 |
 | sonnet-4 | Sonnet 5.5 | 176 000 $ | −9,3 % | −12,3 % | −6,5 % | 85 |
-| sonnet-5 | Sonnet 5.5 | (en cours) | | | | |
+| sonnet-5 | Sonnet 5.5 | 180 000 $ | -7.2 % | -10.3 % | -4.7 % | 89 |
 
 Aucun run dans la tolérance (±1 %). Tous sortent **sous** la référence, de −7 % à −13 %. Opus et Sonnet font les mêmes choix ; l'écart
 n'est pas aléatoire, il est **systématique** : ce sont des règles de portée qui manquent à `METHODE.md`, pas des erreurs de calcul.
 
-## D'où vient l'écart (par article du bordereau, moyenne des 7 runs)
+## D'où vient l'écart (par article du bordereau, moyenne des 8 runs)
 
 | Article | Δ moyen | Stable ? | Cause (ce que la référence fait / ce que les runs font) |
 |---|---|---|---|
@@ -34,7 +34,7 @@ n'est pas aléatoire, il est **systématique** : ce sont des règles de portée 
 Hors allocation, l'écart réel tient à **trois décisions d'estimateur** : (1) garder ou non les postes de travail composites du Détail en
 plus du relevé ; (2) monuments au prix fournisseur ou au prix Dupuis ; (3) portée du démantèlement et temps des conduits.
 
-## Incohérence trouvée dans la référence (signalée par 7 runs sur 7)
+## Incohérence trouvée dans la référence (signalée par 8 runs sur 8)
 
 `outils/soumission/README.md` §2 : le lot éclairage est donné à **11 893 $**, mais son détail (A1 ×11 à 185 + SL1 4′ ×12 à 290 + 3′ ×15 à 230
 + 1′ ×6 à 110 + trousses 1 500 + E ×3 à 475 + Z6 ×3 à 161,60) totalise **13 034,80 $**. Écart 1 141,80 $. À trancher par Francis.

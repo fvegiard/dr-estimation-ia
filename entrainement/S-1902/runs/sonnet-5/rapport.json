@@ -1,0 +1,757 @@
+{
+ "dossier": "S-1902",
+ "run": "sonnet-5",
+ "totaux": {
+  "materiel": {
+   "ref": 66649.07,
+   "run": 59759.04,
+   "delta": -6890.03,
+   "pct": -10.34
+  },
+  "heures_relevees": {
+   "ref": 1045.845,
+   "run": 997.1786,
+   "delta": -48.67,
+   "pct": -4.65
+  },
+  "heures_chargees": {
+   "ref": 1050,
+   "run": 1000,
+   "delta": -50,
+   "pct": -4.76
+  },
+  "total_acceo": {
+   "ref": 155899.07,
+   "run": 144759.04,
+   "delta": -11140.03,
+   "pct": -7.15
+  },
+  "prix_vente": {
+   "ref": 194000,
+   "run": 180000,
+   "delta": -14000,
+   "pct": -7.22
+  }
+ },
+ "par_article": {
+  "3.22": {
+   "ref_h": 108.35,
+   "run_h": 89.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -1659.94
+  },
+  "3.23": {
+   "ref_h": 53.66,
+   "run_h": 96.5944,
+   "ref_mat": 2799.08,
+   "run_mat": 2833.29,
+   "delta_total": 3688.88
+  },
+  "3.24": {
+   "ref_h": 27.5,
+   "run_h": 21.0,
+   "ref_mat": 6335.0,
+   "run_mat": 3400.0,
+   "delta_total": -3491.74
+  },
+  "3.25": {
+   "ref_h": 7.6,
+   "run_h": 6.8,
+   "ref_mat": 0.0,
+   "run_mat": 2800.0,
+   "delta_total": 2731.07
+  },
+  "3.26": {
+   "ref_h": 4.0,
+   "run_h": 3.391,
+   "ref_mat": 30.0,
+   "run_mat": 266.78,
+   "delta_total": 184.48
+  },
+  "3.27": {
+   "ref_h": 34.25,
+   "run_h": 22.5,
+   "ref_mat": 2197.1,
+   "run_mat": 1549.0,
+   "delta_total": -1653.01
+  },
+  "3.28": {
+   "ref_h": 92.0,
+   "run_h": 29.375,
+   "ref_mat": 4259.79,
+   "run_mat": 1620.25,
+   "delta_total": -7986.24
+  },
+  "3.29": {
+   "ref_h": 25.85,
+   "run_h": null,
+   "ref_mat": 1689.82,
+   "run_mat": null,
+   "delta_total": -3895.8
+  },
+  "3.30": {
+   "ref_h": 1.3,
+   "run_h": 28.6,
+   "ref_mat": 65.38,
+   "run_mat": 1438.36,
+   "delta_total": 3699.92
+  },
+  "3.31": {
+   "ref_h": 299.65,
+   "run_h": 325.698,
+   "ref_mat": 14431.68,
+   "run_mat": 13998.65,
+   "delta_total": 1757.82
+  },
+  "3.32": {
+   "ref_h": 2.0,
+   "run_h": 2.0,
+   "ref_mat": 1250.0,
+   "run_mat": 1250.0,
+   "delta_total": -0.2
+  },
+  "3.33": {
+   "ref_h": 131.27,
+   "run_h": 57.85,
+   "ref_mat": 3310.75,
+   "run_mat": 1450.8,
+   "delta_total": -8131.25
+  },
+  "3.34": {
+   "ref_h": 4.0,
+   "run_h": 3.0,
+   "ref_mat": 3422.44,
+   "run_mat": 750.0,
+   "delta_total": -2758.07
+  },
+  "3.35": {
+   "ref_h": 178.75,
+   "run_h": 174.2882,
+   "ref_mat": 18678.93,
+   "run_mat": 18699.38,
+   "delta_total": -377.01
+  },
+  "3.36": {
+   "ref_h": 9.27,
+   "run_h": 29.932,
+   "ref_mat": 779.1,
+   "run_mat": 1052.53,
+   "delta_total": 2033.96
+  },
+  "3.37": {
+   "ref_h": 20.0,
+   "run_h": 8.0,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -1024.83
+  },
+  "3.38": {
+   "ref_h": 8.0,
+   "run_h": 8.0,
+   "ref_mat": 7400.0,
+   "run_mat": 7400.0,
+   "delta_total": -0.78
+  },
+  "5.19": {
+   "ref_h": 38.4,
+   "run_h": 35.15,
+   "ref_mat": 0.0,
+   "run_mat": 0.0,
+   "delta_total": -280.77
+  },
+  "6.1": {
+   "ref_h": null,
+   "run_h": 56.0,
+   "ref_mat": null,
+   "run_mat": 1250.0,
+   "delta_total": 6023.47
+  }
+ },
+ "lignes": {
+  "ref": 73,
+  "run": 89,
+  "codes_communs": 53,
+  "manquantes": [
+   "A-02",
+   "A-04",
+   "B-10",
+   "B-LOT",
+   "C-01b",
+   "C-08",
+   "D-03",
+   "D-04",
+   "D-05",
+   "D-06",
+   "D-17",
+   "D-19",
+   "D-20",
+   "D-21",
+   "D-22",
+   "E-03",
+   "E-04",
+   "E-05",
+   "F-11",
+   "F-LOT"
+  ],
+  "en_plus": [
+   "A-03a",
+   "A-03b",
+   "B-05",
+   "B-06",
+   "B-07",
+   "B-08",
+   "C-05",
+   "C-07b",
+   "C-09",
+   "C-09b",
+   "C-10",
+   "C-10b",
+   "D-10b",
+   "D-16b",
+   "E-01b",
+   "E-01c",
+   "E-06",
+   "E-07",
+   "E-07b",
+   "E-08",
+   "E-09",
+   "E-11",
+   "E-11b",
+   "F-03",
+   "F-04",
+   "F-10b",
+   "G-03",
+   "LOT-B1",
+   "LOT-B2",
+   "LOT-DET",
+   "LOT-F",
+   "N-01",
+   "N-02",
+   "N-03",
+   "N-04",
+   "N-05"
+  ],
+  "ecarts": [
+   {
+    "code": "A-01",
+    "ref": {
+     "q": 39,
+     "p": 0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 40,
+     "p": 0.0,
+     "h": 0.5
+    },
+    "src_run": "Catalogue Dupuis « EQUIPEMENT A ENLEVER » (dernier Dupuis 2026-05-05, s-1753 ecole asomption; prix 0.0000 $, temps 0.5000 h) — luminaire enlevé 0,5 h (METHODE.md)"
+   },
+   {
+    "code": "A-03",
+    "ref": {
+     "q": 34,
+     "p": 0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 28,
+     "p": 0.0,
+     "h": 0.35
+    },
+    "src_run": "Catalogue Dupuis « ENLEVER PRISE » (dernier Dupuis 2026-08-26, s-1835 esbg  rehabilitation inbterieur; prix 0.0000 $, temps 0.3500 h) — prise enlevée 0,35 h (METHODE.md)"
+   },
+   {
+    "code": "A-05",
+    "ref": {
+     "q": 13,
+     "p": 0,
+     "h": 1.5
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 1.5
+    },
+    "src_run": "Catalogue Dupuis « RELO PRISE » (dernier Dupuis 2026-05-05, s-1753 ecole asomption; prix 0.0000 $, temps 1.5000 h) — relocalisation de prise 1,5 h (METHODE.md)"
+   },
+   {
+    "code": "A-06",
+    "ref": {
+     "q": 7,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 4,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « RELO ENCASTRE » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 0.0000 $, temps 1.0000 h)"
+   },
+   {
+    "code": "A-07",
+    "ref": {
+     "q": 1,
+     "p": 0,
+     "h": 6.0
+    },
+    "run": {
+     "q": 4,
+     "p": 0.0,
+     "h": 1.5
+    },
+    "src_run": "Catalogue Dupuis « RELO INT » (dernier Dupuis 2026-05-05, s-1753 ecole asomption; prix 0.0000 $, temps 1.5000 h) — Détail A-07 = 6 h d'hypothèse = 4 interrupteurs x 1,5 h"
+   },
+   {
+    "code": "A-08",
+    "ref": {
+     "q": 21,
+     "p": 0,
+     "h": 0.85
+    },
+    "run": {
+     "q": 21,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « RELO ENCASTRE » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 0.0000 $, temps 1.0000 h) — quantité Détail A-08 (comptée sur plan E-202 note 1); pas de libellé « linéaire » : RELO ENCASTRE par analogie"
+   },
+   {
+    "code": "A-09",
+    "ref": {
+     "q": 24,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 24,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « RELO ENCASTRE » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 0.0000 $, temps 1.0000 h) — quantité Détail A-09"
+   },
+   {
+    "code": "A-10",
+    "ref": {
+     "q": 6,
+     "p": 0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 6,
+     "p": 0.0,
+     "h": 8.0
+    },
+    "src_run": "Catalogue Dupuis « DISCONNECTER ET RECON » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 8.0000 h) — Détail A-10 = 4 h par moteur; catalogue 8 h retenu"
+   },
+   {
+    "code": "B-01b",
+    "ref": {
+     "q": 14,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 4.0
+    },
+    "src_run": "Catalogue Dupuis « ENL PANN 42CCT 120/208V » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 4.0000 h)"
+   },
+   {
+    "code": "B-02",
+    "ref": {
+     "q": 17,
+     "p": 0,
+     "h": 0.2
+    },
+    "run": {
+     "q": 14,
+     "p": 0.0,
+     "h": 0.2
+    },
+    "src_run": "Catalogue Dupuis « DISJ15A1P » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 0.2000 h) — disjoncteur 1P 0,2 h (METHODE.md); matériel dans le lot distribution (EDB 1P)"
+   },
+   {
+    "code": "B-03",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 719.6000 $, temps 1.0000 h) — prix de ligne forcé à 0.00 $ : disjoncteur 3P 1 h (METHODE.md); seul le temps est pris : matériel dans le lot distribution (EJB 3P)"
+   },
+   {
+    "code": "B-04",
+    "ref": {
+     "q": 3,
+     "p": 0,
+     "h": 0.4
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 719.6000 $, temps 1.0000 h) — prix de ligne forcé à 0.00 $ : disjoncteur 3P 1 h (METHODE.md); seul le temps est pris : matériel dans le lot distribution (EJB 3P)"
+   },
+   {
+    "code": "B-09",
+    "ref": {
+     "q": 9,
+     "p": 15.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 9,
+     "p": 0.0,
+     "h": 1
+    },
+    "src_run": "jugement (Estimation_2) — Détail B-09, 1 h/u à valider"
+   },
+   {
+    "code": "C-03",
+    "ref": {
+     "q": 2,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 2,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « MOTEUR » (dernier Dupuis 2026-02-19, S-1676 ARC'TERTX; prix 25.0000 $, temps 0.7500 h) — moteur triphasé; MCC = art. 3.26"
+   },
+   {
+    "code": "C-04",
+    "ref": {
+     "q": 3,
+     "p": 15.0,
+     "h": 0.35
+    },
+    "run": {
+     "q": 3,
+     "p": 25.0,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « MOTEUR » (dernier Dupuis 2026-02-19, S-1676 ARC'TERTX; prix 25.0000 $, temps 0.7500 h)"
+   },
+   {
+    "code": "C-04b",
+    "ref": {
+     "q": 3,
+     "p": 133.49,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 165.61,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « SECTIONNEUR POR ENTRETIEN HUBHBL13R22 » (dernier Dupuis 2026-09-23, s-1866 gar mun st amable; prix 165.6100 $, temps 0.7500 h) — équivalent du HBL1372 de la feuille Lumen (117,84 $); prix Dupuis retenu"
+   },
+   {
+    "code": "C-07",
+    "ref": {
+     "q": 262.4672,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 115,
+     "p": 2.8997,
+     "h": 0.076
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT 3/4 04C12 » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 2.8997 $, temps 0.0760 h) — longueur hypothèse Détail C-02 / C-07"
+   },
+   {
+    "code": "D-01",
+    "ref": {
+     "q": 18,
+     "p": 156.39000000000001,
+     "h": 3.5300000000000002
+    },
+    "run": {
+     "q": 23,
+     "p": 64.81,
+     "h": 1.175
+    },
+    "src_run": "Catalogue Dupuis « PRISE DUPLEX 15A 120V » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 64.8100 $, temps 1.1750 h) — prise 1,175 h, 64,81 $ (METHODE.md)"
+   },
+   {
+    "code": "D-02",
+    "ref": {
+     "q": 5,
+     "p": 439.42,
+     "h": 6.85
+    },
+    "run": {
+     "q": 20,
+     "p": 77.45,
+     "h": 1.125
+    },
+    "src_run": "Catalogue Dupuis « PRISE USB 125V 15 AMP » (dernier Dupuis 2026-09-10, s-1854 sollio st hubert lanthier; prix 77.4500 $, temps 1.1250 h) — USB 1,125 h, 77,45 $ (METHODE.md)"
+   },
+   {
+    "code": "D-07",
+    "ref": {
+     "q": 1,
+     "p": 65.38,
+     "h": 1.3
+    },
+    "run": {
+     "q": 20,
+     "p": 65.38,
+     "h": 1.3
+    },
+    "src_run": "Catalogue Dupuis « PRISE DUPLEX 20A 125V GFI » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 65.3800 $, temps 1.3000 h) — DDFT 1,3 h, 65,38 $ (METHODE.md)"
+   },
+   {
+    "code": "D-08",
+    "ref": {
+     "q": 41,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "run": {
+     "q": 45,
+     "p": 22.32,
+     "h": 0.89
+    },
+    "src_run": "Catalogue Dupuis « TEL/DATA 3/4 » (dernier Dupuis 2026-09-23, s-1866 gar mun st amable; prix 22.3200 $, temps 0.8900 h) — tel/data 3/4 22,32 $ (METHODE.md); câble data hors prix (OPT-1)"
+   },
+   {
+    "code": "D-09",
+    "ref": {
+     "q": 1,
+     "p": 60.0,
+     "h": 4.0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 6
+    },
+    "src_run": "jugement (Estimation_2) — Détail D-09, 6 h à valider"
+   },
+   {
+    "code": "D-10",
+    "ref": {
+     "q": 1,
+     "p": 17.43,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 6.1778,
+     "h": 0.25
+    },
+    "src_run": "Catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 6.1778 $, temps 0.2500 h)"
+   },
+   {
+    "code": "D-11",
+    "ref": {
+     "q": 4,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "run": {
+     "q": 1,
+     "p": 15.0,
+     "h": 0.5
+    },
+    "src_run": "Catalogue Dupuis « BOUTON HANDICAPE » (dernier Dupuis 2026-04-02, S-1692_École Primaire St-Marc Candiac; prix 15.0000 $, temps 0.5000 h)"
+   },
+   {
+    "code": "D-12",
+    "ref": {
+     "q": 23,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 16,
+     "p": 150.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « PERCEMENT PLANCHER » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 150.0000 $, temps 1.0000 h) — percement 150 $ / 1 h (METHODE.md); quantité Détail D-12"
+   },
+   {
+    "code": "D-12b",
+    "ref": {
+     "q": 8,
+     "p": 13.53,
+     "h": 0.5
+    },
+    "run": {
+     "q": 16,
+     "p": 13.53,
+     "h": 0.5
+    },
+    "src_run": "Catalogue Dupuis « COUPE FEU TUBE 10.1 FL O » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 13.5300 $, temps 0.5000 h)"
+   },
+   {
+    "code": "D-13",
+    "ref": {
+     "q": 2148.9501999999998,
+     "p": 4.1197,
+     "h": 0.091
+    },
+    "run": {
+     "q": 1575,
+     "p": 3.4197,
+     "h": 0.081
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT 3/4 05C12 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 3.4197 $, temps 0.0810 h) — Détail prévoit EMT 1\" : 3/4\" 05C12 retenu (même nombre de conducteurs); longueur hypothèse Détail"
+   },
+   {
+    "code": "D-14",
+    "ref": {
+     "q": 1656.8242,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "run": {
+     "q": 1083,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT VIDE 3/4 » (dernier Dupuis 2026-08-19, S-1797 - École Chambly; prix 1.4097 $, temps 0.0560 h) — conduit vide 1,41 $/pi (METHODE.md); longueur hypothèse Détail"
+   },
+   {
+    "code": "D-16",
+    "ref": {
+     "q": 23,
+     "p": 9.26,
+     "h": 0.25
+    },
+    "run": {
+     "q": 32,
+     "p": 6.1778,
+     "h": 0.25
+    },
+    "src_run": "Catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 6.1778 $, temps 0.2500 h) — 2 par course (feuille Matériel Lumen : « 23 courses x 2 »)"
+   },
+   {
+    "code": "E-01",
+    "ref": {
+     "q": 2,
+     "p": 143.58,
+     "h": 2.98
+    },
+    "run": {
+     "q": 2,
+     "p": 64.81,
+     "h": 1.175
+    },
+    "src_run": "Catalogue Dupuis « PRISE DUPLEX 15A 120V » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 64.8100 $, temps 1.1750 h)"
+   },
+   {
+    "code": "E-02",
+    "ref": {
+     "q": 2,
+     "p": 1461.22,
+     "h": 1.0
+    },
+    "run": {
+     "q": 3,
+     "p": 250.0,
+     "h": 1.0
+    },
+    "src_run": "Catalogue Dupuis « MONUMENT PLANCHER » (dernier Dupuis 2026-02-19, S-1676 ARC'TERTX; prix 250.0000 $, temps 1.0000 h) — monument 250 $ (METHODE.md)"
+   },
+   {
+    "code": "F-02",
+    "ref": {
+     "q": 33,
+     "p": 0,
+     "h": 0.75
+    },
+    "run": {
+     "q": 12,
+     "p": 0.0,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « FIXTURE TYPE C1 » (dernier Dupuis 2026-07-14, s-1811 cdc construction de 6 batiment; prix 0.0000 $, temps 0.7500 h) — matériel dans le lot éclairage"
+   },
+   {
+    "code": "F-05",
+    "ref": {
+     "q": 20,
+     "p": 50.0,
+     "h": 1.0
+    },
+    "run": {
+     "q": 20,
+     "p": 0.0,
+     "h": 1
+    },
+    "src_run": "jugement (Estimation_2) — Détail F-05, 1 h/rangée à valider; trousses de suspension dans le lot éclairage"
+   },
+   {
+    "code": "F-08",
+    "ref": {
+     "q": 918.6351999999999,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "run": {
+     "q": 919,
+     "p": 4.2441,
+     "h": 0.1128
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT 3/4 03C12 » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 4.2441 $, temps 0.1128 h) — conduit 3/4 03C12 4,24 $/pi, 0,113 h/pi (METHODE.md); longueur hypothèse Détail (8 m x 35 points)"
+   },
+   {
+    "code": "F-10",
+    "ref": {
+     "q": 46,
+     "p": 8.0,
+     "h": 0.25
+    },
+    "run": {
+     "q": 35,
+     "p": 7.963,
+     "h": 0.2
+    },
+    "src_run": "Catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 7.9630 $, temps 0.2000 h) — 35 points = base de la feuille Matériel Lumen (IBE54151L)"
+   },
+   {
+    "code": "G-01b",
+    "ref": {
+     "q": 2,
+     "p": 300.0,
+     "h": 0
+    },
+    "run": {
+     "q": 1,
+     "p": 0.0,
+     "h": 0.75
+    },
+    "src_run": "Catalogue Dupuis « RELO DETECTEUR A FUME » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 0.0000 $, temps 0.7500 h)"
+   },
+   {
+    "code": "G-02",
+    "ref": {
+     "q": 98.4252,
+     "p": 1.8196999999999999,
+     "h": 0.084
+    },
+    "run": {
+     "q": 99,
+     "p": 1.4097,
+     "h": 0.056
+    },
+    "src_run": "Catalogue Dupuis « CONDUIT VIDE 3/4 » (dernier Dupuis 2026-08-19, S-1797 - École Chambly; prix 1.4097 $, temps 0.0560 h) — longueur hypothèse Détail G-02"
+   }
+  ]
+ },
+ "verdict": "ÉCART"
+}
