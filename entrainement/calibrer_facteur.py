@@ -87,7 +87,9 @@ def statistiques(valeurs: list[float]) -> dict[str, float | None]:
 
 def rapport(couples: list[Couple], facteur_actuel: float, acceo_exemple: float) -> str:
     ratios = [r for r in (c.ratio for c in couples) if r is not None]
-    st = statistiques(ratios)
+    ratios_confirmes = [r for r in (c.ratio for c in couples if not c.a_verifier) if r is not None]
+    st = statistiques(ratios_confirmes)
+    st_tous = statistiques(ratios)
     pcts = [p for p in (c.pct_vs_plus_bas for c in couples) if p is not None]
     sp = statistiques(pcts)
     md = ["# Calibration du facteur « sommaire ACCEO → prix remis » (Daniel Dupuis)", "",
@@ -107,20 +109,37 @@ def rapport(couples: list[Couple], facteur_actuel: float, acceo_exemple: float) 
     md += ["", "## Facteur", ""]
     n = int(st['n'] or 0)
     if n == 0:
-        md.append("Aucun couple sommaire/prix remis exploitable : le facteur ne peut pas être calibré.")
+        md.append("Aucun couple confirmé : le facteur ne peut pas être calibré.")
     elif n == 1:
-        md.append(f"Un seul couple exploitable (ratio {st['moyenne']:.3f}) : écart-type indéfini, le facteur n'est pas calibré, "
+        md.append(f"Un seul couple confirmé (ratio {st['moyenne']:.3f}) : écart-type indéfini, le facteur n'est pas calibré, "
                   "il est posé. Il faut au moins 5 dossiers remis par Daniel avec leur sommaire ACCEO pour parler de calibration.")
     else:
         moy = float(st['moyenne'] or 0.0)
         et = st['ecart_type']
-        md.append(f"{n} couples : ratio moyen {moy:.3f}, écart-type {et:.3f}, min {st['min']:.3f}, max {st['max']:.3f}."
-                  if et is not None else f"{n} couples : ratio moyen {moy:.3f}.")
+        md.append(f"{n} couples confirmés : ratio moyen {moy:.3f}, écart-type {et:.3f}, min {st['min']:.3f}, max {st['max']:.3f}."
+                  if et is not None else f"{n} couples confirmés : ratio moyen {moy:.3f}.")
         if et is not None:
             md.append(f"Sur un sommaire de {acceo_exemple:,.0f} $, ±1 écart-type = ±{acceo_exemple * et:,.0f} $ sur le prix de vente "
                       f"({et / moy * 100:.1f} %).".replace(',', ' '))
+    n_tous = int(st_tous['n'] or 0)
+    if n_tous > n:
+        moy_t = float(st_tous['moyenne'] or 0.0)
+        et_t = st_tous['ecart_type']
+        md.append("")
+        mn_t = float(st_tous['min'] or 0.0)
+        mx_t = float(st_tous['max'] or 0.0)
+        etendue = f"écart-type {et_t:.3f}, min {mn_t:.3f}, max {mx_t:.3f}" if et_t is not None else ""
+        variation = f" de {et_t / moy_t * 100:.0f} % (±{acceo_exemple * et_t:,.0f} $ sur {acceo_exemple:,.0f} $)".replace(',', ' ') if et_t is not None else ''
+        md.append(f"En comptant les {n_tous - n} couples « à vérifier » ({n_tous} au total) : ratio moyen {moy_t:.3f}, {etendue}. "
+                  f"Lecture : le facteur n'est pas une constante de Dupuis ; il varie d'un dossier à l'autre{variation}. "
+                  "Ces couples doivent être confirmés (même portée, auteur du prix) avant de changer parametres.json.")
     md += ["", f"Sensibilité sur un sommaire de {acceo_exemple:,.0f} $ :".replace(',', ' '), "", "| Facteur | Prix de vente ($) | vs facteur actuel |", "|---|---|---|"]
-    for k in sorted({1.20, facteur_actuel, 1.30, 1.35} | ({round(float(st['moyenne'] or 0.0), 3)} if n else set())):
+    facteurs: set[float] = {1.20, facteur_actuel, 1.30, 1.35}
+    if n:
+        facteurs.add(round(float(st['moyenne'] or 0.0), 3))
+    if n_tous:
+        facteurs.add(round(float(st_tous['moyenne'] or 0.0), 3))
+    for k in sorted(facteurs):
         pv = acceo_exemple * k
         md.append(f"| {k:.3f} | {round(pv / 1000) * 1000:,.0f} | {(k / facteur_actuel - 1) * 100:+.1f} % |".replace(',', ' '))
     a_faire = [c for c in couples if c.sommaire_acceo and not c.prix_remis]

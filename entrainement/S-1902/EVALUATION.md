@@ -117,3 +117,12 @@ Sur cette tâche, **Sonnet 5.5 solo = Opus 5.5 solo à la moitié du prix**, et 
 vaut pour ce qu'elle produit en plus (traçabilité, table d'articles, doubles comptes arbitrés par écrit) — pas pour le chiffre final. Ce qui ferait gagner les derniers pourcentages n'est ni
 le modèle ni l'essaim : ce sont les 5 règles à trancher (SYNTHESE.md), un comparateur ligne à ligne avec codes imposés, et un LSP
 branché pour que les scripts survivent au dossier suivant.
+
+## Mise à jour 2026-10-23 — protocole v2
+
+La « suggestion d'architecture » ci-dessus (trois Sonnet en parallèle, Opus arbitre) est remplacée par le protocole v2
+(`entrainement/README.md`) : trois runs d'accord entre eux ne prouvent rien quand ils partagent la même règle manquante (les
+10 runs v1 étaient d'accord pour sortir 7 à 13 % sous la référence). Le prix sort maintenant d'un moteur commun
+(`chiffrage_commun.py`) ; le modèle relève et tranche (`quantites.json`, `decisions.json`) ; le comparateur juge sur le prix,
+les heures et chaque article et attribue l'écart par décision. Le kit est identique d'un run à l'autre et le prompt est
+construit avec sa partie commune en tête (`prompt-run.md`) pour profiter du cache de préfixe du fournisseur.
