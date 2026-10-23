@@ -1,0 +1,14 @@
+{
+ "postes_composites": "en_plus",
+ "monuments": "lumen",
+ "lot_eclairage": "detail_13034_80",
+ "eae_hors_plan": "comptes",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "Référence gelée 2026-10-20 : les postes de travail de la feuille Détail (D-01 ×18, D-02 ×5, D-03…D-06, E-01, E-04, E-05) sont comptés EN PLUS du relevé.",
+  "monuments": "E-02 ×2 au prix Lumen 1 461,22 $ (poke-through Hubbell) ; E-03 ×2 au prix Dupuis 250 $.",
+  "lot_eclairage": "chiffrage_dupuis.py F-LOT = somme du détail (A1 ×11, Axis ×33, trousses, E ×3, Z6 ×3) = 13 034,80 $ ; le 11 893 $ du README est l'allocation du midi.",
+  "eae_hors_plan": "A-01…A-06 comptés depuis la feuille Détail (E.A.E/E.A.R hors plan), en 5.19 et 3.22.",
+  "conduits": "Pas de colonne TEMPSEC au catalogue : temps/pi seulement ; 1\" 05c12 → « CONDUIT 3/4 07C12 », 1\" #8 → « CONDUIT 1 13C12 », longueurs du Détail en m × 3,28084."
+ }
+}

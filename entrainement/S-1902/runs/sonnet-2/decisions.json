@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte — NOTES.md hypothèse 3 : « Les lignes composites par poste (D-01..D-07, E-01, E-03..E-05) sont remplacées par les lignes d'appareils du relevé pour éviter le double compte. » Confirmé par rapport.json lignes.manquantes = D-01, D-02, D-03, D-04, D-05, D-06, D-07, E-01, E-03, E-04, E-05 (aucune ligne D-0x composite dans chiffrage.py ; les appareils passent par R-05/R-06/R-07/R-0",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250 — chiffrage.py : cat_ligne(\"E-02\", \"3.34\", P(\"MONUMENT PLANCHER\", \"INSTALLER\"), \"MONUMENT PLANCHER\", ...) → catalogue Dupuis dernier 2026-02-19 : 250,0 $ / 1,0 h, q=3 (portée INSTALLER 3 ; E-02/E-03 fusionnés, NOTES « Fusions »). Réf : 2 × 1 461,22 $. Article 3.34 : run 750 $ contre réf 3 422,44 $, delta -2 758,79 $.",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893 — NOTES.md « Lot éclairage : les composantes listées dans METHODE totalisent 13 034,80 $, pas 11 893 $. J'ai gardé 11 893 $ (montant confirmé). » Code : LOTS[\"Lot éclairage\"] = 11893.0, ligne LOT-ECL en 3.35 ; luminaires A1/C1/C1_1/C1_3/E/Z6 forcés à p=0.0 en ligne (temps seulement).",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : comptes (fusionnés, quantités du relevé et non d'Estimation_2) — A-01 q=40 (ENCASTRE 26 + LED 1X4 6 + LED 2X2 8, portée ENLEVER ; « A-01/A-02 de l'Estimation_2 (39+7) fusionnés ») ; A-03 q=28 (DDFT 4 + doubles 7 + data 17 ; A-03/A-04 fusionnés) ; A-05 q=12 (RELO PRISE, réf 13) ; A-06 q=4 (RELO ENCASTRE, réf 7) ; plus R-01 (1 interrupteur) et R-02 (10 divers) ; A-02 et A-04 manquants comme codes di",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Pas de TEMPSEC (NOTES : « Le catalogue n'a pas de colonne TEMPSEC : conduits au temps/pi seulement »). Longueurs = hypothèses d'Estimation_2 (30 m / 25 m par course) converties en pi via pi(m)=int(round(m*3.28084)) ; D-13 480 m → 1 575 pi en « CONDUIT VIDE 1 » (2,4307 $ / 0,07 h) + D-15 RW90 #12 séparé (pas d'assemblage 1\"/5C12) ; E-08/E-10 idem ; D-14/E-09 « CONDUIT VIDE 3/4 » ; F-08 919 pi « CON",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

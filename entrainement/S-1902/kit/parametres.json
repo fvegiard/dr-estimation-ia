@@ -1,0 +1,14 @@
+{
+ "taux": 85.0,
+ "facteur": 1.244,
+ "arrondi_heures": 10,
+ "arrondi_prix": 1000,
+ "pi_par_m": 3.28084,
+ "seuils": {
+  "total_pct": 3.0,
+  "article_pct": 10.0,
+  "heures_pct": 5.0,
+  "historique_pct": 1.0
+ },
+ "source": "METHODE.md §5-7 : taux 85 $/h (Dupuis août-oct. 2026), facteur 1,244 (S-1844 : 191 909,19 → 238 744 $), arrondis Dupuis ; seuils = comparateur v2"
+}
