@@ -20,7 +20,7 @@ run réécrivait ; la variance entre runs mesure ce qui compte : le relevé et l
 | Fichier | Rôle |
 |---|---|
 | `chiffrage_commun.py` | moteur : `quantites.json` + `decisions.json` + `parametres.json` + catalogue → `chiffrage.json` (stdlib, pyright strict) |
-| `comparer.py` | run vs référence gelée : totaux, articles, lignes, critères (prix ±3 %, heures ±5 %, articles ±10 %), attribution de l'écart par décision |
+| `comparer.py` | run vs référence gelée : totaux, articles, lignes, critères (prix ±3 %, heures ±5 % avec au moins un pas d'arrondi, articles ±10 % ou 1 000 $), attribution de l'écart par décision ; Δ = run − référence partout |
 | `extraire_reference.py` | référence gelée (`dossiers/<S>/soumission/chiffrage_dupuis.py`) → `quantites.json`, `decisions.json`, `parametres.json` du kit |
 | `convertir_run.py` | run v1 (`chiffrage.json`) → `quantites.json` à prix fixes + contrôle que le moteur redonne ses totaux |
 | `preparer_run.py` | dossier de run isolé hors dépôt : kit + moteur + `PROMPT.md` (préfixe commun cachable) + `run.json` |
@@ -66,7 +66,8 @@ ruff check --select E,F,W,B,UP --ignore UP009,E501 entrainement/*.py
 `chiffrage_commun.DECISIONS_CONNUES`.
 
 `parametres.json` (kit) : `taux`, `facteur`, `arrondi_heures`, `arrondi_prix`, `seuils` (`total_pct`, `heures_pct`,
-`article_pct`, `article_min_abs`, `historique_pct`).
+`article_pct`, `article_min_abs` = plancher en $ sous lequel un article n'est pas jugé, `historique_pct`). En protocole v2, le comparateur
+recalcule et réécrit `chiffrage.json` à chaque comparaison ; le prix du run est jugé avec le facteur du kit.
 
 ## Effet des décisions de portée sur la référence gelée (hors kit)
 

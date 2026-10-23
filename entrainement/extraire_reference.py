@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any, cast
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from chiffrage_commun import PI_PAR_M, charger_catalogue, cle_catalogue, ecrire_json  # noqa: E402
+from chiffrage_commun import PI_PAR_M, Catalogue, charger_catalogue, ecrire_json, entree_catalogue  # noqa: E402
 
 RACINE = Path(__file__).resolve().parent.parent
 
@@ -98,7 +98,7 @@ PARAMETRES_REFERENCE: dict[str, Any] = {
     'arrondi_heures': 10,
     'arrondi_prix': 1000,
     'pi_par_m': PI_PAR_M,
-    'seuils': {'total_pct': 3.0, 'article_pct': 10.0, 'heures_pct': 5.0, 'historique_pct': 1.0},
+    'seuils': {'total_pct': 3.0, 'article_pct': 10.0, 'article_min_abs': 1000.0, 'heures_pct': 5.0, 'historique_pct': 1.0},
     'source': "METHODE.md §5-7 : taux 85 $/h (Dupuis août-oct. 2026), facteur 1,244 (S-1844 : 191 909,19 → 238 744 $), arrondis Dupuis ; seuils = comparateur v2",
 }
 
@@ -113,14 +113,14 @@ def charger_lignes_reference(script: Path) -> list[dict[str, Any]]:
     return [dict(cast(dict[str, Any], x)) for x in cast(list[Any], lignes)]
 
 
-def spec_prix(code: str, p: float, h: float, catalogue: dict[str, Any]) -> tuple[dict[str, Any], str]:
+def spec_prix(code: str, p: float, h: float, catalogue: Catalogue) -> tuple[dict[str, Any], str]:
     """Spécification de prix exacte pour la ligne : `catalogue` si les entrées citées redonnent (p, h), sinon `fixe`."""
     m = CATALOGUE_PAR_CODE.get(code)
     if m is not None:
         pc = float(m.get('supplement_p', 0.0))
         hc = float(m.get('supplement_h', 0.0))
         for desc, mult in m['entrees']:
-            e = catalogue[cle_catalogue(desc)]
+            e = entree_catalogue(catalogue, desc, None, code)
             pc += mult * e.prix
             hc += mult * e.temps
         if abs(pc - p) < 1e-9 and abs(hc - h) < 1e-9:
@@ -134,7 +134,7 @@ def spec_prix(code: str, p: float, h: float, catalogue: dict[str, Any]) -> tuple
     return {'type': 'fixe', 'p': p, 'h': h}, ''
 
 
-def construire_quantites(lignes_ref: list[dict[str, Any]], catalogue: dict[str, Any], dossier: str) -> tuple[dict[str, Any], list[str]]:
+def construire_quantites(lignes_ref: list[dict[str, Any]], catalogue: Catalogue, dossier: str) -> tuple[dict[str, Any], list[str]]:
     journal: list[str] = []
     lignes: list[dict[str, Any]] = []
     for x in lignes_ref:

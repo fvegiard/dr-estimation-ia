@@ -61,26 +61,39 @@ def synthese(S: str, rapports: list[dict[str, Any]]) -> str:
                f" ; {sum(1 for r in rapports if r['verdict'] == 'OK')}/{len(rapports)} OK."]
     # attribution par décision
     par_dec: dict[str, list[float]] = {}
+    identiques: dict[str, int] = {}
     modes: set[str] = set()
     autres: list[float] = []
+    hors_decisions: list[float] = []
     for r in rapports:
         att = cast(dict[str, Any], r['attribution'])
         modes.add(str(att['mode']))
         for d in cast(list[dict[str, Any]], att['decisions']):
+            if d.get('identique'):
+                identiques[str(d['decision'])] = identiques.get(str(d['decision']), 0) + 1
+                continue
             v = d.get('delta_acceo')
             if isinstance(v, (int, float)):
                 par_dec.setdefault(str(d['decision']), []).append(float(v))
         a = att.get('autres_articles_delta_acceo')
         if isinstance(a, (int, float)):
             autres.append(float(a))
-    md += ["", "## Écart attribué aux décisions de portée (Δ ACCEO, $)", "", f"Mode(s) : {' ; '.join(sorted(modes))}.", "",
-           "| Décision | Runs | Moyenne | Min | Max | Stable ? |", "|---|---|---|---|---|---|"]
+        h = att.get('hors_decisions_acceo')
+        if isinstance(h, (int, float)):
+            hors_decisions.append(float(h))
+    md += ["", "## Écart attribué aux décisions de portée (Δ ACCEO, $ ; Δ = run − référence)", "", f"Mode(s) : {' ; '.join(sorted(modes))}.", "",
+           "| Décision | Runs où elle diffère | Moyenne | Min | Max | Stable ? |", "|---|---|---|---|---|---|"]
     for cle, vals in par_dec.items():
         et = statistics.stdev(vals) if len(vals) >= 2 else 0.0
         stable = 'oui' if abs(statistics.fmean(vals)) > 0 and et <= 0.15 * abs(statistics.fmean(vals)) else 'non'
         md.append(f"| {cle} | {len(vals)} | {fmt(statistics.fmean(vals), 0, True)} | {fmt(min(vals), 0, True)} | {fmt(max(vals), 0, True)} | {stable} |")
+    for cle, n_id in identiques.items():
+        if cle not in par_dec:
+            md.append(f"| {cle} | 0 (identique à la référence dans {n_id} runs) | — | — | — | — |")
+    if hors_decisions:
+        md.append(f"| hors décisions (relevé, prix, temps) | {len(hors_decisions)} | {fmt(statistics.fmean(hors_decisions), 0, True)} | {fmt(min(hors_decisions), 0, True)} | {fmt(max(hors_decisions), 0, True)} | — |")
     if autres:
-        md.append(f"| autres articles (non attribués) | {len(autres)} | {fmt(statistics.fmean(autres), 0, True)} | {fmt(min(autres), 0, True)} | {fmt(max(autres), 0, True)} | — |")
+        md.append(f"| autres articles et décisions identiques (non attribués) | {len(autres)} | {fmt(statistics.fmean(autres), 0, True)} | {fmt(min(autres), 0, True)} | {fmt(max(autres), 0, True)} | — |")
     md += ["", "Lecture : en mode « approximation par articles » (ancien protocole), l'effet d'une décision est l'écart des articles qu'elle touche, "
            "pas son effet exact ; en mode « exact » (nouveau protocole), c'est le run rechiffré avec la décision de la référence."]
     return '\n'.join(md) + '\n'

@@ -1,5 +1,7 @@
 # Rapport S-1902 — opus-2 : **ÉCART** (protocole ancien)
 
+Δ = run − référence (négatif : le run est en dessous).
+
 | Total | Référence | Run | Δ | % |
 |---|---|---|---|---|
 | materiel | 66 649.07 | 55 655.69 | -10 993.38 | -16.49 % |
@@ -11,7 +13,7 @@
 | Critère | Mesure | Seuil | OK |
 |---|---|---|---|
 | prix de vente | -13.40 % | ±3.0 % | non |
-| heures chargées | -11.43 % | ±5.0 % | non |
+| heures chargées | -11.43 % | ±5.0 % (≥ 52.5 h) | non |
 | articles hors seuil | 3.24, 3.25, 3.27, 3.28, 3.31, 3.34, 3.37, 5.19, 6.1 | ±10.0 % ou 1000 $ | non |
 | dans ±1 % (historique) | non | — | — |
 | codes : rappel / précision | 0.6712 / 0.8033 | — | — |
@@ -48,9 +50,9 @@ Lignes : réf 73, run 73, communes 49, écarts 31, manquantes 24, en plus 12
 | monuments | dupuis | lumen | -2758.79 | 3.34 |
 | lot_eclairage | readme_11893 | detail_13034_80 | -2135.72 | 3.35 |
 | eae_hors_plan | releve | comptes | -2480.56 | 3.22, 5.19 |
-| conduits | temps_pi | temps_pi | -8993.98 | 3.23, 3.31, 3.33 |
+| conduits | temps_pi | temps_pi | 0.0 | identique, non imputé (-8993.98 $ sur 3.23, 3.31, 3.33) |
 
-Autres articles (hors décisions) : Δ ACCEO +4377.31 $
+Autres articles et décisions identiques (non attribués) : Δ ACCEO -4616.67 $
 
 ## Écarts par ligne (code commun)
 | code | réf q/p/h | run q/p/h | source run |

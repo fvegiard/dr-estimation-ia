@@ -7,6 +7,7 @@
  "seuils": {
   "total_pct": 3.0,
   "article_pct": 10.0,
+  "article_min_abs": 1000.0,
   "heures_pct": 5.0,
   "historique_pct": 1.0
  },

@@ -18,17 +18,17 @@ Référence : 194 000 $. Généré par `entrainement/synthese_runs.py` depuis `r
 Écart moyen sur le prix : -10.8 % ; écart-type 2.42 points
  ; 0/10 OK.
 
-## Écart attribué aux décisions de portée (Δ ACCEO, $)
+## Écart attribué aux décisions de portée (Δ ACCEO, $ ; Δ = run − référence)
 
 Mode(s) : approximation par articles (ancien protocole).
 
-| Décision | Runs | Moyenne | Min | Max | Stable ? |
+| Décision | Runs où elle diffère | Moyenne | Min | Max | Stable ? |
 |---|---|---|---|---|---|
 | postes_composites | 10 | -9 641 | -9 652 | -9 605 | oui |
 | monuments | 10 | -2 758 | -2 759 | -2 756 | oui |
 | lot_eclairage | 10 | -3 195 | -16 741 | -377 | non |
 | eae_hors_plan | 10 | -2 350 | -6 062 | +69 | non |
-| conduits | 10 | -4 601 | -9 911 | +9 904 | non |
-| autres articles (non attribués) | 10 | +5 634 | +3 411 | +7 562 | — |
+| conduits | 0 (identique à la référence dans 10 runs) | — | — | — | — |
+| autres articles et décisions identiques (non attribués) | 10 | +1 033 | -4 617 | +16 227 | — |
 
 Lecture : en mode « approximation par articles » (ancien protocole), l'effet d'une décision est l'écart des articles qu'elle touche, pas son effet exact ; en mode « exact » (nouveau protocole), c'est le run rechiffré avec la décision de la référence.

@@ -1,5 +1,7 @@
 # Rapport S-1902 — swarm-2 : **ÉCART** (protocole ancien)
 
+Δ = run − référence (négatif : le run est en dessous).
+
 | Total | Référence | Run | Δ | % |
 |---|---|---|---|---|
 | materiel | 66 649.07 | 58 511.22 | -8 137.85 | -12.21 % |
@@ -11,7 +13,7 @@
 | Critère | Mesure | Seuil | OK |
 |---|---|---|---|
 | prix de vente | -9.79 % | ±3.0 % | non |
-| heures chargées | -7.62 % | ±5.0 % | non |
+| heures chargées | -7.62 % | ±5.0 % (≥ 52.5 h) | non |
 | articles hors seuil | 3.23, 3.24, 3.25, 3.27, 3.28, 3.29, 3.30, 3.31, 3.33, 3.34, 3.35, 3.37, 5.19, 6.1 | ±10.0 % ou 1000 $ | non |
 | dans ±1 % (historique) | non | — | — |
 | codes : rappel / précision | 0.3425 / 0.3049 | — | — |
@@ -48,9 +50,9 @@ Lignes : réf 73, run 82, communes 25, écarts 19, manquantes 48, en plus 57
 | monuments | dupuis | lumen | -2758.79 | 3.34 |
 | lot_eclairage | readme_11893 | detail_13034_80 | -16740.62 | 3.35 |
 | eae_hors_plan | releve | comptes | -2833.31 | 3.22, 5.19 |
-| conduits | temps_pi | temps_pi | 9903.77 | 3.23, 3.31, 3.33 |
+| conduits | temps_pi | temps_pi | 0.0 | identique, non imputé (+9903.77 $ sur 3.23, 3.31, 3.33) |
 
-Autres articles (hors décisions) : Δ ACCEO +6323.41 $
+Autres articles et décisions identiques (non attribués) : Δ ACCEO +16227.18 $
 
 ## Écarts par ligne (code commun)
 | code | réf q/p/h | run q/p/h | source run |

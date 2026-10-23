@@ -882,6 +882,7 @@
   "heures": {
    "pct": -6.67,
    "seuil_pct": 5.0,
+   "tolerance_h": 52.5,
    "ok": false
   },
   "articles": {
@@ -914,27 +915,30 @@
      "3.27",
      "3.28"
     ],
-    "delta_acceo": -9651.3,
     "run": "couverts",
-    "ref": "en_plus"
+    "ref": "en_plus",
+    "identique": false,
+    "delta_acceo": -9651.3
    },
    {
     "decision": "monuments",
     "articles": [
      "3.34"
     ],
-    "delta_acceo": -2758.79,
     "run": "dupuis",
-    "ref": "lumen"
+    "ref": "lumen",
+    "identique": false,
+    "delta_acceo": -2758.79
    },
    {
     "decision": "lot_eclairage",
     "articles": [
      "3.35"
     ],
-    "delta_acceo": -2668.77,
     "run": "readme_11893",
-    "ref": "detail_13034_80"
+    "ref": "detail_13034_80",
+    "identique": false,
+    "delta_acceo": -2668.77
    },
    {
     "decision": "eae_hors_plan",
@@ -942,9 +946,10 @@
      "3.22",
      "5.19"
     ],
-    "delta_acceo": 69.44,
     "run": "releve",
-    "ref": "comptes"
+    "ref": "comptes",
+    "identique": false,
+    "delta_acceo": 69.44
    },
    {
     "decision": "conduits",
@@ -953,12 +958,14 @@
      "3.31",
      "3.33"
     ],
-    "delta_acceo": -3707.23,
     "run": "temps_pi",
-    "ref": "temps_pi"
+    "ref": "temps_pi",
+    "identique": true,
+    "delta_acceo": 0.0,
+    "delta_articles_non_impute": -3707.23
    }
   ],
-  "autres_articles_delta_acceo": 4436.96
+  "autres_articles_delta_acceo": 729.73
  },
  "verdict": "ÉCART"
 }
