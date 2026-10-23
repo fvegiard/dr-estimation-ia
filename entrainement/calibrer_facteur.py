@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import math
 import statistics
 import sys
@@ -94,7 +95,7 @@ def rapport(couples: list[Couple], facteur_actuel: float, acceo_exemple: float) 
     sp = statistiques(pcts)
     md = ["# Calibration du facteur « sommaire ACCEO → prix remis » (Daniel Dupuis)", "",
           "Généré par `entrainement/calibrer_facteur.py` depuis `prix/dupuis/couples-sommaire-prix-remis.csv`. Le facteur en vigueur reste",
-          f"celui de `parametres.json` ({facteur_actuel}) tant que Jo n'en décide pas autrement.", "",
+          f"celui du kit (`parametres.json` : {facteur_actuel}) tant que Jo n'en décide pas autrement.", "",
           "| Dossier | Date | Sommaire ACCEO ($) | Prix remis ($) | Ratio | Plus bas ($) | Dupuis vs plus bas | Gagnant | Source | À vérifier |",
           "|---|---|---|---|---|---|---|---|---|---|"]
     for c in couples:
@@ -164,15 +165,30 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Calibration du facteur ACCEO → prix remis et position vs plus bas soumissionnaire")
     ap.add_argument('--csv', type=Path, default=CSV_DEFAUT)
     ap.add_argument('--sortie', type=Path, default=RAPPORT_DEFAUT)
-    ap.add_argument('--facteur-actuel', type=float, default=1.244)
-    ap.add_argument('--acceo-exemple', type=float, default=155899.07, help='sommaire ACCEO servant d’exemple de sensibilité (S-1902)')
+    ap.add_argument('--dossier', default='S-1902', help='dossier dont le kit donne le facteur en vigueur et la référence le sommaire d’exemple')
+    ap.add_argument('--facteur-actuel', type=float, default=None, help='défaut : facteur de entrainement/<dossier>/kit/parametres.json')
+    ap.add_argument('--acceo-exemple', type=float, default=None, help='défaut : total ACCEO de dossiers/<dossier>/soumission/chiffrage_dupuis.json')
     args = ap.parse_args(argv)
     chemin: Path = args.csv
     if not chemin.exists():
         print(f"fichier manquant : {chemin}", file=sys.stderr)
         return 2
+    facteur_actuel = args.facteur_actuel
+    if facteur_actuel is None:
+        params = RACINE / 'entrainement' / str(args.dossier) / 'kit' / 'parametres.json'
+        if not params.exists():
+            print(f"facteur en vigueur introuvable ({params}) : passer --facteur-actuel", file=sys.stderr)
+            return 2
+        facteur_actuel = float(json.loads(params.read_text(encoding='utf-8'))['facteur'])
+    acceo_exemple = args.acceo_exemple
+    if acceo_exemple is None:
+        ref = RACINE / 'dossiers' / str(args.dossier) / 'soumission' / 'chiffrage_dupuis.json'
+        if not ref.exists():
+            print(f"sommaire d'exemple introuvable ({ref}) : passer --acceo-exemple", file=sys.stderr)
+            return 2
+        acceo_exemple = float(json.loads(ref.read_text(encoding='utf-8'))['total_acceo'])
     couples = lire_couples(chemin)
-    texte = rapport(couples, float(args.facteur_actuel), float(args.acceo_exemple))
+    texte = rapport(couples, float(facteur_actuel), float(acceo_exemple))
     sortie: Path = args.sortie
     sortie.write_text(texte, encoding='utf-8')
     print(texte)

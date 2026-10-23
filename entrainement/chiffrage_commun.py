@@ -11,7 +11,8 @@ au schéma du banc (`taux`, `materiel`, `heures_relevees`, `heures_chargees`, `m
 Usage :
     python3 chiffrage_commun.py <dossier_run> [--kit <dossier_kit>] [--sortie <chiffrage.json>]
     <dossier_run> contient quantites.json et decisions.json ; le kit contient parametres.json et
-    catalogue-prix-temps-dupuis.csv (par défaut : le kit du dossier, entrainement/<S>/kit).
+    catalogue-prix-temps-dupuis.csv (par défaut : entrainement/<dossier>/kit, <dossier> étant le champ `dossier` de
+    quantites.json ; hors du dépôt, passer --kit, par exemple `--kit .` dans un dossier de run préparé).
     Code de sortie 0 si chiffrage.json est écrit, 2 si une entrée manque ou est invalide (message « ERREUR : … »).
 
 Schéma de quantites.json :
@@ -456,8 +457,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument('--sortie', type=Path, default=None, help='fichier de sortie (défaut : <dossier_run>/chiffrage.json)')
     args = ap.parse_args(argv)
     dossier_run: Path = args.dossier_run
-    kit: Path = args.kit if args.kit is not None else Path(__file__).resolve().parent / 'S-1902' / 'kit'
     try:
+        kit: Path | None = args.kit
+        if kit is None:
+            dossier = lire_json(dossier_run / 'quantites.json').get('dossier')
+            if not isinstance(dossier, str) or not dossier:
+                raise ErreurChiffrage("quantites.json : champ « dossier » manquant, impossible de déduire le kit ; passer --kit")
+            kit = Path(__file__).resolve().parent / dossier / 'kit'
+            if not (kit / 'parametres.json').exists():
+                raise ErreurChiffrage(f"kit introuvable pour le dossier {dossier} ({kit}) ; passer --kit <dossier du kit>")
         c = chiffrer_dossier(dossier_run, kit, args.catalogue)
     except ErreurChiffrage as e:
         print(f"ERREUR : {e}", file=sys.stderr)

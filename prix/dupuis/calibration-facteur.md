@@ -1,7 +1,7 @@
 # Calibration du facteur « sommaire ACCEO → prix remis » (Daniel Dupuis)
 
 Généré par `entrainement/calibrer_facteur.py` depuis `prix/dupuis/couples-sommaire-prix-remis.csv`. Le facteur en vigueur reste
-celui de `parametres.json` (1.244) tant que Jo n'en décide pas autrement.
+celui du kit (`parametres.json` : 1.244) tant que Jo n'en décide pas autrement.
 
 | Dossier | Date | Sommaire ACCEO ($) | Prix remis ($) | Ratio | Plus bas ($) | Dupuis vs plus bas | Gagnant | Source | À vérifier |
 |---|---|---|---|---|---|---|---|---|---|

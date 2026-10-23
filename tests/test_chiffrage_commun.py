@@ -28,6 +28,8 @@ def charger(nom: str) -> ModuleType:
     module = importlib.util.module_from_spec(spec)
     sys.modules[nom] = module          # les dataclasses exigent un module enregistré
     spec.loader.exec_module(module)
+    if sys.path and sys.path[0] == str(ENTRAINEMENT):   # comparer.py s'ajoute en tête de sys.path : ne pas le laisser à la session pytest
+        sys.path.pop(0)
     return module
 
 
