@@ -7,9 +7,9 @@ run réécrivait ; la variance entre runs mesure ce qui compte : le relevé et l
 
 ## Pourquoi (contre-évaluation du banc v1, 2026-10-23)
 
-- 10 runs v1 (8 solos, 2 essaims) : tous entre −7,2 % et −13,4 % de la référence, écart-type 2,65 points. Avec un tel
-  écart-type, « 8/8 dans ±1 % » a une probabilité nulle même une fois le biais corrigé ; seul un chiffrage déterministe
-  (écart-type résiduel sous 0,5 %) rend cette cible atteignable.
+- 10 runs v1 (8 solos, 2 essaims) : tous entre −7,2 % et −13,4 % de la référence, écart-type 2,65 points sur les 8 solos
+  (2,42 sur les 10 runs, essaims compris ; échantillon, n−1). Avec un tel écart-type, « 8/8 dans ±1 % » a une probabilité
+  nulle même une fois le biais corrigé ; seul un chiffrage déterministe (écart-type résiduel sous 0,5 %) rend cette cible atteignable.
 - Tous les runs ont pris les mêmes décisions de portée (postes composites écartés, monuments au prix Dupuis, lot
   éclairage 11 893 $, démantèlement aux quantités du relevé) : l'écart était dans la règle écrite, pas dans le modèle.
 - Un total dans ±1 % peut cacher des erreurs qui se compensent (+6 219 $ en 6.1 contre −3 656 $ en 3.24 dans les runs v1) :
@@ -59,7 +59,8 @@ ruff check --select E,F,W,B,UP --ignore UP009,E501 entrainement/*.py
 `prix` = `{"type": "fixe", "p", "h"}` ou `{"type": "catalogue", "entrees": [{"desc", "mult"}], "supplement_p"?, "supplement_h"?}`
 (colonnes « PRIX À UTILISER » / « TEMPS À UTILISER » du catalogue = dernière valeur de Dupuis). `decision` =
 `{"cle", "actif_si": [...]}` : la ligne ne compte que si `decisions[cle]` est dans `actif_si`. `variantes` =
-`{"cle", "options": {valeur: {"prix"?, "q"?}}}` : surcharge selon la décision. Les codes sont ceux de la référence
+`{"cle", "options": {valeur: {"prix"?, "q"?}}}` : surcharge selon la décision ; si l'option retenue n'est pas dans `options`, la ligne
+garde son `prix` et son `q`. Les codes sont ceux de la référence
 (`dossiers/<S>/soumission/quantites.json`) : un code inconnu ne se rapproche de rien.
 
 `decisions.json` : une valeur par décision de portée (`METHODE.md` §8) + `justifications`. Valeurs connues dans
@@ -75,6 +76,10 @@ Mesuré par contrefactuel avec le moteur (`tests/test_chiffrage_commun.py`) : `p
 (−22 000 $ de prix ; les runs v1 perdent ≈ 9 600 $ seulement, parce qu'ils gardent les prises du relevé) ; `monuments = dupuis`
 −2 422,44 $ ; `lot_eclairage = readme_11893` −1 141,80 $ ; `eae_hors_plan = sautes` −5 100 $ (64,9 h, arrondi 1 050 → 990 h).
 Ces montants restent hors du kit pour que les runs restent aveugles.
+
+Les cinq décisions de portée sont des règles écrites dans le kit (`METHODE.md` §8) : le banc ne mesure plus si un modèle les devine,
+mais s'il relève juste et s'il suit la règle ; le contrefactuel chiffre le coût d'une déviation. `conduits = acceo_tempsec` est
+refusé par le moteur tant que le catalogue n'a pas de colonne TEMPSEC.
 
 ## Ce que le banc ne règle pas (décisions humaines)
 

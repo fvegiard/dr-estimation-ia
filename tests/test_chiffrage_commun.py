@@ -158,6 +158,21 @@ def test_variante_prix_gagne_sur_le_prix_de_la_ligne() -> None:
     assert moteur.chiffrer({'dossier': 'T', 'lignes': [lg]}, {'monuments': 'dupuis'}, PARAMS_SIMPLES, CATALOGUE_VIDE)['lignes'][0]['p'] == 100.0
 
 
+def test_variante_absente_retombe_sur_le_prix_de_la_ligne() -> None:
+    """Option retenue hors de `variantes.options` : la ligne garde son prix et son q ; sans prix, erreur."""
+    lg = ligne('A', q=2, p=100.0, h=1.0, variantes={'cle': 'monuments', 'options': {'dupuis': {'prix': {'type': 'fixe', 'p': 250.0, 'h': 1.0}}}})
+    c = moteur.chiffrer({'dossier': 'T', 'lignes': [lg]}, {'monuments': 'lumen'}, PARAMS_SIMPLES, CATALOGUE_VIDE)
+    assert c['lignes'][0]['p'] == 100.0 and c['lignes'][0]['q'] == 2
+    sans_prix = {k: v for k, v in lg.items() if k != 'prix'}
+    with pytest.raises(moteur.ErreurChiffrage, match='pas de prix de repli'):
+        moteur.chiffrer({'dossier': 'T', 'lignes': [sans_prix]}, {'monuments': 'lumen'}, PARAMS_SIMPLES, CATALOGUE_VIDE)
+
+
+def test_acceo_tempsec_refuse_sans_colonne_tempsec() -> None:
+    with pytest.raises(moteur.ErreurChiffrage, match='TEMPSEC'):
+        moteur.chiffrer({'dossier': 'T', 'lignes': [ligne('A')]}, {'conduits': 'acceo_tempsec'}, PARAMS_SIMPLES, CATALOGUE_VIDE)
+
+
 def test_decision_et_variantes_se_combinent() -> None:
     lg = ligne('A', q=1, p=100.0, h=1.0, decision={'cle': 'eae_hors_plan', 'actif_si': ['comptes', 'releve']},
                variantes={'cle': 'eae_hors_plan', 'options': {'comptes': {'q': 5}, 'releve': {'q': 2}, 'sautes': {}}})

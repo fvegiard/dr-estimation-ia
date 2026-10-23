@@ -34,10 +34,10 @@ Bibliothèques disponibles : la bibliothèque standard de Python 3 et `openpyxl`
    panneaux : 0 $ en ligne (temps seulement) + une ligne de lot (`"lot": true`) par PRIX DE LOT de `METHODE.md` §2.
 4. Conduits : longueurs en pieds (m × 3,28084), temps/pi du catalogue (pas de colonne TEMPSEC) ; indique dans `src` la famille
    retenue et l'équivalence utilisée quand l'assemblage exact n'existe pas.
-5. Décisions de portée (`METHODE.md` §8) : pour chacune, **fournis les lignes des deux options**, étiquetées
-   (`"decision": {"cle", "actif_si"}` pour une ligne qui n'existe que dans une option ; `"variantes"` pour une ligne dont le
-   prix ou la quantité change), et **tranche dans `decisions.json`** avec une justification. Le comparateur mesure ainsi
-   l'effet exact de chaque décision, quelle que soit la tienne.
+5. Décisions de portée (`METHODE.md` §8) : applique la règle en vigueur dans `decisions.json` (valeur + justification), ou
+   justifie ta déviation ; dans tous les cas **fournis les lignes des deux options**, étiquetées (`"decision": {"cle", "actif_si"}`
+   pour une ligne qui n'existe que dans une option ; `"variantes"` pour une ligne dont le prix ou la quantité change). Le
+   comparateur mesure ainsi le coût exact de toute déviation.
 6. Ventile chaque ligne sur un article du bordereau (`art`). Les frais de chantier et heures de jugement vont dans l'article que
    `NOMENCLATURE.md` indique, jamais dans un article que le bordereau ne contient pas.
 

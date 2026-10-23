@@ -41,7 +41,7 @@ def synthese(S: str, rapports: list[dict[str, Any]]) -> str:
     md = [f"# Synthèse automatique — {S} ({len(rapports)} runs)", "",
           f"Référence : {fmt(ref_prix)} $. Généré par `entrainement/synthese_runs.py` depuis `runs/*/rapport.json` (comparateur v2 : "
           "prix ±total_pct, heures ±heures_pct, chaque article ±article_pct). Un run est OK seulement si les trois critères passent.", "",
-          "| Run | Protocole | Prix ($) | Δ prix | Δ heures | Articles hors seuil | Codes rappel / précision | ±1 % | Verdict |",
+          "| Run | Protocole | Prix ($) | Δ prix | Δ heures chargées | Articles hors seuil | Codes rappel / précision | ±1 % | Verdict |",
           "|---|---|---|---|---|---|---|---|---|"]
     pcts: list[float] = []
     for r in rapports:
@@ -56,7 +56,7 @@ def synthese(S: str, rapports: list[dict[str, Any]]) -> str:
                   f"| {len(hors)} ({', '.join(hors[:6])}{'…' if len(hors) > 6 else ''}) | {cr['rappel_codes']} / {cr['precision_codes']} "
                   f"| {'oui' if cr['dans_1_pct'] else 'non'} | {r['verdict']} |")
     if pcts:
-        md += ["", f"Écart moyen sur le prix : {statistics.fmean(pcts):+.1f} % ; écart-type {statistics.stdev(pcts):.2f} points"
+        md += ["", f"Écart moyen sur le prix : {statistics.fmean(pcts):+.1f} % ; écart-type {statistics.stdev(pcts):.2f} points (échantillon, n−1)"
                if len(pcts) >= 2 else f"Écart sur le prix : {pcts[0]:+.1f} %",
                f" ; {sum(1 for r in rapports if r['verdict'] == 'OK')}/{len(rapports)} OK."]
     # attribution par décision

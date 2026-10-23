@@ -2,7 +2,7 @@
 
 Référence : 194 000 $. Généré par `entrainement/synthese_runs.py` depuis `runs/*/rapport.json` (comparateur v2 : prix ±total_pct, heures ±heures_pct, chaque article ±article_pct). Un run est OK seulement si les trois critères passent.
 
-| Run | Protocole | Prix ($) | Δ prix | Δ heures | Articles hors seuil | Codes rappel / précision | ±1 % | Verdict |
+| Run | Protocole | Prix ($) | Δ prix | Δ heures chargées | Articles hors seuil | Codes rappel / précision | ±1 % | Verdict |
 |---|---|---|---|---|---|---|---|---|
 | opus-1 | ancien | 168 000 | -13.4 % | -12.4 % | 10 (3.22, 3.24, 3.25, 3.27, 3.28, 3.33…) | 0.3973 / 0.3671 | non | ÉCART |
 | opus-2 | ancien | 168 000 | -13.4 % | -11.4 % | 9 (3.24, 3.25, 3.27, 3.28, 3.31, 3.34…) | 0.6712 / 0.8033 | non | ÉCART |
@@ -15,7 +15,7 @@ Référence : 194 000 $. Généré par `entrainement/synthese_runs.py` depuis `r
 | swarm-1 | ancien | 170 000 | -12.4 % | -11.4 % | 12 (3.22, 3.23, 3.24, 3.25, 3.27, 3.28…) | 0.5479 / 0.4301 | non | ÉCART |
 | swarm-2 | ancien | 175 000 | -9.8 % | -7.6 % | 14 (3.23, 3.24, 3.25, 3.27, 3.28, 3.29…) | 0.3425 / 0.3049 | non | ÉCART |
 
-Écart moyen sur le prix : -10.8 % ; écart-type 2.42 points
+Écart moyen sur le prix : -10.8 % ; écart-type 2.42 points (échantillon, n−1)
  ; 0/10 OK.
 
 ## Écart attribué aux décisions de portée (Δ ACCEO, $ ; Δ = run − référence)

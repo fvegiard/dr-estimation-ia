@@ -60,4 +60,6 @@ par décision est maintenant générée (`SYNTHESE-auto.md`, `entrainement/synth
 10 runs), monuments −2 758 $ (stable), conduits et démantèlement instables, et en moyenne +5 634 $ d'écart non attribué sur les
 autres articles. Les cinq décisions sont écrites dans `kit/METHODE.md` §8, le prix sort d'un moteur commun
 (`entrainement/chiffrage_commun.py`, test doré : il redonne les 194 000 $ gelés) et le verdict porte sur le prix, les heures et
-chaque article (`entrainement/comparer.py`). Voir `entrainement/README.md`.
+chaque article (`entrainement/comparer.py`). Voir `entrainement/README.md`. Correspondance : essaim-1 = `runs/swarm-1`,
+essaim-2 = `runs/swarm-2` ; la colonne « Δ heures » du tableau ci-dessus porte sur les heures relevées, `SYNTHESE-auto.md` sur
+les heures chargées.

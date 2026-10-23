@@ -17,7 +17,8 @@ Usage :
 Schéma de quantites.json :
     {"dossier": "S-1902", "lignes": [LIGNE, …]}
     LIGNE = {"code", "desc", "q", "u", "art", "src",            # q obligatoire même si une variante le surcharge
-             "prix": PRIX,                                      # obligatoire sauf si `variantes` couvre toutes les options
+             "prix": PRIX,                                      # obligatoire sauf si `variantes` couvre toutes les options ;
+                                                                # si l'option retenue n'est pas dans `variantes.options`, la ligne garde `prix` et `q`
              "decision": {"cle": "…", "actif_si": ["…"]},       # facultatif : la ligne ne compte que si decisions[cle] ∈ actif_si
              "variantes": {"cle": "…", "options": {valeur: {"prix": PRIX, "q": nombre}}},  # facultatif : surcharge par décision
              "lot": true,                                       # facultatif (booléen) : la ligne est un prix de lot fournisseur
@@ -293,7 +294,9 @@ def _variantes(ligne: dict[str, Any], decisions: dict[str, Any], ou: str) -> tup
             _nombre(opt['q'], f"{ou} variante « {k} » q")
     valeur = _valeur_decision(cle, decisions, ou)
     if valeur not in options:
-        raise ErreurChiffrage(f"{ou} : aucune variante pour « {cle} = {valeur} » (options : {sorted(options)})")
+        if isinstance(ligne.get('prix'), dict):
+            return None, None                       # repli documenté : le prix et la quantité de la ligne
+        raise ErreurChiffrage(f"{ou} : aucune variante pour « {cle} = {valeur} » et pas de prix de repli (options : {sorted(options)})")
     opt = cast(dict[str, Any], options[valeur])
     prix = cast(dict[str, Any], opt['prix']) if 'prix' in opt else None
     q = _nombre(opt['q'], f"{ou} variante q") if 'q' in opt else None
@@ -307,6 +310,9 @@ def chiffrer_lignes(quantites: dict[str, Any], decisions: dict[str, Any], catalo
     if not isinstance(lignes, list) or not lignes:
         raise ErreurChiffrage("quantites.json : « lignes » doit être une liste non vide")
     valider_decisions(decisions)
+    if decisions.get('conduits') == 'acceo_tempsec':
+        raise ErreurChiffrage("decisions.json : conduits = acceo_tempsec n'est pas pris en charge : le catalogue n'a pas de colonne TEMPSEC "
+                              "(temps par section de 10 pi) ; utiliser temps_pi")
     codes: set[str] = set()
     resultat: list[LigneChiffree] = []
     for i, brut in enumerate(cast(list[Any], lignes)):

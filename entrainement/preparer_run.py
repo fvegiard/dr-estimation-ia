@@ -8,7 +8,7 @@ moteur commun `chiffrage_commun.py` (l'agent peut se contrôler lui-même), `run
 une preuve du modèle réellement exécuté) et `PROMPT.md` construit depuis `prompt-run.md` : la partie commune à tous
 les runs d'abord (cachable par le fournisseur), la partie propre au run à la fin.
 
-Usage : preparer_run.py <S> <nom_run> --dest <dossier hors dépôt> [--modele sonnet|opus] [--effort low|medium|high|xhigh|max]
+Usage : preparer_run.py <S> <nom_run> --dest <dossier hors dépôt> [--modele sonnet|opus|haiku|fable] [--effort low|medium|high|xhigh|max]
 """
 from __future__ import annotations
 

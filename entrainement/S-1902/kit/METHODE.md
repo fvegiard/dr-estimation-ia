@@ -13,7 +13,7 @@ transcrites, onglets LISEZ-MOI / Catalogue / Paramètres Jo / Backtest / Lignes 
 2. **Luminaires, enseignes, têtes d'urgence, détecteurs, panneaux** : 0 $ en ligne (temps seulement) + un **PRIX DE LOT** fournisseur.
    Lots pour S-1902 (entrées, montants confirmés par Francis le 2026-10-20, sans soumission fournisseur) : lot éclairage = somme de son
    détail (A1 ×11 à 185 $, Axis SL1 4′ ×12 à 290 $, 3′ ×15 à 230 $, 1′ ×6 à 110 $, trousses 1 500 $, E ×3 à 475 $, Z6 ×3 à 161,60 $) =
-   **13 034,80 $** dans la référence gelée (le 11 893 $ du README est l'allocation du midi, voir §8, décision `lot_eclairage`) ;
+   **13 034,80 $** (règle en vigueur ; le 11 893 $ est l'allocation notée le 2026-10-20 à midi, voir §8, décision `lot_eclairage`) ;
    lot distribution 6 200 $ (NF 225 A 42 cct 3 400 $ + EDB 1P 95 $ ×20 + EJB 3P 300 $ ×3) ; JCI 7 400 $ + 2 détecteurs 600 $ ; GPR 1 250 $.
 3. **Heures** = Σ quantité × *temps unitaire* Dupuis (prise 1,175 h ; USB 1,125 h ; DDFT 1,3 h ; tel/data 0,63–0,89 h ; luminaire 0,75 h ;
    enseigne 1 h ; tête 0,5 h ; détecteur 0,5 h ; panneau 8 h ; disjoncteur 1P 0,2 h / 3P 1 h ; percement 1 h ; luminaire enlevé 0,5 h ;
@@ -29,12 +29,12 @@ transcrites, onglets LISEZ-MOI / Catalogue / Paramètres Jo / Backtest / Lignes 
 
 ## 8. Décisions de portée (règles écrites, 2026-10-23)
 
-Le banc v1 (10 runs) a montré que l'écart à la référence tenait à cinq décisions que la méthode ne disait pas. Les voici écrites
-telles que la **référence gelée du 2026-10-20** les applique. Ce sont des règles **en vigueur par défaut, à confirmer par Jo** ; un run
-les tranche dans `decisions.json` (valeur + justification) et fournit les lignes des deux options, étiquetées, pour que le comparateur
-mesure l'effet exact de chaque choix.
+Le banc v1 (10 runs) a montré que l'écart tenait à cinq décisions que la méthode ne disait pas. Les voici écrites comme règles
+**en vigueur depuis le 2026-10-23, à confirmer par Jo**. Un run les applique dans `decisions.json` (valeur + justification) ; s'il
+s'en écarte, il le justifie. Dans tous les cas il fournit les lignes des deux options, étiquetées, pour que le comparateur mesure le
+coût exact de toute déviation.
 
-| Clé | Valeurs permises | Règle en vigueur (référence) |
+| Clé | Valeurs permises | Règle en vigueur |
 |---|---|---|
 | `postes_composites` | `en_plus`, `couverts` | **`en_plus`** : les postes de travail de la feuille Détail (D-01, D-02, D-03…D-06, E-01, E-04, E-05) sont comptés en plus du relevé ; les dispositifs du relevé déjà inclus dans ces postes sont retranchés des lignes du relevé (ex. D-08 : sorties data du relevé moins celles des postes, écrans et kiosque). `couverts` : le relevé fait foi au compte complet, aucune ligne composite. |
 | `monuments` | `lumen`, `dupuis` | **`lumen`** : monuments poke-through E-02 au prix fournisseur Lumen (feuille Matériel Lumen), temps Dupuis 1 h ; les boîtes de plancher E-03 restent au prix Dupuis « MONUMENT PLANCHER ». |
@@ -43,5 +43,5 @@ mesure l'effet exact de chaque choix.
 | `conduits` | `temps_pi`, `acceo_tempsec` | **`temps_pi`** : pas de colonne TEMPSEC au catalogue → temps/pi × longueur en pieds (m × 3,28084) ; équivalences : 1″ 05c12 → « CONDUIT 3/4 07C12 », 1″ #8 → « CONDUIT 1 13C12 », 3/4″ → « CONDUIT 3/4 03C12 », data vide → « CONDUIT VIDE 3/4 ». `acceo_tempsec` : refusé par le moteur tant que le catalogue n'a pas TEMPSEC. |
 
 Les quantités ne se tranchent pas ici : elles viennent du relevé et de la feuille Détail, ligne par ligne, avec leur source.
-L'effet mesuré de chaque décision sur la référence est dans `entrainement/README.md` et `SYNTHESE-auto.md`, hors du kit.
+L'effet mesuré de chaque décision est dans `entrainement/README.md` et `SYNTHESE-auto.md`, hors du kit.
 
