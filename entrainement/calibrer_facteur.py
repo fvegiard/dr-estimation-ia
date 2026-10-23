@@ -123,6 +123,14 @@ def rapport(couples: list[Couple], facteur_actuel: float, acceo_exemple: float) 
     for k in sorted({1.20, facteur_actuel, 1.30, 1.35} | ({round(float(st['moyenne'] or 0.0), 3)} if n else set())):
         pv = acceo_exemple * k
         md.append(f"| {k:.3f} | {round(pv / 1000) * 1000:,.0f} | {(k / facteur_actuel - 1) * 100:+.1f} % |".replace(',', ' '))
+    a_faire = [c for c in couples if c.sommaire_acceo and not c.prix_remis]
+    if a_faire:
+        md += ["", "## Prix remis à retrouver (un sommaire ACCEO existe, le prix remis manque)", ""]
+        for c in a_faire:
+            montant = f"{c.sommaire_acceo:,.2f}".replace(',', ' ')
+            md.append(f"- {c.dossier} (sommaire {montant} $) : {c.source or 'source à préciser'}")
+        md.append("")
+        md.append(f"Avec ces {len(a_faire)} prix, le facteur reposerait sur {len(a_faire) + n} couples au lieu de {n}.")
     md += ["", "## Position par rapport au plus bas soumissionnaire", ""]
     if not pcts:
         md.append("Aucun résultat d'ouverture avec le prix du plus bas soumissionnaire dans le fichier.")

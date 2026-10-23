@@ -1,2 +1,7 @@
 dossier;date;sommaire_acceo;prix_remis;plus_bas_soumissionnaire;gagnant;source;a_verifier
-S-1844;2026-08-26;191909.19;238744;;;METHODE.md §7 — courriel Dupuis 2026-08-26 (sommaire 191 909,19 $ → prix remis 238 744 $);
+S-1844;2026-08-26;191909.19;238744;;;"sommaire : dossiers/S-1844/reference-quantites.csv (p.1 du take-off scanné) ; prix remis : eewin/soumissions-dr/S-1844/Soumission_S-1844_LC2000_SAQ_.pdf.txt (PDF DR du 25 août 2026, courriel Dupuis 2026-08-26)";
+S-1753;2026-05-05;180638.85;;;;"sommaire : catalogue Dupuis, onglet Paramètres Jo ; prix remis à lire dans Drive « Soumission_S-1753_Norgereq.pdf » (inventaire Drive 2026-09-23)";oui
+S-1763;2026-05-18;59887.15;;;;"sommaire : catalogue Dupuis, onglet Paramètres Jo ; prix remis à lire dans Drive « Soumission_S-1763_QMD.pdf » / « _r1.pdf » (inventaire Drive 2026-09-23)";oui
+S-1693;2026-03-31;1231798.52;;;;"sommaire : dossiers/S-1693/reference-quantites.csv ; prix remis à lire dans Drive « BORDEREAU SOUMISSION ELECTRICITÉ.pdf » / « formule de soumission du bsdq.pdf » (inventaire Drive 2026-09-23)";oui
+S-1775;2026-06-03;428310.26;;;;"sommaire : catalogue Dupuis, onglet Paramètres Jo ; prix remis à vérifier dans Drive « Electricité_Soumission_2026 04 03.pdf » (auteur à confirmer)";oui
+S-1835;2026-08-26;88315;;;;"sommaire v2 : dossiers/S-1835/reference-quantites.csv ; manuscrits 70 000 / 75 000 / 80 000 / 89 777 $ « prix CL 50 » sur le sommaire, prix remis non confirmé";oui
