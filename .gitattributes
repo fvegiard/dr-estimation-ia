@@ -1,4 +1,12 @@
+# Texte normalisé en LF. Pas de eol=crlf: ça rendait infra/mcp-docker/diag_mcp.cmd "modifié".
 * text=auto eol=lf
-*.ps1 text eol=crlf
-*.cmd text eol=crlf
-*.bat text eol=crlf
+# Données et scripts Windows déjà versionnés avec leurs octets d'origine (certains blobs sont en CRLF):
+# jamais renormalisés.
+*.qpl -text
+*.csv -text
+*.sql -text
+*.SQL -text
+*.xml -text
+*.cmd -text
+dossiers/** -text
+eewin/** -text

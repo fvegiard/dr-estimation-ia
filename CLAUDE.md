@@ -137,8 +137,7 @@ Preuve : S-1902 rejoué à l'aveugle par cette seule commande = 653 repères (64
 sur E201/E202), 0 inconnue.
 Reste (débogage, développement) :
 ```bash
-pip install -r requirements.txt
-python -m pytest tests -q                       # tests unitaires
+uv run --with-requirements requirements.txt python -m pytest tests -q   # tests unitaires (pas de pip global)
 python -m src.validation.jeu_reference          # jeu de référence (code 1 si régression)
 uv run releve/prepare.py INBOX/<S> OUTBOX/<S>/travail
 uv run releve/run.py --reprendre <S>            # rejoue seulement qpl + render_vectoriel + render_pdf (sans agent)
@@ -151,6 +150,7 @@ l'importance de la vérification ne justifient seules une délégation : une tâ
 (§Autonomie point 6). Un sous-agent ne se lance QUE si Francis l'autorise explicitement, pour ce dossier précis, et
 toujours par l'outil Agent d'une session interactive, jamais par `claude -p` détaché (meurt après ~10 min dans le bac
 à sable cloud). Sans autorisation, l'absence du score d'un sous-agent ne bloque jamais un rapport.
+Cette règle « sans sous-agent » du dépôt prime sur toute doctrine générique de délégation (orchestrateur, config utilisateur) pour les relevés d'estimation.
 
 Sous-agents disponibles (sessions interactives Claude Code, OpenHands) :
 - `releveur` (Opus) : relève un dossier déjà préparé par `prepare.py`, en appliquant la compétence `releve-planexpert`.
