@@ -36,9 +36,11 @@ box = Border(top=thin, bottom=thin, left=thin, right=thin)
 wrap = Alignment(wrap_text=True, vertical='center')
 center = Alignment(horizontal='center', vertical='center', wrap_text=True)
 right = Alignment(horizontal='right', vertical='center')
-CUR = '#,##0.00 $;-#,##0.00 $;"-"'
-CUR0 = '#,##0 $;-#,##0 $;"-"'
-HRS = '#,##0.00;-#,##0.00;"-"'
+# [$-C0C] = français (Canada) : séparateurs « 98 376,90 $ » quel que soit le poste qui ouvre/imprime (Excel fr-CA ou LibreOffice en anglais)
+FR = '[$-C0C]'
+CUR = FR + '#,##0.00 $;-#,##0.00 $;"-"'
+CUR0 = FR + '#,##0 $;-#,##0 $;"-"'
+HRS = FR + '#,##0.00;-#,##0.00;"-"'
 
 def setup_print(ws, landscape, title_rows, widths):
     ws.page_setup.orientation = 'landscape' if landscape else 'portrait'
@@ -48,7 +50,7 @@ def setup_print(ws, landscape, title_rows, widths):
     ws.print_title_rows = title_rows
     ws.page_margins = PageMargins(left=0.4, right=0.4, top=0.6, bottom=0.6, header=0.3, footer=0.3)
     ws.oddHeader.left.text = '&"Arial,Bold"&9Le Groupe DR Électrique inc. — S-1902 Bibliothèque Georgette-Lepage'
-    ws.oddHeader.right.text = '&9Chiffrage méthode Dupuis — 2026-10-20'
+    ws.oddHeader.right.text = '&9Chiffrage méthode Dupuis — ' + C.get('date', '2026-10-20')
     ws.oddFooter.left.text = '&8DR Électrique inc. | Merci de votre confiance'
     ws.oddFooter.right.text = '&8Page &P de &N'
     ws.sheet_view.showGridLines = False
@@ -76,7 +78,7 @@ wb = Workbook()
 D = wb.create_sheet('Détail')
 setup_print(D, True, '1:4', [10, 56, 8, 7, 12, 10, 9, 13, 10, 58])
 banner(D, 'S-1902 — DÉTAIL DU CHIFFRAGE (méthode Dupuis / ACCEO)',
-       'Chaque ligne = quantité × prix vendant d’assemblage de M. Dupuis (dernier prix de ses relevés 2026) et quantité × son temps unitaire.  Bleu = intrant · Jaune = heures de jugement · Noir = formule.', 10)
+       'Chaque ligne = quantité × prix vendant d’assemblage de M. Dupuis (dernier prix de ses relevés 2026) et quantité × son temps unitaire.  Bleu = intrant · Jaune = heures de jugement ou allocation sans soumission · Noir = formule.', 10)
 header_row(D, 4, ['Code', 'Description', 'Qté', 'Unité', 'Prix unit.\nvendant ($)', 'Temps unit.\n(h)', 'Article\nbordereau', 'Matériel ($)', 'Heures', 'Source (catalogue Dupuis / allocation)'])
 sections = [('A', '5.19 / 3.22 — DÉMANTÈLEMENT, RELOCALISATION, TRAVAUX TEMPORAIRES', ('A-',)),
             ('B', '3.24 à 3.26 — DISTRIBUTION, PANNEAU PP-3, DISJONCTEURS, MCC', ('B-',)),
@@ -95,10 +97,10 @@ for sec, title, prefixes in sections:
         if not x['code'].startswith(prefixes): continue
         vals = [x['code'], x['desc'], round(x['q'], 2), x['u'], x['p'], x['h'], x['art'], f'=C{r}*E{r}', f'=C{r}*F{r}', x['src']]
         for j, v in enumerate(vals, 1):
-            c = D.cell(r, j, v); c.font = fN; c.border = box; c.alignment = wrap if j in (2, 10) else (center if j in (1, 4, 7) else right)
+            c = D.cell(r, j, v); c.font = fN; c.border = box; c.alignment = Alignment(wrap_text=True, vertical='center', horizontal='left', indent=1) if j in (2, 10) else (center if j in (1, 4, 7) else right)
         D.cell(r, 3).font = fBlue; D.cell(r, 5).font = fBlue; D.cell(r, 6).font = fBlue
-        D.cell(r, 5).number_format = CUR; D.cell(r, 6).number_format = '0.000'; D.cell(r, 8).number_format = CUR; D.cell(r, 9).number_format = HRS
-        if 'jugement' in x['src']:
+        D.cell(r, 5).number_format = CUR; D.cell(r, 6).number_format = FR + '0.000'; D.cell(r, 8).number_format = CUR; D.cell(r, 9).number_format = HRS
+        if 'jugement' in x['src'] or 'ALLOCATION' in x['src']:
             D.cell(r, 5).fill = fillY; D.cell(r, 6).fill = fillY
         if (r - first) % 2 == 1:
             for j in range(1, 11):
@@ -126,6 +128,7 @@ setup_print(S, False, '1:3', [50, 22, 56])
 banner(S, 'S-1902 — SOMMAIRE DU CHIFFRAGE',
        'Bibliothèque Georgette-Lepage (Brossard) — RFID — AO SP-GTER-26-0080 — R.D.J. E-26-75-GE', 3)
 PRIX_SOUMIS = sum(m for _, _, m in V)
+S.page_setup.fitToHeight = 1; S.sheet_properties.pageSetUpPr.fitToPage = True   # le Sommaire tient sur une page
 tot_mat = C['materiel']; tot_h = C['heures_relevees']; tot_hc = C['heures_chargees']; tot_acceo = C['total_acceo']
 
 def section_title(ws, r, txt, ncols=3):
@@ -142,7 +145,7 @@ INK_C = '1F1F1F'
 # --- bandeau KPI (ligne 4-5) ---
 r = 4
 kpi(S, r, 1, 'PRIX SOUMIS (avant taxes)', PRIX_SOUMIS, CUR0, True)
-kpi(S, r, 2, 'HEURES CHARGÉES', tot_hc, '#,##0 "h"', False)
+kpi(S, r, 2, 'HEURES CHARGÉES', tot_hc, FR + '#,##0 "h"', False)
 kpi(S, r, 3, 'SOMMAIRE ACCEO (matériel + MO, admin/profit 0 %)', tot_acceo, CUR0, False)
 S.row_dimensions[4].height = 14; S.row_dimensions[5].height = 26
 r = 7
@@ -157,10 +160,10 @@ def table(ws, r, headers, rows, fmts, bold_last=False):
         cc = ws.cell(r, 3, c3); cc.font = fSub
         for j in range(1, 4):
             cell = ws.cell(r, j); cell.border = box
-            cell.alignment = Alignment(vertical='center', horizontal='right' if j == 2 else 'left', indent=1 if j != 2 else 0, wrap_text=(j == 3))
+            cell.alignment = Alignment(vertical='center', horizontal='right' if j == 2 else 'left', indent=1 if j != 2 else 0, wrap_text=(j != 2))
             if last: cell.fill = fillSec
             elif i % 2 == 1: cell.fill = fillZ
-        ws.row_dimensions[r].height = 17
+        ws.row_dimensions[r].height = 26 if len(str(c3)) > 62 or len(str(a)) > 64 else 17
         r += 1
     return r + 1
 
@@ -172,34 +175,34 @@ rows = [('Taux horaire', 85, 'Dupuis, août–oct. 2026 : S-1797, S-1835, S-1854
         ('Heures chargées (arrondi vers le haut, multiple de 10)', '=CEILING(B11,10)', 'Pratique Dupuis (S-1881 : 4 128,6 → 4 150 h)'),
         ("Main-d'œuvre = heures chargées × taux", '=B12*B9', ''),
         ('Sommaire ACCEO = matériel + main-d\'œuvre', '=B10+B13', 'Admin/profit 0 % — équivalent de son « Grand total » ; part MO ' + f'{C["main_doeuvre"]/C["total_acceo"]:.0%}' + ' (Dupuis : 30–69 %)'),
-        ('Facteur de passage au prix de vente', 1.244, 'S-1844 : prix remis 238 744 $ ÷ sommaire ACCEO 191 909,19 $'),
+        ('Facteur de passage au prix de vente', C.get('facteur', 1.244), 'S-1844 : prix remis 238 744 $ ÷ sommaire ACCEO 191 909,19 $'),
         ('Prix de vente calculé', '=ROUND(B14*B15,0)', ''),
         ('PRIX SOUMIS (arrondi au millier)', PRIX_SOUMIS, 'Somme des articles de la soumission (PDF)')]
-fm = [CUR, CUR, HRS, '#,##0', CUR, CUR, '0.000', CUR0, CUR0]
+fm = [CUR, CUR, HRS, FR + '#,##0', CUR, CUR, FR + '0.000', CUR0, CUR0]
 r = table(S, r, ['Poste', 'Valeur', 'Source / preuve'], rows, fm, bold_last=True)
 
 # --- 2. Comparaisons ---
 section_title(S, r, '2. COMPARAISONS'); r += 1
-rows = [('Estimation_2 — Léna AI, 2026-10-08', 112381.39, '719,5 h × 124 $ + Lumen 23 160 $ ; sans FG, profit ni sous-traitance'),
-        ('v2 — 2026-10-20 (midi)', 158296, '745 h × 113,50 $ pondéré + matériel + allocations'),
-        ('v3 — méthode Dupuis, médianes conduits', 183000, '990 h ; conduits aux valeurs médianes du catalogue'),
-        ('v4 — méthode Dupuis, dernières valeurs (ce classeur)', PRIX_SOUMIS, 'Ses temps et prix « dernier », 85 $/h, × 1,244')]
+# Historique des versions : lu dans chiffrage.json (clé « historique » ; montant None = ce classeur)
+hist = C.get('historique') or [['v4 — méthode Dupuis, dernières valeurs (ce classeur)', None, 'Ses temps et prix « dernier », 85 $/h, × 1,244']]
+rows = [(lab, PRIX_SOUMIS if m is None else m, base) for lab, m, base in hist]
 r = table(S, r, ['Version', 'Prix avant taxes', 'Base'], rows, CUR0, bold_last=True)
 
-# --- 3. Lots ---
-section_title(S, r, '3. LOTS FOURNISSEUR INCLUS (prix confirmés par Frank, 2026-10-20)'); r += 1
-rows = [('Luminaires A1 ×11, Axis SL1 ×33 + trousses, E ×3, Z6 ×3', 11 * 185 + 12 * 290 + 15 * 230 + 6 * 110 + 1500 + 3 * 475 + 3 * 161.60, 'Gerrie prix réguliers / agents'),
-        ('Panneau NF 225 A 42 cct + disjoncteurs EDB/EJB', 6200, 'Schneider NF + EDB 1P ×20 + EJB 3P ×3'),
-        ('Services JCI/Simplex + 2 détecteurs adressables', 8000, 'Bypass, programmation 4007ES, annonciateur, vérification ULC-S537'),
-        ('Scan GPR de la dalle', 1250, 'Dupuis « SCAN DALLE BETON »')]
-r = table(S, r, ['Poste', 'Montant ($)', 'Note'], rows, CUR0)
+# --- 3. Lots (lus dans chiffrage.json, clé « lots » : description, montant, source — la source dit si c'est une soumission ou une allocation) ---
+section_title(S, r, '3. LOTS FOURNISSEUR INCLUS DANS LE MATÉRIEL (source de chaque montant dans la colonne de droite)'); r += 1
+rows = [(d, m, src) for d, m, src in C.get('lots', [])]
+r = table(S, r, ['Poste', 'Montant ($)', 'Source (soumission reçue ou allocation à confirmer)'], rows, CUR)
+# surligner en jaune les lots encore en allocation (pas de soumission fournisseur)
+for rr in range(r - 1 - len(rows), r - 1):
+    if 'ALLOCATION' in str(S.cell(rr, 3).value):
+        S.cell(rr, 2).fill = fillY; S.cell(rr, 3).fill = fillY
 
 # --- 4. Ventilation ---
 section_title(S, r, '4. VENTILATION PAR ARTICLE DU BORDEREAU (Annexe 2.00, prix soumis avant taxes)'); r += 1
 rows = []
 for a, d, m in V:
     pa = C['par_article'][a]
-    rows.append((f"{a} — {d}", m, f"{pa['materiel']:,.0f} $ matériel · {pa['heures']:,.1f} h".replace(',', ' ')))
+    rows.append((f"{a} — {d}", m, f"{pa['materiel']:,.0f} $ matériel · {pa['heures']:,.1f} h".replace(',', ' ').replace('.', ',')))
 rows.append(('TOTAL ÉLECTRICITÉ, avant taxes', f'=SUM(B{r+1}:B{r+len(V)})', ''))
 r = table(S, r, ['Article — description (bordereau R.D.J.)', 'Prix soumis ($)', 'Base ACCEO'], rows, CUR0, bold_last=True)
 
