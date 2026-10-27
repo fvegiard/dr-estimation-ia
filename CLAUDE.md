@@ -217,6 +217,7 @@ render) → étape 3 ci-dessus.
 
 ## Soumission et chiffrage (référence officielle, 2026-10-20)
 - `outils/soumission/` — chiffrage « méthode Dupuis » + gabarit de soumission DR (ReportLab) + classeur imprimable ; processus complet dans `outils/soumission/README.md`.
-- `dossiers/<S>/soumission/` — dossier gelé par soumission (S-1902 = première application, 194 000 $).
+- `dossiers/<S>/soumission/` — dossier gelé par soumission (S-1902 = première application : 194 000 $ le 2026-10-20, rév. 1 à 233 000 $ le 2026-10-26 avec l'addenda E-01).
+- Lots fournisseur : « ferme » seulement avec une soumission fournisseur datée en main (no, date, validité, exclusions cités dans la colonne source) ; sinon ALLOCATION, en jaune. La traçabilité de chaque montant est dans le README du dossier.
 - `prix/dupuis/` — catalogue prix/temps de M. Dupuis (27 relevés ACCEO 2026) : sa dernière valeur fait foi.
 - Règle : aperçu PNG regardé avant tout PDF ; commit direct sur `main`, pas de PR, pour ces dossiers.
