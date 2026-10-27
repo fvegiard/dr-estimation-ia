@@ -45,5 +45,5 @@ médianes de conduits = 183 000 $ ; v4 2026-10-20 = dernières valeurs du catalo
 
 Contrôle de la rév. 1 (bac à sable cloud, 2026-10-26) : chiffrage 187 626,90 $ / 1 049,10 h → 1 050 h ; classeur 181 formules, 0 erreur au
 recalcul LibreOffice (Sommaire B10:B17 = 98 376,90 / 1 049,10 / 1 050 / 89 250 / 187 626,90 / 1,244 / 233 408 / 233 000) ; PDF 3 pages,
-« 233 000,00 $ » = « Deux cent trente-trois mille dollars » = Σ 18 articles ; dossier regroupé 9 pages, les 9 pages regardées après fusion (planche). Formats de nombres forcés en français (Canada) `[$-C0C]` pour que
+« 233 000,00 $ » = « Deux cent trente-trois mille dollars » = Σ 18 articles ; dossier regroupé 9 pages, les 9 pages regardées après fusion (planche). Alignement corrigé le 2026-10-27 après contrôle visuel à 160 dpi (tuiles KPI sur une même ligne de base, retrait à droite des nombres, hauteurs de lignes calculées sur la largeur des colonnes, jaune sur toute la ligne d'allocation). Formats de nombres forcés en français (Canada) `[$-C0C]` pour que
 « 98 376,90 $ » s'affiche pareil dans Excel fr-CA et dans un LibreOffice anglais.

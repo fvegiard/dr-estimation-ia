@@ -35,7 +35,7 @@ thin = Side(style='thin', color='BFBFBF'); med = Side(style='medium', color=BORD
 box = Border(top=thin, bottom=thin, left=thin, right=thin)
 wrap = Alignment(wrap_text=True, vertical='center')
 center = Alignment(horizontal='center', vertical='center', wrap_text=True)
-right = Alignment(horizontal='right', vertical='center')
+right = Alignment(horizontal='right', vertical='center', indent=1)   # retrait = les nombres ne collent pas au bord
 # [$-C0C] = français (Canada) : séparateurs « 98 376,90 $ » quel que soit le poste qui ouvre/imprime (Excel fr-CA ou LibreOffice en anglais)
 FR = '[$-C0C]'
 CUR = FR + '#,##0.00 $;-#,##0.00 $;"-"'
@@ -137,8 +137,8 @@ def section_title(ws, r, txt, ncols=3):
     ws.row_dimensions[r].height = 20
 
 def kpi(ws, r, j, label, value, fmt, big=True):
-    a = ws.cell(r, j, label); a.font = Font(name=F, bold=True, size=8, color=BORD); a.alignment = Alignment(horizontal='center', vertical='bottom'); a.fill = fillSec
-    b = ws.cell(r + 1, j, value); b.number_format = fmt; b.font = Font(name=F, bold=True, size=16 if big else 13, color=BORD if big else INK_C); b.alignment = Alignment(horizontal='center', vertical='top'); b.fill = fillSec
+    a = ws.cell(r, j, label); a.font = Font(name=F, bold=True, size=8, color=BORD); a.alignment = Alignment(horizontal='center', vertical='center'); a.fill = fillSec
+    b = ws.cell(r + 1, j, value); b.number_format = fmt; b.font = Font(name=F, bold=True, size=15, color=BORD if big else INK_C); b.alignment = Alignment(horizontal='center', vertical='center'); b.fill = fillSec
     for rr in (r, r + 1): ws.cell(rr, j).border = box
 
 INK_C = '1F1F1F'
@@ -147,7 +147,7 @@ r = 4
 kpi(S, r, 1, 'PRIX SOUMIS (avant taxes)', PRIX_SOUMIS, CUR0, True)
 kpi(S, r, 2, 'HEURES CHARGÉES', tot_hc, FR + '#,##0 "h"', False)
 kpi(S, r, 3, 'SOMMAIRE ACCEO (matériel + MO, admin/profit 0 %)', tot_acceo, CUR0, False)
-S.row_dimensions[4].height = 14; S.row_dimensions[5].height = 26
+S.row_dimensions[4].height = 15; S.row_dimensions[5].height = 28
 r = 7
 
 def table(ws, r, headers, rows, fmts, bold_last=False):
@@ -160,10 +160,12 @@ def table(ws, r, headers, rows, fmts, bold_last=False):
         cc = ws.cell(r, 3, c3); cc.font = fSub
         for j in range(1, 4):
             cell = ws.cell(r, j); cell.border = box
-            cell.alignment = Alignment(vertical='center', horizontal='right' if j == 2 else 'left', indent=1 if j != 2 else 0, wrap_text=(j != 2))
+            cell.alignment = Alignment(vertical='center', horizontal='right' if j == 2 else 'left', indent=1, wrap_text=(j != 2))
             if last: cell.fill = fillSec
             elif i % 2 == 1: cell.fill = fillZ
-        ws.row_dimensions[r].height = 26 if len(str(c3)) > 62 or len(str(a)) > 64 else 17
+        import math as _m
+        lines = max(_m.ceil(len(str(a)) / 60), _m.ceil(len(str(c3)) / 78), 1)   # ~60 car. (col. A, 50) et ~78 car. italiques (col. C, 56) par ligne en Arial 9
+        ws.row_dimensions[r].height = 17 if lines == 1 else 12 * lines + 4
         r += 1
     return r + 1
 
@@ -178,7 +180,7 @@ rows = [('Taux horaire', 85, 'Dupuis, août–oct. 2026 : S-1797, S-1835, S-1854
         ('Facteur de passage au prix de vente', C.get('facteur', 1.244), 'S-1844 : prix remis 238 744 $ ÷ sommaire ACCEO 191 909,19 $'),
         ('Prix de vente calculé', '=ROUND(B14*B15,0)', ''),
         ('PRIX SOUMIS (arrondi au millier)', PRIX_SOUMIS, 'Somme des articles de la soumission (PDF)')]
-fm = [CUR, CUR, HRS, FR + '#,##0', CUR, CUR, FR + '0.000', CUR0, CUR0]
+fm = [CUR, CUR, FR + '#,##0.00 "h"', FR + '#,##0 "h"', CUR, CUR, FR + '0.000', CUR0, CUR0]
 r = table(S, r, ['Poste', 'Valeur', 'Source / preuve'], rows, fm, bold_last=True)
 
 # --- 2. Comparaisons ---
@@ -195,7 +197,7 @@ r = table(S, r, ['Poste', 'Montant ($)', 'Source (soumission reçue ou allocatio
 # surligner en jaune les lots encore en allocation (pas de soumission fournisseur)
 for rr in range(r - 1 - len(rows), r - 1):
     if 'ALLOCATION' in str(S.cell(rr, 3).value):
-        S.cell(rr, 2).fill = fillY; S.cell(rr, 3).fill = fillY
+        for j in (1, 2, 3): S.cell(rr, j).fill = fillY
 
 # --- 4. Ventilation ---
 section_title(S, r, '4. VENTILATION PAR ARTICLE DU BORDEREAU (Annexe 2.00, prix soumis avant taxes)'); r += 1
