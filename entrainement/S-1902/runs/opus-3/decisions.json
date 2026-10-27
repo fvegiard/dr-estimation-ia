@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte — NOTES.md Hypothèse 3 : « Quantités sur plan = relevé (portées du tableau de rapport-releve.md) : elles remplacent les comptes de la feuille Détail A-01 à A-06, D-01 à D-10, E-01 à E-05 (sinon double compte) ». chiffrage.py l.253 : « Services — dispositifs (quantités relevé E-104/E-105, remplacent D-01..D-06, E-01, E-03..E-05) ». Les postes composites D-01 ×18 / D-02 ×5 / E-0",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250 — chiffrage.py l.273-274 : cat_ligne(\"E-02\", …, rel(\"MONUMENT PLANCHER\",\"INSTALLER\"), \"MONUMENT PLANCHER\", \"3.34\") → 3 u × 250 $ / 1,0 h (chiffrage.json). NOTES.md « Lignes où j'ai hésité » : « Monument de plancher : 250 $ Dupuis, alors que le Hubbell S1R6PT (poke-through) vaut 1 461,22 $ chez Lumen; risque ≈ 3 600 $ sur 3 unités ». Référence : 2 × 1 461,22 $. Art. 3.34 : mat run 750 $ ",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893 — chiffrage.py l.133-134 LOTS[\"eclairage\"] = 11893.0, ligne LOT-01 (art. 3.35) « METHODE.md lot éclairage 11 893 $, confirmé par Francis 2026-10-20 ». NOTES.md hésitation : « le détail donné (A1 2 035 + 4′ 3 480 + 3′ 3 450 + 1′ 660 + trousses 1 500 + E 1 425 + Z6 484,80) totalise 13 034,80 $, pas 11 893 $. J'ai retenu le montant confirmé 11 893 $; à faire valider par Francis (écart 1 141,80 ",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : comptes (mais aux quantités du relevé, pas de Détail) — chiffrage.py l.171-214 : A-01a/b/c ENLEVER FIXTURE ENCAST/1X4/2X2 = 26 + 6 + 8 u × 0,35 h (5.19) ; A-03a ENLEVER PRISE 11 u, A-03b 17 sorties data, A-03c 1 interrupteur, A-03d EQUIPEMENT A ENLEVER 10 u × 0,5 h ; A-05a RELO PRISE 9 u × 1,5 h, A-05b 3 u ; A-06 RELO ENCASTRE 4 u × 1,0 h (réf 7) ; A-10a/b/c toit 6 u (0,4 + 0,5 + 0,75 h). NOTES.md",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Longueurs = feuille Détail d'Estimation_2 (hypothèses non vérifiées) converties m → pi arrondi au pied supérieur (chiffrage.py l.117-121 pieds(), M_TO_PI = 3.28084) ; assemblages Dupuis « filage inclus », donc C-06/C-08/D-15/E-10/F-09 non chiffrés à part (NOTES Hyp. 5) ; pas de colonne TEMPSEC → temps/pi seulement (« règle 3, cas sinon »). Famille retenue : CONDUIT 3/4 03C12 (4,2441 $ / 0,1128 h) ",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

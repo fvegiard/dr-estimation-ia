@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte — NOTES.md ligne 28 (hyp. 7) : « Pour éviter le double comptage, les lignes Détail D-01 à D-08, E-01 à E-05, A-01 à A-06 ne sont pas reprises : leurs dispositifs sont déjà comptés au relevé ». Aucune ligne D-01/D-02/E-01/D-03…D-06 dans chiffrage.json (rapport.json les liste en « manquantes »). Seules exceptions tirées du Détail : D-07 (1 DDFT fontaine, chiffrage.py l.174), D-0",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250 — chiffrage.py l.187-188 : cat_ligne(\"R-MP\", …, por(\"MONUMENT PLANCHER\",\"INSTALLER\"), \"MONUMENT PLANCHER\", \"3.34\") → chiffrage.json R-MP : 3 u × 250,00 $ × 1,0 h ; par_article 3.34 matériel 750 $ contre 3 422,44 $ en référence (Δ total −2 757,88 $). Pas de mention du prix Lumen 1 461,22 $ dans NOTES.md.",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893 — NOTES.md ligne 31 : « le détail de METHODE … totalise 13 034,80 $, pas 11 893 $. J'ai retenu le montant confirmé 11 893 $ ; écart de 1 141,80 $ à valider avec Francis » ; chiffrage.py l.37 LOTS « Lot éclairage » = (11893.0, {\"3.35\": 11893.0}). Lignes luminaires F-01…F-07 à 0 $ (prix_zero=True) avec temps Dupuis 0,75 h (FIXTURE TYPE A1/C1/E) et 1 h (ENSEIGNE SORTIE Z6).",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : sautes (A-01…A-06) — NOTES.md ligne 28 : A-01 à A-06 « ne sont pas reprises » ; rapport.json les liste en « manquantes ». Mais A-07 (1 lot × 6 h, 3.35), A-08 (21 × 0,6 h, 3.22), A-09 (24 × 0,5 h, 3.22), A-11 (1 lot × 16 h, 6.1) sont repris en jugement (chiffrage.py l.235, 311-312, 338) ; A-10 remplacé par 3 lignes catalogue A-10d/A-10s/A-10r (6 u × 0,4 h + 1,2 h + 0,75 h = 2,35 h/u, l.289-295, NOT",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Pas de colonne TEMPSEC → temps/pi du catalogue (NOTES l.25, docstring chiffrage.py l.8). Longueurs = hypothèses Estimation_2 (30 m/course RDC, 25 m étage, 8 m/point d'éclairage), converties m→pi × 3,28084 et arrondies vers le haut à la section de 10 pi (fonction pieds(), l.129-131). Fil inclus dans les assemblages « CONDUIT x/y nnCmm » (pas de ligne de fil). Courses sous dalle 5 #12 en « CONDUIT 3",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}
