@@ -208,3 +208,9 @@ Débogage étape par étape (à la place de l'étape 2 ci-dessus, seulement si `
 entre étapes est nécessaire) : `prepare.py` → la session fait elle-même le relevé par défaut (§Agents — le
 sous-agent `releveur` seulement si Francis l'autorise explicitement) → `run.py --reprendre <S>` (rejoue qpl +
 render) → étape 3 ci-dessus.
+
+## Chaîne d'outils (source de vérité : `mise.toml`)
+- python 3.14.7 via `mise.toml` ; première fois : `mise trust && mise install` ; `mise ls --current` doit concorder.
+- uv reste le front-end Python : uv run / uv pip / uv venv (mise ne le remplace pas) ; le `.venv` local est en 3.14.
+- La CI GitHub reste en Python 3.12 (`.github/workflows/ci.yml`) : le code doit tourner sur les deux.
+- Changer une version seulement dans `mise.toml` ; jamais de `.python-version` à côté.

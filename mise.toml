@@ -1,0 +1,3 @@
+# Chaîne d'outils du dépôt (mise). uv reste le front-end Python.
+[tools]
+python = "3.14.7"
