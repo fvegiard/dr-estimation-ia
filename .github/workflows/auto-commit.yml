@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
+          python-version-file: .python-version
       - name: Régénérer les dérivés
         run: python apprentissage/hr26-14-exemplaire/outils/regen_derives.py apprentissage/hr26-14-exemplaire
       - name: Auto-commit si changement
