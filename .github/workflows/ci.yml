@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
+          package-manager-cache: false   # aucune dépendance npm, donc aucun package-lock.json à mettre en cache
       # Node 26 LTS embarque npm 11 : npm 12 s'installe explicitement (version de packageManager).
       - name: npm 12
         run: |
