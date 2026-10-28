@@ -154,7 +154,11 @@ python -m pytest tests -q                       # tests unitaires
 python -m src.validation.jeu_reference          # jeu de référence (code 1 si régression)
 uv run releve/prepare.py INBOX/<S> OUTBOX/<S>/travail
 uv run releve/run.py --reprendre <S>            # rejoue seulement qpl + render_vectoriel + render_pdf (sans agent)
+npm install -g npm@12.2.1 && npm test           # tests node:test des outils/*.mjs (Node 26 LTS : .node-version)
 ```
+Node 26 LTS embarque npm 11 : npm 12 s'installe explicitement (version fixée par `packageManager` dans `package.json`).
+Nouveaux scripts Node en TypeScript (`.ts`, exécuté tel quel par Node 26). Port de débogage CDP : toujours le premier port
+libre à partir de 9223, jamais 9222 — `node outils/cdp.ts` (Chromium sans tête, affiche le port et l'URL WebSocket).
 
 ## Agents (`.claude/agents/`)
 Le parcours canonique (`uv run releve/run.py <NOM>`, §Commandes) ne passe PAS par ces sous-agents : `run.py`

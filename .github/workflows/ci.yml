@@ -15,6 +15,16 @@ jobs:
         with:
           python-version-file: .python-version
           cache: pip
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      # Node 26 LTS embarque npm 11 : npm 12 s'installe explicitement (version de packageManager).
+      - name: npm 12
+        run: |
+          npm install -g "$(node -p "require('./package.json').packageManager")"
+          node -e "const v=process.argv[1]; if (+v.split('.')[0] < 12) { console.error('npm ' + v + ' < 12'); process.exit(1) }" "$(npm -v)"
+      - name: Tests Node (outils/*.mjs)
+        run: npm test
       - run: pip install -r requirements.txt
       - name: Tests unitaires
         run: python -m pytest tests -q
