@@ -7,7 +7,13 @@ import { fileURLToPath } from 'node:url';
 
 const racine = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const base = resolve(racine, 'travail-mcp/campagne-25-plans');
-const python = resolve(racine, '.venv/Scripts/python.exe');
+
+// Python du .venv local : Scripts/ sous Windows, bin/ ailleurs (Linux, cloud, Docker) ; ESTIMATEUR_PYTHON l'emporte.
+export function cheminPython(plateforme = process.platform, env = process.env) {
+  if (env.ESTIMATEUR_PYTHON) return env.ESTIMATEUR_PYTHON;
+  return resolve(racine, plateforme === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python');
+}
+const python = cheminPython();
 
 export function contenuReponse(reponse) {
   if (reponse?.structuredContent) return reponse.structuredContent;

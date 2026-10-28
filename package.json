@@ -1,0 +1,14 @@
+{
+  "name": "dr-estimation-ia-outils",
+  "private": true,
+  "type": "module",
+  "description": "Scripts Node (outils/*.mjs, outils/*.ts exécutés tels quels par Node 26) et leurs tests node:test — aucune dépendance externe.",
+  "engines": {
+    "node": ">=26",
+    "npm": ">=12"
+  },
+  "packageManager": "npm@12.2.1",
+  "scripts": {
+    "test": "node --test tests/*.mjs tests/*.ts"
+  }
+}
