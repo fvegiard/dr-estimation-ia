@@ -220,3 +220,6 @@ render) → étape 3 ci-dessus.
 - `dossiers/<S>/soumission/` — dossier gelé par soumission (S-1902 = première application, 194 000 $).
 - `prix/dupuis/` — catalogue prix/temps de M. Dupuis (27 relevés ACCEO 2026) : sa dernière valeur fait foi.
 - Règle : aperçu PNG regardé avant tout PDF ; commit direct sur `main`, pas de PR, pour ces dossiers.
+- `entrainement/` — banc de chiffrage à l'aveugle, protocole v2 (2026-10-23) : le modèle écrit `quantites.json` + `decisions.json`, le moteur
+  commun `chiffrage_commun.py` chiffre, `comparer.py` juge sur le prix, les heures et chaque article et attribue l'écart par décision ;
+  `python -m pytest tests/test_chiffrage_commun.py` est le test doré (la référence gelée doit ressortir à l'identique). Détails : `entrainement/README.md`.

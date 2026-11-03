@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte — NOTES.md l.45-47 (V-02 : « le relevé fait foi. Ces lignes du Détail ne sont pas reprises, puisqu'il s'agit des mêmes appareils regroupés en postes. Écart signalé : 67 prises neuves au relevé contre environ 78 impliquées par le Détail ») ; lot-5.json V-02 : « ne pas reprendre D-01..D-07/E-01/E-04/E-05 ». rapport.json les liste en « manquantes » : D-01, D-02, D-03, D-04, D-05,",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250 — NOTES.md l.53-54 (V-08 : « catalogue Dupuis prioritaire (monument 250 $ et non Hubbell 1 461 $) ») ; chiffrage.json E-02 : q=3, p=250.0, h=1.0, src « Dupuis[MONUMENT PLANCHER] — releve MONUMENT PLANCHER INSTALLER 3 (Détail E-02 en compte 2 + E-03 2 boîtes refaites : le relevé fait foi) ». Réf : 2 × 1 461,22 $.",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893 — NOTES.md l.50-51 (V-06 : « montant confirmé 11 893 $ retenu. Sa décomposition (METHODE.md) fait 13 034,80 $ ; l'écart de 1 141,80 $ est à faire confirmer par Francis ») ; chiffrage.py LOTS_METHODE eclairage=11893.0 (l.34) ; ligne LOT-ECL art 3.35.",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : sautes — aucune ligne A-01..A-06 dans chiffrage.json (rapport.json « manquantes » : A-01..A-06). lots/lot-1.json notes : « A-01..A-06 (comptes E.A.E/E.A.R préliminaires de l'estimation) remplacés par les comptes du relevé à l'aveugle (ENLEVER 40 luminaires vs 46 Détail ; RELOCALISER 12 services + 4 luminaires vs 13 + 7) » ; les src RL-1x/RL-2x portent « remplace Détail A-01/A-02 », « A-03/A-04 », ",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Pas de colonne TEMPSEC : temps au pied (règle 3), NOTES.md l.64-66 : longueurs = hypothèses de l'Estimation_2 (30 m/course RDC, 25 m/course étage, 8 m/point d'éclairage) converties à 3,28084 pi/m ; libellés CONDUIT xxCyy incluent les conducteurs (D-15, E-10, F-09, C-06, C-08 non comptés à part). D-13 = 1575 pi CONDUIT 3/4 05C12 (p 3,4197, h 0,081) pour EMT 1\" du Détail (V-11, NOTES l.91) ; E-08 = ",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte. NOTES.md l.20 : « Les composites « poste de travail » D-01 à D-06, D-08, D-15, E-01, E-03 à E-05, E-10, C-06, C-08, F-09 sont remplacés par les lignes d'appareils du relevé ou absorbés dans les assemblages conduit + fil du catalogue (jamais comptés deux fois) ». Code : L(\"D-01\", \"PRISE DUPLEX 15A 120V\", feuille(\"PRISE DOUBLE 15A\", \"E104\"), \"3.28\", \"... absorbe les composites ",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250. NOTES.md l.32 : « Monument : MONUMENT PLANCHER 250 $ (pas le Hubbell à ~1 461 $ de Lumen), selon METHODE ». Code : L(\"E-02\", \"MONUMENT PLANCHER\", feuille(\"MONUMENT PLANCHER\", \"E105\"), \"3.34\", ..., note=\"monument 250 $ (METHODE.md)\") -> q=3, p=250,0, h=1,0 (réf E-02 : 2 x 1 461,22 $ x 1 h). Art. 3.34 run 750 $ / 3 h vs réf 3 422,44 $ / 4 h, delta -2 758,07.",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11 893 $. NOTES.md l.22 : « la somme des prix détaillés du lot éclairage (A1 2 035 + 4' 3 480 + 3' 3 450 + 1' 660 + trousses 1 500 + E 1 425 + Z6 485 = 13 035 $) ne retombe pas sur 11 893 $ : j'ai retenu le montant du lot, confirmé tel quel ». Code : LOTS = {\"eclairage\": 11893.0, ...} et ligne LOT-F q=1, p=LOTS[\"eclairage\"], art 3.35 ; luminaires F-01..F-07 à p=0.0 (temps seulement).",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : comptes, mais avec les quantités du relevé (portées ENLEVER / RELOCALISER de rapport-releve.md) et non celles du Détail, et A-02/A-04 fusionnées dans A-01/A-03 (NOTES.md l.20 : « les lignes A-02/A-04 du Détail (2e étage) sont donc fusionnées dans A-01/A-03 »). Code plan(fam, portee) = rap[fam][1].get(portee, 0). Quantités : A-01 EQUIPEMENT A ENLEVER 40 u x 0,5 h (réf 39) ; A-03 ENLEVER PRISE 28 u ",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Longueurs hypothétiques du Détail d'Estimation_2 (dq(code), en mètres) converties en pieds par pi(m) = ceil(m x 3,28084) ; prix et temps = colonnes prix_a_utiliser / temps_a_utiliser du catalogue CSV (pas de colonne TEMPSEC utilisée). NOTES.md l.21 : « longueurs de conduits (hypothèses 30 m / 25 m par course, 35 m mécanique, 8 m x 35 points éclairage, 30 m / 60 m boucle AI) » ; l.30 : « Conduits s",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

@@ -1,0 +1,1075 @@
+{
+ "dossier": "S-1902",
+ "protocole": "converti",
+ "source": "converti depuis runs/swarm-2/chiffrage.json (ancien protocole : prix et temps recopiés tels quels, sans étiquette de décision)",
+ "codes_dedoublonnes": 0,
+ "lots_convertis_en_lignes": false,
+ "lignes": [
+  {
+   "code": "PC-I",
+   "desc": "Prise double 15 A 120 V neuve",
+   "q": 25.0,
+   "u": "U",
+   "art": "3.28",
+   "src": "q : releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; rapport-releve.md PRISE DOUBLE 15A INSTALLER 25 ; releve.xlsx Par feuille E104 23 + E105 2 (feuilles nouveau) [chef A1] || p/h : catalogue Dupuis « PRISE DUPLEX 15A 120V » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 64.81,
+    "h": 1.175
+   }
+  },
+  {
+   "code": "PC-R",
+   "desc": "Prise double 15 A 120 V relocalisée",
+   "q": 8.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : rapport-releve.md PRISE DOUBLE 15A RELOCALISER 8 ; releve.xlsx Par libellé PRISE DOUBLE 15A 95 ; Par feuille E101 48 + E102 22 (feuilles existant) [chef A1] || p/h : catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.5
+   }
+  },
+  {
+   "code": "PC-E",
+   "desc": "Prise double 15 A 120 V à enlever",
+   "q": 7.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : rapport-releve.md PRISE DOUBLE 15A ENLEVER 7 ; releve.xlsx Par feuille E101 48 + E102 22 (feuilles existant) [chef A1] || p/h : catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "PU-I",
+   "desc": "Prise USB 120 V neuve (Leviton Decora)",
+   "q": 20.0,
+   "u": "U",
+   "art": "3.27",
+   "src": "q : releve.xlsx Par libellé PRISE USB 20 ; rapport-releve.md PRISE USB INSTALLER 20 ; releve.xlsx Par feuille E104 20 (feuille nouveau) [chef A1] || p/h : catalogue Dupuis « PRISE USB 125V 15 AMP » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 6) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 77.45,
+    "h": 1.125
+   }
+  },
+  {
+   "code": "PG-I",
+   "desc": "Prise DDFT 15 A neuve",
+   "q": 22.0,
+   "u": "U",
+   "art": "3.30",
+   "src": "q : rapport-releve.md PRISE DDFT INSTALLER 22 ; releve.xlsx Par libellé PRISE DDFT 49 ; Par feuille E104 20 + E105 2 (feuilles nouveau) [chef A1] || p/h : catalogue Dupuis « PRISE DUPLEX 20A 125V GFI » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 16) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 65.38,
+    "h": 1.3
+   }
+  },
+  {
+   "code": "PG-E",
+   "desc": "Prise DDFT 15 A à enlever",
+   "q": 4.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : rapport-releve.md PRISE DDFT ENLEVER 4 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant) [chef A1] || p/h : catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "PG-R",
+   "desc": "Prise DDFT 15 A relocalisée",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : rapport-releve.md PRISE DDFT RELOCALISER 1 ; releve.xlsx Par feuille E101 23 + E102 4 (feuilles existant) [chef A1] || p/h : catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.5
+   }
+  },
+  {
+   "code": "SD-I",
+   "desc": "Sortie informatique/réseau neuve",
+   "q": 65.0,
+   "u": "U",
+   "art": "3.33",
+   "src": "q : releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md INSTALLER 65 ; Par feuille E104 45 + E105 20 (feuilles nouveau) [chef A1] || p/h : catalogue Dupuis « TEL/DATA 3/4 » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 22.32,
+    "h": 0.89
+   }
+  },
+  {
+   "code": "SD-E",
+   "desc": "Sortie informatique/réseau à enlever",
+   "q": 17.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md ENLEVER 17 ; Par feuille existant E101 36 + E102 19 = 55 = C+E+R [chef A1] || p/h : catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER DATA » ; sortie data = dispositif mural ≈ prise enlevée (repère METHODE 0,35 h) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "SD-R",
+   "desc": "Sortie informatique/réseau à relocaliser",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé SORTIE DATA 120 ; rapport-releve.md RELOCALISER 3 ; art de la famille SD (convention du directeur A) [chef A1] || p/h : catalogue Dupuis « RELO PRISE » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 3); analogue : aucun libellé « RELO DATA » ; sortie data ≈ prise relocalisée (repère METHODE 1,5 h) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.5
+   }
+  },
+  {
+   "code": "INT-I",
+   "desc": "Interrupteur simple neuf",
+   "q": 5.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : releve.xlsx Par libellé INT SIMPLE 10 ; rapport-releve.md INT SIMPLE INSTALLER 5 ; releve.xlsx Par feuille E203 INT SIMPLE 5 (feuille nouveau, R-002) [chef A1] || p/h : catalogue Dupuis « INTERRUPTEUR 15A 120V » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 13) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 75.47,
+    "h": 1.075
+   }
+  },
+  {
+   "code": "INT-E",
+   "desc": "Interrupteur simple à enlever",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : rapport-releve.md INT SIMPLE ENLEVER 1 ; releve.xlsx Par feuille E201 INT SIMPLE 5 (feuille existant : 4 CONSERVER + 1 ENLEVER) [chef A1] || p/h : catalogue Dupuis « ENLEVER INTERRUPTEUR » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); arbitrage tranché par le chef de lot B1 : h = 0,35 = repère METHODE « prise enlevée 0,35 h » (même famille « ENLEVER … » du projet S-1835 que ENLEVER PRISE) ; « INTERRUPTEUR A DEMANTELER » (0,1 h) aurait gagné par la règle 4 (date) mais n'égale aucun repère et romprait la cohérence avec PC-E, TH-E, DM-E (voir notes) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "TH-I",
+   "desc": "Thermostat neuf (raccordement)",
+   "q": 2.0,
+   "u": "U",
+   "art": "3.23",
+   "src": "q : releve.xlsx Par libellé THERMOSTAT 9 ; rapport-releve.md THERMOSTAT INSTALLER 2 ; releve.xlsx Par feuille E104 THERMOSTAT 2 (feuille nouveau) [chef A1] || p/h : catalogue Dupuis « THERMOSTAT » um=U (dernier 2026-06-03, s-1775 clinique mieux etre, nb_projets 4) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 35.0,
+    "h": 0.4
+   }
+  },
+  {
+   "code": "BJ-I",
+   "desc": "Boîte de jonction neuve",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.31",
+   "src": "q : releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md INSTALLER 3 ; Par feuille E104 3 (feuille nouveau) [chef A1] || p/h : catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) ; aucun libellé « BOITE DE JONCTION » au catalogue : règle 3 (nb_projets), boîte carrée [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1778,
+    "h": 0.25
+   }
+  },
+  {
+   "code": "BJ-E",
+   "desc": "Boîte de jonction à enlever",
+   "q": 2.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé BOITE JONCTION 10 ; rapport-releve.md ENLEVER 2 ; Par feuille existant E101 4 + E102 1 + E201 2 = 7 = C+E+R [chef A1] || p/h : catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; analogue : aucun libellé « ENLEVER BOITE » ; boîte murale ≈ prise enlevée (repère METHODE 0,35 h) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "MP-I",
+   "desc": "Monument plancher neuf",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.34",
+   "src": "q : releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md INSTALLER 3 ; Par feuille E105 3 (feuille nouveau) [chef A1] || p/h : catalogue Dupuis « MONUMENT PLANCHER 1TE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; repère METHODE monument 250 $ (règle 1) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 250.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "MP-E",
+   "desc": "Monument plancher à enlever",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé MONUMENT PLANCHER 7 ; rapport-releve.md ENLEVER 3 ; Par feuille existant E101 1 + E102 3 = 4 = C+E+R [chef A1] || p/h : catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1) ; analogue : aucun libellé « ENLEVER MONUMENT » ; monument = prise/data en boîtier de plancher ≈ prise enlevée (repère METHODE 0,35 h) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "LC-I",
+   "desc": "Lecteur de carte neuf",
+   "q": 2.0,
+   "u": "U",
+   "art": "3.33",
+   "src": "q : releve.xlsx Par libellé LECTEUR CARTE 5 ; rapport-releve.md LECTEUR CARTE INSTALLER 2 ; releve.xlsx Par feuille E104 LECTEUR CARTE 2 (feuille nouveau) [chef A1] || p/h : catalogue Dupuis « LECTEUR DE CARTE » um=U (dernier 2026-04-02, S-1692_École Primaire St-Marc Candiac, nb_projets 5) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "DM-E",
+   "desc": "Détecteur de mouvement à enlever",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé DETECTEUR MOUVEMENT 3 ; rapport-releve.md DETECTEUR MOUVEMENT ENLEVER 1 ; releve.xlsx Par feuille E201 DETECTEUR MOUVEMENT 3 (feuille existant) [chef A1] || p/h : catalogue Dupuis « ENLEVER PRISE » um=U (dernier 2026-08-26, s-1835 esbg  rehabilitation inbterieur, nb_projets 1); analogue : aucun libellé « ENLEVER DETECTEUR » ; dispositif mural/plafond léger ≈ prise enlevée (repère METHODE 0,35 h) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "BC-E",
+   "desc": "Boîtier « C » à enlever",
+   "q": 2.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé BOITIER C 4 ; rapport-releve.md BOITIER C ENLEVER 2 ; releve.xlsx Par feuille E101 BOITIER C 1 + E201 BOITIER C 3 (feuilles existant) [chef A1] || p/h : catalogue Dupuis « CONTACT DE PORTE ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue : « BOITIER C » ≈ contact de porte (hypothèse non prouvée : dispositif d'accès de porte, voir notes) ; famille ENL du projet S-1659 (0,5 h) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "D-09",
+   "desc": "Raccord panneau de contrôle barrière anti-vol (les 2 JB sont comptées dans BJ-I)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.31",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail D-09 Qté 1 lot ; arbitrage chef A1 [chef A1] || p/h : catalogue Dupuis « RACCORD DIRECT » um=U (dernier 2026-09-10, s-1854 sollio st hubert lanthier, nb_projets 5) ; arbitrage directeur B (double compte B3 n° 10) : les 2 boîtes de la barrière sont portées par BJ-I (directeur A : « les 2 JB sont comptées dans BJ-I ») ; D-09 ne garde que le raccord au panneau de contrôle (B1 avait 2 × « BOITE CARRE 2-1/8PO KO 1 » + « RACCORD DIRECT » = 37,3556 $ / 1,0 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "ENC-E",
+   "desc": "Appareil d'éclairage encastré existant (E.A.E) — enlever",
+   "q": 26.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé ENCASTRE 79 ; rapport-releve.md ENLEVER 26 (CONSERVER 49, ENLEVER 26, RELOCALISER 4) ; Par feuille E201 28, E202 35, E204 16 [chef A2] || p/h : catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "ENC-R",
+   "desc": "Appareil d'éclairage encastré existant (E.A.R) — relocaliser",
+   "q": 4.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé ENCASTRE 79 ; rapport-releve.md RELOCALISER 4 (CONSERVER 49, ENLEVER 26, RELOCALISER 4) ; Par feuille E201 28, E202 35, E204 16 [chef A2] || p/h : catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "L14-E",
+   "desc": "Appareil d'éclairage LED 1x4 existant — enlever",
+   "q": 6.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé LED 1X4 33 ; rapport-releve.md ENLEVER 6 (CONSERVER 27, ENLEVER 6) ; Par feuille E102 1, E201 11, E202 21 [chef A2] || p/h : catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "L22-E",
+   "desc": "Appareil d'éclairage LED 2x2 existant — enlever",
+   "q": 8.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé LED 2X2 94 ; rapport-releve.md ENLEVER 8 (CONSERVER 86, ENLEVER 8) ; Par feuille E201 45, E204 49 [chef A2] || p/h : catalogue Dupuis « EQUIPEMENT A ENLEVER » um=U (dernier 2026-05-05, s-1753 ecole asomption, nb_projets 1) ; repère METHODE « luminaire enlevé 0,5 h » (règle 1 : seul libellé ENLEVER à 0,5 h hors autre objet) ; arbitrage du chef B2 en PHASE 2 : remplace la série « ENLEVER FIXTURE… » à 0,35 h du releveur B2-1 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "HP-E",
+   "desc": "Haut-parleur encastré au plafond existant — enlever",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : releve.xlsx Par libellé HP ENCASTRE PLAFOND 1 ; rapport-releve.md ENLEVER 1 (ENLEVER 1) ; Par feuille E202 1 [chef A2] || p/h : catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue Dupuis (aucun libellé ENLEVER HAUT PARLEUR) : même action d'enlèvement d'un dispositif d'alarme/sonorisation, décision B2 n°1 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "A-08",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation luminaires linéaires existants",
+   "q": 21.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail A-08 (ligne Excel 15 ; colonne D Qté = 21 ; Réf. plan = E-202 note 1) [chef A2] || p/h : catalogue Dupuis « RELO FIXTURE 30X30 » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; dépose + repose en un seul temps (R2) ; p = 0, h = 1.0 par luminaire [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "A-09",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation encastrés existants",
+   "q": 24.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail A-09 (ligne Excel 16 ; colonne D Qté = 24 ; Réf. plan = E-202 note 1) [chef A2] || p/h : catalogue Dupuis « RELO ENCASTRE » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; dépose + repose en un seul temps (R2) ; p = 0, h = 1.0 par encastré [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-01",
+   "desc": "Panneau PP-3 NEUF 225A 347/600V 3Ø 4F 42 cct 14kA, type NF Schneider, surface — remplacement de l'existant (note 2 E-006)",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.24",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-01 (ligne Excel 22 ; colonne D Qté = 1 ; Réf. plan = E-006/E-502) [chef A2] || p/h : catalogue Dupuis « PANN PD 400A 347/600V 42CCT 35KA C/A » um=U (dernier 2026-02-02, S-1645 ANNEXE-BOURASSA, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "B-02",
+   "desc": "Disjoncteurs NF 1P-15A pour circuits existants transférés dans PP-3",
+   "q": 14.0,
+   "u": "U",
+   "art": "3.25",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-02 (ligne Excel 23 ; colonne D Qté = 14 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-03",
+   "desc": "Disjoncteur NF 3P-20A (aérotherme, cct 13-15-17) transféré",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.25",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-03 (ligne Excel 24 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-04",
+   "desc": "Disjoncteur NF 3P-40A — UTA-1 (cct 18-20-22) NOUVEAU",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.25",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-04 (ligne Excel 25 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-05",
+   "desc": "Disjoncteur NF 3P-15A — VE-2N (cct 19-21-23) NOUVEAU",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.25",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-05 (ligne Excel 26 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 719.6) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-06",
+   "desc": "Disjoncteur 1P-15A DDFT — Fontaine P2-61 (note 4)",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.25",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-06 (ligne Excel 27 ; colonne D Qté = 1 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-07",
+   "desc": "Disjoncteurs 1P-15A — P2-63 bornes prêts hall, P2-64 prises bibliothèque (note 4)",
+   "q": 2.0,
+   "u": "U",
+   "art": "3.25",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-07 (ligne Excel 28 ; colonne D Qté = 2 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ15A1P » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-08",
+   "desc": "Disjoncteurs 1P-20A — P3-17/19 machine de tri (note 4)",
+   "q": 2.0,
+   "u": "U",
+   "art": "3.25",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-08 (ligne Excel 29 ; colonne D Qté = 2 ; Réf. plan = E-502) [chef A2] || p/h : catalogue Dupuis « DISJ 20A 1P 120V 10KA » um=U (dernier 2026-06-26, S-1795 Lanthier Arthesa, nb_projets 2) ; p = 0 forcé : couvert par LOT-DIST (catalogue p = 10.17) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-09",
+   "desc": "Mise à jour fiches dactylographiées + identification (PP-2, PP-3, P2, P3, P4, P6, PU-1, PPU-1, P10)",
+   "q": 9.0,
+   "u": "U",
+   "art": "3.24",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail B-09 (ligne Excel 30 ; colonne D Qté = 9 ; Réf. plan = Devis 12.3) [chef A2] || p/h : catalogue Dupuis « IDENTIFIER LES CIRCUITS EXISTANTS A » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 3.0
+   }
+  },
+  {
+   "code": "LA1-I",
+   "desc": "Luminaire A1 Cooper 24CGTS-NUV-MEDIUM-3500K 2'x4' encastré 347 V 50 W — neuf",
+   "q": 11.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : releve.xlsx Par libellé LUMINAIRE A1 11 ; rapport-releve.md INSTALLER 11 ; Par feuille E203 11 ; Marques 11 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 9 = 11 [chef A2] || p/h : catalogue Dupuis « FIXTURE TYPE A1 » um=U (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 7) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "LC1-I",
+   "desc": "Luminaire C1 Axis AXIS-SL1-4 (module 4') 120-277 V — neuf",
+   "q": 12.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : releve.xlsx Par libellé LUMINAIRE C1 12 ; rapport-releve.md INSTALLER 12 ; Par feuille E203 12 ; Marques 12 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 10 = 12 [chef A2] || p/h : catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "LC11-I",
+   "desc": "Luminaire C1_1 Axis AXIS-SL1-1 (module 1') — neuf",
+   "q": 6.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : releve.xlsx Par libellé LUMINAIRE C1_1 6 ; rapport-releve.md INSTALLER 6 ; Par feuille E203 6 ; Marques 6 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 11 = 6 [chef A2] || p/h : catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "LC13-I",
+   "desc": "Luminaire C1_3 Axis AXIS-SL1-3 (module 3') — neuf",
+   "q": 15.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : releve.xlsx Par libellé LUMINAIRE C1_3 15 ; rapport-releve.md INSTALLER 15 ; Par feuille E203 15 ; Marques 15 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 12 = 15 [chef A2] || p/h : catalogue Dupuis « FIXTURE TYPE C1 » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "LE-I",
+   "desc": "Luminaire E GreenCreative PXCYL-8-PM-LE05-90-35 cylindre suspendu — neuf",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : releve.xlsx Par libellé LUMINAIRE E 3 ; rapport-releve.md INSTALLER 3 ; Par feuille E203 3 ; Marques 3 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 14 = 4 (écart avec le plan, voir notes) [chef A2] || p/h : catalogue Dupuis « FIXTURE TYPE E » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 7) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "Z6-I",
+   "desc": "Enseigne de sortie Z6 Stanpro RMSOWH-UDC pictogramme LED — neuve",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : releve.xlsx Par libellé ENSEIGNE SORTIE Z6 3 ; rapport-releve.md INSTALLER 3 ; Par feuille E203 2 + E204 1 ; Marques 3 étiquettes ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 16 = 3 [chef A2] || p/h : catalogue Dupuis « ENSEIGNE SORTIE » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 10) ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "F-05",
+   "desc": "Rangées linéaires Axis : suspension aux tiges/câbles fixés à la dalle (devis 16.5), alimentation de rangée",
+   "q": 20.0,
+   "u": "U",
+   "art": "3.35",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail F-05 (ligne Excel 82 ; colonne D Qté = 20 ; Unité = rangée ; Réf. plan = E-203 / devis 16.5 ; Notes = ≈20 rangées continues) ; entree/reference-Releve_Eclairage_Urgence.xlsx Relevé ligne 13 C-SUSP = 20 [chef A2] || p/h : catalogue Dupuis « TIGE FILETE 3/8PO » um=P (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 4) ; opération : 10 pi par rangée = Matériel Lumen VISTF3/8 « ABB TIGE FILETÉE 3/8 PO » Qté 200 pi ÷ 20 rangées ; h = 10 × 0.02 = 0.2 par rangée ; p = 0 forcé : couvert par LOT-ECL (catalogue p = 0.6435 $/pi) [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "F-10",
+   "desc": "Boîtes de jonction éclairage, chaînes de retenue à la dalle (devis 16.5), quincaillerie",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.35",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail F-10 (ligne Excel 87 ; colonne D Qté = 1 ; Unité = lot ; Réf. plan = E-005) [chef A2] || p/h : catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 21) ; opération : N = 35 × (p 7.963 ; h 0.2) = p 278.705, h 7.0 ; N = 35 points d'éclairage (Détail F-08 « Hyp. 8 m x 35 points » ; Matériel Lumen IBE54151L « JB éclairage » Qté 35) [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 278.705,
+    "h": 7.0
+   }
+  },
+  {
+   "code": "DF-I",
+   "desc": "Détecteur de fumée adressable neuf (RDC E-203 : salle de tri 110 + secteur commis 110.8) — pose ; fourniture = LOT-DET",
+   "q": 2.0,
+   "u": "U",
+   "art": "3.36",
+   "src": "q : rapport-releve.md DETECTEUR FUMEE INSTALLER 2 (CONSERVER 6, RELOCALISER 1, ENLEVER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E203 5 ; Marques E203 « instance manuelle : neuf (tracé plein) » P23 ; relevé alarme AI-01 Qté 2 u E-203 (ligne Excel 9) ; concordant avec entree/reference-Estimation_2.xlsx Détail G-01 (ligne Excel 91 ; colonne D Qté = 2 ; Unité = u) [chef A2] || p/h : catalogue Dupuis « DETECTEUR A FUMEE » um=U (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 9) ; p = 0 forcé : couvert par LOT-DET (catalogue p = 0.0) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "DF-R",
+   "desc": "Détecteur de fumée existant — relocaliser",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : rapport-releve.md DETECTEUR FUMEE RELOCALISER 1 (CONSERVER 6, INSTALLER 2, ENLEVER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E201 5, E203 5 ; portée non attribuée par feuille ni par marque dans le kit (voir notes) [chef A2] || p/h : catalogue Dupuis « RELO DETECTEUR A FUME » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 3) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "DF-E",
+   "desc": "Détecteur de fumée existant — enlever",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.22",
+   "src": "q : rapport-releve.md DETECTEUR FUMEE ENLEVER 1 (CONSERVER 6, INSTALLER 2, RELOCALISER 1) ; releve.xlsx Par libellé DETECTEUR FUMEE 10 (E-001 légende ; bloc S146) ; Par feuille E201 5, E203 5 ; portée non attribuée par feuille ni par marque dans le kit (voir notes) [chef A2] || p/h : catalogue Dupuis « STATION ENL » um=U (dernier 2026-02-09, s1659 ecole arc en ciel ste julie, nb_projets 1) ; analogue Dupuis (aucun libellé direct pour détecteur enlevé), décision B2 n°2 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "PA-R",
+   "desc": "Panneau annonciateur Simplex existant — relocaliser au nouvel emplacement (E203)",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.37",
+   "src": "q : rapport-releve.md PANNEAU ANNONCIATEUR INSTALLER 1 (arbitré en PA-R, voir notes) ; releve.xlsx Par libellé PANNEAU ANNONCIATEUR 1 (E-001 légende ; bloc S328) ; Par feuille E203 1 ; Marques E203 « bloc S328 » (891.9/733.5) ; entree/reference-Estimation_2.xlsx Détail G-04 (ligne Excel 94 ; colonne D Qté = 1 ; Unité = u) (Notes : « Nouvel emplacement à confirmer ») ; relevé alarme AI-05 (ligne Excel 14) « Relocalisation annonciateur Simplex existant — reprogrammation / essais » ; bordereau 3.37 « Panneau alarme incendie : déplacement annonciateur » [chef A2] || p/h : catalogue Dupuis « RELO PANN ANNOCIATEUR » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; portée absente du relevé — correspondance de précaution ; relocalisation de l'annonciateur existant (Détail G-04, bordereau 3.37, relevé alarme AI-05) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "MM-R",
+   "desc": "Moteur monophasé existant de ventilation au toit (E.A.R, E-103) — débrancher, entreposer les sectionneurs, isoler/couvrir les câbles, rebrancher (reprend la description de Détail A-10)",
+   "q": 6.0,
+   "u": "U",
+   "art": "3.23",
+   "src": "q : releve.xlsx Par libellé MOTEUR MONOPHASE 9 (E-001 légende ; bloc S102) ; rapport-releve.md RELOCALISER 6 (INSTALLER 3) ; Par feuille E103 6, E105 3 ; Marques E103 6 (bloc S102) ; entree/reference-Estimation_2.xlsx Détail A-10 (ligne Excel 17 ; colonne D Qté = 6 ; Unité = u) (Notes : « 6 E.A.R sur E-103 ») [chef A2] || p/h : catalogue Dupuis « DEBRANCHEMENT APPAREILAGE MECANIQUE » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) + catalogue Dupuis « SECTIONNEUR ENL » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) + catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2) ; opération par équipement : p = 0 + 0 + 25 = 25.0, h = 0,4 + 0,5 + 0,75 = 1.65 (composé du chef B3 pour Détail A-10) ; arbitrage directeur B (double compte B3 n° 13) : A-10 exclue par le directeur A, MM-R porte tout le travail du toit (débrancher, entreposer le sectionneur, rebrancher) ; remplace l'analogue de B2 « RELO PLINTHE 2000W » 0 $ / 1,0 h (objet différent) ; geste « isoler/couvrir câbles » non couvert par un libellé",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 1.65
+   }
+  },
+  {
+   "code": "MM-I",
+   "desc": "Moteur monophasé neuf à raccorder — humidificateurs HUM-1/2/3 Carel 120 V/1Ø (E-105)",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.23",
+   "src": "q : rapport-releve.md MOTEUR MONOPHASE INSTALLER 3 ; releve.xlsx Par libellé MOTEUR MONOPHASE 9 ; Par feuille E105 3 ; Marques E105 3 (bloc S102) ; entree/reference-Estimation_2.xlsx Détail C-04 (ligne Excel 37 ; colonne D Qté = 3 ; Unité = u) (Qté 3 humidificateurs) [chef A2] || p/h : catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "MT-I",
+   "desc": "Moteurs triphasés neufs à raccorder — UTA-01 York KE036 et VE-02N Plymovent FUA-2700 (toit E-106) + chaudières CH-01/CH-02 (E-105)",
+   "q": 4.0,
+   "u": "U",
+   "art": "3.23",
+   "src": "q : rapport-releve.md MOTEUR TRIPHASE INSTALLER 4 (CONSERVER 5) ; releve.xlsx Par libellé MOTEUR TRIPHASE 9 ; Par feuille E105 2, E106 2 ; entree/reference-Estimation_2.xlsx Détail C-01 (ligne Excel 34 ; colonne D Qté = 1 ; Unité = u) + entree/reference-Estimation_2.xlsx Détail C-02 (ligne Excel 35 ; colonne D Qté = 1 ; Unité = u) + entree/reference-Estimation_2.xlsx Détail C-03 (ligne Excel 36 ; colonne D Qté = 2 ; Unité = u) (Notes C-03 : « Réutilisation selon état — à vérifier ») [chef A2] || p/h : catalogue Dupuis « MOTEUR » um=U (dernier 2026-02-19, S-1676 ARC'TERTX, nb_projets 2) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "X-03",
+   "desc": "Sectionneur sans fusible 30 A — HUM-1/2/3",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.23",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail C-04 (ligne Excel 37 ; colonne D Qté = 3 ; Unité = u) « sectionneur sans fusible 30A » ×3 ; entree/reference-Estimation_2.xlsx Matériel Lumen ligne Excel 43 : HUBHBL1372 « HUBBELL HBL1372 SECTIONNEUR 30A 2P (HUM-1/2/3) », Qté 3, Unité lue « ch », Base de quantité « Devis 20 : service intensif — à valider » ; ligne hors Détail (le sectionneur n'est pas un symbole relevé) [chef A2] || p/h : catalogue Dupuis « INTERR 30A 2P 600V CEMA1 » um=U (dernier 2026-09-23, s-1866 gar mun st amable, nb_projets 1) ; code X-03 créé par le directeur A (sectionneur sans fusible 30 A des HUM-1/2/3, Détail C-04) ; même prix que Matériel Lumen HUBHBL1372 (117,84 $) ; composante sectionneur de la ligne C-04 du chef B3 (« HUMIDIFICATEUR » + « INTERR 30A 2P 600V CEMA1 ») ; arbitrage directeur B (double compte B3 n° 12)",
+   "prix": {
+    "type": "fixe",
+    "p": 117.84,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "G-05",
+   "desc": "Démontage/protection/réinstallation dispositifs AI existants dans zones touchées (Réf. plan E-201/E-203)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.22",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail G-05 (ligne Excel 95 ; colonne D Qté = 1 ; Unité = lot) (Notes : « Allocation — à valider ») ; relevé alarme AI-07 (option, prix séparé) non repris [chef A2] || p/h : jugement (Estimation_2) Détail G-05 h/unité 12 [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 12.0
+   }
+  },
+  {
+   "code": "G-06",
+   "desc": "Assistance électricien lors de la programmation / vérification ULC-S537 (E-007 note 3)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.38",
+   "src": "q : entree/reference-Estimation_2.xlsx Détail G-06 (ligne Excel 96 ; colonne D Qté = 1 ; Unité = lot) ; relevé alarme AI-06 (ligne Excel 15) classé « 2. SERVICES JCI / SIMPLEX » (voir notes) [chef A2] || p/h : jugement (Estimation_2) Détail G-06 h/unité 8 [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "C-05",
+   "desc": "Conduit EMT 1\" + 4 #8 RW90 (UTA-01) — assemblage 04C8",
+   "q": 115.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail C-05 (ligne 38) : Qté lue 35 m × 3,2808 = 114,83 → 115 pi ; L lue « Hypothèse longueur » ; C-06 140 m inclus (4 #8 × 35 m) [chef A3] || p/h : catalogue Dupuis « CONDUIT 1 04C08 » um=P (dernier 2026-03-31, S-1693_Ecole Primaire Beloeil, nb_projets 1) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1399,
+    "h": 0.098
+   }
+  },
+  {
+   "code": "C-07",
+   "desc": "Conduit EMT 3/4\" + 3-4 #12 RW90 (VE-02N 35 m 04C12 ; HUM 3 × 15 m 03C12)",
+   "q": 262.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail C-07 (ligne 40) : Qté lue 80 m × 3,2808 = 262,46 → 262 pi ; L lue « 35 m + 3 x 15 m » ; C-08 275 m inclus (mixte 4 × 35 m + 3 × 3 × 15 m) [chef A3] || p/h : catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 4.2441,
+    "h": 0.1128
+   }
+  },
+  {
+   "code": "D-13",
+   "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle RDC (16 courses) — assemblage 05C12",
+   "q": 1575.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail D-13 (ligne 57) : Qté lue 480 m × 3,2808 = 1574,78 → 1575 pi ; L lue « Hyp. 30 m/course » ; D-15 2400 m inclus (5 cond./course) [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 1 » um=P (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) + 5 × catalogue Dupuis « 12AWG SOLIDE RW90 600V » um=P (dernier 2026-09-10, s-1854 sollio st hubert lanthier) ; composé du chef : 4.3787 $/pi, 0.095 h/pi",
+   "prix": {
+    "type": "fixe",
+    "p": 4.3787,
+    "h": 0.095
+   }
+  },
+  {
+   "code": "E-08",
+   "desc": "Conduit EMT 1\" + 5 #12 RW90 sous dalle étage (7 courses) — assemblage 05C12",
+   "q": 574.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail E-08 (ligne 71) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; E-10 875 m inclus (5 cond./course) [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 1 » um=P (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture) + 5 × catalogue Dupuis « 12AWG SOLIDE RW90 600V » um=P (dernier 2026-09-10, s-1854 sollio st hubert lanthier) ; composé du chef : 4.3787 $/pi, 0.095 h/pi",
+   "prix": {
+    "type": "fixe",
+    "p": 4.3787,
+    "h": 0.095
+   }
+  },
+  {
+   "code": "D-14",
+   "desc": "Conduit vide EMT 3/4\" data + corde de tirage (11 courses)",
+   "q": 1083.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail D-14 (ligne 58) : Qté lue 330 m × 3,2808 = 1082,66 → 1083 pi ; L lue « Hyp. 30 m/course » ; conduit vide, aucun fil apparié [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "E-09",
+   "desc": "Conduit vide EMT 3/4\" data (7 courses)",
+   "q": 574.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail E-09 (ligne 72) : Qté lue 175 m × 3,2808 = 574,14 → 574 pi ; L lue « Hyp. 25 m/course » ; conduit vide, aucun fil apparié [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "F-08",
+   "desc": "Conduit EMT 3/4\" + 3 #12 RW90 éclairage — assemblage 03C12",
+   "q": 919.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail F-08 Qté 280 m × 3,2808 = 918,62 → 919 pi ; note L : Hyp. 8 m x 35 points ; Réf. plan E-203 ; 3 cond. RW90 #12 : F-09 exclu (840 m) [chef A3] || p/h : catalogue Dupuis « CONDUIT 3/4 03C12 » um=P (dernier 2026-09-25, S-1857 - Maison St-Michel, nb_projets 20) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 4.2441,
+    "h": 0.1128
+   }
+  },
+  {
+   "code": "G-02",
+   "desc": "Conduit EMT 3/4\" boucle alarme incendie",
+   "q": 98.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail G-02 Qté 30 m × 3,2808 = 98,42 → 98 pi ; note L : Hyp. ; Réf. plan E-203 [chef A3] || p/h : catalogue Dupuis « CONDUIT VIDE 3/4 » um=P (dernier 2026-08-19, S-1797 - École Chambly, nb_projets 12) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "G-03",
+   "desc": "Câble FT4 2c #16 rouge boucle adressable (dans G-02)",
+   "q": 197.0,
+   "u": "PI",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail G-03 Qté 60 m × 3,2808 = 196,85 → 197 pi ; note L : Hyp. ; Réf. plan E-203 ; câble AI, reprise séparée (exception, pas un fil RW90 d'assemblage) [chef A3] || p/h : catalogue Dupuis « 16AWG 1PR PVC FT4 600V  » um=P (dernier 2026-04-02, S-1692_École Primaire St-Marc Candiac, nb_projets 1) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.4299,
+    "h": 0.004
+   }
+  },
+  {
+   "code": "D-11",
+   "desc": "Bouton d'appel — boîte + conduit vide (système fourni par d'autres)",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.33",
+   "src": "q : Estimation_2 Détail D-11 Qté 1 u ; note L : Aide au lecteur 116 ; Réf. plan E-104 [chef A3] || p/h : catalogue Dupuis « DECLENCHEUR APPEL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; règle 2 (seul libellé « appel ») ; convention Dupuis : dispositif posé par DR et fourni par d'autres (15 $) ; décision du chef de lot B1 : retenu ; conduit vide non chiffré dans cette ligne (longueur absente du kit) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "D-12",
+   "desc": "Percement de dalle carotté + coupe-feu (CAN/ULC-S115, Hilti CP-506) — conduits sous dalle RDC",
+   "q": 16.0,
+   "u": "U",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail D-12 Qté 16 u ; note L : 1 percement par course ; Réf. plan E-104 note 5 / devis 1.5, 18 [chef A3] || p/h : catalogue Dupuis « PERCEMENT PLANCHER » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 8) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 150.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "D-16",
+   "desc": "Boîtes de tirage/jonction, connecteurs, supports, corde de tirage — conduits sous dalle RDC",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail D-16 Qté 1 lot ; note L : vide ; Réf. plan E-104 [chef A3] || p/h : catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) + catalogue Dupuis « COUV CARRE 4PO VIERGE » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 23) ; opération : N = 32 boîtes de tirage (2 par course, Matériel Lumen IBE72171K « Tirage : 23 courses sous dalle x 2 ») × (boîte 6.1778 $ / 0.25 h + couvercle 1.4985 $ / 0.05 h) + Matériel Lumen GRE430 « Corde de tirage Poly Line 430 - 6500 pi » 81.68 $/ch × 1 (aucun libellé Dupuis ; repli Lumen) = 327.3216 $ / 9.6 h ; arbitrage directeur B (double compte B3 n° 30) : couvercles Dupuis ajoutés (Lumen IBE72C1 non ajouté), boîtes Lumen IBE72171K non ajoutées",
+   "prix": {
+    "type": "fixe",
+    "p": 327.3216,
+    "h": 9.6
+   }
+  },
+  {
+   "code": "E-06",
+   "desc": "Bouton d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+   "q": 3.0,
+   "u": "U",
+   "art": "3.33",
+   "src": "q : Estimation_2 Détail E-06 Qté 3 u ; note L : vide ; Réf. plan E-105 [chef A3] || p/h : catalogue Dupuis « DECLENCHEUR APPEL » um=U (dernier 2026-06-02, s-1783 anjinnov mcgill 1981 accenture, nb_projets 1) ; même arbitrage que D-11 (bouton de panique = déclencheur d'appel) ; conduit vide non chiffré dans cette ligne (longueur absente du kit) [chef B1]",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "E-07",
+   "desc": "Percement de dalle carotté + coupe-feu — étage (7 courses)",
+   "q": 7.0,
+   "u": "U",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail E-07 Qté 7 u ; note L : vide ; Réf. plan E-105 note 3 [chef A3] || p/h : catalogue Dupuis « PERCEMENT PLANCHER » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 8) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 150.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "E-11",
+   "desc": "Boîtes, connecteurs, supports — étage",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.31",
+   "src": "q : Estimation_2 Détail E-11 Qté 1 lot ; note L : vide ; Réf. plan E-105 [chef A3] || p/h : catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 22) + catalogue Dupuis « COUV CARRE 4PO VIERGE » um=U (dernier 2026-10-07, s-1881 hotel candlewood st-hyacinthe, nb_projets 23) ; opération : N = 14 boîtes de tirage (2 par course, Matériel Lumen IBE72171K « Tirage : 23 courses sous dalle x 2 ») × (boîte 6.1778 $ / 0.25 h + couvercle 1.4985 $ / 0.05 h) = 107.4682 $ / 4.2 h ; arbitrage directeur B (double compte B3 n° 30) : couvercles Dupuis ajoutés (Lumen IBE72C1 non ajouté), boîtes Lumen IBE72171K non ajoutées",
+   "prix": {
+    "type": "fixe",
+    "p": 107.4682,
+    "h": 4.2
+   }
+  },
+  {
+   "code": "A-11",
+   "desc": "Maintien continuité de service, recherche/traçage circuits existants, réalimentation circuits libérés",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "6.1",
+   "src": "q : Estimation_2 Détail A-11 (ligne 18) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3] || p/h : catalogue Dupuis « NOTE 5 RETRACER DERIVA » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) + catalogue Dupuis « NOTE 6 RETRACER FILAGE » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665), nb_projets 2) ; forfaits au lot : h = 6 + 6 = 12.0 ; arbitrage directeur B (double compte B3 n° 22) : la composante « IDENTIFIER LES CIRCUITS EXISTANTS A » (3 h) est retirée, déjà payée 9 × 3 h par B-09",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 12.0
+   }
+  },
+  {
+   "code": "H-01",
+   "desc": "Mobilisation / démobilisation, outillage, plateforme/échafaudage roulant",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "6.1",
+   "src": "q : Estimation_2 Détail H-01 (ligne 101) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3] || p/h : jugement (Estimation_2) Détail H-01 h/unité 16 [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 16.0
+   }
+  },
+  {
+   "code": "H-02",
+   "desc": "Coordination EG / multi-corps, dessins d'atelier, plans tel que construit",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "6.1",
+   "src": "q : Estimation_2 Détail H-02 (ligne 102) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3] || p/h : jugement (Estimation_2) Détail H-02 h/unité 20 [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 20.0
+   }
+  },
+  {
+   "code": "H-03",
+   "desc": "Essais, mise en service, vérification prises existantes (note 3), étiquetage",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "6.1",
+   "src": "q : Estimation_2 Détail H-03 (ligne 103) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3] || p/h : jugement (Estimation_2) Détail H-03 h/unité 12 [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 12.0
+   }
+  },
+  {
+   "code": "H-04",
+   "desc": "Nettoyage, gestion des déchets (devis 5, 9.3)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "6.1",
+   "src": "q : Estimation_2 Détail H-04 (ligne 104) : Qté (D) = 1, Unité (E) = lot, Notes (L) = « Hypothèse » [chef A3] || p/h : jugement (Estimation_2) Détail H-04 h/unité 8 [chef B3]",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "X-02",
+   "desc": "Nacelle (location, 16 h)",
+   "q": 1.0,
+   "u": "U",
+   "art": "6.1",
+   "src": "q : METHODE.md §2 point 3 : nacelle 1 250 $ / 16 h ; catalogue-prix-temps-dupuis.csv ligne 2026 « NACELLE » : prix_a_utiliser 1250.0, temps_a_utiliser 16.0 (dernier projet s-1811 cdc construction de 6 batiment, 2026-07-14) [chef A3] || p/h : catalogue Dupuis « NACELLE » um=U (dernier 2026-07-14, s-1811 cdc construction de 6 batiment, nb_projets 2) [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 1250.0,
+    "h": 16.0
+   }
+  },
+  {
+   "code": "LOT-ECL",
+   "desc": "Lot éclairage (A1 ×11, Axis SL1 4′ ×12, 3′ ×15, 1′ ×6, trousses, E ×3, Z6 ×3)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.35",
+   "src": "q : METHODE.md §2 point 2 : lot éclairage 11 893 $ (prix confirmé Francis 2026-10-20) [chef A3] || p/h : METHODE.md §2, prix confirmé par Francis le 2026-10-20 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 11893.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-DIST",
+   "desc": "Lot distribution (NF 225 A 42 cct + EDB 1P ×20 + EJB 3P ×3)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.24",
+   "src": "q : METHODE.md §2 point 2 : lot distribution 6 200 $ (prix confirmé Francis 2026-10-20) [chef A3] || p/h : METHODE.md §2, prix confirmé par Francis le 2026-10-20 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 6200.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-JCI",
+   "desc": "Sous-traitance JCI/Simplex",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.38",
+   "src": "q : METHODE.md §2 point 2 : JCI 7 400 $ (prix confirmé Francis 2026-10-20) [chef A3] || p/h : METHODE.md §2, prix confirmé par Francis le 2026-10-20 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 7400.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-DET",
+   "desc": "2 détecteurs de fumée (fournis JCI)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.36",
+   "src": "q : METHODE.md §2 point 2 : 2 détecteurs 600 $ (prix confirmé Francis 2026-10-20) [chef A3] || p/h : METHODE.md §2, prix confirmé par Francis le 2026-10-20 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 600.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-GPR",
+   "desc": "GPR (géoradar = scan de dalle avant carottage)",
+   "q": 1.0,
+   "u": "LOT",
+   "art": "3.32",
+   "src": "q : METHODE.md §2 point 2 : GPR 1 250 $ (prix confirmé Francis 2026-10-20) [chef A3] || p/h : METHODE.md §2, prix confirmé par Francis le 2026-10-20 [chef B2]",
+   "prix": {
+    "type": "fixe",
+    "p": 1250.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "X-01",
+   "desc": "Scan de dalle béton (temps de l'électricien ; le 1 250 $ est porté par LOT-GPR)",
+   "q": 1.0,
+   "u": "U",
+   "art": "3.32",
+   "src": "q : décision du chef || p/h : catalogue Dupuis « SCAN DALLE BETON » um=U (dernier 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665)) : p = 0 forcé (1 250 $ déjà dans LOT-GPR), h = 2.0 ; q = 1 (bordereau 3.32, 23 percements D-12 + E-07)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 2.0
+   }
+  }
+ ]
+}

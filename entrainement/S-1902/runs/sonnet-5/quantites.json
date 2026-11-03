@@ -1,0 +1,1166 @@
+{
+ "dossier": "S-1902",
+ "protocole": "converti",
+ "source": "converti depuis runs/sonnet-5/chiffrage.json (ancien protocole : prix et temps recopiés tels quels, sans étiquette de décision)",
+ "codes_dedoublonnes": 0,
+ "lots_convertis_en_lignes": false,
+ "lignes": [
+  {
+   "code": "A-01",
+   "desc": "Démantèlement luminaires existants RDC + 2e (E.A.E : encastrés 26, LED 1x4 6, LED 2x2 8) — absorbe A-02",
+   "q": 40.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Catalogue Dupuis « EQUIPEMENT A ENLEVER » (dernier Dupuis 2026-05-05, s-1753 ecole asomption; prix 0.0000 $, temps 0.5000 h) — luminaire enlevé 0,5 h (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "A-03",
+   "desc": "Démantèlement services RDC + 2e (prises 7, DDFT 4, sorties data 17) E.A.E — absorbe A-04",
+   "q": 28.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Catalogue Dupuis « ENLEVER PRISE » (dernier Dupuis 2026-08-26, s-1835 esbg  rehabilitation inbterieur; prix 0.0000 $, temps 0.3500 h) — prise enlevée 0,35 h (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "A-03a",
+   "desc": "Démantèlement interrupteur existant (E.A.E)",
+   "q": 1.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Catalogue Dupuis « ENLEVER INTERRUPTEUR » (dernier Dupuis 2026-08-26, s-1835 esbg  rehabilitation inbterieur; prix 0.0000 $, temps 0.3500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "A-03b",
+   "desc": "Démantèlement monuments plancher 3, boîtes de jonction 2, boîtiers C 2, détecteur fumée 1, détecteur mouvement 1, haut-parleur encastré 1 (E.A.E)",
+   "q": 10.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Catalogue Dupuis « EQUIPEMENT A ENLEVER » (dernier Dupuis 2026-05-05, s-1753 ecole asomption; prix 0.0000 $, temps 0.5000 h) — absorbe E-03 (boîtes de plancher 2e à refaire)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "A-05",
+   "desc": "Relocalisation équipements services (E.A.R) : prises 8, DDFT 1, sorties data 3",
+   "q": 12.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "Catalogue Dupuis « RELO PRISE » (dernier Dupuis 2026-05-05, s-1753 ecole asomption; prix 0.0000 $, temps 1.5000 h) — relocalisation de prise 1,5 h (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.5
+   }
+  },
+  {
+   "code": "A-06",
+   "desc": "Relocalisation luminaires encastrés (E.A.R) RDC + 2e",
+   "q": 4.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "Catalogue Dupuis « RELO ENCASTRE » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 0.0000 $, temps 1.0000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "A-07",
+   "desc": "Relocalisation interrupteurs maîtres du hall (note spécifique 1 E-201)",
+   "q": 4.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "Catalogue Dupuis « RELO INT » (dernier Dupuis 2026-05-05, s-1753 ecole asomption; prix 0.0000 $, temps 1.5000 h) — Détail A-07 = 6 h d'hypothèse = 4 interrupteurs x 1,5 h",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.5
+   }
+  },
+  {
+   "code": "A-08",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation luminaires linéaires existants",
+   "q": 21.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "Catalogue Dupuis « RELO ENCASTRE » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 0.0000 $, temps 1.0000 h) — quantité Détail A-08 (comptée sur plan E-202 note 1); pas de libellé « linéaire » : RELO ENCASTRE par analogie",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "A-09",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation encastrés existants",
+   "q": 24.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "Catalogue Dupuis « RELO ENCASTRE » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 0.0000 $, temps 1.0000 h) — quantité Détail A-09",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "A-10",
+   "desc": "Toit : débrancher, entreposer, rebrancher équipements de ventilation (E.A.R, moteurs monophasés)",
+   "q": 6.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « DISCONNECTER ET RECON » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 8.0000 h) — Détail A-10 = 4 h par moteur; catalogue 8 h retenu",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "A-11",
+   "desc": "Maintien continuité de service, recherche/traçage circuits existants, réalimentation circuits libérés",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.22",
+   "src": "jugement (Estimation_2) — Détail A-11, 16 h à valider (hypothèse)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 16.0
+   }
+  },
+  {
+   "code": "B-01",
+   "desc": "Panneau PP-3 NEUF 225A 347/600V 3Ø 4F 42 cct (NF Schneider) — pose, temps seulement",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.24",
+   "src": "Catalogue Dupuis « PANN PD 400A 347/600V 42CCT 35KA C/A » (dernier Dupuis 2026-02-02, S-1645 ANNEXE-BOURASSA; prix 0.0000 $, temps 8.0000 h) — panneau 8 h (METHODE.md); matériel dans le lot distribution (NF 225 A 42 cct 3 400 $)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "B-01b",
+   "desc": "Démantèlement de l'ancien PP-3 (42 cct) + transfert des charges",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.24",
+   "src": "Catalogue Dupuis « ENL PANN 42CCT 120/208V » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 4.0000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 4.0
+   }
+  },
+  {
+   "code": "B-02",
+   "desc": "Disjoncteurs NF 1P-15A pour circuits existants transférés dans PP-3",
+   "q": 14.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Catalogue Dupuis « DISJ15A1P » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 0.2000 h) — disjoncteur 1P 0,2 h (METHODE.md); matériel dans le lot distribution (EDB 1P)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-03",
+   "desc": "Disjoncteur NF 3P-20A (aérotherme, cct 13-15-17) transféré",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 719.6000 $, temps 1.0000 h) — prix de ligne forcé à 0.00 $ : disjoncteur 3P 1 h (METHODE.md); seul le temps est pris : matériel dans le lot distribution (EJB 3P)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-04",
+   "desc": "Disjoncteur NF 3P-40A — UTA-1 (cct 18-20-22) NOUVEAU",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 719.6000 $, temps 1.0000 h) — prix de ligne forcé à 0.00 $ : disjoncteur 3P 1 h (METHODE.md); seul le temps est pris : matériel dans le lot distribution (EJB 3P)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-05",
+   "desc": "Disjoncteur NF 3P-15A — VE-2N (cct 19-21-23) NOUVEAU",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Catalogue Dupuis « DISJ 100A 3P 120/240V 22 K » (dernier Dupuis 2026-06-02, s-1783 anjinnov mcgill 1981 accenture; prix 719.6000 $, temps 1.0000 h) — prix de ligne forcé à 0.00 $ : disjoncteur 3P 1 h (METHODE.md); seul le temps est pris : matériel dans le lot distribution (EJB 3P)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-06",
+   "desc": "Disjoncteur 1P-15A DDFT — Fontaine P2-61 (note 4)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Catalogue Dupuis « DISJ15A1P » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 0.2000 h) — matériel dans le lot distribution",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-07",
+   "desc": "Disjoncteurs 1P-15A — P2-63 bornes prêts hall, P2-64 prises bibliothèque (note 4)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Catalogue Dupuis « DISJ15A1P » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 0.2000 h) — matériel dans le lot distribution",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-08",
+   "desc": "Disjoncteurs 1P-20A — P3-17/19 machine de tri (note 4)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Catalogue Dupuis « DISJ15A1P » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 0.2000 h) — 20 A 1P : même temps que 15 A 1P; matériel dans le lot distribution",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-09",
+   "desc": "Mise à jour fiches dactylographiées + identification (PP-2, PP-3, P2, P3, P4, P6, PU-1, PPU-1, P10)",
+   "q": 9.0,
+   "u": "u",
+   "art": "3.24",
+   "src": "jugement (Estimation_2) — Détail B-09, 1 h/u à valider",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "LOT-B1",
+   "desc": "PRIX DE LOT distribution — panneau NF 225 A 42 cct",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.24",
+   "src": "lot fournisseur confirmé par Francis le 2026-10-20 (METHODE.md §2) — lot distribution 6 200 $ : part panneau",
+   "prix": {
+    "type": "fixe",
+    "p": 3400.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-B2",
+   "desc": "PRIX DE LOT distribution — disjoncteurs EDB 1P x20 + EJB 3P x3",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.25",
+   "src": "lot fournisseur confirmé par Francis le 2026-10-20 (METHODE.md §2) — lot distribution 6 200 $ : part disjoncteurs (95 x20 + 300 x3)",
+   "prix": {
+    "type": "fixe",
+    "p": 2800.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "C-01",
+   "desc": "UTA-01 York 575V/3Ø au toit — raccordement",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « UNITER UC AU TOIT » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 25.0000 $, temps 1.0000 h) — UTA 1 h (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "C-02",
+   "desc": "VE-02N Plymovent 575V/3Ø c/a VFD au toit — raccordement",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « MOTEUR » (dernier Dupuis 2026-02-19, S-1676 ARC'TERTX; prix 25.0000 $, temps 0.7500 h) — moteur 0,75 h (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "C-03",
+   "desc": "Chaudières CH-01 / CH-02 575-600V/3Ø — tiroirs CCM-1, raccord final",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.26",
+   "src": "Catalogue Dupuis « MOTEUR » (dernier Dupuis 2026-02-19, S-1676 ARC'TERTX; prix 25.0000 $, temps 0.7500 h) — moteur triphasé; MCC = art. 3.26",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "C-04",
+   "desc": "Humidificateurs HUM-1/2/3 120V/1Ø — raccordement",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « MOTEUR » (dernier Dupuis 2026-02-19, S-1676 ARC'TERTX; prix 25.0000 $, temps 0.7500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "C-04b",
+   "desc": "Sectionneur 30A sans fusible par humidificateur (Hubbell)",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « SECTIONNEUR POR ENTRETIEN HUBHBL13R22 » (dernier Dupuis 2026-09-23, s-1866 gar mun st amable; prix 165.6100 $, temps 0.7500 h) — équivalent du HBL1372 de la feuille Lumen (117,84 $); prix Dupuis retenu",
+   "prix": {
+    "type": "fixe",
+    "p": 165.61,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "C-05",
+   "desc": "Conduit EMT 1\" + 4 #8 (alim. UTA-01), 35 m — absorbe C-06",
+   "q": 115.0,
+   "u": "pi",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « CONDUIT 1 04C08 » (dernier Dupuis 2026-03-31, S-1693_Ecole Primaire Beloeil; prix 6.1399 $, temps 0.0980 h) — conduit + conducteurs en assemblage; longueur hypothèse Détail C-05",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1399,
+    "h": 0.098
+   }
+  },
+  {
+   "code": "C-07",
+   "desc": "Conduit EMT 3/4\" + 4 #12 (VE-02N), 35 m — absorbe une partie de C-08",
+   "q": 115.0,
+   "u": "pi",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « CONDUIT 3/4 04C12 » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 2.8997 $, temps 0.0760 h) — longueur hypothèse Détail C-02 / C-07",
+   "prix": {
+    "type": "fixe",
+    "p": 2.8997,
+    "h": 0.076
+   }
+  },
+  {
+   "code": "C-07b",
+   "desc": "Conduit EMT 3/4\" + 3 #12 (HUM-1/2/3), 3 x 15 m — absorbe le reste de C-08",
+   "q": 148.0,
+   "u": "pi",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « CONDUIT 3/4 03C12 » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 4.2441 $, temps 0.1128 h) — longueur hypothèse Détail C-04 / C-07",
+   "prix": {
+    "type": "fixe",
+    "p": 4.2441,
+    "h": 0.1128
+   }
+  },
+  {
+   "code": "C-09",
+   "desc": "Flexible étanche (LFMC) 3/4\" — raccords finaux équipements mécaniques",
+   "q": 46.0,
+   "u": "pi",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « COND FLEX ETANCHE 3/4PO ACIER BOBINE STD 150M » (dernier Dupuis 2026-09-23, s-1866 gar mun st amable; prix 3.7800 $, temps 0.0400 h) — quantité = feuille Matériel Lumen (14 m)",
+   "prix": {
+    "type": "fixe",
+    "p": 3.78,
+    "h": 0.04
+   }
+  },
+  {
+   "code": "C-09b",
+   "desc": "Connecteurs étanches 3/4\" pour LFMC",
+   "q": 20.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « CONN CONSEAL 3/4PO 90D ALLIAGE ZINC » (dernier Dupuis 2026-09-23, s-1866 gar mun st amable; prix 14.9950 $, temps 0.1500 h) — quantité = feuille Matériel Lumen (20)",
+   "prix": {
+    "type": "fixe",
+    "p": 14.995,
+    "h": 0.15
+   }
+  },
+  {
+   "code": "C-10",
+   "desc": "Câble armé 3C #12 600V (chaudières), 10 m",
+   "q": 33.0,
+   "u": "pi",
+   "art": "3.26",
+   "src": "Catalogue Dupuis « 12AWG 3C ARME ALUM 600' » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 1.4508 $, temps 0.0270 h) — équivalent de TECK90 3C #12 (feuille Lumen); quantité Lumen",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4508,
+    "h": 0.027
+   }
+  },
+  {
+   "code": "C-10b",
+   "desc": "Connecteurs Star Teck 3/4\" (chaudières)",
+   "q": 4.0,
+   "u": "u",
+   "art": "3.26",
+   "src": "prix Lumen IBETEK75120 « ABB Star Teck 3/4 PO CONN TECK » 42.2247 $ (feuille Matériel Lumen, 2026-10-07, régulier) + temps par jugement 0.25 h — famille absente du catalogue Dupuis; quantité = feuille Matériel Lumen",
+   "prix": {
+    "type": "fixe",
+    "p": 42.2247,
+    "h": 0.25
+   }
+  },
+  {
+   "code": "D-01",
+   "desc": "Prises doubles 15A neuves RDC (E-104) — absorbe les composites D-01, D-03, D-04, D-05, D-06",
+   "q": 23.0,
+   "u": "u",
+   "art": "3.28",
+   "src": "Catalogue Dupuis « PRISE DUPLEX 15A 120V » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 64.8100 $, temps 1.1750 h) — prise 1,175 h, 64,81 $ (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 64.81,
+    "h": 1.175
+   }
+  },
+  {
+   "code": "D-02",
+   "desc": "Prises doubles USB Leviton Decora neuves RDC (E-104)",
+   "q": 20.0,
+   "u": "u",
+   "art": "3.27",
+   "src": "Catalogue Dupuis « PRISE USB 125V 15 AMP » (dernier Dupuis 2026-09-10, s-1854 sollio st hubert lanthier; prix 77.4500 $, temps 1.1250 h) — USB 1,125 h, 77,45 $ (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 77.45,
+    "h": 1.125
+   }
+  },
+  {
+   "code": "D-07",
+   "desc": "Prises DDFT neuves RDC (E-104) — symbole DDFT/MALT isolée non départagé",
+   "q": 20.0,
+   "u": "u",
+   "art": "3.30",
+   "src": "Catalogue Dupuis « PRISE DUPLEX 20A 125V GFI » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 65.3800 $, temps 1.3000 h) — DDFT 1,3 h, 65,38 $ (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 65.38,
+    "h": 1.3
+   }
+  },
+  {
+   "code": "D-08",
+   "desc": "Sorties data neuves RDC (E-104), boîte + conduit 3/4\"",
+   "q": 45.0,
+   "u": "u",
+   "art": "3.33",
+   "src": "Catalogue Dupuis « TEL/DATA 3/4 » (dernier Dupuis 2026-09-23, s-1866 gar mun st amable; prix 22.3200 $, temps 0.8900 h) — tel/data 3/4 22,32 $ (METHODE.md); câble data hors prix (OPT-1)",
+   "prix": {
+    "type": "fixe",
+    "p": 22.32,
+    "h": 0.89
+   }
+  },
+  {
+   "code": "D-09",
+   "desc": "Barrière anti-vol : 2 boîtes de jonction + raccord panneau de contrôle (PU-1 23)",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.31",
+   "src": "jugement (Estimation_2) — Détail D-09, 6 h à valider",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 6.0
+   }
+  },
+  {
+   "code": "D-10",
+   "desc": "Boîtes de jonction neuves RDC (E-104) — boîte carrée 4\"",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 6.1778 $, temps 0.2500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1778,
+    "h": 0.25
+   }
+  },
+  {
+   "code": "D-10b",
+   "desc": "Couvercles carrés 4\" pour boîtes de jonction RDC",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « COUV CARRE 4PO VIERGE » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 1.4985 $, temps 0.0500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4985,
+    "h": 0.05
+   }
+  },
+  {
+   "code": "D-11",
+   "desc": "Bouton d'appel — boîte (système fourni par d'autres)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « BOUTON HANDICAPE » (dernier Dupuis 2026-04-02, S-1692_École Primaire St-Marc Candiac; prix 15.0000 $, temps 0.5000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "D-12",
+   "desc": "Percement de dalle carotté — conduits sous dalle RDC (note 5 E-104)",
+   "q": 16.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « PERCEMENT PLANCHER » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 150.0000 $, temps 1.0000 h) — percement 150 $ / 1 h (METHODE.md); quantité Détail D-12",
+   "prix": {
+    "type": "fixe",
+    "p": 150.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "D-12b",
+   "desc": "Coupe-feu aux percements de dalle RDC (CAN/ULC-S115)",
+   "q": 16.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « COUPE FEU TUBE 10.1 FL O » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 13.5300 $, temps 0.5000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 13.53,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "D-13",
+   "desc": "Conduit + 5 #12 sous dalle RDC (16 courses), 480 m — absorbe D-15",
+   "q": 1575.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « CONDUIT 3/4 05C12 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 3.4197 $, temps 0.0810 h) — Détail prévoit EMT 1\" : 3/4\" 05C12 retenu (même nombre de conducteurs); longueur hypothèse Détail",
+   "prix": {
+    "type": "fixe",
+    "p": 3.4197,
+    "h": 0.081
+   }
+  },
+  {
+   "code": "D-14",
+   "desc": "Conduit vide 3/4\" data sous dalle RDC (11 courses), 330 m",
+   "q": 1083.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « CONDUIT VIDE 3/4 » (dernier Dupuis 2026-08-19, S-1797 - École Chambly; prix 1.4097 $, temps 0.0560 h) — conduit vide 1,41 $/pi (METHODE.md); longueur hypothèse Détail",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "D-16",
+   "desc": "Boîtes de tirage carrées 4\" — 2 par course sous dalle RDC",
+   "q": 32.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 6.1778 $, temps 0.2500 h) — 2 par course (feuille Matériel Lumen : « 23 courses x 2 »)",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1778,
+    "h": 0.25
+   }
+  },
+  {
+   "code": "D-16b",
+   "desc": "Couvercles de boîtes de tirage RDC",
+   "q": 32.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « COUV CARRE 4PO VIERGE » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 1.4985 $, temps 0.0500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4985,
+    "h": 0.05
+   }
+  },
+  {
+   "code": "N-02",
+   "desc": "Thermostats neufs RDC (E-104)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Catalogue Dupuis « THERMOSTAT » (dernier Dupuis 2026-06-03, s-1775 clinique mieux etre; prix 35.0000 $, temps 0.4000 h) — thermostat 35 $ (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 35.0,
+    "h": 0.4
+   }
+  },
+  {
+   "code": "N-03",
+   "desc": "Lecteurs de carte neufs RDC (E-104)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « LECTEUR DE CARTE » (dernier Dupuis 2026-04-02, S-1692_École Primaire St-Marc Candiac; prix 15.0000 $, temps 0.5000 h) — lecteur de carte 15 $ (METHODE.md); « LECTEUR CARTE » existe aussi (0,35 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "N-01",
+   "desc": "Scan de dalle béton (GPR) avant percements",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.32",
+   "src": "Catalogue Dupuis « SCAN DALLE BETON » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 1250.0000 $, temps 2.0000 h) — scan dalle 1 250 $ (METHODE.md) = lot GPR 1 250 $ confirmé 2026-10-20 : une seule fois",
+   "prix": {
+    "type": "fixe",
+    "p": 1250.0,
+    "h": 2.0
+   }
+  },
+  {
+   "code": "E-01",
+   "desc": "Prises doubles 15A neuves étage (E-105) — absorbe E-01, E-04, E-05 composites",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.28",
+   "src": "Catalogue Dupuis « PRISE DUPLEX 15A 120V » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 64.8100 $, temps 1.1750 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 64.81,
+    "h": 1.175
+   }
+  },
+  {
+   "code": "E-01b",
+   "desc": "Prises DDFT neuves étage (E-105)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.30",
+   "src": "Catalogue Dupuis « PRISE DUPLEX 20A 125V GFI » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 65.3800 $, temps 1.3000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 65.38,
+    "h": 1.3
+   }
+  },
+  {
+   "code": "E-01c",
+   "desc": "Sorties data neuves étage (E-105)",
+   "q": 20.0,
+   "u": "u",
+   "art": "3.33",
+   "src": "Catalogue Dupuis « TEL/DATA 3/4 » (dernier Dupuis 2026-09-23, s-1866 gar mun st amable; prix 22.3200 $, temps 0.8900 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 22.32,
+    "h": 0.89
+   }
+  },
+  {
+   "code": "E-02",
+   "desc": "Monuments de plancher neufs étage (E-105) — absorbe E-03 refaites",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.34",
+   "src": "Catalogue Dupuis « MONUMENT PLANCHER » (dernier Dupuis 2026-02-19, S-1676 ARC'TERTX; prix 250.0000 $, temps 1.0000 h) — monument 250 $ (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 250.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "E-06",
+   "desc": "Boutons d'appel (2) + panique (1) — boîte",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « BOUTON HANDICAPE » (dernier Dupuis 2026-04-02, S-1692_École Primaire St-Marc Candiac; prix 15.0000 $, temps 0.5000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "E-07",
+   "desc": "Percement de dalle carotté — conduits sous dalle étage (note 3 E-105)",
+   "q": 7.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « PERCEMENT PLANCHER » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 150.0000 $, temps 1.0000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 150.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "E-07b",
+   "desc": "Coupe-feu aux percements de dalle étage",
+   "q": 7.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « COUPE FEU TUBE 10.1 FL O » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 13.5300 $, temps 0.5000 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 13.53,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "E-08",
+   "desc": "Conduit + 5 #12 sous dalle étage (7 courses), 175 m — absorbe E-10",
+   "q": 575.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « CONDUIT 3/4 05C12 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 3.4197 $, temps 0.0810 h) — Détail prévoit EMT 1\" : 3/4\" 05C12 retenu; longueur hypothèse Détail",
+   "prix": {
+    "type": "fixe",
+    "p": 3.4197,
+    "h": 0.081
+   }
+  },
+  {
+   "code": "E-09",
+   "desc": "Conduit vide 3/4\" data sous dalle étage (7 courses), 175 m",
+   "q": 575.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « CONDUIT VIDE 3/4 » (dernier Dupuis 2026-08-19, S-1797 - École Chambly; prix 1.4097 $, temps 0.0560 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "E-11",
+   "desc": "Boîtes de tirage carrées 4\" étage — 2 par course",
+   "q": 14.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « BOITE CARRE 2-1/8PO KO 1 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 6.1778 $, temps 0.2500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1778,
+    "h": 0.25
+   }
+  },
+  {
+   "code": "E-11b",
+   "desc": "Couvercles de boîtes de tirage étage",
+   "q": 14.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Catalogue Dupuis « COUV CARRE 4PO VIERGE » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 1.4985 $, temps 0.0500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4985,
+    "h": 0.05
+   }
+  },
+  {
+   "code": "F-01",
+   "desc": "Luminaire A1 Cooper 2'x4' encastré 347V — pose seulement",
+   "q": 11.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « FIXTURE TYPE A1 » (dernier Dupuis 2026-08-19, S-1797 - École Chambly; prix 0.0000 $, temps 0.7500 h) — luminaire 0,75 h (METHODE.md); matériel dans le lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-02",
+   "desc": "Luminaire C1 Axis SL1 module 4' — pose seulement",
+   "q": 12.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « FIXTURE TYPE C1 » (dernier Dupuis 2026-07-14, s-1811 cdc construction de 6 batiment; prix 0.0000 $, temps 0.7500 h) — matériel dans le lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-03",
+   "desc": "Luminaire C1_1 Axis SL1 module 1' — pose seulement",
+   "q": 6.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « FIXTURE TYPE C1 » (dernier Dupuis 2026-07-14, s-1811 cdc construction de 6 batiment; prix 0.0000 $, temps 0.7500 h) — pas de libellé C1_1 : FIXTURE TYPE C1 (0,75 h; Détail 0,5 h); matériel dans le lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-04",
+   "desc": "Luminaire C1_3 Axis SL1 module 3' — pose seulement",
+   "q": 15.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « FIXTURE TYPE C1 » (dernier Dupuis 2026-07-14, s-1811 cdc construction de 6 batiment; prix 0.0000 $, temps 0.7500 h) — pas de libellé C1_3 : FIXTURE TYPE C1 (0,75 h; Détail 0,6 h); matériel dans le lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-05",
+   "desc": "Rangées linéaires Axis : suspension aux tiges/câbles fixés à la dalle (devis 16.5), alimentation de rangée",
+   "q": 20.0,
+   "u": "rangée",
+   "art": "3.35",
+   "src": "jugement (Estimation_2) — Détail F-05, 1 h/rangée à valider; trousses de suspension dans le lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "F-06",
+   "desc": "Luminaire E GreenCreative cylindre suspendu — pose seulement",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « FIXTURE TYPE E » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 0.0000 $, temps 0.7500 h) — 3 étiquettes au relevé (Détail : 4; lot : 3); matériel dans le lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-07",
+   "desc": "Enseigne de sortie Z6 Stanpro — pose seulement",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « ENSEIGNE SORTIE Z6 » (dernier Dupuis 2026-07-13, s-1808 cpe les copain d'ABORD; prix 0.0000 $, temps 1.0000 h) — enseigne 1 h (METHODE.md); matériel dans le lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "F-08",
+   "desc": "Conduit EMT 3/4\" + 3 #12 — raccordement luminaires sur circuits existants, 280 m — absorbe F-09",
+   "q": 919.0,
+   "u": "pi",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « CONDUIT 3/4 03C12 » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 4.2441 $, temps 0.1128 h) — conduit 3/4 03C12 4,24 $/pi, 0,113 h/pi (METHODE.md); longueur hypothèse Détail (8 m x 35 points)",
+   "prix": {
+    "type": "fixe",
+    "p": 4.2441,
+    "h": 0.1128
+   }
+  },
+  {
+   "code": "F-10",
+   "desc": "Boîtes de jonction octogonales éclairage (35 points)",
+   "q": 35.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « BOITE OCTOG 1-1/2PO KO 1 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 7.9630 $, temps 0.2000 h) — 35 points = base de la feuille Matériel Lumen (IBE54151L)",
+   "prix": {
+    "type": "fixe",
+    "p": 7.963,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "F-10b",
+   "desc": "Quincaillerie / chaînes de retenue à la dalle (devis 16.5)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « QUINCAILLERIE » (dernier Dupuis 2026-07-14, s-1811 cdc construction de 6 batiment; prix 2250.0000 $, temps 0.0000 h) — forfait catalogue (classe Jugement / forfait)",
+   "prix": {
+    "type": "fixe",
+    "p": 2250.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "N-04",
+   "desc": "Interrupteurs simples neufs RDC (E-203)",
+   "q": 5.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Catalogue Dupuis « INTERRUPTEUR 15A 120V » (dernier Dupuis 2026-09-25, S-1857 - Maison St-Michel; prix 75.4700 $, temps 1.0750 h) — interrupteur 75,47 $ (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 75.47,
+    "h": 1.075
+   }
+  },
+  {
+   "code": "LOT-F",
+   "desc": "PRIX DE LOT éclairage (A1 x11, SL1 4' x12, 3' x15, 1' x6, trousses, E x3, Z6 x3)",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.35",
+   "src": "lot fournisseur confirmé par Francis le 2026-10-20 (METHODE.md §2)",
+   "prix": {
+    "type": "fixe",
+    "p": 11893.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "G-01",
+   "desc": "Détecteurs de fumée neufs RDC (JCI) — pose seulement",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.36",
+   "src": "Catalogue Dupuis « DETECTEUR FUMEE » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 0.0000 $, temps 0.5000 h) — détecteur 0,5 h (METHODE.md); matériel dans le lot « 2 détecteurs JCI 600 $ »",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "G-01b",
+   "desc": "Relocalisation détecteur de fumée existant",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.36",
+   "src": "Catalogue Dupuis « RELO DETECTEUR A FUME » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 0.0000 $, temps 0.7500 h)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "G-02",
+   "desc": "Conduit 3/4\" boucle AI, 30 m",
+   "q": 99.0,
+   "u": "pi",
+   "art": "3.36",
+   "src": "Catalogue Dupuis « CONDUIT VIDE 3/4 » (dernier Dupuis 2026-08-19, S-1797 - École Chambly; prix 1.4097 $, temps 0.0560 h) — longueur hypothèse Détail G-02",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "G-03",
+   "desc": "Câble AI FT4 2c #16 (boucle adressable), 60 m",
+   "q": 197.0,
+   "u": "pi",
+   "art": "3.36",
+   "src": "Catalogue Dupuis « COND ALARME 3/16 FT4 » (dernier Dupuis 2026-10-07, s-1881 hotel candlewood st-hyacinthe; prix 1.5887 $, temps 0.0540 h) — longueur hypothèse Détail G-03",
+   "prix": {
+    "type": "fixe",
+    "p": 1.5887,
+    "h": 0.054
+   }
+  },
+  {
+   "code": "G-04",
+   "desc": "Relocalisation panneau annonciateur Simplex",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.37",
+   "src": "Catalogue Dupuis « RELO PANN ANNOCIATEUR » (dernier Dupuis 2026-03-09, 25-066G_Canderel Lobby 2000 McGill College (S-1665); prix 0.0000 $, temps 8.0000 h) — annonciateur relocalisé 8 h (METHODE.md)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "G-05",
+   "desc": "Démontage/protection/réinstallation dispositifs AI existants dans zones touchées",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.36",
+   "src": "jugement (Estimation_2) — Détail G-05, 12 h à valider (allocation)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 12.0
+   }
+  },
+  {
+   "code": "G-06",
+   "desc": "Assistance électricien lors de la programmation / vérification ULC-S537",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.38",
+   "src": "jugement (Estimation_2) — Détail G-06, 8 h à valider",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "G-07",
+   "desc": "Sous-traitance JCI/Simplex : bypass, programmation 4007ES, vérification S-537, certificat",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.38",
+   "src": "lot fournisseur JCI confirmé par Francis le 2026-10-20 (METHODE.md §2)",
+   "prix": {
+    "type": "fixe",
+    "p": 7400.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-DET",
+   "desc": "Lot JCI : 2 détecteurs de fumée adressables + bases",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.36",
+   "src": "lot fournisseur confirmé par Francis le 2026-10-20 (METHODE.md §2)",
+   "prix": {
+    "type": "fixe",
+    "p": 600.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "H-01",
+   "desc": "Mobilisation / démobilisation, plateforme (nacelle)",
+   "q": 1.0,
+   "u": "u",
+   "art": "6.1",
+   "src": "Catalogue Dupuis « NACELLE » (dernier Dupuis 2026-07-14, s-1811 cdc construction de 6 batiment; prix 1250.0000 $, temps 16.0000 h) — nacelle 1 250 $ / 16 h (METHODE.md) = Détail H-01 16 h",
+   "prix": {
+    "type": "fixe",
+    "p": 1250.0,
+    "h": 16.0
+   }
+  },
+  {
+   "code": "H-02",
+   "desc": "Coordination EG / multi-corps, dessins d'atelier, plans tel que construit",
+   "q": 1.0,
+   "u": "lot",
+   "art": "6.1",
+   "src": "jugement (Estimation_2) — Détail H-02, 20 h à valider",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 20.0
+   }
+  },
+  {
+   "code": "H-03",
+   "desc": "Essais, mise en service, vérification prises existantes (note 3), étiquetage",
+   "q": 1.0,
+   "u": "lot",
+   "art": "6.1",
+   "src": "jugement (Estimation_2) — Détail H-03, 12 h à valider",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 12.0
+   }
+  },
+  {
+   "code": "H-04",
+   "desc": "Nettoyage, gestion des déchets (devis 5, 9.3)",
+   "q": 1.0,
+   "u": "lot",
+   "art": "6.1",
+   "src": "jugement (Estimation_2) — Détail H-04, 8 h à valider",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "N-05",
+   "desc": "Corde de tirage Poly Line 430 (conduits vides data)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "prix Lumen GRE430 « Corde de tirage Poly Line 430 - 6500 pi » 81.6800 $ (feuille Matériel Lumen, 2026-10-07, régulier) + temps par jugement 0.50 h — famille absente du catalogue Dupuis; quantité = feuille Matériel Lumen (devis 35.10)",
+   "prix": {
+    "type": "fixe",
+    "p": 81.68,
+    "h": 0.5
+   }
+  }
+ ]
+}
