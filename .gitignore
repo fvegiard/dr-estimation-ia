@@ -52,3 +52,6 @@ travail-mcp/
 .omc/*
 !.omc/skills/
 .omo/
+
+# Node (outils/*.mjs)
+node_modules/

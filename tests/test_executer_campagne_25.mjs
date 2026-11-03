@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { contenuReponse, preuveReussie, selectionner } from '../outils/executer_campagne_25.mjs';
+import { cheminPython, contenuReponse, preuveReussie, selectionner } from '../outils/executer_campagne_25.mjs';
 
 function preuve(produit) {
   return {
@@ -39,4 +39,11 @@ test('sélection complète ou courte sans doublons; identifiant inconnu refusé'
   assert.deepEqual(selectionner(cas, ['P01']), [cas[0]]);
   assert.deepEqual(selectionner(cas, [cas[1].id, 'P02']), [cas[1]]);
   assert.throws(() => selectionner(cas, ['P99']), /Sélection inconnue/);
+});
+
+test('python du .venv selon la plateforme; ESTIMATEUR_PYTHON l’emporte', () => {
+  assert.match(cheminPython('win32', {}).replaceAll('\\', '/'), /\/\.venv\/Scripts\/python\.exe$/);
+  assert.match(cheminPython('linux', {}).replaceAll('\\', '/'), /\/\.venv\/bin\/python$/);
+  assert.match(cheminPython('darwin', {}).replaceAll('\\', '/'), /\/\.venv\/bin\/python$/);
+  assert.equal(cheminPython('linux', { ESTIMATEUR_PYTHON: '/opt/py/bin/python3' }), '/opt/py/bin/python3');
 });
