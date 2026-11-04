@@ -1,10 +1,13 @@
 {
  "taux": 85.0,
- "materiel": 66649.07,
- "heures_relevees": 1045.845,
+ "facteur": 1.244,
+ "date": "2026-10-26",
+ "materiel": 98376.86,
+ "heures_relevees": 1049.095,
  "heures_chargees": 1050,
  "main_doeuvre": 89250.0,
- "total_acceo": 155899.07,
+ "total_acceo": 187626.86,
+ "prix_calcule": 233408,
  "lignes": [
   {
    "code": "A-01",
@@ -528,23 +531,33 @@
   },
   {
    "code": "F-01",
-   "desc": "Luminaire A1 2x4 LED encastré — pose",
-   "q": 11,
+   "desc": "Luminaire A1 Cooper 24CGTS-L3C3 2x4 LED encastré + clips sismiques — pose",
+   "q": 10,
    "u": "u",
    "p": 0,
    "h": 0.75,
    "art": "3.35",
-   "src": "Dupuis « FIXTURE TYPE A » 0,75 h ; fourniture au lot"
+   "src": "Dupuis « FIXTURE TYPE A » 0,75 h ; qté Hi-Tech R1 (ADD E-01 : 10, était 11 au tableau E-008) ; fourniture au lot"
   },
   {
    "code": "F-02",
-   "desc": "Luminaires C1 / C1_1 / C1_3 Axis (33 modules) — pose",
-   "q": 33,
+   "desc": "Luminaires C1 Axis Slate SL1 (7′ ×11, 5′ ×5, 4′ ×2, 3′ ×14 = 32 modules) — pose",
+   "q": 32,
    "u": "u",
    "p": 0,
    "h": 0.75,
    "art": "3.35",
-   "src": "Dupuis 0,75 h/luminaire"
+   "src": "Dupuis 0,75 h/luminaire ; qté Hi-Tech R1 (ADD E-01 ; était 33 au tableau E-008)"
+  },
+  {
+   "code": "F-03",
+   "desc": "Luminaires M / M1 Pinnacle M-P-835LO (8′ ×4, 2′ ×1) — pose",
+   "q": 5,
+   "u": "u",
+   "p": 0,
+   "h": 0.75,
+   "art": "3.35",
+   "src": "Dupuis 0,75 h/luminaire ; type ajouté par l’ADD E-01 (Hi-Tech R1)"
   },
   {
    "code": "F-05",
@@ -599,22 +612,32 @@
   {
    "code": "F-10",
    "desc": "Chaînes de retenue à la dalle, boîtes de jonction, quincaillerie",
-   "q": 46,
+   "q": 50,
    "u": "u",
    "p": 8.0,
    "h": 0.25,
    "art": "3.35",
-   "src": "Dupuis « PARASIMIC » 10 $ / 0,25 h (retenue) — 1 par luminaire"
+   "src": "Dupuis « PARASIMIC » 10 $ / 0,25 h (retenue) — 1 par luminaire (A1 10 + Axis 32 + Pinnacle 5 + E 3)"
   },
   {
    "code": "F-LOT",
-   "desc": "PRIX DE LOT ÉCLAIRAGE : A1 ×11 (185 $), Axis SL1 4′×12 (290), 3′×15 (230), 1′×6 (110), trousses rangées (1 500), E ×3 (475), Z6 ×3 (161,60)",
+   "desc": "PRIX DE LOT ÉCLAIRAGE (ADD E-01) : A1 Cooper ×10 + clips, Axis Slate 7′×11 / 5′×5 / 4′×2 / 3′×14, Pinnacle M ×4 + M1 ×1, transport Axis prépayé",
    "q": 1,
    "u": "lot",
-   "p": 13034.8,
+   "p": 42820.79,
    "h": 0,
    "art": "3.35",
-   "src": "Prix retenus (Gerrie prix réguliers / agents) — confirmés par Frank 2026-10-20"
+   "src": "SOUMISSION FOURNISSEUR Éclairage Hi-Tech S100946-R1 (2026-10-23, prix d’achat, 30 jours) — courriel Daniel Dupuis 2026-10-22 ; EN SUS non chiffrés par Hi-Tech : transport Pinnacle, courtage/dédouanement et tarifs USA (Pinnacle) ; note Cooper « 347 V discontinué »"
+  },
+  {
+   "code": "F-LOT2",
+   "desc": "PRIX DE LOT ÉCLAIRAGE (hors Hi-Tech) : E ×3 (475 $), Z6 ×3 (161,60 $)",
+   "q": 1,
+   "u": "lot",
+   "p": 1909.8,
+   "h": 0,
+   "art": "3.35",
+   "src": "ALLOCATION (Gerrie prix réguliers / agents, 2026-10-20) — types E et Z6 absents de la soumission Hi-Tech R1 : à confirmer (ADD E-01 non lu)"
   },
   {
    "code": "B-LOT",
@@ -624,7 +647,7 @@
    "p": 6200.0,
    "h": 0,
    "art": "3.24",
-   "src": "Schneider NF 225A 42cct 3 400 $ + EDB 1P 95 $ ×20 + EJB 3P 300 $ ×3 — confirmé par Frank 2026-10-20"
+   "src": "ALLOCATION (Schneider NF 225A 42cct ≈ 3 400 $ + EDB 1P ≈ 95 $ ×20 + EJB 3P ≈ 300 $ ×3) — montant retenu par Frank 2026-10-20, aucune soumission Guillevin/Electrimat reçue"
   },
   {
    "code": "G-01",
@@ -644,7 +667,7 @@
    "p": 300.0,
    "h": 0,
    "art": "3.36",
-   "src": "Détecteurs JCI — confirmé par Frank 2026-10-20"
+   "src": "ALLOCATION — montant retenu par Frank 2026-10-20, aucune soumission JCI reçue"
   },
   {
    "code": "G-02",
@@ -694,7 +717,7 @@
    "p": 7400.0,
    "h": 0,
    "art": "3.38",
-   "src": "Services JCI — confirmé par Frank 2026-10-20"
+   "src": "ALLOCATION — montant retenu par Frank 2026-10-20 ; prix JCI demandé par Jo le 2026-10-08, aucune soumission reçue"
   },
   {
    "code": "H-01",
@@ -737,114 +760,173 @@
    "src": "jugement (Estimation_2)"
   }
  ],
+ "lots": [
+  [
+   "Scan GPR de la dalle",
+   1250.0,
+   "Dupuis « SCAN DALLE BETON » 1 250 $"
+  ],
+  [
+   "Luminaires ADD E-01 : A1 Cooper ×10, Axis Slate ×32, Pinnacle M/M1 ×5",
+   42820.79,
+   "SOUMISSION Hi-Tech S100946-R1 (2026-10-23), 30 j ; douanes/transport Pinnacle en sus"
+  ],
+  [
+   "Luminaires E ×3 (475 $) et Z6 ×3 (161,60 $)",
+   1909.8,
+   "ALLOCATION Gerrie/agents — absents de Hi-Tech R1, à confirmer"
+  ],
+  [
+   "Panneau NF 225 A 42 cct + disjoncteurs EDB/EJB",
+   6200.0,
+   "ALLOCATION — retenue par Frank 2026-10-20, aucune soumission Guillevin/Electrimat"
+  ],
+  [
+   "2 détecteurs Simplex 4098-9714 + bases (JCI)",
+   600.0,
+   "ALLOCATION — retenue par Frank 2026-10-20"
+  ],
+  [
+   "Services JCI/Simplex (bypass, 4007ES, annonciateur, ULC-S537)",
+   7400.0,
+   "ALLOCATION — retenue par Frank 2026-10-20, prix JCI demandé par Jo 2026-10-08"
+  ]
+ ],
+ "historique": [
+  [
+   "Estimation_2 — Léna AI, 2026-10-08",
+   112381.39,
+   "719,5 h × 124 $ + Lumen 23 160 $ ; sans FG, profit ni sous-traitance"
+  ],
+  [
+   "v2 — 2026-10-20 (midi)",
+   158296,
+   "745 h × 113,50 $ pondéré + matériel + allocations"
+  ],
+  [
+   "v3 — méthode Dupuis, médianes conduits",
+   183000,
+   "990 h ; conduits aux valeurs médianes du catalogue"
+  ],
+  [
+   "v4 — méthode Dupuis, dernières valeurs du catalogue",
+   194000,
+   "1 050 h ; luminaires 11 893 $ (allocation Gerrie/agents)"
+  ],
+  [
+   "v5 — ADD E-01, lot éclairage Hi-Tech R1 (ce classeur)",
+   null,
+   "42 820,79 $ fermes (30 jours) ; E/Z6, NF et JCI toujours en allocation"
+  ]
+ ],
  "par_article": {
   "3.22": {
    "materiel": 0.0,
    "heures": 108.35,
-   "mo": 9246.34,
-   "total": 9246.34
+   "mo": 9217.7,
+   "total": 9217.7
   },
   "3.23": {
    "materiel": 2799.08,
    "heures": 53.66,
-   "mo": 4579.07,
-   "total": 7378.16
+   "mo": 4564.89,
+   "total": 7363.97
   },
   "3.24": {
    "materiel": 6335.0,
    "heures": 27.5,
-   "mo": 2346.79,
-   "total": 8681.79
+   "mo": 2339.52,
+   "total": 8674.52
   },
   "3.25": {
    "materiel": 0.0,
    "heures": 7.6,
-   "mo": 648.57,
-   "total": 648.57
+   "mo": 646.56,
+   "total": 646.56
   },
   "3.26": {
    "materiel": 30.0,
    "heures": 4.0,
-   "mo": 341.35,
-   "total": 371.35
+   "mo": 340.29,
+   "total": 370.29
   },
   "3.27": {
    "materiel": 2197.1,
    "heures": 34.25,
-   "mo": 2922.82,
-   "total": 5119.92
+   "mo": 2913.76,
+   "total": 5110.86
   },
   "3.28": {
    "materiel": 4259.79,
    "heures": 92.0,
-   "mo": 7850.64,
-   "total": 12110.43
+   "mo": 7826.32,
+   "total": 12086.11
   },
   "3.29": {
    "materiel": 1689.82,
    "heures": 25.85,
-   "mo": 2205.98,
-   "total": 3895.8
+   "mo": 2199.15,
+   "total": 3888.97
   },
   "3.30": {
    "materiel": 65.38,
    "heures": 1.3,
-   "mo": 110.94,
-   "total": 176.32
+   "mo": 110.6,
+   "total": 175.98
   },
   "3.31": {
    "materiel": 14431.68,
    "heures": 299.65,
-   "mo": 25571.83,
-   "total": 40003.51
+   "mo": 25492.61,
+   "total": 39924.29
   },
   "3.32": {
    "materiel": 1250.0,
    "heures": 2.0,
-   "mo": 170.68,
-   "total": 1420.68
+   "mo": 170.15,
+   "total": 1420.15
   },
   "3.33": {
    "materiel": 3310.75,
    "heures": 131.27,
-   "mo": 11202.47,
-   "total": 14513.21
+   "mo": 11167.76,
+   "total": 14478.51
   },
   "3.34": {
    "materiel": 3422.44,
    "heures": 4.0,
-   "mo": 341.35,
-   "total": 3763.79
+   "mo": 340.29,
+   "total": 3762.73
   },
   "3.35": {
-   "materiel": 18678.93,
-   "heures": 178.75,
-   "mo": 15253.87,
-   "total": 33932.8
+   "materiel": 50406.72,
+   "heures": 182.0,
+   "mo": 15483.1,
+   "total": 65889.82
   },
   "3.36": {
    "materiel": 779.1,
    "heures": 9.27,
-   "mo": 790.89,
-   "total": 1569.99
+   "mo": 788.44,
+   "total": 1567.54
   },
   "3.37": {
    "materiel": 0.0,
    "heures": 20.0,
-   "mo": 1706.75,
-   "total": 1706.75
+   "mo": 1701.47,
+   "total": 1701.47
   },
   "3.38": {
    "materiel": 7400.0,
    "heures": 8.0,
-   "mo": 682.7,
-   "total": 8082.7
+   "mo": 680.59,
+   "total": 8080.59
   },
   "5.19": {
    "materiel": 0.0,
    "heures": 38.4,
-   "mo": 3276.97,
-   "total": 3276.97
+   "mo": 3266.82,
+   "total": 3266.82
   }
  }
 }
