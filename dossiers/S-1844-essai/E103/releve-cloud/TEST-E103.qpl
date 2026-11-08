@@ -1,0 +1,85 @@
+﻿<?xml version="1.0"?>
+<QuoterPlanSession>
+	<Project Name="TEST-E103">
+		<Description/>
+		<ContactName/>
+		<ContactInfo/>
+		<JobNumber/>
+		<Comment/>
+		<CreationDate>2026/10/19</CreationDate>
+		<LastModified>2026/10/19</LastModified>
+		<DisplayResultsForAllPlans>True</DisplayResultsForAllPlans>
+	</Project>
+	<Workspace>
+		<ActivePlan Name="E103"/>
+		<RecentPlans>
+			<Plan Name="E103"/>
+		</RecentPlans>
+	</Workspace>
+	<Plans>
+		<Plan Name="E103" FileName="E103.png">
+			<Thumbnail FileName="91e19eee-f619-4980-ade9-aa2f151f50e4"/>
+			<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>
+			<Bookmarks>
+				<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>
+			</Bookmarks>
+			<Comment/>
+			<Layers>
+				<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">
+					<Legend Name="Légende" X="4247" Y="1435" FontSize="45" MaxRows="25" Color="-657931" PenWidth="6" PenType="Generic" FillColor="-657931" ShowMeasure="True" Visible="True"/>&#13;
+					<Counter Name="BOITIER NLIGHT" GroupID="1" Shape="1" DefaultSize="26" Text="1" Color="-13290019" PenWidth="2" PenType="Generic" FillColor="-13290019" ShowMeasure="True" Visible="True">&#13;
+						<Element X="1678" Y="2055" Width="26" Height="26"/>&#13;
+						<Element X="2338" Y="3781" Width="26" Height="26"/>&#13;
+						<Element X="1772" Y="3677" Width="26" Height="26"/>&#13;
+						<Element X="2076" Y="3747" Width="26" Height="26"/>&#13;
+						<Element X="2000" Y="3844" Width="26" Height="26"/>&#13;
+						<Element X="1905" Y="3732" Width="26" Height="26"/>&#13;
+						<Element X="3376" Y="2713" Width="26" Height="26"/>&#13;
+						<Element X="2802" Y="3853" Width="26" Height="26"/>&#13;
+						<Element X="2763" Y="3579" Width="26" Height="26"/>&#13;
+						<Element X="2402" Y="2928" Width="26" Height="26"/>&#13;
+						<Element X="3230" Y="2993" Width="26" Height="26"/>&#13;
+						<Element X="2220" Y="2865" Width="26" Height="26"/>&#13;
+						<Element X="3354" Y="3376" Width="26" Height="26"/>&#13;
+						<Element X="2799" Y="3775" Width="26" Height="26"/>&#13;
+						<Element X="3218" Y="3737" Width="26" Height="26"/>&#13;
+						<Element X="2209" Y="3478" Width="26" Height="26"/>&#13;
+						<Element X="3368" Y="3239" Width="26" Height="26"/>&#13;
+						<Element X="2804" Y="2819" Width="26" Height="26"/>&#13;
+						<Element X="2718" Y="2819" Width="26" Height="26"/>&#13;
+						<Element X="1941" Y="3176" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+					<Counter Name="INTERRUPTEUR NLIGHT" GroupID="2" Shape="1" DefaultSize="26" Text="1" Color="-11334145" PenWidth="2" PenType="Generic" FillColor="-11334145" ShowMeasure="True" Visible="True">&#13;
+						<Element X="2345" Y="3848" Width="26" Height="26"/>&#13;
+						<Element X="2106" Y="3285" Width="26" Height="26"/>&#13;
+						<Element X="1652" Y="3339" Width="26" Height="26"/>&#13;
+					</Counter>&#13;
+				</Layer>
+			</Layers>
+		</Plan>
+	</Plans>
+	<Prices>
+		<Price Key="1;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+		<Price Key="2;;Counter;" CostEach="0" MarkupEach="0" SystemType="2"/>
+	</Prices>
+	<Reports>
+		<Report Name="Default" Order="1" ScaleType="1" Precision="0">
+			<Property Name="ShowProjectInfo" Value="True"/>
+			<Property Name="ShowComments" Value="True"/>
+			<Property Name="ShowInvisibleObjects" Value="True"/>
+			<Property Name="ApplyFilter" Value="True"/>
+			<Property Name="EstimatingShowProjectInfo" Value="True"/>
+			<Property Name="EstimatingShowComments" Value="True"/>
+			<Property Name="EstimatingShowInvisibleObjects" Value="True"/>
+			<Property Name="EstimatingApplyFilter" Value="True"/>
+			<Property Name="QuoteShowProjectInfo" Value="True"/>
+			<Property Name="QuoteShowComments" Value="True"/>
+			<Property Name="QuoteShowInvisibleObjects" Value="True"/>
+			<Property Name="QuoteApplyFilter" Value="True"/>
+			<Property Name="OrderByObjectsFilter" Value=""/>
+			<Property Name="OrderByPlansFilter" Value=""/>
+			<Property Name="ReportSortBy" Value="0"/>
+			<Property Name="QuoteReportSortBy" Value="0"/>
+		</Report>
+	</Reports>
+</QuoterPlanSession>
