@@ -1,0 +1,18 @@
+services:
+  planexpert-vm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: planexpert-vm-mcp:latest
+    container_name: planexpert-vm-mcp
+    stdin_open: true   # MCP stdio : Claude/le pipeline parle par stdin/stdout
+    tty: false
+    environment:
+      - PLANEXPERT_VM_SHOTS=/data/captures
+    volumes:
+      # Clés + ~/.ssh/config (hôtes "mx" et "winsrv") de l'utilisateur qui build/run,
+      # montées en lecture seule -- jamais copiées dans l'image. entrypoint.sh les
+      # recopie dans /root/.ssh (writable, bons droits) au démarrage du conteneur.
+      - ${SSH_DIR:-~/.ssh}:/root/.ssh-src:ro
+      - ./captures:/data/captures
+    restart: "no"
