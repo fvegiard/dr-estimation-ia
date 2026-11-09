@@ -2,7 +2,7 @@
 
 Deux choses à ne pas confondre : **le document reçu** (PDF des plans du client) et **ce que l'estimateur en fait dans Plan Expert** (une marque par appareil, posée sur la page de ce PDF).
 
-488 projets, 328949 marques relues sur les pages mêmes où l'estimateur a cliqué. Pages de documents reçus marquées : 2865 ; pages reçues sans aucune marque (devis, détails, autres disciplines) : 12675. 1392 libellés présents dans au moins 2 projets.
+488 projets, 329166 marques relues sur les pages mêmes où l'estimateur a cliqué. Pages de documents reçus marquées : 2870 ; pages reçues sans aucune marque (devis, détails, autres disciplines) : 12689. 1399 libellés présents dans au moins 2 projets.
 
 Utilisation : nommer chaque article de nomenclature avec le libellé canonique ci-dessous, appeler `exemples_humains(libelle)` pour voir comment l'humain l'a repéré sur de vrais plans, et vérifier les « voisins » (ce que l'humain compte habituellement juste à côté).
 
@@ -11,14 +11,14 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | Libellé | Marques | Projets | Variantes | Voisins habituels |
 |---|---|---|---|---|
 | PRISE | 30121 | 235 | PRISE 15/20, PRISE GFI, A PRISE | TEL, SORTIE TEL, HOTTE |
-| INT | 5125 | 171 | INT 1 VOIE, INT B/V, B INT | FIXT PL LOG, FIXT TYPE MURAL, KS |
+| INT | 5127 | 172 | INT 1 VOIE, INT B/V, B INT | FIXT PL LOG, FIXT TYPE MURAL, KS |
 | PRISE 15A | 3358 | 26 |  | TEL/DATA, PLINTHE 1000W 240V, BOITE CABLE |
 | PRISE DUPLEX 15A 120V | 2250 | 21 | PRISE DUPLEX 15A 120V GFI | TEL/DATA, PRISE DUPLEX 15/20A 120V, MONUMENT PLANCHER FM |
 | GFI | 2202 | 67 |  | PRISE, TEL, HOTTE |
 | THERMOSTAT | 1727 | 27 | A TH | PRISE 15A, PLINTHE B300W, BOITE CABLE |
 | RACCORD DIRECT | 1554 | 65 |  | PRISE, SORTIE TEL, DETECTEUR |
 | GRADATEUR | 1238 | 71 |  | FIXT TYPE D1A, INT, ENSEIGNE SORTIE |
-| PRISE DUPLEX 15/20A 120V | 1152 | 57 | PRISE 15/20A | PRISE, TEL/DATA, PRISE DUPLEX 15A 120V |
+| PRISE DUPLEX 15/20A 120V | 1172 | 58 | PRISE 15/20A | PRISE, TEL/DATA, PRISE DUPLEX 15A 120V |
 | SWITCH | 1092 | 8 |  | POTLIGHT APT., TYPE WALL, WALL FIXT APT. |
 | DETECTEUR MOUVEMENT | 975 | 40 | DECT MOUV | FIXT TYPE E1, INT, FIXT TYPE L1 |
 | INT ENL | 893 | 5 |  | PRISE, DETECTEUR, RELO FT-24 |
@@ -90,7 +90,7 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | POT ENL | 311 | 4 |  | FIXT RAIL, HP ENL, EXIT |
 | ENL ENCASTRE | 297 | 3 |  | ENL URG, COMPTEUR 1ENL INT, ENL 2X4 |
 | ENL 1X4 | 293 | 2 |  | ENL INT, ENL DETECTEUR, ENL HORN |
-| FIXT TYPE E4 | 282 | 3 |  | INT DM, FIXT TYPE E7, FIXT TYPE E7 DOUBLE |
+| FIXT TYPE E4 | 286 | 4 |  | INT DM, FIXT TYPE E7, FIXT TYPE E7 DOUBLE |
 | SERV PRISE | 275 | 3 |  | FIXT TYPE A, LO PRISE, DECT FUMER |
 | FIXT TYPE L1B | 273 | 2 |  | TETE DOUBLE, INT, BATTERIE UNIT 2T |
 | PIEZO | 267 | 2 |  | INT, DECT AF1, FIXT PL LOG |
@@ -133,9 +133,9 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | Libellé | Marques | Projets | Variantes | Voisins habituels |
 |---|---|---|---|---|
 | FIXT TYPE A | 3586 | 83 | FIXT A | TETE DOUBLE, FIXT TYPE B, HP |
-| FIXT TYPE L1 | 2365 | 44 | TYPE L1, L1 | RAIL T12, END FEED, COUPLING |
+| FIXT TYPE L1 | 2383 | 44 | TYPE L1, L1 | RAIL T12, END FEED, COUPLING |
 | ENSEIGNE SORTIE | 2089 | 108 | ENSEIGNE SORTIE 2T, ENL EXIT, EXIT 2 TETE | LOG INT, INT, ECL |
-| FIXT TYPE E1 | 1898 | 30 | TYPE E1, E1 | DETECTEUR MOUVEMENT, RUNNING MAN, INT |
+| FIXT TYPE E1 | 1900 | 30 | TYPE E1, E1 | DETECTEUR MOUVEMENT, RUNNING MAN, INT |
 | FIXT TYPE B | 1795 | 60 |  | FIXT TYPE A, FIXT TYPE E, FIXT TYPE D |
 | FIXT TYPE D | 1752 | 58 | FIXT D, TYPE D | FIXT TYPE C, FIXT TYPE A, HP |
 | FIXT TYPE C | 1422 | 63 | TYPE C | FIXT TYPE A, FIXT TYPE D, FIXT TYPE E |
@@ -143,8 +143,8 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | FIXT TO REMOVE | 1140 | 9 |  | SWITCH TO REMOVE, PLUG TO REMOVE, MISC TO REMOVE |
 | FIXT ENL | 1131 | 7 |  | HP M, HAUT PARLEUR, STRIP ENL |
 | FIXT TYPE A1 | 918 | 20 |  | TETE DOUBLE, DETECTEUR OXC, INT |
-| FIXT TYPE L3 | 900 | 32 | TYPE L3 | FIXT YPE L2-12, FIXT TYPE L2-6, FIXT TYPE L13 |
-| FIXT TYPE L2 | 825 | 32 | TYPE L2 | TYPE A1 12'5", INT, L HOTTE |
+| FIXT TYPE L3 | 901 | 32 | TYPE L3 | FIXT YPE L2-12, FIXT TYPE L2-6, FIXT TYPE L13 |
+| FIXT TYPE L2 | 827 | 32 | TYPE L2 | TYPE A1 12'5", INT, L HOTTE |
 | FIXT TYPE F | 820 | 42 |  | FIXT TYPE A, COMPTEUR INT, FIXT TYPE D |
 | B1000W | 770 | 10 |  | PRISE, COND, =TH |
 | STRIP | 653 | 4 |  | ENSEIGNE SORTIE, KLAXON, PAI |
@@ -155,7 +155,7 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | ENCASTRE | 585 | 23 |  | DETECTEUR FUMER PHOTO, 4 1/2, AXIS |
 | FIXT TYPE L4 | 485 | 22 |  | INT, FIXT TYPE DL2, FIXT TYPE L2 |
 | 1500W | 479 | 13 |  | PRISE, TV, COND |
-| FIXT TYPE E2 | 474 | 22 |  | DETECTEUR MOUVEMENT, INT, FIXT TYPE S2 |
+| FIXT TYPE E2 | 477 | 23 |  | DETECTEUR MOUVEMENT, INT, FIXT TYPE S2 |
 | FIXT TYPE H | 473 | 31 |  | FIXT TYPE A, HP, SPOT 33L |
 | FIXT TYPE I | 467 | 15 | I | FIXT TYPE A, EXIT, GRADATEUR |
 | FIXT TYPE L8 | 464 | 16 | TYPE L8 | ENSEIGNE SORTIE, INT, 360 |
@@ -178,7 +178,7 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | FIXT TYPE L7 | 283 | 16 |  | INT, DETECTEUR MOUV, FIXT TYPE L5 |
 | FIXT TYPE R1 | 283 | 8 |  | FIXT TYPE S2, DETECTEUR PRESENCE, ENSEIGNE SORTIE |
 | B1250W | 281 | 6 |  | PRISE, B1000W, P1500W |
-| FIXT TYPE E3 | 235 | 13 |  | FIXT TYPE E1A, FIXT TYPE E1, FIXT TYPE P10 |
+| FIXT TYPE E3 | 238 | 14 |  | FIXT TYPE E1A, FIXT TYPE E1, FIXT TYPE P10 |
 | FIXT TYPE L | 229 | 16 |  | FIXT TYPE M, FIXT TYPE B1, FIXT TYPE H |
 | FIXT TYPE S1 | 207 | 14 |  | INT, DP, FIXT TYPE L2 |
 | 750W | 201 | 13 |  | PRISE, BOITE, COND |
@@ -201,15 +201,15 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | TETE DOUBLE | 1835 | 104 |  | FIXT TYPE A, MARCHE, ENSEIGNE SORTIE |
 | KLAXON | 1831 | 71 | KLAXON WP | STATION MANUEL, ENSEIGNE SORTIE, DETECTEUR |
 | EXIT | 1691 | 100 |  | FIXT TYPE DL5, STATION MANUEL, TETE DOUBLE |
-| DETECTEUR FUMEE | 1521 | 47 | DETECTEUR FUMER | DETECTEUR GAINE, HAUT PARLEUR, LAMPE TEMOIN |
+| DETECTEUR FUMEE | 1529 | 47 | DETECTEUR FUMER | DETECTEUR GAINE, HAUT PARLEUR, LAMPE TEMOIN |
 | STATION MANUEL | 1283 | 97 | RELO STATION, STATION WP | DETECTEUR FUMEE, ENSEIGNE SORTIE, TELPHONE |
 | STROB | 925 | 29 |  | DETECTEUR FUMER M, FIXTURE TYPE E1, LECTEUR CARTE |
-| CAMERA | 815 | 68 | CAM, RELO CAMERA | PRISE, SORTIE TEL, LECTEUR CARTE |
+| CAMERA | 821 | 68 | CAM, RELO CAMERA | PRISE, SORTIE TEL, TEL |
 | DETECTEUR GAINE | 791 | 28 |  | LAMPE TEMOIN, HAUT PARLEUR, RAI |
 | HORN | 717 | 40 | HORN RELO | PRISE, TETE DOUBLE, FIXT TYPE A |
 | BATTERIE UNIT | 613 | 71 | TETE SIMPLE | FIXT TYPE L-01, INT, HP MURAL |
 | KLAXON STROB | 527 | 32 | HORN STROB | HORN, FIXT TYPE C, DETECTEUR AF5 |
-| LECTEUR CARTE | 396 | 46 | LECTEUR | GACHE, BOUTON SORTIE, PRISE |
+| LECTEUR CARTE | 400 | 47 | LECTEUR | GACHE, BOUTON SORTIE, PRISE |
 | STATION | 242 | 21 | STATION RELO | TEL POMPIER, ENSEIGNE SORTIE, FIXT TYPE L1 |
 | DETECTEUR A FUMER | 210 | 9 |  | FIXT TYPE L-01, INT, PANNEAU REMPLACER |
 | BATTERIE UNIT 2T | 208 | 34 |  | FIXT TYPE STRIP, FIXT TYPE A, FIXT TYPE D |
@@ -238,12 +238,12 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | Libellé | Marques | Projets | Variantes | Voisins habituels |
 |---|---|---|---|---|
 | HAUT PARLEUR | 4332 | 38 |  | DETECTEUR, DETECTEUR GAINE, DETECTEUR FUMEE |
-| TEL | 3730 | 73 | D TEL, B TEL, C TEL | PRISE, GFI, PRISE15A |
+| TEL | 3734 | 74 | D TEL, B TEL, C TEL | PRISE, GFI, PRISE15A |
 | SORTIE TEL | 3223 | 91 | A TEL | PRISE, PRISE 5262SGW, MONUMENT PLANCHER |
 | TEL/DATA | 1329 | 25 |  | PRISE DUPLEX 15A 120V, PRISE 15A, PRISE |
 | HP | 978 | 35 |  | FIXT TYPE A, FIXT TYPE D, FIXT TYPE H |
 | TV | 737 | 37 | D TV, A TV, C TV | PRISE, TH, TEL |
-| WIFI | 289 | 23 |  | TEL, PRISE, 12X12X4 |
+| WIFI | 293 | 24 |  | TEL, PRISE, 12X12X4 |
 | HP RELO | 183 | 18 | RELO HP | AVERTISEUR INCENDIE, TETE DOUBLE, FIXT TYPE L7 |
 | SORTIE TV | 151 | 12 |  | PRISE, SORTIE TEL, PRISE DUPLEX 15A 120V |
 | SORTIE TEL/DATA | 123 | 5 |  | PRISE, GFI 15/20A, 8X8 |
@@ -288,7 +288,7 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | R | 67 | 6 |  | L INV, N INV, DF2 |
 | L | 60 | 7 |  | EXIT, F, M |
 | D | 59 | 12 |  | S, PRISE, N INT |
-| H | 57 | 9 |  | ADO, A, C |
+| H | 58 | 10 |  | ADO, A, C |
 | BA | 56 | 10 |  | GACHE, LECTEUR CARTE, CPG |
 | D/M | 51 | 15 |  | PRISE, MA, RELO AE |
 | RS | 50 | 4 |  | DD, MA, FIXT TYPE B |
@@ -296,8 +296,8 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | LC | 45 | 6 |  | GE, CP, P |
 | V | 41 | 6 |  | U, A, P |
 | BOUTON | 37 | 12 |  | GACHE, FP, DM |
+| CP | 37 | 7 |  | GE, LC, REX |
 | T | 37 | 6 |  | TEL, PRI, S |
-| CP | 36 | 6 |  | GE, LC, REX |
 | CR10 | 33 | 6 |  | FAN VE, VT, FIXT TYPE G1 |
 | DEBIT | 26 | 5 |  | MAT, VALVE, S |
 | PC | 23 | 9 |  | 1/2 HP, VT, CR10 |
@@ -317,7 +317,7 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 | 1000W | 987 | 26 | PLINTHE 1000W | PRISE, TEL, PTAC |
 | 300W | 510 | 4 |  | PRISE, TH, CONTROL VENT |
 | B750W | 187 | 10 |  | PRISE, B1000W, PRISE SECHEUSE |
-| CHAUFFE-EAU | 88 | 54 |  | PRISE, DISCONN, PRISE DUPLEX 15/20A 120V |
+| CHAUFFE-EAU | 90 | 55 |  | PRISE, DISCONN, PRISE DUPLEX 15/20A 120V |
 | 1750W | 63 | 10 |  | PRISE, TRI, TEL |
 | TH INTEGRE | 46 | 10 | TH INT | PES3 1000W, PRISE, DETECTEUR COMBUSTION |
 | 2KW | 23 | 6 |  | PRISE, SORTIE TEL, 4 KW |
@@ -348,14 +348,14 @@ Utilisation : nommer chaque article de nomenclature avec le libellé canonique c
 
 | Libellé | Marques | Projets | Variantes | Voisins habituels |
 |---|---|---|---|---|
-| DISCONN | 645 | 60 | 30A NF, DISCONN 30A NF | PRISE, BOITE, SERPENTIN |
+| DISCONN | 647 | 61 | 30A NF, DISCONN 30A NF | PRISE, BOITE, SERPENTIN |
 | 30A NF WP | 252 | 25 |  | EF, SERV CONDENSEUR, RTU |
 | CONDENSEUR | 233 | 19 |  | 30A NF WP, PRISE, 30A 208V WP |
 | VENTILATEUR | 123 | 25 | VENT | PRISE, RAIL 12FT C/A 8 PROJ, INT |
 | A/C UNIT | 114 | 26 |  | PRISE, PRISE DUPLEX 15/20A 120V, SCR 750W |
 | 2#12 MOTOR | 89 | 13 |  | PRISE 15A, TEL/DATA 3/4", DISC SW 30A 120V SF |
 | OPERATEUR PORTE | 84 | 22 |  | BOUTON RELACHE, DISCONN, CONTACT PORTE |
-| 30A 600V NF | 67 | 12 |  | VA, MOTEUR 1HP, BOUTON POUSSOIRE |
+| 30A 600V NF | 68 | 13 |  | VA, MOTEUR 1HP, BOUTON POUSSOIRE |
 | MOTEUR 600V | 65 | 6 |  | VF, VFD, PRISE |
 | PORTE GARAGE | 48 | 13 |  | 30A NF 600V, DISCONN 30A 3PH, DISCONN 30A NF 25V WP |
 | POMPE | 43 | 12 |  | PANN CONTROL POMPE, V, VE |
