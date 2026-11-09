@@ -1,0 +1,95 @@
+S-1294 — RELEVÉ PAGE PAR PAGE
+
+ÉTAT : EN COURS — PR BROUILLON. Ce dossier ne constitue pas un relevé exhaustif.
+Source : série STAM23A, pour construction du 8 octobre 2024, dossier SharePoint S-1294 (10-Décembre-2024).
+34 PNG uniques conservés après dédoublonnage SHA-256; un doublon supprimé. Aucun .qpl SharePoint téléchargé ou ouvert.
+Référence de présentation : livrable Granby du 30 septembre 2026.
+
+FEUILLES VÉRIFIÉES :
+E101 : 17 pastilles; 1 réserves; contrôle visuel 17/17.
+  Quantités des composants représentés seulement; aucun multiplicateur chantier. Les contacts M, PE et CR ne sont pas des appareils supplémentaires.
+  RES = réserve; * = identification ou prescription à revalider. Câbles, conduits, fixations et longueurs non métrés.
+E102 : 58 pastilles; 4 réserves; contrôle visuel 58/58.
+  Un appareil multipolaire = un repère. Fusibles inclus dans la désignation de leur interrupteur; aucun deuxième décompte de fusibles.
+  Modules incendie et équipements fournis par autres identifiés séparément; aucun cumul avec les plans de niveau.
+  Câbles et conduits non métrés. Les valeurs sont celles de la source; * = réserve.
+E103 : 145 pastilles; 86 réserves; contrôle visuel 145/145.
+  36 panneaux PL représentés; 36 compteurs logements et 14 compteurs commerces. 50 disjoncteurs 100 A, nombre de pôles non précisé (*).
+  Contradiction : les repères PL et les unités des CM-01 à CM-03 ne concordent pas. Aucun appariement ni multiplicateur inventé.
+  Centres = ensembles parents; compteurs et disjoncteurs = composants. DCC-9-BOX6 cité « Typ » : quantité non déterminée, non comptée.
+E104 : 114 pastilles; 72 réserves; contrôle visuel 114/114.
+  36 représentations de panneaux PL, dont PL-206 et PL-208 répétés à deux niveaux; ce total ne constitue pas 36 appareils physiques distincts.
+  36 compteurs et 36 disjoncteurs 100 A aux CM-04 à CM-06. Pôles non indiqués; correspondance avec les repères PL réservée (*).
+  Centres = ensembles parents. DCC-9-BOX6 cité « Typ » : quantité non déterminée. Câbles, conduits et accessoires non métrés.
+E105-page09 : 197 pastilles; 10 réserves; contrôle visuel 197/197.
+  Pastilles sur cellules de calibre; une seule pastille par départ multipolaire. LIBRE avec calibre inclus; ESPACE sans calibre exclu.
+  * ESPACE avec calibre : présence réservée. Principaux isolés des départs; N/A non compté. Un circuit simple occupe une seule position.
+  Contradictions E102 / cédule : PS1 120/208 V / 347/600 V; PP1 Icc 35 / 14 kA; plusieurs valeurs de barres et Icc diffèrent. Aucun choix arbitraire.
+  PSU1A : principal N/A mais « 100A » dans la colonne adjacente; PP1A départ 1-3 = 15 A 2P avec deux puissances. À clarifier.
+E105-page10 : 216 pastilles; 23 réserves; contrôle visuel 216/216.
+  Un symbole dessiné = une pastille. Les coupures de lignes et flèches ne sont pas extrapolées; légende et raccords de fil non comptés.
+  La note du plan donne priorité aux plans d’étage. Ces représentations ne sont pas des quantités globales de chantier.
+  PAI apparaît deux fois (détection / signalisation) : un renvoi, pas deux panneaux physiques. BA : 12 en détection, 4 exemples en signalisation.
+  Note BA : 12 boîtiers. Les adresses proposées ne constituent pas un nombre supplémentaire de boîtiers. Soupapes et débit : fourniture mécanique.
+  UCA01 : seuls le détecteur et le relais d’alarme sont comptés; organes internes de ventilation non comptés. Tableau de légende exclu des quantités.
+E107 : 83 pastilles; 31 réserves; contrôle visuel 83/83.
+  Quantités : représentations uniquement; voir plans de niveau et logements types pour la quantité physique. Aucun câble ou conduit métré.
+  Portes simple et double : composants dessinés comptés séparément. Légende, charnières et renvois ascenseurs exclus.
+  Quincaillerie fournie par architecture identifiée en réserve; SB et K non définis dans la légende de cette feuille.
+  BELL : installation filerie par spécialiste; conduits par électricien. Vidéotron : point de raccordement, ramifications locales et portée selon notes.
+  Prises des systèmes BELL / Vidéotron marquées une fois par groupe dessiné « 2 PU » / « 4 PU »; pas de quantité physique déduite.
+  Le panneau incendie et les renvois intercom ne doivent pas être additionnés aux représentations des autres feuilles.
+E108 : 32 pastilles; 3 réserves; contrôle visuel 32/32.
+  13 types de luminaires et 14 types de contrôles : références de cédule, aucun nombre installé déduit de ces lignes.
+  Principe enseigne : 5 composants représentés; répétition du détail E101 à ne pas additionner.
+  C : puissances et températures de couleur multiples sans sélection. Spot logement : 1000LM dans référence contre 2000 lm dans colonne.
+  A/B/E : même référence STANPRO et puissances différentes (30/41/35 W), conservées telles quelles. Calibre du disjoncteur non précisé.
+  Couleur au choix architecte/propriétaire. Localisation Q à coordonner. Équivalents approuvés permis pour contrôles nommés.
+  Matrice de séquences : exigences de fonctionnement, pas des quantités. Mise en marche et programmation à inclure; CAT6 de contrôle sous EMT selon note.
+E001 : 0 pastilles; 1 réserves; contrôle visuel 0/0.
+  Feuille textuelle : zéro symbole matériel à pastiller. CSV de prescriptions; aucune quantité de chantier ajoutée.
+  Liste E001 : 23 pages électriques. Index E003/E106/E401 différent des cartouches E002/E105/E400 pages 3/10/23.
+  Percements, parasismique, mise en marche, essais, formation et documents de fin de chantier : obligations, pas quantités inventées.
+E002-page02 : 0 pastilles; 4 réserves; contrôle visuel 0/0.
+  Feuille textuelle : aucune pastille matériel. Les prescriptions sont au CSV; aucune quantité physique ajoutée.
+  LIBRE inclut le disjoncteur; ESPACE et absence d’indication l’excluent. ESPACE avec calibre en cédule demeure une contradiction.
+  Icc : 10 kA / 250 V, 22 kA / 600 V et commutation 35 kA dans le devis; ne pas remplacer arbitrairement les valeurs des cédules.
+  Panneau incendie FX-2003 dans le devis contre FX-2000 aux légendes : réserve de modèle.
+E002-page03 : 0 pastilles; 5 réserves; contrôle visuel 0/0.
+  Feuille textuelle, sans symboles matériels : zéro pastille. Prescriptions et caractéristiques au CSV, pas de quantités supplémentaires.
+  Groupe : 154 kW / 193 kVA au devis contre 150 kW sur E102. Réservoir 2930 L; autonomie 24 h; aucun dimensionnement choisi.
+  Inverseurs : paragraphe 100 A, liste finale 200 A et 100 A. Préfixes 1-/2- à réconcilier avec les trois représentations E102.
+  Intercom : références MIRCOM; les 16 boutons mentionnés ne sont pas une quantité de logements ou de stations.
+  Index E001 nomme cette page E003; cartouche E002 conservé dans le nom avec suffixe page03.
+E100 : 88 pastilles; 4 réserves; contrôle visuel 88/88.
+  Pastilles sur les symboles de légende, variantes comprises. Ce sont des références; ne jamais les additionner aux plans.
+  Familles : prises, télécom, urgence, distribution, incendie, CVAC et filerie. Abréviations textuelles non pastillées.
+  Contradictions : fumée120V KIDDE P12040CA ici contre BRK3120B sur page10; PAI FX2000 ici contre FX2003 au devis.
+  Batterie2phares : 320 W près du symbole contre 144 W dans remarque. Câblodistribution : RG58/U ici contre RG6/U sur E107.
+  Calibres de prises reproduits de la légende; aucun calibre de protection associé choisi. Aucune longueur de câble déduite.
+  Notes logements : cuisinières maximum12 kW; modèles mentionnés peuvent être équivalents approuvés. Aucun fabricant imposé par ce relevé.
+E400-page22 : 0 pastilles; 0 réserves; contrôle visuel 0/0.
+  Aucun symbole électrique ni appel de note électrique identifié sur cette page après inspection des quatre zones de façade.
+  Les cercles F2, F16, P20, P24 et similaires sont des repères de fenêtres/portes du fond architectural; ils ne sont pas des luminaires.
+  Zéro pastille ne signifie pas absence d’éclairage extérieur au projet. Les plans et logements types portent les autres prescriptions.
+  Aucune quantité d’appareil déduite des fenêtres, portes, enseignes ou garde-corps. Plan original intégralement conservé.
+E400-page23 : 2 pastilles; 2 réserves; contrôle visuel 2/2.
+  Deux symboles noirs, chacun avec note A : fournir, installer et raccorder un luminaire de sécurité au panneau PSU1-A.
+  Modèle, puissance et emplacement exact à coordonner avec architecture. Aucune référence choisie arbitrairement.
+  Ne pas additionner aux plans de niveau sans identifier les mêmes appareils. Fond architectural et repères fenêtres/portes exclus.
+  Index E001 nomme cette page E401; le cartouche porte E400. Suffixe page23 conservé pour éviter une fusion avec la page22.
+
+LIMITES ET RÉSERVES :
+Feuilles restant à traiter : E200, E201, E202, E203, E204, E205, E206, E300, E301.
+Numéros de cartouche répétés : E002 pages 2–3, E105 pages 9–10, E400 pages 22–23. Les suffixes page distinguent les fichiers.
+Aucune feuille M-, A- ou S- dans la série principale de 23 pages. Les 11 scans complémentaires restent à classer et à contrôler.
+Les détails types et diagrammes ne constituent pas une quantité globale de chantier. Ne pas additionner schémas, plans de niveau et logements types.
+Câbles, conduits, longueurs, fixations et accessoires non représentés ne sont pas métrés. Familles non marquées non réputées comptées.
+Aucun calibre ni nombre de pôles choisi arbitrairement. Les incertitudes explicites portent un astérisque et une réserve dans le CSV.
+Modèle non précisé ne signifie pas choix de fabricant. Équipements fournis par autres et renvois conservent leur portée.
+Vérification à l’aveugle : aucune comparaison au relevé de l’estimateur. Aucune certification de résultat équivalent à l’estimateur.
+La légende est ajoutée dans une bande blanche intégrée sous le plan, afin de préserver intégralement le dessin source.
+Le manifest couvre les livrables et les scripts livrés, hors manifest lui-même. Sources et preuves de zoom conservées uniquement dans le dossier de travail.
+E103 : repères PL incompatibles avec les numéros d’unités aux centres CM-01 à CM-03; correspondance réservée. Disjoncteurs 100 A : pôles non indiqués.
+E104 : repères PL206 et PL208 répétés; correspondance logements / centres réservée. Les 36 représentations PL ne prouvent pas 36 panneaux distincts.
+E105 page 9 : 194 départs et 3 principaux; six ESPACE avec calibre réservés. PS1 : tension 347/600 V en cédule contre 120/208 V sur E102. PP1 : Icc 14 kA contre 35 kA. Autres divergences de barres, principaux et Icc consignées au classeur; aucun arbitrage. Les 86 disjoncteurs de centres CM restent dans un onglet séparé, non additionné.

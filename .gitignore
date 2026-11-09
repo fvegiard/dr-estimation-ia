@@ -52,3 +52,7 @@ travail-mcp/
 .omc/*
 !.omc/skills/
 .omo/
+
+# --- Catalogue EEWin (src/dre_estimation) : base SQLite et extractions brutes reconstruites localement
+eewin/catalogue-llm/data/
+eewin/catalogue-llm/out/

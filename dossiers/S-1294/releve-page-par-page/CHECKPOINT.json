@@ -1,0 +1,149 @@
+{
+  "status": "Relevé en cours",
+  "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",
+  "source_unique_files": 34,
+  "source_duplicates_removed": 1,
+  "completed": [
+    {
+      "sheet": "E101",
+      "markers": 17,
+      "visual_score": "17/17",
+      "review": "17/17 repères contrôlés sur plan entier, planche de zoom et légende; six ancrages déplacés pour dégager les inscriptions; barre déplacée hors trait de rupture.",
+      "jpeg_sha256": "c4345fe74428d9ce7f9cf45e3700f843624660a40256890b3f476c8d0e85766f",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 1
+    },
+    {
+      "sheet": "E102",
+      "markers": 58,
+      "visual_score": "58/58",
+      "review": "58/58 repères vérifiés au zoom; cinq ancrages ajustés; légende contrôlée. Modules MRA en réserve pour niveaux de rappel.",
+      "jpeg_sha256": "89df3197ba8b473dd6471472069ee5dbbea0876e81749d807a04f155491fb6f3",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 4
+    },
+    {
+      "sheet": "E103",
+      "markers": 145,
+      "visual_score": "145/145",
+      "review": "145/145 repères vérifiés sur cinq planches de zoom, plan entier et légende. PL-119 et PL-120 recentrés après contrôle. Incohérences de repères et pôles non précisés réservés.",
+      "jpeg_sha256": "434981ad3fa3a5346f6d950342a50a1518ceff5e9dc8e8ac141ce577441b9f72",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 86
+    },
+    {
+      "sheet": "E104",
+      "markers": 114,
+      "visual_score": "114/114",
+      "review": "114/114 repères vérifiés sur quatre planches, plan entier et légende. PL-206 et PL-208 apparaissent deux fois sur le schéma; réserve explicite sans déduction de quantité physique.",
+      "jpeg_sha256": "43828ecca1393fff45d2fc31c6ad061cc6ac7ecf8d0e4583a4634af7149ccff7",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 72
+    },
+    {
+      "sheet": "E105-page09",
+      "markers": 197,
+      "visual_score": "197/197",
+      "review": "197 repères contrôlés sur sept planches de zoom; astérisques réduits puis revérifiés; légende lisible. Classeur relu automatiquement, aucun circuit dupliqué.",
+      "jpeg_sha256": "8c48cf0847276542e3f7205caead1ae998180d148481f80927207d1e7f7e64b5",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 10
+    },
+    {
+      "sheet": "E105-page10",
+      "markers": 216,
+      "visual_score": "216/216",
+      "review": "216 repères contrôlés sur huit planches de zoom, ajout du détecteur escalier 3 RDC et exclusion des organes internes UCA; modèles recopiés depuis zoom de légende; légende finale lisible.",
+      "jpeg_sha256": "c7e0576361e9c4484c94bea1296fefce3c3b074f3c44f2e064c9a187025fa2b5",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 23
+    },
+    {
+      "sheet": "E107",
+      "markers": 83,
+      "visual_score": "83/83",
+      "review": "83 pastilles contrôlées individuellement sur trois planches de zoom, vue globale et légende. Représentations de groupes PU réservées; aucun multiplicateur.",
+      "jpeg_sha256": "f720581d868b8daf91110d68d72f01d193f7d25f5c666938e942b8db7a6ad53b",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 31
+    },
+    {
+      "sheet": "E108",
+      "markers": 32,
+      "visual_score": "32/32",
+      "review": "32 repères contrôlés sur deux planches de zoom; cédule modèles lue au zoom; portée références distincte du principe répété E101; légende lisible.",
+      "jpeg_sha256": "30975a748bc16614e8ecfa16e7b51e23df50261955426f62e280b8e840e59b4b",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 3
+    },
+    {
+      "sheet": "E001",
+      "markers": 0,
+      "visual_score": "0/0",
+      "review": "Feuille textuelle sans symbole : zéro pastille; index contrôlé au zoom, page entière conservée et légende finale lisible.",
+      "jpeg_sha256": "fda90bcffa7d3bf29713f40612e95ee1d6ce3127f8ea0a06c4cce702df5fb6e3",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 1
+    },
+    {
+      "sheet": "E002-page02",
+      "markers": 0,
+      "visual_score": "0/0",
+      "review": "Zéro symbole matériel; page entière et légende ouvertes. Prescriptions LIBRE/ESPACE et incendie contrôlées au zoom; réserves textuelles distinctes des quantités.",
+      "jpeg_sha256": "8a3df152da04a2982d7c4c45046169879986957a6e80144765316a1628b88e6d",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 4
+    },
+    {
+      "sheet": "E002-page03",
+      "markers": 0,
+      "visual_score": "0/0",
+      "review": "Zéro symbole matériel; page complète et légende ouvertes, capacités et liste inverseurs contrôlées au zoom. Réserves textuelles au CSV.",
+      "jpeg_sha256": "68de50baf71cd321bc9b4c8ac2a8da305461405c1eeae0e0bc90b578c52eb25c",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 5
+    },
+    {
+      "sheet": "E100",
+      "markers": 88,
+      "visual_score": "88/88",
+      "review": "88 repères vus sur trois planches de zoom; correction des trois variantes de phares, plinthe commune, débit et condenseur; légende lisible. Toutes quantités sont des références.",
+      "jpeg_sha256": "0deae9e9a7c9d8a1f4dee61360a8b89c4c6c4bd8b835eb842be3758689cdb881",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 4
+    },
+    {
+      "sheet": "E400-page22",
+      "markers": 0,
+      "visual_score": "0/0",
+      "review": "Quatre zones façade inspectées au zoom : repères architecturaux sans appareils électriques; JPEG complet et légende vérifiés, zéro pastille.",
+      "jpeg_sha256": "3560b733c7c4aff0d015c95cad72ea8aeb25a06c07a91db04f608e9ddea1fee7",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 0
+    },
+    {
+      "sheet": "E400-page23",
+      "markers": 2,
+      "visual_score": "2/2",
+      "review": "Deux pastilles centrées sur deux carrés noirs au zoom; note A lue; JPEG global et légende vérifiés.",
+      "jpeg_sha256": "6fe29e360cae95626e5c44b9681c4acd21e607370fe51a88cf4ff33bbe1b8da2",
+      "scope": "Contrôle des repères retenus; ne certifie pas les familles explicitement exclues.",
+      "reserves": 2
+    }
+  ],
+  "remaining": [
+    "E200",
+    "E201",
+    "E202",
+    "E203",
+    "E204",
+    "E205",
+    "E206",
+    "E300",
+    "E301"
+  ],
+  "reserves": [
+    "Numéros répétés aux cartouches : E002 pages 2 et 3; E105 pages 9 et 10; E400 pages 22 et 23. Identifiants distingués par page."
+  ],
+  "estimator_qpl_opened": false
+}
