@@ -1,0 +1,82 @@
+{
+  "project": "S-0922",
+  "status": "Relevé page par page terminé avec réserves; vérification à l’aveugle",
+  "completed": [
+    {
+      "sheet": "E-1",
+      "markers": 0,
+      "visual_check": "3/3 : plan conservé, légende lisible, aucune quantité inventée; déplacement de légende corrigé."
+    },
+    {
+      "sheet": "E-2",
+      "markers": 19,
+      "visual_check": "19/19 ancrages revus sur JPEG; cédules 91/91 lignes rapprochées; 3 lignes en réserve de lecture.",
+      "breakers": {
+        "P1": 49,
+        "P2": 42,
+        "new_source": 8
+      }
+    },
+    {
+      "sheet": "E-3",
+      "markers": 223,
+      "visual_check": "223/223 ancrages vérifiés sur six zones du JPEG; 6 repères en réserve de configuration des sorties."
+    },
+    {
+      "sheet": "E-4",
+      "markers": 109,
+      "visual_check": "109/109 ancrages vérifiés; 1 DATA ajouté et 4 positions corrigées avant validation; 34 repères en réserve."
+    },
+    {
+      "sheet": "E-5",
+      "markers": 71,
+      "visual_check": "71/71 ancrages vérifiés sur neuf zones du JPEG; 71 repères en réserve de version et segmentation."
+    }
+  ],
+  "remaining": [],
+  "reference_commit": "877e8fd45f289b82b575d9e08a67bfcb535cce41",
+  "qpl_opened_or_downloaded": false,
+  "source_note": "Sources raster PNG. Révisions antérieures non cumulées. Documents de relevé et propositions exclus sans ouverture.",
+  "local_tests": "163 passed in 57.77s (python3 -m pytest tests -q dans pr-repo; PYTHONPATH=../.venv/lib; hors restrictions réseau du bac à sable)",
+  "pull_request": "https://github.com/fvegiard/dr-estimation-ia/pull/14",
+  "sources_used": [
+    {
+      "sheet": "E-1",
+      "file": "sources/23-357-E-CO-CH-E1 (1) - 1.png",
+      "bytes": 5554856,
+      "sha256": "047137f714c8eb63f856a983694eb183ffe7e06ec9589d154e69f3eace419c7b"
+    },
+    {
+      "sheet": "E-2",
+      "file": "sources/23-357-E-CO-CH-E1 (1) - 2 (1).png",
+      "bytes": 5995102,
+      "sha256": "7aa0fe363dc4ece358113518b8af4da9af7664a95fc52334cd0262c95da91862"
+    },
+    {
+      "sheet": "E-3",
+      "file": "sources/23-357-E-CO-CH-E1 (1) - 3.png",
+      "bytes": 8419673,
+      "sha256": "49ae234ce4892aaa591cb5aff1f614fdad615edb01d53258b4b3cdc2579c5266"
+    },
+    {
+      "sheet": "E-4",
+      "file": "sources/23-357-E-CH-E2.png",
+      "bytes": 9072213,
+      "sha256": "e9ae8b73ad6c3cc76f3203e5449589e619bc0ae8639e4dda4c8a89b509f381a8"
+    },
+    {
+      "sheet": "E-5",
+      "file": "sources/23-357-E-PE-2 - 5.png",
+      "bytes": 876613,
+      "sha256": "9049e2f9efbedd6a4c4a999d5ff01b289e5643863f9bfef43301e4b4d2beefbe"
+    }
+  ],
+  "source_inventory_summary": {
+    "download_records": 38,
+    "unique_png_retained": 30,
+    "excluded_without_opening": 3,
+    "electrical_unique_versions": 10,
+    "electrical_sheets": 5,
+    "nonelectrical_retained": 20
+  }
+}

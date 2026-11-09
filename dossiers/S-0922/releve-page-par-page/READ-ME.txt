@@ -1,0 +1,56 @@
+S-0922 — NIKE QUARTIER DIX30, UNITÉ S9D, BROSSARD
+Relevé page par page terminé avec réserves; vérification à l’aveugle
+
+Identification depuis les plans PNG seulement; aucun QPL ouvert ni téléchargé.
+Référence de présentation : Granby du 30 septembre 2026. Plans originaux conservés et légendes intégrées.
+Les révisions antérieures ne sont pas additionnées. Pas de prix, de métré de câbles, conduits ou rails.
+Les symboles au schéma et les renvois ne constituent pas des appareils supplémentaires.
+Une pastille par symbole retenu; cédules de disjoncteurs transcrites séparément.
+Aucun calibre choisi arbitrairement. * dans le relevé = réserve; * dans la cédule source = disjoncteur neuf.
+
+FEUILLES COUVERTES
+E-1 : 0 pastilles. 3/3 : plan conservé, légende lisible, aucune quantité inventée; déplacement de légende corrigé.
+E-2 : 19 pastilles. 19/19 ancrages revus sur JPEG; cédules 91/91 lignes rapprochées; 3 lignes en réserve de lecture.
+E-3 : 223 pastilles. 223/223 ancrages vérifiés sur six zones du JPEG; 6 repères en réserve de configuration des sorties.
+E-4 : 109 pastilles. 109/109 ancrages vérifiés; 1 DATA ajouté et 4 positions corrigées avant validation; 34 repères en réserve.
+E-5 : 71 pastilles. 71/71 ancrages vérifiés sur neuf zones du JPEG; 71 repères en réserve de version et segmentation.
+
+RÉVISIONS ET RÉSERVES
+E-1 / E-2 / E-3 : construction et changement E-1 du 22 avril 2024.
+E-4 : changement E-2 du 29 avril 2024; remplace la version du 22 avril.
+E-5 : seule version disponible du 26 janvier 2024, DO NOT USE FOR CONSTRUCTION. Portée actuelle à confirmer.
+E-2 : P1 49 + P2 42 = 91 disjoncteurs, dont 8 marqués neufs et 83 existants à réutiliser.
+SPARE avec calibre inclus; SPACE sans calibre exclu. Un multipolaire = un appareil, pôles selon cellules regroupées.
+P2-6 et P2-10 : calibres traversés par les nuages de révision, laissés vides. P2-14 : 20* lu, à confirmer.
+Panneaux existants 225 A, 120/208 V, 3 phases, 4 fils. Marque, série, protections et ICC non déterminés.
+Contradiction E-2 : répartiteur secondaire noté 600 V après transformateur 600/120/208 V; aucune tension corrigée arbitrairement.
+E-2 : transformateur existant 112,5 kVA à suspendre; détail de suspension et représentation E-4 non additionnés.
+E-2 : détail incendie = 3 symboles de principe, aucun multiplicateur déduit.
+E-3 : faces et flèches des 6 indicateurs de sortie à confirmer.
+E-4 : 17 repères C/W/TC cerclés sans définition dans la légende disponible; aucune fonction supposée.
+E-4 / E-2 : 5 sectionneurs existants au plan contre 4 au schéma; calibres et correspondance non établis.
+E-4 : relais vers déclenchement shunt-trip sonore prescrit; circuit et calibre non précisés.
+E-4 : 4 serpentins et 2 boîtes terminales représentés; caractéristiques à coordonner avec mécanique.
+E-5 : 71 repères en réserve, dont 45 tronçons D. Aucun nombre de modules ou de longueurs déduit.
+E-5 : 2 sections N sans définition à la cédule; circuit 14 nommé TYPE N à E-2 mais inscrit aux sections J à E-5.
+E-5 : limites de segmentation aux jonctions courbe/droite D et aux sections F à confirmer avant achat.
+Les images de présentation architecturale ne donnent aucune quantité de luminaires.
+Comparaison à l’estimateur volontairement absente : relevé à l’aveugle, aucune certification de supériorité.
+
+DOCUMENTS NON RELEVÉS
+M-1 : 23-357-M-PE-2 - 1.png, légende et devis mécanique, non relevé.
+M-2 : 23-357-M-PE-2 - 2.png, ventilation mécanique, non relevé.
+NSP_DIX 30 - 1.png à - 16.png : présentation architecturale (vues et matériaux), non relevées.
+Nike - Gicleurs - Directive #1 - 2024-01-25.png : directive gicleurs, non relevée.
+Nike - Gicleurs - Directive #1 - Plan PI-04 2024-01-25.png : plan gicleurs PI-04, non relevé.
+Aucune feuille A- ou S- distincte identifiée dans les noms; vues architecturales sous NSP_DIX 30.
+relevé éclairage.png et propositions : exclus sans ouverture. Copies téléchargées par filtre initial PNG, retirées aussitôt identifiées.
+Révisions électriques PE-2 E-1 à E-4 et E-4 du 22 avril conservées seulement comme sources antérieures, non cumulées.
+
+SOURCES ET MÉTHODE
+Accès anonyme SharePoint Mes projets / S-0922 (31-Janvier-2024), module MesProjets du dépôt.
+Déduplication par SHA-256; une copie conservée par empreinte. Sources exclues de la PR.
+Scripts en anglais dans methode/. Les coordonnées des CSV sont en pixels des sources originales.
+Les zooms de vérification restent dans le dossier de travail local et ne sont pas publiés.
+manifest.json : empreintes et tailles des fichiers publiés (hors manifest lui-même).
+CHECKPOINT.json : état par feuille et scores de vérification visuelle.

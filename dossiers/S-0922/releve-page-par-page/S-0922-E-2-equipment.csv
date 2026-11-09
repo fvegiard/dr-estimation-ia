@@ -1,0 +1,20 @@
+﻿Repère / source,Matériel,Désignation,Qté,Portée,Modèle,Prescription / réserve,Parent,X source px,Y source px
+E-2-001,COM,Compteur existant,1,CONSERVER,EXISTANT,,E-2,8096.25,8712.68
+E-2-002,BJ,Boîte au schéma,1,CONSERVER,EXISTANT,,E-2,8096.25,8876.07
+E-2-003,SEC,Sectionneur au schéma,1,CONSERVER,100 A / F100 A,,E-2,8312.25,8794.02
+E-2-004,SEC,Sectionneur au schéma,1,CONSERVER,100 A / F80 A,,E-2,8505.8,8794.02
+E-2-005,SEC,Sectionneur au schéma,1,INSTALLER,30 A / F30 A,,E-2,8698.65,8794.02
+E-2-006,SEC,Sectionneur au schéma,1,CONSERVER,200 A / F150 A,,E-2,8850.13,8794.02
+E-2-007,TR,Transformateur existant à suspendre,1,RENVOI_E-4,"112,5 kVA; 600/120/208 V; 3 phases","* Transformateur existant à suspendre; support selon détail, aucun appareil neuf ajouté.",E-2,9409.04,8611.69
+E-2-008,PN,Panneau existant (renvoi E-4),1,RENVOI_E-4,120/208 V; 225 A à la cédule,,E-2,9275.8,8986.87
+E-2-009,PN,Panneau existant (renvoi E-4),1,RENVOI_E-4,120/208 V; 225 A à la cédule,,E-2,9540.18,8986.87
+E-2-010,TC,Minuterie,1,INSTALLER,INTERMATIC T7401B; 4 contacts 40 A; 120 V,,E-2,9118.01,8936.38
+E-2-011,CT,Contacteur éclairage,1,INSTALLER,SQUARE D 8903-LG1200; 12 pôles 30 A,,E-2,9118.01,9045.08
+E-2-012,CT,Contacteur éclairage,1,INSTALLER,SQUARE D 8903-LG60; 6 pôles 30 A,,E-2,9275.8,9153.78
+E-2-013,MS,Interrupteur maître,1,INSTALLER,Leviton WTG15/10 COVER ou équivalent selon E-1,,E-2,9044.38,9045.08
+E-2-014,MS,Interrupteur maître,1,INSTALLER,Leviton WTG15/10 COVER ou équivalent selon E-1,,E-2,9275.8,9237.93
+E-2-015,REP,Répartiteur existant,1,CONSERVER,400 A; 600 V; 3 phases; 4 fils,,E-2,8625.72,8962.33
+E-2-016,REP,Répartiteur existant,1,CONSERVER,400 A; 600 V inscrit; 3 phases; 4 fils,* Tension secondaire à clarifier : 600 V inscrit après transformateur 120/208 V.,E-2,9411.15,8794.02
+E-2-017,DEM,Démarreur au détail de principe,1,DÉTAIL DE PRINCIPE,MODÈLE NON PRÉCISÉ,* Symbole au détail seulement; aucun multiplicateur ni appareil ajouté au plan E-4.,E-2,2461.49,7156.54
+E-2-018,RA,Relais au détail de principe,1,DÉTAIL DE PRINCIPE,MODÈLE NON PRÉCISÉ,* Symbole au détail seulement; aucun multiplicateur ni appareil ajouté au plan E-4.,E-2,2461.49,7350.79
+E-2-019,DG,Détecteur de gaine au détail,1,DÉTAIL DE PRINCIPE,MODÈLE NON PRÉCISÉ,* Symbole au détail seulement; aucun multiplicateur ni appareil ajouté au plan E-4.,E-2,3185.9,7314.33
