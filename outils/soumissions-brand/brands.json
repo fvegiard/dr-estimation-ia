@@ -1,0 +1,37 @@
+{
+  "_doc": "Une entrée par compagnie. primary/secondary mesurés sur le logo (extract_brand.py). Ajouter une compagnie = déposer assets/logo_xxx.png + une entrée ici.",
+  "_source_logos": "https://dr-sip-br-electritek.netlify.app/assets/images/",
+  "dr": {
+    "name": "Le Groupe DR Électrique",
+    "short": "DR Électrique",
+    "logo": "assets/logo_dr.png",
+    "logo_height_mm": 22,
+    "primary": "#B82048",
+    "secondary": "#B82048",
+    "address": "Varennes, QC",
+    "rbq": "RBQ 5587-4812-01",
+    "email_domain": ""
+  },
+  "sip": {
+    "name": "Groupe SIP",
+    "short": "Groupe SIP",
+    "logo": "assets/logo_sip.png",
+    "logo_height_mm": 18,
+    "primary": "#D84820",
+    "secondary": "#281850",
+    "address": "",
+    "rbq": "",
+    "email_domain": ""
+  },
+  "br": {
+    "name": "BR Division Électrique",
+    "short": "BR Division Électrique",
+    "logo": "assets/logo_br.png",
+    "logo_height_mm": 18,
+    "primary": "#E01010",
+    "secondary": "#E01010",
+    "address": "Mont-Saint-Hilaire, QC",
+    "rbq": "",
+    "email_domain": "groupebr.ca"
+  }
+}
