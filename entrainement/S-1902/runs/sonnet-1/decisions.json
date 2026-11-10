@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte — NOTES.md l.17 : « Les lignes « poste de travail » du Détail (D-01 à D-08, E-01 à E-05) NE sont PAS reprises : leurs appareils sont déjà comptés par famille au relevé (évite le double compte). » Confirmé par rapport.json lignes.manquantes qui liste D-01…D-08 et E-01…E-05. Les appareils sont portés par les lignes P-01…P-09 de chiffrage.py (l.248-259) aux quantités du relevé (e",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250 — chiffrage.py l.259 : L_cat(\"P-09\", …, rel(\"MONUMENT PLANCHER\",\"INSTALLER\"), \"u\", \"MONUMENT PLANCHER\", \"3.34\") → chiffrage.json P-09 : q=3, p=250.0 $, h=1.0, art 3.34 (catalogue Dupuis, « Vu 1 seul projet, dernier 2026-02-19 »). Article 3.34 run mat 750 $ vs réf 3 422,44 $ (delta_total −2 757,94).",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893 — NOTES.md l.33 : composantes totalisent 13 034,80 $ mais « J'ai retenu le total confirmé de 11 893 $ (METHODE §2) et traité Z6 comme inclus; écart de 1 141,80 $ à faire valider ». chiffrage.py l.140 LOTS[\"eclairage\"] = 11893.0, ventilé en 3.35 (l.147).",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : comptes — A-01…A-06 sont chiffrés (chiffrage.py l.182-200) mais aux quantités du RELEVÉ (portées ENLEVER/RELOCALISER de rapport-releve.md), pas à celles du Détail : A-01 26 (réf 39), A-02 8 (réf 7) + A-02b 6, A-03 11 (réf 34) + A-03b 17 + A-03c 7, A-04 1 (réf 10) + A-04b 3, A-05 12 (réf 13), A-06 4 (réf 7) + A-06b. Temps 0,35 h (catalogue) au lieu de 0,5 h pour luminaires (NOTES l.34). NOTES l.41 ",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Pas de TEMPSEC : NOTES.md l.14 « le CSV n'a pas de colonne TEMPSEC → temps/pi (formule par sections de 10 pi non applicable). Longueurs du Détail (m, hypothèses de l'estimation du 2026-10-08) converties en pi (÷ 0,3048) » (chiffrage.py det_m_en_pi l.127-131, M_VERS_PI). Familles : CONDUIT 1 04C08 pour UTA-01 (C-05, 114,8 pi), CONDUIT 3/4 04C12 pour VE-02N (C-07, 114,8 pi — longueur reprise de C-05",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}
