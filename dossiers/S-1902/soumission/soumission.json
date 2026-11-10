@@ -1,7 +1,7 @@
 {
  "no": "S-1902",
  "titre_court": "RFID Bibliothèque Georgette-Lepage",
- "date_ligne": "Varennes, le 20 octobre 2026",
+ "date_ligne": "Varennes, le 26 octobre 2026",
  "client": [
   "<b>Constructions R.D.J. Inc.</b>",
   "1410, boul. Taschereau",
@@ -12,56 +12,56 @@
  ],
  "details": [
   "<b>Soumission :</b> S-1902",
-  "<b>Date :</b> 20 octobre 2026",
+  "<b>Date :</b> 26 octobre 2026 (révision 1 — addenda E-01)",
   "<b>Projet :</b> E-26-75-GE — Technologie RFID, Bibliothèque Georgette-Lepage — aménagement du rez-de-chaussée et de l'étage",
   "<b>Lieu :</b> 2001, boul. Rome, Brossard",
-  "<b>Références :</b> SEAO 20173885 / BSDQ M-1026-26 — AO SP-GTER-26-0080 — plans et devis HF Experts-Conseils 26-29 (E-001 à E-502), émis pour AO le 2026-09-16, sans addenda",
+  "<b>Références :</b> SEAO 20173885 / BSDQ M-1026-26 — AO SP-GTER-26-0080 — plans et devis HF Experts-Conseils 26-29 (E-001 à E-502), émis pour AO le 2026-09-16 ; addenda no 1 du 2026-10-16 (ADD E-01, plans et devis électriques ré-émis) intégré pour l'éclairage selon la soumission Éclairage Hi-Tech S100946-R1 du 2026-10-23",
   "<b>Préparé par :</b> Francis Végiard, Chargé de projets et estimateur"
  ],
  "prix_sous_titre": "TRAVAUX D'ÉLECTRICITÉ, D'ÉCLAIRAGE ET D'ALARME INCENDIE — DIVISION 26 / 28",
- "prix_note": "Prix forfaitaire pour l'ensemble des travaux d'électricité décrits aux plans et devis ci-dessus, ventilé selon le bordereau de prix (Annexe 2.00). Le prix comprend 1 050 heures de main-d'œuvre d'électriciens qualifiés (contremaître inclus), le matériel au prix régulier des distributeurs, les luminaires du tableau E-008 (A1, C1/C1_1/C1_3 avec suspensions, E, Z6), le panneau NF et ses disjoncteurs, les services Johnson Controls/Simplex et le scan GPR de la dalle. Travaux prévus de jour, aux heures normales, du ±17 novembre 2026 au 16 juillet 2027 selon l'échéancier de l'entrepreneur général.",
+ "prix_note": "Prix forfaitaire pour l'ensemble des travaux d'électricité décrits aux plans et devis ci-dessus, ventilé selon le bordereau de prix (Annexe 2.00). Le prix comprend 1 050 heures de main-d'œuvre d'électriciens qualifiés (contremaître inclus), le matériel au prix régulier des distributeurs, les luminaires de l'addenda E-01 (A1 Cooper, Axis Slate avec suspensions, Pinnacle M/M1, E, Z6), le panneau NF et ses disjoncteurs, les services Johnson Controls/Simplex et le scan GPR de la dalle. Travaux prévus de jour, aux heures normales, du ±17 novembre 2026 au 16 juillet 2027 selon l'échéancier de l'entrepreneur général.",
  "ventilation_titre": "VENTILATION SELON LE BORDEREAU DE PRIX (ANNEXE 2.00)",
  "ventilation_note": "Montants avant taxes. Frais de chantier, mobilisation, coordination et matériel courant répartis sur les articles au prorata des heures; article 3.31 ajusté de l'arrondi du total.",
  "ventilation": [
   [
    "3.22",
    "Démontage des éléments électriques",
-   11502
+   11467
   ],
   [
    "3.23",
    "Raccordement des équipements mécaniques",
-   9178
+   9161
   ],
   [
    "3.24",
    "Nouveau panneau 600 V",
-   10800
+   10791
   ],
   [
    "3.25",
    "Lot disjoncteurs",
-   807
+   804
   ],
   [
    "3.26",
    "MCC",
-   462
+   461
   ],
   [
    "3.27",
    "Prises doubles 15 A-120 V – USB",
-   6369
+   6358
   ],
   [
    "3.28",
    "Prises doubles 15 A-120 V",
-   15065
+   15035
   ],
   [
    "3.29",
    "Prises doubles 15 A-120 V MALT isolées",
-   4846
+   4838
   ],
   [
    "3.30",
@@ -71,7 +71,7 @@
   [
    "3.31",
    "Percements, conduit, filage et boîtes de jonction",
-   49829
+   49257
   ],
   [
    "3.32",
@@ -81,37 +81,37 @@
   [
    "3.33",
    "Sorties informatique/réseau",
-   18054
+   18011
   ],
   [
    "3.34",
    "Monument plancher",
-   4682
+   4681
   ],
   [
    "3.35",
    "Appareils de contrôle + appareils d'éclairage",
-   42212
+   81967
   ],
   [
    "3.36",
    "Détecteur de fumée",
-   1953
+   1950
   ],
   [
    "3.37",
    "Panneau alarme incendie : déplacement annonciateur",
-   2123
+   2117
   ],
   [
    "3.38",
    "Panneau alarme incendie : mise en marche et certification",
-   10055
+   10052
   ],
   [
    "5.19",
    "Démolition des systèmes électriques",
-   4077
+   4064
   ]
  ],
  "travaux": [
@@ -120,7 +120,7 @@
   "Raccordement électrique de l'UTA-01, du VE-02N, des chaudières CH-01 et CH-02 (réutilisation des tiroirs CCM-1 selon leur état) et des humidificateurs HUM-1 à HUM-3, avec conduits, conducteurs et raccords flexibles;",
   "Services du rez-de-chaussée et de l'étage : postes de travail intégrés au mobilier, tables avec boîtes d'électrification et prises USB, cabines, écrans, kiosque, prises murales, 22 prises MALT isolées, prise DDFT de la fontaine, monuments de plancher Hubbell, sorties informatiques (boîte, conduit et plaque), 4 sorties TV, boîtes et conduits vides pour boutons d'appel et de panique, 7 portes à contrôle d'accès (lecteur de carte et gâche), 6 thermostats et barrière antivol;",
   "Vingt-trois percements de dalle carottés avec coupe-feu CAN/ULC-S115 et scan GPR préalable; conduits EMT et conducteurs RW90 sous dalle et dans l'entreplafond;",
-  "Éclairage du rez-de-chaussée selon le tableau E-008 : 11 luminaires A1, 12 C1, 6 C1_1, 15 C1_3 en rangées suspendues, 3 luminaires E, 3 enseignes de sortie Z6; suspensions, chaînes de retenue à la dalle (devis 16.5), raccordement aux circuits existants réutilisés et 5 interrupteurs neufs;",
+  "Éclairage du rez-de-chaussée selon l'addenda E-01 (soumission Éclairage Hi-Tech S100946-R1) : 10 luminaires A1 Cooper 24CGTS-L3C3 avec clips sismiques, 32 modules Axis Slate SL1 en rangées suspendues (11 de 7′, 5 de 5′, 2 de 4′, 14 de 3′), 5 luminaires Pinnacle M/M1, 3 luminaires E, 3 enseignes de sortie Z6; suspensions, chaînes de retenue à la dalle (devis 16.5), raccordement aux circuits existants réutilisés et 5 interrupteurs neufs;",
   "Alarme incendie : installation de 2 détecteurs de fumée adressables fournis par Johnson Controls, boucle, relocalisation de l'annonciateur, protection des dispositifs existants, assistance à la programmation du panneau Simplex 4007ES et vérification partielle CAN/ULC-S537; services Johnson Controls inclus;",
   "Mobilisation, plateforme roulante, coordination avec l'entrepreneur général et les autres corps de métier, dessins d'atelier, plans tels que construits, essais, mise en service, étiquetage, nettoyage et gestion des déchets électriques."
  ],
@@ -157,7 +157,8 @@
   "Permis, frais municipaux et taxes (TPS et TVQ en sus); réparation des finis, peinture, plafonds, cloisons et planchers; démolition et évacuation non électriques; échafaudage fixe; percements structuraux autres que les carottages indiqués;",
   "Remplacement du matériel existant trouvé défectueux lors des essais (la vérification des prises existantes de la note 3 est incluse; les réparations sont en sus, sur approbation);",
   "Les longueurs de conduits et de conducteurs sont établies sur hypothèses de tracé (note 5, E-104); le tracé exact sera validé dans l'entreplafond du niveau inférieur sans changement de prix, sauf obstacle imprévu;",
-  "Aucun addenda n'a été reçu à la date de la présente; tout addenda émis après cette date fera l'objet d'un ajustement."
+  "Droits de douane, tarifs douaniers américains, frais de dédouanement/courtage et transport des luminaires Pinnacle, non chiffrés dans la soumission du distributeur d'éclairage (S100946-R1) : facturés au coût réel sur pièces justificatives;",
+  "Addenda no 2 (2026-10-22) et no 3 (2026-10-24) non reçus à la date de la présente : tout changement de portée qu'ils apporteraient fera l'objet d'un ajustement."
  ],
  "validite": "30 jours",
  "signataire": [
