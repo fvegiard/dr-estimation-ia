@@ -97,6 +97,32 @@ Plan d'un **bureau d'ingénieurs encore inconnu** (blocs absents de la biblioth�
 Penser à committer `releve/bibliotheque-blocs.csv` après un nouveau bureau. `ESTIMATEUR_BIBLIOTHEQUE` : autre
 fichier de bibliothèque (essais).
 
+### Leçons de terrain — TEST-E103 (Direktion 360, SAQ Varennes, 2026-10-19, PR #33)
+Feuille E103 « Détails — contrôle d'éclairage » : 23 appareils nLight, score visuel 23/23, preuves dans
+`dossiers/S-1844-essai/E103/releve-cloud/RAPPORT.md`. À appliquer sur tout nouveau bureau :
+- **La liste `a_etiqueter.inconnues` ne suffit pas.** Elle ne montre que les signatures absentes de la bibliothèque.
+  Les vrais boîtiers DP1/DP2 d'E103 étaient aussi portés par S001 (IGNORER, venu de S-1902) et S002 (SORTIE DATA,
+  ø 0–6,5 pt) : des signatures génériques déjà connues, superposées au même endroit. Avant d'étiqueter, croiser
+  `travail/blocs/<F>.csv` avec la zone du plan d'étage et dédoublonner les positions (≤ 4 pt) : c'est le nombre de
+  positions uniques qui fait foi, pas le `n_plans` de chaque signature.
+- **Séparer le plan des détails par région.** Les schémas types (riser, « Design 2 »), les instructions code-barres,
+  le détail CAT5 et le cartouche contiennent des boîtiers dessinés : IGNORER. Ne compter que le plan d'étage.
+- **Une signature, plusieurs types.** Sur E103, DP1, DP2, PP1, SO3 et SO4 ont le même bloc (S004) ; seul le texte
+  inscrit dans la case les distingue. Le bordereau sort alors une ligne générique. Recompter les étiquettes avec
+  `page.get_text("words")` (contre-vérification CONFIRMÉE : 8+4+2+2+4+2+1 = 23) et donner la ventilation par type
+  dans le rapport.
+- **Signatures rares sur le plan.** S059 (n = 2) et S139 (n = 1), absentes de la liste « ≥ 3 instances », étaient
+  de vrais interrupteurs SW1/SW6 : `etiqueter_signatures` les accepte quand même par `sig_id`.
+- **Portée.** Feuille ni « NOUVEAU » ni « EXISTANT/DÉMOLITION » → tout sort en CONSERVER ; à signaler À VALIDER
+  (appareils nLight numérotés = probablement neufs).
+- **Bordereau.** La colonne Source affiche « E-001 légende » par défaut, même sans feuille E-001 : à mentionner en
+  réserve.
+- **Livraison.** `*.zip` est ignoré par `.gitignore` : `git add -f` pour le ZIP des livrables quand il est demandé.
+  Le jeu de référence (`python -m src.validation.jeu_reference`) réécrit `dossiers/*/comparaison-dupuis-qpl/` et
+  `dossiers/_jeu-reference/` : restaurer ces fichiers avant le commit s'ils ne font pas partie du livrable.
+- La bibliothèque connaît maintenant les blocs nLight de Direktion (S004 boîtier, S059/S139 interrupteur, 30 blocs
+  de détails en IGNORER) : le prochain dossier de ce bureau devrait sortir sans étiquetage.
+
 ## Déroulement manuel (ce que fait le LLM)
 
 1. `deposer_fichier` (base64) ou `preparer_dossier(chemin_source=…)` en local → `preparer_dossier`.

@@ -1,0 +1,38 @@
+{
+ "pages": 2,
+ "sheets": [
+  {
+   "sheet": "E103",
+   "format": "agrege",
+   "plan_page": 1,
+   "bordereau_pages": [
+    2
+   ],
+   "reperes": 23,
+   "familles": 2,
+   "res": 23,
+   "box": [
+    1640.0,
+    360.0,
+    1875.0,
+    599.1
+   ],
+   "box_layout": [
+    1,
+    211.0,
+    32.045
+   ],
+   "box_in_free_space": true,
+   "bordereau_troncatures": 0,
+   "encadre": "v6",
+   "calques": 3,
+   "signet": "TEST-E103-E103-annote-v1",
+   "signets_origine": 0
+  }
+ ],
+ "reperes": 23,
+ "conformite": {
+  "encadre_hors_espace_libre": [],
+  "cible_visuelle": "apprentissage/hr26-14-exemplaire/SOURCE.txt"
+ }
+}
