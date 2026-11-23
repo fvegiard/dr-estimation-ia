@@ -67,7 +67,7 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
 - `dossiers/<S>/` — un dossier de soumission : `releve.xlsx`, `ecart.md`, `planexpert/<S>.qpl`, `export-natif/` (sorties du vrai
   Plan Expert), `reference/` (projet de l'estimateur + dimensions + feuilles), `comparaison-dupuis-qpl/`.
 - `dossiers/_jeu-reference/` — résultats et ligne de base du jeu de référence.
-- `src/` (autres modules), `tests/` (pytest, fixtures synthétiques), `docs/`, `infra/` (VM Plan Expert sur mxlinux).
+- `src/` (autres modules), `tests/` (pytest, fixtures synthétiques), `docs/`, `infra/` ([reprise de la VM Plan Expert](infra/planexpert-reprise.md)).
 
 ## Contrôles de conformité (du plus léger au plus profond)
 1. `python -m pytest tests -q` et `python -m src.validation.jeu_reference` — déterministes, tournent partout (y compris en bac
@@ -85,7 +85,7 @@ Francis n'est pas superviseur : il fait seulement des contrôles au hasard. Tu f
    octet-près au gold HR26-14 (marqueurs à 0,05 pt, bordereau cellule par cellule). Exige le EXEMPLE.pdf complet
    (87 p., non versionné, sur le Drive/PC de Francis) : **indisponible en bac à sable cloud**, à lancer sur un poste
    qui a le fichier.
-6. `infra/pe-batch.ps1` — ouvre le `.qpl` dans le vrai Plan Expert (VM mxlinux, PowerShell + SSH + pilotage VNC) et
+6. `infra/pe-batch.ps1` — ouvre le `.qpl` dans le vrai Plan Expert (VM Windows, PowerShell + SSH + pilotage VNC) et
    exporte son propre rapport/PDF natifs : la vérification la plus forte (le logiciel du client accepte le fichier),
    mais **Windows + VM uniquement**, aucun équivalent possible en bac à sable cloud.
 

@@ -119,6 +119,41 @@ def test_doublon_bloque(tmp_path, monkeypatch):
     assert "doublon" in texte and "Y" in texte and "hors de la page" in texte
 
 
+def test_documents_recus(tmp_path, monkeypatch):
+    monkeypatch.setattr(serveur, "LIEN_HUMAIN", tmp_path)
+    bilan = {"pages_marquees": {"3": 2}, "pages_sans_marque": [4]}
+    fichier = {"fichier": "S-1000/01-PLANS.pdf", "url": "https://example.org/f"}
+    dossiers = [{"nom": "S-1000", "url": "https://example.org/d"}]
+    (tmp_path / "documents.json").write_text(json.dumps({
+        "S-1000": {"01-PLANS": bilan, "02-DETAILS": {"pages_marquees": {}, "pages_sans_marque": [1]}},
+        "S-1001": {"01-PLANS": bilan},
+    }), encoding="utf-8")
+
+    async def verifier():
+        async with Client(serveur.mcp) as client:
+            assert "documents_recus" in {t.name for t in (await client.list_tools()).tools}
+            params = {"projet": "S-1000"}
+            absent = await client.call_tool("documents_recus", params)
+            assert absent.is_error and "base humaine absente" in absent.content[0].text
+            (tmp_path / "recus.json").write_text(json.dumps({
+                "S-1000": {"dossiers_recus": dossiers, "fichiers_recus": [fichier["fichier"]],
+                           "document_qpl_vers_recu": {"01-PLANS": fichier, "02-DETAILS": None}},
+            }), encoding="utf-8")
+            resultat = _texte(await client.call_tool("documents_recus", params))
+            assert resultat["projet"] == "S-1000"
+            assert resultat["documents"]["01-PLANS"] == {**bilan, "recu": fichier}
+            assert resultat["documents"]["02-DETAILS"]["recu"] is None
+            assert resultat["dossiers_recus"] == dossiers
+            assert resultat["fichiers_recus"] == [fichier["fichier"]]
+            sans_recu = _texte(await client.call_tool("documents_recus", {"projet": "S-1001"}))
+            assert sans_recu["dossiers_recus"] == sans_recu["fichiers_recus"] == []
+            assert sans_recu["documents"]["01-PLANS"] == {**bilan, "recu": None}
+            inconnu = await client.call_tool("documents_recus", {"projet": "inconnu"})
+            assert inconnu.is_error and "projet inconnu" in inconnu.content[0].text
+
+    asyncio.run(verifier())
+
+
 def test_http_exige_cle(monkeypatch):
     from starlette.testclient import TestClient
 
