@@ -1,5 +1,7 @@
 # MCP « planexpert-vm » — Plan Expert 3.0.17 dans la VM Windows Server 2025 (mxlinux)
 
+> **Archive :** ce serveur dépend des alias SSH, du partage et de la configuration VNC de l'ancien hôte `mxlinux`. Ne pas l'utiliser pour valider le nouvel hôte sans adapter et tester ces dépendances. Voir la [reprise de la VM](../../infra/planexpert-reprise.md).
+
 Serveur MCP minimal (SDK officiel Python `mcp` 2.2.0, `MCPServer`, stdio) qui emballe la VM : `mcp/planexpert_vm/server.py`.
 Enregistré dans Claude Code WSL (portée utilisateur, `~/.claude.json`) :
 

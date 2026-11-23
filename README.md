@@ -30,7 +30,7 @@ Tant que ces chiffres ne sont pas atteints et prouvés dans `dossiers/`, le proj
 1. **Entrée** — `dossiers/<no>/entree/` : plans PDF, devis, addendas
 2. **Relevé** — `dossiers/<no>/releve.xlsx` : quantités par item, référence de page/plan pour chaque ligne
 3. **Validation** — `dossiers/<no>/ecart.md` : comparaison ligne par ligne vs estimation de référence
-4. **Saisie Plan Expert** — VM Windows sur `mxlinux`, pilotée par Claude Code (mxlinux) + Windows-MCP
+4. **Saisie Plan Expert** — VM Windows requise pour la validation native. L’hôte `mxlinux` est retiré ; voir la [procédure de restauration](infra/planexpert-reprise.md).
 5. **Chemins de câblage** — `dossiers/<no>/cablage.pdf` : tracé sur les plans
 
 ## Outillage livré (voir `docs/consolidation.md`)
@@ -49,7 +49,7 @@ Tant que ces chiffres ne sont pas atteints et prouvés dans `dossiers/`, le proj
 - `docs/` — spec du PDF de relevé (`FORMAT-EXEMPLE.md`), format QPL et pipeline complet (`pipeline-qpl.md`),
   format `.qpl` de Plan Expert (`format-qpl-plan-expert.md`), gabarits Excel des livrables (`format-livrable.md`),
   table de consolidation (`consolidation.md`)
-- `infra/` — VM Plan Expert sur mxlinux (`infra/mxlinux/`) et traitement en série (`infra/pe-batch.ps1`)
+- `infra/` — [reprise de la VM Plan Expert](infra/planexpert-reprise.md), configuration historique (`infra/mxlinux/`) et traitement en série (`infra/pe-batch.ps1`)
 - `tests/` — pytest, fixtures **synthétiques uniquement** (aucune donnée client)
 
 ```bash

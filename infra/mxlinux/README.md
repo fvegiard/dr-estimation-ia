@@ -1,5 +1,7 @@
 # Plan Expert sur mxlinux — Windows Server 2025 dans Podman
 
+> **Archive :** l’hôte `mxlinux` est retiré. Ne pas utiliser les adresses, règles réseau ou commandes de déploiement ci-dessous telles quelles. Consulter la [procédure de restauration](../planexpert-reprise.md).
+
 Recette reproductible qui fait tourner **Plan Expert** (application Windows .NET de Groupe DR
 Électrique) sur le **Mac mini 2012 « mxlinux »**, dans une VM Windows Server 2025 pilotée par
 Podman (image `dockurr/windows`). Elle remplace la VM Hyper-V hébergée sur FV_LEGION.

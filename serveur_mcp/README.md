@@ -134,6 +134,7 @@ Colonnes facultatives pour enrichir le bordereau (sinon « A PRECISER » / « MO
 | `comparer_estimateur` | écart marque par marque avec l'estimateur |
 | `chercher_libelle` | nom employé par les estimateurs pour un texte de légende |
 | `exemples_humains` | planche des vrais symboles cliqués par les estimateurs pour un libellé + habitudes |
+| `documents_recus(projet)` | fichiers reçus reliés aux documents et aux pages avec ou sans marques dans Plan Expert |
 
 Ressources : `estimateur://methode`, `estimateur://standard` (standard de l'exemplaire HR26-14),
 `estimateur://libelles` (libellés Plan Expert appris des projets 2021-2026),
@@ -144,10 +145,11 @@ Ressources : `estimateur://methode`, `estimateur://standard` (standard de l'exem
 Deux choses distinctes : **le document reçu** (PDF du client) et **ce que l'estimateur en fait dans Plan Expert**
 (le `.qpl` : Plan Expert rastérise chaque page reçue en `<document> - <page>.png` et l'estimateur y pose une marque
 par appareil). Seuls les documents rattachés à un `.qpl` servent : ce sont eux qui disent ce qu'on a fait.
-`python -m src.apprentissage.lien_humain --racine <dossier des projets Plan Expert>` relit chaque marque sur la page
-même où elle a été cliquée et écrit `apprentissage/lien-humain/` (`connaissance.json`, `documents.json`,
-`galerie/*.jpg`, `PRATIQUES.md`). Ce dossier est dans le dépôt public : un LLM en nuage y a accès sans le serveur
-de fichiers.
+`python -m src.apprentissage.lien_humain` collecte les projets Plan Expert et leurs pages sur OneDrive et les fichiers
+reçus sur Google Drive. Il écrit `apprentissage/lien-humain/` (`connaissance.json`, `documents.json`, `recus.json`,
+`galerie/*.jpg`, `PRATIQUES.md`). `documents_recus(projet)` prend le nom exact d'un projet dans `documents.json` et
+renvoie, par document, le fichier correspondant (`null` si absent), les pages marquées avec leur nombre de marques
+et les pages sans marque. L'outil lit les index locaux : il ne contacte ni les services distants ni la VM.
 
 Le rendu passe par `src.estimer.render.from_releve` (même pont que la chaîne Claude : ancrage de la pastille sur
 le symbole vectoriel, formats materiel/agrege/travaux). Le test `test_parite_claude_e103` rend le relevé S-1844 E103
