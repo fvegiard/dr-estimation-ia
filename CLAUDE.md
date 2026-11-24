@@ -140,6 +140,10 @@ Action unique pour un nouveau dossier (parcours canonique — tout le reste orch
 ```bash
 uv run releve/run.py <NOM>                       # dépose d'abord les PDF dans INBOX/<NOM>/ — c'est tout
 ```
+
+Serveur MCP « Expert estimateur » (démarrage < 0,2 s : la première ligne stdio est répondue avant d'avoir chargé le SDK — `serveur_mcp/lance.py`) :
+`.venv/bin/python -m serveur_mcp` — mesure : `.venv/bin/python outils/mesurer_demarrage_mcp.py --essais 5 --limite 0.2` (rapport `mcp-demarrage-rapport.json`).
+
 Route par défaut depuis 2026-10-18 (`RELEVE_AGENT=blocs`) : **déterministe, zéro agent, zéro jeton, zéro étiquetage** —
 `blocs_vectoriels.py` (symboles = blocs CAO) → `blocs_vignettes.py` → `blocs_familles_auto.py` (familles depuis
 `releve/bibliotheque-blocs.csv`, construite sur S-1902 : même bureau d'ingénieurs = mêmes blocs ; les signatures

@@ -35,6 +35,8 @@ Tant que ces chiffres ne sont pas atteints et prouvés dans `dossiers/`, le proj
 
 ## Outillage livré (voir `docs/consolidation.md`)
 
+- **Démarrage < 0,2 s** : réponse à la première ligne stdio avant le chargement du SDK (`serveur_mcp/lance.py` + `serveur_mcp/demarrage.py`).
+  Mesure : `.venv/bin/python outils/mesurer_demarrage_mcp.py --essais 5 --limite 0.2` (rapport versionné `mcp-demarrage-rapport.json` : `initialize` de 26,6 à 34,4 ms).
 - **PDF « Plans annotés » (le seul moteur de rendu branché)** : `uv run releve/run.py <NOM>` →
   `releve/render_vectoriel.py` → `src/estimer/render/` (pastilles vectorielles OCG, encadré, bordereau au format de
   chaque feuille), puis `releve/render_pdf.py` (rapport de métré + dossier complet). Format visé : la spec unique
