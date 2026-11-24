@@ -69,3 +69,84 @@ référence Dupuis (`dossiers/S-1844/reference/`), justifier sur le plan, ACCEPT
    doute va en réserve.
 4. Le gold HR26-14 ne se corrige pas ; on corrige la spec.
 5. Le verdict final de soumission reste à Francis.
+
+## Plan complet (P1-P8) — tout ce qu'il y a à faire, ce qui manque pour y arriver
+
+État mesuré au 2026-11-24 (preuves du jour : démarrage 26,6-34,4 ms / 46,8-86,2 ms conteneur,
+421 tests, jeu_reference rejoué identique octet-par-octet deux passages, gold 0861bc3a vérifié,
+relevé S-1844 à l'aveugle : 724 sigs à étiqueter, occurrences ≈ 0, « À VÉRIFIER » honnête).
+
+### P1 — Socle (FAIT, 2026-11-24)
+Démarrage MCP < 0,2 s dans les deux environnements, suite verte, socle rejoué identique. Preuve :
+`.venv/bin/python outils/mesurer_demarrage_mcp.py --essais 5 --limite 0.2 --rapport mcp-demarrage-rapport.json`,
+`python -m pytest tests -q`, `python -m src.validation.jeu_reference` exit 0.
+
+### P2 — Données (rapatriement des plans par dossier)
+À faire : pour chacun des dossiers, le(s) PDF de plans + addendas d'origine dans `INBOX/<S>/` —
+jamais le relevé humain dans l'INBOX. Déjà rapatrié : **S-1844 ✓ (12 p.), HR26-14 ✓ (28 p. +
+addenda-01), S-1715 ✓ partiel (addenda ELE-002 seul, plans d'AO à suivre)** ; à rapatrier de
+Drive/SharePoint/Legion : plans AO de S-1715 complets, S-1714, S-1769 (AO + addenda), S-1811, et
+pour la re-route complète des 11 : S-1857, S-1689, S-1693, S-1695, S-1797, S-1808. Vérifier aussi
+la branche `releve/S-1902-georgette-lepage` pour les plans de S-1902. Preuve par passe :
+`sha256sum INBOX/<S>/*.pdf` au journal + inventaire.json du runner.
+
+### P3 — Bibliothèque de signatures multi-bureaux
+À faire : une campagne d'étiquetage **une fois par bureau d'ingénieurs** (vignettes ×8 + légende
+lue — jamais deviné, dans le doute on laisse inconnue) ; chaque étiquette entre dans
+`releve/bibliotheque-blocs.csv` pour tout le monde. Manque : 724 signatures fréquentes de S-1844
+(bureau de la SAQ) à étiqueter — lancement aujourd'hui ; les autres dossiers auront leurs comptes
+à lancer et à étiqueter à mesure. Preuve par bureau : 0 inconnue restante après le rejeu
+(`run.py <S>`) et `blocs-a-etiqueter.json` vide.
+
+### P4 — Précision de comptage fine
+À faire, mesuré vs le jeu de référence à chaque pas : multiplicateur des unités/chambres types
+branché dans la route blocs (le fichier existe sur la chaîne MCP) ; détection vectorielle des
+symboles sans étiquette (la forme, pas le texte) ; « une ligne de légende = un compteur »
+(variantes fusionnées, interrupteurs S-1689) ; notes de plan (« prévoir N par logement », S-1714 :
+140 prises d'échangeur) → N objets ; sous-types (tension, pôles, calibre ; S-1808) ; stabilité de
+la route agent (double passe + vote). Preuve : seuil G2/G3 mesuré (écarts par poste ≤ 10 %, 0
+manquant non signalé) sur la passe rejouée des 11 dossiers ; test par item dans `tests/`.
+
+### P5 — Métré des longueurs (câbles et conduits — l'essentiel des heures d'une soumission)
+À faire : brancher `src/cablage/compute_arteres.py` (chemins entre luminaires et distribution lus
+du plan par artère) et `inject_lines.py` dans `.qpl` (longueurs par symbole) puis dans le rapport
+de métré et le BOM ; valider vs la référence d'un dossier complet (S-1902 ou S-1844). Manque : tout
+le métré reste 0 aujourd'hui — aucune longueur n'est dans un livrable depuis le 2026-09-22.
+
+### P6 — Chiffrage complet sourcé
+À faire : couverture du catalogue Dupuis mesurée (quels postes ont prix/heures, lesquels pas) ;
+soumission générée automatiquement au gabarit DR (ReportLab) — la première existe (S-1902, 194 000 $).
+Manque : mesure de couverture + les postes non chiffrables listés explicitement (jamais 0 h par
+défaut, jamais inventés — le livrable marque « poste non chiffrable » avec réserve).
+
+### P7 — Boucle d'acceptation rejouée sur les 11 dossiers, chacun jusqu'au verdict
+À faire : par dossier, la boucle complète (aveugle → gel → comparaison → classement → justification
+sur le plan → corriger/revérifier → `ACCEPTATION.md`). Manque mesuré : ACCEPTATION.md présent pour
+2 dossiers seulement (S-1844, S-1902) ; à produire par dossier : S-1857 (prises E407-E408 + addenda
+ADME-01 complet), S-1689 (interrupteurs fusionnés, 14 luminaires B→D), S-1769 (4 corrections),
+S-1715 (mécanique +20 %, portes : référence en erreur), S-1844 (doublons + 12 têtes — en cours
+dans P3), S-1808 (TYPE D→C, 4 objets), S-1811 (corrections légères), S-1695 (chambres types −64 %),
+S-1693 (salle électrique, interrupteurs, fausses gâches), S-1797 (alarme, chauffage, distribution),
+S-1714 (enseignes, prises d'échangeur, allocations logements, 20 conduits).
+
+### P8 — Soumission autonome sur un dossier NEUF + opération
+À faire : un dossier jamais relevé (prochain appel d'offres), de bout en bout sous la boucle
+complète, verdict final à Francis (jamais à l'IA) ; puis opération journalière : le service MCP
+déjà déployé (`expert-estimateur-svc`, 8765, rollback taggé), doc d'usage pour l'équipe,
+surveillance des erreurs, le mécanisme d'apprentissage des bureaux maintenu. Manque : rien
+d'opérationnel à coder — le service roule ; il faut la formation + le pilotage.
+
+### Ordre et dépendances
+
+P1 ✓ → P2 (données) → P3 (bibliothèques par bureau, nécessaire à toute identification) → P4
+(précision, nécessaire à G2/G3) ∥ P5 (longueurs, nécessaire aux heures) → P6 (chiffrage,
+dépend de P4+P5) → P7 (acceptation, dépend de P3+P4) → P8 (soumission autonome, dépend de tout).
+P3 ∥ P2 : on étiquette le bureau d'un dossier dès que ses plans sont là.
+
+### Risques récurrents (rappel)
+
+Le gold ne se corrige pas (on corrige la spec) ; la voie par agent ne se vérifie que par la route
+déterministe + la double passe quand elle existe ; la VM Plan Expert (vérification native, la plus
+forte) reste un outil Windows/Legion — inutilisable ici, seule la comparaison déterministe est
+possible sur cette machine ; un poste sans heure sourcée reste réservé, jamais 0 h.
+
