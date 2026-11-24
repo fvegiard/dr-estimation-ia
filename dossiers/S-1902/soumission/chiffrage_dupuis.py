@@ -74,28 +74,32 @@ add('E-04', 'Cabines/salles étage : JB + prise', 3, 'u', 64.81, 1.175, '3.28', 
 add('E-01', 'Postes aide au lecteur 227 : JB, 2 prises, data', 2, 'poste', 2 * 64.81 + 13.96, 2 * 1.175 + 0.63, '3.28', 'Dupuis')
 add('E-05', 'Écran colonne étage : prise + data', 1, 'u', 64.81 + 13.96, 1.175 + 0.63, '3.28', 'Dupuis')
 
-# --- F ÉCLAIRAGE ---
-add('F-01', 'Luminaire A1 2x4 LED encastré — pose', 11, 'u', 0, 0.75, '3.35', 'Dupuis « FIXTURE TYPE A » 0,75 h ; fourniture au lot')
-add('F-02', 'Luminaires C1 / C1_1 / C1_3 Axis (33 modules) — pose', 33, 'u', 0, 0.75, '3.35', 'Dupuis 0,75 h/luminaire')
+# --- F ÉCLAIRAGE (quantités = soumission Éclairage Hi-Tech S100946-R1 du 2026-10-23, ADD E-01, transmise par Daniel Dupuis le 2026-10-22) ---
+add('F-01', 'Luminaire A1 Cooper 24CGTS-L3C3 2x4 LED encastré + clips sismiques — pose', 10, 'u', 0, 0.75, '3.35', 'Dupuis « FIXTURE TYPE A » 0,75 h ; qté Hi-Tech R1 (ADD E-01 : 10, était 11 au tableau E-008) ; fourniture au lot')
+add('F-02', 'Luminaires C1 Axis Slate SL1 (7′ ×11, 5′ ×5, 4′ ×2, 3′ ×14 = 32 modules) — pose', 32, 'u', 0, 0.75, '3.35', 'Dupuis 0,75 h/luminaire ; qté Hi-Tech R1 (ADD E-01 ; était 33 au tableau E-008)')
+add('F-03', 'Luminaires M / M1 Pinnacle M-P-835LO (8′ ×4, 2′ ×1) — pose', 5, 'u', 0, 0.75, '3.35', 'Dupuis 0,75 h/luminaire ; type ajouté par l’ADD E-01 (Hi-Tech R1)')
 add('F-05', 'Rangées linéaires suspendues (20) : suspension à la dalle, alimentation', 20, 'rangée', 50.0, 1.0, '3.35', 'Dupuis « DROP DE SWITCH »/alim. 0-10V 32-55 $ ; 1 h (Estimation_2)')
 add('F-06', 'Luminaire E cylindre suspendu — pose', 3, 'u', 0, 0.75, '3.35', 'Dupuis 0,75 h ; 3 u (E-203)')
 add('F-07', 'Enseignes de sortie Z6 — pose', 3, 'u', 0, 1.0, '3.35', 'Dupuis « ENSEIGNE SORTIE » 1 h')
 add('F-11', 'Interrupteurs neufs 15 A', 5, 'u', 75.47, 1.075, '3.35', 'Dupuis « INTERRUPTEUR 15A 120V » 75,47 $ / 1,075 h')
 add('F-08', 'Conduit EMT 3/4" 03c12 + flexible — raccordement luminaires (35 points)', 280 * PI, 'pi', 4.2441, 0.1128, '3.35', 'Dupuis « CONDUIT 3/4 03C12 » 4,2441 $/pi, 0,1128 h/pi (dernier)')
-add('F-10', 'Chaînes de retenue à la dalle, boîtes de jonction, quincaillerie', 46, 'u', 8.0, 0.25, '3.35', 'Dupuis « PARASIMIC » 10 $ / 0,25 h (retenue) — 1 par luminaire')
-add('F-LOT', 'PRIX DE LOT ÉCLAIRAGE : A1 ×11 (185 $), Axis SL1 4′×12 (290), 3′×15 (230), 1′×6 (110), trousses rangées (1 500), E ×3 (475), Z6 ×3 (161,60)',
-    1, 'lot', 11 * 185 + 12 * 290 + 15 * 230 + 6 * 110 + 1500 + 3 * 475 + 3 * 161.60, 0, '3.35', 'Prix retenus (Gerrie prix réguliers / agents) — confirmés par Frank 2026-10-20')
+add('F-10', 'Chaînes de retenue à la dalle, boîtes de jonction, quincaillerie', 50, 'u', 8.0, 0.25, '3.35', 'Dupuis « PARASIMIC » 10 $ / 0,25 h (retenue) — 1 par luminaire (A1 10 + Axis 32 + Pinnacle 5 + E 3)')
+add('F-LOT', 'PRIX DE LOT ÉCLAIRAGE (ADD E-01) : A1 Cooper ×10 + clips, Axis Slate 7′×11 / 5′×5 / 4′×2 / 3′×14, Pinnacle M ×4 + M1 ×1, transport Axis prépayé',
+    1, 'lot', 42820.79, 0, '3.35', 'SOUMISSION FOURNISSEUR Éclairage Hi-Tech S100946-R1 (2026-10-23, prix d’achat, 30 jours) — courriel Daniel Dupuis 2026-10-22 ; '
+    'EN SUS non chiffrés par Hi-Tech : transport Pinnacle, courtage/dédouanement et tarifs USA (Pinnacle) ; note Cooper « 347 V discontinué »')
+add('F-LOT2', 'PRIX DE LOT ÉCLAIRAGE (hors Hi-Tech) : E ×3 (475 $), Z6 ×3 (161,60 $)', 1, 'lot', 3 * 475 + 3 * 161.60, 0, '3.35',
+    'ALLOCATION (Gerrie prix réguliers / agents, 2026-10-20) — types E et Z6 absents de la soumission Hi-Tech R1 : à confirmer (ADD E-01 non lu)')
 add('B-LOT', 'PRIX DE LOT DISTRIBUTION : panneau NF 225 A 42 cct + 17 disj. 1P-15, 3 disj. 3P, 3 disj. 1P (DDFT/20 A)', 1, 'lot', 6200.0, 0, '3.24',
-    'Schneider NF 225A 42cct 3 400 $ + EDB 1P 95 $ ×20 + EJB 3P 300 $ ×3 — confirmé par Frank 2026-10-20')
+    'ALLOCATION (Schneider NF 225A 42cct ≈ 3 400 $ + EDB 1P ≈ 95 $ ×20 + EJB 3P ≈ 300 $ ×3) — montant retenu par Frank 2026-10-20, aucune soumission Guillevin/Electrimat reçue')
 
 # --- G ALARME INCENDIE ---
 add('G-01', 'Détecteurs de fumée adressables + base (fournis JCI) — pose', 2, 'u', 0, 0.5, '3.36', 'Dupuis « DETECTEUR A FUMEE » 0,5 h')
-add('G-01b', 'Détecteurs Simplex 4098-9714 + base (fourniture JCI)', 2, 'u', 300.0, 0, '3.36', 'Détecteurs JCI — confirmé par Frank 2026-10-20')
+add('G-01b', 'Détecteurs Simplex 4098-9714 + base (fourniture JCI)', 2, 'u', 300.0, 0, '3.36', 'ALLOCATION — montant retenu par Frank 2026-10-20, aucune soumission JCI reçue')
 add('G-02', 'Conduit EMT 3/4" boucle AI + câble FA 16/2', 30 * PI, 'pi', 1.4097 + 0.41, 0.056 + 0.028, '3.36', 'Dupuis conduit vide 3/4 1,4097 $/pi (dernier) + fil alarme 16 AWG 0,41 $/pi, 0,028 h/pi')
 add('G-04', 'Relocalisation annonciateur Simplex', 1, 'u', 0, 8.0, '3.37', 'Dupuis « RELO PANN ANNOCIATEUR » 8 h')
 add('G-05', 'Démontage / protection / réinstallation dispositifs AI existants (zones touchées)', 1, 'lot', 0, 12.0, '3.37', 'jugement (Estimation_2)')
 add('G-06', 'Assistance électricien programmation / vérification ULC-S537', 1, 'lot', 0, 8.0, '3.38', 'jugement (Estimation_2)')
-add('G-07', 'Services JCI/Simplex : bypass, programmation 4007ES, annonciateur, vérification partielle + certificat', 1, 'lot', 7400.0, 0, '3.38', 'Services JCI — confirmé par Frank 2026-10-20')
+add('G-07', 'Services JCI/Simplex : bypass, programmation 4007ES, annonciateur, vérification partielle + certificat', 1, 'lot', 7400.0, 0, '3.38', 'ALLOCATION — montant retenu par Frank 2026-10-20 ; prix JCI demandé par Jo le 2026-10-08, aucune soumission reçue')
 
 # --- H FRAIS DE CHANTIER (Dupuis : nacelle/plateforme au lot, sinon heures de jugement) ---
 add('H-01', 'Mobilisation / démobilisation, plateforme roulante', 1, 'lot', 1250.0, 16.0, '3.31', 'Dupuis « NACELLE » 1 250 $ / 16 h (dernier, S-1811 2026-07-14)')
@@ -115,16 +119,47 @@ for x in L:
     by_art[x['art']][0] += x['q'] * x['p']
     by_art[x['art']][1] += x['q'] * x['h']
 scale = mo / (hrs * TAUX)   # effet de l'arrondi des heures chargées réparti au prorata
-out = {'taux': TAUX, 'materiel': round(mat, 2), 'heures_relevees': round(hrs, 3), 'heures_chargees': hrs_ch, 'main_doeuvre': round(mo, 2),
-       'total_acceo': round(total_acceo, 2), 'lignes': L,
+FACTEUR = 1.244             # passage sommaire ACCEO → prix remis (S-1844 : 238 744 / 191 909,19)
+DATE = '2026-10-26'
+# Lots fournisseur tels qu'ils figurent dans L (repris par build_xlsx.py, section 3 du Sommaire)
+LOTS = {'F-LOT': ('Luminaires ADD E-01 : A1 Cooper ×10, Axis Slate ×32, Pinnacle M/M1 ×5', 'SOUMISSION Hi-Tech S100946-R1 (2026-10-23), 30 j ; douanes/transport Pinnacle en sus'),
+        'F-LOT2': ('Luminaires E ×3 (475 $) et Z6 ×3 (161,60 $)', 'ALLOCATION Gerrie/agents — absents de Hi-Tech R1, à confirmer'),
+        'B-LOT': ('Panneau NF 225 A 42 cct + disjoncteurs EDB/EJB', 'ALLOCATION — retenue par Frank 2026-10-20, aucune soumission Guillevin/Electrimat'),
+        'G-07': ('Services JCI/Simplex (bypass, 4007ES, annonciateur, ULC-S537)', 'ALLOCATION — retenue par Frank 2026-10-20, prix JCI demandé par Jo 2026-10-08'),
+        'G-01b': ('2 détecteurs Simplex 4098-9714 + bases (JCI)', 'ALLOCATION — retenue par Frank 2026-10-20'),
+        'D-19': ('Scan GPR de la dalle', 'Dupuis « SCAN DALLE BETON » 1 250 $')}
+lots = [(LOTS[x['code']][0], round(x['q'] * x['p'], 2), LOTS[x['code']][1]) for x in L if x['code'] in LOTS]
+historique = [('Estimation_2 — Léna AI, 2026-10-08', 112381.39, '719,5 h × 124 $ + Lumen 23 160 $ ; sans FG, profit ni sous-traitance'),
+              ('v2 — 2026-10-20 (midi)', 158296, '745 h × 113,50 $ pondéré + matériel + allocations'),
+              ('v3 — méthode Dupuis, médianes conduits', 183000, '990 h ; conduits aux valeurs médianes du catalogue'),
+              ('v4 — méthode Dupuis, dernières valeurs du catalogue', 194000, '1 050 h ; luminaires 11 893 $ (allocation Gerrie/agents)'),
+              ('v5 — ADD E-01, lot éclairage Hi-Tech R1 (ce classeur)', None, '42 820,79 $ fermes (30 jours) ; E/Z6, NF et JCI toujours en allocation')]
+out = {'taux': TAUX, 'facteur': FACTEUR, 'date': DATE, 'materiel': round(mat, 2), 'heures_relevees': round(hrs, 3), 'heures_chargees': hrs_ch, 'main_doeuvre': round(mo, 2),
+       'total_acceo': round(total_acceo, 2), 'prix_calcule': round(total_acceo * FACTEUR), 'lignes': L, 'lots': lots, 'historique': historique,
        'par_article': {a: {'materiel': round(v[0], 2), 'heures': round(v[1], 2), 'mo': round(v[1] * TAUX * scale, 2), 'total': round(v[0] + v[1] * TAUX * scale, 2)} for a, v in sorted(by_art.items())}}
-import os
-json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'chiffrage_dupuis.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+import os, sys
+HERE = os.path.dirname(os.path.abspath(__file__))
+json.dump(out, open(os.path.join(HERE, 'chiffrage_dupuis.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(f"Matériel (vendant Dupuis + lots) : {mat:,.2f} $")
 print(f"Heures relevées : {hrs:,.2f} h  → chargées : {hrs_ch} h × {TAUX} $ = {mo:,.2f} $")
 print(f"TOTAL ACCEO (style sommaire Dupuis) : {total_acceo:,.2f} $   part MO {mo/total_acceo:.1%}")
-for k in (1.20, 1.244, 1.30, 1.35):
+for k in (1.20, FACTEUR, 1.30, 1.35):
     print(f"  × {k:.3f} (passage au prix de vente, réf. S-1844) = {total_acceo*k:,.0f} $")
 print("\nPar article :")
 for a, v in sorted(by_art.items()):
     print(f"  {a}: mat {v[0]:9,.0f} $  h {v[1]:7.1f}  total {v[0] + v[1]*TAUX*scale:9,.0f} $")
+
+if '--ventiler' in sys.argv:
+    # Réécrit la ventilation de soumission.json : total article × FACTEUR arrondi au dollar ; prix soumis = total ACCEO × FACTEUR
+    # arrondi au millier ; l'article 3.31 absorbe l'écart d'arrondi. Le prix forfaitaire du PDF = Σ ventilation (gen_soumission.py).
+    sp = os.path.join(HERE, 'soumission.json')
+    S = json.load(open(sp, encoding='utf-8'))
+    prix_soumis = int(round(total_acceo * FACTEUR / 1000.0) * 1000)
+    vent = {a: int(round(out['par_article'][a]['total'] * FACTEUR)) for a in out['par_article']}
+    vent['3.31'] += prix_soumis - sum(vent.values())
+    for row in S['ventilation']:
+        row[2] = vent[row[0]]
+    assert sum(r[2] for r in S['ventilation']) == prix_soumis, 'ventilation ≠ prix soumis'
+    assert set(r[0] for r in S['ventilation']) == set(vent), 'articles de la ventilation ≠ articles du chiffrage'
+    json.dump(S, open(sp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print(f"\nVentilation réécrite dans soumission.json : prix soumis {prix_soumis:,} $ (= Σ {len(vent)} articles), 3.31 ajusté de {prix_soumis - sum(int(round(out['par_article'][a]['total'] * FACTEUR)) for a in out['par_article'])} $")
