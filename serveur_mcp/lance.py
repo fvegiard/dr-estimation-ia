@@ -23,7 +23,9 @@ def lance(argv: list[str] | None = None) -> int:
     from .serveur import application_http
     import uvicorn
 
-    uvicorn.run(application_http(a.hote, a.hote_permis), host=a.hote, port=a.port)
+    # Les anciens connecteurs peuvent encore envoyer la clé dans la query
+    # string; le journal d'accès Uvicorn recopierait cette URL telle quelle.
+    uvicorn.run(application_http(a.hote, a.hote_permis), host=a.hote, port=a.port, access_log=False)
     return 0
 
 

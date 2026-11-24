@@ -13,3 +13,19 @@ sh /home/fvdev-ubuntu26/work/dr-estimation-ia-container/infra/containers/verify.
 ```
 
 La première commande nécessite un fournisseur Compose. Le script ne démarre ni ne recrée aucun conteneur. Les modes `dev` et `work` vérifient la CLI, les dépendances, le transport stdio et Git. Le mode `server` échoue si l’endpoint local ne répond pas comme attendu. `all` exécute les trois contrôles et échoue si l’un d’eux échoue.
+
+## Rotation du bearer du service sur le poste
+
+`rotation_bearer.py` migre l'ancien conteneur `expert-estimateur-svc` d'une variable d'environnement
+en clair dans sa configuration vers un secret Podman injecté au démarrage. Sans `--appliquer`, il
+n'effectue que l'essai isolé. Il exige l'ancien déploiement (nom, port et volume `estim` attendus)
+et le pré-vol `expert-estimateur-mcp` enregistré dans Legion. L'exécution avec `--appliquer`
+préserve le digest d'image et le volume, vérifie le nouveau bearer (initialisation MCP : 200),
+ainsi que les refus sans bearer et avec l'ancien (401). Ne pas restaurer l'ancien secret après
+une rotation réussie ; un retour d'image réutilise le **nouveau** secret.
+
+Pour remettre en service un client distant, configurer `Authorization: Bearer` via son coffre
+ou le canal sécurisé de l'équipe, puis vérifier `initialize`. Ne pas coller la valeur dans un
+ticket, un message, un paramètre de commande ou un journal. Si le client impose une clé en URL,
+ne l'activer qu'après avoir vérifié que **chaque** proxy et serveur désactive ou masque la query
+string dans ses logs. La rotation seule ne reconfigure pas les clients ni les anciens liens signés.

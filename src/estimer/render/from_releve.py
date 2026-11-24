@@ -541,7 +541,7 @@ def build(work: Path, out: Path, ancrage: bool = True, projet: str = "") -> dict
                               "prescription": prescription, "parent": parent, "reserve": reserve,
                               "ref": ascii_text(_cell(n, "source")), "code": code, "format": fmt, "note": ascii_text(reserve_motif(o))})
 
-    plans.save(str(out / "plans.pdf"), garbage=3, deflate=True)
+    plans.save(str(out / "plans.pdf"), garbage=3, deflate=True, no_new_id=True)
     est = {"source": "releve", "workdir": str(work), "sheets": sheets_json,
            "counters": [{"family": label, "name": label, "elements": els} for label, els in sorted(counters.items())]}
     if projet:

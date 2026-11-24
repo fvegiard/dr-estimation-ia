@@ -135,6 +135,8 @@ def motif_par_chemin(relatif: Path) -> str | None:
         return "qpl-dupuis"
     if any(normaliser(part) == "reference" for part in relatif.parts[:-1]):
         return "dossier-reference"
+    if any(normaliser(part) == "estimateur" for part in relatif.parts[:-1]):
+        return "dossier-estimateur"
     for mot in MOTS_NOM:
         if mot in nom_norm:
             return f"nom-{mot}"
@@ -170,7 +172,7 @@ def motif_par_contenu(path: Path) -> str | None:
 # Contrôle et rapport
 # --------------------------------------------------------------------- #
 
-def controler(workdir) -> RapportAveugle:
+def controler(workdir, *, ecrire=True) -> RapportAveugle:
     """Scan récursif du dossier de travail, détection de toute référence
     estimateur, écriture de `controle-aveugle.json` dans le dossier."""
     dossier = Path(workdir)
@@ -179,7 +181,7 @@ def controler(workdir) -> RapportAveugle:
     rapport = RapportAveugle(date=date.today().isoformat())
     for path in sorted(p for p in dossier.rglob("*") if p.is_file()):
         relatif = path.relative_to(dossier)
-        if relatif.name == NOM_RAPPORT:
+        if relatif.as_posix() in {NOM_RAPPORT, "gel.json"}:
             continue
         rapport.fichiers_scannes += 1
         motif = motif_par_chemin(relatif) or motif_par_contenu(path)
@@ -187,7 +189,8 @@ def controler(workdir) -> RapportAveugle:
             rapport.references_detectees.append(
                 ReferenceDetectee(fichier=relatif.as_posix(), motif=motif)
             )
-    ecrire_rapport(rapport, dossier)
+    if ecrire:
+        ecrire_rapport(rapport, dossier)
     return rapport
 
 

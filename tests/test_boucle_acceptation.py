@@ -262,7 +262,7 @@ def test_dossier_rempli_relanche_pret(tmp_path):
     justif = f["dossier"] / "justifications.md"
     rempli = justif.read_text(encoding="utf-8").replace(
         "|  |  |",
-        "| plan PLANS-TEST - 1 (zoom ×8) : aucun appareil vu | estimateur correct |")
+        "| plan PLANS-TEST - 1 (zoom ×8) : aucun appareil vu | IA correcte |")
     justif.write_text(rempli, encoding="utf-8")
     rapport = boucle.executer("S-TEST", f["workdir"], f["dossier"])
     assert rapport.verdict == boucle.VERDICT_PRET
@@ -272,6 +272,16 @@ def test_dossier_rempli_relanche_pret(tmp_path):
     assert "**Verdict : PRÊT POUR DÉCISION FRANCIS**" in texte
 
 
+@pytest.mark.parametrize("decision", ["estimateur correct", "ambigu → réserve"])
+def test_justification_ne_corrige_pas_le_releve(tmp_path, decision):
+    f = _fabriquer(tmp_path)
+    boucle.executer("S-TEST", f["workdir"], f["dossier"])
+    path = f["dossier"] / "justifications.md"
+    path.write_text(path.read_text(encoding="utf-8").replace(
+        "|  |  |", f"| Témoin sur le plan E101 p.1, (240, 420) | {decision} |"), encoding="utf-8")
+    assert boucle.executer("S-TEST", f["workdir"], f["dossier"]).verdict == boucle.VERDICT_JUSTIF
+
+
 def test_verdict_acceptation_lecture_seule(tmp_path):
     """verdict_acceptation : lit le verdict d'ACCEPTATION.md, None si absent —
     lecture seule (utilisé par le jeu de référence)."""
@@ -279,6 +289,25 @@ def test_verdict_acceptation_lecture_seule(tmp_path):
     assert boucle.verdict_acceptation(f["dossier"]) is None
     boucle.executer("S-TEST", f["workdir"], f["dossier"])
     assert boucle.verdict_acceptation(f["dossier"]) == boucle.VERDICT_JUSTIF
+
+
+def test_comparaison_dans_sortie_distincte_ne_modifie_pas_historique(tmp_path):
+    f = _fabriquer(tmp_path)
+    historique = f["dossier"] / "ACCEPTATION.md"
+    historique.write_text("Historique à conserver.\n", encoding="utf-8")
+    destination = tmp_path / "OUTBOX" / "acceptation"
+    rapport = boucle.executer("S-TEST", f["workdir"], f["dossier"], sortie=destination)
+    assert historique.read_text(encoding="utf-8") == "Historique à conserver.\n"
+    assert not (f["dossier"] / "comparaison-dupuis-qpl").exists()
+    assert rapport.verdict == boucle.verdict_acceptation(destination) == boucle.VERDICT_JUSTIF
+    assert (destination / "comparaison-dupuis-qpl" / "ecarts-classes.csv").is_file()
+    assert (destination / "justifications.md").is_file()
+
+
+def test_sortie_comparaison_interdite_dans_travail(tmp_path):
+    f = _fabriquer(tmp_path)
+    with pytest.raises(boucle.BoucleErreur, match="hors du dossier aveugle"):
+        boucle.executer("S-TEST", f["workdir"], f["dossier"], sortie=f["workdir"] / "comparaison")
 
 
 def test_cli_boucle(tmp_path):

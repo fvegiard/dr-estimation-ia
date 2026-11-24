@@ -28,6 +28,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
@@ -43,8 +44,18 @@ ARTEFACTS_NOMMES = (
     "occurrences-texte.csv",
     "occurrences-visuel.csv",
     "feuilles-classement.csv",
+    "feuilles.csv",
+    "inventaire.json",
+    "legende.csv",
+    "contexte-candidats.csv",
+    "multiplicateurs.csv",
+    "metre-longueurs.csv",
+    "metre-longueurs.json",
+    "qualite.json",
     "reserves.md",
 )
+ARTEFACTS_STRICTS = ("blocs-a-etiqueter.json", "blocs-non-relevees.json", "ancrage-raster.json",
+                     "comparaison-legende.json", "rapport-releve.md")
 
 
 class GelError(Exception):
@@ -87,7 +98,7 @@ def _sha256(path: Path) -> str:
     return h.hexdigest()
 
 
-def _candidats(workdir: Path) -> dict[str, Path]:
+def _candidats(workdir: Path, *, strict: bool) -> dict[str, Path]:
     """Artefacts du relevé IA présents -> {chemin relatif POSIX : chemin}.
     Artefacts nommés à la racine + tout `.qpl` produit dans l'arbre."""
     actuels: dict[str, Path] = {}
@@ -95,6 +106,10 @@ def _candidats(workdir: Path) -> dict[str, Path]:
         p = workdir / nom
         if p.is_file():
             actuels[nom] = p
+    if strict:
+        for nom in ARTEFACTS_STRICTS:
+            if (p := workdir / nom).is_file():
+                actuels[nom] = p
     for p in sorted(workdir.rglob("*.qpl")):
         if p.is_file():
             actuels[p.relative_to(workdir).as_posix()] = p
@@ -109,6 +124,47 @@ def _deriver_soumission(workdir: Path) -> str:
     return workdir.name
 
 
+def _sources(workdir):
+    """Inventaire de la préparation stricte : contrôler également les PDF qu'il désigne."""
+    p = workdir / "inventaire.json"
+    if not p.is_file():
+        return None, {}
+    try:
+        j = json.loads(p.read_text(encoding="utf-8"))
+        if not j.get("plans_seuls"):
+            return None, {}
+        racine = Path(j["inbox"])
+        if not racine.is_absolute() or not j["fichiers"]:
+            raise ValueError("racine absolue et PDF attendus")
+        attendus = {}
+        for e in j["fichiers"]:
+            nom, h = e["fichier"], e["sha256"]
+            rel = Path(nom)
+            if (rel.is_absolute() or ".." in rel.parts or rel.suffix.lower() != ".pdf" or nom in attendus or
+                    not re.fullmatch(r"[0-9a-f]{64}", h) or e["classement"] not in {"plans", "addenda", "scan"}):
+                raise ValueError("chemin, classement ou SHA-256 invalides")
+            attendus[nom] = h
+        return racine, attendus
+    except (OSError, ValueError, AttributeError, KeyError, TypeError) as e:
+        raise GelError(f"inventaire.json : sources invérifiables ({e})") from e
+
+
+def verifier_sources(workdir, rapport):
+    racine, attendus = _sources(workdir)
+    if racine is None:
+        return
+    for nom, h in attendus.items():
+        p = racine / nom
+        trace = "INBOX/" + nom
+        if not p.is_file():
+            rapport.manquants.append(trace)
+        elif p.is_symlink() or not p.resolve().is_relative_to(racine.resolve()) or _sha256(p) != h:
+            rapport.modifies.append(trace)
+    for p in sorted(q for q in racine.rglob("*") if q.is_file()):
+        if p.relative_to(racine).as_posix() not in attendus:
+            rapport.modifies.append(f"INBOX/{p.relative_to(racine).as_posix()} (nouvelle entrée)")
+
+
 # --------------------------------------------------------------------- #
 # Gel / vérification
 # --------------------------------------------------------------------- #
@@ -119,12 +175,16 @@ def geler(workdir: Path | str, *, soumission: str | None = None) -> Path:
     workdir = Path(workdir)
     if not workdir.is_dir():
         raise GelError(f"dossier de travail introuvable : {workdir}")
-    actuels = _candidats(workdir)
+    actuels = _candidats(workdir, strict=_sources(workdir)[0] is not None)
     if not actuels:
         raise GelError(
             f"aucun artefact du relevé IA à geler dans {workdir} "
             f"(cherché : {', '.join(ARTEFACTS_NOMMES)}, *.qpl)"
         )
+    controle = RapportGel(ok=True)
+    verifier_sources(workdir, controle)
+    if controle.modifies or controle.manquants:
+        raise GelError("Les PDF ne correspondent plus à l'inventaire de la préparation")
     gel = {
         "date": datetime.now().astimezone().isoformat(timespec="seconds"),
         "soumission": soumission or _deriver_soumission(workdir),
@@ -140,7 +200,11 @@ def geler(workdir: Path | str, *, soumission: str | None = None) -> Path:
         ],
     }
     chemin = workdir / NOM_GEL
-    chemin.write_text(json.dumps(gel, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    try:
+        with chemin.open("x", encoding="utf-8") as flux:
+            flux.write(json.dumps(gel, indent=1, ensure_ascii=False) + "\n")
+    except FileExistsError as e:
+        raise GelError("gel déjà présent : vérifiez-le ou utilisez un dossier de travail neuf") from e
     return chemin
 
 
@@ -153,8 +217,16 @@ def lire_gel(workdir: Path | str) -> dict:
         gel = json.loads(chemin.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError) as exc:
         raise GelError(f"{chemin} illisible : {exc}") from exc
-    if not isinstance(gel, dict) or not isinstance(gel.get("artefacts"), list):
+    if not isinstance(gel, dict) or not isinstance(gel.get("artefacts"), list) or not gel["artefacts"]:
         raise GelError(f"{chemin} mal formé : « artefacts » (liste) introuvable")
+    vus = set()
+    for a in gel["artefacts"]:
+        if (not isinstance(a, dict) or not isinstance(a.get("fichier"), str) or not a["fichier"]
+                or Path(a["fichier"]).is_absolute() or a["fichier"] in vus
+                or not isinstance(a.get("sha256"), str) or not re.fullmatch(r"[0-9a-f]{64}", a["sha256"])
+                or not isinstance(a.get("octets"), int) or a["octets"] < 0):
+            raise GelError(f"{chemin} mal formé : artefact dupliqué ou invalide")
+        vus.add(a["fichier"])
     return gel
 
 
@@ -181,9 +253,13 @@ def verifier_gel(workdir: Path | str) -> RapportGel:
             continue
         if _sha256(p) != info.get("sha256"):
             rapport.modifies.append(rel)
-    for rel in sorted(_candidats(workdir)):
+    inventaire_intact = "inventaire.json" not in rapport.modifies and "inventaire.json" not in rapport.manquants
+    strict = inventaire_intact and _sources(workdir)[0] is not None
+    for rel in sorted(_candidats(workdir, strict=strict)):
         if rel not in gelés:
             rapport.ajoutes_apres_gel.append(rel)
+    if strict:
+        verifier_sources(workdir, rapport)
     rapport.ok = not (rapport.modifies or rapport.manquants)
     return rapport
 

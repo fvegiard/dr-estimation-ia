@@ -37,20 +37,27 @@ spec unique [`docs/FORMAT-EXEMPLE.md`](FORMAT-EXEMPLE.md).
 ## CLI
 
 ```bash
-python -m src.validation.boucle_acceptation <S> --workdir W --dossier D
+RELEVE_BASE=/chemin/passe-isolee uv run releve/run.py --aveugle /chemin/INBOX/<S>
+python -m src.validation.boucle_acceptation <S> --workdir W --qpl-ia Q --dossier D --sortie A
 ```
 
 - `<S>` — nom de la soumission (ex. `S-1844`) ;
 - `--workdir W` — dossier de travail du relevé IA (`OUTBOX/<S>/travail` : nomenclature,
   occurrences, feuilles-classement, réserves, `.qpl` IA) ;
 - `--dossier D` — dossier de la soumission dans le dépôt (`dossiers/<S>` : `reference/`
-  et sorties).
+  pour la référence). Sans `--sortie`, la comparaison et les justifications sont écrites dans `D`.
+- `--sortie A` — dossier séparé pour la comparaison et les justifications. Le lanceur standard enregistre
+  ces résultats dans le sous-dossier `acceptation/` de la passe, sans modifier les comparaisons historiques.
+- `--qpl-ia Q` — chemin du projet produit par **la passe courante**. Avec `--gel-seul`,
+  aucun dossier `D` n'est nécessaire et aucune référence n'est ouverte.
+- Une reprise modifiant le relevé se fait dans un nouveau dossier : le lanceur refuse
+  d'écraser un relevé déjà gelé. La comparaison revérifie le scan sans réécrire son rapport initial.
 
 La dernière ligne de la sortie est `VERDICT : …` (machine-lisible). Codes de sortie :
 
 | Code | Signification |
 |---|---|
-| 0 | `PRÊT POUR DÉCISION FRANCIS` ou `VÉRIFICATION INCOMPLÈTE` — rien à corriger dans le relevé |
+| 0 | `PRÊT POUR DÉCISION FRANCIS` ou `VÉRIFICATION INCOMPLÈTE` (code informatif ; lire le verdict) |
 | 1 | `INVALIDE` ou `JUSTIFICATIONS REQUISES` — boucle bloquée avant la décision |
 | 2 | Erreur d'entrée (workdir/dossier introuvable, gel illisible) |
 
@@ -71,8 +78,8 @@ La dernière ligne de la sortie est `VERDICT : …` (machine-lisible). Codes de 
 |---|---|---|
 | `INVALIDE` | Relevé non aveugle (étape 1) ou **gel violé** (étape 2) : les désaccords mesurés ne sont plus ceux du relevé d'aveugle. | 1 |
 | `VÉRIFICATION INCOMPLÈTE` | Référence de l'estimateur absente, incomplète, illisible — ou comparaison en échec : rien n'est prouvé dans un sens ni dans l'autre (étape 8). | 0 |
-| `JUSTIFICATIONS REQUISES` | Comparaison faite, désaccords classés, dossier de justification non entièrement tranché : preuve sur le plan exigée pour chaque ligne. | 1 |
-| `PRÊT POUR DÉCISION FRANCIS` | Vérification complète : aveugle, gel intact, comparaison faite, aucun désaccord non tranché. La décision **finale** reste à Francis — ce verdict ouvre la décision, il ne la remplace pas. | 0 |
+| `JUSTIFICATIONS REQUISES` | Comparaison faite, mais désaccords, corrections, ambiguïtés, contrôle qualité ou anomalies de recalage encore ouverts. | 1 |
+| `PRÊT POUR DÉCISION FRANCIS` | Vérification complète de la **comparaison de repères**, pas une attestation de chiffrage ou une autorisation d'envoi. La décision finale reste à Francis. | 0 |
 
 Le gel couvre aussi le `.qpl` IA quand il vit hors du workdir (dossier assemblé
 `dossiers/<S>/planexpert/<S>.qpl`) : son empreinte sha256 rejoint `gel.json` avant la
@@ -94,20 +101,12 @@ consigne ce classement dans `inventaire.json` (scanné, contenu → « contenu-e
 PDF d'entrée porte « dupuis »/« estimateur »/« releve »/« plan expert »,
 `estimateur/pages.csv` est détecté lui aussi (« contenu-dupuis »…).
 
-Limite résiduelle, à fermer dans une bead dédiée : du matériau de l'estimateur placé
-sous un sous-dossier `estimateur/` du workdir **sans** passer par `prepare.py` (copié
-après préparation, ou toute autre voie hors pipeline) n'est pas détecté quand noms et
-contenus sont neutres — `estimateur/pNN.png` et `estimateur/legendes/*.png` sont des
-PNG binaires (balayage de contenu sauté), « pNN.png » ne contient aucun mot du
-contrôle, et `estimateur/pages.csv` n'est détecté que par sa seule signature de contenu.
-La correction suit la même logique que la règle du dossier `reference/` : tout fichier
-sous `estimateur/` est du matériau de l'estimateur (`prepare.py` n'y écrit jamais
-rien d'autre) et devrait être détecté, ce qui exigera d'ajuster en sus le fixture
-`tests/test_aveugle.py::_creer_travail_ia_propre` (qui place aujourd'hui
-`estimateur/pages.csv` dans un travail « propre », contrepied de ce que
-`prepare.py` écrit réellement dans ce sous-dossier). En attendant, le contrôle
-d'aveugle constate l'état du dossier : ne jamais le citer seul comme preuve de
-discipline.
+Tout fichier sous `estimateur/` ou `reference/` dans `travail/` est refusé, même
+s'il est binaire et porte un nom neutre. Le pré-vol `--aveugle` refuse aussi avant
+préparation le PDF explicitement marqué comme relevé. Il n'authentifie pas pour
+autant l'origine d'un scan anonyme : conserver la provenance et les empreintes.
+Le gel strict revérifie le jeu de PDF depuis `inventaire.json`, y compris un ajout,
+un remplacement ou une suppression postérieurs au gel.
 
 ## Exemple minimal
 
@@ -121,14 +120,16 @@ python -m src.validation.boucle_acceptation S-1844 \
 # → VERDICT : JUSTIFICATIONS REQUISES            # exit 1
 ```
 
-Une fois `justifications.md` rempli (preuve + verdict pour chaque ligne), relancer la même
-commande : le dossier rempli n'est jamais écrasé, et une vérification entièrement tranchée
-donne `VERDICT : PRÊT POUR DÉCISION FRANCIS` (exit 0).
+Relancer la comparaison après avoir rempli `justifications.md` ; ce fichier n'est pas
+écrasé. « estimateur correct » demande une correction réelle et un nouveau contrôle,
+« ambigu → réserve » reste bloquant, même si toutes les cases sont remplies. Ne pas
+présenter une révision faite après ouverture de la référence comme une nouvelle passe aveugle.
 
 ## Intégrations et tests
 
 - `releve/run.py` lance la boucle à la fin du parcours canonique (verdict consigné dans
-  `STATUT.md`, jamais bloquant — `VÉRIFICATION INCOMPLÈTE` si la référence manque).
+  `STATUT.md`, `VÉRIFICATION INCOMPLÈTE` si la référence manque). Le chiffrage de travail est
+  écrit dans `chiffrage-interne/` et n'est pas copié sur le miroir Drive.
 - `python -m src.validation.jeu_reference` affiche le verdict de chaque `ACCEPTATION.md`
   en section informative (lecture seule, jamais pass/fail).
 - `tests/test_boucle_acceptation_e2e.py` rejoue la boucle **par son CLI** (subprocess,

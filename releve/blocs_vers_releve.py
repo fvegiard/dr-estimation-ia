@@ -103,6 +103,14 @@ def main():
     a = ap.parse_args()
     work = os.path.abspath(a.workdir)
     feuilles = {r["feuille"]: r for r in csv.DictReader(open(os.path.join(work, "feuilles.csv"), encoding="utf-8"))}
+    # Pilote à activer explicitement : ne pas écraser les relevés manuels ou
+    # les sorties plus complètes d'une autre route sur une même soumission.
+    if os.environ.get("RELEVE_PROFIL_S1844") == "1":
+        from profil_s1844 import appliquer
+
+        if not appliquer(work, feuilles, classer_feuille):
+            raise ValueError("Le profil pilote S-1844 exige les 12 feuilles du PDF source vérifié")
+        return
     index = {r["sig_id"]: r["signature"] for r in csv.DictReader(open(os.path.join(work, "blocs-index.csv"), encoding="utf-8"))}
     fam_rows = list(csv.DictReader(open(os.path.join(work, "blocs-familles.csv"), encoding="utf-8")))
     par_sig = defaultdict(list)

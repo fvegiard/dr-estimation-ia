@@ -1,0 +1,22 @@
+{
+ "conforme": false,
+ "erreurs": [
+  "Q1 feuille plan sans aucune occurrence : E001",
+  "Q1 feuille plan sans aucune occurrence : E002",
+  "Q1 feuille plan sans aucune occurrence : E003",
+  "Q1 feuille plan sans aucune occurrence : E101",
+  "Q1 feuille plan sans aucune occurrence : E201",
+  "Q1 feuille plan sans aucune occurrence : E301",
+  "Q1 feuille plan sans aucune occurrence : E102",
+  "Q1 feuille plan sans aucune occurrence : T000",
+  "Q1 feuille plan sans aucune occurrence : T001",
+  "Q1 feuille plan sans aucune occurrence : T100",
+  "Q1 feuille plan sans aucune occurrence : T101",
+  "Q1 feuille plan sans aucune occurrence : T201"
+ ],
+ "avertissements": [],
+ "occurrences": 0,
+ "reperes_lus": 0,
+ "comparaison_reference": null,
+ "grilles_suspectes": {}
+}

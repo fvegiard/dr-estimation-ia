@@ -155,6 +155,36 @@ def test_workdir_vide_gel_error(tmp_path):
         geler(w)
 
 
+def test_inbox_stricte_verifie_le_pdf_en_plus_de_son_inventaire(tmp_path):
+    from hashlib import sha256
+
+    w = _workdir(tmp_path)
+    inbox = tmp_path / "INBOX"
+    inbox.mkdir()
+    source = inbox / "plans.pdf"
+    source.write_bytes(b"%PDF-1.4\nplans sources")
+    (w / "inventaire.json").write_text(json.dumps({"plans_seuls": True, "inbox": str(inbox), "fichiers": [
+        {"fichier": "plans.pdf", "sha256": sha256(source.read_bytes()).hexdigest(), "classement": "plans"}]}), encoding="utf-8")
+    (w / "blocs-a-etiqueter.json").write_text('{"inconnues": [1]}', encoding="utf-8")
+    geler(w)
+    assert verifier_gel(w)
+    source.write_bytes(b"%PDF-1.4\nplan modifie")
+    (w / "blocs-a-etiqueter.json").unlink()
+    assert verifier_gel(w).modifies == ["INBOX/plans.pdf"]
+    assert verifier_gel(w).manquants == ["blocs-a-etiqueter.json"]
+    with pytest.raises(GelError):
+        geler(w)
+
+
+def test_gel_existant_ne_peut_pas_etre_reecrit(tmp_path):
+    w = _workdir(tmp_path)
+    p = geler(w)
+    avant = p.read_bytes()
+    with pytest.raises(GelError, match="gel déjà présent"):
+        geler(w)
+    assert p.read_bytes() == avant
+
+
 def test_workdir_inexistant_gel_error(tmp_path):
     with pytest.raises(GelError):
         geler(tmp_path / "inexistant")

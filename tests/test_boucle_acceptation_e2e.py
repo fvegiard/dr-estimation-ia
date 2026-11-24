@@ -222,7 +222,7 @@ def test_e2e_justifications_tranchees_relance_pret(tmp_path):
     rempli = justif.read_text(encoding="utf-8").replace(
         "|  |  |",
         "| plan PLANS-TEST - 1 (zoom ×8) : le 4e compteur est absent du raster | "
-        "estimateur correct |")
+        "IA correcte |")
     assert rempli != justif.read_text(encoding="utf-8")
     justif.write_text(rempli, encoding="utf-8")
     p2 = _lancer_boucle(f["workdir"], f["dossier"])

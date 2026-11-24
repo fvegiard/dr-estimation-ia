@@ -1,0 +1,36 @@
+{
+  "sha256": "456eecd92a05beef45ae214d65cff804ac410d916c9891caeb9fddf94716b334",
+  "feuille": "E400",
+  "page": 12,
+  "echelle": 48,
+  "texte_echelle": "1/4\":1'-0\"",
+  "zone_echelle": [2470, 53, 2550, 82],
+  "specifications": {
+    "EMT 1-1/4 po": "EMT 1-1/4 po, trait large de la légende",
+    "EMT 3/4 po": "EMT 3/4 po, trait mince de la légende"
+  },
+  "traces": [
+    [60770, "EMT 3/4 po", [[1783.47, 978.84], [1823.85, 978.84]]],
+    [60772, "EMT 3/4 po", [[1955.97, 640.08], [1777.38, 640.08], [1777.38, 972.81]]],
+    [60774, "EMT 3/4 po", [[1777.38, 984.87], [1777.38, 1568.37]]],
+    [60867, "EMT 3/4 po", [[1783.47, 1572.90], [1827.30, 1572.90], [1827.30, 1495.71]]],
+    [60960, "EMT 1-1/4 po", [[1234.47, 1574.40], [1771.41, 1574.40]]],
+    [60962, "EMT 1-1/4 po", [[1777.44, 1580.43], [1777.44, 1959.45]]],
+    [60964, "EMT 1-1/4 po", [[880.11, 1574.40], [1222.41, 1574.40]]],
+    [60967, "EMT 1-1/4 po", [[880.11, 1614.36], [959.52, 1614.36], [959.52, 1903.17]]],
+    [60969, "EMT 3/4 po", [[1783.47, 1575.90], [1914.00, 1575.90], [1914.00, 1655.85]]],
+    [61033, "EMT 3/4 po", [[1113.63, 1679.88], [1228.38, 1679.88], [1228.38, 1580.43]]],
+    [61082, "EMT 3/4 po", [[1086.51, 1949.64], [1477.44, 1949.64], [1477.44, 1974.45]]],
+    [61150, "EMT 3/4 po", [[1033.95, 2032.14], [1438.44, 2032.14], [1438.44, 2056.89]]],
+    [61334, "EMT 1-1/4 po", [[1228.44, 1136.55], [1228.44, 1568.37]]],
+    [61336, "EMT 1-1/4 po", [[1228.44, 789.63], [1228.44, 1124.49]]],
+    [61415, "EMT 3/4 po", [[983.31, 643.08], [1228.38, 643.08], [1228.38, 777.57]]],
+    [61463, "EMT 3/4 po", [[1113.63, 783.54], [1222.41, 783.54]]],
+    [61511, "EMT 3/4 po", [[1113.63, 1130.46], [1222.41, 1130.46]]]
+  ],
+  "reserves": [
+    "E400 : seuls les axes horizontaux des 17 tracés continus retenus sont métrés. Interruptions aux boîtes et raccordements non extrapolés.",
+    "E400 : descentes, traversées et choix 1/2 po ou 3/4 po aux terminaisons à arbitrer selon les notes. Aucun câble ni conducteur déduit du conduit.",
+    "Autres feuilles : aucun parcours complet et aucune règle de réserve de tirage validés. Les longueurs et heures non établies restent non chiffrables. Mesures natives Plan Expert à contre-vérifier."
+  ]
+}

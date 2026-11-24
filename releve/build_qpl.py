@@ -11,6 +11,7 @@ Format XML observé sur les fichiers natifs Plan Expert 3.0.17 (voir HANDOFF §3
   Couleurs = ARGB signé 32 bits ; pixels = points PDF × largeur_raster / largeur_page_pt ; Element X,Y = coin haut-gauche.
 """
 import os, sys, shutil, uuid, json, datetime, collections
+from pathlib import Path
 from xml.sax.saxutils import escape
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from commun import load_nomenclature, load_occurrences, load_feuilles, argb, sha256
@@ -51,7 +52,18 @@ def main(work, name, out_dir):
     for o in occ:
         by_sheet[o["feuille"]][o["label"]].append(o)
     order = sorted(feuilles, key=lambda f: (feuilles[f].get("type") != "plan", f))
-    today = datetime.date.today()
+    inv = Path(work) / "inventaire.json"
+    ident = ":".join(sorted(e["sha256"] for e in json.loads(inv.read_text(encoding="utf-8"))["fichiers"])) if inv.is_file() else name
+    # La date de génération est configurable pour un rejeu octet à octet.
+    today = datetime.date.fromisoformat(os.environ["RELEVE_DATE"]) if os.environ.get("RELEVE_DATE") else datetime.date.today()
+    longueurs = Path(work) / "metre-longueurs.json"
+    lignes = collections.defaultdict(list)
+    if longueurs.is_file():
+        for r in json.loads(longueurs.read_text(encoding="utf-8"))["lignes"]:
+            if r["feuille"] not in feuilles:
+                raise ValueError(f"Métré : feuille {r['feuille']} introuvable")
+            lignes[r["feuille"]].append(r)
+    prochain_gid = len(gid) + 1
     L = ['﻿<?xml version="1.0"?>', "<QuoterPlanSession>", f'\t<Project Name="{q(name)}">', "\t\t<Description/>", "\t\t<ContactName/>",
          "\t\t<ContactInfo/>", "\t\t<JobNumber/>", "\t\t<Comment/>",
          f"\t\t<CreationDate>{today.year}/{today.month}/{today.day}</CreationDate>", f"\t\t<LastModified>{today.year}/{today.month}/{today.day}</LastModified>",
@@ -63,7 +75,7 @@ def main(work, name, out_dir):
         L.append(f'\t\t\t<Plan Name="{q(feuilles[f]["nom"])}"/>')
     L += ["\t\t</RecentPlans>", "\t</Workspace>", "\t<Plans>"]
     stats = {}
-    missing_rasters = [f for f in order if by_sheet.get(f) and not os.path.exists(os.path.join(work, "rasters", f + ".png"))]
+    missing_rasters = [f for f in order if (by_sheet.get(f) or lignes.get(f)) and not os.path.exists(os.path.join(work, "rasters", f + ".png"))]
     if missing_rasters:
         sys.exit("rasters absents pour feuilles marquées : " + ", ".join(missing_rasters))
     for f in order:
@@ -71,12 +83,19 @@ def main(work, name, out_dir):
         src = os.path.join(work, "rasters", f + ".png")
         if not os.path.exists(src):
             continue
-        shutil.copy2(src, os.path.join(out_dir, f + ".png"))
-        rw, rh = Image.open(src).size
+        dst = os.path.join(out_dir, f + ".png")
+        with Image.open(src) as im:
+            rw, rh = im.size
+            if lignes[f]:
+                dpi = rw * 72 / float(info["largeur_pt"])
+                im.save(dst, dpi=(dpi, dpi))
+            else:
+                shutil.copy2(src, dst)
         W = float(info["largeur_pt"]); k = rw / W
-        ech = info.get("echelle", "")
+        ech = str(lignes[f][0]["echelle"]) if lignes[f] else info.get("echelle", "")
         scale = f'<Scale Value="{int(ech)}" Type="0" Precision="2" SetManually="False" Engineering="False"/>' if ech.isdigit() else '<Scale Value="0" Type="1" Precision="0" SetManually="False" Engineering="False"/>'
-        L += [f'\t\t<Plan Name="{q(info["nom"])}" FileName="{q(f)}.png">', f'\t\t\t<Thumbnail FileName="{uuid.uuid4()}"/>', "\t\t\t" + scale,
+        vignette = uuid.uuid5(uuid.NAMESPACE_URL, f"dr-estimation/{name}/{ident}/{f}")
+        L += [f'\t\t<Plan Name="{q(info["nom"])}" FileName="{q(f)}.png">', f'\t\t\t<Thumbnail FileName="{vignette}"/>', "\t\t\t" + scale,
               "\t\t\t<Bookmarks>", '\t\t\t\t<Bookmark Name="Default" LayerIndex="0" Zoom="10" X="0" Y="0"/>', "\t\t\t</Bookmarks>", "\t\t\t<Comment/>",
               "\t\t\t<Layers>", '\t\t\t\t<Layer Index="0" Name="Releve automatique" Opacity="150" Visible="True" Active="True">']
         lx, ly = (int(rw * 0.746), int(rh * 0.336)) if by_sheet.get(f) else (100, 100)
@@ -89,6 +108,14 @@ def main(work, name, out_dir):
                 L.append(f'\t\t\t\t\t\t<Element X="{x}" Y="{y}" Width="{size}" Height="{size}"/>&#13;')
                 stats.setdefault(f, collections.Counter())[label] += 1
             L.append("\t\t\t\t\t</Counter>&#13;")
+        for r in lignes[f]:
+            nom_ligne = f"{r['famille']} — {r['id']} ({r['longueur_m']:.2f} m tracés, partiel)"
+            L.append(f'\t\t\t\t\t<Line Name="{q(nom_ligne)}" GroupID="{prochain_gid}" Color="-29696" PenWidth="4" PenType="Generic" ShowMeasure="False" Visible="True">')
+            prochain_gid += 1
+            pixels = [(round(x * k), round(y * k)) for x, y in r["points_pt"]]
+            for (x1, y1), (x2, y2) in zip(pixels, pixels[1:]):
+                L.append(f'\t\t\t\t\t\t<Element X1="{x1}" Y1="{y1}" X2="{x2}" Y2="{y2}"/>')
+            L.append("\t\t\t\t\t</Line>")
         L += ["\t\t\t\t</Layer>", "\t\t\t</Layers>", "\t\t</Plan>"]
     L += ["\t</Plans>", "\t<Prices>"]
     for label in labels:
@@ -104,7 +131,8 @@ def main(work, name, out_dir):
         fh.write("\n".join(L))
     total = sum(sum(c.values()) for c in stats.values())
     audit = {"qpl": out, "sha256": sha256(out), "octets": os.path.getsize(out), "plans": len(order), "compteurs": sum(len(c) for c in stats.values()),
-             "marques": total, "libelles": len(labels), "par_feuille": {f: dict(c) for f, c in stats.items()}}
+             "marques": total, "libelles": len(labels), "par_feuille": {f: dict(c) for f, c in stats.items()},
+             "traces_metres": prochain_gid - len(gid) - 1}
     json.dump(audit, open(out + ".audit.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"{out} : {len(order)} plans, {audit['compteurs']} compteurs, {total} marques, {len(labels)} libellés, sha256 {audit['sha256']}")
 

@@ -1,0 +1,68 @@
+{
+  "python": "/home/fvdev-ubuntu26/work/dr-estimation-ia-container/.venv/bin/python",
+  "commande": [
+    "/home/fvdev-ubuntu26/work/dr-estimation-ia-container/.venv/bin/python",
+    "-m",
+    "serveur_mcp"
+  ],
+  "limite_s": 0.2,
+  "mesure": "Création du processus jusqu'à réception de la réponse initialize complète.",
+  "caches": "Non vidés : premier essai distinct, suivants à caches potentiellement chauds.",
+  "essais": [
+    {
+      "initialize_s": 0.03212,
+      "catalogues_s": 0.47606,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 0.040268,
+      "catalogues_s": 0.456852,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 0.031861,
+      "catalogues_s": 0.434435,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 0.030334,
+      "catalogues_s": 0.468416,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "initialize_s": 0.028671,
+      "catalogues_s": 0.419536,
+      "outils": 19,
+      "ressources": 4,
+      "prompts": 1,
+      "protocole": "2025-06-18",
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "premier_s": 0.03212,
+  "minimum_s": 0.028671,
+  "mediane_s": 0.031861,
+  "maximum_s": 0.040268,
+  "conforme": true
+}

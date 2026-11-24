@@ -6,6 +6,7 @@
     uv run releve/run.py <nom-de-soumission | chemin-du-dossier>     traite un dossier
     uv run releve/run.py --watch                                      surveille les INBOX et traite les nouveaux dossiers
     uv run releve/run.py --reprendre <nom>                            rejoue build_qpl + render_vectoriel + render_pdf (sans agent)
+    uv run releve/run.py --aveugle <nom | chemin>                     produit et gèle sans comparaison ni export externe
     RELEVE_AGENT=blocs (défaut) : route déterministe par blocs CAO + bibliothèque de signatures, zéro agent, zéro jeton ;
     RELEVE_AGENT=sdk|nvidia|cli : l'ancienne route par agent (compétence releve-planexpert).
 
@@ -33,6 +34,10 @@ LOCK = os.path.join(BASE, ".verrou")
 LOG = os.path.join(BASE, "journal.log")
 MODEL = os.environ.get("RELEVE_MODEL", "opus")
 ROUTE = os.environ.get("RELEVE_AGENT", "blocs")    # blocs (défaut : déterministe, sans agent) | sdk | nvidia | cli
+ACCEPTATION = ["uv", "run", "--with", "numpy", "--with", "scipy", "--with", "pillow",
+               "python", "-m", "src.validation.boucle_acceptation"]
+QUANTITES = ["uv", "run", "python", "-m", "src.releve.quantites"]
+CHIFFRAGE = ["uv", "run", "python", "-m", "src.releve.chiffrage"]
 MAX_TURNS = os.environ.get("RELEVE_MAX_TURNS", "800")
 WSL_EXE = "/mnt/c/Windows/System32/wsl.exe"
 PLANEXPERT_VM_CLI = os.path.join(REPO, "mcp", "planexpert_vm", "server.py")
@@ -80,14 +85,14 @@ def drive_mounted():
             pass
     return os.path.isdir(DRIVE)
 
-def resolve_inbox(arg):
+def resolve_inbox(arg, *, local_seulement=False):
     """Nom ou chemin → (nom, dossier d'entrée local). Un dossier du miroir Drive est copié dans l'INBOX local."""
     if os.path.isdir(arg):
         return os.path.basename(os.path.normpath(arg)), os.path.abspath(arg)
     local = os.path.join(INBOX, arg)
     if os.path.isdir(local):
         return arg, local
-    if drive_mounted() and os.path.isdir(os.path.join(DRIVE, "INBOX", arg)):
+    if not local_seulement and drive_mounted() and os.path.isdir(os.path.join(DRIVE, "INBOX", arg)):
         shutil.copytree(os.path.join(DRIVE, "INBOX", arg), local, dirs_exist_ok=True)
         log(f"dossier copié depuis Drive : {arg}")
         return arg, local
@@ -175,7 +180,8 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
     a_verifier = a_verifier or []
     n_raster = raster_ouverts(workdir) if ok else 0
     n_blocs, l_blocs = blocs_ouverts(workdir) if ok else (0, [])
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or n_raster or n_blocs) else "TERMINÉ")
+    mauvaises = qualite_ouverte(workdir) if ok else []
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or n_raster or n_blocs or mauvaises) else "TERMINÉ")
     if ok and acceptation:     # boucle d'acceptation exécutée : l'état intègre son verdict
         if "INVALIDE" in acceptation:
             etat = "TERMINÉ — ACCEPTATION INVALIDE"
@@ -186,6 +192,8 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
             etat = "TERMINÉ — À VÉRIFIER"
     L = [f"# STATUT — relevé automatique « {name} »", "", f"Date : {datetime.datetime.now():%Y-%m-%d %H:%M} · État : **{etat}**"]
     if err: L += ["", f"Erreur : `{err}`"]
+    if mauvaises:
+        L += ["", f"⚠️ **Contrôle qualité : {len(mauvaises)} constat(s) non résolu(s)** — voir `travail/qualite.json`."]
     if n_raster:
         L += ["", f"⚠️ **{n_raster} constat(s) des contrôles raster à trancher au zoom** (symboles non retrouvés, pastilles hors "
               "seuil d'alignement, familles suspectes — détail §Contrôles raster) avant de considérer ce livrable terminé."]
@@ -228,10 +236,11 @@ def statut(name, inbox, outdir, workdir, steps, res, ok, err=None, a_verifier=No
         L += ["## Route blocs (bibliothèque de signatures)", ""] + l_blocs + [""]
     L += ["## Étapes", "", "| étape | durée | résultat |", "|---|--:|---|"] + [f"| {s} | {d / 60:.1f} min | {r} |" for s, d, r in steps]
     if acceptation:
-        L += ["", f"**Boucle d'acceptation : {acceptation}** — verdict détaillé dans "
-              f"`dossiers/{name}/ACCEPTATION.md` (aveugle → gel → comparaison → classement → "
-              "justifications ; un INVALIDE est cohérent avec le critère d'acceptation, il est "
-              "consigné, jamais réduit au silence)."]
+        L += ["", f"**Boucle d'acceptation : {acceptation}**."]
+        if os.path.isfile(os.path.join(outdir, "acceptation", "ACCEPTATION.md")):
+            L.append("Voir `acceptation/ACCEPTATION.md` pour le verdict détaillé local.")
+    if os.path.isdir(os.path.join(outdir, "chiffrage-interne")):
+        L += ["", "Chiffrage de travail : `chiffrage-interne/` (local uniquement ; non soumissible)."]
     usage = (res or {}).get("usage", {}) or {}
     L += ["", f"## Agent de relevé — {(res or {}).get('lanceur') or 'claude -p (headless)'}", "", f"- modèle : `{MODEL}` · tours : {(res or {}).get('num_turns')} · sous-type : {(res or {}).get('subtype')}",
           f"- coût estimé (client, `total_cost_usd`) : {(res or {}).get('total_cost_usd')} $ US",
@@ -358,9 +367,24 @@ def pdf_principal(inbox):
     pdfs = [os.path.join(dp, f) for dp, _, fs in os.walk(inbox) for f in fs if f.lower().endswith(".pdf")]
     return max(pdfs, key=os.path.getsize) if pdfs else None
 
-def process(arg, reprendre=False):
-    name, inbox = resolve_inbox(arg)
+
+def qualite_ouverte(workdir):
+    p = os.path.join(workdir, "qualite.json")
+    if not os.path.exists(p):
+        return []
+    try:
+        with open(p, encoding="utf-8") as fh:
+            r = json.load(fh)
+        return [] if r.get("conforme") is True else (r.get("erreurs") or ["contrôle non conforme"])
+    except (OSError, ValueError, AttributeError):
+        return ["contrôle illisible"]
+
+def process(arg, reprendre=False, *, aveugle=False):
+    name, inbox = resolve_inbox(arg, local_seulement=True) if aveugle else resolve_inbox(arg)
     outdir = os.path.join(OUTBOX, name); workdir = os.path.join(outdir, "travail"); pe_dir = os.path.join(outdir, f"{name}-planexpert")
+    if os.path.exists(os.path.join(workdir, "gel.json")):
+        log("ÉCHEC : sortie déjà gelée. Utiliser un RELEVE_BASE neuf ou le CLI de comparaison.")
+        return False
     os.makedirs(outdir, exist_ok=True)
     marker = os.path.join(outdir, ".en-cours"); open(marker, "w").write(str(os.getpid()))
     log_path = os.path.join(outdir, "journal-etapes.log")
@@ -368,11 +392,12 @@ def process(arg, reprendre=False):
     T = time.time()
     try:
         if not reprendre:
-            if prepare_a_jour(inbox, workdir):
+            if not aveugle and prepare_a_jour(inbox, workdir):
                 log("préparation déjà à jour (mêmes fichiers d'entrée), étape prepare sautée")
                 steps.append(("prepare", 0, "déjà à jour"))
             else:
-                t = time.time(); code, _ = run(["uv", "run", "releve/prepare.py", inbox, workdir], log_path=log_path)
+                opts = ["--plans-seuls"] if aveugle else []
+                t = time.time(); code, _ = run(["uv", "run", "releve/prepare.py", inbox, workdir, *opts], log_path=log_path)
                 steps.append(("prepare", time.time() - t, "ok" if code == 0 else f"code {code}"))
                 if code: raise RuntimeError("prepare.py a échoué")
             if ROUTE == "blocs":
@@ -444,6 +469,13 @@ def process(arg, reprendre=False):
             # contrôle qualité à l'aveugle (Q1-Q14) : non bloquant ici, mais journalisé et repris dans STATUT.md
             t = time.time(); code, out = run(["uv", "run", "releve/controle_qualite.py", workdir], log_path=log_path)
             steps.append(("controle_qualite", time.time() - t, (out.strip().splitlines() or ["?"])[0][:160]))
+        t = time.time(); code, _ = run([*QUANTITES, workdir, outdir, name], log_path=log_path)
+        steps.append(("quantités par portée", time.time() - t, "voir QUANTITES.csv" if code == 0 else f"code {code}"))
+        if code: raise RuntimeError("quantités par portée en échec (multiplicateurs ou sources à vérifier)")
+        t = time.time(); code, _ = run(["uv", "run", "releve/longueurs.py", workdir], log_path=log_path)
+        steps.append(("métré sourcé", time.time() - t, "voir metre-longueurs.csv" if code == 0 else f"code {code}"))
+        if code: raise RuntimeError("calcul des parcours sourcés en échec")
+        shutil.copy2(os.path.join(workdir, "metre-longueurs.csv"), os.path.join(outdir, f"{name}-BOM-LONGUEURS.csv"))
         t = time.time(); code, _ = run(["uv", "run", "releve/build_qpl.py", workdir, name, pe_dir], log_path=log_path)
         steps.append(("build_qpl", time.time() - t, "ok" if code == 0 else f"code {code}"))
         if code: raise RuntimeError("build_qpl.py a échoué")
@@ -471,10 +503,22 @@ def process(arg, reprendre=False):
         # est absente ; INVALIDE (« gel violé », relevé non aveugle) est
         # consigné dans STATUT.md et ACCEPTATION.md, jamais réduit au silence.
         dossier_dir = os.path.join(REPO, "dossiers", name)
-        if os.path.isdir(dossier_dir):
+        if aveugle:
             t = time.time()
-            code_b, out_b = run(["uv", "run", "python", "-m", "src.validation.boucle_acceptation",
-                                 name, "--workdir", workdir, "--dossier", dossier_dir],
+            code_b, _ = run([*ACCEPTATION,
+                             name, "--workdir", workdir, "--qpl-ia", os.path.join(pe_dir, f"{name}.qpl"),
+                             "--gel-seul"], log_path=log_path)
+            if code_b:
+                ok = False
+                raise RuntimeError("contrôle à l'aveugle ou gel SHA-256 en échec; aucune comparaison lancée")
+            acceptation = "VÉRIFICATION INCOMPLÈTE — gel seul, comparaison non exécutée"
+            steps.append(("gel_seul", time.time() - t, "gel SHA-256 vérifié, aucune comparaison"))
+        elif os.path.isdir(dossier_dir):
+            t = time.time()
+            code_b, out_b = run([*ACCEPTATION,
+                                 name, "--workdir", workdir, "--dossier", dossier_dir,
+                                 "--sortie", os.path.join(outdir, "acceptation"),
+                                 "--qpl-ia", os.path.join(pe_dir, f"{name}.qpl")],
                                 log_path=log_path)
             verdict = ""
             for ligne in (out_b or "").splitlines():
@@ -485,7 +529,14 @@ def process(arg, reprendre=False):
             acceptation = verdict
             steps.append(("boucle_acceptation", time.time() - t, f"code {code_b} — {verdict}"))
             log(f"boucle_acceptation {name} : code {code_b}, verdict {verdict}")
-        if os.environ.get("RELEVE_NATIF", "1") == "1":     # export natif Plan Expert par la VM (MCP planexpert-vm) ; jamais bloquant
+        # Le chiffrage n'ouvre pas le catalogue en mode plans seuls. Il peut
+        # aussi être lancé séparément après contrôle d'un gel de référence.
+        if not aveugle and acceptation and not acceptation.startswith(("INVALIDE", "non déterminé")):
+            t = time.time(); code_ch, _ = run([*CHIFFRAGE, workdir, os.path.join(outdir, "chiffrage-interne"), name], log_path=log_path)
+            steps.append(("chiffrage interne", time.time() - t,
+                          "provisoire — non soumissible" if code_ch == 0 else f"échec code {code_ch}"))
+            if code_ch: acceptation += " ; chiffrage à vérifier"
+        if not aveugle and os.environ.get("RELEVE_NATIF", "1") == "1":     # export natif Plan Expert par la VM (MCP planexpert-vm) ; jamais bloquant
             if os.path.exists(PLANEXPERT_VM_CLI):
                 t = time.time(); code, out = run(["uv", "run", PLANEXPERT_VM_CLI, "--cli", "natif", pe_dir, outdir], log_path=log_path)
                 nat_dir = os.path.join(outdir, "export-natif-planexpert"); os.makedirs(nat_dir, exist_ok=True)
@@ -509,12 +560,15 @@ def process(arg, reprendre=False):
     statut(name, inbox, outdir, workdir, steps, res, ok, err, a_verifier, **kwargs)
     try: os.remove(marker)
     except FileNotFoundError: pass
-    if drive_mounted():
+    if ok and not aveugle and not (acceptation or "").startswith(("INVALIDE", "non déterminé")) and drive_mounted():
         try:
             dst = os.path.join(DRIVE, "OUTBOX", name); os.makedirs(dst, exist_ok=True)
             for f in os.listdir(outdir):
                 p = os.path.join(outdir, f)
-                if os.path.isfile(p): shutil.copy2(p, dst)
+                # Les diagnostics de comparaison et le chiffrage interne ne
+                # font pas partie des livrables publiés sur le miroir.
+                if os.path.isfile(p) and "-CHIFFRAGE-INTERNE." not in f:
+                    shutil.copy2(p, dst)
             if os.path.isdir(pe_dir): shutil.copytree(pe_dir, os.path.join(dst, os.path.basename(pe_dir)), dirs_exist_ok=True)
             for sous in ("png", "controle"):                 # livrables PNG et planches de contrôle (revue Codex PR #25)
                 shutil.rmtree(os.path.join(dst, sous), ignore_errors=True)        # miroir : pas de fichier périmé
@@ -523,7 +577,8 @@ def process(arg, reprendre=False):
             log(f"copié sur Drive : {dst}")
         except Exception as e:  # noqa
             log(f"copie Drive impossible : {e}")
-    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or raster_ouverts(workdir) or blocs_ouverts(workdir)[0]) else "TERMINÉ")
+    etat = "ÉCHEC" if not ok else ("TERMINÉ — À VÉRIFIER" if (a_verifier or raster_ouverts(workdir) or blocs_ouverts(workdir)[0] or qualite_ouverte(workdir) or
+                                                           (acceptation and not acceptation.startswith("PRÊT"))) else "TERMINÉ")
     log(f"{etat} {name} → {outdir}")
     return ok
 
@@ -556,11 +611,15 @@ def main():
                     process(n)
                 time.sleep(60)
         elif a[0] == "--reprendre":
-            process(a[1], reprendre=True)
+            return 0 if process(a[1], reprendre=True) else 1
+        elif a[0] == "--aveugle":
+            if len(a) != 2:
+                sys.exit("usage : releve/run.py --aveugle <nom ou chemin INBOX>")
+            return 0 if process(a[1], aveugle=True) else 1
         else:
-            process(a[0])
+            return 0 if process(a[0]) else 1
     finally:
         release_lock()
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

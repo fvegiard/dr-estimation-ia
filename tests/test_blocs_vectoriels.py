@@ -224,6 +224,7 @@ def test_run_blocs_feuilles_raster_et_inconnues_mettent_a_verifier(monkeypatch, 
     outbox = tmp_path / "OUTBOX"; outdir = outbox / "S-T"; workdir = outdir / "travail"; workdir.mkdir(parents=True)
     (workdir / "feuilles.csv").write_text("feuille,fichier,page,nb_mots,classement_fichier,role\nE1,plans.pdf,1,500,plans,plan\nE2,plans.pdf,2,0,plans,plan\n", encoding="utf-8")
     (workdir / "nomenclature.csv").write_text("label\n", encoding="utf-8"); (workdir / "feuilles-classement.csv").write_text("feuille\n", encoding="utf-8")
+    (workdir / "metre-longueurs.csv").write_text("id,longueur_m\n", encoding="utf-8")
     (workdir / "blocs-a-etiqueter.json").write_text(json.dumps({"bibliotheque": "b.csv", "etiquetees": 3, "inconnues": [{"sig_id": "S009", "n_plans": 7, "par_feuille": "E1:7", "exemple": "E1 (1,1)"}], "ambigues": []}), encoding="utf-8")
     statuts = []; statut_reel = releve_run.statut
     monkeypatch.setattr(releve_run, "OUTBOX", str(outbox)); monkeypatch.setattr(releve_run, "ROUTE", "blocs")

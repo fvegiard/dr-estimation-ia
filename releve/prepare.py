@@ -24,10 +24,12 @@ Aucune valeur n'est inventée : tout vient des PDF. Les rasters et les mots sont
 """
 from __future__ import annotations
 import csv, hashlib, json, os, re, sys, collections, shutil
+from pathlib import Path
 import pymupdf
 from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import legende
+from revisions import selection
 
 RASTER_W = 5694          # largeur raster Plan Expert (px) pour une feuille 2383,92 pt
 TILE_ROWS, TILE_COLS = 3, 4
@@ -132,13 +134,22 @@ def reset_workdir(work: str):
         if os.path.exists(path):
             os.remove(path)
 
-def main(inbox: str, work: str):
-    reset_workdir(work)
-    for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "devis"):
-        os.makedirs(os.path.join(work, d), exist_ok=True)
+def main(inbox: str, work: str, *, plans_seuls=False):
     inv, feuilles, notes = [], [], []
     files = sorted(os.path.join(dp, f) for dp, _, fs in os.walk(inbox) for f in fs)
+    if plans_seuls:
+        # Pré-vol avant toute production de rasters ou lancement d'un agent.
+        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from serveur_mcp.sources import motif_reference
+
+        if not files or any(os.path.islink(p) or not p.lower().endswith(".pdf") for p in files):
+            raise ValueError("Plans seuls : déposer uniquement les PDF originaux et addendas, sans liens symboliques")
+        for path in files:
+            if motif := motif_reference(Path(path)):
+                raise ValueError(f"Source refusée ({os.path.basename(path)}) : {motif}")
     seen_sheets = collections.Counter()
+    # Inventorier tous les fichiers avant de choisir les pages actives; idem pour les
+    # versions remplacées, leurs empreintes demeurent dans le manifeste.
     for path in files:
         rel = os.path.relpath(path, inbox)
         entry = {"fichier": rel, "octets": os.path.getsize(path), "sha256": sha256(path)}
@@ -151,12 +162,31 @@ def main(inbox: str, work: str):
         kind = classify(path, doc)
         entry.update({"classement": kind, "pages": len(doc)})
         inv.append(entry)
+        doc.close()
+    if plans_seuls and any(e["classement"] not in {"plans", "addenda", "scan"} for e in inv):
+        raise ValueError("Plans seuls : entrée illisible ou identifiée comme relevé; aucune préparation effectuée")
+    revisions = selection({e["fichier"]: e for e in inv})
+    reset_workdir(work)
+    for d in ("feuilles", "rasters", "apercus", "tuiles", "texte", "estimateur", "devis"):
+        os.makedirs(os.path.join(work, d), exist_ok=True)
+    if revisions:
+        notes.append(f"Révisions {revisions['dossier']} : {revisions['preuve']}")
+        notes.extend(f"{f} p.{n} : remplacée ({raison})" for f, ns in revisions["remplacees"].items()
+                     for n, raison in ns.items())
+    for entry in inv:
+        kind, rel = entry["classement"], entry["fichier"]
+        if kind not in {"plans", "addenda", "scan", "estimateur"}:
+            continue
+        doc = pymupdf.open(os.path.join(inbox, rel))
         if kind == "estimateur":
             prepare_estimateur(doc, work, rel)
+            doc.close()
             continue
         if kind in ("plans", "addenda", "scan"):     # scan = plan raster sans texte (HR26-14) : relevé visuel seulement
             for i, page in enumerate(doc):
-                sid = sheet_id(page)
+                sid = revisions["actives"][rel].get(str(i + 1)) if revisions else sheet_id(page)
+                if revisions and sid is None:
+                    continue
                 if sid is None and kind == "addenda":
                     m = SHEET_RE.findall(os.path.basename(rel).replace("_", " ").upper())
                     sid = m[0].replace("-", "") if len(m) == 1 else f"ADD{i + 1:02d}"
@@ -168,7 +198,7 @@ def main(inbox: str, work: str):
                     sid = f"{stem}-p{i + 1:02d}"
                     notes.append(f"{rel} page {i + 1} : aucun numéro de feuille lu dans le cartouche — feuille nommée provisoirement {sid}, "
                                  "numéro réel à lire sur l'aperçu (cartouche) par l'agent")
-                if kind == "addenda":
+                if kind == "addenda" and not revisions:
                     sid = f"{sid}_ADD"
                 seen_sheets[sid] += 1
                 fid = sid if seen_sheets[sid] == 1 else f"{sid}_{seen_sheets[sid]}"
@@ -177,7 +207,9 @@ def main(inbox: str, work: str):
                 feuilles.append(prepare_sheet(doc, i, fid, rel, kind, work))
         doc.close()
     with open(os.path.join(work, "inventaire.json"), "w", encoding="utf-8") as fh:
-        json.dump({"inbox": os.path.abspath(inbox), "fichiers": inv, "notes": notes}, fh, indent=1, ensure_ascii=False)
+        json.dump({"inbox": os.path.abspath(inbox), "fichiers": inv, "notes": notes,
+                   **({"plans_seuls": True} if plans_seuls else {}),
+                   **({"revisions": revisions} if revisions else {})}, fh, indent=1, ensure_ascii=False)
     with open(os.path.join(work, "feuilles.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=["feuille", "fichier", "page", "largeur_pt", "hauteur_pt", "raster_px", "classement_fichier", "nb_mots", "jetons_frequents", "titre", "role", "articles_devis"])
         w.writeheader(); w.writerows(feuilles)
@@ -190,7 +222,7 @@ def prepare_sheet(doc, i, fid, rel, kind, work):
     page = doc[i]
     W, H = page.rect.width, page.rect.height
     one = pymupdf.open(); one.insert_pdf(doc, from_page=i, to_page=i)
-    one.save(os.path.join(work, "feuilles", f"{fid}.pdf")); one.close()
+    one.save(os.path.join(work, "feuilles", f"{fid}.pdf"), no_new_id=True); one.close()
     zoom = RASTER_W / W
     pix = page.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom), alpha=False)
     pix.save(os.path.join(work, "rasters", f"{fid}.png"))
@@ -296,6 +328,14 @@ def write_manifest(work, inv, feuilles, notes):
         fh.write("\n".join(L) + "\n")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        sys.exit(__doc__)
-    main(sys.argv[1], sys.argv[2])
+    import argparse
+
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument("inbox")
+    p.add_argument("work")
+    p.add_argument("--plans-seuls", action="store_true")
+    a = p.parse_args()
+    try:
+        main(a.inbox, a.work, plans_seuls=a.plans_seuls)
+    except (OSError, ValueError) as e:
+        sys.exit(f"Préparation refusée : {e}")
