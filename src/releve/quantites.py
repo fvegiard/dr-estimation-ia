@@ -12,6 +12,7 @@ from pathlib import Path
 ZONES = ("x0_pt", "y0_pt", "x1_pt", "y1_pt")
 COLONNES = ("feuille", "label", "portee", "unite", "represente", "quantite", "source", "reserve")
 TYPIQUE = re.compile(r"\b(?:LOGEMENTS?|CHAMBRES?|UNITÉS?|SALLES?)\s+TYP(?:E|ES|IQUE|IQUES)\b", re.I)
+PORTEE_INCONNUE = "À PRÉCISER"
 
 
 def lire_csv(p: Path):
@@ -92,7 +93,9 @@ def calculer(travail: Path):
             x, y = float(o["x_pt"]), float(o["y_pt"])
             if not math.isfinite(x) or not math.isfinite(y):
                 raise ValueError(f"{f} : coordonnées de {lab!r} non finies")
-            portee = (o.get("portee") or n.get("portee") or "À PRÉCISER").strip().upper()
+            portee = ((o.get("portee") or "").strip() or (n.get("portee") or "").strip() or PORTEE_INCONNUE).upper()
+            if portee == "A PRECISER":
+                portee = PORTEE_INCONNUE
             r = regle_de(regles, f, x, y)
             qte = float(o.get("qte") or "1")
             if not math.isfinite(qte) or qte < 1 or not qte.is_integer():
@@ -113,12 +116,16 @@ def calculer(travail: Path):
             p = postes.setdefault((f, lab, portee), {"feuille": f, "label": lab, "portee": portee,
                    "unite": "u", "represente": 0, "quantite": 0, "source": [], "reserve": []})
             p["represente"] += 1
-            if p["quantite"] is not None:
-                p["quantite"] = None if f in types_non_traites else p["quantite"] + int(qte * (r["facteur"] if r else 1))
+            if f in types_non_traites or portee == PORTEE_INCONNUE:
+                p["quantite"] = None
+            elif p["quantite"] is not None:
+                p["quantite"] += int(qte * (r["facteur"] if r else 1))
             p["source"].append(loc + (f" ; ×{r['facteur']:g} ({r['source']})" if r else "") +
                                (f" ; {qte_source}" if qte_source else ""))
             if reserve and reserve not in p["reserve"]:
                 p["reserve"].append(reserve)
+            if portee == PORTEE_INCONNUE and "Portée de travaux non établie" not in p["reserve"]:
+                p["reserve"].append("Portée de travaux non établie")
             if f in types_non_traites and "multiplicateur inconnu" not in p["reserve"]:
                 p["reserve"].append("multiplicateur inconnu")
     return {"lignes": [postes[k] for k in sorted(postes)], "reserves": reserves}

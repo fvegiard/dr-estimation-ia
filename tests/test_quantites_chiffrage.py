@@ -43,6 +43,18 @@ def test_pas_de_facteur_par_defaut_si_unite_type(tmp_path):
     assert rs["reserves"] and all(r["quantite"] is None for r in rs["lignes"])
 
 
+def test_portee_non_etablie_conserve_repere_sans_quantite_de_travaux(tmp_path):
+    w = travail(tmp_path)
+    with (w / "nomenclature.csv").open("a", encoding="utf-8") as f:
+        f.write("USB,\n")
+    with (w / "occurrences-visuel.csv").open("a", encoding="utf-8") as f:
+        f.write("E200,USB,40,50,A PRECISER,,\nE200,USB,40,60,   ,,\n")
+    poste = next(p for p in quantites.calculer(w)["lignes"] if p["label"] == "USB")
+    assert poste["portee"] == "À PRÉCISER"
+    assert poste["represente"] == len(poste["source"]) == 2
+    assert poste["quantite"] is None and poste["reserve"] == ["Portée de travaux non établie"]
+
+
 @pytest.mark.parametrize("ligne", ["2,1,,,,note", "nan,,,,,note", "0,,,,,note", "2,,,,,", "1.2,,,,,note"])
 def test_facteurs_invalides_refuses(tmp_path, ligne):
     w = travail(tmp_path)

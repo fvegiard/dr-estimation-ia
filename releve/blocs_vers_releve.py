@@ -105,7 +105,16 @@ def main():
     feuilles = {r["feuille"]: r for r in csv.DictReader(open(os.path.join(work, "feuilles.csv"), encoding="utf-8"))}
     # Pilote à activer explicitement : ne pas écraser les relevés manuels ou
     # les sorties plus complètes d'une autre route sur une même soumission.
-    if os.environ.get("RELEVE_PROFIL_S1844") == "1":
+    s1844 = os.environ.get("RELEVE_PROFIL_S1844") == "1"
+    s1715 = os.environ.get("RELEVE_PROFIL_S1715") == "1"
+    if s1844 and s1715:
+        ap.error("activer un seul profil pilote par passe")
+    if s1715:
+        from profil_s1715 import appliquer
+
+        appliquer(work, feuilles)
+        return
+    if s1844:
         from profil_s1844 import appliquer
 
         if not appliquer(work, feuilles, classer_feuille):

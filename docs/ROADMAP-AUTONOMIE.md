@@ -27,7 +27,7 @@ jamais par le récit d'un agent. Les écarts se lisent contre `dossiers/`, pas c
 
 Voir [la preuve de rejeu et les données disponibles](preuves/autonomie-pilote/README.md),
 [S-1844](../dossiers/S-1844/ACCEPTATION.md) et [S-1715](../dossiers/S-1715/ACCEPTATION.md).
-Les états ci-dessous sont les plus récents ; le diagnostic plus bas documente le point de départ.
+Le tableau décrit le passage initial ; les notes qui suivent consignent les rejeux plus récents.
 
 | Chantier | Livré au pilote | Encore ouvert |
 |---|---|---|
@@ -49,6 +49,12 @@ Les avis écrits, la validation des longueurs, le chiffrage et le dossier neuf r
 **Reconnaissance S-1844 (P3/P4).** La [passe F](preuves/autonomie-pilote/recalage-et-d4.md) ajoute un
 seul D4-N confirmé sur E300 (200 repères, les 199 précédents conservés). Les têtes non typées et la
 dépose restent à relever. Les métrés E400 ne changent pas.
+
+**Reconnaissance S-1715 (P3/P4).** Les [passes E/F](preuves/autonomie-pilote/s1715-reconnaissance.md)
+produisent 32 repères sur quatre feuilles (19 au schéma E-003), avec 25 sorties identiques.
+Les quantités de travaux restent vides quand la portée n'est pas établie. E-102, les autres familles,
+la comparaison des fonds et les métrés demeurent ouverts. 484 tests et le jeu historique rejoué sans
+régression n'établissent pas l'exhaustivité du dossier.
 
 ## Ordre de dépendances et prochains chantiers
 
