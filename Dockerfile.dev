@@ -1,0 +1,14 @@
+# Conteneur de développement « dr-estimation-ai-dev » — le dépôt est monté en volume sur /workspace,
+# l'image ne fournit que Python + les requirements (aucun code copié). Lancement type :
+# podman build -t dr-estimation-ai-dev -f Dockerfile.dev . && podman run -d --name dr-estimation-ai-dev \
+#   -v "$PWD:/workspace" dr-estimation-ai-dev
+FROM python:3.14-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+WORKDIR /workspace
+ENV PYTHONUTF8=1 PYTHONIOENCODING=utf-8
+CMD ["sleep", "infinity"]

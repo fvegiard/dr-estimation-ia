@@ -1,0 +1,55 @@
+x-image-travail: &image-travail
+  image: localhost/dr-estimation-ai-dev:compose
+  build:
+    context: ../..
+    dockerfile: Dockerfile.dev
+
+services:
+  dev:
+    <<: *image-travail
+    container_name: dr-estimation-ai-dev
+    volumes:
+      - type: bind
+        source: ../../../dr-estimation-ia-work
+        target: /workspace
+        bind:
+          create_host_path: false
+
+  work:
+    <<: *image-travail
+    container_name: dr-estimation-ai-work
+    volumes:
+      - type: bind
+        source: ../..
+        target: /workspace
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${DR_ESTIMATION_GIT_DIR:-../../../../github/dr-estimation-ia/.git}
+        target: /workspace/.git
+        read_only: true
+        bind:
+          create_host_path: false
+
+  server:
+    profiles: [server]
+    container_name: dr-estimation-ai-server
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    ports:
+      - '127.0.0.1:8765:8765'
+    volumes:
+      - estim:/data
+    environment:
+      - ESTIMATEUR_MCP_CLE
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD, python, -B, /app/infra/containers/probe_http.py]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  estim:
