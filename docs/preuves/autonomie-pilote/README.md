@@ -3,6 +3,10 @@
 **Ce pilote n'est pas une autorisation de soumettre.** Lire les décisions [S-1844](../../../dossiers/S-1844/ACCEPTATION.md)
 et [S-1715](../../../dossiers/S-1715/ACCEPTATION.md). Les sorties historiques, le gold et la bibliothèque partagée n'ont pas été modifiés.
 
+**Rejeu le plus récent :** [recalage des fonds et passe S-1844 F](recalage-et-d4.md) — 472 tests,
+200 repères pour F, deux pilotes en **VÉRIFICATION INCOMPLÈTE** faute de rasters attestés. Les chiffres
+ci-dessous décrivent le passage initial D/E/B et ses propres contrôles.
+
 | Contrôle | Résultat |
 |---|---|
 | Pytest | 455 tests passés ; exit 0 |

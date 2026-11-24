@@ -71,7 +71,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
-from src.validation import aveugle, classer_ecarts, gel, justifier
+from src.validation import aveugle, classer_ecarts, gel, justifier, recalage_sources
 from src.validation import compare_qpl as cq
 
 NOM_RAPPORT = "ACCEPTATION.md"
@@ -149,13 +149,16 @@ class RapportAcceptation:
                 if n:
                     L.append(f"| {classe} | {n} |")
             L.append(f"| **total** | **{total}** |")
-        elif any(e.nom == "classement" for e in self.etapes):
-            L.append("Comparaison exécutée : aucun désaccord classé.")
+        elif any(e.nom == "comparaison" and e.etat in ("ok", "partielle") for e in self.etapes):
+            suffixe = " sur les feuilles attestées" if any(e.nom == "recalage_sources" for e in self.etapes) else ""
+            L.append(f"Aucun désaccord classé{suffixe}.")
         else:
             L.append("Comparaison non exécutée : aucun compteur.")
         if self.totaux_marques:
             t = self.totaux_marques
             L.append("")
+            if any(e.nom == "recalage_sources" for e in self.etapes):
+                L.append("Totaux limités aux feuilles attestées (voir `comparaison-dupuis-qpl/recalage-pages.csv`).")
             L.append(f"Marques humaines uniques {t.get('humaines', 0)} · marques IA "
                      f"{t.get('ia', 0)} · appariées {t.get('appariees', 0)} · "
                      f"manquantes IA {t.get('manquantes', 0)} · en trop IA {t.get('en_trop', 0)}.")
@@ -299,6 +302,16 @@ def _garde_aveugle(rapport, workdir, chemin_qpl):
     return True
 
 
+def _verifier_sortie_stricte(destination, dossier_dir, inbox):
+    if destination.is_relative_to(dossier_dir) or destination.is_relative_to(inbox.resolve()):
+        raise BoucleErreur("La comparaison plans seuls exige --sortie hors du dossier de référence et de l'INBOX")
+    sous_dossier = destination / "comparaison-dupuis-qpl"
+    if (sous_dossier.is_symlink() or
+            (sous_dossier.is_dir() and any(f.is_symlink() for f in sous_dossier.iterdir())) or
+            any((destination / f).is_symlink() for f in (NOM_RAPPORT, "justifications.md"))):
+        raise BoucleErreur("liens symboliques interdits dans la sortie de comparaison plans seuls")
+
+
 def executer(soumission: str, workdir, dossier_dir=None, *, qpl_ia=None, gel_seul=False, sortie=None) -> RapportAcceptation:
     """Contrôle aveugle et gel, puis comparaison uniquement si demandée et possible."""
     workdir = Path(workdir).resolve()
@@ -308,8 +321,12 @@ def executer(soumission: str, workdir, dossier_dir=None, *, qpl_ia=None, gel_seu
     if not gel_seul and (dossier_dir is None or not dossier_dir.is_dir()):
         raise BoucleErreur(f"dossier de la soumission introuvable : {dossier_dir}")
     destination = Path(sortie).resolve() if sortie is not None else dossier_dir
-    if not gel_seul and (destination.is_relative_to(workdir) or destination.is_relative_to(dossier_dir / "reference")):
+    if not gel_seul and (destination.is_relative_to(workdir) or
+                         destination.is_relative_to((dossier_dir / "reference").resolve())):
         raise BoucleErreur("La comparaison doit être écrite hors du dossier aveugle et de reference/")
+    inbox, _ = gel._sources(workdir) if not gel_seul else (None, {})
+    if inbox is not None:
+        _verifier_sortie_stricte(destination, dossier_dir, inbox)
     resolu = None
     if qpl_ia:
         qpl = Path(qpl_ia).resolve()
@@ -335,7 +352,7 @@ def executer(soumission: str, workdir, dossier_dir=None, *, qpl_ia=None, gel_seu
     # --- Étape 3 : comparaison + classification + justifications ----------------
     ref_dir = dossier_dir / "reference"
     courant = workdir / "feuilles.csv"
-    chemin_feuilles = courant if courant.is_file() else ref_dir / "feuilles-ia.csv"
+    chemin_feuilles = courant if inbox is not None or courant.is_file() else ref_dir / "feuilles-ia.csv"
     pieces_attendues: dict[str, Path] = {
         f"reference/{soumission}-Dupuis-PlanExpert.qpl": ref_dir / f"{soumission}-Dupuis-PlanExpert.qpl",
         "reference/dupuis-png-dimensions.txt": ref_dir / "dupuis-png-dimensions.txt",
@@ -357,15 +374,23 @@ def executer(soumission: str, workdir, dossier_dir=None, *, qpl_ia=None, gel_seu
     chemin_qpl, provenance = resolu
 
     sortie_dir = destination / "comparaison-dupuis-qpl"
+    recalage = None
+    qpl_humain = ref_dir / f"{soumission}-Dupuis-PlanExpert.qpl"
     try:
         dims = cq.lire_dimensions(ref_dir / "dupuis-png-dimensions.txt", soumission)
         feuilles = cq.lire_feuilles(chemin_feuilles)
-        humains = cq.lire_qpl(ref_dir / f"{soumission}-Dupuis-PlanExpert.qpl", "humain")
+        humains = cq.lire_qpl(qpl_humain, "humain")
         ias = cq.lire_qpl(chemin_qpl, "ia")
         cq.preparer_humain(humains, dims)
-        anomalies = cq.preparer_ia(ias, feuilles, chemin_qpl.parent)
-        comp = cq.comparer(humains, ias, anomalies)
-    except (cq.CompareErreur, OSError, ValueError) as exc:
+        # En plans seuls, utiliser les dimensions de l'inventaire gelé, pas un PNG IA hors du gel.
+        anomalies = cq.preparer_ia(ias, feuilles, None if inbox is not None else chemin_qpl.parent)
+        if inbox is not None:
+            inventaire = json.loads((workdir / "inventaire.json").read_text(encoding="utf-8"))
+            recalage = recalage_sources.controler(humains, ias, inventaire, feuilles, ref_dir, qpl_humain)
+            comp = recalage.comparer(ias, anomalies)
+        else:
+            comp = cq.comparer(humains, ias, anomalies)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
         rapport.verdict, rapport.motif = VERDICT_INCOMPLET, (
             f"comparaison en échec : {exc} — les pièces existent mais la comparaison "
             "marque par marque n'a pas pu être produite (VÉRIFICATION INCOMPLÈTE, "
@@ -374,26 +399,48 @@ def executer(soumission: str, workdir, dossier_dir=None, *, qpl_ia=None, gel_seu
             "comparaison", "échec", f"{provenance} : {chemin_qpl} — {exc}"))
         ecrire_acceptation(rapport, destination, workdir)
         return rapport
-    rapport.etapes.append(EtapeAcceptation(
-        "comparaison", "ok",
-        f"marque par marque (compare_qpl) ; .qpl IA : {provenance} — {chemin_qpl}"))
-    rapport.totaux_marques = cq.totaux(comp)
-    cq.ecrire_sorties(comp, sortie_dir, {"dossier": soumission, "ia": str(chemin_qpl),
-        "humain": str(ref_dir / f"{soumission}-Dupuis-PlanExpert.qpl"),
-        "dims": str(ref_dir / "dupuis-png-dimensions.txt"), "feuilles": str(chemin_feuilles)})
+
+    if recalage is not None:
+        apres = gel.verifier_gel(workdir)
+        if not apres or apres.ajoutes_apres_gel:
+            rapport.verdict, rapport.motif = VERDICT_INVALIDE, "gel violé pendant la comparaison"
+            rapport.etapes.append(EtapeAcceptation("gel_apres_comparaison", "échec", rapport.motif))
+            ecrire_acceptation(rapport, destination, workdir)
+            return rapport
+        rapport.etapes.append(EtapeAcceptation("gel_apres_comparaison", "intact", "SHA-256 revérifiés"))
+        rapport.etapes.append(EtapeAcceptation("recalage_sources", "ok" if recalage.complet else "partiel",
+                                               recalage.detail()))
+    partielle = recalage is not None and not recalage.complet
+    if recalage is not None and not comp.pages.paires:
+        rapport.etapes.append(EtapeAcceptation("comparaison", "non exécutée", "aucune paire de pages attestée"))
+    else:
+        rapport.etapes.append(EtapeAcceptation(
+            "comparaison", "partielle" if partielle else "ok",
+            f"marque par marque (compare_qpl) ; .qpl IA : {provenance} — {chemin_qpl}"))
+        rapport.totaux_marques = cq.totaux(comp)
+    entrees = {"dossier": soumission, "ia": str(chemin_qpl), "humain": str(qpl_humain),
+               "dims": str(ref_dir / "dupuis-png-dimensions.txt"), "feuilles": str(chemin_feuilles)}
+    if recalage is not None:
+        entrees["perimetre"] = recalage.detail()
+    cq.ecrire_sorties(comp, sortie_dir, entrees)
+    if recalage is not None:
+        recalage_sources.ecrire(recalage, sortie_dir)
 
     ecarts = classer_ecarts.classer(comp)
-    rapport.compteurs = classer_ecarts.ecrire_sorties(ecarts, sortie_dir)
+    rapport.compteurs = classer_ecarts.ecrire_sorties(ecarts, sortie_dir, partielle=partielle)
     total_ecarts = sum(rapport.compteurs.values())
     rapport.etapes.append(EtapeAcceptation(
-        "classement", "ok",
-        f"{total_ecarts} désaccord(s) classé(s) → {sortie_dir / 'ecarts-classes.csv'}"))
+        "classement", "non exécuté" if recalage is not None and not comp.pages.paires else "ok",
+        ("aucune comparaison à classer" if recalage is not None and not comp.pages.paires else
+         f"{total_ecarts} désaccord(s) classé(s) → {sortie_dir / 'ecarts-classes.csv'}")))
 
     # --- Étapes 5-7 : dossier de justification (généré si absent, jamais écrasé)
     chemin_justif = destination / "justifications.md"
     etat_justif, detail_justif = "", ""
     controle = None
-    if chemin_justif.is_file():
+    if recalage is not None and not comp.pages.paires:
+        etat_justif, detail_justif = "non exécutées", "aucun écart de repère calculable sans fond attesté"
+    elif chemin_justif.is_file():
         try:
             controle = justifier.controler_justifications(chemin_justif,
                                                           sortie_dir / "ecarts-classes.csv")
@@ -429,7 +476,10 @@ def executer(soumission: str, workdir, dossier_dir=None, *, qpl_ia=None, gel_seu
         incomplet.append(f"{controle.ambigus} ambiguïté(s) ouverte(s), {controle.corrections_requises} erreur(s) IA à corriger")
     if incomplet:
         rapport.etapes.append(EtapeAcceptation("aptitude", "bloquée", "; ".join(incomplet)))
-    if incomplet and (not total_ecarts or etat_justif == "COMPLET"):
+    if partielle:
+        rapport.verdict, rapport.motif = VERDICT_INCOMPLET, (
+            "référence non vérifiable sur tout le périmètre : " + recalage.detail())
+    elif incomplet and (not total_ecarts or etat_justif == "COMPLET"):
         rapport.verdict, rapport.motif = VERDICT_JUSTIF, "; ".join(incomplet) + " — corriger et revérifier avant décision"
     elif etat_justif == "COMPLET":
         rapport.verdict, rapport.motif = VERDICT_PRET, (

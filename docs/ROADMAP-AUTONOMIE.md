@@ -40,6 +40,16 @@ Les états ci-dessous sont les plus récents ; le diagnostic plus bas documente 
 | P7 / G7 | 19 sorties D/E identiques ; comparaison séparée après gel, 2 dossiers pilotes examinés | Recalage fiable pour les pages humaines, preuves individuelles, révision et recontrôle ; pas de vote pour la route agent. |
 | P8 / G8 | Rotation MCP locale vérifiée ; ancien bearer refusé | Reconfigurer les clients distants sans journaliser la clé. Terminer les mesures, puis prouver le parcours sur dossier neuf avant décision de Francis. |
 
+**Rattachement après gel (P7).** La [comparaison stricte des fonds](boucle-acceptation.md#recaler-les-fonds-en-plans-seuls)
+ne redirige plus une page vers une feuille qui a seulement des marques voisines. Sans les rasters humains,
+les deux pilotes donnent **VÉRIFICATION INCOMPLÈTE** ; les nombres historiques restent des diagnostics.
+Les 242 marques S-1715 associées par nom à des éditions présumées remplacées ne sont pas reportées vers ELE-002.
+Les avis écrits, la validation des longueurs, le chiffrage et le dossier neuf restent des conditions de G8.
+
+**Reconnaissance S-1844 (P3/P4).** La [passe F](preuves/autonomie-pilote/recalage-et-d4.md) ajoute un
+seul D4-N confirmé sur E300 (200 repères, les 199 précédents conservés). Les têtes non typées et la
+dépose restent à relever. Les métrés E400 ne changent pas.
+
 ## Ordre de dépendances et prochains chantiers
 
 G0 (socle) → G3+G4 (précision de comptage, conditions de G2/G3) → G5 (longueurs, conditions des

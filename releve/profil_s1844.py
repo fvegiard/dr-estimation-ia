@@ -200,8 +200,8 @@ def rail_touche(d, rails):
     return None
 
 
-def mots_du_rail(x, y, mots, rail):
-    """Lire le libellé dans le même couloir et du même côté du rail que le glyphe."""
+def mots_du_rail(x, y, mots, rail, *, devant=False):
+    """Lire le libellé du même côté du rail : à côté, ou au-devant de la tête."""
     _, _, u, origine = rail
     horizontal = abs(u.x) >= .98
     if not horizontal and abs(u.y) < .98:
@@ -214,9 +214,18 @@ def mots_du_rail(x, y, mots, rail):
         if not TYPE.fullmatch(w[4]) or not (w[axe + 2] - w[axe] >= 1.5 * (w[travers + 2] - w[travers])):
             continue
         meme_cote = (milieu[travers] - origine[travers]) * (xy[travers] - origine[travers]) > 0
+        if not meme_cote:
+            continue
         lateral = abs(milieu[travers] - xy[travers])
         longitudinal = max(w[axe] - xy[axe], xy[axe] - w[axe + 2], 0)
-        if meme_cote and lateral <= 4.5 and 1 <= longitudinal <= 9:
+        if devant:
+            # Témoin E300 p.11 : « D4-N » aligné sur le centre du triangle,
+            # plus loin du rail, sans traverser vers la tête de l'autre côté.
+            decentre = abs(milieu[axe] - xy[axe])
+            eloigne = (milieu[travers] - xy[travers]) * (xy[travers] - origine[travers]) > 0
+            if eloigne and 5 <= lateral <= 8 and longitudinal == 0 and decentre <= 3:
+                retour.append((math.hypot(decentre, lateral), w))
+        elif lateral <= 4.5 and 1 <= longitudinal <= 9:
             retour.append((math.hypot(longitudinal, lateral), w))
     return retour
 
@@ -225,7 +234,7 @@ def projecteurs(traces, mots, feuille):
     rails = [(d["seqno"], it[1]) for d in traces if couleur(d) == "vert" and continu(d)
              and .9 <= (d["width"] or 0) <= 1.2 for it in d["items"] if it[0] == "qu"
              and max(it[1].rect.width, it[1].rect.height) >= 16]
-    candidats = []
+    candidats, au_devant = [], []
     for d in traces:
         style = couleur(d)
         if style not in {"vert", "pâle", "rouge", "gris"} or not triangle(d):
@@ -239,14 +248,27 @@ def projecteurs(traces, mots, feuille):
         rail = rail_touche(d, rails) if style == "vert" and continu(d) else None
         motif = ("feuille démolition, aucune pose déduite" if feuille == "E300D" else
                  "triangle sans rail vert continu jointif" if rail is None else "")
-        candidats.append(Candidat(x, y, max(d["rect"].width, d["rect"].height) / 2, "projecteur", style,
+        c = Candidat(x, y, max(d["rect"].width, d["rect"].height) / 2, "projecteur", style,
             f"E101 p.4 (D3 y=583, D4 y=762); triangle {d['seqno']}; rail {rail[0] if rail else 'non identifié'}",
-            mots_du_rail(x, y, mots, rail) if rail and feuille == "E300" else proches, motif=motif))
-    for c, tag, motif in associer([c for c in candidats if not c.motif]):
-        c.motif = motif
-        if tag:
-            c.portee, c.label = "INSTALLER", f"PROJECTEUR {tag}"
-            c.preuve += f"; étiquette {tag}"
+            mots_du_rail(x, y, mots, rail) if rail and feuille == "E300" else proches, motif=motif)
+        candidats.append(c)
+        if feuille == "E300" and rail and not c.options:
+            au_devant.append((c, rail))
+
+    def etiqueter(groupe, precis):
+        for c, tag, motif in associer(groupe):
+            c.motif = motif
+            if tag:
+                c.portee, c.label = "INSTALLER", f"PROJECTEUR {tag}"
+                c.preuve += f"; étiquette {tag}{precis}"
+
+    lateraux = [c for c in candidats if not c.motif]
+    etiquettes_laterales = {w for c in lateraux for _, w in c.options}
+    etiqueter(lateraux, "")
+    for c, rail in au_devant:
+        c.options = [(d, w) for d, w in mots_du_rail(c.x, c.y, mots, rail, devant=True)
+                     if w not in etiquettes_laterales]
+    etiqueter([c for c, _ in au_devant], " centrée au-devant du triangle")
     return candidats
 
 

@@ -87,3 +87,25 @@ def test_etiquette_de_l_autre_cote_du_rail_ne_prend_pas_le_triangle():
     # D4 plus proche du centre du triangle, mais au-dessus du rail horizontal.
     [c] = projecteurs(traces, [mot(47, 43, "D4-N"), mot(55, 50, "D3-N")], "E300")
     assert c.label == "PROJECTEUR D3-N"
+
+
+def test_etiquette_centree_au_devant_de_la_tete():
+    [c] = projecteurs(traces_projecteur(), [mot(45, 56, "D4-N")], "E300")
+    assert (c.label, c.portee) == ("PROJECTEUR D4-N", "INSTALLER")
+    assert "centrée au-devant" in c.preuve
+
+
+@pytest.mark.parametrize("mots, feuille", [
+    ([mot(45, 39, "D4-N")], "E300"),                     # autre côté du rail
+    ([mot(42, 56, "D4-N")], "E300"),                     # pas centré
+    ([mot(45, 56, "D4-N"), mot(45, 57, "D3-N")], "E300"),  # disputé
+    ([mot(45, 56, "D4-N")], "E300D"),                    # aucune pose en dépose
+])
+def test_etiquette_devant_reste_en_reserve_si_non_univoque(mots, feuille):
+    [c] = projecteurs(traces_projecteur(), mots, feuille)
+    assert not c.label and not c.portee and c.motif
+
+
+def test_couloir_lateral_ne_change_pas_de_type():
+    [c] = projecteurs(traces_projecteur(), [mot(45, 56, "D4-N"), mot(55, 50, "D3-N")], "E300")
+    assert c.label == "PROJECTEUR D3-N"

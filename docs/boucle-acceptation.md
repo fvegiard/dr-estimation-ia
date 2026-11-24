@@ -27,6 +27,7 @@ d'absence de régression).
 | `aveugle.py` | Scan récursif du workdir du relevé IA : `.qpl` « dupuis », dossier `reference/`, noms `dupuis/estimateur/reference/humain`, `releve.xlsx`, signatures de contenu. | 1 |
 | `gel.py` | Gel sha256 de chaque artefact du relevé IA (`nomenclature.csv`, `occurrences-*.csv`, `feuilles-classement.csv`, `reserves.md`, tout `.qpl`) dans `gel.json`, revérifié à chaque relance. | 2 |
 | `compare_qpl.py` | Comparaison déterministe marque par marque, page par page (préexistante, partagée avec le jeu de référence). | 3 |
+| `recalage_sources.py` | En plans seuls : rattache les fonds à un PDF/page et une révision, sans utiliser les marques pour choisir ou déplacer une feuille. | 3 |
 | `classer_ecarts.py` | Classe chaque désaccord du comparateur — jamais un compte global seul. | 4 |
 | `justifier.py` | Génère puis contrôle `justifications.md` : preuve + verdict par désaccord, tranché sur la source originale. | 5–7 |
 | `boucle_acceptation.py` | Orchestrateur : enchaîne le tout et écrit `ACCEPTATION.md`. | 1–8 |
@@ -44,10 +45,11 @@ python -m src.validation.boucle_acceptation <S> --workdir W --qpl-ia Q --dossier
 - `<S>` — nom de la soumission (ex. `S-1844`) ;
 - `--workdir W` — dossier de travail du relevé IA (`OUTBOX/<S>/travail` : nomenclature,
   occurrences, feuilles-classement, réserves, `.qpl` IA) ;
-- `--dossier D` — dossier de la soumission dans le dépôt (`dossiers/<S>` : `reference/`
-  pour la référence). Sans `--sortie`, la comparaison et les justifications sont écrites dans `D`.
+- `--dossier D` — dossier de la soumission (`reference/` pour la référence). Sans `--sortie`, les
+  comparaisons historiques écrivent dans `D` ; **en plans seuls, une sortie distincte est obligatoire**.
 - `--sortie A` — dossier séparé pour la comparaison et les justifications. Le lanceur standard enregistre
   ces résultats dans le sous-dossier `acceptation/` de la passe, sans modifier les comparaisons historiques.
+  En plans seuls, rester hors de `D`, de l'INBOX et de `travail/`.
 - `--qpl-ia Q` — chemin du projet produit par **la passe courante**. Avec `--gel-seul`,
   aucun dossier `D` n'est nécessaire et aucune référence n'est ouverte.
 - Une reprise modifiant le relevé se fait dans un nouveau dossier : le lanceur refuse
@@ -69,6 +71,8 @@ La dernière ligne de la sortie est `VERDICT : …` (machine-lisible). Codes de 
 | `gel.json` | workdir | `gel.geler` / `verifier_gel` | étape 2 (empreinte de chaque artefact, revérifiée à chaque relance) |
 | `comparaison-dupuis-qpl/ecarts-classes.csv` | dossier | `classer_ecarts.ecrire_sorties` | étapes 3–4 (contrat gelé : en-tête exact, une ligne par désaccord) |
 | `comparaison-dupuis-qpl/ecarts-classes.md` | dossier | `classer_ecarts.ecrire_sorties` | étapes 3–4 (compte par classe + liste individuelle) |
+| `comparaison-dupuis-qpl/recalage-pages.csv` | `--sortie` (plans seuls) | `recalage_sources.ecrire` | identité candidate, preuve, couverture, révision et nombre de lignes par page |
+| `comparaison-dupuis-qpl/marques-hors-comparaison.csv` | `--sortie` (plans seuls) | `recalage_sources.ecrire` | une ligne par marque non évaluée, en coordonnées natives, y compris sur une version remplacée |
 | `justifications.md` | dossier | `justifier.generer_dossier` | étapes 5–7 (une ligne à trancher par désaccord ; jamais écrasé s'il existe) |
 | `ACCEPTATION.md` | dossier | `ecrire_acceptation` | synthèse : étapes, compteurs par classe, verdict |
 
@@ -108,7 +112,38 @@ autant l'origine d'un scan anonyme : conserver la provenance et les empreintes.
 Le gel strict revérifie le jeu de PDF depuis `inventaire.json`, y compris un ajout,
 un remplacement ou une suppression postérieurs au gel.
 
-## Exemple minimal
+## Recaler les fonds en plans seuls
+
+Après établissement du gel, prendre **les rasters effectivement référencés par le QPL humain** et
+les placer dans `D/reference/rasters/` (hors INBOX, hors Git). Vérifier à l'œil sur les deux fonds le
+cartouche complet (dossier, feuille, titre, dernière révision) et au moins trois repères fixes et bien
+répartis (coins de dessin ou axes, pas les marques ni uniquement les bords du papier).
+
+`D/reference/recalage-pages.json` décrit ce contrôle. Il contient `version: 1`, `qpl_sha256` (empreinte
+du QPL humain), éventuellement `documents` (nom de document humain → empreinte d'un PDF gelé si le nom
+d'entrée a changé), et `calages`, indexé par le `FileName` exact du plan dans le QPL :
+
+| Champ de `calages[FileName]` | Valeur à relever |
+|---|---|
+| `pdf_sha256`, `page` | PDF **dans le gel**, et numéro physique de sa page à partir de 1. |
+| `feuille`, `revision` | Identifiant de feuille et date ISO de sa révision courante, lues dans les cartouches des deux fonds. |
+| `raster_sha256` | Empreinte du raster humain effectivement contrôlé. Ne pas utiliser un export du relevé IA à sa place. |
+| `preuve`, `preuve_zero` | Désigner les témoins contrôlés. `preuve_zero` obligatoire sur une page humaine sans marques : prouver le périmètre examiné, pas simplement l'absence de compteurs dans le QPL. |
+| `ancres` | Couples `[[x_raster, y_raster], [x_pdf, y_pdf]]`, chaque point normalisé dans les dimensions affichées de sa page, origine en haut à gauche. |
+
+La boucle lit `feuilles.csv` du gel, refuse les correspondances contredisant l'inventaire, confirme le
+cartouche du PDF et contrôle le recouvrement d'encre global et dans le cartouche à la transformation
+donnée par les ancres. Ce dernier contrôle ne remplace pas la lecture de la date dans le cartouche
+humain. Une rotation non vérifiée, un fond trop différent ou une feuille ambiguë restent en réserve.
+Le recouvrement des marques ne prouve ni un doublon de page ni une révision. Un alias sans `calages`
+sert uniquement au triage. Une version présumée remplacée n'est ni reportée ni déclarée résolue.
+
+Le gel est revérifié après lecture de la référence, avant écriture des écarts. Si le périmètre n'est pas
+entièrement attesté, la boucle rend **VÉRIFICATION INCOMPLÈTE** même si le CSV d'écarts est vide. Les
+longueurs ne sont toujours pas comparées. Le benchmark `jeu_reference` garde son appariement historique :
+il ne valide ni le nouveau recalage des fonds ni la couverture du devis.
+
+## Exemple minimal (comparaison historique)
 
 ```bash
 # Relevé IA dans OUTBOX/S-1844/travail, référence dans dossiers/S-1844/reference/

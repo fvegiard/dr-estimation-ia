@@ -264,7 +264,7 @@ def _md(texte: str) -> str:
     return str(texte).replace("|", "\\|").replace("\n", " ")
 
 
-def ecrire_sorties(ecarts: list[EcartClasse], sortie_dir: Path) -> dict[str, int]:
+def ecrire_sorties(ecarts: list[EcartClasse], sortie_dir: Path, *, partielle: bool = False) -> dict[str, int]:
     """Écrit `ecarts-classes.csv` (contrat gelé) et `ecarts-classes.md`
     (compte par classe + liste individuelle, jamais le compte seul)."""
     sortie_dir.mkdir(parents=True, exist_ok=True)
@@ -284,8 +284,12 @@ def ecrire_sorties(ecarts: list[EcartClasse], sortie_dir: Path) -> dict[str, int
              "classification déterministe des désaccords de `compare_qpl` ;"
              " aucun chiffre saisi à la main._")
     L.append("")
+    if partielle:
+        L.extend(["Les désaccords portent seulement sur les feuilles attestées. Aucune conclusion sur le reste : "
+                  "voir `recalage-pages.csv` et `marques-hors-comparaison.csv`.", ""])
     if not ecarts:
-        L.append("Aucun désaccord classé : chaque marque humaine a une contrepartie IA, "
+        L.append("Aucun désaccord mesuré dans le périmètre attesté." if partielle else
+                 "Aucun désaccord classé : chaque marque humaine a une contrepartie IA, "
                  "chaque marque IA a une contrepartie humaine, familles, portées et "
                  "rattachements de feuille concordent.")
     else:

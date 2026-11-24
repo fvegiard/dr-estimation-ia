@@ -808,12 +808,17 @@ class Comparaison:
         return {p.feuille: p for p in self.ias}
 
 
-def comparer(humains: list[Plan], ias: list[Plan], anomalies_entree: list[str] | None = None) -> Comparaison:
+def comparer(humains: list[Plan], ias: list[Plan], anomalies_entree: list[str] | None = None,
+             *, pages_attestees: ResultatPages | None = None) -> Comparaison:
     anomalies = list(anomalies_entree or [])
-    pages = apparier_pages(humains, ias)
+    pages = apparier_pages(humains, ias) if pages_attestees is None else pages_attestees
     anomalies.extend(pages.anomalies)
     ia_par_feuille = {p.feuille: p for p in ias}
     humaines_par_feuille, doublons = fusionner(pages.paires, ia_par_feuille)
+    if pages_attestees is not None:
+        for paire in pages.paires:
+            # Un zéro attesté est distinct d'une absence de page humaine.
+            humaines_par_feuille.setdefault(paire.feuille, [])
     def passe(seuil_rel: float, probabilites: dict[str, dict[str, float]] | None) -> dict[str, ResultatMarques]:
         par_feuille = {}
         for feuille, humaines in humaines_par_feuille.items():
@@ -1084,6 +1089,9 @@ def ecrire_sorties(comp: Comparaison, sortie: Path, entrees: dict[str, str]) -> 
     L.append(f"- Humain : `{entrees['humain']}`")
     L.append(f"- IA : `{entrees['ia']}`")
     L.append(f"- Dimensions : `{entrees['dims']}` ; feuilles : `{entrees['feuilles']}`")
+    if entrees.get("perimetre"):
+        L.append(f"- Périmètre : {entrees['perimetre']}. Les totaux portent seulement sur les feuilles attestées. "
+                 "Voir `recalage-pages.csv` et `marques-hors-comparaison.csv` pour le reste.")
     L.append("")
     L.append("## Résumé")
     L.append("")
@@ -1226,10 +1234,14 @@ def ecrire_sorties(comp: Comparaison, sortie: Path, entrees: dict[str, str]) -> 
         L.append("")
     L.append("## Méthode et limites")
     L.append("")
-    L.append(f"- Pages : nom (PDF, page) puis recalage géométrique (seuil {100 * SEUIL_PAGE:.1f} % diag., score ≥ "
-             f"{SCORE_PAGE_MIN}, 8 orientations, échelle uniforme ± ajustement par axe). Marques : affectation "
-             f"optimale sur la distance, seuil {100 * SEUIL_MARQUE:.1f} % de la diagonale du raster IA, sans "
-             "tenir compte des libellés.")
+    if entrees.get("perimetre"):
+        L.append("- Pages : cartouche, révision et repères de fond attestés, jamais recalés sur les appareils. "
+                 f"Marques : affectation un-à-un à {100 * SEUIL_MARQUE:.1f} % de la diagonale (diagnostic à justifier).")
+    else:
+        L.append(f"- Pages : nom (PDF, page) puis recalage géométrique (seuil {100 * SEUIL_PAGE:.1f} % diag., score ≥ "
+                 f"{SCORE_PAGE_MIN}, 8 orientations, échelle uniforme ± ajustement par axe). Marques : affectation "
+                 f"optimale sur la distance, seuil {100 * SEUIL_MARQUE:.1f} % de la diagonale du raster IA, sans "
+                 "tenir compte des libellés.")
     L.append("- Les coordonnées `X`/`Y` des éléments sont prises telles quelles (pas de correction de centre "
              "de symbole : l'écart est inférieur à 0,3 % de la diagonale).")
     L.append("- Les lignes (longueurs) sont seulement comptées ; elles ne sont pas comparées.")
