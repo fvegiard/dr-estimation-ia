@@ -16,7 +16,10 @@ Partage des rôles :
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+# Environnement virtuel local (obligatoire : le serveur démarre dans .venv, précompilé sans compilation dynamique)
+uv venv .venv --python 3.14 && uv pip install --python .venv/bin/python -r requirements.txt
+# pré-compilation du bytecode (Windows : .venv\Scripts\python -m compileall …)
+.venv/bin/python -m compileall -q serveur_mcp src releve tests outils
 ```
 
 ## Local (stdio)
@@ -27,14 +30,29 @@ Configuration type d'un client MCP (Claude Desktop, VS Code / Copilot, Cursor, L
 {
   "mcpServers": {
     "expert-estimateur": {
-      "command": "python",
+      "command": ".venv/bin/python",
       "args": ["-m", "serveur_mcp"],
-      "cwd": "D:/github/dr-estimation-ia",
-      "env": { "ESTIMATEUR_BASE": "D:/estimations" }
+      "cwd": "/home/fvdev-ubuntu26/work/dr-estimation-ia-container",
+      "env": { "ESTIMATEUR_BASE": "/data/estimations" }
     }
   }
 }
 ```
+
+### Démarrage : réponse « initialize » en moins de 0,2 s
+
+La première ligne du canal est reconnue et répondue **avant d'avoir chargé le SDK**
+(`serveur_mcp/lance.py` + `demarrage.py`, bibliothèque standard seule) ; le serveur complet
+se charge ensuite et chaque requête part par le noyau officiel du SDK. Toute autre première
+ligne (version de prise de contact inconnue, client moderne 2026…) rend la main au serveur
+officiel tel quel. Parité et écart contrôlés par `tests/test_demarrage_mcp.py`
+(la réponse immédiate doit rester identique, champ par champ, à celle du noyau du SDK).
+Mesure de la mission :
+
+```bash
+.venv/bin/python outils/mesurer_demarrage_mcp.py --essais 5 --limite 0.2 --rapport mcp-demarrage-rapport.json
+```
+le rapport est conforme (`conforme: true`, code de sortie 0) quand les cinq essais passent sous 0,2 s.
 
 Images : `voir_image` et `zoomer` renvoient du JPEG (plus léger que PNG pour les plans).
 

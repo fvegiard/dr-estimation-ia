@@ -1,6 +1,7 @@
 """Chronomètre le vrai protocole stdio, depuis la création du processus Python.
 
-Exemple : .venv/Scripts/python.exe outils/mesurer_demarrage_mcp.py --essais 5
+Exemple (poste local) : .venv/bin/python outils/mesurer_demarrage_mcp.py --essais 5 --limite 0.2
+(Windows : .venv\\Scripts\\python.exe outils/mesurer_demarrage_mcp.py)
 Le premier essai n'est pas un démarrage à froid garanti : aucun cache OS n'est vidé.
 Le code de sortie vaut 1 si un échange échoue ou si un essai dépasse la limite.
 """
