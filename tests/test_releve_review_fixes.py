@@ -256,6 +256,7 @@ def test_run_process_propagates_box_overlap_from_rendu_rapport(monkeypatch, tmp_
     workdir.mkdir(parents=True)
     (workdir / "nomenclature.csv").write_text("label\n", encoding="utf-8")
     (workdir / "feuilles-classement.csv").write_text("feuille\n", encoding="utf-8")
+    (workdir / "metre-longueurs.csv").write_text("id,longueur_m\n", encoding="utf-8")
     statut_calls = []
 
     def _run(cmd, **kwargs):
@@ -287,6 +288,7 @@ def test_run_process_skips_native_export_when_component_missing(monkeypatch, tmp
     workdir = outdir / "travail"
     workdir.mkdir(parents=True)
     (workdir / "agent-resultat.json").write_text("{}", encoding="utf-8")
+    (workdir / "metre-longueurs.csv").write_text("id,longueur_m\n", encoding="utf-8")
     commands: list[list[str]] = []
 
     monkeypatch.setattr(releve_run, "OUTBOX", str(outbox))

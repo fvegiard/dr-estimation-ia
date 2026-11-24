@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "qpl_sha256": "de187f0ecf480b73b66da7268cd5a17d1361ad1f82289cb5b06c150640ee224e",
+  "documents": {
+    "Électrique_Plans pour soumission.pdf": "dd1dfacb29ebf31dfdbe562f0d776e2931585eaaf595e11b074e87b6286f316d",
+    "Électrique_Addenda ELE-001_Plans.pdf": "793d9749c2c1c87ac38fa2e187d021016e4049244bdd8264353d5afe9879b421",
+    "ELectrique_Addenda ELE-002_Plans.pdf": "9118bd946119a0d549c2f9c497803331a7c5786a42a0dc458d1c5731a17ee6aa"
+  },
+  "calages": {}
+}

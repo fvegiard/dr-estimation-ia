@@ -1,0 +1,39 @@
+{
+ "conforme": false,
+ "erreurs": [
+  "Q1 feuille plan sans aucune occurrence : E201",
+  "Q1 feuille plan sans aucune occurrence : E300D",
+  "Q1 feuille plan sans aucune occurrence : E400",
+  "Q15 E200D (425.2, 1953.4) : cercle vectoriel Ø12.1 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (425, 1953) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (560.3, 1853.8) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (560, 1854) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (1991.5, 1718.1) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (1991, 1718) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (904.4, 565.4) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (904, 565) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (542.5, 1953.8) : cercle vectoriel Ø12.1 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (542, 1954) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (559.1, 1953.7) : cercle vectoriel Ø12.1 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (559, 1954) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (1461.9, 1083.4) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (1462, 1083) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (489.1, 442.0) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (489, 442) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (411.2, 496.4) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (411, 496) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (906.4, 1431.2) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (906, 1431) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (1298.9, 2051.0) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (1299, 2051) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (1606.3, 2051.7) : cercle vectoriel Ø12.6 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (1606, 2052) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200D (459.5, 1953.4) : cercle vectoriel Ø12.1 pt, trait 0.6 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (460, 1953) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (670.5, 1861.1) : cercle vectoriel Ø12.6 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (670, 1861) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (1725.3, 2051.7) : cercle vectoriel Ø12.6 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (1725, 2052) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (411.5, 987.9) : cercle vectoriel Ø12.6 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (412, 988) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (607.4, 329.0) : cercle vectoriel Ø12.6 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (607, 329) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (964.3, 2052.7) : cercle vectoriel Ø12.1 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (964, 2053) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (926.7, 1882.1) : cercle vectoriel Ø12.1 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (927, 1882) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (1059.8, 1881.7) : cercle vectoriel Ø12.1 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (1060, 1882) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (488.8, 1721.7) : cercle vectoriel Ø12.1 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (489, 1722) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (932.3, 1072.7) : cercle vectoriel Ø12.1 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (932, 1073) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (932.3, 1084.7) : cercle vectoriel Ø12.1 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (932, 1085) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)",
+  "Q15 E200 (900.2, 1370.1) : cercle vectoriel Ø12.1 pt, trait 1.08 pt — même signature que 'PRISE DUPLEX 15A 120V' déjà relevé, mais aucune occurrence : relève-le, ou justifie dans reserves.md une ligne « Q15 (900, 1370) : <pourquoi ce n'est pas un appareil> » (zoom à l'appui)"
+ ],
+ "avertissements": [
+  "aucun repère lu dans les notes : Q4-Q6 non vérifiables (classement non contrôlé)"
+ ],
+ "occurrences": 199,
+ "reperes_lus": 0,
+ "comparaison_reference": null,
+ "grilles_suspectes": {}
+}

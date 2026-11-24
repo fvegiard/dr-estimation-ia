@@ -6,6 +6,7 @@ import pytest
 
 from serveur_mcp import serveur
 from serveur_mcp.sources import motif_reference
+from releve import prepare
 
 
 def creer_pdf(chemin: Path, textes: list[str]) -> Path:
@@ -59,3 +60,22 @@ def test_reprise_refuse_reference_deja_deposee(tmp_path, monkeypatch):
     (dossier / "travail/blocs-index.csv").write_text("sig_id\n", encoding="utf-8")
     with pytest.raises(serveur.ToolError, match="Source refusée"):
         serveur.relever_automatique("ESSAI", reprendre=True)
+
+
+def test_preparer_plans_seuls_refuse_avant_de_produire_des_rasters(tmp_path):
+    inbox = tmp_path / "INBOX"
+    inbox.mkdir()
+    p = creer_pdf(inbox / "E05.pdf", [
+        "PLAN ELECTRIQUE E05",
+        "RELEVE E05 - MATERIEL\n115 reperes / 21 familles",
+    ])
+    work = tmp_path / "travail"
+    with pytest.raises(ValueError, match="Source refusée.*page 2"):
+        prepare.main(str(inbox), str(work), plans_seuls=True)
+    assert p.is_file() and not work.exists()
+
+
+def test_preparer_plans_seuls_refuse_fichier_hors_pdf(tmp_path):
+    (tmp_path / "export-quantites.xlsx").touch()
+    with pytest.raises(ValueError, match="uniquement les PDF"):
+        prepare.main(str(tmp_path), str(tmp_path / "travail"), plans_seuls=True)

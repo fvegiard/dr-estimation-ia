@@ -11,7 +11,7 @@ Usage : uv run releve/render_pdf.py WORKDIR NOM_PROJET SORTIE_DIR
 Entrée : SORTIE_DIR/<NOM>-Plans-annotes.pdf (produit par render_vectoriel.py, doit déjà exister).
 Sorties : <NOM>-Rapport-de-metre.pdf (+ .md), <NOM>-Dossier-complet.pdf (= rapport + plans annotés).
 """
-import os, sys, io, collections, datetime, html
+import os, sys, io, collections, datetime, html, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pymupdf, markdown
 from commun import load_nomenclature, load_occurrences, load_feuilles, sha256
@@ -52,9 +52,9 @@ def main(work, name, out_dir):
     if not os.path.exists(p_plans):
         sys.exit(f"{p_plans} introuvable : lancer releve/render_vectoriel.py avant render_pdf.py (étape 4a)")
     # --- rapport de métré
-    today = datetime.date.today().strftime("%Y-%m-%d")
+    today = os.environ.get("RELEVE_DATE") or datetime.date.today().isoformat()
     L = [f"# Rapport de métré (par plans) — {name}", "", f"Généré le {today} par le pipeline `releve/` (relevé automatique Claude + scripts déterministes). "
-         "Chaque marque est une occurrence relevée sur le plan (étiquette texte vectorielle ou lecture visuelle) ; les quantités sont des comptes d'objets, sans métrage de câble.", ""]
+         "Chaque marque est une occurrence relevée sur le plan. Le métré des parcours est séparé des comptes d'objets.", ""]
     L += ["## Résumé", "", "| Feuille | Marques | Libellés |", "|---|--:|--:|"]
     for f in sheets:
         L.append(f"| {feuilles[f].get('nom', f)} | {sum(per_sheet[f].values())} | {len(per_sheet[f])} |")
@@ -71,6 +71,22 @@ def main(work, name, out_dir):
     L += ["", "## Nomenclature (libellé → source de la lecture)", "", "| Libellé | Famille | Description | Source |", "|---|---|---|---|"]
     for l in sorted(nom):
         n = nom[l]; L.append(f"| {html.escape(l)} | {n['famille']} | {html.escape(n['description'])} | {html.escape(n['source'])} |")
+    p_longueurs = os.path.join(work, "metre-longueurs.json")
+    L += ["", "## Câbles et conduits", ""]
+    if os.path.isfile(p_longueurs):
+        with open(p_longueurs, encoding="utf-8") as f:
+            metrage = json.load(f)
+        if metrage["lignes"]:
+            total = collections.Counter()
+            L += ["| Feuille / tracé | Type | Longueur (m) | Source |", "|---|---|--:|---|"]
+            for r in metrage["lignes"]:
+                total[r["famille"]] += r["longueur_m"]
+                L.append(f"| {html.escape(r['id'])} | {html.escape(r['famille'])} | {r['longueur_m']:.2f} | {html.escape(r['source'])} |")
+            L += ["", "**Sous-totaux tracés (pas des longueurs à acheter) :** " +
+                  ", ".join(f"{html.escape(k)} : {v:.2f} m" for k, v in sorted(total.items())) + "."]
+        L += ["", *[f"- {html.escape(r)}" for r in metrage["reserves"]]]
+    else:
+        L.append("Parcours non métrés — câble et conduit à vérifier, pas de quantité zéro.")
     for extra, title in (("rapport-releve.md", "Méthode et constats de l'agent"), ("reserves.md", "Réserves"), ("comparaison-estimateur.md", "Comparaison avec le relevé de l'estimateur")):
         p = os.path.join(work, extra)
         if os.path.exists(p):
@@ -78,14 +94,14 @@ def main(work, name, out_dir):
     md = "\n".join(L)
     open(os.path.join(out_dir, f"{name}-Rapport-de-metre.md"), "w", encoding="utf-8").write(md)
     rap = md_to_pdf(md)
-    p_rap = os.path.join(out_dir, f"{name}-Rapport-de-metre.pdf"); rap.save(p_rap, garbage=3, deflate=True)
+    p_rap = os.path.join(out_dir, f"{name}-Rapport-de-metre.pdf"); rap.set_metadata({}); rap.save(p_rap, garbage=3, deflate=True, no_new_id=True)
     # --- dossier complet
     # Build from p_plans (it owns the /OCProperties catalog entry for the RELEVE layers) and prepend the
     # report pages, rather than starting from a fresh document and inserting p_plans into it: pymupdf's
     # insert_pdf() does not carry the source document's OCG catalog into an unrelated destination, so the
     # family layers silently stopped being toggleable in Dossier-complet.pdf (verified empirically).
     full = pymupdf.open(p_plans); full.insert_pdf(rap, start_at=0)
-    p_full = os.path.join(out_dir, f"{name}-Dossier-complet.pdf"); full.save(p_full, garbage=3, deflate=True)
+    p_full = os.path.join(out_dir, f"{name}-Dossier-complet.pdf"); full.save(p_full, garbage=3, deflate=True, no_new_id=True)
     for p in (p_plans, p_rap, p_full):
         print(f"{os.path.basename(p)}  {os.path.getsize(p)} o  {len(pymupdf.open(p))} p  sha256 {sha256(p)}")
 

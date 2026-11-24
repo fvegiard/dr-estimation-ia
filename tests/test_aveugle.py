@@ -45,7 +45,7 @@ def _creer_travail_ia_propre(workdir: Path) -> None:
     _ecrire(workdir, "feuilles-classement.csv", "feuille,role\nE100,plan\n")
     _ecrire(workdir, "reserves.md", "# Reserves\n- famille indeterminee sur E100 (symbole sans legende)\n")
     _ecrire(workdir, "planexpert/S-TEST.qpl", '<?xml version="1.0"?><projet version="1"></projet>\n')
-    _ecrire(workdir, "estimateur/pages.csv", "page,largeur_pt,hauteur_pt,fichier\n1,2383,1683,\n")
+    (workdir / "estimateur").mkdir()  # prepare.py crée le répertoire, sans fichiers si plans seuls
     _ecrire(workdir, "rasters/E100.png", b"\x89PNG\r\n\x1a\n".decode("latin-1"))
 
 
@@ -104,6 +104,14 @@ def test_dossier_reference_bannis(tmp_path):
     refs = {(x["fichier"], x["motif"]) for x in _rapport_json(workdir)["references_detectees"]}
     assert ("reference/S-1294-Dupuis-PlanExpert.qpl", "qpl-dupuis") in refs
     assert ("reference/feuilles-ia.csv", "dossier-reference") in refs
+
+
+def test_png_neutre_sous_estimateur_banni(tmp_path):
+    (tmp_path / "estimateur" / "legendes").mkdir(parents=True)
+    (tmp_path / "estimateur" / "legendes" / "p01.png").write_bytes(b"\x89PNG\r\n\x1a\n")
+    rapport = aveugle.controler(tmp_path)
+    assert not rapport.aveugle
+    assert rapport.references_detectees[0].motif == "dossier-estimateur"
 
 
 def test_signature_dans_contenu(tmp_path):

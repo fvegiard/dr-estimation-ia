@@ -100,7 +100,7 @@ def render(sheets: list[Sheet], plans_pdf: Path, out_pdf: Path, log=print) -> di
     out_pdf.parent.mkdir(parents=True, exist_ok=True)
     # garbage=2, pas 3 : le niveau 3 fusionne les objets identiques, donc les calques de même nom des
     # différentes feuilles (26 x « RELEVE - Legende et avertissements ») en un seul — le gold en garde un par feuille
-    out.save(out_pdf, garbage=2, deflate=True)
+    out.save(out_pdf, garbage=2, deflate=True, no_new_id=True)
     pages = out.page_count
     out.close()                              # libère plans_pdf tout de suite (sans attendre le ramasse-miettes)
     return {"pages": pages, "sheets": report}

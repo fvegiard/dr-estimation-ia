@@ -278,6 +278,7 @@ class RapportJustification:
     tranches: int = 0
     non_tranches: int = 0
     ambigus: int = 0
+    corrections_requises: int = 0
     sans_preuve: list[str] = field(default_factory=list)
     verdicts_non_reconnus: list[str] = field(default_factory=list)
     lignes_csv_absentes: list[str] = field(default_factory=list)
@@ -431,6 +432,8 @@ def controler_justifications(path: Path,
             rapport.tranches += 1
             if canon == "ambigu reserve":
                 rapport.ambigus += 1
+            if canon == "estimateur correct":
+                rapport.corrections_requises += 1
         rapport.cles.append(_cle_dossier(classe, libelle_h, libelle_i, cellule_pos))
     if ecarts_csv is not None:
         desaccords = lire_ecarts(ecarts_csv)

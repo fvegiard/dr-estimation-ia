@@ -27,6 +27,7 @@ d'absence de régression).
 | `aveugle.py` | Scan récursif du workdir du relevé IA : `.qpl` « dupuis », dossier `reference/`, noms `dupuis/estimateur/reference/humain`, `releve.xlsx`, signatures de contenu. | 1 |
 | `gel.py` | Gel sha256 de chaque artefact du relevé IA (`nomenclature.csv`, `occurrences-*.csv`, `feuilles-classement.csv`, `reserves.md`, tout `.qpl`) dans `gel.json`, revérifié à chaque relance. | 2 |
 | `compare_qpl.py` | Comparaison déterministe marque par marque, page par page (préexistante, partagée avec le jeu de référence). | 3 |
+| `recalage_sources.py` | En plans seuls : rattache les fonds à un PDF/page et une révision, sans utiliser les marques pour choisir ou déplacer une feuille. | 3 |
 | `classer_ecarts.py` | Classe chaque désaccord du comparateur — jamais un compte global seul. | 4 |
 | `justifier.py` | Génère puis contrôle `justifications.md` : preuve + verdict par désaccord, tranché sur la source originale. | 5–7 |
 | `boucle_acceptation.py` | Orchestrateur : enchaîne le tout et écrit `ACCEPTATION.md`. | 1–8 |
@@ -37,20 +38,28 @@ spec unique [`docs/FORMAT-EXEMPLE.md`](FORMAT-EXEMPLE.md).
 ## CLI
 
 ```bash
-python -m src.validation.boucle_acceptation <S> --workdir W --dossier D
+RELEVE_BASE=/chemin/passe-isolee uv run releve/run.py --aveugle /chemin/INBOX/<S>
+python -m src.validation.boucle_acceptation <S> --workdir W --qpl-ia Q --dossier D --sortie A
 ```
 
 - `<S>` — nom de la soumission (ex. `S-1844`) ;
 - `--workdir W` — dossier de travail du relevé IA (`OUTBOX/<S>/travail` : nomenclature,
   occurrences, feuilles-classement, réserves, `.qpl` IA) ;
-- `--dossier D` — dossier de la soumission dans le dépôt (`dossiers/<S>` : `reference/`
-  et sorties).
+- `--dossier D` — dossier de la soumission (`reference/` pour la référence). Sans `--sortie`, les
+  comparaisons historiques écrivent dans `D` ; **en plans seuls, une sortie distincte est obligatoire**.
+- `--sortie A` — dossier séparé pour la comparaison et les justifications. Le lanceur standard enregistre
+  ces résultats dans le sous-dossier `acceptation/` de la passe, sans modifier les comparaisons historiques.
+  En plans seuls, rester hors de `D`, de l'INBOX et de `travail/`.
+- `--qpl-ia Q` — chemin du projet produit par **la passe courante**. Avec `--gel-seul`,
+  aucun dossier `D` n'est nécessaire et aucune référence n'est ouverte.
+- Une reprise modifiant le relevé se fait dans un nouveau dossier : le lanceur refuse
+  d'écraser un relevé déjà gelé. La comparaison revérifie le scan sans réécrire son rapport initial.
 
 La dernière ligne de la sortie est `VERDICT : …` (machine-lisible). Codes de sortie :
 
 | Code | Signification |
 |---|---|
-| 0 | `PRÊT POUR DÉCISION FRANCIS` ou `VÉRIFICATION INCOMPLÈTE` — rien à corriger dans le relevé |
+| 0 | `PRÊT POUR DÉCISION FRANCIS` ou `VÉRIFICATION INCOMPLÈTE` (code informatif ; lire le verdict) |
 | 1 | `INVALIDE` ou `JUSTIFICATIONS REQUISES` — boucle bloquée avant la décision |
 | 2 | Erreur d'entrée (workdir/dossier introuvable, gel illisible) |
 
@@ -62,6 +71,8 @@ La dernière ligne de la sortie est `VERDICT : …` (machine-lisible). Codes de 
 | `gel.json` | workdir | `gel.geler` / `verifier_gel` | étape 2 (empreinte de chaque artefact, revérifiée à chaque relance) |
 | `comparaison-dupuis-qpl/ecarts-classes.csv` | dossier | `classer_ecarts.ecrire_sorties` | étapes 3–4 (contrat gelé : en-tête exact, une ligne par désaccord) |
 | `comparaison-dupuis-qpl/ecarts-classes.md` | dossier | `classer_ecarts.ecrire_sorties` | étapes 3–4 (compte par classe + liste individuelle) |
+| `comparaison-dupuis-qpl/recalage-pages.csv` | `--sortie` (plans seuls) | `recalage_sources.ecrire` | identité candidate, preuve, couverture, révision et nombre de lignes par page |
+| `comparaison-dupuis-qpl/marques-hors-comparaison.csv` | `--sortie` (plans seuls) | `recalage_sources.ecrire` | une ligne par marque non évaluée, en coordonnées natives, y compris sur une version remplacée |
 | `justifications.md` | dossier | `justifier.generer_dossier` | étapes 5–7 (une ligne à trancher par désaccord ; jamais écrasé s'il existe) |
 | `ACCEPTATION.md` | dossier | `ecrire_acceptation` | synthèse : étapes, compteurs par classe, verdict |
 
@@ -71,8 +82,8 @@ La dernière ligne de la sortie est `VERDICT : …` (machine-lisible). Codes de 
 |---|---|---|
 | `INVALIDE` | Relevé non aveugle (étape 1) ou **gel violé** (étape 2) : les désaccords mesurés ne sont plus ceux du relevé d'aveugle. | 1 |
 | `VÉRIFICATION INCOMPLÈTE` | Référence de l'estimateur absente, incomplète, illisible — ou comparaison en échec : rien n'est prouvé dans un sens ni dans l'autre (étape 8). | 0 |
-| `JUSTIFICATIONS REQUISES` | Comparaison faite, désaccords classés, dossier de justification non entièrement tranché : preuve sur le plan exigée pour chaque ligne. | 1 |
-| `PRÊT POUR DÉCISION FRANCIS` | Vérification complète : aveugle, gel intact, comparaison faite, aucun désaccord non tranché. La décision **finale** reste à Francis — ce verdict ouvre la décision, il ne la remplace pas. | 0 |
+| `JUSTIFICATIONS REQUISES` | Comparaison faite, mais désaccords, corrections, ambiguïtés, contrôle qualité ou anomalies de recalage encore ouverts. | 1 |
+| `PRÊT POUR DÉCISION FRANCIS` | Vérification complète de la **comparaison de repères**, pas une attestation de chiffrage ou une autorisation d'envoi. La décision finale reste à Francis. | 0 |
 
 Le gel couvre aussi le `.qpl` IA quand il vit hors du workdir (dossier assemblé
 `dossiers/<S>/planexpert/<S>.qpl`) : son empreinte sha256 rejoint `gel.json` avant la
@@ -94,22 +105,45 @@ consigne ce classement dans `inventaire.json` (scanné, contenu → « contenu-e
 PDF d'entrée porte « dupuis »/« estimateur »/« releve »/« plan expert »,
 `estimateur/pages.csv` est détecté lui aussi (« contenu-dupuis »…).
 
-Limite résiduelle, à fermer dans une bead dédiée : du matériau de l'estimateur placé
-sous un sous-dossier `estimateur/` du workdir **sans** passer par `prepare.py` (copié
-après préparation, ou toute autre voie hors pipeline) n'est pas détecté quand noms et
-contenus sont neutres — `estimateur/pNN.png` et `estimateur/legendes/*.png` sont des
-PNG binaires (balayage de contenu sauté), « pNN.png » ne contient aucun mot du
-contrôle, et `estimateur/pages.csv` n'est détecté que par sa seule signature de contenu.
-La correction suit la même logique que la règle du dossier `reference/` : tout fichier
-sous `estimateur/` est du matériau de l'estimateur (`prepare.py` n'y écrit jamais
-rien d'autre) et devrait être détecté, ce qui exigera d'ajuster en sus le fixture
-`tests/test_aveugle.py::_creer_travail_ia_propre` (qui place aujourd'hui
-`estimateur/pages.csv` dans un travail « propre », contrepied de ce que
-`prepare.py` écrit réellement dans ce sous-dossier). En attendant, le contrôle
-d'aveugle constate l'état du dossier : ne jamais le citer seul comme preuve de
-discipline.
+Tout fichier sous `estimateur/` ou `reference/` dans `travail/` est refusé, même
+s'il est binaire et porte un nom neutre. Le pré-vol `--aveugle` refuse aussi avant
+préparation le PDF explicitement marqué comme relevé. Il n'authentifie pas pour
+autant l'origine d'un scan anonyme : conserver la provenance et les empreintes.
+Le gel strict revérifie le jeu de PDF depuis `inventaire.json`, y compris un ajout,
+un remplacement ou une suppression postérieurs au gel.
 
-## Exemple minimal
+## Recaler les fonds en plans seuls
+
+Après établissement du gel, prendre **les rasters effectivement référencés par le QPL humain** et
+les placer dans `D/reference/rasters/` (hors INBOX, hors Git). Vérifier à l'œil sur les deux fonds le
+cartouche complet (dossier, feuille, titre, dernière révision) et au moins trois repères fixes et bien
+répartis (coins de dessin ou axes, pas les marques ni uniquement les bords du papier).
+
+`D/reference/recalage-pages.json` décrit ce contrôle. Il contient `version: 1`, `qpl_sha256` (empreinte
+du QPL humain), éventuellement `documents` (nom de document humain → empreinte d'un PDF gelé si le nom
+d'entrée a changé), et `calages`, indexé par le `FileName` exact du plan dans le QPL :
+
+| Champ de `calages[FileName]` | Valeur à relever |
+|---|---|
+| `pdf_sha256`, `page` | PDF **dans le gel**, et numéro physique de sa page à partir de 1. |
+| `feuille`, `revision` | Identifiant de feuille et date ISO de sa révision courante, lues dans les cartouches des deux fonds. |
+| `raster_sha256` | Empreinte du raster humain effectivement contrôlé. Ne pas utiliser un export du relevé IA à sa place. |
+| `preuve`, `preuve_zero` | Désigner les témoins contrôlés. `preuve_zero` obligatoire sur une page humaine sans marques : prouver le périmètre examiné, pas simplement l'absence de compteurs dans le QPL. |
+| `ancres` | Couples `[[x_raster, y_raster], [x_pdf, y_pdf]]`, chaque point normalisé dans les dimensions affichées de sa page, origine en haut à gauche. |
+
+La boucle lit `feuilles.csv` du gel, refuse les correspondances contredisant l'inventaire, confirme le
+cartouche du PDF et contrôle le recouvrement d'encre global et dans le cartouche à la transformation
+donnée par les ancres. Ce dernier contrôle ne remplace pas la lecture de la date dans le cartouche
+humain. Une rotation non vérifiée, un fond trop différent ou une feuille ambiguë restent en réserve.
+Le recouvrement des marques ne prouve ni un doublon de page ni une révision. Un alias sans `calages`
+sert uniquement au triage. Une version présumée remplacée n'est ni reportée ni déclarée résolue.
+
+Le gel est revérifié après lecture de la référence, avant écriture des écarts. Si le périmètre n'est pas
+entièrement attesté, la boucle rend **VÉRIFICATION INCOMPLÈTE** même si le CSV d'écarts est vide. Les
+longueurs ne sont toujours pas comparées. Le benchmark `jeu_reference` garde son appariement historique :
+il ne valide ni le nouveau recalage des fonds ni la couverture du devis.
+
+## Exemple minimal (comparaison historique)
 
 ```bash
 # Relevé IA dans OUTBOX/S-1844/travail, référence dans dossiers/S-1844/reference/
@@ -121,14 +155,16 @@ python -m src.validation.boucle_acceptation S-1844 \
 # → VERDICT : JUSTIFICATIONS REQUISES            # exit 1
 ```
 
-Une fois `justifications.md` rempli (preuve + verdict pour chaque ligne), relancer la même
-commande : le dossier rempli n'est jamais écrasé, et une vérification entièrement tranchée
-donne `VERDICT : PRÊT POUR DÉCISION FRANCIS` (exit 0).
+Relancer la comparaison après avoir rempli `justifications.md` ; ce fichier n'est pas
+écrasé. « estimateur correct » demande une correction réelle et un nouveau contrôle,
+« ambigu → réserve » reste bloquant, même si toutes les cases sont remplies. Ne pas
+présenter une révision faite après ouverture de la référence comme une nouvelle passe aveugle.
 
 ## Intégrations et tests
 
 - `releve/run.py` lance la boucle à la fin du parcours canonique (verdict consigné dans
-  `STATUT.md`, jamais bloquant — `VÉRIFICATION INCOMPLÈTE` si la référence manque).
+  `STATUT.md`, `VÉRIFICATION INCOMPLÈTE` si la référence manque). Le chiffrage de travail est
+  écrit dans `chiffrage-interne/` et n'est pas copié sur le miroir Drive.
 - `python -m src.validation.jeu_reference` affiche le verdict de chaque `ACCEPTATION.md`
   en section informative (lecture seule, jamais pass/fail).
 - `tests/test_boucle_acceptation_e2e.py` rejoue la boucle **par son CLI** (subprocess,

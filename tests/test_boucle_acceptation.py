@@ -19,11 +19,14 @@ import csv
 import json
 import subprocess
 import sys
+from hashlib import sha256
 from pathlib import Path
 
+import pymupdf as pdf
 import pytest
+from PIL import Image
 
-from src.validation import aveugle, boucle_acceptation as boucle
+from src.validation import aveugle, boucle_acceptation as boucle, recalage_sources
 
 from conftest import env_sans_encodage
 
@@ -262,7 +265,7 @@ def test_dossier_rempli_relanche_pret(tmp_path):
     justif = f["dossier"] / "justifications.md"
     rempli = justif.read_text(encoding="utf-8").replace(
         "|  |  |",
-        "| plan PLANS-TEST - 1 (zoom ×8) : aucun appareil vu | estimateur correct |")
+        "| plan PLANS-TEST - 1 (zoom ×8) : aucun appareil vu | IA correcte |")
     justif.write_text(rempli, encoding="utf-8")
     rapport = boucle.executer("S-TEST", f["workdir"], f["dossier"])
     assert rapport.verdict == boucle.VERDICT_PRET
@@ -272,6 +275,16 @@ def test_dossier_rempli_relanche_pret(tmp_path):
     assert "**Verdict : PRÊT POUR DÉCISION FRANCIS**" in texte
 
 
+@pytest.mark.parametrize("decision", ["estimateur correct", "ambigu → réserve"])
+def test_justification_ne_corrige_pas_le_releve(tmp_path, decision):
+    f = _fabriquer(tmp_path)
+    boucle.executer("S-TEST", f["workdir"], f["dossier"])
+    path = f["dossier"] / "justifications.md"
+    path.write_text(path.read_text(encoding="utf-8").replace(
+        "|  |  |", f"| Témoin sur le plan E101 p.1, (240, 420) | {decision} |"), encoding="utf-8")
+    assert boucle.executer("S-TEST", f["workdir"], f["dossier"]).verdict == boucle.VERDICT_JUSTIF
+
+
 def test_verdict_acceptation_lecture_seule(tmp_path):
     """verdict_acceptation : lit le verdict d'ACCEPTATION.md, None si absent —
     lecture seule (utilisé par le jeu de référence)."""
@@ -279,6 +292,25 @@ def test_verdict_acceptation_lecture_seule(tmp_path):
     assert boucle.verdict_acceptation(f["dossier"]) is None
     boucle.executer("S-TEST", f["workdir"], f["dossier"])
     assert boucle.verdict_acceptation(f["dossier"]) == boucle.VERDICT_JUSTIF
+
+
+def test_comparaison_dans_sortie_distincte_ne_modifie_pas_historique(tmp_path):
+    f = _fabriquer(tmp_path)
+    historique = f["dossier"] / "ACCEPTATION.md"
+    historique.write_text("Historique à conserver.\n", encoding="utf-8")
+    destination = tmp_path / "OUTBOX" / "acceptation"
+    rapport = boucle.executer("S-TEST", f["workdir"], f["dossier"], sortie=destination)
+    assert historique.read_text(encoding="utf-8") == "Historique à conserver.\n"
+    assert not (f["dossier"] / "comparaison-dupuis-qpl").exists()
+    assert rapport.verdict == boucle.verdict_acceptation(destination) == boucle.VERDICT_JUSTIF
+    assert (destination / "comparaison-dupuis-qpl" / "ecarts-classes.csv").is_file()
+    assert (destination / "justifications.md").is_file()
+
+
+def test_sortie_comparaison_interdite_dans_travail(tmp_path):
+    f = _fabriquer(tmp_path)
+    with pytest.raises(boucle.BoucleErreur, match="hors du dossier aveugle"):
+        boucle.executer("S-TEST", f["workdir"], f["dossier"], sortie=f["workdir"] / "comparaison")
 
 
 def test_cli_boucle(tmp_path):
@@ -310,3 +342,170 @@ def test_erreurs_entree(tmp_path):
         boucle.executer("S-TEST", f["workdir"], tmp_path / "dossiers" / "Absent")
     with pytest.raises(aveugle.AveugleErreur):
         boucle.executer("S-TEST", tmp_path / "absent", f["dossier"])
+
+
+def _plan_synthetique(chemin, feuille, *, revise=False):
+    with pdf.open() as doc:
+        p = doc.new_page(width=1000, height=700)
+        p.draw_rect(pdf.Rect(100, 100, 620, 540), width=4)
+        p.draw_line(pdf.Point(100, 440), pdf.Point(620, 100), width=3)
+        p.draw_rect(pdf.Rect(750, 470, 960, 660), width=3)
+        if revise:
+            p.insert_text((760, 505), "1 POUR ADDENDA 2026-03-12", fontsize=10)
+        p.insert_text((760, 530), "0 POUR SOUMISSIONS 2026-02-06", fontsize=10)
+        p.insert_text((770, 635), feuille, fontsize=28)
+        doc.save(chemin)
+
+
+def _raster_synthetique(source, destination):
+    with pdf.open(source) as doc:
+        pix = doc[0].get_pixmap(matrix=pdf.Matrix(2, 2), colorspace=pdf.csGRAY)
+        fond = Image.new("L", (2080, 1440), 255)
+        fond.paste(Image.frombytes("L", (pix.width, pix.height), pix.samples), (80, 40))
+        fond.save(destination)
+
+
+@pytest.fixture
+def strict(tmp_path):
+    f = _fabriquer(tmp_path)
+    inbox = tmp_path / "plans-seuls"
+    inbox.mkdir()
+    actif, ancien = inbox / "Addenda-plans.pdf", inbox / "Plans-ao.pdf"
+    _plan_synthetique(actif, "E100", revise=True)
+    _plan_synthetique(ancien, "E100")
+    fichiers = [{"fichier": p.name, "sha256": sha256(p.read_bytes()).hexdigest(),
+                 "classement": k, "pages": 1} for p, k in [(actif, "addenda"), (ancien, "plans")]]
+    inv = {"inbox": str(inbox), "plans_seuls": True, "fichiers": fichiers,
+           "revisions": {"actives": {actif.name: {"1": "E100"}},
+                         "remplacees": {ancien.name: {"1": "E100 → Addenda-plans p.1"}}}}
+    w, ref = f["workdir"], f["ref"]
+    (w / "inventaire.json").write_text(json.dumps(inv), encoding="utf-8")
+    (w / "feuilles.csv").write_text("feuille,fichier,page,raster_px\nE100,Addenda-plans.pdf,1,1000x700\n",
+                                  encoding="utf-8")
+    humain = ref / "S-TEST-Dupuis-PlanExpert.qpl"
+    nom_actif, nom_ancien = "Tirage R1 - 1.png", "Tirage AO - 1.jpg"
+    marques = [(lib, 2 * x + 80, 2 * y + 40) for lib, x, y in GRILLE_IA]
+    humain.write_text(_qpl([("R1", nom_actif, marques), ("AO", nom_ancien, marques)]), encoding="utf-8")
+    # Fichier de dimensions historique vide : les deux dimensions attestées
+    # doivent être lues sur le vrai raster, et non extrapolées depuis les marques.
+    (ref / "dupuis-png-dimensions.txt").write_text("", encoding="utf-8")
+    (ref / "rasters").mkdir()
+    pts = [(100, 100), (620, 100), (100, 540), (960, 660)]
+    calages = {}
+    for p, fichier, rev, nom in zip((actif, ancien), fichiers, ("2026-03-12", "2026-02-06"), (nom_actif, nom_ancien)):
+        raster = ref / "rasters" / nom
+        _raster_synthetique(p, raster)
+        calages[nom] = {"pdf_sha256": fichier["sha256"], "page": 1, "feuille": "E100", "revision": rev,
+                        "raster_sha256": sha256(raster.read_bytes()).hexdigest(),
+                        "preuve": "Cartouche et coins du tracé synthétique contrôlés.",
+                        "ancres": [[[(2 * x + 80) / 2080, (2 * y + 40) / 1440], [x / 1000, y / 700]]
+                                   for x, y in pts]}
+    donnees = {"version": 1, "qpl_sha256": sha256(humain.read_bytes()).hexdigest(),
+               "documents": {"Tirage R1": fichiers[0]["sha256"], "Tirage AO": fichiers[1]["sha256"]}, "calages": calages}
+    f.update(inbox=inbox, inv=inv, dest=tmp_path / "comparaison", actif=nom_actif, ancien=nom_ancien,
+             humain=humain, donnees=donnees, attestation=ref / recalage_sources.NOM_ATTESTATION)
+    return f
+
+
+def _comparer_strict(f):
+    f["attestation"].write_text(json.dumps(f["donnees"]), encoding="utf-8")
+    return boucle.executer("S-TEST", f["workdir"], f["dossier"], sortie=f["dest"])
+
+
+def _csv_strict(f, nom):
+    with (f["dest"] / "comparaison-dupuis-qpl" / nom).open(encoding="utf-8", newline="") as flux:
+        return list(csv.DictReader(flux))
+
+
+def test_fonds_attestes_independants_des_positions(strict):
+    r = _comparer_strict(strict)
+    assert r.verdict == boucle.VERDICT_PRET
+    assert r.totaux_marques["appariees"] == r.totaux_marques["humaines"] == 3
+    assert [p["etat"] for p in _csv_strict(strict, "recalage-pages.csv")] == [
+        recalage_sources.ATTESTEE, recalage_sources.REMPLACEE]
+    hors = _csv_strict(strict, "marques-hors-comparaison.csv")
+    assert len(hors) == 3 and all(p["raster"] == strict["ancien"] for p in hors)
+    [page] = _csv_strict(strict, "pages.csv")
+    assert page["methode"] == "fond attesté" and "translation (-40, -20)" in page["transformation"]
+    assert not (strict["dossier"] / "ACCEPTATION.md").exists()
+
+
+def test_fonds_absents_malgre_positions_identiques(strict):
+    strict["donnees"]["calages"] = {}
+    r = _comparer_strict(strict)
+    assert r.verdict == boucle.VERDICT_INCOMPLET and not r.compteurs and not r.totaux_marques
+    assert [p["etat"] for p in _csv_strict(strict, "recalage-pages.csv")] == [
+        recalage_sources.A_VERIFIER, recalage_sources.REMPLACEMENT_PRESUME, "sans référence attestée"]
+    assert len(_csv_strict(strict, "marques-hors-comparaison.csv")) == 9
+    assert not _csv_strict(strict, "ecarts-classes.csv")
+    md = (strict["dest"] / "ACCEPTATION.md").read_text(encoding="utf-8")
+    assert "aucune paire de pages attestée" in md and "Comparaison non exécutée : aucun compteur." in md
+    assert not (strict["dest"] / "justifications.md").exists()
+
+
+@pytest.mark.parametrize("cas, message", [
+    ("date", "révision courante"), ("fond", "fond ou cartouche différents"),
+    ("ancien", "date du cartouche non confirmée"),
+    ("ancre", "trop groupés ou alignés"), ("empreinte", "différent de l'attestation"),
+    ("pagination", "contraire à l'identité PDF/page"),
+])
+def test_fausse_attestation_ne_permet_pas_de_comparer(strict, tmp_path, cas, message):
+    a = strict["donnees"]["calages"][strict["actif"]]
+    if cas == "date":
+        a["revision"] = "2026-02-06"  # la date figure toujours au cartouche, mais n'est plus courante
+    elif cas == "fond":
+        faux = tmp_path / "fond.pdf"
+        _plan_synthetique(faux, "T999", revise=True)
+        with pdf.open(faux) as doc:
+            doc[0].draw_rect(pdf.Rect(110, 120, 580, 510), color=(0, 0, 0), fill=(0, 0, 0))
+            doc.saveIncr()
+        raster = strict["ref"] / "rasters" / strict["actif"]
+        _raster_synthetique(faux, raster)
+        a["raster_sha256"] = sha256(raster.read_bytes()).hexdigest()  # exact, mais mauvais fond
+    elif cas == "ancien":
+        raster = strict["ref"] / "rasters" / strict["actif"]
+        _raster_synthetique(strict["inbox"] / "Plans-ao.pdf", raster)
+        a["raster_sha256"] = sha256(raster.read_bytes()).hexdigest()  # même dessin, révision différente
+    elif cas == "ancre":
+        a["ancres"] = [[[v, v], [v, v]] for v in [.1, .5, .9]]
+    elif cas == "empreinte":
+        a["raster_sha256"] = "0" * 64
+    elif cas == "pagination":
+        a["page"] = 2
+    r = _comparer_strict(strict)
+    assert r.verdict == boucle.VERDICT_INCOMPLET and not r.compteurs
+    assert message in _csv_strict(strict, "recalage-pages.csv")[0]["note"]
+
+
+def test_attestation_ne_reporte_pas_un_zero_non_verifie(strict):
+    h = strict["humain"]
+    h.write_text(_qpl([("R1", strict["actif"], [])]), encoding="utf-8")
+    strict["donnees"]["qpl_sha256"] = sha256(h.read_bytes()).hexdigest()
+    del strict["donnees"]["calages"][strict["ancien"]]
+    assert _comparer_strict(strict).verdict == boucle.VERDICT_INCOMPLET
+    assert "preuve_zero" in _csv_strict(strict, "recalage-pages.csv")[0]["note"]
+    strict["donnees"]["calages"][strict["actif"]]["preuve_zero"] = "Aucun objet du périmètre dans le plan validé."
+    r = _comparer_strict(strict)
+    assert r.verdict == boucle.VERDICT_JUSTIF and r.compteurs == {"en_trop": 3}
+    assert all("feuille IA sans page humaine" not in e["detail"] for e in _csv_strict(strict, "ecarts-classes.csv"))
+
+
+def test_gel_strict_verifie_apres_lecture_de_la_reference(strict, monkeypatch):
+    originale = recalage_sources.controler
+
+    def mutation(*args, **kw):
+        result = originale(*args, **kw)
+        (strict["inbox"] / "Plans-ao.pdf").write_bytes(b"%PDF-1.4\nModifie pendant la comparaison")
+        return result
+
+    monkeypatch.setattr(recalage_sources, "controler", mutation)
+    r = _comparer_strict(strict)
+    assert r.verdict == boucle.VERDICT_INVALIDE and "pendant la comparaison" in r.motif
+    assert not (strict["dest"] / "comparaison-dupuis-qpl").exists()
+
+
+def test_plans_seuls_necrit_pas_dans_les_sources_ni_dans_la_reference(strict):
+    for destination in (None, strict["dossier"], strict["inbox"] / "comparaison"):
+        with pytest.raises(boucle.BoucleErreur, match="exige --sortie"):
+            boucle.executer("S-TEST", strict["workdir"], strict["dossier"], sortie=destination)
+    assert not (strict["workdir"] / "gel.json").exists()

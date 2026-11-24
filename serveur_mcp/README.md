@@ -80,8 +80,10 @@ docker run -d -p 8765:8765 -v estim:/data -e ESTIMATEUR_MCP_CLE=<clé 24+ car.> 
 (proxy TLS devant ; sans Docker : `python -m serveur_mcp --transport http --hote 0.0.0.0 --hote-permis <hôte>` avec
 les mêmes variables.)
 
-Chaque collègue, une fois : claude.ai ou Claude Desktop → Paramètres → Connecteurs → **Ajouter un connecteur
-personnalisé** → URL `https://<hôte>/mcp?cle=<clé>` (le connecteur n'envoie pas d'en-tête : la clé passe dans l'URL).
+Préférer un client qui permet l'en-tête `Authorization: Bearer` et le stockage de la clé dans son coffre.
+Un ancien connecteur qui ne sait transmettre la clé qu'en URL ne doit être réactivé qu'après contrôle
+des logs du proxy TLS et du serveur (ne jamais journaliser la query string). Voir la
+[procédure de rotation et de remise en service](../infra/containers/README.md#rotation-du-bearer-du-service-sur-le-poste).
 
 Ensuite, dans n'importe quelle conversation : « Fais le relevé de S-1902 : <lien Google Drive du PDF ou du dossier
 de plans> ». Claude appelle `relever_automatique(dossier, url_source)` — c'est écrit dans les instructions du serveur —

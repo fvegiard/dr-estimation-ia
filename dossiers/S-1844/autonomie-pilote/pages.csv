@@ -1,0 +1,10 @@
+page_humaine,document,page,feuille_ia,plan_ia,methode,score,transformation,dims_humain,marques_humain,doublons,marques_ia_feuille,appariees,manquantes_ia,en_trop_ia_feuille,lignes_humain,lignes_ia_feuille,second_candidat,note
+23347_SELECTION_GLOBAL_SOUM_2026-08-13 - 2,23347_SELECTION_GLOBAL_SOUM_2026-08-13,2,E300,E300,géométrie,0.792,"miroir 180°, échelle x=0.4183 y=0.4599, translation (552, 3744) px IA",10079x7199 (fichier de dimensions),53,47,168,3,3,17,0,0,E200D (0.09),
+23347_SELECTION_GLOBAL_SOUM_2026-08-13 - 3,23347_SELECTION_GLOBAL_SOUM_2026-08-13,3,E300,E300,géométrie,0.529,"miroir 180°, échelle x=0.4492 y=0.4276, translation (408, 3715) px IA",10079x7199 (fichier de dimensions),204,120,168,18,66,17,0,0,E200 (0.08),
+23347_SELECTION_GLOBAL_SOUM_2026-08-13 - 5,23347_SELECTION_GLOBAL_SOUM_2026-08-13,5,E300,E300,géométrie,0.895,"miroir 180°, échelle x=0.4034 y=0.4181, translation (599, 3763) px IA",10079x7199 (fichier de dimensions),57,33,168,11,13,17,4,0,E200 (0.32),
+23347_SELECTION_GLOBAL_SOUM_2026-08-13 - 6,23347_SELECTION_GLOBAL_SOUM_2026-08-13,6,E300,E300,géométrie,0.824,"miroir 180°, échelle x=0.3981 y=0.3981, translation (503, 3762) px IA",10079x7199 (fichier de dimensions),17,15,168,1,1,17,2,0,E200 (0.12),
+23347_SELECTION_GLOBAL_SOUM_2026-08-13 - 8,23347_SELECTION_GLOBAL_SOUM_2026-08-13,8,E300,E300,géométrie,0.624,"miroir 180°, échelle x=0.3856 y=0.4328, translation (795, 3893) px IA",10079x7199 (fichier de dimensions),354,0,168,118,236,17,3,0,E200 (0.07),
+23347_SELECTION_GLOBAL_SOUM_2026-08-13 - 9,23347_SELECTION_GLOBAL_SOUM_2026-08-13,9,E300,E300,géométrie,0.875,"miroir 180°, échelle x=0.4224 y=0.4123, translation (532, 3787) px IA",10079x7199 (fichier de dimensions),8,7,168,0,1,17,0,0,E200 (0.12),
+26-0108-02_ELECTRICITE_POUR SOUMISSION-page-00006,26-0108-02_ELECTRICITE_POUR SOUMISSION,6,,,non appariée,,,inconnues,23,0,,0,23,,2,,,"taille du raster humain inconnue, aucun nom commun"
+,plans.pdf,8,E200,E200,feuille IA sans page humaine,,,,0,0,14,0,0,14,0,0,,
+,plans.pdf,7,E200D,E200D,feuille IA sans page humaine,,,,0,0,17,0,0,17,0,0,,
