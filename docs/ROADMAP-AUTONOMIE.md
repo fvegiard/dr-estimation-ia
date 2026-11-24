@@ -39,8 +39,26 @@ classé et justifié sur le plan.
   « Mes projets » de Daniel — `docs/sources-cloud-plans-originaux.md` ; sur le poste : INBOX/<S>/
   avec plans + addendas seulement). Sur cette machine : aucun plan complet local — les portes
   plan-dépendantes attendent le rapatriement cloud/Legion.
+- **Rapatriés le 2026-11-24 depuis GitHub** (branche `data-hr26-14-plans` du dépôt, intégrité
+  vérifiée) : `INBOX/HR26-14/` (plans-entree 28 p. + addenda-01 complet), `INBOX/S-1844/plans.pdf`
+  (12 p., SAQ Varennes), `INBOX/S-1715/Addenda-ELE-002-Plans.pdf`, corpus Dupuis
+  (`apprentissage/qpl-manifest.json`), et **le gold complet `apprentissage/hr26-14-exemplaire/EXEMPLE.pdf`
+  (87 p., sha256 0861bc3a…eb84b correspondant à SOURCE.txt — la porte `verify_exemple` du rendu octet-près
+  devient jouable hors du poste de Francis)**.
 - G8 : la boucle `python -m src.validation.boucle_acceptation <S> --workdir W --dossier D` +
   référence de l'estimateur.
+
+### Chantier ouvert — bibliothèque de blocs, bureau de S-1844 (SAQ Varennes)
+
+Premier relevé à l'aveugle de S-1844 par la route blocs (2026-11-24, route déterministe) :
+pipeline jusqu'à Plans-annotes complet, mais identification incomplète — 837 blocs-index, **724
+signatures fréquentes à étiqueter** (`OUTBOX/S-1844/travail/blocs-a-etiqueter.md`), seulement 3
+auto-étiquetées depuis la bibliothèque S-1902 (HF Experts-Conseils) → occurrences ≈ 0, état
+« TERMINÉ — À VÉRIFIER » honnête, pas de quantités livrées. L'étiquetage se fait UNE fois
+(vignettes ×8 + légende E100, jamais deviné : dans le doute on laisse inconnue) et reste appris
+dans `releve/bibliotheque-blocs.csv` pour ce bureau comme pour tous. Suite exacte : étiqueter par
+vagues (découper sous 20 images/tour), rejouer `run.py S-1844`, classer les désaccords vs la
+référence Dupuis (`dossiers/S-1844/reference/`), justifier sur le plan, ACCEPTATION.md.
 
 ## Règles qui ne bougent pas avec l'autonomie
 
