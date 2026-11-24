@@ -1,5 +1,5 @@
 import sys
 
-from .serveur import main
+from .lance import main
 
 sys.exit(main())
