@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : partiel — NOTES.md §Hypothèses « Postes/prises : un seul comptage. Les prises, DDFT, USB et sorties data viennent du relevé (INSTALLER); les lignes composites du Détail (D-01 à D-07, E-01 à E-05) ne sont pas rechargées en plus. Seules les boîtes de jonction/raccords de mobilier hors plan restent (D-01, D-03, E-01, E-04 = « DROP DE PRISE », 25 u) ». chiffrage.py : cat_line(\"D-01\", ..., DET[\"D-01\"][",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250 — chiffrage.py : cat_line(\"E-02\", \"Monument de plancher — relevé INSTALLER\", por(\"MONUMENT PLANCHER\",\"INSTALLER\"), \"3.34\", \"MONUMENT PLANCHER\", note=\"monument 250 $ (METHODE §1); remplace E-02 (2) + E-03 (2) du Détail\") → 3 u × 250 $ / 1 h = 750 $ (réf : 2 × 1 461,22 $ + E-03 ; art. 3.34 réf 3 422,44 $ → run 750 $, Δ −2 758,79 $).",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893 — NOTES.md « Lot éclairage : METHODE donne 11 893 $, mais la somme de ses composantes (11×185 + 12×290 + 15×230 + 6×110 + 1 500 + 3×475 + 3×161,60) fait 13 034,80 $. J'ai retenu le total confirmé 11 893 $. » ; chiffrage.py LOTS = {\"eclairage\": 11893.0} ventilé sur 3.35.",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : partiel — démantèlement/relocalisation comptés mais sur les portées du relevé, pas sur le Détail : A-01 = por(ENCASTRE+LED 1X4+LED 2X2, ENLEVER) = 40 u × 0,5 h (fusionne A-02 ; réf 39) ; A-03 = ENLEVER PRISE 28 u × 0,35 h (fusionne A-04 ; réf 34) ; A-05 = RELO PRISE 12 u × 1,5 h (réf 13) ; A-06 = RELO ENCASTRE 4 u × 1 h (réf 7) ; lignes ajoutées A-12 (1 interrupteur enlevé, 0,35 h) et A-13 (10 équ",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Longueurs hypothétiques du Détail (Estimation_2), converties m→pi par pi(m)=ceil(m×3,28084), au prix/temps « à utiliser » du catalogue au pied : CONDUIT VIDE 1 (2,4307 $/pi, 0,07 h/pi : C-05 115 pi, D-13 1 575 pi, E-08 575 pi), CONDUIT VIDE 3/4 (1,4097 $/pi, 0,056 h/pi : C-07 263, D-14 1 083, E-09 575, G-02 99), fils séparés 12AWG SOLIDE RW90 (0,3896 $/pi, 0,005 h/pi : C-08 903, D-15 7 875, E-10 2",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

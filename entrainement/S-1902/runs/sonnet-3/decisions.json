@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte. NOTES.md l.15 : « Lignes Détail remplacées par le relevé (pour ne pas compter deux fois les symboles) : D-01, D-03, D-04, D-05, D-10, E-01, E-03, E-04, E-05 (postes/écrans/cabines = prises, data et JB déjà au relevé) ». D-02 et D-06 gardent leur code mais la quantité vient du relevé INSTALLER (chiffrage.py construire(), section D/E : add_cat(\"D-02\", ..., R(\"PRISE USB\",\"INSTAL",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250. NOTES.md l.25 : « Monuments : 250 $ (METHODE) au lieu du Hubbell Lumen 1 461,22 $ × 3 (≈ +3 600 $ si on prenait Lumen) ». chiffrage.py : add_cat(\"E-02\", \"Monument de plancher Hubbell S1R6PTFIT (relevé INSTALLER)\", R(\"MONUMENT PLANCHER\",\"INSTALLER\"), \"u\", \"MONUMENT PLANCHER\", \"3.34\", note=\"monument 250 $ / 1 h\") → q=3, p=250,0, h=1,0 ; article 3.34 matériel run 750 $ vs réf 3 422,44 $ (",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893. NOTES.md l.21 : « METHODE donne 11 893 $ confirmé, mais le détail entre parenthèses (...) totalise 13 034,80 $ (écart 1 141,80 $). J'ai retenu le total confirmé 11 893 $. » chiffrage.py l.30-36 : LOTS = {\"eclairage\": 11893.0, ...} ; ligne LOT-ECL p=11893,0 art 3.35 ; les luminaires F-01…F-04, F-06 sont à prix forcé 0,0 $ (p_force=0.0, « prix dans lot éclairage »).",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : partiel — comptés mais aux quantités du relevé, pas du Détail, avec fusion : A-01 q=40 (ENCASTRE 26 + LED 2X2 8 + LED 1X4 6 ENLEVER, « EQUIPEMENT A ENLEVER » 0,5 h) et A-02 fusionné dans A-01 ; A-03 q=28 (DDFT 4 + doubles 7 + data 17, « ENLEVER PRISE » 0,35 h) et A-04 fusionné dans A-03 ; A-05 q=12 (« RELO PRISE » 1,5 h, art 5.19) ; A-06 q=4 (« RELO ENCASTRE » 1 h, art 5.19). NOTES.md l.15 : « A-0",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Pas de colonne TEMPSEC → temps/pi du catalogue (temps_a_utiliser) appliqué à la longueur en pieds ; longueurs = hypothèses de la feuille Détail converties m→pi par dm_vers_pi() (int(round(q × 3.28084))). NOTES.md l.16 : « le catalogue n'a pas de colonne TEMPSEC → temps/pi (CONSIGNES règle 3). Mètres du Détail convertis en pi (× 3,28084, arrondi). Sous-dalle 1\" = « COND TME 1PO » + « 12AWG SOLIDE R",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

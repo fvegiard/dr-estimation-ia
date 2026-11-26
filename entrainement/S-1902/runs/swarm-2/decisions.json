@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte. lots/directeur-A.json exclusions (45 codes) : D-01 (Qté 18 postes) « double compte avec PC-I (plan) et SD-I (plan) », D-02 (Qté 5 tables, 10 USB) « double compte avec PC-I et PU-I (plan PU-I 20) », D-03 (2), D-04 (2), D-05 (1), D-06 (8) « double compte avec PC-I [et SD-I] (plan) », E-01 (2 postes) « remplacée par PC-I et SD-I (plan) ». NOTES.md l.70 : « exclusion de 45 lignes",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250. chiffrage.json ligne MP-I : q 3, p 250.0, h 1.0, art 3.34, src « catalogue Dupuis « MONUMENT PLANCHER 1TE » um=U (dernier 2026-06-02, s-1783…) ; repère METHODE monument 250 $ (règle 1) [chef B1] », montant 750 $. NOTES.md l.97 : « poke-through Lumen HUBS1R6PTDEHBLK (MP-I au repère Dupuis 250 $) » hors total ; directeur-B note B3 n° 7 : « poke-through Lumen HUBS1R6PTDEHBLK non ajouté (o",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11 893 $. chiffrage.py l.128-129 : « LOT-ECL gardé à 11 893 $ (prix confirmé par Francis, METHODE.md §2) malgré la décomposition qui donne 13 034,80 $ : le montant confirmé fait foi, écart signalé dans incoherences » ; l.224-227 : assertion A et B égaux + incohérence « 11×185 + 12×290 + 15×230 + 6×110 + 1 500 + 3×475 + 3×161,60 = 13 034,80 $ contre 11 893 $ confirmé (écart 1 141,80 $) ». NOTES.md ",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : sautes (A-01…A-06 toutes exclues, remplacées par les portées -E/-R du plan). directeur-A.json exclusions : A-01/A-02 « remplacée par ENC-E 26, L14-E 6, L22-E 8 » (Détail 39+7 = 46 vs plan 40) ; A-03/A-04 « remplacée par PC-E 7, PG-E 4, SD-E 17, BJ-E 2, MP-E 3, BC-E 2 (total 35) » (Détail 44 vs 35) ; A-05 (13) « remplacé par PC-R 8 + PG-R 1 + SD-R 3 = 12 » ; A-06 (7) « remplacée par ENC-R 4 ». chif",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Pas de TEMPSEC : temps/pi × longueur en pieds (ARCHITECTURE.md §2 : « Il n'y a PAS de colonne TEMPSEC : les conduits se chiffrent en temps/pi × longueur en pieds (1 m = 3,2808 pi) » ; chiffrage.py l.29 PI_PAR_M = 3.2808). Longueurs = hypothèses de Détail converties et arrondies à l'entier (D-13 480 m → 1575 pi, D-14 330 m → 1083, E-08/E-09 175 m → 574, F-08 280 m → 919, C-07 80 m → 262, C-05 35 m ",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

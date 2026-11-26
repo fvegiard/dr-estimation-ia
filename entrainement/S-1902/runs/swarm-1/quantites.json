@@ -1,0 +1,1218 @@
+{
+ "dossier": "S-1902",
+ "protocole": "converti",
+ "source": "converti depuis runs/swarm-1/chiffrage.json (ancien protocole : prix et temps recopiés tels quels, sans étiquette de décision)",
+ "codes_dedoublonnes": 0,
+ "lots_convertis_en_lignes": false,
+ "lignes": [
+  {
+   "code": "RL-01",
+   "desc": "Prise double 15A-120V neuve (PRISE DOUBLE 15A INSTALLER)",
+   "q": 25.0,
+   "u": "u",
+   "art": "3.28",
+   "src": "Dupuis[PRISE DUPLEX 15A 120V] — releve PRISE DOUBLE 15A INSTALLER 25",
+   "prix": {
+    "type": "fixe",
+    "p": 64.81,
+    "h": 1.175
+   }
+  },
+  {
+   "code": "RL-02",
+   "desc": "Prise double DDFT neuve (PRISE DDFT INSTALLER, E-104 20 + E-105 2)",
+   "q": 22.0,
+   "u": "u",
+   "art": "3.30",
+   "src": "Dupuis[PRISE DUPLEX 20A 125V GFI] — releve PRISE DDFT INSTALLER 22 (variante M.A.L.T. isolée non départagée, R-007)",
+   "prix": {
+    "type": "fixe",
+    "p": 65.38,
+    "h": 1.3
+   }
+  },
+  {
+   "code": "RL-03",
+   "desc": "Prise double 15A USB Leviton Decora (PRISE USB INSTALLER)",
+   "q": 20.0,
+   "u": "u",
+   "art": "3.27",
+   "src": "Dupuis[PRISE USB 125V 15 AMP] — releve PRISE USB INSTALLER 20",
+   "prix": {
+    "type": "fixe",
+    "p": 77.45,
+    "h": 1.125
+   }
+  },
+  {
+   "code": "RL-04",
+   "desc": "Interrupteur simple neuf (INT SIMPLE INSTALLER, E-203)",
+   "q": 5.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis[INTERRUPTEUR 15A 120V] — releve INT SIMPLE INSTALLER 5",
+   "prix": {
+    "type": "fixe",
+    "p": 75.47,
+    "h": 1.075
+   }
+  },
+  {
+   "code": "RL-05",
+   "desc": "Lecteur de carte neuf — boîte + conduit vide (LECTEUR CARTE INSTALLER, E-104)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Dupuis[LECTEUR DE CARTE] — releve LECTEUR CARTE INSTALLER 2",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "RL-06",
+   "desc": "Thermostat neuf (THERMOSTAT INSTALLER, E-104)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Dupuis[THERMOSTAT] — releve THERMOSTAT INSTALLER 2",
+   "prix": {
+    "type": "fixe",
+    "p": 35.0,
+    "h": 0.4
+   }
+  },
+  {
+   "code": "E-02",
+   "desc": "Monument plancher neuf (MONUMENT PLANCHER INSTALLER, E-105)",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.34",
+   "src": "Dupuis[MONUMENT PLANCHER] — releve MONUMENT PLANCHER INSTALLER 3 (Détail E-02 en compte 2 + E-03 2 boîtes refaites : le relevé fait foi)",
+   "prix": {
+    "type": "fixe",
+    "p": 250.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "F-01",
+   "desc": "Luminaire A1 Cooper 2'x4' (temps seulement — lot éclairage)",
+   "q": 11.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis-temps[FIXTURE TYPE A1] — releve LUMINAIRE A1 INSTALLER 11 ; prix au lot éclairage",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-02",
+   "desc": "Luminaire C1 Axis SL1 4' (temps seulement — lot éclairage)",
+   "q": 12.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis-temps[FIXTURE TYPE C1] — releve LUMINAIRE C1 INSTALLER 12",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-03",
+   "desc": "Luminaire C1_1 Axis SL1 1' (temps seulement — lot éclairage)",
+   "q": 6.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis-temps[FIXTURE TYPE C1] — releve LUMINAIRE C1_1 INSTALLER 6",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-04",
+   "desc": "Luminaire C1_3 Axis SL1 3' (temps seulement — lot éclairage)",
+   "q": 15.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis-temps[FIXTURE TYPE C1] — releve LUMINAIRE C1_3 INSTALLER 15",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-06",
+   "desc": "Luminaire E GreenCreative cylindre suspendu (temps seulement — lot éclairage)",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis-temps[FIXTURE TYPE E] — releve LUMINAIRE E INSTALLER 3 (Détail F-06 en compte 4 ; R-003 et lot éclairage confirmé : 3)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "F-05",
+   "desc": "Rangées linéaires Axis : suspension aux tiges fixées à la dalle (devis 16.5), alimentation de rangée",
+   "q": 20.0,
+   "u": "rangée",
+   "art": "3.35",
+   "src": "jugement (Estimation_2) F-05 — famille absente du catalogue Dupuis",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "RL-10",
+   "desc": "Enlever encastré existant (ENCASTRE ENLEVER)",
+   "q": 26.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[ENLEVER FIXTURE ENCAST] — releve ENCASTRE ENLEVER 26 (remplace Détail A-01/A-02)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "RL-11",
+   "desc": "Enlever luminaire 1x4 existant (LED 1X4 ENLEVER)",
+   "q": 6.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[ENLEVER FIXTURE 1X4] — releve LED 1X4 ENLEVER 6 (remplace Détail A-01/A-02)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "RL-12",
+   "desc": "Enlever luminaire 2x2 existant (LED 2X2 ENLEVER)",
+   "q": 8.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[ENLEVER FIXTURE 2X2] — releve LED 2X2 ENLEVER 8 (remplace Détail A-01/A-02)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "RL-13",
+   "desc": "Enlever prise existante (PRISE DOUBLE 15A ENLEVER 7 + PRISE DDFT ENLEVER 4)",
+   "q": 11.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[ENLEVER PRISE] — releve (remplace Détail A-03/A-04)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "RL-14",
+   "desc": "Enlever sortie data existante (SORTIE DATA ENLEVER)",
+   "q": 17.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "jugement (analogie Dupuis ENLEVER PRISE 0,35 h) — releve SORTIE DATA ENLEVER 17 (remplace Détail A-03/A-04)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "RL-15",
+   "desc": "Enlever interrupteur existant (INT SIMPLE ENLEVER)",
+   "q": 1.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[ENLEVER INTERRUPTEUR] — releve INT SIMPLE ENLEVER 1",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "RL-16",
+   "desc": "Enlever détecteur de mouvement existant (DETECTEUR MOUVEMENT ENLEVER)",
+   "q": 1.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "jugement (analogie Dupuis ENLEVER INTERRUPTEUR 0,35 h) — releve DETECTEUR MOUVEMENT ENLEVER 1",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "RL-17",
+   "desc": "Enlever boîte de jonction existante (BOITE JONCTION ENLEVER)",
+   "q": 2.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[EQUIPEMENT A ENLEVER] — releve BOITE JONCTION ENLEVER 2",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "RL-18",
+   "desc": "Enlever monument de plancher existant (MONUMENT PLANCHER ENLEVER)",
+   "q": 3.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[EQUIPEMENT A ENLEVER] — releve MONUMENT PLANCHER ENLEVER 3",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "RL-20",
+   "desc": "Relocaliser prise existante (PRISE DOUBLE 15A RELOCALISER 8 + PRISE DDFT RELOCALISER 1)",
+   "q": 9.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "Dupuis[RELO PRISE] — releve (remplace Détail A-05)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.5
+   }
+  },
+  {
+   "code": "RL-21",
+   "desc": "Relocaliser sortie data existante (SORTIE DATA RELOCALISER)",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "jugement (analogie Dupuis RELO PRISE 1,5 h) — releve SORTIE DATA RELOCALISER 3 (remplace Détail A-05)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.5
+   }
+  },
+  {
+   "code": "RL-22",
+   "desc": "Relocaliser encastré existant (ENCASTRE RELOCALISER)",
+   "q": 4.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "Dupuis[RELO ENCASTRE] — releve ENCASTRE RELOCALISER 4 (remplace Détail A-06)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "A-07",
+   "desc": "Relocalisation interrupteurs maîtres du hall (note spécifique 1 E-201)",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.22",
+   "src": "jugement (Estimation_2) A-07",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 6.0
+   }
+  },
+  {
+   "code": "A-08",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation luminaires linéaires existants",
+   "q": 21.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "jugement (Estimation_2) A-08 — luminaires CONSERVER au relevé, pas de double compte",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.6
+   }
+  },
+  {
+   "code": "A-09",
+   "desc": "FabLab 210 : retrait temporaire + réinstallation encastrés existants",
+   "q": 24.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "jugement (Estimation_2) A-09",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "A-10",
+   "desc": "Toit : débrancher, entreposer sectionneurs, couvrir câbles, rebrancher équipements de ventilation (E.A.R)",
+   "q": 6.0,
+   "u": "u",
+   "art": "3.22",
+   "src": "jugement (Estimation_2) A-10 — = releve MOTEUR MONOPHASE RELOCALISER 6 (E-103), compté une seule fois ici",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 4.0
+   }
+  },
+  {
+   "code": "A-11",
+   "desc": "Maintien continuité de service, traçage circuits existants, réalimentation circuits libérés",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.22",
+   "src": "jugement (Estimation_2) A-11",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 16.0
+   }
+  },
+  {
+   "code": "D-12",
+   "desc": "Percement de dalle carotté — conduits sous dalle RDC (note 5 E-104)",
+   "q": 16.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Dupuis[PERCEMENT PLANCHER] — qté Détail D-12",
+   "prix": {
+    "type": "fixe",
+    "p": 150.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "E-07",
+   "desc": "Percement de dalle carotté — étage (7 courses)",
+   "q": 7.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Dupuis[PERCEMENT PLANCHER] — qté Détail E-07",
+   "prix": {
+    "type": "fixe",
+    "p": 150.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "D-12-CF",
+   "desc": "Coupe-feu des percements (CAN/ULC-S115) — 1 tube par percement",
+   "q": 23.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Dupuis[COUPE FEU TUBE 10.1 FL O] — 16 (D-12) + 7 (E-07)",
+   "prix": {
+    "type": "fixe",
+    "p": 13.53,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "D-13",
+   "desc": "Conduit EMT + 5 cond. #12 (2 circuits + MALT) sous dalle RDC vers P-2/P-3 — 480 m (inclut D-15)",
+   "q": 1575.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT 3/4 05C12] — Détail D-13 480 m + D-15 (5 cond./course) ; 1 m = 3,28084 pi",
+   "prix": {
+    "type": "fixe",
+    "p": 3.4197,
+    "h": 0.081
+   }
+  },
+  {
+   "code": "D-14",
+   "desc": "Conduit vide 3/4 data sous dalle RDC — 330 m",
+   "q": 1083.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT VIDE 3/4] — Détail D-14 330 m",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "D-16",
+   "desc": "Boîtes de tirage 4-11/16 sous dalle RDC (16 courses × 2)",
+   "q": 32.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Lumen[IBE72171K+IBE72C1] — famille 4-11/16 absente du catalogue ; base Lumen 2 boîtes/course",
+   "prix": {
+    "type": "fixe",
+    "p": 9.2625,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "D-16-MO",
+   "desc": "Boîtes de tirage, connecteurs, supports, corde — main-d'œuvre RDC",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.31",
+   "src": "jugement (Estimation_2) D-16",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "E-08",
+   "desc": "Conduit EMT + 5 cond. #12 sous dalle étage vers P-4/P-6 — 175 m (inclut E-10)",
+   "q": 574.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT 3/4 05C12] — Détail E-08 175 m + E-10",
+   "prix": {
+    "type": "fixe",
+    "p": 3.4197,
+    "h": 0.081
+   }
+  },
+  {
+   "code": "E-09",
+   "desc": "Conduit vide 3/4 data sous dalle étage — 175 m",
+   "q": 574.0,
+   "u": "pi",
+   "art": "3.31",
+   "src": "Dupuis[CONDUIT VIDE 3/4] — Détail E-09 175 m",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "E-11",
+   "desc": "Boîtes de tirage 4-11/16 étage (7 courses × 2)",
+   "q": 14.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Lumen[IBE72171K+IBE72C1] — famille absente du catalogue",
+   "prix": {
+    "type": "fixe",
+    "p": 9.2625,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "E-11-MO",
+   "desc": "Boîtes, connecteurs, supports — main-d'œuvre étage",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.31",
+   "src": "jugement (Estimation_2) E-11",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 4.0
+   }
+  },
+  {
+   "code": "GRE430",
+   "desc": "Corde de tirage Poly Line 430 (conduits vides, devis 35.10)",
+   "q": 1.0,
+   "u": "ch",
+   "art": "3.31",
+   "src": "Lumen[GRE430] — famille absente du catalogue",
+   "prix": {
+    "type": "fixe",
+    "p": 81.68,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "RL-30",
+   "desc": "Boîte de jonction neuve (BOITE JONCTION INSTALLER, E-104) — boîte carrée",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Dupuis[BOITE CARRE 2-1/8PO KO 1] — releve BOITE JONCTION INSTALLER 3",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1778,
+    "h": 0.25
+   }
+  },
+  {
+   "code": "RL-31",
+   "desc": "Couvercle de boîte de jonction",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Dupuis[COUV CARRE 4PO VIERGE] — releve BOITE JONCTION INSTALLER 3",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4985,
+    "h": 0.05
+   }
+  },
+  {
+   "code": "D-09",
+   "desc": "Barrière anti-vol : raccord des 2 boîtes de jonction au panneau de contrôle (PU-1 23)",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.31",
+   "src": "jugement (Estimation_2) D-09",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 6.0
+   }
+  },
+  {
+   "code": "D-10",
+   "desc": "Bornes de prêts / fontaine hall (P2-63) — JB dans mur adjacent, raccord",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "jugement (Estimation_2) D-10",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 2.0
+   }
+  },
+  {
+   "code": "D-11",
+   "desc": "Bouton d'appel (aide au lecteur 116) — boîte + conduit vide",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Lumen[IBE52151K+IBE52C13] + jugement (Estimation_2) D-11 — famille absente",
+   "prix": {
+    "type": "fixe",
+    "p": 9.3069,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "E-06",
+   "desc": "Boutons d'appel (2) + bouton de panique (1) — boîte + conduit vide",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.31",
+   "src": "Lumen[IBE52151K+IBE52C13] + jugement (Estimation_2) E-06 — famille absente",
+   "prix": {
+    "type": "fixe",
+    "p": 9.3069,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "F-08",
+   "desc": "Conduit EMT 3/4 + 3 cond. #12 — raccordement luminaires sur circuits existants, 280 m (inclut F-09)",
+   "q": 919.0,
+   "u": "pi",
+   "art": "3.35",
+   "src": "Dupuis[CONDUIT 3/4 03C12] — Détail F-08 280 m + F-09 (3 cond.)",
+   "prix": {
+    "type": "fixe",
+    "p": 4.2441,
+    "h": 0.1128
+   }
+  },
+  {
+   "code": "F-08-FX",
+   "desc": "Conduit flexible 3/8 alu — descentes de luminaires (35 points × 1,8 m)",
+   "q": 63.0,
+   "u": "m",
+   "art": "3.35",
+   "src": "Lumen[THOABRH03830] — famille 3/8 absente du catalogue ; temps compris dans le luminaire",
+   "prix": {
+    "type": "fixe",
+    "p": 7.714,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "F-08-CX",
+   "desc": "Connecteur BX 3/8 90° — descentes de luminaires",
+   "q": 70.0,
+   "u": "ch",
+   "art": "3.35",
+   "src": "Lumen[IBE2210] — famille absente du catalogue",
+   "prix": {
+    "type": "fixe",
+    "p": 1.799,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "F-10",
+   "desc": "Boîtes de jonction octogonales éclairage (35 points)",
+   "q": 35.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis[BOITE OCTOG 1-1/2PO KO 1] — base Lumen IBE54151L ×35 ; remplace les heures jugement F-10",
+   "prix": {
+    "type": "fixe",
+    "p": 7.963,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "F-10-TF",
+   "desc": "Tige filetée 3/8 — suspension luminaires à la dalle (devis 16.5)",
+   "q": 200.0,
+   "u": "pi",
+   "art": "3.35",
+   "src": "Dupuis[TIGE FILETE 3/8PO] — qté Lumen VISTF3/8 200 pi",
+   "prix": {
+    "type": "fixe",
+    "p": 0.6435,
+    "h": 0.02
+   }
+  },
+  {
+   "code": "F-10-AN",
+   "desc": "Ancrages drop-in 3/8-16 (paquet de 50)",
+   "q": 2.0,
+   "u": "pk",
+   "art": "3.35",
+   "src": "Lumen[VISDIA3/816BX50] — famille absente du catalogue",
+   "prix": {
+    "type": "fixe",
+    "p": 32.26,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "B-01",
+   "desc": "Panneau PP-3 neuf 225A 347/600V 3Ø 4F 42 cct NF — installation (prix au lot distribution)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.24",
+   "src": "Dupuis-temps[PANNEAU 225A 120/208V 3F] — panneau 0 $ en ligne (règle 2), 8 h",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "B-01-ENL",
+   "desc": "Démantèlement de l'ancien PP-3 (42 cct) + transfert des charges",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.24",
+   "src": "Dupuis[ENL PANN 42CCT 120/208V] — Détail B-01 (incl. démantèlement ancien PP-3)",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 4.0
+   }
+  },
+  {
+   "code": "B-02",
+   "desc": "Disjoncteurs NF 1P-15A — circuits existants transférés dans PP-3",
+   "q": 14.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ15A1P] — qté Détail B-02 ; prix au lot distribution",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-03",
+   "desc": "Disjoncteur NF 3P-20A aérotherme (transféré)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — disjoncteur 3P 1 h ; prix au lot",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-04",
+   "desc": "Disjoncteur NF 3P-40A UTA-1 (nouveau)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — prix au lot",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-05",
+   "desc": "Disjoncteur NF 3P-15A VE-2N (nouveau)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 100A 3P 120/240V 22 K] — prix au lot",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "B-06",
+   "desc": "Disjoncteur 1P-15A DDFT — fontaine P2-61",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ15A1P] — prix au lot",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-07",
+   "desc": "Disjoncteurs 1P-15A — P2-63, P2-64",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ15A1P] — prix au lot",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-08",
+   "desc": "Disjoncteurs 1P-20A — P3-17/19 machine de tri",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.25",
+   "src": "Dupuis-temps[DISJ 20A 1P 120V 10KA] — prix au lot",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.2
+   }
+  },
+  {
+   "code": "B-09",
+   "desc": "Mise à jour fiches dactylographiées + identification (9 panneaux)",
+   "q": 9.0,
+   "u": "u",
+   "art": "3.24",
+   "src": "jugement (Estimation_2) B-09",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "C-01",
+   "desc": "Raccordement UTA-01 York 575V/3Ø au toit (sectionneur d'usine, raccord LFMC)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Dupuis[MOTEUR UAF-1] — releve MOTEUR TRIPHASE INSTALLER (E-106) ; Détail C-01",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "C-05",
+   "desc": "Conduit 1\" + 4 #8 (3 + MALT) alimentation UTA-01 — 35 m (inclut C-06)",
+   "q": 115.0,
+   "u": "pi",
+   "art": "3.23",
+   "src": "Dupuis[CONDUIT 1 04C08] — Détail C-05 35 m + C-06",
+   "prix": {
+    "type": "fixe",
+    "p": 6.1399,
+    "h": 0.098
+   }
+  },
+  {
+   "code": "C-02",
+   "desc": "Raccordement VE-02N Plymovent 575V/3Ø c/a VFD (sectionneur d'usine)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Dupuis[MOTEUR] — releve MOTEUR TRIPHASE INSTALLER (E-106) ; Détail C-02",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "C-07a",
+   "desc": "Conduit 3/4 + 4 #12 alimentation VE-02N — 35 m (inclut C-08)",
+   "q": 115.0,
+   "u": "pi",
+   "art": "3.23",
+   "src": "Dupuis[CONDUIT 3/4 04C12] — Détail C-07 (35 m VE-02N) + C-08",
+   "prix": {
+    "type": "fixe",
+    "p": 2.8997,
+    "h": 0.076
+   }
+  },
+  {
+   "code": "C-03",
+   "desc": "Raccordement chaudières CH-01/CH-02 600V/3Ø (tiroirs CCM-1 et câbles réutilisés, raccord final)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.26",
+   "src": "Dupuis[MOTEUR] — releve MOTEUR TRIPHASE INSTALLER (E-105 2) ; Détail C-03",
+   "prix": {
+    "type": "fixe",
+    "p": 25.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "C-04",
+   "desc": "Raccordement humidificateurs HUM-1/2/3 Carel 120V",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Dupuis[HUMIDIFICATEUR] — releve MOTEUR MONOPHASE INSTALLER 3 (E-105) ; Détail C-04",
+   "prix": {
+    "type": "fixe",
+    "p": 15.0,
+    "h": 0.35
+   }
+  },
+  {
+   "code": "C-04-SS",
+   "desc": "Sectionneur sans fusible 30A (HUM-1/2/3)",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.23",
+   "src": "Dupuis[INTERR 30A 2P 600V CEMA1] — = Lumen HUBHBL1372 117,84 $ ; Détail C-04",
+   "prix": {
+    "type": "fixe",
+    "p": 117.84,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "C-07b",
+   "desc": "Conduit 3/4 + 3 #12 humidificateurs — 3 × 15 m (inclut C-08)",
+   "q": 148.0,
+   "u": "pi",
+   "art": "3.23",
+   "src": "Dupuis[CONDUIT 3/4 03C12] — Détail C-07 (3 × 15 m) + C-08",
+   "prix": {
+    "type": "fixe",
+    "p": 4.2441,
+    "h": 0.1128
+   }
+  },
+  {
+   "code": "H-01",
+   "desc": "Nacelle / plateforme (mobilisation, outillage, travail en hauteur)",
+   "q": 1.0,
+   "u": "u",
+   "art": "6.1",
+   "src": "Dupuis[NACELLE] — remplace Détail H-01 (16 h jugement, même nombre d'heures)",
+   "prix": {
+    "type": "fixe",
+    "p": 1250.0,
+    "h": 16.0
+   }
+  },
+  {
+   "code": "H-02",
+   "desc": "Coordination EG / multi-corps, dessins d'atelier, plans tel que construit",
+   "q": 1.0,
+   "u": "lot",
+   "art": "6.1",
+   "src": "jugement (Estimation_2) H-02",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 20.0
+   }
+  },
+  {
+   "code": "H-03",
+   "desc": "Essais, mise en service, vérification prises existantes, étiquetage",
+   "q": 1.0,
+   "u": "lot",
+   "art": "6.1",
+   "src": "jugement (Estimation_2) H-03",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 12.0
+   }
+  },
+  {
+   "code": "H-04",
+   "desc": "Nettoyage, gestion des déchets",
+   "q": 1.0,
+   "u": "lot",
+   "art": "6.1",
+   "src": "jugement (Estimation_2) H-04",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "LOT-DIST-PAN",
+   "desc": "Lot distribution — panneau NF 225A 42 cct",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.24",
+   "src": "lot confirmé (METHODE.md, Francis 2026-10-20) — part panneau du lot distribution 6 200 $",
+   "prix": {
+    "type": "fixe",
+    "p": 3400.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-DIST-DISJ",
+   "desc": "Lot distribution — disjoncteurs EDB 1P 95 $ ×20 + EJB 3P 300 $ ×3",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.25",
+   "src": "lot confirmé (METHODE.md) — part disjoncteurs du lot distribution 6 200 $",
+   "prix": {
+    "type": "fixe",
+    "p": 2800.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "RL-40",
+   "desc": "Sortie data neuve aux postes/mobilier/tables (plaque, câble réutilisé)",
+   "q": 55.0,
+   "u": "u",
+   "art": "3.33",
+   "src": "Dupuis[TEL/DATA] — releve SORTIE DATA INSTALLER 65 moins 10 murales (D-08)",
+   "prix": {
+    "type": "fixe",
+    "p": 13.96,
+    "h": 0.63
+   }
+  },
+  {
+   "code": "D-08",
+   "desc": "Sortie data murale/colonne : boîte + conduit 3/4 vers entreplafond + corde",
+   "q": 10.0,
+   "u": "u",
+   "art": "3.33",
+   "src": "Dupuis[TEL/DATA 3/4] — qté Détail D-08 (incluse dans les 65 INSTALLER du relevé)",
+   "prix": {
+    "type": "fixe",
+    "p": 22.32,
+    "h": 0.89
+   }
+  },
+  {
+   "code": "F-07",
+   "desc": "Enseigne de sortie Z6 Stanpro RMSOWH-UDC (temps seulement — lot éclairage)",
+   "q": 3.0,
+   "u": "u",
+   "art": "3.35",
+   "src": "Dupuis-temps[ENSEIGNE SORTIE Z6] — releve ENSEIGNE SORTIE Z6 INSTALLER 3",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 1.0
+   }
+  },
+  {
+   "code": "G-01",
+   "desc": "Détecteur de fumée adressable Simplex 4007ES + base (fourni JCI, installé DR)",
+   "q": 2.0,
+   "u": "u",
+   "art": "3.36",
+   "src": "Dupuis-temps[DETECTEUR FUMEE] — releve DETECTEUR FUMEE INSTALLER 2 = Détail G-01 ; prix au lot AI",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "RL-41",
+   "desc": "Relocaliser détecteur de fumée existant",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.36",
+   "src": "Dupuis[RELO DETECTEUR A FUME] — releve DETECTEUR FUMEE RELOCALISER 1",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.75
+   }
+  },
+  {
+   "code": "RL-42",
+   "desc": "Enlever dispositifs AI existants (détecteur 1, boîtier « C » 2, haut-parleur 1)",
+   "q": 4.0,
+   "u": "u",
+   "art": "5.19",
+   "src": "Dupuis[EQUIPEMENT A ENLEVER] — releve DETECTEUR FUMEE ENLEVER 1 + BOITIER C ENLEVER 2 + HP ENCASTRE PLAFOND ENLEVER 1",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 0.5
+   }
+  },
+  {
+   "code": "G-02",
+   "desc": "Conduit vide 3/4 boucle AI — 30 m",
+   "q": 98.0,
+   "u": "pi",
+   "art": "3.36",
+   "src": "Dupuis[CONDUIT VIDE 3/4] — Détail G-02 30 m",
+   "prix": {
+    "type": "fixe",
+    "p": 1.4097,
+    "h": 0.056
+   }
+  },
+  {
+   "code": "G-03",
+   "desc": "Câble AI FT4 #16 (boucle adressable) — 60 m",
+   "q": 197.0,
+   "u": "pi",
+   "art": "3.36",
+   "src": "Dupuis[COND ALARME 3/16 FT4] — Détail G-03 60 m",
+   "prix": {
+    "type": "fixe",
+    "p": 1.5887,
+    "h": 0.054
+   }
+  },
+  {
+   "code": "G-04",
+   "desc": "Relocalisation panneau annonciateur Simplex (réutiliser câbles, rallonger)",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.37",
+   "src": "Dupuis[RELO PANNEAU ANNONCIA] — releve PANNEAU ANNONCIATEUR INSTALLER 1 (E-203) = Détail G-04",
+   "prix": {
+    "type": "fixe",
+    "p": 550.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "G-05",
+   "desc": "Démontage/protection/réinstallation dispositifs AI existants dans zones touchées",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.36",
+   "src": "jugement (Estimation_2) G-05",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 12.0
+   }
+  },
+  {
+   "code": "G-06",
+   "desc": "Assistance électricien — programmation / vérification ULC-S537",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.38",
+   "src": "jugement (Estimation_2) G-06",
+   "prix": {
+    "type": "fixe",
+    "p": 0.0,
+    "h": 8.0
+   }
+  },
+  {
+   "code": "G-07",
+   "desc": "Sous-traitance JCI/Simplex : bypass, programmation 4007ES, vérification CAN/ULC-S537, certificat",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.38",
+   "src": "lot confirmé (METHODE.md, Francis 2026-10-20) — JCI 7 400 $",
+   "prix": {
+    "type": "fixe",
+    "p": 7400.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-AI-DET",
+   "desc": "Détecteurs de fumée adressables (2) — fourniture JCI",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.36",
+   "src": "lot confirmé (METHODE.md) — « 2 détecteurs 600 $ » lu comme 600 $ pour les deux",
+   "prix": {
+    "type": "fixe",
+    "p": 600.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "LOT-ECL",
+   "desc": "Lot éclairage (A1, Axis SL1 4'/3'/1', trousses, E, Z6)",
+   "q": 1.0,
+   "u": "lot",
+   "art": "3.35",
+   "src": "lot confirmé (METHODE.md, Francis 2026-10-20) — 11 893 $",
+   "prix": {
+    "type": "fixe",
+    "p": 11893.0,
+    "h": 0.0
+   }
+  },
+  {
+   "code": "GPR",
+   "desc": "Scan de dalle béton (GPR) avant carottage",
+   "q": 1.0,
+   "u": "u",
+   "art": "3.32",
+   "src": "Dupuis[SCAN DALLE BETON] — = lot GPR 1 250 $ confirmé (METHODE.md), compté une seule fois",
+   "prix": {
+    "type": "fixe",
+    "p": 1250.0,
+    "h": 2.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "postes_composites": "couverts",
+ "monuments": "dupuis",
+ "lot_eclairage": "readme_11893",
+ "eae_hors_plan": "releve",
+ "conduits": "temps_pi",
+ "justifications": {
+  "postes_composites": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : exclus_double_compte. Les postes composites du Détail (D-01 ×18 à 156,39 $/3,53 h, D-02 ×5 à 439,42 $/6,85 h, E-01, D-03…D-06) ne sont PAS repris comme assemblages : hypothèse 2 de NOTES.md « Quantités sur plan = relevé » ; chiffrage.py l. 209-221 réutilise les codes D-01/D-02 pour des lignes unitaires du relevé : D-01 = 21 u « PRISE DUPLEX 15/20A 120V » (60,19 $ ; 1,225 h, art. 3.29) + 55 u « TEL",
+  "monuments": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : dupuis_250. chiffrage.py l. 239-240 : cat_l(\"E-02\", …, rel(\"MONUMENT PLANCHER\",\"INSTALLER\"), \"MONUMENT PLANCHER\", \"3.34\") → 3 u × 250 $ / 1,0 h. NOTES.md « Lignes où j'ai hésité » : « Monuments : 3 selon le relevé, alors que le Détail compte E-02 (2) + E-03 (2). Prix catalogue 250 $ « MONUMENT PLANCHER ». Le poke-through Hubbell coûte 1 461 $ chez Lumen, ce qui sous-estime peut-être le matériel. »",
+  "lot_eclairage": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : 11893. LOTS[\"Lot éclairage …\"] = 11893.0 (chiffrage.py l. 30 et LOTS_ART l. 39 → art. 3.35). NOTES.md : « Le détail donné dans METHODE … totalise 13 034,80 $, pas 11 893 $. J'ai retenu le montant confirmé (11 893 $). Écart de 1 141,80 $ à faire vérifier par Francis. »",
+  "eae_hors_plan": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : partiel. Hypothèse 2 NOTES.md : les comptes Détail A-01…A-04 (39+7 luminaires, 34+10 services) sont REMPLACÉS par les ENLEVER du relevé ; A-02 et A-04 fusionnés dans A-01/A-03 (donc absents : rapport.json manquantes A-02, A-04). Quantités run (chiffrage.json) : A-01 = 26 ENCASTRE + 6 LED 1X4 + 8 LED 2X2 = 40 luminaires à 0,35 h (réf 39 à 0,5 h) ; A-03 = 11 prises + 17 data + 1 int à 0,35 h + 10 éq",
+  "conduits": "relecture automatisée des NOTES.md / chiffrage.py du run, 2026-10-23 : Pas de TEMPSEC (NOTES hyp. 3 : « Le catalogue n'a pas de colonne TEMPSEC : temps/pi seulement (pas de « sections de 10 pi ») »). Longueurs = feuille Détail (m) × 3,28084 arrondies au pied (m2pi, chiffrage.py l. 111-112), fils compris dans l'assemblage (pas de ligne C-06/C-08/D-15/E-10/F-09/G-03). D-13+E-08 = (480+175) m → 2 149 pi en « CONDUIT 3/4 05C12 » 3,4197 $/pi ; 0,081 h/pi (l. 228-230), au ",
+  "_source": "valeurs déduites de NOTES.md et chiffrage.py du run par relecture (entrainement/comprendre-banc, 2026-10-23) ; le run n'a pas écrit de decisions.json lui-même (ancien protocole)"
+ }
+}

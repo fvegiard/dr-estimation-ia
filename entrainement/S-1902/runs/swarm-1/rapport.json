@@ -1,6 +1,15 @@
 {
  "dossier": "S-1902",
  "run": "swarm-1",
+ "protocole": "ancien",
+ "facteur": 1.244,
+ "seuils": {
+  "total_pct": 3.0,
+  "article_pct": 10.0,
+  "heures_pct": 5.0,
+  "historique_pct": 1.0,
+  "article_min_abs": 1000.0
+ },
  "totaux": {
   "materiel": {
    "ref": 66649.07,
@@ -15,9 +24,9 @@
    "pct": -11.16
   },
   "heures_chargees": {
-   "ref": 1050,
-   "run": 930,
-   "delta": -120,
+   "ref": 1050.0,
+   "run": 930.0,
+   "delta": -120.0,
    "pct": -11.43
   },
   "total_acceo": {
@@ -27,9 +36,9 @@
    "pct": -12.36
   },
   "prix_vente": {
-   "ref": 194000,
-   "run": 170000,
-   "delta": -24000,
+   "ref": 194000.0,
+   "run": 170000.0,
+   "delta": -24000.0,
    "pct": -12.37
   }
  },
@@ -39,133 +48,190 @@
    "run_h": 92.6,
    "ref_mat": 0.0,
    "run_mat": 0.0,
-   "delta_total": -1368.18
+   "ref_total": 9246.34,
+   "run_total": 7878.16,
+   "delta_total": -1368.18,
+   "dans_seuil": false
   },
   "3.23": {
    "ref_h": 53.66,
    "run_h": 41.8,
    "ref_mat": 2799.08,
    "run_mat": 2186.2,
-   "delta_total": -1635.35
+   "ref_total": 7378.16,
+   "run_total": 5742.81,
+   "delta_total": -1635.35,
+   "dans_seuil": false
   },
   "3.24": {
    "ref_h": 27.5,
    "run_h": 21.0,
    "ref_mat": 6335.0,
    "run_mat": 3400.0,
-   "delta_total": -3495.17
+   "ref_total": 8681.79,
+   "run_total": 5186.62,
+   "delta_total": -3495.17,
+   "dans_seuil": false
   },
   "3.25": {
    "ref_h": 7.6,
    "run_h": 6.8,
    "ref_mat": 0.0,
    "run_mat": 2800.0,
-   "delta_total": 2729.96
+   "ref_total": 648.57,
+   "run_total": 3378.53,
+   "delta_total": 2729.96,
+   "dans_seuil": false
   },
   "3.26": {
    "ref_h": 4.0,
    "run_h": 1.5,
    "ref_mat": 30.0,
    "run_mat": 50.0,
-   "delta_total": -193.73
+   "ref_total": 371.35,
+   "run_total": 177.62,
+   "delta_total": -193.73,
+   "dans_seuil": true
   },
   "3.27": {
    "ref_h": 34.25,
    "run_h": 22.5,
    "ref_mat": 2197.1,
    "run_mat": 1549.0,
-   "delta_total": -1656.68
+   "ref_total": 5119.92,
+   "run_total": 3463.24,
+   "delta_total": -1656.68,
+   "dans_seuil": false
   },
   "3.28": {
    "ref_h": 92.0,
    "run_h": 29.38,
    "ref_mat": 4259.79,
    "run_mat": 1620.25,
-   "delta_total": -7991.03
+   "ref_total": 12110.43,
+   "run_total": 4119.4,
+   "delta_total": -7991.03,
+   "dans_seuil": false
   },
   "3.29": {
    "ref_h": 25.85,
    "run_h": null,
    "ref_mat": 1689.82,
    "run_mat": null,
-   "delta_total": -3895.8
+   "ref_total": 3895.8,
+   "run_total": 0.0,
+   "delta_total": -3895.8,
+   "dans_seuil": false
   },
   "3.30": {
    "ref_h": 1.3,
    "run_h": 28.6,
    "ref_mat": 65.38,
    "run_mat": 1438.36,
-   "delta_total": 3695.25
+   "ref_total": 176.32,
+   "run_total": 3871.57,
+   "delta_total": 3695.25,
+   "dans_seuil": false
   },
   "3.31": {
    "ref_h": 299.65,
    "run_h": 327.26,
    "ref_mat": 14431.68,
    "run_mat": 14044.01,
-   "delta_total": 1882.99
+   "ref_total": 40003.51,
+   "run_total": 41886.5,
+   "delta_total": 1882.99,
+   "dans_seuil": true
   },
   "3.32": {
    "ref_h": 2.0,
    "run_h": 2.0,
    "ref_mat": 1250.0,
    "run_mat": 1250.0,
-   "delta_total": -0.53
+   "ref_total": 1420.68,
+   "run_total": 1420.15,
+   "delta_total": -0.53,
+   "dans_seuil": true
   },
   "3.33": {
    "ref_h": 131.27,
    "run_h": 43.55,
    "ref_mat": 3310.75,
    "run_mat": 991.0,
-   "delta_total": -9817.09
+   "ref_total": 14513.21,
+   "run_total": 4696.12,
+   "delta_total": -9817.09,
+   "dans_seuil": false
   },
   "3.34": {
    "ref_h": 4.0,
    "run_h": 3.0,
    "ref_mat": 3422.44,
    "run_mat": 750.0,
-   "delta_total": -2758.56
+   "ref_total": 3763.79,
+   "run_total": 1005.23,
+   "delta_total": -2758.56,
+   "dans_seuil": false
   },
   "3.35": {
    "ref_h": 178.75,
    "run_h": 178.29,
    "ref_mat": 18678.93,
    "run_mat": 17254.51,
-   "delta_total": -1510.0
+   "ref_total": 33932.8,
+   "run_total": 32422.8,
+   "delta_total": -1510.0,
+   "dans_seuil": true
   },
   "3.36": {
    "ref_h": 9.27,
    "run_h": 29.88,
    "ref_mat": 779.1,
    "run_mat": 1051.12,
-   "delta_total": 2022.91
+   "ref_total": 1569.99,
+   "run_total": 3592.9,
+   "delta_total": 2022.91,
+   "dans_seuil": false
   },
   "3.37": {
    "ref_h": 20.0,
    "run_h": 8.0,
    "ref_mat": 0.0,
    "run_mat": 550.0,
-   "delta_total": -476.13
+   "ref_total": 1706.75,
+   "run_total": 1230.62,
+   "delta_total": -476.13,
+   "dans_seuil": true
   },
   "3.38": {
    "ref_h": 8.0,
    "run_h": 8.0,
    "ref_mat": 7400.0,
    "run_mat": 7400.0,
-   "delta_total": -2.08
+   "ref_total": 8082.7,
+   "run_total": 8080.62,
+   "delta_total": -2.08,
+   "dans_seuil": true
   },
   "5.19": {
    "ref_h": 38.4,
    "run_h": 29.0,
    "ref_mat": 0.0,
    "run_mat": 0.0,
-   "delta_total": -809.73
+   "ref_total": 3276.97,
+   "run_total": 2467.24,
+   "delta_total": -809.73,
+   "dans_seuil": true
   },
   "6.1": {
    "ref_h": null,
    "run_h": 56.0,
    "ref_mat": null,
    "run_mat": 1250.0,
-   "delta_total": 6014.33
+   "ref_total": 0.0,
+   "run_total": 6014.33,
+   "delta_total": 6014.33,
+   "dans_seuil": false
   }
  },
  "lignes": {
@@ -572,6 +638,102 @@
     "src_run": "Dupuis[RELO PANNEAU ANNONCIA] — releve PANNEAU ANNONCIATEUR INSTALLER 1 (E-203) = Détail G-04"
    }
   ]
+ },
+ "criteres": {
+  "total": {
+   "pct": -12.37,
+   "seuil_pct": 3.0,
+   "ok": false
+  },
+  "heures": {
+   "pct": -11.43,
+   "seuil_pct": 5.0,
+   "tolerance_h": 52.5,
+   "ok": false
+  },
+  "articles": {
+   "hors_seuil": [
+    "3.22",
+    "3.23",
+    "3.24",
+    "3.25",
+    "3.27",
+    "3.28",
+    "3.29",
+    "3.30",
+    "3.33",
+    "3.34",
+    "3.36",
+    "6.1"
+   ],
+   "seuil_pct": 10.0,
+   "seuil_min_abs": 1000.0,
+   "ok": false
+  },
+  "dans_1_pct": false,
+  "rappel_codes": 0.5479,
+  "precision_codes": 0.4301
+ },
+ "attribution": {
+  "mode": "approximation par articles (ancien protocole)",
+  "decisions": [
+   {
+    "decision": "postes_composites",
+    "articles": [
+     "3.27",
+     "3.28"
+    ],
+    "run": "couverts",
+    "ref": "en_plus",
+    "identique": false,
+    "delta_acceo": -9647.71
+   },
+   {
+    "decision": "monuments",
+    "articles": [
+     "3.34"
+    ],
+    "run": "dupuis",
+    "ref": "lumen",
+    "identique": false,
+    "delta_acceo": -2758.56
+   },
+   {
+    "decision": "lot_eclairage",
+    "articles": [
+     "3.35"
+    ],
+    "run": "readme_11893",
+    "ref": "detail_13034_80",
+    "identique": false,
+    "delta_acceo": -1510.0
+   },
+   {
+    "decision": "eae_hors_plan",
+    "articles": [
+     "3.22",
+     "5.19"
+    ],
+    "run": "releve",
+    "ref": "comptes",
+    "identique": false,
+    "delta_acceo": -2177.91
+   },
+   {
+    "decision": "conduits",
+    "articles": [
+     "3.23",
+     "3.31",
+     "3.33"
+    ],
+    "run": "temps_pi",
+    "ref": "temps_pi",
+    "identique": true,
+    "delta_acceo": 0.0,
+    "delta_articles_non_impute": -9569.45
+   }
+  ],
+  "autres_articles_delta_acceo": -3170.44
  },
  "verdict": "ÉCART"
 }
